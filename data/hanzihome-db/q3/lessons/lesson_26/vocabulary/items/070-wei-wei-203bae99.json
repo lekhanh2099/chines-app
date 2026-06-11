@@ -1,0 +1,214 @@
+{
+  "id": "53455d7c-142f-407a-a7e9-ecf03b30f2b8",
+  "type": "deep_vocabulary_item",
+  "order": 70,
+  "hanzi": "为",
+  "pinyin": "wéi / wèi",
+  "pos": {
+    "raw_vi": "Động từ / giới từ",
+    "raw_cn": "动词 / 介词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "vi / vị",
+    "meaning_vi": "làm, là, trở thành; vì, cho, thay cho",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm",
+      "là",
+      "trở thành",
+      "vì"
+    ],
+    "short_definition_vi": "làm, là, trở thành; vì, cho, thay cho",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "为",
+        "lishu_vi": "vi/vị",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "为 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "为 trong bài được học theo nghĩa: làm, là, trở thành; vì, cho, thay cho.",
+    "memory_tip_vi": "Nhớ 为 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "为了",
+        "pinyin": "wèile",
+        "meaning_vi": "vì/để",
+        "difference_vi": "Chỉ mục đích; khác 因为 nêu nguyên nhân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không đọc tất cả 为 là wèi: 成为/化为 đọc wéi; 为了/为他担心 đọc wèi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "027c33dd-9c58-4d36-aad1-9706aa418d74",
+      "order": 1,
+      "zh": "成为",
+      "pinyin": "",
+      "vi": "trở thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "deeb8e45-1664-4a71-ba1c-9e68aee66842",
+      "order": 2,
+      "zh": "化为",
+      "pinyin": "",
+      "vi": "hóa thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8e44529-72fc-43cc-8b06-8ca901976f0c",
+      "order": 3,
+      "zh": "为了爱情",
+      "pinyin": "",
+      "vi": "vì tình yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95d7fdfa-4e63-4eb1-b9ed-79293ec894b2",
+      "order": 4,
+      "zh": "为他难过",
+      "pinyin": "",
+      "vi": "buồn thay cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f2307a52-89b3-41c0-8d3e-16381d4fc50b",
+      "order": 1,
+      "zh": "他们最后化为两只蝴蝶。",
+      "pinyin": "",
+      "vi": "Cuối cùng họ hóa thành hai con bướm.",
+      "analysis_vi": "化为 đọc huàwéi, nghĩa hóa thành.",
+      "highlight": [
+        "为"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53455d7c-142f-407a-a7e9-ecf03b30f2b8"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7be64882-89dd-45ae-9623-b2fa262f4a14",
+      "order": 2,
+      "zh": "很多人听完这个故事以后，都会为他们难过。",
+      "pinyin": "",
+      "vi": "Nhiều người nghe xong câu chuyện đều buồn thay cho họ.",
+      "analysis_vi": "为他们难过 đọc wèi, nghĩa là buồn vì/thay cho họ.",
+      "highlight": [
+        "为"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53455d7c-142f-407a-a7e9-ecf03b30f2b8"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "为 trong bài có cả mạch biến hóa và mạch cảm xúc.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cb17862c-561a-4822-a62f-c471e3cad68a",
+      "order": 1,
+      "rule_vi": "Không đọc tất cả 为 là wèi: 成为/化为 đọc wéi; 为了/为他担心 đọc wèi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "为",
+    "back": "làm, là, trở thành; vì, cho, thay cho",
+    "hint": "wéi / wèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53455d7c-142f-407a-a7e9-ecf03b30f2b8",
+    "source_lesson_vocab_id": null
+  }
+}

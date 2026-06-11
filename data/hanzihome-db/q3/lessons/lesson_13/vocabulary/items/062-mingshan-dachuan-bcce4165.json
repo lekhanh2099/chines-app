@@ -1,0 +1,226 @@
+{
+  "id": "e3cd6656-acaf-4ef6-bded-4964c285fc1a",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "名山大川",
+  "pinyin": "míngshān dàchuān",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "culture"
+  ],
+  "meaning": {
+    "hanviet": "danh sơn đại xuyên",
+    "meaning_vi": "núi nổi tiếng sông lớn; danh thắng núi sông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "núi nổi tiếng sông lớn",
+      "danh thắng núi sông"
+    ],
+    "short_definition_vi": "núi nổi tiếng sông lớn; danh thắng núi sông",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "名",
+        "lishu_vi": "danh",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tên",
+        "modern_logic_vi": "Trong từ/cụm này, 名 góp phần vào nghĩa hiện đại: tên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "山",
+        "lishu_vi": "sơn",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "núi",
+        "modern_logic_vi": "Trong từ/cụm này, 山 góp phần vào nghĩa hiện đại: núi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "大",
+        "lishu_vi": "đại",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "Trong từ/cụm này, 大 góp phần vào nghĩa hiện đại: lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "川",
+        "lishu_vi": "xuyên",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sông/dòng nước",
+        "modern_logic_vi": "Trong từ/cụm này, 川 góp phần vào nghĩa hiện đại: sông/dòng nước.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "名山大川 cần học theo nghĩa hiện đại trong bài: núi nổi tiếng sông lớn; danh thắng núi sông.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 游历名山大川.",
+    "warning_vi": "Không tách nghĩa từng chữ nếu là tên riêng, tục ngữ hoặc cấu trúc cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f8047e00-8d20-4c35-80b4-6e08c2d9802b",
+      "order": 1,
+      "zh": "游历名山大川",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05ab5b00-5644-4228-86b6-34632cab18e5",
+      "order": 2,
+      "zh": "走遍名山大川",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62667e4e-c0de-425a-a627-2dfc7965ca4e",
+      "order": 3,
+      "zh": "中国的名山大川",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d6a09f9f-6383-4b48-9f71-38b38fa179f8",
+      "order": 1,
+      "zh": "他一生游历了很多名山大川。",
+      "pinyin": "Tā yìshēng yóulì le hěn duō míngshān dàchuān.",
+      "vi": "Cả đời ông đi nhiều danh sơn đại xuyên.",
+      "analysis_vi": "游历名山大川 là collocation sát văn phong du ký.",
+      "highlight": [
+        "名山大川"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e3cd6656-acaf-4ef6-bded-4964c285fc1a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bd09a2e8-e6b9-46ce-a4a1-3cf1af7ce20f",
+      "order": 2,
+      "zh": "徐霞客不只是看风景，他还认真记录名山大川的地理特点。",
+      "pinyin": "Xú Xiákè bú zhǐ shì kàn fēngjǐng, tā hái rènzhēn jìlù míngshān dàchuān de dìlǐ tèdiǎn.",
+      "vi": "Từ Hà Khách không chỉ ngắm cảnh mà còn ghi đặc điểm địa lý của danh sơn đại xuyên.",
+      "analysis_vi": "不只是……还…… nâng tầng đánh giá.",
+      "highlight": [
+        "名山大川"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e3cd6656-acaf-4ef6-bded-4964c285fc1a"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "名山大川 có màu văn học cổ, hợp với văn cảnh 徐霞客.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "deb07c8d-1185-4203-9232-e5954693b9fa",
+      "order": 1,
+      "rule_vi": "Dùng 名山大川 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "名山大川",
+    "back": "núi nổi tiếng sông lớn; danh thắng núi sông",
+    "hint": "míngshān dàchuān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e3cd6656-acaf-4ef6-bded-4964c285fc1a",
+    "source_lesson_vocab_id": null
+  }
+}

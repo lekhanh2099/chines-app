@@ -1,0 +1,163 @@
+{
+  "id": "b0bfeb9c-e0e6-44c0-97f4-62c8721571a8",
+  "type": "deep_vocabulary_item",
+  "order": 119,
+  "hanzi": "喷出",
+  "pinyin": "pēn chū",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动补结构",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Chuyển động và giao thông"
+  ],
+  "meaning": {
+    "hanviet": "Phún xuất",
+    "meaning_vi": "phun ra, xịt ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phun ra",
+      "xịt ra"
+    ],
+    "short_definition_vi": "phun ra, xịt ra",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: phun ra, xịt ra.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Chuyển động và giao thông",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "喷",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "喷出 trong bài được học theo nghĩa trọng tâm: phun ra, xịt ra.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: phun ra, xịt ra.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a1a1898d-f28c-406b-89aa-89ecb171c4c3",
+      "order": 1,
+      "zh": "喷出",
+      "pinyin": "",
+      "vi": "phun ra, xịt ra",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e16326b3-c52f-4460-bf06-c58496f3aa3d",
+      "order": 1,
+      "zh": "对此，我们还不能肯定，也许是些金属颗粒——它们沿着固定轨道移动，并能喷出气体，发出噪音，还会互相碰撞。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “喷出” = phun ra, xịt ra.",
+      "analysis_vi": "Câu này dùng “喷出” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "喷出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b0bfeb9c-e0e6-44c0-97f4-62c8721571a8"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “喷出” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2dc64d3a-f033-4521-924e-3b3b95c0fd2d",
+      "order": 1,
+      "rule_vi": "Cần dùng “喷出” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "喷出",
+    "back": "phun ra, xịt ra",
+    "hint": "pēn chū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Chuyển động và giao thông"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b0bfeb9c-e0e6-44c0-97f4-62c8721571a8",
+    "source_lesson_vocab_id": null
+  }
+}

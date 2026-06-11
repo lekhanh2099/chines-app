@@ -1,0 +1,394 @@
+{
+  "id": "4b9f83ab-fcbe-467d-aa86-0ccf8e95c113",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "残疾",
+  "pinyin": "cánjí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "tàn tật",
+    "meaning_vi": "khuyết tật, tàn tật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khuyết tật",
+      "tàn tật"
+    ],
+    "short_definition_vi": "khuyết tật, tàn tật",
+    "textbook_focus_vi": "残疾 chỉ tình trạng cơ thể/chức năng bị tổn hại, không phải bệnh tạm thời.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "残",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "歹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đãi",
+          "radical_name_zh": "",
+          "hanviet": "đãi",
+          "meaning_vi": "xấu, hư tổn, chết",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "歹 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "歹",
+            "hanviet": "đãi",
+            "meaning_vi": "xấu, hư tổn, chết",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "歹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đãi",
+              "radical_name_zh": "",
+              "hanviet": "đãi",
+              "meaning_vi": "xấu, hư tổn, chết",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "歹 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "歹 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "戋",
+            "hanviet": "tiễn",
+            "meaning_vi": "thành phần nhìn thấy trong chữ giản thể, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "戋 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "còn sót, tổn hại, không đầy đủ",
+        "modern_logic_vi": "Trong từ “残疾”, chữ “残” góp phần vào trường nghĩa: còn sót, tổn hại, không đầy đủ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "疾",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "疒 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "疒 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "疒 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "矢",
+            "hanviet": "thỉ",
+            "meaning_vi": "mũi tên",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "矢 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bệnh, tật",
+        "modern_logic_vi": "Trong từ “残疾”, chữ “疾” góp phần vào trường nghĩa: bệnh, tật",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "残疾 chỉ tình trạng cơ thể/chức năng bị tổn hại, không phải bệnh tạm thời.",
+    "memory_tip_vi": "残疾 chỉ tình trạng cơ thể/chức năng bị tổn hại, không phải bệnh tạm thời.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "残废",
+        "pinyin": "",
+        "meaning_vi": "tàn phế",
+        "difference_vi": "tàn phế; dễ nặng và thiếu lịch sự khi nói về người",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "病人",
+        "pinyin": "",
+        "meaning_vi": "bệnh nhân",
+        "difference_vi": "bệnh nhân; không đồng nghĩa với người khuyết tật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "60db4869-8119-4c94-87ee-dff20d802aa3",
+      "order": 1,
+      "zh": "残疾人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a978c673-7d83-4606-b647-3d4e8ee731eb",
+      "order": 2,
+      "zh": "变成残疾人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "586a6fed-374f-448b-954e-be6608fe4934",
+      "order": 3,
+      "zh": "帮助残疾人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bdbd7f6b-daf5-4691-b1fb-7953bf615c7e",
+      "order": 4,
+      "zh": "残疾人就业",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "548aaf6b-151a-4492-83d6-586e54dbff35",
+      "order": 1,
+      "zh": "虽然他身体有残疾，但是他一直没有放弃工作。",
+      "pinyin": "",
+      "vi": "Tuy cơ thể có khuyết tật, anh ấy vẫn không từ bỏ công việc.",
+      "analysis_vi": "虽然……但是…… nêu đối lập.",
+      "highlight": [
+        "残疾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4b9f83ab-fcbe-467d-aa86-0ccf8e95c113"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ca171bd1-0b46-4996-a722-aa0e8761fa46",
+      "order": 2,
+      "zh": "如果单位因为残疾拒绝他，这就是一种歧视。",
+      "pinyin": "",
+      "vi": "Nếu đơn vị từ chối anh ấy vì khuyết tật, đó là một kiểu kỳ thị.",
+      "analysis_vi": "因为……拒绝…… nêu nguyên nhân không công bằng.",
+      "highlight": [
+        "残疾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4b9f83ab-fcbe-467d-aa86-0ccf8e95c113"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "残疾 chỉ tình trạng cơ thể/chức năng bị tổn hại, không phải bệnh tạm thời.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bc422093-71f8-44f9-a39f-8b29a8731435",
+      "order": 1,
+      "rule_vi": "Ưu tiên dịch 残疾人 là người khuyết tật, tránh dùng để mắng người khác.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Ưu tiên dịch 残疾人 là người khuyết tật, tránh dùng để mắng người khác.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "残疾",
+    "back": "khuyết tật, tàn tật",
+    "hint": "cánjí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4b9f83ab-fcbe-467d-aa86-0ccf8e95c113",
+    "source_lesson_vocab_id": null
+  }
+}

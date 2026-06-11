@@ -1,0 +1,175 @@
+{
+  "id": "a0951b52-cf27-48cd-abde-66c131a01c20",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "可能",
+  "pinyin": "kěnéng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词/助动词/名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Suy đoán và khả năng"
+  ],
+  "meaning": {
+    "hanviet": "Khả năng",
+    "meaning_vi": "có thể; khả năng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "có thể",
+      "khả năng"
+    ],
+    "short_definition_vi": "có thể; khả năng",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: có thể; khả năng.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Suy đoán và khả năng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "能",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "可能 trong bài được học theo nghĩa trọng tâm: có thể; khả năng.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: có thể; khả năng.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "也许",
+        "pinyin": "yěxǔ",
+        "meaning_vi": "có lẽ",
+        "difference_vi": "也许 thiên về suy đoán; 可能 rộng hơn, có thể là khả năng khách quan.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d69b3268-54fd-49c2-b477-d6e9bc2baf99",
+      "order": 1,
+      "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: có thể; khả năng",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8e7b7455-ceab-411f-9fa9-6b9a5ac9cedf",
+      "order": 1,
+      "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “可能” = có thể; khả năng.",
+      "analysis_vi": "Câu này dùng “可能” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "可能"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a0951b52-cf27-48cd-abde-66c131a01c20"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “可能” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f48bd851-0cb6-4e7d-97dd-e45c5f9688b4",
+      "order": 1,
+      "rule_vi": "Cần dùng “可能” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "可能",
+    "back": "có thể; khả năng",
+    "hint": "kěnéng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Suy đoán và khả năng"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a0951b52-cf27-48cd-abde-66c131a01c20",
+    "source_lesson_vocab_id": null
+  }
+}

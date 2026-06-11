@@ -1,0 +1,324 @@
+{
+  "id": "f2d37b59-e3a0-480c-8e29-5d8ec5e840bb",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "可是",
+  "pinyin": "kěshì",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "city_weather"
+  ],
+  "meaning": {
+    "hanviet": "Khả thị",
+    "meaning_vi": "nhưng, thế nhưng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhưng",
+      "thế nhưng"
+    ],
+    "short_definition_vi": "nhưng, thế nhưng",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "city weather",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "口 là thành phần rõ; 可 trong 可是 học nguyên khối.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh/lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có thể, được, đáng",
+        "modern_logic_vi": "口 là thành phần rõ; 可 trong 可是 học nguyên khối.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "日 là thành phần rõ; không tách nghĩa máy móc.",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là, đúng",
+        "modern_logic_vi": "日 là thành phần rõ; không tách nghĩa máy móc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "可是 là liên từ chuyển ý, học nguyên khối là nhưng/thế nhưng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "但是",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhưng, trung tính",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不过",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhưng mà, nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "然而",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tuy nhiên, văn viết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ef1637fa-df45-4cfb-a463-29ee89dc4a69",
+      "order": 1,
+      "zh": "可是我觉得……",
+      "pinyin": "",
+      "vi": "nhưng tôi thấy rằng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a05c65d0-de38-4c58-8b5e-bb0e987fa43a",
+      "order": 2,
+      "zh": "可是现在……",
+      "pinyin": "",
+      "vi": "nhưng bây giờ...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e9c8a95f-68c0-42b3-861f-a79f8432e619",
+      "order": 3,
+      "zh": "想去，可是没时间",
+      "pinyin": "",
+      "vi": "muốn đi nhưng không có thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44233dbb-1108-4628-85fa-1d3b033665fb",
+      "order": 4,
+      "zh": "虽然……可是……",
+      "pinyin": "",
+      "vi": "tuy... nhưng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2b9d16eb-9a6d-419d-bba9-1ca5511422d1",
+      "order": 1,
+      "zh": "我想去，可是没有时间。",
+      "pinyin": "Wǒ xiǎng qù, kěshì méiyǒu shíjiān.",
+      "vi": "Tôi muốn đi, nhưng không có thời gian.",
+      "analysis_vi": "可是 nối hai vế trái hướng.",
+      "highlight": [
+        "可是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2d37b59-e3a0-480c-8e29-5d8ec5e840bb"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c9e3abd6-8ded-4a16-bc68-fc08a6f1ca0c",
+      "order": 2,
+      "zh": "这个城市很漂亮，可是人口太多了。",
+      "pinyin": "Zhège chéngshì hěn piàoliang, kěshì rénkǒu tài duō le.",
+      "vi": "Thành phố này rất đẹp, nhưng dân số quá đông.",
+      "analysis_vi": "可是 đưa mặt trái sau nhận xét tích cực.",
+      "highlight": [
+        "可是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2d37b59-e3a0-480c-8e29-5d8ec5e840bb"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ac6eb0e0-afe8-45fe-9c2f-0937e8aca6c6",
+      "order": 1,
+      "rule_vi": "Không dịch 可是 thành 'có thể là' trong bài này.",
+      "natural_examples": [
+        {
+          "zh": "可是 = nhưng / thế nhưng",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Nghĩa liên từ trong bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "可是 = nhưng / thế nhưng",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Nghĩa liên từ trong bài.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "可是",
+    "back": "nhưng, thế nhưng",
+    "hint": "kěshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "city_weather"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f2d37b59-e3a0-480c-8e29-5d8ec5e840bb",
+    "source_lesson_vocab_id": null
+  }
+}

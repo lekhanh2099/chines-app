@@ -1,0 +1,327 @@
+{
+  "id": "2826c04b-2884-4858-8273-cdeb5fd2690c",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "转椅",
+  "pinyin": "zhuànyǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "chuyển ỷ",
+    "meaning_vi": "ghế xoay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ghế xoay"
+    ],
+    "short_definition_vi": "ghế xoay",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: ghế xoay.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "转",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "车 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 转.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "椅",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 椅.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "转椅 trong bài được hiểu theo nghĩa: ghế xoay. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 转椅.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "转椅 đọc zhuànyǐ; động từ 转 trong 把椅子转过去 đọc zhuǎn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8a31dc3c-6bce-48b7-b677-b4452352ed9e",
+      "order": 1,
+      "zh": "一把转椅",
+      "pinyin": "",
+      "vi": "một cái ghế xoay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "987057f3-841e-46b9-b85a-ce851cfa4b10",
+      "order": 2,
+      "zh": "坐在转椅上",
+      "pinyin": "",
+      "vi": "ngồi trên ghế xoay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "39c79da5-4fb1-4a8c-a7c7-dee5ec4331f1",
+      "order": 3,
+      "zh": "办公转椅",
+      "pinyin": "",
+      "vi": "ghế xoay văn phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b0dd1bd-b22e-4660-8656-ea2bf2016caa",
+      "order": 4,
+      "zh": "转椅坏了",
+      "pinyin": "",
+      "vi": "ghế xoay hỏng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57afc336-a8e5-486f-b443-78186eae37f6",
+      "order": 5,
+      "zh": "把转椅转过去",
+      "pinyin": "",
+      "vi": "xoay ghế qua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2aa2b520-2199-4ad6-8c07-c36316ff582c",
+      "order": 1,
+      "zh": "请坐在这把转椅上。",
+      "pinyin": "",
+      "vi": "Mời ngồi lên chiếc ghế xoay này.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "转椅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2826c04b-2884-4858-8273-cdeb5fd2690c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5a3d2b8f-cff1-47f1-b6b8-033ace52509f",
+      "order": 2,
+      "zh": "理发师把转椅转过去，让我面对镜子。",
+      "pinyin": "",
+      "vi": "Thợ cắt tóc xoay ghế qua để tôi đối diện với gương.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "转椅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2826c04b-2884-4858-8273-cdeb5fd2690c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "转椅 đọc zhuànyǐ; động từ 转 trong 把椅子转过去 đọc zhuǎn.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c81ac768-def1-4a9f-bda8-7781ecd006ef",
+      "order": 1,
+      "rule_vi": "转椅 đọc zhuànyǐ; động từ 转 trong 把椅子转过去 đọc zhuǎn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这张转椅。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "转椅 đọc zhuànyǐ; động từ 转 trong 把椅子转过去 đọc zhuǎn.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这把转椅。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "转椅 đọc zhuànyǐ; động từ 转 trong 把椅子转过去 đọc zhuǎn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "转椅",
+    "back": "ghế xoay",
+    "hint": "zhuànyǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2826c04b-2884-4858-8273-cdeb5fd2690c",
+    "source_lesson_vocab_id": null
+  }
+}

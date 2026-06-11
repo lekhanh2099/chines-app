@@ -1,0 +1,40 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "圣诞节",
+      "pinyin": "Shèngdàn Jié",
+      "meaning_vi": "lễ Giáng sinh",
+      "meaning_en": "Christmas",
+      "aliases": [
+        {
+          "hanzi": "圣诞",
+          "pinyin": "Shèngdàn",
+          "meaning_vi": "Giáng sinh"
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "春节",
+      "pinyin": "Chūnjié",
+      "meaning_vi": "Tết Xuân; Tết âm lịch Trung Quốc",
+      "meaning_en": "Spring Festival; Chinese New Year",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

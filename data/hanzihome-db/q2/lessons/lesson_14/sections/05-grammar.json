@@ -1,0 +1,380 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法",
+  "title_vi": "Ngữ pháp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "动作趋向的表达：复合趋向补语",
+      "title_vi": "Bổ ngữ xu hướng kép",
+      "level": "HSK3+",
+      "tags": [
+        "复合趋向补语",
+        "directional_complement"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Bổ ngữ xu hướng kép diễn tả hướng di chuyển của hành động, đồng thời cho biết hướng đó về phía người nói/điểm quy chiếu hay rời xa người nói/điểm quy chiếu.",
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我是上来的。",
+              "pinyin": "Wǒ shì shànglai de.",
+              "vi": "Tôi đi lên đây.",
+              "highlight": [
+                "上来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "他们走过来，我们走过去。",
+              "pinyin": "Tāmen zǒu guòlai, wǒmen zǒu guòqu.",
+              "vi": "Họ đi qua đây, chúng tôi đi qua đó.",
+              "highlight": [
+                "过来",
+                "过去"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+              "zh": "他跑进来了。",
+              "pinyin": "Tā pǎo jìnlai le.",
+              "vi": "Anh ấy chạy vào đây rồi.",
+              "highlight": [
+                "进来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
+              "zh": "他跑出去了。",
+              "pinyin": "Tā pǎo chūqu le.",
+              "vi": "Anh ấy chạy ra ngoài rồi.",
+              "highlight": [
+                "出去"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
+              "zh": "这本书买回来了。",
+              "pinyin": "Zhè běn shū mǎi huílai le.",
+              "vi": "Quyển sách này mua về rồi.",
+              "highlight": [
+                "回来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
+              "zh": "蝴蝶飞起来了。",
+              "pinyin": "Húdié fēi qǐlai le.",
+              "vi": "Con bướm bay lên rồi.",
+              "highlight": [
+                "起来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "V + 上/下/进/出/回/过/起 + 来/去",
+          "meaning_vi": "来 chỉ hướng về phía người nói/điểm quy chiếu; 去 chỉ hướng rời xa người nói/điểm quy chiếu.",
+          "formulas": [
+            {
+              "label": "nhóm 来",
+              "pattern": "上来、下来、进来、出来、回来、过来、起来"
+            },
+            {
+              "label": "nhóm 去",
+              "pattern": "上去、下去、进去、出去、回去、过去"
+            }
+          ],
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我是上来的。",
+              "pinyin": "Wǒ shì shànglai de.",
+              "vi": "Tôi đi lên đây.",
+              "highlight": [
+                "上来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "他们走过来，我们走过去。",
+              "pinyin": "Tāmen zǒu guòlai, wǒmen zǒu guòqu.",
+              "vi": "Họ đi qua đây, chúng tôi đi qua đó.",
+              "highlight": [
+                "过来",
+                "过去"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+              "zh": "他跑进来了。",
+              "pinyin": "Tā pǎo jìnlai le.",
+              "vi": "Anh ấy chạy vào đây rồi.",
+              "highlight": [
+                "进来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
+              "zh": "他跑出去了。",
+              "pinyin": "Tā pǎo chūqu le.",
+              "vi": "Anh ấy chạy ra ngoài rồi.",
+              "highlight": [
+                "出去"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
+              "zh": "这本书买回来了。",
+              "pinyin": "Zhè běn shū mǎi huílai le.",
+              "vi": "Quyển sách này mua về rồi.",
+              "highlight": [
+                "回来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
+              "zh": "蝴蝶飞起来了。",
+              "pinyin": "Húdié fēi qǐlai le.",
+              "vi": "Con bướm bay lên rồi.",
+              "highlight": [
+                "起来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "起来 có nhiều nghĩa mở rộng như đứng dậy, nổi lên, bắt đầu, nhớ ra tùy ngữ cảnh."
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Khi tân ngữ là nơi chốn",
+          "pattern": "V + hướng cơ bản + nơi chốn + 来/去",
+          "meaning_vi": "Tân ngữ nơi chốn phải đặt trước 来/去.",
+          "examples": [
+            {
+              "id": "82c84378-8c03-4e23-be01-d27117bb65ef",
+              "zh": "我看见他走进图书馆去了。",
+              "pinyin": "Wǒ kànjiàn tā zǒu jìn túshūguǎn qù le.",
+              "vi": "Tôi nhìn thấy anh ấy đi vào thư viện rồi.",
+              "highlight": [
+                "走进图书馆去"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Đúng: 走进图书馆去。Sai: 走进去图书馆。"
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b4cc66d6-0523-4a75-bc1b-366c9bb288d0",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "Khi tân ngữ là sự vật",
+          "pattern": "V + hướng kép + sự vật / V + hướng cơ bản + sự vật + 来/去",
+          "meaning_vi": "Tân ngữ sự vật linh hoạt hơn, có thể đứng trước hoặc sau 来/去 trong nhiều trường hợp.",
+          "examples": [
+            {
+              "id": "d912f7f1-c6af-48af-9bbb-aa9f54ac3921",
+              "zh": "他从国外给我带回来一件礼物。",
+              "pinyin": "Tā cóng guówài gěi wǒ dài huílai yí jiàn lǐwù.",
+              "vi": "Anh ấy mang từ nước ngoài về cho tôi một món quà.",
+              "highlight": [
+                "带回来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "带回来一件礼物 và 带回一件礼物来 đều có thể dùng."
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "95fa8628-79ac-44cd-8cbf-3c57a325d1c6",
+          "type": "grammar_structure",
+          "order": 5,
+          "title": "Vị trí của 了",
+          "pattern": "V + 了 + hướng kép / V + hướng kép + 了 / V + hướng kép + 了 + sự vật",
+          "meaning_vi": "Vị trí của 了 thay đổi tùy câu có tân ngữ hay không, và tân ngữ là nơi chốn hay sự vật.",
+          "examples": [
+            {
+              "id": "c650d743-227e-4e10-9373-95e0940ca9ec",
+              "zh": "刚一下课，同学们就都跑出去了。",
+              "pinyin": "Gāng yí xiàkè, tóngxuémen jiù dōu pǎo chūqu le.",
+              "vi": "Vừa tan học, các bạn học sinh đều chạy ra ngoài.",
+              "highlight": [
+                "跑出去"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "6f2f727c-79e3-48ed-a2b5-42a3afbdf18e",
+              "zh": "我给你买回来了一件羽绒服。",
+              "pinyin": "Wǒ gěi nǐ mǎi huílai le yí jiàn yǔróngfú.",
+              "vi": "Tôi mua về cho bạn một chiếc áo lông vũ.",
+              "highlight": [
+                "买回来"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Không có tân ngữ: 跑了出去 / 跑出去了 đều được.",
+            "Có tân ngữ nơi chốn: 了 thường ở cuối câu: 他们都爬上山去了.",
+            "Có tân ngữ sự vật: thường V + hướng kép + 了 + sự vật."
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "887640f9-1173-43fc-ad6b-663c06a0b9b3",
+          "type": "grammar_common_mistakes",
+          "order": 6,
+          "title": "Lỗi dễ sai",
+          "items": [
+            {
+              "id": "fcca9d55-0c2d-4c43-a7dc-53d87054f2ad",
+              "wrong": "我看见他走进去图书馆了。",
+              "correct": "我看见他走进图书馆去了。",
+              "explanation_vi": "图书馆 là nơi chốn, phải đứng trước 去."
+            },
+            {
+              "id": "43ad1993-846b-4c58-95cb-71d086060b17",
+              "wrong": "汽车开上去山了。",
+              "correct": "汽车开上山去了。",
+              "explanation_vi": "山 là nơi chốn, phải đứng trước 去."
+            },
+            {
+              "id": "e9feed73-8319-4195-9b00-03aab9bbda3e",
+              "wrong": "他跑进来了。= Anh ấy chạy vào đó.",
+              "correct": "他跑进来了。= Anh ấy chạy vào đây.",
+              "explanation_vi": "来 là hướng về phía người nói/điểm quy chiếu."
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "id": "307e9fff-3613-4b7c-a5be-4a254ea60ce4",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "慈善家",
+  "pinyin": "císhànjiā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "từ thiện gia",
+    "meaning_vi": "nhà từ thiện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà từ thiện"
+    ],
+    "short_definition_vi": "nhà từ thiện",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "慈",
+        "lishu_vi": "từ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhân từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "善",
+        "lishu_vi": "thiện",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "dê; trong vài chữ gợi tốt/đẹp",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羊",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dương",
+              "radical_name_zh": "",
+              "hanviet": "dương",
+              "meaning_vi": "dê; trong vài chữ gợi tốt/đẹp",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thiện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "羊",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dương",
+          "radical_name_zh": "",
+          "hanviet": "dương",
+          "meaning_vi": "dê; trong vài chữ gợi tốt/đẹp",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "家",
+        "lishu_vi": "gia",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nơi che phủ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nơi che phủ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà; chuyên gia",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nơi che phủ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "慈善家 là người làm, tài trợ hoặc thúc đẩy hoạt động từ thiện.",
+    "memory_tip_vi": "Nhớ 慈善家捐钱帮助失学儿童.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好人",
+        "pinyin": "",
+        "meaning_vi": "好人",
+        "difference_vi": "好人 nghĩa rộng, không nhất thiết làm từ thiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5d8e06dc-8fd1-4f88-a966-1192d28086f0",
+      "order": 1,
+      "zh": "一位慈善家",
+      "pinyin": "yí wèi císhànjiā",
+      "vi": "một vị nhà từ thiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5910c21-4511-46aa-b76e-15db4d3a5b98",
+      "order": 2,
+      "zh": "著名慈善家",
+      "pinyin": "zhùmíng císhànjiā",
+      "vi": "nhà từ thiện nổi tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d4ca595-b44a-4580-b1dd-25103e6aaf54",
+      "order": 3,
+      "zh": "慈善活动",
+      "pinyin": "císhàn huódòng",
+      "vi": "hoạt động từ thiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0747641f-e0ce-4567-8cc3-a05adc43eb41",
+      "order": 4,
+      "zh": "慈善家捐钱",
+      "pinyin": "císhànjiā juān qián",
+      "vi": "nhà từ thiện quyên tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d9ebb2da-afc5-47bb-aa99-679ac1ce59eb",
+      "order": 1,
+      "zh": "他是一位有名的慈善家。",
+      "pinyin": "Tā shì yí wèi yǒumíng de císhànjiā.",
+      "vi": "Ông ấy là một nhà từ thiện nổi tiếng.",
+      "analysis_vi": "一位 thể hiện lịch sự/tôn trọng.",
+      "highlight": [
+        "慈善家"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "307e9fff-3613-4b7c-a5be-4a254ea60ce4"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "aafeeb2e-7693-453e-8aa6-b7e1df8e04ad",
+      "order": 2,
+      "zh": "这位慈善家的帮助改变了失学儿童的生活。",
+      "pinyin": "Zhè wèi císhànjiā de bāngzhù gǎibiàn le shīxué értóng de shēnghuó.",
+      "vi": "Sự giúp đỡ của nhà từ thiện này thay đổi cuộc sống trẻ thất học.",
+      "analysis_vi": "Gắn với chủ đề bài.",
+      "highlight": [
+        "慈善家"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "307e9fff-3613-4b7c-a5be-4a254ea60ce4"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nên gắn 慈善家 với 慈善事业, 捐款, 失学儿童, 希望工程.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "080d7952-26b9-4f81-bc9e-80e9a61dbd0e",
+      "order": 1,
+      "rule_vi": "Không gọi bất kỳ người tốt nào là 慈善家.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他帮了我一次，所以他是慈善家。",
+          "pinyin": "Tā bāng le wǒ yí cì, suǒyǐ tā shì císhànjiā.",
+          "vi": "Quá mức; giúp một lần không thành nhà từ thiện.",
+          "note_vi": "慈善家 cần hoạt động từ thiện rõ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他是个好心人。",
+          "pinyin": "Tā shì ge hǎoxīnrén.",
+          "vi": "Anh ấy là người có lòng tốt.",
+          "note_vi": "好心人 hợp hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "慈善家",
+    "back": "nhà từ thiện",
+    "hint": "císhànjiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "307e9fff-3613-4b7c-a5be-4a254ea60ce4",
+    "source_lesson_vocab_id": null
+  }
+}

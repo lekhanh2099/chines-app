@@ -1,0 +1,503 @@
+{
+  "id": "a9b5ee7e-5555-430a-a724-69a5070d3047",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "分手",
+  "pinyin": "fēnshǒu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Phân thủ",
+    "meaning_vi": "chia tay; tách ra; từ biệt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chia tay",
+      "tách ra",
+      "từ biệt"
+    ],
+    "short_definition_vi": "chia tay; tách ra; từ biệt",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "分",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刀 được dùng như bộ Đao trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刀 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia ra, tách ra.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "刀 được dùng như bộ Đao trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "手 được dùng như bộ Thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "手 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "手 được dùng như bộ Thủ trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "分 = chia ra, tách ra. 手 = tay. → Hình ảnh hai tay buông ra, tách nhau ra → 分手 = chia tay. Logic hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分手",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chia tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "离婚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ly hôn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "分开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tách ra, xa nhau, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "断绝关系",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cắt đứt quan hệ, mạnh và trang trọng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不在一起了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không còn bên nhau nữa, khẩu ngữ mềm hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "他们分手了。",
+      "Họ chia tay rồi.",
+      "他们离婚了。",
+      "Họ ly hôn rồi.",
+      "我们暂时分开一段时间。",
+      "Chúng tôi tạm xa nhau một thời gian."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "52006255-65e1-4052-a777-1c23d52885e7",
+      "order": 1,
+      "zh": "分手了",
+      "pinyin": "",
+      "vi": "chia tay rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5ce5cf4e-3d86-479c-8266-da4852caffbf",
+      "order": 2,
+      "zh": "跟……分手",
+      "pinyin": "",
+      "vi": "chia tay với...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6f584b02-fdb5-4e3b-acdd-2ff6f873263a",
+      "order": 3,
+      "zh": "分过手",
+      "pinyin": "",
+      "vi": "từng chia tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dcc24380-b100-4786-93fa-9338f6168dad",
+      "order": 4,
+      "zh": "没分过手",
+      "pinyin": "",
+      "vi": "chưa từng chia tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "102dc0ef-07db-43f2-8022-88c81ba470a4",
+      "order": 5,
+      "zh": "第一次分手",
+      "pinyin": "",
+      "vi": "lần đầu chia tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6f1d5186-a0c5-4c35-803e-64131bde73b8",
+      "order": 6,
+      "zh": "提出分手",
+      "pinyin": "",
+      "vi": "đề nghị chia tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cfbc5ec8-2a3a-415f-9ea2-0f227629008e",
+      "order": 1,
+      "zh": "他们分手了。",
+      "pinyin": "Tāmen fēnshǒu le.",
+      "vi": "Họ chia tay rồi.",
+      "analysis_vi": "了 báo tình trạng mới: quan hệ đã kết thúc.",
+      "highlight": [
+        "分手"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "a9b5ee7e-5555-430a-a724-69a5070d3047"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "42460117-0742-491f-bbab-04bd04022d5b",
+      "order": 2,
+      "zh": "他跟女朋友分过一次手，后来又和好了。",
+      "pinyin": "Tā gēn nǚpéngyou fēn guo yí cì shǒu, hòulái yòu héhǎo le.",
+      "vi": "Anh ấy từng chia tay bạn gái một lần, sau đó lại làm lành.",
+      "analysis_vi": "分过一次手 là ly hợp + 过 + số lần. 又 dùng vì sự việc “lại” xảy ra trong quá khứ.",
+      "highlight": [
+        "分手"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "a9b5ee7e-5555-430a-a724-69a5070d3047"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7a29e7e4-5930-4151-8a51-f307c1ee57bd",
+      "order": 3,
+      "zh": "第一次分手以后，他难过极了，一个人听了三遍《梁祝》，觉得这首曲子好像在说自己的故事。",
+      "pinyin": "Dì yī cì fēnshǒu yǐhòu, tā nánguò jí le, yí ge rén tīng le sān biàn “Liáng Zhù”, juéde zhè shǒu qǔzi hǎoxiàng zài shuō zìjǐ de gùshi.",
+      "vi": "Sau lần đầu chia tay, anh ấy buồn cực kỳ, một mình nghe “Lương Chúc” ba lượt, cảm thấy bản nhạc này như đang kể câu chuyện của chính mình.",
+      "analysis_vi": "第一次分手 = lần đầu chia tay. 难过极了 nhấn cảm xúc. 听了三遍 = nghe ba lượt từ đầu đến cuối.",
+      "highlight": [
+        "分手"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "a9b5ee7e-5555-430a-a724-69a5070d3047"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "14b4aa44-461e-47ec-840f-272b55a063c0",
+      "order": 1,
+      "rule_vi": "Chia tay khi yêu:",
+      "natural_examples": [
+        {
+          "zh": "分手",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "离婚",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "Dạng với 过:",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Chia tay khi yêu: 分手 Ly hôn sau khi kết hôn: 离婚 Dạng với 过: 分过手 Từng chia tay. Không nói: 分手过 ❌",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "分手",
+    "back": "chia tay; tách ra; từ biệt",
+    "hint": "fēnshǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi nói chuyện tình cảm, 分手 là từ trực tiếp. Nói mềm hơn có thể dùng 我们不在一起了 = tụi mình không còn bên nhau nữa.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a9b5ee7e-5555-430a-a724-69a5070d3047",
+    "source_lesson_vocab_id": null
+  }
+}

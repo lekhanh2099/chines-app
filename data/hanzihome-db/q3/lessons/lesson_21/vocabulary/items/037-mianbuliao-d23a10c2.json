@@ -1,0 +1,256 @@
+{
+  "id": "a38bdfea-de0f-48e6-ac16-5b90f18c15f7",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "免不了",
+  "pinyin": "miǎnbuliǎo",
+  "pos": {
+    "raw_vi": "Từ loại",
+    "raw_cn": "短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "miễn bất liễu",
+    "meaning_vi": "khó tránh khỏi, không tránh khỏi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khó tránh khỏi",
+      "không tránh khỏi"
+    ],
+    "short_definition_vi": "khó tránh khỏi, không tránh khỏi",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: khó tránh khỏi, không tránh khỏi.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "免",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "了",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "免不了 trong bài được hiểu theo nghĩa: khó tránh khỏi, không tránh khỏi. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 免不了.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "了 trong 免不了 đọc liǎo; nghĩa là không tránh được."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f7164c98-6c2f-4c83-b6a4-21c79a3607f7",
+      "order": 1,
+      "zh": "免不了出错",
+      "pinyin": "",
+      "vi": "khó tránh mắc lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03564957-8b61-4c71-95e7-4131d09b63bf",
+      "order": 2,
+      "zh": "免不了紧张",
+      "pinyin": "",
+      "vi": "khó tránh căng thẳng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e023741-a9a2-4b9e-a26c-c3b930b753b3",
+      "order": 3,
+      "zh": "免不了会担心",
+      "pinyin": "",
+      "vi": "khó tránh sẽ lo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d38f0000-d9a9-4ded-9595-c615c3b41c2c",
+      "order": 4,
+      "zh": "免不了被人笑话",
+      "pinyin": "",
+      "vi": "khó tránh bị cười chê",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a879d5c-38f5-4855-810a-126add793b1c",
+      "order": 5,
+      "zh": "免不了发生闪失",
+      "pinyin": "",
+      "vi": "khó tránh xảy ra sơ suất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bdfaa918-0cd3-4e66-8642-442f741603fa",
+      "order": 1,
+      "zh": "第一次上台，免不了有点儿紧张。",
+      "pinyin": "",
+      "vi": "Lần đầu lên sân khấu, khó tránh hơi căng thẳng.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "免不了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a38bdfea-de0f-48e6-ac16-5b90f18c15f7"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0b1676d7-06e7-4a3b-8690-279de14b047e",
+      "order": 2,
+      "zh": "头一天开张，免不了会出点儿差错。",
+      "pinyin": "",
+      "vi": "Ngày đầu khai trương, khó tránh có chút sai sót.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "免不了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a38bdfea-de0f-48e6-ac16-5b90f18c15f7"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "了 trong 免不了 đọc liǎo; nghĩa là không tránh được.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8317a8ae-e457-43e1-81a8-13f45be65a4c",
+      "order": 1,
+      "rule_vi": "了 trong 免不了 đọc liǎo; nghĩa là không tránh được.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "免不。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "了 trong 免不了 đọc liǎo; nghĩa là không tránh được.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "免不了。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "了 trong 免不了 đọc liǎo; nghĩa là không tránh được.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "免不了",
+    "back": "khó tránh khỏi, không tránh khỏi",
+    "hint": "miǎnbuliǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a38bdfea-de0f-48e6-ac16-5b90f18c15f7",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "id": "acab9317-11e5-4630-b278-dbef4e1caec5",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "难忘",
+  "pinyin": "nánwàng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nan vong",
+    "meaning_vi": "khó quên; đáng nhớ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khó quên",
+      "đáng nhớ"
+    ],
+    "short_definition_vi": "khó quên; đáng nhớ",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "难",
+        "lishu_vi": "",
+        "structure_note_vi": "难: khó",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khó",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: khó.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "忘",
+        "lishu_vi": "",
+        "structure_note_vi": "忘: quên",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng; tâm trí",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng; tâm trí",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quên",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: quên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng; tâm trí",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "难忘 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 难忘的经历.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "29d77332-b4fa-4dfc-8b88-8d17cd147dad",
+      "order": 1,
+      "zh": "难忘的经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc9b372b-b33d-43b5-8fb0-c5857ddad70d",
+      "order": 2,
+      "zh": "难忘的往事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d5b56f2c-7bca-4945-a9bf-5d8cd417af1c",
+      "order": 3,
+      "zh": "令人难忘",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "20692f79-07e9-4004-a0c9-d5abf188c115",
+      "order": 4,
+      "zh": "最难忘的是",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e2d430d9-d644-4625-b61f-8d9b08d359ca",
+      "order": 1,
+      "zh": "这是我最难忘的一次经历。",
+      "pinyin": "",
+      "vi": "Đây là một trải nghiệm khó quên nhất của tôi。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "难忘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "acab9317-11e5-4630-b278-dbef4e1caec5"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a966aab9-ed2f-47fa-8313-630b094fbe8f",
+      "order": 2,
+      "zh": "这件事让我到现在还难忘。",
+      "pinyin": "",
+      "vi": "Chuyện này đến bây giờ vẫn khiến tôi khó quên。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "难忘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "acab9317-11e5-4630-b278-dbef4e1caec5"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dada1918-83db-409f-970c-49bead361f8b",
+      "order": 1,
+      "rule_vi": "Không nói 我很难忘这件事; nói 这件事让我难忘。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 我很难忘这件事; nói 这件事让我难忘。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "难忘",
+    "back": "khó quên; đáng nhớ",
+    "hint": "nánwàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "acab9317-11e5-4630-b278-dbef4e1caec5",
+    "source_lesson_vocab_id": null
+  }
+}

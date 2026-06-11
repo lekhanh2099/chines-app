@@ -1,0 +1,304 @@
+{
+  "id": "20933266-1b04-4b9c-82a8-51d56696eab7",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "半天",
+  "pinyin": "bàn tiān",
+  "pos": {
+    "raw_vi": "Danh từ / Cụm thời lượng",
+    "raw_cn": "",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "time_context"
+  ],
+  "meaning": {
+    "hanviet": "bán thiên",
+    "meaning_vi": "nửa ngày; một lúc lâu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nửa ngày; một lúc lâu"
+    ],
+    "short_definition_vi": "nửa ngày; một lúc lâu",
+    "textbook_focus_vi": "nửa ngày; một lúc lâu",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "半",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "丷",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "mười/thành phần hình thể",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một nửa",
+        "modern_logic_vi": "半 là một nửa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "天",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn/người dang tay",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "nét ngang trên",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời, ngày",
+        "modern_logic_vi": "天 là trời/ngày.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "半天 từ nghĩa nửa ngày mở rộng thành cảm giác một lúc lâu/cả buổi.",
+    "memory_tip_vi": "半天 từ nghĩa nửa ngày mở rộng thành cảm giác một lúc lâu/cả buổi.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一会儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một lát, ngắn/trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "很久",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rất lâu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "整天",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cả ngày",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cb6f5c3c-ead2-4bb8-80f3-f33fa0852bca",
+      "order": 1,
+      "zh": "找了半天",
+      "pinyin": "",
+      "vi": "tìm mãi một hồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7349b542-dbe8-425f-a205-3d34d82f88b9",
+      "order": 2,
+      "zh": "等了半天",
+      "pinyin": "",
+      "vi": "đợi lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "650b636b-2fb0-46ae-8cc8-0ebcb55003a8",
+      "order": 3,
+      "zh": "想了半天",
+      "pinyin": "",
+      "vi": "nghĩ mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "73861589-9325-4e3f-99ab-78fefa00e7b2",
+      "order": 4,
+      "zh": "说了半天",
+      "pinyin": "",
+      "vi": "nói cả buổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de1d0f37-7782-4e5c-93fd-8ab0109a385d",
+      "order": 5,
+      "zh": "忙了半天",
+      "pinyin": "",
+      "vi": "bận cả buổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "611c3c77-5fe8-4afe-a438-950703a060b6",
+      "order": 1,
+      "zh": "我找了半天，也没找到护照。",
+      "pinyin": "",
+      "vi": "Tôi tìm mãi mà cũng không tìm thấy hộ chiếu.",
+      "analysis_vi": "找了半天 nhấn quá trình kéo dài.",
+      "highlight": [
+        "半天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "20933266-1b04-4b9c-82a8-51d56696eab7"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e30d21c8-c86f-48cb-a35c-433295a60134",
+      "order": 2,
+      "zh": "我的护照他找了半天也没找着。",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi anh ấy tìm mãi cũng không thấy.",
+      "analysis_vi": "我的护照 là chủ đề lớn; 没找着 là không tìm thấy.",
+      "highlight": [
+        "半天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "20933266-1b04-4b9c-82a8-51d56696eab7"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "半天 khẩu ngữ thường không phải đúng 12 tiếng mà là cảm giác “mãi/cả buổi”.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "82e95815-e3cd-468a-aa34-c8abc75a8124",
+      "order": 1,
+      "rule_vi": "Không máy móc dịch 半天 là nửa ngày trong mọi ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "找了半天",
+          "pinyin": "",
+          "vi": "tìm mãi/cả buổi",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "半天",
+    "back": "nửa ngày; một lúc lâu",
+    "hint": "bàn tiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "time_context"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "20933266-1b04-4b9c-82a8-51d56696eab7",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_0ac648a1ae9dcb69",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "胜利",
+  "pinyin": "shènglì",
+  "meaning_vi": "thắng lợi; giành thắng lợi; chiến thắng",
+  "pos": "Động từ / Danh từ",
+  "pos_detail": {
+    "vi": "Động từ / Danh từ",
+    "cn": "动词 / 名词",
+    "normalized": "verb_noun",
+    "schema_compatible_pos": "verb_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Có thể là danh từ ‘thắng lợi’ hoặc động từ ‘giành thắng lợi’; trong 坚持就是胜利 thiên về danh từ.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+    "type": "vocabulary_item",
+    "order": 5,
+    "hanzi": "胜利",
+    "pinyin": "shènglì",
+    "meaning_vi": "thắng lợi; giành thắng lợi; chiến thắng",
+    "meaning_en": "",
+    "pos": "Động từ / Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "胜利",
+      "back": "shènglì — thắng lợi; giành thắng lợi; chiến thắng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ / Danh từ",
+      "cn": "动词 / 名词",
+      "normalized": "verb_noun",
+      "schema_compatible_pos": "verb_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Có thể là danh từ ‘thắng lợi’ hoặc động từ ‘giành thắng lợi’; trong 坚持就是胜利 thiên về danh từ.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,163 @@
+{
+  "id": "8dd5ad4a-45ec-450d-b7a3-87564dd5e56d",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "重大",
+  "pinyin": "zhòngdà",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Đánh giá và mức độ"
+  ],
+  "meaning": {
+    "hanviet": "Trọng đại",
+    "meaning_vi": "trọng đại, quan trọng lớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trọng đại",
+      "quan trọng lớn"
+    ],
+    "short_definition_vi": "trọng đại, quan trọng lớn",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: trọng đại, quan trọng lớn.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Đánh giá và mức độ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "重",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "大",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "重大 trong bài được học theo nghĩa trọng tâm: trọng đại, quan trọng lớn.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: trọng đại, quan trọng lớn.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "62504cc6-c3f5-43aa-bf71-6f1c670514f3",
+      "order": 1,
+      "zh": "对这个重大问题，他们也已经取得了某些突破。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: trọng đại, quan trọng lớn",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ad3f206f-cfef-4d94-baa1-8355aa2c2c72",
+      "order": 1,
+      "zh": "对这个重大问题，他们也已经取得了某些突破。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “重大” = trọng đại, quan trọng lớn.",
+      "analysis_vi": "Câu này dùng “重大” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "重大"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8dd5ad4a-45ec-450d-b7a3-87564dd5e56d"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “重大” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2823e235-cd11-4373-825f-31dbcd5a4950",
+      "order": 1,
+      "rule_vi": "Cần dùng “重大” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "重大",
+    "back": "trọng đại, quan trọng lớn",
+    "hint": "zhòngdà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Đánh giá và mức độ"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8dd5ad4a-45ec-450d-b7a3-87564dd5e56d",
+    "source_lesson_vocab_id": null
+  }
+}

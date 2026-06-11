@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_86c2371941911c73",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "季",
+  "pinyin": "jì",
+  "meaning_vi": "mùa; quý; yếu tố tạo từ trong 季节",
+  "pos": "Danh từ / Yếu tố cấu tạo từ",
+  "pos_detail": {
+    "vi": "Danh từ / Yếu tố cấu tạo từ",
+    "cn": "名词 / 语素",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_042",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_042",
+    "type": "vocabulary_item",
+    "order": 42,
+    "hanzi": "季",
+    "pinyin": "jì",
+    "meaning_vi": "mùa; quý; yếu tố tạo từ trong 季节",
+    "meaning_en": "",
+    "pos": "Danh từ / Yếu tố cấu tạo từ",
+    "tags": [
+      "supplementary_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "季",
+      "back": "jì — mùa; quý; yếu tố tạo từ trong 季节",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ / Yếu tố cấu tạo từ",
+      "cn": "名词 / 语素",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

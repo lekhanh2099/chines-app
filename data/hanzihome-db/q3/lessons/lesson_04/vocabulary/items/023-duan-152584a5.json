@@ -1,0 +1,254 @@
+{
+  "id": "b7d18111-1f9d-423a-8ae6-fcfaddd83647",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "段",
+  "pinyin": "duàn",
+  "pos": {
+    "raw_vi": "Danh từ / Lượng từ",
+    "raw_cn": "名 / 量",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đoạn",
+    "meaning_vi": "đoạn, khúc; lượng từ cho đoạn đường/thời gian/lời nói",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đoạn",
+      "khúc",
+      "lượng từ cho đoạn đường/thời gian/lời nói"
+    ],
+    "short_definition_vi": "đoạn, khúc",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "段",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "殳",
+            "hanviet": "thù",
+            "meaning_vi": "binh khí/cầm vật đánh",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "殳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thù",
+              "radical_name_zh": "",
+              "hanviet": "thù",
+              "meaning_vi": "binh khí/cầm vật đánh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đoạn, phần",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "段 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 段 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "部分",
+        "pinyin": "bùfen",
+        "meaning_vi": "bộ phận/phần",
+        "difference_vi": "Rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "节",
+        "pinyin": "jié",
+        "meaning_vi": "tiết/đoạn nhỏ",
+        "difference_vi": "Dùng cho tiết học/chương trình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "篇",
+        "pinyin": "piān",
+        "meaning_vi": "bài/thiên",
+        "difference_vi": "Dùng cho bài viết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3a789c83-b711-428f-bdf3-6519a5898f22",
+      "order": 1,
+      "zh": "一段路",
+      "pinyin": "yí duàn lù",
+      "vi": "một đoạn đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4203c03-5ee3-483a-afc6-dcaeb88d378f",
+      "order": 2,
+      "zh": "一段时间",
+      "pinyin": "yí duàn shíjiān",
+      "vi": "một khoảng thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "374888ba-156c-4b1d-901f-5b4d583964e3",
+      "order": 3,
+      "zh": "一段话",
+      "pinyin": "yí duàn huà",
+      "vi": "một đoạn lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9592d5c8-646b-484e-92b8-3a0394755d6b",
+      "order": 4,
+      "zh": "一段旅途",
+      "pinyin": "yí duàn lǚtú",
+      "vi": "một chặng hành trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3d9db1d9-b12b-4a53-be26-b65011111eef",
+      "order": 1,
+      "zh": "这是一段很难忘的旅途。",
+      "pinyin": "Zhè shì yí duàn hěn nánwàng de lǚtú.",
+      "vi": "Đây là một chặng hành trình rất khó quên.",
+      "analysis_vi": "段 dùng cho thứ có tính kéo dài.",
+      "highlight": [
+        "段"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7d18111-1f9d-423a-8ae6-fcfaddd83647"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ad956c8b-cbd8-44a9-bd46-df670440a0d8",
+      "order": 2,
+      "zh": "那段时间，他一点儿也没有失去信心。",
+      "pinyin": "Nà duàn shíjiān, tā yìdiǎnr yě méiyǒu shīqù xìnxīn.",
+      "vi": "Quãng thời gian đó, anh ấy không hề mất niềm tin.",
+      "analysis_vi": "那段时间 làm trạng ngữ thời gian.",
+      "highlight": [
+        "段"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7d18111-1f9d-423a-8ae6-fcfaddd83647"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "一段时间, 一段经历, 一段感情 là collocation mạnh trong tiếng Trung.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c343e410-b4bc-44fd-bd5b-38c40dd6f2a2",
+      "order": 1,
+      "rule_vi": "Không nói 一个时间/一个路/一个话; dùng 一段时间/一段路/一段话.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "段",
+    "back": "đoạn, khúc; lượng từ cho đoạn đường/thời gian/lời nói",
+    "hint": "duàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7d18111-1f9d-423a-8ae6-fcfaddd83647",
+    "source_lesson_vocab_id": null
+  }
+}

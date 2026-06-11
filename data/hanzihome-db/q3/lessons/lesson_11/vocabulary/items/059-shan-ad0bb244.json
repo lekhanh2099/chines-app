@@ -1,0 +1,357 @@
+{
+  "id": "e16aee3c-e249-4419-9276-7a639c9f3404",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "闪",
+  "pinyin": "shǎn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "thiểm",
+    "meaning_vi": "lóe, vụt sáng; tránh né",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lóe",
+      "vụt sáng",
+      "tránh né"
+    ],
+    "short_definition_vi": "lóe lên/vụt qua rất nhanh; cũng có nghĩa tránh ra",
+    "textbook_focus_vi": "Trong bài: 一闪 rồi biến mất.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "闪",
+        "lishu_vi": "",
+        "structure_note_vi": "门 + 人",
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "",
+            "meaning_vi": "cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "门 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "门 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "人",
+            "hanviet": "",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "人 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lóe, vụt",
+        "modern_logic_vi": "lóe, vụt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "門",
+          "radical_variant": "门",
+          "radical_name_vi": "bộ Môn",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "cửa",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "门 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "闪 được học trong bài theo nghĩa: lóe lên/vụt qua rất nhanh; cũng có nghĩa tránh ra.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 一闪.",
+    "warning_vi": "闪 trong bài là lóe/vụt, không phải 闪开 tránh ra.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "亮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Sáng, trạng thái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "消失",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Biến mất, không nhấn lóe sáng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "闪 trong bài là lóe/vụt, không phải 闪开 tránh ra."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1825aee8-acc8-41f4-aef2-c1de29e42b45",
+      "order": 1,
+      "zh": "一闪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0a92b26-5207-4968-b999-fca82c337220",
+      "order": 2,
+      "zh": "又一闪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df2770ca-58c4-434b-8183-8231be9218b9",
+      "order": 3,
+      "zh": "闪了一下",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb50264e-ad34-4709-a7d8-99cf50897784",
+      "order": 4,
+      "zh": "闪闪发光",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1002e597-e332-4a1c-b6ba-12769262feb3",
+      "order": 5,
+      "zh": "闪开",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bac03a49-2303-45a0-82a1-222af3ee4ef9",
+      "order": 6,
+      "zh": "闪电",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd90150a-8622-4631-bc3d-19fb0e7c05d3",
+      "order": 7,
+      "zh": "眼前一闪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "60a59864-0bdf-4707-aa55-e9face172e2b",
+      "order": 1,
+      "zh": "飞碟一闪，就变成了一个小亮点儿。",
+      "pinyin": "",
+      "vi": "Đĩa bay lóe lên một cái rồi biến thành một điểm sáng nhỏ.",
+      "analysis_vi": "一闪，就…… nói kết quả ngay sau khoảnh khắc lóe.",
+      "highlight": [
+        "闪"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e16aee3c-e249-4419-9276-7a639c9f3404"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9ab402aa-1ab3-42c4-9824-225f557bf804",
+      "order": 2,
+      "zh": "它不是慢慢变小的，是一闪就不见了。",
+      "pinyin": "",
+      "vi": "Nó không từ từ nhỏ lại, mà lóe một cái rồi biến mất.",
+      "analysis_vi": "不见了 = biến mất/không thấy nữa.",
+      "highlight": [
+        "闪"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e16aee3c-e249-4419-9276-7a639c9f3404"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "闪 rất hay trong miêu tả ánh sáng: 闪电, 闪光, 闪闪发光.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "717619f7-6639-4ce7-91f8-7e732323bdab",
+      "order": 1,
+      "rule_vi": "闪 trong bài là lóe/vụt, không phải 闪开 tránh ra.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "闪 trong bài là lóe/vụt, không phải 闪开 tránh ra.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "闪",
+    "back": "lóe, vụt sáng; tránh né",
+    "hint": "shǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e16aee3c-e249-4419-9276-7a639c9f3404",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "id": "48305f6e-e02f-41ab-b56d-c8e475a3ccfa",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "半夜",
+  "pinyin": "bànyè",
+  "pos": {
+    "raw_vi": "Danh từ thời gian",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bán dạ",
+    "meaning_vi": "nửa đêm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nửa đêm"
+    ],
+    "short_definition_vi": "nửa đêm",
+    "textbook_focus_vi": "Thời điểm rất khuya, thường sau khi mọi người đã ngủ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "半",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nửa",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "夜",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đêm",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Thời điểm rất khuya, thường sau khi mọi người đã ngủ.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 半夜 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "晚上",
+        "pinyin": "",
+        "meaning_vi": "buổi tối",
+        "difference_vi": "Rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "深夜",
+        "pinyin": "",
+        "meaning_vi": "đêm khuya",
+        "difference_vi": "Hơi văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "凌晨",
+        "pinyin": "",
+        "meaning_vi": "rạng sáng",
+        "difference_vi": "Sau nửa đêm đến trước sáng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a7bc0b15-06d9-496d-addb-05394f35483e",
+      "order": 1,
+      "zh": "半夜醒来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b192f5a4-02a3-495a-b139-fd838271c5bf",
+      "order": 2,
+      "zh": "半夜睡不着",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dee6e1e2-d5fa-4564-84d6-102fd5c79747",
+      "order": 3,
+      "zh": "半夜打电话",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f9f3036-efe7-41c3-8bc9-07b6378e9b9b",
+      "order": 4,
+      "zh": "半夜起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f82b9847-f739-490e-bc47-4b60aa754898",
+      "order": 5,
+      "zh": "半夜推醒我",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "62c7f5c2-a6cc-4703-9c48-626fe6879826",
+      "order": 1,
+      "zh": "半夜，西西推醒我，悄悄地问我那个男孩儿是谁。",
+      "pinyin": "",
+      "vi": "Nửa đêm, Tây Tây lay tôi dậy, khẽ hỏi cậu con trai đó là ai.",
+      "analysis_vi": "半夜 đặt đầu câu làm trạng ngữ thời gian.",
+      "highlight": [
+        "半夜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48305f6e-e02f-41ab-b56d-c8e475a3ccfa"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "863bbb59-6848-4dfd-ae42-06dbfaf15f2a",
+      "order": 1,
+      "rule_vi": "半夜 không phải mọi 晚上.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "半夜十二点。",
+          "pinyin": "",
+          "vi": "Mười hai giờ đêm.",
+          "note_vi": "Rất khuya.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "半夜",
+    "back": "nửa đêm",
+    "hint": "bànyè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "48305f6e-e02f-41ab-b56d-c8e475a3ccfa",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "de35c3b1-49df-4654-8f6f-5dff16c1e167",
+    "order": 1,
+    "title_vi": "Nhân vật trong hội nghị / hôn lễ / sự kiện",
+    "words": [
+      "女士",
+      "服务员",
+      "小伙子 / 小伙儿",
+      "主持人",
+      "新娘",
+      "新郎",
+      "客人",
+      "主持",
+      "班长"
+    ],
+    "notes": []
+  },
+  {
+    "id": "0b9788a9-4c1e-4394-af09-c00755a465a4",
+    "order": 2,
+    "title_vi": "Không gian & đồ vật trong hội trường",
+    "words": [
+      "会议厅",
+      "讲台",
+      "椅子",
+      "墙",
+      "灯笼",
+      "摄像机",
+      "麦克风",
+      "铃"
+    ],
+    "notes": []
+  },
+  {
+    "id": "97ba5ea1-9958-4019-911f-0ba1bf9a8859",
+    "order": 3,
+    "title_vi": "Trang phục & phụ kiện",
+    "words": [
+      "西服",
+      "裙子",
+      "领带",
+      "副",
+      "双"
+    ],
+    "notes": []
+  },
+  {
+    "id": "f03f54bc-b902-4463-ac2a-ebf3fb7b953b",
+    "order": 4,
+    "title_vi": "Trang trí & không khí sự kiện",
+    "words": [
+      "喜",
+      "双喜",
+      "热评",
+      "气氛",
+      "样子",
+      "个子"
+    ],
+    "notes": []
+  },
+  {
+    "id": "e59248fc-c34e-40b9-bfe7-13b790d57e99",
+    "order": 5,
+    "title_vi": "Động tác duy trì trạng thái với 着",
+    "words": [
+      "穿",
+      "系",
+      "戴",
+      "挂",
+      "摆",
+      "扛",
+      "开着",
+      "贴着",
+      "站着",
+      "坐着"
+    ],
+    "notes": []
+  },
+  {
+    "id": "c5bc7a5b-f7b1-4ca2-9a1c-58223ef9e4b0",
+    "order": 6,
+    "title_vi": "Nói năng / tổ chức / hoạt động / cảm xúc",
+    "words": [
+      "讲话",
+      "讲",
+      "讨论",
+      "赶",
+      "干",
+      "停",
+      "保重",
+      "长",
+      "帅",
+      "硕",
+      "激动",
+      "大概",
+      "义"
+    ],
+    "notes": []
+  }
+]

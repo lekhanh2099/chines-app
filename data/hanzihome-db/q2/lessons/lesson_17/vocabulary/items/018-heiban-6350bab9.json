@@ -1,0 +1,373 @@
+{
+  "id": "e6d83257-9434-4602-8828-00cad4d30b4d",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "黑板",
+  "pinyin": "hēibǎn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Hắc bản",
+    "meaning_vi": "bảng đen, bảng viết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bảng đen, bảng viết"
+    ],
+    "short_definition_vi": "bảng đen, bảng viết",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "trường học, lớp học, giảng dạy.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "黑",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "黑",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hắc",
+          "radical_name_zh": "",
+          "hanviet": "hắc",
+          "meaning_vi": "đen",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "黑",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "黑",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hắc",
+              "radical_name_zh": "",
+              "hanviet": "hắc",
+              "meaning_vi": "đen",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đen, tối",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "板",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "反",
+            "hanviet": "phản",
+            "meaning_vi": "ngược/lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tấm, bảng, ván",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "黑 là đen. 板 là tấm, bảng, phiến phẳng. → 黑板 = tấm bảng đen dùng để viết. Cảnh báo: 黑板 là bảng trong lớp; bảng thông báo có thể là 通知栏, 公告栏.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "黑板",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bảng đen/bảng lớp học.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "白板",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bảng trắng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "黑板擦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồ lau bảng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "公告栏",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bảng thông báo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: giáo viên viết bài lên 黑板; trường dán thông báo ở 公告栏."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4332c7f8-82bc-4183-bcf5-28560afe10ce",
+      "order": 1,
+      "zh": "在黑板上写字",
+      "pinyin": "",
+      "vi": "viết chữ lên bảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5fc96edc-aa42-412f-ab28-189d02af993f",
+      "order": 2,
+      "zh": "黑板上写着……",
+      "pinyin": "",
+      "vi": "trên bảng đang viết...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8d0f8c9-11b3-492a-a399-9746570a7500",
+      "order": 3,
+      "zh": "擦黑板",
+      "pinyin": "",
+      "vi": "lau bảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80761b00-055f-4cd2-9eca-d469d0625da2",
+      "order": 4,
+      "zh": "把黑板擦干净",
+      "pinyin": "",
+      "vi": "lau sạch bảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11829280-8aa9-449e-a430-3f95bcb32597",
+      "order": 5,
+      "zh": "看黑板",
+      "pinyin": "",
+      "vi": "nhìn bảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "51855077-8d82-4595-a4b6-f8a19d211501",
+      "order": 1,
+      "zh": "班长把活动安排写在黑板上。",
+      "pinyin": "Bānzhǎng bǎ huódòng ānpái xiě zài hēibǎn shang.",
+      "vi": "Lớp trưởng viết sắp xếp hoạt động lên bảng.",
+      "analysis_vi": "把安排写在黑板上 là câu 把 với kết quả vị trí: nội dung được đưa lên bảng.",
+      "highlight": [
+        "黑板"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "e6d83257-9434-4602-8828-00cad4d30b4d"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8c22031c-67e4-45cb-b367-fd2f5b78d60c",
+      "order": 2,
+      "zh": "黑板上写着四个大字：新春快乐。",
+      "pinyin": "Hēibǎn shang xiězhe sì ge dà zì: Xīnchūn kuàilè.",
+      "vi": "Trên bảng đang viết bốn chữ lớn: Chúc mừng xuân mới.",
+      "analysis_vi": "黑板上写着…… là câu tồn hiện, nhấn chữ đang tồn tại trên bảng.",
+      "highlight": [
+        "黑板"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "e6d83257-9434-4602-8828-00cad4d30b4d"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08b1fb47-9dc2-4704-92ff-eb626cb085eb",
+      "order": 3,
+      "zh": "联欢会结束以后，别忘了把黑板擦干净。",
+      "pinyin": "Liánhuānhuì jiéshù yǐhòu, bié wàng le bǎ hēibǎn cā gānjìng.",
+      "vi": "Sau khi buổi liên hoan kết thúc, đừng quên lau sạch bảng.",
+      "analysis_vi": "把黑板擦干净 là câu chữ 把 có kết quả rõ.",
+      "highlight": [
+        "黑板"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "e6d83257-9434-4602-8828-00cad4d30b4d"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 黑板",
+    "content_vi": "Trong nhiều lớp học Trung Quốc, trước các dịp lễ như 春节, học sinh có thể làm 黑板报 – hēibǎnbào – báo tường/bảng trang trí trên bảng đen, gồm chữ đẹp, tranh vẽ, khẩu hiệu chúc mừng. Đây là một hoạt động rất có màu học đường.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e09b2717-800e-459f-9495-9f25471fca02",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Thiếu 上 khi nói viết trên bảng. Không tự nhiên: 写黑板 Tự nhiên: 写在黑板上。 Xiě zài hēibǎn shang. Viết lên bảng. 黑板上写着字。 Hēibǎn shang xiězhe zì. Trên bảng có viết chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "黑板",
+    "back": "bảng đen, bảng viết",
+    "hint": "hēibǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e6d83257-9434-4602-8828-00cad4d30b4d",
+    "source_lesson_vocab_id": null
+  }
+}

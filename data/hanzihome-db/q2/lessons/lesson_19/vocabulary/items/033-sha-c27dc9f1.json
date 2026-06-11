@@ -1,0 +1,371 @@
+{
+  "id": "13125402-1b96-4e8e-8139-c75311b51aee",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "傻",
+  "pinyin": "shǎ",
+  "pos": {
+    "raw_vi": "tính từ / động từ trạng thái",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_19",
+    "emotion",
+    "judgment"
+  ],
+  "meaning": {
+    "hanviet": "Sỏa",
+    "meaning_vi": "ngốc, khờ; đờ ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngốc, khờ; đờ ra"
+    ],
+    "short_definition_vi": "ngốc, khờ; đờ ra",
+    "textbook_focus_vi": "Phản ứng/đánh giá khi bị lừa.",
+    "register_vi": "khẩu ngữ, có thể xúc phạm",
+    "usage_domain_vi": "đánh giá người, phản ứng sốc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "傻",
+        "lishu_vi": "sỏa",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngốc, khờ, đờ ra",
+        "modern_logic_vi": "亻 gợi trạng thái/tính chất của người; 傻 = phản ứng chậm, thiếu tỉnh táo hoặc đờ ra vì sốc.",
+        "warning_vi": "Dễ xúc phạm, dùng cẩn thận.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "傻 nghĩa là ngốc/khờ, cũng có thể chỉ trạng thái đờ ra vì sợ hoặc ngạc nhiên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "笨",
+        "pinyin": "",
+        "meaning_vi": "ngốc/vụng",
+        "difference_vi": "Thiên về học/chậm hiểu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "糊涂",
+        "pinyin": "",
+        "meaning_vi": "hồ đồ",
+        "difference_vi": "Không rõ ràng, lẫn lộn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "天真",
+        "pinyin": "",
+        "meaning_vi": "ngây thơ",
+        "difference_vi": "Có thể trung tính/tích cực.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老实",
+        "pinyin": "",
+        "meaning_vi": "thật thà",
+        "difference_vi": "Không nhất thiết ngốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "聪明",
+        "pinyin": "",
+        "meaning_vi": "thông minh",
+        "difference_vi": "Trái nghĩa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "傻",
+        "right": "聪明",
+        "meaning_vi": "ngốc ↔ thông minh",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "91a2cbf8-6622-4c14-8af1-1df222942983",
+      "order": 1,
+      "zh": "真傻",
+      "pinyin": "",
+      "vi": "ngốc thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6398dba7-cab6-4607-b7b6-a33262f09a48",
+      "order": 2,
+      "zh": "傻孩子",
+      "pinyin": "",
+      "vi": "đứa trẻ ngốc / con ngốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cef0884a-e8ae-4e7b-b46e-04b08954d39f",
+      "order": 3,
+      "zh": "傻瓜",
+      "pinyin": "",
+      "vi": "đồ ngốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff31adcf-1640-4de7-bef9-7f8a9792b78e",
+      "order": 4,
+      "zh": "装傻",
+      "pinyin": "",
+      "vi": "giả ngu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "12885f28-cc1f-4c50-85a0-dc66b77cb3d4",
+      "order": 5,
+      "zh": "吓傻了",
+      "pinyin": "",
+      "vi": "sợ đến đờ ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d53b723c-8f75-46a6-9f95-0e761b683b89",
+      "order": 6,
+      "zh": "看傻了",
+      "pinyin": "",
+      "vi": "nhìn đến đờ người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc379134-376f-4712-8abd-7f2b85c6c79e",
+      "order": 7,
+      "zh": "傻眼了",
+      "pinyin": "",
+      "vi": "ngớ người, sốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "282b718a-cb06-4329-a6c8-d854f8ee4b9e",
+      "order": 8,
+      "zh": "别犯傻",
+      "pinyin": "",
+      "vi": "đừng làm chuyện ngốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "17a828cc-1a81-496e-bb76-70cd730c2faa",
+      "order": 1,
+      "zh": "你别犯傻，别相信他说的话。",
+      "pinyin": "Nǐ bié fàn shǎ, bié xiāngxìn tā shuō de huà.",
+      "vi": "Bạn đừng làm chuyện ngốc, đừng tin lời anh ta nói.",
+      "analysis_vi": "别 + V là mệnh lệnh phủ định; 犯傻 = làm chuyện ngốc.",
+      "highlight": [
+        "傻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "13125402-1b96-4e8e-8139-c75311b51aee"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3911c4df-0a3e-4ef2-a035-462f33681c47",
+      "order": 2,
+      "zh": "他被骗了钱以后，一下子傻眼了。",
+      "pinyin": "Tā bèi piàn le qián yǐhòu, yíxiàzi shǎyǎn le.",
+      "vi": "Sau khi bị lừa mất tiền, anh ấy ngớ người ra ngay.",
+      "analysis_vi": "被骗了钱 là bị động; 傻眼了 là phản ứng sốc.",
+      "highlight": [
+        "傻",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "13125402-1b96-4e8e-8139-c75311b51aee"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5d22fd62-f6a0-4756-b40f-4c619498d979",
+      "order": 3,
+      "zh": "我早就提醒他要小心，他还相信那个骗子，真有点儿傻。",
+      "pinyin": "Wǒ zǎo jiù tíxǐng tā yào xiǎoxīn, tā hái xiāngxìn nà ge piànzi, zhēn yǒu diǎnr shǎ.",
+      "vi": "Tôi đã nhắc anh ấy từ lâu là phải cẩn thận, vậy mà anh ấy vẫn tin kẻ lừa đảo đó, đúng là hơi khờ.",
+      "analysis_vi": "有点儿傻 nhẹ hơn 真傻, đỡ xúc phạm hơn.",
+      "highlight": [
+        "傻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "13125402-1b96-4e8e-8139-c75311b51aee"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Giữa người thân/bạn thân, 傻瓜 / 傻孩子 đôi khi có sắc thái thương; với người lạ hoặc trong lớp, 你真傻 dễ xúc phạm.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f1c64b48-3bb0-4281-b121-d847b293e6d8",
+      "order": 1,
+      "rule_vi": "Không dùng 傻 tùy tiện với người khác.",
+      "natural_examples": [
+        {
+          "zh": "你太不小心了。",
+          "pinyin": "Nǐ tài bù xiǎoxīn le.",
+          "vi": "Bạn bất cẩn quá.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "你这次有点儿大意了。",
+          "pinyin": "Nǐ zhè cì yǒu diǎnr dàyì le.",
+          "vi": "Lần này bạn hơi sơ ý rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "你真傻。",
+          "pinyin": "Nǐ zhēn shǎ.",
+          "vi": "Bạn ngốc thật.",
+          "note_vi": "Dễ xúc phạm.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "傻",
+    "back": "ngốc, khờ; đờ ra",
+    "hint": "shǎ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "emotion",
+      "judgment"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "13125402-1b96-4e8e-8139-c75311b51aee",
+    "source_lesson_vocab_id": null
+  }
+}

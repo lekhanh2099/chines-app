@@ -1,0 +1,472 @@
+{
+  "id": "2f7840ee-100a-46f2-ad70-33c16788ad9c",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "解答",
+  "pinyin": "jiědá",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "study",
+    "answer"
+  ],
+  "meaning": {
+    "hanviet": "Giải đáp",
+    "meaning_vi": "giải đáp, trả lời có giải thích",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giải đáp",
+      "trả lời có giải thích"
+    ],
+    "short_definition_vi": "giải đáp, trả lời có giải thích",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "study, answer",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "解",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "角",
+            "hanviet": "giác",
+            "meaning_vi": "sừng/góc",
+            "position_vi": "bên trái/trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "角",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Giác",
+              "radical_name_zh": "",
+              "hanviet": "giác",
+              "meaning_vi": "sừng; góc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao/cắt",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao; cắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "牛",
+            "hanviet": "ngưu",
+            "meaning_vi": "trâu/bò",
+            "position_vi": "phần dưới/phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "牛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Ngưu",
+              "radical_name_zh": "",
+              "hanviet": "ngưu",
+              "meaning_vi": "trâu/bò",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tháo ra, giải thích, hiểu, giải quyết",
+        "modern_logic_vi": "解 là tháo/gỡ/giải thích vấn đề.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "角",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Giác",
+          "radical_name_zh": "",
+          "hanviet": "giác",
+          "meaning_vi": "sừng; góc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "答",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "⺮",
+            "hanviet": "trúc",
+            "meaning_vi": "tre; phần trên",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "⺮",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre; văn bản/đồ dùng cổ bằng tre",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "合",
+            "hanviet": "hợp",
+            "meaning_vi": "kết hợp",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đáp, trả lời",
+        "modern_logic_vi": "答 là trả lời.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "⺮",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre; văn bản/đồ dùng cổ bằng tre",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "解 là gỡ/giải thích; 答 là trả lời. 解答 là trả lời bằng cách giải thích rõ vấn đề.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "回答",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trả lời nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "答案",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đáp án, câu trả lời cuối cùng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "解释",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Giải thích.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "解决",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Giải quyết vấn đề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "解答问题",
+        "right": "回答问题",
+        "meaning_vi": "解答 là giải đáp có giải thích/lời giải; 回答 là trả lời nói chung.",
+        "note_vi": "",
+        "notes": []
+      },
+      {
+        "left": "解答问题",
+        "right": "解决问题",
+        "meaning_vi": "Giải đáp câu hỏi đối lập với giải quyết vấn đề.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b08cc083-e88d-4950-97f5-fcfc6f345107",
+      "order": 1,
+      "zh": "解答问题",
+      "pinyin": "",
+      "vi": "giải đáp câu hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9020727a-a04b-4dff-9308-7162d43f2eae",
+      "order": 2,
+      "zh": "详细解答",
+      "pinyin": "",
+      "vi": "giải đáp chi tiết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7be2705d-995e-4927-94bc-a0775ae0d928",
+      "order": 3,
+      "zh": "认真解答",
+      "pinyin": "",
+      "vi": "giải đáp nghiêm túc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "92147869-fc97-4a86-a34a-108056fc650e",
+      "order": 4,
+      "zh": "老师的解答",
+      "pinyin": "",
+      "vi": "lời giải đáp của thầy/cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2969c9e-74cb-4dda-aff2-de9cd88650fa",
+      "order": 5,
+      "zh": "给学生解答",
+      "pinyin": "",
+      "vi": "giải đáp cho học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aeaf04be-2173-4e8f-b325-c52bdda15814",
+      "order": 6,
+      "zh": "解答练习题",
+      "pinyin": "",
+      "vi": "giải bài luyện tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9954ba1-6d94-4cf2-b604-d12ac0ba2482",
+      "order": 7,
+      "zh": "解答疑问",
+      "pinyin": "",
+      "vi": "giải đáp thắc mắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f68e63ad-242b-4411-b12d-64b0139c90e7",
+      "order": 8,
+      "zh": "无法解答",
+      "pinyin": "",
+      "vi": "không thể giải đáp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "590933cf-c0f7-4309-b878-a718ec15dfe5",
+      "order": 1,
+      "zh": "老师正在解答学生的问题。",
+      "pinyin": "Lǎoshī zhèngzài jiědá xuésheng de wèntí.",
+      "vi": "Thầy/cô đang giải đáp câu hỏi của học sinh.",
+      "analysis_vi": "解答问题 là collocation chuẩn; 正在 nhấn đang diễn ra.",
+      "highlight": [
+        "解答"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f7840ee-100a-46f2-ad70-33c16788ad9c"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b3445e53-9965-4a47-a702-4bbae9c1be04",
+      "order": 2,
+      "zh": "虽然这个问题不难，但是老师还是给我们做了详细的解答。",
+      "pinyin": "Suīrán zhège wèntí bù nán, dànshì lǎoshī háishi gěi wǒmen zuò le xiángxì de jiědá.",
+      "vi": "Tuy câu hỏi này không khó, nhưng thầy/cô vẫn giải đáp chi tiết cho chúng tôi.",
+      "analysis_vi": "虽然……但是……; 做了解答 là cách nói danh từ hóa.",
+      "highlight": [
+        "解答"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f7840ee-100a-46f2-ad70-33c16788ad9c"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "21b4298e-2231-42cc-a43b-3251cdc92cfc",
+      "order": 3,
+      "zh": "要是你做完会话练习以后还有问题，就把问题写下来，明天上课时请老师解答。",
+      "pinyin": "Yàoshi nǐ zuò wán huìhuà liànxí yǐhòu hái yǒu wèntí, jiù bǎ wèntí xiě xiàlai, míngtiān shàngkè shí qǐng lǎoshī jiědá.",
+      "vi": "Nếu sau khi làm xong bài luyện hội thoại bạn vẫn còn câu hỏi, thì hãy viết câu hỏi ra, ngày mai khi lên lớp nhờ thầy/cô giải đáp.",
+      "analysis_vi": "要是……就……; 把问题写下来 là 把字句 + 下来.",
+      "highlight": [
+        "解答"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f7840ee-100a-46f2-ad70-33c16788ad9c"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong lớp học, giáo viên hay nói 我来给大家解答一下; 一下 làm câu mềm hơn.",
+    "tags": [
+      "study",
+      "answer"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bf45f968-3b69-4f79-a0e3-0661ab225430",
+      "order": 1,
+      "rule_vi": "Đừng dùng 解答 cho câu trả lời xã giao đơn giản.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "老师解答了这个语法问题。",
+          "pinyin": "",
+          "vi": "Thầy/cô đã giải đáp vấn đề ngữ pháp này.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他回答了我的问题。",
+          "pinyin": "",
+          "vi": "Anh ấy đã trả lời câu hỏi của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Hỏi tên, tuổi, đi đâu thường dùng 回答; bài tập/thắc mắc cần lời giải dùng 解答.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "解答",
+    "back": "giải đáp, trả lời có giải thích",
+    "hint": "jiědá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "study",
+      "answer"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2f7840ee-100a-46f2-ad70-33c16788ad9c",
+    "source_lesson_vocab_id": null
+  }
+}

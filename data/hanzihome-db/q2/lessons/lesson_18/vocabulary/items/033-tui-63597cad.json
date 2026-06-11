@@ -1,0 +1,316 @@
+{
+  "id": "64e3e541-4e09-4b12-90b4-cef39dbb41a4",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "腿",
+  "pinyin": "tuǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Thối",
+    "meaning_vi": "chân; phần chân của vật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chân; phần chân của vật"
+    ],
+    "short_definition_vi": "chân; phần chân của vật",
+    "textbook_focus_vi": "chân; phần chân của vật",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "腿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thân thể/thịt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thịt, thân thể",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "退",
+            "hanviet": "thoái",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chân, đùi/cẳng chân; chân của vật",
+        "modern_logic_vi": "腿 là bộ phận cơ thể.",
+        "warning_vi": "Không ép nghĩa lùi của 退 vào 腿.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "肉",
+          "radical_variant": "月",
+          "radical_name_vi": "bộ Nhục",
+          "radical_name_zh": "",
+          "hanviet": "nhục",
+          "meaning_vi": "thịt, thân thể",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "腿 có bộ 月, trong chữ Hán hiện đại nhiều chữ bộ 月 liên quan đến thân thể/thịt. Lõi nghĩa hiện đại: bộ phận dùng để đứng, đi, chạy. → 腿疼 = đau chân. → 伸腿 = duỗi chân.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "脚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bàn chân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "胳膊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cánh tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "手",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "腿: chân, phần chân."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ee60c3d3-4b96-4e8f-ab40-8c493ded0824",
+      "order": 1,
+      "zh": "腿疼",
+      "pinyin": "",
+      "vi": "đau chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e50e6f5b-d92c-47bd-a0a2-3de993a783d6",
+      "order": 2,
+      "zh": "腿酸",
+      "pinyin": "",
+      "vi": "mỏi chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d835fdf-d4a1-4d6d-8835-bbe3165f8345",
+      "order": 3,
+      "zh": "伸腿",
+      "pinyin": "",
+      "vi": "duỗi chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "334fdd80-7a37-4f62-954a-15c55097a5bd",
+      "order": 4,
+      "zh": "腿长",
+      "pinyin": "",
+      "vi": "chân dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83a1c032-8eb3-4e97-bce3-8ce4200902e7",
+      "order": 5,
+      "zh": "桌子腿",
+      "pinyin": "",
+      "vi": "chân bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "862060b5-6ff0-4c67-9aa5-6e7af2458837",
+      "order": 1,
+      "zh": "飞机上地方小，腿不要伸得太远。",
+      "pinyin": "Fēijī shang dìfang xiǎo, tuǐ bú yào shēn de tài yuǎn.",
+      "vi": "Trên máy bay chỗ nhỏ, chân đừng duỗi ra quá xa.",
+      "analysis_vi": "伸得太远 dùng 得 để nói mức độ duỗi quá xa.",
+      "highlight": [
+        "腿"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "64e3e541-4e09-4b12-90b4-cef39dbb41a4"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b3413eb5-e8c6-431f-a318-e1ec877cb245",
+      "order": 2,
+      "zh": "坐久了以后，他觉得腿有点儿酸。",
+      "pinyin": "Zuò jiǔ le yǐhòu, tā juéde tuǐ yǒudiǎnr suān.",
+      "vi": "Sau khi ngồi lâu, anh ấy thấy chân hơi mỏi.",
+      "analysis_vi": "坐久了以后 nói sau khi ngồi lâu; 腿酸 là mỏi chân.",
+      "highlight": [
+        "腿"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "64e3e541-4e09-4b12-90b4-cef39dbb41a4"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "aa5acd47-cf70-47fa-bf17-dcba60839f0a",
+      "order": 3,
+      "zh": "请把行李放在前边，别放在腿上。",
+      "pinyin": "Qǐng bǎ xíngli fàng zài qiánbian, bié fàng zài tuǐ shang.",
+      "vi": "Xin hãy đặt hành lý ở phía trước, đừng đặt lên chân.",
+      "analysis_vi": "把行李放在…… là câu 把 có vị trí; 腿上 là “trên chân”.",
+      "highlight": [
+        "腿"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "64e3e541-4e09-4b12-90b4-cef39dbb41a4"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trên máy bay, thông báo an toàn thường yêu cầu hành lý nhỏ để dưới ghế phía trước hoặc khoang hành lý, không để chắn lối đi. Vì vậy câu 别把行李放在过道上 – đừng để hành lý ở lối đi – rất thực tế.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c98ab7a5-f3c0-4eb2-bfa1-7f717a9f57ff",
+      "order": 1,
+      "rule_vi": "Nhầm 腿 và 脚.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 腿 theo cụm và ngữ cảnh bài 18; nghĩa chính là chân; phần chân của vật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "腿",
+    "back": "chân; phần chân của vật",
+    "hint": "tuǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "64e3e541-4e09-4b12-90b4-cef39dbb41a4",
+    "source_lesson_vocab_id": null
+  }
+}

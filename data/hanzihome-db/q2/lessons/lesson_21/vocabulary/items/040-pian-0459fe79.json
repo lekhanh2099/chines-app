@@ -1,0 +1,265 @@
+{
+  "id": "4bb2cb9b-1a11-49d4-9fcb-b1f7db87380a",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "篇",
+  "pinyin": "piān",
+  "pos": {
+    "raw_vi": "Lượng từ / Danh từ",
+    "raw_cn": "量/名",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thiên",
+    "meaning_vi": "bài, thiên; lượng từ cho văn bản",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bài, thiên; lượng từ cho văn bản"
+    ],
+    "short_definition_vi": "bài, thiên; lượng từ cho văn bản",
+    "textbook_focus_vi": "bài, thiên; lượng từ cho văn bản",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "篇",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "扁",
+            "hanviet": "biển",
+            "meaning_vi": "",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "bài/thiên/lượng từ văn bản",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "một bài/văn bản hoàn chỉnh",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0288322d-cc48-4ae0-9895-33e0e6247e30",
+      "order": 1,
+      "zh": "一篇文章",
+      "pinyin": "",
+      "vi": "một bài viết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1468d4e8-e19c-4f79-923c-87ec6f8d2f85",
+      "order": 2,
+      "zh": "一篇课文",
+      "pinyin": "",
+      "vi": "một bài khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b31cdfc5-cb9c-4440-b605-74f53e086a53",
+      "order": 3,
+      "zh": "这篇文章",
+      "pinyin": "",
+      "vi": "bài viết này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa742931-486b-40e1-b825-cf4ec6c5b5eb",
+      "order": 4,
+      "zh": "一篇论文",
+      "pinyin": "",
+      "vi": "một bài luận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a11736d-c8ee-4bdc-b3b9-876a53719761",
+      "order": 5,
+      "zh": "写一篇作文",
+      "pinyin": "",
+      "vi": "viết một bài văn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "374c426d-633c-45d0-b025-497d37fb97bb",
+      "order": 1,
+      "zh": "这篇文章的内容很有趣。",
+      "pinyin": "Zhè piān wénzhāng de nèiróng hěn yǒuqù.",
+      "vi": "Nội dung bài viết này rất thú vị.",
+      "analysis_vi": "篇 dùng cho văn bản hoàn chỉnh.",
+      "highlight": [
+        "篇"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4bb2cb9b-1a11-49d4-9fcb-b1f7db87380a"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "782cb388-8a09-4d03-b950-eaeffb8eaab7",
+      "order": 2,
+      "zh": "如果不了解篇，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě piān, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 篇, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "篇"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4bb2cb9b-1a11-49d4-9fcb-b1f7db87380a"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "717b44d3-edef-4aed-bf70-43dd650e9aa2",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解篇在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě piān zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 篇 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "篇"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4bb2cb9b-1a11-49d4-9fcb-b1f7db87380a"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "'Bài' tiếng Việt không dịch một kiểu: 一篇文章, 一首歌, 一节课, 一道题.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2fba1326-60fe-4909-94bf-14d8357b894c",
+      "order": 1,
+      "rule_vi": "Không dùng 篇 cho bài hát/câu hỏi; dùng 一首歌, 一道题。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "篇",
+    "back": "bài, thiên; lượng từ cho văn bản",
+    "hint": "piān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4bb2cb9b-1a11-49d4-9fcb-b1f7db87380a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "id": "172d2538-483d-448f-9ee7-dc1c1fd25c6f",
+  "type": "deep_vocabulary_item",
+  "order": 61,
+  "hanzi": "夫人",
+  "pinyin": "fūrén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词 / 称谓",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phu nhân",
+    "meaning_vi": "phu nhân, bà; vợ của ai đó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phu nhân",
+      "bà",
+      "vợ của ai đó"
+    ],
+    "short_definition_vi": "phu nhân, bà; vợ của ai đó",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: xưng hô, gia đình.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "xưng hô, gia đình",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "夫",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chồng, người đàn ông",
+        "modern_logic_vi": "Trong từ 夫人, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "人 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "人 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Trong từ 夫人, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "夫人 nên được học theo nghĩa hiện đại trong cụm/tình huống: phu nhân, bà; vợ của ai đó.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 总统夫人.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "太太",
+        "pinyin": "tàitai",
+        "meaning_vi": "bà/vợ",
+        "difference_vi": "太太 đời sống/lịch sự; 夫人 trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "39da453b-a6ad-46a8-95e4-3b21dfb8c37b",
+      "order": 1,
+      "zh": "总统夫人",
+      "pinyin": "",
+      "vi": "phu nhân tổng thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53bbb263-d4ab-45b2-84d8-3570dd498763",
+      "order": 2,
+      "zh": "张先生的夫人",
+      "pinyin": "",
+      "vi": "phu nhân/vợ ông Trương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "494e16e2-a0fd-4ff0-aa7b-3889a910718e",
+      "order": 3,
+      "zh": "第一夫人",
+      "pinyin": "",
+      "vi": "đệ nhất phu nhân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6a3375e1-c17a-4ab5-8ecf-0c12fa865d42",
+      "order": 1,
+      "zh": "这是张先生的夫人。",
+      "pinyin": "",
+      "vi": "Đây là phu nhân/vợ của ông Trương.",
+      "analysis_vi": "夫人 trang trọng/lịch sự hơn 妻子/老婆.",
+      "highlight": [
+        "夫人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "172d2538-483d-448f-9ee7-dc1c1fd25c6f"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 夫人 được dùng trong ngữ cảnh xưng hô, gia đình; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ea177572-534a-4f95-bef7-1df41f01e4b7",
+      "order": 1,
+      "rule_vi": "Đời thường không cần dùng 我的夫人 quá thường xuyên; nghe kiểu cách.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đời thường không cần dùng 我的夫人 quá thường xuyên; nghe kiểu cách.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "夫人",
+    "back": "phu nhân, bà; vợ của ai đó",
+    "hint": "fūrén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "172d2538-483d-448f-9ee7-dc1c1fd25c6f",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "id": "da65d66e-cd66-4732-b858-d3bbcbdf24f3",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "一般",
+  "pinyin": "yìbān",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ",
+    "raw_cn": "形 / 副",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "nhất ban",
+    "meaning_vi": "bình thường, thông thường; không có gì đặc biệt",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "bình thường, thông thường; không có gì đặc biệt",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "般",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "舟",
+            "hanviet": "chu",
+            "meaning_vi": "thuyền",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "舟",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chu",
+              "radical_name_zh": "",
+              "hanviet": "chu",
+              "meaning_vi": "thuyền",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "舟 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "殳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "loại, dạng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "舟",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chu",
+          "radical_name_zh": "",
+          "hanviet": "chu",
+          "meaning_vi": "thuyền",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "舟 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Chỉ mức phổ thông/bình thường; trong khẩu ngữ thường không phải lời khen mạnh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "普通",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "平常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thường ngày",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "通常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thông thường, thiên về quy luật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "03b3ada3-993b-4213-943e-36ef950a2f40",
+      "order": 1,
+      "zh": "效果一般",
+      "pinyin": "",
+      "vi": "hiệu quả bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62f5e36a-0677-41ec-8093-3a4c6169eaf7",
+      "order": 2,
+      "zh": "成绩一般",
+      "pinyin": "",
+      "vi": "thành tích bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ae031a7-46c9-4994-ab2d-8fe2464ede80",
+      "order": 3,
+      "zh": "一般来说",
+      "pinyin": "",
+      "vi": "nói chung mà nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "38be22a5-f32a-4438-bcc9-efe77467a999",
+      "order": 1,
+      "zh": "这个办法效果一般。",
+      "pinyin": "Zhège bànfǎ xiàoguǒ yìbān.",
+      "vi": "Cách này hiệu quả bình thường.",
+      "en": "",
+      "highlight": [
+        "一般"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "da65d66e-cd66-4732-b858-d3bbcbdf24f3"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "一般吧 thường không phải khen.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d7ea39cb-416c-4813-9453-806c1e04041b",
+      "order": 1,
+      "title_vi": "Không dịch máy là thông thường mọi lúc",
+      "explanation_vi": "他汉语说得一般 nghĩa là tiếng Hán của anh ấy bình thường thôi.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "他汉语说得一般。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "一般",
+    "back": "bình thường, thông thường; không có gì đặc biệt",
+    "hint": "yìbān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "一般"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "da65d66e-cd66-4732-b858-d3bbcbdf24f3",
+    "source_lesson_vocab_id": null
+  }
+}

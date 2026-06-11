@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_cf680d2004bc3903",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "放不下心",
+  "pinyin": "fàng bu xià xīn",
+  "meaning_vi": "không yên tâm được",
+  "pos": "Cụm động từ kết quả/khả năng",
+  "pos_detail": {
+    "vi": "Cụm động từ kết quả/khả năng",
+    "cn": "动词短语",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "682e1087-39f5-4c67-9836-fa89206dfba5",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "682e1087-39f5-4c67-9836-fa89206dfba5",
+    "type": "vocabulary_item",
+    "order": 57,
+    "hanzi": "放不下心",
+    "pinyin": "fàng bu xià xīn",
+    "meaning_vi": "không yên tâm được",
+    "meaning_en": "",
+    "pos": "Cụm động từ kết quả/khả năng",
+    "tags": [
+      "exercise_phrase"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "放不下心",
+      "back": "fàng bu xià xīn — không yên tâm được",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Cụm động từ kết quả/khả năng",
+      "cn": "动词短语",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

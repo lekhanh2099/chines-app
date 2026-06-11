@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_1ef1ffe1e1edb912",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "打电话",
+  "pinyin": "dǎ diànhuà",
+  "meaning_vi": "gọi điện thoại",
+  "pos": "Động từ li hợp / Cụm động-tân",
+  "pos_detail": {
+    "vi": "Động từ li hợp / Cụm động-tân",
+    "cn": "动宾短语 / 可离合",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": true,
+    "separable_type": "động-tân / 离合词",
+    "structure_vi": "động từ 打 + tân ngữ 电话",
+    "usage_note_vi": "Có thể nói 打了一个电话; số lượng/thời lượng thường chen giữa 打 và 电话.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "54613016-834a-4fc3-9912-2357a6d27058",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "54613016-834a-4fc3-9912-2357a6d27058",
+    "type": "vocabulary_item",
+    "order": 7,
+    "hanzi": "打电话",
+    "pinyin": "dǎ diànhuà",
+    "meaning_vi": "gọi điện thoại",
+    "meaning_en": "",
+    "pos": "Động từ li hợp / Cụm động-tân",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "打电话",
+      "back": "dǎ diànhuà — gọi điện thoại",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ li hợp / Cụm động-tân",
+      "cn": "动宾短语 / 可离合",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": true,
+      "separable_type": "động-tân / 离合词",
+      "structure_vi": "động từ 打 + tân ngữ 电话",
+      "usage_note_vi": "Có thể nói 打了一个电话; số lượng/thời lượng thường chen giữa 打 và 电话.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

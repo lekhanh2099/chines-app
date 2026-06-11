@@ -1,0 +1,246 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "可能补语（一）",
+      "title_vi": "Bổ ngữ khả năng (1)",
+      "level": "HSK3+",
+      "tags": [
+        "可能补语",
+        "得不补语"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nói hành động có đạt được kết quả hay không trong điều kiện cụ thể, không chỉ nói năng lực chung.",
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我看得懂，但是听不懂。",
+              "vi": "Tôi xem thì hiểu, nhưng nghe thì không hiểu.",
+              "highlight": [
+                "看得懂",
+                "听不懂"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "动词 + 得 / 不 + 结果补语 / 趋向补语",
+          "meaning_vi": "Làm được / không làm được; đạt / không đạt kết quả.",
+          "formulas": [
+            {
+              "label": "肯定",
+              "pattern": "V + 得 + 补语"
+            },
+            {
+              "label": "否定",
+              "pattern": "V + 不 + 补语"
+            },
+            {
+              "label": "正反问",
+              "pattern": "V + 得 + 补语 + V + 不 + 补语？"
+            }
+          ],
+          "examples": [
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "票好买，肯定买得到。",
+              "vi": "Vé dễ mua, chắc chắn mua được.",
+              "highlight": [
+                "买得到"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+              "zh": "我担心买不到票。",
+              "vi": "Tôi lo không mua được vé.",
+              "highlight": [
+                "买不到"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
+              "zh": "公共汽车上不去，我们只好打的。",
+              "vi": "Xe buýt lên không được, chúng tôi đành phải đi taxi.",
+              "highlight": [
+                "上不去"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Tân ngữ không chen giữa động từ và 得/不 + 补语.",
+            "Không dùng 把字句 với 可能补语 trong phạm vi bài này."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "结果补语 dạng khả năng",
+      "title_vi": "V + 得/不 + bổ ngữ kết quả",
+      "level": "HSK3+",
+      "tags": [
+        "结果补语",
+        "可能补语"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "Cấu trúc",
+          "pattern": "V + 得 / 不 + 懂 / 见 / 完 / 到 / 清楚",
+          "meaning_vi": "Hành động có đạt kết quả hiểu, thấy, xong, đạt được, rõ hay không.",
+          "examples": [
+            {
+              "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+              "zh": "节目单上全是中文，没有英文，我看不懂。",
+              "vi": "Trên tờ chương trình toàn là tiếng Trung, không có tiếng Anh, tôi xem không hiểu.",
+              "highlight": [
+                "看不懂"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
+              "zh": "坐得太远看不清楚。",
+              "vi": "Ngồi xa quá thì nhìn không rõ.",
+              "highlight": [
+                "看不清楚"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "动词 + 得 / 不 + 了",
+      "title_vi": "V + 得/不 + 了 (liǎo)",
+      "level": "HSK3+",
+      "tags": [
+        "可能补语",
+        "了"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "Cấu trúc",
+          "pattern": "V + 得 / 不 + 了",
+          "meaning_vi": "Làm được / không làm được; làm nổi / không làm nổi; xảy ra được / không xảy ra được.",
+          "examples": [
+            {
+              "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
+              "zh": "她说晚上有事，去不了。",
+              "vi": "Cô ấy nói buổi tối có việc, đi không được.",
+              "highlight": [
+                "去不了"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
+              "zh": "这么多饺子，我吃不了。",
+              "vi": "Nhiều sủi cảo thế này, tôi ăn không nổi.",
+              "highlight": [
+                "吃不了"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "了 trong 去不了 đọc là liǎo, không phải trợ từ le."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "动词 + 得 / 不 + 下",
+      "title_vi": "V + 得/不 + 下",
+      "level": "HSK3+",
+      "tags": [
+        "可能补语",
+        "下"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "Cấu trúc",
+          "pattern": "V + 得 / 不 + 下",
+          "meaning_vi": "Chứa được / không chứa được, đủ chỗ / không đủ chỗ.",
+          "examples": [
+            {
+              "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
+              "zh": "这个剧场不大，估计坐不下一千人。",
+              "vi": "Rạp hát này không lớn, ước chừng không chứa nổi một nghìn người.",
+              "highlight": [
+                "坐不下"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
+              "zh": "这个包儿太小，装不下我的大衣。",
+              "vi": "Cái túi này nhỏ quá, không nhét vừa áo khoác của tôi.",
+              "highlight": [
+                "装不下"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "synthetic_vocab_5e1927567459b39d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "烤",
+  "pinyin": "kǎo",
+  "meaning_vi": "nướng; quay",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_l10_021",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_l10_021",
+    "type": "vocabulary_item",
+    "order": 21,
+    "hanzi": "烤",
+    "pinyin": "kǎo",
+    "meaning_vi": "nướng; quay",
+    "meaning_en": "to roast; to bake",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "lesson_10"
+    ]
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

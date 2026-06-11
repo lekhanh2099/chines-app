@@ -1,0 +1,402 @@
+{
+  "id": "03aa646d-d657-4205-bf95-5117816ad81e",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "导游",
+  "pinyin": "dǎoyóu",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名 / 动",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đạo du",
+    "meaning_vi": "hướng dẫn viên du lịch; dẫn đi tham quan",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hướng dẫn viên du lịch; dẫn đi tham quan"
+    ],
+    "short_definition_vi": "hướng dẫn viên du lịch; dẫn đi tham quan",
+    "textbook_focus_vi": "hướng dẫn viên du lịch; dẫn đi tham quan",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "导",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "tấc, phần dưới",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "寸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thốn",
+              "radical_name_zh": "",
+              "hanviet": "thốn",
+              "meaning_vi": "tấc, đơn vị nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dẫn, hướng dẫn",
+        "modern_logic_vi": "Phần trên là hình giản thể, không nên tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "寸",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thốn",
+          "radical_name_zh": "",
+          "hanviet": "thốn",
+          "meaning_vi": "tấc, đơn vị nhỏ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "游",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng",
+            "position_vi": "phần giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con/trẻ",
+            "position_vi": "bên dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con/trẻ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi chơi, du lịch, bơi",
+        "modern_logic_vi": "游 có lõi nghĩa đi chơi/du lịch/bơi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước/chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "导 = dẫn đường, 游 = đi chơi/du lịch. 导游 = người dẫn khách đi tham quan.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "向导",
+        "pinyin": "",
+        "meaning_vi": "người dẫn đường",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "讲解员",
+        "pinyin": "",
+        "meaning_vi": "người thuyết minh",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "游客",
+        "pinyin": "",
+        "meaning_vi": "du khách",
+        "difference_vi": "người đi du lịch, không phải người hướng dẫn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "75cff156-7749-4776-a2a9-90837dd04848",
+      "order": 1,
+      "zh": "一个导游",
+      "pinyin": "",
+      "vi": "một hướng dẫn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9c2ba45-3ca2-42fa-aceb-32dd1f05dcac",
+      "order": 2,
+      "zh": "中文导游",
+      "pinyin": "",
+      "vi": "hướng dẫn viên tiếng Trung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "237fe287-c178-48e9-bb80-95c6446f2389",
+      "order": 3,
+      "zh": "当地导游",
+      "pinyin": "",
+      "vi": "hướng dẫn viên địa phương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e086ed9d-64b8-4884-97a3-96fb8f950148",
+      "order": 4,
+      "zh": "导游带我们去……",
+      "pinyin": "",
+      "vi": "hướng dẫn viên đưa chúng tôi đi...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba5ce055-8f3d-47c9-8054-0d13f301dc9f",
+      "order": 5,
+      "zh": "导游讲解",
+      "pinyin": "",
+      "vi": "hướng dẫn viên thuyết minh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1157042d-19f4-40cd-b95b-e74eec949617",
+      "order": 6,
+      "zh": "找导游",
+      "pinyin": "",
+      "vi": "tìm hướng dẫn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ff3057b8-cb99-4a3a-ad50-e4c220896b5e",
+      "order": 1,
+      "zh": "这个导游说汉语说得很清楚。",
+      "pinyin": "Zhège dǎoyóu shuō Hànyǔ shuō de hěn qīngchu.",
+      "vi": "Hướng dẫn viên này nói tiếng Hán rất rõ.",
+      "analysis_vi": "说得很清楚 là bổ ngữ trình độ.",
+      "highlight": [
+        "导游"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03aa646d-d657-4205-bf95-5117816ad81e"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "33e21807-a2ac-4d3b-8bf7-f72c80cea8ce",
+      "order": 2,
+      "zh": "我们是跟导游一起去故宫的。",
+      "pinyin": "Wǒmen shì gēn dǎoyóu yìqǐ qù Gùgōng de.",
+      "vi": "Chúng tôi đi Cố Cung cùng hướng dẫn viên.",
+      "analysis_vi": "是……的 nhấn mạnh người đi cùng.",
+      "highlight": [
+        "导游"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03aa646d-d657-4205-bf95-5117816ad81e"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b9a9e585-7b40-4333-ba3b-23305b997f38",
+      "order": 3,
+      "zh": "一下车，导游就拿出地图，给我们介绍今天的安排。",
+      "pinyin": "Yí xià chē, dǎoyóu jiù ná chū dìtú, gěi wǒmen jièshào jīntiān de ānpái.",
+      "vi": "Vừa xuống xe, hướng dẫn viên liền lấy bản đồ ra và giới thiệu lịch trình hôm nay.",
+      "analysis_vi": "一下车就…… chỉ hành động xảy ra ngay; 拿出 là lấy ra.",
+      "highlight": [
+        "导游"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03aa646d-d657-4205-bf95-5117816ad81e"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Đi theo đoàn ở Trung Quốc thường gọi là 跟团游; 导游 phụ trách thuyết minh và điều phối lịch trình.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c9d29c92-b07d-49c0-a483-5e988f96e27c",
+      "order": 1,
+      "rule_vi": "导游 là danh từ chỉ người; muốn nói 'đi du lịch' dùng 去旅游, không nói 我导游.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我导游。",
+          "pinyin": "",
+          "vi": "Tôi hướng dẫn viên / tôi du lịch.",
+          "note_vi": "Sai nếu muốn nói đi du lịch.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我去旅游。",
+          "pinyin": "",
+          "vi": "Tôi đi du lịch.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我当导游。",
+          "pinyin": "",
+          "vi": "Tôi làm hướng dẫn viên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "导游",
+    "back": "hướng dẫn viên du lịch; dẫn đi tham quan",
+    "hint": "dǎoyóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "03aa646d-d657-4205-bf95-5117816ad81e",
+    "source_lesson_vocab_id": null
+  }
+}

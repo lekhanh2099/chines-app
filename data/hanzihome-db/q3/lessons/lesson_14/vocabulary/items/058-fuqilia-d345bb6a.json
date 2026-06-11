@@ -1,0 +1,381 @@
+{
+  "id": "1551150f-2d84-4ac9-96c0-9f71e7ed6dee",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "夫妻俩",
+  "pinyin": "fūqīliǎ",
+  "pos": {
+    "raw_vi": "Danh ngữ",
+    "raw_cn": "名词短语",
+    "normalized": "noun_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phu thê lưỡng",
+    "meaning_vi": "hai vợ chồng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hai vợ chồng"
+    ],
+    "short_definition_vi": "hai vợ chồng",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: gia đình, quan hệ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "gia đình, quan hệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "夫",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chồng, người đàn ông",
+        "modern_logic_vi": "Trong từ 夫妻俩, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "妻",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vợ",
+        "modern_logic_vi": "Trong từ 夫妻俩, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "俩",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 夫妻俩, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "夫妻俩 nên được học theo nghĩa hiện đại trong cụm/tình huống: hai vợ chồng.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 他们夫妻俩.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "夫妇",
+        "pinyin": "fūfù",
+        "meaning_vi": "vợ chồng",
+        "difference_vi": "夫妇 trang trọng hơn; 夫妻俩 khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d8c07dc4-c64f-47fd-8997-28aaa14a22a0",
+      "order": 1,
+      "zh": "他们夫妻俩",
+      "pinyin": "",
+      "vi": "hai vợ chồng họ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37d0ecc5-4ebc-4741-88d0-327d348506a7",
+      "order": 2,
+      "zh": "夫妻俩商量",
+      "pinyin": "",
+      "vi": "hai vợ chồng bàn bạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "96087f5c-029c-432a-af20-18d5eef5bde2",
+      "order": 3,
+      "zh": "老夫妻俩",
+      "pinyin": "",
+      "vi": "hai vợ chồng già",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9dce85ec-59af-474f-8058-a01a8b5a97da",
+      "order": 1,
+      "zh": "他们夫妻俩感情很好。",
+      "pinyin": "",
+      "vi": "Hai vợ chồng họ tình cảm rất tốt.",
+      "analysis_vi": "俩 đã bao gồm hai người.",
+      "highlight": [
+        "夫妻俩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1551150f-2d84-4ac9-96c0-9f71e7ed6dee"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 夫妻俩 được dùng trong ngữ cảnh gia đình, quan hệ; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "87107bdd-a391-48e6-a0a0-d3ffcb6dc771",
+      "order": 1,
+      "rule_vi": "Không nói 两个夫妻俩; nếu hai cặp vợ chồng nói 两对夫妻.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 两个夫妻俩; nếu hai cặp vợ chồng nói 两对夫妻.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "夫妻俩",
+    "back": "hai vợ chồng",
+    "hint": "fūqīliǎ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1551150f-2d84-4ac9-96c0-9f71e7ed6dee",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "id": "b756b2af-2a04-4ebf-b9e6-9c269a8f425f",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "谎",
+  "pinyin": "huǎng",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ / Tính từ trong một số tổ hợp",
+    "raw_cn": "名/动/形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hoảng",
+    "meaning_vi": "lời nói dối; giả dối",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lời nói dối",
+      "giả dối"
+    ],
+    "short_definition_vi": "lời nói dối; giả dối",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "谎",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ Ngôn trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ Ngôn trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "谎 có bộ 讠, thường liên quan đến lời nói/ngôn ngữ. Logic hiện đại: Lời nói không thật → 谎. Cảnh báo: 谎 ít đứng độc lập trong khẩu ngữ cơ bản; thường học qua 说谎 / 撒谎 / 谎话.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "谎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lời nói dối, yếu tố từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "谎话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lời nói dối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "说谎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói dối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "撒谎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói dối, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "假话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lời giả dối, lời không thật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "他说了一个谎。",
+      "Anh ấy nói một lời dối.",
+      "这是假话。",
+      "Đây là lời giả dối.",
+      "他爱撒谎。",
+      "Anh ấy hay nói dối."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1757567c-28cd-42aa-867b-71ab201a0dc8",
+      "order": 1,
+      "zh": "说谎",
+      "pinyin": "",
+      "vi": "nói dối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d3d00532-e96e-4a9a-a68c-2239b8d6a977",
+      "order": 2,
+      "zh": "撒谎",
+      "pinyin": "",
+      "vi": "nói dối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "222745de-986e-45d1-92b2-59db483ee8d2",
+      "order": 3,
+      "zh": "谎话",
+      "pinyin": "",
+      "vi": "lời nói dối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "e3c68cbf-f628-4b45-92c3-aadd71017502",
+      "order": 4,
+      "zh": "一个谎",
+      "pinyin": "",
+      "vi": "một lời nói dối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2e54fec3-627d-4d53-b8e2-8cccf64a736d",
+      "order": 5,
+      "zh": "说了一个谎",
+      "pinyin": "",
+      "vi": "đã nói một lời dối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "462bada8-5d87-430b-869f-a3b8f2037dda",
+      "order": 6,
+      "zh": "别听他的谎话",
+      "pinyin": "",
+      "vi": "đừng nghe lời nói dối của anh ta",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28b1e0dc-d340-42de-aa79-7907de0a9a37",
+      "order": 1,
+      "zh": "他说了一个谎。",
+      "pinyin": "Tā shuō le yí ge huǎng.",
+      "vi": "Anh ấy đã nói một lời nói dối.",
+      "analysis_vi": "一个谎 = một lời nói dối.",
+      "highlight": [
+        "谎"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "b756b2af-2a04-4ebf-b9e6-9c269a8f425f"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "507ec219-279d-4db3-87e1-8614d9f7b844",
+      "order": 2,
+      "zh": "这个谎太大了，谁也不会相信。",
+      "pinyin": "Zhège huǎng tài dà le, shéi yě bú huì xiāngxìn.",
+      "vi": "Lời nói dối này quá lớn, ai cũng sẽ không tin.",
+      "analysis_vi": "太……了 nhấn mức độ. 谁也不…… = không ai...",
+      "highlight": [
+        "谎"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "b756b2af-2a04-4ebf-b9e6-9c269a8f425f"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a4700760-2ff3-422b-9cbc-8a0ce951343f",
+      "order": 3,
+      "zh": "他以前说过很多谎，可是这一次，他把事情的经过清楚地说了一遍，没有再骗大家。",
+      "pinyin": "Tā yǐqián shuō guo hěn duō huǎng, kěshì zhè yí cì, tā bǎ shìqing de jīngguò qīngchu de shuō le yí biàn, méiyǒu zài piàn dàjiā.",
+      "vi": "Trước đây anh ấy từng nói nhiều lời dối, nhưng lần này, anh ấy kể rõ một lượt diễn biến sự việc, không lừa mọi người nữa.",
+      "analysis_vi": "说过很多谎 = từng nói nhiều lời dối. 把经过说了一遍 = kể một lượt diễn biến. 清楚地说 dùng 地.",
+      "highlight": [
+        "谎"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "b756b2af-2a04-4ebf-b9e6-9c269a8f425f"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "62fbbcb2-824e-44a9-ad5a-651e55f2d201",
+      "order": 1,
+      "rule_vi": "谎 thường đi trong cụm:",
+      "natural_examples": [
+        {
+          "zh": "谎 thường đi trong cụm:",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "说谎 / 撒谎 / 谎话",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "谎 thường đi trong cụm: 说谎 / 撒谎 / 谎话 Đừng dùng đơn độc quá nhiều nếu chưa chắc câu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "谎",
+    "back": "lời nói dối; giả dối",
+    "hint": "huǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi trách ai nói dối, 你说谎！ nghe trực diện và nặng. Nói mềm hơn có thể là 你是不是没说实话？ = có phải bạn chưa nói thật không?",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b756b2af-2a04-4ebf-b9e6-9c269a8f425f",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "id": "d6ad41f6-384b-4843-b4ec-53dc6212d8ba",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "笔记",
+  "pinyin": "bǐjì",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "bút ký",
+    "meaning_vi": "ghi chép, ghi chú; vở/ghi chú bài học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ghi chép"
+    ],
+    "short_definition_vi": "ghi chép, ghi chú; vở/ghi chú bài học",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "笔",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre, đồ tre",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "竹 được dùng như bộ/thành phần chỉ trường nghĩa: tre, đồ tre.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre, đồ tre",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre, đồ tre",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "竹 được dùng như bộ/thành phần chỉ trường nghĩa: tre, đồ tre.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bút",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "记",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ/thành phần chỉ trường nghĩa: lời nói, ngôn ngữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ/thành phần chỉ trường nghĩa: lời nói, ngôn ngữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ghi, nhớ",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "笔记 được ghi nhớ theo nghĩa hiện đại: ghi chép, ghi chú; vở/ghi chú bài học.",
+    "memory_tip_vi": "Nhớ qua cụm: 记笔记.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "记录",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "日记",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "备注",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "记忆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ghi chép trong lớp nói 记笔记 / 做笔记 tự nhiên hơn 写笔记."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "21d668e7-d9b2-4308-8a7f-252e8d5a1b8f",
+      "order": 1,
+      "zh": "记笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "669b624e-d7ac-437a-b064-1d194ea836f6",
+      "order": 2,
+      "zh": "做笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1337f4ea-1f60-46e5-b918-486544821039",
+      "order": 3,
+      "zh": "课堂笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a63f3526-9434-435f-85e0-04191b76bef8",
+      "order": 4,
+      "zh": "学习笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35819b0b-3f71-4393-bcd1-42317666c363",
+      "order": 5,
+      "zh": "听课笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44eeba82-c08a-45aa-82e0-08d18aad673c",
+      "order": 6,
+      "zh": "整理笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01ad89b9-c10b-470b-83d6-1c3dfe52d4e5",
+      "order": 7,
+      "zh": "电子笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2c025dee-96a3-4f02-a1b8-20281354634b",
+      "order": 1,
+      "zh": "上课的时候，我喜欢记笔记。",
+      "pinyin": "Shàngkè de shíhou, wǒ xǐhuan jì bǐjì.",
+      "vi": "Khi lên lớp, tôi thích ghi chép.",
+      "analysis_vi": "记笔记 là collocation tự nhiên.",
+      "highlight": [
+        "笔记"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d6ad41f6-384b-4843-b4ec-53dc6212d8ba"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4464478e-98d0-42b8-8160-a1a2d47260e3",
+      "order": 2,
+      "zh": "母亲把老师讲过的内容一五一十地整理成笔记。",
+      "pinyin": "Mǔqīn bǎ lǎoshī jiǎng guo de nèiróng yīwǔ-yīshí de zhěnglǐ chéng bǐjì.",
+      "vi": "Mẹ chỉnh lý đầy đủ nội dung giáo viên đã giảng thành ghi chú.",
+      "analysis_vi": "把……整理成…… = xử lý A thành B.",
+      "highlight": [
+        "笔记"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d6ad41f6-384b-4843-b4ec-53dc6212d8ba"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "电子笔记, 用平板记笔记 là cách dùng hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0f84ee02-b8b8-4379-8640-38bd75ed52e0",
+      "order": 1,
+      "rule_vi": "Ghi chép trong lớp nói 记笔记 / 做笔记 tự nhiên hơn 写笔记.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Ghi chép trong lớp nói 记笔记 / 做笔记 tự nhiên hơn 写笔记.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "笔记",
+    "back": "ghi chép, ghi chú; vở/ghi chú bài học",
+    "hint": "bǐjì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d6ad41f6-384b-4843-b4ec-53dc6212d8ba",
+    "source_lesson_vocab_id": null
+  }
+}

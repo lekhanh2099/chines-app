@@ -1,0 +1,479 @@
+{
+  "id": "9038c2ca-a774-49fb-a0ae-b08c86b35b08",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "好玩儿",
+  "pinyin": "hǎowánr",
+  "pos": {
+    "raw_vi": "Tính từ khẩu ngữ",
+    "raw_cn": "形/口语",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "spoken"
+  ],
+  "meaning": {
+    "hanviet": "Hảo ngoạn nhi",
+    "meaning_vi": "vui, thú vị, chơi vui",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui, thú vị, chơi vui"
+    ],
+    "short_definition_vi": "vui, thú vị, chơi vui",
+    "textbook_focus_vi": "vui, thú vị, chơi vui",
+    "register_vi": "",
+    "usage_domain_vi": "spoken",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được dùng như bộ Nữ trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con/trẻ nhỏ",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ; hậu tố",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ Tử trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, hay, thích, dễ",
+        "modern_logic_vi": "好 trong 好玩儿 là “hay/đáng”.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được dùng như bộ Nữ trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "玩",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, vật quý",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, vật quý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được dùng như bộ Ngọc trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "元",
+            "hanviet": "nguyên",
+            "meaning_vi": "gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chơi, thưởng ngoạn",
+        "modern_logic_vi": "玩 = chơi; 好玩儿 = đáng chơi/thú vị.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, vật quý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được dùng như bộ Ngọc trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhi; âm uốn lưỡi/儿化 trong 好玩儿",
+        "modern_logic_vi": "Trong 好玩儿 là 儿化, không dịch riêng.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "好 trong 好玩儿 là “hay/đáng”.; 玩 = chơi; 好玩儿 = đáng chơi/thú vị.; Trong 好玩儿 là 儿化, không dịch riêng.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "有意思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有趣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好笑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "没意思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "无聊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aadd1d4e-bafa-41b1-b00f-1ee0c95c75ac",
+      "order": 1,
+      "zh": "很好玩儿",
+      "pinyin": "",
+      "vi": "rất vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d31eb3a8-ff61-49ed-9ba4-4b45a502f9f5",
+      "order": 2,
+      "zh": "真好玩儿",
+      "pinyin": "",
+      "vi": "vui thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d6bd4160-9550-4c32-85cb-41dadfc48bdf",
+      "order": 3,
+      "zh": "一点儿也不好玩儿",
+      "pinyin": "",
+      "vi": "chẳng vui chút nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5f0fb57-dcb6-4734-8d98-139000fb6eb7",
+      "order": 4,
+      "zh": "这个游戏很好玩儿",
+      "pinyin": "",
+      "vi": "trò chơi này rất vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe2d1ee9-4c54-4bb0-b88e-ca71923c7661",
+      "order": 5,
+      "zh": "好玩儿极了",
+      "pinyin": "",
+      "vi": "vui cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aa7b3301-8cab-4997-9c57-14c04fc11640",
+      "order": 1,
+      "zh": "这个游戏很好玩儿。",
+      "pinyin": "Zhège yóuxì hěn hǎowánr.",
+      "vi": "Trò chơi này rất vui.",
+      "analysis_vi": "好玩儿 là tính từ khẩu ngữ.",
+      "highlight": [
+        "好玩儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9038c2ca-a774-49fb-a0ae-b08c86b35b08"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "610dea14-558a-4d55-9f91-acd8bc82c428",
+      "order": 2,
+      "zh": "练太极拳一开始我觉得不好玩儿，后来慢慢适应了，才发现它很有意思。",
+      "pinyin": "Liàn tàijíquán yì kāishǐ wǒ juéde bù hǎowánr, hòulái mànmàn shìyìng le, cái fāxiàn tā hěn yǒu yìsi.",
+      "vi": "Ban đầu tôi thấy luyện Thái Cực Quyền không vui, sau dần thích nghi mới thấy nó thú vị.",
+      "analysis_vi": "一开始……后来……才发现……",
+      "highlight": [
+        "好玩儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9038c2ca-a774-49fb-a0ae-b08c86b35b08"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "好玩儿 có 儿化音, màu Bắc phương; nói 好玩 không 儿 vẫn rất thông dụng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2db00ee5-0b4f-4c0a-8da8-9016d2f516ba",
+      "order": 1,
+      "rule_vi": "好玩儿 = thú vị/vui; 爱玩儿 = ham chơi/thích chơi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这个游戏很好玩儿。",
+          "pinyin": "Zhège yóuxì hěn hǎowánr.",
+          "vi": "Trò chơi này rất vui.",
+          "note_vi": "好玩儿 chỉ tính chất của trò chơi.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "好玩儿",
+    "back": "vui, thú vị, chơi vui",
+    "hint": "hǎowánr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "spoken"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9038c2ca-a774-49fb-a0ae-b08c86b35b08",
+    "source_lesson_vocab_id": null
+  }
+}

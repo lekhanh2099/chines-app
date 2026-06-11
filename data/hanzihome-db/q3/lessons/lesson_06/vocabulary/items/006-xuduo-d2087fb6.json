@@ -1,0 +1,280 @@
+{
+  "id": "0436f00a-27f6-4f73-86e5-a84b08a01b13",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "许多",
+  "pinyin": "xǔduō",
+  "pos": {
+    "raw_vi": "Số lượng từ / Định ngữ",
+    "raw_cn": "数量词性成分",
+    "normalized": "numeral",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hứa đa",
+    "meaning_vi": "nhiều; rất nhiều",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiều",
+      "rất nhiều"
+    ],
+    "short_definition_vi": "nhiều",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "许",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhiều trong 许多; cho phép trong từ khác",
+        "modern_logic_vi": "Trong từ 许多, chữ 许 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "多",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhiều",
+        "modern_logic_vi": "Trong từ 许多, chữ 多 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "许多 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 今年树上结了许多葡萄。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很多",
+        "pinyin": "hěn duō",
+        "meaning_vi": "rất nhiều",
+        "difference_vi": "很多 khẩu ngữ hơn 许多.",
+        "register_vi": "",
+        "example_zh": "这里有很多人。",
+        "example_vi": "Ở đây có rất nhiều người.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5bbae94e-1039-46d8-863b-cd4494bc83f4",
+      "order": 1,
+      "zh": "许多人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6b12d69-1a42-4748-b37b-c7d7efbe1bc3",
+      "order": 2,
+      "zh": "许多事情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4ba8099-a678-415c-9396-0a9421a6c2a1",
+      "order": 3,
+      "zh": "许多葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5dc1541-dd05-4195-aeac-27b2af74255e",
+      "order": 4,
+      "zh": "许多叶子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b11f7cf-f197-426d-9d85-6eb09037719e",
+      "order": 5,
+      "zh": "有许多问题",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f750d23e-3d0a-47a7-a073-063d4e0da69a",
+      "order": 6,
+      "zh": "学到许多东西",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6b595891-ff0e-4e3f-b1b9-47cd3ad7239b",
+      "order": 1,
+      "zh": "今年树上结了许多葡萄。",
+      "pinyin": "",
+      "vi": "Năm nay trên cây ra rất nhiều nho.",
+      "analysis_vi": "Ví dụ dùng 许多 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "许多"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0436f00a-27f6-4f73-86e5-a84b08a01b13"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "许多 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "329f7f77-986f-4449-a934-7ceb6b1bfc82",
+      "order": 1,
+      "rule_vi": "Thường dùng 许多 + danh từ, không cần 的 trong cấu trúc cơ bản.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "许多",
+    "back": "nhiều; rất nhiều",
+    "hint": "xǔduō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0436f00a-27f6-4f73-86e5-a84b08a01b13",
+    "source_lesson_vocab_id": null
+  }
+}

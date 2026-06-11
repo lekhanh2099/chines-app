@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_54e3304b703a36ce",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "租",
+  "pinyin": "zū",
+  "meaning_vi": "thuê; cho thuê",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_022",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_022",
+    "type": "vocabulary_item",
+    "order": 22,
+    "hanzi": "租",
+    "pinyin": "zū",
+    "meaning_vi": "thuê; cho thuê",
+    "meaning_en": "to rent",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab_pdf"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "租",
+      "back": "zū — thuê; cho thuê",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "main_vocab_pdf",
+    "check_needed": false,
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

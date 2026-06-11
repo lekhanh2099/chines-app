@@ -1,0 +1,548 @@
+{
+  "id": "bbc63eae-e97f-4f89-b6f6-4e0fc53f0488",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "人怕出名猪怕壮",
+  "pinyin": "rén pà chūmíng zhū pà zhuàng",
+  "pos": {
+    "raw_vi": "Tục ngữ",
+    "raw_cn": "俗语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "nhân phạ xuất danh, trư phạ tráng",
+    "meaning_vi": "người sợ nổi tiếng, lợn sợ béo; nổi tiếng dễ sinh phiền",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người sợ nổi tiếng, lợn sợ béo; nổi tiếng dễ sinh phiền"
+    ],
+    "short_definition_vi": "người sợ nổi tiếng, lợn sợ béo; nổi tiếng dễ sinh phiền",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "tục ngữ / văn hóa",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "人 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 人.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "怕",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm lý, cảm xúc",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm lý, cảm xúc",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 忄.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sợ",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra, xuất hiện",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "名",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tên, danh tiếng",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "猪",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "犬",
+          "radical_variant": "犭",
+          "radical_name_vi": "bộ Khuyển",
+          "radical_name_zh": "",
+          "hanviet": "khuyển",
+          "meaning_vi": "chó, thú vật",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "犭 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó, thú vật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó, thú vật",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "犭 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 犭.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lợn",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "怕",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm lý, cảm xúc",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm lý, cảm xúc",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 忄.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sợ",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "壮",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "to khỏe, cường tráng",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Người nổi tiếng dễ phiền, lợn béo dễ bị giết thịt.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 人怕出名猪怕壮.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "树大招风",
+        "pinyin": "shù dà zhāo fēng",
+        "meaning_vi": "cây cao đón gió",
+        "difference_vi": "người nổi bật dễ bị công kích",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "枪打出头鸟",
+        "pinyin": "qiāng dǎ chūtóu niǎo",
+        "meaning_vi": "súng bắn chim ló đầu",
+        "difference_vi": "ai nổi trước dễ bị nhắm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "默默无闻",
+          "",
+          "âm thầm không tiếng tăm",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7285fb96-e423-4b40-9231-80c7d2b4fe45",
+      "order": 1,
+      "zh": "俗话说，人怕出名猪怕壮",
+      "pinyin": "",
+      "vi": "tục ngữ nói…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0653dd4a-d7bb-46a8-a8ea-c618f4142363",
+      "order": 2,
+      "zh": "真是人怕出名猪怕壮",
+      "pinyin": "",
+      "vi": "đúng là nổi tiếng dễ rước phiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bffc2759-ea43-48af-ac00-6f596e50ff33",
+      "order": 3,
+      "zh": "别太招摇，人怕出名猪怕壮",
+      "pinyin": "",
+      "vi": "đừng quá phô trương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a098f9f0-0a56-4b0c-9d46-6729326d171d",
+      "order": 4,
+      "zh": "有点儿人怕出名猪怕壮的意思",
+      "pinyin": "",
+      "vi": "có ý nổi tiếng dễ sinh chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9b97f1c2-5c9f-4d01-8f22-824fe0588ba3",
+      "order": 1,
+      "zh": "他出名以后，麻烦也多了，真是人怕出名猪怕壮。",
+      "pinyin": "Tā chūmíng yǐhòu, máfan yě duō le, zhēn shì rén pà chūmíng zhū pà zhuàng.",
+      "vi": "Sau khi anh ấy nổi tiếng, rắc rối cũng nhiều lên, đúng là người sợ nổi tiếng, lợn sợ béo.",
+      "analysis_vi": "出名以后 tạo mốc thời gian.",
+      "highlight": [
+        "人怕出名猪怕壮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbc63eae-e97f-4f89-b6f6-4e0fc53f0488"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dda2df85-d505-44c7-b7d9-827e4ba58302",
+      "order": 2,
+      "zh": "不管你做什么，只要出了名，就可能有人批评你。",
+      "pinyin": "Bùguǎn nǐ zuò shénme, zhǐyào chū le míng, jiù kěnéng yǒu rén pīpíng nǐ.",
+      "vi": "Dù làm gì, chỉ cần nổi tiếng thì có thể bị phê bình.",
+      "analysis_vi": "不管……只要……就…….",
+      "highlight": [
+        "人怕出名猪怕壮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbc63eae-e97f-4f89-b6f6-4e0fc53f0488"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu này phản ánh mặt trái của sự nổi danh: dễ bị soi và kéo rắc rối.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1ab066f3-894b-494e-bcd9-d9e75909ee99",
+      "order": 1,
+      "rule_vi": "Không phải lời khuyên đừng bao giờ nổi tiếng; nó cảnh báo mặt trái của nổi danh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人怕出名猪怕壮",
+    "back": "người sợ nổi tiếng, lợn sợ béo; nổi tiếng dễ sinh phiền",
+    "hint": "rén pà chūmíng zhū pà zhuàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bbc63eae-e97f-4f89-b6f6-4e0fc53f0488",
+    "source_lesson_vocab_id": null
+  }
+}

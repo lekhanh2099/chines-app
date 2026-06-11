@@ -1,0 +1,286 @@
+{
+  "id": "6b92eebd-a6d6-4248-b0ca-38f40b246f8f",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "问候",
+  "pinyin": "wènhòu",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vấn hậu",
+    "meaning_vi": "hỏi thăm, gửi lời hỏi thăm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hỏi thăm",
+      "gửi lời hỏi thăm"
+    ],
+    "short_definition_vi": "hỏi thăm, gửi lời hỏi thăm",
+    "textbook_focus_vi": "问 = hỏi, 候 = tình trạng/thăm hỏi. 问候 = hỏi thăm, vấn an.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, thư từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "问",
+        "lishu_vi": "vấn",
+        "structure_note_vi": "门 + 口; có 口 liên quan lời nói.",
+        "main_radical": {
+          "radical": "門",
+          "radical_variant": "门",
+          "radical_name_vi": "bộ Môn",
+          "radical_name_zh": "",
+          "hanviet": "môn",
+          "meaning_vi": "cửa",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hỏi",
+        "modern_logic_vi": "Trong từ này, 问 góp phần tạo nghĩa 'hỏi'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "候",
+        "lishu_vi": "hậu",
+        "structure_note_vi": "亻 + 侯; trong 问候 là hỏi tình trạng.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chờ, tình trạng; hỏi thăm",
+        "modern_logic_vi": "Trong từ này, 候 góp phần tạo nghĩa 'chờ, tình trạng; hỏi thăm'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "问 = hỏi, 候 = tình trạng/thăm hỏi. 问候 = hỏi thăm, vấn an.",
+    "memory_tip_vi": "Nhớ qua cụm: 亲切的问候 = lời hỏi thăm thân tình.",
+    "warning_vi": "问候 không phải 问题.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "问好",
+        "pinyin": "wèn hǎo",
+        "meaning_vi": "chào hỏi/gửi lời chào",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "慰问",
+        "pinyin": "wèiwèn",
+        "meaning_vi": "thăm hỏi/an ủi",
+        "difference_vi": "Trang trọng, dùng khi khó khăn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "问候 không phải 问题."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dbb661c5-edea-407e-ad08-7e540aca2b38",
+      "order": 1,
+      "zh": "亲切的问候",
+      "pinyin": "qīnqiè de wènhòu",
+      "vi": "lời hỏi thăm thân tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5952f22e-46d4-4127-ac5d-d47f41c06837",
+      "order": 2,
+      "zh": "代我问候他",
+      "pinyin": "dài wǒ wènhòu tā",
+      "vi": "thay tôi hỏi thăm anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "630e93b6-639a-41e5-824a-1a5cabc1092c",
+      "order": 3,
+      "zh": "节日问候",
+      "pinyin": "jiérì wènhòu",
+      "vi": "lời chúc/hỏi thăm dịp lễ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7aee59dd-6d4d-41ce-b1cc-5760c15d0de5",
+      "order": 1,
+      "zh": "赵霞在电子信里写了几句亲切的问候。",
+      "pinyin": "Zhào Xiá zài diànzǐ xìn lǐ xiě le jǐ jù qīnqiè de wènhòu.",
+      "vi": "Triệu Hà viết vài câu hỏi thăm thân tình trong email.",
+      "analysis_vi": "几句问候 dùng 句 vì là lời/câu chữ.",
+      "highlight": [
+        "问候"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6b92eebd-a6d6-4248-b0ca-38f40b246f8f"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "请代我问候…… là mẫu lịch sự để gửi lời hỏi thăm người vắng mặt.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8b2ddcd4-5a64-49e2-899b-4d833d101f07",
+      "order": 1,
+      "rule_vi": "问候 không phải 问题.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我有一个问候。",
+          "pinyin": "Wǒ yǒu yí ge wènhòu.",
+          "vi": "Sai nếu muốn nói có câu hỏi.",
+          "note_vi": "问候 là lời hỏi thăm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我有一个问题。",
+          "pinyin": "Wǒ yǒu yí ge wèntí.",
+          "vi": "Tôi có một câu hỏi.",
+          "note_vi": "问题 mới là câu hỏi/vấn đề.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "问候",
+    "back": "hỏi thăm, gửi lời hỏi thăm",
+    "hint": "wènhòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6b92eebd-a6d6-4248-b0ca-38f40b246f8f",
+    "source_lesson_vocab_id": null
+  }
+}

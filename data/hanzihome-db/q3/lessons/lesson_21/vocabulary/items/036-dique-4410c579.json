@@ -1,0 +1,328 @@
+{
+  "id": "06c00883-9a42-4d12-8db1-26e4160e57eb",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "的确",
+  "pinyin": "díquè",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "đích xác",
+    "meaning_vi": "quả thật, đúng là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quả thật",
+      "đúng là"
+    ],
+    "short_definition_vi": "quả thật, đúng là",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: quả thật, đúng là.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "的",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "白",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Bạch",
+          "radical_name_zh": "",
+          "hanviet": "bạch",
+          "meaning_vi": "màu trắng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "màu trắng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "白",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bạch",
+              "radical_name_zh": "",
+              "hanviet": "bạch",
+              "meaning_vi": "màu trắng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "白 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 的.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "确",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "thạch",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "thạch",
+            "meaning_vi": "đá",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "thạch",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "石 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 确.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "的确 trong bài được hiểu theo nghĩa: quả thật, đúng là. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 的确.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "的确 đứng trước nhận định/tính từ/động từ để xác nhận."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f71f69f2-2622-43ba-90be-246f1c0672b4",
+      "order": 1,
+      "zh": "的确如此",
+      "pinyin": "",
+      "vi": "quả thật như vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18744a0c-b4c7-4f31-9bd1-74d1eef583ab",
+      "order": 2,
+      "zh": "的确不错",
+      "pinyin": "",
+      "vi": "đúng là không tệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fdf825c0-697d-4be6-824a-18edad9337f8",
+      "order": 3,
+      "zh": "的确很难",
+      "pinyin": "",
+      "vi": "quả thật rất khó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53aebd97-296d-4b1d-927e-84c7fa6c86e2",
+      "order": 4,
+      "zh": "的确有道理",
+      "pinyin": "",
+      "vi": "đúng là có lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6859639b-1c04-4b67-8c8e-940243a3c807",
+      "order": 5,
+      "zh": "的确不大",
+      "pinyin": "",
+      "vi": "đúng là không lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0c2e1cb5-da95-46df-a58d-2b920a075c77",
+      "order": 1,
+      "zh": "这件事的确很奇怪。",
+      "pinyin": "",
+      "vi": "Việc này đúng là rất lạ.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "的确"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "06c00883-9a42-4d12-8db1-26e4160e57eb"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "94a5a7c5-8782-4d7f-9a1e-4868208ab23e",
+      "order": 2,
+      "zh": "伤口的确不大，可是理发师还是吓坏了。",
+      "pinyin": "",
+      "vi": "Vết thương đúng là không lớn, nhưng thợ cắt tóc vẫn sợ phát khiếp.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "的确"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "06c00883-9a42-4d12-8db1-26e4160e57eb"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "的确 đứng trước nhận định/tính từ/động từ để xác nhận.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "388c092c-0c84-4319-9639-4d45864527b8",
+      "order": 1,
+      "rule_vi": "的确 đứng trước nhận định/tính từ/động từ để xác nhận.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这件事很难的确。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "的确 đứng trước nhận định/tính từ/động từ để xác nhận.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这件事的确很难。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "的确 đứng trước nhận định/tính từ/động từ để xác nhận.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "的确",
+    "back": "quả thật, đúng là",
+    "hint": "díquè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "06c00883-9a42-4d12-8db1-26e4160e57eb",
+    "source_lesson_vocab_id": null
+  }
+}

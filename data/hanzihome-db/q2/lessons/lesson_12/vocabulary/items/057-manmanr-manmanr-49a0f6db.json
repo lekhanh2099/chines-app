@@ -1,0 +1,416 @@
+{
+  "id": "471bb15c-7746-4ab8-b2f3-b2700deb6224",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "慢慢儿",
+  "pinyin": "mànmānr / mànmànr",
+  "pos": {
+    "raw_vi": "Phó từ / Trạng thái từ khẩu ngữ",
+    "raw_cn": "",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "fixed_phrases_state"
+  ],
+  "meaning": {
+    "hanviet": "mạn mạn nhi",
+    "meaning_vi": "từ từ, chậm rãi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ từ, chậm rãi"
+    ],
+    "short_definition_vi": "từ từ, chậm rãi",
+    "textbook_focus_vi": "từ từ, chậm rãi",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "慢",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý/thái độ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "曼",
+            "hanviet": "mạn",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chậm, từ từ",
+        "modern_logic_vi": "慢 là chậm/từ từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "慢",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý/thái độ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "曼",
+            "hanviet": "mạn",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chậm, từ từ",
+        "modern_logic_vi": "慢 là chậm/từ từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố nhi hóa; trẻ/con",
+        "modern_logic_vi": "儿 trong 好好儿/慢慢儿 là âm nhi hóa khẩu ngữ.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "慢 + 慢 nhấn chậm rãi; 儿 là nhi hóa khẩu ngữ.",
+    "memory_tip_vi": "慢 + 慢 nhấn chậm rãi; 儿 là nhi hóa khẩu ngữ.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "慢慢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từ từ, dùng rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "慢点儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chậm một chút",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "渐渐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dần dần biến đổi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赶快",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mau lên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "赶快",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mau lên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "马上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngay lập tức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "慢慢儿",
+        "right": "赶快",
+        "meaning_vi": "",
+        "note_vi": "từ từ ↔ mau lên",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "afb1c482-bc2c-426c-a6da-cb5717abbb64",
+      "order": 1,
+      "zh": "慢慢儿走",
+      "pinyin": "",
+      "vi": "đi từ từ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75510dc1-c8f8-4cb0-b573-3b7015811660",
+      "order": 2,
+      "zh": "慢慢儿说",
+      "pinyin": "",
+      "vi": "nói từ từ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ae8b08f7-6b04-48b4-a255-44261a92f4cd",
+      "order": 3,
+      "zh": "慢慢儿找",
+      "pinyin": "",
+      "vi": "tìm từ từ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5360a3d3-3de2-469c-a384-d2a30e2c23dd",
+      "order": 4,
+      "zh": "慢慢儿想",
+      "pinyin": "",
+      "vi": "nghĩ từ từ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f71ddfec-55cd-4902-8116-381afc698c88",
+      "order": 5,
+      "zh": "慢慢儿来",
+      "pinyin": "",
+      "vi": "cứ từ từ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "881c2d3e-b4bf-4e2f-a80e-4230b0cfd673",
+      "order": 6,
+      "zh": "慢慢儿解决",
+      "pinyin": "",
+      "vi": "từ từ giải quyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0dc0748c-2f59-47cb-a98e-5571250a6b8e",
+      "order": 1,
+      "zh": "你别着急，慢慢儿找。",
+      "pinyin": "",
+      "vi": "Bạn đừng sốt ruột, từ từ tìm.",
+      "analysis_vi": "别着急 khuyên đừng vội.",
+      "highlight": [
+        "慢慢儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "471bb15c-7746-4ab8-b2f3-b2700deb6224"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bbe017c7-7f5d-4449-8b17-035c3b16c8c8",
+      "order": 2,
+      "zh": "护照这件事我们慢慢儿想办法。",
+      "pinyin": "",
+      "vi": "Chuyện hộ chiếu này chúng ta từ từ nghĩ cách.",
+      "analysis_vi": "护照这件事 là chủ đề lớn.",
+      "highlight": [
+        "慢慢儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "471bb15c-7746-4ab8-b2f3-b2700deb6224"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "慢慢儿来 là câu khuyên đời thường: cứ từ từ.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "09086a3a-0de9-40df-9059-babcbf04306c",
+      "order": 1,
+      "rule_vi": "慢慢儿 nhấn cách làm/tốc độ; 渐渐 nhấn quá trình biến đổi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "慢慢儿说。",
+          "pinyin": "",
+          "vi": "Nói từ từ.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "天气渐渐冷了。",
+          "pinyin": "",
+          "vi": "Trời dần dần lạnh rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "慢慢儿",
+    "back": "từ từ, chậm rãi",
+    "hint": "mànmānr / mànmànr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "fixed_phrases_state"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "471bb15c-7746-4ab8-b2f3-b2700deb6224",
+    "source_lesson_vocab_id": null
+  }
+}

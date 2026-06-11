@@ -1,0 +1,466 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "前边开过来一辆空车",
+      "title_vi": "Phía trước có một chiếc xe trống đang chạy tới",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "summary_vi": "Một ngày mùa thu, Điền Phương mời Trương Đông, Mary và Mike đến nhà làm khách.",
+      "lines": [
+        {
+          "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+          "order": 1,
+          "speaker": "说明",
+          "zh": "秋天的一天，田芳请张东、玛丽和麦克到家里做客……",
+          "vi": "Một ngày mùa thu, Điền Phương mời Trương Đông, Mary và Mike đến nhà làm khách…",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "pinyin": "Qiūtiān de yì tiān, Tián Fāng qǐng Zhāng Dōng, Mǎlì hé Màikè dào jiā lǐ zuòkè……",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+          "order": 2,
+          "speaker": "田芳",
+          "zh": "等车的人越来越多了，咱们还是打的去吧，别坐公共汽车了。",
+          "vi": "Người đợi xe ngày càng đông rồi, chúng ta vẫn nên đi taxi đi, đừng đi xe buýt nữa.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
+          ],
+          "pinyin": "Děng chē de rén yuè lái yuè duō le, zánmen háishi dǎ dī qù ba, bié zuò gōnggòng qìchē le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+          "order": 3,
+          "speaker": "玛丽",
+          "zh": "好吧，你看，那边正好开过来一辆空车，就坐这辆吧。",
+          "vi": "Được thôi, bạn xem, bên kia vừa hay có một chiếc taxi trống đang chạy tới, vậy ngồi chiếc này đi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+          ],
+          "pinyin": "Hǎo ba, nǐ kàn, nà biān zhènghǎo kāi guòlai yí liàng kōng chē, jiù zuò zhè liàng ba.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+          "order": 4,
+          "speaker": "说明",
+          "zh": "在出租车上。",
+          "vi": "Trên taxi.",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "pinyin": "Zài chūzūchē shang.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+          "order": 5,
+          "speaker": "玛丽",
+          "zh": "你家住的是四合院儿吗？",
+          "vi": "Nhà bạn ở là kiểu tứ hợp viện à?",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+          ],
+          "pinyin": "Nǐ jiā zhù de shì sìhéyuànr ma?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+          "order": 6,
+          "speaker": "田芳",
+          "zh": "是啊。我家院子里种着一棵大枣树，树上结着很多红枣，远远儿地就能看见。一看见那棵大枣树就看到我家了。今天请你们尝尝我家的红枣，可甜了。",
+          "vi": "Đúng vậy. Trong sân nhà mình có trồng một cây táo tàu lớn, trên cây kết rất nhiều táo đỏ, từ xa đã có thể nhìn thấy. Hễ nhìn thấy cây táo tàu lớn đó là thấy nhà mình rồi. Hôm nay mời các bạn nếm thử táo đỏ nhà mình, ngọt lắm.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "188412d4-4c23-4d60-b7b2-21f3490199e7",
+            "5ea44727-d97c-467b-b1b8-babd195df50d",
+            "54613016-834a-4fc3-9912-2357a6d27058",
+            "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "54b36889-82be-485b-8342-fb8aab572065",
+            "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "f0684cb3-4577-4e6c-9f22-7d97c89692b3"
+          ],
+          "pinyin": "Shì a. Wǒ jiā yuànzi lǐ zhòngzhe yì kē dà zǎoshù, shù shang jiēzhe hěn duō hóngzǎo, yuǎnyuǎnr de jiù néng kànjiàn. Yí kànjiàn nà kē dà zǎoshù jiù kàndào wǒ jiā le. Jīntiān qǐng nǐmen chángchang wǒ jiā de hóngzǎo, kě tián le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+          "order": 7,
+          "speaker": "玛丽",
+          "zh": "我听说现在住四合院儿的越来越少了。",
+          "vi": "Mình nghe nói bây giờ người ở tứ hợp viện ngày càng ít rồi.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+          ],
+          "pinyin": "Wǒ tīngshuō xiànzài zhù sìhéyuànr de yuè lái yuè shǎo le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+          "order": 8,
+          "speaker": "田芳",
+          "zh": "是。现在城市里大楼越盖越多，住宅小区也越建越漂亮。很多人都搬进楼房里去住了。我们院子里最近也搬走了五六家，明年我们家也要搬走了。",
+          "vi": "Đúng vậy. Bây giờ trong thành phố, nhà cao tầng xây ngày càng nhiều, các khu dân cư cũng xây ngày càng đẹp. Rất nhiều người đều chuyển vào nhà chung cư để ở rồi. Trong sân nhà mình gần đây cũng đã có năm sáu gia đình chuyển đi, năm sau nhà mình cũng phải chuyển đi rồi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+            "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+            "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+            "7a89dc80-d79d-4c2f-988c-d0f54e240d19"
+          ],
+          "pinyin": "Shì. Xiànzài chéngshì lǐ dàlóu yuè gài yuè duō, zhùzhái xiǎoqū yě yuè jiàn yuè piàoliang. Hěn duō rén dōu bān jìn lóufáng lǐ qù zhù le. Wǒmen yuànzi lǐ zuìjìn yě bān zǒu le wǔ liù jiā, míngnián wǒmen jiā yě yào bān zǒu le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+          "order": 9,
+          "speaker": "玛丽",
+          "zh": "那太遗憾了。",
+          "vi": "Vậy thì tiếc quá.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
+          ],
+          "pinyin": "Nà tài yíhàn le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+          "order": 10,
+          "speaker": "田芳",
+          "zh": "我虽然也舍不得离开我们家的小院儿，但还是希望快点儿搬进现代化的楼房里去住。",
+          "vi": "Tuy mình cũng không nỡ rời khỏi cái sân nhỏ của nhà mình, nhưng vẫn hy vọng sớm chuyển vào sống trong nhà chung cư hiện đại.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "689eb64b-5d4f-469f-9afa-74017d399614",
+            "d45d5488-9293-41ae-9deb-1e5b51cee446"
+          ],
+          "pinyin": "Wǒ suīrán yě shěbude líkāi wǒmen jiā de xiǎo yuànr, dàn háishi xīwàng kuài diǎnr bān jìn xiàndàihuà de lóufáng lǐ qù zhù.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "年轻人打扮得越来越漂亮了",
+      "title_vi": "Người trẻ ăn mặc ngày càng đẹp",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "summary_vi": "Giáng sinh và năm mới sắp đến. Thầy Vương mời mọi người nói về cảm nhận, trải nghiệm, ý kiến và đề xuất.",
+      "lines": [
+        {
+          "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+          "order": 1,
+          "speaker": "说明",
+          "zh": "圣诞节和新年快到了……",
+          "vi": "Giáng sinh và năm mới sắp đến…",
+          "vocab_refs": [
+            "070690f6-fd26-41df-ab28-f5031668ed3e",
+            "22e66ee9-565e-4670-b2ac-4d5a9b500b38"
+          ],
+          "pinyin": "Shèngdàn Jié hé Xīnnián kuài dào le……",
+          "en": "",
+          "audio_key": "",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+          "order": 2,
+          "speaker": "王老师",
+          "zh": "同学们已经学了两个多月汉语了。今天，想请大家随便谈谈自己的感想和体会，有什么意见和建议也可以提。",
+          "vi": "Các em đã học tiếng Hán hơn hai tháng rồi. Hôm nay, thầy muốn mời mọi người thoải mái nói về cảm nhận và trải nghiệm của mình; có ý kiến hoặc đề xuất gì cũng có thể nêu ra.",
+          "vocab_refs": [
+            "c99a633b-27a2-429b-a139-44113a84c189",
+            "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+            "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "c43cedbf-7024-4ec1-922f-e75119114baf",
+            "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "55cd807c-eec7-412d-99db-f4e6508b170f"
+          ],
+          "pinyin": "Tóngxuémen yǐjīng xué le liǎng ge duō yuè Hànyǔ le. Jīntiān, xiǎng qǐng dàjiā suíbiàn tán tan zìjǐ de gǎnxiǎng hé tǐhuì, yǒu shénme yìjiàn hé jiànyì yě kěyǐ tí.",
+          "en": "",
+          "audio_key": "",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+          "order": 3,
+          "speaker": "玛丽",
+          "zh": "刚来的时候，我不习惯北京的气候，常常感冒，现在越来越习惯了。",
+          "vi": "Lúc mới đến, em không quen khí hậu Bắc Kinh, thường xuyên bị cảm, bây giờ ngày càng quen rồi.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+          ],
+          "pinyin": "Gāng lái de shíhou, wǒ bù xíguàn Běijīng de qìhòu, chángcháng gǎnmào, xiànzài yuè lái yuè xíguàn le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
+          "order": 4,
+          "speaker": "麦克",
+          "zh": "我们的汉语越来越好，觉得越学越有意思了。",
+          "vi": "Tiếng Hán của chúng em ngày càng tốt hơn, cảm thấy càng học càng thú vị.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb"
+          ],
+          "pinyin": "Wǒmen de Hànyǔ yuè lái yuè hǎo, juéde yuè xué yuè yǒu yìsi le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+          "order": 5,
+          "speaker": "玛丽",
+          "zh": "我的朋友越来越多了。",
+          "vi": "Bạn bè của em ngày càng nhiều rồi.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+          ],
+          "pinyin": "Wǒ de péngyou yuè lái yuè duō le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+          "order": 6,
+          "speaker": "麦克",
+          "zh": "朋友越多越好，“在家靠父母，出门靠朋友”嘛。",
+          "vi": "Bạn bè càng nhiều càng tốt mà, “ở nhà nhờ cha mẹ, ra ngoài nhờ bạn bè” đấy thôi.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
+          ],
+          "pinyin": "Péngyou yuè duō yuè hǎo, “zài jiā kào fùmǔ, chū mén kào péngyou” ma.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cc8da348-3e89-4f64-a680-de239f505497",
+          "order": 7,
+          "speaker": "山本",
+          "zh": "中国菜很好吃，我越吃越喜欢吃，所以也越来越胖了。",
+          "vi": "Món Trung Quốc rất ngon, em càng ăn càng thích ăn, vì vậy cũng ngày càng béo rồi.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb"
+          ],
+          "pinyin": "Zhōngguó cài hěn hǎochī, wǒ yuè chī yuè xǐhuan chī, suǒyǐ yě yuè lái yuè pàng le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
+          "order": 8,
+          "speaker": "麦克",
+          "zh": "我觉得人们的生活一天比一天丰富，年轻人越来越会打扮，打扮得越来越漂亮了。",
+          "vi": "Em cảm thấy cuộc sống của mọi người ngày càng phong phú, người trẻ ngày càng biết ăn mặc, ăn mặc ngày càng đẹp.",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+            "2185ee67-885d-4ffb-83e2-e97be4070796",
+            "092a8c16-3739-4685-a4c0-39365071bd48"
+          ],
+          "pinyin": "Wǒ juéde rénmen de shēnghuó yì tiān bǐ yì tiān fēngfù, niánqīngrén yuè lái yuè huì dǎban, dǎban de yuè lái yuè piàoliang le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
+          "order": 9,
+          "speaker": "玛丽",
+          "zh": "圣诞节和新年快到了，不少商店都摆着圣诞树，装饰得非常漂亮，我看见很多中国人也买圣诞树和圣诞礼物。",
+          "vi": "Giáng sinh và năm mới sắp đến rồi, không ít cửa hàng đều bày cây thông Noel, trang trí rất đẹp, em thấy rất nhiều người Trung Quốc cũng mua cây thông Noel và quà Giáng sinh.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "070690f6-fd26-41df-ab28-f5031668ed3e",
+            "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+            "275b46f4-3166-48b7-9766-58384178d1be",
+            "1190511f-5970-4304-8f84-d7201b287aeb",
+            "d42d3d90-443d-45da-bed7-987b50034e92"
+          ],
+          "pinyin": "Shèngdàn Jié hé Xīnnián kuài dào le, bù shǎo shāngdiàn dōu bǎizhe Shèngdànshù, zhuāngshì de fēicháng piàoliang, wǒ kànjiàn hěn duō Zhōngguó rén yě mǎi Shèngdànshù hé Shèngdàn lǐwù.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7419a05-c714-4cff-ae26-210852d56303",
+          "order": 10,
+          "speaker": "麦克",
+          "zh": "老师，我听说中国过圣诞节的人越来越多了，是吗？",
+          "vi": "Thưa thầy, em nghe nói người Trung Quốc đón Giáng sinh ngày càng nhiều rồi, đúng không ạ?",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "070690f6-fd26-41df-ab28-f5031668ed3e",
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+          ],
+          "pinyin": "Lǎoshī, wǒ tīngshuō Zhōngguó guò Shèngdàn Jié de rén yuè lái yuè duō le, shì ma?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
+          "order": 11,
+          "speaker": "王老师",
+          "zh": "一般家庭是不过圣诞节的。有的人过圣诞节，可能是喜欢圣诞节那种欢乐的气氛，孩子们能从爸爸妈妈那儿得到礼物，当然也很高兴。不过，中国最大的节日还是春节。",
+          "vi": "Thông thường các gia đình không đón Giáng sinh. Có người đón Giáng sinh, có thể là vì thích bầu không khí vui vẻ của Giáng sinh; trẻ em có thể nhận quà từ bố mẹ, đương nhiên cũng rất vui. Tuy nhiên, ngày lễ lớn nhất của Trung Quốc vẫn là Tết Xuân.",
+          "vocab_refs": [
+            "070690f6-fd26-41df-ab28-f5031668ed3e",
+            "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+            "d42d3d90-443d-45da-bed7-987b50034e92",
+            "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+            "6059829f-ae21-43cf-ac0c-05e19639ec43"
+          ],
+          "pinyin": "Yìbān jiātíng shì bú guò Shèngdàn Jié de. Yǒu de rén guò Shèngdàn Jié, kěnéng shì xǐhuan Shèngdàn Jié nà zhǒng huānlè de qìfēn, háizimen néng cóng bàba māma nàr dédào lǐwù, dāngrán yě hěn gāoxìng. Búguò, Zhōngguó zuì dà de jiérì háishi Chūnjié.",
+          "en": "",
+          "audio_key": "",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
+          "order": 12,
+          "speaker": "麦克",
+          "zh": "老师，我建议，咱们开一个新年联欢会，怎么样？",
+          "vi": "Thưa thầy, em đề nghị chúng ta tổ chức một buổi liên hoan năm mới, được không ạ?",
+          "vocab_refs": [
+            "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+            "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+            "27761bd2-433a-44ef-b79a-9e6f0a34b9c9"
+          ],
+          "pinyin": "Lǎoshī, wǒ jiànyì, zánmen kāi yí ge Xīnnián liánhuānhuì, zěnmeyàng?",
+          "en": "",
+          "audio_key": "",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "491f58c7-7ead-4d8c-876d-7e3113dcff35",
+          "order": 13,
+          "speaker": "王老师",
+          "zh": "好啊！",
+          "vi": "Được chứ!",
+          "vocab_refs": [],
+          "pinyin": "Hǎo a!",
+          "en": "",
+          "audio_key": "",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "id": "5c404fab-ff08-4967-bfb4-302e05bfd453",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "犬",
+  "pinyin": "quǎn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词 / 部首",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khuyển",
+    "meaning_vi": "chó; bộ Khuyển",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chó",
+      "bộ Khuyển"
+    ],
+    "short_definition_vi": "chó; bộ Khuyển",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: động vật, chữ Hán.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "động vật, chữ Hán",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "犬",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "犬",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khuyển",
+          "radical_name_zh": "",
+          "hanviet": "khuyển",
+          "meaning_vi": "chó",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "犬 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "犬",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "犬 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "犬 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chó",
+        "modern_logic_vi": "Trong từ 犬, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "犬 nên được học theo nghĩa hiện đại trong cụm/tình huống: chó; bộ Khuyển.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 警犬.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "狗",
+        "pinyin": "gǒu",
+        "meaning_vi": "chó",
+        "difference_vi": "狗 đời thường; 犬 văn viết/chữ học hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "37ff3064-2454-4e9c-a39b-fa3fd77953a1",
+      "order": 1,
+      "zh": "警犬",
+      "pinyin": "",
+      "vi": "chó nghiệp vụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23721678-b03a-4e32-9072-056fff2535fb",
+      "order": 2,
+      "zh": "猎犬",
+      "pinyin": "",
+      "vi": "chó săn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d573c3bf-574a-424b-bce0-c5fa740740c6",
+      "order": 3,
+      "zh": "犬字旁",
+      "pinyin": "",
+      "vi": "bộ khuyển dạng bên trái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8a75ae95-6223-4da4-8473-120c9afdd6a7",
+      "order": 1,
+      "zh": "“犬”就是狗的意思。",
+      "pinyin": "",
+      "vi": "“犬” nghĩa là chó.",
+      "analysis_vi": "犬 trang trọng/chữ học hơn 狗.",
+      "highlight": [
+        "犬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5c404fab-ff08-4967-bfb4-302e05bfd453"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 犬 được dùng trong ngữ cảnh động vật, chữ Hán; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d7c48fbf-cb78-4914-b7ce-8ce0f74e380d",
+      "order": 1,
+      "rule_vi": "Đời thường nói 我的狗, không nói 我的犬.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đời thường nói 我的狗, không nói 我的犬.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "犬",
+    "back": "chó; bộ Khuyển",
+    "hint": "quǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5c404fab-ff08-4967-bfb4-302e05bfd453",
+    "source_lesson_vocab_id": null
+  }
+}

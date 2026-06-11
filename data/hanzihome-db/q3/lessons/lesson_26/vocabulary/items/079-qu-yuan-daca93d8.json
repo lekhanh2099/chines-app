@@ -1,0 +1,69 @@
+{
+  "id": "synthetic_vocab_06809ff45fdefc75",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "屈原",
+  "pinyin": "Qū Yuán",
+  "meaning_vi": "Khuất Nguyên",
+  "pos": "proper_noun",
+  "pos_detail": {
+    "vi": "Danh từ riêng",
+    "cn": "专名",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "772d40d7-1f7f-49d3-b04b-8591ec396374",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "772d40d7-1f7f-49d3-b04b-8591ec396374",
+    "type": "vocabulary_item",
+    "order": 74,
+    "hanzi": "屈原",
+    "pinyin": "Qū Yuán",
+    "meaning_vi": "Khuất Nguyên",
+    "meaning_en": "Qu Yuan, an ancient Chinese poet and statesman",
+    "pos": "proper_noun",
+    "pos_vi": "Danh từ riêng",
+    "pos_detail": {
+      "vi": "Danh từ riêng",
+      "cn": "专名",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "屈原",
+      "back": "Qū Yuán — Khuất Nguyên",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_supplementary",
+    "page_start": 227,
+    "page_end": 227,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

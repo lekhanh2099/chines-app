@@ -1,0 +1,34 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook_pdf_second_pass_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "南郭先生",
+      "pinyin": "Nán Guō xiānsheng",
+      "meaning_vi": "Nam Quách tiên sinh; nhân vật trong thành ngữ 滥竽充数",
+      "meaning_en": "",
+      "source_origin": "textbook_pdf_second_pass_checked",
+      "check_needed": false,
+      "pos": "Tên riêng / nhân vật điển cố",
+      "pos_detail": {
+        "vi": "Tên riêng / nhân vật điển cố",
+        "cn": "专名/人名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    }
+  ]
+}

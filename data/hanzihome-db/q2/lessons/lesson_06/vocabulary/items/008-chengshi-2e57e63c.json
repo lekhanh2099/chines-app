@@ -1,0 +1,333 @@
+{
+  "id": "4f960e71-0848-4027-b49d-f0b85d63c53f",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "城市",
+  "pinyin": "chéngshì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "city_weather"
+  ],
+  "meaning": {
+    "hanviet": "Thành thị",
+    "meaning_vi": "thành phố, đô thị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành phố",
+      "đô thị"
+    ],
+    "short_definition_vi": "thành phố, đô thị",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "city weather",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "城",
+        "lishu_vi": "",
+        "structure_note_vi": "土 liên quan đất; 成 là thành phần bên phải.",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "成",
+            "hanviet": "thành",
+            "meaning_vi": "hoàn thành",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành, thành phố",
+        "modern_logic_vi": "土 liên quan đất; 成 là thành phần bên phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "市",
+        "lishu_vi": "",
+        "structure_note_vi": "亠/巾 là thành phần hình thể; không ép nghĩa sâu.",
+        "components": [
+          {
+            "text": "亠",
+            "hanviet": "đầu",
+            "meaning_vi": "thành phần trên",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chợ, thị trường, thành phố",
+        "modern_logic_vi": "亠/巾 là thành phần hình thể; không ép nghĩa sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "城 gợi khu thành, 市 gợi nơi buôn bán/tụ họp; 城市 là đô thị.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "市",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thành phố cấp hành chính/chợ tùy ngữ cảnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "都市",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đô thị, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "农村",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nông thôn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dcc50996-7b21-402e-a89b-eebbdfb3b775",
+      "order": 1,
+      "zh": "大城市",
+      "pinyin": "",
+      "vi": "thành phố lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d31fe56-41ff-4378-86c7-ff8cb4850c5d",
+      "order": 2,
+      "zh": "小城市",
+      "pinyin": "",
+      "vi": "thành phố nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd55442b-32aa-40ed-bcaa-a55cff75d286",
+      "order": 3,
+      "zh": "现代城市",
+      "pinyin": "",
+      "vi": "thành phố hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa4d41c4-da78-4123-962c-bc5e2eeaa5ef",
+      "order": 4,
+      "zh": "城市人口",
+      "pinyin": "",
+      "vi": "dân số đô thị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f3459c57-700e-45bc-932d-909d8662999f",
+      "order": 5,
+      "zh": "城市中心",
+      "pinyin": "",
+      "vi": "trung tâm thành phố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "60707087-2bbb-472e-8e30-7af085b4a360",
+      "order": 1,
+      "zh": "上海是一个大城市。",
+      "pinyin": "Shànghǎi shì yí ge dà chéngshì.",
+      "vi": "Thượng Hải là một thành phố lớn.",
+      "analysis_vi": "一个城市 là cách nói cơ bản.",
+      "highlight": [
+        "城市"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f960e71-0848-4027-b49d-f0b85d63c53f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "63e89935-4f5f-49fc-b60f-5b72ae7194f9",
+      "order": 2,
+      "zh": "这个城市比过去漂亮多了。",
+      "pinyin": "Zhège chéngshì bǐ guòqù piàoliang duō le.",
+      "vi": "Thành phố này đẹp hơn trước nhiều.",
+      "analysis_vi": "So sánh với quá khứ bằng 比过去.",
+      "highlight": [
+        "城市"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f960e71-0848-4027-b49d-f0b85d63c53f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "城市变化 là chủ đề hay gặp khi nói về Trung Quốc hiện đại.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5d0f1dc2-95cb-4e65-8b1f-d47e11936cce",
+      "order": 1,
+      "rule_vi": "Dịch 城市 là 'thành phố' tự nhiên hơn 'thành thị' trong nhiều câu đời sống.",
+      "natural_examples": [
+        {
+          "zh": "我喜欢这个城市。",
+          "pinyin": "Wǒ xǐhuan zhège chéngshì.",
+          "vi": "Tôi thích thành phố này.",
+          "note_vi": "Dịch tự nhiên theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我喜欢这个城市。",
+          "pinyin": "Wǒ xǐhuan zhège chéngshì.",
+          "vi": "Tôi thích thành phố này.",
+          "note_vi": "Dịch tự nhiên theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "城市",
+    "back": "thành phố, đô thị",
+    "hint": "chéngshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "city_weather"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f960e71-0848-4027-b49d-f0b85d63c53f",
+    "source_lesson_vocab_id": null
+  }
+}

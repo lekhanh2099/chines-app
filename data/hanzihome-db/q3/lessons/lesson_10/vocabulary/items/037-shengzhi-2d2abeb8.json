@@ -1,0 +1,268 @@
+{
+  "id": "3c0f70cb-439d-40d9-ab59-3d8d80bcaf1e",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "升职",
+  "pinyin": "shēngzhí",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thăng chức",
+    "meaning_vi": "được thăng chức, lên chức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "được thăng chức",
+      "lên chức"
+    ],
+    "short_definition_vi": "thăng chức",
+    "textbook_focus_vi": "thăng chức",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "升",
+        "lishu_vi": "thăng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "职",
+        "lishu_vi": "chức",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "耳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhĩ",
+          "radical_name_zh": "",
+          "hanviet": "nhĩ",
+          "meaning_vi": "tai",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thăng chức",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 升职加薪.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "晋升",
+        "pinyin": "jìnshēng",
+        "meaning_vi": "đề bạt/thăng cấp",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "加薪",
+        "pinyin": "jiāxīn",
+        "meaning_vi": "tăng lương",
+        "difference_vi": "không nhất thiết lên chức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3940340f-9f46-4a5d-b65c-a9bcf2fb8840",
+      "order": 1,
+      "zh": "升职加薪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36f0ce39-cd42-42fb-afaa-7556a0b8695f",
+      "order": 2,
+      "zh": "得到升职",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8d5a7b4f-f2f1-429e-9abe-c35b08ea3103",
+      "order": 3,
+      "zh": "升职机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e656eaf3-5c40-4347-a0f4-af481ba3e139",
+      "order": 4,
+      "zh": "想升职",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d0a5f00-4f3a-4e24-aee1-6083087102dc",
+      "order": 5,
+      "zh": "很快升职",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15e087c5-0141-4f37-a1e1-6ed5b3aec3dc",
+      "order": 6,
+      "zh": "升职以后",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cbb85d91-db4f-4e23-86fb-dc37f25917ed",
+      "order": 1,
+      "zh": "他今年升职了。",
+      "pinyin": "Tā jīnnián shēngzhí le.",
+      "vi": "Năm nay anh ấy được thăng chức.",
+      "analysis_vi": "升职了 báo kết quả nghề nghiệp đã xảy ra.",
+      "highlight": [
+        "升职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c0f70cb-439d-40d9-ab59-3d8d80bcaf1e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "升职加薪 là cụm công sở rất phổ biến.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "181559c1-9df2-4d5b-a86c-a39f3814e85d",
+      "order": 1,
+      "rule_vi": "升职 không đồng nghĩa 加薪; có thể thăng chức mà chưa tăng lương.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "升职",
+    "back": "được thăng chức, lên chức",
+    "hint": "shēngzhí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3c0f70cb-439d-40d9-ab59-3d8d80bcaf1e",
+    "source_lesson_vocab_id": null
+  }
+}

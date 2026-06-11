@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_27f860841013a94a",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "相信",
+  "pinyin": "xiāngxìn",
+  "meaning_vi": "tin; tin tưởng",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Nghĩa là tin/tin tưởng; thường nói 相信他说的话, 相信自己.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+    "type": "vocabulary_item",
+    "order": 22,
+    "hanzi": "相信",
+    "pinyin": "xiāngxìn",
+    "meaning_vi": "tin; tin tưởng",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "相信",
+      "back": "xiāngxìn — tin; tin tưởng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Nghĩa là tin/tin tưởng; thường nói 相信他说的话, 相信自己.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "synthetic_vocab_8ad33ec8df1ab5f3",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "秦国",
+  "pinyin": "Qín guó",
+  "meaning_vi": "nước Tần",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "a4a354d8-d066-415f-a5cd-e59f03580c28",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "a4a354d8-d066-415f-a5cd-e59f03580c28",
+    "type": "proper_noun",
+    "order": 8,
+    "hanzi": "秦国",
+    "pinyin": "Qín guó",
+    "meaning_vi": "nước Tần",
+    "meaning_en": "Qin State",
+    "source_origin": "textbook",
+    "page_start": 228,
+    "page_end": 228,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

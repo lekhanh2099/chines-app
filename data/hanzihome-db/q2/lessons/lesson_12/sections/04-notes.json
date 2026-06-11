@@ -1,0 +1,110 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "我找了半天也没找着。",
+      "structure": "主语 + 动词 + 了 + 半天 + 也 + 没 + 动词 + 着（zháo）",
+      "meaning_vi": "Diễn tả đã làm một việc rất lâu / cả buổi, nhưng cuối cùng vẫn không đạt được kết quả.",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "我找了半天也没找着。",
+          "pinyin": "Wǒ zhǎo le bàntiān yě méi zhǎozháo.",
+          "vi": "Tôi tìm cả buổi mà vẫn không tìm thấy.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "08ef5e15-4b23-4ced-8657-3328becab052",
+          "zh": "我想了半天也没想起来。",
+          "pinyin": "Wǒ xiǎng le bàntiān yě méi xiǎng qǐlai.",
+          "vi": "Tôi nghĩ mãi mà vẫn không nhớ ra.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "30929615-34c8-4e5b-b0a2-5ad3358ad755"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "我看球迷一个个都有点儿不正常。",
+      "structure": "我看 + 对象 + 一个个 + 都 + 有点儿 + 形容词",
+      "meaning_vi": "我看 ở đây nghĩa là “theo tôi thấy/tôi nghĩ”; 一个个 nhấn mạnh từng người trong nhóm; 有点儿 + tính từ tiêu cực diễn tả mức độ nhẹ: hơi...",
+      "examples": [
+        {
+          "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+          "zh": "我看球迷一个个都有点儿不正常。",
+          "pinyin": "Wǒ kàn qiúmí yí ge ge dōu yǒudiǎnr bú zhèngcháng.",
+          "vi": "Tôi thấy fan bóng đá ai nấy đều hơi không bình thường.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "vocab-12-qiumi",
+            "20f66e08-4820-43f5-a18a-50f61591e7cd"
+          ],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
+          "zh": "他们一个个都很高兴。",
+          "pinyin": "Tāmen yí ge ge dōu hěn gāoxìng.",
+          "vi": "Bọn họ ai nấy đều rất vui.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

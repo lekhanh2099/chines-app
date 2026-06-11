@@ -1,0 +1,438 @@
+{
+  "id": "161c1068-97b9-4e6b-90fc-48bdc74f616f",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "安全带",
+  "pinyin": "ānquándài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "An toàn đới",
+    "meaning_vi": "dây an toàn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dây an toàn"
+    ],
+    "short_definition_vi": "dây an toàn",
+    "textbook_focus_vi": "dây an toàn",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "安",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yên ổn, an toàn, bình an",
+        "modern_logic_vi": "安 = yên ổn/bình an.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "全",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "phần dưới nhìn thấy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc; vật quý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "toàn bộ, đầy đủ, toàn vẹn",
+        "modern_logic_vi": "全 = toàn vẹn/đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "带",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn, vải",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dây/đai; mang theo; dẫn theo",
+        "modern_logic_vi": "带 gợi dây/dải, mở rộng sang mang theo/dẫn theo.",
+        "warning_vi": "Không tách sâu phần trên giản thể.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "巾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cân",
+          "radical_name_zh": "",
+          "hanviet": "cân",
+          "meaning_vi": "khăn, vải",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "安全 là an toàn. 带 là dây, dải. → 安全带 = dây dùng để giữ an toàn. Cảnh báo: với dây an toàn, động từ tự nhiên là 系 – thắt/cài. Không dùng 穿安全带.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dây/dải nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "皮带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thắt lưng da/dây nịt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "彩带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dây ruy băng màu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "安全带: dây an toàn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f59feeff-a2c5-4d22-8624-61e381c04869",
+      "order": 1,
+      "zh": "系安全带",
+      "pinyin": "",
+      "vi": "thắt dây an toàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ad2e819-c83c-493c-b783-6e7c1b9414f7",
+      "order": 2,
+      "zh": "把安全带系好",
+      "pinyin": "",
+      "vi": "thắt dây an toàn cho chắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "887b53ac-67a8-4b15-bbe0-cab3a480acd9",
+      "order": 3,
+      "zh": "解开安全带",
+      "pinyin": "",
+      "vi": "tháo dây an toàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d38c71d5-e12c-49be-be78-30e3686463c9",
+      "order": 4,
+      "zh": "安全带指示灯",
+      "pinyin": "",
+      "vi": "đèn báo thắt dây an toàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce51ce7e-faf5-4d68-81e7-37c0297f1316",
+      "order": 5,
+      "zh": "请系好安全带",
+      "pinyin": "",
+      "vi": "xin hãy thắt dây an toàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5174c719-e577-407a-bbec-383af84cf2ac",
+      "order": 1,
+      "zh": "飞机起飞以前，请把安全带系好。",
+      "pinyin": "Fēijī qǐfēi yǐqián, qǐng bǎ ānquándài jì hǎo.",
+      "vi": "Trước khi máy bay cất cánh, xin hãy thắt dây an toàn cho chắc.",
+      "analysis_vi": "把安全带系好 là câu 把 có kết quả 好, rất đúng trọng tâm bài.",
+      "highlight": [
+        "安全带"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "161c1068-97b9-4e6b-90fc-48bdc74f616f"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "29c59091-5c77-4a3b-b5cf-dcec0065557b",
+      "order": 2,
+      "zh": "安全带指示灯还亮着，请不要站起来。",
+      "pinyin": "Ānquándài zhǐshìdēng hái liàngzhe, qǐng bú yào zhàn qǐlai.",
+      "vi": "Đèn báo thắt dây an toàn vẫn đang sáng, xin đừng đứng dậy.",
+      "analysis_vi": "亮着 là trạng thái đèn đang sáng; 站起来 là đứng lên.",
+      "highlight": [
+        "安全带"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "161c1068-97b9-4e6b-90fc-48bdc74f616f"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a4724674-36a1-4dd3-8afb-b28efe76c19d",
+      "order": 3,
+      "zh": "飞机平稳以后，空姐才让大家解开安全带。",
+      "pinyin": "Fēijī píngwěn yǐhòu, kōngjiě cái ràng dàjiā jiěkāi ānquándài.",
+      "vi": "Sau khi máy bay ổn định, tiếp viên mới cho mọi người tháo dây an toàn.",
+      "analysis_vi": "才 nhấn phải đợi đến sau khi máy bay ổn định mới được tháo.",
+      "highlight": [
+        "安全带"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "161c1068-97b9-4e6b-90fc-48bdc74f616f"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trên máy bay, câu thông báo 请系好安全带 gần như câu kinh điển. Khi đèn 安全带指示灯 bật, hành khách nên ngồi yên và thắt dây, kể cả khi máy bay đang bay ổn định nhưng gặp nhiễu động.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ec4a6999-d087-46c0-9f97-ab12b19ec18d",
+      "order": 1,
+      "rule_vi": "Dùng sai động từ với 安全带.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 安全带 theo cụm và ngữ cảnh bài 18; nghĩa chính là dây an toàn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "安全带",
+    "back": "dây an toàn",
+    "hint": "ānquándài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "161c1068-97b9-4e6b-90fc-48bdc74f616f",
+    "source_lesson_vocab_id": null
+  }
+}

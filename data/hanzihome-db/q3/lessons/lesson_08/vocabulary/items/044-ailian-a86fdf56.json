@@ -1,0 +1,254 @@
+{
+  "id": "6f25b04c-433b-4089-9778-71eb76270071",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "爱恋",
+  "pinyin": "àiliàn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ái luyến",
+    "meaning_vi": "yêu thương lưu luyến, tình yêu quyến luyến",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "yêu thương lưu luyến",
+      "tình yêu quyến luyến"
+    ],
+    "short_definition_vi": "yêu thương lưu luyến, tình yêu quyến luyến",
+    "textbook_focus_vi": "爱 = yêu, 恋 = lưu luyến. 爱恋 = tình yêu sâu có sự quyến luyến.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình yêu, văn chương",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "爱",
+        "lishu_vi": "ái",
+        "structure_note_vi": "Chữ giản thể; không ép chiết tự theo phồn thể 愛.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yêu, thích, quý",
+        "modern_logic_vi": "Trong từ này, 爱 góp phần tạo nghĩa 'yêu, thích, quý'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "恋",
+        "lishu_vi": "luyến",
+        "structure_note_vi": "亦 + 心; chữ giản thể, nhớ theo nghĩa tình cảm trong lòng.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lưu luyến, yêu nhớ",
+        "modern_logic_vi": "Trong từ này, 恋 góp phần tạo nghĩa 'lưu luyến, yêu nhớ'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "爱 = yêu, 恋 = lưu luyến. 爱恋 = tình yêu sâu có sự quyến luyến.",
+    "memory_tip_vi": "Nhớ qua cụm: 爱恋之情 = tình cảm yêu thương lưu luyến.",
+    "warning_vi": "Không dùng 爱恋 thay 谈恋爱.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "恋爱",
+        "pinyin": "liàn’ài",
+        "meaning_vi": "yêu đương",
+        "difference_vi": "Chỉ quan hệ yêu đương, đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "爱情",
+        "pinyin": "àiqíng",
+        "meaning_vi": "tình yêu",
+        "difference_vi": "Khái niệm tình yêu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 爱恋 thay 谈恋爱."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0bf42291-a878-417e-bddb-11fb6a295d98",
+      "order": 1,
+      "zh": "爱恋之情",
+      "pinyin": "àiliàn zhī qíng",
+      "vi": "tình cảm yêu thương lưu luyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44b2ea01-36e9-4c27-b336-f87a389f6201",
+      "order": 2,
+      "zh": "深深地爱恋",
+      "pinyin": "shēnshēn de àiliàn",
+      "vi": "yêu lưu luyến sâu sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aec643e8-a7e5-4a9a-b250-09320e02fa5d",
+      "order": 3,
+      "zh": "心中的爱恋",
+      "pinyin": "xīnzhōng de àiliàn",
+      "vi": "tình yêu trong lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "31c24085-da89-4a42-9156-2d48d84286c1",
+      "order": 1,
+      "zh": "他对赵霞的爱恋一直藏在心里，没有告诉任何人。",
+      "pinyin": "Tā duì Zhào Xiá de àiliàn yìzhí cáng zài xīn lǐ, méiyǒu gàosu rènhé rén.",
+      "vi": "Tình yêu lưu luyến của anh ấy dành cho Triệu Hà luôn giấu trong lòng, không nói với ai.",
+      "analysis_vi": "对赵霞的爱恋 là cụm danh từ cảm xúc.",
+      "highlight": [
+        "爱恋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6f25b04c-433b-4089-9778-71eb76270071"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "爱恋 có màu văn chương; đời thường nói 爱/喜欢/谈恋爱 tự nhiên hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "878c5b6c-fd88-4a70-890d-d99f5da48b1c",
+      "order": 1,
+      "rule_vi": "Không dùng 爱恋 thay 谈恋爱.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "谈爱恋。",
+          "pinyin": "Tán àiliàn.",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Cụm đúng là 谈恋爱.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "谈恋爱。",
+          "pinyin": "Tán liàn’ài.",
+          "vi": "Yêu đương/hẹn hò.",
+          "note_vi": "Collocation chuẩn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "爱恋",
+    "back": "yêu thương lưu luyến, tình yêu quyến luyến",
+    "hint": "àiliàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6f25b04c-433b-4089-9778-71eb76270071",
+    "source_lesson_vocab_id": null
+  }
+}

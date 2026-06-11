@@ -1,0 +1,295 @@
+{
+  "id": "54f48fd9-8f6d-4e0f-80ed-dcc8ebbbaddb",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "差错",
+  "pinyin": "chācuò",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "sai thác",
+    "meaning_vi": "sai sót, lỗi trong công việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sai sót",
+      "lỗi trong công việc"
+    ],
+    "short_definition_vi": "sai sót, lỗi trong công việc",
+    "textbook_focus_vi": "差错 là sai lệch/sai nhầm trong quy trình.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "差",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sai khác, chênh lệch",
+        "modern_logic_vi": "Trong từ “差错”, chữ “差” góp phần vào trường nghĩa: sai khác, chênh lệch",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "错",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim giản thể",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "钅 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim giản thể",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "钅 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "钅 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sai, nhầm",
+        "modern_logic_vi": "Trong từ “差错”, chữ “错” góp phần vào trường nghĩa: sai, nhầm",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "差错 là sai lệch/sai nhầm trong quy trình.",
+    "memory_tip_vi": "差错 là sai lệch/sai nhầm trong quy trình.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "错误",
+        "pinyin": "",
+        "meaning_vi": "lỗi sai nói chung",
+        "difference_vi": "lỗi sai nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "失误",
+        "pinyin": "",
+        "meaning_vi": "sơ suất do thao tác/đánh giá",
+        "difference_vi": "sơ suất do thao tác/đánh giá",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1697242f-323e-4c3a-8435-ea669a72de37",
+      "order": 1,
+      "zh": "出差错",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88121982-2bce-4100-98bf-d3678d465643",
+      "order": 2,
+      "zh": "避免差错",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89ba8eee-f27b-4fe6-8794-7c899d849f8e",
+      "order": 3,
+      "zh": "严重差错",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80feb032-2cb3-40b7-bdbd-42b065dd89cd",
+      "order": 4,
+      "zh": "工作差错",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "91d3b1be-f795-4086-8149-940255934472",
+      "order": 1,
+      "zh": "这份资料里有一个差错。",
+      "pinyin": "",
+      "vi": "Trong tài liệu này có một sai sót.",
+      "analysis_vi": "资料里有 là cấu trúc tồn tại.",
+      "highlight": [
+        "差错"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54f48fd9-8f6d-4e0f-80ed-dcc8ebbbaddb"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "01e224fe-7095-4dff-a22c-9461b8e9150e",
+      "order": 2,
+      "zh": "他在工作中出了不少差错。",
+      "pinyin": "",
+      "vi": "Anh ấy xảy ra không ít sai sót trong công việc.",
+      "analysis_vi": "出差错 là cụm cố định.",
+      "highlight": [
+        "差错"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54f48fd9-8f6d-4e0f-80ed-dcc8ebbbaddb"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "差错 là sai lệch/sai nhầm trong quy trình.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "95a985bd-71a6-4a6a-844f-2b64f73659b1",
+      "order": 1,
+      "rule_vi": "差 trong 差错 đọc chā; khác 差不多 chàbuduō và 出差 chūchāi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "差 trong 差错 đọc chā; khác 差不多 chàbuduō và 出差 chūchāi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "差错",
+    "back": "sai sót, lỗi trong công việc",
+    "hint": "chācuò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "54f48fd9-8f6d-4e0f-80ed-dcc8ebbbaddb",
+    "source_lesson_vocab_id": null
+  }
+}

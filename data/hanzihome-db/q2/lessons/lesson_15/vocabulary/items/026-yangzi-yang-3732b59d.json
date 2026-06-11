@@ -1,0 +1,340 @@
+{
+  "id": "6dd868d1-d4ad-4470-9985-bc96e2017091",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "样子 / 样",
+  "pinyin": "yàngzi / yàng",
+  "pos": {
+    "raw_vi": "Danh từ / lượng từ kiểu loại",
+    "raw_cn": "名 / 量",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Dạng tử / dạng",
+    "meaning_vi": "dáng vẻ, kiểu, bộ dạng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dáng vẻ, kiểu, bộ dạng"
+    ],
+    "short_definition_vi": "dáng vẻ, kiểu, bộ dạng",
+    "textbook_focus_vi": "dáng vẻ, kiểu, bộ dạng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "样",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểu, dạng, mẫu, dáng vẻ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ, hậu tố danh từ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, trẻ, hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ, hậu tố danh từ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "样 = dạng/kiểu/mẫu; 子 = hậu tố danh từ. 样子 = dáng vẻ/kiểu dạng nhìn hoặc cảm nhận được.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "外表",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vẻ ngoài/ngoại hình, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "样貌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "diện mạo/dáng vẻ, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "情况",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình hình, không nhất thiết nhìn bằng mắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "状态",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trạng thái, hơi kỹ thuật hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1cec4c24-db5a-415f-944d-92b51e828780",
+      "order": 1,
+      "zh": "这个样子",
+      "pinyin": "",
+      "vi": "dáng vẻ/tình trạng như thế này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97794e9d-85bf-40ff-bdb8-ff16b8d19fd4",
+      "order": 2,
+      "zh": "高兴的样子",
+      "pinyin": "",
+      "vi": "vẻ vui mừng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75347907-81c9-4307-93ef-77ccd2bcf9c5",
+      "order": 3,
+      "zh": "激动的样子",
+      "pinyin": "",
+      "vi": "vẻ xúc động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4b15d9f5-3f62-40ed-82bf-d7616dfb7870",
+      "order": 4,
+      "zh": "看样子",
+      "pinyin": "",
+      "vi": "xem ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7308ce98-d84c-4351-853e-c8fecfaed2d6",
+      "order": 5,
+      "zh": "什么样子",
+      "pinyin": "",
+      "vi": "dáng vẻ/kiểu gì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "09545a92-9af7-491d-bd18-e6d249a39bf4",
+      "order": 1,
+      "zh": "他今天的样子有点儿紧张。",
+      "pinyin": "Tā jīntiān de yàngzi yǒudiǎnr jǐnzhāng.",
+      "vi": "Dáng vẻ hôm nay của anh ấy hơi căng thẳng.",
+      "analysis_vi": "样子 là vẻ ngoài/thần thái nhìn thấy được.",
+      "highlight": [
+        "样子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6dd868d1-d4ad-4470-9985-bc96e2017091"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "32092162-dcf2-439d-bf77-f736995b108b",
+      "order": 2,
+      "zh": "新娘笑着讲话的样子很漂亮。",
+      "pinyin": "Xīnniáng xiàozhe jiǎnghuà de yàngzi hěn piàoliang.",
+      "vi": "Dáng vẻ cô dâu cười nói rất đẹp.",
+      "analysis_vi": "笑着讲话 là V着 + V làm định ngữ cho 样子.",
+      "highlight": [
+        "样子",
+        "笑着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6dd868d1-d4ad-4470-9985-bc96e2017091"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "39cef319-bf3a-4274-9837-5fc8ba0d0acc",
+      "order": 1,
+      "rule_vi": "Đừng dịch 样子 lúc nào cũng là “hình dạng”; hình dạng vật lý nên dùng 形状.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "样子 / 样",
+    "back": "dáng vẻ, kiểu, bộ dạng",
+    "hint": "yàngzi / yàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "看样子 là cụm rất hữu dụng: “xem ra / nhìn tình hình thì có vẻ”.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6dd868d1-d4ad-4470-9985-bc96e2017091",
+    "source_lesson_vocab_id": null
+  }
+}

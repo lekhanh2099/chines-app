@@ -1,0 +1,246 @@
+{
+  "id": "7646eb64-3282-4104-abcb-47349f6ef720",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "各自",
+  "pinyin": "gèzì",
+  "pos": {
+    "raw_vi": "Đại từ / Phó từ",
+    "raw_cn": "代词 / 副词",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "các tự",
+    "meaning_vi": "mỗi người tự, từng bên riêng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mỗi người tự",
+      "từng bên riêng"
+    ],
+    "short_definition_vi": "mỗi người tự, từng bên riêng",
+    "textbook_focus_vi": "各 = mỗi, 自 = tự mình. 各自 = mỗi bên/mỗi người tự mình.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "phân chia, quan hệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "各",
+        "lishu_vi": "các",
+        "structure_note_vi": "Có 口; học theo nghĩa mỗi/từng.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mỗi, từng",
+        "modern_logic_vi": "Trong từ này, 各 góp phần tạo nghĩa 'mỗi, từng'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "自",
+        "lishu_vi": "tự",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình, bản thân",
+        "modern_logic_vi": "Trong từ này, 自 góp phần tạo nghĩa 'tự mình, bản thân'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "各 = mỗi, 自 = tự mình. 各自 = mỗi bên/mỗi người tự mình.",
+    "memory_tip_vi": "Nhớ qua cụm: 各自回家 = ai về nhà nấy.",
+    "warning_vi": "各自 đối lập với 一起, nghĩa khác rất lớn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "自己",
+        "pinyin": "zìjǐ",
+        "meaning_vi": "tự mình",
+        "difference_vi": "Một chủ thể hoặc bản thân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "分别",
+        "pinyin": "fēnbié",
+        "meaning_vi": "lần lượt/riêng ra",
+        "difference_vi": "Nhấn phân chia hoặc thứ tự.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "各自 đối lập với 一起, nghĩa khác rất lớn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "943b0ccb-feaa-4a4b-a986-5544af83d9f6",
+      "order": 1,
+      "zh": "各自回家",
+      "pinyin": "gèzì huí jiā",
+      "vi": "ai về nhà nấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6895bbab-fe92-49d6-bae2-71faa8d7aa77",
+      "order": 2,
+      "zh": "各自的看法",
+      "pinyin": "gèzì de kànfǎ",
+      "vi": "cách nhìn riêng của từng người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ffd91fe-ee4e-4425-8326-a18433667bf7",
+      "order": 3,
+      "zh": "各自负责",
+      "pinyin": "gèzì fùzé",
+      "vi": "mỗi người tự chịu trách nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ce5b4fe9-04c7-4315-bd7e-aca61b95476c",
+      "order": 1,
+      "zh": "对这件事，赵霞和他各自有各自的看法。",
+      "pinyin": "Duì zhè jiàn shì, Zhào Xiá hé tā gèzì yǒu gèzì de kànfǎ.",
+      "vi": "Về chuyện này, Triệu Hà và anh ấy mỗi người có cách nhìn riêng.",
+      "analysis_vi": "各自有各自的…… nhấn mỗi bên một cách nghĩ.",
+      "highlight": [
+        "各自"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7646eb64-3282-4104-abcb-47349f6ef720"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "各自 rất hay khi nói hai bên có suy nghĩ/trách nhiệm/không gian riêng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "da33b012-e7cf-4370-820d-30e48c43de96",
+      "order": 1,
+      "rule_vi": "各自 đối lập với 一起, nghĩa khác rất lớn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我们各自回家。",
+          "pinyin": "Wǒmen gèzì huí jiā.",
+          "vi": "Chúng tôi ai về nhà nấy.",
+          "note_vi": "Không phải cùng về nhà.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "各自",
+    "back": "mỗi người tự, từng bên riêng",
+    "hint": "gèzì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7646eb64-3282-4104-abcb-47349f6ef720",
+    "source_lesson_vocab_id": null
+  }
+}

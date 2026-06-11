@@ -1,0 +1,411 @@
+{
+  "id": "2bbb73ef-1e5a-4d62-a68d-0e078723b205",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "冰激凌",
+  "pinyin": "bīngjīlíng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "băng kích lăng",
+    "meaning_vi": "kem, ice cream",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kem, ice cream"
+    ],
+    "short_definition_vi": "Món kem lạnh; ngoài đời cũng gặp 冰淇淋.",
+    "textbook_focus_vi": "Dùng trong 一盒冰激凌, 吃冰激凌.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "冰",
+        "lishu_vi": "băng",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "lạnh/băng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "冫 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "lạnh/băng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "lạnh/băng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "冫 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "冫 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lạnh/băng",
+        "modern_logic_vi": "lạnh/băng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "激",
+        "lishu_vi": "kích",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước/chất lỏng",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kích/mạnh",
+        "modern_logic_vi": "kích/mạnh",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "凌",
+        "lishu_vi": "lăng",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "lạnh/băng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "冫 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "lạnh/băng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "lạnh/băng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "冫 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "冫 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành phần trong từ kem",
+        "modern_logic_vi": "thành phần trong từ kem",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Từ mượn/phiên âm; không suy nghĩa từng chữ quá sâu.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "冰淇淋",
+        "pinyin": "bīngqílín",
+        "meaning_vi": "kem",
+        "difference_vi": "Cùng nghĩa, rất phổ biến trong đời sống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "35d01023-01ec-4b0c-9841-b29b095789cf",
+      "order": 1,
+      "zh": "吃冰激凌",
+      "pinyin": "",
+      "vi": "ăn kem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3619b2de-b218-4280-ac18-1e33b0fbea3d",
+      "order": 2,
+      "zh": "买冰激凌",
+      "pinyin": "",
+      "vi": "mua kem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5629263e-f286-4148-9d6d-b74ddbae013e",
+      "order": 3,
+      "zh": "一盒冰激凌",
+      "pinyin": "",
+      "vi": "một hộp kem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce9b090f-a3f2-4a23-9b70-1643a1b3526e",
+      "order": 4,
+      "zh": "冰激凌化了",
+      "pinyin": "",
+      "vi": "kem tan rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b689ee38-42cb-4aa6-b71a-4f68fc33c874",
+      "order": 1,
+      "zh": "天太热了，我想吃冰激凌。",
+      "pinyin": "",
+      "vi": "Trời nóng quá, tôi muốn ăn kem.",
+      "analysis_vi": "Câu đời sống tự nhiên.",
+      "highlight": [
+        "冰激凌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2bbb73ef-1e5a-4d62-a68d-0e078723b205"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c2a197f3-56e5-4aa8-b35b-6c0f68dc7396",
+      "order": 2,
+      "zh": "她把一盒冰激凌拿出来。",
+      "pinyin": "",
+      "vi": "Cô ấy lấy một hộp kem ra.",
+      "analysis_vi": "把 + O + 拿出来.",
+      "highlight": [
+        "冰激凌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2bbb73ef-1e5a-4d62-a68d-0e078723b205"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "10e01afc-197e-4ad0-91fe-b1db366f546a",
+      "order": 1,
+      "rule_vi": "Không dịch thành “đá lạnh”; muốn nói kem tan dùng 化了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch thành “đá lạnh”; muốn nói kem tan dùng 化了.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "冰激凌",
+    "back": "kem, ice cream",
+    "hint": "bīngjīlíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2bbb73ef-1e5a-4d62-a68d-0e078723b205",
+    "source_lesson_vocab_id": null
+  }
+}

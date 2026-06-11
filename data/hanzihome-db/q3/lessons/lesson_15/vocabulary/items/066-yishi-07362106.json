@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_daf181105672297b",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "意识",
+  "pinyin": "yìshi",
+  "meaning_vi": "ý thức; nhận ra",
+  "pos": "Danh từ / Động từ",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+    "type": "vocabulary_item",
+    "order": 19,
+    "hanzi": "意识",
+    "pinyin": "yìshi",
+    "meaning_vi": "ý thức; nhận ra",
+    "meaning_en": "",
+    "pos": "Danh từ / Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "意识",
+      "back": "yìshi — ý thức; nhận ra",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

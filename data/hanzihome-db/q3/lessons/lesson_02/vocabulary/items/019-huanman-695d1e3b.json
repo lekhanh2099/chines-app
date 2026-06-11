@@ -1,0 +1,436 @@
+{
+  "id": "4b3f66dc-62c1-486a-9cea-ee2915b8ae3a",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "缓慢",
+  "pinyin": "huǎnmàn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "speed",
+    "taiji"
+  ],
+  "meaning": {
+    "hanviet": "Hoãn mạn",
+    "meaning_vi": "chậm rãi, chậm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chậm rãi, chậm"
+    ],
+    "short_definition_vi": "chậm rãi, chậm",
+    "textbook_focus_vi": "chậm rãi, chậm",
+    "register_vi": "",
+    "usage_domain_vi": "speed,taiji",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "缓",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ Mịch trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "爰",
+            "hanviet": "viên",
+            "meaning_vi": "thành phần phải/gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chậm, hoãn, nới lỏng",
+        "modern_logic_vi": "缓 gợi nhịp chậm/nới ra.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ Mịch trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "慢",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "trạng thái tâm lý/cảm giác",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ Tâm trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "曼",
+            "hanviet": "mạn",
+            "meaning_vi": "gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chậm, chậm rãi",
+        "modern_logic_vi": "慢 là chậm về nhịp/tốc độ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ Tâm trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "缓 gợi nhịp chậm/nới ra.; 慢 là chậm về nhịp/tốc độ.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "慢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "慢慢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "迟缓",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "快速",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "迅速",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9663b891-1eec-46e0-8e66-e40c39d7fb26",
+      "order": 1,
+      "zh": "动作缓慢",
+      "pinyin": "",
+      "vi": "động tác chậm rãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "39dd5855-dd43-49ad-bb8d-37554c38b588",
+      "order": 2,
+      "zh": "速度缓慢",
+      "pinyin": "",
+      "vi": "tốc độ chậm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0526deb8-5ebc-49d5-bce9-ebd62a49af4e",
+      "order": 3,
+      "zh": "发展缓慢",
+      "pinyin": "",
+      "vi": "phát triển chậm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd0ca0fe-23d4-4b9a-820d-f2439a43a938",
+      "order": 4,
+      "zh": "缓慢地移动",
+      "pinyin": "",
+      "vi": "di chuyển chậm rãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03909aa1-32c1-477e-991b-13d976043685",
+      "order": 5,
+      "zh": "柔和缓慢",
+      "pinyin": "",
+      "vi": "mềm mại và chậm rãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "795ac47b-8599-4913-9358-7b9e1d382bac",
+      "order": 1,
+      "zh": "太极拳的动作很缓慢。",
+      "pinyin": "Tàijíquán de dòngzuò hěn huǎnmàn.",
+      "vi": "Động tác Thái Cực Quyền rất chậm rãi.",
+      "analysis_vi": "动作缓慢 là cụm sát bài.",
+      "highlight": [
+        "缓慢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4b3f66dc-62c1-486a-9cea-ee2915b8ae3a"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "347bef98-b634-4e55-af21-acf86b42995b",
+      "order": 2,
+      "zh": "他刚开始练的时候动作很快，后来老师让他放慢一点，他才做得柔和缓慢。",
+      "pinyin": "Tā gāng kāishǐ liàn de shíhou dòngzuò hěn kuài, hòulái lǎoshī ràng tā fàng màn yìdiǎn, tā cái zuò de róuhé huǎnmàn.",
+      "vi": "Lúc mới luyện động tác anh ấy nhanh, sau đó thầy/cô bảo chậm lại, anh ấy mới làm mềm mại chậm rãi.",
+      "analysis_vi": "做得柔和缓慢 ôn 得 bổ ngữ trạng thái.",
+      "highlight": [
+        "缓慢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4b3f66dc-62c1-486a-9cea-ee2915b8ae3a"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong Thái Cực Quyền, chậm là kiểm soát nhịp và trọng tâm, không phải yếu.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8041b022-b5e6-437c-b63e-3e709bb8d8a5",
+      "order": 1,
+      "rule_vi": "Không dùng 缓慢 để chê “người chậm hiểu”; nên nói 反应慢.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他反应比较慢。",
+          "pinyin": "Tā fǎnyìng bǐjiào màn.",
+          "vi": "Phản ứng của anh ấy hơi chậm.",
+          "note_vi": "慢 hợp khẩu ngữ hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "缓慢",
+    "back": "chậm rãi, chậm",
+    "hint": "huǎnmàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "speed",
+      "taiji"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4b3f66dc-62c1-486a-9cea-ee2915b8ae3a",
+    "source_lesson_vocab_id": null
+  }
+}

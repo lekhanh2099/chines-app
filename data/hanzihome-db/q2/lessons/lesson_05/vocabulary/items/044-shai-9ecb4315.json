@@ -1,0 +1,256 @@
+{
+  "id": "ce9d2f56-8b05-46c7-b76f-fb3c3e761533",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "晒",
+  "pinyin": "shài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "sái",
+    "meaning_vi": "phơi nắng, phơi khô; nắng chiếu",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "phơi nắng, phơi khô; nắng chiếu",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "晒",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "西",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phơi nắng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Gắn với mặt trời: phơi nắng/phơi khô; hiện đại còn có nghĩa đăng/khoe.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "晾",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hong/phơi cho khô không nhất thiết có nắng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "晒太阳",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tắm nắng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "晒照片",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đăng/khoe ảnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "371e7390-a4ac-4dde-8b53-73e4b120244a",
+      "order": 1,
+      "zh": "晒太阳",
+      "pinyin": "",
+      "vi": "phơi nắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e640a6f-977b-4145-bedd-1e73a4c3c605",
+      "order": 2,
+      "zh": "晒衣服",
+      "pinyin": "",
+      "vi": "phơi quần áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e1cdd66-dd8a-4c28-8318-d9ce129762aa",
+      "order": 3,
+      "zh": "晒黑了",
+      "pinyin": "",
+      "vi": "bị nắng làm đen da",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a269ac70-497e-49c1-9549-8316776a96cd",
+      "order": 1,
+      "zh": "老人坐在椅子上晒太阳。",
+      "pinyin": "Lǎorén zuò zài yǐzi shang shài tàiyáng.",
+      "vi": "Người già ngồi trên ghế phơi nắng.",
+      "en": "",
+      "highlight": [
+        "晒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ce9d2f56-8b05-46c7-b76f-fb3c3e761533"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Trên mạng 晒 có nghĩa đăng/khoe: 晒照片, 晒成绩.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f17ba06e-c094-4a4a-abe3-52b7f78a4d91",
+      "order": 1,
+      "title_vi": "Phân biệt 晒 và 晾",
+      "explanation_vi": "晒 là phơi dưới nắng; 晾 là hong/phơi cho khô.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "晒衣服",
+        "晾衣服"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "晒",
+    "back": "phơi nắng, phơi khô; nắng chiếu",
+    "hint": "shài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "晒"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ce9d2f56-8b05-46c7-b76f-fb3c3e761533",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "id": "fcc068c3-855e-4abf-94af-a87fd24451c4",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "暑假",
+  "pinyin": "shǔjià",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Thử giả",
+    "meaning_vi": "kỳ nghỉ hè",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỳ nghỉ hè"
+    ],
+    "short_definition_vi": "kỳ nghỉ hè",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "học đường, đời sống, du lịch.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "暑",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "者",
+            "hanviet": "giả",
+            "meaning_vi": "người/cái",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nóng/mùa hè",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "暑 là nóng mùa hè. → 暑假 = kỳ nghỉ mùa nóng, tức nghỉ hè.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "假",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "叚",
+            "hanviet": "giả",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kỳ nghỉ; giả",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "假 đọc jià, nghĩa là kỳ nghỉ. → 暑假 = kỳ nghỉ mùa nóng, tức nghỉ hè.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 暑假 = kỳ nghỉ mùa nóng, tức nghỉ hè.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 暑假 là nghỉ hè của học sinh/sinh viên; người đi làm thường nói 年假, 假期, hoặc 请假 tùy trường hợp.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "暑假 (shǔjià)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỳ nghỉ hè.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寒假 (hánjià)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỳ nghỉ đông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "假期 (jiàqī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỳ nghỉ nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "年假 (niánjià)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phép năm/nghỉ phép năm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: học sinh/sinh viên có 暑假; người đi làm xin nghỉ phép thường nói 请假 hoặc dùng 年假."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "abf36df6-1b9f-442e-adb5-bfcbc794a4ff",
+      "order": 1,
+      "zh": "放暑假",
+      "pinyin": "",
+      "vi": "nghỉ hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ae3496a7-e32f-4a05-a1ad-80d1c176a8f8",
+      "order": 2,
+      "zh": "暑假计划",
+      "pinyin": "",
+      "vi": "kế hoạch nghỉ hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b82b4d0e-c1da-45a3-b625-8b82634dc599",
+      "order": 3,
+      "zh": "暑假打工",
+      "pinyin": "",
+      "vi": "nghỉ hè đi làm kiếm tiền/làm thêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "814002aa-bf9a-4f06-8866-d626bb8ea341",
+      "order": 4,
+      "zh": "暑假预习新课",
+      "pinyin": "",
+      "vi": "nghỉ hè học trước bài mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bfe2cece-7bf8-4ee7-ad26-185da166b82f",
+      "order": 1,
+      "zh": "暑假里，他想去图书城挑几本适合自己的中文书。",
+      "pinyin": "Shǔjià lǐ, tā xiǎng qù túshūchéng tiāo jǐ běn shìhé zìjǐ de Zhōngwén shū.",
+      "vi": "Trong kỳ nghỉ hè, anh ấy muốn đi trung tâm sách chọn vài quyển sách tiếng Trung phù hợp với mình.",
+      "analysis_vi": "挑几本书 là chọn kỹ vài quyển sách; 适合自己 là phù hợp với bản thân.",
+      "highlight": [
+        "暑假"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "fcc068c3-855e-4abf-94af-a87fd24451c4"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f3690363-59ba-4eec-8d86-01f9f5dc2c07",
+      "order": 2,
+      "zh": "这个暑假，我打算每天抽一点儿时间，把旧词复习起来。",
+      "pinyin": "Zhège shǔjià, wǒ dǎsuàn měitiān chōu yìdiǎnr shíjiān, bǎ jiù cí fùxí qǐlai.",
+      "vi": "Kỳ nghỉ hè này, tôi dự định mỗi ngày rút ra một chút thời gian để ôn lại từ cũ.",
+      "analysis_vi": "抽时间 là tranh thủ thời gian; 复习起来 là bắt đầu ôn lại một cách có đà.",
+      "highlight": [
+        "暑假"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "fcc068c3-855e-4abf-94af-a87fd24451c4"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "37d6fc35-2eb6-4c4b-abba-d505a9b14846",
+      "order": 3,
+      "zh": "暑假去旅行很开心，但是热门景点常常又热又拥挤。",
+      "pinyin": "Shǔjià qù lǚxíng hěn kāixīn, dànshì rèmén jǐngdiǎn chángcháng yòu rè yòu yōngjǐ.",
+      "vi": "Nghỉ hè đi du lịch rất vui, nhưng các điểm hot thường vừa nóng vừa đông chen chúc.",
+      "analysis_vi": "又……又…… miêu tả hai đặc điểm cùng tồn tại; câu thực tế hơn là chỉ nói “vui”.",
+      "highlight": [
+        "暑假"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "fcc068c3-855e-4abf-94af-a87fd24451c4"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "0a7eb494-0119-4261-b840-c7535cdefc2a",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 暑假 cho người đi làm nghỉ phép vài ngày. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "暑假",
+    "back": "kỳ nghỉ hè",
+    "hint": "shǔjià",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Ở Trung Quốc, 暑假 là mùa du lịch, học thêm, trại hè và ôn thi. Nhiều học sinh sẽ đi 补习班 – bǔxíbān – lớp học thêm.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fcc068c3-855e-4abf-94af-a87fd24451c4",
+    "source_lesson_vocab_id": null
+  }
+}

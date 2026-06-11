@@ -1,0 +1,280 @@
+{
+  "id": "43fbc373-83d8-4aa9-b3af-ec9254ed0857",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "当时",
+  "pinyin": "dāngshí",
+  "pos": {
+    "raw_vi": "Danh từ thời gian / Trạng ngữ thời gian",
+    "raw_cn": "时间名词 / 时间状语",
+    "normalized": "noun_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đương thời",
+    "meaning_vi": "lúc đó, khi ấy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lúc đó",
+      "khi ấy"
+    ],
+    "short_definition_vi": "lúc đó, khi ấy",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "当",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lúc, nên, đảm nhiệm",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "时",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời; ngày",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thời gian, lúc",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "当时 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 当时 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "那时候",
+        "pinyin": "nà shíhou",
+        "meaning_vi": "lúc đó, hồi đó",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以前",
+        "pinyin": "yǐqián",
+        "meaning_vi": "trước đây",
+        "difference_vi": "Phạm vi rộng hơn, không nhất thiết một thời điểm cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "81ee947c-5beb-43c9-b2de-52dcfac0bcbc",
+      "order": 1,
+      "zh": "当时的情况",
+      "pinyin": "dāngshí de qíngkuàng",
+      "vi": "tình hình lúc đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4d5d2be-2dd0-4dd9-907f-69540eabb9fe",
+      "order": 2,
+      "zh": "当时的想法",
+      "pinyin": "dāngshí de xiǎngfǎ",
+      "vi": "suy nghĩ lúc đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a859285f-a363-45d2-889a-0dbd8e54d727",
+      "order": 3,
+      "zh": "当时我觉得",
+      "pinyin": "dāngshí wǒ juéde",
+      "vi": "lúc đó tôi cảm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26a439f9-daf3-41c6-8a60-bf7e16088b44",
+      "order": 4,
+      "zh": "回想当时",
+      "pinyin": "huíxiǎng dāngshí",
+      "vi": "nhớ lại lúc đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "90b3911a-487b-4c67-a273-bbd366696f6b",
+      "order": 1,
+      "zh": "当时我一点儿也不懂他的意思。",
+      "pinyin": "Dāngshí wǒ yìdiǎnr yě bù dǒng tā de yìsi.",
+      "vi": "Lúc đó tôi chẳng hiểu ý anh ấy chút nào.",
+      "analysis_vi": "当时 làm trạng ngữ thời gian.",
+      "highlight": [
+        "当时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "43fbc373-83d8-4aa9-b3af-ec9254ed0857"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7aec90a8-e985-4aa0-a615-de5cd917d99f",
+      "order": 2,
+      "zh": "当时她选择这个专业，家里人都不太赞成。",
+      "pinyin": "Dāngshí tā xuǎnzé zhège zhuānyè, jiālǐ rén dōu bú tài zànchéng.",
+      "vi": "Lúc đó cô ấy chọn ngành này, người nhà đều không tán thành lắm.",
+      "analysis_vi": "Gài 选择专业 và 赞成 trong bối cảnh quá khứ.",
+      "highlight": [
+        "当时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "43fbc373-83d8-4aa9-b3af-ec9254ed0857"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "当时 thường mở đoạn hồi tưởng, kéo người nghe về bối cảnh quá khứ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c142305c-f28b-48e4-8449-ee1439162d2b",
+      "order": 1,
+      "rule_vi": "Không dùng 当时 cho hiện tại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "当时我正在上课。",
+          "pinyin": "Dāngshí wǒ zhèngzài shàngkè.",
+          "vi": "Sai nếu muốn nói bây giờ đang học.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "现在我正在上课。",
+          "pinyin": "Xiànzài wǒ zhèngzài shàngkè.",
+          "vi": "Bây giờ tôi đang học.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "当时",
+    "back": "lúc đó, khi ấy",
+    "hint": "dāngshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "43fbc373-83d8-4aa9-b3af-ec9254ed0857",
+    "source_lesson_vocab_id": null
+  }
+}

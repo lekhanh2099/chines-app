@@ -1,0 +1,227 @@
+{
+  "id": "6a5680d3-26b5-4fb2-94f1-ce145f16c74d",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "竟然",
+  "pinyin": "jìngrán",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cánh nhiên",
+    "meaning_vi": "lại; không ngờ lại; thật bất ngờ là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lại",
+      "không ngờ lại",
+      "thật bất ngờ là"
+    ],
+    "short_definition_vi": "lại",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "竟",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rốt cuộc; đến mức",
+        "modern_logic_vi": "Trong từ 竟然, chữ 竟 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy",
+        "modern_logic_vi": "Trong từ 竟然, chữ 然 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "竟然 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他平时不爱说话，今天竟然主动发言了。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "果然",
+        "pinyin": "guǒrán",
+        "meaning_vi": "quả nhiên",
+        "difference_vi": "果然 là đúng như dự đoán; 竟然 là ngoài dự đoán.",
+        "register_vi": "",
+        "example_zh": "他说会来，果然来了。",
+        "example_vi": "Anh ấy nói sẽ đến, quả nhiên đã đến.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7c8703af-b419-462a-8fc4-47cc8af69394",
+      "order": 1,
+      "zh": "竟然来了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a95e220b-ea80-48c5-b7f8-e69a8eb81a25",
+      "order": 2,
+      "zh": "竟然成功了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6deaf950-77e2-4453-b966-1699abc6b8eb",
+      "order": 3,
+      "zh": "竟然不知道",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9bb9d9be-6c3a-4835-9f16-5d3c196f7a9d",
+      "order": 4,
+      "zh": "竟然这么快",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "efc49254-4043-477a-ba3f-e250b5e78546",
+      "order": 5,
+      "zh": "竟然是真的",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22590e2b-9187-4410-9094-68127c2ec7e2",
+      "order": 6,
+      "zh": "不料……竟然……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "75719883-b170-428c-befc-9a9a2bc43981",
+      "order": 1,
+      "zh": "他平时不爱说话，今天竟然主动发言了。",
+      "pinyin": "",
+      "vi": "Bình thường anh ấy không thích nói, hôm nay không ngờ lại chủ động phát biểu.",
+      "analysis_vi": "Ví dụ dùng 竟然 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "竟然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a5680d3-26b5-4fb2-94f1-ce145f16c74d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "竟然 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2a21b14f-5914-4305-933d-88915efc0c7a",
+      "order": 1,
+      "rule_vi": "竟然 phải có sắc thái bất ngờ; không dùng cho việc bình thường không trái dự đoán.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "竟然",
+    "back": "lại; không ngờ lại; thật bất ngờ là",
+    "hint": "jìngrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6a5680d3-26b5-4fb2-94f1-ce145f16c74d",
+    "source_lesson_vocab_id": null
+  }
+}

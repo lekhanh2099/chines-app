@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_65b9b6bf6c4e25f9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "请放心",
+  "pinyin": "qǐng fàngxīn",
+  "meaning_vi": "xin hãy yên tâm",
+  "pos": "Cụm cầu khiến",
+  "pos_detail": {
+    "vi": "Cụm cầu khiến",
+    "cn": "祈使短语",
+    "normalized": "phrase",
+    "schema_compatible_pos": "phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "e93080a4-2857-4582-a75a-94276764a235",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "e93080a4-2857-4582-a75a-94276764a235",
+    "type": "vocabulary_item",
+    "order": 56,
+    "hanzi": "请放心",
+    "pinyin": "qǐng fàngxīn",
+    "meaning_vi": "xin hãy yên tâm",
+    "meaning_en": "",
+    "pos": "Cụm cầu khiến",
+    "tags": [
+      "exercise_phrase"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "请放心",
+      "back": "qǐng fàngxīn — xin hãy yên tâm",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Cụm cầu khiến",
+      "cn": "祈使短语",
+      "normalized": "phrase",
+      "schema_compatible_pos": "phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

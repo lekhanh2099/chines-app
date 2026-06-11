@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_5d93769f2d109d85",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "严格",
+  "pinyin": "yángé",
+  "meaning_vi": "nghiêm khắc; nghiêm ngặt",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+    "type": "vocabulary_item",
+    "order": 36,
+    "hanzi": "严格",
+    "pinyin": "yángé",
+    "meaning_vi": "nghiêm khắc; nghiêm ngặt",
+    "meaning_en": "",
+    "pos": "Tính từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "严格",
+      "back": "yángé — nghiêm khắc; nghiêm ngặt",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

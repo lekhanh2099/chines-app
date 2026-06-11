@@ -1,0 +1,394 @@
+{
+  "id": "d131541f-6655-4dfe-bb2d-fc9c72570559",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "空调",
+  "pinyin": "kōngtiáo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Không điều",
+    "meaning_vi": "máy lạnh, điều hòa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "máy lạnh, điều hòa"
+    ],
+    "short_definition_vi": "máy lạnh, điều hòa",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "đồ gia dụng hiện đại, lớp học, hội trường, văn phòng.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "空",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "huyệt",
+          "meaning_vi": "hang/lỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "huyệt",
+              "meaning_vi": "hang/lỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "工",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Công",
+              "radical_name_zh": "",
+              "hanviet": "công",
+              "meaning_vi": "công việc/kỹ thuật",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trống, không khí/không gian",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "调",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói/ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "周",
+            "hanviet": "chu",
+            "meaning_vi": "chu; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điều chỉnh; giọng/điệu/thanh điệu tùy âm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "空 ở đây là 空气 – không khí. 调 là điều chỉnh. → 空调 = thiết bị điều chỉnh không khí/nhiệt độ. Cảnh báo: 开空调 nghĩa là bật máy lạnh/điều hòa; 关空调 là tắt máy lạnh/điều hòa.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "空调",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "máy lạnh/điều hòa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "电风扇",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quạt điện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "暖气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hệ thống sưởi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冷气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khí lạnh/máy lạnh trong một số cách nói.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: miền Nam Trung Quốc và Việt Nam hay dùng 空调 để làm mát; miền Bắc Trung Quốc mùa đông còn có 暖气."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "84979da8-8521-46da-84a4-ae3954016160",
+      "order": 1,
+      "zh": "开空调",
+      "pinyin": "",
+      "vi": "bật máy lạnh/điều hòa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf126345-61b2-4412-a82e-06e6695643ee",
+      "order": 2,
+      "zh": "关空调",
+      "pinyin": "",
+      "vi": "tắt máy lạnh/điều hòa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da5141c9-8dc7-407c-8a76-11cf10656b4d",
+      "order": 3,
+      "zh": "把空调调低一点儿",
+      "pinyin": "",
+      "vi": "chỉnh máy lạnh thấp hơn một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ad92446-6808-4946-a30f-fa9ed2b2528f",
+      "order": 4,
+      "zh": "空调旁边",
+      "pinyin": "",
+      "vi": "bên cạnh máy lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26d56b9c-57e1-4f1f-9c9a-fc66b829b5e9",
+      "order": 5,
+      "zh": "空调开着",
+      "pinyin": "",
+      "vi": "máy lạnh đang bật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ce6dd65e-a997-4101-9ad4-c724e3244c76",
+      "order": 1,
+      "zh": "开空调以前，最好先把窗户关上。",
+      "pinyin": "Kāi kōngtiáo yǐqián, zuìhǎo xiān bǎ chuānghu guān shang.",
+      "vi": "Trước khi bật máy lạnh, tốt nhất đóng cửa sổ lại trước.",
+      "analysis_vi": "把窗户关上 là câu chữ 把 có kết quả trạng thái đóng.",
+      "highlight": [
+        "空调"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "d131541f-6655-4dfe-bb2d-fc9c72570559"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3993b9c6-351a-488e-a08d-d7229c7914a9",
+      "order": 2,
+      "zh": "管理员说，不要把彩带挂在空调旁边。",
+      "pinyin": "Guǎnlǐyuán shuō, bú yào bǎ cǎidài guà zài kōngtiáo pángbiān.",
+      "vi": "Người quản lý nói đừng treo dây ruy băng màu bên cạnh máy lạnh.",
+      "analysis_vi": "把彩带挂在……旁边 là câu 把 có vị trí rõ; câu này rất thực tế vì liên quan an toàn/thiết bị.",
+      "highlight": [
+        "空调"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "d131541f-6655-4dfe-bb2d-fc9c72570559"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ba237217-75ba-4a44-a3fd-f90ff088296a",
+      "order": 3,
+      "zh": "会场里的空调开着，大家进来以后觉得舒服多了。",
+      "pinyin": "Huìchǎng lǐ de kōngtiáo kāizhe, dàjiā jìnlai yǐhòu juéde shūfu duō le.",
+      "vi": "Máy lạnh trong hội trường đang bật, mọi người vào rồi thấy dễ chịu hơn nhiều.",
+      "analysis_vi": "开着 nói trạng thái thiết bị đang bật; không phải hành động đang bật lên.",
+      "highlight": [
+        "空调"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "d131541f-6655-4dfe-bb2d-fc9c72570559"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 空调",
+    "content_vi": "Ở Trung Quốc có khác biệt vùng miền rất rõ: miền Bắc mùa đông nhiều nơi dùng 暖气 – hệ thống sưởi tập trung; miền Nam ẩm lạnh hơn nhưng không phải nơi nào cũng có sưởi, nên 空调 hai chiều trở nên rất quan trọng. Ở Việt Nam, 空调 thường được hiểu chủ yếu là máy lạnh làm mát.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1976d0b2-3776-4247-8755-99e2e28e7207",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dịch 开空调 thành “mở máy lạnh” thì tiếng Việt hiểu, nhưng khi học tiếng Trung nên nhớ 开 = bật/vận hành thiết bị. Cụm chuẩn: 开空调 Kāi kōngtiáo Bật máy lạnh. 关空调 Guān kōngtiáo Tắt máy lạnh. 空调开着呢。 Kōngtiáo kāizhe ne. Máy lạnh đang bật đó.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "空调",
+    "back": "máy lạnh, điều hòa",
+    "hint": "kōngtiáo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d131541f-6655-4dfe-bb2d-fc9c72570559",
+    "source_lesson_vocab_id": null
+  }
+}

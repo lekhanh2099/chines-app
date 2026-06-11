@@ -1,0 +1,189 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền tổng hợp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "综合填空：说话真是大学问",
+      "supplementary_vocab": [
+        {
+          "hanzi": "节约",
+          "pinyin": "jiéyuē",
+          "meaning_vi": "tiết kiệm",
+          "pos": "Động từ / Tính từ",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ",
+            "cn": "动词 / 形容词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "家长",
+          "pinyin": "jiāzhǎng",
+          "meaning_vi": "phụ huynh; cha mẹ/người giám hộ",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "自尊",
+          "pinyin": "zìzūn",
+          "meaning_vi": "lòng tự trọng; tự tôn",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "良言",
+          "pinyin": "liángyán",
+          "meaning_vi": "lời hay; lời khuyên tốt",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "恶语",
+          "pinyin": "èyǔ",
+          "meaning_vi": "lời ác ý; lời cay độc",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        }
+      ],
+      "passage": {
+        "id": "d1e16e95-9841-43e1-8289-68ac78ec5305",
+        "title": "说话真是大学问",
+        "paragraphs": [
+          {
+            "id": "b7aa77cc-e97b-4721-a0d3-6c56ce508a53",
+            "order": 1,
+            "zh": "昨天晚上，我妻子给我看电话账单。“你看，我们不在的时候，儿子打了多少长途电话，”她指着其中一项，“这一天就打了一小时四十分钟。”\n\n“什么？这还得了！”我立刻站①______准备去说儿子一顿。可是，想了想，又坐了②______，自己正在气头上，还是不说的好。而且儿子已经长大了，我要说，也得讲点儿方法。\n\n我把要说的话从昨天晚上一直忍到今天。中午吃饭的时候，对儿子笑着说：“你马上要回学校了，查一下儿，找一家长途费最低的电话公司。”我停了一下儿，又说：“其实你学习忙，不一定有时间打电话。”\n\n“是啊，”儿子不好意思地说，“爸，你是不是看③______上个月的电话账单了？那几天因为我要回学校去，有很多事要联系，所以电话打④______了。以后我不会打那么多电话的。”\n\n吃完饭，我很得意，觉得自己把要说的“注意节约，少打电话，别误了功课”这些话，换了一个方式说了，却没一点儿不愉快。\n\n说话真是大学问。\n\n记得孩子上小学时，小学老师就告诉过我们这些学生家长：“孩子画的画儿不够好，家长千万不能说‘你画坏了’，而要说：‘你想，是不是还能画得更好些？’；在孩子的作业做错了的时候，也最好别说‘你错了’，要很温和地说：‘你检查一下儿，是不是按照老师教的方法做了？’这样就不会伤了孩子的自尊。”老师还说：“要学会⑤______正面思考的方式对待孩子。多说积极的、鼓励的话。这样会给他带来信心，也带来愉快。⑥______用负面思考的方式对待孩子，会伤害他们的自尊心。如果他从小听到的就是恶意的、否定的话语，他将来也会这样对待别人。”\n\n说话的方法其实不难，最重要的是：要真诚地关怀别人，要有善待别人的心。我觉得一个笑话说得很好。\n\n一个丈夫要找东西找不到，就叫妻子帮助他找，妻子一眼就看到了，于是指着丈夫的眼睛说：“上帝给你这么好的东西，你不用。”\n\n丈夫笑着对妻子说：“上帝给我这么好的妻子，我不是正在用吗？”\n\n你想，丈夫的这句话，妻子听了，能不高兴吗？即使当时⑦______忙，她的心情也是愉快的。\n\n要把话说得让别人爱听，在说话的时候，要看着对方，要急话慢说，坏话好说，大话小说，气头上不说。常言说：“良言一句三冬暖，恶语伤人六月寒。”可见，把话说好是⑧______重要的。",
+            "vi": "",
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "number": 1,
+          "answer": "起来",
+          "explanation_vi": "站起来 = đứng dậy.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "number": 2,
+          "answer": "下来",
+          "explanation_vi": "坐下来 = ngồi xuống.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "number": 3,
+          "answer": "到",
+          "explanation_vi": "看到 = xem thấy / nhìn thấy.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "number": 4,
+          "answer": "多",
+          "explanation_vi": "电话打多了 = gọi điện nhiều quá.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
+          "number": 5,
+          "answer": "用",
+          "explanation_vi": "用……方式对待…… = dùng cách/phương thức để đối xử.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
+          "number": 6,
+          "answer": "如果",
+          "explanation_vi": "Nếu dùng cách suy nghĩ tiêu cực thì sẽ làm tổn thương lòng tự trọng.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
+          "number": 7,
+          "answer": "很",
+          "explanation_vi": "即使当时很忙 = cho dù lúc đó rất bận.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
+          "number": 8,
+          "answer": "十分",
+          "explanation_vi": "十分重要 = rất quan trọng.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_answer_checked",
+      "check_needed": false,
+      "answers": [],
+      "answer_key": []
+    }
+  ],
+  "empty_reading_note_vi": "Không thấy mục 阅读理解 tách riêng ngoài 综合填空 trong PDF scan bài 24."
+}

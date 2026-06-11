@@ -1,0 +1,451 @@
+{
+  "id": "6fbc06a6-822f-4274-80a6-b98204c2aeb6",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "时代",
+  "pinyin": "shídài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thời đại",
+    "meaning_vi": "thời đại, thời kỳ, kỷ nguyên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thời đại",
+      "thời kỳ",
+      "kỷ nguyên"
+    ],
+    "short_definition_vi": "thời đại, thời kỳ, kỷ nguyên",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về xã hội, công nghệ, lịch sử.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "xã hội, công nghệ, lịch sử",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "时",
+        "lishu_vi": "thời",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 时 trong từ 时代; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寸",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 时代, chữ 时 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "代",
+        "lishu_vi": "đại",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 代 trong từ 时代; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân đứng",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân đứng",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弋",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 时代, chữ 代 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "时代 trong bài được nhớ theo nghĩa hiện đại: thời đại, giai đoạn lớn.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 网络时代 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "时期",
+        "pinyin": "shíqī",
+        "meaning_vi": "thời kỳ; trung tính hơn",
+        "difference_vi": "thời kỳ; trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "时候",
+        "pinyin": "shíhou",
+        "meaning_vi": "lúc, khi; nhỏ và đời thường hơn",
+        "difference_vi": "lúc, khi; nhỏ và đời thường hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "旧时代",
+        "pinyin": "jiù shídài",
+        "meaning_vi": "thời đại cũ",
+        "difference_vi": "thời đại cũ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 时代 cho mọi chữ 'lúc'; việc nhỏ dùng 时候."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5244710b-4b21-4477-a449-8044cc2f4a2b",
+      "order": 1,
+      "zh": "网络时代",
+      "pinyin": "",
+      "vi": "thời đại Internet",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05ed2fff-9ddc-4357-94bf-ba575de77f1b",
+      "order": 2,
+      "zh": "新时代",
+      "pinyin": "",
+      "vi": "thời đại mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a16f950-211e-4e43-b196-b5f1e96875b1",
+      "order": 3,
+      "zh": "信息时代",
+      "pinyin": "",
+      "vi": "thời đại thông tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da9712c3-081a-4c95-a617-f41b4034cbb8",
+      "order": 4,
+      "zh": "学生时代",
+      "pinyin": "",
+      "vi": "thời học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d491fbe-9b47-42af-9d8f-6d22da26250f",
+      "order": 5,
+      "zh": "跟上时代",
+      "pinyin": "",
+      "vi": "theo kịp thời đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "15121ad5-3f7a-4c5b-8dc1-db06d08c9062",
+      "order": 1,
+      "zh": "我们生活在网络时代。",
+      "pinyin": "",
+      "vi": "thời đại, thời kỳ, kỷ nguyên",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "时代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6fbc06a6-822f-4274-80a6-b98204c2aeb6"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1e90929c-fd3c-42a3-8ace-75b6c4f17e31",
+      "order": 2,
+      "zh": "这个词语“时代”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 时代 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "时代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6fbc06a6-822f-4274-80a6-b98204c2aeb6"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4fb804ae-7692-4c61-ad6e-6d6bbb981c66",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“时代”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 时代 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "时代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6fbc06a6-822f-4274-80a6-b98204c2aeb6"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "新时代 có thể mang sắc thái chính luận; khẩu ngữ thường nói 现在这个时代.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4597ebe2-6eeb-449e-ab0e-2119a3b18a22",
+      "order": 1,
+      "rule_vi": "Không dùng 时代 cho mọi chữ 'lúc'; việc nhỏ dùng 时候.",
+      "natural_examples": [
+        {
+          "zh": "我吃饭的时候很开心。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我吃饭的时代很开心。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我吃饭的时代很开心。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我吃饭的时候很开心。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dùng 时代 cho mọi chữ 'lúc'; việc nhỏ dùng 时候.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "时代",
+    "back": "thời đại, thời kỳ, kỷ nguyên",
+    "hint": "shídài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6fbc06a6-822f-4274-80a6-b98204c2aeb6",
+    "source_lesson_vocab_id": null
+  }
+}

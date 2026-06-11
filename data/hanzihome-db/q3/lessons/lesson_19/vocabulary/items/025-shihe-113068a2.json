@@ -1,0 +1,354 @@
+{
+  "id": "e5aea718-d059-4ec6-a1ec-92b6a2433550",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "适合",
+  "pinyin": "shìhé",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动词 / 形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "thích hợp",
+    "meaning_vi": "phù hợp, thích hợp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phù hợp",
+      "thích hợp"
+    ],
+    "short_definition_vi": "phù hợp, thích hợp",
+    "textbook_focus_vi": "适合 là khớp với điều kiện/người/tình huống.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "适",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi, chuyển động",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, chuyển động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, chuyển động",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thích hợp",
+        "modern_logic_vi": "Trong từ “适合”, chữ “适” góp phần vào trường nghĩa: thích hợp",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "合",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hợp, khớp",
+        "modern_logic_vi": "Trong từ “适合”, chữ “合” góp phần vào trường nghĩa: hợp, khớp",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "适合 là khớp với điều kiện/người/tình huống.",
+    "memory_tip_vi": "适合 là khớp với điều kiện/người/tình huống.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "合适",
+        "pinyin": "",
+        "meaning_vi": "thích hợp/vừa vặn, thường làm tính từ",
+        "difference_vi": "thích hợp/vừa vặn, thường làm tính từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "适应",
+        "pinyin": "",
+        "meaning_vi": "thích nghi với môi trường/tình huống",
+        "difference_vi": "thích nghi với môi trường/tình huống",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9a63d0e2-0179-46d2-8196-99e4dd795db8",
+      "order": 1,
+      "zh": "适合我",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "794a9584-b593-44a2-8ca6-cab048268c4f",
+      "order": 2,
+      "zh": "适合这份工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b76159a-95d1-4837-86cf-b605de9251cc",
+      "order": 3,
+      "zh": "非常适合",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a71d26ca-e4c1-40ad-9ab6-cbb98eeb1ef1",
+      "order": 4,
+      "zh": "适合不适合",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9cf73d6d-a590-4672-b22c-98fbc75ec0a3",
+      "order": 1,
+      "zh": "这份工作很适合他。",
+      "pinyin": "",
+      "vi": "Công việc này rất phù hợp với anh ấy.",
+      "analysis_vi": "适合 + người.",
+      "highlight": [
+        "适合"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5aea718-d059-4ec6-a1ec-92b6a2433550"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "04d7c143-9976-4c7c-8ff3-18a7fcce9b42",
+      "order": 2,
+      "zh": "我到底适合不适合继续在这儿工作？",
+      "pinyin": "",
+      "vi": "Rốt cuộc tôi có phù hợp tiếp tục làm ở đây không?",
+      "analysis_vi": "适合不适合 là câu hỏi chính phản.",
+      "highlight": [
+        "适合"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5aea718-d059-4ec6-a1ec-92b6a2433550"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "适合 là khớp với điều kiện/người/tình huống.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "954e6c1a-e95c-4b3d-8b33-e5d3a5847d86",
+      "order": 1,
+      "rule_vi": "适合 là có hợp không; 适应 là đã quen/thích nghi chưa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "适合 là có hợp không; 适应 là đã quen/thích nghi chưa.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "适合",
+    "back": "phù hợp, thích hợp",
+    "hint": "shìhé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e5aea718-d059-4ec6-a1ec-92b6a2433550",
+    "source_lesson_vocab_id": null
+  }
+}

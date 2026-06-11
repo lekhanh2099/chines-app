@@ -1,0 +1,44 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook_verified_pdf/web_crosscheck",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "note_001",
+      "type": "note",
+      "order": 1,
+      "title": "希望工程",
+      "structure": "希望工程",
+      "meaning_vi": "Công trình Hy vọng — chương trình công ích giáo dục giúp cải thiện điều kiện giáo dục ở vùng nghèo và giúp trẻ em thất học quay lại trường.",
+      "examples": [
+        {
+          "id": "note_001_ex_001",
+          "zh": "是从自己不多的收入里拿出一部分钱捐给希望工程。",
+          "pinyin": "shì cóng zìjǐ bù duō de shōurù lǐ ná chū yí bùfen qián juān gěi Xīwàng Gōngchéng。",
+          "vi": "Là lấy ra một phần tiền từ khoản thu nhập không nhiều của mình để quyên góp cho Công trình Hy vọng.",
+          "en": "",
+          "highlight": [
+            "希望工程"
+          ],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_verified_pdf",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "cde61ddf-34c9-4d25-892b-99b26df9e427",
+        "official_project_hope_1989"
+      ],
+      "source_origin": "textbook_verified_pdf/web_crosscheck",
+      "check_needed": false
+    }
+  ]
+}

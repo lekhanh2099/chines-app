@@ -1,0 +1,440 @@
+{
+  "id": "df3bcc03-2e95-4f1c-af0e-a49d951f748d",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "秋高气爽",
+  "pinyin": "qiū gāo qì shuǎng",
+  "pos": {
+    "raw_vi": "idiom",
+    "raw_cn": "",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "idiom",
+    "autumn"
+  ],
+  "meaning": {
+    "hanviet": "thu cao khí sảng",
+    "meaning_vi": "trời thu cao rộng, khí trời trong mát",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trời thu cao rộng",
+      "khí trời trong mát"
+    ],
+    "short_definition_vi": "trời thu cao rộng, khí trời trong mát",
+    "textbook_focus_vi": "trời thu cao rộng, khí trời trong mát",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "idiom, autumn",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "秋",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa, cây lương thực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa, cây lương thực",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa, cây lương thực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mùa thu",
+        "modern_logic_vi": "Trong từ này, 秋 góp phần vào lớp nghĩa hiện đại: mùa thu",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "高",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "高",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao",
+        "modern_logic_vi": "Trong từ này, 高 góp phần vào lớp nghĩa hiện đại: cao",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "气",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "气",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khí, không khí",
+        "modern_logic_vi": "Trong từ này, 气 góp phần vào lớp nghĩa hiện đại: khí, không khí",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "爽",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "爽",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sảng khoái, dễ chịu",
+        "modern_logic_vi": "Trong từ này, 爽 góp phần vào lớp nghĩa hiện đại: sảng khoái, dễ chịu",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "秋 = thu; 高 = trời cao; 气爽 = khí trời sảng khoái. Thành ngữ tả mùa thu mát trong.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 秋高气爽 cho mùa hè/mùa đông; mùa hè dùng 烈日高照, mùa đông dùng 万里雪飘/冰天雪地.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "天高云淡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "风和日丽",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "凉爽",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烈日高照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "烈日炎炎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寒风刺骨",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7062565a-768a-48fd-9aee-1408c155e6d8",
+      "order": 1,
+      "zh": "秋高气爽的季节",
+      "pinyin": "",
+      "vi": "mùa trời thu trong mát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a4df520-6bb9-44db-be4c-ad8a623fb645",
+      "order": 2,
+      "zh": "秋高气爽，适合郊游",
+      "pinyin": "",
+      "vi": "trời thu mát, hợp đi chơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5133ef0-0dff-4ea9-bd32-791c0c1a7780",
+      "order": 3,
+      "zh": "北京秋高气爽",
+      "pinyin": "",
+      "vi": "Bắc Kinh trời thu trong mát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5d0cfc0-33c4-4b78-9683-2fca1d2cdb5c",
+      "order": 4,
+      "zh": "正是秋高气爽的时候",
+      "pinyin": "",
+      "vi": "đúng lúc trời thu mát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f655653a-2a8c-4568-ba8e-7e9c63d94bf8",
+      "order": 5,
+      "zh": "秋高气爽的日子",
+      "pinyin": "",
+      "vi": "những ngày thu mát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e3072305-bd70-4892-8730-98aa7b2e7a70",
+      "order": 6,
+      "zh": "景色宜人",
+      "pinyin": "",
+      "vi": "cảnh sắc dễ chịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ecdce0a-b564-44d4-8035-02247d577e45",
+      "order": 1,
+      "zh": "北京的秋天秋高气爽。",
+      "pinyin": "",
+      "vi": "Mùa thu Bắc Kinh trời cao khí mát.",
+      "analysis_vi": "Thành ngữ làm vị ngữ.",
+      "highlight": [
+        "秋高气爽"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df3bcc03-2e95-4f1c-af0e-a49d951f748d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0319c8a9-5d76-439f-8bbd-f8573da25890",
+      "order": 2,
+      "zh": "每到秋高气爽的时候，很多人都去香山看红叶。",
+      "pinyin": "",
+      "vi": "Mỗi khi trời thu mát, nhiều người đi Hương Sơn ngắm lá đỏ.",
+      "analysis_vi": "每到……的时候.",
+      "highlight": [
+        "秋高气爽"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df3bcc03-2e95-4f1c-af0e-a49d951f748d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d1dfee9-715a-48dd-9dcc-72596da6d785",
+      "order": 3,
+      "zh": "经历过北京秋高气爽的日子，就会明白为什么那么多人向往这里的秋天。",
+      "pinyin": "",
+      "vi": "Từng trải qua những ngày thu mát ở Bắc Kinh thì sẽ hiểu vì sao nhiều người mong đến đây.",
+      "analysis_vi": "经历过 + 如果/就 logic.",
+      "highlight": [
+        "秋高气爽"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df3bcc03-2e95-4f1c-af0e-a49d951f748d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "秋高气爽 trong Bài 3 北京的四季",
+    "content_vi": "Cụm này rất đặc trưng khi tả mùa thu miền Bắc Trung Quốc.",
+    "tags": [
+      "idiom",
+      "autumn"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "35811b39-5afe-4274-9c40-f60fded46edd",
+      "order": 1,
+      "rule_vi": "Không dùng 秋高气爽 cho mùa hè/mùa đông; mùa hè dùng 烈日高照, mùa đông dùng 万里雪飘/冰天雪地.",
+      "natural_examples": [
+        {
+          "zh": "北京的秋天秋高气爽。",
+          "pinyin": "",
+          "vi": "Mùa thu Bắc Kinh trời cao khí mát.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 秋高气爽 cho mùa hè/mùa đông; mùa hè dùng 烈日高照, mùa đông dùng 万里雪飘/冰天雪地.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "秋高气爽",
+    "back": "trời thu cao rộng, khí trời trong mát",
+    "hint": "qiū gāo qì shuǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "idiom",
+      "autumn"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "df3bcc03-2e95-4f1c-af0e-a49d951f748d",
+    "source_lesson_vocab_id": null
+  }
+}

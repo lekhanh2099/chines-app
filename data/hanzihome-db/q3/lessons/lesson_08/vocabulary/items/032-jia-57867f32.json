@@ -1,0 +1,234 @@
+{
+  "id": "736ee030-47ba-4431-9851-bb6bb0cbbff3",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "加",
+  "pinyin": "jiā",
+  "pos": {
+    "raw_vi": "Động từ / Thành phần cấu tạo từ",
+    "raw_cn": "动词 / 语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "gia",
+    "meaning_vi": "thêm, cộng, tăng thêm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thêm",
+      "cộng",
+      "tăng thêm"
+    ],
+    "short_definition_vi": "thêm, cộng, tăng thêm",
+    "textbook_focus_vi": "加 = thêm vào/cộng vào/tăng thêm; dùng từ toán học đến đời sống số.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thao tác, số lượng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "加",
+        "lishu_vi": "gia",
+        "structure_note_vi": "力 + 口; học theo nghĩa thêm/cộng.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thêm, cộng",
+        "modern_logic_vi": "Trong từ này, 加 góp phần tạo nghĩa 'thêm, cộng'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "加 = thêm vào/cộng vào/tăng thêm; dùng từ toán học đến đời sống số.",
+    "memory_tip_vi": "Nhớ qua cụm: 加一点儿糖 = thêm chút đường.",
+    "warning_vi": "加 không phải lúc nào cũng dịch là cộng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "增加",
+        "pinyin": "zēngjiā",
+        "meaning_vi": "tăng thêm",
+        "difference_vi": "Trang trọng/rõ nghĩa hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "加入",
+        "pinyin": "jiārù",
+        "meaning_vi": "tham gia/gia nhập",
+        "difference_vi": "Thêm vào một nhóm/tổ chức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "加 không phải lúc nào cũng dịch là cộng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9edb8bc7-fb18-4fbd-bc05-67fb311bd88c",
+      "order": 1,
+      "zh": "加一点儿糖",
+      "pinyin": "jiā yìdiǎnr táng",
+      "vi": "thêm chút đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2f45797-ca1f-491d-8ed1-bdce0cf51b59",
+      "order": 2,
+      "zh": "加微信",
+      "pinyin": "jiā Wēixìn",
+      "vi": "thêm WeChat",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5ae7296-eea7-4598-a270-37d4c3fb9ab0",
+      "order": 3,
+      "zh": "加上这个",
+      "pinyin": "jiā shàng zhège",
+      "vi": "thêm cái này vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0418d6be-9a0d-43af-860c-568d0fba34e1",
+      "order": 1,
+      "zh": "赵霞在信里加了自己的电子信箱。",
+      "pinyin": "Zhào Xiá zài xìn lǐ jiā le zìjǐ de diànzǐ xìnxiāng.",
+      "vi": "Triệu Hà thêm email của mình vào trong thư.",
+      "analysis_vi": "在信里加了…… = thêm vào trong thư.",
+      "highlight": [
+        "加"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "736ee030-47ba-4431-9851-bb6bb0cbbff3"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hiện nay 加微信 phổ biến hơn hỏi email trong nhiều tình huống đời sống Trung Quốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d36790e7-4eab-494e-bca7-b352c98c94ed",
+      "order": 1,
+      "rule_vi": "加 không phải lúc nào cũng dịch là cộng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "可以加你微信吗？",
+          "pinyin": "Kěyǐ jiā nǐ Wēixìn ma?",
+          "vi": "Có thể thêm WeChat của bạn không?",
+          "note_vi": "加微信 là kết bạn/thêm liên hệ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "加",
+    "back": "thêm, cộng, tăng thêm",
+    "hint": "jiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "736ee030-47ba-4431-9851-bb6bb0cbbff3",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "id": "b45a4695-ad4c-4d5e-8d6f-c8eaa2513bf0",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "手镯",
+  "pinyin": "shǒuzhuó",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "thủ trạc",
+    "meaning_vi": "vòng tay, vòng đeo cổ tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vòng tay",
+      "vòng đeo cổ tay"
+    ],
+    "short_definition_vi": "vòng tay, vòng đeo cổ tay",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "thủ",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "手 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "镯",
+        "lishu_vi": "trạc",
+        "structure_note_vi": "Chữ có thành phần/bộ 钅; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại, vật quý",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại, vật quý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại, vật quý",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "钅 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 镯 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手镯 trong bài được học theo nghĩa: vòng tay, vòng đeo cổ tay.",
+    "memory_tip_vi": "Nhớ 手镯 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "手链",
+        "pinyin": "shǒuliàn",
+        "meaning_vi": "lắc tay/dây đeo tay",
+        "difference_vi": "Mềm/dạng dây hơn 手镯.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Lượng từ tự nhiên là 一只手镯, không phải 一个手镯."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b72c9235-7821-4361-bcb5-ea590078f59a",
+      "order": 1,
+      "zh": "一只手镯",
+      "pinyin": "",
+      "vi": "một chiếc vòng tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e2e9676-b444-403b-bf3e-0edbac703e11",
+      "order": 2,
+      "zh": "玉手镯",
+      "pinyin": "",
+      "vi": "vòng tay ngọc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e38c93e-d667-4326-8299-c8e6c61fda3b",
+      "order": 3,
+      "zh": "戴手镯",
+      "pinyin": "",
+      "vi": "đeo vòng tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "76903d19-e4ae-4ca1-ae6c-7cb41ff0c8a9",
+      "order": 1,
+      "zh": "她手上戴着一只玉手镯。",
+      "pinyin": "",
+      "vi": "Trên tay cô ấy đang đeo một chiếc vòng tay ngọc.",
+      "analysis_vi": "戴着 chỉ trạng thái đang đeo.",
+      "highlight": [
+        "手镯"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b45a4695-ad4c-4d5e-8d6f-c8eaa2513bf0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5c62e5a9-2411-4fc2-b98a-b0c6820bb2f6",
+      "order": 2,
+      "zh": "祝英台把手镯交给师母，请她转交给梁山伯。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài đưa vòng tay cho sư mẫu, nhờ bà chuyển cho Lương Sơn Bá.",
+      "analysis_vi": "交给 là giao cho; 转交给 là chuyển tiếp cho.",
+      "highlight": [
+        "手镯"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b45a4695-ad4c-4d5e-8d6f-c8eaa2513bf0"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Đồ trang sức có thể trở thành tín vật trong truyện tình truyền thống.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "419e0cfd-02c4-4a25-bbd2-d0fdd1c6023d",
+      "order": 1,
+      "rule_vi": "Lượng từ tự nhiên là 一只手镯, không phải 一个手镯.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手镯",
+    "back": "vòng tay, vòng đeo cổ tay",
+    "hint": "shǒuzhuó",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b45a4695-ad4c-4d5e-8d6f-c8eaa2513bf0",
+    "source_lesson_vocab_id": null
+  }
+}

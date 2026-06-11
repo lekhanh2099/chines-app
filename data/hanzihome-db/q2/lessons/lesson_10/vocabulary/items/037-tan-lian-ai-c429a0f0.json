@@ -1,0 +1,525 @@
+{
+  "id": "72c19fe1-bf92-4632-8b96-1351827c6133",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "谈恋爱",
+  "pinyin": "tán liàn’ài",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动宾短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đàm luyến ái",
+    "meaning_vi": "yêu đương, hẹn hò yêu đương",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "yêu đương, hẹn hò yêu đương"
+    ],
+    "short_definition_vi": "yêu đương, hẹn hò yêu đương",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "谈",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ Ngôn trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói chuyện, bàn chuyện.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ Ngôn trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "恋",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, cảm xúc, suy nghĩ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ Tâm trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, cảm xúc, suy nghĩ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ Tâm trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "爱",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "谈 = nói chuyện, bàn chuyện. 恋爱 = tình yêu nam nữ / quan hệ yêu đương. → 谈恋爱 = bước vào quan hệ yêu đương, hẹn hò, tìm hiểu tình cảm. Logic hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "谈恋爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "yêu đương, hẹn hò.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "恋爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình yêu / yêu đương, danh từ hoặc động từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "交往",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "qua lại, hẹn hò, quan hệ qua lại; có thể rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "约会",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hẹn hò, cuộc hẹn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喜欢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thích.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "yêu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "他们谈过恋爱。",
+      "Họ từng yêu nhau.",
+      "他们在交往。",
+      "Họ đang qua lại/hẹn hò.",
+      "我喜欢她。",
+      "Tôi thích cô ấy."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "828aa2e9-3ec6-4d19-b7b3-ce9257e1e50d",
+      "order": 1,
+      "zh": "谈恋爱",
+      "pinyin": "",
+      "vi": "yêu đương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5d880f41-8c10-468f-a631-a737e32388fa",
+      "order": 2,
+      "zh": "谈过恋爱",
+      "pinyin": "",
+      "vi": "từng yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5172b653-31dc-41d5-acd4-a167fc5c47cb",
+      "order": 3,
+      "zh": "没谈过恋爱",
+      "pinyin": "",
+      "vi": "chưa từng yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f255f584-6b96-4e4b-befb-d4f3d5cb063c",
+      "order": 4,
+      "zh": "第一次谈恋爱",
+      "pinyin": "",
+      "vi": "lần đầu yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "555011a1-f5c4-41a3-8538-7913216dd7da",
+      "order": 5,
+      "zh": "跟……谈恋爱",
+      "pinyin": "",
+      "vi": "yêu/hẹn hò với...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "90508dc2-a864-4910-abd4-5f1ec95efa01",
+      "order": 6,
+      "zh": "正在谈恋爱",
+      "pinyin": "",
+      "vi": "đang yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "21779326-ec35-4442-92a6-4da51bd4fa44",
+      "order": 1,
+      "zh": "你谈过恋爱吗？",
+      "pinyin": "Nǐ tán guo liàn’ài ma?",
+      "vi": "Bạn đã từng yêu chưa?",
+      "analysis_vi": "谈过恋爱 là dạng đúng của ly hợp từ + 过.",
+      "highlight": [
+        "谈恋爱"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "72c19fe1-bf92-4632-8b96-1351827c6133"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "269ee4d4-9c72-4269-8d0e-777de8c25e13",
+      "order": 2,
+      "zh": "这是我第一次谈恋爱，所以我有点儿紧张嘛。",
+      "pinyin": "Zhè shì wǒ dì yī cì tán liàn’ài, suǒyǐ wǒ yǒudiǎnr jǐnzhāng ma.",
+      "vi": "Đây là lần đầu tôi yêu, nên tôi hơi căng thẳng mà.",
+      "analysis_vi": "第一次 + V = lần đầu làm gì. 嘛 giải thích kiểu “chuyện đó cũng dễ hiểu mà”.",
+      "highlight": [
+        "谈恋爱"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "72c19fe1-bf92-4632-8b96-1351827c6133"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0114327-26db-44cf-81a1-fe9cfc579b5d",
+      "order": 3,
+      "zh": "他以前没谈过恋爱，第一次跟女朋友去听小提琴协奏曲《梁祝》的时候，紧张得一句话也说不出来。",
+      "pinyin": "Tā yǐqián méi tán guo liàn’ài, dì yī cì gēn nǚpéngyou qù tīng xiǎotíqín xiézòuqǔ “Liáng Zhù” de shíhou, jǐnzhāng de yí jù huà yě shuō bu chūlai.",
+      "vi": "Trước đây anh ấy chưa từng yêu, lần đầu đi nghe concerto violin “Lương Chúc” với bạn gái thì căng thẳng đến mức một câu cũng không nói ra được.",
+      "analysis_vi": "没谈过恋爱 nhấn chưa từng có kinh nghiệm. 第一次跟……去听 là lần đầu đi nghe với ai. 说不出来 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "谈恋爱"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "72c19fe1-bf92-4632-8b96-1351827c6133"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "50857c01-9d6c-4d97-81c5-7fb3b858cc15",
+      "order": 1,
+      "rule_vi": "Câu đúng:",
+      "natural_examples": [
+        {
+          "zh": "我没谈过恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我谈恋爱过。 ❌",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我谈过恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Câu đúng: 我谈过恋爱。 Tôi từng yêu. 我没谈过恋爱。 Tôi chưa từng yêu. Không nói: 我谈恋爱过。 ❌",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "谈恋爱",
+    "back": "yêu đương, hẹn hò yêu đương",
+    "hint": "tán liàn’ài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong khẩu ngữ hiện đại, 谈恋爱 vẫn rất phổ biến. Nếu muốn nói “đang hẹn hò với ai”, có thể nói 我在跟他/她谈恋爱 hoặc tự nhiên hơn trong nhiều ngữ cảnh là 我们在一起了 = chúng tôi thành đôi rồi.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "72c19fe1-bf92-4632-8b96-1351827c6133",
+    "source_lesson_vocab_id": null
+  }
+}

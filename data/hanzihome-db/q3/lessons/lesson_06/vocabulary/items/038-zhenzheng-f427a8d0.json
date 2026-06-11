@@ -1,0 +1,238 @@
+{
+  "id": "f6a035f3-4eb5-455c-ab80-a35efea78ec1",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "真正",
+  "pinyin": "zhēnzhèng",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ",
+    "raw_cn": "形/副",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chân chính",
+    "meaning_vi": "thật sự; đích thực; chân chính",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thật sự",
+      "đích thực",
+      "chân chính"
+    ],
+    "short_definition_vi": "thật sự",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "真",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật",
+        "modern_logic_vi": "Trong từ 真正, chữ 真 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "正",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đúng, chính",
+        "modern_logic_vi": "Trong từ 真正, chữ 正 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "真正 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 真正的朋友不会只看你的成绩。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "真的",
+        "pinyin": "zhēn de",
+        "meaning_vi": "thật",
+        "difference_vi": "真的 khẩu ngữ xác nhận; 真正 nhấn bản chất đích thực.",
+        "register_vi": "",
+        "example_zh": "这是真的。",
+        "example_vi": "Cái này là thật.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "75c01969-27fd-466a-a2d6-d29eddc80795",
+      "order": 1,
+      "zh": "真正的朋友",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8200bad-7a99-459c-873b-5275dcf8beea",
+      "order": 2,
+      "zh": "真正的友谊",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "931d3522-152b-4042-8acd-975874173abb",
+      "order": 3,
+      "zh": "真正的原因",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb80d075-5bda-4e9a-8376-32a8f82e6c0b",
+      "order": 4,
+      "zh": "真正的收获",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "418fcbe5-5b9b-40bd-9307-6cb20f650000",
+      "order": 5,
+      "zh": "真正好吃",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc728624-184d-4b47-baf2-1f8545d10504",
+      "order": 6,
+      "zh": "真正了解",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f21ca9d-a1d1-44d9-8013-9012074c9c78",
+      "order": 7,
+      "zh": "真正做到",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "56445ed2-71d9-42bf-8f3c-a57fbe7059f3",
+      "order": 1,
+      "zh": "真正的朋友不会只看你的成绩。",
+      "pinyin": "",
+      "vi": "Người bạn thật sự sẽ không chỉ nhìn vào thành tích của bạn.",
+      "analysis_vi": "Ví dụ dùng 真正 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "真正"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f6a035f3-4eb5-455c-ab80-a35efea78ec1"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "真正 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6d253605-2956-47c2-a76e-988fd4f500e6",
+      "order": 1,
+      "rule_vi": "真正 nhấn bản chất/đích thực; 真的 thiên xác nhận khẩu ngữ hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "真正",
+    "back": "thật sự; đích thực; chân chính",
+    "hint": "zhēnzhèng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f6a035f3-4eb5-455c-ab80-a35efea78ec1",
+    "source_lesson_vocab_id": null
+  }
+}

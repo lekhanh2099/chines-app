@@ -1,0 +1,243 @@
+{
+  "id": "52340e12-c0a8-4053-b9ef-4fb2264439f9",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "学院",
+  "pinyin": "xuéyuàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "education"
+  ],
+  "meaning": {
+    "hanviet": "học viện",
+    "meaning_vi": "học viện; khoa/trường trực thuộc đại học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "học viện",
+      "khoa",
+      "trường trực thuộc đại học"
+    ],
+    "short_definition_vi": "học viện; khoa/trường trực thuộc đại học",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học",
+        "modern_logic_vi": "Trong từ/cụm này, 学 góp phần vào nghĩa hiện đại: học.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "院",
+        "lishu_vi": "viện",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "阝",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Phụ",
+          "radical_name_zh": "",
+          "hanviet": "phụ",
+          "meaning_vi": "gò/đất hoặc thành phần bên trái/phải",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ",
+            "meaning_vi": "gò/đất hoặc thành phần bên trái/phải",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阝",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Phụ",
+              "radical_name_zh": "",
+              "hanviet": "phụ",
+              "meaning_vi": "gò/đất hoặc thành phần bên trái/phải",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "完",
+            "hanviet": "hoàn",
+            "meaning_vi": "xong/trọn",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "viện/cơ sở",
+        "modern_logic_vi": "Trong từ/cụm này, 院 góp phần vào nghĩa hiện đại: viện/cơ sở.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "学院 cần học theo nghĩa hiện đại trong bài: học viện; khoa/trường trực thuộc đại học.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 音乐学院.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "167a02c5-d4b4-44bc-a4bc-314a085f4af7",
+      "order": 1,
+      "zh": "音乐学院",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "727ddd9f-3f99-4500-8118-0c509e460a79",
+      "order": 2,
+      "zh": "艺术学院",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33faffff-2e7a-49a5-9eac-e2a75b1e4dd5",
+      "order": 3,
+      "zh": "外语学院",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "37cd3602-544d-432f-bb66-9cf8edb92d41",
+      "order": 1,
+      "zh": "他考上了音乐学院。",
+      "pinyin": "Tā kǎoshàng le yīnyuè xuéyuàn.",
+      "vi": "Anh ấy thi đỗ vào học viện âm nhạc.",
+      "analysis_vi": "考上 là thi đỗ vào.",
+      "highlight": [
+        "学院"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "52340e12-c0a8-4053-b9ef-4fb2264439f9"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1c11b612-b644-454d-9b3a-837ac627423f",
+      "order": 2,
+      "zh": "她的职业是歌手，以前在艺术学院学习过。",
+      "pinyin": "Tā de zhíyè shì gēshǒu, yǐqián zài yìshù xuéyuàn xuéxí guo.",
+      "vi": "Nghề cô ấy là ca sĩ, trước đây từng học ở học viện nghệ thuật.",
+      "analysis_vi": "过 chỉ kinh nghiệm.",
+      "highlight": [
+        "学院"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "52340e12-c0a8-4053-b9ef-4fb2264439f9"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "学院 có thể là học viện độc lập hoặc đơn vị trực thuộc 大学.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8ab95b70-f132-4f82-97ef-6cadd100a698",
+      "order": 1,
+      "rule_vi": "Dùng 学院 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "学院",
+    "back": "học viện; khoa/trường trực thuộc đại học",
+    "hint": "xuéyuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "52340e12-c0a8-4053-b9ef-4fb2264439f9",
+    "source_lesson_vocab_id": null
+  }
+}

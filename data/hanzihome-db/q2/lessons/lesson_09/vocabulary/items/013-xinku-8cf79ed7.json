@@ -1,0 +1,386 @@
+{
+  "id": "ccc4e7b2-1a8e-4bcb-975f-33006c371cfb",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "辛苦",
+  "pinyin": "xīnkǔ",
+  "pos": {
+    "raw_vi": "Tính từ / động từ tâm lý-xã giao",
+    "raw_cn": "形/动",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tân khổ",
+    "meaning_vi": "vất vả, cực khổ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vất vả",
+      "cực khổ"
+    ],
+    "short_definition_vi": "vất vả, cực khổ",
+    "textbook_focus_vi": "Âm Hán Việt: tân khổ. Nghĩa chính: Vất vả, cực nhọc. Dùng để nói công việc/học tập làm ai đó mệt. Dùng như câu xã giao cảm ơn: 辛苦了！ = vất vả cho bạn rồi / cảm ơn bạn đã vất vả. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "辛",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "辛",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cay, gian khổ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "苦",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "古",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đắng, khổ, cực nhọc",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "辛 = cay/gian nan; 苦 = đắng/khổ. 辛苦 = vất vả, cực nhọc.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 辛苦了 không nên dịch cứng là “bạn khổ rồi”. Nó là câu cảm ơn/xã giao.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "辛苦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vất vả, cực nhọc; cũng dùng để cảm ơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "累",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mệt, cảm giác cơ thể/tinh thần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bận.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麻烦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phiền phức; làm phiền.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不容易",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không dễ dàng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "你今天很累吗？",
+      "Hôm nay bạn mệt không?",
+      "老师，您辛苦了。",
+      "Thưa thầy/cô, thầy/cô vất vả rồi.",
+      "这件事很麻烦。",
+      "Việc này rất phiền phức."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8b5f56e7-f203-4dd9-8b69-97563e30030e",
+      "order": 1,
+      "zh": "辛苦了",
+      "pinyin": "",
+      "vi": "vất vả rồi / cảm ơn vì đã vất vả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "79f206bb-8d54-41ea-a8d0-bf942f2e011a",
+      "order": 2,
+      "zh": "老师辛苦了",
+      "pinyin": "",
+      "vi": "thầy/cô vất vả rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c1a9300-5f9f-407e-9782-539b9933f0d9",
+      "order": 3,
+      "zh": "工作很辛苦",
+      "pinyin": "",
+      "vi": "công việc rất vất vả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ed59544-d4aa-43c3-a65c-613782598fd8",
+      "order": 4,
+      "zh": "这趟很辛苦",
+      "pinyin": "",
+      "vi": "chuyến này rất vất vả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab359ed9-ac28-48ef-96f7-10740fc57d01",
+      "order": 5,
+      "zh": "辛苦你了",
+      "pinyin": "",
+      "vi": "làm phiền/vất vả cho bạn rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2203ef8e-4b12-4d46-977e-4ebce6a2308d",
+      "order": 6,
+      "zh": "一路辛苦了",
+      "pinyin": "",
+      "vi": "đi đường vất vả rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "27a974f7-25a7-427e-8b92-1555ff8e1637",
+      "order": 1,
+      "zh": "老师，您辛苦了。",
+      "pinyin": "Lǎoshī, nín xīnkǔ le.",
+      "vi": "Thưa thầy/cô, thầy/cô vất vả rồi.",
+      "analysis_vi": "Đây là câu xã giao rất tự nhiên sau khi thầy/cô giảng bài, giúp đỡ, hoặc làm việc nhiều.",
+      "highlight": [
+        "辛苦"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "ccc4e7b2-1a8e-4bcb-975f-33006c371cfb"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fa7a0f4a-3ef9-461f-be0f-8193f8e34823",
+      "order": 2,
+      "zh": "这趟去台湾参加研讨会很辛苦，可是老师给我们捎来了很多资料。",
+      "pinyin": "Zhè tàng qù Táiwān cānjiā yántǎohuì hěn xīnkǔ, kěshì lǎoshī gěi wǒmen shāo lái le hěn duō zīliào.",
+      "vi": "Chuyến đi Đài Loan tham gia hội thảo lần này rất vất vả, nhưng thầy/cô đã tiện mang về cho chúng tôi rất nhiều tài liệu.",
+      "analysis_vi": "这趟 = chuyến/lần đi này. 捎来 dùng 来 vì tài liệu được mang về phía người nói.",
+      "highlight": [
+        "辛苦"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "ccc4e7b2-1a8e-4bcb-975f-33006c371cfb"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2ec224d4-f358-4c4d-ab9e-c80bb2c71b91",
+      "order": 3,
+      "zh": "会议快开始了，赵老师让师傅把展览资料送进来，大家都说：“师傅，辛苦您了。”",
+      "pinyin": "Huìyì kuài kāishǐ le, Zhào lǎoshī ràng shīfu bǎ zhǎnlǎn zīliào sòng jìnlai, dàjiā dōu shuō: “Shīfu, xīnkǔ nín le.”",
+      "vi": "Cuộc họp sắp bắt đầu rồi, thầy Triệu bảo bác/tài xế/thợ đưa tài liệu triển lãm vào đây, mọi người đều nói: “Bác vất vả rồi ạ.”",
+      "analysis_vi": "快开始了 báo sắp xảy ra. 送进来 dùng 来 vì đưa vào phía người nói. 辛苦您了 là cách cảm ơn lịch sự.",
+      "highlight": [
+        "辛苦"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "ccc4e7b2-1a8e-4bcb-975f-33006c371cfb"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "辛苦了 là câu cực hay trong văn hóa giao tiếp Trung Quốc. Sau khi ai đó làm việc, chạy việc, giúp mình, bê đồ, dạy học, lái xe, chuẩn bị tài liệu, nói 辛苦了 nghe rất có giáo dưỡng.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2b6fc5a6-644e-47e2-80f9-6273356ac6a6",
+      "order": 1,
+      "rule_vi": "辛苦了 là công thức lịch sự cảm ơn/công nhận công sức, không dịch máy là “đau khổ rồi”.",
+      "natural_examples": [
+        {
+          "zh": "辛苦了 không phải “khổ rồi”.",
+          "pinyin": "",
+          "vi": "Vất vả cho bạn rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "您辛苦了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Tự nhiên hơn: Vất vả cho bạn rồi. Cảm ơn bạn đã vất vả. Với người trên:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "辛苦",
+    "back": "vất vả, cực khổ",
+    "hint": "xīnkǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ccc4e7b2-1a8e-4bcb-975f-33006c371cfb",
+    "source_lesson_vocab_id": null
+  }
+}

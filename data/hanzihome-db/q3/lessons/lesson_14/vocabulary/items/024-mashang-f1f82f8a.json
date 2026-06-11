@@ -1,0 +1,193 @@
+{
+  "id": "744dba5d-d54e-4504-9d39-bc4b5e5826bd",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "马上",
+  "pinyin": "mǎshàng",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mã thượng",
+    "meaning_vi": "ngay lập tức, liền, ngay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngay lập tức",
+      "liền",
+      "ngay"
+    ],
+    "short_definition_vi": "ngay lập tức, liền, ngay",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: thời gian, phản ứng nhanh.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thời gian, phản ứng nhanh",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "马",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngựa",
+        "modern_logic_vi": "Trong từ 马上, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "上",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên, lên",
+        "modern_logic_vi": "Trong từ 马上, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "马上 nên được học theo nghĩa hiện đại trong cụm/tình huống: ngay lập tức, liền, ngay.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 马上来.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "立刻",
+        "pinyin": "lìkè",
+        "meaning_vi": "lập tức",
+        "difference_vi": "立刻 trang trọng hơn; 马上 khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7cccbb05-83a8-404f-abfd-af1ec0bdcefd",
+      "order": 1,
+      "zh": "马上来",
+      "pinyin": "",
+      "vi": "đến ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a25f66d-248d-4319-8c6f-91207e94e10c",
+      "order": 2,
+      "zh": "马上开始",
+      "pinyin": "",
+      "vi": "bắt đầu ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5700eaca-9b5d-4dbc-b2fc-9c72fc14db6d",
+      "order": 3,
+      "zh": "马上派人来",
+      "pinyin": "",
+      "vi": "cử người đến ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "55536ea4-7a53-47a2-8a62-8c90add25c13",
+      "order": 1,
+      "zh": "我马上来。",
+      "pinyin": "",
+      "vi": "Tôi đến ngay.",
+      "analysis_vi": "马上 + V nhấn hành động xảy ra rất nhanh.",
+      "highlight": [
+        "马上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "744dba5d-d54e-4504-9d39-bc4b5e5826bd"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 马上 được dùng trong ngữ cảnh thời gian, phản ứng nhanh; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a0aeae33-7cb2-43bd-b615-f7c47a1173f0",
+      "order": 1,
+      "rule_vi": "Không dịch 马上 là “trên ngựa” trong tiếng Trung hiện đại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 马上 là “trên ngựa” trong tiếng Trung hiện đại.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "马上",
+    "back": "ngay lập tức, liền, ngay",
+    "hint": "mǎshàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "744dba5d-d54e-4504-9d39-bc4b5e5826bd",
+    "source_lesson_vocab_id": null
+  }
+}

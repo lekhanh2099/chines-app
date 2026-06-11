@@ -1,0 +1,273 @@
+{
+  "id": "992ec498-f272-4318-b891-14d7e3a5a6e4",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "地区",
+  "pinyin": "dìqū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "địa khu",
+    "meaning_vi": "khu vực; vùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khu vực",
+      "vùng"
+    ],
+    "short_definition_vi": "khu vực; vùng",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "地",
+        "lishu_vi": "",
+        "structure_note_vi": "地: đất; nơi",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đất; nơi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: đất; nơi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "区",
+        "lishu_vi": "",
+        "structure_note_vi": "区: khu vực",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khu vực",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: khu vực.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "地区 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 这个地区.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "56c010e6-ee0a-470a-ae9c-3aba80d19f18",
+      "order": 1,
+      "zh": "这个地区",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74861d80-6e61-401d-bb7c-6df506ee1f4f",
+      "order": 2,
+      "zh": "不同地区",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72773766-82cf-4937-b370-e00966519a68",
+      "order": 3,
+      "zh": "亚洲地区",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be4117cc-9c21-4b3d-bac4-df736a4d6af0",
+      "order": 4,
+      "zh": "经济发达地区",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2814779b-7e8e-4bd8-b5e1-c96290032bdf",
+      "order": 1,
+      "zh": "不同地区的人生活习惯也不一样。",
+      "pinyin": "",
+      "vi": "Người ở các khu vực khác nhau thì thói quen sinh hoạt cũng khác nhau。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "地区"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "992ec498-f272-4318-b891-14d7e3a5a6e4"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a18e7372-5eb7-44f0-bdc4-a33c59b02c6a",
+      "order": 2,
+      "zh": "这个地区的气候比较干燥。",
+      "pinyin": "",
+      "vi": "Khí hậu khu vực này tương đối khô。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "地区"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "992ec498-f272-4318-b891-14d7e3a5a6e4"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e648b01c-7ef8-49a1-9b75-43ff1c180d67",
+      "order": 1,
+      "rule_vi": "Không dịch 地区 là “địa khu” trong tiếng Việt tự nhiên。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 地区 là “địa khu” trong tiếng Việt tự nhiên。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "地区",
+    "back": "khu vực; vùng",
+    "hint": "dìqū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "992ec498-f272-4318-b891-14d7e3a5a6e4",
+    "source_lesson_vocab_id": null
+  }
+}

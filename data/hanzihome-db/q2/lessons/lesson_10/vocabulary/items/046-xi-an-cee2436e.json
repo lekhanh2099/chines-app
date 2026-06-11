@@ -1,0 +1,423 @@
+{
+  "id": "6e81e727-ab12-4a4f-a4e9-07b5ad760341",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "西安",
+  "pinyin": "Xī’ān",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名/地名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab",
+    "proper-name"
+  ],
+  "meaning": {
+    "hanviet": "Tây An",
+    "meaning_vi": "thành phố Xi’an / Tây An",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành phố Xi’an",
+      "Tây An"
+    ],
+    "short_definition_vi": "thành phố Xi’an / Tây An",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "西",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "安",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ Miên trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ Miên trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Tên riêng địa danh, không cần chiết tự sâu. Cần nhớ: 西安 pinyin viết Xī’ān, có dấu ngăn cách âm tiết để tránh đọc nhầm thành một âm liền. Cảnh báo: Không viết pinyin thành Xian khi học chuẩn có thanh điệu; nên viết Xī’ān.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "西安",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tây An, cố đô.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "敦煌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đôn Hoàng, nổi tiếng hang Mạc Cao và Con đường Tơ lụa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "北京",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bắc Kinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "故宫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cố Cung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我去过西安，没去过敦煌。",
+      "Tôi từng đi Tây An, chưa từng đi Đôn Hoàng.",
+      "西安有很多出土文物。",
+      "Tây An có rất nhiều văn vật khai quật."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "74749e39-cbc6-4b7b-9c27-5dfb1691c7b7",
+      "order": 1,
+      "zh": "去西安",
+      "pinyin": "",
+      "vi": "đi Tây An",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "1862d9b7-9e42-45ea-9565-25883efc23d3",
+      "order": 2,
+      "zh": "到西安旅游",
+      "pinyin": "",
+      "vi": "đến Tây An du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "17addcf0-67a3-4bd9-97bd-118e6ae50175",
+      "order": 3,
+      "zh": "西安的历史",
+      "pinyin": "",
+      "vi": "lịch sử Tây An",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c0c9d40b-96a7-444d-b9e5-976fe48311ee",
+      "order": 4,
+      "zh": "西安的文物",
+      "pinyin": "",
+      "vi": "văn vật Tây An",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "56897f6b-32a6-43a0-b3b9-ba4d97e5d9b6",
+      "order": 5,
+      "zh": "第一次去西安",
+      "pinyin": "",
+      "vi": "lần đầu đi Tây An",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f21a8234-6611-4bb3-b810-59453fcc53d6",
+      "order": 6,
+      "zh": "去过西安",
+      "pinyin": "",
+      "vi": "từng đi Tây An",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "23d47b87-1390-4ebc-b9fc-e446317121cc",
+      "order": 1,
+      "zh": "我去过西安。",
+      "pinyin": "Wǒ qù guo Xī’ān.",
+      "vi": "Tôi từng đi Tây An.",
+      "analysis_vi": "去过 nhấn kinh nghiệm.",
+      "highlight": [
+        "西安"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "6e81e727-ab12-4a4f-a4e9-07b5ad760341"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "474eff63-ea4e-491a-a751-2c0e669129a7",
+      "order": 2,
+      "zh": "我第一次去西安的时候，看过很多出土文物。",
+      "pinyin": "Wǒ dì yī cì qù Xī’ān de shíhou, kàn guo hěn duō chūtǔ wénwù.",
+      "vi": "Lần đầu đi Tây An, tôi từng xem rất nhiều văn vật khai quật.",
+      "analysis_vi": "第一次去 = lần đầu đi. 看过 = từng xem. 出土文物 = văn vật khai quật.",
+      "highlight": [
+        "西安"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "6e81e727-ab12-4a4f-a4e9-07b5ad760341"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fe72291b-d4fa-43f6-9219-eeabfbeb72db",
+      "order": 3,
+      "zh": "我以前只在书上看过西安的历史，第一次亲眼看到那些文物的时候，才觉得中国历史真的有意思极了。",
+      "pinyin": "Wǒ yǐqián zhǐ zài shū shang kàn guo Xī’ān de lìshǐ, dì yī cì qīnyǎn kàn dào nàxiē wénwù de shíhou, cái juéde Zhōngguó lìshǐ zhēn de yǒu yìsi jí le.",
+      "vi": "Trước đây tôi chỉ từng đọc lịch sử Tây An trong sách, lần đầu tận mắt nhìn thấy những văn vật đó, tôi mới thấy lịch sử Trung Quốc thật sự thú vị cực kỳ.",
+      "analysis_vi": "看过 nhấn từng đọc/xem. 第一次亲眼看到 = lần đầu tận mắt nhìn thấy. 才觉得 = lúc đó mới cảm thấy.",
+      "highlight": [
+        "西安"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "6e81e727-ab12-4a4f-a4e9-07b5ad760341"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "0698095a-641e-4f95-8103-d0542eccc2af",
+      "order": 1,
+      "rule_vi": "Pinyin chuẩn:",
+      "natural_examples": [
+        {
+          "zh": "你去过西安吗？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Pinyin chuẩn: Xī’ān Hỏi kinh nghiệm: 你去过西安吗？ Bạn từng đi Tây An chưa?",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "西安",
+    "back": "thành phố Xi’an / Tây An",
+    "hint": "Xī’ān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab",
+      "proper-name"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "西安 là một trong những cố đô quan trọng nhất của Trung Quốc. Khi học văn hóa Trung Quốc, Tây An thường gắn với lịch sử nhà Tần, nhà Đường, binh mã dũng và các di tích cổ.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6e81e727-ab12-4a4f-a4e9-07b5ad760341",
+    "source_lesson_vocab_id": null
+  }
+}

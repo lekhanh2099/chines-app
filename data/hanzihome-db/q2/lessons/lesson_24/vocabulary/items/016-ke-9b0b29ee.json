@@ -1,0 +1,184 @@
+{
+  "id": "bb70413d-8662-4ea8-b2b4-0d4a514252f9",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "可",
+  "pinyin": "kě",
+  "pos": {
+    "raw_vi": "adverb/modal",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khả",
+    "meaning_vi": "thật là; quả là; có thể; đáng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thật là",
+      "quả là",
+      "có thể",
+      "đáng"
+    ],
+    "short_definition_vi": "thật là; quả là; có thể; đáng",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng; lời nói; âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng; lời nói; âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng; lời nói; âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có thể; được; đáng; phó từ nhấn mạnh",
+        "modern_logic_vi": "Học theo chức năng: 可 + Adj/V nhấn mạnh; 可以 + V = có thể/được phép.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "可 = thật là; quả là; có thể; đáng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Đừng thấy 可 là dịch “có thể” hết.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e47badf7-31f7-4c3e-bfec-8f2876044d30",
+      "order": 1,
+      "zh": "可",
+      "pinyin": "",
+      "vi": "thật là; quả là; có thể; đáng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aad5b349-7d5e-4d53-b02e-8bff1c6865f1",
+      "order": 1,
+      "zh": "这位警察可真有礼貌。",
+      "pinyin": "Zhè wèi jǐngchá kě zhēn yǒu lǐmào.",
+      "vi": "Vị cảnh sát này thật là lịch sự.",
+      "analysis_vi": "Đừng thấy 可 là dịch “có thể” hết.",
+      "level": "basic",
+      "highlight": [
+        "可"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bb70413d-8662-4ea8-b2b4-0d4a514252f9"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d9859422-4024-4fe9-9ad6-e022431db993",
+      "kind": "usage",
+      "text_vi": "Đừng thấy 可 là dịch “có thể” hết.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "可",
+    "back": "thật là; quả là; có thể; đáng",
+    "hint": "kě",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bb70413d-8662-4ea8-b2b4-0d4a514252f9",
+    "source_lesson_vocab_id": null
+  }
+}

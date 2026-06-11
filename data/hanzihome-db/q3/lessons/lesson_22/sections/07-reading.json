@@ -1,0 +1,278 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "综合填空",
+  "title_vi": "Bài đọc điền chỗ trống",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "综合填空",
+      "title_vi": "Điền vào chỗ trống",
+      "supplementary_vocabulary": [
+        {
+          "id": "825d34bd-24e5-4cd9-8f13-d2ae5e0dac35",
+          "type": "vocabulary_item",
+          "order": 1,
+          "hanzi": "仓库",
+          "pinyin": "cāngkù",
+          "meaning_vi": "nhà kho; kho hàng",
+          "meaning_en": "",
+          "pos": "Danh từ",
+          "tags": [
+            "supplementary_vocab",
+            "reading_cloze"
+          ],
+          "examples": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "0914fb28-105b-4797-93e2-cd2f72731272",
+          "type": "vocabulary_item",
+          "order": 2,
+          "hanzi": "缝补",
+          "pinyin": "féngbǔ",
+          "meaning_vi": "khâu vá; vá lại",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "tags": [
+            "supplementary_vocab",
+            "reading_cloze"
+          ],
+          "examples": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "838df787-ac41-4d6c-b762-b15704f0fe4f",
+          "type": "vocabulary_item",
+          "order": 3,
+          "hanzi": "帐篷",
+          "pinyin": "zhàngpeng",
+          "meaning_vi": "lều; lều bạt",
+          "meaning_en": "",
+          "pos": "Danh từ",
+          "tags": [
+            "supplementary_vocab",
+            "reading_cloze"
+          ],
+          "examples": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "54aaec51-6765-469b-9948-06a90db2b2c7",
+          "type": "vocabulary_item",
+          "order": 4,
+          "hanzi": "拾",
+          "pinyin": "shí",
+          "meaning_vi": "nhặt; nhặt lên",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "tags": [
+            "supplementary_vocab",
+            "reading_cloze"
+          ],
+          "examples": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "5f0c7204-3fca-496c-a3ce-e604c4409c66",
+          "type": "vocabulary_item",
+          "order": 5,
+          "hanzi": "服气",
+          "pinyin": "fúqì",
+          "meaning_vi": "phục; chịu phục; tâm phục",
+          "meaning_en": "",
+          "pos": "Tính từ / Động từ trạng thái tâm lý",
+          "tags": [
+            "supplementary_vocab",
+            "reading_cloze"
+          ],
+          "examples": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Động từ trạng thái tâm lý",
+            "cn": "形容词 / 心理状态动词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "服气 dùng như một đơn vị từ vựng biểu thị trạng thái “phục/chịu phục”.",
+            "usage_note_vi": "Trong bài là 很不服气: “rất không phục”. Không đánh dấu động từ li hợp để tránh tách sai trong app.",
+            "notes": []
+          }
+        },
+        {
+          "id": "97f004f6-96f6-4386-960a-45e70801a573",
+          "type": "vocabulary_item",
+          "order": 6,
+          "hanzi": "本分",
+          "pinyin": "běnfèn",
+          "meaning_vi": "an phận; đúng bổn phận; thật thà giữ phận",
+          "meaning_en": "",
+          "pos": "Tính từ / Danh từ",
+          "tags": [
+            "supplementary_vocab",
+            "reading_cloze"
+          ],
+          "examples": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ",
+            "cn": "形/名",
+            "normalized": "adjective_noun",
+            "schema_compatible_pos": "adjective_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "志强高中毕业后，因为家里穷，没有考大学，就到海边的一个城市打工了。\n\n志强在一个公司仓库里缝补帐篷。他很能干，做的活儿也很好，看到线头碎布也拾 ①________，不舍得丢掉。\n\n那天夜里，暴风雨来了，志强从床上爬起来，冲进雨中。有人说他是个傻瓜。\n\n在露天仓库里，志强察看了一遍又一遍，加固被风吹开的篷布。待老板开车赶来时，他已成了一只落汤鸡。老板见仓库的物资完好无损，当场提出这个月要给他加工资，他说：“不用了，我只是看看我修补的篷布牢不牢。”\n\n老板见他这么诚实，②________想把另一个公司交给他，让他当经理。志强说：“我不行，让文化高的人干吧。”老板说：“我看你行，我喜欢你这种认真负责的精神。”\n\n就这样，志强当上了经理。\n\n公司又来 ③________ 几个大学生，业务开展起来了。过了些日子，那几个受过大学教育的年轻人知道了他的学历，心里很不服气：“我们是大学生，④________能让他领导？”志强知道了并不生气，说：“我们既然一块儿共事，就应该把工作做好。我这个经理的位子谁 ⑤________ 可以坐。”\n\n那几个大学生听了都不说话了。\n\n一家外商听说这个公司很有发展前途，想跟他们谈一个合作项目。志强的助手说：“这可是个大公司，咱得好好儿接待。”志强说：“对。”\n\n外商来了，是位美籍华人，还带着翻译和秘书。\n\n志强用英语问：“先生，会汉语吗？”\n\n那外商一愣，说：“会的。”志强就说：“我们用汉语谈好吗？”\n\n外商就说了一声“好”。谈成以后，志强说：“我们一起吃顿饭怎么样？”外商点点头表示同意。\n\n晚餐比较简单，⑥________很有特色。所有的菜都吃完了，只剩下两个小包子。志强对服务小姐说：“请把这两个包子装进袋子里，我要带 ⑦________。”虽说这话很自然，他的助手却紧张起来，不住地看那外商。那外商站起来，握着志强的手说：“好，明天我们就签合同！”\n\n事成之后，老板设宴招待外商，志强和他的助手都去了。\n\n在宴会上，外商轻声问志强是哪个大学毕业的。\n\n志强说：“我没有上过大学。父母对我的教育是从爱惜一粒米、一根线开始的。后来我父亲去世，母亲辛辛苦苦地供我上了高中。她说，不希望你高人一等，⑧________能做个本分的人，干好该干的事，她就放心了。”\n\n外商听了，端起一杯酒说：“⑨________提议敬她老人家一杯，你有一个了不起的母亲。”",
+          "pinyin": "Zhìqiáng gāozhōng bìyè hòu, yīnwèi jiā lǐ qióng, méiyǒu kǎo dàxué, jiù dào hǎibiān de yí ge chéngshì dǎgōng le.\n\nZhìqiáng zài yí ge gōngsī cāngkù lǐ féngbǔ zhàngpeng. Tā hěn nénggàn, zuò de huór yě hěn hǎo, kàn dào xiàntóu suìbù yě shí ①________, bù shěde diūdiào.\n\nNà tiān yèli, bàofēngyǔ lái le, Zhìqiáng cóng chuáng shang pá qǐlai, chōng jìn yǔ zhōng. Yǒu rén shuō tā shì ge shǎguā.\n\nZài lùtiān cāngkù lǐ, Zhìqiáng chákàn le yí biàn yòu yí biàn, jiāgù bèi fēng chuī kāi de péngbù. Dài lǎobǎn kāi chē gǎn lái shí, tā yǐ chéng le yì zhī luòtāngjī. Lǎobǎn jiàn cāngkù de wùzī wánhǎo wúsǔn, dāngchǎng tíchū zhège yuè yào gěi tā jiā gōngzī, tā shuō: “Bú yòng le, wǒ zhǐ shì kànkan wǒ xiūbǔ de péngbù láo bù láo.”\n\nLǎobǎn jiàn tā zhème chéngshí, ②________ xiǎng bǎ lìng yí ge gōngsī jiāo gěi tā, ràng tā dāng jīnglǐ. Zhìqiáng shuō: “Wǒ bù xíng, ràng wénhuà gāo de rén gàn ba.” Lǎobǎn shuō: “Wǒ kàn nǐ xíng, wǒ xǐhuan nǐ zhè zhǒng rènzhēn fùzé de jīngshén.”\n\nJiù zhèyàng, Zhìqiáng dāng shàng le jīnglǐ.\n\nGōngsī yòu lái ③________ jǐ ge dàxuéshēng, yèwù kāizhǎn qǐlai le. Guò le xiē rìzi, nà jǐ ge shòu guo dàxué jiàoyù de niánqīng rén zhīdào le tā de xuélì, xīnli hěn bù fúqì: “Wǒmen shì dàxuéshēng, ④________ néng ràng tā lǐngdǎo?” Zhìqiáng zhīdào le bìng bù shēngqì, shuō: “Wǒmen jìrán yíkuàir gòngshì, jiù yīnggāi bǎ gōngzuò zuò hǎo. Wǒ zhège jīnglǐ de wèizi shéi ⑤________ kěyǐ zuò.”\n\nNà jǐ ge dàxuéshēng tīng le dōu bù shuōhuà le.\n\nYì jiā wàishāng tīngshuō zhège gōngsī hěn yǒu fāzhǎn qiántú, xiǎng gēn tāmen tán yí ge hézuò xiàngmù. Zhìqiáng de zhùshǒu shuō: “Zhè kě shì ge dà gōngsī, zán děi hǎohāor jiēdài.” Zhìqiáng shuō: “Duì.”\n\nWàishāng lái le, shì wèi Měijí Huárén, hái dàizhe fānyì hé mìshū.\n\nZhìqiáng yòng Yīngyǔ wèn: “Xiānsheng, huì Hànyǔ ma?”\n\nNà wàishāng yí lèng, shuō: “Huì de.” Zhìqiáng jiù shuō: “Wǒmen yòng Hànyǔ tán hǎo ma?”\n\nWàishāng jiù shuō le yì shēng “hǎo”. Tán chéng yǐhòu, Zhìqiáng shuō: “Wǒmen yìqǐ chī dùn fàn zěnmeyàng?” Wàishāng diǎn diǎn tóu biǎoshì tóngyì.\n\nWǎncān bǐjiào jiǎndān, ⑥________ hěn yǒu tèsè. Suǒyǒu de cài dōu chī wán le, zhǐ shèng xià liǎng ge xiǎo bāozi. Zhìqiáng duì fúwù xiǎojiě shuō: “Qǐng bǎ zhè liǎng ge bāozi zhuāng jìn dàizi lǐ, wǒ yào dài ⑦________.” Suīshuō zhè huà hěn zìrán, tā de zhùshǒu què jǐnzhāng qǐlai, bú zhù de kàn nà wàishāng. Nà wàishāng zhàn qǐlai, wòzhe Zhìqiáng de shǒu shuō: “Hǎo, míngtiān wǒmen jiù qiān hétong!”\n\nShì chéng zhī hòu, lǎobǎn shèyàn zhāodài wàishāng, Zhìqiáng hé tā de zhùshǒu dōu qù le.\n\nZài yànhuì shang, wàishāng qīngshēng wèn Zhìqiáng shì něi ge dàxué bìyè de.\n\nZhìqiáng shuō: “Wǒ méiyǒu shàng guo dàxué. Fùmǔ duì wǒ de jiàoyù shì cóng àixī yì lì mǐ, yì gēn xiàn kāishǐ de. Hòulái wǒ fùqīn qùshì, mǔqīn xīnxīn-kǔkǔ de gōng wǒ shàng le gāozhōng. Tā shuō, bù xīwàng nǐ gāo rén yì děng, ⑧________ néng zuò ge běnfèn de rén, gàn hǎo gāi gàn de shì, tā jiù fàngxīn le.”\n\nWàishāng tīng le, duān qǐ yì bēi jiǔ shuō: “⑨________ tíyì jìng tā lǎorénjiā yì bēi, nǐ yǒu yí ge liǎobuqǐ de mǔqīn.”",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
+          "blank": "①",
+          "answer": "起来",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
+          "blank": "②",
+          "answer": "便 / 就",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
+          "blank": "③",
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
+          "blank": "④",
+          "answer": "怎么",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
+          "blank": "⑤",
+          "answer": "都",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
+          "blank": "⑥",
+          "answer": "但 / 但是 / 可是",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
+          "blank": "⑦",
+          "answer": "走",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
+          "blank": "⑧",
+          "answer": "只要",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "79309c87-6c7d-4fae-940f-982e99c028d8",
+          "blank": "⑨",
+          "answer": "我",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "reading.cloze.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answers": [],
+      "answer_key": []
+    }
+  ]
+}

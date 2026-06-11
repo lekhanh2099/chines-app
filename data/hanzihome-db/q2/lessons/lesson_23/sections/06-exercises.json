@@ -1,0 +1,618 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook_generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 8,
+    "actual_exercise_count_in_json": 8,
+    "all_exercises_covered": true,
+    "coverage_status": "partial",
+    "note": "Some answers are inferred/guided, not textbook answer key."
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读下列词组。",
+        "vi": "Phân biệt âm/thanh điệu; đọc các cụm từ sau."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "speaking"
+      ],
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "hánjià — hángjia",
+            "hǎochī — hǎo shì",
+            "wàidì — dàitì",
+            "shānshuǐ — sān suì",
+            "shǎoshù — shóushù",
+            "mínzú — mínzhǔ",
+            "fēngsú — fēng sū",
+            "lùxiàn — lùxiàng"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_chunks",
+          "title": "朗读",
+          "items": [
+            "少数民族",
+            "少数人",
+            "少数学生",
+            "少数国家",
+            "游览长城",
+            "游览颐和园",
+            "游览长江三峡",
+            "游览桂林山水",
+            "学习计划",
+            "工作计划",
+            "旅行计划",
+            "计划去旅行",
+            "谁都喜欢她",
+            "怎么去都行",
+            "哪儿都不舒服",
+            "什么地方都没去过",
+            "一边看一边写",
+            "一边旅行一边练习说汉语",
+            "一边听音乐一边做练习"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Luyện thay thế",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar",
+        "speaking"
+      ],
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "type": "pattern_drill",
+          "pattern": "A：我们……吧。 B：好吧。",
+          "base": "A：我们去哪儿玩儿玩儿吧。 B：好吧。",
+          "items": [
+            "给他送点儿什么礼物",
+            "去找谁问问路",
+            "去请谁帮帮忙",
+            "什么时候去看看她",
+            "吃点儿什么"
+          ]
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "type": "pattern_drill",
+          "pattern": "你想……我们就……",
+          "base": "A：我们去哪儿呢？ B：你想去哪儿我们就去哪儿。",
+          "items": [
+            "送什么礼物 → 她喜欢什么就送什么",
+            "怎么去 → 怎么去方便就怎么去",
+            "什么时候去 → 什么时候有空儿就什么时候去",
+            "派谁去 → 谁能办好这件事就派谁去",
+            "借给他多少 → 他需要多少就借给他多少"
+          ]
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "type": "pattern_drill",
+          "pattern": "疑问代词 + 都行/可以",
+          "base": "A：你想吃点儿什么？ B：什么都行 / 可以。",
+          "items": [
+            "喝点儿什么 → 什么",
+            "去哪儿 → 哪儿",
+            "怎么去 → 怎么去",
+            "跟谁去 → 谁",
+            "要哪个 → 哪个",
+            "要多少 → 多少"
+          ]
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "type": "pattern_drill",
+          "pattern": "什么/哪儿/怎么 + 条件 + 就 + V",
+          "base": "A：想吃点儿什么？ B：什么好吃我就吃什么。",
+          "items": [
+            "喝点儿什么 → 什么好喝 → 喝什么",
+            "要哪个 → 哪个好 → 要哪个",
+            "看哪个 → 哪个好看 → 看哪个",
+            "去哪儿 → 哪儿好玩儿 → 去哪儿",
+            "怎么去 → 怎么方便 → 怎么去"
+          ]
+        },
+        {
+          "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
+          "type": "pattern_drill",
+          "pattern": "一边 + V1 + 一边 + V2",
+          "base": "他一边旅行一边练习说汉语。",
+          "items": [
+            "吃饭 — 看电视",
+            "听音乐 — 做练习",
+            "跳 — 唱",
+            "想 — 写",
+            "哭 — 说"
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选择合适的词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "word_bank": [
+        "了解",
+        "除了",
+        "风俗",
+        "寒假",
+        "值得",
+        "要求",
+        "开心",
+        "零下",
+        "饭馆儿",
+        "计划",
+        "一边……一边……"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "prompt": "我想利用________去南方旅行。",
+          "answer": "寒假",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "prompt": "他________听音乐________做练习。",
+          "answer": "一边……一边……",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "prompt": "这里有不少小________，饭菜又便宜又好吃。",
+          "answer": "饭馆儿",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "prompt": "我们那儿一年四季都很暖和，气温从来没有到过________一度。",
+          "answer": "零下",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "prompt": "________旅行以外，我还想________一下儿中国南方的城市交通。",
+          "answer": "除了；了解",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "prompt": "我们公司也________在这儿开展业务。",
+          "answer": "计划",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "prompt": "我想研究中国少数民族的________习惯。",
+          "answer": "风俗",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "prompt": "杭州、桂林，这两个地方都________去看看。",
+          "answer": "值得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "prompt": "今天我过得特别________。",
+          "answer": "开心",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "prompt": "请把你的________跟大家说说吧。",
+          "answer": "要求",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ trong ngoặc để hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "A：她怎么样？ B：她又热情又漂亮，班上的同学________________。（谁）",
+          "answer": "谁都喜欢她。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "A：你今天出去吗？ B：今天外边太冷，我________________。（哪儿）",
+          "answer": "哪儿都不去。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "A：你看这件事儿怎么办呢？ B：________________。（怎么）",
+          "answer": "你说怎么办就怎么办。 / 怎么办都行。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "A：我想去看看你，什么时候去比较合适？ B：你________________。（什么）",
+          "answer": "你什么时候来都行。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "A：来中国以后，你去过什么地方？ B：除了北京以外，我________________。（哪儿）",
+          "answer": "哪儿都没去过。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "A：我们坐火车去还是坐飞机去？ B：________________。（怎么）",
+          "answer": "怎么去都行。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "answer_questions",
+      "variant": "free_fill_blank",
+      "order": 5,
+      "title": "五、用括号里的词语回答问题",
+      "title_vi": "Dùng từ trong ngoặc trả lời câu hỏi",
+      "instruction": {
+        "zh": "用括号里的词语回答问题。",
+        "vi": "Dùng từ trong ngoặc để trả lời câu hỏi."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "A：你想吃点儿什么？ B：________________。（什么……什么……）",
+          "answer": "什么好吃就吃什么。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "A：你想让谁跟你去？ B：________________。（谁……谁……）",
+          "answer": "谁愿意去就让谁去。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "A：我们怎么去呢？ B：________________。（怎么……怎么……）",
+          "answer": "怎么方便就怎么去。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "A：我们什么时候出发？ B：________________。（什么（时候）……什么（时候）……）",
+          "answer": "什么时候有空儿就什么时候出发。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "A：我们去哪儿买？ B：________________。（哪儿……哪儿……）",
+          "answer": "哪儿便宜就去哪儿买。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "A：你想学哪本书？ B：________________。（哪……哪……）",
+          "answer": "哪本有意思就学哪本。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 6,
+      "title": "六、下列情景怎么说（用上疑问代词）",
+      "title_vi": "Dựa vào tình huống, dùng đại từ nghi vấn để diễn đạt",
+      "instruction": {
+        "zh": "根据下列情景，用疑问代词表达。",
+        "vi": "Dựa vào tình huống, dùng đại từ nghi vấn để nói lại."
+      },
+      "supplement_vocab": [
+        "经济",
+        "法律",
+        "医学",
+        "记者",
+        "作家",
+        "工程师",
+        "方面"
+      ],
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "prompt": "你们班的同学有的以后要学经济，有的要学法律，有的要学医学，有的要学历史……（什么）",
+          "answer": "我们班的同学以后想学什么的都有。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "prompt": "我有很多朋友，有的是老师，有的是记者，有的是作家，有的是工程师，有的是大夫，有的是律师……（什么）",
+          "answer": "我的朋友做什么的都有。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "prompt": "我喜欢看书，文学、历史、医学、经济、法律等方面的书我都喜欢看。（什么）",
+          "answer": "什么方面的书我都喜欢看。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "prompt": "他来中国快一年了，只去过一次北京，别的地方还没有去过。（除了……以外，哪儿）",
+          "answer": "除了北京以外，他哪儿都没去过。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "wrong": "哪个题容易，我就做什么题。",
+          "correct": "哪个题容易，我就做哪个题。 / 什么题容易，我就做什么题。",
+          "explanation_vi": "Đại từ nghi vấn trước và sau phải tương ứng.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "wrong": "你说怎么，我就做怎么。",
+          "correct": "你说怎么做，我就怎么做。",
+          "explanation_vi": "怎么 cần gắn với động tác cụ thể: 怎么做.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "wrong": "哪儿好玩儿，就我们去哪儿玩儿。",
+          "correct": "哪儿好玩儿，我们就去哪儿玩儿。",
+          "explanation_vi": "就 đứng trước vị ngữ/động tác, không đặt trước chủ ngữ trong mẫu này.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "wrong": "我的电脑坏了，什么也修不好。",
+          "correct": "我的电脑坏了，怎么也修不好。 / 我的电脑坏了，谁也修不好。",
+          "explanation_vi": "修不好 cần hỏi cách sửa hoặc người sửa, không dùng 什么.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "wrong": "我刚来中国的时候，什么汉语不会说。",
+          "correct": "我刚来中国的时候，一句汉语也不会说。 / 我刚来中国的时候，汉语什么都不会说。",
+          "explanation_vi": "Phủ định bao trùm cần 都/也. Cách tự nhiên nhất là 一句汉语也不会说; nếu dùng 什么 thì nên nói 汉语什么都不会说.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "wrong": "老师的话我一边听，一边不懂。",
+          "correct": "老师的话我听不懂。 / 我一边听老师讲，一边记笔记。",
+          "explanation_vi": "一边……一边…… nối hai hành động đồng thời. 不懂 là trạng thái/kết quả hiểu, không phải hành động song song tự nhiên.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp theo tình huống."
+      },
+      "dialogues": [
+        {
+          "id": "9d10590c-3dd7-4287-b930-4f4dbe1e9afb",
+          "title": "计划",
+          "title_vi": "Lập kế hoạch",
+          "lines": [
+            {
+              "speaker": "A",
+              "zh": "快放寒假了，你打算去哪儿玩儿？",
+              "vi": "Sắp nghỉ đông rồi, bạn định đi đâu chơi?",
+              "pinyin": "Kuài fàng hánjià le, nǐ dǎsuàn qù nǎr wánr?"
+            },
+            {
+              "speaker": "B",
+              "zh": "哪儿风景漂亮我就去哪儿。",
+              "vi": "Nơi nào phong cảnh đẹp thì tôi đi nơi đó.",
+              "pinyin": "Nǎr fēngjǐng piàoliang wǒ jiù qù nǎr."
+            },
+            {
+              "speaker": "A",
+              "zh": "杭州风景很漂亮。",
+              "vi": "Phong cảnh Hàng Châu rất đẹp.",
+              "pinyin": "Hángzhōu fēngjǐng hěn piàoliang."
+            },
+            {
+              "speaker": "B",
+              "zh": "除了杭州，我还想去苏州看看。",
+              "vi": "Ngoài Hàng Châu, tôi còn muốn đi Tô Châu xem thử.",
+              "pinyin": "Chúle Hángzhōu, wǒ hái xiǎng qù Sūzhōu kànkan."
+            }
+          ]
+        },
+        {
+          "id": "57e12e55-5de1-4145-b9ff-e71fe2cc59e2",
+          "title": "送行",
+          "title_vi": "Tiễn người đi",
+          "lines": [
+            {
+              "speaker": "A",
+              "zh": "车快开了，快上去吧。",
+              "vi": "Xe sắp chạy rồi, mau lên xe đi.",
+              "pinyin": "Chē kuài kāi le, kuài shàngqu ba."
+            },
+            {
+              "speaker": "B",
+              "zh": "好，我走了。再见吧。",
+              "vi": "Được, tôi đi đây. Tạm biệt nhé.",
+              "pinyin": "Hǎo, wǒ zǒu le. Zàijiàn ba."
+            },
+            {
+              "speaker": "A",
+              "zh": "再见！一路平安！",
+              "vi": "Tạm biệt! Thượng lộ bình an!",
+              "pinyin": "Zàijiàn! Yílù píng'ān!"
+            },
+            {
+              "speaker": "B",
+              "zh": "谢谢！",
+              "vi": "Cảm ơn!",
+              "pinyin": "Xièxie!"
+            }
+          ]
+        },
+        {
+          "id": "e64b5e74-5b95-4c55-bc5f-1d7320d1cd27",
+          "title": "表达无所谓",
+          "title_vi": "Diễn đạt “sao cũng được / gì cũng được”",
+          "lines": [
+            {
+              "speaker": "张东",
+              "zh": "你想吃点儿什么？",
+              "vi": "Bạn muốn ăn chút gì?",
+              "pinyin": "Nǐ xiǎng chī diǎnr shénme?"
+            },
+            {
+              "speaker": "田芳",
+              "zh": "随便，吃什么都行。你点吧。",
+              "vi": "Tùy, ăn gì cũng được. Bạn gọi đi.",
+              "pinyin": "Suíbiàn, chī shénme dōu xíng. Nǐ diǎn ba."
+            },
+            {
+              "speaker": "张东",
+              "zh": "你来点吧。你喜欢吃什么咱们就吃什么。",
+              "vi": "Bạn gọi đi. Bạn thích ăn gì thì chúng ta ăn cái đó.",
+              "pinyin": "Nǐ lái diǎn ba. Nǐ xǐhuan chī shénme zánmen jiù chī shénme."
+            },
+            {
+              "speaker": "田芳",
+              "zh": "你想喝点儿什么？",
+              "vi": "Bạn muốn uống chút gì?",
+              "pinyin": "Nǐ xiǎng hē diǎnr shénme?"
+            },
+            {
+              "speaker": "张东",
+              "zh": "我无所谓，喝什么都行。",
+              "vi": "Tôi sao cũng được, uống gì cũng được.",
+              "pinyin": "Wǒ wúsuǒwèi, hē shénme dōu xíng."
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

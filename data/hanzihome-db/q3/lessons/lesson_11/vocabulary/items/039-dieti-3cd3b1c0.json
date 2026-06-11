@@ -1,0 +1,387 @@
+{
+  "id": "6acb49cb-5c74-47c4-aca7-e1027e6866d5",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "碟体",
+  "pinyin": "diétǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "điệp thể",
+    "meaning_vi": "thân đĩa bay, phần thân dạng đĩa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thân đĩa bay",
+      "phần thân dạng đĩa"
+    ],
+    "short_definition_vi": "phần thân của vật thể dạng đĩa",
+    "textbook_focus_vi": "Trong bài là thân của 飞碟.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "碟",
+        "lishu_vi": "",
+        "structure_note_vi": "石 + 枼",
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "",
+            "meaning_vi": "đá",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "石 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "石 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "枼",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đĩa nhỏ, vật hình đĩa",
+        "modern_logic_vi": "đĩa nhỏ, vật hình đĩa",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "石 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "体",
+        "lishu_vi": "",
+        "structure_note_vi": "亻 + 本",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "本",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, thể",
+        "modern_logic_vi": "thân, thể",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "碟体 được học trong bài theo nghĩa: phần thân của vật thể dạng đĩa.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 橙红发亮的碟体.",
+    "warning_vi": "Không dùng 碟体 để nói cái đĩa ăn cơm; dùng 碟子/盘子.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "飞碟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cả chiếc đĩa bay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "物体",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vật thể nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 碟体 để nói cái đĩa ăn cơm; dùng 碟子/盘子."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a05d1561-0081-4467-b227-fffbf8bd5abb",
+      "order": 1,
+      "zh": "橙红发亮的碟体",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "306013ce-122d-44c4-97e6-4a974cd1a700",
+      "order": 2,
+      "zh": "飞碟的碟体",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6431e990-a7db-4b65-830a-6f589e58bd69",
+      "order": 3,
+      "zh": "碟体发亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76cbfca5-40d6-4eac-ba4d-e180e91de862",
+      "order": 4,
+      "zh": "碟体自转",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ddfb0d81-f22a-4e49-ba68-0f27cdfb1fc5",
+      "order": 5,
+      "zh": "巨大的碟体",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "67e6d140-3601-437e-973e-2eb6b13b769d",
+      "order": 1,
+      "zh": "它那橙红发亮的碟体照亮了整个西北天空。",
+      "pinyin": "",
+      "vi": "Thân đĩa bay màu đỏ cam phát sáng chiếu sáng cả bầu trời tây bắc.",
+      "analysis_vi": "橙红发亮的碟体 là cụm định ngữ dài.",
+      "highlight": [
+        "碟体"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6acb49cb-5c74-47c4-aca7-e1027e6866d5"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "abaf346a-6cec-4ae7-aafd-a70077047e1d",
+      "order": 2,
+      "zh": "我们不只看见光，连飞碟的碟体也看见了。",
+      "pinyin": "",
+      "vi": "Chúng tôi không chỉ thấy ánh sáng, mà đến thân đĩa bay cũng thấy.",
+      "analysis_vi": "连……也…… nhấn mức độ.",
+      "highlight": [
+        "碟体"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6acb49cb-5c74-47c4-aca7-e1027e6866d5"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "碟体 phụ thuộc mạnh vào ngữ cảnh 飞碟 hoặc vật thể hình đĩa.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "acd7540b-8b9c-435d-8c04-730bd65845cc",
+      "order": 1,
+      "rule_vi": "Không dùng 碟体 để nói cái đĩa ăn cơm; dùng 碟子/盘子.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 碟体 để nói cái đĩa ăn cơm; dùng 碟子/盘子.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "碟体",
+    "back": "thân đĩa bay, phần thân dạng đĩa",
+    "hint": "diétǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6acb49cb-5c74-47c4-aca7-e1027e6866d5",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "id": "ea89a1b4-570c-48ab-a8e3-3753601f2210",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "交响乐",
+  "pinyin": "jiāoxiǎngyuè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "music_experience"
+  ],
+  "meaning": {
+    "hanviet": "Giao hưởng nhạc",
+    "meaning_vi": "nhạc giao hưởng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhạc giao hưởng"
+    ],
+    "short_definition_vi": "nhạc giao hưởng",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "music experience",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "交",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại; không ép chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giao nhau, trao đổi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại; không ép chiết tự.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "响",
+        "lishu_vi": "",
+        "structure_note_vi": "口 liên quan âm thanh; 向 là phần phải.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh/lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "向",
+            "hanviet": "hướng",
+            "meaning_vi": "hướng về",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vang, kêu",
+        "modern_logic_vi": "口 liên quan âm thanh; 向 là phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "乐",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ giản thể, học theo âm đọc/ngữ cảnh.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm nhạc khi đọc yuè; vui khi đọc lè",
+        "modern_logic_vi": "Chữ giản thể, học theo âm đọc/ngữ cảnh.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "交 là giao hòa, 响 là âm vang, 乐 đọc yuè là âm nhạc; 交响乐 là nhạc giao hưởng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "交响曲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bản giao hưởng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "古典音乐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhạc cổ điển, phạm vi rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "流行歌曲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bài hát thịnh hành",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "84edfc51-46e8-4a18-bf92-50dfc5a2243d",
+      "order": 1,
+      "zh": "听交响乐",
+      "pinyin": "",
+      "vi": "nghe nhạc giao hưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ca703e0-a666-45c3-955a-85195fe175b0",
+      "order": 2,
+      "zh": "交响乐队",
+      "pinyin": "",
+      "vi": "dàn nhạc giao hưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7e322f5-9060-49f8-b6b0-090f91a76154",
+      "order": 3,
+      "zh": "喜欢交响乐",
+      "pinyin": "",
+      "vi": "thích nhạc giao hưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c775f0e-9410-4152-98ed-3935e0e17512",
+      "order": 4,
+      "zh": "演奏交响乐",
+      "pinyin": "",
+      "vi": "biểu diễn nhạc giao hưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3bf399b3-99d0-4fa0-a2fa-734df7376f61",
+      "order": 5,
+      "zh": "交响乐作品",
+      "pinyin": "",
+      "vi": "tác phẩm nhạc giao hưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "02356007-6b72-4d52-98a7-1b01e2bae5d0",
+      "order": 1,
+      "zh": "我喜欢听交响乐。",
+      "pinyin": "Wǒ xǐhuan tīng jiāoxiǎngyuè.",
+      "vi": "Tôi thích nghe nhạc giao hưởng.",
+      "analysis_vi": "听 + loại nhạc.",
+      "highlight": [
+        "交响乐"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea89a1b4-570c-48ab-a8e3-3753601f2210"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2b40fb5a-0cb0-442d-a184-7e7ba950822c",
+      "order": 2,
+      "zh": "我比以前更喜欢交响乐了。",
+      "pinyin": "Wǒ bǐ yǐqián gèng xǐhuan jiāoxiǎngyuè le.",
+      "vi": "Tôi thích nhạc giao hưởng hơn trước rồi.",
+      "analysis_vi": "比以前更喜欢 là so sánh mức độ thay đổi.",
+      "highlight": [
+        "交响乐"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea89a1b4-570c-48ab-a8e3-3753601f2210"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Từ này mở rộng chủ đề âm nhạc trong giáo trình sang nhạc cổ điển/giao hưởng.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3403eb85-b27b-45d2-b5ed-7894066a5f9a",
+      "order": 1,
+      "rule_vi": "乐 trong 交响乐 đọc yuè, không đọc lè.",
+      "natural_examples": [
+        {
+          "zh": "交响乐",
+          "pinyin": "jiāoxiǎngyuè",
+          "vi": "nhạc giao hưởng",
+          "note_vi": "Cách đọc đúng.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "交响乐",
+          "pinyin": "jiāoxiǎngyuè",
+          "vi": "nhạc giao hưởng",
+          "note_vi": "Cách đọc đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "交响乐",
+    "back": "nhạc giao hưởng",
+    "hint": "jiāoxiǎngyuè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "music_experience"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ea89a1b4-570c-48ab-a8e3-3753601f2210",
+    "source_lesson_vocab_id": null
+  }
+}

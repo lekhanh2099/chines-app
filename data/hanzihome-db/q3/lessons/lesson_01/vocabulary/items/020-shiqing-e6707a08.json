@@ -1,0 +1,346 @@
+{
+  "id": "48c6c1db-6286-4694-b1ba-23164637f203",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "事情",
+  "pinyin": "shìqing",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "sự tình",
+    "meaning_vi": "sự việc, chuyện, việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sự việc",
+      "chuyện",
+      "việc"
+    ],
+    "short_definition_vi": "sự việc, chuyện, việc",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: sự việc, chuyện, việc.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "事",
+        "lishu_vi": "sự",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc, sự việc",
+        "modern_logic_vi": "Việc/chuyện cần xử lý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "情",
+        "lishu_vi": "tình",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm, tình hình, trạng thái",
+        "modern_logic_vi": "Liên quan đến trạng thái/cảm xúc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "事情 trong bài dùng theo nghĩa: sự việc, chuyện, việc. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 事情 qua văn cảnh 离家的时候: sự việc, chuyện, việc.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "事",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "việc, ngắn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "事件",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sự kiện/vụ việc lớn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "情况",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình hình/trạng thái của sự việc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "问题",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vấn đề cần giải quyết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b590aa6c-b6d0-4d43-8fdf-220b8904dd11",
+      "order": 1,
+      "zh": "一件事情",
+      "pinyin": "",
+      "vi": "một chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35e355ce-045e-45e2-aed1-aa6fe5a60112",
+      "order": 2,
+      "zh": "很多事情",
+      "pinyin": "",
+      "vi": "rất nhiều việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bad2806a-bb75-41df-b5fa-ce3bcf3cf5d6",
+      "order": 3,
+      "zh": "重要的事情",
+      "pinyin": "",
+      "vi": "chuyện quan trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fd5eb6e-3f1c-4752-954b-1b2c8a2bfcc2",
+      "order": 4,
+      "zh": "处理事情",
+      "pinyin": "",
+      "vi": "xử lý việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88f6a660-238e-40a2-b227-bc75b0389d62",
+      "order": 5,
+      "zh": "把事情说清楚",
+      "pinyin": "",
+      "vi": "nói rõ sự việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9c008c3b-6410-4fa8-8ca8-76726195da62",
+      "order": 1,
+      "zh": "这件事情很重要。",
+      "pinyin": "",
+      "vi": "Chuyện này rất quan trọng.",
+      "analysis_vi": "事情 thường đi với lượng từ 件.",
+      "highlight": [
+        "事情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48c6c1db-6286-4694-b1ba-23164637f203"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e721ce94-ff93-4f62-a6d9-8f0c6d134cc9",
+      "order": 2,
+      "zh": "到了国外以后，很多事情都要自己做。",
+      "pinyin": "",
+      "vi": "Sau khi đến nước ngoài, nhiều việc đều phải tự làm.",
+      "analysis_vi": "很多事情都…… nhấn phạm vi rộng.",
+      "highlight": [
+        "事情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48c6c1db-6286-4694-b1ba-23164637f203"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a1c19d97-4c40-46ab-851d-0d14f62e6bdc",
+      "order": 3,
+      "zh": "她本来不想把这件事情告诉父母，可是后来发现一个人处理不了。",
+      "pinyin": "",
+      "vi": "Cô ấy vốn không muốn nói chuyện này với bố mẹ nhưng sau phát hiện một mình xử lý không nổi.",
+      "analysis_vi": "处理不了 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "事情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48c6c1db-6286-4694-b1ba-23164637f203"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "事情 là từ an toàn khi chưa biết chọn 事/问题/情况/事件, nhưng viết kỹ thì phải phân biệt.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f5287cbb-5218-42c8-9501-bbd13f651371",
+      "order": 1,
+      "rule_vi": "Khẩu ngữ 'Có chuyện gì không?' thường là 有什么事吗？ tự nhiên hơn 有什么事情吗？",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "事情",
+    "back": "sự việc, chuyện, việc",
+    "hint": "shìqing",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_020"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "48c6c1db-6286-4694-b1ba-23164637f203",
+    "source_lesson_vocab_id": null
+  }
+}

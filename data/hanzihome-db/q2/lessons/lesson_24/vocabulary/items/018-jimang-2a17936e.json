@@ -1,0 +1,237 @@
+{
+  "id": "1cbfb4e6-1bc7-436d-b125-d93d9e1d86ae",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "急忙",
+  "pinyin": "jímáng",
+  "pos": {
+    "raw_vi": "adverb/adjective",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cấp mang",
+    "meaning_vi": "vội vàng; hấp tấp làm ngay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vội vàng",
+      "hấp tấp làm ngay"
+    ],
+    "short_definition_vi": "vội vàng; hấp tấp làm ngay",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "急",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim; lòng; cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim; lòng; cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim; lòng; cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấp; sốt ruột",
+        "modern_logic_vi": "Có 心 nên liên quan nóng ruột.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "忙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm đứng; cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm đứng; cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm đứng; cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "亡",
+            "hanviet": "vong",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bận; rối; vội",
+        "modern_logic_vi": "Có 忄 nên liên quan trạng thái tâm trí bận/rối.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "急忙 = vội vàng; hấp tấp làm ngay.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 急忙 để nói “tôi bận”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "673f0369-7eeb-4263-b92c-76d3dba03b26",
+      "order": 1,
+      "zh": "急忙",
+      "pinyin": "",
+      "vi": "vội vàng; hấp tấp làm ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9a651958-3f00-48e5-aead-5c54b970bebc",
+      "order": 1,
+      "zh": "看到老人摔倒了，他急忙跑过去扶。",
+      "pinyin": "Kàndào lǎorén shuāidǎo le, tā jímáng pǎo guòqu fú.",
+      "vi": "Thấy cụ già bị ngã, anh ấy vội chạy qua đỡ.",
+      "analysis_vi": "Không dùng 急忙 để nói “tôi bận”.",
+      "level": "basic",
+      "highlight": [
+        "急忙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1cbfb4e6-1bc7-436d-b125-d93d9e1d86ae"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "481750d0-8ff5-4a21-9034-f65a973fa662",
+      "kind": "usage",
+      "text_vi": "Không dùng 急忙 để nói “tôi bận”.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "急忙",
+    "back": "vội vàng; hấp tấp làm ngay",
+    "hint": "jímáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1cbfb4e6-1bc7-436d-b125-d93d9e1d86ae",
+    "source_lesson_vocab_id": null
+  }
+}

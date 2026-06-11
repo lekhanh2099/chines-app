@@ -1,0 +1,282 @@
+{
+  "id": "fd05d46b-686b-4d73-a53a-216e13862e48",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "天气",
+  "pinyin": "tiānqì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "city_weather"
+  ],
+  "meaning": {
+    "hanviet": "Thiên khí",
+    "meaning_vi": "thời tiết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thời tiết"
+    ],
+    "short_definition_vi": "thời tiết",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "city weather",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "天",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ cơ bản chỉ trời/ngày.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời, ngày",
+        "modern_logic_vi": "Chữ cơ bản chỉ trời/ngày.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "气",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ cơ bản chỉ khí/hơi.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khí, hơi, không khí",
+        "modern_logic_vi": "Chữ cơ bản chỉ khí/hơi.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "天 là trời, 气 là khí; 天气 là trạng thái khí trời.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "气候",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khí hậu dài hạn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "温度",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhiệt độ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "气温",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhiệt độ không khí",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2f6fa4bc-45fe-4945-aa7b-c0d5f012cabc",
+      "order": 1,
+      "zh": "天气很好",
+      "pinyin": "",
+      "vi": "thời tiết rất đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27c1d3d3-2e7a-4f2c-8771-80e398d8452b",
+      "order": 2,
+      "zh": "天气不好",
+      "pinyin": "",
+      "vi": "thời tiết không tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c99bb949-44a8-4317-bf05-0b8298d1d1f2",
+      "order": 3,
+      "zh": "天气预报",
+      "pinyin": "",
+      "vi": "dự báo thời tiết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a2a8d27-8c98-4df4-bb6c-be51c46bbd5d",
+      "order": 4,
+      "zh": "天气变冷了",
+      "pinyin": "",
+      "vi": "thời tiết trở lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6df4b2ce-6ba1-46cc-8b79-e5e2ef71898d",
+      "order": 5,
+      "zh": "今天天气怎么样？",
+      "pinyin": "",
+      "vi": "hôm nay thời tiết thế nào?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2cf2bf34-53fe-47cd-842b-c55c5bf42f3a",
+      "order": 1,
+      "zh": "今天天气很好。",
+      "pinyin": "Jīntiān tiānqì hěn hǎo.",
+      "vi": "Hôm nay thời tiết rất đẹp.",
+      "analysis_vi": "天气很好 là mẫu cơ bản.",
+      "highlight": [
+        "天气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd05d46b-686b-4d73-a53a-216e13862e48"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "13805f2f-c304-4b7f-b0e9-81cc2bb76e28",
+      "order": 2,
+      "zh": "北京的天气比我家乡冷。",
+      "pinyin": "Běijīng de tiānqì bǐ wǒ jiāxiāng lěng.",
+      "vi": "Thời tiết Bắc Kinh lạnh hơn quê tôi.",
+      "analysis_vi": "Mẫu 比 + chuẩn so sánh + tính từ.",
+      "highlight": [
+        "天气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd05d46b-686b-4d73-a53a-216e13862e48"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "03e11da6-c1cc-42b9-91c5-801ffb22130a",
+      "order": 1,
+      "rule_vi": "天气 là thời tiết ngắn hạn, 气候 là khí hậu dài hạn.",
+      "natural_examples": [
+        {
+          "zh": "今天的天气很好。",
+          "pinyin": "Jīntiān de tiānqì hěn hǎo.",
+          "vi": "Thời tiết hôm nay rất đẹp.",
+          "note_vi": "天气.",
+          "notes": []
+        },
+        {
+          "zh": "北京的气候比较干燥。",
+          "pinyin": "Běijīng de qìhòu bǐjiào gānzào.",
+          "vi": "Khí hậu Bắc Kinh khá khô.",
+          "note_vi": "气候.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "今天的天气很好。",
+          "pinyin": "Jīntiān de tiānqì hěn hǎo.",
+          "vi": "Thời tiết hôm nay rất đẹp.",
+          "note_vi": "天气.",
+          "notes": []
+        },
+        {
+          "zh": "北京的气候比较干燥。",
+          "pinyin": "Běijīng de qìhòu bǐjiào gānzào.",
+          "vi": "Khí hậu Bắc Kinh khá khô.",
+          "note_vi": "气候.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "天气",
+    "back": "thời tiết",
+    "hint": "tiānqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "city_weather"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fd05d46b-686b-4d73-a53a-216e13862e48",
+    "source_lesson_vocab_id": null
+  }
+}

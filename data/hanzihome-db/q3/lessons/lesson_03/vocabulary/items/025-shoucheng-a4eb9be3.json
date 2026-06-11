@@ -1,0 +1,381 @@
+{
+  "id": "aa468218-3ad5-4724-829f-8a2e91382277",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "收成",
+  "pinyin": "shōucheng",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "agriculture"
+  ],
+  "meaning": {
+    "hanviet": "thu thành",
+    "meaning_vi": "mùa màng; kết quả thu hoạch",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mùa màng",
+      "kết quả thu hoạch"
+    ],
+    "short_definition_vi": "mùa màng; kết quả thu hoạch",
+    "textbook_focus_vi": "mùa màng; kết quả thu hoạch",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "agriculture",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "收",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "đánh, tác động",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh, tác động",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh, tác động",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thu, nhận, gom",
+        "modern_logic_vi": "Trong từ này, 收 góp phần vào lớp nghĩa hiện đại: thu, nhận, gom",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "成",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "戈",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Qua",
+          "radical_name_zh": "",
+          "hanviet": "qua",
+          "meaning_vi": "vũ khí cổ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí cổ",
+            "position_vi": "bên ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "戈",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Qua",
+              "radical_name_zh": "",
+              "hanviet": "qua",
+              "meaning_vi": "vũ khí cổ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoàn thành, trở thành, kết quả",
+        "modern_logic_vi": "Trong từ này, 成 góp phần vào lớp nghĩa hiện đại: hoàn thành, trở thành, kết quả",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "收 = thu/gom/thu hoạch; 成 = kết quả đã thành. 收成 là kết quả vụ mùa.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "收获",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "收割",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "丰收",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "产量",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "减产",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1278987f-ee06-4f5d-b756-aabadabac595",
+      "order": 1,
+      "zh": "收成好",
+      "pinyin": "",
+      "vi": "mùa màng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d313cd5-c331-4677-bbc1-dedf752b3fa7",
+      "order": 2,
+      "zh": "收成不好",
+      "pinyin": "",
+      "vi": "mùa màng không tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6091934f-bc08-4a2e-9f13-fec1931490c4",
+      "order": 3,
+      "zh": "今年的收成",
+      "pinyin": "",
+      "vi": "mùa màng năm nay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0993526-9fae-4405-bdc9-cb84c364da7e",
+      "order": 4,
+      "zh": "好收成",
+      "pinyin": "",
+      "vi": "vụ mùa tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d429fe5-dd09-4e5b-ade9-1181195d1368",
+      "order": 5,
+      "zh": "影响收成",
+      "pinyin": "",
+      "vi": "ảnh hưởng mùa màng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a841b075-5684-49a5-93a9-67cf47e2fa3d",
+      "order": 6,
+      "zh": "带来好收成",
+      "pinyin": "",
+      "vi": "mang lại vụ mùa tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "70f6852e-c072-4098-aedd-314bb21ebc3e",
+      "order": 1,
+      "zh": "今年的收成很好。",
+      "pinyin": "",
+      "vi": "Mùa màng năm nay rất tốt.",
+      "analysis_vi": "收成 nói kết quả thu hoạch.",
+      "highlight": [
+        "收成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aa468218-3ad5-4724-829f-8a2e91382277"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a5d2de2c-122b-4f21-8045-e938fbc3ec5d",
+      "order": 2,
+      "zh": "农民都希望明年有个好收成。",
+      "pinyin": "",
+      "vi": "Nông dân đều mong năm sau có vụ mùa tốt.",
+      "analysis_vi": "好收成 liên quan 瑞雪兆丰年.",
+      "highlight": [
+        "收成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aa468218-3ad5-4724-829f-8a2e91382277"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "88f648f0-8f55-40ff-9d1f-62371c3330ed",
+      "order": 3,
+      "zh": "孩子们想到堆雪人儿，农民想到来年的收成。",
+      "pinyin": "",
+      "vi": "Trẻ con nghĩ đến người tuyết, nông dân nghĩ đến mùa màng năm sau.",
+      "analysis_vi": "Đối lập góc nhìn trẻ con/nông dân.",
+      "highlight": [
+        "收成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aa468218-3ad5-4724-829f-8a2e91382277"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "收成 trong Bài 3 北京的四季",
+    "content_vi": "Từ này là chìa khóa hiểu 瑞雪兆丰年.",
+    "tags": [
+      "agriculture"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c77551d3-29b5-466d-96fa-4861460d2e8c",
+      "order": 1,
+      "rule_vi": "收成 thiên về mùa màng; kinh nghiệm học được nói 收获, không nói 收成.",
+      "natural_examples": [
+        {
+          "zh": "今年的收成很好。",
+          "pinyin": "",
+          "vi": "Mùa màng năm nay rất tốt.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "收成 thiên về mùa màng; kinh nghiệm học được nói 收获, không nói 收成.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "收成",
+    "back": "mùa màng; kết quả thu hoạch",
+    "hint": "shōucheng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "agriculture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "aa468218-3ad5-4724-829f-8a2e91382277",
+    "source_lesson_vocab_id": null
+  }
+}

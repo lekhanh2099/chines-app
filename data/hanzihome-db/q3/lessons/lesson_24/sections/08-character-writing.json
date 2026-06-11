@@ -1,0 +1,312 @@
+{
+  "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
+  "type": "character_writing",
+  "order": 8,
+  "title": "写汉字",
+  "title_vi": "Luyện viết chữ Hán",
+  "source_origin": "generated_from_lesson_vocab",
+  "check_needed": false,
+  "empty_reason_vi": "Bài này không thấy mục 写汉字 riêng trong PDF; danh sách dưới đây là gợi ý luyện viết từ 生词.",
+  "items": [
+    {
+      "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
+      "type": "character_writing",
+      "order": 1,
+      "hanzi": "情",
+      "pinyin": "qíng",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
+      "type": "character_writing",
+      "order": 2,
+      "hanzi": "商",
+      "pinyin": "shāng",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
+      "type": "character_writing",
+      "order": 3,
+      "hanzi": "绪",
+      "pinyin": "xù",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
+      "type": "character_writing",
+      "order": 4,
+      "hanzi": "智",
+      "pinyin": "zhì",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
+      "type": "character_writing",
+      "order": 5,
+      "hanzi": "素",
+      "pinyin": "sù",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
+      "type": "character_writing",
+      "order": 6,
+      "hanzi": "质",
+      "pinyin": "zhì",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "b00ce016-cc5e-4ca7-8718-7ddcae1618a6",
+      "type": "character_writing",
+      "order": 7,
+      "hanzi": "体",
+      "pinyin": "tǐ",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
+      "type": "character_writing",
+      "order": 8,
+      "hanzi": "谅",
+      "pinyin": "liàng",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "465657de-9263-4d12-86f0-2441c5765015",
+      "type": "character_writing",
+      "order": 9,
+      "hanzi": "设",
+      "pinyin": "shè",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "fc063ab3-c1b4-44d9-bd34-c6ed58bdbba7",
+      "type": "character_writing",
+      "order": 10,
+      "hanzi": "处",
+      "pinyin": "chù",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "937cd534-2bef-484c-ac0b-fc654e6db919",
+      "type": "character_writing",
+      "order": 11,
+      "hanzi": "动",
+      "pinyin": "dòng",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "df0df0d7-11b4-49e3-804b-a0fc179aab2a",
+      "type": "character_writing",
+      "order": 12,
+      "hanzi": "建",
+      "pinyin": "jiàn",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "d8cdf3e0-e26d-4968-a7e2-6a30d0af1b90",
+      "type": "character_writing",
+      "order": 13,
+      "hanzi": "竞",
+      "pinyin": "jìng",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "e11918fd-b3c9-4cb7-b623-0179aa82488b",
+      "type": "character_writing",
+      "order": 14,
+      "hanzi": "争",
+      "pinyin": "zhēng",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "fe2d69a5-d155-4723-ba67-501d887ac2f9",
+      "type": "character_writing",
+      "order": 15,
+      "hanzi": "忌",
+      "pinyin": "jì",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "6c79894d-40a6-41be-9333-c875515563fb",
+      "type": "character_writing",
+      "order": 16,
+      "hanzi": "妒",
+      "pinyin": "dù",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "ce0a9298-ea47-4a52-b701-758c6dab11b5",
+      "type": "character_writing",
+      "order": 17,
+      "hanzi": "脾",
+      "pinyin": "pí",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "59521ea2-4427-4918-8593-59465c201b2c",
+      "type": "character_writing",
+      "order": 18,
+      "hanzi": "擦",
+      "pinyin": "cā",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "24960e10-d1fe-4ba7-9f07-a05f4eeedc2f",
+      "type": "character_writing",
+      "order": 19,
+      "hanzi": "骂",
+      "pinyin": "mà",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "a6a87167-2b01-4228-a7dc-8c541bb553d8",
+      "type": "character_writing",
+      "order": 20,
+      "hanzi": "化",
+      "pinyin": "huà",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "826166c1-f1d9-4339-b008-1f1fca0ce764",
+      "type": "character_writing",
+      "order": 21,
+      "hanzi": "解",
+      "pinyin": "jiě",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "cf6c2bec-a30d-4b71-823a-43e970b73e6d",
+      "type": "character_writing",
+      "order": 22,
+      "hanzi": "趣",
+      "pinyin": "qù",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "3905c22e-8711-425d-b8ce-f850e476332f",
+      "type": "character_writing",
+      "order": 23,
+      "hanzi": "耐",
+      "pinyin": "nài",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "3aa48fb0-9b5e-4076-ba39-ca30936c3202",
+      "type": "character_writing",
+      "order": 24,
+      "hanzi": "冒",
+      "pinyin": "mào",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "ccf16d48-233f-4a02-8f5d-8e395949748a",
+      "type": "character_writing",
+      "order": 25,
+      "hanzi": "险",
+      "pinyin": "xiǎn",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "b80a7041-c7a9-4a3e-95c9-cfeece6329f4",
+      "type": "character_writing",
+      "order": 26,
+      "hanzi": "靠",
+      "pinyin": "kào",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "d7dc219b-33ae-4d74-a66b-dcb0ee281a55",
+      "type": "character_writing",
+      "order": 27,
+      "hanzi": "缩",
+      "pinyin": "suō",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "8bdb2c56-68f3-4771-8c40-1ec6bbab31c1",
+      "type": "character_writing",
+      "order": 28,
+      "hanzi": "距",
+      "pinyin": "jù",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "5fbffe9f-1bd1-49a8-9059-25ca183ce711",
+      "type": "character_writing",
+      "order": 29,
+      "hanzi": "离",
+      "pinyin": "lí",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    },
+    {
+      "id": "cb10b322-d20e-4d24-ad18-669d7e13c998",
+      "type": "character_writing",
+      "order": 30,
+      "hanzi": "际",
+      "pinyin": "jì",
+      "note_vi": "Gợi ý luyện viết từ sinh từ bài 24; không phải mục 写汉字 riêng trong sách.",
+      "source_origin": "generated_from_lesson_vocab",
+      "check_needed": false
+    }
+  ]
+}

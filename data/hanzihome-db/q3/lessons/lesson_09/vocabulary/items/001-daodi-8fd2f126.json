@@ -1,0 +1,336 @@
+{
+  "id": "b89c1037-ecdf-4b94-a9a0-bbb97137bb17",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "到底",
+  "pinyin": "dàodǐ",
+  "pos": {
+    "raw_vi": "Phó từ / cụm trạng ngữ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đáo để",
+    "meaning_vi": "rốt cuộc; cuối cùng; cho đến cùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rốt cuộc",
+      "cuối cùng",
+      "cho đến cùng"
+    ],
+    "short_definition_vi": "rốt cuộc",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "到",
+        "lishu_vi": "đáo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "至",
+            "hanviet": "chí",
+            "meaning_vi": "đến, tới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "至",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chí",
+              "radical_name_zh": "",
+              "hanviet": "chí",
+              "meaning_vi": "đến, tới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến, tới",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "至",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chí",
+          "radical_name_zh": "",
+          "hanviet": "chí",
+          "meaning_vi": "đến, tới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "底",
+        "lishu_vi": "để",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái che, không gian",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái che, không gian",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đáy, cuối cùng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái che, không gian",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "到 là đến, 底 là đáy; 到底 gợi ý xét đến tận đáy vấn đề hoặc đi đến kết quả cuối cùng.",
+    "memory_tip_vi": "Nhớ qua 你到底想要什么？ = Rốt cuộc bạn muốn gì?",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "究竟",
+        "pinyin": "jiūjìng",
+        "meaning_vi": "rốt cuộc",
+        "difference_vi": "Trang trọng hơn 到底.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "终于",
+        "pinyin": "zhōngyú",
+        "meaning_vi": "cuối cùng",
+        "difference_vi": "Nhấn chờ đợi/khó khăn rồi mới đạt kết quả.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6b3cd240-81e7-4da9-a951-7a820ab22c69",
+      "order": 1,
+      "zh": "到底是什么",
+      "pinyin": "dàodǐ shì shénme",
+      "vi": "rốt cuộc là gì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e284ded-15e0-45ed-8748-bf2867f1c50d",
+      "order": 2,
+      "zh": "到底为什么",
+      "pinyin": "dàodǐ wèishénme",
+      "vi": "rốt cuộc vì sao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "12a47450-b950-49a6-90f0-e0bd2a26de3c",
+      "order": 3,
+      "zh": "坚持到底",
+      "pinyin": "jiānchí dàodǐ",
+      "vi": "kiên trì đến cùng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98624558-bfcd-4417-acbd-8690cfc30a80",
+      "order": 4,
+      "zh": "说到底",
+      "pinyin": "shuō dàodǐ",
+      "vi": "nói cho cùng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fba5f907-bec4-4f97-a44b-5cb555c6c313",
+      "order": 1,
+      "zh": "你到底想要什么？",
+      "pinyin": "Nǐ dàodǐ xiǎng yào shénme?",
+      "vi": "Rốt cuộc bạn muốn gì?",
+      "analysis_vi": "到底 đứng trước 想要 để truy hỏi mạnh hơn.",
+      "highlight": [
+        "到底"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b89c1037-ecdf-4b94-a9a0-bbb97137bb17"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f1a1b046-c2dd-4d0f-9ff7-28a497467fda",
+      "order": 2,
+      "zh": "对我来说，幸福到底是什么，不是一个容易回答的问题。",
+      "pinyin": "Duì wǒ lái shuō, xìngfú dàodǐ shì shénme, bú shì yí ge róngyì huídá de wèntí.",
+      "vi": "Đối với tôi, hạnh phúc rốt cuộc là gì không phải câu hỏi dễ trả lời.",
+      "analysis_vi": "Gài 对……来说; 到底 nhấn truy vấn bản chất.",
+      "highlight": [
+        "到底"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b89c1037-ecdf-4b94-a9a0-bbb97137bb17"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "到底 trong câu hỏi khẩu ngữ có thể nghe khá mạnh, gần chất vấn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5442c59a-c302-496d-bc0d-3f6ef7565859",
+      "order": 1,
+      "rule_vi": "Không dùng 到底 thay 终于 khi muốn nhấn sự mong chờ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我等了很久，他到底来了。",
+          "pinyin": "Wǒ děng le hěn jiǔ, tā dàodǐ lái le.",
+          "vi": "Gượng nếu muốn nói niềm vui mong chờ.",
+          "note_vi": "到底 thiên về kết luận.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我等了很久，他终于来了。",
+          "pinyin": "Wǒ děng le hěn jiǔ, tā zhōngyú lái le.",
+          "vi": "Tôi đợi rất lâu, cuối cùng anh ấy cũng đến.",
+          "note_vi": "终于 hợp để nhấn chờ đợi.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "到底",
+    "back": "rốt cuộc; cuối cùng; cho đến cùng",
+    "hint": "dàodǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b89c1037-ecdf-4b94-a9a0-bbb97137bb17",
+    "source_lesson_vocab_id": null
+  }
+}

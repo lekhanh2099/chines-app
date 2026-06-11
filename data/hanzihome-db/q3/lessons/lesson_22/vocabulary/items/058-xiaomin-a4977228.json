@@ -1,0 +1,386 @@
+{
+  "id": "9fd9efc9-8774-4dae-8152-84fe18367d11",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "小敏",
+  "pinyin": "Xiǎomǐn",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "proper_noun"
+  ],
+  "meaning": {
+    "hanviet": "Tiểu Mẫn",
+    "meaning_vi": "tên riêng nhân vật Tiểu Mẫn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tên riêng nhân vật Tiểu Mẫn"
+    ],
+    "short_definition_vi": "tên riêng nhân vật Tiểu Mẫn",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "thuật ngữ/tên riêng",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "小",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "小",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tiểu",
+          "radical_name_zh": "",
+          "hanviet": "tiểu",
+          "meaning_vi": "nhỏ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "小 được dùng như bộ/thành phần chỉ trường nghĩa: nhỏ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "小",
+            "hanviet": "tiểu",
+            "meaning_vi": "nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "小",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tiểu",
+              "radical_name_zh": "",
+              "hanviet": "tiểu",
+              "meaning_vi": "nhỏ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "小 được dùng như bộ/thành phần chỉ trường nghĩa: nhỏ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "小 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhỏ",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "敏",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "đánh khẽ, tác động, dạy bảo",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ/thành phần chỉ trường nghĩa: đánh khẽ, tác động, dạy bảo.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh khẽ, tác động, dạy bảo",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh khẽ, tác động, dạy bảo",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ/thành phần chỉ trường nghĩa: đánh khẽ, tác động, dạy bảo.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhanh nhạy",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "小敏 được ghi nhớ theo nghĩa hiện đại: tên riêng nhân vật Tiểu Mẫn.",
+    "memory_tip_vi": "Nhớ qua cụm: 小敏的母亲.",
+    "warning_vi": "Tên riêng/phiên âm: không dịch nghĩa từng chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小王",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小李",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "敏敏",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch 小敏 thành “bé Mẫn” nếu nhân vật đã lớn; giữ “Tiểu Mẫn” ổn hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "47e4f5dd-7f6e-493c-aee5-d88448e8064d",
+      "order": 1,
+      "zh": "小敏的母亲",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50bef240-4731-4678-9b26-b0703a3f97a3",
+      "order": 2,
+      "zh": "帮助小敏",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a4772fe-0753-4b8e-a8f5-6a175742472a",
+      "order": 3,
+      "zh": "鼓励小敏",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22cbcd29-459e-4b04-94f2-fcf17a3e66a1",
+      "order": 4,
+      "zh": "小敏进入课堂",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c6e7ca57-789e-4c69-bc0a-e055c6113b74",
+      "order": 5,
+      "zh": "小敏自学文学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f002a27-2307-4667-a846-328481c36a98",
+      "order": 6,
+      "zh": "小敏考上大学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a62b109f-720a-47d9-87be-40d433b499d0",
+      "order": 1,
+      "zh": "小敏从小就失去了听力。",
+      "pinyin": "Xiǎomǐn cóng xiǎo jiù shīqù le tīnglì.",
+      "vi": "Tiểu Mẫn từ nhỏ đã mất thính lực.",
+      "analysis_vi": "从小就…… = từ nhỏ đã……",
+      "highlight": [
+        "小敏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9fd9efc9-8774-4dae-8152-84fe18367d11"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4b193ebd-b002-4b08-9cd6-44933b5e666c",
+      "order": 2,
+      "zh": "即使小敏听不见，母亲也没有放弃教她说话。",
+      "pinyin": "Jíshǐ Xiǎomǐn tīng bu jiàn, mǔqīn yě méiyǒu fàngqì jiāo tā shuōhuà.",
+      "vi": "Cho dù Tiểu Mẫn không nghe thấy, mẹ cũng không từ bỏ việc dạy cô ấy nói.",
+      "analysis_vi": "即使……也…… đúng trọng tâm bài.",
+      "highlight": [
+        "小敏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9fd9efc9-8774-4dae-8152-84fe18367d11"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "小 + tên có thể là cách gọi thân mật, không nhất thiết là tên khai sinh đầy đủ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e2b8d189-179e-47b4-8ecd-2a23291ef320",
+      "order": 1,
+      "rule_vi": "Không dịch 小敏 thành “bé Mẫn” nếu nhân vật đã lớn; giữ “Tiểu Mẫn” ổn hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 小敏 thành “bé Mẫn” nếu nhân vật đã lớn; giữ “Tiểu Mẫn” ổn hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "小敏",
+    "back": "tên riêng nhân vật Tiểu Mẫn",
+    "hint": "Xiǎomǐn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "proper_noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9fd9efc9-8774-4dae-8152-84fe18367d11",
+    "source_lesson_vocab_id": null
+  }
+}

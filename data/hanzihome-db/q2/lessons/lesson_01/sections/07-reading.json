@@ -1,0 +1,549 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解",
+  "title_vi": "Đọc hiểu",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "supplementary_vocab": [
+    {
+      "id": "97948db8-350f-468f-a584-08ac6ee8ea70",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "最",
+      "pinyin": "zuì",
+      "meaning_vi": "nhất; mức độ cao nhất",
+      "pos": "Phó từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "考试",
+      "pinyin": "kǎoshì",
+      "meaning_vi": "thi; kỳ thi",
+      "pos": "Danh từ / Động từ li hợp",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ li hợp",
+        "cn": "名词 / 动宾式离合词",
+        "normalized": "verb_noun",
+        "schema_compatible_pos": "verb_noun",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 考 + tân ngữ 试",
+        "usage_note_vi": "Có thể nói 考了试; khi chỉ “kỳ thi” thì dùng như danh từ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "得",
+      "pinyin": "dé",
+      "meaning_vi": "được; đạt được",
+      "pos": "Động từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "66286879-4464-4667-b96b-edb647e8e7a6",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "满分",
+      "pinyin": "mǎnfēn",
+      "meaning_vi": "điểm tối đa; điểm tuyệt đối",
+      "pos": "Danh từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "奖学金",
+      "pinyin": "jiǎngxuéjīn",
+      "meaning_vi": "học bổng",
+      "pos": "Danh từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "送行",
+      "pinyin": "sòngxíng",
+      "meaning_vi": "tiễn ai lên đường",
+      "pos": "Động từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fe04b57-27fb-446a-a96c-ac48b8e36867",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "热情",
+      "pinyin": "rèqíng",
+      "meaning_vi": "nhiệt tình; nồng nhiệt",
+      "pos": "Tính từ / Danh từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Danh từ",
+        "cn": "形容词 / 名词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "见面",
+      "pinyin": "jiànmiàn",
+      "meaning_vi": "gặp mặt",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 见 + tân ngữ 面",
+        "usage_note_vi": "Có thể nói 见了面 / 见过面; nghĩa là gặp mặt trực tiếp.",
+        "notes": []
+      }
+    },
+    {
+      "id": "f5f5c02a-114d-4943-8a50-c6cb7ed80e9e",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "一路平安",
+      "pinyin": "yílù píng’ān",
+      "meaning_vi": "thượng lộ bình an; đi đường bình an",
+      "pos": "Thành ngữ / Lời chúc",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Thành ngữ / Lời chúc",
+        "cn": "成语 / 祝福语",
+        "normalized": "idiom",
+        "schema_compatible_pos": "idiom",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "3a6679d3-0126-4890-9d7e-f9738c768e7f",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "哭",
+      "pinyin": "kū",
+      "meaning_vi": "khóc",
+      "pos": "Động từ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "examples": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "阅读理解",
+      "title_vi": "Đọc thêm",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "09774607-50d1-46ab-a769-9d723c536d13",
+          "order": 1,
+          "zh": "今天我去江苹（Jiang Ping）家了。",
+          "vi": "Hôm nay tôi đến nhà Giang Bình.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "79df4efa-6d58-462c-b963-4f377e7c72df",
+          "order": 2,
+          "zh": "我和江苹是中学同学，她是我的好朋友，也是我们全班同学的朋友。她学习非常努力，是我们班学习最好的学生。她会学习，也会玩儿，还常常帮助别人，老师和同学都很喜欢她。她这次参加了国外一个大学的考试。这个考试非常难，但是她考得很好，得了满分。听说只有三个得满分的。这个大学给了她最高的奖学金。同学们都向她表示祝贺，为她感到高兴。",
+          "vi": "Tôi và Giang Bình là bạn học hồi trung học. Cô ấy là bạn tốt của tôi, cũng là bạn của cả lớp chúng tôi. Cô ấy học rất chăm chỉ, là học sinh học giỏi nhất lớp chúng tôi. Cô ấy biết học, cũng biết chơi, lại thường xuyên giúp đỡ người khác, nên thầy cô và bạn học đều rất thích cô ấy. Lần này cô ấy tham gia kỳ thi của một trường đại học nước ngoài. Kỳ thi này rất khó, nhưng cô ấy thi rất tốt, đạt điểm tuyệt đối. Nghe nói chỉ có ba người đạt điểm tuyệt đối. Trường đại học này đã cấp cho cô ấy học bổng cao nhất. Các bạn học đều chúc mừng cô ấy và vui thay cho cô ấy.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+          "order": 3,
+          "zh": "下星期她就要出国留学了，我们班的同学都去看她，给她送行。江苹的家在东城，离我家比较远。我下午四点多就出发了，五点半才到。我到的时候，同学们都已经到了。",
+          "vi": "Tuần sau cô ấy sắp ra nước ngoài du học rồi, các bạn trong lớp chúng tôi đều đến thăm cô ấy, tiễn cô ấy lên đường. Nhà Giang Bình ở Đông Thành, cách nhà tôi khá xa. Tôi hơn bốn giờ chiều đã xuất phát, năm rưỡi mới đến. Khi tôi đến, các bạn học đều đã tới rồi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+          "order": 4,
+          "zh": "江苹热情地欢迎我们。同学们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。我们预祝江苹成功。祝她一路平安。我说，一定要常联系啊。江苹说，一定。跟她说“再见”的时候，她哭了，我也哭了。",
+          "vi": "Giang Bình nhiệt tình chào đón chúng tôi. Các bạn lâu rồi không gặp, sau khi gặp mặt thì vui đến mức vừa nói vừa cười, chơi rất vui vẻ. Chúng tôi chúc Giang Bình thành công, chúc cô ấy thượng lộ bình an. Tôi nói: “Nhất định phải thường xuyên liên lạc nhé.” Giang Bình nói: “Nhất định rồi.” Lúc nói “tạm biệt” với cô ấy, cô ấy khóc, tôi cũng khóc.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "38ce032c-c858-4aea-8c64-47ef74cc454e",
+          "order": 5,
+          "zh": "回家的路上，我想，我们常常说“再见”，但是，有时候“再见”是很难的。我和江苹什么时候能“再见”呢？",
+          "vi": "Trên đường về nhà, tôi nghĩ: chúng ta thường nói “tạm biệt / hẹn gặp lại”, nhưng có lúc “gặp lại” là một chuyện rất khó. Tôi và Giang Bình khi nào mới có thể “gặp lại” đây?",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "lines": [],
+      "comprehension_questions": [
+        {
+          "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
+          "question": "今天“我”去哪儿了？",
+          "answer": "今天“我”去江苹家了。",
+          "evidence": [
+            {
+              "paragraph_id": "09774607-50d1-46ab-a769-9d723c536d13",
+              "quote": "今天我去江苹（Jiang Ping）家了。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
+          "question": "“我”为什么去那儿？",
+          "answer": "因为江苹下星期就要出国留学了，“我”和同学们去看她，给她送行。",
+          "evidence": [
+            {
+              "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+              "quote": "下星期她就要出国留学了，我们班的同学都去看她，给她送行。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
+          "question": "“我”怎么迟到了？",
+          "answer": "因为江苹的家在东城，离“我”家比较远。“我”下午四点多就出发了，五点半才到。",
+          "evidence": [
+            {
+              "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+              "quote": "江苹的家在东城，离我家比较远。我下午四点多就出发了，五点半才到。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
+          "question": "同学们聊得高兴吗？",
+          "answer": "高兴。他们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。",
+          "evidence": [
+            {
+              "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+              "quote": "同学们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "5e69569d-fb68-4a4b-943a-6680d390f578",
+          "question": "同学们怎么向江苹表达祝福？",
+          "answer": "同学们预祝江苹成功，祝她一路平安，还说一定要常联系。",
+          "evidence": [
+            {
+              "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+              "quote": "我们预祝江苹成功。祝她一路平安。我说，一定要常联系啊。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "阅读理解",
+      "title_vi": "Đọc thêm",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "09774607-50d1-46ab-a769-9d723c536d13",
+          "order": 1,
+          "zh": "今天我去江苹家了。",
+          "vi": "Hôm nay tôi đến nhà Giang Bình.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "79df4efa-6d58-462c-b963-4f377e7c72df",
+          "order": 2,
+          "zh": "我和江苹是中学同学，她是我的好朋友，也是我们全班同学的朋友。她学习非常努力，是我们班学习最好的学生。她会学习，也会玩儿，还常常帮助别人，老师和同学都很喜欢她。她这次参加了国外一个大学的考试。这个考试非常难，但是她考得很好，得了满分。听说只有三个得满分的。这个大学给了她最高的奖学金。同学们都向她表示祝贺，为她感到高兴。",
+          "vi": "Tôi và Giang Bình là bạn học hồi trung học. Cô ấy là bạn tốt của tôi, cũng là bạn của cả lớp chúng tôi. Cô ấy học rất chăm chỉ, là học sinh học giỏi nhất lớp chúng tôi. Cô ấy biết học, cũng biết chơi, lại thường xuyên giúp đỡ người khác, nên thầy cô và bạn học đều rất thích cô ấy. Lần này cô ấy tham gia kỳ thi của một trường đại học nước ngoài. Kỳ thi này rất khó, nhưng cô ấy thi rất tốt, đạt điểm tuyệt đối. Nghe nói chỉ có ba người đạt điểm tuyệt đối. Trường đại học này đã cấp cho cô ấy học bổng cao nhất. Các bạn học đều chúc mừng cô ấy và vui thay cho cô ấy.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+          "order": 3,
+          "zh": "下星期她就要出国留学了，我们班的同学都去看她，给她送行。江苹的家在东城，离我家比较远。我下午四点多就出发了，五点半才到。我到的时候，同学们都已经到了。",
+          "vi": "Tuần sau cô ấy sắp ra nước ngoài du học rồi, các bạn trong lớp chúng tôi đều đến thăm cô ấy, tiễn cô ấy lên đường. Nhà Giang Bình ở Đông Thành, cách nhà tôi khá xa. Tôi hơn bốn giờ chiều đã xuất phát, năm rưỡi mới đến. Khi tôi đến, các bạn học đều đã tới rồi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+          "order": 4,
+          "zh": "江苹热情地欢迎我们。同学们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。我们预祝江苹成功。祝她一路平安。我说，一定要常联系啊。江苹说，一定。跟她说“再见”的时候，她哭了，我也哭了。",
+          "vi": "Giang Bình nhiệt tình chào đón chúng tôi. Các bạn lâu rồi không gặp, sau khi gặp mặt thì vui đến mức vừa nói vừa cười, chơi rất vui vẻ. Chúng tôi chúc Giang Bình thành công, chúc cô ấy thượng lộ bình an. Tôi nói: “Nhất định phải thường xuyên liên lạc nhé.” Giang Bình nói: “Nhất định rồi.” Lúc nói “tạm biệt” với cô ấy, cô ấy khóc, tôi cũng khóc.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "38ce032c-c858-4aea-8c64-47ef74cc454e",
+          "order": 5,
+          "zh": "回家的路上，我想，我们常常说“再见”，但是，有时候“再见”是很难的。我和江苹什么时候能“再见”呢？",
+          "vi": "Trên đường về nhà, tôi nghĩ: chúng ta thường nói “tạm biệt / hẹn gặp lại”, nhưng có lúc “gặp lại” là một chuyện rất khó. Tôi và Giang Bình khi nào mới có thể “gặp lại” đây?",
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "lines": [],
+      "comprehension_questions": [
+        {
+          "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
+          "question": "今天“我”去哪儿了？",
+          "answer": "今天“我”去江苹家了。",
+          "evidence": [
+            {
+              "paragraph_id": "09774607-50d1-46ab-a769-9d723c536d13",
+              "quote": ""
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
+          "question": "“我”为什么去那儿？",
+          "answer": "因为江苹下星期就要出国留学了，“我”和同学们去看她，给她送行。",
+          "evidence": [
+            {
+              "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+              "quote": ""
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
+          "question": "“我”怎么迟到了？",
+          "answer": "因为江苹的家在东城，离“我”家比较远。“我”下午四点多就出发了，五点半才到。",
+          "evidence": [
+            {
+              "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+              "quote": ""
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
+          "question": "同学们聊得高兴吗？",
+          "answer": "高兴。他们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。",
+          "evidence": [
+            {
+              "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+              "quote": ""
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "5e69569d-fb68-4a4b-943a-6680d390f578",
+          "question": "同学们怎么向江苹表达祝福？",
+          "answer": "同学们预祝江苹成功，祝她一路平安，还说一定要常联系。",
+          "evidence": [
+            {
+              "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+              "quote": ""
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "6a3e54a2-7066-4bf8-9678-2b916a113472",
+    "order": 1,
+    "title_vi": "Nhượng bộ, tránh hậu quả và mức độ",
+    "words": [
+      "尽管",
+      "难免",
+      "免得",
+      "好不",
+      "更加"
+    ],
+    "notes": []
+  },
+  {
+    "id": "93289bdc-e141-4e58-8668-ef3ea8e60777",
+    "order": 2,
+    "title_vi": "Thiện ý, xin lỗi, cảm ơn và quan hệ xã hội",
+    "words": [
+      "诚心诚意",
+      "心疼",
+      "安慰",
+      "道歉",
+      "道谢",
+      "抱怨",
+      "戒心",
+      "信任",
+      "怀疑"
+    ],
+    "notes": []
+  },
+  {
+    "id": "27259271-4fd7-4b73-99e0-5ce41aa991c8",
+    "order": 3,
+    "title_vi": "Đánh giá tình huống, vận may và phản ứng tâm lý",
+    "words": [
+      "吃力不讨好",
+      "走运",
+      "马大哈",
+      "得意",
+      "冒险",
+      "冲动",
+      "镇静",
+      "胡思乱想"
+    ],
+    "notes": []
+  },
+  {
+    "id": "aeff97b4-b061-49cf-b7d8-c9518b1004ad",
+    "order": 4,
+    "title_vi": "Đồ vật, lượng từ và vật dụng đời sống",
+    "words": [
+      "盒",
+      "冰激凌",
+      "被子",
+      "拉链儿",
+      "气筒",
+      "车胎",
+      "双"
+    ],
+    "notes": []
+  },
+  {
+    "id": "9df84089-56d3-4f0a-9259-9bd55124b2e1",
+    "order": 5,
+    "title_vi": "Động tác, tư thế, âm thanh và xử lý sự việc",
+    "words": [
+      "趴",
+      "瞪",
+      "吼",
+      "道",
+      "指",
+      "赔",
+      "收",
+      "逛",
+      "横",
+      "推",
+      "打气",
+      "连声",
+      "压",
+      "起劲儿",
+      "嘭",
+      "爆"
+    ],
+    "notes": []
+  },
+  {
+    "id": "2635bd28-ca15-4ce9-9f71-af780c75d85d",
+    "order": 6,
+    "title_vi": "Thời tiết, không gian, gia đình và người",
+    "words": [
+      "晴",
+      "阴",
+      "双职工",
+      "单身",
+      "林荫道",
+      "青年",
+      "漫天"
+    ],
+    "notes": []
+  },
+  {
+    "id": "7b581fdc-03ba-4d05-b054-7e96be12675b",
+    "order": 7,
+    "title_vi": "Cảm xúc và sắc thái miêu tả trong bài đọc",
+    "words": [
+      "甜蜜",
+      "感伤",
+      "欣喜",
+      "沉默",
+      "魅力"
+    ],
+    "notes": []
+  }
+]

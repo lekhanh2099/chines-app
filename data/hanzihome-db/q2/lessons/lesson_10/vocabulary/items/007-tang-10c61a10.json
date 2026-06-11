@@ -1,0 +1,428 @@
+{
+  "id": "3655fc57-b851-4e7d-970c-770b2dedb9bc",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "糖",
+  "pinyin": "táng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đường",
+    "meaning_vi": "đường; kẹo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đường",
+      "kẹo"
+    ],
+    "short_definition_vi": "đường; kẹo",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "糖",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "米",
+            "hanviet": "mễ",
+            "meaning_vi": "gạo, lương thực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "米",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mễ",
+              "radical_name_zh": "",
+              "hanviet": "mễ",
+              "meaning_vi": "gạo, lương thực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "米 được dùng như bộ Mễ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "米 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đường/kẹo.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "米",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mễ",
+          "radical_name_zh": "",
+          "hanviet": "mễ",
+          "meaning_vi": "gạo, lương thực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "米 được dùng như bộ Mễ trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "糖 có bộ 米, liên quan đến lương thực/ngũ cốc trong cấu tạo chữ. Nghĩa hiện đại cần nhớ theo cụm: 糖 = đường/kẹo. 糖葫芦 = kẹo hồ lô.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "糖",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đường/kẹo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "糖果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kẹo, rõ nghĩa “candy” hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "白糖",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đường trắng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "红糖",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đường đỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "甜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngọt, tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我喜欢吃糖。",
+      "Tôi thích ăn kẹo.",
+      "这杯茶里放了很多糖。",
+      "Trong cốc trà này cho rất nhiều đường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c5a854ee-6cc0-485f-b2c1-3d119b74be19",
+      "order": 1,
+      "zh": "吃糖",
+      "pinyin": "",
+      "vi": "ăn kẹo / ăn đường tùy ngữ cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "134a00d6-7fa6-4e6a-9848-59a3aef61d27",
+      "order": 2,
+      "zh": "放糖",
+      "pinyin": "",
+      "vi": "cho đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "38d34945-46ca-43f0-8109-c20c66c3281e",
+      "order": 3,
+      "zh": "少放糖",
+      "pinyin": "",
+      "vi": "cho ít đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c8c14f2d-6a59-4520-9af5-af6467cb293d",
+      "order": 4,
+      "zh": "糖很甜",
+      "pinyin": "",
+      "vi": "đường/kẹo rất ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "28eeffb7-cf6c-46eb-a580-7dc867da6afa",
+      "order": 5,
+      "zh": "糖葫芦",
+      "pinyin": "",
+      "vi": "kẹo hồ lô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "4444c173-b6e3-4258-9897-525589788cec",
+      "order": 6,
+      "zh": "白糖 / 红糖",
+      "pinyin": "",
+      "vi": "đường trắng / đường đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a1cb2ba6-b705-408b-8b40-42203a3f3ef1",
+      "order": 1,
+      "zh": "糖很甜。",
+      "pinyin": "Táng hěn tián.",
+      "vi": "Đường/kẹo rất ngọt.",
+      "analysis_vi": "甜 là tính từ chỉ vị ngọt.",
+      "highlight": [
+        "糖"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "3655fc57-b851-4e7d-970c-770b2dedb9bc"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5c2a717e-266a-4c9b-b162-28791860d954",
+      "order": 2,
+      "zh": "我小时候吃过一次糖葫芦，又酸又甜，好吃极了。",
+      "pinyin": "Wǒ xiǎoshíhou chī guo yí cì tánghúlu, yòu suān yòu tián, hǎochī jí le.",
+      "vi": "Hồi nhỏ tôi từng ăn kẹo hồ lô một lần, vừa chua vừa ngọt, ngon cực kỳ.",
+      "analysis_vi": "吃过一次 = từng ăn một lần. 又酸又甜 = vừa chua vừa ngọt. 极了 nhấn mức độ cao.",
+      "highlight": [
+        "糖"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "3655fc57-b851-4e7d-970c-770b2dedb9bc"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "58491180-f117-4c11-8a6e-3d566ecffb3a",
+      "order": 3,
+      "zh": "第一次喝中药的时候，我觉得太苦了，就偷偷地往碗里放了一点儿糖；中医看见以后，笑着说：“这种药最好不要放糖。”",
+      "pinyin": "Dì yī cì hē zhōngyào de shíhou, wǒ juéde tài kǔ le, jiù tōutōu de wǎng wǎn lǐ fàng le yìdiǎnr táng; zhōngyī kànjiàn yǐhòu, xiào zhe shuō: “Zhè zhǒng yào zuì hǎo bú yào fàng táng.”",
+      "vi": "Lần đầu uống thuốc Bắc, tôi thấy đắng quá nên lén cho một chút đường vào bát; bác sĩ Đông y nhìn thấy rồi cười nói: “Loại thuốc này tốt nhất đừng cho đường.”",
+      "analysis_vi": "第一次 là số thứ tự. 放了一点儿糖 là cho một ít đường. 最好不要…… = tốt nhất đừng...",
+      "highlight": [
+        "糖"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "3655fc57-b851-4e7d-970c-770b2dedb9bc"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "956cfe8b-f5bb-45e3-bd49-298de2f3eeff",
+      "order": 1,
+      "rule_vi": "糖 tùy ngữ cảnh có thể dịch là “đường” hoặc “kẹo”.",
+      "natural_examples": [
+        {
+          "zh": "糖 tùy ngữ cảnh có thể dịch là “đường” hoặc “kẹo”.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "茶里放糖。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "孩子爱吃糖。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "糖 tùy ngữ cảnh có thể dịch là “đường” hoặc “kẹo”. 茶里放糖。 Cho đường vào trà. 孩子爱吃糖。 Trẻ con thích ăn kẹo.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "糖",
+    "back": "đường; kẹo",
+    "hint": "táng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "糖葫芦 là món ăn vặt rất biểu tượng ở miền Bắc Trung Quốc, nhất là mùa lạnh. Vị thường là 又酸又甜, rất hợp để nhớ cặp 酸 / 甜.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3655fc57-b851-4e7d-970c-770b2dedb9bc",
+    "source_lesson_vocab_id": null
+  }
+}

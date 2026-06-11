@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_b7a292ba5b73fae0",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "上海",
+  "pinyin": "Shànghǎi",
+  "meaning_vi": "Thượng Hải",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+    "type": "proper_noun",
+    "order": 1,
+    "hanzi": "上海",
+    "pinyin": "Shànghǎi",
+    "meaning_vi": "Thượng Hải",
+    "meaning_en": "Shanghai",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

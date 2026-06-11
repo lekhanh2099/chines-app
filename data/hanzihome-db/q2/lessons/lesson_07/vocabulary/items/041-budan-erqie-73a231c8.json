@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_78c7835068bacc5e",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "不但……而且……",
+  "pinyin": "búdàn……érqiě……",
+  "meaning_vi": "không những……mà còn……",
+  "pos": "Liên từ / Cấu trúc liên kết",
+  "pos_detail": {
+    "vi": "Liên từ / Cấu trúc liên kết",
+    "cn": "连词 / 关联词语",
+    "normalized": "conjunction",
+    "schema_compatible_pos": "conjunction",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+    "type": "vocabulary_item",
+    "order": 17,
+    "hanzi": "不但……而且……",
+    "pinyin": "búdàn……érqiě……",
+    "meaning_vi": "không những……mà còn……",
+    "meaning_en": "",
+    "pos": "Liên từ / Cấu trúc liên kết",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "不但……而且……",
+      "back": "búdàn……érqiě…… — không những……mà còn……",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Liên từ / Cấu trúc liên kết",
+      "cn": "连词 / 关联词语",
+      "normalized": "conjunction",
+      "schema_compatible_pos": "conjunction",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

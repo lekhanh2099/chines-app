@@ -1,0 +1,74 @@
+{
+  "id": "synthetic_vocab_dcaea31b15bf6575",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "一边……一边……",
+  "pinyin": "yìbiān... yìbiān...",
+  "meaning_vi": "vừa... vừa...; diễn tả hai hành động xảy ra đồng thời",
+  "pos": "Liên từ / Cấu trúc cố định",
+  "pos_detail": {
+    "raw_vi": "Liên từ / Cấu trúc cố định",
+    "raw_cn": "连词结构",
+    "normalized": "conjunction",
+    "schema_compatible_pos": "conjunction",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_l23_yibian_yibian",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_l23_yibian_yibian",
+    "type": "vocabulary_item",
+    "order": 29,
+    "hanzi": "一边……一边……",
+    "pinyin": "yìbiān... yìbiān...",
+    "meaning_vi": "vừa... vừa...; diễn tả hai hành động xảy ra đồng thời",
+    "meaning_en": "indicating two actions taking place at the same time",
+    "pos": "Liên từ / Cấu trúc cố định",
+    "pos_detail": {
+      "raw_vi": "Liên từ / Cấu trúc cố định",
+      "raw_cn": "连词结构",
+      "normalized": "conjunction",
+      "schema_compatible_pos": "conjunction",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "grammar_pattern"
+    ],
+    "examples": [
+      {
+        "id": "vocab_l23_yibian_yibian_ex_001",
+        "zh": "他一边旅行一边练习说汉语。",
+        "pinyin": "Tā yìbiān lǚxíng yìbiān liànxí shuō Hànyǔ.",
+        "vi": "Anh ấy vừa du lịch vừa luyện nói tiếng Hán.",
+        "source_ref": "textbook_lesson_23",
+        "grammar_refs": [
+          "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
+        "vocab_refs": [
+          "vocab_l23_yibian_yibian"
+        ]
+      }
+    ],
+    "flashcard": {
+      "front": "一边……一边……",
+      "back": "yìbiān... yìbiān... — vừa... vừa...",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

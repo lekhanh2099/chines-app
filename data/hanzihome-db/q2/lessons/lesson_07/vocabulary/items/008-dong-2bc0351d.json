@@ -1,0 +1,364 @@
+{
+  "id": "217ec018-3d63-47d8-80a6-1256862a140b",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "冬",
+  "pinyin": "dōng",
+  "pos": {
+    "raw_vi": "Danh từ / Yếu tố cấu tạo từ 【名词 / 语素】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "weather",
+    "season"
+  ],
+  "meaning": {
+    "hanviet": "Đông",
+    "meaning_vi": "mùa đông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mùa đông"
+    ],
+    "short_definition_vi": "mùa đông",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "mùa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "冬",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "夂",
+            "hanviet": "truy",
+            "meaning_vi": "dạng bước/chân ở cuối chữ",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "hai chấm lạnh",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "băng/lạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mùa đông",
+        "modern_logic_vi": "冬 là mùa cuối trong bốn mùa, thường gắn với lạnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "băng/lạnh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "冬 = mùa cuối trong bốn mùa; nhớ theo 春夏秋冬.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "冬天",
+        "pinyin": "",
+        "meaning_vi": "mùa đông",
+        "difference_vi": "Tự nhiên nhất trong khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冬季",
+        "pinyin": "",
+        "meaning_vi": "mùa đông",
+        "difference_vi": "Văn viết/khí tượng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寒冬",
+        "pinyin": "",
+        "meaning_vi": "mùa đông giá rét",
+        "difference_vi": "Sắc thái mạnh và văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "夏",
+        "pinyin": "",
+        "meaning_vi": "mùa hè",
+        "difference_vi": "Cặp đông-hè.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ad6c5946-810d-4c8e-a9fc-2bb7fa6097d1",
+      "order": 1,
+      "zh": "冬天",
+      "pinyin": "",
+      "vi": "mùa đông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30bc44f8-be69-4f63-84ba-7930aa169aab",
+      "order": 2,
+      "zh": "冬季",
+      "pinyin": "",
+      "vi": "mùa đông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8155713b-19c3-48cd-a7da-37fdc6133772",
+      "order": 3,
+      "zh": "寒冬",
+      "pinyin": "",
+      "vi": "mùa đông giá rét",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3bc468a0-effa-47f9-a5e8-cfc254d4be85",
+      "order": 4,
+      "zh": "冬天很冷",
+      "pinyin": "",
+      "vi": "mùa đông rất lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "49e758d1-7cb3-4d34-895c-b7fce1025b38",
+      "order": 5,
+      "zh": "冬暖夏凉",
+      "pinyin": "",
+      "vi": "đông ấm hè mát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e7a34fd-14e6-4c47-ab2f-f625051b3c3a",
+      "order": 6,
+      "zh": "春夏秋冬",
+      "pinyin": "",
+      "vi": "xuân hạ thu đông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e805434c-40ad-4136-b5c1-ccc5ea719f8b",
+      "order": 7,
+      "zh": "过冬",
+      "pinyin": "",
+      "vi": "qua mùa đông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "633c28a9-c6f1-4f83-9258-0a52b2f63625",
+      "order": 1,
+      "zh": "北京的冬天很冷。",
+      "pinyin": "Běijīng de dōngtiān hěn lěng.",
+      "vi": "Mùa đông ở Bắc Kinh rất lạnh.",
+      "analysis_vi": "北京的冬天 là cụm danh từ.",
+      "highlight": [
+        "冬天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "217ec018-3d63-47d8-80a6-1256862a140b"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d2b36add-2cfa-491a-addc-6dbf3c8fc8d5",
+      "order": 2,
+      "zh": "我们那儿的冬天跟北京一样冷。",
+      "pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng.",
+      "vi": "Mùa đông chỗ chúng tôi lạnh như Bắc Kinh.",
+      "analysis_vi": "Câu trục của bài 7.",
+      "highlight": [
+        "冬天",
+        "一样冷"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "217ec018-3d63-47d8-80a6-1256862a140b"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "702af414-acda-4ca6-810a-2af9da1083b9",
+      "order": 3,
+      "zh": "冬天不但冷，而且常常刮风，所以出门以前要多穿一点儿。",
+      "pinyin": "Dōngtiān búdàn lěng, érqiě chángcháng guā fēng, suǒyǐ chūmén yǐqián yào duō chuān yìdiǎnr.",
+      "vi": "Mùa đông không những lạnh mà còn thường xuyên có gió, nên trước khi ra ngoài phải mặc nhiều hơn một chút.",
+      "analysis_vi": "不但……而且…… thêm tầng thông tin.",
+      "highlight": [
+        "冬天",
+        "不但",
+        "而且",
+        "刮风"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "217ec018-3d63-47d8-80a6-1256862a140b"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Mùa đông miền Bắc Trung Quốc, nhất là Bắc Kinh, thường khô và lạnh rõ hơn nhiều vùng ở Việt Nam.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6eb4d817-c74b-4465-ae2e-122a8eae6a0c",
+      "order": 1,
+      "rule_vi": "Không nhầm 冬天 với 东边.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我喜欢东天。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Sai chữ; 东天 không phải “mùa đông”.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我喜欢冬天。",
+          "pinyin": "Wǒ xǐhuan dōngtiān.",
+          "vi": "Tôi thích mùa đông.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "冬",
+    "back": "mùa đông",
+    "hint": "dōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "season"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "217ec018-3d63-47d8-80a6-1256862a140b",
+    "source_lesson_vocab_id": null
+  }
+}

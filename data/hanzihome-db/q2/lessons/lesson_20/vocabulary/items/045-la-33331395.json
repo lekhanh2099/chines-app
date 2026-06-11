@@ -1,0 +1,343 @@
+{
+  "id": "caab3747-ae72-4f24-977a-f4fab602864a",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "辣",
+  "pinyin": "là",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lạt",
+    "meaning_vi": "cay; cay nóng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cay; cay nóng"
+    ],
+    "short_definition_vi": "cay; cay nóng",
+    "textbook_focus_vi": "cay; cay nóng",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "辣",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "辛",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tân",
+          "radical_name_zh": "",
+          "hanviet": "tân",
+          "meaning_vi": "cay, nhọc",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辛 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辛",
+            "hanviet": "tân",
+            "meaning_vi": "cay, nhọc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tân",
+              "radical_name_zh": "",
+              "hanviet": "tân",
+              "meaning_vi": "cay, nhọc",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辛 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "束",
+            "hanviet": "",
+            "meaning_vi": "bó lại; thành phần bên phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "辣 nghĩa hiện đại là cay. Nên học theo cụm: 很辣 = rất cay. 太辣了 = cay quá. 吃不了辣 = không ăn cay được. 辣得受不了 = cay đến mức chịu không nổi.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 辣 là cay kiểu ớt/gia vị, không phải “mặn”. Mặn là 咸.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "辣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麻",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tê, thường do hoa tiêu Tứ Xuyên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麻辣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tê cay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "咸",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mặn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: món Tứ Xuyên thường 麻辣; món có nhiều muối thì 咸."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "47a7d314-69de-4aaa-a788-331a59518a26",
+      "order": 1,
+      "zh": "很辣",
+      "pinyin": "",
+      "vi": "rất cay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b79b25cf-b15a-4b9c-9aa1-b44bb371b63e",
+      "order": 2,
+      "zh": "太辣了",
+      "pinyin": "",
+      "vi": "cay quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c791923a-f725-47c2-a16e-ce09753488ad",
+      "order": 3,
+      "zh": "吃不了辣",
+      "pinyin": "",
+      "vi": "không ăn cay được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a0e070e-88c7-4201-9b34-969b0a699013",
+      "order": 4,
+      "zh": "辣得受不了",
+      "pinyin": "",
+      "vi": "cay chịu không nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "adc7efa4-3eef-4cc0-835a-acd60579dee2",
+      "order": 5,
+      "zh": "麻辣火锅",
+      "pinyin": "",
+      "vi": "lẩu tê cay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1bea98f3-e142-4089-a30b-099618d8b7bf",
+      "order": 1,
+      "zh": "这个菜太辣了，我吃不了。",
+      "pinyin": "Zhège cài tài là le, wǒ chī bù liǎo.",
+      "vi": "Món này cay quá, tôi ăn không nổi.",
+      "analysis_vi": "吃不了 dùng 了 liǎo chỉ không xử lý nổi việc ăn.",
+      "highlight": [
+        "辣"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "caab3747-ae72-4f24-977a-f4fab602864a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8576cb36-0d9f-4499-8cc3-207029cc6549",
+      "order": 2,
+      "zh": "我看得懂菜单，但是不知道哪个菜最辣。",
+      "pinyin": "Wǒ kàn de dǒng càidān, dànshì bù zhīdào nǎ ge cài zuì là.",
+      "vi": "Tôi đọc hiểu được thực đơn, nhưng không biết món nào cay nhất.",
+      "analysis_vi": "看得懂菜单 rất thực tế khi gọi món; hiểu chữ chưa chắc biết khẩu vị.",
+      "highlight": [
+        "辣"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "caab3747-ae72-4f24-977a-f4fab602864a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "37757bfd-ad70-4e9d-a98e-b98322b4b7cf",
+      "order": 3,
+      "zh": "如果你吃不了辣，最好别点麻辣火锅。",
+      "pinyin": "Rúguǒ nǐ chī bù liǎo là, zuìhǎo bié diǎn málà huǒguō.",
+      "vi": "Nếu bạn không ăn cay được, tốt nhất đừng gọi lẩu tê cay.",
+      "analysis_vi": "吃不了辣 là không chịu/ăn cay được, cực tự nhiên trong đời sống.",
+      "highlight": [
+        "辣"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "caab3747-ae72-4f24-977a-f4fab602864a"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "3f48bbf4-d814-4413-9338-51ce191acb2f",
+      "order": 1,
+      "rule_vi": "Muốn nói không ăn cay được mà nói 不能吃辣 cũng được, nhưng sắc thái khác. 我吃不了辣。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Muốn nói không ăn cay được mà nói 不能吃辣 cũng được, nhưng sắc thái khác. 我吃不了辣。 Wǒ chī bù liǎo là. Tôi không ăn cay nổi. Nhấn khả năng chịu cay. 我不能吃辣。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "辣",
+    "back": "cay; cay nóng",
+    "hint": "là",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Ẩm thực Tứ Xuyên và Trùng Khánh nổi tiếng 麻辣 – vừa tê vừa cay. Người Việt hay nói chung là “cay”, nhưng tiếng Trung tách khá rõ 辣 là cay và 麻 là tê đầu lưỡi.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "caab3747-ae72-4f24-977a-f4fab602864a",
+    "source_lesson_vocab_id": null
+  }
+}

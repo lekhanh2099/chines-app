@@ -1,0 +1,1064 @@
+{
+  "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "越来越",
+      "pinyin": "yuèláiyuè",
+      "meaning_vi": "ngày càng; càng ngày càng",
+      "meaning_en": "more and more",
+      "pos": "adverb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "越来越",
+        "back": "yuèláiyuè — ngày càng; càng ngày càng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "打的",
+      "pinyin": "dǎ dī",
+      "meaning_vi": "bắt taxi; đi taxi",
+      "meaning_en": "to take a taxi",
+      "pos": "verb_phrase",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "打的",
+        "back": "dǎ dī — bắt taxi; đi taxi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "空",
+      "pinyin": "kōng",
+      "meaning_vi": "trống; không có khách",
+      "meaning_en": "empty",
+      "pos": "adjective",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "空",
+        "back": "kōng — trống; không có khách",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "四合院儿",
+      "pinyin": "sìhéyuànr",
+      "meaning_vi": "tứ hợp viện; nhà truyền thống bốn phía bao quanh sân",
+      "meaning_en": "courtyard house",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "四合院儿",
+        "back": "sìhéyuànr — tứ hợp viện; nhà truyền thống bốn phía bao quanh sân",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "院子",
+      "pinyin": "yuànzi",
+      "meaning_vi": "sân; sân nhà",
+      "meaning_en": "courtyard",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "院子",
+        "back": "yuànzi — sân; sân nhà",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "meaning_vi": "trồng",
+      "meaning_en": "to plant",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "种",
+        "back": "zhòng — trồng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "棵",
+      "pinyin": "kē",
+      "meaning_vi": "lượng từ cho cây cối",
+      "meaning_en": "measure word for trees",
+      "pos": "measure_word",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "棵",
+        "back": "kē — lượng từ cho cây cối",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "枣",
+      "pinyin": "zǎo",
+      "meaning_vi": "táo tàu; táo đỏ Trung Quốc",
+      "meaning_en": "Chinese date; jujube",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "枣",
+        "back": "zǎo — táo tàu; táo đỏ Trung Quốc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "结",
+      "pinyin": "jiē",
+      "meaning_vi": "kết trái; ra quả",
+      "meaning_en": "to bear fruit",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "结",
+        "back": "jiē — kết trái; ra quả",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "尝",
+      "pinyin": "cháng",
+      "meaning_vi": "nếm; thử ăn",
+      "meaning_en": "to taste",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "尝",
+        "back": "cháng — nếm; thử ăn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "甜",
+      "pinyin": "tián",
+      "meaning_vi": "ngọt",
+      "meaning_en": "sweet",
+      "pos": "adjective",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "甜",
+        "back": "tián — ngọt",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "越……越……",
+      "pinyin": "yuè...yuè...",
+      "meaning_vi": "càng… càng…",
+      "meaning_en": "the more... the more...",
+      "pos": "phrase",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "越……越……",
+        "back": "yuè...yuè... — càng… càng…",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "盖",
+      "pinyin": "gài",
+      "meaning_vi": "xây; xây dựng",
+      "meaning_en": "to build",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "盖",
+        "back": "gài — xây; xây dựng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "住宅",
+      "pinyin": "zhùzhái",
+      "meaning_vi": "nhà ở; nơi cư trú",
+      "meaning_en": "residence; housing",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "住宅",
+        "back": "zhùzhái — nhà ở; nơi cư trú",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "小区",
+      "pinyin": "xiǎoqū",
+      "meaning_vi": "khu dân cư; khu nhà ở",
+      "meaning_en": "residential compound",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "小区",
+        "back": "xiǎoqū — khu dân cư; khu nhà ở",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "建",
+      "pinyin": "jiàn",
+      "meaning_vi": "xây; xây dựng",
+      "meaning_en": "to build",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "建",
+        "back": "jiàn — xây; xây dựng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "搬",
+      "pinyin": "bān",
+      "meaning_vi": "chuyển; dọn",
+      "meaning_en": "to move",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "搬",
+        "back": "bān — chuyển; dọn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "遗憾",
+      "pinyin": "yíhàn",
+      "meaning_vi": "tiếc; đáng tiếc",
+      "meaning_en": "regret; pity",
+      "pos": "adjective",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "遗憾",
+        "back": "yíhàn — tiếc; đáng tiếc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "舍不得",
+      "pinyin": "shěbude",
+      "meaning_vi": "không nỡ; tiếc không muốn rời / dùng / bỏ",
+      "meaning_en": "to be reluctant to part with",
+      "pos": "verb_phrase",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "舍不得",
+        "back": "shěbude — không nỡ; tiếc không muốn rời / dùng / bỏ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "离开",
+      "pinyin": "líkāi",
+      "meaning_vi": "rời khỏi",
+      "meaning_en": "to leave",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "离开",
+        "back": "líkāi — rời khỏi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "现代化",
+      "pinyin": "xiàndàihuà",
+      "meaning_vi": "hiện đại hóa; hiện đại",
+      "meaning_en": "modernization; modernized",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "现代化",
+        "back": "xiàndàihuà — hiện đại hóa; hiện đại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "随便",
+      "pinyin": "suíbiàn",
+      "meaning_vi": "tùy tiện; thoải mái; không câu nệ",
+      "meaning_en": "casual; as one likes",
+      "pos": "adjective",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "随便",
+        "back": "suíbiàn — tùy tiện; thoải mái; không câu nệ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "感想",
+      "pinyin": "gǎnxiǎng",
+      "meaning_vi": "cảm tưởng; suy nghĩ, cảm nhận",
+      "meaning_en": "impressions; reflections",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "感想",
+        "back": "gǎnxiǎng — cảm tưởng; suy nghĩ, cảm nhận",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "体会",
+      "pinyin": "tǐhuì",
+      "meaning_vi": "thể hội; cảm nhận qua trải nghiệm; sự lĩnh hội",
+      "meaning_en": "experience; understanding",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "体会",
+        "back": "tǐhuì — thể hội; cảm nhận qua trải nghiệm; sự lĩnh hội",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "意见",
+      "pinyin": "yìjiàn",
+      "meaning_vi": "ý kiến; góp ý; phàn nàn",
+      "meaning_en": "opinion; suggestion",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "意见",
+        "back": "yìjiàn — ý kiến; góp ý; phàn nàn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "建议",
+      "pinyin": "jiànyì",
+      "meaning_vi": "đề nghị; kiến nghị; lời khuyên",
+      "meaning_en": "suggestion; to suggest",
+      "pos": "verb_noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "建议",
+        "back": "jiànyì — đề nghị; kiến nghị; lời khuyên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "提",
+      "pinyin": "tí",
+      "meaning_vi": "nêu ra; đưa ra",
+      "meaning_en": "to raise; to put forward",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "提",
+        "back": "tí — nêu ra; đưa ra",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "出门",
+      "pinyin": "chū mén",
+      "meaning_vi": "ra ngoài; rời nhà",
+      "meaning_en": "to go out",
+      "pos": "verb_phrase",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "出门",
+        "back": "chū mén — ra ngoài; rời nhà",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "人们",
+      "pinyin": "rénmen",
+      "meaning_vi": "mọi người; người ta",
+      "meaning_en": "people",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "人们",
+        "back": "rénmen — mọi người; người ta",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "丰富",
+      "pinyin": "fēngfù",
+      "meaning_vi": "phong phú; dồi dào",
+      "meaning_en": "rich; abundant",
+      "pos": "adjective",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "丰富",
+        "back": "fēngfù — phong phú; dồi dào",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "打扮",
+      "pinyin": "dǎban",
+      "meaning_vi": "ăn mặc; trang điểm; chưng diện",
+      "meaning_en": "to dress up",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "打扮",
+        "back": "dǎban — ăn mặc; trang điểm; chưng diện",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "新年",
+      "pinyin": "xīnnián",
+      "meaning_vi": "năm mới",
+      "meaning_en": "New Year",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "新年",
+        "back": "xīnnián — năm mới",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "圣诞树",
+      "pinyin": "shèngdànshù",
+      "meaning_vi": "cây thông Noel; cây Giáng sinh",
+      "meaning_en": "Christmas tree",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "圣诞树",
+        "back": "shèngdànshù — cây thông Noel; cây Giáng sinh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "装饰",
+      "pinyin": "zhuāngshì",
+      "meaning_vi": "trang trí; sự trang trí",
+      "meaning_en": "to decorate; decoration",
+      "pos": "verb_noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "装饰",
+        "back": "zhuāngshì — trang trí; sự trang trí",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "礼物",
+      "pinyin": "lǐwù",
+      "meaning_vi": "quà; quà tặng",
+      "meaning_en": "gift",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "礼物",
+        "back": "lǐwù — quà; quà tặng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "欢乐",
+      "pinyin": "huānlè",
+      "meaning_vi": "vui vẻ; hân hoan",
+      "meaning_en": "happy; joyful",
+      "pos": "adjective",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "欢乐",
+        "back": "huānlè — vui vẻ; hân hoan",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "节日",
+      "pinyin": "jiérì",
+      "meaning_vi": "ngày lễ; ngày hội",
+      "meaning_en": "festival; holiday",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "节日",
+        "back": "jiérì — ngày lễ; ngày hội",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "开",
+      "pinyin": "kāi",
+      "meaning_vi": "tổ chức; mở, họp, tiến hành",
+      "meaning_en": "to hold; to open",
+      "pos": "verb",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "开",
+        "back": "kāi — tổ chức; mở, họp, tiến hành",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "联欢会",
+      "pinyin": "liánhuānhuì",
+      "meaning_vi": "buổi liên hoan; buổi gặp mặt vui chơi",
+      "meaning_en": "party; get-together",
+      "pos": "noun",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "联欢会",
+        "back": "liánhuānhuì — buổi liên hoan; buổi gặp mặt vui chơi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

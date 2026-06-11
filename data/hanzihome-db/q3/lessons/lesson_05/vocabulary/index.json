@@ -1,0 +1,552 @@
+[
+  {
+    "id": "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0",
+    "order": 1,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/001-huitou-7a8cf1d2.json"
+  },
+  {
+    "id": "eb609dcc-df51-4809-ac0f-3dce06947f27",
+    "order": 2,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eb609dcc-df51-4809-ac0f-3dce06947f27",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/002-zaishuo-6847f58b.json"
+  },
+  {
+    "id": "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a",
+    "order": 3,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/003-koutouyu-d74a435c.json"
+  },
+  {
+    "id": "23c87406-b271-49fe-bcce-ed9e0958bcca",
+    "order": 4,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "23c87406-b271-49fe-bcce-ed9e0958bcca",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/004-houlai-5ff240e0.json"
+  },
+  {
+    "id": "f2e94823-d8a4-46af-9124-7519206e73fd",
+    "order": 5,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f2e94823-d8a4-46af-9124-7519206e73fd",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/005-qishi-6eabcabc.json"
+  },
+  {
+    "id": "73a175b7-962a-43a3-8cb4-24e91c4edf52",
+    "order": 6,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "73a175b7-962a-43a3-8cb4-24e91c4edf52",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/006-minhang-6072e9e2.json"
+  },
+  {
+    "id": "fca1d9a2-7de5-4304-9039-2cafb2fb07b5",
+    "order": 7,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fca1d9a2-7de5-4304-9039-2cafb2fb07b5",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/007-lin-d3dee1c9.json"
+  },
+  {
+    "id": "dbd186b1-b669-40bf-bafc-6a875b7b3787",
+    "order": 8,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dbd186b1-b669-40bf-bafc-6a875b7b3787",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/008-didao-didao-55425d7e.json"
+  },
+  {
+    "id": "f5388978-b756-4ee7-9c3c-e086e1a90a2f",
+    "order": 9,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f5388978-b756-4ee7-9c3c-e086e1a90a2f",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/009-huida-9d3c8dfd.json"
+  },
+  {
+    "id": "b6d5ca8b-a218-47f3-9371-fa7c2c021729",
+    "order": 10,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b6d5ca8b-a218-47f3-9371-fa7c2c021729",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/010-mingpian-6f240e62.json"
+  },
+  {
+    "id": "7c7c9147-41d6-4643-bc75-b1998089b041",
+    "order": 11,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7c7c9147-41d6-4643-bc75-b1998089b041",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/011-jihu-f32bc652.json"
+  },
+  {
+    "id": "be305f28-7810-4b78-88a5-df3e826cf265",
+    "order": 12,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "be305f28-7810-4b78-88a5-df3e826cf265",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/012-tongshi-acb6d14e.json"
+  },
+  {
+    "id": "87c6536f-47b6-44cd-8a38-d8b6ffa5d2d1",
+    "order": 13,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "87c6536f-47b6-44cd-8a38-d8b6ffa5d2d1",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/013-shizai-shizai-3dba5e0b.json"
+  },
+  {
+    "id": "0a650938-21c3-4860-aa8c-650c02ea1f50",
+    "order": 14,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0a650938-21c3-4860-aa8c-650c02ea1f50",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/014-zhihou-00f9e14f.json"
+  },
+  {
+    "id": "2b2adb79-9ea7-47bb-90d4-1b1b7cf8f400",
+    "order": 15,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2b2adb79-9ea7-47bb-90d4-1b1b7cf8f400",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/015-taitai-c8e59831.json"
+  },
+  {
+    "id": "9dea84b5-ebd9-41fe-a498-5c058b7dc17c",
+    "order": 16,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9dea84b5-ebd9-41fe-a498-5c058b7dc17c",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/016-linliaor-294fe637.json"
+  },
+  {
+    "id": "5a7c9ead-215f-4d9c-9878-ba71e7c8f6e9",
+    "order": 17,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5a7c9ead-215f-4d9c-9878-ba71e7c8f6e9",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/017-cu-9efa9d29.json"
+  },
+  {
+    "id": "12ea005b-ae33-4cf2-9f3f-aed4fb9f8ab8",
+    "order": 18,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "12ea005b-ae33-4cf2-9f3f-aed4fb9f8ab8",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/018-jiaqian-b3801767.json"
+  },
+  {
+    "id": "3f52dd3b-18b3-451a-8e00-a81d91945f60",
+    "order": 19,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3f52dd3b-18b3-451a-8e00-a81d91945f60",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/019-fu-fb63e472.json"
+  },
+  {
+    "id": "279b35b1-aee8-41bd-8515-6bd28c456e40",
+    "order": 20,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "279b35b1-aee8-41bd-8515-6bd28c456e40",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/020-pingdan-8c1c8d0f.json"
+  },
+  {
+    "id": "dda23983-772d-4fae-9a88-cb26909d0aee",
+    "order": 21,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dda23983-772d-4fae-9a88-cb26909d0aee",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/021-zhiyu-a5139244.json"
+  },
+  {
+    "id": "fcfdc26e-17f9-4ef8-96b6-fe15d2a06b1d",
+    "order": 22,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fcfdc26e-17f9-4ef8-96b6-fe15d2a06b1d",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/022-rizi-65f80baa.json"
+  },
+  {
+    "id": "988a6a6c-2ae3-4b02-9141-706b2c81e46c",
+    "order": 23,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "988a6a6c-2ae3-4b02-9141-706b2c81e46c",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/023-tuici-e68f205c.json"
+  },
+  {
+    "id": "2e5ee362-9e19-4ddd-aab5-c433767d012e",
+    "order": 24,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2e5ee362-9e19-4ddd-aab5-c433767d012e",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/024-wennuan-9b1e57a0.json"
+  },
+  {
+    "id": "24d070b1-87bf-49e1-b020-36ff773b36f3",
+    "order": 25,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "24d070b1-87bf-49e1-b020-36ff773b36f3",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/025-dengdai-1250e202.json"
+  },
+  {
+    "id": "f50556a2-81ea-4fdc-905f-64232e18cb24",
+    "order": 26,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f50556a2-81ea-4fdc-905f-64232e18cb24",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/026-dimian-557b43d3.json"
+  },
+  {
+    "id": "207201bf-2cc0-40d8-a22e-1ae2ce0c2825",
+    "order": 27,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "207201bf-2cc0-40d8-a22e-1ae2ce0c2825",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/027-shuxi-897d04bb.json"
+  },
+  {
+    "id": "60e8e8a1-4379-4033-86e6-d9a6b8759795",
+    "order": 28,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "60e8e8a1-4379-4033-86e6-d9a6b8759795",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/028-lu-3d372d39.json"
+  },
+  {
+    "id": "2da0e8bc-c274-4815-94d4-42cb40b8cd0b",
+    "order": 29,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2da0e8bc-c274-4815-94d4-42cb40b8cd0b",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/029-zuoyou-zuogu-youpan-0d120c67.json"
+  },
+  {
+    "id": "0f19504b-d154-4d66-bd20-89f841e8119f",
+    "order": 30,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0f19504b-d154-4d66-bd20-89f841e8119f",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/030-zhudong-93e58d19.json"
+  },
+  {
+    "id": "ced71949-35b1-40ad-97b6-cdffe3639b3b",
+    "order": 31,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ced71949-35b1-40ad-97b6-cdffe3639b3b",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/031-da-zhaohu-af1e506f.json"
+  },
+  {
+    "id": "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8",
+    "order": 32,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/032-li-33d726ce.json"
+  },
+  {
+    "id": "f23717d0-3577-49aa-93d2-249035b92d5c",
+    "order": 33,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f23717d0-3577-49aa-93d2-249035b92d5c",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/033-fangxiang-5196037c.json"
+  },
+  {
+    "id": "b1864e37-b893-41fd-8130-5f6aa93d81ce",
+    "order": 34,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b1864e37-b893-41fd-8130-5f6aa93d81ce",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/034-youyu-314d5251.json"
+  },
+  {
+    "id": "8cea6b39-34cc-4ada-b23a-61a1a755aee6",
+    "order": 35,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8cea6b39-34cc-4ada-b23a-61a1a755aee6",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/035-da-jiaodao-b50e1cf8.json"
+  },
+  {
+    "id": "66029959-9bf8-4baf-9001-ee20df36521b",
+    "order": 36,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "66029959-9bf8-4baf-9001-ee20df36521b",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/036-shunlu-fbf3a40b.json"
+  },
+  {
+    "id": "742393bc-3cf1-41f8-ab48-a18dffd728d7",
+    "order": 37,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "742393bc-3cf1-41f8-ab48-a18dffd728d7",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/037-fadong-c3944d97.json"
+  },
+  {
+    "id": "67b02d84-f28e-4ce0-b5ca-093251611800",
+    "order": 38,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "67b02d84-f28e-4ce0-b5ca-093251611800",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/038-zhaoshou-26c3ec02.json"
+  },
+  {
+    "id": "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b",
+    "order": 39,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/039-mei-zhunr-be48eebd.json"
+  },
+  {
+    "id": "c2a3fc1d-7226-4011-afd7-28a54ad2a950",
+    "order": 40,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c2a3fc1d-7226-4011-afd7-28a54ad2a950",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/040-jianmian-e878044e.json"
+  },
+  {
+    "id": "69e8ee1b-831c-430e-bf95-97ad6f6248df",
+    "order": 41,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "69e8ee1b-831c-430e-bf95-97ad6f6248df",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/041-leng-27292238.json"
+  },
+  {
+    "id": "5383bb22-a220-40d3-80ba-599c52f01349",
+    "order": 42,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5383bb22-a220-40d3-80ba-599c52f01349",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/042-zhijin-d6f2e825.json"
+  },
+  {
+    "id": "246e4ec5-af2b-4c34-bad7-b11c9dfeba82",
+    "order": 43,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "246e4ec5-af2b-4c34-bad7-b11c9dfeba82",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/043-zhongguo-minhang-fc91593b.json"
+  },
+  {
+    "id": "ee760058-3b2a-43f6-96f3-f633b6008ef7",
+    "order": 44,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ee760058-3b2a-43f6-96f3-f633b6008ef7",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/044-jianguomen-259277c0.json"
+  },
+  {
+    "id": "59518ddd-9bdf-4b36-b105-158ad3a10287",
+    "order": 45,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "59518ddd-9bdf-4b36-b105-158ad3a10287",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/045-xizhimen-36cb5186.json"
+  },
+  {
+    "id": "979d05da-cfbe-4608-a40c-f568c04283da",
+    "order": 46,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "979d05da-cfbe-4608-a40c-f568c04283da",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/046-fuxingmen-1b3b2ebb.json"
+  },
+  {
+    "id": "7427c037-8d72-4c7b-bc06-dc14531b702c",
+    "order": 47,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7427c037-8d72-4c7b-bc06-dc14531b702c",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/047-zhan-zhan-a224a32c.json"
+  },
+  {
+    "id": "d807abe3-6b4b-44d0-908e-22f116b7d0d7",
+    "order": 48,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d807abe3-6b4b-44d0-908e-22f116b7d0d7",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/048-bai-c5515a58.json"
+  },
+  {
+    "id": "57bcac20-adae-4d40-84b6-3b228af30696",
+    "order": 49,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "57bcac20-adae-4d40-84b6-3b228af30696",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/049-reqing-e76d3ded.json"
+  },
+  {
+    "id": "a5489a9e-15f6-4df2-8506-53d62b3c8ca9",
+    "order": 50,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a5489a9e-15f6-4df2-8506-53d62b3c8ca9",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/050-qiguai-1393f757.json"
+  },
+  {
+    "id": "53875fff-ed01-45e6-8ec3-558d97c79f92",
+    "order": 51,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53875fff-ed01-45e6-8ec3-558d97c79f92",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/051-zeren-0460ee2f.json"
+  },
+  {
+    "id": "0202947d-a615-4696-86e1-611143a5f79e",
+    "order": 52,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0202947d-a615-4696-86e1-611143a5f79e",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/052-weilai-597abe26.json"
+  },
+  {
+    "id": "c6d76da7-dafe-4600-9de3-02525f25b0cd",
+    "order": 53,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c6d76da7-dafe-4600-9de3-02525f25b0cd",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/053-zhenxi-1771ea3e.json"
+  },
+  {
+    "id": "4cd4fef6-eb21-43f3-b17a-2d716ae082e5",
+    "order": 54,
+    "type": "deep_vocabulary_item",
+    "materialized_kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4cd4fef6-eb21-43f3-b17a-2d716ae082e5",
+    "source_lesson_vocab_id": null,
+    "check_needed": false,
+    "file": "vocabulary/items/054-zhan-zuowei-b0b46541.json"
+  },
+  {
+    "id": "synthetic_vocab_18f49452cdd9faaa",
+    "order": 55,
+    "type": "materialized_vocabulary_item",
+    "materialized_kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+    "check_needed": true,
+    "file": "vocabulary/items/055-zuogu-youpan-56b0a648.json"
+  }
+]

@@ -1,0 +1,435 @@
+{
+  "id": "1818670c-90df-4ccb-8d64-8e3a0f6a9df4",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "地位",
+  "pinyin": "dìwèi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Địa vị",
+    "meaning_vi": "địa vị, vị trí xã hội",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "địa vị, vị trí xã hội"
+    ],
+    "short_definition_vi": "địa vị, vị trí xã hội",
+    "textbook_focus_vi": "địa vị, vị trí xã hội",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "地",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "也",
+            "hanviet": "",
+            "meaning_vi": "thành phần bên phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "位",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "立",
+            "hanviet": "",
+            "meaning_vi": "đứng, lập",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "地 là nơi/vị trí. 位 là vị trí, chỗ đứng. → 地位 = vị trí/chỗ đứng của một người hoặc sự vật trong hệ thống quan hệ.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 地位 không phải vị trí vật lý như “đứng ở đâu”. Vị trí vật lý dùng 位置.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "地位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "địa vị, chỗ đứng xã hội.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "位置",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vị trí vật lý hoặc vị trí trong danh sách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "身份",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thân phận/danh tính.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "职位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chức vụ trong công việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 社会地位 là địa vị xã hội; 座位的位置 là vị trí ghế ngồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fca3a400-8847-4711-9899-5636230a9293",
+      "order": 1,
+      "zh": "社会地位",
+      "pinyin": "",
+      "vi": "địa vị xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e7df907a-abb7-49b8-b5d4-89fada156c12",
+      "order": 2,
+      "zh": "地位很高",
+      "pinyin": "",
+      "vi": "địa vị rất cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "552fbc56-8077-4e9e-8b62-22e504da573b",
+      "order": 3,
+      "zh": "地位很低",
+      "pinyin": "",
+      "vi": "địa vị rất thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d76d534c-684f-4491-b643-941690886c2e",
+      "order": 4,
+      "zh": "提高地位",
+      "pinyin": "",
+      "vi": "nâng cao địa vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ae7a8f4-4fa4-4dbf-a052-f6e89cd81418",
+      "order": 5,
+      "zh": "国际地位",
+      "pinyin": "",
+      "vi": "vị thế quốc tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d4684501-b4d7-4572-9c2a-1a438604ed94",
+      "order": 1,
+      "zh": "从他的服装看得出，他的社会地位不低。",
+      "pinyin": "Cóng tā de fúzhuāng kàn de chū, tā de shèhuì dìwèi bù dī.",
+      "vi": "Từ trang phục của anh ấy có thể nhìn ra địa vị xã hội của anh ấy không thấp.",
+      "analysis_vi": "看得出 là nhìn ra được; 不低 là cách nói giảm nhẹ, nghĩa là khá cao.",
+      "highlight": [
+        "地位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1818670c-90df-4ccb-8d64-8e3a0f6a9df4"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4ad2ee11-763f-44c2-9751-c7ec822dc291",
+      "order": 2,
+      "zh": "这个人物地位很高，所以别人不敢直接批评他。",
+      "pinyin": "Zhège rénwù dìwèi hěn gāo, suǒyǐ biéren bù gǎn zhíjiē pīpíng tā.",
+      "vi": "Nhân vật này địa vị rất cao, nên người khác không dám phê bình trực tiếp ông ấy.",
+      "analysis_vi": "不敢 nói không dám làm; địa vị ảnh hưởng cách giao tiếp.",
+      "highlight": [
+        "地位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1818670c-90df-4ccb-8d64-8e3a0f6a9df4"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a8ff8690-099d-4207-b6dc-648a71ea5754",
+      "order": 3,
+      "zh": "如果不了解他的地位，就听不懂这些话真正的意思。",
+      "pinyin": "Rúguǒ bù liǎojiě tā de dìwèi, jiù tīng bù dǒng zhèxiē huà zhēnzhèng de yìsi.",
+      "vi": "Nếu không hiểu địa vị của anh ấy, sẽ nghe không hiểu ý nghĩa thật sự của những lời này.",
+      "analysis_vi": "听不懂真正的意思 là không nghe/hiểu được tầng nghĩa sâu.",
+      "highlight": [
+        "地位"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "1818670c-90df-4ccb-8d64-8e3a0f6a9df4"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "24e72400-6d0f-4254-a613-0f5c41beb728",
+      "order": 1,
+      "rule_vi": "Dùng 地位 cho vị trí địa lý/vật lý. Không tự nhiên",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的地位在第二排。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的位置在第二排。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他的社会地位很高。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Lỗi sai phổ biến: Dùng 地位 cho vị trí địa lý/vật lý. Không tự nhiên: 我的地位在第二排。 Tự nhiên: 我的位置在第二排。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "地位",
+    "back": "địa vị, vị trí xã hội",
+    "hint": "dìwèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong xã hội cổ đại Trung Quốc, trang phục, màu sắc, mũ mão và cách xưng hô thường phản ánh 地位 rất rõ. Khi xem phim cổ trang, đôi khi chỉ cần nhìn áo mũ đã đoán được nhân vật là quan, dân thường, quý tộc hay người trong cung.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1818670c-90df-4ccb-8d64-8e3a0f6a9df4",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "synthetic_vocab_e9f9a2ae03768634",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "辞退",
+  "pinyin": "cítuì",
+  "meaning_vi": "sa thải; cho thôi việc",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "46aede47-4430-4d17-befd-37576908c5ab",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "46aede47-4430-4d17-befd-37576908c5ab",
+    "type": "vocabulary_item",
+    "order": 4,
+    "hanzi": "辞退",
+    "pinyin": "cítuì",
+    "meaning_vi": "sa thải; cho thôi việc",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "辞退",
+      "back": "cítuì — sa thải; cho thôi việc",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ],
+      "tags": [
+        "supplementary_vocab",
+        "reading_vocab"
+      ],
+      "notes": []
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

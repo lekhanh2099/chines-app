@@ -1,0 +1,248 @@
+{
+  "id": "45654d9c-82b9-4053-b853-40302f6a61e1",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "风光",
+  "pinyin": "fēngguāng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名 / 形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Phong quang",
+    "meaning_vi": "phong cảnh; vẻ vang, oai",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phong cảnh; vẻ vang, oai"
+    ],
+    "short_definition_vi": "phong cảnh; vẻ vang, oai",
+    "textbook_focus_vi": "phong cảnh; vẻ vang, oai",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "风",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gió, phong cách, cảnh sắc",
+        "modern_logic_vi": "风 là giản thể của 風; không tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "光",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ánh sáng, sáng, vẻ vang",
+        "modern_logic_vi": "光 = ánh sáng/vẻ sáng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "风 = gió/khí cảnh, 光 = ánh sáng/vẻ sáng. 风光 = cảnh sắc; mở rộng thành vẻ vang.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7294eff0-3628-409c-85f3-657966d16247",
+      "order": 1,
+      "zh": "自然风光",
+      "pinyin": "",
+      "vi": "phong cảnh tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e130da23-f7dc-4a2c-8f79-ea897cb2849e",
+      "order": 2,
+      "zh": "美丽的风光",
+      "pinyin": "",
+      "vi": "phong cảnh đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e620ebae-0dee-4397-99a2-fa511397381e",
+      "order": 3,
+      "zh": "北国风光",
+      "pinyin": "",
+      "vi": "phong quang phương Bắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2cb5fb9-77b2-45ac-87c5-2bd805d0c7ff",
+      "order": 4,
+      "zh": "桂林风光",
+      "pinyin": "",
+      "vi": "phong cảnh Quế Lâm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d196fb42-7d55-49c9-abe7-478967b6f945",
+      "order": 5,
+      "zh": "一路风光",
+      "pinyin": "",
+      "vi": "phong cảnh dọc đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0be79351-12f4-4eb2-85aa-d435a03fc739",
+      "order": 6,
+      "zh": "很风光",
+      "pinyin": "",
+      "vi": "rất vẻ vang/oai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "48229fe5-c4dd-43ac-b3b9-457e8c8042e0",
+      "order": 1,
+      "zh": "这里的自然风光很美。",
+      "pinyin": "Zhèlǐ de zìrán fēngguāng hěn měi.",
+      "vi": "Phong cảnh tự nhiên ở đây rất đẹp.",
+      "analysis_vi": "自然风光 là cụm du lịch tự nhiên.",
+      "highlight": [
+        "风光"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45654d9c-82b9-4053-b853-40302f6a61e1"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "603788c7-3e92-40c9-91a7-335e1f8d1c69",
+      "order": 2,
+      "zh": "我们是来中国看自然风光的。",
+      "pinyin": "Wǒmen shì lái Zhōngguó kàn zìrán fēngguāng de.",
+      "vi": "Chúng tôi đến Trung Quốc để ngắm phong cảnh tự nhiên.",
+      "analysis_vi": "是……的 nhấn mục đích.",
+      "highlight": [
+        "风光"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45654d9c-82b9-4053-b853-40302f6a61e1"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "95ab2869-f3bf-41f8-8e9f-3cee8870c031",
+      "order": 3,
+      "zh": "一坐上高铁，他就看着窗外的风光，一句话也不说。",
+      "pinyin": "Yí zuò shàng gāotiě, tā jiù kànzhe chuāngwài de fēngguāng, yí jù huà yě bù shuō.",
+      "vi": "Vừa lên tàu cao tốc, anh ấy nhìn phong cảnh ngoài cửa sổ và không nói gì.",
+      "analysis_vi": "看着 chỉ trạng thái nhìn kéo dài.",
+      "highlight": [
+        "风光"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45654d9c-82b9-4053-b853-40302f6a61e1"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "北国风光 là cụm văn chương nổi tiếng, gợi cảnh phương Bắc rộng lớn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6a8a51d5-7bf0-47b3-8c43-837e0e3bcb59",
+      "order": 1,
+      "rule_vi": "风光 có nghĩa phong cảnh và cũng có nghĩa vẻ vang/oai; phải nhìn ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "风光",
+    "back": "phong cảnh; vẻ vang, oai",
+    "hint": "fēngguāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "45654d9c-82b9-4053-b853-40302f6a61e1",
+    "source_lesson_vocab_id": null
+  }
+}

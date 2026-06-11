@@ -1,0 +1,275 @@
+{
+  "id": "7fa3e702-4941-4f47-8b1d-8061ae47f044",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "叶",
+  "pinyin": "yè",
+  "pos": {
+    "raw_vi": "Danh từ / Yếu tố cấu tạo từ",
+    "raw_cn": "名 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "bai_04",
+    "dong_am"
+  ],
+  "meaning": {
+    "hanviet": "Diệp",
+    "meaning_vi": "lá cây",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lá cây"
+    ],
+    "short_definition_vi": "lá cây",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "叶",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / lời nói",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng / lời nói / âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "số mười",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lá cây",
+        "modern_logic_vi": "",
+        "warning_vi": "Phồn thể của lá là 葉; không ép nghĩa từ 口 + 十.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng / lời nói / âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "叶 = lá; phân biệt với 夜 / 页.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "叶子",
+        "pinyin": "",
+        "meaning_vi": "lá cây",
+        "difference_vi": "đời sống hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "树叶",
+        "pinyin": "",
+        "meaning_vi": "lá cây",
+        "difference_vi": "cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "叶",
+        "right": "页",
+        "meaning_vi": "lá ↔ trang",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0d8c7309-f097-4a9a-86e9-aada92089229",
+      "order": 1,
+      "zh": "叶子",
+      "pinyin": "",
+      "vi": "lá cây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56d1fbc0-eb1a-4134-96b0-d36e2596529a",
+      "order": 2,
+      "zh": "树叶",
+      "pinyin": "",
+      "vi": "lá cây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85cc5821-7d7f-4b5c-89de-70449baf2583",
+      "order": 3,
+      "zh": "红叶",
+      "pinyin": "",
+      "vi": "lá đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7a7a0e88-699c-4d0b-9179-93d6bfbfde49",
+      "order": 1,
+      "zh": "树叶都黄了。",
+      "pinyin": "Shùyè dōu huáng le.",
+      "vi": "Lá cây đều vàng rồi.",
+      "analysis_vi": "了 báo thay đổi trạng thái.",
+      "highlight": [
+        "叶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7fa3e702-4941-4f47-8b1d-8061ae47f044"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4768b23f-2025-431d-9e7d-28ddefe33513",
+      "order": 2,
+      "zh": "安娜把“叶”念成了“夜”。",
+      "pinyin": "Ānnà bǎ “yè” niàn chéng le “yè”.",
+      "vi": "Anna đọc chữ “叶” thành “夜”.",
+      "analysis_vi": "念成 dùng 成 chỉ đọc nhầm thành.",
+      "highlight": [
+        "叶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7fa3e702-4941-4f47-8b1d-8061ae47f044"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "叶落归根 gần với “lá rụng về cội”.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c68c2095-5b7e-4b1b-80bb-f07f02bea704",
+      "order": 1,
+      "rule_vi": "Không nhầm 叶 với 页.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "一片叶子",
+          "pinyin": "yí piàn yèzi",
+          "vi": "một chiếc lá",
+          "note_vi": "叶 = lá.",
+          "notes": []
+        },
+        {
+          "zh": "一页书",
+          "pinyin": "yì yè shū",
+          "vi": "một trang sách",
+          "note_vi": "页 = trang.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "叶",
+    "back": "lá cây",
+    "hint": "yè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "dong_am"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7fa3e702-4941-4f47-8b1d-8061ae47f044",
+    "source_lesson_vocab_id": null
+  }
+}

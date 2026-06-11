@@ -1,0 +1,324 @@
+{
+  "id": "ab1b8af3-50b4-4476-a41f-b9c1a0687f9e",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "帮助",
+  "pinyin": "bāngzhù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动 / 名",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bang trợ",
+    "meaning_vi": "giúp đỡ, sự giúp đỡ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giúp đỡ, sự giúp đỡ"
+    ],
+    "short_definition_vi": "giúp đỡ, sự giúp đỡ",
+    "textbook_focus_vi": "giúp đỡ, sự giúp đỡ",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "帮",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn/vải",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giúp, hỗ trợ",
+        "modern_logic_vi": "Phần trên không nên ép nghĩa sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "巾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cân",
+          "radical_name_zh": "",
+          "hanviet": "cân",
+          "meaning_vi": "khăn/vải",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "助",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "且",
+            "hanviet": "thả",
+            "meaning_vi": "thành phần trái",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giúp, hỗ trợ",
+        "modern_logic_vi": "助 = giúp bằng sức/hỗ trợ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "帮 = giúp, 助 = hỗ trợ bằng sức. 帮助 = giúp đỡ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "587b2da4-f74f-4e43-90dc-75e73d52e39e",
+      "order": 1,
+      "zh": "帮助别人",
+      "pinyin": "",
+      "vi": "giúp đỡ người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89e31eca-7b5a-44d9-bd30-8895fca4d95e",
+      "order": 2,
+      "zh": "帮助同学",
+      "pinyin": "",
+      "vi": "giúp đỡ bạn học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d504f6fe-25be-4f27-8fca-f8c9a928237e",
+      "order": 3,
+      "zh": "互相帮助",
+      "pinyin": "",
+      "vi": "giúp đỡ lẫn nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f45ddf6-5a57-4eb5-a916-87f9aa9695ab",
+      "order": 4,
+      "zh": "需要帮助",
+      "pinyin": "",
+      "vi": "cần giúp đỡ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fb78a09-979d-4aa0-b004-f11b413959c5",
+      "order": 5,
+      "zh": "得到帮助",
+      "pinyin": "",
+      "vi": "nhận được sự giúp đỡ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f4447fa-059b-4364-b037-f9024d9ef0b1",
+      "order": 6,
+      "zh": "在……的帮助下",
+      "pinyin": "",
+      "vi": "dưới sự giúp đỡ của...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f4144db3-5576-46fb-bd52-7a1f07a2edfc",
+      "order": 1,
+      "zh": "谢谢你的帮助。",
+      "pinyin": "Xièxie nǐ de bāngzhù.",
+      "vi": "Cảm ơn sự giúp đỡ của bạn.",
+      "analysis_vi": "帮助 ở đây là danh từ.",
+      "highlight": [
+        "帮助"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab1b8af3-50b4-4476-a41f-b9c1a0687f9e"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "92714ade-aaff-4889-a7a1-6c1012702bf4",
+      "order": 2,
+      "zh": "我是在导游的帮助下才找到饭店的。",
+      "pinyin": "Wǒ shì zài dǎoyóu de bāngzhù xià cái zhǎodào fàndiàn de.",
+      "vi": "Tôi nhờ sự giúp đỡ của hướng dẫn viên mới tìm được khách sạn.",
+      "analysis_vi": "是……的 nhấn điều kiện/cách thức.",
+      "highlight": [
+        "帮助"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab1b8af3-50b4-4476-a41f-b9c1a0687f9e"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8adb7049-faa8-4f85-92c4-1890c4f036a5",
+      "order": 3,
+      "zh": "他一发现同学听不懂，就马上过去帮助他解释生词。",
+      "pinyin": "Tā yì fāxiàn tóngxué tīng bù dǒng, jiù mǎshàng guòqù bāngzhù tā jiěshì shēngcí.",
+      "vi": "Anh ấy vừa thấy bạn học nghe không hiểu liền qua giúp giải thích từ mới.",
+      "analysis_vi": "听不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "帮助"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab1b8af3-50b4-4476-a41f-b9c1a0687f9e"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "帮助 trang trọng và an toàn hơn 帮 trong văn viết/bài thi; khẩu ngữ việc nhỏ dùng 帮我一下.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "66b05547-ae06-44b8-9154-d8df88d82d5d",
+      "order": 1,
+      "rule_vi": "帮助 có thể là động từ hoặc danh từ; việc nhỏ nên dùng 帮 / 帮忙 tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "帮助",
+    "back": "giúp đỡ, sự giúp đỡ",
+    "hint": "bāngzhù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ab1b8af3-50b4-4476-a41f-b9c1a0687f9e",
+    "source_lesson_vocab_id": null
+  }
+}

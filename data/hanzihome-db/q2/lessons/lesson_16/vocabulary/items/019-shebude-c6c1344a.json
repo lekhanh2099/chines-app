@@ -1,0 +1,247 @@
+{
+  "id": "4313aec1-67c6-4491-b9aa-c08f54b76936",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "舍不得",
+  "pinyin": "shěbude",
+  "pos": {
+    "raw_vi": "Động từ tâm lý / Cụm cố định",
+    "raw_cn": "心理动词 / 固定短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xả bất đắc",
+    "meaning_vi": "không nỡ, tiếc không muốn rời/bỏ/dùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không nỡ, tiếc không muốn rời/bỏ/dùng"
+    ],
+    "short_definition_vi": "không nỡ, tiếc không muốn rời/bỏ/dùng",
+    "textbook_focus_vi": "không nỡ, tiếc không muốn rời/bỏ/dùng",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "舍",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bỏ, rời",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "được; phần cố định trong 舍不得",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "舍不得 = không bỏ/rời/dùng được về mặt tình cảm hoặc vì quý tiếc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "43e650a3-f045-4f7a-b3aa-27a714947df1",
+      "order": 1,
+      "zh": "舍不得离开",
+      "pinyin": "",
+      "vi": "không nỡ rời đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e23a8b9-d613-4ff4-a9e6-82f0a7d51e10",
+      "order": 2,
+      "zh": "舍不得搬走",
+      "pinyin": "",
+      "vi": "không nỡ chuyển đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9758a5c3-846e-4038-8be6-3530eb310d7c",
+      "order": 3,
+      "zh": "舍不得花钱",
+      "pinyin": "",
+      "vi": "tiếc tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "619262c3-f639-4494-88dc-41fe3c497ef4",
+      "order": 4,
+      "zh": "舍不得扔掉",
+      "pinyin": "",
+      "vi": "không nỡ vứt đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08e74512-6dc0-4709-8217-cafc964c8114",
+      "order": 5,
+      "zh": "越来越舍不得",
+      "pinyin": "",
+      "vi": "ngày càng không nỡ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a79c65f6-8dae-4c5c-ba59-67afdf6f4fa5",
+      "order": 1,
+      "zh": "爷爷舍不得离开这个院子。",
+      "pinyin": "Yéye shěbude líkāi zhège yuànzi.",
+      "vi": "Ông nội không nỡ rời cái sân này.",
+      "analysis_vi": "舍不得 + động từ = không nỡ làm gì.",
+      "highlight": [
+        "舍不得"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "4313aec1-67c6-4491-b9aa-c08f54b76936"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "26990f33-8699-4c2c-9c0c-dfa4c7362c60",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：舍不得。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: không nỡ, tiếc không muốn rời/bỏ/dùng.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "舍不得"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "4313aec1-67c6-4491-b9aa-c08f54b76936"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 舍不得 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5ec58239-3d7a-455a-b45a-48b95c18acea",
+      "order": 1,
+      "rule_vi": "舍不得 không phải cấm đoán 'không được bỏ'; nghĩa là không nỡ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "舍不得 không phải cấm đoán 'không được bỏ'; nghĩa là không nỡ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "舍不得",
+    "back": "không nỡ, tiếc không muốn rời/bỏ/dùng",
+    "hint": "shěbude",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_019"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4313aec1-67c6-4491-b9aa-c08f54b76936",
+    "source_lesson_vocab_id": null
+  }
+}

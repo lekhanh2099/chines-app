@@ -1,0 +1,520 @@
+{
+  "id": "65e80add-7368-460d-b274-cde3bd09dabb",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "颐和园",
+  "pinyin": "Yíhéyuán",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名/地名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab",
+    "proper-name"
+  ],
+  "meaning": {
+    "hanviet": "Di Hòa Viên",
+    "meaning_vi": "Cung điện mùa hè / Di Hòa Viên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Cung điện mùa hè",
+      "Di Hòa Viên"
+    ],
+    "short_definition_vi": "Cung điện mùa hè / Di Hòa Viên",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "颐",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu, mặt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu, mặt",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "页 được dùng như bộ Hiệt trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "页 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu, mặt",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "页 được dùng như bộ Hiệt trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "和",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "禾 được dùng như bộ Hòa trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "禾 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "禾 được dùng như bộ Hòa trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "园",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "bao quanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "囗 được dùng như bộ Vi trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "囗 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vườn/khu vườn.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "bao quanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "囗 được dùng như bộ Vi trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Tên riêng danh thắng, không cần chiết tự sâu. Có thể nhớ nhẹ: 园 = vườn/khu vườn. 颐和园 là tên riêng của một khu vườn hoàng gia.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "颐和园",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Di Hòa Viên, vườn hoàng gia ở Bắc Kinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "故宫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cố Cung, cung điện hoàng gia.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长城",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trường Thành.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "天坛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Thiên Đàn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我去过颐和园，也去过故宫。",
+      "Tôi từng đi Di Hòa Viên, cũng từng đi Cố Cung.",
+      "我第一次去北京的时候去了颐和园。",
+      "Lần đầu tôi đi Bắc Kinh thì đã đi Di Hòa Viên."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ac89253c-5ad0-4151-b8fc-ee1afb0cf9e8",
+      "order": 1,
+      "zh": "去颐和园",
+      "pinyin": "",
+      "vi": "đi Di Hòa Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "86eec340-3553-4f66-8fe3-c872560ef600",
+      "order": 2,
+      "zh": "参观颐和园",
+      "pinyin": "",
+      "vi": "tham quan Di Hòa Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "71a30986-06c9-4f59-893c-aba993730fa4",
+      "order": 3,
+      "zh": "颐和园的风景",
+      "pinyin": "",
+      "vi": "phong cảnh Di Hòa Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5409dd66-d4d7-4149-9ca2-a2ba6c39a8fb",
+      "order": 4,
+      "zh": "第一次去颐和园",
+      "pinyin": "",
+      "vi": "lần đầu đi Di Hòa Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "0f23b893-b7dc-42c0-be5d-a301d6b06cb8",
+      "order": 5,
+      "zh": "去过颐和园",
+      "pinyin": "",
+      "vi": "từng đi Di Hòa Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "7f587ce0-85d1-4abf-98b8-ffcc2067bcb8",
+      "order": 6,
+      "zh": "在颐和园照相",
+      "pinyin": "",
+      "vi": "chụp ảnh ở Di Hòa Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ee0a300a-9b9e-40ef-92ba-8a34afa93791",
+      "order": 1,
+      "zh": "我去过颐和园。",
+      "pinyin": "Wǒ qù guo Yíhé Yuán.",
+      "vi": "Tôi từng đi Di Hòa Viên.",
+      "analysis_vi": "去过 nhấn kinh nghiệm từng đến.",
+      "highlight": [
+        "颐和园"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "65e80add-7368-460d-b274-cde3bd09dabb"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "39c8394a-c18a-4ca2-86cc-5b206e8fa7f5",
+      "order": 2,
+      "zh": "我第一次去颐和园的时候，照了很多相。",
+      "pinyin": "Wǒ dì yī cì qù Yíhé Yuán de shíhou, zhào le hěn duō xiàng.",
+      "vi": "Lần đầu đi Di Hòa Viên, tôi đã chụp rất nhiều ảnh.",
+      "analysis_vi": "第一次去 = lần đầu đi. 照了很多相 = chụp rất nhiều ảnh; 照相 là ly hợp.",
+      "highlight": [
+        "颐和园"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "65e80add-7368-460d-b274-cde3bd09dabb"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c29bdd52-a429-41a9-b811-c59d9058267a",
+      "order": 3,
+      "zh": "我去过颐和园两次，第一次是春天去的，第二次是冬天去的；同一个地方，不同季节看起来完全不一样。",
+      "pinyin": "Wǒ qù guo Yíhé Yuán liǎng cì, dì yī cì shì chūntiān qù de, dì èr cì shì dōngtiān qù de; tóng yí ge dìfang, bù tóng jìjié kàn qǐlai wánquán bù yíyàng.",
+      "vi": "Tôi từng đi Di Hòa Viên hai lần, lần thứ nhất là đi vào mùa xuân, lần thứ hai là đi vào mùa đông; cùng một nơi mà các mùa khác nhau nhìn hoàn toàn khác nhau.",
+      "analysis_vi": "去过两次 = từng đi hai lần. 第一次 / 第二次 sắp xếp thứ tự. 看起来 = nhìn có vẻ.",
+      "highlight": [
+        "颐和园"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "65e80add-7368-460d-b274-cde3bd09dabb"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [],
+  "flashcard": {
+    "front": "颐和园",
+    "back": "Cung điện mùa hè / Di Hòa Viên",
+    "hint": "Yíhéyuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab",
+      "proper-name"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "65e80add-7368-460d-b274-cde3bd09dabb",
+    "source_lesson_vocab_id": null
+  }
+}

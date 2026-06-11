@@ -1,0 +1,340 @@
+{
+  "id": "67cb8774-2bfb-41fe-9e28-565698f3f8e7",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "手抓羊肉",
+  "pinyin": "shǒuzhuā yángròu",
+  "pos": {
+    "raw_vi": "Cụm danh từ",
+    "raw_cn": "名词短语",
+    "normalized": "noun_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "thủ trảo dương nhục",
+    "meaning_vi": "thịt cừu bốc tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thịt cừu bốc tay"
+    ],
+    "short_definition_vi": "món thịt cừu ăn bằng tay/bốc tay",
+    "textbook_focus_vi": "Đặc sản trong đoạn miêu tả cảnh và ẩm thực Tân Cương.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "tay",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "抓",
+        "lishu_vi": "",
+        "structure_note_vi": "扌 + 爪",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "tay",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "爪",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nắm, bắt, bốc",
+        "modern_logic_vi": "nắm, bắt, bốc",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "tay",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "羊",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dê/cừu",
+        "modern_logic_vi": "dê/cừu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "肉",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thịt",
+        "modern_logic_vi": "thịt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手抓羊肉 được học trong bài theo nghĩa: món thịt cừu ăn bằng tay/bốc tay.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 新疆手抓羊肉.",
+    "warning_vi": "Không dịch 手抓羊肉 là tay bắt thịt cừu; đây là tên món ăn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "羊肉串",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xiên thịt cừu nướng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "羊肉汤",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Canh/súp thịt cừu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch 手抓羊肉 là tay bắt thịt cừu; đây là tên món ăn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "eb22c703-f35c-453b-ad62-91dc9d2f56a5",
+      "order": 1,
+      "zh": "新疆手抓羊肉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "797de86b-1eb5-4f82-b38d-7307527f3ae4",
+      "order": 2,
+      "zh": "味道鲜美的手抓羊肉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0d830a3-099a-4d7e-b2a0-e929656524d4",
+      "order": 3,
+      "zh": "吃手抓羊肉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1237be79-8c6e-4c44-b535-7967d925c2be",
+      "order": 4,
+      "zh": "一盘手抓羊肉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "402fa3d4-6fd7-4791-98ff-e922113facf0",
+      "order": 5,
+      "zh": "当地的手抓羊肉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dd664626-34d7-4592-959a-e13dbaccf74c",
+      "order": 1,
+      "zh": "新疆的手抓羊肉味道很鲜美。",
+      "pinyin": "",
+      "vi": "Món thịt cừu bốc tay ở Tân Cương có vị rất tươi ngon.",
+      "analysis_vi": "味道鲜美 dùng để khen món ăn.",
+      "highlight": [
+        "手抓羊肉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "67cb8774-2bfb-41fe-9e28-565698f3f8e7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3c426576-cd3b-4542-a727-799de8560087",
+      "order": 2,
+      "zh": "这盘手抓羊肉是导游帮我们点的。",
+      "pinyin": "",
+      "vi": "Đĩa thịt cừu bốc tay này là hướng dẫn viên gọi giúp chúng tôi.",
+      "analysis_vi": "是……的 nhấn người thực hiện hành động.",
+      "highlight": [
+        "手抓羊肉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "67cb8774-2bfb-41fe-9e28-565698f3f8e7"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "手抓 nhấn cách ăn/cầm bằng tay trong món đặc sản vùng Tây Bắc/Tân Cương.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a01d9ff3-1fe0-49c3-97f1-ca35755ea364",
+      "order": 1,
+      "rule_vi": "Không dịch 手抓羊肉 là tay bắt thịt cừu; đây là tên món ăn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 手抓羊肉 là tay bắt thịt cừu; đây là tên món ăn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手抓羊肉",
+    "back": "thịt cừu bốc tay",
+    "hint": "shǒuzhuā yángròu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "67cb8774-2bfb-41fe-9e28-565698f3f8e7",
+    "source_lesson_vocab_id": null
+  }
+}

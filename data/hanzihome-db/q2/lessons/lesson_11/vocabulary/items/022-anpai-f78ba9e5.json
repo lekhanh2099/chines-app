@@ -1,0 +1,345 @@
+{
+  "id": "b2fa633e-c443-4e40-9c93-cd0de95b3279",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "安排",
+  "pinyin": "ānpái",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动 / 名",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "An bài",
+    "meaning_vi": "sắp xếp, bố trí; sự sắp xếp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sắp xếp, bố trí; sự sắp xếp"
+    ],
+    "short_definition_vi": "sắp xếp, bố trí; sự sắp xếp",
+    "textbook_focus_vi": "sắp xếp, bố trí; sự sắp xếp",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "安",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ/nữ giới",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ/nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yên ổn, đặt ổn",
+        "modern_logic_vi": "安 = làm cho ổn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "排",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay/thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "非",
+            "hanviet": "phi",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xếp hàng, sắp xếp",
+        "modern_logic_vi": "排 = xếp theo hàng/thứ tự.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "安 = ổn, 排 = xếp. 安排 = sắp xếp cho ổn thỏa, có trật tự.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c5998b84-0dbc-4459-86dc-b5fe44299d10",
+      "order": 1,
+      "zh": "安排时间",
+      "pinyin": "",
+      "vi": "sắp xếp thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a0de1ec-c688-4628-acdb-064dcb7136a5",
+      "order": 2,
+      "zh": "安排工作",
+      "pinyin": "",
+      "vi": "sắp xếp công việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "349dc71f-0076-4835-a8a4-8563d79aa8e7",
+      "order": 3,
+      "zh": "安排房间",
+      "pinyin": "",
+      "vi": "sắp xếp phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb6d4f12-31ab-46fc-9844-b911b85cd90c",
+      "order": 4,
+      "zh": "安排活动",
+      "pinyin": "",
+      "vi": "sắp xếp hoạt động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ad89785-44c7-4eb7-80e9-c6b44e47f5bc",
+      "order": 5,
+      "zh": "安排旅行",
+      "pinyin": "",
+      "vi": "sắp xếp chuyến du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "96af601e-3ad1-40ed-bd8b-b6e148ab6933",
+      "order": 6,
+      "zh": "合理安排",
+      "pinyin": "",
+      "vi": "sắp xếp hợp lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "506d0baf-b475-4205-8fbf-1e5cb28683dd",
+      "order": 1,
+      "zh": "导游已经安排好了明天的活动。",
+      "pinyin": "Dǎoyóu yǐjīng ānpái hǎo le míngtiān de huódòng.",
+      "vi": "Hướng dẫn viên đã sắp xếp xong hoạt động ngày mai.",
+      "analysis_vi": "安排好 là bổ ngữ kết quả.",
+      "highlight": [
+        "安排"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2fa633e-c443-4e40-9c93-cd0de95b3279"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7631e171-f2b8-4143-891e-df199bad95d9",
+      "order": 2,
+      "zh": "明天的参观活动是旅行社安排的。",
+      "pinyin": "Míngtiān de cānguān huódòng shì lǚxíngshè ānpái de.",
+      "vi": "Hoạt động tham quan ngày mai do công ty du lịch sắp xếp.",
+      "analysis_vi": "是……的 nhấn bên sắp xếp.",
+      "highlight": [
+        "安排"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2fa633e-c443-4e40-9c93-cd0de95b3279"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d686abd1-bce6-470c-9f83-94914fcece17",
+      "order": 3,
+      "zh": "老板一听说他暑假有空儿，就给他安排了一份简单的工作。",
+      "pinyin": "Lǎobǎn yì tīngshuō tā shǔjià yǒu kòngr, jiù gěi tā ānpái le yí fèn jiǎndān de gōngzuò.",
+      "vi": "Ông chủ vừa nghe anh ấy có thời gian rảnh liền sắp xếp một công việc đơn giản.",
+      "analysis_vi": "给他安排工作 = sắp xếp công việc cho anh ấy.",
+      "highlight": [
+        "安排"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2fa633e-c443-4e40-9c93-cd0de95b3279"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong công việc, 我安排一下 nghe mềm như 'để tôi xử lý/sắp xếp'.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2b9bf78e-6435-44dc-b83c-67e2f3941c6b",
+      "order": 1,
+      "rule_vi": "Không nhầm 安排 với 排; 安排 dùng cho thời gian/công việc/phòng/hoạt động.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "安排",
+    "back": "sắp xếp, bố trí; sự sắp xếp",
+    "hint": "ānpái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b2fa633e-c443-4e40-9c93-cd0de95b3279",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,792 @@
+{
+  "id": "l13_section_005",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "grammar_001",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "老大",
+      "title_vi": "Cách gọi thứ tự con cái",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_001_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "老大 dùng để chỉ người con lớn nhất trong gia đình, không nhất thiết là nam.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_001_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "老大 / 老二 / 老三",
+          "meaning_vi": "con cả / con thứ hai / con thứ ba",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_008",
+              "zh": "我在家是老大。",
+              "pinyin": "Wǒ zài jiā shì lǎodà.",
+              "vi": "Ở nhà tôi là con cả.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_001"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_002",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "以……为主",
+      "title_vi": "Lấy cái gì làm chính",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_002_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để nói phần chủ yếu, trọng tâm hoặc nghề/công việc chính.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_002_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "以 + A + 为主",
+          "meaning_vi": "lấy A làm chính",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_009",
+              "zh": "我们家生活挺好的，以种地为主，兼搞一些副业。",
+              "pinyin": "Wǒmen jiā shēnghuó tǐng hǎo de, yǐ zhòng dì wéi zhǔ, jiān gǎo yìxiē fùyè.",
+              "vi": "Nhà chúng tôi sống khá tốt, lấy làm ruộng làm chính, kiêm làm nghề phụ.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_002"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_010",
+              "zh": "这门课以口语练习为主。",
+              "pinyin": "Zhè mén kè yǐ kǒuyǔ liànxí wéi zhǔ.",
+              "vi": "Môn này lấy luyện nói làm chính.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_002"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_003",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "总之",
+      "title_vi": "Tóm lại",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_003_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để tổng kết lại những điều vừa nói.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_003_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "前文 nhiều ý + 总之 + kết luận",
+          "meaning_vi": "tóm lại / nói chung",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_011",
+              "zh": "总之，挺难的。",
+              "pinyin": "Zǒngzhī, tǐng nán de.",
+              "vi": "Tóm lại là khá khó.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_003"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_012",
+              "zh": "听力、口语、阅读、写作，总之哪门功课都很重要。",
+              "pinyin": "Tīnglì, kǒuyǔ, yuèdú, xiězuò, zǒngzhī nǎ mén gōngkè dōu hěn zhòngyào.",
+              "vi": "Nghe, nói, đọc, viết, tóm lại môn nào cũng quan trọng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_003"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_004",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "总得",
+      "title_vi": "Dù sao cũng phải",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_004_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Biểu thị dù thế nào cuối cùng cũng phải làm, có sắc thái không thể tránh.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_004_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "主语 + 总得 + 动词/动词短语",
+          "meaning_vi": "rốt cuộc cũng phải / dù sao cũng phải",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_013",
+              "zh": "一个人总不能守着父母过一辈子，总得自立。",
+              "pinyin": "Yí ge rén zǒng bù néng shǒuzhe fùmǔ guò yí bèizi, zǒng děi zìlì.",
+              "vi": "Một người không thể cứ ở bên cha mẹ cả đời, cuối cùng cũng phải tự lập.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_004"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_014",
+              "zh": "不能去上课，总得告诉老师一声吧。",
+              "pinyin": "Bù néng qù shàngkè, zǒng děi gàosu lǎoshī yì shēng ba.",
+              "vi": "Không đi học được thì dù sao cũng phải báo thầy cô một tiếng chứ.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_004"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Thường dùng trong câu khẳng định; phủ định thường đổi sang 不一定要 / 不用."
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_005",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "够",
+      "title_vi": "Đủ / rất / đến phát ngán",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_005_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "够 có thể làm phó từ chỉ mức độ, động từ chỉ đủ, hoặc bổ ngữ kết quả chỉ quá đủ đến phát chán.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_005_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "够 làm phó từ",
+          "pattern": "够 + 形容词 + 的/了",
+          "meaning_vi": "rất, đủ mức",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_015",
+              "zh": "家务事就够我忙的了。",
+              "pinyin": "Jiāwùshì jiù gòu wǒ máng de le.",
+              "vi": "Việc nhà đã đủ làm tôi bận lắm rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_005"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_016",
+              "zh": "今年夏天够热的。",
+              "pinyin": "Jīnnián xiàtiān gòu rè de.",
+              "vi": "Mùa hè năm nay nóng thật đấy.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_005"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_005_block_003",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "够 làm động từ",
+          "pattern": "够 + tân ngữ / 够不够 + tân ngữ",
+          "meaning_vi": "đủ số lượng/tiêu chuẩn",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_017",
+              "zh": "你一个月两千块钱够用吗？",
+              "pinyin": "Nǐ yí ge yuè liǎng qiān kuài qián gòu yòng ma?",
+              "vi": "Một tháng hai nghìn tệ có đủ dùng không?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_005"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_005_block_004",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "够 làm bổ ngữ kết quả",
+          "pattern": "动词 + 够了",
+          "meaning_vi": "quá đủ, phát ngán",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_018",
+              "zh": "每天吃这个，我早就吃够了。",
+              "pinyin": "Měitiān chī zhège, wǒ zǎo jiù chī gòu le.",
+              "vi": "Ngày nào cũng ăn món này, tôi đã ăn phát ngán rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_005"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_006",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "哪怕",
+      "title_vi": "Dù cho",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_006_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Đưa ra điều kiện giả định nhỏ hoặc cực đoan nhưng kết quả vẫn không thay đổi.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_006_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "哪怕 + điều kiện，主语 + 也/都 + kết quả",
+          "meaning_vi": "dù cho / ngay cả khi",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_019",
+              "zh": "哪怕是看一场电影都不行。",
+              "pinyin": "Nǎpà shì kàn yì chǎng diànyǐng dōu bù xíng.",
+              "vi": "Dù chỉ xem một bộ phim cũng không được.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_006"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_020",
+              "zh": "哪怕今天晚上不睡觉，我也得把这篇文章写完。",
+              "pinyin": "Nǎpà jīntiān wǎnshang bù shuìjiào, wǒ yě děi bǎ zhè piān wénzhāng xiě wán.",
+              "vi": "Dù tối nay không ngủ, tôi cũng phải viết xong bài này.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_006"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_007",
+      "type": "grammar_point",
+      "order": 7,
+      "title": "敢",
+      "title_vi": "Dám",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_007_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "敢 đứng trước động từ, chỉ dám hoặc có gan làm việc gì.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_007_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "主语 + 敢 + 动词",
+          "meaning_vi": "dám làm gì",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_021",
+              "zh": "晚上连电视我都不敢看。",
+              "pinyin": "Wǎnshang lián diànshì wǒ dōu bù gǎn kàn.",
+              "vi": "Buổi tối ngay cả tivi tôi cũng không dám xem.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_007"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_022",
+              "zh": "我可不敢一个人去旅行。",
+              "pinyin": "Wǒ kě bù gǎn yí ge rén qù lǚxíng.",
+              "vi": "Tôi không dám đi du lịch một mình đâu.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_007"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Phủ định: 不敢 + V / 没敢 + V."
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_008",
+      "type": "grammar_point",
+      "order": 8,
+      "title": "好在",
+      "title_vi": "May mà",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_008_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nêu điểm may mắn hoặc có lợi trong tình huống không hoàn toàn tốt.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_008_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "好在 + tình huống may mắn",
+          "meaning_vi": "may mà / may là",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_023",
+              "zh": "好在孩子还算听话，功课也不错。",
+              "pinyin": "Hǎozài háizi hái suàn tīnghuà, gōngkè yě búcuò.",
+              "vi": "May mà con cũng khá nghe lời, bài vở cũng không tệ.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_008"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_024",
+              "zh": "房间不太大，好在只我一个人住。",
+              "pinyin": "Fángjiān bú tài dà, hǎozài zhǐ wǒ yí ge rén zhù.",
+              "vi": "Phòng không lớn lắm, may mà chỉ có một mình tôi ở.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_008"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_009",
+      "type": "grammar_point",
+      "order": 9,
+      "title": "一……就是……",
+      "title_vi": "Vừa làm là kéo dài",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_009_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Biểu thị hễ bắt đầu một hành động thì kéo dài khá lâu hoặc đạt một lượng lớn.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_009_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "一 + V + 就是 + thời lượng/số lượng",
+          "meaning_vi": "vừa/hễ làm là kéo dài...",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_025",
+              "zh": "一待就是四年。",
+              "pinyin": "Yí dāi jiù shì sì nián.",
+              "vi": "Ở lại một cái là bốn năm.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_009"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_026",
+              "zh": "他晚上看书，一看就是一两个小时。",
+              "pinyin": "Tā wǎnshang kàn shū, yí kàn jiù shì yì liǎng ge xiǎoshí.",
+              "vi": "Buổi tối anh ấy đọc sách, hễ đọc là một hai tiếng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_009"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_010",
+      "type": "grammar_point",
+      "order": 10,
+      "title": "反而",
+      "title_vi": "Ngược lại",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_010_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng khi kết quả thực tế trái với dự đoán hoặc logic thông thường.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "grammar_010_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "Theo lẽ thường A → nên B, nhưng 反而 + C",
+          "meaning_vi": "ngược lại, trái với dự đoán",
+          "formulas": [],
+          "examples": [
+            {
+              "id": "l13_ex_027",
+              "zh": "母亲知道了反而更担心。",
+              "pinyin": "Mǔqīn zhīdào le fǎn’ér gèng dānxīn.",
+              "vi": "Mẹ biết rồi ngược lại càng lo hơn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_010"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "l13_ex_028",
+              "zh": "雨没有停，反而越下越大了。",
+              "pinyin": "Yǔ méiyǒu tíng, fǎn’ér yuè xià yuè dà le.",
+              "vi": "Mưa không tạnh, trái lại càng mưa to hơn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "grammar_010"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "反而 không chỉ là 'nhưng'; nó cần sắc thái trái dự đoán."
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

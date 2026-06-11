@@ -1,0 +1,369 @@
+{
+  "id": "8003c5ad-8e82-4831-adc9-ac6fd79906dc",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "趟",
+  "pinyin": "tàng",
+  "pos": {
+    "raw_vi": "Lượng từ",
+    "raw_cn": "量",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thang",
+    "meaning_vi": "chuyến, lượt đi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuyến",
+      "lượt đi"
+    ],
+    "short_definition_vi": "chuyến, lượt đi",
+    "textbook_focus_vi": "Âm Hán Việt tham khảo: thang. Nghĩa chính: Chuyến, lượt đi. Dùng cho hành động đi – về, đi một nơi nào đó. Thường đi với 去 / 来 / 跑 / 走. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "趟",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi / chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi / chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "尚",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuyến/lượt đi lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 走 nên gắn với di chuyển. 趟 = một lần đi/về/qua lại.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 趟 không phải lượng từ cho mọi hành động. Nó mạnh nhất với “đi một chuyến”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "趟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyến/lượt đi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "次",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lần, dùng rất rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "遍",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lượt từ đầu đến cuối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "回",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lần, lượt, hay trong khẩu ngữ/kể chuyện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "班",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyến xe/máy bay theo lịch trong vài ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我去了一趟大使馆。",
+      "Tôi đi đại sứ quán một chuyến.",
+      "我看了一遍。",
+      "Tôi xem một lượt từ đầu đến cuối.",
+      "我去过一次香港。",
+      "Tôi từng đi Hồng Kông một lần."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "65538df1-c256-4190-8de4-3030c41421ff",
+      "order": 1,
+      "zh": "去一趟",
+      "pinyin": "",
+      "vi": "đi một chuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3be0bd4f-7a0d-4c8d-bff6-c3d800c3164c",
+      "order": 2,
+      "zh": "来一趟",
+      "pinyin": "",
+      "vi": "đến một chuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0b1e0247-2645-4bef-93d6-415c9fcd9068",
+      "order": 3,
+      "zh": "跑一趟",
+      "pinyin": "",
+      "vi": "chạy/đi một chuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fc6b48e-c5fc-46b8-87e7-110774e3b99f",
+      "order": 4,
+      "zh": "这趟车",
+      "pinyin": "",
+      "vi": "chuyến xe này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad8e015c-f94a-4061-a4e2-c0c37c6015d7",
+      "order": 5,
+      "zh": "白跑一趟",
+      "pinyin": "",
+      "vi": "đi công cốc một chuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62f005be-d120-4f97-89b8-f115580995b2",
+      "order": 6,
+      "zh": "麻烦你跑一趟",
+      "pinyin": "",
+      "vi": "phiền bạn đi một chuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0a2297c0-8b5a-48ed-84ba-34bcec2a17e0",
+      "order": 1,
+      "zh": "我去了一趟大使馆。",
+      "pinyin": "Wǒ qù le yí tàng dàshǐguǎn.",
+      "vi": "Tôi đi đại sứ quán một chuyến.",
+      "analysis_vi": "一趟 dùng cho một lượt đi đến nơi nào đó.",
+      "highlight": [
+        "趟"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "8003c5ad-8e82-4831-adc9-ac6fd79906dc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9dd9c8aa-1326-4905-b9fe-6297ad4c5770",
+      "order": 2,
+      "zh": "麻烦你跑一趟，把这本书送过去。",
+      "pinyin": "Máfan nǐ pǎo yí tàng, bǎ zhè běn shū sòng guòqù.",
+      "vi": "Phiền bạn đi một chuyến, đưa quyển sách này qua đó.",
+      "analysis_vi": "跑一趟 không nhất thiết là chạy thật, mà là đi một chuyến giúp ai đó. 送过去 hướng ra xa người nói.",
+      "highlight": [
+        "趟"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "8003c5ad-8e82-4831-adc9-ac6fd79906dc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "594dac14-a6cf-4693-9dab-d99e58086781",
+      "order": 3,
+      "zh": "赵老师这趟去香港参加研讨会很辛苦，可是他还是给我们捎回来了一些文物展览的资料。",
+      "pinyin": "Zhào lǎoshī zhè tàng qù Xiānggǎng cānjiā yántǎohuì hěn xīnkǔ, kěshì tā háishi gěi wǒmen shāo huílai le yìxiē wénwù zhǎnlǎn de zīliào.",
+      "vi": "Chuyến đi Hồng Kông tham gia hội thảo lần này của thầy Triệu rất vất vả, nhưng thầy vẫn tiện mang về cho chúng tôi một ít tài liệu triển lãm văn vật.",
+      "analysis_vi": "这趟去香港 = chuyến đi Hồng Kông lần này. 捎回来 = tiện mang về phía người nói.",
+      "highlight": [
+        "趟"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "8003c5ad-8e82-4831-adc9-ac6fd79906dc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "跑一趟 là cách nói rất đời thường. Nó không nhất thiết là “chạy”, mà là “đi một chuyến xử lý việc gì”. Ví dụ 麻烦你跑一趟银行 = phiền bạn đi ngân hàng một chuyến.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cc24a46c-7e63-49c0-bdc5-c90fce9a0aa4",
+      "order": 1,
+      "rule_vi": "趟 dùng cho lượt/chuyến đi lại; hành động không di chuyển thường dùng 次。",
+      "natural_examples": [
+        {
+          "zh": "一次 = một lần, rộng.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "一趟 = một chuyến đi.",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我去过一次台湾。",
+          "pinyin": "Tôi từng đi Đài Loan một lần.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "趟",
+    "back": "chuyến, lượt đi",
+    "hint": "tàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8003c5ad-8e82-4831-adc9-ac6fd79906dc",
+    "source_lesson_vocab_id": null
+  }
+}

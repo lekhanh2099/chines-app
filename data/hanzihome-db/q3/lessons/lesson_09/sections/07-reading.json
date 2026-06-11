@@ -1,0 +1,410 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền tổng hợp",
+  "source_origin": "textbook_verified_pdf",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "reading_001",
+      "type": "text_reading",
+      "variant": "reading_cloze",
+      "order": 1,
+      "title": "综合填空：拔苗助长",
+      "title_vi": "Bài đọc điền từ: Nhổ mầm giúp cây lớn",
+      "source_origin": "textbook_verified_pdf",
+      "check_needed": false,
+      "supplementary_vocab": [
+        {
+          "id": "97948db8-350f-468f-a584-08ac6ee8ea70",
+          "type": "vocabulary_item",
+          "order": 1,
+          "hanzi": "拔苗助长",
+          "pinyin": "bá miáo zhù zhǎng",
+          "meaning_vi": "nhổ mạ thúc cây lớn; nóng vội thúc ép làm hỏng việc",
+          "meaning_en": "to spoil things by excessive enthusiasm",
+          "pos": "Thành ngữ",
+          "pos_detail": {
+            "vi": "Thành ngữ",
+            "cn": "成语",
+            "normalized": "idiom",
+            "schema_compatible_pos": "phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": [
+              "Thành ngữ lưu trong schema-compatible POS là phrase để không lệch enum; normalized vẫn hiểu là idiom/chengyu."
+            ]
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "拔苗助长",
+            "back": "bá miáo zhù zhǎng — nhổ mạ thúc cây lớn; nóng vội thúc ép làm hỏng việc",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook_verified",
+          "check_needed": false
+        },
+        {
+          "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
+          "type": "vocabulary_item",
+          "order": 2,
+          "hanzi": "性急",
+          "pinyin": "xìngjí",
+          "meaning_vi": "nóng vội; nóng tính; hấp tấp",
+          "meaning_en": "impatient",
+          "pos": "Tính từ",
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "性急",
+            "back": "xìngjí — nóng vội; nóng tính; hấp tấp",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook_verified",
+          "check_needed": false
+        },
+        {
+          "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
+          "type": "vocabulary_item",
+          "order": 3,
+          "hanzi": "田",
+          "pinyin": "tián",
+          "meaning_vi": "ruộng",
+          "meaning_en": "field",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "田",
+            "back": "tián — ruộng",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook_verified",
+          "check_needed": false
+        },
+        {
+          "id": "66286879-4464-4667-b96b-edb647e8e7a6",
+          "type": "vocabulary_item",
+          "order": 4,
+          "hanzi": "急忙",
+          "pinyin": "jímáng",
+          "meaning_vi": "vội vàng; hấp tấp",
+          "meaning_en": "in a hurry",
+          "pos": "Phó từ",
+          "pos_detail": {
+            "vi": "Phó từ",
+            "cn": "副词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "急忙",
+            "back": "jímáng — vội vàng; hấp tấp",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook_verified",
+          "check_needed": false
+        },
+        {
+          "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
+          "type": "vocabulary_item",
+          "order": 5,
+          "hanzi": "苗",
+          "pinyin": "miáo",
+          "meaning_vi": "mầm cây; cây non; mạ",
+          "meaning_en": "seedling",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "苗",
+            "back": "miáo — mầm cây; cây non; mạ",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook_verified",
+          "check_needed": false
+        },
+        {
+          "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
+          "type": "vocabulary_item",
+          "order": 6,
+          "hanzi": "拔",
+          "pinyin": "bá",
+          "meaning_vi": "nhổ; kéo lên; rút ra",
+          "meaning_en": "to pull up; to pull out",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "拔",
+            "back": "bá — nhổ; kéo lên; rút ra",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook_verified",
+          "check_needed": false
+        }
+      ],
+      "cloze_text": "有个性急的人，种了几亩田。总希望田里的苗快一点儿长，______(1) 苗长得不像他想的那么快。\n\n有一天，他忽然想 ______(2) 了一个“好”办法，就急急忙忙跑到田里，______(3) 每棵苗都往上拔了拔。回过头来再看看苗，______(4) 原来高了不少，心里十分高兴。\n\n回到家，他 ______(5) 对家里人说：“我辛辛苦苦干了一整天，快累死 ______(6)！不过一天的时间，地里的苗 ______(7) 长高了很多。”\n\n他的儿子听了，感到很奇怪，就跑到田里去看，结果，田里的苗都死 ______(8)。",
+      "paragraphs": [
+        {
+          "id": "reading_001_para_001",
+          "order": 1,
+          "zh": "有个性急的人，种了几亩田。总希望田里的苗快一点儿长，可是苗长得不像他想的那么快。",
+          "pinyin": "yǒu gè xìngjí de rén，zhòng le jǐ mǔ tián。zǒng xīwàng tián lǐ de miáo kuài yì diǎn ér zhǎng，kěshì miáo zhǎng de bú xiàng tā xiǎng de nà me kuài。",
+          "vi": "Có một người nóng vội, canh tác vài mẫu ruộng. Ông ta luôn hy vọng cây mạ trong ruộng lớn nhanh hơn một chút, nhưng cây mạ lại không lớn nhanh như ông ta tưởng.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_verified_pdf",
+          "check_needed": false
+        },
+        {
+          "id": "reading_001_para_002",
+          "order": 2,
+          "zh": "有一天，他忽然想出了一个“好”办法，就急急忙忙跑到田里，把每棵苗都往上拔了拔。回过头来再看看苗，比原来高了不少，心里十分高兴。",
+          "pinyin": "yǒu yī tiān，tā hūrán xiǎng chū le yí ge“hǎo” bànfǎ，jiù jíjímángmáng pǎo dào tián lǐ，bǎ měi kē miáo dōu wǎng shàng bá le bá。huí guò tóu lái zài kàn kàn miáo，bǐ yuánlái gāo le bù shǎo，xīn lǐ shífēn gāoxìng。",
+          "vi": "Một hôm, ông ta bỗng nghĩ ra một “cách hay”, bèn vội vàng chạy ra ruộng, nhổ từng cây mạ lên trên một chút. Quay đầu nhìn lại thì thấy cây mạ cao hơn trước không ít, trong lòng rất vui.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_verified_pdf",
+          "check_needed": false
+        },
+        {
+          "id": "reading_001_para_003",
+          "order": 3,
+          "zh": "回到家，他得意地对家里人说：“我辛辛苦苦干了一整天，快累死了！不过一天的时间，地里的苗都长高了很多。”",
+          "pinyin": "huí dào jiā，tā déyì de duì jiālǐ rén shuō：“wǒ xīnxīn kǔkǔ gàn le yì zhěng tiān，kuài lèi sǐ le！búguò yī tiān de shíjiān，dì lǐ de miáo dōu zhǎng gāo le hěn duō。”",
+          "vi": "Về đến nhà, ông ta đắc ý nói với người nhà: “Tôi vất vả làm cả ngày, mệt chết rồi! Nhưng chỉ trong một ngày, cây mạ dưới ruộng đều cao lên rất nhiều.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_verified_pdf",
+          "check_needed": false
+        },
+        {
+          "id": "reading_001_para_004",
+          "order": 4,
+          "zh": "他的儿子听了，感到很奇怪，就跑到田里去看，结果，田里的苗都死了。",
+          "pinyin": "tā de érzi tīng le，gǎn dào hěn qíguài，jiù pǎo dào tián lǐ qù kàn，jiéguǒ，tián lǐ de miáo dōu sǐ le。",
+          "vi": "Con trai ông ta nghe xong thấy rất lạ, bèn chạy ra ruộng xem. Kết quả là cây mạ trong ruộng đều chết rồi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_verified_pdf",
+          "check_needed": false
+        }
+      ],
+      "answer_key": [
+        {
+          "blank_id": "blank_01",
+          "order": 1,
+          "answer": "可是",
+          "explanation_vi": "Nối ý tương phản.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_02",
+          "order": 2,
+          "answer": "出",
+          "explanation_vi": "想出办法 = nghĩ ra cách.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_03",
+          "order": 3,
+          "answer": "把",
+          "explanation_vi": "Câu chữ 把: 把每棵苗都往上拔了拔.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_04",
+          "order": 4,
+          "answer": "比",
+          "explanation_vi": "比原来高 = cao hơn trước.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_05",
+          "order": 5,
+          "answer": "得意地",
+          "explanation_vi": "Trạng ngữ chỉ thái độ đắc ý.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_06",
+          "order": 6,
+          "answer": "了",
+          "explanation_vi": "Câu cảm thán 快累死了.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_07",
+          "order": 7,
+          "answer": "都",
+          "explanation_vi": "Nhấn mạnh tất cả cây non đều cao lên.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_id": "blank_08",
+          "order": 8,
+          "answer": "了",
+          "explanation_vi": "Biểu thị kết quả đã xảy ra: 苗都死了.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "reading_001_q_001",
+          "question": "这个人为什么要把苗往上拔？",
+          "answer": "因为他性急，总希望田里的苗快一点儿长。",
+          "source_origin": "generated_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_001_q_002",
+          "question": "他为什么觉得自己的办法很好？",
+          "answer": "因为他看到苗比原来高了不少。",
+          "source_origin": "generated_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_001_q_003",
+          "question": "结果怎么样？",
+          "answer": "结果，田里的苗都死了。",
+          "source_origin": "generated_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_001_q_004",
+          "question": "“拔苗助长”这个成语告诉我们什么道理？",
+          "answer": "做事不能太性急，不能违反事物发展的规律。",
+          "source_origin": "generated_checked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

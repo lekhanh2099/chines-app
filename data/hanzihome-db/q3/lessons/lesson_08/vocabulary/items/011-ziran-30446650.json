@@ -1,0 +1,255 @@
+{
+  "id": "bbbb58f6-d272-440d-acfc-823e1e429b70",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "自然",
+  "pinyin": "zìrán",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ / Phó từ",
+    "raw_cn": "形容词 / 名词 / 副词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tự nhiên",
+    "meaning_vi": "tự nhiên; không gượng gạo; thiên nhiên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự nhiên",
+      "không gượng gạo",
+      "thiên nhiên"
+    ],
+    "short_definition_vi": "tự nhiên; không gượng gạo; thiên nhiên",
+    "textbook_focus_vi": "自 = tự mình, 然 = trạng thái như vậy. 自然 = tự nó như vậy, không bị ép.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "trạng thái, thiên nhiên",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "tự",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình, bản thân",
+        "modern_logic_vi": "Trong từ này, 自 góp phần tạo nghĩa 'tự mình, bản thân'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "灬 là hỏa dưới; học theo từ ghép.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy, trạng thái",
+        "modern_logic_vi": "Trong từ này, 然 góp phần tạo nghĩa 'như vậy, trạng thái'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "自 = tự mình, 然 = trạng thái như vậy. 自然 = tự nó như vậy, không bị ép.",
+    "memory_tip_vi": "Nhớ qua cụm: 很自然 = rất tự nhiên.",
+    "warning_vi": "Không dịch 'cứ tự nhiên ăn đi' máy móc thành 自然吃.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "自在",
+        "pinyin": "zìzài",
+        "meaning_vi": "thoải mái, tự tại",
+        "difference_vi": "Nhấn cảm giác không bị gò bó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "随便",
+        "pinyin": "suíbiàn",
+        "meaning_vi": "tùy tiện/tùy ý",
+        "difference_vi": "Không thay 自然 tùy tiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch 'cứ tự nhiên ăn đi' máy móc thành 自然吃."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bd97e6f6-890e-48f0-8943-096449f02e53",
+      "order": 1,
+      "zh": "很自然",
+      "pinyin": "hěn zìrán",
+      "vi": "rất tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2db5155-861a-4255-9ea1-53b383d45bc4",
+      "order": 2,
+      "zh": "不太自然",
+      "pinyin": "bú tài zìrán",
+      "vi": "không tự nhiên lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1c00bf1-704a-42a7-a4d9-16c8877b47f6",
+      "order": 3,
+      "zh": "自然风光",
+      "pinyin": "zìrán fēngguāng",
+      "vi": "phong cảnh thiên nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5ebf2a85-2e3e-4556-a1c0-b4838ecefbb5",
+      "order": 1,
+      "zh": "他尽量装得自然一点儿，可是一看见赵霞，心里就紧张。",
+      "pinyin": "Tā jǐnliàng zhuāng de zìrán yìdiǎnr, kěshì yí kànjiàn Zhào Xiá, xīnli jiù jǐnzhāng.",
+      "vi": "Anh ấy cố tỏ ra tự nhiên hơn một chút, nhưng cứ nhìn thấy Triệu Hà là căng thẳng.",
+      "analysis_vi": "装得自然一点儿 là bổ ngữ trạng thái.",
+      "highlight": [
+        "自然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbbb58f6-d272-440d-acfc-823e1e429b70"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "自然一点儿 thường dùng để bảo người khác đừng gượng quá.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fe94b83d-6593-4960-82cd-8e625a15985c",
+      "order": 1,
+      "rule_vi": "Không dịch 'cứ tự nhiên ăn đi' máy móc thành 自然吃.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "自然吃。",
+          "pinyin": "Zìrán chī.",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Không dùng 自然 như trạng ngữ kiểu này.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "别客气，多吃点儿。",
+          "pinyin": "Bié kèqi, duō chī diǎnr.",
+          "vi": "Đừng khách sáo, ăn nhiều vào.",
+          "note_vi": "Tự nhiên hơn trong ngữ cảnh mời ăn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自然",
+    "back": "tự nhiên; không gượng gạo; thiên nhiên",
+    "hint": "zìrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bbbb58f6-d272-440d-acfc-823e1e429b70",
+    "source_lesson_vocab_id": null
+  }
+}

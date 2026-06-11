@@ -1,0 +1,200 @@
+{
+  "id": "bbf2e5f7-109c-4d86-b8e6-9388282a96c2",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "劝",
+  "pinyin": "quàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khuyến",
+    "meaning_vi": "khuyên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khuyên"
+    ],
+    "short_definition_vi": "khuyên",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "劝",
+        "lishu_vi": "",
+        "structure_note_vi": "劝: khuyên",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khuyên",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: khuyên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "劝 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 劝我去医院.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5b53ef02-bc85-48cb-9337-25c1359f8f68",
+      "order": 1,
+      "zh": "劝我去医院",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a7a3ed4-39ed-43ac-ac49-1dc5fe2abcf1",
+      "order": 2,
+      "zh": "劝他休息",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f6c3b1a-8a37-4fe3-9be5-2527635f6681",
+      "order": 3,
+      "zh": "劝你别去",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6de20254-bf60-4dd1-b163-677b23d66ed9",
+      "order": 4,
+      "zh": "再三劝",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3f5b7b7b-1860-4028-8a88-c63a16a4ef22",
+      "order": 1,
+      "zh": "我劝你早点儿休息。",
+      "pinyin": "",
+      "vi": "Tôi khuyên bạn nghỉ sớm một chút。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "劝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbf2e5f7-109c-4d86-b8e6-9388282a96c2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4b10e60f-293d-4bf3-8010-e71d52632dfd",
+      "order": 2,
+      "zh": "老师再三劝我住到她家去。",
+      "pinyin": "",
+      "vi": "Cô giáo nhiều lần khuyên tôi đến nhà cô ở。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "劝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbf2e5f7-109c-4d86-b8e6-9388282a96c2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "620b1c32-98cb-47a2-af0d-9c8a66be4e06",
+      "order": 1,
+      "rule_vi": "Khi luyện dịch nên nói đủ 劝 + người + V.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Khi luyện dịch nên nói đủ 劝 + người + V.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "劝",
+    "back": "khuyên",
+    "hint": "quàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bbf2e5f7-109c-4d86-b8e6-9388282a96c2",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "id": "2f5b4831-fa84-4825-bd4b-efff66ccfc7c",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "房管",
+  "pinyin": "fángguǎn",
+  "pos": {
+    "raw_vi": "Danh từ / Cách gọi rút gọn",
+    "raw_cn": "名/简称",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Phòng quản",
+    "meaning_vi": "quản lý nhà/phòng, bộ phận quản lý nhà ở",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quản lý nhà/phòng",
+      "bộ phận quản lý nhà ở"
+    ],
+    "short_definition_vi": "quản lý nhà/phòng, bộ phận quản lý nhà ở",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "khẩu ngữ/rút gọn theo ngữ cảnh; không phải lúc nào cũng là chức danh chính thức đầy đủ.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "房",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "户",
+            "hanviet": "hộ",
+            "meaning_vi": "cửa/hộ nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "戶",
+              "radical_variant": "户",
+              "radical_name_vi": "bộ Hộ",
+              "radical_name_zh": "",
+              "hanviet": "hộ",
+              "meaning_vi": "cửa/hộ nhà",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phòng, nhà",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "房 là phòng, nhà, nhà ở. → 房管 = người/bộ phận quản lý việc liên quan đến phòng/nhà.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "管",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "官",
+            "hanviet": "quan",
+            "meaning_vi": "quan/quản",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quản lý; ống",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "管 là quản lý, trông coi, xử lý. → 房管 = người/bộ phận quản lý việc liên quan đến phòng/nhà.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 房管 = người/bộ phận quản lý việc liên quan đến phòng/nhà.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: nếu cần nói rõ người quản lý, 房管员 sẽ rõ hơn 房管.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "房管 (fángguǎn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quản lý nhà/phòng, cách gọi tắt theo ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "房管员 (fángguǎnyuán)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhân viên quản lý nhà/phòng, rõ là người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "管理员 (guǎnlǐyuán)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quản lý/nhân viên quản lý nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "宿管 (sùguǎn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quản lý ký túc xá, khẩu ngữ rất thường gặp với sinh viên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: ở ký túc xá nói 宿管 rất tự nhiên; nói chung về quản lý phòng/nhà có thể gặp 房管 / 房管员."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "be6a1bc3-0b38-41a2-9fb0-bc0caa163541",
+      "order": 1,
+      "zh": "叫房管过来",
+      "pinyin": "",
+      "vi": "gọi quản lý nhà/phòng qua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a4e7993-622f-45fe-89fa-e1debb56a9b1",
+      "order": 2,
+      "zh": "找房管帮忙",
+      "pinyin": "",
+      "vi": "tìm quản lý nhà/phòng giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76bbee9f-bfa6-4afc-94de-7274aceb5bd7",
+      "order": 3,
+      "zh": "房管员",
+      "pinyin": "",
+      "vi": "nhân viên quản lý nhà/phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b51bee79-9e37-4ae9-9e49-ca78dd3c0ffd",
+      "order": 4,
+      "zh": "宿管阿姨",
+      "pinyin": "",
+      "vi": "cô quản lý ký túc xá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c07b2350-e650-4e9c-ac90-2261b2b412bc",
+      "order": 1,
+      "zh": "钥匙拔不下来，他只好叫房管过来。",
+      "pinyin": "Yàoshi bá bu xiàlai, tā zhǐhǎo jiào fángguǎn guòlai.",
+      "vi": "Chìa khóa rút không ra, anh ấy đành gọi quản lý nhà qua.",
+      "analysis_vi": "拔不下来 là không rút ra được; 叫……过来 là gọi người đến phía mình.",
+      "highlight": [
+        "房管"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2f5b4831-fa84-4825-bd4b-efff66ccfc7c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5da780f0-4736-4779-a5a1-27d39318a693",
+      "order": 2,
+      "zh": "房管过来以后，先看了看钥匙插进去的情况。",
+      "pinyin": "Fángguǎn guòlai yǐhòu, xiān kàn le kan yàoshi chā jìnqù de qíngkuàng.",
+      "vi": "Sau khi quản lý nhà qua, trước tiên xem thử tình hình chìa khóa cắm vào.",
+      "analysis_vi": "过来 là qua tới chỗ người nói; 插进去 là cắm vào bên trong ổ khóa.",
+      "highlight": [
+        "房管"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2f5b4831-fa84-4825-bd4b-efff66ccfc7c"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a833798c-92f7-4b31-b73b-a483b1233d79",
+      "order": 3,
+      "zh": "如果住在宿舍，钥匙丢了不要自己乱弄，最好先找宿管或者房管。",
+      "pinyin": "Rúguǒ zhù zài sùshè, yàoshi diū le bú yào zìjǐ luàn nòng, zuìhǎo xiān zhǎo sùguǎn huòzhě fángguǎn.",
+      "vi": "Nếu ở ký túc xá, chìa khóa mất rồi thì đừng tự làm bừa, tốt nhất tìm quản lý ký túc xá hoặc quản lý phòng trước.",
+      "analysis_vi": "Câu này thực tế hơn sách; 宿管 thường gặp hơn trong môi trường ký túc xá.",
+      "highlight": [
+        "房管"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2f5b4831-fa84-4825-bd4b-efff66ccfc7c"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "ed7137ac-5ca9-403d-84a6-53e1be5eb66e",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Tưởng 房管 luôn là từ phổ thông cho mọi “chủ nhà”. Không hẳn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "房管",
+    "back": "quản lý nhà/phòng, bộ phận quản lý nhà ở",
+    "hint": "fángguǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong ký túc xá Trung Quốc, sinh viên rất hay nói 宿管阿姨 hoặc 宿管老师 để chỉ người quản lý ký túc. 房管 thì rộng hơn, có thể liên quan quản lý nhà/phòng trong khu ở.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2f5b4831-fa84-4825-bd4b-efff66ccfc7c",
+    "source_lesson_vocab_id": null
+  }
+}

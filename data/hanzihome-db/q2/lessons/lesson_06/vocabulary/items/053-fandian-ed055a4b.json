@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_c94fcd2eb699d0a0",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "饭店",
+  "pinyin": "fàndiàn",
+  "meaning_vi": "nhà hàng; khách sạn",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "b11c7b02-d08e-4ed2-8be6-3094858255ff",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "b11c7b02-d08e-4ed2-8be6-3094858255ff",
+    "type": "vocabulary_item",
+    "order": 28,
+    "hanzi": "饭店",
+    "pinyin": "fàndiàn",
+    "meaning_vi": "nhà hàng; khách sạn",
+    "meaning_en": "restaurant; hotel",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "饭店",
+      "back": "fàndiàn — nhà hàng; khách sạn",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

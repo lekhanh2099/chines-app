@@ -1,0 +1,337 @@
+{
+  "id": "e7f463d0-30d6-4ce8-a283-b8f30c2218af",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "文学",
+  "pinyin": "wénxué",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "văn học",
+    "meaning_vi": "văn học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "văn học"
+    ],
+    "short_definition_vi": "văn học",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "文",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "văn, chữ viết",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng như bộ/thành phần chỉ trường nghĩa: con, trẻ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ/thành phần chỉ trường nghĩa: con, trẻ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "文学 được ghi nhớ theo nghĩa hiện đại: văn học.",
+    "memory_tip_vi": "Nhớ qua cụm: 文学作品.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "文章",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "文化",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "语文",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "文学 không phải 文化; 文学 là văn học, 文化 là văn hóa."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b15e28dc-c6d1-416e-b0c8-d0e9cdcbff8b",
+      "order": 1,
+      "zh": "文学作品",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e7341819-ca1d-4c5e-b68b-4fb58af5a23c",
+      "order": 2,
+      "zh": "文学专业",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15f66b7b-fdb7-4163-8532-7bcfa821a38c",
+      "order": 3,
+      "zh": "文学系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "51000e6c-4fce-4824-bc6e-f2590cdd73c4",
+      "order": 4,
+      "zh": "中国文学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b4060ef-919f-4f1f-816d-27b3cf91b4ce",
+      "order": 5,
+      "zh": "现代文学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7453a62c-c426-4bb9-be23-b6275b140b84",
+      "order": 6,
+      "zh": "文学史",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7a239aa-c77b-4c2a-9aa1-926b826d1e5c",
+      "order": 7,
+      "zh": "学习文学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "199ee988-4788-49ce-894e-81ae99752c33",
+      "order": 1,
+      "zh": "她从小就喜欢文学。",
+      "pinyin": "Tā cóng xiǎo jiù xǐhuan wénxué.",
+      "vi": "Cô ấy từ nhỏ đã thích văn học.",
+      "analysis_vi": "从小就…… = từ nhỏ đã……",
+      "highlight": [
+        "文学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7f463d0-30d6-4ce8-a283-b8f30c2218af"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "515c9704-5e93-4e0e-b07b-7fb3544e68b1",
+      "order": 2,
+      "zh": "不论别人怎么看，母亲都支持小敏学习文学。",
+      "pinyin": "Búlùn biéren zěnme kàn, mǔqīn dōu zhīchí Xiǎomǐn xuéxí wénxué.",
+      "vi": "Bất kể người khác nhìn thế nào, mẹ đều ủng hộ Tiểu Mẫn học văn học.",
+      "analysis_vi": "不论……都…… nhấn thái độ không đổi.",
+      "highlight": [
+        "文学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7f463d0-30d6-4ce8-a283-b8f30c2218af"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong đại học Trung Quốc, 文学 có thể là ngành/khoa học thuật chính quy.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2592a390-f67f-4d6b-a0d0-efb2ca5b150f",
+      "order": 1,
+      "rule_vi": "文学 không phải 文化; 文学 là văn học, 文化 là văn hóa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "文学 không phải 文化; 文学 là văn học, 文化 là văn hóa.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "文学",
+    "back": "văn học",
+    "hint": "wénxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e7f463d0-30d6-4ce8-a283-b8f30c2218af",
+    "source_lesson_vocab_id": null
+  }
+}

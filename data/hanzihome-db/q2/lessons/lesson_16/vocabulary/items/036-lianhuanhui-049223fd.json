@@ -1,0 +1,369 @@
+{
+  "id": "8448f49c-2a16-4a0c-86d1-19375cf202a2",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "联欢会",
+  "pinyin": "liánhuānhuì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Liên hoan hội",
+    "meaning_vi": "buổi liên hoan, buổi gặp mặt vui chơi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "buổi liên hoan, buổi gặp mặt vui chơi"
+    ],
+    "short_definition_vi": "buổi liên hoan, buổi gặp mặt vui chơi",
+    "textbook_focus_vi": "buổi liên hoan, buổi gặp mặt vui chơi",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "联",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "耳 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "liên kết, liên hợp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "欢",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay phải; lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "又",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hựu",
+              "radical_name_zh": "",
+              "hanviet": "hựu",
+              "meaning_vi": "tay phải; lại",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "又 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "há miệng, thiếu",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "há miệng, thiếu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "会",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "mây; thành phần trong giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết, hiểu, gặp gỡ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "联欢会 = buổi liên hoan/gặp mặt tập thể có hoạt động vui, văn nghệ, giao lưu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "69f7cf47-8a98-4db5-98e9-1ca050db12f5",
+      "order": 1,
+      "zh": "开联欢会",
+      "pinyin": "",
+      "vi": "tổ chức liên hoan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af857f50-506f-4795-9158-cd37f39b92be",
+      "order": 2,
+      "zh": "参加联欢会",
+      "pinyin": "",
+      "vi": "tham gia liên hoan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cbb9755d-42bc-4443-b24f-a80f72ba3690",
+      "order": 3,
+      "zh": "新年联欢会",
+      "pinyin": "",
+      "vi": "liên hoan năm mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e18d010-71b0-4e09-bd4b-a9ddcccb97e6",
+      "order": 4,
+      "zh": "春节联欢会",
+      "pinyin": "",
+      "vi": "liên hoan Tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "becc2355-c0f9-4412-bd83-77ae0c7d987b",
+      "order": 5,
+      "zh": "小区联欢会",
+      "pinyin": "",
+      "vi": "liên hoan khu dân cư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b557da94-b7fe-484e-9002-7ddab66b14e9",
+      "order": 1,
+      "zh": "春节快到了，小区里的人们建议开一个联欢会。",
+      "pinyin": "Chūnjié kuài dào le, xiǎoqū lǐ de rénmen jiànyì kāi yí ge liánhuānhuì.",
+      "vi": "Tết sắp đến rồi, mọi người trong khu dân cư đề nghị tổ chức một buổi liên hoan.",
+      "analysis_vi": "建议 + V = đề nghị làm gì.",
+      "highlight": [
+        "联欢会"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8448f49c-2a16-4a0c-86d1-19375cf202a2"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4bd14b64-34b5-491c-a184-1088174490c6",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：联欢会。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: buổi liên hoan, buổi gặp mặt vui chơi.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "联欢会"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8448f49c-2a16-4a0c-86d1-19375cf202a2"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 联欢会 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d03aeade-45df-4488-a3bc-d4a7aae708a0",
+      "order": 1,
+      "rule_vi": "开联欢会 nghĩa là tổ chức liên hoan, không dịch cứng là 'mở buổi liên hoan'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "开联欢会 nghĩa là tổ chức liên hoan, không dịch cứng là 'mở buổi liên hoan'.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "联欢会",
+    "back": "buổi liên hoan, buổi gặp mặt vui chơi",
+    "hint": "liánhuānhuì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_036"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8448f49c-2a16-4a0c-86d1-19375cf202a2",
+    "source_lesson_vocab_id": null
+  }
+}

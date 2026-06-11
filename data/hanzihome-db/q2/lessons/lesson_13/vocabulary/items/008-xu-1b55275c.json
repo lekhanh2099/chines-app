@@ -1,0 +1,299 @@
+{
+  "id": "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "虚",
+  "pinyin": "xū",
+  "pos": {
+    "raw_vi": "Tính từ / Yếu tố cấu tạo từ",
+    "raw_cn": "形/语素",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hư",
+    "meaning_vi": "mờ, yếu, rỗng, không thật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mờ",
+      "yếu",
+      "rỗng",
+      "không thật"
+    ],
+    "short_definition_vi": "mờ, yếu, rỗng, không thật",
+    "textbook_focus_vi": "Âm Hán Việt: hư Nghĩa: Mờ, không rõ trong ngữ cảnh ảnh/chữ/hình ảnh: 照片照虚了. Yếu, không khỏe, thiếu sức: 身体虚.",
+    "register_vi": "đa nghĩa; trong Bài 13 ưu tiên nghĩa ảnh bị mờ/không nét.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "虚",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "虍",
+            "hanviet": "hổ",
+            "meaning_vi": "thành phần trên",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "虍",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hổ",
+              "radical_name_zh": "",
+              "hanviet": "hổ",
+              "meaning_vi": "hổ; thành phần hình thể",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "业",
+            "hanviet": "",
+            "meaning_vi": "phần dưới trong chữ giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hư, không thật, yếu, mờ",
+        "modern_logic_vi": "Không nên tách sâu theo giản thể; lõi nghĩa “không đặc/không rõ” giúp nhớ 照虚了.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "虚 có lõi nghĩa là rỗng, không đầy, không chắc. Từ “không chắc/không thực” mở rộng thành “mờ, không rõ nét” khi nói ảnh. Trong sức khỏe, 身体虚 là cơ thể yếu, thiếu sức. Cảnh báo: 虚 trong ảnh không phải “hư hỏng”; ảnh mờ là 照片虚了 / 照虚了.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "虚 (xū)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mờ/không nét; yếu; không thật, tùy ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "模糊 (móhu)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mơ hồ, mờ, không rõ; dùng rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "坏 (huài)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hỏng, xấu, không dùng để nói ảnh mờ nếu không có ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "不清楚 (bù qīngchu): không rõ, dễ dùng nhất.",
+      "→ Phân biệt nhanh: ảnh chụp bị mất nét có thể nói 照虚了; nhìn không rõ nói 不清楚; máy hỏng nói 坏了."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2a691096-38cb-4a1e-b802-a71253982333",
+      "order": 1,
+      "zh": "照片照虚了",
+      "pinyin": "",
+      "vi": "ảnh chụp bị mờ/mất nét",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c6fab76f-03b0-4b83-a054-a73e2bf77e4e",
+      "order": 2,
+      "zh": "有点儿虚",
+      "pinyin": "",
+      "vi": "hơi mờ / hơi yếu tùy ngữ cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8167141f-df61-4a57-b2ee-3828c2e6528b",
+      "order": 3,
+      "zh": "身体虚",
+      "pinyin": "",
+      "vi": "cơ thể yếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8699b1fa-c35b-46d3-99ca-dd0d292bc1d3",
+      "order": 4,
+      "zh": "[Công nghệ] 虚拟现实",
+      "pinyin": "",
+      "vi": "thực tế ảo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4023fe97-5a7c-472b-9307-071736039ed5",
+      "order": 1,
+      "zh": "这张照片照虚了，人物的脸看不清楚。",
+      "pinyin": "Zhè zhāng zhàopiàn zhào xū le, rénwù de liǎn kàn bù qīngchu.",
+      "vi": "Tấm ảnh này chụp bị mờ, mặt nhân vật nhìn không rõ.",
+      "analysis_vi": "照虚了 nói kết quả xấu sau khi chụp; 看不清楚 là không nhìn rõ.",
+      "highlight": [
+        "虚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6b8180c4-5256-4a96-9b8e-71080deda91d",
+      "order": 2,
+      "zh": "照片放大以后更虚了，最好不要洗成大尺寸。",
+      "pinyin": "Zhàopiàn fàngdà yǐhòu gèng xū le, zuìhǎo bú yào xǐ chéng dà chǐcùn.",
+      "vi": "Ảnh sau khi phóng to càng mờ hơn, tốt nhất đừng rửa/in thành cỡ lớn.",
+      "analysis_vi": "放大以后更虚了 nói kết quả sau xử lý; 洗成大尺寸 dùng 成 để nói thành kích thước lớn.",
+      "highlight": [
+        "虚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c83a39ca-8bc2-47bb-852a-046588983d8b",
+      "order": 3,
+      "zh": "他刚生病好，身体还有点儿虚，别让他马上去跑步。",
+      "pinyin": "Tā gāng shēngbìng hǎo, shēntǐ hái yǒudiǎnr xū, bié ràng tā mǎshàng qù pǎobù.",
+      "vi": "Anh ấy vừa khỏi bệnh, cơ thể vẫn hơi yếu, đừng để anh ấy đi chạy ngay.",
+      "analysis_vi": "身体虚 là nghĩa sức khỏe; câu này giúp tách nghĩa “ảnh mờ” và “người yếu”.",
+      "highlight": [
+        "虚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung hiện đại, 虚拟 rất hay gặp trong công nghệ: 虚拟现实 là VR, 虚拟人物 là nhân vật ảo. Đây là nghĩa “không thật/ảo” của 虚.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ec1f8888-50be-4b91-b9e5-43079c71427e",
+      "order": 1,
+      "rule_vi": "Dịch 照片虚了 thành “ảnh hư rồi”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "照片照虚了。",
+          "pinyin": "Zhàopiàn zhào xū le.",
+          "vi": "Ảnh chụp bị mờ rồi.",
+          "note_vi": "Tự nhiên hơn:",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dịch 照片虚了 thành “ảnh hư rồi”. Tự nhiên hơn: 照片照虚了。 Zhàopiàn zhào xū le. Ảnh chụp bị mờ rồi. 相机坏了。 Xiàngjī huài le. Máy ảnh hỏng rồi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "虚",
+    "back": "mờ, yếu, rỗng, không thật",
+    "hint": "xū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "虚"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "id": "d777384f-7316-49b6-877a-bea44b5e9a7d",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "大约",
+  "pinyin": "dàyuē",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "đại ước",
+    "meaning_vi": "khoảng, xấp xỉ, ước chừng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khoảng",
+      "xấp xỉ",
+      "ước chừng"
+    ],
+    "short_definition_vi": "đánh dấu con số hoặc thời gian chỉ là ước lượng",
+    "textbook_focus_vi": "Dùng trước con số: 大约两个小时.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "大",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "lớn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "约",
+        "lishu_vi": "",
+        "structure_note_vi": "纟 + 勺",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "勺",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hẹn, khoảng, ước",
+        "modern_logic_vi": "hẹn, khoảng, ước",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "大约 được học trong bài theo nghĩa: đánh dấu con số hoặc thời gian chỉ là ước lượng.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 大约两个小时.",
+    "warning_vi": "大约 thường đứng trước con số; 左右 thường đứng sau con số.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "大概",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Có thể là ước lượng hoặc phán đoán.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "左右",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đứng sau số lượng/thời gian.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "大约 thường đứng trước con số; 左右 thường đứng sau con số."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d25bcebb-93a3-4046-89b6-a4022fe7fb1d",
+      "order": 1,
+      "zh": "大约两个小时",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "192a23c3-3b88-4538-b3e7-1b5d571803bd",
+      "order": 2,
+      "zh": "大约三公里",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2cb3f916-c9af-44f6-a79d-ed03b4f674eb",
+      "order": 3,
+      "zh": "大约十点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48366ae2-86a9-45be-bbbf-874bfa3d47ed",
+      "order": 4,
+      "zh": "大约有二十个人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3b3be453-7e6e-404b-b479-575172911782",
+      "order": 5,
+      "zh": "大约需要半天",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0b48cd4b-051c-4f57-988a-bbb9431c47a8",
+      "order": 1,
+      "zh": "时差大约是两个小时。",
+      "pinyin": "",
+      "vi": "Chênh lệch giờ khoảng hai tiếng.",
+      "analysis_vi": "大约 + con số biểu thị ước lượng.",
+      "highlight": [
+        "大约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d777384f-7316-49b6-877a-bea44b5e9a7d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "aa51df09-90a9-4e01-8f6c-4efe0f6c881d",
+      "order": 2,
+      "zh": "我们是大约九点出发的。",
+      "pinyin": "",
+      "vi": "Chúng tôi xuất phát khoảng 9 giờ.",
+      "analysis_vi": "是……的 nhấn thời gian hành động.",
+      "highlight": [
+        "大约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d777384f-7316-49b6-877a-bea44b5e9a7d"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "大约两个小时左右 có thể nghe được nhưng hơi dư trong bài viết.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ed283393-22d2-4012-a396-5714ad460cc6",
+      "order": 1,
+      "rule_vi": "大约 thường đứng trước con số; 左右 thường đứng sau con số.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "大约 thường đứng trước con số; 左右 thường đứng sau con số.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "大约",
+    "back": "khoảng, xấp xỉ, ước chừng",
+    "hint": "dàyuē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d777384f-7316-49b6-877a-bea44b5e9a7d",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "id": "18c2cb6d-bd62-4577-8a6a-eda018090db7",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "要强",
+  "pinyin": "yàoqiáng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "yếu cường",
+    "meaning_vi": "hiếu thắng, không chịu thua, có chí vươn lên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiếu thắng",
+      "không chịu thua",
+      "có chí vươn lên"
+    ],
+    "short_definition_vi": "hiếu thắng, không chịu thua, có chí vươn lên",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "要",
+        "lishu_vi": "yếu",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "muốn, cần",
+        "modern_logic_vi": "Trong từ này, 要 góp phần vào nghĩa hiện đại: muốn, cần.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "强",
+        "lishu_vi": "cường",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mạnh",
+        "modern_logic_vi": "Trong từ này, 强 góp phần vào nghĩa hiện đại: mạnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "要强 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 很要强.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không phải muốn mạnh cơ bắp; là không chịu kém/nghĩa tính cách."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aca478cb-9bc5-41c0-b96a-755680a6f0cb",
+      "order": 1,
+      "zh": "很要强",
+      "pinyin": "",
+      "vi": "rất không chịu thua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d95a5a2f-4c62-4e13-8b48-de8dc4865225",
+      "order": 2,
+      "zh": "要强的人",
+      "pinyin": "",
+      "vi": "người có chí",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27a1a45c-82ca-4555-b4e8-80e71daf530f",
+      "order": 3,
+      "zh": "性格要强",
+      "pinyin": "",
+      "vi": "tính cách không chịu thua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f0b30893-4a64-4515-90d6-6500adf64618",
+      "order": 1,
+      "zh": "她从小就很要强，什么事都想做好。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 要强 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 要强; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "要强"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "18c2cb6d-bd62-4577-8a6a-eda018090db7"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 要强 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "80146c7d-a40a-418a-9677-8a685eee65a5",
+      "order": 1,
+      "rule_vi": "Không phải muốn mạnh cơ bắp; là không chịu kém/nghĩa tính cách.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "要强",
+    "back": "hiếu thắng, không chịu thua, có chí vươn lên",
+    "hint": "yàoqiáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "18c2cb6d-bd62-4577-8a6a-eda018090db7",
+    "source_lesson_vocab_id": null
+  }
+}

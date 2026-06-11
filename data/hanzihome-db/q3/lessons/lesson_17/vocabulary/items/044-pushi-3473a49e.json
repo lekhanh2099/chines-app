@@ -1,0 +1,334 @@
+{
+  "id": "88df8724-e05b-42ee-8774-7290d3c88e22",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "朴实",
+  "pinyin": "pǔshí",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phác thực",
+    "meaning_vi": "chất phác, thật thà; giản dị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chất phác",
+      "thật thà",
+      "giản dị"
+    ],
+    "short_definition_vi": "chất phác, thật thà",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "朴",
+        "lishu_vi": "phác",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卜",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mộc mạc, chất phác",
+        "modern_logic_vi": "mộc mạc, chất phác",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "实",
+        "lishu_vi": "thực",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực, đầy đủ",
+        "modern_logic_vi": "thật, thực, đầy đủ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "朴 là mộc mạc; 实 là thật; 朴实 là mộc mạc mà thật thà.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 朴实的人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "朴素",
+        "pinyin": "pǔsù",
+        "meaning_vi": "giản dị",
+        "difference_vi": "朴素 thiên về hình thức/lối sống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老实",
+        "pinyin": "lǎoshi",
+        "meaning_vi": "thật thà",
+        "difference_vi": "老实 đôi khi có nghĩa hơi khờ/ngoan.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "华丽",
+        "pinyin": "huálì",
+        "meaning_vi": "hoa lệ",
+        "difference_vi": "trái nghĩa vẻ ngoài",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "虚伪",
+        "pinyin": "xūwěi",
+        "meaning_vi": "giả dối",
+        "difference_vi": "trái nghĩa tính cách",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d265e5d9-1e43-4bce-9ab4-365bf30039d4",
+      "order": 1,
+      "zh": "朴实的人",
+      "pinyin": "pǔshí de rén",
+      "vi": "người chất phác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6926b0b2-a2b8-4d7f-aaaf-0d218ed98caa",
+      "order": 2,
+      "zh": "语言朴实",
+      "pinyin": "yǔyán pǔshí",
+      "vi": "ngôn ngữ giản dị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1e9bc23-e2cd-4e53-a012-05353ede7f34",
+      "order": 3,
+      "zh": "穿得很朴实",
+      "pinyin": "chuān de hěn pǔshí",
+      "vi": "ăn mặc rất giản dị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f9c52781-4fe3-4db1-9692-94e4b110af7a",
+      "order": 1,
+      "zh": "这些学生很朴实，也很可爱。",
+      "pinyin": "Zhèxiē xuésheng hěn pǔshí, yě hěn kě’ài.",
+      "vi": "Những học sinh này rất chất phác và đáng yêu.",
+      "analysis_vi": "朴实 nói về tính cách.",
+      "highlight": [
+        "朴实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "88df8724-e05b-42ee-8774-7290d3c88e22"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0cb51e90-bb06-4f67-a953-1aacdd6d41f4",
+      "order": 2,
+      "zh": "他用很朴实的话跟学生们交流，反而收到了热烈的掌声。",
+      "pinyin": "Tā yòng hěn pǔshí de huà gēn xuéshengmen jiāoliú, fǎn’ér shōu dào le rèliè de zhǎngshēng.",
+      "vi": "Anh ấy dùng lời lẽ giản dị trao đổi với học sinh, trái lại nhận được vỗ tay nhiệt liệt.",
+      "analysis_vi": "反而 nhấn kết quả trái với lo lắng ban đầu.",
+      "highlight": [
+        "朴实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "88df8724-e05b-42ee-8774-7290d3c88e22"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "朴实 là kiểu khen không hào nhoáng nhưng đáng tin.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d04dcdb-4ef7-402c-87f8-66328176de72",
+      "order": 1,
+      "rule_vi": "朴实 không có nghĩa là rẻ; 穿得很朴实 là ăn mặc giản dị.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "朴实",
+    "back": "chất phác, thật thà; giản dị",
+    "hint": "pǔshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "88df8724-e05b-42ee-8774-7290d3c88e22",
+    "source_lesson_vocab_id": null
+  }
+}

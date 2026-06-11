@@ -1,0 +1,248 @@
+{
+  "id": "55646962-7a08-4b30-8ca8-8462530f3c51",
+  "type": "deep_vocabulary_item",
+  "order": 73,
+  "hanzi": "提起",
+  "pinyin": "tíqǐ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "đề khởi",
+    "meaning_vi": "nhắc đến; nâng lên; lấy lại tinh thần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhắc đến; nâng lên; lấy lại tinh thần"
+    ],
+    "short_definition_vi": "nhắc đến; nâng lên; lấy lại tinh thần",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "提",
+        "lishu_vi": "đề",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nâng, nêu",
+        "modern_logic_vi": "Trong từ này, 提 góp phần vào nghĩa hiện đại: nâng, nêu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "起",
+        "lishu_vi": "khởi",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi, chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dậy, bắt đầu",
+        "modern_logic_vi": "Trong từ này, 起 góp phần vào nghĩa hiện đại: dậy, bắt đầu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "提起 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 提起爸爸.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khác 想起: 想起 là nhớ ra trong đầu, 提起 là nhắc ra lời."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "41bc793d-cc9c-49cf-bf13-e9823c84a28f",
+      "order": 1,
+      "zh": "提起爸爸",
+      "pinyin": "",
+      "vi": "nhắc đến bố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b76dbbdb-2ed8-45e7-a7bf-92733c95f477",
+      "order": 2,
+      "zh": "提起这件事",
+      "pinyin": "",
+      "vi": "nhắc chuyện này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "981c1933-2fd6-4803-ac0b-3eb154090534",
+      "order": 3,
+      "zh": "提起精神",
+      "pinyin": "",
+      "vi": "lấy lại tinh thần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8c91f1d0-2873-4ca7-bfc4-86fe39850269",
+      "order": 1,
+      "zh": "他不愿意提起过去的事。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 提起 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 提起; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "提起"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "55646962-7a08-4b30-8ca8-8462530f3c51"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 提起 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c7def106-f5f0-4b9b-bfd3-a4950cd3bb27",
+      "order": 1,
+      "rule_vi": "Khác 想起: 想起 là nhớ ra trong đầu, 提起 là nhắc ra lời.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "提起",
+    "back": "nhắc đến; nâng lên; lấy lại tinh thần",
+    "hint": "tíqǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "55646962-7a08-4b30-8ca8-8462530f3c51",
+    "source_lesson_vocab_id": null
+  }
+}

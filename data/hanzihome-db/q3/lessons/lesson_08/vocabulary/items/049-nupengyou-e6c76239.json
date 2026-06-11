@@ -1,0 +1,331 @@
+{
+  "id": "7583c125-c81b-418d-83b9-f33a6b4a6651",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "女朋友",
+  "pinyin": "nǚpéngyou",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nữ bằng hữu",
+    "meaning_vi": "bạn gái, người yêu nữ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bạn gái",
+      "người yêu nữ"
+    ],
+    "short_definition_vi": "bạn gái, người yêu nữ",
+    "textbook_focus_vi": "女 = nữ, 朋友 = bạn. Trong ngữ cảnh hiện đại, 我的女朋友 thường là người yêu nữ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình yêu, quan hệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "女",
+        "lishu_vi": "nữ",
+        "structure_note_vi": "Bộ Nữ, nghĩa trực tiếp.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, con gái",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, con gái",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, con gái",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nữ, con gái",
+        "modern_logic_vi": "Trong từ này, 女 góp phần tạo nghĩa 'nữ, con gái'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "朋",
+        "lishu_vi": "bằng",
+        "structure_note_vi": "Hai phần 月; học theo nghĩa bạn bè.",
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng, thân thể trong nhiều chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng, thân thể trong nhiều chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng, thân thể trong nhiều chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bạn bè",
+        "modern_logic_vi": "Trong từ này, 朋 góp phần tạo nghĩa 'bạn bè'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "友",
+        "lishu_vi": "hữu",
+        "structure_note_vi": "又 gốc liên quan tay; nghĩa bạn.",
+        "main_radical": {
+          "radical": "又",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hựu",
+          "radical_name_zh": "",
+          "hanviet": "hựu",
+          "meaning_vi": "tay phải, lại",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay phải, lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "又",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hựu",
+              "radical_name_zh": "",
+              "hanviet": "hựu",
+              "meaning_vi": "tay phải, lại",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bạn",
+        "modern_logic_vi": "Trong từ này, 友 góp phần tạo nghĩa 'bạn'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "女 = nữ, 朋友 = bạn. Trong ngữ cảnh hiện đại, 我的女朋友 thường là người yêu nữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 我的女朋友 = bạn gái của tôi.",
+    "warning_vi": "女朋友 dễ hiểu là người yêu, không dùng nếu chỉ nói bạn nữ bình thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "女孩儿",
+        "pinyin": "nǚháir",
+        "meaning_vi": "cô gái/bé gái",
+        "difference_vi": "Không nhất thiết là người yêu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "女友",
+        "pinyin": "nǚyǒu",
+        "meaning_vi": "bạn gái",
+        "difference_vi": "Ngắn hơn, hay thấy trong báo chí/văn viết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "女朋友 dễ hiểu là người yêu, không dùng nếu chỉ nói bạn nữ bình thường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "46c3d559-1e55-4522-bc69-cedf3079725c",
+      "order": 1,
+      "zh": "我的女朋友",
+      "pinyin": "wǒ de nǚpéngyou",
+      "vi": "bạn gái của tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68ef9daf-aa5f-48b5-8f58-4928808732ba",
+      "order": 2,
+      "zh": "交女朋友",
+      "pinyin": "jiāo nǚpéngyou",
+      "vi": "quen/có bạn gái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ddfb1a23-80a6-4b97-a84f-207eac50e062",
+      "order": 3,
+      "zh": "他有女朋友了",
+      "pinyin": "tā yǒu nǚpéngyou le",
+      "vi": "anh ấy có bạn gái rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7c314a87-1e0e-462b-9130-a030b9e29d67",
+      "order": 1,
+      "zh": "朋友们都以为赵霞是他的女朋友，可是他们的关系一直没有公开。",
+      "pinyin": "Péngyoumen dōu yǐwéi Zhào Xiá shì tā de nǚpéngyou, kěshì tāmen de guānxi yìzhí méiyǒu gōngkāi.",
+      "vi": "Bạn bè đều tưởng Triệu Hà là bạn gái anh ấy, nhưng quan hệ của họ vẫn chưa công khai.",
+      "analysis_vi": "女朋友 ở đây là người yêu nữ.",
+      "highlight": [
+        "女朋友"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7583c125-c81b-418d-83b9-f33a6b4a6651"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "男朋友/女朋友 thường mặc định là quan hệ yêu đương.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "291f77d9-46e8-4c4c-b1ed-c616dfc1095b",
+      "order": 1,
+      "rule_vi": "女朋友 dễ hiểu là người yêu, không dùng nếu chỉ nói bạn nữ bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我有很多女朋友。",
+          "pinyin": "Wǒ yǒu hěn duō nǚpéngyou.",
+          "vi": "Dễ hiểu là tôi có nhiều bạn gái/người yêu.",
+          "note_vi": "Dễ sai nghĩa nếu chỉ muốn nói bạn nữ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我有很多女性朋友。",
+          "pinyin": "Wǒ yǒu hěn duō nǚxìng péngyou.",
+          "vi": "Tôi có nhiều bạn nữ.",
+          "note_vi": "Rõ là bạn nữ, không phải người yêu.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "女朋友",
+    "back": "bạn gái, người yêu nữ",
+    "hint": "nǚpéngyou",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7583c125-c81b-418d-83b9-f33a6b4a6651",
+    "source_lesson_vocab_id": null
+  }
+}

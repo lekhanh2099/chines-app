@@ -1,0 +1,348 @@
+{
+  "id": "76eef0ba-e72e-4157-b10f-b12df2b22ade",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "才",
+  "pinyin": "cái",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "grammar_word",
+    "adverb"
+  ],
+  "meaning": {
+    "hanviet": "Tài",
+    "meaning_vi": "mới; mới chỉ; mãi mới",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mới",
+      "mới chỉ",
+      "mãi mới"
+    ],
+    "short_definition_vi": "mới; mới chỉ; mãi mới",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "grammar_word, adverb",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "才",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "才",
+            "hanviet": "tài",
+            "meaning_vi": "chữ đơn thể ít nét",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tài năng; mới; chỉ mới; mãi mới",
+        "modern_logic_vi": "Trong ngữ pháp, 才 thường kéo cảm giác ít/muộn/vừa mới/phải đến lúc đó mới.",
+        "warning_vi": "Không nên ép chiết tự; học theo câu thật.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "才 nhấn sự việc muộn/ít/khó đạt hơn kỳ vọng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "就",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đã, liền, ngay; thường nhấn sớm/nhanh/dễ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "刚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vừa mới, nhấn thời gian rất gần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "只",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Chỉ, nhấn giới hạn số lượng/phạm vi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "就",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Thường đối lập với 才 về sắc thái sớm/muộn, nhanh/chậm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "才",
+        "right": "就",
+        "meaning_vi": "才 nhấn muộn/ít/khó; 就 nhấn sớm/nhanh/dễ.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "12cab649-3a2d-42a2-a006-d8fe09671021",
+      "order": 1,
+      "zh": "才来",
+      "pinyin": "",
+      "vi": "mới đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1c211be-dd3a-4b92-b280-84444ffcec04",
+      "order": 2,
+      "zh": "才知道",
+      "pinyin": "",
+      "vi": "mới biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ede8260d-16ed-4b61-9e91-e5092c8b08a4",
+      "order": 3,
+      "zh": "才发现",
+      "pinyin": "",
+      "vi": "mới phát hiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8557ce2d-f848-40e5-949e-70acf453076f",
+      "order": 4,
+      "zh": "才明白",
+      "pinyin": "",
+      "vi": "mới hiểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a5b9005-a2c9-4dfe-9c0e-9cd4f51f96bf",
+      "order": 5,
+      "zh": "才十分钟",
+      "pinyin": "",
+      "vi": "mới/chỉ 10 phút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68f218d5-5ebc-4135-8455-2392f2078947",
+      "order": 6,
+      "zh": "才一点儿",
+      "pinyin": "",
+      "vi": "mới/chỉ một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cef3d751-bffc-44fa-a2c1-1d671ac26c54",
+      "order": 7,
+      "zh": "才到家",
+      "pinyin": "",
+      "vi": "mới về đến nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "992476ed-cadd-4679-8a9f-d3c66b05842f",
+      "order": 8,
+      "zh": "才决定",
+      "pinyin": "",
+      "vi": "mới quyết định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5ab59788-9a56-4c45-8f26-4a7453f7f4b4",
+      "order": 1,
+      "zh": "他八点才来。",
+      "pinyin": "Tā bā diǎn cái lái.",
+      "vi": "8 giờ anh ấy mới đến.",
+      "analysis_vi": "才 nhấn đến muộn hơn kỳ vọng.",
+      "highlight": [
+        "才"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "76eef0ba-e72e-4157-b10f-b12df2b22ade"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "588d801a-3db7-4ced-8571-08427a1bbe54",
+      "order": 2,
+      "zh": "我们上去看了以后，才发现卧室太小。",
+      "pinyin": "Wǒmen shàngqù kàn le yǐhòu, cái fāxiàn wòshì tài xiǎo.",
+      "vi": "Sau khi chúng tôi lên xem rồi mới phát hiện phòng ngủ quá nhỏ.",
+      "analysis_vi": "才发现 = mãi/sau đó mới phát hiện.",
+      "highlight": [
+        "才"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "76eef0ba-e72e-4157-b10f-b12df2b22ade"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "da2cee7c-fdf1-4618-b002-2fba5b0b5695",
+      "order": 3,
+      "zh": "要是今天不堵车，我们七点就能到；可是路上太堵了，我们八点半才到车站。",
+      "pinyin": "Yàoshi jīntiān bù dǔchē, wǒmen qī diǎn jiù néng dào; kěshì lù shang tài dǔ le, wǒmen bā diǎn bàn cái dào chēzhàn.",
+      "vi": "Nếu hôm nay không kẹt xe, chúng tôi có thể đến lúc 7 giờ; nhưng đường kẹt quá, chúng tôi 8 giờ rưỡi mới đến trạm.",
+      "analysis_vi": "就 nhấn kết quả sớm/nhanh trong giả thiết; 才 nhấn thực tế đến muộn.",
+      "highlight": [
+        "才"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "76eef0ba-e72e-4157-b10f-b12df2b22ade"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Người Việt hay dịch 才 là 'mới', nhưng 才十块钱 nghĩa là 'chỉ có 10 tệ', nhấn ít/rẻ, không phải thời gian.",
+    "tags": [
+      "grammar_word",
+      "adverb"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d0410068-3dc2-40c1-8fda-0523732d63de",
+      "order": 1,
+      "rule_vi": "Lỗi lớn là đảo 才 và 就.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他八点才来。",
+          "pinyin": "",
+          "vi": "8 giờ anh ấy mới đến; muộn.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他八点就来了。",
+          "pinyin": "",
+          "vi": "8 giờ anh ấy đã đến rồi; sớm hơn kỳ vọng trong ngữ cảnh.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "才 / 就 không chỉ là thời gian khách quan mà còn là thái độ đánh giá của người nói.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "才",
+    "back": "mới; mới chỉ; mãi mới",
+    "hint": "cái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "grammar_word",
+      "adverb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "76eef0ba-e72e-4157-b10f-b12df2b22ade",
+    "source_lesson_vocab_id": null
+  }
+}

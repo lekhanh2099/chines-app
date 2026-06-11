@@ -1,0 +1,301 @@
+{
+  "id": "41cd3c74-b119-4d11-8e80-e425ce3248ef",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "偶然",
+  "pinyin": "ǒurán",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "副词 / 形容词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ngẫu nhiên",
+    "meaning_vi": "tình cờ, ngẫu nhiên; bất chợt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình cờ",
+      "ngẫu nhiên",
+      "bất chợt"
+    ],
+    "short_definition_vi": "tình cờ, ngẫu nhiên",
+    "textbook_focus_vi": "tình cờ, ngẫu nhiên",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "偶",
+        "lishu_vi": "ngẫu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "tình cờ, ngẫu nhiên",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 偶然遇到.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "偶尔",
+        "pinyin": "ǒuěr",
+        "meaning_vi": "thỉnh thoảng",
+        "difference_vi": "nhấn tần suất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "碰巧",
+        "pinyin": "pèngqiǎo",
+        "meaning_vi": "tình cờ đúng lúc",
+        "difference_vi": "nhấn trùng hợp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d806d3b1-3cc7-4343-afbd-20b920963b85",
+      "order": 1,
+      "zh": "偶然遇到",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13b1472d-14e2-49d1-a336-6c0441b94bd6",
+      "order": 2,
+      "zh": "偶然发现",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc03a7ca-a52e-4096-b766-3ca2cbfb11e8",
+      "order": 3,
+      "zh": "偶然想起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f883fd49-8bd0-43ec-ab12-55510d4b8b1b",
+      "order": 4,
+      "zh": "偶然听到",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ea26097-802d-4320-9fc8-8196976a1d02",
+      "order": 5,
+      "zh": "偶然事件",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c949574-09c6-4bf0-ad07-48e3b29ddf5a",
+      "order": 6,
+      "zh": "偶然现象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "39ec777b-6234-4d98-840c-87cc6c6848d7",
+      "order": 1,
+      "zh": "我昨天偶然遇到了一个老朋友。",
+      "pinyin": "Wǒ zuótiān ǒurán yùdào le yí ge lǎo péngyou.",
+      "vi": "Hôm qua tôi tình cờ gặp một người bạn cũ.",
+      "analysis_vi": "偶然 + V = tình cờ làm/gặp việc gì.",
+      "highlight": [
+        "偶然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "41cd3c74-b119-4d11-8e80-e425ce3248ef"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "偶然 hợp văn viết/kể chuyện; khẩu ngữ hay dùng 碰巧/正好.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b3802a86-9ab6-4de6-9047-e94a94e461c9",
+      "order": 1,
+      "rule_vi": "偶然 là tình cờ; 偶尔 là thỉnh thoảng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "偶然",
+    "back": "tình cờ, ngẫu nhiên; bất chợt",
+    "hint": "ǒurán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "41cd3c74-b119-4d11-8e80-e425ce3248ef",
+    "source_lesson_vocab_id": null
+  }
+}

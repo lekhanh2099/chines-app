@@ -1,0 +1,341 @@
+{
+  "id": "da25dbe3-4a63-4598-8c85-37ac271d055d",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "幸福",
+  "pinyin": "xìngfú",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ",
+    "raw_cn": "形/名",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Hạnh phúc",
+    "meaning_vi": "hạnh phúc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hạnh phúc"
+    ],
+    "short_definition_vi": "hạnh phúc",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "tích cực, lời chúc, gia đình, tình cảm, đời sống.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "幸",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "may mắn, hạnh phúc",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "福",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "示",
+          "radical_variant": "礻",
+          "radical_name_vi": "bộ Thị",
+          "radical_name_zh": "",
+          "hanviet": "thị",
+          "meaning_vi": "nghi lễ/cầu phúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "nghi lễ/cầu phúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "畐",
+            "hanviet": "phúc",
+            "meaning_vi": "thành phần gợi âm, liên hệ đầy đủ trong một số giải thích",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phúc, may mắn, tốt lành",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "幸 là may mắn, điều tốt lành. 福 là phúc, phúc lành. → 幸福 = trạng thái có may mắn, phúc lành, đời sống tốt đẹp. Cảnh báo: 幸福 không giống hoàn toàn 高兴. 高兴 là vui trong khoảnh khắc; 幸福 sâu và dài hơn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "幸福",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hạnh phúc, trạng thái tốt đẹp sâu hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "高兴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vui, cảm xúc nhất thời.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "快乐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vui vẻ, hạnh phúc nhẹ, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "福气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phúc khí, cái phúc/may lành.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: nhận quà thì 很高兴; sống bên gia đình có thể thấy 很幸福."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5818f83a-9d11-46cb-94f8-e4811bb9fded",
+      "order": 1,
+      "zh": "很幸福",
+      "pinyin": "",
+      "vi": "rất hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a67f932d-158a-41eb-8b84-3041aa5622ca",
+      "order": 2,
+      "zh": "幸福生活",
+      "pinyin": "",
+      "vi": "cuộc sống hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5da4bd93-cc40-4307-88c5-c064a4452a87",
+      "order": 3,
+      "zh": "祝你幸福",
+      "pinyin": "",
+      "vi": "chúc bạn hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e39483a-6025-4bd2-9b00-1755ef3029e8",
+      "order": 4,
+      "zh": "家庭幸福",
+      "pinyin": "",
+      "vi": "gia đình hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b970c68-5f5b-47b5-9964-183a297fdafd",
+      "order": 5,
+      "zh": "幸福美满",
+      "pinyin": "",
+      "vi": "hạnh phúc viên mãn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "92d60e23-81df-493d-abf5-d7e9a594fa96",
+      "order": 1,
+      "zh": "对联儿上写着“家庭幸福”。",
+      "pinyin": "Duìliánr shang xiězhe “jiātíng xìngfú”.",
+      "vi": "Trên câu đối viết “gia đình hạnh phúc”.",
+      "analysis_vi": "对联儿上写着…… là câu tồn hiện; 家庭幸福 là cụm chúc Tết tự nhiên.",
+      "highlight": [
+        "幸福"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "da25dbe3-4a63-4598-8c85-37ac271d055d"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b3e92afe-9c59-4649-9f99-f9496d051b8e",
+      "order": 2,
+      "zh": "老师看到同学们亲手布置的会场，觉得很幸福。",
+      "pinyin": "Lǎoshī kàn dào tóngxuémen qīnshǒu bùzhì de huìchǎng, juéde hěn xìngfú.",
+      "vi": "Thầy/cô nhìn thấy hội trường do các bạn học tự tay trang trí thì cảm thấy rất hạnh phúc.",
+      "analysis_vi": "亲手布置的会场 nhấn công sức; 幸福 là cảm xúc sâu hơn vui bình thường.",
+      "highlight": [
+        "幸福"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "da25dbe3-4a63-4598-8c85-37ac271d055d"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "51c1f442-89b7-4000-ba06-87d0e607000a",
+      "order": 3,
+      "zh": "人们把“福”字贴在门上，希望新的一年生活幸福。",
+      "pinyin": "Rénmen bǎ “Fú” zì tiē zài mén shang, xīwàng xīn de yì nián shēnghuó xìngfú.",
+      "vi": "Mọi người dán chữ “Phúc” lên cửa, hy vọng năm mới cuộc sống hạnh phúc.",
+      "analysis_vi": "把“福”字贴在门上 là câu 把 có vị trí rõ; 生活幸福 là lời chúc.",
+      "highlight": [
+        "幸福"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "da25dbe3-4a63-4598-8c85-37ac271d055d"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 幸福",
+    "content_vi": "Chữ 福 trong văn hóa Trung Quốc bao hàm may mắn, phúc lành, giàu đủ, bình an, hạnh phúc. Vì vậy 幸福 không chỉ là cảm xúc “vui”, mà còn là đời sống có phúc, ổn định, tốt đẹp.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "085ef96f-7fdc-4543-be37-8b72aaeb5b32",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 幸福 cho niềm vui rất ngắn. Tự nhiên: 收到礼物，我很高兴。 Shōu dào lǐwù, wǒ hěn gāoxìng. Nhận được quà, tôi rất vui. Sâu hơn: 和家人在一起，我觉得很幸福。 Hé jiārén zài yìqǐ, wǒ juéde hěn xìngfú. Ở bên gia đình, tôi thấy rất hạnh phúc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "幸福",
+    "back": "hạnh phúc",
+    "hint": "xìngfú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "da25dbe3-4a63-4598-8c85-37ac271d055d",
+    "source_lesson_vocab_id": null
+  }
+}

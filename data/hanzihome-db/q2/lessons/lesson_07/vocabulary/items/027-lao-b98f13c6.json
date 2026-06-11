@@ -1,0 +1,367 @@
+{
+  "id": "d7229ae0-37d9-4e14-9383-5716b871579f",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "老",
+  "pinyin": "lǎo",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ / Tiền tố xưng hô 【形容词 / 副词 / 前缀】",
+    "raw_cn": "",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "society_major",
+    "adjective",
+    "adverb"
+  ],
+  "meaning": {
+    "hanviet": "Lão",
+    "meaning_vi": "già; cũ; lâu năm; luôn cứ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "già",
+      "cũ",
+      "lâu năm",
+      "luôn cứ"
+    ],
+    "short_definition_vi": "già",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "tuổi / quan hệ / khẩu ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "老",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "耂",
+            "hanviet": "lão",
+            "meaning_vi": "phần trên chữ 老",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "匕",
+            "hanviet": "chủy",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "già, cũ, lâu năm, luôn luôn",
+        "modern_logic_vi": "Lõi nghĩa là già/lâu; mở rộng sang đồ cũ, quan hệ lâu năm, thói quen lặp lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "老 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "旧",
+        "pinyin": "",
+        "meaning_vi": "cũ",
+        "difference_vi": "Đối lập mới; thường cho đồ vật/thời đại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "年老",
+        "pinyin": "",
+        "meaning_vi": "già",
+        "difference_vi": "Trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老是",
+        "pinyin": "",
+        "meaning_vi": "cứ luôn",
+        "difference_vi": "Gần 老 khi làm phó từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "年轻",
+        "pinyin": "",
+        "meaning_vi": "trẻ",
+        "difference_vi": "Đối lập già.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "新",
+        "pinyin": "",
+        "meaning_vi": "mới",
+        "difference_vi": "Đối lập cũ/lâu năm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "60b002c3-a924-4818-aad1-d49f81f7e36f",
+      "order": 1,
+      "zh": "老人",
+      "pinyin": "",
+      "vi": "người già",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d241f22b-b0fa-4de4-a7e2-eb3b0df037d4",
+      "order": 2,
+      "zh": "老师",
+      "pinyin": "",
+      "vi": "thầy/cô giáo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "afc35345-d644-4c4a-b2b7-1a16feb3faeb",
+      "order": 3,
+      "zh": "老朋友",
+      "pinyin": "",
+      "vi": "bạn cũ/bạn lâu năm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7151834f-9553-41d5-9658-d317949208d6",
+      "order": 4,
+      "zh": "老房子",
+      "pinyin": "",
+      "vi": "nhà cũ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "843af063-6813-4b29-ab93-7ff7c62cb538",
+      "order": 5,
+      "zh": "老地方",
+      "pinyin": "",
+      "vi": "chỗ cũ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17978e9b-a6cb-4b9b-b307-a17e8a479b76",
+      "order": 6,
+      "zh": "老问题",
+      "pinyin": "",
+      "vi": "vấn đề cũ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a6f44bf7-eafa-4da3-8dcb-46036d74566c",
+      "order": 7,
+      "zh": "老迟到",
+      "pinyin": "",
+      "vi": "cứ đến muộn hoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "02a0ffe7-74b0-4684-8955-e2ad8a8a457f",
+      "order": 8,
+      "zh": "老样子",
+      "pinyin": "",
+      "vi": "như cũ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6228edf8-8967-4f91-909b-808422b8f736",
+      "order": 1,
+      "zh": "他是我的老朋友。",
+      "pinyin": "Tā shì wǒ de lǎo péngyou.",
+      "vi": "Anh ấy là bạn cũ/bạn lâu năm của tôi.",
+      "analysis_vi": "老朋友 không nhất thiết là bạn già tuổi.",
+      "highlight": [
+        "老朋友"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d7229ae0-37d9-4e14-9383-5716b871579f"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5d85a6b5-6761-49a4-989b-3d11bc5fe7ae",
+      "order": 2,
+      "zh": "这个老房子不但有历史，而且很漂亮。",
+      "pinyin": "Zhège lǎo fángzi búdàn yǒu lìshǐ, érqiě hěn piàoliang.",
+      "vi": "Căn nhà cũ này không những có lịch sử mà còn rất đẹp.",
+      "analysis_vi": "老房子 = nhà cũ.",
+      "highlight": [
+        "老",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "d7229ae0-37d9-4e14-9383-5716b871579f"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7b9da25f-eab0-4513-93e6-762eb3c64ee6",
+      "order": 3,
+      "zh": "他老说北京的冬天跟他家乡一样冷，可是我觉得还是北京冷得多。",
+      "pinyin": "Tā lǎo shuō Běijīng de dōngtiān gēn tā jiāxiāng yíyàng lěng, kěshì wǒ juéde háishi Běijīng lěng de duō.",
+      "vi": "Anh ấy cứ nói mùa đông Bắc Kinh lạnh như quê anh ấy, nhưng tôi vẫn thấy Bắc Kinh lạnh hơn nhiều.",
+      "analysis_vi": "老说 = cứ nói hoài, khẩu ngữ.",
+      "highlight": [
+        "老说",
+        "一样冷"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "d7229ae0-37d9-4e14-9383-5716b871579f"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "老 + họ như 老王/老李 có sắc thái thân quen, không nhất thiết là người già; không nên tự tiện dùng với người chưa thân.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fe96fe9d-72ad-46f2-bd52-5b34f750c596",
+      "order": 1,
+      "rule_vi": "Không dịch 老朋友 máy móc là “người bạn già”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "老朋友",
+          "pinyin": "lǎo péngyou",
+          "vi": "bạn cũ/bạn lâu năm",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "年纪比较大的朋友",
+          "pinyin": "niánjì bǐjiào dà de péngyou",
+          "vi": "người bạn lớn tuổi hơn",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "老",
+    "back": "già; cũ; lâu năm; luôn cứ",
+    "hint": "lǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "adjective",
+      "adverb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d7229ae0-37d9-4e14-9383-5716b871579f",
+    "source_lesson_vocab_id": null
+  }
+}

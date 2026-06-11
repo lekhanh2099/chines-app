@@ -547,12 +547,7 @@
       "flashcard": {
        "front": "前天",
        "back": "qiántiān — hôm kia",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -584,12 +579,7 @@
       "flashcard": {
        "front": "后天",
        "back": "hòutiān — ngày kia",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -621,12 +611,7 @@
       "flashcard": {
        "front": "导游",
        "back": "dǎoyóu — hướng dẫn viên du lịch",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -660,12 +645,7 @@
       "flashcard": {
        "front": "研究生",
        "back": "yánjiūshēng — học viên cao học; nghiên cứu sinh",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -697,12 +677,7 @@
       "flashcard": {
        "front": "打工",
        "back": "dǎ gōng — làm công; làm thuê; đi làm kiếm tiền; trong bài: làm thêm",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -734,12 +709,7 @@
       "flashcard": {
        "front": "利用",
        "back": "lìyòng — tận dụng; sử dụng; lợi dụng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -771,12 +741,7 @@
       "flashcard": {
        "front": "假期",
        "back": "jiàqī — kỳ nghỉ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -808,12 +773,7 @@
       "flashcard": {
        "front": "旅行社",
        "back": "lǚxíngshè — công ty du lịch; hãng lữ hành",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -845,12 +805,7 @@
       "flashcard": {
        "front": "组织",
        "back": "zǔzhī — tổ chức; sự tổ chức",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -882,12 +837,7 @@
       "flashcard": {
        "front": "老板",
        "back": "lǎobǎn — ông chủ; bà chủ; sếp",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -919,12 +869,7 @@
       "flashcard": {
        "front": "需要",
        "back": "xūyào — cần; nhu cầu",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -956,12 +901,7 @@
       "flashcard": {
        "front": "经常",
        "back": "jīngcháng — thường xuyên",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -993,12 +933,7 @@
       "flashcard": {
        "front": "收集",
        "back": "shōují — thu thập; sưu tập",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1030,12 +965,7 @@
       "flashcard": {
        "front": "一……就……",
        "back": "yī……jiù…… — hễ/vừa… thì/liền…",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1067,12 +997,7 @@
       "flashcard": {
        "front": "安排",
        "back": "ānpái — sắp xếp; bố trí",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1104,12 +1029,7 @@
       "flashcard": {
        "front": "帮助",
        "back": "bāngzhù — giúp đỡ; sự giúp đỡ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1141,12 +1061,7 @@
       "flashcard": {
        "front": "帮",
        "back": "bāng — giúp",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1178,12 +1093,7 @@
       "flashcard": {
        "front": "高铁",
        "back": "gāotiě — tàu cao tốc; đường sắt cao tốc",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1215,12 +1125,7 @@
       "flashcard": {
        "front": "铁路",
        "back": "tiělù — đường sắt",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1252,12 +1157,7 @@
       "flashcard": {
        "front": "风光",
        "back": "fēngguāng — phong cảnh; cảnh sắc",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1289,12 +1189,7 @@
       "flashcard": {
        "front": "商量",
        "back": "shāngliang — bàn bạc; thương lượng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1326,12 +1221,7 @@
       "flashcard": {
        "front": "故乡",
        "back": "gùxiāng — quê hương; quê nhà",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1363,12 +1253,7 @@
       "flashcard": {
        "front": "自由",
        "back": "zìyóu — tự do",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1400,12 +1285,7 @@
       "flashcard": {
        "front": "活动",
        "back": "huódòng — hoạt động; vận động",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1437,12 +1317,7 @@
       "flashcard": {
        "front": "马马虎虎",
        "back": "mǎmǎhūhū — tạm tạm; qua loa; không kỹ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1474,12 +1349,7 @@
       "flashcard": {
        "front": "老外",
        "back": "lǎowài — người nước ngoài (khẩu ngữ)",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1511,12 +1381,7 @@
       "flashcard": {
        "front": "呀",
        "back": "ya — trợ từ ngữ khí; biến âm của 啊",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1548,12 +1413,7 @@
       "flashcard": {
        "front": "鼻子",
        "back": "bízi — mũi",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1585,12 +1445,7 @@
       "flashcard": {
        "front": "头发",
        "back": "tóufa — tóc",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1622,12 +1477,7 @@
       "flashcard": {
        "front": "眼睛",
        "back": "yǎnjing — mắt",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1659,12 +1509,7 @@
       "flashcard": {
        "front": "声调",
        "back": "shēngdiào — thanh điệu",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook_checked",
@@ -1851,7 +1696,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "abb1dc2b-9897-4fe2-baa7-19eedc5c0a51",
+      "id": "grammar_001",
       "type": "grammar_point",
       "order": 1,
       "title": "是……的",
@@ -2027,7 +1872,7 @@
       ]
      },
      {
-      "id": "6119917a-0738-43c8-b8bc-6840cd60ecec",
+      "id": "grammar_002",
       "type": "grammar_point",
       "order": 2,
       "title": "一……就……",
@@ -2158,7 +2003,7 @@
       ]
      },
      {
-      "id": "41ce33c7-b05d-49f7-8b07-0c5b55e8ae65",
+      "id": "grammar_003",
       "type": "grammar_point",
       "order": 3,
       "title": "形容词重叠",
@@ -2501,18 +2346,7 @@
        "zh": "选词填空。",
        "vi": "Chọn từ thích hợp điền vào chỗ trống."
       },
-      "word_bank": [
-       "陪",
-       "组织",
-       "希望",
-       "风光",
-       "收集",
-       "互相",
-       "研究",
-       "老板",
-       "利用",
-       "需要"
-      ],
+      "word_bank": ["陪", "组织", "希望", "风光", "收集", "互相", "研究", "老板", "利用", "需要"],
       "questions": [
        {
         "id": "b362c1ea-3689-4ada-9dd0-97785b6af429",
@@ -3054,10 +2888,7 @@
         "type": "error_correction",
         "prompt": "你是什么时候来了中国？",
         "answer": "你是什么时候来中国的？",
-        "acceptable_answers": [
-         "你是什么时候来中国的？",
-         "你是什么时候来的中国？"
-        ],
+        "acceptable_answers": ["你是什么时候来中国的？", "你是什么时候来的中国？"],
         "answer_verified": true,
         "source_origin": "textbook_answer_checked",
         "check_needed": false
@@ -3087,10 +2918,7 @@
         "type": "error_correction",
         "prompt": "我来中国不是坐高铁的。",
         "answer": "我不是坐高铁来中国的。",
-        "acceptable_answers": [
-         "我不是坐高铁来中国的。",
-         "我来中国不是坐高铁来的。"
-        ],
+        "acceptable_answers": ["我不是坐高铁来中国的。", "我来中国不是坐高铁来的。"],
         "answer_verified": true,
         "source_origin": "textbook_answer_checked",
         "check_needed": false
@@ -3255,13 +3083,9 @@
          "separable_type": "",
          "structure_vi": "",
          "usage_note_vi": "",
-         "notes": [
-          "Trong 《孔子与中国》, 与 dùng trang trọng hơn 和, nghĩa là “và”."
-         ]
+         "notes": ["Trong 《孔子与中国》, 与 dùng trang trọng hơn 和, nghĩa là “và”."]
         },
-        "notes": [
-         "Trong 《孔子与中国》, 与 dùng trang trọng hơn 和, nghĩa là “và”."
-        ],
+        "notes": ["Trong 《孔子与中国》, 与 dùng trang trọng hơn 和, nghĩa là “và”."],
         "check_needed": false
        }
       ],
@@ -3455,15 +3279,15 @@
      ],
      "grammar_points": [
       {
-       "id": "abb1dc2b-9897-4fe2-baa7-19eedc5c0a51",
+       "id": "grammar_001",
        "title": "是……的"
       },
       {
-       "id": "6119917a-0738-43c8-b8bc-6840cd60ecec",
+       "id": "grammar_002",
        "title": "一……就……"
       },
       {
-       "id": "41ce33c7-b05d-49f7-8b07-0c5b55e8ae65",
+       "id": "grammar_003",
        "title": "形容词重叠"
       }
      ],
@@ -3533,27 +3357,18 @@
    "data_update_note_vi": "Đã rà lại đúng file lesson đầy đủ: bài khóa, từ vựng, chuyên danh, chú thích, ngữ pháp, bài tập, đọc kể lại và viết chữ Hán; giữ nguyên root/sections, chỉ cập nhật nội dung dữ liệu."
   },
   "summary": {
-   "lesson_parts": [
-    "课文",
-    "生词",
-    "专名",
-    "注释",
-    "语法 / 词语用法",
-    "练习",
-    "读后说",
-    "写汉字"
-   ],
+   "lesson_parts": ["课文", "生词", "专名", "注释", "语法 / 词语用法", "练习", "读后说", "写汉字"],
    "grammar_points": [
     {
-     "id": "abb1dc2b-9897-4fe2-baa7-19eedc5c0a51",
+     "id": "grammar_001",
      "title": "是……的"
     },
     {
-     "id": "6119917a-0738-43c8-b8bc-6840cd60ecec",
+     "id": "grammar_002",
      "title": "一……就……"
     },
     {
-     "id": "41ce33c7-b05d-49f7-8b07-0c5b55e8ae65",
+     "id": "grammar_003",
      "title": "形容词重叠"
     }
    ],

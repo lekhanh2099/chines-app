@@ -1,0 +1,326 @@
+{
+  "id": "72ce36e9-e8fc-4970-8455-69c18c73aac9",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "成绩",
+  "pinyin": "chéngjì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "ket_qua"
+  ],
+  "meaning": {
+    "hanviet": "Thành tích",
+    "meaning_vi": "điểm số; kết quả học tập / công việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "điểm số",
+      "kết quả học tập / công việc"
+    ],
+    "short_definition_vi": "điểm số; kết quả học tập / công việc",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "成",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí cổ",
+            "position_vi": "thành phần",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "戈",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Qua",
+              "radical_name_zh": "",
+              "hanviet": "qua",
+              "meaning_vi": "vũ khí cổ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành, hoàn thành",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "戈",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Qua",
+          "radical_name_zh": "",
+          "hanviet": "qua",
+          "meaning_vi": "vũ khí cổ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "绩",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ / liên kết",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ / liên kết",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "责",
+            "hanviet": "trách",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành tích, kết quả",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ / liên kết",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "成绩 = kết quả sau quá trình học/làm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分数",
+        "pinyin": "",
+        "meaning_vi": "điểm số cụ thể",
+        "difference_vi": "ví dụ 90分",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "结果",
+        "pinyin": "",
+        "meaning_vi": "kết quả chung",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "成绩差",
+        "pinyin": "",
+        "meaning_vi": "kết quả kém",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "成绩好",
+        "right": "成绩差",
+        "meaning_vi": "tốt ↔ kém",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ba1f45c9-0cd1-4b8a-ae92-c1098f7a9bbf",
+      "order": 1,
+      "zh": "考试成绩",
+      "pinyin": "",
+      "vi": "điểm thi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eeae5dac-3ac9-4642-b694-ad6e6dc5dba3",
+      "order": 2,
+      "zh": "汉语成绩",
+      "pinyin": "",
+      "vi": "kết quả môn tiếng Hán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ead8453-d330-41cc-942a-36b45613a989",
+      "order": 3,
+      "zh": "成绩单",
+      "pinyin": "",
+      "vi": "bảng điểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5750a989-fa44-4957-a04b-30efa8e2f77b",
+      "order": 1,
+      "zh": "我的考试成绩还不错。",
+      "pinyin": "Wǒ de kǎoshì chéngjì hái búcuò.",
+      "vi": "Kết quả thi của tôi cũng khá tốt.",
+      "analysis_vi": "考试成绩 là cụm danh từ.",
+      "highlight": [
+        "成绩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "72ce36e9-e8fc-4970-8455-69c18c73aac9"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "edcfef16-fe1a-4975-a7c2-4f83e0ca414d",
+      "order": 2,
+      "zh": "这次考试，安娜的成绩比上次好。",
+      "pinyin": "Zhè cì kǎoshì, Ānnà de chéngjì bǐ shàng cì hǎo.",
+      "vi": "Lần thi này, kết quả của Anna tốt hơn lần trước.",
+      "analysis_vi": "Ôn so sánh với 比.",
+      "highlight": [
+        "成绩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "72ce36e9-e8fc-4970-8455-69c18c73aac9"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "成绩 trong học tập thường là điểm/kết quả, không chỉ “thành tích”.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "44addeb3-4d05-4555-bdee-a3c70b59deb6",
+      "order": 1,
+      "rule_vi": "Không dịch cứng 成绩 là “thành tích”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "考试成绩",
+          "pinyin": "kǎoshì chéngjì",
+          "vi": "điểm thi / kết quả thi",
+          "note_vi": "Nghĩa trong bài.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "成绩",
+    "back": "điểm số; kết quả học tập / công việc",
+    "hint": "chéngjì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "ket_qua"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "72ce36e9-e8fc-4970-8455-69c18c73aac9",
+    "source_lesson_vocab_id": null
+  }
+}

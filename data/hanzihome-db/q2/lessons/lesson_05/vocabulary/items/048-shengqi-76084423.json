@@ -1,0 +1,308 @@
+{
+  "id": "3e214154-f5bc-484f-9b01-5979a0562e2a",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "生气",
+  "pinyin": "shēngqì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "sinh khí",
+    "meaning_vi": "tức giận; sinh khí, sức sống",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "tức giận; sinh khí, sức sống",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "生",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "生",
+            "hanviet": "sinh",
+            "meaning_vi": "sinh ra, sống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "生",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sinh",
+              "radical_name_zh": "",
+              "hanviet": "sinh",
+              "meaning_vi": "sinh ra, sống",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "生 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sinh ra, sống",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "生",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sinh",
+          "radical_name_zh": "",
+          "hanviet": "sinh",
+          "meaning_vi": "sinh ra, sống",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "生 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "气",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "气",
+            "hanviet": "khí",
+            "meaning_vi": "khí, hơi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "气",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khí",
+              "radical_name_zh": "",
+              "hanviet": "khí",
+              "meaning_vi": "khí, hơi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "气 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khí, hơi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "气",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khí",
+          "radical_name_zh": "",
+          "hanviet": "khí",
+          "meaning_vi": "khí, hơi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "气 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Khẩu ngữ hiện đại chủ yếu là tức giận; nghĩa khác là sức sống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "发火",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nổi nóng mạnh hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "愤怒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phẫn nộ, trang trọng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不高兴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không vui, nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b846f5ed-049c-4b8c-8d6b-e42e2577b81b",
+      "order": 1,
+      "zh": "生气了",
+      "pinyin": "",
+      "vi": "giận rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3be6eba5-adf9-419f-a71e-907603f0d2fd",
+      "order": 2,
+      "zh": "别生气",
+      "pinyin": "",
+      "vi": "đừng giận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e45ea956-e868-4806-82fc-6e494420c81b",
+      "order": 3,
+      "zh": "怕他生气",
+      "pinyin": "",
+      "vi": "sợ anh ấy giận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "75b1af02-6d5e-4c8d-bb5f-8376434d89d4",
+      "order": 1,
+      "zh": "你别生气。",
+      "pinyin": "Nǐ bié shēngqì.",
+      "vi": "Bạn đừng giận.",
+      "en": "",
+      "highlight": [
+        "生气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3e214154-f5bc-484f-9b01-5979a0562e2a"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Muốn mềm hơn 别生气 có thể nói 你先别着急，听我解释一下.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "154f316d-b1b5-4343-937a-29a2670bdd6f",
+      "order": 1,
+      "title_vi": "Không dịch là sinh khí trong khẩu ngữ",
+      "explanation_vi": "他生气了 nghĩa là anh ấy tức giận rồi.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "他生气了。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "生气",
+    "back": "tức giận; sinh khí, sức sống",
+    "hint": "shēngqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "生气"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3e214154-f5bc-484f-9b01-5979a0562e2a",
+    "source_lesson_vocab_id": null
+  }
+}

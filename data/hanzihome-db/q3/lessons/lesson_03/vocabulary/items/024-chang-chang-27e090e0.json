@@ -1,0 +1,339 @@
+{
+  "id": "ba154db2-34fc-4bf9-a64d-bc6baa13708b",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "场",
+  "pinyin": "chǎng / cháng",
+  "pos": {
+    "raw_vi": "measure_word",
+    "raw_cn": "",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "measure",
+    "polyphone"
+  ],
+  "meaning": {
+    "hanviet": "trường",
+    "meaning_vi": "sân, nơi diễn ra hoạt động; trận/lượt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sân",
+      "nơi diễn ra hoạt động",
+      "trận",
+      "lượt"
+    ],
+    "short_definition_vi": "sân, nơi diễn ra hoạt động; trận/lượt",
+    "textbook_focus_vi": "sân, nơi diễn ra hoạt động; trận/lượt",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "measure, polyphone",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "场",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, mặt đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, mặt đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, mặt đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "昜/扬简体",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sân/nơi; trận/lượt",
+        "modern_logic_vi": "Trong từ này, 场 góp phần vào lớp nghĩa hiện đại: sân/nơi; trận/lượt",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "场 có 土, gợi nơi chốn; mở rộng thành lượng từ cho trận/buổi/sự kiện. Âm đọc tùy cụm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "次",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "阵",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "地方",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "广场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "22c209ab-5215-42fe-93cc-269463427bf6",
+      "order": 1,
+      "zh": "一场雪",
+      "pinyin": "",
+      "vi": "một trận tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "19475a73-5de4-470b-a9e5-5ceb6207e331",
+      "order": 2,
+      "zh": "一场大雪",
+      "pinyin": "",
+      "vi": "một trận tuyết lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfacf3e3-0fe9-4dd1-8c47-48c5ff075d34",
+      "order": 3,
+      "zh": "一场雨",
+      "pinyin": "",
+      "vi": "một trận mưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c64e247c-44fd-4e46-b745-e9fd3d9f82c9",
+      "order": 4,
+      "zh": "一场比赛",
+      "pinyin": "",
+      "vi": "một trận đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e701408-43c3-4e42-8f73-ed83fcfb0b97",
+      "order": 5,
+      "zh": "广场",
+      "pinyin": "",
+      "vi": "quảng trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a9588dd-b531-4221-a94d-dfa40382e1c3",
+      "order": 6,
+      "zh": "考场",
+      "pinyin": "",
+      "vi": "nơi thi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b8d708b0-fb10-403c-845a-95d593e7d15f",
+      "order": 1,
+      "zh": "昨天北京下了一场大雪。",
+      "pinyin": "",
+      "vi": "Hôm qua Bắc Kinh có một trận tuyết lớn.",
+      "analysis_vi": "一场雪 đọc yì cháng xuě.",
+      "highlight": [
+        "场"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ba154db2-34fc-4bf9-a64d-bc6baa13708b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "036c2a7b-370f-4328-a708-766d29b5919d",
+      "order": 2,
+      "zh": "这场雪下得很大。",
+      "pinyin": "",
+      "vi": "Trận tuyết này rơi rất lớn.",
+      "analysis_vi": "这场雪 = trận tuyết này.",
+      "highlight": [
+        "场"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ba154db2-34fc-4bf9-a64d-bc6baa13708b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b5a4e0cb-3ef4-48cf-b271-dc27273b8f3e",
+      "order": 3,
+      "zh": "广场上堆着一堆一堆的雪。",
+      "pinyin": "",
+      "vi": "Trên quảng trường chất từng đống tuyết.",
+      "analysis_vi": "广场 đọc chǎng; 一场雪 đọc cháng.",
+      "highlight": [
+        "场"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ba154db2-34fc-4bf9-a64d-bc6baa13708b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "场 trong Bài 3 北京的四季",
+    "content_vi": "场 là lượng từ rất hay gặp cho thời tiết, phim, thi đấu, kỳ thi/sự kiện.",
+    "tags": [
+      "measure",
+      "polyphone"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2b594585-1d59-41f1-b725-d7440a599634",
+      "order": 1,
+      "rule_vi": "Phân biệt âm: 广场 guǎngchǎng, 一场雪 yì cháng xuě, 一场比赛 yì chǎng bǐsài.",
+      "natural_examples": [
+        {
+          "zh": "昨天北京下了一场大雪。",
+          "pinyin": "",
+          "vi": "Hôm qua Bắc Kinh có một trận tuyết lớn.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt âm: 广场 guǎngchǎng, 一场雪 yì cháng xuě, 一场比赛 yì chǎng bǐsài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "场",
+    "back": "sân, nơi diễn ra hoạt động; trận/lượt",
+    "hint": "chǎng / cháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "measure",
+      "polyphone"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ba154db2-34fc-4bf9-a64d-bc6baa13708b",
+    "source_lesson_vocab_id": null
+  }
+}

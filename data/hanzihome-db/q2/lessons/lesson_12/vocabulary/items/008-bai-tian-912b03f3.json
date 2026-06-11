@@ -1,0 +1,344 @@
+{
+  "id": "df542314-185c-4806-b2ff-181c82b07d9a",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "白天",
+  "pinyin": "bái tiān",
+  "pos": {
+    "raw_vi": "Danh từ / Cụm thời gian",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "time_context"
+  ],
+  "meaning": {
+    "hanviet": "bạch thiên",
+    "meaning_vi": "ban ngày",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ban ngày"
+    ],
+    "short_definition_vi": "ban ngày",
+    "textbook_focus_vi": "ban ngày",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "白",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "trắng/sáng",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trắng, sáng, rõ",
+        "modern_logic_vi": "白 gợi ánh sáng/trạng thái sáng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "天",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn/người dang tay",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "nét ngang trên",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời, ngày",
+        "modern_logic_vi": "天 là trời/ngày.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "白天 = khoảng thời gian trời sáng, đối lập với 晚上/夜里.",
+    "memory_tip_vi": "白天 = khoảng thời gian trời sáng, đối lập với 晚上/夜里.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "白日",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ban ngày, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "白昼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ban ngày, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上午",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "buổi sáng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "下午",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "buổi chiều",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "晚上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "buổi tối",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "夜里",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ban đêm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "白天",
+        "right": "晚上",
+        "meaning_vi": "",
+        "note_vi": "ban ngày ↔ buổi tối",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "94a88bfc-58ed-49bd-84d3-3ddc9c4b8bcb",
+      "order": 1,
+      "zh": "白天上课",
+      "pinyin": "",
+      "vi": "ban ngày đi học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e4d8d3a-d917-4030-811f-3017537bec5d",
+      "order": 2,
+      "zh": "白天工作",
+      "pinyin": "",
+      "vi": "ban ngày làm việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb7a4dc8-0bf9-4d57-a63e-be0c8bfa3077",
+      "order": 3,
+      "zh": "白天睡觉",
+      "pinyin": "",
+      "vi": "ban ngày ngủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68ebd4c2-a954-4b20-8528-4a9d00606aeb",
+      "order": 4,
+      "zh": "大白天",
+      "pinyin": "",
+      "vi": "giữa ban ngày ban mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e08f97cc-edce-4f02-9f6c-3f82d4d7274f",
+      "order": 5,
+      "zh": "白天和晚上",
+      "pinyin": "",
+      "vi": "ban ngày và buổi tối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "27eb5662-7061-451d-9e88-48dab2586ce9",
+      "order": 1,
+      "zh": "他白天上课，晚上打工。",
+      "pinyin": "",
+      "vi": "Ban ngày anh ấy đi học, tối đi làm thêm.",
+      "analysis_vi": "白天/晚上 làm trạng ngữ thời gian đối lập.",
+      "highlight": [
+        "白天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df542314-185c-4806-b2ff-181c82b07d9a"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "52b28f27-d749-429d-9c33-8025ab3df21c",
+      "order": 2,
+      "zh": "护照白天你找过了吗？",
+      "pinyin": "",
+      "vi": "Hộ chiếu ban ngày bạn đã tìm rồi à?",
+      "analysis_vi": "护照 là chủ đề; 找过 chưa hỏi kinh nghiệm trong khoảng ban ngày.",
+      "highlight": [
+        "白天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df542314-185c-4806-b2ff-181c82b07d9a"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "大白天 giống “ban ngày ban mặt” trong tiếng Việt.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "da5bb95c-6e72-4f02-a070-0a014d011022",
+      "order": 1,
+      "rule_vi": "Không dùng 白天 để chỉ ngày mai/hôm nay theo nghĩa ngày tháng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我白天去中国。",
+          "pinyin": "",
+          "vi": "Nếu muốn nói ngày mai đi Trung Quốc thì sai logic.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我明天去中国。",
+          "pinyin": "",
+          "vi": "Ngày mai tôi đi Trung Quốc.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "白天",
+    "back": "ban ngày",
+    "hint": "bái tiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "time_context"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "df542314-185c-4806-b2ff-181c82b07d9a",
+    "source_lesson_vocab_id": null
+  }
+}

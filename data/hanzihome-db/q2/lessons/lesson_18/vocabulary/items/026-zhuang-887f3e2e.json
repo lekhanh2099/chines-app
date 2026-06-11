@@ -1,0 +1,316 @@
+{
+  "id": "4deaa709-4f4d-4c4f-bf98-a3dceae13af0",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "装",
+  "pinyin": "zhuāng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Trang",
+    "meaning_vi": "cho vào, đựng; lắp; giả vờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cho vào, đựng; lắp; giả vờ"
+    ],
+    "short_definition_vi": "cho vào, đựng; lắp; giả vờ",
+    "textbook_focus_vi": "cho vào, đựng; lắp; giả vờ",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "装",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo/quần áo",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, quần áo",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "壮",
+            "hanviet": "tráng",
+            "meaning_vi": "phần trên",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trang phục; cho vào/đựng; lắp; giả vờ",
+        "modern_logic_vi": "Trong bài, 装 = cho đồ vào chỗ chứa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "áo, quần áo",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "装 có lõi nghĩa hiện đại là “đưa vào một vật chứa / làm cho có trang bị”. → 把护照装进包里 = bỏ hộ chiếu vào túi. → 装空调 = lắp máy lạnh. → 装不知道 = giả vờ không biết.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "放",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt, để.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放进",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt/cho vào trong, gần với 装进 nhưng trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安装",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lắp đặt, trang trọng/rõ hơn nghĩa lắp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "装: bỏ/cho vào vật chứa; lắp; giả vờ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bb820ad6-8b04-42b9-9387-daf1731eee1f",
+      "order": 1,
+      "zh": "装进包里",
+      "pinyin": "",
+      "vi": "bỏ vào túi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "63430d75-693b-4fa4-9c0c-028e52ba2411",
+      "order": 2,
+      "zh": "装好行李",
+      "pinyin": "",
+      "vi": "xếp/chuẩn bị hành lý xong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95ca03f9-c4dc-436a-892c-0dd9ea57cd39",
+      "order": 3,
+      "zh": "这个包很能装",
+      "pinyin": "",
+      "vi": "cái túi này chứa được nhiều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a728d497-6714-46ca-a70f-089de4df8289",
+      "order": 4,
+      "zh": "装空调",
+      "pinyin": "",
+      "vi": "lắp điều hòa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1fcacf01-c509-4007-aeb2-760b2d9cace5",
+      "order": 5,
+      "zh": "装不知道",
+      "pinyin": "",
+      "vi": "giả vờ không biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "237ef447-e4aa-40ee-8d97-720b5a3c1df2",
+      "order": 1,
+      "zh": "别把护照装进托运行李里，最好拿在手里。",
+      "pinyin": "Bié bǎ hùzhào zhuāng jìn tuōyùn xíngli lǐ, zuìhǎo ná zài shǒu lǐ.",
+      "vi": "Đừng bỏ hộ chiếu vào hành lý ký gửi, tốt nhất cầm trong tay.",
+      "analysis_vi": "把护照装进……里 là câu 把 có hướng vào trong; rất thực tế khi đi sân bay.",
+      "highlight": [
+        "装"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "4deaa709-4f4d-4c4f-bf98-a3dceae13af0"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5d83201a-6a38-4af6-8256-efcd0c175f4f",
+      "order": 2,
+      "zh": "她把硬币和纸币都装在一个小包里。",
+      "pinyin": "Tā bǎ yìngbì hé zhǐbì dōu zhuāng zài yí ge xiǎo bāo lǐ.",
+      "vi": "Cô ấy bỏ cả tiền xu và tiền giấy vào một cái túi nhỏ.",
+      "analysis_vi": "把……装在……里 nhấn tiền được cho vào vật chứa.",
+      "highlight": [
+        "装"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "4deaa709-4f4d-4c4f-bf98-a3dceae13af0"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5bedaa48-b349-462a-ae33-ee4053acae20",
+      "order": 3,
+      "zh": "这个行李箱很能装，可是太重的话还是要托运。",
+      "pinyin": "Zhège xínglixiāng hěn néng zhuāng, kěshì tài zhòng de huà háishi yào tuōyùn.",
+      "vi": "Cái vali này chứa được nhiều, nhưng nếu quá nặng thì vẫn phải ký gửi.",
+      "analysis_vi": "很能装 là khẩu ngữ: chứa được nhiều đồ.",
+      "highlight": [
+        "装"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "4deaa709-4f4d-4c4f-bf98-a3dceae13af0"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khi đi máy bay ở Trung Quốc, nhân viên an ninh có thể yêu cầu lấy một số đồ ra khỏi túi để kiểm tra. Vì vậy các cụm 装进包里, 拿出来, 放回去 rất thực tế trong ngữ cảnh sân bay.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c91543b7-c54e-443a-a0b2-6972407c1dde",
+      "order": 1,
+      "rule_vi": "Dùng 装 thay 放 trong mọi trường hợp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 装 theo cụm và ngữ cảnh bài 18; nghĩa chính là cho vào, đựng; lắp; giả vờ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "装",
+    "back": "cho vào, đựng; lắp; giả vờ",
+    "hint": "zhuāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4deaa709-4f4d-4c4f-bf98-a3dceae13af0",
+    "source_lesson_vocab_id": null
+  }
+}

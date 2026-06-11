@@ -1,0 +1,33 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "6e414eda-1f1c-496d-802b-6cd342f52ed7",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "关建平",
+      "pinyin": "Guān Jiànpíng",
+      "meaning_vi": "Quan Kiến Bình; tên người nam trong bài",
+      "meaning_en": "male personal name",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "bd642d13-691a-4a05-b9c3-ebec4bcb4a01",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "夏雨",
+      "pinyin": "Xià Yǔ",
+      "meaning_vi": "Hạ Vũ; tên người nữ trong bài",
+      "meaning_en": "female personal name",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

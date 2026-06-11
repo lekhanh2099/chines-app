@@ -1,0 +1,344 @@
+{
+  "id": "fd8e341a-0111-44a0-a7fe-e7d88f0ce53b",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "叫",
+  "pinyin": "jiào",
+  "pos": {
+    "raw_vi": "động từ / giới từ",
+    "raw_cn": "动词 / 介词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_19",
+    "passive",
+    "spoken"
+  ],
+  "meaning": {
+    "hanviet": "Khiếu",
+    "meaning_vi": "gọi, kêu; bảo; bị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gọi, kêu; bảo; bị"
+    ],
+    "short_definition_vi": "gọi, kêu; bảo; bị",
+    "textbook_focus_vi": "叫 vừa là động từ gọi/bảo vừa có thể là bị động khẩu ngữ.",
+    "register_vi": "khẩu ngữ",
+    "usage_domain_vi": "xưng hô, sai khiến, bị động khẩu ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "叫",
+        "lishu_vi": "khiếu",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, âm thanh",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丩",
+            "hanviet": "",
+            "meaning_vi": "thành phần bên phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gọi, kêu, bảo, bị",
+        "modern_logic_vi": "Có 口 nên lớp nghĩa dễ nhớ là phát tiếng/gọi; từ gọi/bảo mở rộng sang bị động khẩu ngữ trong một số cấu trúc.",
+        "warning_vi": "Đừng dịch mọi 叫 thành “gọi”.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "叫 có nghĩa gọi/tên là/bảo; trong Bài 19 còn có thể dùng bị động khẩu ngữ như 叫人骗了.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "喊",
+        "pinyin": "",
+        "meaning_vi": "gọi to, hét",
+        "difference_vi": "Nhấn âm lượng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "被",
+        "pinyin": "",
+        "meaning_vi": "bị",
+        "difference_vi": "Chuẩn hơn trong bị động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "让",
+        "pinyin": "",
+        "meaning_vi": "để cho/khiến/bị",
+        "difference_vi": "Gần 叫 trong khẩu ngữ bị động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "叫做",
+        "pinyin": "",
+        "meaning_vi": "được gọi là",
+        "difference_vi": "Dùng khi giải thích tên gọi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "35aa383d-0bb0-4b7f-9c20-d58456de3ab2",
+      "order": 1,
+      "zh": "叫他来",
+      "pinyin": "",
+      "vi": "gọi/bảo anh ấy đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1bd9cb35-50f4-41bf-91a3-32da9b4544ce",
+      "order": 2,
+      "zh": "叫什么名字",
+      "pinyin": "",
+      "vi": "tên là gì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "477c2071-f633-42af-8163-da796b837bd0",
+      "order": 3,
+      "zh": "大声叫",
+      "pinyin": "",
+      "vi": "kêu to",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec43b7f4-e315-4596-b6c7-0f19d94e1de2",
+      "order": 4,
+      "zh": "叫苦",
+      "pinyin": "",
+      "vi": "than khổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d9fe0501-2aae-4fdc-8987-6a7f3f802b68",
+      "order": 5,
+      "zh": "叫人骗了",
+      "pinyin": "",
+      "vi": "bị người ta lừa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "559ff231-4948-4c84-8be4-21dbcfeaa559",
+      "order": 6,
+      "zh": "叫雨淋了",
+      "pinyin": "",
+      "vi": "bị mưa làm ướt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "466d6d25-d1c9-4b96-91fe-3ad0b0998be6",
+      "order": 7,
+      "zh": "叫小偷偷走了",
+      "pinyin": "",
+      "vi": "bị tên trộm lấy mất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8b917c78-6f96-44e8-85f8-5fc69ff94a87",
+      "order": 1,
+      "zh": "你叫什么名字？",
+      "pinyin": "Nǐ jiào shénme míngzi?",
+      "vi": "Bạn tên là gì?",
+      "analysis_vi": "叫 ở đây là “tên là”, không phải “gọi”.",
+      "highlight": [
+        "叫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd8e341a-0111-44a0-a7fe-e7d88f0ce53b"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a275c892-c068-4b0e-a4b1-1fee31c6af18",
+      "order": 2,
+      "zh": "他的钱包儿叫小偷偷走了。",
+      "pinyin": "Tā de qiánbāor jiào xiǎotōu tōu zǒu le.",
+      "vi": "Ví của anh ấy bị tên trộm lấy mất.",
+      "analysis_vi": "叫小偷偷走了 là bị động khẩu ngữ, nghĩa gần 被小偷偷走了.",
+      "highlight": [
+        "叫",
+        "偷走"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "fd8e341a-0111-44a0-a7fe-e7d88f0ce53b"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6900fc32-687b-4d6f-aced-264fac296c5a",
+      "order": 3,
+      "zh": "我刚走出商店，就听见有人在后面叫我；回头一看，才发现自己的包叫人拿错了。",
+      "pinyin": "Wǒ gāng zǒu chū shāngdiàn, jiù tīngjiàn yǒu rén zài hòumiàn jiào wǒ; huítóu yí kàn, cái fāxiàn zìjǐ de bāo jiào rén ná cuò le.",
+      "vi": "Tôi vừa đi ra khỏi cửa hàng thì nghe có người gọi tôi phía sau; quay lại nhìn mới phát hiện túi của mình bị người ta cầm nhầm.",
+      "analysis_vi": "Câu có hai 叫: 叫我 = gọi tôi; 叫人拿错了 = bị người ta cầm nhầm.",
+      "highlight": [
+        "叫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd8e341a-0111-44a0-a7fe-e7d88f0ce53b"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "叫 / 让 làm bị động nghe đời thường hơn 被. Với người học và bài thi dịch, 被 rõ và an toàn hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e9d03709-c154-4dcd-bbd4-3971d3d1e0db",
+      "order": 1,
+      "rule_vi": "Không nên dùng 叫 bị động trong văn viết trang trọng nếu có thể dùng 被 rõ hơn.",
+      "natural_examples": [
+        {
+          "zh": "我的衣服被雨淋湿了。",
+          "pinyin": "Wǒ de yīfu bèi yǔ lín shī le.",
+          "vi": "Quần áo tôi bị mưa làm ướt.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我的衣服叫雨淋湿了。",
+          "pinyin": "Wǒ de yīfu jiào yǔ lín shī le.",
+          "vi": "Quần áo tôi bị mưa làm ướt.",
+          "note_vi": "Khẩu ngữ được, nhưng không phải lựa chọn chuẩn nhất trong văn viết.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "叫",
+    "back": "gọi, kêu; bảo; bị",
+    "hint": "jiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "passive",
+      "spoken"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fd8e341a-0111-44a0-a7fe-e7d88f0ce53b",
+    "source_lesson_vocab_id": null
+  }
+}

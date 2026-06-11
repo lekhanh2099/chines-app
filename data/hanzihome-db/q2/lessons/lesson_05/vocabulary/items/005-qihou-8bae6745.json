@@ -1,0 +1,299 @@
+{
+  "id": "c6363178-d570-45fd-9032-fd2afc7f748e",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "气候",
+  "pinyin": "qìhòu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "khí hậu",
+    "meaning_vi": "khí hậu",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "khí hậu",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "气",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "气",
+            "hanviet": "khí",
+            "meaning_vi": "khí, hơi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "气",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khí",
+              "radical_name_zh": "",
+              "hanviet": "khí",
+              "meaning_vi": "khí, hơi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "气 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khí, hơi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "气",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khí",
+          "radical_name_zh": "",
+          "hanviet": "khí",
+          "meaning_vi": "khí, hơi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "气 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "候",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thời tiết/mùa/đợi trong từ ghép",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Chỉ đặc điểm thời tiết dài hạn của một vùng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "天气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thời tiết ngắn hạn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "气温",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhiệt độ không khí",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "322cd011-629c-4dd5-a986-699206c891da",
+      "order": 1,
+      "zh": "气候干燥",
+      "pinyin": "",
+      "vi": "khí hậu khô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5336e650-e25c-4597-a416-6cb8691b8407",
+      "order": 2,
+      "zh": "适应气候",
+      "pinyin": "",
+      "vi": "thích nghi khí hậu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d494fadf-ee1f-4ad6-8c98-f5fcc79da256",
+      "order": 3,
+      "zh": "气候变化",
+      "pinyin": "",
+      "vi": "biến đổi khí hậu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e19604c9-9ff9-4163-b8f8-136e55347bb6",
+      "order": 1,
+      "zh": "这里的气候很干燥。",
+      "pinyin": "Zhèlǐ de qìhòu hěn gānzào.",
+      "vi": "Khí hậu ở đây rất khô.",
+      "en": "",
+      "highlight": [
+        "气候"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c6363178-d570-45fd-9032-fd2afc7f748e"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Nói về Bắc - Nam Trung Quốc thường hay nhắc khí hậu khô/ẩm/lạnh/nóng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "43f2a482-b532-4f53-b200-67f16a252ce2",
+      "order": 1,
+      "title_vi": "Không dùng cho thời tiết hôm nay",
+      "explanation_vi": "Hôm nay thời tiết đẹp thì dùng 天气.",
+      "wrong_examples": [
+        "今天的气候很好。"
+      ],
+      "correct_examples": [
+        "今天的天气很好。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "气候",
+    "back": "khí hậu",
+    "hint": "qìhòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "气候"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c6363178-d570-45fd-9032-fd2afc7f748e",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "summary": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "注释",
+      "语法",
+      "练习",
+      "综合填空"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "动作趋向的表达：复合趋向补语"
+      }
+    ],
+    "key_patterns": [
+      "V + 上/下/进/出/回/过/起 + 来/去",
+      "V + hướng cơ bản + nơi chốn + 来/去",
+      "V + hướng kép + 了 + sự vật"
+    ],
+    "coverage": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": true,
+      "character_writing_checked": true,
+      "remaining_check_needed": []
+    }
+  }
+}

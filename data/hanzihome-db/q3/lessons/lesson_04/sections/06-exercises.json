@@ -1,0 +1,973 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调。朗读。",
+        "vi": "Phân biệt âm đọc/thanh điệu và đọc các câu sau."
+      },
+      "skill_focus": [
+        "pronunciation",
+        "listening",
+        "speaking"
+      ],
+      "parts": [
+        {
+          "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "专业 zhuānyè",
+              "right": "转业 zhuǎnyè"
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "著名 zhùmíng",
+              "right": "出名 chūmíng"
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "心事 xīnshì",
+              "right": "新诗 xīnshī"
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "当然 dāngrán",
+              "right": "坦然 tǎnrán"
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "简直 jiǎnzhí",
+              "right": "兼职 jiānzhí"
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "人生 rénshēng",
+              "right": "人参 rénshēn"
+            },
+            {
+              "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
+              "left": "可能 kěnéng",
+              "right": "核能 hénéng"
+            },
+            {
+              "id": "5dcaf7e0-6d93-4034-b992-da23295bca73",
+              "left": "鼓励 gǔlì",
+              "right": "孤立 gūlì"
+            }
+          ]
+        },
+        {
+          "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "书到用时方恨少，事非经过不知难。",
+              "vi": "Sách đến lúc dùng mới tiếc là đọc ít; việc chưa trải qua thì không biết khó.",
+              "pinyin": "Shū dào yòng shí fāng hèn shǎo, shì fēi jīngguò bù zhī nán.",
+              "check_needed": false
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "不到长城非好汉。",
+              "vi": "Chưa đến Trường Thành thì chưa phải hảo hán.",
+              "pinyin": "Bú dào Chángchéng fēi hǎohàn.",
+              "check_needed": false
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "少壮不努力，老大徒伤悲。",
+              "vi": "Trẻ không cố gắng, già chỉ buồn thương.",
+              "pinyin": "Shàozhuàng bù nǔlì, lǎodà tú shāngbēi.",
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ/cụm từ",
+      "instruction": {
+        "zh": "读下列词语。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "美好的理想",
+          "pinyin": "méi hǎo de lǐ xiǎng",
+          "vi": "lý tưởng tốt đẹp",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "理想的专业",
+          "pinyin": "lǐ xiǎng de zhuān yè",
+          "vi": "chuyên ngành lý tưởng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "理想的工作",
+          "pinyin": "lǐ xiǎng de gōng zuò",
+          "vi": "công việc lý tưởng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "理想的家庭",
+          "pinyin": "lǐ xiǎng de jiā tíng",
+          "vi": "gia đình lý tưởng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "著名的风景区",
+          "pinyin": "zhù míng de fēngjǐngqū",
+          "vi": "khu thắng cảnh nổi tiếng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "著名的大学",
+          "pinyin": "zhù míng de dà xué",
+          "vi": "trường đại học nổi tiếng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "著名的律师",
+          "pinyin": "zhù míng de lǜ shī",
+          "vi": "luật sư nổi tiếng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "著名的教授",
+          "pinyin": "zhù míng de jiào shòu",
+          "vi": "giáo sư nổi tiếng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "做了一个梦",
+          "pinyin": "zuò le yí gè mèng",
+          "vi": "đã nằm mơ một giấc",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "梦见了我的家",
+          "pinyin": "mèng jiàn le wǒ de jiā",
+          "vi": "đã mơ thấy nhà của tôi",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "梦想当翻译",
+          "pinyin": "mèng xiǎng dāng fān yì",
+          "vi": "mơ ước làm phiên dịch",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "祝你梦想成真",
+          "pinyin": "zhù nǐ mèng xiǎng chéng zhēn",
+          "vi": "chúc bạn ước mơ thành sự thật",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "选择朋友",
+          "pinyin": "xuǎn zé péngyou",
+          "vi": "chọn bạn",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "选择专业",
+          "pinyin": "xuǎn zé zhuān yè",
+          "vi": "chọn chuyên ngành",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "选择人生道路",
+          "pinyin": "xuǎn zé rén shēng dào lù",
+          "vi": "lựa chọn con đường đời",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+          "text": "选择理想工作",
+          "pinyin": "xuǎn zé lǐ xiǎng gōng zuò",
+          "vi": "chọn công việc lý tưởng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng trong khung để điền vào chỗ trống."
+      },
+      "word_bank": [
+        "酸甜苦辣",
+        "付出",
+        "赞成",
+        "信心",
+        "简直",
+        "失败",
+        "心事",
+        "偷偷儿",
+        "经历",
+        "意义",
+        "不过",
+        "分别",
+        "著名",
+        "理想",
+        "当然"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "type": "fill_blank",
+          "order": 1,
+          "prompt": "上大学，学汉语，当翻译，一直是我的______。",
+          "answer": "理想",
+          "acceptable_answers": [
+            "理想"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 理想。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "type": "fill_blank",
+          "order": 2,
+          "prompt": "妈妈非常______我来中国留学。",
+          "answer": "赞成",
+          "acceptable_answers": [
+            "赞成"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 赞成。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "type": "fill_blank",
+          "order": 3,
+          "prompt": "老师让我说出五个______的中国人，但是，我想了半天也没有说出来。",
+          "answer": "著名",
+          "acceptable_answers": [
+            "著名"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 著名。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "type": "fill_blank",
+          "order": 4,
+          "prompt": "我看她最近好像有什么______。",
+          "answer": "心事",
+          "acceptable_answers": [
+            "心事"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 心事。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "type": "fill_blank",
+          "order": 5,
+          "prompt": "因为是好朋友，他遇到了困难我______要帮助他。",
+          "answer": "当然",
+          "acceptable_answers": [
+            "当然"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 当然。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "type": "fill_blank",
+          "order": 6,
+          "prompt": "这件羽绒服样子不太好看，______穿着挺暖和。",
+          "answer": "不过",
+          "acceptable_answers": [
+            "不过"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 不过。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "type": "fill_blank",
+          "order": 7,
+          "prompt": "我______不相信他能干出这种事。",
+          "answer": "简直",
+          "acceptable_answers": [
+            "简直"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 简直。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "type": "fill_blank",
+          "order": 8,
+          "prompt": "这是在机场______时女朋友送给我的。",
+          "answer": "分别",
+          "acceptable_answers": [
+            "分别"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 分别。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "type": "fill_blank",
+          "order": 9,
+          "prompt": "对我来说，学习汉语的______就是选择了一条人生的道路。将来我要用汉语工作，就是说，把自己跟中国联系在一起。",
+          "answer": "意义",
+          "acceptable_answers": [
+            "意义"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 意义。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "type": "fill_blank",
+          "order": 10,
+          "prompt": "这半年来，我尝够了人生的______。但是，我觉得自己也在长大。",
+          "answer": "酸甜苦辣",
+          "acceptable_answers": [
+            "酸甜苦辣"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 酸甜苦辣。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
+          "type": "fill_blank",
+          "order": 11,
+          "prompt": "人们常说，______是成功之母，所以，要想成功就不要怕失败，失败了再来。",
+          "answer": "失败",
+          "acceptable_answers": [
+            "失败"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 失败。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
+          "type": "fill_blank",
+          "order": 12,
+          "prompt": "我很喜欢这句歌词：不______风雨，怎么见彩虹？没有人能随随便便成功。说得多好！",
+          "answer": "经历",
+          "acceptable_answers": [
+            "经历"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 经历。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "031f4049-5da9-4fae-8986-27983e6ee1b3",
+          "type": "fill_blank",
+          "order": 13,
+          "prompt": "遇到困难时，不要失去______，要鼓励自己，坚持下去。坚持就是胜利。",
+          "answer": "信心",
+          "acceptable_answers": [
+            "信心"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 信心。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b6d54b1c-3759-4757-8547-8d84d47e4fb1",
+          "type": "fill_blank",
+          "order": 14,
+          "prompt": "不______艰苦的努力，要想取得成功是不可能的。",
+          "answer": "付出",
+          "acceptable_answers": [
+            "付出"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 付出。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c709ced5-f195-4255-aa3b-a35680918f1f",
+          "type": "fill_blank",
+          "order": 15,
+          "prompt": "老师在黑板上写字时，他______地走了出去。",
+          "answer": "偷偷儿",
+          "acceptable_answers": [
+            "偷偷儿"
+          ],
+          "explanation_vi": "Đáp án phù hợp với ngữ cảnh và collocation trong bài: 偷偷儿。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_answer_key_crosschecked",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ/cấu trúc trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ/cấu trúc trong ngoặc để hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "type": "complete_sentence",
+          "order": 1,
+          "prompt": "说实话，能不能实现自己的理想，我______。",
+          "given": "一点儿 + 也 / 都 + 没……",
+          "answer": "说实话，能不能实现自己的理想，我一点儿信心都没有。",
+          "acceptable_answers": [
+            "说实话，能不能实现自己的理想，我一点儿信心都没有。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "type": "complete_sentence",
+          "order": 2,
+          "prompt": "来中国以前，我______。",
+          "given": "一点儿 + 也 / 都 + 不……",
+          "answer": "来中国以前，我一点儿汉语都不懂。",
+          "acceptable_answers": [
+            "来中国以前，我一点儿汉语都不懂。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "type": "complete_sentence",
+          "order": 3,
+          "prompt": "这件衣服贵是贵了点儿，______。",
+          "given": "不过",
+          "answer": "这件衣服贵是贵了点儿，不过很好看。",
+          "acceptable_answers": [
+            "这件衣服贵是贵了点儿，不过很好看。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "type": "complete_sentence",
+          "order": 4,
+          "prompt": "这一课的课文虽然有点儿长，______。",
+          "given": "不过",
+          "answer": "这一课的课文虽然有点儿长，不过很好读。",
+          "acceptable_answers": [
+            "这一课的课文虽然有点儿长，不过很好读。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "type": "complete_sentence",
+          "order": 5,
+          "prompt": "这幅画儿画得太好了，画儿上的鱼______。",
+          "given": "简直",
+          "answer": "这幅画儿画得太好了，画儿上的鱼简直跟真的一样。",
+          "acceptable_answers": [
+            "这幅画儿画得太好了，画儿上的鱼简直跟真的一样。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "type": "complete_sentence",
+          "order": 6,
+          "prompt": "你啊，______。",
+          "given": "简直",
+          "answer": "你啊，简直是个小傻瓜。",
+          "acceptable_answers": [
+            "你啊，简直是个小傻瓜。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
+          "type": "complete_sentence",
+          "order": 7,
+          "prompt": "我又累又困，______。",
+          "given": "看着看着 / 听着听着",
+          "answer": "我又累又困，听着听着就睡着了。",
+          "acceptable_answers": [
+            "我又累又困，听着听着就睡着了。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
+          "type": "complete_sentence",
+          "order": 8,
+          "prompt": "你能帮助我______，不过我还是想自己把它干成。",
+          "given": "当然",
+          "answer": "你能帮助我当然好，不过我还是想自己把它干成。",
+          "acceptable_answers": [
+            "你能帮助我当然好，不过我还是想自己把它干成。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ/cấu trúc trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ/cấu trúc trong ngoặc để hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "type": "complete_dialogue",
+          "order": 1,
+          "prompt": "A：汉语最难学的不是语法，是词语的用法。\nB：当然。______。",
+          "given": "不过",
+          "answer": "A：汉语最难学的不是语法，是词语的用法。\nB：当然。不过，多练习就不难了。",
+          "acceptable_answers": [
+            "A：汉语最难学的不是语法，是词语的用法。\nB：当然。不过，多练习就不难了。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "type": "complete_dialogue",
+          "order": 2,
+          "prompt": "A：要是大家都去，你去不去？\nB：______。",
+          "given": "当然",
+          "answer": "A：要是大家都去，你去不去？\nB：当然去。",
+          "acceptable_answers": [
+            "A：要是大家都去，你去不去？\nB：当然去。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "type": "complete_dialogue",
+          "order": 3,
+          "prompt": "A：这种颜色的你喜欢吗？\nB：______。",
+          "given": "一点儿 + 也 / 都 + 不……",
+          "answer": "A：这种颜色的你喜欢吗？\nB：一点儿都不喜欢。",
+          "acceptable_answers": [
+            "A：这种颜色的你喜欢吗？\nB：一点儿都不喜欢。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "type": "complete_dialogue",
+          "order": 4,
+          "prompt": "A：昨天晚上我做了一个梦。\nB：______？",
+          "given": "梦",
+          "answer": "A：昨天晚上我做了一个梦。\nB：梦见什么？",
+          "acceptable_answers": [
+            "A：昨天晚上我做了一个梦。\nB：梦见什么？"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "type": "complete_dialogue",
+          "order": 5,
+          "prompt": "A：喝杯酒吧。\nB：谢谢！不过，我______。",
+          "given": "从 + 不",
+          "answer": "A：喝杯酒吧。\nB：谢谢！不过，我从不喝酒。",
+          "acceptable_answers": [
+            "A：喝杯酒吧。\nB：谢谢！不过，我从不喝酒。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "type": "complete_dialogue",
+          "order": 6,
+          "prompt": "A：刚才广播里说什么？\nB：说得太快，我______。",
+          "given": "简直",
+          "answer": "A：刚才广播里说什么？\nB：说得太快，我简直跟不上。",
+          "acceptable_answers": [
+            "A：刚才广播里说什么？\nB：说得太快，我简直跟不上。"
+          ],
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "type": "reorder_sentences",
+          "order": 1,
+          "items": [
+            {
+              "key": "A",
+              "text": "同时我还交了很多好朋友。"
+            },
+            {
+              "key": "B",
+              "text": "在中国待了一年多了，语言慢慢不再成为生活中的问题。"
+            },
+            {
+              "key": "C",
+              "text": "他们对我非常关心。"
+            },
+            {
+              "key": "D",
+              "text": "让我时时感到像在家一样的温暖。"
+            }
+          ],
+          "answer_order": [
+            "B",
+            "A",
+            "C",
+            "D"
+          ],
+          "answer_text": "在中国待了一年多了，语言慢慢不再成为生活中的问题。同时我还交了很多好朋友。他们对我非常关心。让我时时感到像在家一样的温暖。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "type": "reorder_sentences",
+          "order": 2,
+          "items": [
+            {
+              "key": "A",
+              "text": "一个人生活太孤单，没有依靠，如果出了问题，也没有人来帮助和安慰你。"
+            },
+            {
+              "key": "B",
+              "text": "男女双方只有结了婚，才可以合理地去养育他们的后代。"
+            },
+            {
+              "key": "C",
+              "text": "结婚是人类养育后代的一种合法的形式。"
+            },
+            {
+              "key": "D",
+              "text": "因此，我认为自己应该结婚。"
+            },
+            {
+              "key": "E",
+              "text": "不结婚只同居方便是方便，但总让人感觉到双方都不愿意负责任。"
+            }
+          ],
+          "answer_order": [
+            "A",
+            "D",
+            "C",
+            "B",
+            "E"
+          ],
+          "answer_text": "一个人生活太孤单，没有依靠，如果出了问题，也没有人来帮助和安慰你。因此，我认为自己应该结婚。结婚是人类养育后代的一种合法的形式。男女双方只有结了婚，才可以合理地去养育他们的后代。不结婚只同居方便是方便，但总让人感觉到双方都不愿意负责任。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "type": "error_correction",
+          "order": 1,
+          "prompt": "听了她的话，我心里很热乎乎。",
+          "answer": "听了她的话，我心里热乎乎的。",
+          "explanation_vi": "“热乎乎”这类状态形容词常用“热乎乎的”作谓语，前面不再加“很”。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "type": "error_correction",
+          "order": 2,
+          "prompt": "这是很当然的事，各国人都会这样。",
+          "answer": "这是很自然的事，各国人都会这样。",
+          "explanation_vi": "“当然”不能直接说“很当然的事”；这里应说“自然的事”。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "type": "error_correction",
+          "order": 3,
+          "prompt": "我昨天晚上做了一个梦，梦了我的朋友。",
+          "answer": "我昨天晚上做了一个梦，梦见了我的朋友。",
+          "explanation_vi": "“梦见”表示“mơ thấy”; 单独“梦了我的朋友”不自然。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "type": "error_correction",
+          "order": 4,
+          "prompt": "我分别朋友的时候，心里很难过。",
+          "answer": "我和朋友分别的时候，心里很难过。",
+          "explanation_vi": "“分别”表示 chia tay với ai 时要说“和……分别”。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "type": "error_correction",
+          "order": 5,
+          "prompt": "我不愿意太给你麻烦。",
+          "answer": "我不愿意太麻烦你。",
+          "explanation_vi": "“麻烦你”是动宾结构；不能说“给你麻烦”。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "type": "error_correction",
+          "order": 6,
+          "prompt": "他把我吃饭的样子拍照了下来。",
+          "answer": "他把我吃饭的样子拍了下来。",
+          "explanation_vi": "“拍下来”已经表示 chụp lại; 不说“拍照下来”。",
+          "source_origin": "textbook_answer_key_crosschecked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "下列句子什么情景下说？下列情景怎么说？",
+        "vi": "Các câu sau dùng trong tình huống nào? Gặp tình huống sau thì nói thế nào?"
+      },
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "下列句子什么情景下说？",
+          "questions": [
+            {
+              "id": "b00bd3d7-1351-42c4-a61b-914d4105a6cf",
+              "prompt": "想到这儿，就觉得自己很可笑。",
+              "answer_vi": "Dùng khi nhớ lại một suy nghĩ hoặc hành động trước đây của mình và cảm thấy lúc đó mình hơi ngây ngô, buồn cười, không chín chắn.",
+              "check_needed": false,
+              "answer_verified": true
+            },
+            {
+              "id": "fdfcbff6-4bcc-4a59-b36b-ebd42625faa3",
+              "prompt": "他已经失去了信心。",
+              "answer_vi": "Dùng khi một người gặp thất bại hoặc khó khăn nhiều lần, không còn tin rằng mình có thể tiếp tục hoặc thành công.",
+              "check_needed": false,
+              "answer_verified": true
+            },
+            {
+              "id": "54d97e15-3c49-43dc-aed4-e82a2d378f98",
+              "prompt": "这时，我心里真有点儿着急。",
+              "answer_vi": "Dùng khi gặp chuyện khó xử, không biết phải làm thế nào, trong lòng bắt đầu sốt ruột.",
+              "check_needed": false,
+              "answer_verified": true
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "d648081f-f5fc-472b-b31b-76142bdf6f9d",
+              "prompt": "朋友失去信心的时候，你要鼓励他 / 她。",
+              "answer": "别失去信心。失败了再来，坚持就是胜利。",
+              "answer_vi": "Đừng mất niềm tin. Thất bại rồi thì làm lại, kiên trì chính là thắng lợi.",
+              "check_needed": false,
+              "answer_verified": true
+            },
+            {
+              "id": "ce81c8f5-79ee-479c-835f-3817dfa43187",
+              "prompt": "看到朋友哭的时候，你要安慰他 / 她。",
+              "answer": "别难过。有什么困难可以告诉我，我会帮助你的。",
+              "answer_vi": "Đừng buồn. Có khó khăn gì có thể nói với tôi, tôi sẽ giúp bạn.",
+              "check_needed": false,
+              "answer_verified": true
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook_question_sample_answer_checked",
+      "answer_verified": true,
+      "check_needed": false
+    }
+  ]
+}

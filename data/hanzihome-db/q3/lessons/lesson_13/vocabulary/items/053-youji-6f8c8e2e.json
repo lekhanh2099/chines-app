@@ -1,0 +1,275 @@
+{
+  "id": "5f775456-ebfc-48fc-bb47-205494e6b65a",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "游记",
+  "pinyin": "yóujì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "reading"
+  ],
+  "meaning": {
+    "hanviet": "du ký",
+    "meaning_vi": "du ký, bài/sách ghi chép chuyến đi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "du ký",
+      "bài",
+      "sách ghi chép chuyến đi"
+    ],
+    "short_definition_vi": "du ký, bài/sách ghi chép chuyến đi",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "游",
+        "lishu_vi": "du",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "du ngoạn/di chuyển",
+        "modern_logic_vi": "Trong từ/cụm này, 游 góp phần vào nghĩa hiện đại: du ngoạn/di chuyển.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "记",
+        "lishu_vi": "ký",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói/ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "bản thân",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ghi nhớ/ghi chép",
+        "modern_logic_vi": "Trong từ/cụm này, 记 góp phần vào nghĩa hiện đại: ghi nhớ/ghi chép.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "游记 cần học theo nghĩa hiện đại trong bài: du ký, bài/sách ghi chép chuyến đi.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 写游记.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "472944ee-b628-4371-8eb7-4b27f8e2f816",
+      "order": 1,
+      "zh": "写游记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5dad8939-40f0-4a05-b8ac-71909804827c",
+      "order": 2,
+      "zh": "读游记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa5cf1ca-a40c-48a1-81c4-64ecd2c64a48",
+      "order": 3,
+      "zh": "探险游记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6613cafc-c3af-43a3-a984-c13c4ad54b3d",
+      "order": 1,
+      "zh": "他旅行回来以后，写了一篇游记。",
+      "pinyin": "Tā lǚxíng huílai yǐhòu, xiě le yì piān yóujì.",
+      "vi": "Sau khi đi du lịch về, anh ấy viết một bài du ký.",
+      "analysis_vi": "一篇 dùng cho bài viết.",
+      "highlight": [
+        "游记"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5f775456-ebfc-48fc-bb47-205494e6b65a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "15e562fa-f4a1-4829-8ef3-f155f5c963d4",
+      "order": 2,
+      "zh": "《徐霞客游记》记录了他游历各地的经历。",
+      "pinyin": "“Xú Xiákè Yóujì” jìlù le tā yóulì gèdì de jīnglì.",
+      "vi": "Từ Hà Khách du ký ghi lại trải nghiệm ông đi nhiều nơi.",
+      "analysis_vi": "记录经历 là ghi lại trải nghiệm.",
+      "highlight": [
+        "游记"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5f775456-ebfc-48fc-bb47-205494e6b65a"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "游记 trong truyền thống không chỉ là review du lịch, mà có thể chứa phong cảnh, cảm xúc, lịch sử, địa lý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8c5da041-6ee2-47c4-bbf3-eff9715a06a1",
+      "order": 1,
+      "rule_vi": "Dùng 游记 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "游记",
+    "back": "du ký, bài/sách ghi chép chuyến đi",
+    "hint": "yóujì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5f775456-ebfc-48fc-bb47-205494e6b65a",
+    "source_lesson_vocab_id": null
+  }
+}

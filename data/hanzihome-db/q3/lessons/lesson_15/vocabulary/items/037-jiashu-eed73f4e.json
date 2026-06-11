@@ -1,0 +1,273 @@
+{
+  "id": "37c56f67-c368-4b0d-8b5a-952381443bf7",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "家属",
+  "pinyin": "jiāshǔ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "gia thuộc",
+    "meaning_vi": "người nhà; thân nhân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người nhà",
+      "thân nhân"
+    ],
+    "short_definition_vi": "người nhà; thân nhân",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "家",
+        "lishu_vi": "",
+        "structure_note_vi": "家: nhà",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: nhà.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "属",
+        "lishu_vi": "",
+        "structure_note_vi": "属: thuộc về",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuộc về",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: thuộc về.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "家属 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 病人家属.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6277a48f-f376-4802-b235-e17e6bbdacd0",
+      "order": 1,
+      "zh": "病人家属",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d28af39e-1c7f-4ff9-b4a7-9fe7b8c0b997",
+      "order": 2,
+      "zh": "家属签字",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48f39c27-e589-46cc-8847-3e86f5739735",
+      "order": 3,
+      "zh": "通知家属",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4384e8b6-9256-4580-a427-1ec72a4ebdd6",
+      "order": 4,
+      "zh": "联系家属",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a51cfd86-7db2-41e4-8bb0-23a36f40d583",
+      "order": 1,
+      "zh": "医生让病人家属签字。",
+      "pinyin": "",
+      "vi": "Bác sĩ bảo người nhà bệnh nhân ký tên。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "家属"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37c56f67-c368-4b0d-8b5a-952381443bf7"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "91277078-a882-4bf7-81f1-4396f6a1272e",
+      "order": 2,
+      "zh": "老师急忙帮我联系家属。",
+      "pinyin": "",
+      "vi": "Thầy/cô vội giúp tôi liên lạc với người nhà。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "家属"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37c56f67-c368-4b0d-8b5a-952381443bf7"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "14bf5525-b09e-40da-978f-5cbf223c3d46",
+      "order": 1,
+      "rule_vi": "Đời thường nói 家人 tự nhiên hơn 家属。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đời thường nói 家人 tự nhiên hơn 家属。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "家属",
+    "back": "người nhà; thân nhân",
+    "hint": "jiāshǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "37c56f67-c368-4b0d-8b5a-952381443bf7",
+    "source_lesson_vocab_id": null
+  }
+}

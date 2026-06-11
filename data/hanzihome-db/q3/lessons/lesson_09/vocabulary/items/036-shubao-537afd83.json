@@ -1,0 +1,269 @@
+{
+  "id": "6e0a9eb7-5c71-4a96-9d1d-c3853af658ac",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "书包",
+  "pinyin": "shūbāo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thư bao",
+    "meaning_vi": "cặp sách, ba lô đi học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cặp sách, ba lô đi học"
+    ],
+    "short_definition_vi": "cặp sách, ba lô đi học",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "书",
+        "lishu_vi": "thư",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sách",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "包",
+        "lishu_vi": "bao",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "勹",
+            "hanviet": "bao",
+            "meaning_vi": "bao bọc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "勹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bao",
+              "radical_name_zh": "",
+              "hanviet": "bao",
+              "meaning_vi": "bao bọc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "túi, bao",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "勹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Bao",
+          "radical_name_zh": "",
+          "hanviet": "bao",
+          "meaning_vi": "bao bọc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "书包 là túi/cặp đựng sách vở.",
+    "memory_tip_vi": "Nhớ 背书包.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "背包",
+        "pinyin": "",
+        "meaning_vi": "背包",
+        "difference_vi": "背包 là ba lô nói chung; 书包 thiên về cặp học sinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "29d012ea-9093-451c-ab54-213f9a1cdec8",
+      "order": 1,
+      "zh": "一个书包",
+      "pinyin": "yí ge shūbāo",
+      "vi": "một cái cặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7dfdca43-b948-4dc4-8b83-7e7f4f0e4f69",
+      "order": 2,
+      "zh": "背书包",
+      "pinyin": "bēi shūbāo",
+      "vi": "đeo cặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56121a6d-315f-49b9-8e24-ce097d0a4a01",
+      "order": 3,
+      "zh": "新书包",
+      "pinyin": "xīn shūbāo",
+      "vi": "cặp mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "983ab234-7955-4a88-90b1-805fe888b102",
+      "order": 4,
+      "zh": "打开书包",
+      "pinyin": "dǎkāi shūbāo",
+      "vi": "mở cặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2861cfa1-7645-478e-9734-a231a44e749a",
+      "order": 1,
+      "zh": "我的书包很重。",
+      "pinyin": "Wǒ de shūbāo hěn zhòng.",
+      "vi": "Cặp sách của tôi rất nặng.",
+      "analysis_vi": "书包 làm chủ ngữ.",
+      "highlight": [
+        "书包"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6e0a9eb7-5c71-4a96-9d1d-c3853af658ac"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8bbad1ea-b1a0-47f0-8b7e-c01e349cf794",
+      "order": 2,
+      "zh": "他把书和本子都放进书包里，然后背着书包去上学。",
+      "pinyin": "Tā bǎ shū hé běnzi dōu fàng jìn shūbāo lǐ, ránhòu bēizhe shūbāo qù shàngxué.",
+      "vi": "Cậu ấy bỏ sách vở vào cặp rồi đeo cặp đi học.",
+      "analysis_vi": "把……放进……里 + 背着.",
+      "highlight": [
+        "书包"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6e0a9eb7-5c71-4a96-9d1d-c3853af658ac"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "背上书包 tượng trưng cho việc có cơ hội đi học.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "05a7712f-be39-45e0-8e99-3ee352979dbc",
+      "order": 1,
+      "rule_vi": "Không nhầm 书包 với 包子.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我要买一个包子上学。",
+          "pinyin": "Wǒ yào mǎi yí ge bāozi shàngxué.",
+          "vi": "Sai nếu muốn nói mua cặp đi học.",
+          "note_vi": "包子 là bánh bao.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我要买一个书包上学。",
+          "pinyin": "Wǒ yào mǎi yí ge shūbāo shàngxué.",
+          "vi": "Tôi muốn mua một cái cặp để đi học.",
+          "note_vi": "书包 là cặp sách.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "书包",
+    "back": "cặp sách, ba lô đi học",
+    "hint": "shūbāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6e0a9eb7-5c71-4a96-9d1d-c3853af658ac",
+    "source_lesson_vocab_id": null
+  }
+}

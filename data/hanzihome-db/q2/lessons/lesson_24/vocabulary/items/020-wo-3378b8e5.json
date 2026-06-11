@@ -1,0 +1,192 @@
+{
+  "id": "3c3d46e2-dd2b-435f-84e9-11f73ec73238",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "握",
+  "pinyin": "wò",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ác",
+    "meaning_vi": "nắm; cầm chặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nắm",
+      "cầm chặt"
+    ],
+    "short_definition_vi": "nắm; cầm chặt",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "握",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay; hành động bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay; hành động bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay; hành động bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "屋",
+            "hanviet": "ốc",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nắm; cầm chặt",
+        "modern_logic_vi": "Có 扌 nên là động tác bằng tay; 握 = nắm chặt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "握 = nắm; cầm chặt.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 握 cho cầm chung chung như 拿.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "28e07941-e247-4439-bcc3-9c19df40d0fb",
+      "order": 1,
+      "zh": "握",
+      "pinyin": "",
+      "vi": "nắm; cầm chặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9afbc130-ac0c-4414-bc0e-ecfc05c633e9",
+      "order": 1,
+      "zh": "老人握着警察的手，感动得说不出话来。",
+      "pinyin": "Lǎorén wòzhe jǐngchá de shǒu, gǎndòng de shuō bù chū huà lái.",
+      "vi": "Cụ già nắm tay cảnh sát, cảm động đến không nói nên lời.",
+      "analysis_vi": "Không dùng 握 cho cầm chung chung như 拿.",
+      "level": "basic",
+      "highlight": [
+        "握"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c3d46e2-dd2b-435f-84e9-11f73ec73238"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8010abe4-076f-457e-83a8-74f4bacaf3af",
+      "kind": "usage",
+      "text_vi": "Không dùng 握 cho cầm chung chung như 拿.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "握",
+    "back": "nắm; cầm chặt",
+    "hint": "wò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3c3d46e2-dd2b-435f-84e9-11f73ec73238",
+    "source_lesson_vocab_id": null
+  }
+}

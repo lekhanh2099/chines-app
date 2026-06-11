@@ -1,0 +1,218 @@
+{
+  "id": "a0a4eeaa-d185-4d74-bd19-706d69643429",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "延长",
+  "pinyin": "yáncháng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "diên trường",
+    "meaning_vi": "kéo dài, gia hạn",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "kéo dài, gia hạn",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "延",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kéo dài",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "长",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dài",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Làm cho dài hơn về thời gian hoặc độ dài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "延迟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trì hoãn, làm muộn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "推迟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dời mốc thời gian",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拖延",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trì hoãn dây dưa, tiêu cực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "缩短",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rút ngắn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a98dc52a-34c9-47cc-8106-d68cc5d0b198",
+      "order": 1,
+      "zh": "延长时间",
+      "pinyin": "",
+      "vi": "kéo dài thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "454ec048-ecb7-4a68-8724-981a06e4a77d",
+      "order": 2,
+      "zh": "延长练习时间",
+      "pinyin": "",
+      "vi": "kéo dài thời gian luyện tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec62dcfa-fda4-472e-ab29-370b6ee3a52a",
+      "order": 3,
+      "zh": "延长十分钟",
+      "pinyin": "",
+      "vi": "kéo dài thêm mười phút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5be92f22-2c53-431d-9b65-3e80f798d9e1",
+      "order": 1,
+      "zh": "老师把考试时间延长了十分钟。",
+      "pinyin": "Lǎoshī bǎ kǎoshì shíjiān yáncháng le shí fēnzhōng.",
+      "vi": "Thầy/cô kéo dài thời gian thi thêm mười phút.",
+      "en": "",
+      "highlight": [
+        "延长"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a0a4eeaa-d185-4d74-bd19-706d69643429"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Thông báo hay có 延长报名时间 / 延长开放时间.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9b34e679-da4e-4c5d-9348-3a8f8b35455d",
+      "order": 1,
+      "title_vi": "Phân biệt với 推迟/拖延",
+      "explanation_vi": "延长 là kéo dài thời lượng; 推迟 là dời mốc; 拖延 thường tiêu cực.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "考试时间延长十分钟。",
+        "考试推迟到明天。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "延长",
+    "back": "kéo dài, gia hạn",
+    "hint": "yáncháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "延长"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a0a4eeaa-d185-4d74-bd19-706d69643429",
+    "source_lesson_vocab_id": null
+  }
+}

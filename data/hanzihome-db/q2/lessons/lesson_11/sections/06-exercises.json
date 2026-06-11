@@ -1,0 +1,1293 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "note_vi": "Mục 写汉字 trong PDF được tách sang section character_writing, không tính trong 10 exercise tương tác."
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读下列短语。",
+        "vi": "Phân biệt âm/thanh điệu; đọc các cụm sau."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "listening"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "919b7e83-fcbe-4884-ba05-af2ff9f6460f",
+              "text": "dǎoyóu / dǎoliú / xūyào / xǐyào"
+            },
+            {
+              "id": "6707d0ad-7f88-42cc-b030-fc48791d5f82",
+              "text": "lìyòng / lǐyóu / lǎobǎn / rǎoluàn"
+            },
+            {
+              "id": "5eca3d0c-dacb-4228-8ad7-976834e72370",
+              "text": "yánjiū / yān jiū / zìyóu / jí yóu"
+            }
+          ]
+        },
+        {
+          "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
+          "type": "read_aloud_chunks",
+          "title": "朗读",
+          "items": [
+            "研究问题",
+            "研究语言",
+            "研究文化",
+            "认真研究",
+            "高高兴兴",
+            "漂漂亮亮",
+            "马马虎虎",
+            "清清楚楚",
+            "一听就懂",
+            "一看就会",
+            "一说就知道",
+            "一感冒就发烧",
+            "一感冒就咳嗽",
+            "一喝咖啡就睡不好觉",
+            "一下课就吃饭",
+            "一下课就回宿舍",
+            "一做完练习就看电视"
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": false
+      }
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế",
+      "instruction": {
+        "zh": "按照例句替换练习。",
+        "vi": "Thay thế theo mẫu câu."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar",
+        "speaking"
+      ],
+      "items": [
+        {
+          "id": "1c61da44-6e11-476e-852f-6a34ae01f606",
+          "title": "你是什么时候去的北京？",
+          "pattern_dialogue": [
+            "A：你去过北京了吗？",
+            "B：去过了。",
+            "A：你是什么时候去的北京？",
+            "B：我是上个星期去的。"
+          ],
+          "prompts": [
+            [
+              "银行",
+              "上午"
+            ],
+            [
+              "香港",
+              "上个月"
+            ],
+            [
+              "大使馆",
+              "上星期"
+            ],
+            [
+              "王老师家",
+              "昨天晚上"
+            ],
+            [
+              "医院",
+              "前天上午"
+            ],
+            [
+              "颐和园",
+              "星期日"
+            ]
+          ]
+        },
+        {
+          "id": "a3f54ebc-9d38-4303-9b3e-4f64dece2e8f",
+          "title": "她是从哪儿来的？",
+          "pattern_dialogue": [
+            "A：她是从哪儿来的？",
+            "B：她是从德国来的。",
+            "A：她是一个人来的吗？",
+            "B：不是，她是跟旅游团一起来的。"
+          ],
+          "prompts": [
+            [
+              "美国",
+              "朋友"
+            ],
+            [
+              "日本",
+              "她爱人"
+            ],
+            [
+              "香港",
+              "参观团"
+            ],
+            [
+              "加拿大",
+              "公司经理"
+            ],
+            [
+              "韩国",
+              "体育代表团"
+            ],
+            [
+              "意大利",
+              "她爸爸"
+            ]
+          ]
+        },
+        {
+          "id": "cf69bd0f-0320-4b0a-af9b-0de4a0439338",
+          "title": "你们是怎么去的？",
+          "pattern_dialogue": [
+            "A：你们去博物馆了吗？",
+            "B：去了。",
+            "A：你们是怎么去的？",
+            "B：我们是坐汽车去的。"
+          ],
+          "prompts": [
+            [
+              "体育馆",
+              "骑车"
+            ],
+            [
+              "展览馆",
+              "开车"
+            ],
+            [
+              "书店",
+              "走路"
+            ],
+            [
+              "西安",
+              "坐高铁"
+            ],
+            [
+              "法国",
+              "坐飞机"
+            ]
+          ]
+        },
+        {
+          "id": "18edaf60-ac2a-40e3-9509-f842c237699e",
+          "title": "你是来留学的吗？",
+          "pattern_dialogue": [
+            "A：你是来留学的吗？",
+            "B：不是。我是来旅行的。"
+          ],
+          "prompts": [
+            [
+              "旅行",
+              "参加比赛"
+            ],
+            [
+              "借书",
+              "还书"
+            ],
+            [
+              "参加比赛",
+              "看比赛"
+            ],
+            [
+              "学习语言",
+              "学习中医"
+            ],
+            [
+              "参观",
+              "照相"
+            ],
+            [
+              "报名",
+              "考试"
+            ]
+          ]
+        },
+        {
+          "id": "bba3fcfd-6eab-443c-af2b-20f3f27801e0",
+          "title": "你的汉语是在哪儿学的？",
+          "pattern_dialogue": [
+            "A：你的汉语是在哪儿学的？",
+            "B：在我们大学学的。",
+            "B：我的汉语是在我们大学学的。"
+          ],
+          "prompts": [
+            [
+              "这个箱子",
+              "买",
+              "中国"
+            ],
+            [
+              "这本书",
+              "买",
+              "书店"
+            ],
+            [
+              "这件衣服",
+              "做",
+              "北京"
+            ],
+            [
+              "研讨会",
+              "举行",
+              "台湾"
+            ],
+            [
+              "电影节",
+              "举行",
+              "上海"
+            ],
+            [
+              "晚会",
+              "举行",
+              "礼堂"
+            ]
+          ]
+        },
+        {
+          "id": "61cda0e3-2151-49a6-84e3-7e7d07244ad9",
+          "title": "一看就知道我是老外。",
+          "pattern_dialogue": [
+            "一看就知道我是老外。"
+          ],
+          "prompts": [
+            [
+              "听",
+              "知道他是南方人"
+            ],
+            [
+              "听",
+              "喜欢这首歌"
+            ],
+            [
+              "用",
+              "觉得不错"
+            ],
+            [
+              "看",
+              "知道好不好"
+            ],
+            [
+              "喝",
+              "知道是什么茶"
+            ],
+            [
+              "摸脉",
+              "知道你有什么病"
+            ]
+          ]
+        }
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.substitution_drill.v2"
+      }
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "word_bank": [
+        "陪",
+        "组织",
+        "希望",
+        "风光",
+        "收集",
+        "互相",
+        "研究",
+        "老板",
+        "利用",
+        "需要"
+      ],
+      "questions": [
+        {
+          "id": "b362c1ea-3689-4ada-9dd0-97785b6af429",
+          "type": "fill_blank",
+          "prompt": "丹尼斯________的是中国的孔子。",
+          "answer": "研究",
+          "acceptable_answers": [
+            "研究"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "1204fb6b-3cf3-4d2a-bf6b-08bc7601046d",
+          "type": "fill_blank",
+          "prompt": "她常________暑假去一家公司打工。",
+          "answer": "利用",
+          "acceptable_answers": [
+            "利用"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e18f364f-865b-439d-8bab-49d6120ea100",
+          "type": "fill_blank",
+          "prompt": "我这次来是为写论文________资料的。",
+          "answer": "收集",
+          "acceptable_answers": [
+            "收集"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3767e733-f785-4822-ab06-11f68e0b1335",
+          "type": "fill_blank",
+          "prompt": "学好一门外语________时间，着急是不行的。",
+          "answer": "需要",
+          "acceptable_answers": [
+            "需要"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "aafa86f8-cbfc-429f-b1e9-0db7521d2599",
+          "type": "fill_blank",
+          "prompt": "他现在已经是一家大公司的________了。",
+          "answer": "老板",
+          "acceptable_answers": [
+            "老板"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6c2ba85b-869d-4f58-87d9-074c3fb5ed6d",
+          "type": "fill_blank",
+          "prompt": "我________毕业以后能当翻译。",
+          "answer": "希望",
+          "acceptable_answers": [
+            "希望"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "0a6a84b7-d9c5-4eaa-adcb-62e1b6f985e5",
+          "type": "fill_blank",
+          "prompt": "她这次是________代表团来的。",
+          "answer": "陪",
+          "acceptable_answers": [
+            "陪"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9b78b279-2b5a-4181-9939-86f65b3cdddb",
+          "type": "fill_blank",
+          "prompt": "我们班的同学都能________帮助，________学习。",
+          "answer": "互相；互相",
+          "acceptable_answers": [
+            "互相；互相"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "da811ea4-67e5-4590-877b-4dd02f617e92",
+          "type": "fill_blank",
+          "prompt": "坐高铁去可以看看铁路两边的________。",
+          "answer": "风光",
+          "acceptable_answers": [
+            "风光"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "40b12e98-eef9-4cf6-9a1c-b795e449da2e",
+          "type": "fill_blank",
+          "prompt": "学校________我们去南方旅行了一趟，去了好多地方。",
+          "answer": "组织",
+          "acceptable_answers": [
+            "组织"
+          ],
+          "explanation_vi": "",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "vocabulary",
+        "grammar"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "communication_dialogue",
+      "variant": "substitution_dialogue",
+      "order": 4,
+      "title": "四、按照例句做会话练习",
+      "title_vi": "Luyện hội thoại theo ví dụ",
+      "instruction": {
+        "zh": "按照例句做会话练习。",
+        "vi": "Dựa theo ví dụ, luyện hội thoại."
+      },
+      "model_dialogue": [
+        "A：丹尼斯是什么时候来的？",
+        "B：前天。",
+        "A：她是从哪儿来的？",
+        "B：她是从深圳来的。",
+        "A：她是怎么来的？",
+        "B：坐高铁来的。",
+        "A：她是一个人来的吗？",
+        "B：不是，她是跟旅游团一起来的。"
+      ],
+      "data_headers": [
+        "人物",
+        "什么时间",
+        "从哪儿来",
+        "怎么来的",
+        "跟谁来的"
+      ],
+      "rows": [
+        [
+          "玛丽",
+          "去年九月",
+          "英国",
+          "坐飞机",
+          "同学"
+        ],
+        [
+          "小张",
+          "上个月",
+          "上海",
+          "坐高铁",
+          "旅游团"
+        ],
+        [
+          "你哥哥",
+          "早上",
+          "旅行社",
+          "坐出租车",
+          "老板"
+        ],
+        [
+          "小王",
+          "上午",
+          "学校",
+          "骑自行车",
+          "朋友"
+        ],
+        [
+          "秘书",
+          "八点",
+          "外贸公司",
+          "开车",
+          "经理"
+        ]
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "grammar"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.dialogue_substitution.v2"
+      }
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "answer_questions",
+      "variant": "actual_situation_questions",
+      "order": 5,
+      "title": "五、根据实际情况回答问题",
+      "title_vi": "Trả lời theo tình hình thực tế",
+      "instruction": {
+        "zh": "根据实际情况回答问题。",
+        "vi": "Trả lời theo tình hình thực tế."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "type": "open_answer",
+          "prompt": "你是什么时候来中国的？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "type": "open_answer",
+          "prompt": "你是从哪国来的？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "type": "open_answer",
+          "prompt": "你以前来过中国吗？这是第几次？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "type": "open_answer",
+          "prompt": "你是怎么来的？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "type": "open_answer",
+          "prompt": "你是一个人来的吗？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "type": "open_answer",
+          "prompt": "来中国以前你工作过没有？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+          "type": "open_answer",
+          "prompt": "你学过哪几门外语？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+          "type": "open_answer",
+          "prompt": "你是在哪儿学的？",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "writing"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.open_answer.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "complete_dialogue",
+      "variant": "interview_dialogue",
+      "order": 6,
+      "title": "六、你是记者，请对 B 进行采访",
+      "title_vi": "Bạn là phóng viên, hãy phỏng vấn B",
+      "instruction": {
+        "zh": "你是记者，请对 B 进行采访。",
+        "vi": "Bạn là phóng viên, hãy phỏng vấn B."
+      },
+      "dialogue_lines": [
+        {
+          "speaker": "A",
+          "text": "________________！"
+        },
+        {
+          "speaker": "B",
+          "text": "你好！"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "昨天刚到的。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "我是从英国来的。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "不，我是跟我女儿一起来的。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "我女儿在中国留学。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "我来参加一个研讨会。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "我觉得很好。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________？"
+        },
+        {
+          "speaker": "B",
+          "text": "我已经来过中国很多次了，所以没有不习惯的问题。"
+        },
+        {
+          "speaker": "A",
+          "text": "________________。"
+        },
+        {
+          "speaker": "B",
+          "text": "不客气！"
+        }
+      ],
+      "answer_key": [
+        {
+          "blank_index": 1,
+          "acceptable_answers": [
+            "你好！"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 2,
+          "acceptable_answers": [
+            "你是什么时候来的？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 3,
+          "acceptable_answers": [
+            "你是从哪儿来的？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 4,
+          "acceptable_answers": [
+            "你是一个人来的吗？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 5,
+          "acceptable_answers": [
+            "你女儿在中国做什么？",
+            "你女儿为什么在中国？",
+            "你女儿是在中国留学吗？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 6,
+          "acceptable_answers": [
+            "你来中国做什么？",
+            "你这次来中国是做什么的？",
+            "你是来参加研讨会的吗？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 7,
+          "acceptable_answers": [
+            "你觉得中国怎么样？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 8,
+          "acceptable_answers": [
+            "你习惯中国的生活吗？"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank_index": 9,
+          "acceptable_answers": [
+            "谢谢你接受采访。",
+            "谢谢你的回答。"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "conversation"
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false,
+      "answer_verified": true,
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 7,
+      "title": "七、完成句子",
+      "title_vi": "Hoàn thành câu",
+      "instruction": {
+        "zh": "完成句子。",
+        "vi": "Hoàn thành câu."
+      },
+      "example": "下午一到四点我就去操场锻炼身体。",
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "type": "free_completion",
+          "prompt": "我每天一起床就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "type": "free_completion",
+          "prompt": "她一到冬天就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "type": "free_completion",
+          "prompt": "她一感到寂寞就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "type": "free_completion",
+          "prompt": "他一喝酒就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "type": "free_completion",
+          "prompt": "这种花儿一到夏天就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "type": "free_completion",
+          "prompt": "我一喝咖啡就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
+          "type": "free_completion",
+          "prompt": "他一下课就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
+          "type": "free_completion",
+          "prompt": "她一感冒就________________。",
+          "grading": {
+            "mode": "manual"
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar",
+        "writing"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "allow_manual_check": true
+      },
+      "answer_verified": true
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 8,
+      "title": "八、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "type": "error_correction",
+          "prompt": "你是什么时候来了中国？",
+          "answer": "你是什么时候来中国的？",
+          "acceptable_answers": [
+            "你是什么时候来中国的？",
+            "你是什么时候来的中国？"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "type": "error_correction",
+          "prompt": "我是在操场看见了玛丽的。",
+          "answer": "我是在操场看见玛丽的。",
+          "acceptable_answers": [
+            "我是在操场看见玛丽的。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "type": "error_correction",
+          "prompt": "他是今年九月来中国了。",
+          "answer": "他是今年九月来中国的。",
+          "acceptable_answers": [
+            "他是今年九月来中国的。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "type": "error_correction",
+          "prompt": "我来中国不是坐高铁的。",
+          "answer": "我不是坐高铁来中国的。",
+          "acceptable_answers": [
+            "我不是坐高铁来中国的。",
+            "我来中国不是坐高铁来的。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+          "type": "error_correction",
+          "prompt": "她是前天下午到了上海。",
+          "answer": "她是前天下午到上海的。",
+          "acceptable_answers": [
+            "她是前天下午到上海的。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+          "type": "error_correction",
+          "prompt": "我汉字写得很马马虎虎。",
+          "answer": "我汉字写得马马虎虎。",
+          "acceptable_answers": [
+            "我汉字写得马马虎虎。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "a38bba23-f596-4371-82c0-14a75cbc3dee",
+          "type": "error_correction",
+          "prompt": "我们是坐公共汽车到博物馆去的参观。",
+          "answer": "我们是坐公共汽车到博物馆去参观的。",
+          "acceptable_answers": [
+            "我们是坐公共汽车到博物馆去参观的。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        },
+        {
+          "id": "97b922c5-eca7-4c57-817f-978352efaddc",
+          "type": "error_correction",
+          "prompt": "我是跟朋友一起去大使馆。",
+          "answer": "我是跟朋友一起去大使馆的。",
+          "acceptable_answers": [
+            "我是跟朋友一起去大使馆的。"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_answer_checked",
+          "check_needed": false
+        }
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar",
+        "writing"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 9,
+      "title": "九、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp."
+      },
+      "dialogs": [
+        {
+          "id": "e146a0d0-9909-41c9-b0e3-5b4fe2d87991",
+          "title": "强调",
+          "function_en": "Emphasizing",
+          "lines": [
+            "A：你去过天津了吗？",
+            "B：去过了。",
+            "A：你是怎么去的？",
+            "B：坐高铁去的。",
+            "A：是一个人去的吗？",
+            "B：不是，我是跟爱德华一起去的。"
+          ]
+        },
+        {
+          "id": "81cfdafd-6808-4d1e-93a6-4e464ac94912",
+          "title": "迎接",
+          "function_en": "Meeting people",
+          "lines": [
+            "A：请问，你是从美国来的杰克先生吗？",
+            "B：是。",
+            "A：我是和平旅行社的，是来接您的。",
+            "B：是吗？谢谢您！",
+            "A：不客气！车在外边呢，我们出去吧。"
+          ]
+        }
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "communication"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.role_play.v2"
+      }
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "reading_comprehension",
+      "variant": "retell_text",
+      "order": 10,
+      "title": "十、读后说",
+      "title_vi": "Đọc xong rồi kể lại",
+      "instruction": {
+        "zh": "读后说。",
+        "vi": "Đọc xong rồi kể lại."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "兼",
+          "pinyin": "jiān",
+          "meaning_vi": "kiêm; đồng thời đảm nhiệm",
+          "pos": "Động từ / Phó từ",
+          "pos_detail": {
+            "vi": "Động từ / Phó từ",
+            "cn": "动词 / 副词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": [
+              "Trong 导游兼翻译, 兼 nghĩa là kiêm hai vai trò."
+            ]
+          },
+          "notes": [
+            "Trong 导游兼翻译, 兼 nghĩa là kiêm hai vai trò."
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "课题",
+          "pinyin": "kètí",
+          "meaning_vi": "đề tài; chủ đề nghiên cứu / thảo luận",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": [],
+          "check_needed": false
+        },
+        {
+          "hanzi": "与",
+          "pinyin": "yǔ",
+          "meaning_vi": "và; với",
+          "pos": "Liên từ / Giới từ",
+          "pos_detail": {
+            "vi": "Liên từ / Giới từ",
+            "cn": "连词 / 介词",
+            "normalized": "conjunction",
+            "schema_compatible_pos": "conjunction",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": [
+              "Trong 《孔子与中国》, 与 dùng trang trọng hơn 和, nghĩa là “và”."
+            ]
+          },
+          "notes": [
+            "Trong 《孔子与中国》, 与 dùng trang trọng hơn 和, nghĩa là “và”."
+          ],
+          "check_needed": false
+        }
+      ],
+      "passage": {
+        "id": "242c0f58-eb1b-49ee-b3ac-c28e7ad90d6a",
+        "zh": "我是前天到的北京，两年前曾经在中国学过汉语，是王老师的学生。这次我不是来学习的，是来旅行的。我不是一个人来的，是跟旅行团一起来的。我是旅行团的导游兼翻译。我现在还没有工作，在读研究生，研究的课题是《孔子与中国》，业余时间或寒暑假到一个旅行社去打工。这次，他们组织了一个旅游团，老板就让我陪团来了。他知道我需要经常来中国收集资料，所以，一有来中国的旅游团，就安排我陪团来。我们先到的香港，在香港玩儿了三天，又去了深圳，前天是从深圳坐高铁过来的。原来打算坐飞机，但是旅行团的人都没有坐过中国的高铁，很想坐坐，看看铁路两边的风光。旅行团后天就回去了，我跟老板说好了，晚回去几天，等送他们上了飞机，我要到孔子的故乡去一趟。今天下午是自由活动时间，来看看王老师。",
+        "vi": "Tôi đến Bắc Kinh hôm kia. Hai năm trước tôi từng học tiếng Hán ở Trung Quốc và là học trò của thầy Vương. Lần này tôi không đến để học mà đến du lịch. Tôi không đi một mình, mà đi cùng đoàn du lịch. Tôi là hướng dẫn viên kiêm phiên dịch của đoàn. Hiện tôi chưa đi làm, đang học cao học; đề tài nghiên cứu là “Khổng Tử và Trung Quốc”. Thời gian ngoài giờ hoặc dịp nghỉ đông/nghỉ hè, tôi đến một công ty du lịch làm thêm. Lần này họ tổ chức một đoàn du lịch, ông chủ liền để tôi đi theo đoàn đến đây. Ông ấy biết tôi cần thường xuyên đến Trung Quốc thu thập tài liệu, nên hễ có đoàn du lịch đến Trung Quốc là sắp xếp cho tôi đi theo đoàn. Chúng tôi đến Hồng Kông trước, chơi ở Hồng Kông ba ngày, rồi lại đi Thâm Quyến; hôm kia chúng tôi từ Thâm Quyến đi tàu cao tốc tới đây. Ban đầu dự định đi máy bay, nhưng người trong đoàn chưa từng đi tàu cao tốc Trung Quốc, rất muốn thử ngồi và ngắm phong cảnh hai bên đường sắt. Đoàn du lịch ngày kia sẽ về. Tôi đã bàn xong với ông chủ là về muộn vài ngày; đợi tiễn họ lên máy bay rồi, tôi muốn đến quê hương Khổng Tử một chuyến. Chiều nay là thời gian hoạt động tự do, nên tôi đến thăm thầy Vương.",
+        "source_origin": "textbook_checked",
+        "check_needed": false,
+        "pinyin": "Wǒ shì qiántiān dào de Běijīng, liǎng nián qián céngjīng zài Zhōngguó xué guo Hànyǔ, shì Wáng lǎoshī de xuésheng. Zhè cì wǒ bú shì lái xuéxí de, shì lái lǚxíng de. Wǒ bú shì yí ge rén lái de, shì gēn lǚxíngtuán yìqǐ lái de. Wǒ shì lǚxíngtuán de dǎoyóu jiān fānyì. Wǒ xiànzài hái méiyǒu gōngzuò, zài dú yánjiūshēng, yánjiū de kètí shì “Kǒngzǐ yǔ Zhōngguó”, yèyú shíjiān huò hánshǔjià dào yí ge lǚxíngshè qù dǎ gōng. Zhè cì, tāmen zǔzhī le yí ge lǚyóutuán, lǎobǎn jiù ràng wǒ péi tuán lái le. Tā zhīdào wǒ xūyào jīngcháng lái Zhōngguó shōují zīliào, suǒyǐ, yì yǒu lái Zhōngguó de lǚyóutuán, jiù ānpái wǒ péi tuán lái. Wǒmen xiān dào de Xiānggǎng, zài Xiānggǎng wánr le sān tiān, yòu qù le Shēnzhèn, qiántiān shì cóng Shēnzhèn zuò gāotiě guòlái de. Yuánlái dǎsuàn zuò fēijī, dànshì lǚxíngtuán de rén dōu méi yǒu zuò guo Zhōngguó de gāotiě, hěn xiǎng zuòzuo, kànkan tiělù liǎng biān de fēngguāng. Lǚxíngtuán hòutiān jiù huíqù le, wǒ gēn lǎobǎn shuō hǎo le, wǎn huíqù jǐ tiān, děng sòng tāmen shàng le fēijī, wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng. Jīntiān xiàwǔ shì zìyóu huódòng shíjiān, lái kànkan Wáng lǎoshī."
+      },
+      "retell_prompts": [
+        "“我”是什么时候到北京的？",
+        "“我”以前在中国做过什么？",
+        "这次“我”是来学习的吗？",
+        "“我”是跟谁一起来的？",
+        "“我”现在在做什么？研究什么课题？",
+        "老板为什么常安排“我”陪团来中国？",
+        "旅行团先去了哪儿？后来怎么到北京？",
+        "旅行团什么时候回去？“我”为什么晚几天回去？"
+      ],
+      "difficulty": "normal",
+      "skill_focus": [
+        "reading",
+        "speaking",
+        "retell"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+        "renderer": "exercise.read_and_retell.v2"
+      },
+      "answer_verified": true,
+      "answer_key": [
+        {
+          "question_index": 1,
+          "answer_zh": "“我”是前天到北京的。",
+          "answer_vi": "“Tôi” đến Bắc Kinh hôm kia.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 2,
+          "answer_zh": "两年前“我”曾经在中国学过汉语，是王老师的学生。",
+          "answer_vi": "Hai năm trước “tôi” từng học tiếng Hán ở Trung Quốc và là học trò của thầy Vương.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 3,
+          "answer_zh": "不是，“我”不是来学习的，是来旅行的。",
+          "answer_vi": "Không. “Tôi” không đến để học, mà đến du lịch.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 4,
+          "answer_zh": "“我”是跟旅行团一起来的。",
+          "answer_vi": "“Tôi” đi cùng đoàn du lịch đến.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 5,
+          "answer_zh": "“我”现在在读研究生，研究的课题是《孔子与中国》。",
+          "answer_vi": "“Tôi” hiện đang học cao học; đề tài nghiên cứu là “Khổng Tử và Trung Quốc”.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 6,
+          "answer_zh": "因为老板知道“我”需要经常来中国收集资料。",
+          "answer_vi": "Vì ông chủ biết “tôi” cần thường xuyên đến Trung Quốc thu thập tài liệu.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 7,
+          "answer_zh": "旅行团先去了香港，在香港玩儿了三天，又去了深圳，后来从深圳坐高铁到北京。",
+          "answer_vi": "Đoàn du lịch trước tiên đi Hồng Kông, chơi ở đó ba ngày, rồi đi Thâm Quyến; sau đó từ Thâm Quyến đi tàu cao tốc đến Bắc Kinh.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_index": 8,
+          "answer_zh": "旅行团后天回去。“我”要晚几天回去，因为等送他们上了飞机以后，要到孔子的故乡去一趟。",
+          "answer_vi": "Đoàn du lịch ngày kia về. “Tôi” sẽ về muộn vài ngày vì sau khi tiễn họ lên máy bay, “tôi” muốn đến quê hương Khổng Tử một chuyến.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

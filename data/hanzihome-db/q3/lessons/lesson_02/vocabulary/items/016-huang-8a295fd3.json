@@ -1,0 +1,281 @@
+{
+  "id": "fc528459-f9ef-4e6c-92a2-676c3bbd76d2",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "黄",
+  "pinyin": "huáng",
+  "pos": {
+    "raw_vi": "Tính từ / danh từ / họ",
+    "raw_cn": "形/名/姓",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "color"
+  ],
+  "meaning": {
+    "hanviet": "Hoàng",
+    "meaning_vi": "màu vàng; họ Hoàng; nghĩa mở rộng khẩu ngữ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "màu vàng; họ Hoàng; nghĩa mở rộng khẩu ngữ"
+    ],
+    "short_definition_vi": "màu vàng; họ Hoàng; nghĩa mở rộng khẩu ngữ",
+    "textbook_focus_vi": "màu vàng; họ Hoàng; nghĩa mở rộng khẩu ngữ",
+    "register_vi": "",
+    "usage_domain_vi": "color",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "黄",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "màu vàng; họ Hoàng; nghĩa mở rộng khẩu ngữ",
+        "modern_logic_vi": "Chữ độc thể/bộ Hoàng, không nên tách sâu để suy nghĩa hiện đại.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Chữ độc thể/bộ Hoàng, không nên tách sâu để suy nghĩa hiện đại.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "黄色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "金色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "红",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "蓝",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "绿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dd077d43-75a6-49e6-885c-f7b30ac959d1",
+      "order": 1,
+      "zh": "黄色",
+      "pinyin": "",
+      "vi": "màu vàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f3827d2-1453-4f38-9729-1fe8d731e33c",
+      "order": 2,
+      "zh": "黄衣服",
+      "pinyin": "",
+      "vi": "áo vàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba5f3002-ed6c-47e7-ada7-a7e630ca5611",
+      "order": 3,
+      "zh": "黄头发",
+      "pinyin": "",
+      "vi": "tóc vàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "49c17297-c315-47c9-bf59-7f2fda86764b",
+      "order": 4,
+      "zh": "黄河",
+      "pinyin": "",
+      "vi": "Hoàng Hà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4ec1cbe-90d4-44c1-8e8f-719022221334",
+      "order": 5,
+      "zh": "蛋黄",
+      "pinyin": "",
+      "vi": "lòng đỏ trứng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6605781a-ffb6-4ed2-891f-2840d8ba3944",
+      "order": 6,
+      "zh": "事情黄了",
+      "pinyin": "",
+      "vi": "việc hỏng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "64d783b3-8712-4c1b-addc-e1612e13ad36",
+      "order": 1,
+      "zh": "她今天穿了一件黄色的衣服。",
+      "pinyin": "Tā jīntiān chuān le yí jiàn huángsè de yīfu.",
+      "vi": "Hôm nay cô ấy mặc một chiếc áo màu vàng.",
+      "analysis_vi": "黄色的衣服 = áo màu vàng.",
+      "highlight": [
+        "黄"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fc528459-f9ef-4e6c-92a2-676c3bbd76d2"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bc8bea2a-b94f-4957-8091-a06ac51423be",
+      "order": 2,
+      "zh": "我本来想参加课外活动，可是突然下雨，活动就黄了。",
+      "pinyin": "Wǒ běnlái xiǎng cānjiā kèwài huódòng, kěshì tūrán xià yǔ, huódòng jiù huáng le.",
+      "vi": "Tôi vốn định tham gia hoạt động ngoại khóa, nhưng trời mưa đột ngột nên hoạt động bị bể.",
+      "analysis_vi": "黄了 là khẩu ngữ nghĩa kế hoạch hỏng.",
+      "highlight": [
+        "黄"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fc528459-f9ef-4e6c-92a2-676c3bbd76d2"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "黄色 trong một số cụm có nghĩa nội dung khiêu dâm, không phải màu vàng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6042ee90-968b-4196-96ce-05c80e607e48",
+      "order": 1,
+      "rule_vi": "黄色小说 không phải “truyện màu vàng”; 事情黄了 là kế hoạch hỏng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "事情黄了。",
+          "pinyin": "Shìqing huáng le.",
+          "vi": "Việc hỏng rồi.",
+          "note_vi": "Nghĩa khẩu ngữ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "黄",
+    "back": "màu vàng; họ Hoàng; nghĩa mở rộng khẩu ngữ",
+    "hint": "huáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "color"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fc528459-f9ef-4e6c-92a2-676c3bbd76d2",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "id": "2a24d8e8-00c5-4954-8b11-2521e7dff7a1",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "暗",
+  "pinyin": "àn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Ám",
+    "meaning_vi": "tối; ngầm, kín, không công khai",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tối; ngầm, kín, không công khai"
+    ],
+    "short_definition_vi": "tối; ngầm, kín, không công khai",
+    "textbook_focus_vi": "tối; ngầm, kín, không công khai",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "暗",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "音",
+            "hanviet": "âm",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tối, thiếu sáng; ngầm/kín",
+        "modern_logic_vi": "Học theo cặp 暗 ↔ 亮.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "暗 có bộ 日, liên quan đến mặt trời/ánh sáng. Lõi nghĩa hiện đại: ánh sáng không đủ, nhìn không rõ. → 房间很暗 = phòng rất tối. → 灯太暗 = đèn quá mờ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "黑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đen; tối đen.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sáng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "阴暗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "âm u, tối tăm hơn, sắc thái nặng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "亮",
+        "right": "暗",
+        "meaning_vi": "sáng ↔ tối",
+        "note_vi": "sáng ↔ tối",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "暗: tối, mờ, thiếu sáng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "23093596-ef34-412d-8e09-773225dbc1d8",
+      "order": 1,
+      "zh": "房间很暗",
+      "pinyin": "",
+      "vi": "phòng rất tối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2eddda24-b7f9-4ea3-9742-2c21aa015771",
+      "order": 2,
+      "zh": "灯光太暗",
+      "pinyin": "",
+      "vi": "ánh đèn quá mờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f56a2359-0059-48ea-b964-b1c63c2e0acb",
+      "order": 3,
+      "zh": "有点儿暗",
+      "pinyin": "",
+      "vi": "hơi tối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "048b7c84-8b8c-47dc-ab37-75b353c1a478",
+      "order": 4,
+      "zh": "暗下来",
+      "pinyin": "",
+      "vi": "tối xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f75a95df-a5b4-47aa-8e89-9ad4b00b7ee4",
+      "order": 5,
+      "zh": "暗中",
+      "pinyin": "",
+      "vi": "âm thầm/ngầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "516a2859-5162-4a8a-a2c6-48d2440a5cfc",
+      "order": 1,
+      "zh": "机舱里有点儿暗，请把灯开着。",
+      "pinyin": "Jīcāng lǐ yǒudiǎnr àn, qǐng bǎ dēng kāizhe.",
+      "vi": "Trong khoang máy bay hơi tối, xin hãy bật đèn và để đèn sáng.",
+      "analysis_vi": "把灯开着 là mẫu 把 + O + V着, nhấn giữ nguyên trạng thái bật.",
+      "highlight": [
+        "暗"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "2a24d8e8-00c5-4954-8b11-2521e7dff7a1"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d5dabeaa-9889-48f8-8e38-3fda7f1a4373",
+      "order": 2,
+      "zh": "这个座位旁边的灯太暗了，我看不清登机牌儿上的字。",
+      "pinyin": "Zhège zuòwèi pángbiān de dēng tài àn le, wǒ kàn bù qīng dēngjīpáir shang de zì.",
+      "vi": "Đèn bên cạnh chỗ ngồi này mờ quá, tôi nhìn không rõ chữ trên boarding pass.",
+      "analysis_vi": "看不清 là không nhìn rõ; 登机牌儿上 là trên thẻ lên máy bay.",
+      "highlight": [
+        "暗"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "2a24d8e8-00c5-4954-8b11-2521e7dff7a1"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "16fb5494-b51c-4d2c-81a1-3f43022f502c",
+      "order": 3,
+      "zh": "飞机起飞以后，外边慢慢暗下来了。",
+      "pinyin": "Fēijī qǐfēi yǐhòu, wàibian mànmàn àn xiàlai le.",
+      "vi": "Sau khi máy bay cất cánh, bên ngoài từ từ tối xuống.",
+      "analysis_vi": "暗下来 là chuyển sang trạng thái tối hơn; 下来 chỉ xu hướng thay đổi trạng thái.",
+      "highlight": [
+        "暗"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "2a24d8e8-00c5-4954-8b11-2521e7dff7a1"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trên máy bay, khi cất cánh/hạ cánh ban đêm, cabin thường điều chỉnh ánh sáng. Một số hãng yêu cầu mở tấm che cửa sổ khi cất/hạ cánh để tổ bay dễ quan sát bên ngoài trong tình huống khẩn cấp.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e5a497d4-bd58-4f6f-b40a-e72093080ef7",
+      "order": 1,
+      "rule_vi": "Nhầm 暗 và 黑.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 暗 theo cụm và ngữ cảnh bài 18; nghĩa chính là tối; ngầm, kín, không công khai.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "暗",
+    "back": "tối; ngầm, kín, không công khai",
+    "hint": "àn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2a24d8e8-00c5-4954-8b11-2521e7dff7a1",
+    "source_lesson_vocab_id": null
+  }
+}

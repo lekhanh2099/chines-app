@@ -1,0 +1,300 @@
+{
+  "id": "cf989dfa-f632-428e-a12a-5ce954b80518",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "女孩儿",
+  "pinyin": "nǚháir",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nữ hài nhi",
+    "meaning_vi": "cô gái, bé gái",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cô gái",
+      "bé gái"
+    ],
+    "short_definition_vi": "cô gái, bé gái",
+    "textbook_focus_vi": "女 = nữ, 孩 = trẻ con, 儿 là hậu tố 儿化. 女孩儿 = cô gái/bé gái.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "con người, giới tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "女",
+        "lishu_vi": "nữ",
+        "structure_note_vi": "Bộ Nữ, nghĩa trực tiếp.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, con gái",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, con gái",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, con gái",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nữ, con gái",
+        "modern_logic_vi": "Trong từ này, 女 góp phần tạo nghĩa 'nữ, con gái'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "孩",
+        "lishu_vi": "hài",
+        "structure_note_vi": "子 + 亥; 亥 chủ yếu biểu âm.",
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ nhỏ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trẻ con",
+        "modern_logic_vi": "Trong từ này, 孩 góp phần tạo nghĩa 'trẻ con'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Chữ cơ bản; trong 女孩儿/男孩儿 là hậu tố.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trẻ, hậu tố 儿化",
+        "modern_logic_vi": "Trong từ này, 儿 góp phần tạo nghĩa 'trẻ, hậu tố 儿化'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "女 = nữ, 孩 = trẻ con, 儿 là hậu tố 儿化. 女孩儿 = cô gái/bé gái.",
+    "memory_tip_vi": "Nhớ qua cụm: 一个女孩儿 = một cô gái.",
+    "warning_vi": "女孩儿 không đồng nghĩa 女朋友.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "女生",
+        "pinyin": "nǚshēng",
+        "meaning_vi": "nữ sinh, bạn nữ",
+        "difference_vi": "Dùng trong trường học.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "女朋友",
+        "pinyin": "nǚpéngyou",
+        "meaning_vi": "bạn gái/người yêu nữ",
+        "difference_vi": "Không phải chỉ cô gái bình thường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "男孩儿",
+        "pinyin": "",
+        "meaning_vi": "chàng trai, bé trai",
+        "difference_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "女孩儿 không đồng nghĩa 女朋友."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c3a20792-4dc0-42fc-a4af-9c30a6356416",
+      "order": 1,
+      "zh": "一个女孩儿",
+      "pinyin": "yí ge nǚháir",
+      "vi": "một cô gái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e862b135-4dd9-4ac5-b2d0-09820aa8fb86",
+      "order": 2,
+      "zh": "心爱的女孩儿",
+      "pinyin": "xīn’ài de nǚháir",
+      "vi": "cô gái mình yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c96d4ff-d187-47e3-b9cc-7efbada06141",
+      "order": 3,
+      "zh": "人见人爱的女孩儿",
+      "pinyin": "rén jiàn rén ài de nǚháir",
+      "vi": "cô gái ai gặp cũng quý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3e0a11c4-43b2-443c-a2ed-5d25b0da0c72",
+      "order": 1,
+      "zh": "赵霞是个人见人爱的女孩儿。",
+      "pinyin": "Zhào Xiá shì ge rén jiàn rén ài de nǚháir.",
+      "vi": "Triệu Hà là một cô gái ai gặp cũng quý.",
+      "analysis_vi": "人见人爱 là cụm cố định.",
+      "highlight": [
+        "女孩儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf989dfa-f632-428e-a12a-5ce954b80518"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "儿化 như 女孩儿 thường gặp trong tiếng Bắc Kinh; 女孩 vẫn phổ biến và dễ hiểu toàn quốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dd3905ae-1f8b-4388-90bf-0e777ab703cd",
+      "order": 1,
+      "rule_vi": "女孩儿 không đồng nghĩa 女朋友.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "她是我喜欢的女孩儿。",
+          "pinyin": "Tā shì wǒ xǐhuan de nǚháir.",
+          "vi": "Cô ấy là cô gái tôi thích.",
+          "note_vi": "Nếu là người yêu thì dùng 女朋友.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "女孩儿",
+    "back": "cô gái, bé gái",
+    "hint": "nǚháir",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cf989dfa-f632-428e-a12a-5ce954b80518",
+    "source_lesson_vocab_id": null
+  }
+}

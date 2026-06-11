@@ -1,0 +1,274 @@
+{
+  "id": "83fb70c4-737f-423b-b79f-b92a9a42a56a",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "天真",
+  "pinyin": "tiānzhēn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thiên chân",
+    "meaning_vi": "ngây thơ, hồn nhiên; non nớt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngây thơ",
+      "hồn nhiên",
+      "non nớt"
+    ],
+    "short_definition_vi": "ngây thơ, hồn nhiên",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "天",
+        "lishu_vi": "thiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "一",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời, tự nhiên, ngày",
+        "modern_logic_vi": "trời, tự nhiên, ngày",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "真",
+        "lishu_vi": "chân",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "十",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, chân thật, đúng",
+        "modern_logic_vi": "thật, chân thật, đúng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "天 + 真 gợi cái thật tự nhiên, chưa bị làm giả; nghĩa có thể khen hoặc chê tùy ngữ cảnh.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 天真的孩子.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "单纯",
+        "pinyin": "dānchún",
+        "meaning_vi": "đơn thuần/trong sáng",
+        "difference_vi": "单纯 trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "幼稚",
+        "pinyin": "yòuzhì",
+        "meaning_vi": "ấu trĩ",
+        "difference_vi": "幼稚 sắc thái chê rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "世故",
+        "pinyin": "shìgù",
+        "meaning_vi": "lọc lõi/từng trải",
+        "difference_vi": "đối lập theo tính cách",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e9c753dd-bff4-447b-bd3c-41783a83ee1a",
+      "order": 1,
+      "zh": "天真的孩子",
+      "pinyin": "tiānzhēn de háizi",
+      "vi": "đứa trẻ hồn nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6269b40f-fd44-41f7-b0d6-43b55b0013b1",
+      "order": 2,
+      "zh": "天真的笑容",
+      "pinyin": "tiānzhēn de xiàoróng",
+      "vi": "nụ cười hồn nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d636e6a-5d70-4a03-a23a-10cb035db455",
+      "order": 3,
+      "zh": "想法太天真",
+      "pinyin": "xiǎngfǎ tài tiānzhēn",
+      "vi": "suy nghĩ quá ngây thơ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3dfdc5d1-3b0a-470b-b657-3808351dd019",
+      "order": 1,
+      "zh": "孩子们的笑容很天真。",
+      "pinyin": "Háizimen de xiàoróng hěn tiānzhēn.",
+      "vi": "Nụ cười của bọn trẻ rất hồn nhiên.",
+      "analysis_vi": "天真 ở đây là nghĩa tích cực.",
+      "highlight": [
+        "天真"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "83fb70c4-737f-423b-b79f-b92a9a42a56a"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4229ce67-1653-4cce-ac30-09777de7c869",
+      "order": 2,
+      "zh": "他看到学生们天真的样子，心里一下子轻松了。",
+      "pinyin": "Tā kàn dào xuéshengmen tiānzhēn de yàngzi, xīnli yíxiàzi qīngsōng le.",
+      "vi": "Anh ấy thấy dáng vẻ hồn nhiên của học sinh, trong lòng bỗng nhẹ nhõm.",
+      "analysis_vi": "一下子轻松了 báo thay đổi tâm lý nhanh.",
+      "highlight": [
+        "天真"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "83fb70c4-737f-423b-b79f-b92a9a42a56a"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong tiếng Trung hiện đại, 天真 vẫn dùng tự nhiên hơn 'thiên chân' trong tiếng Việt.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8ba134af-725c-46ff-9cde-4034f4b2c387",
+      "order": 1,
+      "rule_vi": "Nói người lớn 你太天真了 thường là chê ngây thơ/non nớt, không phải khen.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "天真",
+    "back": "ngây thơ, hồn nhiên; non nớt",
+    "hint": "tiānzhēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "83fb70c4-737f-423b-b79f-b92a9a42a56a",
+    "source_lesson_vocab_id": null
+  }
+}

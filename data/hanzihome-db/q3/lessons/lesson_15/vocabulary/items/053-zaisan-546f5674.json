@@ -1,0 +1,213 @@
+{
+  "id": "6c7694b9-77fd-45e9-9c10-c77af15bb066",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "再三",
+  "pinyin": "zàisān",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tái tam",
+    "meaning_vi": "nhiều lần; hết lần này đến lần khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiều lần",
+      "hết lần này đến lần khác"
+    ],
+    "short_definition_vi": "nhiều lần; hết lần này đến lần khác",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "再",
+        "lishu_vi": "",
+        "structure_note_vi": "再: lại",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lại",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "三",
+        "lishu_vi": "",
+        "structure_note_vi": "三: ba/nhiều lần",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ba/nhiều lần",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: ba/nhiều lần.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "再三 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 再三劝说.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a0fdffed-9cf1-49b6-a316-4f7a68c10cff",
+      "order": 1,
+      "zh": "再三劝说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da5c23f0-29b2-443f-9e41-23f46a731b0e",
+      "order": 2,
+      "zh": "再三提醒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af0b23cc-6de4-4a3f-9508-6ad047d911e7",
+      "order": 3,
+      "zh": "再三考虑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb7ba906-1d3a-43aa-ab55-162a4cd36090",
+      "order": 4,
+      "zh": "再三感谢",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cb6a4329-3436-4276-b1be-2ed8c03a7a6e",
+      "order": 1,
+      "zh": "老师再三提醒我千万别乱动。",
+      "pinyin": "",
+      "vi": "Cô giáo nhắc tôi nhiều lần tuyệt đối đừng cử động lung tung。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "再三"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7694b9-77fd-45e9-9c10-c77af15bb066"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bd041abb-cccf-437a-aeff-a86f82a1ce12",
+      "order": 2,
+      "zh": "由于老师再三劝说，我只好答应了。",
+      "pinyin": "",
+      "vi": "Vì cô giáo khuyên đi khuyên lại nhiều lần, tôi đành đồng ý。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "再三"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7694b9-77fd-45e9-9c10-c77af15bb066"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "25267582-e287-4785-956d-96ec6d11433f",
+      "order": 1,
+      "rule_vi": "Không dùng 再三 cho hành động ngẫu nhiên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 再三 cho hành động ngẫu nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "再三",
+    "back": "nhiều lần; hết lần này đến lần khác",
+    "hint": "zàisān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6c7694b9-77fd-45e9-9c10-c77af15bb066",
+    "source_lesson_vocab_id": null
+  }
+}

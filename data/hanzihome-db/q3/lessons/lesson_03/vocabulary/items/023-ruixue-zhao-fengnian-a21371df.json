@@ -1,0 +1,472 @@
+{
+  "id": "b8d739a6-f975-4489-bae5-14fee8ea01e6",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "瑞雪兆丰年",
+  "pinyin": "ruìxuě zhào fēngnián",
+  "pos": {
+    "raw_vi": "idiom",
+    "raw_cn": "",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "culture",
+    "agriculture"
+  ],
+  "meaning": {
+    "hanviet": "thụy tuyết triệu phong niên",
+    "meaning_vi": "tuyết lành báo hiệu năm được mùa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tuyết lành báo hiệu năm được mùa"
+    ],
+    "short_definition_vi": "tuyết lành báo hiệu năm được mùa",
+    "textbook_focus_vi": "tuyết lành báo hiệu năm được mùa",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "culture, agriculture",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "瑞",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, đồ quý",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, đồ quý",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, đồ quý",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "耑",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điềm lành",
+        "modern_logic_vi": "Trong từ này, 瑞 góp phần vào lớp nghĩa hiện đại: điềm lành",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "雪",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "雨",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "mưa, hiện tượng khí trời",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa, hiện tượng khí trời",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa, hiện tượng khí trời",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "彐",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tuyết",
+        "modern_logic_vi": "Trong từ này, 雪 góp phần vào lớp nghĩa hiện đại: tuyết",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "兆",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "兆",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điềm báo",
+        "modern_logic_vi": "Trong từ này, 兆 góp phần vào lớp nghĩa hiện đại: điềm báo",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "丰",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "丰",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phong phú, được mùa",
+        "modern_logic_vi": "Trong từ này, 丰 góp phần vào lớp nghĩa hiện đại: phong phú, được mùa",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "年",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "年",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "năm",
+        "modern_logic_vi": "Trong từ này, 年 góp phần vào lớp nghĩa hiện đại: năm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "瑞雪 = tuyết lành; 兆 = báo hiệu; 丰年 = năm được mùa. Đây là nông ngạn về tuyết mùa đông tốt cho mùa màng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 瑞雪兆丰年 chỉ để nói tuyết đẹp; phải có sắc thái tuyết đúng mùa/có lợi cho mùa màng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "风调雨顺",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "五谷丰登",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "年年有余",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "雪上加霜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "雪上加霜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "89a6471b-306e-4d14-8601-947a8aeac498",
+      "order": 1,
+      "zh": "俗话说，瑞雪兆丰年",
+      "pinyin": "",
+      "vi": "tục ngữ nói tuyết lành báo năm được mùa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01f986d7-cf29-47d4-abf6-fc2c6844258a",
+      "order": 2,
+      "zh": "真是瑞雪兆丰年",
+      "pinyin": "",
+      "vi": "đúng là tuyết lành báo năm được mùa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70e135dd-403c-4afb-be8b-7a06e43b912f",
+      "order": 3,
+      "zh": "瑞雪",
+      "pinyin": "",
+      "vi": "tuyết lành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07ad143a-93a7-4d23-9adc-e8d2b377d73f",
+      "order": 4,
+      "zh": "丰年",
+      "pinyin": "",
+      "vi": "năm được mùa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "515d4178-4f9c-4797-b228-cba0957ec035",
+      "order": 5,
+      "zh": "预示丰收",
+      "pinyin": "",
+      "vi": "báo hiệu thu hoạch tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "485e1463-d2e0-4efb-b193-0ccb048ac789",
+      "order": 6,
+      "zh": "风调雨顺",
+      "pinyin": "",
+      "vi": "mưa thuận gió hòa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3985bbef-3687-48c7-a2b0-09d9172c42a7",
+      "order": 1,
+      "zh": "今年冬天下了几场大雪，老人们都说：“瑞雪兆丰年。”",
+      "pinyin": "",
+      "vi": "Mùa đông năm nay có mấy trận tuyết lớn, các cụ đều nói: “Tuyết lành báo hiệu năm được mùa.”",
+      "analysis_vi": "几场大雪 dùng 场 cho hiện tượng thời tiết.",
+      "highlight": [
+        "瑞雪兆丰年"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8d739a6-f975-4489-bae5-14fee8ea01e6"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d6b0c0cf-c72e-4691-860f-3415a4a6efc7",
+      "order": 2,
+      "zh": "冬天适当地下一些雪，对农作物有好处。",
+      "pinyin": "",
+      "vi": "Mùa đông tuyết rơi vừa phải có lợi cho cây trồng.",
+      "analysis_vi": "Giải thích logic nông nghiệp của câu.",
+      "highlight": [
+        "瑞雪兆丰年"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8d739a6-f975-4489-bae5-14fee8ea01e6"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c9bfdb92-9744-4e1d-a4d2-da75dbe43fc7",
+      "order": 3,
+      "zh": "农民更关心这场雪会不会带来好收成。",
+      "pinyin": "",
+      "vi": "Nông dân quan tâm trận tuyết này có mang lại vụ mùa tốt không.",
+      "analysis_vi": "这场雪 liên kết với 收成.",
+      "highlight": [
+        "瑞雪兆丰年"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8d739a6-f975-4489-bae5-14fee8ea01e6"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "瑞雪兆丰年 trong Bài 3 北京的四季",
+    "content_vi": "Câu này phản ánh xã hội nông nghiệp: tuyết mùa đông có thể giữ ẩm và hỗ trợ cây trồng qua đông.",
+    "tags": [
+      "culture",
+      "agriculture"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "316a50fc-a313-465c-b3a1-7148b492f043",
+      "order": 1,
+      "rule_vi": "Không dùng 瑞雪兆丰年 chỉ để nói tuyết đẹp; phải có sắc thái tuyết đúng mùa/có lợi cho mùa màng.",
+      "natural_examples": [
+        {
+          "zh": "今年冬天下了几场大雪，老人们都说：“瑞雪兆丰年。”",
+          "pinyin": "",
+          "vi": "Mùa đông năm nay có mấy trận tuyết lớn, các cụ đều nói: “Tuyết lành báo hiệu năm được mùa.”",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 瑞雪兆丰年 chỉ để nói tuyết đẹp; phải có sắc thái tuyết đúng mùa/có lợi cho mùa màng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "瑞雪兆丰年",
+    "back": "tuyết lành báo hiệu năm được mùa",
+    "hint": "ruìxuě zhào fēngnián",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "culture",
+      "agriculture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b8d739a6-f975-4489-bae5-14fee8ea01e6",
+    "source_lesson_vocab_id": null
+  }
+}

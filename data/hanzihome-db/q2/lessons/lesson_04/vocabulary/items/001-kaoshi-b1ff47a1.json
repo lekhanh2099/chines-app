@@ -1,0 +1,312 @@
+{
+  "id": "9bcee512-186c-4e56-9a5b-050b9b49e49e",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "考试",
+  "pinyin": "kǎoshì",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ ly hợp",
+    "raw_cn": "名 / 离合动词",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "thi_cu"
+  ],
+  "meaning": {
+    "hanviet": "Khảo thí",
+    "meaning_vi": "kỳ thi; thi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỳ thi",
+      "thi"
+    ],
+    "short_definition_vi": "kỳ thi; thi",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "考",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "耂",
+            "hanviet": "",
+            "meaning_vi": "phần trên gần 老",
+            "position_vi": "phần trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thi, kiểm tra",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "试",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói / ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói / ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "式",
+            "hanviet": "thức",
+            "meaning_vi": "kiểu / phương thức",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thử, kiểm tra, thi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói / ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "考试 = dùng đề/câu hỏi để kiểm tra trình độ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "测验",
+        "pinyin": "",
+        "meaning_vi": "bài kiểm tra nhỏ",
+        "difference_vi": "nhẹ hơn 考试",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "考",
+        "pinyin": "",
+        "meaning_vi": "thi",
+        "difference_vi": "dùng trong 考大学",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "复习",
+        "pinyin": "",
+        "meaning_vi": "ôn tập",
+        "difference_vi": "chuẩn bị trước thi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "考试",
+        "right": "复习",
+        "meaning_vi": "thi ↔ ôn tập",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b6670db4-fce1-4620-9c79-f794b2fd979b",
+      "order": 1,
+      "zh": "参加考试",
+      "pinyin": "",
+      "vi": "tham gia kỳ thi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e3e3097-c5c8-45b1-9a49-e10b1c87fa6b",
+      "order": 2,
+      "zh": "考试成绩",
+      "pinyin": "",
+      "vi": "kết quả / điểm thi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbdd8d09-9b4f-4935-b565-4e912e6d17d9",
+      "order": 3,
+      "zh": "考完试",
+      "pinyin": "",
+      "vi": "thi xong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "33512f50-6ef0-477e-988f-37f0071ff0d1",
+      "order": 1,
+      "zh": "明天有汉语考试。",
+      "pinyin": "Míngtiān yǒu Hànyǔ kǎoshì.",
+      "vi": "Ngày mai có kỳ thi tiếng Hán.",
+      "analysis_vi": "有考试 = có kỳ thi.",
+      "highlight": [
+        "考试"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9bcee512-186c-4e56-9a5b-050b9b49e49e"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0b169691-7aa3-4c2f-9aa5-33091cc1b257",
+      "order": 2,
+      "zh": "考试题我都做完了，但是不知道做对了没有。",
+      "pinyin": "Kǎoshì tí wǒ dōu zuò wán le, dànshì bù zhīdào zuò duì le méiyǒu.",
+      "vi": "Các câu trong bài thi tôi đều làm xong rồi, nhưng không biết đã làm đúng chưa.",
+      "analysis_vi": "做完了 / 做对了 là bổ ngữ kết quả.",
+      "highlight": [
+        "考试"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9bcee512-186c-4e56-9a5b-050b9b49e49e"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "考试 thường đi với 成绩, 题, 答题, 做题, 复习.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9d7814bc-8f1c-434b-bb8a-a6b7d1ac35a9",
+      "order": 1,
+      "rule_vi": "考试 là động từ ly hợp; bổ ngữ chen giữa 考 và 试.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我完考试了。",
+          "pinyin": "Wǒ wán kǎoshì le.",
+          "vi": "Tôi xong thi rồi.",
+          "note_vi": "Sai vị trí bổ ngữ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我考完试了。",
+          "pinyin": "Wǒ kǎo wán shì le.",
+          "vi": "Tôi thi xong rồi.",
+          "note_vi": "完 chen giữa 考 và 试.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "考试",
+    "back": "kỳ thi; thi",
+    "hint": "kǎoshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "thi_cu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9bcee512-186c-4e56-9a5b-050b9b49e49e",
+    "source_lesson_vocab_id": null
+  }
+}

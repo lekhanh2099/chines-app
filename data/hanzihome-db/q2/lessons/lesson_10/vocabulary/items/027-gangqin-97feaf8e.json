@@ -1,0 +1,501 @@
+{
+  "id": "794e5f63-29e8-43c1-aef7-cf8f2c9eac6b",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "钢琴",
+  "pinyin": "gāngqín",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cương cầm",
+    "meaning_vi": "đàn piano",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đàn piano"
+    ],
+    "short_definition_vi": "đàn piano",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "钢",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "钅 được dùng như bộ Kim trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "钅 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thép.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "钅 được dùng như bộ Kim trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "琴",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, đá quý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc/Vương",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, đá quý",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được dùng như bộ Ngọc/Vương trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đàn.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc/Vương",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, đá quý",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được dùng như bộ Ngọc/Vương trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "钢 = thép. 琴 = đàn. → 钢琴 = đàn có dây thép, tức piano. Logic nhớ nghĩa hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "钢琴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đàn piano.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小提琴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "violin.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "古琴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cổ cầm Trung Quốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "二胡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đàn nhị Trung Quốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "琴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đàn nói chung trong một số từ ghép.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我学过钢琴。",
+      "Tôi từng học piano.",
+      "我没学过小提琴。",
+      "Tôi chưa từng học violin.",
+      "我听过二胡演奏。",
+      "Tôi từng nghe biểu diễn đàn nhị."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f5ed6097-afd1-4a51-8f2e-43716d77d54b",
+      "order": 1,
+      "zh": "弹钢琴",
+      "pinyin": "",
+      "vi": "chơi piano",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3c139488-c937-4076-81c0-4b645fb49de6",
+      "order": 2,
+      "zh": "学钢琴",
+      "pinyin": "",
+      "vi": "học piano",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "afadfe6c-1513-40d8-89ec-ae1ada256f3c",
+      "order": 3,
+      "zh": "钢琴家",
+      "pinyin": "",
+      "vi": "nghệ sĩ piano",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ea540763-11ca-487e-9b56-d436650367b9",
+      "order": 4,
+      "zh": "钢琴曲",
+      "pinyin": "",
+      "vi": "bản nhạc piano",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "9eeb7f98-5341-4183-9a12-be73651c7f6b",
+      "order": 5,
+      "zh": "钢琴协奏曲",
+      "pinyin": "",
+      "vi": "concerto piano",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f03a36e3-7a14-4e2f-823c-60661e96e93c",
+      "order": 6,
+      "zh": "听钢琴演奏",
+      "pinyin": "",
+      "vi": "nghe biểu diễn piano",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "93825f5c-82be-492d-a867-ede1e29975cb",
+      "order": 1,
+      "zh": "我学过钢琴。",
+      "pinyin": "Wǒ xué guo gāngqín.",
+      "vi": "Tôi từng học piano.",
+      "analysis_vi": "学过 nhấn từng có kinh nghiệm học.",
+      "highlight": [
+        "钢琴"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "794e5f63-29e8-43c1-aef7-cf8f2c9eac6b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e1e4144-bf39-4e42-890f-516ebebbee17",
+      "order": 2,
+      "zh": "你听过钢琴协奏曲《黄河》吗？",
+      "pinyin": "Nǐ tīng guo gāngqín xiézòuqǔ “Huáng Hé” ma?",
+      "vi": "Bạn từng nghe bản concerto piano “Hoàng Hà” chưa?",
+      "analysis_vi": "听过……吗？ là câu hỏi kinh nghiệm. 钢琴协奏曲 = concerto piano.",
+      "highlight": [
+        "钢琴"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "794e5f63-29e8-43c1-aef7-cf8f2c9eac6b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "20df07af-e3fd-44a9-a91b-568491f6232b",
+      "order": 3,
+      "zh": "第一次亲耳听钢琴家演奏的时候，我才发现，同一首曲子在现场听和在手机上听，感觉完全不一样。",
+      "pinyin": "Dì yī cì qīněr tīng gāngqínjiā yǎnzòu de shíhou, wǒ cái fāxiàn, tóng yì shǒu qǔzi zài xiànchǎng tīng hé zài shǒujī shang tīng, gǎnjué wánquán bù yíyàng.",
+      "vi": "Lần đầu tận tai nghe nghệ sĩ piano biểu diễn, tôi mới phát hiện cùng một bản nhạc mà nghe trực tiếp và nghe trên điện thoại, cảm giác hoàn toàn khác nhau.",
+      "analysis_vi": "第一次亲耳听 = lần đầu tận tai nghe. 才发现 = lúc đó mới phát hiện. 跟/和……不一样 ôn so sánh khác biệt.",
+      "highlight": [
+        "钢琴"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "794e5f63-29e8-43c1-aef7-cf8f2c9eac6b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "b799d893-a8f2-418f-9764-db34e1a7f4cf",
+      "order": 1,
+      "rule_vi": "Chơi piano:",
+      "natural_examples": [
+        {
+          "zh": "弹钢琴",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "玩钢琴 ❌",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "钢琴家",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Chơi piano: 弹钢琴 Không nói: 玩钢琴 ❌ Người chơi piano chuyên nghiệp: 钢琴家",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "钢琴",
+    "back": "đàn piano",
+    "hint": "gāngqín",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "钢琴协奏曲《黄河》 là một tác phẩm rất nổi tiếng trong âm nhạc Trung Quốc hiện đại, được cải biên từ 《黄河大合唱》. Trong giáo trình, nó xuất hiện để nối từ vựng âm nhạc với trải nghiệm 听过.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "794e5f63-29e8-43c1-aef7-cf8f2c9eac6b",
+    "source_lesson_vocab_id": null
+  }
+}

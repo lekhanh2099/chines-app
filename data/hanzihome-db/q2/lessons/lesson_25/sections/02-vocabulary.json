@@ -1,0 +1,1721 @@
+{
+  "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "数字",
+      "pinyin": "shùzì",
+      "meaning_vi": "con số; chữ số",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "数字",
+        "back": "shùzì — con số; chữ số",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ con số/chữ số; làm chủ ngữ, tân ngữ hoặc định ngữ trong 数字文化, 数字谐音.",
+        "notes": []
+      }
+    },
+    {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "连……也……",
+      "pinyin": "lián... yě...",
+      "meaning_vi": "ngay cả... cũng...",
+      "meaning_en": "",
+      "pos": "Cấu trúc ngữ pháp",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "连……也……",
+        "back": "lián... yě... — ngay cả... cũng...",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Cấu trúc ngữ pháp",
+        "cn": "关联结构",
+        "normalized": "phrase",
+        "schema_compatible_pos": "phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Mẫu nhấn mạnh 'ngay cả... cũng...'; không phải từ loại từ vựng đơn lẻ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "简单",
+      "pinyin": "jiǎndān",
+      "meaning_vi": "đơn giản",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "简单",
+        "back": "jiǎndān — đơn giản",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Miêu tả sự việc/vấn đề đơn giản; có thể làm vị ngữ hoặc định ngữ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "一半儿",
+      "pinyin": "yíbànr",
+      "meaning_vi": "một nửa",
+      "meaning_en": "",
+      "pos": "Cụm danh từ / số lượng",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "一半儿",
+        "back": "yíbànr — một nửa",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Cụm danh từ / số lượng",
+        "cn": "名词性数量短语",
+        "normalized": "noun_phrase",
+        "schema_compatible_pos": "noun_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ một nửa; có thể làm tân ngữ hoặc chủ ngữ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "中国通",
+      "pinyin": "zhōngguótōng",
+      "meaning_vi": "người rất am hiểu Trung Quốc; chuyên gia Trung Quốc",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "中国通",
+        "back": "zhōngguótōng — người rất am hiểu Trung Quốc; chuyên gia Trung Quốc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ người rất am hiểu Trung Quốc; 通 là hậu tố chỉ người thông thạo một lĩnh vực.",
+        "notes": []
+      }
+    },
+    {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "通",
+      "pinyin": "tōng",
+      "meaning_vi": "thông thạo; hiểu rõ; biết rõ",
+      "meaning_en": "",
+      "pos": "Động từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "通",
+        "back": "tōng — thông thạo; hiểu rõ; biết rõ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ",
+        "cn": "动词/形容词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong 中国通 thiên về 'thông thạo, hiểu rõ'; cũng có nghĩa thông suốt/đi qua tùy ngữ cảnh.",
+        "notes": []
+      }
+    },
+    {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "少",
+      "pinyin": "shào",
+      "meaning_vi": "trẻ; nhỏ tuổi hơn",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "少",
+        "back": "shào — trẻ; nhỏ tuổi hơn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài đọc shào: trẻ, nhỏ tuổi; khác với shǎo = ít.",
+        "notes": []
+      }
+    },
+    {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "可",
+      "pinyin": "kě",
+      "meaning_vi": "nhất định; phải; dùng để nhấn mạnh",
+      "meaning_en": "",
+      "pos": "Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "可",
+        "back": "kě — nhất định; phải; dùng để nhấn mạnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Dùng để nhấn mạnh sắc thái, như 可不是; không phải động từ 'có thể' trong cách dùng này.",
+        "notes": []
+      }
+    },
+    {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "别人",
+      "pinyin": "biérén",
+      "meaning_vi": "người khác",
+      "meaning_en": "",
+      "pos": "Đại từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "别人",
+        "back": "biérén — người khác",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Đại từ",
+        "cn": "代词",
+        "normalized": "pronoun",
+        "schema_compatible_pos": "pronoun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ người khác; thường làm chủ ngữ/tân ngữ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "伟大",
+      "pinyin": "wěidà",
+      "meaning_vi": "vĩ đại; to lớn",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "伟大",
+        "back": "wěidà — vĩ đại; to lớn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Miêu tả người/sự nghiệp/phát hiện có ý nghĩa lớn; sắc thái trang trọng hơn 大.",
+        "notes": []
+      }
+    },
+    {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "发现",
+      "pinyin": "fāxiàn",
+      "meaning_vi": "phát hiện; tìm ra",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "发现",
+        "back": "fāxiàn — phát hiện; tìm ra",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ thường, không phải 离合词; sau nó có thể là danh từ hoặc mệnh đề.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "申请",
+      "pinyin": "shēnqǐng",
+      "meaning_vi": "xin; đăng ký; nộp đơn xin",
+      "meaning_en": "",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "申请",
+        "back": "shēnqǐng — xin; đăng ký; nộp đơn xin",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词/名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chủ yếu là động từ 'nộp đơn xin'; cũng có thể là danh từ 'đơn xin/sự xin' trong 申请表, 提交申请.",
+        "notes": []
+      }
+    },
+    {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "专利",
+      "pinyin": "zhuānlì",
+      "meaning_vi": "bằng sáng chế; quyền sáng chế",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "专利",
+        "back": "zhuānlì — bằng sáng chế; quyền sáng chế",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ bằng/quyền sáng chế; thường đi với 申请, 获得, 保护.",
+        "notes": []
+      }
+    },
+    {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "认为",
+      "pinyin": "rènwéi",
+      "meaning_vi": "cho rằng; nghĩ rằng",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "认为",
+        "back": "rènwéi — cho rằng; nghĩ rằng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ nhận định; thường theo sau bởi mệnh đề hoặc cấu trúc 认为A是B.",
+        "notes": []
+      }
+    },
+    {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "吉利",
+      "pinyin": "jílì",
+      "meaning_vi": "may mắn; tốt lành",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "吉利",
+        "back": "jílì — may mắn; tốt lành",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Miêu tả sự vật/số/ngày/lời nói mang ý may mắn; không thường dùng trực tiếp cho người.",
+        "notes": []
+      }
+    },
+    {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "音",
+      "pinyin": "yīn",
+      "meaning_vi": "âm; âm thanh",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "音",
+        "back": "yīn — âm; âm thanh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ âm/âm đọc; trong bài là nền để hiểu 谐音.",
+        "notes": []
+      }
+    },
+    {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "笨",
+      "pinyin": "bèn",
+      "meaning_vi": "ngốc; vụng; đần",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "笨",
+        "back": "bèn — ngốc; vụng; đần",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Miêu tả người/hành vi ngốc, vụng; sắc thái chê.",
+        "notes": []
+      }
+    },
+    {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "谐音",
+      "pinyin": "xiéyīn",
+      "meaning_vi": "đồng âm; âm gần giống nhau",
+      "meaning_en": "",
+      "pos": "Danh từ / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "谐音",
+        "back": "xiéyīn — đồng âm; âm gần giống nhau",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词/动词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Vừa chỉ hiện tượng âm gần/đồng âm, vừa có thể dùng như động từ trong 跟……谐音.",
+        "notes": []
+      }
+    },
+    {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "发",
+      "pinyin": "fā",
+      "meaning_vi": "phát tài; giàu lên",
+      "meaning_en": "",
+      "pos": "Động từ / Hình vị",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "发",
+        "back": "fā — phát tài; giàu lên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Hình vị",
+        "cn": "动词/语素",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài lấy nghĩa fā liên tưởng 发财; chú ý khác 发 fà trong 头发.",
+        "notes": []
+      }
+    },
+    {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "巧克力",
+      "pinyin": "qiǎokèlì",
+      "meaning_vi": "sô-cô-la",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "巧克力",
+        "back": "qiǎokèlì — sô-cô-la",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ phiên âm chỉ chocolate; không phân tích nghĩa từng chữ để suy nghĩa.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "土豆儿",
+      "pinyin": "tǔdòur",
+      "meaning_vi": "khoai tây",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "土豆儿",
+        "back": "tǔdòur — khoai tây",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ khoai tây; 儿 là 儿化, không dịch thành 'con'.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "胡说",
+      "pinyin": "húshuō",
+      "meaning_vi": "nói bậy; nói nhảm",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "胡说",
+        "back": "húshuō — nói bậy; nói nhảm",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ khẩu ngữ 'nói bậy/nói linh tinh'; không xử lý như 离合词 trong bài này.",
+        "notes": []
+      }
+    },
+    {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "长久",
+      "pinyin": "chángjiǔ",
+      "meaning_vi": "lâu dài; bền lâu",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "长久",
+        "back": "chángjiǔ — lâu dài; bền lâu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ lâu dài/bền lâu; thường dùng với quan hệ, tình cảm, kế hoạch.",
+        "notes": []
+      }
+    },
+    {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "友谊",
+      "pinyin": "yǒuyì",
+      "meaning_vi": "tình bạn",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "友谊",
+        "back": "yǒuyì — tình bạn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ tình bạn/hữu nghị; hơi trang trọng hơn 友情.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "爱情",
+      "pinyin": "àiqíng",
+      "meaning_vi": "tình yêu",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "爱情",
+        "back": "àiqíng — tình yêu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ tình yêu đôi lứa; không dùng cho mọi loại tình cảm.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "活",
+      "pinyin": "huó",
+      "meaning_vi": "sống; còn sống",
+      "meaning_en": "",
+      "pos": "Động từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "活",
+        "back": "huó — sống; còn sống",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ",
+        "cn": "动词/形容词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Nghĩa chính trong bài: sống/còn sống; cũng có nghĩa linh hoạt/sinh động tùy ngữ cảnh.",
+        "notes": []
+      }
+    },
+    {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "顺",
+      "pinyin": "shùn",
+      "meaning_vi": "thuận lợi; suôn sẻ",
+      "meaning_en": "",
+      "pos": "Tính từ / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "顺",
+        "back": "shùn — thuận lợi; suôn sẻ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Động từ",
+        "cn": "形容词/动词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ thuận, xuôi, suôn sẻ; trong 六六大顺 thiên về ý thuận lợi.",
+        "notes": []
+      }
+    },
+    {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "宴会",
+      "pinyin": "yànhuì",
+      "meaning_vi": "tiệc; yến tiệc",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "宴会",
+        "back": "yànhuì — tiệc; yến tiệc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ yến tiệc/buổi tiệc xã giao, thường trang trọng hơn bữa ăn thường.",
+        "notes": []
+      }
+    },
+    {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "规矩",
+      "pinyin": "guīju",
+      "meaning_vi": "quy tắc; phép tắc; quy củ",
+      "meaning_en": "",
+      "pos": "Danh từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "规矩",
+        "back": "guīju — quy tắc; phép tắc; quy củ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Tính từ",
+        "cn": "名词/形容词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ 'quy tắc/phép tắc'; cũng có thể tính từ hóa như 他很规矩.",
+        "notes": []
+      }
+    },
+    {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "首先",
+      "pinyin": "shǒuxiān",
+      "meaning_vi": "trước hết; đầu tiên",
+      "meaning_en": "",
+      "pos": "Phó từ / Thành phần nối trình tự",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "首先",
+        "back": "shǒuxiān — trước hết; đầu tiên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ / Thành phần nối trình tự",
+        "cn": "副词/连接成分",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Mở ý hoặc bước đầu tiên trong trình tự; trang trọng hơn 先.",
+        "notes": []
+      }
+    },
+    {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "重要",
+      "pinyin": "zhòngyào",
+      "meaning_vi": "quan trọng",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "重要",
+        "back": "zhòngyào — quan trọng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Miêu tả sự vật có ý nghĩa/ảnh hưởng lớn; phân biệt với 主要 = chủ yếu.",
+        "notes": []
+      }
+    },
+    {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "领导",
+      "pinyin": "lǐngdǎo",
+      "meaning_vi": "lãnh đạo",
+      "meaning_en": "",
+      "pos": "Danh từ / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "领导",
+        "back": "lǐngdǎo — lãnh đạo",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词/动词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ: lãnh đạo/cấp trên; động từ: lãnh đạo/dẫn dắt. Trong bài chủ yếu là danh từ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "长辈",
+      "pinyin": "zhǎngbèi",
+      "meaning_vi": "bậc trưởng bối; người lớn tuổi hơn",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "长辈",
+        "back": "zhǎngbèi — bậc trưởng bối; người lớn tuổi hơn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ người vai trên/thế hệ trên; khác 老人 chỉ người già.",
+        "notes": []
+      }
+    },
+    {
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "上座",
+      "pinyin": "shàngzuò",
+      "meaning_vi": "chỗ ngồi danh dự; vị trí trang trọng",
+      "meaning_en": "",
+      "pos": "Danh từ / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "上座",
+        "back": "shàngzuò — chỗ ngồi danh dự; vị trí trang trọng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词/动词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài chủ yếu là danh từ: ghế danh dự; cũng có thể là động từ 'ngồi vào chỗ'.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "上菜",
+      "pinyin": "shàngcài",
+      "meaning_vi": "dọn món lên",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "上菜",
+        "back": "shàng cài — dọn món lên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 上 + tân ngữ 菜",
+        "usage_note_vi": "Có thể tách/chèn thành phần như 上了一道菜, 上了几个菜; nghĩa là dọn/lên món.",
+        "notes": []
+      }
+    },
+    {
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "如果",
+      "pinyin": "rúguǒ",
+      "meaning_vi": "nếu; nếu như",
+      "meaning_en": "",
+      "pos": "Liên từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "如果",
+        "back": "rúguǒ — nếu; nếu như",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Liên từ",
+        "cn": "连词",
+        "normalized": "conjunction",
+        "schema_compatible_pos": "conjunction",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Dẫn giả thiết; thường đi với 就 ở vế sau.",
+        "notes": []
+      }
+    },
+    {
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "敬酒",
+      "pinyin": "jìngjiǔ",
+      "meaning_vi": "mời rượu; kính rượu",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "敬酒",
+        "back": "jìng jiǔ — mời rượu; kính rượu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 敬 + tân ngữ 酒",
+        "usage_note_vi": "Có thể nói 敬了一杯酒, 给领导敬酒; nghĩa là mời/chúc rượu.",
+        "notes": []
+      }
+    },
+    {
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "上次",
+      "pinyin": "shàngcì",
+      "meaning_vi": "lần trước",
+      "meaning_en": "",
+      "pos": "Danh từ thời gian",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "上次",
+        "back": "shàng cì — lần trước",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ thời gian",
+        "cn": "时间名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ lần trước; làm trạng ngữ thời gian hoặc danh ngữ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "下次",
+      "pinyin": "xià cì",
+      "meaning_vi": "lần sau",
+      "meaning_en": "",
+      "pos": "Danh từ thời gian",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "下次",
+        "back": "xià cì — lần sau",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ thời gian",
+        "cn": "时间名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ lần sau/lần tới; làm trạng ngữ thời gian hoặc danh ngữ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "干杯",
+      "pinyin": "gānbēi",
+      "meaning_vi": "cạn ly",
+      "meaning_en": "",
+      "pos": "Động từ li hợp / Thán ngữ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "干杯",
+        "back": "gān bēi — cạn ly",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp / Thán ngữ",
+        "cn": "动宾式离合词/叹词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 干 + tân ngữ 杯",
+        "usage_note_vi": "Khi dùng như lời hô chúc rượu thì thường nói nguyên khối 干杯！; khi kể hành động có thể nói 干了一杯, 干了这杯酒.",
+        "notes": []
+      }
+    },
+    {
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "感情",
+      "pinyin": "gǎnqíng",
+      "meaning_vi": "tình cảm; cảm tình",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "感情",
+        "back": "gǎnqíng — tình cảm; cảm tình",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ tình cảm/cảm xúc/quan hệ tình cảm; rộng hơn 爱情.",
+        "notes": []
+      }
+    },
+    {
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "当",
+      "pinyin": "dāng",
+      "meaning_vi": "làm; coi như; dùng làm",
+      "meaning_en": "",
+      "pos": "Động từ / Giới từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "当",
+        "back": "dāng — làm; coi như; dùng làm",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Giới từ",
+        "cn": "动词/介词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài trọng tâm là A当B = coi/dùng A như B, như 以茶当酒.",
+        "notes": []
+      }
+    },
+    {
+      "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "代替",
+      "pinyin": "dàitì",
+      "meaning_vi": "thay thế",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "代替",
+        "back": "dàitì — thay thế",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ thường, nghĩa là thay thế/thay cho; phân biệt với 代表 = đại diện.",
+        "notes": []
+      }
+    },
+    {
+      "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "哈",
+      "pinyin": "hā",
+      "meaning_vi": "ha; tiếng cười",
+      "meaning_en": "",
+      "pos": "Thán từ / Tượng thanh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "哈",
+        "back": "hā — ha; tiếng cười",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Thán từ / Tượng thanh từ",
+        "cn": "叹词/拟声词",
+        "normalized": "interjection",
+        "schema_compatible_pos": "interjection",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Mô phỏng tiếng cười/âm thở; thường gặp trong 哈哈大笑.",
+        "notes": []
+      }
+    },
+    {
+      "id": "505dae11-836a-475d-b811-339f25caaf42",
+      "type": "vocabulary_item",
+      "order": 45,
+      "hanzi": "吹",
+      "pinyin": "chuī",
+      "meaning_vi": "khoác lác; nói phét; thổi",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "吹",
+        "back": "chuī — khoác lác; nói phét; thổi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ 'thổi'; trong khẩu ngữ có nghĩa khoác lác qua 吹牛.",
+        "notes": []
+      }
+    }
+  ]
+}

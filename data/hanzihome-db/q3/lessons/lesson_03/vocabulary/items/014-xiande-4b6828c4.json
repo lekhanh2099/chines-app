@@ -1,0 +1,383 @@
+{
+  "id": "df149110-9c83-495d-8477-51b4e5d90221",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "显得",
+  "pinyin": "xiǎnde",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "description",
+    "state"
+  ],
+  "meaning": {
+    "hanviet": "hiển đắc",
+    "meaning_vi": "trông có vẻ; tỏ ra; biểu hiện ra trạng thái",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trông có vẻ",
+      "tỏ ra",
+      "biểu hiện ra trạng thái"
+    ],
+    "short_definition_vi": "trông có vẻ; tỏ ra; biểu hiện ra trạng thái",
+    "textbook_focus_vi": "trông có vẻ; tỏ ra; biểu hiện ra trạng thái",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "description, state",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "显",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiện ra, rõ ra",
+        "modern_logic_vi": "Trong từ này, 显 góp phần vào lớp nghĩa hiện đại: hiện ra, rõ ra",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "寸",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thốn",
+          "radical_name_zh": "",
+          "hanviet": "thốn",
+          "meaning_vi": "tấc; tay trong cấu tạo chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "tấc; tay trong cấu tạo chữ",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "寸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thốn",
+              "radical_name_zh": "",
+              "hanviet": "thốn",
+              "meaning_vi": "tấc; tay trong cấu tạo chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "được; thành tố trong显得",
+        "modern_logic_vi": "Trong từ này, 得 góp phần vào lớp nghĩa hiện đại: được; thành tố trong显得",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "显 = hiện ra/rõ ra; 得 trong từ này là thành phần cấu tạo. 显得 + trạng thái = trông/có vẻ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "觉得",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "看起来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "显然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表现出",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4ed0b78d-cfe5-4ef0-a93e-02915d31e820",
+      "order": 1,
+      "zh": "显得年轻",
+      "pinyin": "",
+      "vi": "trông trẻ trung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "689a933c-5a2e-4144-9f1c-10402ebc0138",
+      "order": 2,
+      "zh": "显得轻松",
+      "pinyin": "",
+      "vi": "trông nhẹ nhõm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a691435-26ae-43f3-bc52-9defc07bd88e",
+      "order": 3,
+      "zh": "显得很高兴",
+      "pinyin": "",
+      "vi": "trông rất vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75e9b20b-157f-409b-95b0-2a786cc79509",
+      "order": 4,
+      "zh": "显得更美丽",
+      "pinyin": "",
+      "vi": "trông càng đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "55e449c0-372c-4598-aa1c-a7fe473d40cd",
+      "order": 5,
+      "zh": "显得有点儿累",
+      "pinyin": "",
+      "vi": "trông hơi mệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23d041d1-20b6-4716-bf67-af234514ffb4",
+      "order": 6,
+      "zh": "显得很自然",
+      "pinyin": "",
+      "vi": "trông rất tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c17973a5-70ca-49d9-8338-00cdc290f039",
+      "order": 1,
+      "zh": "她穿上春装以后，显得年轻多了。",
+      "pinyin": "",
+      "vi": "Sau khi mặc đồ xuân, cô ấy trông trẻ hơn nhiều.",
+      "analysis_vi": "显得 + tính từ.",
+      "highlight": [
+        "显得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df149110-9c83-495d-8477-51b4e5d90221"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "64ca87b3-9555-40d4-ba11-8b97e487ab00",
+      "order": 2,
+      "zh": "公园里充满了鲜花和游人，整个城市显得很有活力。",
+      "pinyin": "",
+      "vi": "Công viên đầy hoa và du khách, cả thành phố trông có sức sống.",
+      "analysis_vi": "显得 nhận xét trạng thái bên ngoài.",
+      "highlight": [
+        "显得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df149110-9c83-495d-8477-51b4e5d90221"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0a6e9870-1451-4718-a8dc-077f620f2ae0",
+      "order": 3,
+      "zh": "阳光和鲜花让这座城市显得轻松而美丽。",
+      "pinyin": "",
+      "vi": "Ánh nắng và hoa tươi làm thành phố trông nhẹ nhàng và đẹp.",
+      "analysis_vi": "让 + O + 显得 + trạng thái.",
+      "highlight": [
+        "显得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df149110-9c83-495d-8477-51b4e5d90221"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "显得 trong Bài 3 北京的四季",
+    "content_vi": "显得 giúp câu tả cảnh mềm hơn câu phán đoán trực tiếp.",
+    "tags": [
+      "description",
+      "state"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "48699e1c-f7c1-4300-b2d8-9c6cfe29f911",
+      "order": 1,
+      "rule_vi": "显得 là “trông có vẻ”; 觉得 là “cảm thấy/nghĩ rằng”. Đừng nhầm.",
+      "natural_examples": [
+        {
+          "zh": "她穿上春装以后，显得年轻多了。",
+          "pinyin": "",
+          "vi": "Sau khi mặc đồ xuân, cô ấy trông trẻ hơn nhiều.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "显得 là “trông có vẻ”; 觉得 là “cảm thấy/nghĩ rằng”. Đừng nhầm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "显得",
+    "back": "trông có vẻ; tỏ ra; biểu hiện ra trạng thái",
+    "hint": "xiǎnde",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "description",
+      "state"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "df149110-9c83-495d-8477-51b4e5d90221",
+    "source_lesson_vocab_id": null
+  }
+}

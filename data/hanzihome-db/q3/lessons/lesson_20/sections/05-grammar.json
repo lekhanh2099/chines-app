@@ -1,0 +1,608 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法 / 语法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "何必",
+      "title_vi": "Hà tất; việc gì phải",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng trong câu hỏi tu từ để nói một việc không cần thiết, thường mang sắc thái khuyên, ngăn hoặc phê bình nhẹ.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "何必 + V/VP + 呢？",
+          "meaning_vi": "Hà tất phải làm gì? / Việc gì phải làm vậy?",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "何必 + V/VP + 呢？"
+            }
+          ],
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "我本来也不是什么贵族，何必要装出贵族的样子呢？",
+              "pinyin": "Wǒ běnlái yě bú shì shénme guìzú, hébì yào zhuāng chū guìzú de yàngzi ne?",
+              "vi": "Bản thân tôi vốn không phải quý tộc, hà tất phải giả ra dáng vẻ quý tộc làm gì?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
+              "zh": "就在这儿买吧，何必跑那么远呢？",
+              "pinyin": "Jiù zài zhèr mǎi ba, hébì pǎo nàme yuǎn ne?",
+              "vi": "Mua ngay ở đây đi, hà tất phải chạy xa như vậy?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+              "zh": "我们都是老朋友了，何必那么客气呢？",
+              "pinyin": "Wǒmen dōu shì lǎo péngyou le, hébì nàme kèqi ne?",
+              "vi": "Chúng ta là bạn cũ rồi, hà tất phải khách sáo như vậy?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "凭",
+      "title_vi": "Dựa vào; bằng; căn cứ vào",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Có thể làm động từ hoặc giới từ, biểu thị căn cứ, phương tiện hoặc điều kiện dựa vào để làm việc gì.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "凭 + căn cứ/phương tiện + V",
+          "meaning_vi": "Dựa vào / bằng / căn cứ theo cái gì để làm gì.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "凭 + căn cứ/phương tiện + V"
+            }
+          ],
+          "examples": [
+            {
+              "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+              "zh": "考得上考不上，凭的是知识和才能，不是衣服。",
+              "pinyin": "Kǎo de shàng kǎo bu shàng, píng de shì zhīshi hé cáinéng, bú shì yīfu.",
+              "vi": "Thi đỗ hay không dựa vào tri thức và tài năng, không phải quần áo.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
+              "zh": "你凭什么让他进去，不让我进去？",
+              "pinyin": "Nǐ píng shénme ràng tā jìnqu, bù ràng wǒ jìnqu?",
+              "vi": "Bạn dựa vào đâu mà cho anh ấy vào, không cho tôi vào?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
+              "zh": "请大家把票拿出来，凭票入场。",
+              "pinyin": "Qǐng dàjiā bǎ piào ná chūlai, píng piào rùchǎng.",
+              "vi": "Mời mọi người lấy vé ra, vào cửa bằng vé.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "然而",
+      "title_vi": "Tuy nhiên; thế nhưng",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Liên từ chuyển ngoặt, nghĩa gần với 但是 nhưng văn viết hơn.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "句子A，然而，句子B。",
+          "meaning_vi": "Vế sau trái hoặc chuyển hướng so với kỳ vọng từ vế trước.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "句子A，然而，句子B。"
+            }
+          ],
+          "examples": [
+            {
+              "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
+              "zh": "她的自信使朋友觉得很有道理。然而，让人吃惊的是，面试时她竟然跟阿加尔教授争论了起来。",
+              "pinyin": "Tā de zìxìn shǐ péngyou juéde hěn yǒu dàoli. Rán'ér, ràng rén chījīng de shì, miànshì shí tā jìngrán gēn Ājiā'ěr jiàoshòu zhēnglùn le qǐlai.",
+              "vi": "Sự tự tin của cô khiến bạn thấy có lý. Tuy nhiên, điều khiến người ta kinh ngạc là lúc phỏng vấn cô lại tranh luận với giáo sư Archer.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
+              "zh": "身体健康当然很重要，然而心理健康可能更重要。",
+              "pinyin": "Shēntǐ jiànkāng dāngrán hěn zhòngyào, rán'ér xīnlǐ jiànkāng kěnéng gèng zhòngyào.",
+              "vi": "Sức khỏe cơ thể đương nhiên quan trọng, tuy nhiên sức khỏe tâm lý có thể còn quan trọng hơn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "从而",
+      "title_vi": "Từ đó; nhờ vậy mà",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Biểu thị kết quả hoặc bước phát triển kéo theo từ vế trước, thiên văn viết.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "句子A，从而 + 结果/进一步行动。",
+          "meaning_vi": "Từ A dẫn đến B / nhờ A mà B.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "句子A，从而 + 结果/进一步行动。"
+            }
+          ],
+          "examples": [
+            {
+              "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
+              "zh": "行为治疗的目的，是使那些心灵痛苦的人能够回到正常生活中去，从而享受正常人都拥有的幸福和权利。",
+              "pinyin": "Xíngwéi zhìliáo de mùdì, shì shǐ nàxiē xīnlíng tòngkǔ de rén nénggòu huí dào zhèngcháng shēnghuó zhōng qù, cóng'ér xiǎngshòu zhèngcháng rén dōu yōngyǒu de xìngfú hé quánlì.",
+              "vi": "Mục đích của liệu pháp hành vi là giúp người đau khổ về tinh thần quay lại cuộc sống bình thường, từ đó hưởng hạnh phúc và quyền lợi của người bình thường.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "6829a99e-8c28-481f-a33f-c15c2f232489",
+              "zh": "通过一年的努力，我的汉语水平已经达到了HSK五级，从而为以后的专业学习打下了基础。",
+              "pinyin": "Tōngguò yì nián de nǔlì, wǒ de Hànyǔ shuǐpíng yǐjīng dádào le HSK wǔ jí, cóng'ér wèi yǐhòu de zhuānyè xuéxí dǎxià le jīchǔ.",
+              "vi": "Thông qua một năm nỗ lực, trình độ tiếng Hán của tôi đã đạt HSK5, từ đó đặt nền tảng cho học chuyên ngành sau này.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "动词 + 不起",
+      "title_vi": "Không kham nổi; không đủ khả năng",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Biểu thị không đủ khả năng chịu hoặc đảm đương một việc, thường do tiền bạc hoặc điều kiện không cho phép.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "V + 不起 + O",
+          "meaning_vi": "Không làm nổi / không kham nổi việc gì.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "V + 不起 + O"
+            }
+          ],
+          "examples": [
+            {
+              "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
+              "zh": "彭艺云付不起几千英镑的学费，必须争取得到奖学金。",
+              "pinyin": "Péng Yìyún fù bu qǐ jǐ qiān yīngbàng de xuéfèi, bìxū zhēngqǔ dédào jiǎngxuéjīn.",
+              "vi": "Bành Nghệ Vân không trả nổi học phí mấy nghìn bảng Anh nên buộc phải cố gắng giành học bổng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "f9e042a0-fdff-4bbd-ae63-c89fd60a5d8e",
+              "zh": "房租每月五千元，我租不起。",
+              "pinyin": "Fángzū měi yuè wǔ qiān yuán, wǒ zū bu qǐ.",
+              "vi": "Tiền thuê nhà mỗi tháng 5.000 tệ, tôi thuê không nổi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "94983de4-1c9c-4a06-a92a-dec034629020",
+              "zh": "这类贵族学校一般家庭的孩子根本上不起。",
+              "pinyin": "Zhè lèi guìzú xuéxiào yìbān jiātíng de háizi gēnběn shàng bu qǐ.",
+              "vi": "Trường quý tộc kiểu này con em gia đình bình thường căn bản học không nổi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "假如",
+      "title_vi": "Nếu như; giả sử",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dẫn giả thiết, nghĩa gần với 如果 nhưng văn viết hơn và sắc thái giả định rõ hơn.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "36af8925-9df2-4371-9cce-405d3672953f",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "假如 + điều kiện，结果。",
+          "meaning_vi": "Nếu như / giả sử A thì B.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "假如 + điều kiện，结果。"
+            }
+          ],
+          "examples": [
+            {
+              "id": "dac06a15-2133-4363-b088-fba19458cb07",
+              "zh": "假如你在爱情上欺骗，受骗的只是一个人；可在科学上欺骗，受害的将是成千上万的病人。",
+              "pinyin": "Jiǎrú nǐ zài àiqíng shang qīpiàn, shòupiàn de zhǐ shì yí ge rén; kě zài kēxué shang qīpiàn, shòuhài de jiāng shì chéng qiān shàng wàn de bìngrén.",
+              "vi": "Nếu bạn lừa dối trong tình yêu, người bị lừa chỉ là một người; nhưng lừa dối trong khoa học thì người bị hại sẽ là hàng nghìn hàng vạn bệnh nhân.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "787830ab-30e2-4c8f-aeed-8007cc3a0cb6",
+              "zh": "假如得不到奖学金，我可能就学不下去了。",
+              "pinyin": "Jiǎrú dé bu dào jiǎngxuéjīn, wǒ kěnéng jiù xué bu xiàqu le.",
+              "vi": "Nếu không lấy được học bổng, có lẽ tôi sẽ không học tiếp được nữa.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "type": "grammar_point",
+      "order": 7,
+      "title": "尽情",
+      "title_vi": "Thỏa thích; hết mình",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "aa4bd385-d335-46aa-b357-a29252478df1",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Phó từ chỉ làm việc gì theo ý muốn hoặc cảm xúc, không bị kìm nén, không bị ràng buộc.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "bd6bb145-4592-4726-b2d2-6c72d9ac0a68",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "尽情地 + V / 尽情 + V",
+          "meaning_vi": "Thỏa thích làm gì / hết mình làm gì.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "尽情地 + V / 尽情 + V"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2f2e651f-ea3f-4597-a43a-76e867638000",
+              "zh": "我要你做我的研究生，是让你在我的支持下，尽情地反对我的理论。",
+              "pinyin": "Wǒ yào nǐ zuò wǒ de yánjiūshēng, shì ràng nǐ zài wǒ de zhīchí xià, jìnqíng de fǎnduì wǒ de lǐlùn.",
+              "vi": "Tôi muốn cô làm nghiên cứu sinh của tôi để cô, dưới sự ủng hộ của tôi, thỏa sức phản đối lý thuyết của tôi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "610f3b70-9977-49e3-a33d-72a1f7f03c9c",
+              "zh": "同学们，让我们尽情地唱吧、跳吧！",
+              "pinyin": "Tóngxuémen, ràng wǒmen jìnqíng de chàng ba, tiào ba!",
+              "vi": "Các bạn, chúng ta hãy hát và nhảy thật thỏa thích đi!",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

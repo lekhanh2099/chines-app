@@ -1,0 +1,412 @@
+{
+  "id": "b4d57fd5-a41e-461e-afdd-196d96c904cc",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "艺术",
+  "pinyin": "yìshù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Nghệ thuật",
+    "meaning_vi": "nghệ thuật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghệ thuật"
+    ],
+    "short_definition_vi": "nghệ thuật",
+    "textbook_focus_vi": "nghệ thuật",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "艺",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乙",
+            "hanviet": "",
+            "meaning_vi": "nét cong/chữ ất",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "术",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丶",
+            "hanviet": "",
+            "meaning_vi": "nét điểm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "艺 là nghệ, kỹ nghệ, tài nghệ. 术 là thuật, kỹ thuật, phương pháp. → 艺术 = hệ thống kỹ năng và sáng tạo tạo ra giá trị thẩm mỹ.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 艺术 rộng hơn 技术. 技术 thiên về kỹ thuật; 艺术 thiên về biểu đạt, thẩm mỹ, cảm xúc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "艺术",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghệ thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "技术",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỹ thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "文化",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "văn hóa, rộng hơn nghệ thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表演",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biểu diễn, là một hình thức hoạt động nghệ thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: diễn viên cần 技术, nhưng tiết mục hay còn cần 艺术表现."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f22ee123-cfd9-430c-8bda-7cf15347973b",
+      "order": 1,
+      "zh": "传统艺术",
+      "pinyin": "",
+      "vi": "nghệ thuật truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e9b76ef-1480-42e9-8733-6243508a2685",
+      "order": 2,
+      "zh": "现代艺术",
+      "pinyin": "",
+      "vi": "nghệ thuật hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f8c6c92-4997-428f-b56b-e26f5d62f58f",
+      "order": 3,
+      "zh": "艺术形式",
+      "pinyin": "",
+      "vi": "hình thức nghệ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba3f23a6-ee4b-48db-a6ef-c7ecfad75a3b",
+      "order": 4,
+      "zh": "艺术家",
+      "pinyin": "",
+      "vi": "nghệ sĩ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "715c1629-6cfb-4f44-b789-c200611d59b6",
+      "order": 5,
+      "zh": "了解艺术",
+      "pinyin": "",
+      "vi": "hiểu nghệ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c8bdad17-deaa-4159-9048-7a50e78ee28f",
+      "order": 1,
+      "zh": "京剧是一种中国传统艺术。",
+      "pinyin": "Jīngjù shì yì zhǒng Zhōngguó chuántǒng yìshù.",
+      "vi": "Kinh kịch là một loại nghệ thuật truyền thống Trung Quốc.",
+      "analysis_vi": "一种……艺术 là mẫu giới thiệu loại hình nghệ thuật.",
+      "highlight": [
+        "艺术"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b4d57fd5-a41e-461e-afdd-196d96c904cc"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a14f2104-5028-40d3-8532-5417f87fe5a4",
+      "order": 2,
+      "zh": "不了解传统艺术的人，第一次看京剧可能看不懂。",
+      "pinyin": "Bù liǎojiě chuántǒng yìshù de rén, dì yī cì kàn Jīngjù kěnéng kàn bù dǒng.",
+      "vi": "Người không hiểu nghệ thuật truyền thống, lần đầu xem Kinh kịch có thể xem không hiểu.",
+      "analysis_vi": "看不懂 là không hiểu được qua xem; rất hợp bài 20.",
+      "highlight": [
+        "艺术"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "b4d57fd5-a41e-461e-afdd-196d96c904cc"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fdc891fc-0001-4310-a8cb-c5366d1e9d44",
+      "order": 3,
+      "zh": "这些动作不只是技术，也是一种艺术表现。",
+      "pinyin": "Zhèxiē dòngzuò bù zhǐ shì jìshù, yě shì yì zhǒng yìshù biǎoxiàn.",
+      "vi": "Những động tác này không chỉ là kỹ thuật, mà cũng là một sự thể hiện nghệ thuật.",
+      "analysis_vi": "Câu phân biệt 技术 và 艺术 rất sạch.",
+      "highlight": [
+        "艺术"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b4d57fd5-a41e-461e-afdd-196d96c904cc"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "96260e33-0e69-4a00-8d80-74432bcf5d96",
+      "order": 1,
+      "rule_vi": "Nhầm 艺术 với 技术. 艺术",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Nhầm 艺术 với 技术. 艺术 Yìshù Nghệ thuật. 技术",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "艺术",
+    "back": "nghệ thuật",
+    "hint": "yìshù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong nghệ thuật truyền thống Trung Quốc, nhiều thứ có tính ước lệ: một động tác có thể tượng trưng cho cưỡi ngựa, mở cửa, lên núi, đánh trận. Vì vậy xem 传统艺术 không chỉ nhìn “giống thật hay không”, mà còn phải hiểu mã biểu đạt của sân khấu.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b4d57fd5-a41e-461e-afdd-196d96c904cc",
+    "source_lesson_vocab_id": null
+  }
+}

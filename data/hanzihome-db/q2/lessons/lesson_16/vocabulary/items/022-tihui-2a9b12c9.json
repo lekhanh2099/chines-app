@@ -1,0 +1,306 @@
+{
+  "id": "6f5c00e2-a90f-4d43-93f6-8efd33aa5b89",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "体会",
+  "pinyin": "tǐhuì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thể hội",
+    "meaning_vi": "thể nghiệm rồi hiểu ra, cảm nhận sâu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thể nghiệm rồi hiểu ra, cảm nhận sâu"
+    ],
+    "short_definition_vi": "thể nghiệm rồi hiểu ra, cảm nhận sâu",
+    "textbook_focus_vi": "thể nghiệm rồi hiểu ra, cảm nhận sâu",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "体",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "本",
+            "hanviet": "bản",
+            "meaning_vi": "gốc, vốn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân thể, thể nghiệm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "会",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "mây; thành phần trong giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết, hiểu, gặp gỡ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "体会 = dùng trải nghiệm/cảm nhận của mình để hiểu ra.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3c61f7b8-b3f4-48a8-8b50-e56f467fb802",
+      "order": 1,
+      "zh": "体会到……",
+      "pinyin": "",
+      "vi": "cảm nhận/hiểu ra rằng…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "92399ef9-d16b-4765-bc2c-878820f0d5c5",
+      "order": 2,
+      "zh": "深深体会到……",
+      "pinyin": "",
+      "vi": "cảm nhận sâu sắc rằng…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd021f7a-2a65-4117-9eb1-a3c2a31f0977",
+      "order": 3,
+      "zh": "体会生活",
+      "pinyin": "",
+      "vi": "trải nghiệm cuộc sống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f7503e2-1403-405f-8b45-788641c87016",
+      "order": 4,
+      "zh": "深有体会",
+      "pinyin": "",
+      "vi": "rất thấm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4212da54-2db1-47d5-9827-1899d7e33106",
+      "order": 5,
+      "zh": "谈谈体会",
+      "pinyin": "",
+      "vi": "nói về cảm nhận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ff814112-537a-4eff-8a2a-6f8c317574d5",
+      "order": 1,
+      "zh": "搬到新小区以后，我体会到现代化生活很方便。",
+      "pinyin": "Bān dào xīn xiǎoqū yǐhòu, wǒ tǐhuì dào xiàndàihuà shēnghuó hěn fāngbiàn.",
+      "vi": "Sau khi chuyển đến khu dân cư mới, tôi cảm nhận được cuộc sống hiện đại rất tiện lợi.",
+      "analysis_vi": "Có trải nghiệm thật nên dùng 体会到 hợp hơn 知道.",
+      "highlight": [
+        "体会"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "6f5c00e2-a90f-4d43-93f6-8efd33aa5b89"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2897d4d1-2046-4577-8a58-94428f1c4140",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：体会。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: thể nghiệm rồi hiểu ra, cảm nhận sâu.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "体会"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "6f5c00e2-a90f-4d43-93f6-8efd33aa5b89"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 体会 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b81069fd-44ce-4566-858b-0d5a4065de14",
+      "order": 1,
+      "rule_vi": "Không dùng 体会 cho thông tin chỉ biết qua nghe kể đơn giản.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 体会 cho thông tin chỉ biết qua nghe kể đơn giản.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "体会",
+    "back": "thể nghiệm rồi hiểu ra, cảm nhận sâu",
+    "hint": "tǐhuì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_022"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6f5c00e2-a90f-4d43-93f6-8efd33aa5b89",
+    "source_lesson_vocab_id": null
+  }
+}

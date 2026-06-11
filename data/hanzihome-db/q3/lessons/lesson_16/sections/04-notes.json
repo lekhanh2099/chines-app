@@ -1,0 +1,44 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook_pdf_verified",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "da0e1f16-3d9d-4537-aae2-6815bc595ee0",
+      "type": "note",
+      "order": 1,
+      "title": "《金星人遇到麻烦》",
+      "structure": "科学幻想小说",
+      "meaning_vi": "《金星人遇到麻烦》 là một truyện khoa học viễn tưởng. Bài dùng góc nhìn giả tưởng của người sao Kim để nhìn ngược Trái Đất.",
+      "examples": [],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "21da7398-ba97-40ce-ab53-e604a27ff1f8",
+      "type": "note",
+      "order": 2,
+      "title": "被撞个稀巴烂",
+      "structure": "被 / 把 / V + 个 + 结果/状态",
+      "meaning_vi": "Trong câu ‘被撞个稀巴烂’, 个 đứng sau động từ để dẫn ra kết quả/trạng thái, gần giống tác dụng của 得 sau động từ, nhấn mạnh kết quả ‘bị đâm nát bét’. Cách dùng này có sắc thái khẩu ngữ mạnh.",
+      "examples": [
+        {
+          "id": "72636f1b-4ce3-4e04-b729-b21d0db45628",
+          "zh": "我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+          "vi": "Nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bét.",
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false,
+          "pinyin": "Wǒmen de fēichuán rúguǒ yùdào tāmen, jiù huì bèi zhuàng ge xībālàn."
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    }
+  ]
+}

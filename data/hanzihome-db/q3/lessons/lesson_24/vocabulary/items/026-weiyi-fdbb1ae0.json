@@ -1,0 +1,267 @@
+{
+  "id": "b163360c-903c-4cfb-bed2-cb5adb0a79f3",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "唯一",
+  "pinyin": "wéiyī",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_24",
+    "deep_vocab",
+    "qingshang"
+  ],
+  "meaning": {
+    "hanviet": "duy nhất",
+    "meaning_vi": "duy nhất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "duy nhất"
+    ],
+    "short_definition_vi": "duy nhất",
+    "textbook_focus_vi": "Dùng trong Bài 24 情商 để nối chủ đề EQ, cảm xúc, tự kiểm soát và quan hệ xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, giao tiếp, giáo dục, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "唯",
+        "lishu_vi": "duy",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 唯 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 一 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "Không gán bộ thủ nếu không chắc; học theo nghĩa hiện đại của cả từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "唯一 được ghi theo nghĩa hiện đại đã soạn; ưu tiên học qua cụm dùng thật thay vì suy diễn từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 唯一的因素.",
+    "warning_vi": "Không ép chiết tự nếu là tên riêng, thành ngữ cố định hoặc chữ giản thể khó suy nghĩa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên học 唯一 qua cụm cố định và ví dụ trong bài 情商."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2dcc2bb5-a338-4670-a008-c4f70eaed437",
+      "order": 1,
+      "zh": "唯一的因素",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2fef405-b559-46aa-aebf-11da3db49cea",
+      "order": 2,
+      "zh": "唯一的办法",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff770e82-15d5-45c0-a3c4-5f65a64ae1cb",
+      "order": 3,
+      "zh": "唯一的选择",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc2cdf17-c39a-47d3-b4c3-8b242e260193",
+      "order": 4,
+      "zh": "唯一的目标",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9967e39-583f-4ca5-ab61-d74604935ce4",
+      "order": 5,
+      "zh": "不是唯一的",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0d336707-a73f-4a3a-8811-c6f5683f9b6b",
+      "order": 6,
+      "zh": "唯一的机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bb3e3ce6-8b20-4d45-9f26-da03177ade3b",
+      "order": 1,
+      "zh": "这不是唯一的办法。",
+      "pinyin": "",
+      "vi": "",
+      "analysis_vi": "Ví dụ tự nhiên đã bám nghĩa trọng tâm của 唯一 trong bài 情商.",
+      "highlight": [
+        "唯一"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b163360c-903c-4cfb-bed2-cb5adb0a79f3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9d244ddd-6dc9-43c0-9ba3-e5f825b083d6",
+      "order": 2,
+      "zh": "本课用“唯一”来说明情商、情绪和人际关系之间的联系。",
+      "pinyin": "",
+      "vi": "Bài này dùng “唯一” để nói rõ mối liên hệ giữa EQ, cảm xúc và quan hệ xã hội.",
+      "analysis_vi": "Câu phục vụ ngữ cảnh hóa từ trong chủ đề bài, không phải câu dịch máy.",
+      "highlight": [
+        "唯一"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b163360c-903c-4cfb-bed2-cb5adb0a79f3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 情商, 唯一 được đặt vào mạch học về EQ, kiểm soát cảm xúc, quan hệ xã hội hoặc tác động của công nghệ tới giao tiếp.",
+    "tags": [
+      "usage",
+      "lesson_24"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f293f8a7-7e0d-47d6-be04-b6bdd7cf3596",
+      "order": 1,
+      "rule_vi": "Không dịch máy từng chữ Hán Việt của 唯一; phải học theo nghĩa hiện đại và collocation.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảnh báo này giữ lại tinh thần phần lỗi sai đã soạn: tránh suy nghĩa từ mặt chữ khi từ/cụm đã có nghĩa cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "唯一",
+    "back": "duy nhất",
+    "hint": "wéiyī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_24",
+      "qingshang"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b163360c-903c-4cfb-bed2-cb5adb0a79f3",
+    "source_lesson_vocab_id": null
+  }
+}

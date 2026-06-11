@@ -1,0 +1,381 @@
+{
+  "id": "544a7131-dc3e-4e95-bab8-926b73023556",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "真",
+  "pinyin": "zhēn",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ",
+    "raw_cn": "形容词/副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "adverb",
+    "evaluation"
+  ],
+  "meaning": {
+    "hanviet": "Chân",
+    "meaning_vi": "thật; thật sự; rất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thật",
+      "thật sự",
+      "rất"
+    ],
+    "short_definition_vi": "thật; thật sự; rất",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "adverb, evaluation",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "真",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "phần giữa/trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, chân thật, đúng thật; rất/thật sự",
+        "modern_logic_vi": "真 đối lập với 假; trước tính từ nhấn mức độ/cảm thán.",
+        "warning_vi": "真 không giống hoàn toàn 很.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "真 có nghĩa thật/thật sự; khi đứng trước tính từ thường có sắc thái cảm thán, chủ quan mạnh hơn 很.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Rất, trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "非常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Rất, trang trọng/nhấn mạnh hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "真的",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Thật đấy, thật sự.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "假",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Giả.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "假",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Giả, đối lập 真.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "真",
+        "right": "很",
+        "meaning_vi": "真 có cảm xúc/cảm thán hơn 很.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c66b1e4c-c73a-4aa3-80ce-53b8a3f8e409",
+      "order": 1,
+      "zh": "真好",
+      "pinyin": "",
+      "vi": "thật tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "287ac0a4-fc72-4b0d-9848-6f9f2e926707",
+      "order": 2,
+      "zh": "真不错",
+      "pinyin": "",
+      "vi": "khá tốt thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "357d22ae-d69f-4d30-ab66-139019f0fa35",
+      "order": 3,
+      "zh": "真贵",
+      "pinyin": "",
+      "vi": "đắt thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef00f1f7-502f-4286-aeb7-66bda750f3d8",
+      "order": 4,
+      "zh": "真方便",
+      "pinyin": "",
+      "vi": "tiện thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65a19e9f-5ed6-4223-abea-3770d8a73926",
+      "order": 5,
+      "zh": "真麻烦",
+      "pinyin": "",
+      "vi": "phiền thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4fc783e9-f2a4-4a45-859b-8219a8e0f9e6",
+      "order": 6,
+      "zh": "真的假的",
+      "pinyin": "",
+      "vi": "thật hay giả vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d68e9b6-8687-4acd-9cb2-1edb1af85b00",
+      "order": 7,
+      "zh": "真漂亮",
+      "pinyin": "",
+      "vi": "đẹp thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c64a07c8-de6a-4b17-8b22-366a58fea597",
+      "order": 8,
+      "zh": "真安静",
+      "pinyin": "",
+      "vi": "yên tĩnh thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6f58ca83-60cf-4cbb-bb6f-958e3492784c",
+      "order": 1,
+      "zh": "这套房子真不错。",
+      "pinyin": "Zhè tào fángzi zhēn búcuò.",
+      "vi": "Căn này thật sự khá ổn.",
+      "analysis_vi": "真不错 là nhận xét tự nhiên, có cảm xúc tích cực.",
+      "highlight": [
+        "真"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "544a7131-dc3e-4e95-bab8-926b73023556"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8a80519e-a5f5-4948-ade9-777e83e75ec1",
+      "order": 2,
+      "zh": "虽然房租有点儿贵，但是交通真方便。",
+      "pinyin": "Suīrán fángzū yǒudiǎnr guì, dànshì jiāotōng zhēn fāngbiàn.",
+      "vi": "Tuy tiền thuê hơi đắt, nhưng giao thông tiện thật.",
+      "analysis_vi": "真方便 mạnh hơn 很方便.",
+      "highlight": [
+        "真"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "544a7131-dc3e-4e95-bab8-926b73023556"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "afd7f79c-acc1-4dd2-8cd4-1c405f1e8d7e",
+      "order": 3,
+      "zh": "我们上去看了以后，才发现这套房子真没有照片上那么大。",
+      "pinyin": "Wǒmen shàngqù kàn le yǐhòu, cái fāxiàn zhè tào fángzi zhēn méiyǒu zhàopiàn shang nàme dà.",
+      "vi": "Sau khi chúng tôi lên xem rồi mới phát hiện căn này thật sự không lớn như trên ảnh.",
+      "analysis_vi": "才发现 nhấn phát hiện sau khi xem thật; 真没有……那么大 nhấn đánh giá thực tế.",
+      "highlight": [
+        "真"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "544a7131-dc3e-4e95-bab8-926b73023556"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khẩu ngữ 真 + tính từ rất thường dùng để bộc lộ cảm xúc ngay lúc nói: 真好，真累，真贵，真方便.",
+    "tags": [
+      "adverb",
+      "evaluation"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d16d8429-2708-440a-930c-e5066c3aa054",
+      "order": 1,
+      "rule_vi": "Đừng thay 很 bằng 真 máy móc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这个房间很大。",
+          "pinyin": "",
+          "vi": "Phòng này rất lớn.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这个房间真大！",
+          "pinyin": "",
+          "vi": "Phòng này rộng thật!",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "很 trung tính hơn; 真 có cảm xúc hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "真",
+    "back": "thật; thật sự; rất",
+    "hint": "zhēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "adverb",
+      "evaluation"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "544a7131-dc3e-4e95-bab8-926b73023556",
+    "source_lesson_vocab_id": null
+  }
+}

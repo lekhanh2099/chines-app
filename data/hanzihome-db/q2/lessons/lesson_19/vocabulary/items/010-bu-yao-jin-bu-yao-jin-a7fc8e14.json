@@ -1,0 +1,378 @@
+{
+  "id": "17128905-2e3c-417f-9ace-2688adc9dbb0",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "不要紧",
+  "pinyin": "bù yào jǐn / bú yào jǐn",
+  "pos": {
+    "raw_vi": "cụm tính từ / câu đáp",
+    "raw_cn": "形容词短语",
+    "normalized": "adjective_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "condition",
+    "spoken"
+  ],
+  "meaning": {
+    "hanviet": "Bất yếu khẩn",
+    "meaning_vi": "không sao; không nghiêm trọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không sao; không nghiêm trọng"
+    ],
+    "short_definition_vi": "không sao; không nghiêm trọng",
+    "textbook_focus_vi": "Trấn an sau tai nạn hoặc bệnh nhẹ.",
+    "register_vi": "khẩu ngữ",
+    "usage_domain_vi": "hỏi thăm, trấn an",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Phủ định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "要",
+        "lishu_vi": "yếu",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cần, quan trọng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "紧",
+        "lishu_vi": "khẩn",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "糸",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấp, nghiêm trọng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不要紧 là cụm cố định: không nghiêm trọng, không cần quá lo.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "没关系",
+        "pinyin": "",
+        "meaning_vi": "không sao",
+        "difference_vi": "Thường đáp lại lời xin lỗi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "没事儿",
+        "pinyin": "",
+        "meaning_vi": "không sao",
+        "difference_vi": "Khẩu ngữ rất tự nhiên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "没问题",
+        "pinyin": "",
+        "meaning_vi": "không vấn đề gì",
+        "difference_vi": "Có thể dùng khi đồng ý giúp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不严重",
+        "pinyin": "",
+        "meaning_vi": "không nghiêm trọng",
+        "difference_vi": "Trực tiếp hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "要紧",
+        "right": "不要紧",
+        "meaning_vi": "nghiêm trọng ↔ không nghiêm trọng",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "54e195dd-bf1b-487c-ad55-2b60cfcf1036",
+      "order": 1,
+      "zh": "不要紧，我没事儿",
+      "pinyin": "",
+      "vi": "không sao, tôi ổn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74a6670e-068e-4c4c-98e4-0cf35efffed4",
+      "order": 2,
+      "zh": "一点儿也不要紧",
+      "pinyin": "",
+      "vi": "chẳng nghiêm trọng chút nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd6a9990-d12c-4f52-8904-fa7000fd0fd4",
+      "order": 3,
+      "zh": "伤得不要紧",
+      "pinyin": "",
+      "vi": "bị thương không nặng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69be89d4-a4ae-4a3f-bde8-9adfd8950431",
+      "order": 4,
+      "zh": "病得不要紧",
+      "pinyin": "",
+      "vi": "bệnh không nặng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0d14915-2058-4499-b0b1-49399a68d950",
+      "order": 5,
+      "zh": "这不要紧",
+      "pinyin": "",
+      "vi": "chuyện này không sao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "275cc2cb-7ee9-4d8a-9098-184939c87b15",
+      "order": 6,
+      "zh": "晚一点儿也不要紧",
+      "pinyin": "",
+      "vi": "muộn một chút cũng không sao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "61ddeb2c-8dd0-4cf6-836e-9ab3612be468",
+      "order": 1,
+      "zh": "不要紧，我只是擦伤了一点儿。",
+      "pinyin": "Bú yào jǐn, wǒ zhǐ shì cāshāng le yìdiǎnr.",
+      "vi": "Không sao, tôi chỉ bị trầy xước một chút thôi.",
+      "analysis_vi": "不要紧 dùng để trấn an; 只是……一点儿 giảm nhẹ mức độ.",
+      "highlight": [
+        "不要紧"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17128905-2e3c-417f-9ace-2688adc9dbb0"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e3906051-dd3c-4b8b-999c-9c9dfe11e838",
+      "order": 2,
+      "zh": "他的腿被自行车撞伤了，不过不要紧。",
+      "pinyin": "Tā de tuǐ bèi zìxíngchē zhuàng shāng le, búguò bú yào jǐn.",
+      "vi": "Chân anh ấy bị xe đạp đâm bị thương, nhưng không nghiêm trọng.",
+      "analysis_vi": "不过 chuyển ý; 不要紧 đánh giá mức độ thương tích.",
+      "highlight": [
+        "不要紧",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "17128905-2e3c-417f-9ace-2688adc9dbb0"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "05fd4db0-4d27-4d86-a749-043fa9821bb7",
+      "order": 3,
+      "zh": "他的钱包儿被偷了，虽然钱不多，可是证件也在里面，这就不是小事了。",
+      "pinyin": "Tā de qiánbāor bèi tōu le, suīrán qián bù duō, kěshì zhèngjiàn yě zài lǐmiàn, zhè jiù bú shì xiǎo shì le.",
+      "vi": "Ví của anh ấy bị trộm; tuy tiền không nhiều, nhưng giấy tờ cũng ở bên trong, vậy thì chuyện này không còn là chuyện nhỏ nữa.",
+      "analysis_vi": "Không phải tình huống nào cũng nói 不要紧; nếu có giấy tờ thì nghiêm trọng hơn.",
+      "highlight": [
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "17128905-2e3c-417f-9ace-2688adc9dbb0"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Đáp lời xin lỗi thường dùng 没关系 / 没事儿; nói tình trạng bệnh/tai nạn không nghiêm trọng thì 不要紧 hợp hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "308da62a-cfa7-4609-a62a-75372103e4f8",
+      "order": 1,
+      "rule_vi": "Đáp lời xin lỗi thì 没关系 thường tự nhiên hơn 不要紧.",
+      "natural_examples": [
+        {
+          "zh": "对不起，我来晚了。没关系。",
+          "pinyin": "Duìbuqǐ, wǒ lái wǎn le. Méi guānxi.",
+          "vi": "Xin lỗi, tôi đến muộn. Không sao.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "伤得不要紧。",
+          "pinyin": "Shāng de bú yào jǐn.",
+          "vi": "Bị thương không nặng.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不要紧",
+    "back": "không sao; không nghiêm trọng",
+    "hint": "bù yào jǐn / bú yào jǐn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "condition",
+      "spoken"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "17128905-2e3c-417f-9ace-2688adc9dbb0",
+    "source_lesson_vocab_id": null
+  }
+}

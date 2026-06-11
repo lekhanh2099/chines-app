@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_c9589e85955bbfd4",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "加油（儿）",
+  "pinyin": "jiāyóu(r)",
+  "meaning_vi": "cố lên; động viên; tiếp thêm sức",
+  "pos": "Động từ li hợp / Cụm động từ cố định",
+  "pos_detail": {
+    "vi": "Động từ li hợp / Cụm động từ cố định",
+    "cn": "动宾式离合词 / 固定口语短语",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": true,
+    "separable_type": "động-tân / 离合词",
+    "structure_vi": "động từ 加 + tân ngữ 油",
+    "usage_note_vi": "Nghĩa gốc là thêm nhiên liệu; trong bài là lời cổ vũ 加油儿啊. Khi dùng để cổ vũ thường nói cố định 加油/加油儿, không nên tách tùy tiện trong trình độ này.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+    "type": "vocabulary_item",
+    "order": 6,
+    "hanzi": "加油（儿）",
+    "pinyin": "jiāyóu(r)",
+    "meaning_vi": "cố lên; động viên; tiếp thêm sức",
+    "meaning_en": "",
+    "pos": "Động từ li hợp / Cụm động từ cố định",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "加油（儿）",
+      "back": "jiāyóu(r) — cố lên; động viên; tiếp thêm sức",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ li hợp / Cụm động từ cố định",
+      "cn": "动宾式离合词 / 固定口语短语",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": true,
+      "separable_type": "động-tân / 离合词",
+      "structure_vi": "động từ 加 + tân ngữ 油",
+      "usage_note_vi": "Nghĩa gốc là thêm nhiên liệu; trong bài là lời cổ vũ 加油儿啊. Khi dùng để cổ vũ thường nói cố định 加油/加油儿, không nên tách tùy tiện trong trình độ này.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,267 @@
+{
+  "id": "8fc230ff-f98e-489e-99a8-256146a1de19",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "赔",
+  "pinyin": "péi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bồi",
+    "meaning_vi": "đền, bồi thường; lỗ vốn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đền, bồi thường; lỗ vốn"
+    ],
+    "short_definition_vi": "Mất tiền/vật để bù thiệt hại hoặc lỗ vốn.",
+    "textbook_focus_vi": "Dùng khi làm hỏng/mất đồ người khác.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "赔",
+        "lishu_vi": "bồi",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "tiền/tài sản",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "贝 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tiền/tài sản",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "tiền/tài sản",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "贝 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đền/bồi thường",
+        "modern_logic_vi": "đền/bồi thường",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 贝 nên liên quan tiền/tài sản.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "赔偿",
+        "pinyin": "péicháng",
+        "meaning_vi": "bồi thường",
+        "difference_vi": "赔偿 trang trọng/pháp lý hơn 赔.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9b0902c7-6fa7-4451-8e8f-214536e978b2",
+      "order": 1,
+      "zh": "赔钱",
+      "pinyin": "",
+      "vi": "đền tiền/lỗ tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6a0be13-ed53-4f94-bfb3-184001d021a7",
+      "order": 2,
+      "zh": "赔偿损失",
+      "pinyin": "",
+      "vi": "bồi thường tổn thất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50c50e0f-9ad7-49b0-9de5-1ecf218aa125",
+      "order": 3,
+      "zh": "赔一本新的",
+      "pinyin": "",
+      "vi": "đền một quyển mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16e5b134-1c4d-494c-b858-3db9e9e78515",
+      "order": 4,
+      "zh": "赔礼道歉",
+      "pinyin": "",
+      "vi": "xin lỗi nhận lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "af509c7c-fa67-422d-8b1f-0c931af800fb",
+      "order": 1,
+      "zh": "我把你的杯子打破了，我赔你一个新的。",
+      "pinyin": "",
+      "vi": "Tôi làm vỡ cốc của bạn rồi, tôi đền bạn cái mới.",
+      "analysis_vi": "赔 + người + vật.",
+      "highlight": [
+        "赔"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8fc230ff-f98e-489e-99a8-256146a1de19"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "66498097-cced-4a38-a38f-026eb6de81f9",
+      "order": 2,
+      "zh": "他把东西弄坏了，不但要赔钱，还得道歉。",
+      "pinyin": "",
+      "vi": "Anh ấy làm hỏng đồ, không những phải đền tiền mà còn phải xin lỗi.",
+      "analysis_vi": "不但……还…….",
+      "highlight": [
+        "赔"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8fc230ff-f98e-489e-99a8-256146a1de19"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "51f90e0f-538c-4f7b-801a-e30f5f0bb553",
+      "order": 1,
+      "rule_vi": "赔钱 có thể là đền tiền hoặc lỗ tiền; phải đọc ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "赔钱 có thể là đền tiền hoặc lỗ tiền; phải đọc ngữ cảnh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "赔",
+    "back": "đền, bồi thường; lỗ vốn",
+    "hint": "péi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8fc230ff-f98e-489e-99a8-256146a1de19",
+    "source_lesson_vocab_id": null
+  }
+}

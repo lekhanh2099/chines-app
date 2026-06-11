@@ -1,0 +1,442 @@
+{
+  "id": "d438e81a-9112-4e30-a3da-6cf0aedd9c6d",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "想法",
+  "pinyin": "xiǎngfǎ / xiǎng fa",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ-cụm động từ 【名词 / 动词性短语】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "degree_motion",
+    "idea",
+    "polyphone"
+  ],
+  "meaning": {
+    "hanviet": "Tưởng pháp",
+    "meaning_vi": "ý nghĩ, quan điểm; nghĩ cách",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ý nghĩ, quan điểm",
+      "nghĩ cách"
+    ],
+    "short_definition_vi": "ý nghĩ, quan điểm",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "想",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "相",
+            "hanviet": "tương",
+            "meaning_vi": "nhìn nhau/dáng vẻ",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim/lòng/suy nghĩ",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng/suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩ, muốn, nhớ",
+        "modern_logic_vi": "想 = nghĩ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim/lòng/suy nghĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "法",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "去",
+            "hanviet": "khứ",
+            "meaning_vi": "đi; thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "pháp, cách, phương pháp, luật",
+        "modern_logic_vi": "法 = cách/phương pháp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước/chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "想法 được phân tích theo các thành phần đã chắc trong phần soạn; phần không chắc không ép chiết tự.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "看法",
+        "pinyin": "",
+        "meaning_vi": "cách nhìn/quan điểm",
+        "difference_vi": "Quan điểm về một việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "意见",
+        "pinyin": "",
+        "meaning_vi": "ý kiến/góp ý",
+        "difference_vi": "Có thể mang sắc thái phản hồi/phê bình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "办法",
+        "pinyin": "",
+        "meaning_vi": "biện pháp/cách làm",
+        "difference_vi": "Cách làm cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "主意",
+        "pinyin": "",
+        "meaning_vi": "ý tưởng/cách",
+        "difference_vi": "Đời thường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "做法",
+        "pinyin": "",
+        "meaning_vi": "cách làm",
+        "difference_vi": "Đối lập cách nghĩ-cách làm trong vài ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c21fd0b5-5f88-4fbd-8610-f7e5c59e5636",
+      "order": 1,
+      "zh": "我的想法",
+      "pinyin": "",
+      "vi": "ý nghĩ của tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a8a6a3e2-e9e7-47bb-b843-ce42c5861caf",
+      "order": 2,
+      "zh": "有一个想法",
+      "pinyin": "",
+      "vi": "có một ý tưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f5af64a-ea5c-472b-a6e2-9c02f494826f",
+      "order": 3,
+      "zh": "新的想法",
+      "pinyin": "",
+      "vi": "ý tưởng mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "477284c9-653b-44eb-988b-c3b86e023e88",
+      "order": 4,
+      "zh": "不同的想法",
+      "pinyin": "",
+      "vi": "suy nghĩ khác nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32403356-e403-4c33-9d64-fe259b827300",
+      "order": 5,
+      "zh": "改变想法",
+      "pinyin": "",
+      "vi": "thay đổi suy nghĩ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d623441d-19ba-4de0-8a25-91b78d9de6ca",
+      "order": 6,
+      "zh": "产生想法",
+      "pinyin": "",
+      "vi": "nảy sinh ý nghĩ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f7028b5-7702-4b07-8e71-e6a26a7af2c9",
+      "order": 7,
+      "zh": "想法解决问题",
+      "pinyin": "",
+      "vi": "nghĩ cách giải quyết vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ef69d54-c965-455f-8249-44ff5734c4d4",
+      "order": 8,
+      "zh": "按我的想法",
+      "pinyin": "",
+      "vi": "theo ý tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ab03c5a6-89a8-4b38-9e67-dcdc1b79a56a",
+      "order": 1,
+      "zh": "我有一个新的想法。",
+      "pinyin": "Wǒ yǒu yí ge xīn de xiǎngfa.",
+      "vi": "Tôi có một ý tưởng mới.",
+      "analysis_vi": "Danh từ 想法 thường đọc nhẹ âm 法.",
+      "highlight": [
+        "想法"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d438e81a-9112-4e30-a3da-6cf0aedd9c6d"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1278dee3-3554-42d3-8989-fbcdea21bea0",
+      "order": 2,
+      "zh": "改革开放以后，很多人的想法跟以前不一样了。",
+      "pinyin": "Gǎigé kāifàng yǐhòu, hěn duō rén de xiǎngfa gēn yǐqián bù yíyàng le.",
+      "vi": "Sau cải cách mở cửa, suy nghĩ của nhiều người đã khác trước.",
+      "analysis_vi": "想法 = cách nghĩ/quan điểm.",
+      "highlight": [
+        "想法",
+        "不一样"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "d438e81a-9112-4e30-a3da-6cf0aedd9c6d"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cfb532a4-791f-4895-a77c-3458a638a779",
+      "order": 3,
+      "zh": "他不但提出了自己的想法，而且想法把这个问题解决好。",
+      "pinyin": "Tā búdàn tíchū le zìjǐ de xiǎngfa, érqiě xiǎng fǎ bǎ zhège wèntí jiějué hǎo.",
+      "vi": "Anh ấy không những đưa ra ý kiến của mình mà còn nghĩ cách giải quyết tốt vấn đề này.",
+      "analysis_vi": "Câu dùng hai nghĩa: danh từ 想法 và động từ/cụm 想法.",
+      "highlight": [
+        "想法",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "d438e81a-9112-4e30-a3da-6cf0aedd9c6d"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "你的想法是什么？ là cách hỏi ý kiến trung tính; 意见 đôi khi nghe như góp ý/phê bình.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0e8ef847-5b1a-4c90-bb32-1dd607fd7491",
+      "order": 1,
+      "rule_vi": "Phân biệt 想法 và 办法.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我有一个想法。",
+          "pinyin": "Wǒ yǒu yí ge xiǎngfa.",
+          "vi": "Tôi có một ý tưởng.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我有一个办法。",
+          "pinyin": "Wǒ yǒu yí ge bànfǎ.",
+          "vi": "Tôi có một cách/biện pháp.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "想法",
+    "back": "ý nghĩ, quan điểm; nghĩ cách",
+    "hint": "xiǎngfǎ / xiǎng fa",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "idea",
+      "polyphone"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d438e81a-9112-4e30-a3da-6cf0aedd9c6d",
+    "source_lesson_vocab_id": null
+  }
+}

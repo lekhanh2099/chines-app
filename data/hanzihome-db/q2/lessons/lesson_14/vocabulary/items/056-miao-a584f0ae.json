@@ -1,0 +1,313 @@
+{
+  "id": "2b74f4bd-9edf-43ee-960c-621f70dbd845",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "庙",
+  "pinyin": "miào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Miếu",
+    "meaning_vi": "miếu, đền thờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "miếu",
+      "đền thờ"
+    ],
+    "short_definition_vi": "miếu, đền thờ",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "văn hóa, tín ngưỡng, du lịch, kiến trúc truyền thống.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "庙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "由",
+            "hanviet": "do",
+            "meaning_vi": "do/từ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "miếu, đền",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "庙 có bộ 广, thường liên quan đến nhà cửa, công trình, mái che. → 庙 thường rộng hơn 寺, không nhất thiết là chùa Phật giáo.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 庙 thường rộng hơn 寺, không nhất thiết là chùa Phật giáo.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: tiếng Việt hay gom “chùa/đền/miếu”, nhưng tiếng Trung phân biệt tương đối rõ theo đối tượng thờ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "庙 (miào)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "miếu/đền thờ thần, nhân vật lịch sử, tổ tiên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寺 (sì)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chùa, thường gắn với Phật giáo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寺庙 (sìmiào)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chùa miếu/đền chùa nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "祠堂 (cítáng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhà thờ họ/từ đường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 寺 thiên Phật giáo; 庙 thiên tín ngưỡng dân gian, thần linh, nhân vật lịch sử; 寺庙 là cách gọi chung."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b2c1ccae-4116-4eab-a1d4-fbdfad417d73",
+      "order": 1,
+      "zh": "孔庙",
+      "pinyin": "",
+      "vi": "Văn Miếu / miếu thờ Khổng Tử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f20b2dda-e3d9-4c1e-ba67-009ffdbff162",
+      "order": 2,
+      "zh": "关帝庙",
+      "pinyin": "",
+      "vi": "miếu Quan Đế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99e85120-cae8-46d3-9fec-35c95aa12730",
+      "order": 3,
+      "zh": "庙会",
+      "pinyin": "",
+      "vi": "hội chùa/hội miếu, hội dân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df7538d4-437c-4dbb-9930-ea5fc074f8f5",
+      "order": 4,
+      "zh": "去庙里看看",
+      "pinyin": "",
+      "vi": "vào miếu/đền xem thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "92f2f23e-5f40-4638-a84c-27786ba01df7",
+      "order": 1,
+      "zh": "我们走进庙里以后，忽然觉得里面很安静。",
+      "pinyin": "Wǒmen zǒu jìn miào lǐ yǐhòu, hūrán juéde lǐmian hěn ānjìng.",
+      "vi": "Sau khi chúng tôi đi vào trong miếu, bỗng cảm thấy bên trong rất yên tĩnh.",
+      "analysis_vi": "走进庙里 đặt tân ngữ địa điểm 庙里 giữa 进 và phần ý hướng vào; câu rất sát bổ ngữ xu hướng.",
+      "highlight": [
+        "庙"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2b74f4bd-9edf-43ee-960c-621f70dbd845"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3e6b0b4e-b9be-436f-ac93-3e23f8679940",
+      "order": 2,
+      "zh": "从庙里出来的时候，他买了一个小脸谱钥匙链。",
+      "pinyin": "Cóng miào lǐ chūlai de shíhou, tā mǎi le yí ge xiǎo liǎnpǔ yàoshi liàn.",
+      "vi": "Khi từ trong miếu đi ra, anh ấy mua một cái móc khóa mặt nạ kinh kịch nhỏ.",
+      "analysis_vi": "从庙里出来 là từ trong đi ra ngoài; phía sau nối với mua quà lưu niệm.",
+      "highlight": [
+        "庙"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2b74f4bd-9edf-43ee-960c-621f70dbd845"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5dda04c3-2ae2-4493-98ef-7cfa4f2b4a45",
+      "order": 3,
+      "zh": "去中国旅行时，看到“孔庙”不要马上翻译成普通的寺。",
+      "pinyin": "Qù Zhōngguó lǚxíng shí, kàn dào “Kǒngmiào” bú yào mǎshàng fānyì chéng pǔtōng de sì.",
+      "vi": "Khi đi du lịch Trung Quốc, thấy “孔庙” đừng lập tức dịch thành chùa bình thường.",
+      "analysis_vi": "翻译成 nói dịch thành một cách hiểu khác; câu này nhắc phân biệt văn hóa.",
+      "highlight": [
+        "庙"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2b74f4bd-9edf-43ee-960c-621f70dbd845"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "21a3a688-db7b-4588-b0f4-afd5bad6a876",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dịch mọi nơi thờ tự thành 寺. Tự nhiên hơn:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "庙",
+    "back": "miếu, đền thờ",
+    "hint": "miào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "庙会 – miàohuì – là hội dân gian quanh đền/miếu, thường có đồ ăn, biểu diễn, trò chơi, hàng hóa truyền thống. Đây là nét văn hóa rất Trung Quốc, đặc biệt vào dịp Tết.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2b74f4bd-9edf-43ee-960c-621f70dbd845",
+    "source_lesson_vocab_id": null
+  }
+}

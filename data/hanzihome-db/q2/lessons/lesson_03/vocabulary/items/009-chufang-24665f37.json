@@ -1,0 +1,433 @@
+{
+  "id": "37e30068-e797-4a6e-ac2a-5318bfe7e018",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "厨房",
+  "pinyin": "chúfáng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "housing",
+    "room"
+  ],
+  "meaning": {
+    "hanviet": "Trù phòng",
+    "meaning_vi": "nhà bếp, phòng bếp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà bếp",
+      "phòng bếp"
+    ],
+    "short_definition_vi": "nhà bếp, phòng bếp",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "housing, room",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "厨",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "hán",
+            "meaning_vi": "không gian/mái che trong nhiều chữ",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "厂",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hán/Hán xưởng",
+              "radical_name_zh": "",
+              "hanviet": "hán",
+              "meaning_vi": "vách núi; mái che, không gian xưởng trong nhiều chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "豆",
+            "hanviet": "đậu",
+            "meaning_vi": "phần cấu tạo nhìn thấy",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "phần cấu tạo nhìn thấy",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bếp, nấu ăn",
+        "modern_logic_vi": "厨 liên quan nấu ăn/nhà bếp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "房",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "户",
+            "hanviet": "hộ",
+            "meaning_vi": "cửa/căn hộ",
+            "position_vi": "phần trái/trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "戶",
+              "radical_variant": "户",
+              "radical_name_vi": "bộ Hộ",
+              "radical_name_zh": "",
+              "hanviet": "hộ",
+              "meaning_vi": "cửa; hộ/căn",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng/phía",
+            "position_vi": "phần phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phòng, nhà",
+        "modern_logic_vi": "房 là phòng/không gian.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "戶",
+          "radical_variant": "户",
+          "radical_name_vi": "bộ Hộ",
+          "radical_name_zh": "",
+          "hanviet": "hộ",
+          "meaning_vi": "cửa; hộ/căn",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "厨 liên quan nấu ăn; 房 là phòng/không gian; 厨房 là không gian dùng để nấu ăn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "厨师",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đầu bếp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "餐厅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phòng ăn/nhà hàng tùy ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "客厅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phòng khách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "卧室",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phòng ngủ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "厨房",
+        "right": "厨师",
+        "meaning_vi": "厨房 là phòng bếp; 厨师 là đầu bếp.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "61dfcbb4-eb53-4262-a8c6-7767d5a5b5c3",
+      "order": 1,
+      "zh": "一个厨房",
+      "pinyin": "",
+      "vi": "một phòng bếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95e76221-4a5e-4fa1-88eb-db0e35db5836",
+      "order": 2,
+      "zh": "厨房很大",
+      "pinyin": "",
+      "vi": "bếp rất rộng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "caf9b637-7ca0-455c-ba5e-c8187ac596f2",
+      "order": 3,
+      "zh": "厨房很小",
+      "pinyin": "",
+      "vi": "bếp rất nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "300b2b7d-411b-4ea0-9d72-f72035743cca",
+      "order": 4,
+      "zh": "厨房很干净",
+      "pinyin": "",
+      "vi": "bếp rất sạch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "969fc49e-1a95-4cf8-a852-97764c36f33d",
+      "order": 5,
+      "zh": "开放式厨房",
+      "pinyin": "",
+      "vi": "bếp mở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f956243d-ccf9-4aa0-9c33-3cdd1526ae74",
+      "order": 6,
+      "zh": "在厨房做饭",
+      "pinyin": "",
+      "vi": "nấu cơm trong bếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bca67aa7-3535-41e1-8019-a4c67b344f02",
+      "order": 7,
+      "zh": "厨房用品",
+      "pinyin": "",
+      "vi": "đồ dùng nhà bếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37b860c5-93fb-4f5b-83c0-163722acd987",
+      "order": 8,
+      "zh": "厨房门口",
+      "pinyin": "",
+      "vi": "cửa phòng bếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0d66f0f3-5e65-464d-ada5-c47dd3520eff",
+      "order": 1,
+      "zh": "厨房在客厅旁边。",
+      "pinyin": "Chúfáng zài kètīng pángbiān.",
+      "vi": "Phòng bếp ở bên cạnh phòng khách.",
+      "analysis_vi": "A 在 B 旁边 là mẫu vị trí cơ bản.",
+      "highlight": [
+        "厨房"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37e30068-e797-4a6e-ac2a-5318bfe7e018"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a8c06312-b591-40d8-8ff3-1f00d0a698e8",
+      "order": 2,
+      "zh": "这套房子虽然不大，但是厨房很干净。",
+      "pinyin": "Zhè tào fángzi suīrán bú dà, dànshì chúfáng hěn gānjìng.",
+      "vi": "Căn nhà này tuy không lớn, nhưng bếp rất sạch.",
+      "analysis_vi": "虽然……但是……; vế sau nêu ưu điểm khi xem nhà.",
+      "highlight": [
+        "厨房"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37e30068-e797-4a6e-ac2a-5318bfe7e018"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7196f4c3-c053-4ccf-b792-28183f891c45",
+      "order": 3,
+      "zh": "我们上去看了以后，才发现厨房的面积比我们想象的小，所以妻子不太满意。",
+      "pinyin": "Wǒmen shàngqù kàn le yǐhòu, cái fāxiàn chúfáng de miànjī bǐ wǒmen xiǎngxiàng de xiǎo, suǒyǐ qīzi bú tài mǎnyì.",
+      "vi": "Sau khi chúng tôi lên xem rồi mới phát hiện diện tích bếp nhỏ hơn chúng tôi tưởng, nên vợ tôi không hài lòng lắm.",
+      "analysis_vi": "上去看了以后，才发现…… nhấn sau khi xem mới phát hiện.",
+      "highlight": [
+        "厨房"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37e30068-e797-4a6e-ac2a-5318bfe7e018"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "开放式厨房 là bếp mở; nấu món nhiều dầu khói thì bếp mở có thể làm mùi lan ra phòng khách.",
+    "tags": [
+      "housing",
+      "room"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "16e101a0-c726-4b32-bbc2-f00c09de6a61",
+      "order": 1,
+      "rule_vi": "厨房 là phòng bếp, không phải đầu bếp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "厨房在做饭。",
+          "pinyin": "",
+          "vi": "Cái bếp đang nấu.",
+          "note_vi": "Sai nếu muốn nói đầu bếp đang nấu.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "厨师在厨房做饭。",
+          "pinyin": "Chúshī zài chúfáng zuò fàn.",
+          "vi": "Đầu bếp đang nấu ăn trong bếp.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Đầu bếp là 厨师.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "厨房",
+    "back": "nhà bếp, phòng bếp",
+    "hint": "chúfáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "housing",
+      "room"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "37e30068-e797-4a6e-ac2a-5318bfe7e018",
+    "source_lesson_vocab_id": null
+  }
+}

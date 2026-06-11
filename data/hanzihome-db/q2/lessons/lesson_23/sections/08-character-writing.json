@@ -1,0 +1,152 @@
+{
+  "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
+  "type": "character_writing",
+  "order": 8,
+  "title": "写汉字",
+  "title_vi": "Luyện viết chữ Hán",
+  "source_origin": "generated",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
+      "type": "character_copying",
+      "order": 1,
+      "hanzi": "丁",
+      "pinyin": "dīng",
+      "meaning_vi": "đinh; miếng nhỏ dạng hạt lựu trong 鸡丁",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
+      "type": "character_copying",
+      "order": 2,
+      "hanzi": "兵",
+      "pinyin": "bīng",
+      "meaning_vi": "binh lính",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
+      "type": "character_copying",
+      "order": 3,
+      "hanzi": "俗",
+      "pinyin": "sú",
+      "meaning_vi": "tục; phong tục",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
+      "type": "character_copying",
+      "order": 4,
+      "hanzi": "渴",
+      "pinyin": "kě",
+      "meaning_vi": "khát",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
+      "type": "character_copying",
+      "order": 5,
+      "hanzi": "辣",
+      "pinyin": "là",
+      "meaning_vi": "cay",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
+      "type": "character_copying",
+      "order": 6,
+      "hanzi": "醋",
+      "pinyin": "cù",
+      "meaning_vi": "giấm",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "b00ce016-cc5e-4ca7-8718-7ddcae1618a6",
+      "type": "character_copying",
+      "order": 7,
+      "hanzi": "零",
+      "pinyin": "líng",
+      "meaning_vi": "số không; không độ",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
+      "type": "character_copying",
+      "order": 8,
+      "hanzi": "线",
+      "pinyin": "xiàn",
+      "meaning_vi": "đường dây; tuyến",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "465657de-9263-4d12-86f0-2441c5765015",
+      "type": "character_copying",
+      "order": 9,
+      "hanzi": "雕",
+      "pinyin": "diāo",
+      "meaning_vi": "điêu khắc; chạm khắc",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "fc063ab3-c1b4-44d9-bd34-c6ed58bdbba7",
+      "type": "character_copying",
+      "order": 10,
+      "hanzi": "划",
+      "pinyin": "huá / huà",
+      "meaning_vi": "chèo/rạch; vạch, hoạch định",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "937cd534-2bef-484c-ac0b-fc654e6db919",
+      "type": "character_copying",
+      "order": 11,
+      "hanzi": "船",
+      "pinyin": "chuán",
+      "meaning_vi": "thuyền, tàu",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "df0df0d7-11b4-49e3-804b-a0fc179aab2a",
+      "type": "character_copying",
+      "order": 12,
+      "hanzi": "甲",
+      "pinyin": "jiǎ",
+      "meaning_vi": "đứng đầu; hạng nhất; giáp",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d8cdf3e0-e26d-4968-a7e2-6a30d0af1b90",
+      "type": "character_copying",
+      "order": 13,
+      "hanzi": "数",
+      "pinyin": "shù",
+      "meaning_vi": "số; số lượng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e11918fd-b3c9-4cb7-b623-0179aa82488b",
+      "type": "character_copying",
+      "order": 14,
+      "hanzi": "族",
+      "pinyin": "zú",
+      "meaning_vi": "dân tộc; tộc",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ],
+  "note_vi": "Theo mục 写汉字 trong PDF Bài 23, trang sách 182–183."
+}

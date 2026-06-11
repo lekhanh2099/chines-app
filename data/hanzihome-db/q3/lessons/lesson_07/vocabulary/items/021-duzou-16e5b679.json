@@ -1,0 +1,306 @@
+{
+  "id": "864224fe-3028-4643-82f2-95dbe016c660",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "独奏",
+  "pinyin": "dúzòu",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "độc tấu",
+    "meaning_vi": "độc tấu, biểu diễn solo nhạc cụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "độc tấu, biểu diễn solo nhạc cụ"
+    ],
+    "short_definition_vi": "độc tấu, biểu diễn solo nhạc cụ",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "独",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "犬",
+          "radical_variant": "犭",
+          "radical_name_vi": "bộ Khuyển",
+          "radical_name_zh": "",
+          "hanviet": "khuyển",
+          "meaning_vi": "chó, thú vật",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "犭 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó, thú vật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó, thú vật",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "犭 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 犭.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một mình, riêng",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "奏",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "diễn tấu",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "独 + 奏 = một người/một nhạc cụ tấu riêng.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 独奏.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "合奏",
+        "pinyin": "hézòu",
+        "meaning_vi": "hòa tấu",
+        "difference_vi": "nhiều người/nhạc cụ cùng biểu diễn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "独唱",
+        "pinyin": "dúchàng",
+        "meaning_vi": "đơn ca",
+        "difference_vi": "hát solo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "合奏",
+          "",
+          "hòa tấu",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3b72ee10-7246-4bda-9bcd-baabc93be336",
+      "order": 1,
+      "zh": "一个人独奏",
+      "pinyin": "",
+      "vi": "một người độc tấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76cfc99a-4dfb-4107-a697-f501528cdeee",
+      "order": 2,
+      "zh": "钢琴独奏",
+      "pinyin": "",
+      "vi": "piano độc tấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f579dfa-bd9d-469c-997a-7371b58617ad",
+      "order": 3,
+      "zh": "听独奏",
+      "pinyin": "",
+      "vi": "nghe độc tấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb7000ce-b36d-4007-bdc8-1d37e7edba8e",
+      "order": 4,
+      "zh": "独奏一首曲子",
+      "pinyin": "",
+      "vi": "độc tấu một bản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9b8405f1-cd6c-4c87-8603-da746abd4ceb",
+      "order": 1,
+      "zh": "国王的儿子不听合奏，只听独奏。",
+      "pinyin": "Guówáng de érzi bù tīng hézòu, zhǐ tīng dúzòu.",
+      "vi": "Con trai nhà vua không nghe hòa tấu, chỉ nghe độc tấu.",
+      "analysis_vi": "合奏 và 独奏 đối lập.",
+      "highlight": [
+        "独奏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "864224fe-3028-4643-82f2-95dbe016c660"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ec1d855a-8058-43f7-878b-2eb8dd142c2c",
+      "order": 2,
+      "zh": "一听说要独奏，南郭先生就吓得溜走了。",
+      "pinyin": "Yì tīngshuō yào dúzòu, Nán Guō xiānsheng jiù xià de liūzǒu le.",
+      "vi": "Vừa nghe nói phải độc tấu, Nam Quách sợ đến mức chuồn mất.",
+      "analysis_vi": "一听说……就…… chỉ phản ứng ngay.",
+      "highlight": [
+        "独奏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "864224fe-3028-4643-82f2-95dbe016c660"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Solo nhạc cụ là 独奏; hát solo là 独唱.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "75ae72a5-bf55-4d62-8172-a399cf989c6c",
+      "order": 1,
+      "rule_vi": "Không nói 她独奏了一首歌 nếu là hát; phải nói 她独唱了一首歌.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "独奏",
+    "back": "độc tấu, biểu diễn solo nhạc cụ",
+    "hint": "dúzòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "864224fe-3028-4643-82f2-95dbe016c660",
+    "source_lesson_vocab_id": null
+  }
+}

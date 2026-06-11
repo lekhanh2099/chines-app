@@ -1,0 +1,18 @@
+[
+  {
+    "id": "warning_e888f746efb110ae19ce5f57",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "待",
+      "敲",
+      "捧",
+      "甩",
+      "料",
+      "沉",
+      "束",
+      "加",
+      "淡"
+    ]
+  }
+]

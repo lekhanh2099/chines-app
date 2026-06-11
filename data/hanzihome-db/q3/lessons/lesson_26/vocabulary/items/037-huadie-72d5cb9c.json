@@ -1,0 +1,296 @@
+{
+  "id": "344a09b7-ae46-4d4f-9d8b-6d83f9a5079b",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "化蝶",
+  "pinyin": "huàdié",
+  "pos": {
+    "raw_vi": "Cụm động từ văn học",
+    "raw_cn": "文学性动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "hóa điệp",
+    "meaning_vi": "hóa thành bướm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hóa thành bướm"
+    ],
+    "short_definition_vi": "hóa thành bướm",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "化",
+        "lishu_vi": "hóa",
+        "structure_note_vi": "Chữ có thành phần/bộ 亻; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người, hành động của người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành động của người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành động của người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 化 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "蝶",
+        "lishu_vi": "điệp",
+        "structure_note_vi": "Chữ có thành phần/bộ 虫; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "虫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trùng",
+          "radical_name_zh": "",
+          "hanviet": "trùng",
+          "meaning_vi": "côn trùng, sâu bọ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng, sâu bọ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng, sâu bọ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "虫 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 蝶 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "化蝶 trong bài được học theo nghĩa: hóa thành bướm.",
+    "memory_tip_vi": "Nhớ 化蝶 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "变成蝴蝶",
+        "pinyin": "biànchéng húdié",
+        "meaning_vi": "biến thành bướm",
+        "difference_vi": "Đời thường hơn 化蝶.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "化蝶 dùng cho văn học/truyền thuyết; sâu bướm biến thành bướm nói 毛毛虫变成蝴蝶."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6d99aaf2-909f-4758-b66f-a84a5e4644be",
+      "order": 1,
+      "zh": "梁祝化蝶",
+      "pinyin": "",
+      "vi": "Lương Chúc hóa bướm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ce99b80-2b45-4552-8bca-8495f4fd53af",
+      "order": 2,
+      "zh": "死后化蝶",
+      "pinyin": "",
+      "vi": "sau khi chết hóa bướm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0fda3dc-ec2d-43f7-ae35-7072ce81badd",
+      "order": 3,
+      "zh": "双双化蝶",
+      "pinyin": "",
+      "vi": "cả hai cùng hóa bướm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a6b2adce-6102-4773-b8f0-87565c18022d",
+      "order": 1,
+      "zh": "故事的最后，他们双双化蝶。",
+      "pinyin": "",
+      "vi": "Cuối câu chuyện, hai người cùng hóa thành bướm.",
+      "analysis_vi": "双双 chỉ cả hai cùng làm.",
+      "highlight": [
+        "化蝶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "344a09b7-ae46-4d4f-9d8b-6d83f9a5079b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fe42845f-d5a3-4792-9e22-7632815e6307",
+      "order": 2,
+      "zh": "化蝶的结局表明，传说用想象完成了他们的心愿。",
+      "pinyin": "",
+      "vi": "Kết cục hóa bướm cho thấy truyền thuyết dùng tưởng tượng để hoàn thành tâm nguyện của họ.",
+      "analysis_vi": "表明 nối kết cục với ý nghĩa.",
+      "highlight": [
+        "化蝶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "344a09b7-ae46-4d4f-9d8b-6d83f9a5079b"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "化蝶 là biểu tượng dân gian hóa giải bi kịch tình yêu.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "edbe083b-498f-4981-b503-77aa055c572a",
+      "order": 1,
+      "rule_vi": "化蝶 dùng cho văn học/truyền thuyết; sâu bướm biến thành bướm nói 毛毛虫变成蝴蝶.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "化蝶",
+    "back": "hóa thành bướm",
+    "hint": "huàdié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "344a09b7-ae46-4d4f-9d8b-6d83f9a5079b",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "id": "c33c83a3-5b0e-429a-89ff-7588348c9c23",
+  "type": "deep_vocabulary_item",
+  "order": 60,
+  "hanzi": "孤立",
+  "pinyin": "gūlì",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动 / 形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cô lập",
+    "meaning_vi": "cô lập, đơn độc, tách rời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cô lập",
+      "đơn độc",
+      "tách rời"
+    ],
+    "short_definition_vi": "cô lập, đơn độc, tách rời",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "孤",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "瓜",
+            "hanviet": "qua",
+            "meaning_vi": "dưa",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cô đơn, lẻ loi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "立",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng, dựng, lập",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "立",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lập",
+              "radical_name_zh": "",
+              "hanviet": "lập",
+              "meaning_vi": "đứng, dựng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng, dựng, lập",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "孤立 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 孤立 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "孤独",
+        "pinyin": "gūdú",
+        "meaning_vi": "cô đơn",
+        "difference_vi": "Cảm giác nội tâm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "独立",
+        "pinyin": "dúlì",
+        "meaning_vi": "độc lập",
+        "difference_vi": "Có thể tích cực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "联系",
+        "pinyin": "liánxì",
+        "meaning_vi": "liên hệ",
+        "difference_vi": "Trái hướng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4fa5b0e0-61be-443c-be62-db873ac3e476",
+      "order": 1,
+      "zh": "感到孤立",
+      "pinyin": "gǎndào gūlì",
+      "vi": "cảm thấy cô lập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "917a7643-5e4c-4bd3-afdd-30620c677a94",
+      "order": 2,
+      "zh": "被孤立",
+      "pinyin": "bèi gūlì",
+      "vi": "bị cô lập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b01e686-e63e-4125-9d87-2be3d38fbd0a",
+      "order": 3,
+      "zh": "孤立地看问题",
+      "pinyin": "gūlì de kàn wèntí",
+      "vi": "nhìn vấn đề tách rời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "920ca5d1-8a9d-4421-9c41-4ad7623e34b1",
+      "order": 4,
+      "zh": "孤立无援",
+      "pinyin": "gūlì wúyuán",
+      "vi": "cô lập không ai giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4bdbfdf4-1a2b-404a-90ac-5221c1ca36e1",
+      "order": 1,
+      "zh": "他一个人在异国他乡，常常感到很孤立。",
+      "pinyin": "Tā yí ge rén zài yìguó tāxiāng, chángcháng gǎndào hěn gūlì.",
+      "vi": "Anh ấy một mình nơi đất khách, thường cảm thấy cô lập.",
+      "analysis_vi": "感到很孤立.",
+      "highlight": [
+        "孤立"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c33c83a3-5b0e-429a-89ff-7588348c9c23"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d330a7dd-0c2b-42b2-8576-e9e67c51f00c",
+      "order": 2,
+      "zh": "我们不能孤立地看一次失败，而要看它给我们带来了什么经验。",
+      "pinyin": "Wǒmen bù néng gūlì de kàn yí cì shībài, ér yào kàn tā gěi wǒmen dài lái le shénme jīngyàn.",
+      "vi": "Không nên nhìn một lần thất bại tách rời mà phải xem nó đem lại kinh nghiệm gì.",
+      "analysis_vi": "不能……而要…….",
+      "highlight": [
+        "孤立"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c33c83a3-5b0e-429a-89ff-7588348c9c23"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "孤立 còn dùng trong học thuật: 孤立地看问题 = nhìn vấn đề tách khỏi bối cảnh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f1893d14-0e25-4911-af9b-6f44c2ae25bc",
+      "order": 1,
+      "rule_vi": "独立 có thể tích cực; 孤立 thường tiêu cực.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "孤立",
+    "back": "cô lập, đơn độc, tách rời",
+    "hint": "gūlì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c33c83a3-5b0e-429a-89ff-7588348c9c23",
+    "source_lesson_vocab_id": null
+  }
+}

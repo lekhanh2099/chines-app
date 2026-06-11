@@ -1,0 +1,244 @@
+{
+  "id": "75124b39-5b9e-4baa-99eb-419fe25d2df8",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "跃",
+  "pinyin": "yuè",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "dược",
+    "meaning_vi": "nhảy, vọt lên, bật lên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhảy",
+      "vọt lên",
+      "bật lên"
+    ],
+    "short_definition_vi": "nhảy, vọt lên, bật lên",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "跃",
+        "lishu_vi": "dược",
+        "structure_note_vi": "Chữ có thành phần/bộ 足; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân, đi lại",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân, đi lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân, đi lại",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "足 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 跃 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "跃 trong bài được học theo nghĩa: nhảy, vọt lên, bật lên.",
+    "memory_tip_vi": "Nhớ 跃 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "跳",
+        "pinyin": "tiào",
+        "meaning_vi": "nhảy",
+        "difference_vi": "Đời thường và phổ biến hơn 跃.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Đời thường nói 跳 nhiều hơn; 跃 văn hơn và mạnh hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d2c85be1-f80b-41c6-b9a0-70ba27ad3568",
+      "order": 1,
+      "zh": "一跃而起",
+      "pinyin": "",
+      "vi": "bật dậy một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "332dd471-3117-4574-bd04-6fac87b38466",
+      "order": 2,
+      "zh": "跃进去",
+      "pinyin": "",
+      "vi": "nhảy vào trong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c6eec45-5aa5-4913-9615-f022356cf876",
+      "order": 3,
+      "zh": "跃入",
+      "pinyin": "",
+      "vi": "nhảy vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3a0b6d9f-66c6-462b-abc7-88eb6a9e7fe0",
+      "order": 1,
+      "zh": "他一跃而起，跑出了房间。",
+      "pinyin": "",
+      "vi": "Anh ấy bật dậy một cái rồi chạy ra khỏi phòng.",
+      "analysis_vi": "一跃而起 văn hơn 一下子跳起来.",
+      "highlight": [
+        "跃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "75124b39-5b9e-4baa-99eb-419fe25d2df8"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7090ec4e-1383-4afa-b90f-bed4056d1249",
+      "order": 2,
+      "zh": "坟墓裂开以后，祝英台一下子跃了进去。",
+      "pinyin": "",
+      "vi": "Sau khi mộ nứt mở, Chúc Anh Đài lập tức nhảy vọt vào trong.",
+      "analysis_vi": "跃进去 chỉ hướng vào bên trong.",
+      "highlight": [
+        "跃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "75124b39-5b9e-4baa-99eb-419fe25d2df8"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "跃 làm động tác trong cao trào có màu văn học và dứt khoát.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2f05d3c2-a089-46ff-815a-ff888c15f60e",
+      "order": 1,
+      "rule_vi": "Đời thường nói 跳 nhiều hơn; 跃 văn hơn và mạnh hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "跃",
+    "back": "nhảy, vọt lên, bật lên",
+    "hint": "yuè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "75124b39-5b9e-4baa-99eb-419fe25d2df8",
+    "source_lesson_vocab_id": null
+  }
+}

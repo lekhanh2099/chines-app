@@ -1,0 +1,255 @@
+{
+  "id": "e2dc1020-0fc8-4279-bf07-5698066b4224",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "暗示",
+  "pinyin": "ànshì",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "ám thị",
+    "meaning_vi": "ám chỉ, gợi ý ngầm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ám chỉ",
+      "gợi ý ngầm"
+    ],
+    "short_definition_vi": "ám chỉ, gợi ý ngầm",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "暗",
+        "lishu_vi": "ám",
+        "structure_note_vi": "Chữ có thành phần/bộ 日; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 暗 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "示",
+        "lishu_vi": "thị",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "示 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "暗示 trong bài được học theo nghĩa: ám chỉ, gợi ý ngầm.",
+    "memory_tip_vi": "Nhớ 暗示 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "提示",
+        "pinyin": "tíshì",
+        "meaning_vi": "gợi ý, nhắc",
+        "difference_vi": "Rõ hơn 暗示, thường dùng trong học tập/bài kiểm tra.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 暗示 với 提示; 提示 là gợi ý rõ để giúp người khác hiểu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1690d032-491b-46de-9940-fdc30b812a36",
+      "order": 1,
+      "zh": "暗示某人",
+      "pinyin": "",
+      "vi": "ám thị ai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ec7865b-5c6b-462d-bf51-92ee42b9fb76",
+      "order": 2,
+      "zh": "用眼神暗示",
+      "pinyin": "",
+      "vi": "dùng ánh mắt ám thị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c1ef3b6-d229-454e-8a14-aed5253cc64c",
+      "order": 3,
+      "zh": "听懂暗示",
+      "pinyin": "",
+      "vi": "hiểu ám chỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e480125a-0be5-4fdd-92cd-354397c23c79",
+      "order": 1,
+      "zh": "她用眼神暗示我别说话。",
+      "pinyin": "",
+      "vi": "Cô ấy dùng ánh mắt ám thị tôi đừng nói.",
+      "analysis_vi": "用 + phương tiện + V.",
+      "highlight": [
+        "暗示"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e2dc1020-0fc8-4279-bf07-5698066b4224"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8812ac33-fc53-497a-b4f5-3fa86a2add3a",
+      "order": 2,
+      "zh": "祝英台一路上都在暗示梁山伯，可是他始终没有明白。",
+      "pinyin": "",
+      "vi": "Trên suốt đường đi, Chúc Anh Đài luôn ám thị Lương Sơn Bá, nhưng anh vẫn không hiểu.",
+      "analysis_vi": "始终没有明白 nhấn không hiểu suốt quá trình.",
+      "highlight": [
+        "暗示"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e2dc1020-0fc8-4279-bf07-5698066b4224"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tình cảm trong văn học cổ thường được nói vòng qua 暗示.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4a07b2d2-0641-4a37-b9da-e0d54408e78a",
+      "order": 1,
+      "rule_vi": "Không nhầm 暗示 với 提示; 提示 là gợi ý rõ để giúp người khác hiểu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "暗示",
+    "back": "ám chỉ, gợi ý ngầm",
+    "hint": "ànshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e2dc1020-0fc8-4279-bf07-5698066b4224",
+    "source_lesson_vocab_id": null
+  }
+}

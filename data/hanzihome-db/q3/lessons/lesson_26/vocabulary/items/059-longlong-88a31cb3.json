@@ -1,0 +1,202 @@
+{
+  "id": "61795a25-ee96-476f-a758-21c40d4beeb3",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "隆隆",
+  "pinyin": "lónglóng",
+  "pos": {
+    "raw_vi": "Từ tượng thanh",
+    "raw_cn": "拟声词",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "long long",
+    "meaning_vi": "ầm ầm, ù ù, rền vang",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ầm ầm",
+      "ù ù",
+      "rền vang"
+    ],
+    "short_definition_vi": "ầm ầm, ù ù, rền vang",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "隆",
+        "lishu_vi": "long",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "隆 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "隆隆 trong bài được học theo nghĩa: ầm ầm, ù ù, rền vang.",
+    "memory_tip_vi": "Nhớ 隆隆 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "轰隆隆",
+        "pinyin": "hōnglónglóng",
+        "meaning_vi": "ầm ầm kéo dài",
+        "difference_vi": "Mạnh và khẩu ngữ/miêu tả hơn 隆隆.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 隆隆 cho âm nhỏ/ngắn như tiếng gõ cửa hoặc vỗ tay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "50297385-5e02-4ee8-8157-142c54145508",
+      "order": 1,
+      "zh": "雷声隆隆",
+      "pinyin": "",
+      "vi": "tiếng sấm ầm ầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00ee205c-4c48-4180-b63a-4ddfead70bd9",
+      "order": 2,
+      "zh": "隆隆作响",
+      "pinyin": "",
+      "vi": "vang ầm ầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5970ca99-d35a-48ba-8849-b9890273b478",
+      "order": 3,
+      "zh": "机器隆隆作响",
+      "pinyin": "",
+      "vi": "máy móc kêu ầm ầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c99babbf-516e-4656-b047-2dae5610c00f",
+      "order": 1,
+      "zh": "远处传来隆隆的雷声。",
+      "pinyin": "",
+      "vi": "Từ xa vọng lại tiếng sấm ầm ầm.",
+      "analysis_vi": "隆隆的雷声 là định ngữ âm thanh.",
+      "highlight": [
+        "隆隆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "61795a25-ee96-476f-a758-21c40d4beeb3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1c65c3be-4411-45b1-b267-2627215f0898",
+      "order": 2,
+      "zh": "雷声隆隆，祝英台跪在墓前痛哭。",
+      "pinyin": "",
+      "vi": "Tiếng sấm ầm ầm, Chúc Anh Đài quỳ trước mộ khóc đau đớn.",
+      "analysis_vi": "Vế đầu dựng âm thanh; vế sau dựng hành động.",
+      "highlight": [
+        "隆隆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "61795a25-ee96-476f-a758-21c40d4beeb3"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "隆隆 là từ tượng thanh, cần học bằng cảm giác âm thanh trầm lớn.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "918cc014-f8c8-4376-947c-968bdb478f86",
+      "order": 1,
+      "rule_vi": "Không dùng 隆隆 cho âm nhỏ/ngắn như tiếng gõ cửa hoặc vỗ tay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "隆隆",
+    "back": "ầm ầm, ù ù, rền vang",
+    "hint": "lónglóng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "61795a25-ee96-476f-a758-21c40d4beeb3",
+    "source_lesson_vocab_id": null
+  }
+}

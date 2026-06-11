@@ -1,0 +1,379 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "我们那儿的冬天跟北京一样冷",
+      "title_vi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "0d702b5a-265e-4467-b5d4-d34cc91e80d7",
+          "order": 1,
+          "speaker": "田芳",
+          "zh": "罗兰，你们国家的时间跟北京不一样吧？",
+          "pinyin": "Luólán, nǐmen guójiā de shíjiān gēn Běijīng bù yíyàng ba?",
+          "vi": "Roland, giờ ở nước bạn không giống giờ Bắc Kinh nhỉ?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4c837029-53b1-4a97-8057-b7d9394b6810",
+          "order": 2,
+          "speaker": "罗兰",
+          "zh": "当然不一样。我们那儿跟北京有七个小时的时差呢！",
+          "pinyin": "Dāngrán bù yíyàng. Wǒmen nàr gēn Běijīng yǒu qī ge xiǎoshí de shíchā ne!",
+          "vi": "Đương nhiên là không giống. Chỗ chúng tôi với Bắc Kinh lệch nhau bảy tiếng đấy!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "68867e17-037e-4416-a919-3df82d290ae5",
+          "order": 3,
+          "speaker": "田芳",
+          "zh": "你们那儿早还是北京早？",
+          "pinyin": "Nǐmen nàr zǎo háishì Běijīng zǎo?",
+          "vi": "Chỗ các bạn sớm hơn hay Bắc Kinh sớm hơn?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6179bdb7-83fb-48eb-9ee6-e8bc4437190e",
+          "order": 4,
+          "speaker": "罗兰",
+          "zh": "北京比我们那儿早七个小时。现在北京是上午八点多，我们那儿才夜里一点多。",
+          "pinyin": "Běijīng bǐ wǒmen nàr zǎo qī ge xiǎoshí. Xiànzài Běijīng shì shàngwǔ bā diǎn duō, wǒmen nàr cái yèlǐ yì diǎn duō.",
+          "vi": "Bắc Kinh sớm hơn chỗ chúng tôi bảy tiếng. Bây giờ Bắc Kinh là hơn tám giờ sáng, chỗ chúng tôi mới hơn một giờ đêm.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "584da1f1-b892-4d11-96d1-d8f6d5c35279",
+          "order": 5,
+          "speaker": "田芳",
+          "zh": "季节跟北京一样吗？",
+          "pinyin": "Jìjié gēn Běijīng yíyàng ma?",
+          "vi": "Các mùa có giống Bắc Kinh không?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0f3dd17-9607-425a-ab21-fa23c3fe0428",
+          "order": 6,
+          "speaker": "罗兰",
+          "zh": "季节跟北京一样，也是春、夏、秋、冬四个季节。",
+          "pinyin": "Jìjié gēn Běijīng yíyàng, yě shì chūn, xià, qiū, dōng sì ge jìjié.",
+          "vi": "Các mùa giống Bắc Kinh, cũng là bốn mùa xuân, hạ, thu, đông.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d71a9cc0-8e09-4e1d-8c80-8041f1fe6567",
+          "order": 7,
+          "speaker": "田芳",
+          "zh": "气候跟北京一样不一样？",
+          "pinyin": "Qìhòu gēn Běijīng yíyàng bù yíyàng?",
+          "vi": "Khí hậu có giống Bắc Kinh không?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "31a79611-4b10-4760-9d87-9b84ceb8b17b",
+          "order": 8,
+          "speaker": "罗兰",
+          "zh": "不一样。北京的夏天很热，我们那儿夏天没有这么热。",
+          "pinyin": "Bù yíyàng. Běijīng de xiàtiān hěn rè, wǒmen nàr xiàtiān méiyǒu zhème rè.",
+          "vi": "Không giống. Mùa hè Bắc Kinh rất nóng, mùa hè chỗ chúng tôi không nóng như vậy.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "dd5e19e2-db1e-480f-93ae-dc2ae89bee70",
+          "order": 9,
+          "speaker": "田芳",
+          "zh": "冬天冷不冷？",
+          "pinyin": "Dōngtiān lěng bù lěng?",
+          "vi": "Mùa đông có lạnh không?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b5341ae8-1b49-4826-b097-d018662915fc",
+          "order": 10,
+          "speaker": "罗兰",
+          "zh": "冬天跟北京一样冷，但是不常刮大风。",
+          "pinyin": "Dōngtiān gēn Běijīng yíyàng lěng, dànshì bù cháng guā dà fēng.",
+          "vi": "Mùa đông lạnh như Bắc Kinh, nhưng không thường có gió lớn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5ed5760c-eacb-45f3-8138-096cb33bb256",
+          "order": 11,
+          "speaker": "田芳",
+          "zh": "常下雪吗？",
+          "pinyin": "Cháng xià xuě ma?",
+          "vi": "Có thường có tuyết rơi không?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d1c8f679-10a4-4e05-9cca-427d7eb28ea9",
+          "order": 12,
+          "speaker": "罗兰",
+          "zh": "不但常常下雪，而且下得很大。北京呢？",
+          "pinyin": "Búdàn chángcháng xià xuě, érqiě xià de hěn dà. Běijīng ne?",
+          "vi": "Không những thường có tuyết rơi, mà tuyết còn rơi rất nhiều. Còn Bắc Kinh thì sao?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f84e9257-c93d-44a9-87d0-969f06cdc7db",
+          "order": 13,
+          "speaker": "田芳",
+          "zh": "北京冬天不常下雪。",
+          "pinyin": "Běijīng dōngtiān bù cháng xià xuě.",
+          "vi": "Mùa đông ở Bắc Kinh không thường có tuyết rơi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "我跟你不一样",
+      "title_vi": "Tôi không giống bạn",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "db54c3d1-f44c-4a4a-ad1f-c41114f0d1f5",
+          "order": 14,
+          "speaker": "麦克",
+          "zh": "玛丽，这次你考得怎么样？",
+          "pinyin": "Mǎlì, zhè cì nǐ kǎo de zěnmeyàng?",
+          "vi": "Mary, lần này bạn thi thế nào?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "58d995ce-1e95-46a5-8041-eaac9bf287ee",
+          "order": 15,
+          "speaker": "玛丽",
+          "zh": "还可以，综合课考了95分，听力跟阅读一样，都是90分，口语考得不太好，只考了85分。你呢？",
+          "pinyin": "Hái kěyǐ, zōnghé kè kǎo le jiǔshíwǔ fēn, tīnglì gēn yuèdú yíyàng, dōu shì jiǔshí fēn, kǒuyǔ kǎo de bú tài hǎo, zhǐ kǎo le bāshíwǔ fēn. Nǐ ne?",
+          "vi": "Cũng được, môn tổng hợp thi được 95 điểm, nghe và đọc giống nhau, đều 90 điểm, nói thì thi không tốt lắm, chỉ được 85 điểm. Còn bạn?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b2851f6f-c78e-4391-b88b-b834a9eb83d8",
+          "order": 16,
+          "speaker": "麦克",
+          "zh": "你比我考得好。我的阅读跟你考得一样，综合课和听力课都没有你考得好，只得了80分。",
+          "pinyin": "Nǐ bǐ wǒ kǎo de hǎo. Wǒ de yuèdú gēn nǐ kǎo de yíyàng, zōnghé kè hé tīnglì kè dōu méiyǒu nǐ kǎo de hǎo, zhǐ dé le bāshí fēn.",
+          "vi": "Bạn thi tốt hơn tôi. Môn đọc của tôi thi giống bạn, môn tổng hợp và môn nghe đều không tốt bằng bạn, chỉ được 80 điểm.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "52a1e6b8-7cf5-4801-b0aa-3cdfc8697bc8",
+          "order": 17,
+          "speaker": "玛丽",
+          "zh": "听写我没考好，有的汉字不会写。",
+          "pinyin": "Tīngxiě wǒ méi kǎo hǎo, yǒu de Hànzì bú huì xiě.",
+          "vi": "Phần nghe viết tôi thi không tốt, có vài chữ Hán không biết viết.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5e6308d6-3de7-45cc-a207-613d495e48f2",
+          "order": 18,
+          "speaker": "麦克",
+          "zh": "好了，不谈考试了。我问你，周末有什么打算？出去玩儿吗？",
+          "pinyin": "Hǎo le, bù tán kǎoshì le. Wǒ wèn nǐ, zhōumò yǒu shénme dǎsuàn? Chūqu wánr ma?",
+          "vi": "Thôi được rồi, không nói chuyện thi cử nữa. Tôi hỏi bạn, cuối tuần có dự định gì không? Có ra ngoài chơi không?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "af1daa2e-5950-4d4b-acf1-27dbbb24ec42",
+          "order": 19,
+          "speaker": "玛丽",
+          "zh": "出去。最近，我常到历史博物馆去参观。",
+          "pinyin": "Chūqu. Zuìjìn, wǒ cháng dào lìshǐ bówùguǎn qù cānguān.",
+          "vi": "Có ra ngoài. Gần đây tôi thường đến bảo tàng lịch sử tham quan.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "672f6f8a-a6fc-4432-b505-3eab376d0abd",
+          "order": 20,
+          "speaker": "麦克",
+          "zh": "是吗？你怎么对历史产生兴趣了？",
+          "pinyin": "Shì ma? Nǐ zěnme duì lìshǐ chǎnshēng xìngqù le?",
+          "vi": "Vậy à? Sao bạn lại bắt đầu có hứng thú với lịch sử rồi?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "63d654f5-4561-4d48-a144-bacbf9671dfc"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7957c566-a6d5-4e43-b40b-5fe3c63069f2",
+          "order": 21,
+          "speaker": "玛丽",
+          "zh": "学了京剧以后，我就对中国历史产生了兴趣。有一天，我在书店买到了一本画册，是介绍中国历史的。看了以后，就想到历史博物馆去看看。",
+          "pinyin": "Xué le Jīngjù yǐhòu, wǒ jiù duì Zhōngguó lìshǐ chǎnshēng le xìngqù. Yǒu yì tiān, wǒ zài shūdiàn mǎi dào le yì běn huàcè, shì jièshào Zhōngguó lìshǐ de. Kàn le yǐhòu, jiù xiǎng dào lìshǐ bówùguǎn qù kànkan.",
+          "vi": "Sau khi học Kinh kịch, tôi liền bắt đầu có hứng thú với lịch sử Trung Quốc. Một hôm, tôi mua được một quyển sách tranh ở hiệu sách; đó là sách giới thiệu lịch sử Trung Quốc. Xem xong rồi, tôi liền muốn đến bảo tàng lịch sử xem thử.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "63d654f5-4561-4d48-a144-bacbf9671dfc"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "32ad4f02-55d6-44c2-a190-68bd70607e50",
+          "order": 22,
+          "speaker": "麦克",
+          "zh": "你打算研究中国历史吗？",
+          "pinyin": "Nǐ dǎsuàn yánjiū Zhōngguó lìshǐ ma?",
+          "vi": "Bạn định nghiên cứu lịch sử Trung Quốc à?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "21b2136e-d19a-4928-a5df-029313d55763",
+          "order": 23,
+          "speaker": "玛丽",
+          "zh": "不，我只是对中国历史感兴趣。",
+          "pinyin": "Bù, wǒ zhǐshì duì Zhōngguó lìshǐ gǎn xìngqù.",
+          "vi": "Không, tôi chỉ có hứng thú với lịch sử Trung Quốc thôi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "7e2ee128-4fbd-4a93-898c-5f5fd99b371b"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9adfbc86-8bfb-46d7-ac4e-d41fca97d111",
+          "order": 24,
+          "speaker": "麦克",
+          "zh": "我跟你不一样，你喜欢老的，我喜欢新的。我对中国改革开放以后的一切都很感兴趣。",
+          "pinyin": "Wǒ gēn nǐ bù yíyàng, nǐ xǐhuan lǎo de, wǒ xǐhuan xīn de. Wǒ duì Zhōngguó gǎigé kāifàng yǐhòu de yíqiè dōu hěn gǎn xìngqù.",
+          "vi": "Tôi không giống bạn: bạn thích cái cũ, tôi thích cái mới. Tôi rất có hứng thú với mọi thứ của Trung Quốc sau cải cách mở cửa.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "bf5e90df-dc03-4600-a2d2-426ab562c9a5"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    }
+  ],
+  "comprehension_questions": []
+}

@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_118b2744d860f571",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "某",
+  "pinyin": "mǒu",
+  "meaning_vi": "nào đó, một vài, một người/vật nào đó",
+  "pos": "Đại từ",
+  "pos_detail": {
+    "vi": "Đại từ",
+    "cn": "代词",
+    "normalized": "pronoun",
+    "schema_compatible_pos": "pronoun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "fdf0fdbc-a8d1-440f-a3e6-908eae2319cf",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "fdf0fdbc-a8d1-440f-a3e6-908eae2319cf",
+    "type": "vocabulary_item",
+    "order": 19,
+    "hanzi": "某",
+    "pinyin": "mǒu",
+    "meaning_vi": "nào đó, một vài, một người/vật nào đó",
+    "meaning_en": "certain; some",
+    "pos": "Đại từ",
+    "pos_detail": {
+      "vi": "Đại từ",
+      "cn": "代词",
+      "normalized": "pronoun",
+      "schema_compatible_pos": "pronoun",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "某",
+      "back": "mǒu — nào đó, một vài, một người/vật nào đó",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

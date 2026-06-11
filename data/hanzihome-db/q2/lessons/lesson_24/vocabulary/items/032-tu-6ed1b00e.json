@@ -1,0 +1,184 @@
+{
+  "id": "2c839bd2-0fd3-4291-9085-3a4e73e3d964",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "图",
+  "pinyin": "tú",
+  "pos": {
+    "raw_vi": "noun/verb",
+    "raw_cn": "",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đồ",
+    "meaning_vi": "hình; tranh; bản đồ; sơ đồ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hình",
+      "tranh",
+      "bản đồ",
+      "sơ đồ"
+    ],
+    "short_definition_vi": "hình; tranh; bản đồ; sơ đồ",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "图",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao quanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao quanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hình; tranh; bản đồ",
+        "modern_logic_vi": "Khung bao gợi hình/bản vẽ trong phạm vi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "图 = hình; tranh; bản đồ; sơ đồ.",
+    "memory_tip_vi": "",
+    "warning_vi": "图 rất rộng; phải nhìn từ ghép như 地图, 图片, 图表.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9dbaaac5-711e-4410-a855-c4207b522f46",
+      "order": 1,
+      "zh": "图",
+      "pinyin": "",
+      "vi": "hình; tranh; bản đồ; sơ đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0fc93819-3271-4510-b98c-fb3991e52295",
+      "order": 1,
+      "zh": "这张图上画着松、竹、梅。",
+      "pinyin": "Zhè zhāng tú shang huàzhe sōng, zhú, méi.",
+      "vi": "Trên bức hình này vẽ tùng, trúc, mai.",
+      "analysis_vi": "图 rất rộng; phải nhìn từ ghép như 地图, 图片, 图表.",
+      "level": "basic",
+      "highlight": [
+        "图"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2c839bd2-0fd3-4291-9085-3a4e73e3d964"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5af1a30c-03d2-4d95-ab4b-e1a97d560b64",
+      "kind": "usage",
+      "text_vi": "图 rất rộng; phải nhìn từ ghép như 地图, 图片, 图表.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "图",
+    "back": "hình; tranh; bản đồ; sơ đồ",
+    "hint": "tú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2c839bd2-0fd3-4291-9085-3a4e73e3d964",
+    "source_lesson_vocab_id": null
+  }
+}

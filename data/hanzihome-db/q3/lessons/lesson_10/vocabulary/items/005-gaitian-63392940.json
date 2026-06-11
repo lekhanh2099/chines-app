@@ -1,0 +1,236 @@
+{
+  "id": "929016f6-ef71-42ea-8aad-0852847af77b",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "改天",
+  "pinyin": "gǎitiān",
+  "pos": {
+    "raw_vi": "Danh từ thời gian / Trạng ngữ",
+    "raw_cn": "时间名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cải thiên",
+    "meaning_vi": "hôm khác, ngày khác gần đây",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hôm khác",
+      "ngày khác gần đây"
+    ],
+    "short_definition_vi": "hôm khác, ngày khác",
+    "textbook_focus_vi": "hôm khác, ngày khác",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "改",
+        "lishu_vi": "cải",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "天",
+        "lishu_vi": "thiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "hôm khác, ngày khác",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 改天见.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "明天",
+        "pinyin": "míngtiān",
+        "meaning_vi": "ngày mai",
+        "difference_vi": "mốc cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以后",
+        "pinyin": "yǐhòu",
+        "meaning_vi": "sau này",
+        "difference_vi": "rộng hơn và không chắc gần",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cfc1d452-0ad7-4e84-8487-f94f06f896e3",
+      "order": 1,
+      "zh": "改天见",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "050f9f21-5b7a-41c4-b6a8-2a746ca6bbee",
+      "order": 2,
+      "zh": "改天再说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1014a620-a5ff-4022-a52f-47249c203a2d",
+      "order": 3,
+      "zh": "改天再谈",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ed0363fa-ca0f-468b-8586-dff0784216c1",
+      "order": 4,
+      "zh": "改天请你吃饭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "52e2504f-62fd-463d-bddd-3a8fad2cf111",
+      "order": 5,
+      "zh": "咱们改天吧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "820e8a1a-0d63-417c-84ff-cc9a0c43d5f3",
+      "order": 6,
+      "zh": "改天再去",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "16fd1b09-5041-4759-88ca-77737f66f82c",
+      "order": 1,
+      "zh": "今天太晚了，我们改天再谈。",
+      "pinyin": "Jīntiān tài wǎn le, wǒmen gǎitiān zài tán.",
+      "vi": "Hôm nay muộn quá rồi, chúng ta để hôm khác bàn tiếp.",
+      "analysis_vi": "改天再谈 là cụm hoãn lịch tự nhiên.",
+      "highlight": [
+        "改天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "929016f6-ef71-42ea-8aad-0852847af77b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "改天请你吃饭 có thể là lời hẹn xã giao.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7593d2fa-1272-42ab-9ee2-7a0005a24d1e",
+      "order": 1,
+      "rule_vi": "改天 không đồng nghĩa 明天; 明天 là ngày mai cụ thể.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "改天",
+    "back": "hôm khác, ngày khác gần đây",
+    "hint": "gǎitiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "929016f6-ef71-42ea-8aad-0852847af77b",
+    "source_lesson_vocab_id": null
+  }
+}

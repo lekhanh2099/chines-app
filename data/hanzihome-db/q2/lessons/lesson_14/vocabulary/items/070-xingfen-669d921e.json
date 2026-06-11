@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_fab4492e2b2e9c82",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "兴奋",
+  "pinyin": "xīngfèn",
+  "meaning_vi": "phấn khích, hưng phấn",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+    "type": "vocabulary_item",
+    "order": 9,
+    "hanzi": "兴奋",
+    "pinyin": "xīngfèn",
+    "meaning_vi": "phấn khích, hưng phấn",
+    "meaning_en": "excited",
+    "pos": "Tính từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "兴奋",
+      "back": "xīngfèn — phấn khích, hưng phấn",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

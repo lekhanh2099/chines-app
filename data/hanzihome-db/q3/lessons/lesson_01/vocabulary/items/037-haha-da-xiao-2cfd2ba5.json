@@ -1,0 +1,544 @@
+{
+  "id": "5e1de3b6-677e-46f1-b98f-2c18effc0aff",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "哈哈大笑",
+  "pinyin": "hāhā dà xiào",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ha ha đại tiếu",
+    "meaning_vi": "cười ha hả, cười lớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cười ha hả",
+      "cười lớn"
+    ],
+    "short_definition_vi": "cười ha hả, cười lớn",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: cười ha hả, cười lớn.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "哈",
+        "lishu_vi": "ha",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "合",
+            "hanviet": "hợp",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm ha, tiếng cười",
+        "modern_logic_vi": "Âm thanh phát ra từ miệng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "哈",
+        "lishu_vi": "ha",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "合",
+            "hanviet": "hợp",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm ha, tiếng cười",
+        "modern_logic_vi": "Âm thanh phát ra từ miệng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "大",
+        "lishu_vi": "đại",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn, to",
+        "modern_logic_vi": "Mức độ lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "笑",
+        "lishu_vi": "tiếu",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre; phần trên",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre; phần trên",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "夭",
+            "hanviet": "yêu",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cười",
+        "modern_logic_vi": "Biểu hiện cười.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre; phần trên",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "哈哈大笑 trong bài dùng theo nghĩa: cười ha hả, cười lớn. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 哈哈大笑 qua văn cảnh 离家的时候: cười ha hả, cười lớn.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "笑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cười nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "微笑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mỉm cười",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大笑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cười lớn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "笑出声来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cười thành tiếng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "哭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khóc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "流泪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rơi nước mắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7036af64-d70a-4de3-970c-1b7b2b140b7d",
+      "order": 1,
+      "zh": "哈哈大笑起来",
+      "pinyin": "",
+      "vi": "bật cười ha hả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6775bdf7-5e44-4d50-95aa-38b42bc3b064",
+      "order": 2,
+      "zh": "逗得哈哈大笑",
+      "pinyin": "",
+      "vi": "chọc đến mức cười ha hả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46498133-4252-46de-9bdb-98dc2d0a4095",
+      "order": 3,
+      "zh": "忍不住哈哈大笑",
+      "pinyin": "",
+      "vi": "không nhịn được cười lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a11d3f00-38fb-4e8d-8f4c-3b5b6fc451a1",
+      "order": 4,
+      "zh": "大家哈哈大笑",
+      "pinyin": "",
+      "vi": "mọi người cười lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a7e3f70b-d53f-42ee-b3f0-eaf965423940",
+      "order": 5,
+      "zh": "突然哈哈大笑",
+      "pinyin": "",
+      "vi": "đột nhiên cười phá lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1adeb79c-f8e0-4c0f-9cfe-bf5288a26b3a",
+      "order": 1,
+      "zh": "大家听了以后，都哈哈大笑起来。",
+      "pinyin": "",
+      "vi": "Mọi người nghe xong đều bật cười ha hả.",
+      "analysis_vi": "笑起来 = bật cười.",
+      "highlight": [
+        "哈哈大笑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e1de3b6-677e-46f1-b98f-2c18effc0aff"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0896b7ef-c0cc-4766-9156-8ff11c0ee46e",
+      "order": 2,
+      "zh": "父亲想逗她开心，就讲了一个笑话，结果她真的哈哈大笑起来。",
+      "pinyin": "",
+      "vi": "Bố muốn chọc cô ấy vui nên kể chuyện cười, kết quả cô ấy cười lớn thật.",
+      "analysis_vi": "结果 cho biết kết quả.",
+      "highlight": [
+        "哈哈大笑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e1de3b6-677e-46f1-b98f-2c18effc0aff"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c60b663e-ff02-4b30-9b55-f11eec38a0b4",
+      "order": 3,
+      "zh": "她刚才还哭着，可是听到弟弟那句傻话，一下子就被逗得哈哈大笑。",
+      "pinyin": "",
+      "vi": "Vừa nãy cô ấy còn khóc, nhưng nghe câu ngốc của em trai thì lập tức bị chọc cười lớn.",
+      "analysis_vi": "被逗得哈哈大笑 là bị chọc đến mức cười lớn.",
+      "highlight": [
+        "哈哈大笑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e1de3b6-677e-46f1-b98f-2c18effc0aff"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "哈哈 là âm thanh cười quen trong chat và văn kể cảnh vui.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ca97e415-74fa-4383-bf53-2c9bb095576c",
+      "order": 1,
+      "rule_vi": "Không dùng 哈哈大笑 cho nụ cười nhẹ/lịch sự; dùng 微笑.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "哈哈大笑",
+    "back": "cười ha hả, cười lớn",
+    "hint": "hāhā dà xiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_037"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5e1de3b6-677e-46f1-b98f-2c18effc0aff",
+    "source_lesson_vocab_id": null
+  }
+}

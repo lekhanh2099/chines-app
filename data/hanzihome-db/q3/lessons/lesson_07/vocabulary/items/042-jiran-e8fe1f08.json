@@ -1,0 +1,294 @@
+{
+  "id": "ad44ac92-cc18-486e-a3aa-8f57f09b0b90",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "既然",
+  "pinyin": "jìrán",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "ký nhiên",
+    "meaning_vi": "đã… thì…, một khi đã…",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đã… thì…, một khi đã…"
+    ],
+    "short_definition_vi": "đã… thì…, một khi đã…",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "既",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đã, đã rồi",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "灬 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 灬.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Việc đã như vậy rồi → từ tiền đề ấy suy ra kết luận.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 既然.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "因为",
+        "pinyin": "yīnwèi",
+        "meaning_vi": "vì",
+        "difference_vi": "nhấn nguyên nhân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "如果",
+        "pinyin": "rúguǒ",
+        "meaning_vi": "nếu",
+        "difference_vi": "tiền đề giả định",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dea901b8-b524-4ac2-bb8b-ad67a19e9bd8",
+      "order": 1,
+      "zh": "既然来了，就……",
+      "pinyin": "",
+      "vi": "đã đến thì…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8ff1ee7-34f5-4281-8930-71ac8faac102",
+      "order": 2,
+      "zh": "既然这样，就……",
+      "pinyin": "",
+      "vi": "đã như vậy thì…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3bd1b756-c3d8-4209-8738-eeb4444c865a",
+      "order": 3,
+      "zh": "既然不会，就要学",
+      "pinyin": "",
+      "vi": "đã không biết thì phải học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7fe81cd1-a35b-4020-a91b-c9cf0a31ccfb",
+      "order": 4,
+      "zh": "既然有问题，就应该解决",
+      "pinyin": "",
+      "vi": "đã có vấn đề thì nên giải quyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "97d49501-a4da-40ed-89ad-ec212db0af92",
+      "order": 1,
+      "zh": "既然来了，就坐一会儿吧。",
+      "pinyin": "Jìrán lái le, jiù zuò yíhuìr ba.",
+      "vi": "Đã đến rồi thì ngồi một lát đi.",
+      "analysis_vi": "既然 nêu tiền đề đã xảy ra.",
+      "highlight": [
+        "既然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ad44ac92-cc18-486e-a3aa-8f57f09b0b90"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "676b4f15-d110-41b7-ba08-25012b75b830",
+      "order": 2,
+      "zh": "既然你的矛能刺透任何盾，那它能不能刺透你自己的盾？",
+      "pinyin": "Jìrán nǐ de máo néng cì tòu rènhé dùn, nà tā néng bu néng cì tòu nǐ zìjǐ de dùn?",
+      "vi": "Đã là mâu của anh đâm thủng mọi khiên, vậy nó có đâm thủng khiên anh không?",
+      "analysis_vi": "Lấy chính lời người bán làm tiền đề phản biện.",
+      "highlight": [
+        "既然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ad44ac92-cc18-486e-a3aa-8f57f09b0b90"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "既然 rất hợp khi phản biện logic: đã A thì B thế nào?",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6535c2a2-ad6e-4d6d-8368-9dd55daf06bb",
+      "order": 1,
+      "rule_vi": "Không nhầm 既然 với 虽然; 既然 đi với 就, 虽然 đi với 但是/可是.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "既然",
+    "back": "đã… thì…, một khi đã…",
+    "hint": "jìrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ad44ac92-cc18-486e-a3aa-8f57f09b0b90",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_1f6492c20560ff45",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "忽然",
+  "pinyin": "hūrán",
+  "meaning_vi": "bỗng nhiên; đột nhiên",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+    "type": "vocabulary_item",
+    "order": 13,
+    "hanzi": "忽然",
+    "pinyin": "hūrán",
+    "meaning_vi": "bỗng nhiên; đột nhiên",
+    "meaning_en": "",
+    "pos": "Phó từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "忽然",
+      "back": "hūrán — bỗng nhiên; đột nhiên",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,64 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "summary": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "词语用法 / 语法",
+      "练习",
+      "综合填空",
+      "写汉字"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "拿"
+      },
+      {
+        "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+        "title": "动词 + 下"
+      },
+      {
+        "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+        "title": "动词 + 上"
+      },
+      {
+        "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+        "title": "多么"
+      },
+      {
+        "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+        "title": "也许"
+      }
+    ],
+    "main_patterns": [
+      "拿 + N + 来说",
+      "V + 下 + O",
+      "V + 上 + O",
+      "多么 + Adj / VP",
+      "也许 + câu",
+      "要是……就……",
+      "一边……一边……",
+      "边……边……边……"
+    ],
+    "coverage_summary": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": true,
+      "character_writing_covered": false,
+      "remaining_check_needed": "Không còn mục check_needed trong phần bài khóa, từ vựng, bài tập và đọc hiểu sau khi rà lại PDF và chuẩn hóa pinyin/dịch."
+    }
+  }
+}

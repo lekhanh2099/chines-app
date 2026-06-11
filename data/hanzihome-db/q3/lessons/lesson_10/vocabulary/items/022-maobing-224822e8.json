@@ -1,0 +1,281 @@
+{
+  "id": "7a278073-88ae-41cc-857e-4ea7a1137440",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "毛病",
+  "pinyin": "máobìng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mao bệnh",
+    "meaning_vi": "lỗi, tật xấu; trục trặc; bệnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lỗi",
+      "tật xấu",
+      "trục trặc",
+      "bệnh"
+    ],
+    "short_definition_vi": "lỗi, trục trặc, tật xấu",
+    "textbook_focus_vi": "lỗi, trục trặc, tật xấu",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "毛",
+        "lishu_vi": "mao",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "病",
+        "lishu_vi": "bệnh",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "lỗi, trục trặc, tật xấu",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 出毛病.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "问题",
+        "pinyin": "wèntí",
+        "meaning_vi": "vấn đề",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "故障",
+        "pinyin": "gùzhàng",
+        "meaning_vi": "sự cố kỹ thuật",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1fc97a44-1517-4fab-a92e-e7c94385dea5",
+      "order": 1,
+      "zh": "出毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15698c7b-04a3-409e-9f63-d0b5510b78bd",
+      "order": 2,
+      "zh": "有毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f2bc2c2-78cd-43bb-9ec0-868a75cd08a0",
+      "order": 3,
+      "zh": "机器有毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6403362e-fe82-4549-b792-3472b1595938",
+      "order": 4,
+      "zh": "身体有毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d9ae617e-0013-4d6d-804d-d59ac3ca7c7c",
+      "order": 5,
+      "zh": "老毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ece1d8d6-26d3-4bba-b7fd-dba75b5b7689",
+      "order": 6,
+      "zh": "小毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca94a568-b0d7-4ca7-8e84-8ac952c146cb",
+      "order": 7,
+      "zh": "找毛病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "be27b675-e8d1-475b-98e5-35cfd1949b65",
+      "order": 1,
+      "zh": "这台打印机又出毛病了。",
+      "pinyin": "Zhè tái dǎyìnjī yòu chū máobìng le.",
+      "vi": "Cái máy in này lại bị trục trặc rồi.",
+      "analysis_vi": "出毛病 = phát sinh vấn đề/trục trặc.",
+      "highlight": [
+        "毛病"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7a278073-88ae-41cc-857e-4ea7a1137440"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "你有毛病吧？ nghe xúc phạm nếu nói với người.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4dbedd25-a2e6-4a9c-9302-925799d084a0",
+      "order": 1,
+      "rule_vi": "有毛病 nói về người có thể rất xúc phạm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "毛病",
+    "back": "lỗi, tật xấu; trục trặc; bệnh",
+    "hint": "máobìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7a278073-88ae-41cc-857e-4ea7a1137440",
+    "source_lesson_vocab_id": null
+  }
+}

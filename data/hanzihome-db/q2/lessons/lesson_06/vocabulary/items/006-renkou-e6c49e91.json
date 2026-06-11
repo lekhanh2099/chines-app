@@ -1,0 +1,361 @@
+{
+  "id": "eb560ae3-8e9e-48dc-9d60-f596db276da2",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "人口",
+  "pinyin": "rénkǒu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "comparison_degree"
+  ],
+  "meaning": {
+    "hanviet": "Nhân khẩu",
+    "meaning_vi": "dân số",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dân số"
+    ],
+    "short_definition_vi": "dân số",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "comparison degree",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ cơ bản chỉ người.",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Chữ cơ bản chỉ người.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "口",
+        "lishu_vi": "",
+        "structure_note_vi": "口 gợi miệng; trong 人口 mở rộng thành đơn vị người/dân số.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh/lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "miệng; nhân khẩu trong 人口",
+        "modern_logic_vi": "口 gợi miệng; trong 人口 mở rộng thành đơn vị người/dân số.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "人 là người, 口 là miệng/nhân khẩu; 人口 là số người của một nơi.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "人民",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhân dân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "居民",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cư dân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "人数",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "số người trong nhóm cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9070cb5b-7f23-4a81-a84f-5156226a442b",
+      "order": 1,
+      "zh": "人口很多",
+      "pinyin": "",
+      "vi": "dân số rất đông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09e44c60-b98a-4390-9e0d-d848813372a7",
+      "order": 2,
+      "zh": "人口不少",
+      "pinyin": "",
+      "vi": "dân số không ít",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "adea7f54-1fae-49c7-80d9-1cfd702079a2",
+      "order": 3,
+      "zh": "人口增加",
+      "pinyin": "",
+      "vi": "dân số tăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0779dd7d-e2bd-46da-9007-d5e378c72e31",
+      "order": 4,
+      "zh": "人口减少",
+      "pinyin": "",
+      "vi": "dân số giảm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf14b391-c339-401d-8ed8-c7e8efcd55f6",
+      "order": 5,
+      "zh": "城市人口",
+      "pinyin": "",
+      "vi": "dân số đô thị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d6861753-3f58-4509-b38a-b972f474ad2a",
+      "order": 1,
+      "zh": "这个城市人口很多。",
+      "pinyin": "Zhège chéngshì rénkǒu hěn duō.",
+      "vi": "Thành phố này dân số rất đông.",
+      "analysis_vi": "人口 thường đi với 多/少.",
+      "highlight": [
+        "人口"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb560ae3-8e9e-48dc-9d60-f596db276da2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0f5749d1-5793-4dbf-9d59-efbc266b6637",
+      "order": 2,
+      "zh": "过去这里人口不多，现在人口增加了二十多万。",
+      "pinyin": "Guòqù zhèlǐ rénkǒu bù duō, xiànzài rénkǒu zēngjiā le èrshí duō wàn.",
+      "vi": "Trước đây dân số ở đây không đông, bây giờ đã tăng hơn hai trăm nghìn.",
+      "analysis_vi": "增加了 + số lượng = tăng thêm bao nhiêu.",
+      "highlight": [
+        "人口"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb560ae3-8e9e-48dc-9d60-f596db276da2"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "45270fdb-5a50-4f8a-8e9c-f5f406ac66ff",
+      "order": 1,
+      "rule_vi": "Với 人口, nói 多/少 tự nhiên hơn 大/小 ở trình độ cơ bản.",
+      "natural_examples": [
+        {
+          "zh": "人口多。",
+          "pinyin": "Rénkǒu duō.",
+          "vi": "Dân số đông.",
+          "note_vi": "Cách nói tự nhiên.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "人口大。",
+          "pinyin": "Rénkǒu dà.",
+          "vi": "",
+          "note_vi": "Không phải cách cơ bản để nói dân số đông.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "人口大。",
+          "pinyin": "Rénkǒu dà.",
+          "vi": "",
+          "note_vi": "Không phải cách cơ bản để nói dân số đông.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "人口多。",
+          "pinyin": "Rénkǒu duō.",
+          "vi": "Dân số đông.",
+          "note_vi": "Cách nói tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人口",
+    "back": "dân số",
+    "hint": "rénkǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "comparison_degree"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eb560ae3-8e9e-48dc-9d60-f596db276da2",
+    "source_lesson_vocab_id": null
+  }
+}

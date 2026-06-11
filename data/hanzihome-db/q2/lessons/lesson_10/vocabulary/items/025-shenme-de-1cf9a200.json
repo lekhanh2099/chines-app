@@ -1,0 +1,500 @@
+{
+  "id": "1109a7d0-d1a3-4009-b3fd-9b6554169d06",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "什么的",
+  "pinyin": "shénme de",
+  "pos": {
+    "raw_vi": "Cụm trợ từ / Cụm đánh dấu liệt kê khẩu ngữ",
+    "raw_cn": "列举标记",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thập ma đích",
+    "meaning_vi": "vân vân, này nọ, những thứ kiểu như vậy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vân vân, này nọ, những thứ kiểu như vậy"
+    ],
+    "short_definition_vi": "vân vân, này nọ, những thứ kiểu như vậy",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "什",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ Nhân trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ Nhân trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "么",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "的",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "màu trắng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "白",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bạch",
+              "radical_name_zh": "",
+              "hanviet": "bạch",
+              "meaning_vi": "màu trắng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "白 được dùng như bộ Bạch trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "白 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "白",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Bạch",
+          "radical_name_zh": "",
+          "hanviet": "bạch",
+          "meaning_vi": "màu trắng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "白 được dùng như bộ Bạch trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Không chiết tự. Học theo chức năng: A、B 什么的 = A, B và những thứ tương tự. Cảnh báo: 什么的 rất khẩu ngữ. Viết trang trọng thì dùng 等等.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "什么的",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vân vân, những thứ kiểu như..., khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "等等",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vân vân, trung tính/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "之类的",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "loại như..., những thứ thuộc loại đó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "等",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vân vân, văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我喜欢吃烤鸭、糖葫芦什么的。",
+      "Tôi thích ăn vịt quay, kẹo hồ lô gì đó.",
+      "我喜欢吃烤鸭、糖葫芦等等。",
+      "Tôi thích ăn vịt quay, kẹo hồ lô vân vân. Trang trọng hơn một chút."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "54e97089-6d94-4163-997f-a687bf1269e7",
+      "order": 1,
+      "zh": "……什么的",
+      "pinyin": "",
+      "vi": "... gì đó / vân vân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "61e5c83e-d8d2-4203-a5b3-3c3c62f4c8ee",
+      "order": 2,
+      "zh": "钢琴、小提琴什么的",
+      "pinyin": "",
+      "vi": "piano, violin gì đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6864f4b6-590a-42bd-8c6d-7dbb1068c0e2",
+      "order": 3,
+      "zh": "烤鸭、糖葫芦什么的",
+      "pinyin": "",
+      "vi": "vịt quay, kẹo hồ lô gì đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3b5cb3b3-f51a-4084-b717-cd45949403cd",
+      "order": 4,
+      "zh": "中医、针灸什么的",
+      "pinyin": "",
+      "vi": "Đông y, châm cứu gì đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a87dbc04-9900-4c92-92b5-62104d4b0683",
+      "order": 5,
+      "zh": "旅游、听音乐什么的",
+      "pinyin": "",
+      "vi": "du lịch, nghe nhạc gì đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "bf907b9e-ec9d-4270-b9e4-90d71a5c292a",
+      "order": 6,
+      "zh": "衣服、礼物什么的",
+      "pinyin": "",
+      "vi": "quần áo, quà cáp gì đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d88e830d-9457-47c0-a902-86fad0465128",
+      "order": 1,
+      "zh": "我喜欢吃烤鸭、糖葫芦什么的。",
+      "pinyin": "Wǒ xǐhuan chī kǎoyā, tánghúlu shénme de.",
+      "vi": "Tôi thích ăn vịt quay, kẹo hồ lô gì đó.",
+      "analysis_vi": "什么的 gom các món cùng loại, giọng khẩu ngữ.",
+      "highlight": [
+        "什么的"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "1109a7d0-d1a3-4009-b3fd-9b6554169d06"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "20e08ff0-9d25-4c18-bd16-86bf53a9207e",
+      "order": 2,
+      "zh": "你听过钢琴、小提琴什么的演奏吗？",
+      "pinyin": "Nǐ tīng guo gāngqín, xiǎotíqín shénme de yǎnzòu ma?",
+      "vi": "Bạn từng nghe biểu diễn piano, violin gì đó chưa?",
+      "analysis_vi": "听过 hỏi kinh nghiệm. 钢琴、小提琴什么的 = các nhạc cụ kiểu piano, violin.",
+      "highlight": [
+        "什么的"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "1109a7d0-d1a3-4009-b3fd-9b6554169d06"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5c5b052b-ebcf-4b85-938f-81b593022aac",
+      "order": 3,
+      "zh": "第一次去北京的时候，我吃过烤鸭、糖葫芦什么的，也亲耳听过一场中国音乐会，觉得那次旅行有意思极了。",
+      "pinyin": "Dì yī cì qù Běijīng de shíhou, wǒ chī guo kǎoyā, tánghúlu shénme de, yě qīněr tīng guo yì chǎng Zhōngguó yīnyuèhuì, juéde nà cì lǚxíng yǒu yìsi jí le.",
+      "vi": "Lần đầu đi Bắc Kinh, tôi từng ăn vịt quay, kẹo hồ lô gì đó, cũng từng tận tai nghe một buổi hòa nhạc Trung Quốc, tôi thấy chuyến đi lần đó thú vị cực kỳ.",
+      "analysis_vi": "第一次 = lần đầu. 吃过 / 听过 nhấn trải nghiệm. 极了 nhấn mức độ cao.",
+      "highlight": [
+        "什么的"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "1109a7d0-d1a3-4009-b3fd-9b6554169d06"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "e9bb80fd-b5b1-4f34-acad-57bb67a78365",
+      "order": 1,
+      "rule_vi": "Khẩu ngữ:",
+      "natural_examples": [
+        {
+          "zh": "烤鸭、糖葫芦什么的。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "烤鸭、糖葫芦等等。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "Không nên lạm dụng 什么的 trong bài thi viết nếu yêu cầu văn phong trang trọng.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Khẩu ngữ: 烤鸭、糖葫芦什么的。 Trang trọng hơn: 烤鸭、糖葫芦等等。 Không nên lạm dụng 什么的 trong bài thi viết nếu yêu cầu văn phong trang trọng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "什么的",
+    "back": "vân vân, này nọ, những thứ kiểu như vậy",
+    "hint": "shénme de",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "什么的 là kiểu nói rất đời. Khi nói chuyện với bạn bè, nó giúp câu mềm và tự nhiên hơn. Nhưng trong bài viết học thuật hoặc văn bản trang trọng, nên dùng 等等 / 之类的.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1109a7d0-d1a3-4009-b3fd-9b6554169d06",
+    "source_lesson_vocab_id": null
+  }
+}

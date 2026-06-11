@@ -1,0 +1,335 @@
+{
+  "id": "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "回头",
+  "pinyin": "huítóu",
+  "pos": {
+    "raw_vi": "Động từ / Phó từ thời gian khẩu ngữ",
+    "raw_cn": "动/副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hồi đầu",
+    "meaning_vi": "quay đầu; lát nữa; sau này; để sau",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quay đầu",
+      "lát nữa",
+      "sau này",
+      "để sau"
+    ],
+    "short_definition_vi": "quay đầu",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "回",
+        "lishu_vi": "hồi",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "vây quanh/khung bao",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "囗 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "vây quanh/khung bao",
+            "position_vi": "bao quanh",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "vây quanh/khung bao",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "囗 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "囗 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "头",
+        "lishu_vi": "đầu",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "回头 vốn là quay đầu lại, mở rộng thành quay lại xử lý sau/lát nữa tính.",
+    "memory_tip_vi": "Nhớ qua 回头再说 = để sau rồi nói.",
+    "warning_vi": "Trong 回头再说 không hiểu là quay đầu thật.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "以后",
+        "pinyin": "yǐhòu",
+        "meaning_vi": "sau này",
+        "difference_vi": "trung tính hơn 回头",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一会儿",
+        "pinyin": "yíhuìr",
+        "meaning_vi": "một lát nữa",
+        "difference_vi": "thời gian gần hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "后来",
+        "pinyin": "hòulái",
+        "meaning_vi": "sau đó",
+        "difference_vi": "dùng khi kể chuyện đã xảy ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nhớ qua 回头再说 = để sau rồi nói."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "00da3dae-6a39-46cf-b009-85d7ecf3a332",
+      "order": 1,
+      "zh": "回头再说",
+      "pinyin": "",
+      "vi": "để sau rồi nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8352de4a-b077-462b-a8ef-1a58cbf2cf87",
+      "order": 2,
+      "zh": "回头见",
+      "pinyin": "",
+      "vi": "lát nữa gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47ab9bfc-9d15-4694-8dd9-67a9471911ec",
+      "order": 3,
+      "zh": "回头再谈",
+      "pinyin": "",
+      "vi": "để sau bàn tiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58132e05-44fd-4d32-94a9-ef71e5e92d3e",
+      "order": 4,
+      "zh": "回头我给你打电话",
+      "pinyin": "",
+      "vi": "lát nữa tôi gọi cho bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a589a2d0-c559-4164-9595-71930f4c1921",
+      "order": 5,
+      "zh": "回头再联系",
+      "pinyin": "",
+      "vi": "để sau liên hệ lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3b522f3d-1a2b-49a9-a4ec-69b30e8841ee",
+      "order": 1,
+      "zh": "这件事现在不好决定，咱们回头再说吧。",
+      "pinyin": "Zhè jiàn shì xiànzài bù hǎo juédìng, zánmen huítóu zài shuō ba.",
+      "vi": "Việc này bây giờ khó quyết định, để sau rồi nói nhé.",
+      "analysis_vi": "回头再说 làm câu mềm hơn, chưa chốt ngay.",
+      "highlight": [
+        "回头"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ac4c1b4-1f94-4d8b-99f8-bbb67e407a46",
+      "order": 2,
+      "zh": "我回头给你发地址，你先别着急。",
+      "pinyin": "Wǒ huítóu gěi nǐ fā dìzhǐ, nǐ xiān bié zháojí.",
+      "vi": "Lát nữa tôi gửi địa chỉ cho bạn, bạn đừng vội.",
+      "analysis_vi": "回头 + V = lát nữa/sau đó làm gì.",
+      "highlight": [
+        "回头"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "回头再说 có thể là cách hoãn lịch sự, không nhất thiết là lời hứa chắc chắn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "81edc452-0441-4410-85ba-faeaf5baa791",
+      "order": 1,
+      "rule_vi": "Không thêm 了 sau 回头 khi muốn nói để sau tính.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我回头了再说。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我们回头再说。",
+          "pinyin": "Wǒmen huítóu zài shuō.",
+          "vi": "Để sau rồi nói.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Trong 回头再说 không hiểu là quay đầu thật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "回头",
+    "back": "quay đầu; lát nữa; sau này; để sau",
+    "hint": "huítóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "id": "564ea398-61bd-4dbe-8842-0641a5f94acd",
+  "type": "deep_vocabulary_item",
+  "order": 128,
+  "hanzi": "它们",
+  "pinyin": "tāmen",
+  "pos": {
+    "raw_vi": "Đại từ",
+    "raw_cn": "代词",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ chức năng ngữ pháp"
+  ],
+  "meaning": {
+    "hanviet": "Tha môn",
+    "meaning_vi": "chúng, dùng cho vật/động vật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chúng",
+      "dùng cho vật/động vật"
+    ],
+    "short_definition_vi": "chúng, dùng cho vật/động vật",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: chúng, dùng cho vật/động vật.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ chức năng ngữ pháp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "它",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "们",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "它们 trong bài được học theo nghĩa trọng tâm: chúng, dùng cho vật/động vật.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: chúng, dùng cho vật/động vật.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "874fb6c3-0acd-407e-aef2-5e663f78fbd9",
+      "order": 1,
+      "zh": "它们",
+      "pinyin": "",
+      "vi": "chúng, dùng cho vật/động vật",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d64cd2ed-a02b-4222-915f-1f9bc068281b",
+      "order": 1,
+      "zh": "对此，我们还不能肯定，也许是些金属颗粒——它们沿着固定轨道移动，并能喷出气体，发出噪音，还会互相碰撞。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “它们” = chúng, dùng cho vật/động vật.",
+      "analysis_vi": "Câu này dùng “它们” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "它们"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "564ea398-61bd-4dbe-8842-0641a5f94acd"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “它们” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "33ef2a2f-aa81-4ce8-b95d-ffb996e298e6",
+      "order": 1,
+      "rule_vi": "Cần dùng “它们” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "它们",
+    "back": "chúng, dùng cho vật/động vật",
+    "hint": "tāmen",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ chức năng ngữ pháp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "564ea398-61bd-4dbe-8842-0641a5f94acd",
+    "source_lesson_vocab_id": null
+  }
+}

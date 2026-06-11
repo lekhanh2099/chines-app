@@ -1,0 +1,414 @@
+{
+  "id": "aab277ee-2a24-4412-b135-47182513d899",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "爱人",
+  "pinyin": "àiren",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ái nhân",
+    "meaning_vi": "vợ/chồng; người yêu trong nghĩa cũ/trang trọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vợ/chồng",
+      "người yêu trong nghĩa cũ/trang trọng"
+    ],
+    "short_definition_vi": "vợ/chồng; người yêu trong nghĩa cũ/trang trọng",
+    "textbook_focus_vi": "Âm Hán Việt: ái nhân. Nghĩa chính trong tiếng Trung đại lục hiện đại: Vợ hoặc chồng. Người phối ngẫu, cách nói lịch sự/hơi thế hệ trước. Ít dùng hơn 丈夫 / 妻子 / 老公 / 老婆 trong khẩu ngữ người trẻ. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "爱",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "爫",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "冖",
+            "hanviet": "mịch",
+            "meaning_vi": "mái che / phủ lên",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冖",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mịch/Miên che",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "mái che / phủ lên",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "友",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yêu, thích, quý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "爱 = yêu/quý; 人 = người. 爱人 = người mình yêu; trong Mainland thường là vợ/chồng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: Người Việt thấy “ái nhân” dễ hiểu là người yêu. Nhưng trong nhiều ngữ cảnh Trung Quốc đại lục, 爱人 = vợ/chồng, không phải bạn trai/bạn gái.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "爱人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vợ/chồng, hơi lịch sự/hơi cũ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "丈夫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chồng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "妻子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vợ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老公",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chồng, khẩu ngữ thân mật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老婆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vợ, khẩu ngữ thân mật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "男朋友 / 女朋友: bạn trai/bạn gái.",
+      "Ví dụ:",
+      "这是我丈夫。",
+      "Đây là chồng tôi.",
+      "这是我妻子。",
+      "Đây là vợ tôi.",
+      "这是我爱人。",
+      "Đây là vợ/chồng tôi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a36c4443-3213-43ea-9675-5dd7cf41c7dd",
+      "order": 1,
+      "zh": "我的爱人",
+      "pinyin": "",
+      "vi": "vợ/chồng tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2875386-8ef3-400f-82ef-9fe8308d8ee4",
+      "order": 2,
+      "zh": "他爱人",
+      "pinyin": "",
+      "vi": "vợ/chồng anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2b0e95b-8406-4221-8e31-a27f4b3f84d4",
+      "order": 3,
+      "zh": "爱人来了",
+      "pinyin": "",
+      "vi": "vợ/chồng đến rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a334e24-fe9f-49cc-9706-94d9c66f2da5",
+      "order": 4,
+      "zh": "爱人去办事了",
+      "pinyin": "",
+      "vi": "vợ/chồng đi làm việc rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95a2ae7c-d166-4915-8011-b087608a64c7",
+      "order": 5,
+      "zh": "带爱人来",
+      "pinyin": "",
+      "vi": "dẫn vợ/chồng đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9cabc118-d600-420f-9247-58f86f9a7680",
+      "order": 6,
+      "zh": "跟爱人一起去",
+      "pinyin": "",
+      "vi": "đi cùng vợ/chồng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f3c537cb-6b84-49d2-886a-922f90a21c25",
+      "order": 1,
+      "zh": "这是我的爱人。",
+      "pinyin": "Zhè shì wǒ de àiren.",
+      "vi": "Đây là vợ/chồng tôi.",
+      "analysis_vi": "爱人 ở Mainland Putonghua thường là vợ/chồng.",
+      "highlight": [
+        "爱人"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "aab277ee-2a24-4412-b135-47182513d899"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "78213517-10f3-4b30-8b35-466b6a620780",
+      "order": 2,
+      "zh": "我爱人去大使馆办事了，马上回来。",
+      "pinyin": "Wǒ àiren qù dàshǐguǎn bàn shì le, mǎshàng huílai.",
+      "vi": "Vợ/chồng tôi đi đại sứ quán làm việc rồi, sắp về ngay.",
+      "analysis_vi": "去大使馆办事 = đi đại sứ quán xử lý việc. 回来 hướng về chỗ người nói.",
+      "highlight": [
+        "爱人"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "aab277ee-2a24-4412-b135-47182513d899"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a2d5317c-fff2-4406-a030-daf823014452",
+      "order": 3,
+      "zh": "研讨会快开始了，赵老师的爱人还没进去，他就向门口走过去，轻轻地叫她：“快进来吧。”",
+      "pinyin": "Yántǎohuì kuài kāishǐ le, Zhào lǎoshī de àiren hái méi jìnqù, tā jiù xiàng ménkǒu zǒu guòqù, qīngqīng de jiào tā: “Kuài jìnlai ba.”",
+      "vi": "Hội thảo sắp bắt đầu rồi, vợ/chồng của thầy Triệu vẫn chưa vào trong, thầy liền đi về phía cửa và nhẹ nhàng gọi cô ấy/anh ấy: “Mau vào đây đi.”",
+      "analysis_vi": "快开始了 báo sắp xảy ra. 还没进去 = vẫn chưa vào trong. 走过去 = đi qua đó. 进来 dùng 来 vì gọi vào phía người nói.",
+      "highlight": [
+        "爱人"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "aab277ee-2a24-4412-b135-47182513d899"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở Trung Quốc đại lục, 爱人 từng là cách gọi vợ/chồng khá phổ biến, nhất là thế hệ lớn tuổi hoặc ngữ cảnh lịch sự. Người trẻ hiện nay thường dùng 老公 / 老婆 / 丈夫 / 妻子 tùy mức độ thân mật và trang trọng.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cde2e6f4-2045-496b-a981-d22a1188d8af",
+      "order": 1,
+      "rule_vi": "Ở Mainland, 我的爱人 thường hiểu là vợ/chồng, không phải chỉ bạn trai/bạn gái.",
+      "natural_examples": [
+        {
+          "zh": "Đừng dịch 爱人 tự động là “người yêu”.",
+          "pinyin": "Trong nhiều câu giáo trình:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我爱人 = vợ/chồng tôi.",
+          "pinyin": "Bạn trai/bạn gái:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "男朋友 / 女朋友.",
+          "pinyin": "Người yêu nói chung trong ngữ cảnh hiện đại có thể dùng 恋人, nhưng đời thường vẫn hay nói rõ 男朋友 / 女朋友.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "爱人",
+    "back": "vợ/chồng; người yêu trong nghĩa cũ/trang trọng",
+    "hint": "àiren",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "aab277ee-2a24-4412-b135-47182513d899",
+    "source_lesson_vocab_id": null
+  }
+}

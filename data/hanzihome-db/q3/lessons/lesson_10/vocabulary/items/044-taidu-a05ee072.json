@@ -1,0 +1,312 @@
+{
+  "id": "8422ef26-c523-4acc-88a1-16680f36b912",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "态度",
+  "pinyin": "tàidu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thái độ",
+    "meaning_vi": "thái độ, lập trường, cách cư xử",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thái độ",
+      "lập trường",
+      "cách cư xử"
+    ],
+    "short_definition_vi": "thái độ, cách nhìn và cách cư xử",
+    "textbook_focus_vi": "thái độ, cách nhìn và cách cư xử",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "态",
+        "lishu_vi": "thái",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "度",
+        "lishu_vi": "độ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái nhà, không gian che phủ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái nhà, không gian che phủ",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái nhà, không gian che phủ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thái độ, cách nhìn và cách cư xử",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 工作态度.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "看法",
+        "pinyin": "kànfǎ",
+        "meaning_vi": "cách nhìn",
+        "difference_vi": "thiên về suy nghĩ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "立场",
+        "pinyin": "lìchǎng",
+        "meaning_vi": "lập trường",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1f1f5b99-d64a-4fd1-a954-8cb98ef3882c",
+      "order": 1,
+      "zh": "工作态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d24f5651-800b-4495-a228-834daeae3f5a",
+      "order": 2,
+      "zh": "学习态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa6622d9-4c82-4627-b344-824f658de027",
+      "order": 3,
+      "zh": "服务态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bceb3fb7-bdce-45cf-a4f6-ce3a05cce3b5",
+      "order": 4,
+      "zh": "态度很好",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d96e05a5-830d-4159-b1a7-acad6d6dd91a",
+      "order": 5,
+      "zh": "态度很差",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf144a79-91e8-4119-a0b2-b3116b1d2aec",
+      "order": 6,
+      "zh": "改变态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c05e0ee-3e55-46f1-8709-989a669d4d33",
+      "order": 7,
+      "zh": "表明态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4064d8a7-710f-4e0b-9b20-aa9575f6968d",
+      "order": 1,
+      "zh": "他的工作态度很好。",
+      "pinyin": "Tā de gōngzuò tàidu hěn hǎo.",
+      "vi": "Thái độ làm việc của anh ấy rất tốt.",
+      "analysis_vi": "工作态度 là cụm công sở rất hay dùng.",
+      "highlight": [
+        "态度"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8422ef26-c523-4acc-88a1-16680f36b912"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Công sở thường đánh giá cả 能力 lẫn 态度.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "660597bb-c25c-4828-a28f-92a1946b406f",
+      "order": 1,
+      "rule_vi": "态度 không chỉ là cảm xúc; nó là cách nhìn và cách cư xử.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "态度",
+    "back": "thái độ, lập trường, cách cư xử",
+    "hint": "tàidu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8422ef26-c523-4acc-88a1-16680f36b912",
+    "source_lesson_vocab_id": null
+  }
+}

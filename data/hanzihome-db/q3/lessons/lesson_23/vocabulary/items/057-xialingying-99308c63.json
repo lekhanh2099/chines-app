@@ -1,0 +1,370 @@
+{
+  "id": "c76a9bce-12b7-428b-b229-99173e696375",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "夏令营",
+  "pinyin": "xiàlìngyíng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hạ lệnh doanh",
+    "meaning_vi": "trại hè, summer camp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trại hè",
+      "summer camp"
+    ],
+    "short_definition_vi": "trại hè, summer camp",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về hoạt động hè, giáo dục, giao lưu.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "hoạt động hè, giáo dục, giao lưu",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "夏",
+        "lishu_vi": "hạ",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 夏 trong từ 夏令营; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 夏令营, chữ 夏 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "令",
+        "lishu_vi": "lệnh",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 令 trong từ 夏令营; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 夏令营, chữ 令 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "营",
+        "lishu_vi": "doanh",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 营 trong từ 夏令营; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ, cây cỏ",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ, cây cỏ",
+            "position_vi": "phần trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ, cây cỏ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 夏令营, chữ 营 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "夏令营 trong bài được nhớ theo nghĩa hiện đại: trại hè.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 参加夏令营 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "野营",
+        "pinyin": "yěyíng",
+        "meaning_vi": "cắm trại; hoạt động ngoài trời",
+        "difference_vi": "cắm trại; hoạt động ngoài trời",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "暑期课程",
+        "pinyin": "shǔqī kèchéng",
+        "meaning_vi": "khóa học hè; thiên học thuật",
+        "difference_vi": "khóa học hè; thiên học thuật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 夏令营 với 野营/露营."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6d00fba9-8ee0-4497-8639-92e0dbaedf06",
+      "order": 1,
+      "zh": "参加夏令营",
+      "pinyin": "",
+      "vi": "tham gia trại hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ee339331-ff49-4599-85ce-9c37b7ee5608",
+      "order": 2,
+      "zh": "汉语夏令营",
+      "pinyin": "",
+      "vi": "trại hè tiếng Hán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "486c6d7c-885a-4238-a8c3-76449827897a",
+      "order": 3,
+      "zh": "国际夏令营",
+      "pinyin": "",
+      "vi": "trại hè quốc tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03361c42-f6e1-4f9c-8b12-fe1e68334e2d",
+      "order": 4,
+      "zh": "组织夏令营",
+      "pinyin": "",
+      "vi": "tổ chức trại hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d10d0691-3374-468d-a78c-2e30efcd7d31",
+      "order": 5,
+      "zh": "报名夏令营",
+      "pinyin": "",
+      "vi": "đăng ký trại hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d82f9753-3b3b-4b30-b485-3c52f062ac9a",
+      "order": 1,
+      "zh": "暑假我想参加汉语夏令营。",
+      "pinyin": "",
+      "vi": "trại hè, summer camp",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "夏令营"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c76a9bce-12b7-428b-b229-99173e696375"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "422fd149-d5ab-4b12-abaf-9298d8336a07",
+      "order": 2,
+      "zh": "这个词语“夏令营”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 夏令营 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "夏令营"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c76a9bce-12b7-428b-b229-99173e696375"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0dbb34f-479f-46ba-bcbf-7efa5bb86659",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“夏令营”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 夏令营 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "夏令营"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c76a9bce-12b7-428b-b229-99173e696375"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "夏令营 thường gợi hoạt động tập thể, trải nghiệm, giao lưu, vừa học vừa chơi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "16313ea2-4532-4f90-9c94-0b3e9be9f749",
+      "order": 1,
+      "rule_vi": "Không nhầm 夏令营 với 野营/露营.",
+      "natural_examples": [
+        {
+          "zh": "我们参加夏令营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我们去夏令营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我们去夏令营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我们参加夏令营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 夏令营 với 野营/露营.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "夏令营",
+    "back": "trại hè, summer camp",
+    "hint": "xiàlìngyíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c76a9bce-12b7-428b-b229-99173e696375",
+    "source_lesson_vocab_id": null
+  }
+}

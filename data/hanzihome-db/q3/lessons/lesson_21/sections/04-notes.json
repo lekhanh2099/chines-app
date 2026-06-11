@@ -1,0 +1,95 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "头一天营业",
+      "structure": "头一天 + V/N",
+      "meaning_vi": "头 ở đây mang nghĩa 'đầu tiên'. 头一天营业 = ngày đầu tiên mở cửa kinh doanh.",
+      "examples": [
+        {
+          "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+          "zh": "今天是开门头一天，我太紧张了。",
+          "pinyin": "Jīntiān shì kāimén tóu yì tiān, wǒ tài jǐnzhāng le.",
+          "vi": "Hôm nay là ngày đầu tiên mở cửa, em căng thẳng quá.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "把提到嗓子眼儿的心一下子放到了肚里",
+      "structure": "把 + 心 + 提到嗓子眼儿 / 把 + 心 + 放到肚里",
+      "meaning_vi": "Cách nói hình tượng: lo đến thắt tim rồi yên tâm trở lại.",
+      "examples": [
+        {
+          "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+          "zh": "看到只是一个小伤口，我才把提到嗓子眼儿的心一下子放到了肚里。",
+          "pinyin": "Kàn dào zhǐshì yí ge xiǎo shāngkǒu, wǒ cái bǎ tí dào sǎngziyǎnr de xīn yíxiàzi fàng dào le dù lǐ.",
+          "vi": "Thấy chỉ là một vết thương nhỏ, tôi mới thở phào nhẹ nhõm.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "走，找他们算账去。",
+      "structure": "找 + người + 算账",
+      "meaning_vi": "算账 nghĩa gốc là tính sổ; trong ngữ cảnh là tìm ai đó để tính sổ/đòi lại công bằng.",
+      "examples": [
+        {
+          "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
+          "zh": "走，找他们算账去。",
+          "pinyin": "Zǒu, zhǎo tāmen suàn zhàng qù.",
+          "vi": "Đi, tìm họ tính sổ.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

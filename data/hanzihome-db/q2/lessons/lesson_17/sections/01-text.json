@@ -1,0 +1,373 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "我们把教室布置成了会场",
+      "title_vi": "Chúng tôi trang trí phòng học thành hội trường",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "圣诞节和新年快到了，我们班准备在圣诞节前举行一个联欢晚会，请老师们也来参加。晚会上我们要唱中文歌，用汉语讲故事，表演节目，品尝各国的特色菜。班长要求我们那天把自己亲手做的菜带到晚会上来，让大家品尝。",
+          "vi": "Giáng sinh và năm mới sắp đến rồi, lớp chúng tôi chuẩn bị tổ chức một buổi liên hoan trước Giáng sinh, mời các thầy cô cũng đến tham gia. Trong buổi liên hoan, chúng tôi sẽ hát bài hát tiếng Trung, kể chuyện bằng tiếng Hán, biểu diễn tiết mục, thưởng thức các món ăn đặc sắc của các nước. Lớp trưởng yêu cầu hôm đó chúng tôi mang món ăn tự tay mình làm đến buổi liên hoan để mọi người cùng thưởng thức.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+            "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+            "188412d4-4c23-4d60-b7b2-21f3490199e7"
+          ],
+          "pinyin": "Shèngdànjié hé xīnnián kuài dào le, wǒmen bān zhǔnbèi zài Shèngdànjié qián jǔxíng yí ge liánhuān wǎnhuì, qǐng lǎoshīmen yě lái cānjiā. Wǎnhuì shang wǒmen yào chàng Zhōngwén gē, yòng Hànyǔ jiǎng gùshi, biǎoyǎn jiémù, pǐncháng gè guó de tèsè cài. Bānzhǎng yāoqiú wǒmen nà tiān bǎ zìjǐ qīnshǒu zuò de cài dài dào wǎnhuì shang lái, ràng dàjiā pǐncháng."
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "玛丽说：“我们最好借一个大教室，把它布置成会场。”",
+          "vi": "Mary nói: “Tốt nhất chúng ta mượn một phòng học lớn, rồi bố trí nó thành hội trường.”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "5ea44727-d97c-467b-b1b8-babd195df50d",
+            "54613016-834a-4fc3-9912-2357a6d27058",
+            "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "54b36889-82be-485b-8342-fb8aab572065"
+          ],
+          "pinyin": "Mǎlì shuō: “Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.”"
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+          "vi": "Hôm kia, chúng tôi tìm người quản lý, nói với cô ấy chuyện mượn phòng học, cô ấy đồng ý cho chúng tôi mượn phòng học lớn đó. Chiều hôm qua, nhân viên phục vụ đã dọn phòng học qua một lượt, cửa ra vào và cửa sổ cũng đều được lau sạch sẽ tinh tươm.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+            "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+            "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "7a89dc80-d79d-4c2f-988c-d0f54e240d19"
+          ],
+          "pinyin": "Qiántiān, wǒmen zhǎodào guǎnlǐyuán, gàosu le tā jiè jiàoshì de shìr, tā dāying bǎ nà ge dà jiàoshì jiè gěi wǒmen. Zuótiān xiàwǔ fúwùyuán bǎ jiàoshì dǎsǎo le yíxiàr, bǎ mén hé chuānghu yě dōu cā de gāngānjìngjìng de."
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "我们把桌子摆成了一个大圆圈儿，爱德华把“圣诞——新年快乐”几个大字贴在了黑板上。",
+          "vi": "Chúng tôi xếp bàn thành một vòng tròn lớn, Edward dán mấy chữ lớn “Giáng sinh — Năm mới vui vẻ” lên bảng.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+            "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "689eb64b-5d4f-469f-9afa-74017d399614"
+          ],
+          "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng le yí ge dà yuánquānr, Àidéhuá bǎ “Shèngdàn — xīnnián kuàilè” jǐ ge dà zì tiē zài le hēibǎn shang."
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "李美英说，晚会上她要和几个同学唱歌，跳舞，所以把音响也搬到教室里来了。爱德华昨天从商店买回来一棵圣诞树，我们把它摆在了教室的前边，用彩灯和彩带把它装饰得非常漂亮。",
+          "vi": "Lý Mỹ Anh nói trong buổi liên hoan cô ấy sẽ hát và nhảy cùng vài bạn học, nên cũng chuyển dàn âm thanh đến phòng học. Hôm qua Edward mua từ cửa hàng về một cây thông Giáng sinh; chúng tôi đặt nó ở phía trước phòng học, dùng đèn màu và dây trang trí màu để trang trí nó rất đẹp.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+            "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "c99a633b-27a2-429b-a139-44113a84c189",
+            "79358c6f-3427-4c28-98f3-7ef98c7033c3"
+          ],
+          "pinyin": "Lǐ Měiyīng shuō, wǎnhuì shang tā yào hé jǐ ge tóngxué chàng gē, tiào wǔ, suǒyǐ bǎ yīnxiǎng yě bān dào jiàoshì lǐ lái le. Àidéhuá zuótiān cóng shāngdiàn mǎi huílai yì kē Shèngdànshù, wǒmen bǎ tā bǎi zài le jiàoshì de qiánbian, yòng cǎidēng hé cǎidài bǎ tā zhuāngshì de fēicháng piàoliang."
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "安娜是我们班最小的同学，她的生日正好是十二月二十五号，所以同学们还为她准备了一份生日礼物和一个生日蛋糕，但是我们还没把这事儿告诉她。我们想，到晚会上再把生日礼物送给她，给她一个惊喜，让她在中国过一个快乐的生日。",
+          "vi": "Anna là bạn nhỏ tuổi nhất lớp chúng tôi, sinh nhật của cô ấy đúng vào ngày 25 tháng 12, nên các bạn còn chuẩn bị cho cô ấy một món quà sinh nhật và một chiếc bánh sinh nhật, nhưng chúng tôi vẫn chưa nói chuyện này cho cô ấy biết. Chúng tôi định đến buổi liên hoan mới tặng quà sinh nhật cho cô ấy, cho cô ấy một điều bất ngờ vui, để cô ấy có một sinh nhật vui vẻ ở Trung Quốc.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+            "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "c43cedbf-7024-4ec1-922f-e75119114baf"
+          ],
+          "pinyin": "Ānnà shì wǒmen bān zuì xiǎo de tóngxué, tā de shēngrì zhènghǎo shì shí’èr yuè èrshíwǔ hào, suǒyǐ tóngxuémen hái wèi tā zhǔnbèi le yí fèn shēngrì lǐwù hé yí ge shēngrì dàngāo, dànshì wǒmen hái méi bǎ zhè shìr gàosu tā. Wǒmen xiǎng, dào wǎnhuì shang zài bǎ shēngrì lǐwù sòng gěi tā, gěi tā yí ge jīngxǐ, ràng tā zài Zhōngguó guò yí ge kuàilè de shēngrì."
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "我们把教室布置好以后，请老师来看了看，老师高兴地说：“你们把教室布置得真漂亮！”",
+          "vi": "Sau khi bố trí xong phòng học, chúng tôi mời thầy cô đến xem thử, thầy cô vui vẻ nói: “Các em bố trí phòng học đẹp thật!”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "0da97406-c3ac-4fcb-a51c-398a59c3fbae"
+          ],
+          "pinyin": "Wǒmen bǎ jiàoshì bùzhì hǎo yǐhòu, qǐng lǎoshī lái kàn le kàn, lǎoshī gāoxìng de shuō: “Nǐmen bǎ jiàoshì bùzhì de zhēn piàoliang!”"
+        },
+        {
+          "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
+          "order": 8,
+          "zh": "为了开好这个联欢会，同学们都认真地做了准备。明天晚上六点钟，我们的晚会就要开始了，欢迎大家来参加。",
+          "vi": "Để tổ chức tốt buổi liên hoan này, các bạn học đều chuẩn bị rất nghiêm túc. Sáu giờ tối mai, buổi liên hoan của chúng tôi sẽ bắt đầu, hoan nghênh mọi người đến tham gia.",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "pinyin": "Wèile kāi hǎo zhège liánhuān wǎnhuì, tóngxuémen dōu rènzhēn de zuò le zhǔnbèi. Míngtiān wǎnshang liù diǎn zhōng, wǒmen de wǎnhuì jiù yào kāishǐ le, huānyíng dàjiā lái cānjiā."
+        }
+      ],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "把对联儿贴在大门两边",
+      "title_vi": "Dán câu đối ở hai bên cửa chính",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+          "order": 1,
+          "speaker": "高老师",
+          "zh": "哎，这幅画儿挂在什么地方比较好？",
+          "vi": "Này, treo bức tranh này ở đâu thì tốt hơn nhỉ?",
+          "vocab_refs": [
+            "d9991c79-3454-4247-bf18-f14f43b4a24a"
+          ],
+          "pinyin": "Āi, zhè fú huàr guà zài shénme dìfang bǐjiào hǎo?"
+        },
+        {
+          "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+          "order": 2,
+          "speaker": "王老师",
+          "zh": "我想把它挂在中间。对了，小林还没把水仙花送来吧？",
+          "vi": "Tôi muốn treo nó ở giữa. À đúng rồi, Tiểu Lâm vẫn chưa mang hoa thủy tiên đến à?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "55cd807c-eec7-412d-99db-f4e6508b170f"
+          ],
+          "pinyin": "Wǒ xiǎng bǎ tā guà zài zhōngjiān. Duì le, Xiǎo Lín hái méi bǎ shuǐxiān huā sòng lái ba?"
+        },
+        {
+          "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+          "order": 3,
+          "speaker": "高老师",
+          "zh": "已经送来了，我把它摆在卧室里了。你来看，开得可好了。",
+          "vi": "Đã mang đến rồi, tôi đặt nó trong phòng ngủ rồi. Bạn lại đây xem, nó nở đẹp lắm.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
+          ],
+          "pinyin": "Yǐjīng sòng lái le, wǒ bǎ tā bǎi zài wòshì lǐ le. Nǐ lái kàn, kāi de kě hǎo le."
+        },
+        {
+          "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
+          "order": 4,
+          "speaker": "王老师",
+          "zh": "把它摆在客厅里比较好。我把“福”字贴在门上吧。",
+          "vi": "Đặt nó ở phòng khách thì tốt hơn. Tôi dán chữ “Phúc” lên cửa nhé.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+            "2185ee67-885d-4ffb-83e2-e97be4070796"
+          ],
+          "pinyin": "Bǎ tā bǎi zài kètīng lǐ bǐjiào hǎo. Wǒ bǎ “Fú” zì tiē zài mén shang ba."
+        },
+        {
+          "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+          "order": 5,
+          "speaker": "高老师",
+          "zh": "把你写的对联儿也贴上去吧。",
+          "vi": "Dán cả câu đối bạn viết lên nữa đi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "092a8c16-3739-4685-a4c0-39365071bd48"
+          ],
+          "pinyin": "Bǎ nǐ xiě de duìliánr yě tiē shàngqù ba."
+        },
+        {
+          "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+          "order": 6,
+          "speaker": "高老师",
+          "zh": "“新年新春吉祥，百行百业……”你是不是把“兴”字也写成“旺”字了？",
+          "vi": "“Năm mới, tân xuân cát tường; trăm nghề trăm nghiệp…” Có phải bạn cũng viết chữ “兴” thành chữ “旺” rồi không?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+            "275b46f4-3166-48b7-9766-58384178d1be",
+            "1190511f-5970-4304-8f84-d7201b287aeb"
+          ],
+          "pinyin": "“Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè...” Nǐ shì bú shì bǎ “xīng” zì yě xiě chéng “wàng” zì le?"
+        },
+        {
+          "id": "cc8da348-3e89-4f64-a680-de239f505497",
+          "order": 7,
+          "speaker": "王老师",
+          "zh": "哦，可不是嘛，写错了。应该是“新年新春吉祥，百行百业兴旺”。",
+          "vi": "À đúng thật, viết sai rồi. Phải là “Năm mới, tân xuân cát tường; trăm nghề trăm nghiệp hưng vượng”.",
+          "grammar_refs": [
+            "63d654f5-4561-4d48-a144-bacbf9671dfc"
+          ],
+          "vocab_refs": [
+            "d42d3d90-443d-45da-bed7-987b50034e92",
+            "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+            "6059829f-ae21-43cf-ac0c-05e19639ec43"
+          ],
+          "pinyin": "Ò, kě bú shì ma, xiě cuò le. Yīnggāi shì “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè xīngwàng.”"
+        }
+      ],
+      "comprehension_questions": []
+    },
+    {
+      "id": "e198f9da-fae1-4ab9-aaf8-4be7549579c8",
+      "type": "text_dialogue",
+      "order": 3,
+      "title": "把“福”字倒着贴在门上",
+      "title_vi": "Dán chữ “Phúc” ngược lên cửa",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "dae16c6f-5eb1-4c5e-ae2a-6b8d0971f6c1",
+          "order": 1,
+          "speaker": "麦克",
+          "zh": "田芳，这就是你说的对联儿吗？",
+          "vi": "Điền Phương, đây chính là câu đối bạn nói à?",
+          "vocab_refs": [
+            "092a8c16-3739-4685-a4c0-39365071bd48"
+          ],
+          "pinyin": "Tián Fāng, zhè jiù shì nǐ shuō de duìliánr ma?"
+        },
+        {
+          "id": "6a9f9409-a14a-4e5b-957f-5609b29abcf4",
+          "order": 2,
+          "speaker": "田芳",
+          "zh": "是啊。",
+          "vi": "Đúng rồi.",
+          "pinyin": "Shì a."
+        },
+        {
+          "id": "8783fa9f-f6d3-4d28-8301-714146384d01",
+          "order": 3,
+          "speaker": "麦克",
+          "zh": "门上这个字怎么念？",
+          "vi": "Chữ này trên cửa đọc thế nào?",
+          "vocab_refs": [
+            "2185ee67-885d-4ffb-83e2-e97be4070796"
+          ],
+          "pinyin": "Mén shang zhège zì zěnme niàn?"
+        },
+        {
+          "id": "077fca74-cf50-4164-80a0-217b40399296",
+          "order": 4,
+          "speaker": "田芳",
+          "zh": "你仔细看看，认识不认识？",
+          "vi": "Bạn nhìn kỹ xem, có nhận ra không?",
+          "vocab_refs": [
+            "fefd5441-7b6c-47e3-b823-9e149b947bf7"
+          ],
+          "pinyin": "Nǐ zǐxì kànkan, rènshi bu rènshi?"
+        },
+        {
+          "id": "cdc21194-bac0-4711-b327-6993d80ab6f3",
+          "order": 5,
+          "speaker": "麦克",
+          "zh": "没学过。",
+          "vi": "Chưa học qua.",
+          "pinyin": "Méi xué guo."
+        },
+        {
+          "id": "8fb969b7-ea3c-4f62-a650-16652a998ba7",
+          "order": 6,
+          "speaker": "田芳",
+          "zh": "这不是幸福的“福”字吗？过春节的时候，差不多家家都贴“福”字。",
+          "vi": "Đây chẳng phải là chữ “福” trong từ “幸福” sao? Khi đón Tết, hầu như nhà nào cũng dán chữ “Phúc”.",
+          "grammar_refs": [
+            "7e2ee128-4fbd-4a93-898c-5f5fd99b371b"
+          ],
+          "vocab_refs": [
+            "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+            "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
+          ],
+          "pinyin": "Zhè bú shì xìngfú de “Fú” zì ma? Guò Chūnjié de shíhou, chàbuduō jiājiā dōu tiē “Fú” zì."
+        },
+        {
+          "id": "1143881f-b56a-4893-900c-f7d92482e9a7",
+          "order": 7,
+          "speaker": "麦克",
+          "zh": "这是幸福的“福”字？为什么把“福”字倒着贴在门上呢？",
+          "vi": "Đây là chữ “Phúc” trong “hạnh phúc” à? Vì sao lại dán ngược chữ “Phúc” lên cửa?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "861ed325-b320-4ae0-8eac-bb6bb8ebc215"
+          ],
+          "pinyin": "Zhè shì xìngfú de “Fú” zì? Wèishénme bǎ “Fú” zì dàozhe tiē zài mén shang ne?"
+        },
+        {
+          "id": "6e898255-5e01-4f04-b692-db1a83acfb9e",
+          "order": 8,
+          "speaker": "田芳",
+          "zh": "这样，人们一看见就会说“福倒了”，听声音就是“福到了”。",
+          "vi": "Làm như vậy, người ta vừa nhìn thấy sẽ nói “福倒了”; nghe theo âm thì chính là “福到了” — phúc đến rồi.",
+          "vocab_refs": [
+            "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c"
+          ],
+          "pinyin": "Zhèyàng, rénmen yí kànjiàn jiù huì shuō “Fú dào le”, tīng shēngyīn jiù shì “Fú dào le”."
+        },
+        {
+          "id": "144d961a-c5bd-4553-b0f5-e4ba233f2985",
+          "order": 9,
+          "speaker": "麦克",
+          "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+          "vi": "Ồ, vậy tôi cũng đi mua vài chữ “Phúc”, dán ngược nó lên cửa, lên giường, lên bàn, lên ghế, lên sofa, lên tủ lạnh, lên máy giặt, lên máy lạnh… rồi đợi hạnh phúc đến tìm tôi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "863bbf3f-83e7-4021-b98e-be632043d94c",
+            "b14487b6-5579-4f1c-9ad7-16fd40991577",
+            "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
+            "505dae11-836a-475d-b811-339f25caaf42",
+            "a47b82f7-2260-4763-8c97-b1631e792e1c"
+          ],
+          "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “Fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang... děngzhe xìngfú lái zhǎo wǒ."
+        }
+      ],
+      "comprehension_questions": []
+    }
+  ]
+}

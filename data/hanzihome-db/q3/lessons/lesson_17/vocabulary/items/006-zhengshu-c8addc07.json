@@ -1,0 +1,275 @@
+{
+  "id": "ea2b4130-7900-4ecb-b1ef-a8e47da75984",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "证书",
+  "pinyin": "zhèngshū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chứng thư",
+    "meaning_vi": "giấy chứng nhận, chứng chỉ, bằng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giấy chứng nhận",
+      "chứng chỉ",
+      "bằng"
+    ],
+    "short_definition_vi": "giấy chứng nhận, chứng chỉ, bằng",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "证",
+        "lishu_vi": "chứng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "正",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chứng minh, giấy chứng nhận",
+        "modern_logic_vi": "chứng minh, giấy chứng nhận",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "书",
+        "lishu_vi": "thư",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sách, văn bản, giấy tờ",
+        "modern_logic_vi": "sách, văn bản, giấy tờ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "证 là chứng minh; 书 là văn bản; 证书 là văn bản dùng để chứng nhận.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 毕业证书.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "证件",
+        "pinyin": "zhèngjiàn",
+        "meaning_vi": "giấy tờ tùy thân",
+        "difference_vi": "证件 dùng xác minh danh tính như hộ chiếu/thẻ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "文凭",
+        "pinyin": "wénpíng",
+        "meaning_vi": "văn bằng",
+        "difference_vi": "文凭 nhấn bằng cấp học lực.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "58dfce0e-e0a9-4485-82db-a5e226b12c46",
+      "order": 1,
+      "zh": "毕业证书",
+      "pinyin": "bìyè zhèngshū",
+      "vi": "bằng tốt nghiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4e9149b-bff1-4326-8b70-e1ff37197143",
+      "order": 2,
+      "zh": "资格证书",
+      "pinyin": "zīgé zhèngshū",
+      "vi": "chứng chỉ năng lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7160504d-cc85-4ada-9b26-648c002200e9",
+      "order": 3,
+      "zh": "领证书",
+      "pinyin": "lǐng zhèngshū",
+      "vi": "nhận chứng chỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b5d56653-0486-48a1-9f81-5c0cf29e43b9",
+      "order": 1,
+      "zh": "这是我的毕业证书。",
+      "pinyin": "Zhè shì wǒ de bìyè zhèngshū.",
+      "vi": "Đây là bằng tốt nghiệp của tôi.",
+      "analysis_vi": "毕业证书 là giấy tờ chính thức chứng nhận đã tốt nghiệp.",
+      "highlight": [
+        "证书"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea2b4130-7900-4ecb-b1ef-a8e47da75984"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e19a8acd-b889-4507-856c-26a01a6854ab",
+      "order": 2,
+      "zh": "你把证书带上，否则他们可能不让你参加面试。",
+      "pinyin": "Nǐ bǎ zhèngshū dài shang, fǒuzé tāmen kěnéng bú ràng nǐ cānjiā miànshì.",
+      "vi": "Bạn mang giấy chứng nhận theo, nếu không họ có thể không cho tham gia phỏng vấn.",
+      "analysis_vi": "把证书带上 nhấn đối tượng xác định.",
+      "highlight": [
+        "证书"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea2b4130-7900-4ecb-b1ef-a8e47da75984"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong tuyển dụng thường cần 毕业证书, 学位证书 hoặc 资格证书.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dea9e1f2-6c6c-44b3-b401-615248e878ca",
+      "order": 1,
+      "rule_vi": "Không nhầm 证书 với 证件; 请出示你的证件 là xuất trình giấy tờ tùy thân.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "证书",
+    "back": "giấy chứng nhận, chứng chỉ, bằng",
+    "hint": "zhèngshū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ea2b4130-7900-4ecb-b1ef-a8e47da75984",
+    "source_lesson_vocab_id": null
+  }
+}

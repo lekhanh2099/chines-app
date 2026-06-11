@@ -1,0 +1,245 @@
+{
+  "id": "77e8a19e-f82a-4ee7-bfe6-7857f536a12e",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "丑",
+  "pinyin": "chǒu",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "xú",
+    "meaning_vi": "xấu, xấu xí",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xấu",
+      "xấu xí"
+    ],
+    "short_definition_vi": "xấu, xấu xí",
+    "textbook_focus_vi": "Từ trực tiếp về ngoại hình/hình thức, dễ gây tổn thương nếu dùng với người thật.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "丑",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xấu",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Từ trực tiếp về ngoại hình/hình thức, dễ gây tổn thương nếu dùng với người thật.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 丑 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不好看",
+        "pinyin": "",
+        "meaning_vi": "không đẹp",
+        "difference_vi": "Nhẹ hơn 丑.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "难看",
+        "pinyin": "",
+        "meaning_vi": "khó coi",
+        "difference_vi": "Cũng khá trực tiếp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "漂亮",
+        "pinyin": "",
+        "meaning_vi": "đẹp",
+        "difference_vi": "Trái nghĩa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "44d6b7c2-663b-476a-a8da-4f982edf8090",
+      "order": 1,
+      "zh": "长得丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ccfc7e90-0132-4638-95bc-3c13042ddbb7",
+      "order": 2,
+      "zh": "很丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a14f2497-2b17-4e61-928e-e4114c17cd5c",
+      "order": 3,
+      "zh": "太丑了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05deb053-9fd6-45ed-bb02-ba6ad633972a",
+      "order": 4,
+      "zh": "丑小鸭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "21183de2-51ab-4421-ad05-3b6297eee501",
+      "order": 5,
+      "zh": "不算丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "effa0919-a84a-48fd-b0da-1ed10dc619cb",
+      "order": 1,
+      "zh": "说别人丑很不礼貌。",
+      "pinyin": "",
+      "vi": "Nói người khác xấu là rất bất lịch sự.",
+      "analysis_vi": "丑 trực tiếp và nặng hơn 不好看.",
+      "highlight": [
+        "丑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "77e8a19e-f82a-4ee7-bfe6-7857f536a12e"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "72cb9a28-5667-4e43-b4bc-3d79265807b9",
+      "order": 1,
+      "rule_vi": "Không dùng 丑 bừa với người thật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "你很丑。",
+          "pinyin": "",
+          "vi": "Bạn rất xấu.",
+          "note_vi": "Rất dễ xúc phạm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "不太好看。",
+          "pinyin": "",
+          "vi": "Không đẹp lắm.",
+          "note_vi": "Nhẹ hơn nhưng vẫn nên tránh.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "丑",
+    "back": "xấu, xấu xí",
+    "hint": "chǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "77e8a19e-f82a-4ee7-bfe6-7857f536a12e",
+    "source_lesson_vocab_id": null
+  }
+}

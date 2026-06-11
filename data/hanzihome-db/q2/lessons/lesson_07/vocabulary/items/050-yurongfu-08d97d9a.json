@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ab4f58fcd52d025f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "羽绒服",
+  "pinyin": "yǔróngfú",
+  "meaning_vi": "áo lông vũ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_049",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_049",
+    "type": "vocabulary_item",
+    "order": 49,
+    "hanzi": "羽绒服",
+    "pinyin": "yǔróngfú",
+    "meaning_vi": "áo lông vũ",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "supplementary_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "羽绒服",
+      "back": "yǔróngfú — áo lông vũ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

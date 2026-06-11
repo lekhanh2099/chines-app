@@ -1,0 +1,397 @@
+{
+  "id": "4c9349b2-40b0-4885-b1d8-49789568e3ad",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "主持人",
+  "pinyin": "zhǔchírén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Chủ trì nhân",
+    "meaning_vi": "người dẫn chương trình, người chủ trì",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người dẫn chương trình, người chủ trì"
+    ],
+    "short_definition_vi": "người dẫn chương trình, người chủ trì",
+    "textbook_focus_vi": "người dẫn chương trình, người chủ trì",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "主",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "主",
+            "hanviet": "chủ",
+            "meaning_vi": "chủ, chính, làm chủ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chủ, chính, làm chủ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "持",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寺",
+            "hanviet": "tự",
+            "meaning_vi": "thành phần phải, không ép nghĩa chùa",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầm, giữ, duy trì, chủ trì",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "主持 = điều khiển/chủ trì; 人 = người. 主持人 là người điều khiển/chủ trì chương trình.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "司仪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người điều hành nghi lễ, nhất là cưới/lễ trang trọng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "主播",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người dẫn livestream/phát thanh/truyền hình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "讲解员",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thuyết minh viên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发言人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người phát ngôn, không phải MC",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0838275b-2cd8-42e7-94ec-a6536b69510e",
+      "order": 1,
+      "zh": "电视节目主持人",
+      "pinyin": "",
+      "vi": "người dẫn chương trình truyền hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1779df3-af03-4dcf-9cd6-69619e1d15e2",
+      "order": 2,
+      "zh": "婚礼主持人",
+      "pinyin": "",
+      "vi": "MC đám cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ecf298c-96b8-49d8-bb0c-a4e6eabcd85e",
+      "order": 3,
+      "zh": "会议主持人",
+      "pinyin": "",
+      "vi": "người chủ trì cuộc họp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ce119da-355b-4ba7-9de5-7dd24097282d",
+      "order": 4,
+      "zh": "主持人上台",
+      "pinyin": "",
+      "vi": "MC lên sân khấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db3b7b67-7d0d-4817-bd20-f46c33a7c56b",
+      "order": 5,
+      "zh": "主持人讲话",
+      "pinyin": "",
+      "vi": "MC phát biểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d2d9a4b-175c-4813-880c-0d38f7be365c",
+      "order": 6,
+      "zh": "当主持人",
+      "pinyin": "",
+      "vi": "làm người dẫn chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6ec84a8d-a482-4488-ad20-6de7d9d93ce7",
+      "order": 1,
+      "zh": "今天的主持人说话很清楚。",
+      "pinyin": "Jīntiān de zhǔchírén shuōhuà hěn qīngchu.",
+      "vi": "Người dẫn chương trình hôm nay nói rất rõ ràng.",
+      "analysis_vi": "主持人 chỉ vai trò.",
+      "highlight": [
+        "主持人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c9349b2-40b0-4885-b1d8-49789568e3ad"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0cdcac66-4356-44e6-8ecb-f2d5a8397977",
+      "order": 2,
+      "zh": "主持人站在讲台上，手里拿着麦克风。",
+      "pinyin": "Zhǔchírén zhàn zài jiǎngtái shàng, shǒu lǐ názhe màikèfēng.",
+      "vi": "Người dẫn chương trình đứng trên bục, trong tay cầm micro.",
+      "analysis_vi": "拿着麦克风 dùng 着 để tả trạng thái đang cầm micro.",
+      "highlight": [
+        "主持人",
+        "拿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c9349b2-40b0-4885-b1d8-49789568e3ad"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "d01aa1e1-04f2-4b39-a6a0-a07c9151d264",
+      "order": 1,
+      "rule_vi": "Phân biệt 主持人 là danh từ, 主持 là động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他是主持今天的会议人。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cấu trúc sai/kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他是今天会议的主持人。",
+          "pinyin": "Tā shì jīntiān huìyì de zhǔchírén.",
+          "vi": "Anh ấy là người chủ trì cuộc họp hôm nay.",
+          "note_vi": "Danh từ hóa đúng.",
+          "notes": []
+        },
+        {
+          "zh": "他主持今天的会议。",
+          "pinyin": "Tā zhǔchí jīntiān de huìyì.",
+          "vi": "Anh ấy chủ trì cuộc họp hôm nay.",
+          "note_vi": "Dùng 主持 làm động từ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "主持人",
+    "back": "người dẫn chương trình, người chủ trì",
+    "hint": "zhǔchírén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Ở đám cưới Trung Quốc hiện đại, 婚礼主持人 hoặc 司仪 điều phối nghi thức, mời phát biểu và giữ nhịp chương trình.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4c9349b2-40b0-4885-b1d8-49789568e3ad",
+    "source_lesson_vocab_id": null
+  }
+}

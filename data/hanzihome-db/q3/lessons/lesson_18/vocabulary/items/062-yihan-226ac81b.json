@@ -1,0 +1,351 @@
+{
+  "id": "1448170d-1e8b-41fa-8dae-6af441a094c3",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "遗憾",
+  "pinyin": "yíhàn",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ",
+    "raw_cn": "名 / 形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "di hám",
+    "meaning_vi": "tiếc nuối, điều đáng tiếc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiếc nuối",
+      "điều đáng tiếc"
+    ],
+    "short_definition_vi": "tiếc nuối, điều đáng tiếc",
+    "textbook_focus_vi": "Cảm giác tiếc còn để lại trong lòng; sâu/trang trọng hơn 可惜.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "遗",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "辶",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi/chuyển động",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/chuyển động",
+            "position_vi": "ngoài/trái dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辶",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi/chuyển động",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "để lại/bỏ sót",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "憾",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "cảm xúc/tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "cảm xúc/tâm lý",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "cảm xúc/tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiếc nuối",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Cảm giác tiếc còn để lại trong lòng; sâu/trang trọng hơn 可惜.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 遗憾 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "可惜",
+        "pinyin": "",
+        "meaning_vi": "đáng tiếc",
+        "difference_vi": "Nhẹ và khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "后悔",
+        "pinyin": "",
+        "meaning_vi": "hối hận",
+        "difference_vi": "Vì việc mình đã/không làm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "失望",
+        "pinyin": "",
+        "meaning_vi": "thất vọng",
+        "difference_vi": "Vì kỳ vọng không đạt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b7a83b86-cf91-41da-ae15-d51e034b8754",
+      "order": 1,
+      "zh": "留下遗憾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "608b037a-b5d7-4f30-9f87-b14e284a1611",
+      "order": 2,
+      "zh": "感到遗憾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bfafbc78-eb8d-49c1-b282-2027668b38ff",
+      "order": 3,
+      "zh": "非常遗憾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0d2aac3-ae8c-49dd-b1cc-ff5174d634c5",
+      "order": 4,
+      "zh": "没有遗憾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b070c97-d963-402b-a645-f16c6709e29b",
+      "order": 5,
+      "zh": "弥补遗憾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0ba3b368-7930-4b15-aa31-388b2819be3e",
+      "order": 1,
+      "zh": "并不是所有的错误都会留下遗憾。",
+      "pinyin": "",
+      "vi": "Không phải tất cả sai lầm đều sẽ để lại tiếc nuối.",
+      "analysis_vi": "留下遗憾 là collocation quan trọng.",
+      "highlight": [
+        "遗憾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1448170d-1e8b-41fa-8dae-6af441a094c3"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0dac16e2-7f9b-4c9b-87f8-53f5923861f2",
+      "order": 1,
+      "rule_vi": "Không phải cứ “tiếc” là dùng 后悔.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我很遗憾。",
+          "pinyin": "",
+          "vi": "Tôi rất tiếc/tiếc nuối.",
+          "note_vi": "遗憾 không nhất thiết là hối hận.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "遗憾",
+    "back": "tiếc nuối, điều đáng tiếc",
+    "hint": "yíhàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1448170d-1e8b-41fa-8dae-6af441a094c3",
+    "source_lesson_vocab_id": null
+  }
+}

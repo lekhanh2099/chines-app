@@ -1,0 +1,1141 @@
+{
+  "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "开会",
+      "pinyin": "kāi huì",
+      "meaning_vi": "họp; dự họp; mở cuộc họp",
+      "meaning_en": "to have/attend a meeting",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 开 + tân ngữ 会",
+        "usage_note_vi": "Có thể nói 开了一次会 / 开了两个小时会; trong bài là đi/dự hội thảo.",
+        "notes": []
+      }
+    },
+    {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "教学",
+      "pinyin": "jiàoxué",
+      "meaning_vi": "giảng dạy; việc dạy học",
+      "meaning_en": "teaching",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "研讨会",
+      "pinyin": "yántǎohuì",
+      "meaning_vi": "hội thảo chuyên đề; hội nghị thảo luận",
+      "meaning_en": "seminar; symposium",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "研讨",
+      "pinyin": "yántǎo",
+      "meaning_vi": "nghiên cứu và thảo luận",
+      "meaning_en": "to study and discuss",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "经过",
+      "pinyin": "jīngguò",
+      "meaning_vi": "đi qua; trải qua",
+      "meaning_en": "to pass; to go through",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "向",
+      "pinyin": "xiàng",
+      "meaning_vi": "hướng về; về phía; với",
+      "meaning_en": "to; towards",
+      "pos": "Giới từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Giới từ",
+        "cn": "介词",
+        "normalized": "preposition",
+        "schema_compatible_pos": "preposition",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "问好",
+      "pinyin": "wèn hǎo",
+      "meaning_vi": "hỏi thăm; gửi lời hỏi thăm",
+      "meaning_en": "to send regards; to say hello to",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 问 + tân ngữ 好",
+        "usage_note_vi": "Có thể dùng 向某人问好 / 问个好; trong bài là gửi lời hỏi thăm.",
+        "notes": []
+      }
+    },
+    {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "捎",
+      "pinyin": "shāo",
+      "meaning_vi": "tiện mang theo; chuyển giúp; nhắn gửi",
+      "meaning_en": "to take/bring along for someone",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "送",
+      "pinyin": "sòng",
+      "meaning_vi": "đưa; tặng; tiễn; mang đến",
+      "meaning_en": "to deliver; to give; to see off",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "过去",
+      "pinyin": "guòqu",
+      "meaning_vi": "qua đó; đi qua phía bên kia",
+      "meaning_en": "to go over; to pass by",
+      "pos": "Động từ xu hướng",
+      "tags": [
+        "main_vocab",
+        "directional_complement"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ xu hướng",
+        "cn": "趋向动词 / 趋向补语",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "过来",
+      "pinyin": "guòlai",
+      "meaning_vi": "qua đây; đến phía người nói",
+      "meaning_en": "to come over; to come by",
+      "pos": "Động từ xu hướng",
+      "tags": [
+        "main_vocab",
+        "directional_complement"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ xu hướng",
+        "cn": "趋向动词 / 趋向补语",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "辛苦",
+      "pinyin": "xīnkǔ",
+      "meaning_vi": "vất vả; cực nhọc; làm phiền/nhờ vả",
+      "meaning_en": "hard; strenuous; to bother",
+      "pos": "Tính từ / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Động từ",
+        "cn": "形容词 / 动词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "麻烦",
+      "pinyin": "máfan",
+      "meaning_vi": "phiền phức; làm phiền",
+      "meaning_en": "to trouble; troublesome",
+      "pos": "Động từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ",
+        "cn": "动词 / 形容词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "趟",
+      "pinyin": "tàng",
+      "meaning_vi": "chuyến; lượt đi",
+      "meaning_en": "measure word for trips",
+      "pos": "Lượng từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Lượng từ",
+        "cn": "量词",
+        "normalized": "measure_word",
+        "schema_compatible_pos": "measure_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "进去",
+      "pinyin": "jìnqu",
+      "meaning_vi": "đi vào trong; vào đó",
+      "meaning_en": "to go in",
+      "pos": "Động từ xu hướng",
+      "tags": [
+        "main_vocab",
+        "directional_complement"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ xu hướng",
+        "cn": "趋向动词 / 趋向补语",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "爱人",
+      "pinyin": "àiren",
+      "meaning_vi": "vợ/chồng; người bạn đời",
+      "meaning_en": "husband or wife",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "办事",
+      "pinyin": "bàn shì",
+      "meaning_vi": "làm việc; xử lý công việc",
+      "meaning_en": "to handle affairs",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 办 + tân ngữ 事",
+        "usage_note_vi": "Có thể nói 办点儿事儿 / 办完事; trong bài là ra ngoài xử lý chút việc.",
+        "notes": []
+      }
+    },
+    {
+      "id": "vocab_l09_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "慢",
+      "pinyin": "màn",
+      "meaning_vi": "chậm; thong thả",
+      "meaning_en": "slow",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "上来",
+      "pinyin": "shànglai",
+      "meaning_vi": "lên đây; đi lên phía người nói",
+      "meaning_en": "to come up",
+      "pos": "Động từ xu hướng",
+      "tags": [
+        "main_vocab",
+        "directional_complement"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ xu hướng",
+        "cn": "趋向动词 / 趋向补语",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "马上",
+      "pinyin": "mǎshàng",
+      "meaning_vi": "ngay lập tức; sắp; liền",
+      "meaning_en": "at once; immediately",
+      "pos": "Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "开车",
+      "pinyin": "kāi chē",
+      "meaning_vi": "lái xe; xe chạy; xe khởi hành",
+      "meaning_en": "to drive; for a vehicle to start",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 开 + tân ngữ 车",
+        "usage_note_vi": "Có thể nói 开了一天车; trong bài 要开车了 nghĩa là xe sắp chạy/khởi hành.",
+        "notes": []
+      }
+    },
+    {
+      "id": "vocab_l09_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "照相机",
+      "pinyin": "zhàoxiàngjī",
+      "meaning_vi": "máy ảnh",
+      "meaning_en": "camera",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "vocab_l09_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "照相",
+      "pinyin": "zhào xiàng",
+      "meaning_vi": "chụp ảnh",
+      "meaning_en": "to take a photo",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 照 + tân ngữ 相",
+        "usage_note_vi": "Có thể nói 照了一张相 / 照相去; trong bài là quên mang máy ảnh để chụp ảnh.",
+        "notes": []
+      }
+    },
+    {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "座位",
+      "pinyin": "zuòwèi",
+      "meaning_vi": "chỗ ngồi; ghế ngồi",
+      "meaning_en": "seat",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "vocab_l09_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "注意",
+      "pinyin": "zhùyì",
+      "meaning_vi": "chú ý; để ý",
+      "meaning_en": "to pay attention to",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "出土",
+      "pinyin": "chūtǔ",
+      "meaning_vi": "được khai quật; đưa lên khỏi mặt đất",
+      "meaning_en": "to be unearthed; to be excavated",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "文物",
+      "pinyin": "wénwù",
+      "meaning_vi": "văn vật; di vật văn hóa",
+      "meaning_en": "cultural relic; antique",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "展览",
+      "pinyin": "zhǎnlǎn",
+      "meaning_vi": "triển lãm; trưng bày",
+      "meaning_en": "to exhibit; exhibition",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "vocab_l09_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "展览馆",
+      "pinyin": "zhǎnlǎnguǎn",
+      "meaning_vi": "phòng/nhà triển lãm",
+      "meaning_en": "exhibition hall",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "大约",
+      "pinyin": "dàyuē",
+      "meaning_vi": "khoảng; ước chừng",
+      "meaning_en": "approximately",
+      "pos": "Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "要求",
+      "pinyin": "yāoqiú",
+      "meaning_vi": "yêu cầu; đòi hỏi; yêu cầu/điều kiện",
+      "meaning_en": "to ask; to demand; requirement",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "声",
+      "pinyin": "shēng",
+      "meaning_vi": "tiếng; âm thanh; lời; lượng từ cho tiếng/lời",
+      "meaning_en": "sound; voice; measure word for sounds",
+      "pos": "Lượng từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Lượng từ / Danh từ",
+        "cn": "量词 / 名词",
+        "normalized": "measure_word",
+        "schema_compatible_pos": "measure_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "清楚",
+      "pinyin": "qīngchu",
+      "meaning_vi": "rõ ràng; rõ",
+      "meaning_en": "clear",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "师傅",
+      "pinyin": "shīfu",
+      "meaning_vi": "bác tài; thợ lành nghề; cách gọi lịch sự người có tay nghề",
+      "meaning_en": "master; skilled worker",
+      "pos": "Danh từ / Cách xưng hô",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Cách xưng hô",
+        "cn": "名词 / 称呼",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "大使馆",
+      "pinyin": "dàshǐguǎn",
+      "meaning_vi": "đại sứ quán",
+      "meaning_en": "embassy",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "vocab_l09_036",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "大使",
+      "pinyin": "dàshǐ",
+      "meaning_vi": "đại sứ",
+      "meaning_en": "ambassador",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "讨论",
+      "pinyin": "tǎolùn",
+      "meaning_vi": "thảo luận",
+      "meaning_en": "to discuss; discussion",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "supplementary_from_thread"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "开始",
+      "pinyin": "kāishǐ",
+      "meaning_vi": "bắt đầu; sự khởi đầu",
+      "meaning_en": "to begin; beginning",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "supplementary_from_thread"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "起来",
+      "pinyin": "qǐlai",
+      "meaning_vi": "đứng dậy; dậy; lên; bắt đầu trở nên",
+      "meaning_en": "to rise; directional/result complement",
+      "pos": "Động từ xu hướng",
+      "tags": [
+        "supplementary_from_thread",
+        "directional_complement"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ xu hướng",
+        "cn": "趋向动词 / 趋向补语",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "主意",
+      "pinyin": "zhǔyi",
+      "meaning_vi": "ý kiến; chủ ý; cách nghĩ/cách giải quyết",
+      "meaning_en": "idea; plan",
+      "pos": "Danh từ",
+      "tags": [
+        "supplementary_from_thread"
+      ],
+      "examples": [],
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    }
+  ]
+}

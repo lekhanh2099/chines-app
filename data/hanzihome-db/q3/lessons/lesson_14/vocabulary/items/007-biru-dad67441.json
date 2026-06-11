@@ -1,0 +1,192 @@
+{
+  "id": "9a51928c-4920-4cad-b6dc-879d10119cd5",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "比如",
+  "pinyin": "bǐrú",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词 / 举例词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tỉ như",
+    "meaning_vi": "ví dụ như, chẳng hạn như",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ví dụ như",
+      "chẳng hạn như"
+    ],
+    "short_definition_vi": "ví dụ như, chẳng hạn như",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: nêu ví dụ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "nêu ví dụ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "比",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "so sánh, ví với",
+        "modern_logic_vi": "Trong từ 比如, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "如",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như, giống như",
+        "modern_logic_vi": "Trong từ 比如, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "比如 nên được học theo nghĩa hiện đại trong cụm/tình huống: ví dụ như, chẳng hạn như.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 比如说.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "例如",
+        "pinyin": "lìrú",
+        "meaning_vi": "ví dụ như",
+        "difference_vi": "例如 trang trọng/văn viết hơn 比如.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7f187364-dd58-478a-ab29-8611d71a1537",
+      "order": 1,
+      "zh": "比如说",
+      "pinyin": "",
+      "vi": "ví dụ như là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f131b61-b89a-4217-85ca-10c7277b6472",
+      "order": 2,
+      "zh": "比如这个问题",
+      "pinyin": "",
+      "vi": "ví dụ vấn đề này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09df77c5-21c6-4c82-88bc-0df86a5b7036",
+      "order": 3,
+      "zh": "举个例子，比如……",
+      "pinyin": "",
+      "vi": "lấy ví dụ, chẳng hạn như...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f706650f-8083-4e94-85c7-af793a35d8a9",
+      "order": 1,
+      "zh": "我喜欢很多中国菜，比如饺子和火锅。",
+      "pinyin": "",
+      "vi": "Tôi thích nhiều món Trung Quốc, ví dụ như sủi cảo và lẩu.",
+      "analysis_vi": "比如 đặt trước ví dụ được nêu ra.",
+      "highlight": [
+        "比如"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a51928c-4920-4cad-b6dc-879d10119cd5"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 比如 được dùng trong ngữ cảnh nêu ví dụ; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2545a52d-825a-4634-82ea-092a32434a3e",
+      "order": 1,
+      "rule_vi": "Không đặt 比如 sau chuỗi ví dụ theo kiểu tiếng Việt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không đặt 比如 sau chuỗi ví dụ theo kiểu tiếng Việt.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "比如",
+    "back": "ví dụ như, chẳng hạn như",
+    "hint": "bǐrú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9a51928c-4920-4cad-b6dc-879d10119cd5",
+    "source_lesson_vocab_id": null
+  }
+}

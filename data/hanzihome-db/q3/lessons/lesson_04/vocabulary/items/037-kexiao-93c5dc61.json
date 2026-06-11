@@ -1,0 +1,298 @@
+{
+  "id": "2563f7b7-ff6f-464f-a138-ac9928f05b5a",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "可笑",
+  "pinyin": "kěxiào",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khả tiếu",
+    "meaning_vi": "buồn cười, đáng cười, lố bịch",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "buồn cười",
+      "đáng cười",
+      "lố bịch"
+    ],
+    "short_definition_vi": "buồn cười, đáng cười, lố bịch",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có thể, đáng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "笑",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "夭",
+            "hanviet": "yêu",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cười",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "可笑 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 可笑 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好笑",
+        "pinyin": "hǎoxiào",
+        "meaning_vi": "buồn cười",
+        "difference_vi": "Nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "搞笑",
+        "pinyin": "gǎoxiào",
+        "meaning_vi": "hài/gây cười",
+        "difference_vi": "Khẩu ngữ hiện đại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "荒唐",
+        "pinyin": "huāngtáng",
+        "meaning_vi": "vô lý",
+        "difference_vi": "Nặng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ca15fff1-a4b7-45c9-a15a-ed74f1e42205",
+      "order": 1,
+      "zh": "很可笑",
+      "pinyin": "hěn kěxiào",
+      "vi": "rất buồn cười/lố bịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbf58aac-8bf2-4751-a057-55002d094b93",
+      "order": 2,
+      "zh": "太可笑了",
+      "pinyin": "tài kěxiào le",
+      "vi": "quá lố bịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cbe09d6c-c2a4-466b-a1a3-529d6a56cfbe",
+      "order": 3,
+      "zh": "可笑的想法",
+      "pinyin": "kěxiào de xiǎngfǎ",
+      "vi": "suy nghĩ đáng cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2298282-d443-4e77-95f5-3bfc3690e1c5",
+      "order": 4,
+      "zh": "听起来很可笑",
+      "pinyin": "tīng qǐlai hěn kěxiào",
+      "vi": "nghe rất buồn cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b276e511-a2dc-4b67-9c6e-4280bdd98778",
+      "order": 1,
+      "zh": "他说的话听起来有点儿可笑。",
+      "pinyin": "Tā shuō de huà tīng qǐlai yǒudiǎnr kěxiào.",
+      "vi": "Lời anh ấy nói nghe hơi buồn cười.",
+      "analysis_vi": "有点儿 làm sắc thái mềm hơn.",
+      "highlight": [
+        "可笑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2563f7b7-ff6f-464f-a138-ac9928f05b5a"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "363febd6-674e-4a34-a425-c3681dd552a2",
+      "order": 2,
+      "zh": "如果一个人不愿意付出努力，却天天说自己一定会成功，这种想法其实很可笑。",
+      "pinyin": "Rúguǒ yí ge rén bú yuànyì fùchū nǔlì, què tiāntiān shuō zìjǐ yídìng huì chénggōng, zhè zhǒng xiǎngfǎ qíshí hěn kěxiào.",
+      "vi": "Nếu không muốn bỏ công mà ngày nào cũng nói chắc thành công, kiểu nghĩ đó rất lố bịch.",
+      "analysis_vi": "却 tạo đối lập.",
+      "highlight": [
+        "可笑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2563f7b7-ff6f-464f-a138-ac9928f05b5a"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "可笑 có thể chạm thể diện nếu dùng trực tiếp với người khác.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7feb5649-be8c-42b1-b9f9-97298791da9a",
+      "order": 1,
+      "rule_vi": "你的想法很可笑 khá nặng; mềm hơn là 这个想法可能不太现实.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "可笑",
+    "back": "buồn cười, đáng cười, lố bịch",
+    "hint": "kěxiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2563f7b7-ff6f-464f-a138-ac9928f05b5a",
+    "source_lesson_vocab_id": null
+  }
+}

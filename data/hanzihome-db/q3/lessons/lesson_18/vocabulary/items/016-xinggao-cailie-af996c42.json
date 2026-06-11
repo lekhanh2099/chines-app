@@ -1,0 +1,332 @@
+{
+  "id": "79a3127f-77a0-48b8-beac-7ff3fc1c1035",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "兴高采烈",
+  "pinyin": "xìnggāo-cǎiliè",
+  "pos": {
+    "raw_vi": "Thành ngữ / Cụm tính từ",
+    "raw_cn": "成语 / 形",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hứng cao thái liệt",
+    "meaning_vi": "vui vẻ phấn khởi, hào hứng hừng hực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui vẻ phấn khởi",
+      "hào hứng hừng hực"
+    ],
+    "short_definition_vi": "vui vẻ phấn khởi, hào hứng hừng hực",
+    "textbook_focus_vi": "Miêu tả hứng thú cao, cảm xúc sôi nổi rõ ra ngoài.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "兴",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hứng thú/vui",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "高",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "采",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sắc thái/tinh thần trong thành ngữ",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "烈",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa/nhiệt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "灬 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa/nhiệt",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa/nhiệt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mạnh/mãnh liệt",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Miêu tả hứng thú cao, cảm xúc sôi nổi rõ ra ngoài.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 兴高采烈 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "高兴",
+        "pinyin": "",
+        "meaning_vi": "vui",
+        "difference_vi": "Cơ bản hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "兴奋",
+        "pinyin": "",
+        "meaning_vi": "phấn khích",
+        "difference_vi": "Có thể vì hồi hộp/kích động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开心",
+        "pinyin": "",
+        "meaning_vi": "vui vẻ",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "db49a2d3-b778-48d5-b715-99adf9a141d8",
+      "order": 1,
+      "zh": "兴高采烈地说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a6996f6b-9c95-4bba-89cd-3576566ad379",
+      "order": 2,
+      "zh": "兴高采烈地跑过来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "895e0ed3-eb95-49c2-8261-6b91438b77bc",
+      "order": 3,
+      "zh": "兴高采烈的脸",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7afef231-f095-4d72-a922-73124ba2c089",
+      "order": 4,
+      "zh": "大家兴高采烈",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e709485c-4cfb-472e-9b44-27e606558d06",
+      "order": 1,
+      "zh": "我看到那一张张兴高采烈的脸，就不忍说出真相。",
+      "pinyin": "",
+      "vi": "Tôi nhìn thấy từng gương mặt vui phấn khởi ấy nên không nỡ nói sự thật.",
+      "analysis_vi": "一张张 nhấn từng gương mặt.",
+      "highlight": [
+        "兴高采烈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "79a3127f-77a0-48b8-beac-7ff3fc1c1035"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f7c04fd3-87ec-456f-ad21-6b8f64ba5799",
+      "order": 1,
+      "rule_vi": "Không dùng 兴高采烈 cho cảm xúc âm tính.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他兴高采烈地哭了。",
+          "pinyin": "",
+          "vi": "Kém tự nhiên.",
+          "note_vi": "Khóc vì vui nên dùng 高兴得哭了.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他高兴得哭了。",
+          "pinyin": "",
+          "vi": "Anh ấy vui đến phát khóc.",
+          "note_vi": "Tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "兴高采烈",
+    "back": "vui vẻ phấn khởi, hào hứng hừng hực",
+    "hint": "xìnggāo-cǎiliè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "79a3127f-77a0-48b8-beac-7ff3fc1c1035",
+    "source_lesson_vocab_id": null
+  }
+}

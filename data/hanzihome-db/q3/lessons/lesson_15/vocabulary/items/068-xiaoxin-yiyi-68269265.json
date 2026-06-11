@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_5b1cd6c9180a77f6",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "小心翼翼",
+  "pinyin": "xiǎoxīn-yìyì",
+  "meaning_vi": "hết sức cẩn thận; cẩn thận từng li từng tí",
+  "pos": "Thành ngữ",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "type": "vocabulary_item",
+    "order": 26,
+    "hanzi": "小心翼翼",
+    "pinyin": "xiǎoxīn-yìyì",
+    "meaning_vi": "hết sức cẩn thận; cẩn thận từng li từng tí",
+    "meaning_en": "",
+    "pos": "Thành ngữ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "小心翼翼",
+      "back": "xiǎoxīn-yìyì — hết sức cẩn thận; cẩn thận từng li từng tí",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

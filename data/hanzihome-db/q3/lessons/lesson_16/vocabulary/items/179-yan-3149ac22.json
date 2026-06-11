@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_4ce2327d900fbdec",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "沿",
+  "pinyin": "yán",
+  "meaning_vi": "men theo, dọc theo",
+  "pos": "Giới từ",
+  "pos_detail": {
+    "vi": "Giới từ",
+    "cn": "介词",
+    "normalized": "preposition",
+    "schema_compatible_pos": "preposition",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "719125b8-3cdd-425d-b2e5-8b7f7bd75445",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "719125b8-3cdd-425d-b2e5-8b7f7bd75445",
+    "type": "vocabulary_item",
+    "order": 47,
+    "hanzi": "沿",
+    "pinyin": "yán",
+    "meaning_vi": "men theo, dọc theo",
+    "meaning_en": "along",
+    "pos": "Giới từ",
+    "pos_detail": {
+      "vi": "Giới từ",
+      "cn": "介词",
+      "normalized": "preposition",
+      "schema_compatible_pos": "preposition",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "沿",
+      "back": "yán — men theo, dọc theo",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,363 @@
+{
+  "id": "d54c6658-35b8-42cc-b055-f1617c8a3a5e",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "口袋",
+  "pinyin": "kǒudài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "documents_objects"
+  ],
+  "meaning": {
+    "hanviet": "khẩu đại",
+    "meaning_vi": "túi áo/quần; túi đựng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "túi áo/quần; túi đựng"
+    ],
+    "short_definition_vi": "túi áo/quần; túi đựng",
+    "textbook_focus_vi": "túi áo/quần; túi đựng",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "口",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/cửa mở",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, cửa/lỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "miệng, lỗ, cửa vào",
+        "modern_logic_vi": "口 gợi miệng túi/cửa mở.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "袋",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "vải/quần áo",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, quần áo, vải",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "衣 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "代",
+            "hanviet": "đại",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "túi, bao",
+        "modern_logic_vi": "袋 là túi/bao dùng để đựng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "口袋 là cái túi có miệng túi để bỏ đồ, thường nằm trên quần áo.",
+    "memory_tip_vi": "口袋 là cái túi có miệng túi để bỏ đồ, thường nằm trên quần áo.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "衣兜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "túi áo/quần, khẩu ngữ miền Bắc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "包",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "túi xách/cặp nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "袋子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "túi rời như túi nilon/túi giấy",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钱包",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ví tiền",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7b254b05-101f-4cd9-9391-ec94f79c2d95",
+      "order": 1,
+      "zh": "大衣口袋",
+      "pinyin": "",
+      "vi": "túi áo khoác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e6e2384-9729-40c9-b69a-52af13044a27",
+      "order": 2,
+      "zh": "裤子口袋",
+      "pinyin": "",
+      "vi": "túi quần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35ce69e0-ef89-4f3c-84c5-01c4cad06a71",
+      "order": 3,
+      "zh": "上衣口袋",
+      "pinyin": "",
+      "vi": "túi áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d6cb89e0-7a73-4d6f-9992-667583a2aa29",
+      "order": 4,
+      "zh": "放进口袋里",
+      "pinyin": "",
+      "vi": "bỏ vào trong túi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4ffec63-0e8f-42bf-877c-3ae7f4e02d03",
+      "order": 5,
+      "zh": "从口袋里拿出来",
+      "pinyin": "",
+      "vi": "lấy từ trong túi ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd61eb5f-e132-48a9-8a1d-b64922a77510",
+      "order": 6,
+      "zh": "口袋里有钱",
+      "pinyin": "",
+      "vi": "trong túi có tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "caea91b0-0b47-4e44-973f-0018a20d4b3b",
+      "order": 1,
+      "zh": "你的手机在口袋里吗？",
+      "pinyin": "",
+      "vi": "Điện thoại của bạn ở trong túi áo/quần không?",
+      "analysis_vi": "在口袋里 nói vị trí tồn tại.",
+      "highlight": [
+        "口袋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d54c6658-35b8-42cc-b055-f1617c8a3a5e"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "954c1071-6502-436d-8be3-ee7eae41256a",
+      "order": 2,
+      "zh": "护照是我昨天晚上放到口袋里的。",
+      "pinyin": "",
+      "vi": "Hộ chiếu là tôi bỏ vào túi tối hôm qua.",
+      "analysis_vi": "是……的 nhấn thời gian/người làm; 放到 nhấn kết quả chuyển vào túi.",
+      "highlight": [
+        "口袋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d54c6658-35b8-42cc-b055-f1617c8a3a5e"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "口袋/衣兜 đều gặp trong đời sống; với người học 口袋 an toàn hơn.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2bc124d3-1d97-4022-bba7-0251015e6600",
+      "order": 1,
+      "rule_vi": "Không nhầm 口袋 với 包: 口袋 là túi áo/quần, 包 là túi xách/cặp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "手机在口袋里。",
+          "pinyin": "",
+          "vi": "Điện thoại ở trong túi áo/quần.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "手机在包里。",
+          "pinyin": "",
+          "vi": "Điện thoại ở trong túi xách/cặp.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "口袋",
+    "back": "túi áo/quần; túi đựng",
+    "hint": "kǒudài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "documents_objects"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d54c6658-35b8-42cc-b055-f1617c8a3a5e",
+    "source_lesson_vocab_id": null
+  }
+}

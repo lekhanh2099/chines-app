@@ -1,0 +1,298 @@
+{
+  "id": "989c8004-e9af-4b7c-96ce-12d2962825a3",
+  "type": "deep_vocabulary_item",
+  "order": 68,
+  "hanzi": "流传",
+  "pinyin": "liúchuán",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "lưu truyền",
+    "meaning_vi": "lưu truyền, truyền lại, lan truyền qua thời gian",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lưu truyền",
+      "truyền lại",
+      "lan truyền qua thời gian"
+    ],
+    "short_definition_vi": "lưu truyền, truyền lại, lan truyền qua thời gian",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "流",
+        "lishu_vi": "lưu",
+        "structure_note_vi": "Chữ có thành phần/bộ 氵; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, dòng chảy",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, dòng chảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, dòng chảy",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 流 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "传",
+        "lishu_vi": "truyền",
+        "structure_note_vi": "Chữ có thành phần/bộ 亻; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người, hành động của người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành động của người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành động của người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 传 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "流传 trong bài được học theo nghĩa: lưu truyền, truyền lại, lan truyền qua thời gian.",
+    "memory_tip_vi": "Nhớ 流传 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "传播",
+        "pinyin": "chuánbō",
+        "meaning_vi": "truyền bá/lan truyền",
+        "difference_vi": "Hiện đại hơn, dùng rộng cho thông tin/truyền thông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 流传 với 流行."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f1b9f9eb-7cc3-4aae-9baf-f41f56b8e5dd",
+      "order": 1,
+      "zh": "流传至今",
+      "pinyin": "",
+      "vi": "lưu truyền đến nay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8880dc23-7adc-4e0e-a029-04b6a6a24ea6",
+      "order": 2,
+      "zh": "代代流传",
+      "pinyin": "",
+      "vi": "lưu truyền qua nhiều thế hệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47ba9d83-7019-4c19-828b-156356aa10fd",
+      "order": 3,
+      "zh": "民间流传",
+      "pinyin": "",
+      "vi": "lưu truyền trong dân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ad187bdc-c37a-4b62-b53d-49758096bfca",
+      "order": 1,
+      "zh": "这个故事在民间流传了很久。",
+      "pinyin": "",
+      "vi": "Câu chuyện này đã lưu truyền rất lâu trong dân gian.",
+      "analysis_vi": "在民间 nêu phạm vi lưu truyền.",
+      "highlight": [
+        "流传"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "989c8004-e9af-4b7c-96ce-12d2962825a3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a9b20e41-075f-48df-88bc-f9a1d4b1d7e4",
+      "order": 2,
+      "zh": "《梁山伯与祝英台》的故事一代一代流传下来，后来变得家喻户晓。",
+      "pinyin": "",
+      "vi": "Câu chuyện Lương Sơn Bá và Chúc Anh Đài lưu truyền qua nhiều thế hệ, sau này trở nên ai ai cũng biết.",
+      "analysis_vi": "流传下来 nhấn truyền đến hiện tại.",
+      "highlight": [
+        "流传"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "989c8004-e9af-4b7c-96ce-12d2962825a3"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "流传 khác 流行: vượt thời gian, không chỉ thịnh hành nhất thời.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b16ba114-ea52-485c-ba31-89998933b3fa",
+      "order": 1,
+      "rule_vi": "Không nhầm 流传 với 流行.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "流传",
+    "back": "lưu truyền, truyền lại, lan truyền qua thời gian",
+    "hint": "liúchuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "989c8004-e9af-4b7c-96ce-12d2962825a3",
+    "source_lesson_vocab_id": null
+  }
+}

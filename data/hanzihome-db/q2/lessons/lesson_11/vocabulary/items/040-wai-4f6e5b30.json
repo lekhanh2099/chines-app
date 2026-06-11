@@ -1,0 +1,290 @@
+{
+  "id": "e85ca9e8-b1ae-474b-8126-37c1ec379c21",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "外",
+  "pinyin": "wài",
+  "pos": {
+    "raw_vi": "Từ loại",
+    "raw_cn": "方位名词 / 形 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ngoại",
+    "meaning_vi": "ngoài, bên ngoài; nước ngoài; ngoại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngoài, bên ngoài; nước ngoài; ngoại"
+    ],
+    "short_definition_vi": "ngoài, bên ngoài; nước ngoài; ngoại",
+    "textbook_focus_vi": "ngoài, bên ngoài; nước ngoài; ngoại",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "外",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "buổi tối",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "夕",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tịch",
+              "radical_name_zh": "",
+              "hanviet": "tịch",
+              "meaning_vi": "chiều tối",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "卜",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bốc",
+              "radical_name_zh": "",
+              "hanviet": "bốc",
+              "meaning_vi": "bói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngoài, bên ngoài, ngoại quốc",
+        "modern_logic_vi": "Học lõi nghĩa hiện đại: phía ngoài một phạm vi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "夕",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tịch",
+          "radical_name_zh": "",
+          "hanviet": "tịch",
+          "meaning_vi": "chiều tối",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "外 = phía ngoài một phạm vi; mở rộng thành 外国, 外面, 老外, 外语.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8654c36b-d705-4962-8e9d-421c304b3adf",
+      "order": 1,
+      "zh": "外面",
+      "pinyin": "",
+      "vi": "bên ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "afeb4736-f6c1-422a-94eb-9d29cb3696f5",
+      "order": 2,
+      "zh": "外国",
+      "pinyin": "",
+      "vi": "nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07f55043-28a2-44e1-abaa-aa2b8d4b1080",
+      "order": 3,
+      "zh": "国外",
+      "pinyin": "",
+      "vi": "nước ngoài/ngoài nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3c3c8ee8-e9d4-45c8-923b-a241de51f7c0",
+      "order": 4,
+      "zh": "外语",
+      "pinyin": "",
+      "vi": "ngoại ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "04163de4-0a94-42d3-bd7a-a69b372ada42",
+      "order": 5,
+      "zh": "外地",
+      "pinyin": "",
+      "vi": "nơi khác/ngoại tỉnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33c56bbd-bbb6-4f63-9f9a-f1558f1dcc2f",
+      "order": 6,
+      "zh": "外人",
+      "pinyin": "",
+      "vi": "người ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c2b32829-b25b-4024-9605-1ba4de109e7f",
+      "order": 1,
+      "zh": "外面下雨了。",
+      "pinyin": "Wàimian xià yǔ le.",
+      "vi": "Bên ngoài mưa rồi.",
+      "analysis_vi": "外面 là danh từ vị trí.",
+      "highlight": [
+        "外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e85ca9e8-b1ae-474b-8126-37c1ec379c21"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "42e77a46-8331-4a26-bd4b-b1dced2bbc60",
+      "order": 2,
+      "zh": "他是从国外来的，不是从北京来的。",
+      "pinyin": "Tā shì cóng guówài lái de, bú shì cóng Běijīng lái de.",
+      "vi": "Anh ấy từ nước ngoài đến, không phải từ Bắc Kinh.",
+      "analysis_vi": "是……的 nhấn nơi xuất phát.",
+      "highlight": [
+        "外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e85ca9e8-b1ae-474b-8126-37c1ec379c21"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b1ff3e68-4163-42a0-9214-47e804dd5225",
+      "order": 3,
+      "zh": "一走到饭店外面，我们就看见导游正拿着地图等大家。",
+      "pinyin": "Yì zǒu dào fàndiàn wàimian, wǒmen jiù kànjiàn dǎoyóu zhèng názhe dìtú děng dàjiā.",
+      "vi": "Vừa ra ngoài khách sạn, chúng tôi thấy hướng dẫn viên đang cầm bản đồ đợi mọi người.",
+      "analysis_vi": "拿着地图 chỉ trạng thái cầm bản đồ.",
+      "highlight": [
+        "外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e85ca9e8-b1ae-474b-8126-37c1ec379c21"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "外 tạo nhiều từ giống Hán Việt: 外语, 外国, 外交.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e1aafbea-93c7-41ff-a0fa-0ee1d025cb14",
+      "order": 1,
+      "rule_vi": "外 thường cần dạng vị trí như 外面 / 国外; không nên dùng trống 我在外 trong trình độ sơ cấp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "外",
+    "back": "ngoài, bên ngoài; nước ngoài; ngoại",
+    "hint": "wài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e85ca9e8-b1ae-474b-8126-37c1ec379c21",
+    "source_lesson_vocab_id": null
+  }
+}

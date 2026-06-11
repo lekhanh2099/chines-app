@@ -1,0 +1,163 @@
+{
+  "id": "7bf01bd2-dc44-4357-9f31-a2fd6727b076",
+  "type": "deep_vocabulary_item",
+  "order": 125,
+  "hanzi": "惊人",
+  "pinyin": "jīngrén",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Đánh giá và mức độ"
+  ],
+  "meaning": {
+    "hanviet": "Kinh nhân",
+    "meaning_vi": "đáng kinh ngạc, làm người ta kinh ngạc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đáng kinh ngạc",
+      "làm người ta kinh ngạc"
+    ],
+    "short_definition_vi": "đáng kinh ngạc, làm người ta kinh ngạc",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: đáng kinh ngạc, làm người ta kinh ngạc.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Đánh giá và mức độ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "惊",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "惊人 trong bài được học theo nghĩa trọng tâm: đáng kinh ngạc, làm người ta kinh ngạc.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: đáng kinh ngạc, làm người ta kinh ngạc.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ff42a8b8-4286-4d1b-a75d-9b8368250867",
+      "order": 1,
+      "zh": "它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: đáng kinh ngạc, làm người ta kinh ngạc",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "821511fe-5e36-482f-aa0a-17c74f517bef",
+      "order": 1,
+      "zh": "它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “惊人” = đáng kinh ngạc, làm người ta kinh ngạc.",
+      "analysis_vi": "Câu này dùng “惊人” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "惊人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7bf01bd2-dc44-4357-9f31-a2fd6727b076"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “惊人” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "efecfb22-a5a1-4b66-9767-9a3d01028b55",
+      "order": 1,
+      "rule_vi": "Cần dùng “惊人” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "惊人",
+    "back": "đáng kinh ngạc, làm người ta kinh ngạc",
+    "hint": "jīngrén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Đánh giá và mức độ"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7bf01bd2-dc44-4357-9f31-a2fd6727b076",
+    "source_lesson_vocab_id": null
+  }
+}

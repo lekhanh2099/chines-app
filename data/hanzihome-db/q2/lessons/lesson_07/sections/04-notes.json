@@ -1,0 +1,102 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "对历史产生兴趣",
+      "structure": "对 + 对象 + 产生兴趣",
+      "meaning_vi": "Nảy sinh hứng thú / bắt đầu có hứng thú với cái gì.",
+      "examples": [
+        {
+          "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+          "zh": "学了京剧以后，我就对中国历史产生了兴趣。",
+          "pinyin": "Xué le Jīngjù yǐhòu, wǒ jiù duì Zhōngguó lìshǐ chǎnshēng le xìngqù.",
+          "vi": "Sau khi học Kinh kịch, tôi liền bắt đầu có hứng thú với lịch sử Trung Quốc.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "672f6f8a-a6fc-4432-b505-3eab376d0abd",
+        "7957c566-a6d5-4e43-b40b-5fe3c63069f2"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "只是",
+      "structure": "只是 + 内容",
+      "meaning_vi": "Chỉ là / chỉ có điều; dùng để giới hạn ý vừa nói, tránh hiểu quá rộng.",
+      "examples": [
+        {
+          "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+          "zh": "我只是对中国历史感兴趣。",
+          "pinyin": "Wǒ zhǐshì duì Zhōngguó lìshǐ gǎn xìngqù.",
+          "vi": "Tôi chỉ có hứng thú với lịch sử Trung Quốc thôi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "21b2136e-d19a-4928-a5df-029313d55763"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "改革开放以后的一切",
+      "structure": "改革开放以后 + 的 + 一切",
+      "meaning_vi": "Tất cả mọi thứ sau cải cách mở cửa.",
+      "examples": [
+        {
+          "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
+          "zh": "我对中国改革开放以后的一切都很感兴趣。",
+          "pinyin": "Wǒ duì Zhōngguó gǎigé kāifàng yǐhòu de yíqiè dōu hěn gǎn xìngqù.",
+          "vi": "Tôi rất có hứng thú với mọi thứ của Trung Quốc sau cải cách mở cửa.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "9adfbc86-8bfb-46d7-ac4e-d41fca97d111"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

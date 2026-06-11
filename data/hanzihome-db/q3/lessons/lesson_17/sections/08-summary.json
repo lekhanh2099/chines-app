@@ -1,0 +1,42 @@
+{
+  "id": "section_summary",
+  "type": "summary",
+  "order": 8,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "summary_001",
+      "type": "summary_block",
+      "order": 1,
+      "title": "Ngữ pháp chính",
+      "items": [
+        "一向",
+        "何况",
+        "一下子",
+        "或……或……",
+        "与其……不如……",
+        "否则"
+      ]
+    },
+    {
+      "id": "summary_002",
+      "type": "summary_block",
+      "order": 2,
+      "title": "Coverage tổng",
+      "items": [
+        "课文 covered",
+        "生词 62/62 covered",
+        "专名 empty verified",
+        "注释 covered",
+        "词语用法 covered",
+        "练习 10/10 covered",
+        "综合填空 covered",
+        "交际会话 speaker corrected",
+        "写汉字 not found in PDF"
+      ]
+    }
+  ]
+}

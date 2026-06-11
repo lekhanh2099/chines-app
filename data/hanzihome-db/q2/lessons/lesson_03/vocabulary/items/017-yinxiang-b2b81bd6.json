@@ -1,0 +1,365 @@
+{
+  "id": "7ba8c70c-f015-4a2c-b97b-87e3d1e713a1",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "印象",
+  "pinyin": "yìnxiàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "evaluation"
+  ],
+  "meaning": {
+    "hanviet": "Ấn tượng",
+    "meaning_vi": "ấn tượng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ấn tượng"
+    ],
+    "short_definition_vi": "ấn tượng",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "evaluation",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "印",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "卩",
+            "hanviet": "tiết",
+            "meaning_vi": "phần bên phải trong cấu tạo chữ",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "in, dấu, con dấu, để lại dấu vết",
+        "modern_logic_vi": "印 là dấu/in lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "象",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "象",
+            "hanviet": "tượng",
+            "meaning_vi": "voi; hình tượng; dáng vẻ",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hình tượng, biểu tượng, dáng vẻ",
+        "modern_logic_vi": "象 là hình ảnh/hình tượng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "印 là dấu vết; 象 là hình ảnh. 印象 là hình ảnh/dấu vết còn in lại trong đầu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "感觉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cảm giác/cảm nhận tức thời, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "看法",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cách nhìn, quan điểm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "记忆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ký ức, trí nhớ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "影响",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ảnh hưởng, dễ nhầm hình thức với 印象.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "印象",
+        "right": "影响",
+        "meaning_vi": "印象 là ấn tượng; 影响 là ảnh hưởng.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "31223d93-1972-41d2-b52b-943434545fdc",
+      "order": 1,
+      "zh": "印象很好",
+      "pinyin": "",
+      "vi": "ấn tượng rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6456ef1a-0ceb-4b08-a347-c7ed225121dd",
+      "order": 2,
+      "zh": "印象不错",
+      "pinyin": "",
+      "vi": "ấn tượng khá ổn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88bf3114-1aa2-4977-bf9b-b3c3110438c7",
+      "order": 3,
+      "zh": "印象很深",
+      "pinyin": "",
+      "vi": "ấn tượng sâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4eeaea3b-f19b-435c-af25-9722caa0dc78",
+      "order": 4,
+      "zh": "留下印象",
+      "pinyin": "",
+      "vi": "để lại ấn tượng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff82a36b-9684-4eb1-92bd-5d5f46b8743e",
+      "order": 5,
+      "zh": "给人留下好印象",
+      "pinyin": "",
+      "vi": "để lại ấn tượng tốt cho người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f0da593-a7b3-40fd-9eee-fb6167f567e5",
+      "order": 6,
+      "zh": "第一印象",
+      "pinyin": "",
+      "vi": "ấn tượng đầu tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd9eea85-29d6-4058-85d3-846ca801bab1",
+      "order": 7,
+      "zh": "对……有印象",
+      "pinyin": "",
+      "vi": "có ấn tượng về...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5bad831-de64-454d-9697-d214b17a878e",
+      "order": 8,
+      "zh": "没什么印象",
+      "pinyin": "",
+      "vi": "không có ấn tượng gì mấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d1469fa3-9543-46be-9c15-e3b910fa2d77",
+      "order": 1,
+      "zh": "这套房子给我的印象很好。",
+      "pinyin": "Zhè tào fángzi gěi wǒ de yìnxiàng hěn hǎo.",
+      "vi": "Căn nhà này để lại cho tôi ấn tượng rất tốt.",
+      "analysis_vi": "给我的印象很好 là cách nói tự nhiên.",
+      "highlight": [
+        "印象"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ba8c70c-f015-4a2c-b97b-87e3d1e713a1"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d8294ee2-8ad1-438f-826d-0b402940a860",
+      "order": 2,
+      "zh": "虽然客厅不大，但是阳光很好，所以第一印象不错。",
+      "pinyin": "Suīrán kètīng bú dà, dànshì yángguāng hěn hǎo, suǒyǐ dì yī yìnxiàng búcuò.",
+      "vi": "Tuy phòng khách không lớn, nhưng ánh nắng rất tốt, nên ấn tượng đầu tiên khá ổn.",
+      "analysis_vi": "虽然……但是……; 第一印象 là ấn tượng đầu tiên.",
+      "highlight": [
+        "印象"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ba8c70c-f015-4a2c-b97b-87e3d1e713a1"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "db183efb-67c5-4a9a-aaf4-1f1b568cf757",
+      "order": 3,
+      "zh": "我们上去看了以后，才发现这套房子的实际情况比照片好，所以妻子对它的印象也越来越好了。",
+      "pinyin": "Wǒmen shàngqù kàn le yǐhòu, cái fāxiàn zhè tào fángzi de shíjì qíngkuàng bǐ zhàopiàn hǎo, suǒyǐ qīzi duì tā de yìnxiàng yě yuè lái yuè hǎo le.",
+      "vi": "Sau khi chúng tôi lên xem rồi mới phát hiện tình hình thực tế của căn này tốt hơn ảnh, nên ấn tượng của vợ tôi về nó cũng ngày càng tốt hơn.",
+      "analysis_vi": "才发现 nhấn phát hiện sau khi xem thật; 对……的印象 = ấn tượng đối với.",
+      "highlight": [
+        "印象"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ba8c70c-f015-4a2c-b97b-87e3d1e713a1"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "第一印象 dùng rất giống 'ấn tượng đầu tiên' trong tiếng Việt; hay dùng khi phỏng vấn, gặp mặt, xem nhà, xem trường.",
+    "tags": [
+      "evaluation"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6b284173-ffe8-4fbe-9796-964f5b98c978",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 印象 với 影响.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我对他印象很好。",
+          "pinyin": "",
+          "vi": "Tôi có ấn tượng rất tốt về anh ấy.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这件事对我影响很大。",
+          "pinyin": "",
+          "vi": "Việc này ảnh hưởng rất lớn đến tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "印象 là ấn tượng; 影响 là ảnh hưởng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "印象",
+    "back": "ấn tượng",
+    "hint": "yìnxiàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "evaluation"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7ba8c70c-f015-4a2c-b97b-87e3d1e713a1",
+    "source_lesson_vocab_id": null
+  }
+}

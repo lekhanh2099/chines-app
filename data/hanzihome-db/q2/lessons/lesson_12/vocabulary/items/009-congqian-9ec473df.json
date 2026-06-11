@@ -1,0 +1,352 @@
+{
+  "id": "183cfef4-e7bd-43f0-9428-b65d6ccaf4c7",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "从前",
+  "pinyin": "cóngqián",
+  "pos": {
+    "raw_vi": "Danh từ thời gian",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "time_context"
+  ],
+  "meaning": {
+    "hanviet": "tòng tiền",
+    "meaning_vi": "trước đây, ngày xưa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trước đây, ngày xưa"
+    ],
+    "short_definition_vi": "trước đây, ngày xưa",
+    "textbook_focus_vi": "trước đây, ngày xưa",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "从",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "từ, theo",
+        "modern_logic_vi": "从 gợi quan hệ đi theo/từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "前",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng, tháng; bộ phận cơ thể trong một số chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao đứng/thành phần nhìn thấy",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trước, phía trước, trước đây",
+        "modern_logic_vi": "前 là phía trước/trước đó.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "从前 = từ thời quá khứ nhìn lại, dùng nhiều trong kể chuyện/hồi tưởng.",
+    "memory_tip_vi": "从前 = từ thời quá khứ nhìn lại, dùng nhiều trong kể chuyện/hồi tưởng.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "以前",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trước đây, phổ thông hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "过去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quá khứ; cũng có thể là đi qua",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "原来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vốn dĩ/hóa ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "现在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bây giờ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "从前",
+        "right": "现在",
+        "meaning_vi": "",
+        "note_vi": "trước đây/ngày xưa ↔ bây giờ",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "190c698c-378c-4711-bdad-31b9ab52c37b",
+      "order": 1,
+      "zh": "从前有一个人",
+      "pinyin": "",
+      "vi": "ngày xưa có một người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "832a6e8b-f6bd-4a36-8d65-c6423c8c11ef",
+      "order": 2,
+      "zh": "从前的生活",
+      "pinyin": "",
+      "vi": "cuộc sống ngày xưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "228142b3-14a8-426c-8cad-4c099ffbdd9e",
+      "order": 3,
+      "zh": "从前的样子",
+      "pinyin": "",
+      "vi": "dáng vẻ trước đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a82a30fb-eb38-403e-8007-ed9a8c5ccc5f",
+      "order": 4,
+      "zh": "想起从前的事",
+      "pinyin": "",
+      "vi": "nhớ chuyện trước đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6c883b7-85da-4701-8520-29d3cfc58049",
+      "order": 5,
+      "zh": "从前和现在",
+      "pinyin": "",
+      "vi": "ngày xưa và bây giờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "95d883e7-3d17-4d65-904b-9b383555b0c7",
+      "order": 1,
+      "zh": "从前，这里没有这么多高楼。",
+      "pinyin": "",
+      "vi": "Trước đây, chỗ này không có nhiều nhà cao tầng như vậy.",
+      "analysis_vi": "从前 đặt đầu câu làm bối cảnh quá khứ.",
+      "highlight": [
+        "从前"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "183cfef4-e7bd-43f0-9428-b65d6ccaf4c7"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "312c9d15-cfd7-476c-a729-c653d11e16ef",
+      "order": 2,
+      "zh": "从前的事你还记得吗？",
+      "pinyin": "",
+      "vi": "Chuyện trước đây bạn vẫn còn nhớ không?",
+      "analysis_vi": "从前的事 là chủ đề lớn.",
+      "highlight": [
+        "从前"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "183cfef4-e7bd-43f0-9428-b65d6ccaf4c7"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "从前有…… giống mở đầu “ngày xửa ngày xưa”.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a3f58be9-bef4-4dde-ac8b-e037d5053eac",
+      "order": 1,
+      "rule_vi": "Không dùng 从前 cho “vừa nãy/lúc nãy”; dùng 刚才.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "从前我给你打电话了。",
+          "pinyin": "",
+          "vi": "Không tự nhiên nếu chỉ là lúc nãy.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "刚才我给你打电话了。",
+          "pinyin": "",
+          "vi": "Lúc nãy tôi gọi điện cho bạn rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "从前",
+    "back": "trước đây, ngày xưa",
+    "hint": "cóngqián",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "time_context"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "183cfef4-e7bd-43f0-9428-b65d6ccaf4c7",
+    "source_lesson_vocab_id": null
+  }
+}

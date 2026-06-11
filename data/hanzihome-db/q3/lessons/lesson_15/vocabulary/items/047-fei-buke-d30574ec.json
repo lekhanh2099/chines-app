@@ -1,0 +1,227 @@
+{
+  "id": "ecf38e9b-d96b-43d5-9ffa-30c3791592ec",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "非……不可",
+  "pinyin": "fēi……bùkě",
+  "pos": {
+    "raw_vi": "Cấu trúc cố định",
+    "raw_cn": "固定结构",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phi……bất khả",
+    "meaning_vi": "nhất định phải; không...không được",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhất định phải",
+      "không...không được"
+    ],
+    "short_definition_vi": "nhất định phải; không...không được",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "非",
+        "lishu_vi": "",
+        "structure_note_vi": "非: phải trong cấu trúc",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phải trong cấu trúc",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: phải trong cấu trúc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "不: không",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: không.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "可: ",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: .",
+        "warning_vi": "Chưa chắc cấu tạo; không tự đoán component.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "非……不可 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 非去不可.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e7e9893f-0a56-4994-94e4-f89aedce0ea9",
+      "order": 1,
+      "zh": "非去不可",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc85d32e-dd57-488b-a1a5-98b1189a4817",
+      "order": 2,
+      "zh": "非做不可",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d241cdcd-df0d-4874-a165-e5cd2bd5a115",
+      "order": 3,
+      "zh": "非动手术不可",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cfe48e2-ba4e-49a4-9dea-cf78ebfbbb68",
+      "order": 4,
+      "zh": "非住院不可",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5715fd64-5e0b-4318-ab0e-dc60a3085b07",
+      "order": 1,
+      "zh": "这件事我非做不可。",
+      "pinyin": "",
+      "vi": "Chuyện này tôi nhất định phải làm。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "非",
+        "不可"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ecf38e9b-d96b-43d5-9ffa-30c3791592ec"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "15fd9e2c-3bf8-4eff-8c8a-46d88d59e467",
+      "order": 2,
+      "zh": "如果伤势很重，就非动手术不可。",
+      "pinyin": "",
+      "vi": "Nếu thương tích rất nặng thì bắt buộc phải phẫu thuật。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "非",
+        "不可"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ecf38e9b-d96b-43d5-9ffa-30c3791592ec"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "01daf846-4f62-4458-824f-3fedb04c1268",
+      "order": 1,
+      "rule_vi": "Không viết thiếu 不可 nếu dùng cấu trúc cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không viết thiếu 不可 nếu dùng cấu trúc cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "非……不可",
+    "back": "nhất định phải; không...không được",
+    "hint": "fēi……bùkě",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ecf38e9b-d96b-43d5-9ffa-30c3791592ec",
+    "source_lesson_vocab_id": null
+  }
+}

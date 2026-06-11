@@ -1,0 +1,253 @@
+{
+  "id": "b99dba3f-078d-42e3-86b9-160578d1d0e6",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "家务",
+  "pinyin": "jiāwù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "family"
+  ],
+  "meaning": {
+    "hanviet": "gia vụ",
+    "meaning_vi": "việc nhà, công việc gia đình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "việc nhà",
+      "công việc gia đình"
+    ],
+    "short_definition_vi": "việc nhà, công việc gia đình",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "家",
+        "lishu_vi": "gia",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "豕",
+            "hanviet": "thỉ",
+            "meaning_vi": "heo/lợn",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà/gia đình",
+        "modern_logic_vi": "Trong từ/cụm này, 家 góp phần vào nghĩa hiện đại: nhà/gia đình.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "务",
+        "lishu_vi": "vụ",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc/sự vụ",
+        "modern_logic_vi": "Trong từ/cụm này, 务 góp phần vào nghĩa hiện đại: việc/sự vụ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "家务 cần học theo nghĩa hiện đại trong bài: việc nhà, công việc gia đình.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 做家务.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dfb488c5-3492-423e-8a08-669bfbbf2729",
+      "order": 1,
+      "zh": "做家务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56a634f8-e406-4a43-be13-98ce39703079",
+      "order": 2,
+      "zh": "分担家务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28884777-dcc6-4387-be00-ca344fa7dec3",
+      "order": 3,
+      "zh": "家务活儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "efabd465-fe18-475a-bb2d-636d26fc01a0",
+      "order": 1,
+      "zh": "我每天晚上都做家务。",
+      "pinyin": "Wǒ měitiān wǎnshang dōu zuò jiāwù.",
+      "vi": "Mỗi tối tôi đều làm việc nhà.",
+      "analysis_vi": "做家务 là collocation chuẩn.",
+      "highlight": [
+        "家务"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b99dba3f-078d-42e3-86b9-160578d1d0e6"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e97d8f8e-57a8-40bb-ae09-82f3874bf097",
+      "order": 2,
+      "zh": "他家以种地为主，孩子放学以后也要帮忙做家务。",
+      "pinyin": "Tā jiā yǐ zhòngdì wéi zhǔ, háizi fàngxué yǐhòu yě yào bāngmáng zuò jiāwù.",
+      "vi": "Nhà anh ấy chủ yếu làm ruộng, con cái tan học cũng giúp làm việc nhà.",
+      "analysis_vi": "做家务 nêu trách nhiệm gia đình.",
+      "highlight": [
+        "家务"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b99dba3f-078d-42e3-86b9-160578d1d0e6"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "分担家务 là cụm hiện đại khi nói về chia sẻ việc nhà và bình đẳng gia đình.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fd7a0b10-b77b-4884-8886-fc8099209fbd",
+      "order": 1,
+      "rule_vi": "Dùng 家务 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "家务",
+    "back": "việc nhà, công việc gia đình",
+    "hint": "jiāwù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b99dba3f-078d-42e3-86b9-160578d1d0e6",
+    "source_lesson_vocab_id": null
+  }
+}

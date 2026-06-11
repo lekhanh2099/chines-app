@@ -1,0 +1,406 @@
+{
+  "id": "0ab66cd4-936a-4df1-890c-bd575579f232",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "选择",
+  "pinyin": "xuǎnzé",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tuyển trạch",
+    "meaning_vi": "lựa chọn; sự lựa chọn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lựa chọn; sự lựa chọn"
+    ],
+    "short_definition_vi": "lựa chọn; sự lựa chọn",
+    "textbook_focus_vi": "lựa chọn; sự lựa chọn",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "选",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi, di chuyển",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "先",
+            "hanviet": "",
+            "meaning_vi": "trước",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "择",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "选 là chọn. 择 cũng là chọn, lựa. → 选择 = lựa chọn sau khi cân nhắc giữa nhiều khả năng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 选择 trang trọng hơn 选 một chút. Nói đời thường có thể dùng 选; viết/phân tích dùng 选择 đẹp hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "选择",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lựa chọn, danh từ hoặc động từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "选",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chọn, ngắn và khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "决定",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quyết định sau khi chọn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chọn lựa, thường chọn đồ/người cụ thể, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 选择专业 = lựa chọn ngành học; 挑衣服 = chọn quần áo."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a6af6d6b-1474-49bb-b1ac-054fc1408237",
+      "order": 1,
+      "zh": "做出选择",
+      "pinyin": "",
+      "vi": "đưa ra lựa chọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7351ad04-b1b4-4e26-8364-601f95aab2d6",
+      "order": 2,
+      "zh": "选择专业",
+      "pinyin": "",
+      "vi": "chọn ngành học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0bf54826-8757-45ef-b5df-077c6104a0b4",
+      "order": 3,
+      "zh": "选择节目",
+      "pinyin": "",
+      "vi": "chọn tiết mục/chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1e704c7-450a-4ad1-972b-5e97f0f14dd9",
+      "order": 4,
+      "zh": "正确的选择",
+      "pinyin": "",
+      "vi": "lựa chọn đúng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ec7c52a-c147-421a-a38a-e4140a2e21ae",
+      "order": 5,
+      "zh": "没有选择",
+      "pinyin": "",
+      "vi": "không có lựa chọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0f401f2a-69e3-49dd-bc95-7dc9bd5e8b8d",
+      "order": 1,
+      "zh": "如果你不了解这个人物，就看不懂他的选择。",
+      "pinyin": "Rúguǒ nǐ bù liǎojiě zhège rénwù, jiù kàn bù dǒng tā de xuǎnzé.",
+      "vi": "Nếu bạn không hiểu nhân vật này, bạn sẽ xem không hiểu lựa chọn của anh ấy.",
+      "analysis_vi": "看不懂选择 nghĩa là không hiểu được lý do/ý nghĩa đằng sau lựa chọn.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "0ab66cd4-936a-4df1-890c-bd575579f232"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e719197c-12b1-4b4f-82c6-bed78ec12a1f",
+      "order": 2,
+      "zh": "节目太多了，我一下子选择不了。",
+      "pinyin": "Jiémù tài duō le, wǒ yíxiàzi xuǎnzé bù liǎo.",
+      "vi": "Chương trình nhiều quá, tôi nhất thời không chọn được.",
+      "analysis_vi": "选择不了 dùng 了 liǎo chỉ không xử lý/hoàn thành được việc lựa chọn.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "0ab66cd4-936a-4df1-890c-bd575579f232"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "619debd8-144a-45d7-92a4-911403240f24",
+      "order": 3,
+      "zh": "你要是听不懂京剧，可以先选择一个内容简单的节目。",
+      "pinyin": "Nǐ yàoshi tīng bù dǒng Jīngjù, kěyǐ xiān xuǎnzé yí ge nèiróng jiǎndān de jiémù.",
+      "vi": "Nếu bạn nghe không hiểu Kinh kịch, có thể chọn trước một tiết mục có nội dung đơn giản.",
+      "analysis_vi": "听不懂 là không nghe hiểu; 选择……节目 là chọn chương trình/tiết mục.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "0ab66cd4-936a-4df1-890c-bd575579f232"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "e343b992-4ed9-4dba-9022-07e6cfa07de0",
+      "order": 1,
+      "rule_vi": "Nhầm 选择 và 挑. 选择专业",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Nhầm 选择 và 挑. 选择专业 Xuǎnzé zhuānyè Chọn ngành học. 挑衣服",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "选择",
+    "back": "lựa chọn; sự lựa chọn",
+    "hint": "xuǎnzé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Khi xem nghệ thuật truyền thống Trung Quốc lần đầu, chọn tiết mục có cốt truyện quen hoặc nội dung ngắn sẽ dễ hơn. Ví dụ xem trước phần giới thiệu 节目单 rồi chọn tiết mục mình hiểu bối cảnh sẽ giúp 看得懂 hơn.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0ab66cd4-936a-4df1-890c-bd575579f232",
+    "source_lesson_vocab_id": null
+  }
+}

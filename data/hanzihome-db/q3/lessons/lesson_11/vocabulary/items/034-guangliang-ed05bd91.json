@@ -1,0 +1,247 @@
+{
+  "id": "05a4755e-6567-4f59-b863-3eb66f44bc59",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "光亮",
+  "pinyin": "guāngliàng",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ",
+    "raw_cn": "名词 / 形容词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "quang lượng",
+    "meaning_vi": "ánh sáng; sáng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ánh sáng",
+      "sáng"
+    ],
+    "short_definition_vi": "ánh sáng hoặc trạng thái sáng",
+    "textbook_focus_vi": "Trong bài dùng như danh từ chỉ ánh sáng đỏ cam.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "光",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ánh sáng",
+        "modern_logic_vi": "ánh sáng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "亮",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng",
+        "modern_logic_vi": "sáng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "光亮 được học trong bài theo nghĩa: ánh sáng hoặc trạng thái sáng.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 橙红色的光亮.",
+    "warning_vi": "Không nhầm 光亮 với 漂亮; 光亮 là sáng/ánh sáng, 漂亮 là đẹp.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "明亮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Sáng rõ, thường tả phòng/mắt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亮光",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vệt sáng/ánh sáng nhìn thấy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 光亮 với 漂亮; 光亮 là sáng/ánh sáng, 漂亮 là đẹp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d2246f00-4acb-48cd-8354-1124a801e9e5",
+      "order": 1,
+      "zh": "橙红色的光亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4002e1bf-3185-4881-a31f-d55600b67167",
+      "order": 2,
+      "zh": "光亮十分耀眼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "501a49cf-344a-4f53-b2b2-2ecd85538bed",
+      "order": 3,
+      "zh": "一点儿光亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "365bd40b-b8a6-46b8-bead-54f3de2c020f",
+      "order": 4,
+      "zh": "屋子很光亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23a9ba0d-1650-4c03-b20b-ff0860b002cf",
+      "order": 5,
+      "zh": "发出光亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cdc9c32a-1e87-4f00-a55d-353624f89443",
+      "order": 1,
+      "zh": "那橙红色的光亮十分耀眼。",
+      "pinyin": "",
+      "vi": "Ánh sáng đỏ cam ấy vô cùng chói mắt.",
+      "analysis_vi": "光亮 là danh từ trong câu này.",
+      "highlight": [
+        "光亮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "05a4755e-6567-4f59-b863-3eb66f44bc59"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2b9abf0f-0f5c-4e7b-80e5-fc186d5953b0",
+      "order": 2,
+      "zh": "房间里一点儿光亮也没有。",
+      "pinyin": "",
+      "vi": "Trong phòng không có chút ánh sáng nào.",
+      "analysis_vi": "一点儿……也没有 nhấn phủ định tuyệt đối.",
+      "highlight": [
+        "光亮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "05a4755e-6567-4f59-b863-3eb66f44bc59"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nói phòng sáng đẹp, 明亮 thường tự nhiên hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fc010cfb-ec0c-4feb-b0af-32e945b7a206",
+      "order": 1,
+      "rule_vi": "Không nhầm 光亮 với 漂亮; 光亮 là sáng/ánh sáng, 漂亮 là đẹp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 光亮 với 漂亮; 光亮 là sáng/ánh sáng, 漂亮 là đẹp.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "光亮",
+    "back": "ánh sáng; sáng",
+    "hint": "guāngliàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "05a4755e-6567-4f59-b863-3eb66f44bc59",
+    "source_lesson_vocab_id": null
+  }
+}

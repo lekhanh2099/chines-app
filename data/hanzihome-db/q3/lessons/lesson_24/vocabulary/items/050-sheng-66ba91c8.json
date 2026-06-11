@@ -1,0 +1,266 @@
+{
+  "id": "211b63c9-e34e-48cf-af81-9aa3e9326419",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "剩",
+  "pinyin": "shèng",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动词/形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_24",
+    "deep_vocab",
+    "qingshang"
+  ],
+  "meaning": {
+    "hanviet": "thặng",
+    "meaning_vi": "còn lại, dư lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "còn lại, dư lại"
+    ],
+    "short_definition_vi": "còn lại, dư lại",
+    "textbook_focus_vi": "Dùng trong Bài 24 情商 để nối chủ đề EQ, cảm xúc, tự kiểm soát và quan hệ xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, giao tiếp, giáo dục, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "剩",
+        "lishu_vi": "thặng",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, tách",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, tách",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 剩 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt, tách",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "剩 được ghi theo nghĩa hiện đại đã soạn; ưu tiên học qua cụm dùng thật thay vì suy diễn từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 剩下.",
+    "warning_vi": "Không ép chiết tự nếu là tên riêng, thành ngữ cố định hoặc chữ giản thể khó suy nghĩa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên học 剩 qua cụm cố định và ví dụ trong bài 情商."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "89a8d54a-cc53-4348-93f1-de6ff124a8a8",
+      "order": 1,
+      "zh": "剩下",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5fec4ab3-e53a-4e54-b82b-2f2133d85980",
+      "order": 2,
+      "zh": "剩饭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "566c9a34-4e0d-407b-911e-4ea5b75db0f1",
+      "order": 3,
+      "zh": "剩菜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7aa91708-10e3-4f07-9b74-92c63bfb3052",
+      "order": 4,
+      "zh": "剩一个",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cbf81f89-1534-4034-9005-409f3da46c80",
+      "order": 5,
+      "zh": "剩多少",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab105568-48b3-454d-8beb-38dde85214b5",
+      "order": 6,
+      "zh": "没剩多少",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d354591-42e5-4b83-8142-9740ae71d4f0",
+      "order": 7,
+      "zh": "只剩下……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fbfd2c80-5510-4516-b773-0d36c48a8be7",
+      "order": 1,
+      "zh": "桌子上只剩下一块棉花糖。",
+      "pinyin": "",
+      "vi": "",
+      "analysis_vi": "Ví dụ tự nhiên đã bám nghĩa trọng tâm của 剩 trong bài 情商.",
+      "highlight": [
+        "剩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "211b63c9-e34e-48cf-af81-9aa3e9326419"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ddce5cd5-adf2-4917-a5d3-05d4393ff950",
+      "order": 2,
+      "zh": "本课用“剩”来说明情商、情绪和人际关系之间的联系。",
+      "pinyin": "",
+      "vi": "Bài này dùng “剩” để nói rõ mối liên hệ giữa EQ, cảm xúc và quan hệ xã hội.",
+      "analysis_vi": "Câu phục vụ ngữ cảnh hóa từ trong chủ đề bài, không phải câu dịch máy.",
+      "highlight": [
+        "剩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "211b63c9-e34e-48cf-af81-9aa3e9326419"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 情商, 剩 được đặt vào mạch học về EQ, kiểm soát cảm xúc, quan hệ xã hội hoặc tác động của công nghệ tới giao tiếp.",
+    "tags": [
+      "usage",
+      "lesson_24"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8cc7a4ee-fce8-43a9-8866-a527f5595bb6",
+      "order": 1,
+      "rule_vi": "Không dịch máy từng chữ Hán Việt của 剩; phải học theo nghĩa hiện đại và collocation.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảnh báo này giữ lại tinh thần phần lỗi sai đã soạn: tránh suy nghĩa từ mặt chữ khi từ/cụm đã có nghĩa cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "剩",
+    "back": "còn lại, dư lại",
+    "hint": "shèng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_24",
+      "qingshang"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "211b63c9-e34e-48cf-af81-9aa3e9326419",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "id": "48d767d7-d2cb-4164-8a94-ae6e38404ce8",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "商量",
+  "pinyin": "shāngliang",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thương lượng",
+    "meaning_vi": "bàn bạc, trao đổi ý kiến",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bàn bạc, trao đổi ý kiến"
+    ],
+    "short_definition_vi": "bàn bạc, trao đổi ý kiến",
+    "textbook_focus_vi": "bàn bạc, trao đổi ý kiến",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "商",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "buôn bán, thương mại; bàn bạc",
+        "modern_logic_vi": "Không tách sâu hình hiện đại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "量",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "lý",
+            "meaning_vi": "trong/dặm",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đo lường, lượng, cân nhắc",
+        "modern_logic_vi": "量 gợi cân nhắc/đo lường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "商 = bàn việc/thương thảo, 量 = cân nhắc. 商量 = cùng bàn và cân nhắc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "df9bde4c-60b4-4ad7-82e5-8539fedbb70e",
+      "order": 1,
+      "zh": "商量一下",
+      "pinyin": "",
+      "vi": "bàn một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d65ae8c4-6cf8-40d2-891e-f07d7e232cfa",
+      "order": 2,
+      "zh": "跟你商量",
+      "pinyin": "",
+      "vi": "bàn với bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad091356-5f6a-425a-be84-9b49e2674b7f",
+      "order": 3,
+      "zh": "商量一件事",
+      "pinyin": "",
+      "vi": "bàn một việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a704bf1-0d33-41aa-8b32-cff04f7ff75f",
+      "order": 4,
+      "zh": "商量办法",
+      "pinyin": "",
+      "vi": "bàn cách giải quyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "432c5f4b-8329-4a98-8988-4365004ce7da",
+      "order": 5,
+      "zh": "大家商量商量",
+      "pinyin": "",
+      "vi": "mọi người bàn thử xem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "523227e3-75af-4aed-a6ba-dd1acbcd352c",
+      "order": 6,
+      "zh": "商量好了",
+      "pinyin": "",
+      "vi": "đã bàn xong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8371320d-6684-45db-aed8-d1949bcb6c2c",
+      "order": 1,
+      "zh": "我想跟你商量一下。",
+      "pinyin": "Wǒ xiǎng gēn nǐ shāngliang yíxià.",
+      "vi": "Tôi muốn bàn với bạn một chút.",
+      "analysis_vi": "一下 làm sắc thái nhẹ hơn.",
+      "highlight": [
+        "商量"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48d767d7-d2cb-4164-8a94-ae6e38404ce8"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e44bf37c-c986-4656-9524-4a21d5b2f2c1",
+      "order": 2,
+      "zh": "我们是跟导游商量以后才决定坐高铁的。",
+      "pinyin": "Wǒmen shì gēn dǎoyóu shāngliang yǐhòu cái juédìng zuò gāotiě de.",
+      "vi": "Chúng tôi bàn với hướng dẫn viên rồi mới quyết định đi tàu cao tốc.",
+      "analysis_vi": "是……的 nhấn quá trình/cách quyết định.",
+      "highlight": [
+        "商量"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48d767d7-d2cb-4164-8a94-ae6e38404ce8"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dffacb74-89a0-4729-ae77-59077683a93e",
+      "order": 3,
+      "zh": "一发现时间不够，大家就坐下来商量怎么重新安排活动。",
+      "pinyin": "Yì fāxiàn shíjiān bú gòu, dàjiā jiù zuò xiàlai shāngliang zěnme chóngxīn ānpái huódòng.",
+      "vi": "Vừa phát hiện thời gian không đủ, mọi người ngồi xuống bàn cách sắp xếp lại.",
+      "analysis_vi": "怎么重新安排活动 là nội dung bàn.",
+      "highlight": [
+        "商量"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48d767d7-d2cb-4164-8a94-ae6e38404ce8"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "我们商量一下吧 tạo cảm giác cùng bàn, ít áp đặt hơn 我决定了.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff29edd5-ce37-4904-a134-3bfed16a8137",
+      "order": 1,
+      "rule_vi": "商量 không phải lúc nào cũng là mặc cả giá; mặc cả thường dùng 还价 / 讲价.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "商量",
+    "back": "bàn bạc, trao đổi ý kiến",
+    "hint": "shāngliang",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "48d767d7-d2cb-4164-8a94-ae6e38404ce8",
+    "source_lesson_vocab_id": null
+  }
+}

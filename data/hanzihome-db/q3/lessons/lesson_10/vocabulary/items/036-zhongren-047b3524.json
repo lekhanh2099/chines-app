@@ -1,0 +1,268 @@
+{
+  "id": "62068ab0-bfc8-432d-8a7f-ababd5133f49",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "重任",
+  "pinyin": "zhòngrèn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trọng nhiệm",
+    "meaning_vi": "trọng trách, nhiệm vụ quan trọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trọng trách",
+      "nhiệm vụ quan trọng"
+    ],
+    "short_definition_vi": "trọng trách, nhiệm vụ quan trọng",
+    "textbook_focus_vi": "trọng trách, nhiệm vụ quan trọng",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "重",
+        "lishu_vi": "trọng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "任",
+        "lishu_vi": "nhiệm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "trọng trách, nhiệm vụ quan trọng",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 担当重任.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "任务",
+        "pinyin": "rènwu",
+        "meaning_vi": "nhiệm vụ",
+        "difference_vi": "nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "责任",
+        "pinyin": "zérèn",
+        "meaning_vi": "trách nhiệm",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f74d47bd-f733-4c5e-b8f5-87af92e97325",
+      "order": 1,
+      "zh": "担当重任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75cb71bc-29ea-4980-ad0e-8544fb09e5e7",
+      "order": 2,
+      "zh": "肩负重任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13b7895c-8551-458b-8033-7f03adfb0f8a",
+      "order": 3,
+      "zh": "承担重任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8d6b1877-19fd-4002-81c3-d5f4d2fe21cd",
+      "order": 4,
+      "zh": "委以重任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "66d3e212-cd06-438e-9a5e-e87da0fe86ec",
+      "order": 5,
+      "zh": "一项重任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc84913d-a425-443e-8181-221ec6912b8e",
+      "order": 6,
+      "zh": "不负重任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3acd12bb-9b36-4abf-b944-631efd9b9e58",
+      "order": 1,
+      "zh": "这是一项重任。",
+      "pinyin": "Zhè shì yí xiàng zhòngrèn.",
+      "vi": "Đây là một nhiệm vụ quan trọng.",
+      "analysis_vi": "项 là lượng từ thường dùng cho nhiệm vụ/công việc/dự án.",
+      "highlight": [
+        "重任"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "62068ab0-bfc8-432d-8a7f-ababd5133f49"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "重任 thường đi với 担当/肩负/承担/委以.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "11f3df87-7268-4cf5-b69e-733d304a12e7",
+      "order": 1,
+      "rule_vi": "Không dùng 重任 cho việc nhỏ/vặt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "重任",
+    "back": "trọng trách, nhiệm vụ quan trọng",
+    "hint": "zhòngrèn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "62068ab0-bfc8-432d-8a7f-ababd5133f49",
+    "source_lesson_vocab_id": null
+  }
+}

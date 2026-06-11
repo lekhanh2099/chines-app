@@ -1,0 +1,364 @@
+{
+  "id": "ab037a2f-2883-493a-bb2f-82f07b20e245",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "坏事",
+  "pinyin": "huàishì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hoại sự",
+    "meaning_vi": "chuyện xấu, việc xấu",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "chuyện xấu, việc xấu",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "坏",
+        "lishu_vi": "hoại",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "土",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "不",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xấu, hỏng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "土",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "事",
+        "lishu_vi": "sự",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc, chuyện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "坏 = xấu, hỏng, tệ. 事 = chuyện, việc. → 坏事 = chuyện xấu / việc xấu. Logic hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "Việc gây hậu quả không tốt hoặc vi phạm đạo đức → 坏事. Cảnh báo: 坏事 khác 坏了.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "坏事",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyện xấu, việc xấu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好事",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyện tốt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "坏消息",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tin xấu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麻烦事",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyện phiền phức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "问题",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vấn đề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "这是坏事吗？",
+      "Đây là chuyện xấu à?",
+      "这是坏消息。",
+      "Đây là tin xấu.",
+      "我遇到了一件麻烦事。",
+      "Tôi gặp một chuyện phiền phức."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f16c1b96-4a94-4fee-9d0e-5e9dd7832db9",
+      "order": 1,
+      "zh": "一件坏事",
+      "pinyin": "",
+      "vi": "một chuyện xấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1794e246-f0c2-48fc-bfc5-8386e0609cb6",
+      "order": 2,
+      "zh": "做坏事",
+      "pinyin": "",
+      "vi": "làm việc xấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26aca47d-a10f-44f2-b69c-72cfc547fbc5",
+      "order": 3,
+      "zh": "坏事发生了",
+      "pinyin": "",
+      "vi": "chuyện xấu xảy ra rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e252ed2-3917-4b33-9412-7bc987891aa5",
+      "order": 4,
+      "zh": "不是坏事",
+      "pinyin": "",
+      "vi": "không phải chuyện xấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c389148a-4d17-47eb-b2e5-6c11c2fad77c",
+      "order": 5,
+      "zh": "好事变坏事",
+      "pinyin": "",
+      "vi": "chuyện tốt biến thành chuyện xấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a6dcc1a-98a4-49d9-a6be-7e953f4fd452",
+      "order": 6,
+      "zh": "坏事传得快",
+      "pinyin": "",
+      "vi": "chuyện xấu lan nhanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c21478e9-3847-4504-871a-05cd95f316b2",
+      "order": 1,
+      "zh": "这不是坏事。",
+      "pinyin": "Zhè bú shì huàishì.",
+      "vi": "Đây không phải chuyện xấu.",
+      "analysis_vi": "不是…… phủ định nhận định.",
+      "highlight": [
+        "坏事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab037a2f-2883-493a-bb2f-82f07b20e245"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ac8db607-b9ab-4493-9d7b-031d0b1b5f79",
+      "order": 2,
+      "zh": "表停了不一定是坏事，也许只是提醒你该换电池了。",
+      "pinyin": "Biǎo tíng le bù yídìng shì huàishì, yěxǔ zhǐshì tíxǐng nǐ gāi huàn diànchí le.",
+      "vi": "Đồng hồ ngừng chạy chưa chắc là chuyện xấu, có lẽ chỉ là nhắc bạn đến lúc thay pin rồi.",
+      "analysis_vi": "不一定 = chưa chắc. 该换电池了 là mẫu Bài 8. 只是 làm nhẹ ý.",
+      "highlight": [
+        "坏事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab037a2f-2883-493a-bb2f-82f07b20e245"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "83aa77f1-aabb-4ae1-b69c-430de0127e53",
+      "order": 3,
+      "zh": "迟到当然不是好事，可是如果你能认真地想一想原因，把老问题改掉，这件坏事也可能变成一件好事。",
+      "pinyin": "Chídào dāngrán bú shì hǎoshì, kěshì rúguǒ nǐ néng rènzhēn de xiǎng yi xiǎng yuányīn, bǎ lǎo wèntí gǎi diào, zhè jiàn huàishì yě kěnéng biàn chéng yí jiàn hǎoshì.",
+      "vi": "Đi trễ đương nhiên không phải chuyện tốt, nhưng nếu bạn có thể nghiêm túc nghĩ lại nguyên nhân, sửa bỏ vấn đề cũ, chuyện xấu này cũng có thể biến thành một chuyện tốt.",
+      "analysis_vi": "认真地想一想 dùng 地. 把老问题改掉 là 把字句 + kết quả. 变成一件好事 = biến thành chuyện tốt.",
+      "highlight": [
+        "坏事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab037a2f-2883-493a-bb2f-82f07b20e245"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Người Trung hay dùng cặp 好事 / 坏事 để nhìn một việc từ hai mặt. Câu kiểu 坏事也可能变成好事 rất hợp khi nói về bài học sau sai lầm.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "99a7a624-6fa7-4260-973b-96d4542520db",
+      "order": 1,
+      "rule_vi": "Đừng nhầm:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "坏事 = chuyện xấu. 坏了 = hỏng rồi. Ví dụ: 手机坏了。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "坏事",
+    "back": "chuyện xấu, việc xấu",
+    "hint": "huàishì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ab037a2f-2883-493a-bb2f-82f07b20e245",
+    "source_lesson_vocab_id": null
+  }
+}

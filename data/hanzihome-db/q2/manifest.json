@@ -1,0 +1,876 @@
+{
+  "schemaVersion": "hanzihome-db-manifest-v3",
+  "dataset": "q2",
+  "source": "data/hanzihome/q2",
+  "generatedAt": "2026-06-11T03:41:59.672Z",
+  "options": {
+    "lexicalScan": true,
+    "includeSingleCharScan": false,
+    "sourceCopied": false,
+    "indexMode": "slim"
+  },
+  "counts": {
+    "lessons": 25,
+    "sections": 227,
+    "lessonVocabItems": 1206,
+    "sourceDeepVocabItems": 1195,
+    "materializedVocabItems": 1418,
+    "syntheticVocabItems": 223,
+    "relations": 4782,
+    "checkNeededRelations": 265,
+    "checkNeededVocabItems": 242,
+    "unresolved": 0,
+    "warnings": 36
+  },
+  "lessons": [
+    {
+      "lessonIndex": 1,
+      "id": "986fa952-0ba7-4fb5-9374-abbe1eaae2ce",
+      "title": {
+        "zh": "田芳去哪儿了",
+        "pinyin": "Tián Fāng qù nǎr le",
+        "vi": "Điền Phương đi đâu rồi?",
+        "en": "Where has Tian Fang gone?"
+      },
+      "folder": "lessons/lesson_01",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_01.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_01_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 40,
+        "sourceDeepVocabItems": 45,
+        "materializedVocabItems": 48,
+        "syntheticVocabItems": 3,
+        "hanziOnlyVocabMatches": 2,
+        "relations": 170,
+        "relationTypes": {
+          "content_to_grammar": 28,
+          "content_to_vocabulary_item": 57,
+          "lesson_vocab_to_vocabulary_item": 40,
+          "vocab_group_to_vocabulary_item": 45
+        },
+        "checkNeededRelations": 5,
+        "checkNeededVocabItems": 3,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 2,
+      "id": "1608b09e-d48d-481c-b9ad-3885026cf3c1",
+      "title": {
+        "zh": "玛丽哭了",
+        "pinyin": "Mǎlì kū le",
+        "vi": "Mary khóc rồi",
+        "en": "Mary cried"
+      },
+      "folder": "lessons/lesson_02",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_02.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_02_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 34,
+        "sourceDeepVocabItems": 32,
+        "materializedVocabItems": 35,
+        "syntheticVocabItems": 3,
+        "hanziOnlyVocabMatches": 1,
+        "relations": 158,
+        "relationTypes": {
+          "content_to_grammar": 25,
+          "content_to_vocabulary_item": 66,
+          "lesson_vocab_to_vocabulary_item": 34,
+          "vocab_group_to_vocabulary_item": 33
+        },
+        "checkNeededRelations": 4,
+        "checkNeededVocabItems": 3,
+        "unresolved": 0,
+        "warnings": 2
+      }
+    },
+    {
+      "lessonIndex": 3,
+      "id": "828d9720-d3be-49b5-abc1-59e868ee312e",
+      "title": {
+        "zh": "我吃了早饭就来了",
+        "pinyin": "Wǒ chī le zǎofàn jiù lái le",
+        "vi": "Tôi ăn sáng xong thì đến",
+        "en": "I came right after breakfast"
+      },
+      "folder": "lessons/lesson_03",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_03.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_03_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 7,
+        "lessonVocabItems": 44,
+        "sourceDeepVocabItems": 41,
+        "materializedVocabItems": 46,
+        "syntheticVocabItems": 5,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 181,
+        "relationTypes": {
+          "content_to_grammar": 18,
+          "content_to_vocabulary_item": 79,
+          "lesson_vocab_to_vocabulary_item": 44,
+          "vocab_group_to_vocabulary_item": 40
+        },
+        "checkNeededRelations": 5,
+        "checkNeededVocabItems": 5,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 4,
+      "id": "d3f68940-fbf7-4a31-8e2b-89df7f050858",
+      "title": {
+        "zh": "我都做对了",
+        "pinyin": "Wǒ dōu zuòduì le",
+        "vi": "Tôi đều làm đúng rồi",
+        "en": "I got them all correct"
+      },
+      "folder": "lessons/lesson_04",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_04.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_04_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 10,
+        "lessonVocabItems": 36,
+        "sourceDeepVocabItems": 28,
+        "materializedVocabItems": 36,
+        "syntheticVocabItems": 8,
+        "hanziOnlyVocabMatches": 1,
+        "relations": 129,
+        "relationTypes": {
+          "content_to_vocabulary_item": 44,
+          "content_to_grammar": 20,
+          "lesson_vocab_to_vocabulary_item": 36,
+          "vocab_group_to_vocabulary_item": 29
+        },
+        "checkNeededRelations": 9,
+        "checkNeededVocabItems": 8,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 5,
+      "id": "6ccc843c-74ab-4b14-a6e7-fce116520339",
+      "title": {
+        "zh": "我来了两个多月了",
+        "pinyin": "Wǒ lái le liǎng ge duō yuè le",
+        "vi": "Tôi đến được hơn hai tháng rồi",
+        "en": "I've been here for more than two months"
+      },
+      "folder": "lessons/lesson_05",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_05.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_05_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 49,
+        "sourceDeepVocabItems": 51,
+        "materializedVocabItems": 55,
+        "syntheticVocabItems": 4,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 186,
+        "relationTypes": {
+          "content_to_vocabulary_item": 87,
+          "lesson_vocab_to_vocabulary_item": 49,
+          "vocab_group_to_vocabulary_item": 50
+        },
+        "checkNeededRelations": 4,
+        "checkNeededVocabItems": 4,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 6,
+      "id": "e3fa4618-6a01-41d7-9c47-1fe900a40c1b",
+      "title": {
+        "zh": "我比你更喜欢音乐",
+        "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè",
+        "vi": "Tôi thích âm nhạc hơn bạn",
+        "en": "I like music more than you do"
+      },
+      "folder": "lessons/lesson_06",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_06.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_06_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 55,
+        "sourceDeepVocabItems": 46,
+        "materializedVocabItems": 56,
+        "syntheticVocabItems": 10,
+        "hanziOnlyVocabMatches": 1,
+        "relations": 245,
+        "relationTypes": {
+          "content_to_vocabulary_item": 106,
+          "content_to_grammar": 40,
+          "lesson_vocab_to_vocabulary_item": 55,
+          "vocab_group_to_vocabulary_item": 44
+        },
+        "checkNeededRelations": 11,
+        "checkNeededVocabItems": 10,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 7,
+      "id": "5fdf8f10-aca0-4432-8bf7-ee5e7ba9d27b",
+      "title": {
+        "zh": "我们那儿的冬天跟北京一样冷",
+        "pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng",
+        "vi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh",
+        "en": "The winter in my hometown is as cold as in Beijing"
+      },
+      "folder": "lessons/lesson_07",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_07.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_07_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 53,
+        "sourceDeepVocabItems": 40,
+        "materializedVocabItems": 54,
+        "syntheticVocabItems": 14,
+        "hanziOnlyVocabMatches": 6,
+        "relations": 205,
+        "relationTypes": {
+          "content_to_vocabulary_item": 85,
+          "content_to_grammar": 27,
+          "lesson_vocab_to_vocabulary_item": 53,
+          "vocab_group_to_vocabulary_item": 40
+        },
+        "checkNeededRelations": 20,
+        "checkNeededVocabItems": 14,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 8,
+      "id": "ccfdb77a-d9ef-4dd6-ae03-29b58d183883",
+      "title": {
+        "zh": "冬天快要到了",
+        "pinyin": "Dōngtiān kuàiyào dào le",
+        "vi": "Mùa đông sắp đến rồi",
+        "en": "Winter is coming"
+      },
+      "folder": "lessons/lesson_08",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_08.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_08_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 62,
+        "sourceDeepVocabItems": 54,
+        "materializedVocabItems": 63,
+        "syntheticVocabItems": 9,
+        "hanziOnlyVocabMatches": 1,
+        "relations": 183,
+        "relationTypes": {
+          "content_to_grammar": 13,
+          "content_to_vocabulary_item": 54,
+          "lesson_vocab_to_vocabulary_item": 62,
+          "vocab_group_to_vocabulary_item": 54
+        },
+        "checkNeededRelations": 10,
+        "checkNeededVocabItems": 9,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 9,
+      "id": "e0a72335-eb76-4e72-9d14-df62242a654d",
+      "title": {
+        "zh": "快上来吧，要开车了",
+        "pinyin": "Kuài shànglai ba, yào kāi chē le",
+        "vi": "Mau lên xe đi, xe sắp chạy rồi",
+        "en": "The bus is starting up, so let's hurry"
+      },
+      "folder": "lessons/lesson_09",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_09.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_09_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 43,
+        "sourceDeepVocabItems": 37,
+        "materializedVocabItems": 43,
+        "syntheticVocabItems": 6,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 182,
+        "relationTypes": {
+          "content_to_vocabulary_item": 67,
+          "content_to_grammar": 35,
+          "lesson_vocab_to_vocabulary_item": 43,
+          "vocab_group_to_vocabulary_item": 37
+        },
+        "checkNeededRelations": 6,
+        "checkNeededVocabItems": 6,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 10,
+      "id": "da5c9197-c5ff-41c5-a68c-4bab613e6f6b",
+      "title": {
+        "zh": "我听过钢琴协奏曲《黄河》",
+        "pinyin": "Wǒ tīngguo gāngqín xiézòuqǔ 《Huáng Hé》",
+        "vi": "Tôi từng nghe bản concerto piano 《Hoàng Hà》",
+        "en": "I've heard the piano concerto Yellow River"
+      },
+      "folder": "lessons/lesson_10",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_10.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_10_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 46,
+        "sourceDeepVocabItems": 52,
+        "materializedVocabItems": 54,
+        "syntheticVocabItems": 2,
+        "hanziOnlyVocabMatches": 3,
+        "relations": 204,
+        "relationTypes": {
+          "content_to_vocabulary_item": 71,
+          "content_to_grammar": 35,
+          "lesson_vocab_to_vocabulary_item": 46,
+          "vocab_group_to_vocabulary_item": 52
+        },
+        "checkNeededRelations": 5,
+        "checkNeededVocabItems": 2,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 11,
+      "id": "aeae5463-9277-41b6-9705-421df415d3df",
+      "title": {
+        "zh": "我是跟旅游团一起来的",
+        "pinyin": "Wǒ shì gēn lǚyóutuán yìqǐ lái de",
+        "vi": "Tôi đi cùng đoàn du lịch đến",
+        "en": "I came with a tour group"
+      },
+      "folder": "lessons/lesson_11",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_11.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_11_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 34,
+        "sourceDeepVocabItems": 48,
+        "materializedVocabItems": 55,
+        "syntheticVocabItems": 7,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 181,
+        "relationTypes": {
+          "content_to_vocabulary_item": 87,
+          "lesson_vocab_to_vocabulary_item": 34,
+          "content_to_grammar": 14,
+          "vocab_group_to_vocabulary_item": 46
+        },
+        "checkNeededRelations": 7,
+        "checkNeededVocabItems": 7,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 12,
+      "id": "f11f885d-e5e2-4d28-a7bb-d5eeaf81d179",
+      "title": {
+        "zh": "我的护照你找到了没有",
+        "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu",
+        "vi": "Hộ chiếu của tôi, bạn tìm thấy chưa?",
+        "en": "Did you find my passport?"
+      },
+      "folder": "lessons/lesson_12",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_12.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_12_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 10,
+        "lessonVocabItems": 54,
+        "sourceDeepVocabItems": 60,
+        "materializedVocabItems": 67,
+        "syntheticVocabItems": 7,
+        "hanziOnlyVocabMatches": 1,
+        "relations": 280,
+        "relationTypes": {
+          "content_to_vocabulary_item": 129,
+          "content_to_grammar": 37,
+          "lesson_vocab_to_vocabulary_item": 54,
+          "vocab_group_to_vocabulary_item": 60
+        },
+        "checkNeededRelations": 8,
+        "checkNeededVocabItems": 7,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 13,
+      "id": "3707b818-a5ca-489f-819c-c083912e3869",
+      "title": {
+        "zh": "我的眼镜儿摔坏了",
+        "pinyin": "Wǒ de yǎnjìngr shuāihuài le",
+        "vi": "Kính mắt của tôi bị rơi vỡ rồi",
+        "en": "I've broken my glasses"
+      },
+      "folder": "lessons/lesson_13",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_13.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_13_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 32,
+        "sourceDeepVocabItems": 37,
+        "materializedVocabItems": 41,
+        "syntheticVocabItems": 4,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 158,
+        "relationTypes": {
+          "content_to_vocabulary_item": 73,
+          "content_to_grammar": 17,
+          "lesson_vocab_to_vocabulary_item": 32,
+          "vocab_group_to_vocabulary_item": 36
+        },
+        "checkNeededRelations": 4,
+        "checkNeededVocabItems": 4,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 14,
+      "id": "a9463697-c2f7-49f1-a3e1-7351b44d34c6",
+      "title": {
+        "zh": "钥匙忘拔下来了",
+        "pinyin": "Yàoshi wàng bá xiàlai le",
+        "vi": "Chìa khóa quên rút ra rồi",
+        "en": "I forgot to pull out the keys"
+      },
+      "folder": "lessons/lesson_14",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_14.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_14_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 95,
+        "sourceDeepVocabItems": 67,
+        "materializedVocabItems": 90,
+        "syntheticVocabItems": 23,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 265,
+        "relationTypes": {
+          "content_to_vocabulary_item": 80,
+          "content_to_grammar": 23,
+          "lesson_vocab_to_vocabulary_item": 95,
+          "vocab_group_to_vocabulary_item": 67
+        },
+        "checkNeededRelations": 27,
+        "checkNeededVocabItems": 23,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 15,
+      "id": "dcaaa09d-93b1-4fdb-ac44-2cd87ba88349",
+      "title": {
+        "zh": "会议厅的门开着呢",
+        "pinyin": "Huìyìtīng de mén kāizhe ne",
+        "vi": "Cửa phòng hội nghị đang mở",
+        "en": "The door of the conference hall is open"
+      },
+      "folder": "lessons/lesson_15",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_15.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_15_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 41,
+        "sourceDeepVocabItems": 51,
+        "materializedVocabItems": 61,
+        "syntheticVocabItems": 10,
+        "hanziOnlyVocabMatches": 4,
+        "relations": 185,
+        "relationTypes": {
+          "content_to_vocabulary_item": 57,
+          "content_to_grammar": 36,
+          "lesson_vocab_to_vocabulary_item": 41,
+          "vocab_group_to_vocabulary_item": 51
+        },
+        "checkNeededRelations": 14,
+        "checkNeededVocabItems": 13,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 16,
+      "id": "b004b30b-ced9-4f86-b02d-58b23be6234d",
+      "title": {
+        "zh": "前边开过来一辆空车",
+        "pinyin": "Qiánbian kāi guòlai yí liàng kōng chē",
+        "vi": "Phía trước có một chiếc xe trống đang chạy tới",
+        "en": "An empty taxi is coming towards us"
+      },
+      "folder": "lessons/lesson_16",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_16.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_16_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 41,
+        "sourceDeepVocabItems": 54,
+        "materializedVocabItems": 61,
+        "syntheticVocabItems": 7,
+        "hanziOnlyVocabMatches": 3,
+        "relations": 214,
+        "relationTypes": {
+          "content_to_vocabulary_item": 91,
+          "content_to_grammar": 28,
+          "lesson_vocab_to_vocabulary_item": 41,
+          "vocab_group_to_vocabulary_item": 54
+        },
+        "checkNeededRelations": 10,
+        "checkNeededVocabItems": 7,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 17,
+      "id": "372dc1fc-bb39-4177-add0-742fd9491362",
+      "title": {
+        "zh": "把“福”字倒着贴在门上",
+        "pinyin": "Bǎ “Fú” zì dàozhe tiē zài mén shang",
+        "vi": "Dán chữ “Phúc” ngược lên cửa",
+        "en": "Paste “福” upside down on the door"
+      },
+      "folder": "lessons/lesson_17",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_17.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_17_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 58,
+        "sourceDeepVocabItems": 53,
+        "materializedVocabItems": 60,
+        "syntheticVocabItems": 7,
+        "hanziOnlyVocabMatches": 3,
+        "relations": 211,
+        "relationTypes": {
+          "content_to_grammar": 18,
+          "content_to_vocabulary_item": 84,
+          "lesson_vocab_to_vocabulary_item": 58,
+          "vocab_group_to_vocabulary_item": 51
+        },
+        "checkNeededRelations": 10,
+        "checkNeededVocabItems": 7,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 18,
+      "id": "1e499940-9607-41c2-99ce-61747e370ed9",
+      "title": {
+        "zh": "请把护照和机票给我",
+        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ",
+        "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi",
+        "en": "Please give me your passport and air ticket"
+      },
+      "folder": "lessons/lesson_18",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_18.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_18_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 10,
+        "lessonVocabItems": 49,
+        "sourceDeepVocabItems": 46,
+        "materializedVocabItems": 51,
+        "syntheticVocabItems": 5,
+        "hanziOnlyVocabMatches": 3,
+        "relations": 161,
+        "relationTypes": {
+          "content_to_vocabulary_item": 42,
+          "content_to_grammar": 22,
+          "lesson_vocab_to_vocabulary_item": 49,
+          "vocab_group_to_vocabulary_item": 48
+        },
+        "checkNeededRelations": 8,
+        "checkNeededVocabItems": 5,
+        "unresolved": 0,
+        "warnings": 5
+      }
+    },
+    {
+      "lessonIndex": 19,
+      "id": "ef7659c0-e4aa-44c9-a462-11463e54ac05",
+      "title": {
+        "zh": "我的腿被自行车撞伤了",
+        "pinyin": "Wǒ de tuǐ bèi zìxíngchē zhuàng shāng le",
+        "vi": "Chân tôi bị xe đạp đâm bị thương",
+        "en": "My leg got injured in a bike crash"
+      },
+      "folder": "lessons/lesson_19",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_19.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_19_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 53,
+        "sourceDeepVocabItems": 39,
+        "materializedVocabItems": 56,
+        "syntheticVocabItems": 17,
+        "hanziOnlyVocabMatches": 5,
+        "relations": 190,
+        "relationTypes": {
+          "content_to_vocabulary_item": 72,
+          "content_to_grammar": 26,
+          "lesson_vocab_to_vocabulary_item": 53,
+          "vocab_group_to_vocabulary_item": 39
+        },
+        "checkNeededRelations": 22,
+        "checkNeededVocabItems": 17,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 20,
+      "id": "4aa805ee-0d0a-49f2-91ac-d5f4b8bc4655",
+      "title": {
+        "zh": "我看得懂，但是听不懂",
+        "pinyin": "Wǒ kàn de dǒng, dànshì tīng bu dǒng",
+        "vi": "Tôi xem hiểu được, nhưng nghe không hiểu",
+        "en": "I can understand the scenes, but not the lines"
+      },
+      "folder": "lessons/lesson_20",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_20.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_20_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 10,
+        "lessonVocabItems": 54,
+        "sourceDeepVocabItems": 59,
+        "materializedVocabItems": 63,
+        "syntheticVocabItems": 4,
+        "hanziOnlyVocabMatches": 2,
+        "relations": 191,
+        "relationTypes": {
+          "content_to_vocabulary_item": 79,
+          "content_to_grammar": 8,
+          "lesson_vocab_to_vocabulary_item": 54,
+          "vocab_group_to_vocabulary_item": 50
+        },
+        "checkNeededRelations": 6,
+        "checkNeededVocabItems": 4,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 21,
+      "id": "fd3afd44-d54e-499e-8637-5ce1205c83cd",
+      "title": {
+        "zh": "山这么高，你爬得上去吗",
+        "pinyin": "Shān zhème gāo, nǐ pá de shàngqù ma",
+        "vi": "Núi cao thế này, bạn leo lên được không?",
+        "en": "The mountain is so high. Are you sure you can climb it?"
+      },
+      "folder": "lessons/lesson_21",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_21.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_21_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 40,
+        "sourceDeepVocabItems": 59,
+        "materializedVocabItems": 98,
+        "syntheticVocabItems": 39,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 151,
+        "relationTypes": {
+          "content_to_vocabulary_item": 32,
+          "content_to_grammar": 25,
+          "lesson_vocab_to_vocabulary_item": 40,
+          "vocab_group_to_vocabulary_item": 54
+        },
+        "checkNeededRelations": 39,
+        "checkNeededVocabItems": 39,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 22,
+      "id": "b527d813-a184-4d1c-94e5-2f2f0545ce19",
+      "title": {
+        "zh": "我想起来了",
+        "pinyin": "Wǒ xiǎng qǐlai le",
+        "vi": "Tôi nhớ ra rồi",
+        "en": "I remember now"
+      },
+      "folder": "lessons/lesson_22",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_22.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_22_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 44,
+        "sourceDeepVocabItems": 42,
+        "materializedVocabItems": 49,
+        "syntheticVocabItems": 7,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 132,
+        "relationTypes": {
+          "content_to_vocabulary_item": 36,
+          "content_to_grammar": 13,
+          "lesson_vocab_to_vocabulary_item": 44,
+          "vocab_group_to_vocabulary_item": 39
+        },
+        "checkNeededRelations": 7,
+        "checkNeededVocabItems": 7,
+        "unresolved": 0,
+        "warnings": 7
+      }
+    },
+    {
+      "lessonIndex": 23,
+      "id": "797e3ba2-5d5d-45d7-8cd7-aeca38cd6056",
+      "title": {
+        "zh": "寒假你打算去哪儿旅行",
+        "pinyin": "Hánjià nǐ dǎsuàn qù nǎr lǚxíng",
+        "vi": "Kỳ nghỉ đông bạn định đi đâu du lịch?",
+        "en": "Where are you planning to travel during the winter vacation?"
+      },
+      "folder": "lessons/lesson_23",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_23.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_23_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 54,
+        "sourceDeepVocabItems": 46,
+        "materializedVocabItems": 55,
+        "syntheticVocabItems": 9,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 224,
+        "relationTypes": {
+          "content_to_grammar": 35,
+          "content_to_vocabulary_item": 89,
+          "lesson_vocab_to_vocabulary_item": 54,
+          "vocab_group_to_vocabulary_item": 46
+        },
+        "checkNeededRelations": 9,
+        "checkNeededVocabItems": 9,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 24,
+      "id": "3ad0da25-e834-4fed-b336-4dc1aef51095",
+      "title": {
+        "zh": "有困难找警察",
+        "pinyin": "Yǒu kùnnan zhǎo jǐngchá",
+        "vi": "Có khó khăn thì tìm cảnh sát",
+        "en": "Go to the police when you are in trouble"
+      },
+      "folder": "lessons/lesson_24",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_24.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_24_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 50,
+        "sourceDeepVocabItems": 41,
+        "materializedVocabItems": 50,
+        "syntheticVocabItems": 9,
+        "hanziOnlyVocabMatches": 0,
+        "relations": 173,
+        "relationTypes": {
+          "content_to_vocabulary_item": 68,
+          "content_to_grammar": 14,
+          "lesson_vocab_to_vocabulary_item": 50,
+          "vocab_group_to_vocabulary_item": 41
+        },
+        "checkNeededRelations": 9,
+        "checkNeededVocabItems": 25,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "lessonIndex": 25,
+      "id": "a1201520-a569-4744-b315-23e86882cf64",
+      "title": {
+        "zh": "吉利的数字",
+        "pinyin": "Jílì de shùzì",
+        "vi": "Những con số may mắn",
+        "en": "Lucky numbers"
+      },
+      "folder": "lessons/lesson_25",
+      "sourceRefs": {
+        "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_25.json",
+        "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_25_deep_vocab.json"
+      },
+      "counts": {
+        "sections": 9,
+        "lessonVocabItems": 45,
+        "sourceDeepVocabItems": 67,
+        "materializedVocabItems": 71,
+        "syntheticVocabItems": 4,
+        "hanziOnlyVocabMatches": 2,
+        "relations": 223,
+        "relationTypes": {
+          "content_to_vocabulary_item": 97,
+          "lesson_vocab_to_vocabulary_item": 45,
+          "content_to_grammar": 14,
+          "vocab_group_to_vocabulary_item": 67
+        },
+        "checkNeededRelations": 6,
+        "checkNeededVocabItems": 4,
+        "unresolved": 0,
+        "warnings": 1
+      }
+    }
+  ]
+}

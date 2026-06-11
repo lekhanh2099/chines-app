@@ -1,0 +1,268 @@
+{
+  "id": "291ac892-8ef1-4f76-ba7d-5a43788f92b0",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "拍",
+  "pinyin": "pāi",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phách",
+    "meaning_vi": "vỗ, đập nhẹ; chụp; quay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vỗ",
+      "đập nhẹ",
+      "chụp",
+      "quay"
+    ],
+    "short_definition_vi": "vỗ/đập nhẹ; chụp/quay",
+    "textbook_focus_vi": "vỗ/đập nhẹ; chụp/quay",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拍",
+        "lishu_vi": "phách",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "vỗ/đập nhẹ; chụp/quay",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 拍桌子.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打",
+        "pinyin": "dǎ",
+        "meaning_vi": "đánh/gõ/gọi",
+        "difference_vi": "nghĩa rộng và mạnh hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "敲",
+        "pinyin": "qiāo",
+        "meaning_vi": "gõ",
+        "difference_vi": "nhấn tạo tiếng gõ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "99806540-24bb-4a33-9ac9-7b7254613af4",
+      "order": 1,
+      "zh": "拍桌子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f157c519-b4f2-4300-b8e8-c5f20cd8bfb3",
+      "order": 2,
+      "zh": "拍手",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e634729f-1ffd-46a7-8b5e-b3c9fc1b6c27",
+      "order": 3,
+      "zh": "拍照",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "808824f4-2335-495a-94c0-5d326a3eeb30",
+      "order": 4,
+      "zh": "拍照片",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef415619-88be-40ef-929f-1bf1c3a065db",
+      "order": 5,
+      "zh": "拍电影",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ee5aaf0-4328-4f27-8a05-91dcadb6acde",
+      "order": 6,
+      "zh": "拍视频",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e747387b-4e35-4191-ba83-b62cc7b59a4d",
+      "order": 7,
+      "zh": "拍马屁",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f434533d-fae4-43a2-9b1a-139e2c4fd40b",
+      "order": 1,
+      "zh": "他生气的时候拍了一下桌子。",
+      "pinyin": "Tā shēngqì de shíhou pāi le yíxià zhuōzi.",
+      "vi": "Khi tức giận, anh ấy đập bàn một cái.",
+      "analysis_vi": "拍了一下 là động tác ngắn, nhẹ hơn 打.",
+      "highlight": [
+        "拍"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "291ac892-8ef1-4f76-ba7d-5a43788f92b0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "拍桌子 trong công sở là hành vi căng, gợi mất kiểm soát.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "11dc0330-5161-4b11-a9e2-7201897bc701",
+      "order": 1,
+      "rule_vi": "拍马屁 nghĩa là nịnh bợ, không dịch từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拍",
+    "back": "vỗ, đập nhẹ; chụp; quay",
+    "hint": "pāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "291ac892-8ef1-4f76-ba7d-5a43788f92b0",
+    "source_lesson_vocab_id": null
+  }
+}

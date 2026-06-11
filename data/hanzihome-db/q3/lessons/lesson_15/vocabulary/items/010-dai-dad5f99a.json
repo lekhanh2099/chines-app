@@ -1,0 +1,262 @@
+{
+  "id": "c99a30ee-e72c-40b5-82e9-d24ecfd1d229",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "待",
+  "pinyin": "dài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đãi",
+    "meaning_vi": "đối đãi; đối xử; ở lại (dāi trong khẩu ngữ)",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đối đãi",
+      "đối xử",
+      "ở lại (dāi trong khẩu ngữ)"
+    ],
+    "short_definition_vi": "đối đãi; đối xử; ở lại (dāi trong khẩu ngữ)",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "待",
+        "lishu_vi": "",
+        "structure_note_vi": "待: đối đãi",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彳 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đối đãi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: đối đãi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "彳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Xích",
+          "radical_name_zh": "",
+          "hanviet": "xích",
+          "meaning_vi": "bước đi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彳 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "待 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 待人热情.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1949b3c3-7bf7-45f8-9245-2d13807a0e3e",
+      "order": 1,
+      "zh": "待人热情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "63746bc4-a506-4933-b2b4-2331563c69d7",
+      "order": 2,
+      "zh": "待人真诚",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5a9751d-c3d6-4121-bd12-376190541b22",
+      "order": 3,
+      "zh": "待人友好",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fcdc51e4-0c90-4e83-8325-8472e838a286",
+      "order": 4,
+      "zh": "待在家里",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0510b979-7532-4ce0-b9ba-d0fffea04d4a",
+      "order": 1,
+      "zh": "他待人很热情。",
+      "pinyin": "",
+      "vi": "Anh ấy đối đãi với người khác rất nhiệt tình。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "待"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c99a30ee-e72c-40b5-82e9-d24ecfd1d229"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "28be3e62-2615-4165-96ea-8eb039dfd719",
+      "order": 2,
+      "zh": "从我接触到的人来看，他们大都待人真诚。",
+      "pinyin": "",
+      "vi": "Từ những người tôi từng tiếp xúc mà xét, họ phần lớn đều đối đãi chân thành。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "待"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c99a30ee-e72c-40b5-82e9-d24ecfd1d229"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "183f2e62-2381-4ded-858d-3fe3491681b3",
+      "order": 1,
+      "rule_vi": "Phân biệt dài trong 待人 và dāi trong 待在家里。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt dài trong 待人 và dāi trong 待在家里。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "待",
+    "back": "đối đãi; đối xử; ở lại (dāi trong khẩu ngữ)",
+    "hint": "dài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c99a30ee-e72c-40b5-82e9-d24ecfd1d229",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "id": "a6ceaf32-be25-404d-9e63-464a451d78c7",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "最",
+  "pinyin": "zuì",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "comparison_degree"
+  ],
+  "meaning": {
+    "hanviet": "Tối",
+    "meaning_vi": "nhất, bậc nhất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhất",
+      "bậc nhất"
+    ],
+    "short_definition_vi": "nhất, bậc nhất",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "comparison degree",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "最",
+        "lishu_vi": "",
+        "structure_note_vi": "曰/日 và 取 là thành phần nhìn thấy; học như phó từ chỉ cực điểm.",
+        "components": [
+          {
+            "text": "曰",
+            "hanviet": "viết",
+            "meaning_vi": "nói/ngày dạng hình",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "取",
+            "hanviet": "thủ",
+            "meaning_vi": "lấy/chọn",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhất, mức cao nhất",
+        "modern_logic_vi": "曰/日 và 取 là thành phần nhìn thấy; học như phó từ chỉ cực điểm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "最 chỉ mức cao nhất trong một phạm vi.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "更",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hơn nữa/càng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "非常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rất, không phải nhất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "太",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quá, vượt mức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6cb36a44-5fd9-442c-82bd-e244169afb0f",
+      "order": 1,
+      "zh": "最好",
+      "pinyin": "",
+      "vi": "tốt nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6210d03-94b4-4f25-9f24-dbf833ef1e60",
+      "order": 2,
+      "zh": "最高",
+      "pinyin": "",
+      "vi": "cao nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "169a0779-e11a-443b-af09-e143baf4ad16",
+      "order": 3,
+      "zh": "最低",
+      "pinyin": "",
+      "vi": "thấp nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83620f3b-6440-481e-a2ce-f6472bb573b1",
+      "order": 4,
+      "zh": "最漂亮",
+      "pinyin": "",
+      "vi": "đẹp nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc03e054-17e8-444c-b5ed-2f7bf1ee63fd",
+      "order": 5,
+      "zh": "最喜欢",
+      "pinyin": "",
+      "vi": "thích nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4fc72bf1-25ad-4185-ae3e-3d44a1410cd6",
+      "order": 1,
+      "zh": "我最喜欢音乐。",
+      "pinyin": "Wǒ zuì xǐhuan yīnyuè.",
+      "vi": "Tôi thích âm nhạc nhất.",
+      "analysis_vi": "最 đứng trước động từ tâm lý 喜欢.",
+      "highlight": [
+        "最"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6ceaf32-be25-404d-9e63-464a451d78c7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "785a9f7a-4e18-4d71-bab6-34a14a52c1b1",
+      "order": 2,
+      "zh": "在这些城市里，北京的人口最多。",
+      "pinyin": "Zài zhèxiē chéngshì lǐ, Běijīng de rénkǒu zuì duō.",
+      "vi": "Trong những thành phố này, dân số Bắc Kinh đông nhất.",
+      "analysis_vi": "在……里 nêu phạm vi.",
+      "highlight": [
+        "最"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6ceaf32-be25-404d-9e63-464a451d78c7"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "最喜欢 là cách nói sở thích rất phổ biến.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b6eb6e06-8a94-44ba-9388-0e7dd21e678d",
+      "order": 1,
+      "rule_vi": "最 đứng trước tính từ hoặc động từ tâm lý; không đặt sau danh từ.",
+      "natural_examples": [
+        {
+          "zh": "我最喜欢音乐。",
+          "pinyin": "Wǒ zuì xǐhuan yīnyuè.",
+          "vi": "Tôi thích âm nhạc nhất.",
+          "note_vi": "Đúng vị trí.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我喜欢最音乐。",
+          "pinyin": "Wǒ xǐhuan zuì yīnyuè.",
+          "vi": "",
+          "note_vi": "Sai vị trí của 最.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我喜欢最音乐。",
+          "pinyin": "Wǒ xǐhuan zuì yīnyuè.",
+          "vi": "",
+          "note_vi": "Sai vị trí của 最.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我最喜欢音乐。",
+          "pinyin": "Wǒ zuì xǐhuan yīnyuè.",
+          "vi": "Tôi thích âm nhạc nhất.",
+          "note_vi": "Đúng vị trí.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "最",
+    "back": "nhất, bậc nhất",
+    "hint": "zuì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "comparison_degree"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a6ceaf32-be25-404d-9e63-464a451d78c7",
+    "source_lesson_vocab_id": null
+  }
+}

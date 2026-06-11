@@ -1,0 +1,317 @@
+{
+  "id": "f9b4c299-0811-44cf-9dec-032e223456ce",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "传统",
+  "pinyin": "chuántǒng",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ",
+    "raw_cn": "名/形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Truyền thống",
+    "meaning_vi": "truyền thống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "truyền thống"
+    ],
+    "short_definition_vi": "truyền thống",
+    "textbook_focus_vi": "truyền thống",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "传",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "专",
+            "hanviet": "chuyên",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "truyền",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "统",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ, sự nối kết",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ, sự nối kết",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "充",
+            "hanviet": "sung",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "thống/hệ thống",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thứ được truyền nối qua nhiều đời",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8b106b29-c37e-4e56-92ac-1421db97d044",
+      "order": 1,
+      "zh": "传统文化",
+      "pinyin": "",
+      "vi": "văn hóa truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2343afc5-70cb-43a3-8f08-9b0aeeb1b3fb",
+      "order": 2,
+      "zh": "传统艺术",
+      "pinyin": "",
+      "vi": "nghệ thuật truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2800e50-cd3d-46ad-a1c8-d7c3ab0565e9",
+      "order": 3,
+      "zh": "传统服装",
+      "pinyin": "",
+      "vi": "trang phục truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "457b7369-48ab-4ce4-b191-686a699a91c4",
+      "order": 4,
+      "zh": "传统观念",
+      "pinyin": "",
+      "vi": "quan niệm truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0d436097-443e-4174-979e-747cdbf06363",
+      "order": 5,
+      "zh": "保持传统",
+      "pinyin": "",
+      "vi": "giữ truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b819e209-e428-484a-8b0a-a441722ae6ba",
+      "order": 1,
+      "zh": "京剧是中国传统艺术。",
+      "pinyin": "Jīngjù shì Zhōngguó chuántǒng yìshù.",
+      "vi": "Kinh kịch là nghệ thuật truyền thống Trung Quốc.",
+      "analysis_vi": "传统艺术 là cụm trọng tâm.",
+      "highlight": [
+        "传统"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9b4c299-0811-44cf-9dec-032e223456ce"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "da1783af-16af-4c40-bd73-5f408109ea9d",
+      "order": 2,
+      "zh": "如果不了解传统，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě chuántǒng, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 传统, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "传统"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9b4c299-0811-44cf-9dec-032e223456ce"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ebe8d78b-0d4c-4dbf-8e84-7d216479389c",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解传统在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě chuántǒng zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 传统 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "传统"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9b4c299-0811-44cf-9dec-032e223456ce"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "传统 không mặc định tốt hay lạc hậu; cần xét loại truyền thống và ngữ cảnh.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "46e2775e-90d0-479d-86f4-72e2361296e1",
+      "order": 1,
+      "rule_vi": "Không đồng nhất 传统 với 古代 hay 落后。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "传统",
+    "back": "truyền thống",
+    "hint": "chuántǒng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f9b4c299-0811-44cf-9dec-032e223456ce",
+    "source_lesson_vocab_id": null
+  }
+}

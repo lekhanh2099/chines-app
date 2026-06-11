@@ -1,0 +1,590 @@
+[
+  {
+    "id": "rel_2724dc5643f268f20698c3b1",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.paragraphs.2"
+    },
+    "to": {
+      "id": "grammar_001",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.0"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_001",
+      "json_path": "$.lesson.sections.0.blocks.0.paragraphs.2.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_26e6467106066a9d468fd6be",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.paragraphs.4"
+    },
+    "to": {
+      "id": "grammar_003",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.2"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_003",
+      "json_path": "$.lesson.sections.0.blocks.0.paragraphs.4.grammar_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ce7c9606c378cd5f7f782451",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.paragraphs.4"
+    },
+    "to": {
+      "id": "grammar_002",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.1"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_002",
+      "json_path": "$.lesson.sections.0.blocks.0.paragraphs.4.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a8ac8d4071435bb3f79136a4",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.paragraphs.6"
+    },
+    "to": {
+      "id": "grammar_004",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.3"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_004",
+      "json_path": "$.lesson.sections.0.blocks.0.paragraphs.6.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_253d8fdda4beb447af9b5c8a",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.1"
+    },
+    "to": {
+      "id": "grammar_007",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.6"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_007",
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.1.grammar_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ec1e3df0c4af0159af4da2f3",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.1"
+    },
+    "to": {
+      "id": "grammar_006",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.5"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_006",
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f9c61d010839ed3e97874e75",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_001",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.0"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_001",
+      "json_path": "$.lesson.sections.4.items.0.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c40ea9cc8db82ea4d6fb729f",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_001",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.0"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_001",
+      "json_path": "$.lesson.sections.4.items.0.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_cf13199bb6d9bf14a69b33ca",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "b7a3d982-8f73-4ed4-b3d6-828fba6e2949",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.1.examples.0"
+    },
+    "to": {
+      "id": "grammar_001",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.0"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_001",
+      "json_path": "$.lesson.sections.4.items.0.blocks.1.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_04c463e8def0afad680feab6",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "7aa9ef46-6f3d-4ea1-b0f6-1ba89dd9b81b",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.1.examples.1"
+    },
+    "to": {
+      "id": "grammar_001",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.0"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_001",
+      "json_path": "$.lesson.sections.4.items.0.blocks.1.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c4ca4507ca57c2faa380a511",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_002",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.1"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_002",
+      "json_path": "$.lesson.sections.4.items.1.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_23b989ae781503ff438064e0",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_002",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.1"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_002",
+      "json_path": "$.lesson.sections.4.items.1.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8e9fdaf2d0b20b3f86af2629",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "e32b9b44-0167-4608-818f-ad358140a4ff",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.1.examples.0"
+    },
+    "to": {
+      "id": "grammar_002",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.1"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_002",
+      "json_path": "$.lesson.sections.4.items.1.blocks.1.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e34e1682b2a605644bb641e4",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "3d218f68-a9a9-46a3-8ff6-83866693abad",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.1.examples.1"
+    },
+    "to": {
+      "id": "grammar_002",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.1"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_002",
+      "json_path": "$.lesson.sections.4.items.1.blocks.1.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_fa3ee164dc2394d86cd9e866",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_003",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.2"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_003",
+      "json_path": "$.lesson.sections.4.items.2.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9b62ed1b8d14789697e6d6c9",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_003",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.2"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_003",
+      "json_path": "$.lesson.sections.4.items.2.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f4099d9061b85dcdcbf64abe",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.3.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_004",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.3"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_004",
+      "json_path": "$.lesson.sections.4.items.3.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b3609e1102ec615e6d3da6fd",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "857c43af-3f3e-491c-988c-f6e69807c407",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.3.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_004",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.3"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_004",
+      "json_path": "$.lesson.sections.4.items.3.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ec49fda7be56ed3fd654cc7c",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "38e52309-29d4-419f-b95a-6dad25f96eb9",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.3.blocks.1.examples.0"
+    },
+    "to": {
+      "id": "grammar_004",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.3"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_004",
+      "json_path": "$.lesson.sections.4.items.3.blocks.1.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_409b2d4fc9325e611a8c4919",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.4.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_005",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.4"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_005",
+      "json_path": "$.lesson.sections.4.items.4.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_84405ecb734df4c21cace918",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "b50bbea9-e176-4f1d-a9da-57239b4a25e0",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.4.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_005",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.4"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_005",
+      "json_path": "$.lesson.sections.4.items.4.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a87171c3c19b6b5291adf1af",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "6afe794f-bd28-4d3b-9e91-419edfb74f42",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.4.blocks.1.examples.0"
+    },
+    "to": {
+      "id": "grammar_005",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.4"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_005",
+      "json_path": "$.lesson.sections.4.items.4.blocks.1.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e38b05382210bbd816c889af",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "efefab30-bcd8-4248-a5e1-9730cca9d249",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.5.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_006",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.5"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_006",
+      "json_path": "$.lesson.sections.4.items.5.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8bfe5cb6923b7a717b2164b0",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "ce6f4cfa-8af5-44ad-a6a1-0ec58e7dc3e4",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.5.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_006",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.5"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_006",
+      "json_path": "$.lesson.sections.4.items.5.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f4ab03cacef6d21b29eeb9d1",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "2a3eed9c-310f-467c-a879-652af3df7011",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.6.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "grammar_007",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.6"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_007",
+      "json_path": "$.lesson.sections.4.items.6.blocks.0.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7364b9ee90c92ef0d6c38fdf",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "0dba9543-3f65-41f5-88fd-30968a68640e",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.6.blocks.0.examples.1"
+    },
+    "to": {
+      "id": "grammar_007",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.6"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_007",
+      "json_path": "$.lesson.sections.4.items.6.blocks.0.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d856a6858e352146c9a4268b",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "d492c822-54ae-48c7-94b7-5841d4958814",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.6.blocks.1.examples.0"
+    },
+    "to": {
+      "id": "grammar_007",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.6"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_007",
+      "json_path": "$.lesson.sections.4.items.6.blocks.1.examples.0.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_037e2f6f814a1c4181ba9a18",
+    "type": "content_to_grammar",
+    "from": {
+      "id": "3afd7f64-6250-4dc8-a9ba-582980a50912",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.6.blocks.1.examples.1"
+    },
+    "to": {
+      "id": "grammar_007",
+      "kind": "grammar_point",
+      "path": "$.lesson.sections.4.items.6"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "grammar_007",
+      "json_path": "$.lesson.sections.4.items.6.blocks.1.examples.1.grammar_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  }
+]

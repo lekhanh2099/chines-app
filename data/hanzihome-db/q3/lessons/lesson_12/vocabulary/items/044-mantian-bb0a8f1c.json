@@ -1,0 +1,280 @@
+{
+  "id": "e5431513-1dbe-4844-bc77-01970009d940",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "漫天",
+  "pinyin": "màntiān",
+  "pos": {
+    "raw_vi": "Tính từ / Trạng ngữ",
+    "raw_cn": "形容词 / 状语",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mạn thiên",
+    "meaning_vi": "đầy trời; quá mức không giới hạn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đầy trời; quá mức không giới hạn"
+    ],
+    "short_definition_vi": "Phủ khắp bầu trời hoặc quá mức/vô căn cứ.",
+    "textbook_focus_vi": "Dùng trong 漫天大雪, 漫天要价.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "漫",
+        "lishu_vi": "mạn",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước/chất lỏng",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lan khắp",
+        "modern_logic_vi": "lan khắp",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "天",
+        "lishu_vi": "thiên",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời",
+        "modern_logic_vi": "trời",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "漫 = lan rộng; 天 = trời.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "满天",
+        "pinyin": "mǎntiān",
+        "meaning_vi": "đầy trời",
+        "difference_vi": "满天 trung tính hơn; 漫天 có cảm giác lan phủ rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b93da74f-dd62-4206-a5f4-0620a9154fad",
+      "order": 1,
+      "zh": "漫天大雪",
+      "pinyin": "",
+      "vi": "tuyết đầy trời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "34af3fd6-41f1-41eb-9c0e-4078f782de57",
+      "order": 2,
+      "zh": "漫天飞舞",
+      "pinyin": "",
+      "vi": "bay múa đầy trời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e81cffa-7684-48ff-8bed-591cf3fd4104",
+      "order": 3,
+      "zh": "漫天要价",
+      "pinyin": "",
+      "vi": "hét giá trên trời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00bb8a12-c2ba-4ece-a971-afbf7cf146be",
+      "order": 4,
+      "zh": "漫天胡说",
+      "pinyin": "",
+      "vi": "nói bừa quá mức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "62fe348f-5e65-45d7-9d73-77b112de15e5",
+      "order": 1,
+      "zh": "外面下着漫天大雪。",
+      "pinyin": "",
+      "vi": "Bên ngoài tuyết lớn bay đầy trời.",
+      "analysis_vi": "下着 chỉ trạng thái đang diễn ra.",
+      "highlight": [
+        "漫天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5431513-1dbe-4844-bc77-01970009d940"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "13fe39cb-6c24-4777-a646-88cbfe50338e",
+      "order": 2,
+      "zh": "那个小店漫天要价。",
+      "pinyin": "",
+      "vi": "Cửa hàng đó hét giá trên trời.",
+      "analysis_vi": "漫天 ở đây là nghĩa quá mức.",
+      "highlight": [
+        "漫天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5431513-1dbe-4844-bc77-01970009d940"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "49d283d1-0431-486c-83b1-5c74669002c6",
+      "order": 1,
+      "rule_vi": "Phân biệt nghĩa đầy trời và nghĩa quá mức theo tân ngữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt nghĩa đầy trời và nghĩa quá mức theo tân ngữ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "漫天",
+    "back": "đầy trời; quá mức không giới hạn",
+    "hint": "màntiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e5431513-1dbe-4844-bc77-01970009d940",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "id": "9a58ba7b-621e-4c4f-8ece-e30f3501e6d4",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "深厚",
+  "pinyin": "shēnhòu",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "thâm hậu",
+    "meaning_vi": "sâu đậm, sâu dày, vững chắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sâu đậm",
+      "sâu dày",
+      "vững chắc"
+    ],
+    "short_definition_vi": "sâu đậm, sâu dày, vững chắc",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "深",
+        "lishu_vi": "thâm",
+        "structure_note_vi": "Chữ có thành phần/bộ 氵; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, dòng chảy",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, dòng chảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, dòng chảy",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 深 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "厚",
+        "lishu_vi": "hậu",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "厚 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "深厚 trong bài được học theo nghĩa: sâu đậm, sâu dày, vững chắc.",
+    "memory_tip_vi": "Nhớ 深厚 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "深",
+        "pinyin": "shēn",
+        "meaning_vi": "sâu",
+        "difference_vi": "Rộng hơn; dùng cho độ sâu vật lý, còn 深厚 thường là trừu tượng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nói 这条河很深厚; nói 这条河很深."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5e0444d4-11a2-4928-976f-a3536ab06a8a",
+      "order": 1,
+      "zh": "感情深厚",
+      "pinyin": "",
+      "vi": "tình cảm sâu đậm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4927094-d8dc-499d-b40f-04d4f6d818d8",
+      "order": 2,
+      "zh": "情谊深厚",
+      "pinyin": "",
+      "vi": "tình nghĩa sâu đậm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0c179e1-14b3-4d68-9271-bda010129cd1",
+      "order": 3,
+      "zh": "深厚的基础",
+      "pinyin": "",
+      "vi": "nền tảng sâu chắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a463dac-f3e0-415c-8d3e-9b466899b1a0",
+      "order": 4,
+      "zh": "功力深厚",
+      "pinyin": "",
+      "vi": "công lực sâu dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "18857ff5-3d39-49e1-816a-cfcab87fe76a",
+      "order": 1,
+      "zh": "他们的感情很深厚。",
+      "pinyin": "",
+      "vi": "Tình cảm của họ rất sâu đậm.",
+      "analysis_vi": "感情深厚 là collocation chuẩn.",
+      "highlight": [
+        "深厚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a58ba7b-621e-4c4f-8ece-e30f3501e6d4"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "117280ec-7bde-4ef5-acbb-afa0a3ab4e2a",
+      "order": 2,
+      "zh": "三年的同窗生活使梁山伯和祝英台结下了深厚的情谊。",
+      "pinyin": "",
+      "vi": "Ba năm học cùng khiến Lương Sơn Bá và Chúc Anh Đài kết nên tình nghĩa sâu đậm.",
+      "analysis_vi": "使 + người + V trang trọng hơn 让.",
+      "highlight": [
+        "深厚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a58ba7b-621e-4c4f-8ece-e30f3501e6d4"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "深厚 hợp với tình cảm, nền tảng, công lực có tích lũy.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b798f728-3bf0-41c8-8987-be0e759cf081",
+      "order": 1,
+      "rule_vi": "Không nói 这条河很深厚; nói 这条河很深.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "深厚",
+    "back": "sâu đậm, sâu dày, vững chắc",
+    "hint": "shēnhòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9a58ba7b-621e-4c4f-8ece-e30f3501e6d4",
+    "source_lesson_vocab_id": null
+  }
+}

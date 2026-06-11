@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ef8aeb2383eff11d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "开",
+  "pinyin": "kāi",
+  "meaning_vi": "sôi; mở; bật",
+  "pos": "Động từ / Tính từ trạng thái",
+  "pos_detail": {
+    "vi": "Động từ / Tính từ trạng thái",
+    "cn": "动词 / 形容词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Trong phần nhìn tranh dùng nghĩa “nước sôi” như 水开了; ngoài ra còn nghĩa mở/bật/tổ chức.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "756eb58d-c9d0-52ee-8e8a-3b7a74d15fbd",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "756eb58d-c9d0-52ee-8e8a-3b7a74d15fbd",
+    "type": "vocabulary_item",
+    "order": 61,
+    "hanzi": "开",
+    "pinyin": "kāi",
+    "meaning_vi": "sôi; mở; bật",
+    "meaning_en": "",
+    "pos": "Động từ / Tính từ trạng thái",
+    "tags": [
+      "supplementary_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "开",
+      "back": "sôi; mở; bật",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "pdf_textbook_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ / Tính từ trạng thái",
+      "cn": "动词 / 形容词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Trong phần nhìn tranh dùng nghĩa “nước sôi” như 水开了; ngoài ra còn nghĩa mở/bật/tổ chức.",
+      "notes": []
+    },
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

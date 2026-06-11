@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_a8825a228dc2d14c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "科技",
+  "pinyin": "kējì",
+  "meaning_vi": "khoa học kỹ thuật, công nghệ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "2a71499c-b62c-4917-bd48-037ce877fada",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "2a71499c-b62c-4917-bd48-037ce877fada",
+    "type": "vocabulary_item",
+    "order": 21,
+    "hanzi": "科技",
+    "pinyin": "kējì",
+    "meaning_vi": "khoa học kỹ thuật, công nghệ",
+    "meaning_en": "science and technology",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "科技",
+      "back": "kējì — khoa học kỹ thuật, công nghệ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

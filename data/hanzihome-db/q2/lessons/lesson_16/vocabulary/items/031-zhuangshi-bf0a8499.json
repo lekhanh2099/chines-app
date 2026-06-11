@@ -1,0 +1,317 @@
+{
+  "id": "9ea3024f-173c-4116-96d0-0808cd30b5bd",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "装饰",
+  "pinyin": "zhuāngshì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Trang sức / Trang sức hóa",
+    "meaning_vi": "trang trí; vật trang trí",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trang trí",
+      "vật trang trí"
+    ],
+    "short_definition_vi": "trang trí; vật trang trí",
+    "textbook_focus_vi": "trang trí; vật trang trí",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "装",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo, trang phục",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, trang phục",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "衣 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặc, lắp, trang trí",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "饰",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "饣",
+            "hanviet": "thực",
+            "meaning_vi": "ăn uống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "食",
+              "radical_variant": "饣",
+              "radical_name_vi": "bộ Thực",
+              "radical_name_zh": "",
+              "hanviet": "thực",
+              "meaning_vi": "ăn uống",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "饣 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn, vải",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn, vải",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "巾 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trang sức, trang hoàng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "装饰 = thêm thứ bên ngoài để làm không gian/vật thể đẹp hơn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4d6a19f8-556d-4846-8586-565dffc92971",
+      "order": 1,
+      "zh": "装饰房间",
+      "pinyin": "",
+      "vi": "trang trí phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "256629ad-c751-4997-9261-9a2ba785cfca",
+      "order": 2,
+      "zh": "装饰窗户",
+      "pinyin": "",
+      "vi": "trang trí cửa sổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05d4f788-4173-487f-b6e9-6d7c3e9d46dd",
+      "order": 3,
+      "zh": "节日装饰",
+      "pinyin": "",
+      "vi": "trang trí lễ tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54f89f88-1ed9-40b4-8525-7b29942992a2",
+      "order": 4,
+      "zh": "装饰得很漂亮",
+      "pinyin": "",
+      "vi": "trang trí rất đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf953d9c-233e-4fa7-ba13-151353e70155",
+      "order": 5,
+      "zh": "装饰品",
+      "pinyin": "",
+      "vi": "đồ trang trí",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1a62fae9-23db-4754-88c3-d1396413812e",
+      "order": 1,
+      "zh": "春节快到了，小区门口装饰得越来越漂亮。",
+      "pinyin": "Chūnjié kuài dào le, xiǎoqū ménkǒu zhuāngshì de yuè lái yuè piàoliang.",
+      "vi": "Tết sắp đến rồi, cổng khu dân cư được trang trí ngày càng đẹp.",
+      "analysis_vi": "装饰得 + tính từ là bổ ngữ trạng thái.",
+      "highlight": [
+        "装饰"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9ea3024f-173c-4116-96d0-0808cd30b5bd"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "025977c5-e44c-43ef-8f78-442d1c534698",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：装饰。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: trang trí; vật trang trí.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "装饰"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9ea3024f-173c-4116-96d0-0808cd30b5bd"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 装饰 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ad1e6698-7e78-492e-9a1b-b9edab1f0276",
+      "order": 1,
+      "rule_vi": "装饰房间 là trang trí phòng; 装修房子 là sửa sang/thi công nhà; 打扮自己 là ăn mặc/trang điểm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "装饰房间 là trang trí phòng; 装修房子 là sửa sang/thi công nhà; 打扮自己 là ăn mặc/trang điểm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "装饰",
+    "back": "trang trí; vật trang trí",
+    "hint": "zhuāngshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_031"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9ea3024f-173c-4116-96d0-0808cd30b5bd",
+    "source_lesson_vocab_id": null
+  }
+}

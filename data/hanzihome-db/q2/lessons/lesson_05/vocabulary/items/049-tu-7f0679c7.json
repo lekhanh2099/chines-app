@@ -1,0 +1,257 @@
+{
+  "id": "f6636c49-b4f2-4961-8f78-6cb33b06f3ef",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "涂",
+  "pinyin": "tú",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "đồ",
+    "meaning_vi": "bôi, quét, phết; viết vẽ bừa",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "bôi, quét, phết; viết vẽ bừa",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "涂",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "余",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bôi, quét, phết",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Đưa chất lỏng/sệt lên bề mặt: sơn, thuốc, kem, màu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "擦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lau/bôi thuốc tùy ngữ cảnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抹",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bôi/phết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "刷",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quét bằng cọ/bàn chải",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1f323c60-3a70-4f13-83b2-88a9c877ec02",
+      "order": 1,
+      "zh": "涂油漆",
+      "pinyin": "",
+      "vi": "quét sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb4c4cca-2182-43dc-97f8-d5fd8ee94286",
+      "order": 2,
+      "zh": "涂药",
+      "pinyin": "",
+      "vi": "bôi thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f010114f-e95c-42a0-a606-ff9bbe18f4e1",
+      "order": 3,
+      "zh": "乱涂乱画",
+      "pinyin": "",
+      "vi": "vẽ bậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "38d2f84f-d1bd-4020-8cae-bd8acceb6e8b",
+      "order": 1,
+      "zh": "他在椅子上涂油漆。",
+      "pinyin": "Tā zài yǐzi shang tú yóuqī.",
+      "vi": "Anh ấy quét sơn lên ghế.",
+      "en": "",
+      "highlight": [
+        "涂"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f6636c49-b4f2-4961-8f78-6cb33b06f3ef"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "涂 hay dùng với mỹ phẩm/thuốc: 涂口红, 涂防晒霜, 涂药.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b0b0bd57-0aba-4e7e-aedd-6f6b1941b994",
+      "order": 1,
+      "title_vi": "Không dùng cho vẽ tranh đẹp",
+      "explanation_vi": "Vẽ tranh là 画画.",
+      "wrong_examples": [
+        "他涂一幅画。"
+      ],
+      "correct_examples": [
+        "他画了一幅画。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "涂",
+    "back": "bôi, quét, phết; viết vẽ bừa",
+    "hint": "tú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "涂"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f6636c49-b4f2-4961-8f78-6cb33b06f3ef",
+    "source_lesson_vocab_id": null
+  }
+}

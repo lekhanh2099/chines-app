@@ -1,0 +1,134 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "pdf_textbook_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "我一次病也没有得过。",
+      "structure": "一 + lượng từ + danh từ + 也/都 + 没有 + V过",
+      "meaning_vi": "Phủ định hoàn toàn kinh nghiệm: ngay cả một lần cũng chưa từng.",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "我一次病也没有得过。",
+          "vi": "Tôi chưa từng bị bệnh lần nào.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "9faf6980-effe-42f1-a01e-7f1740da2edb"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "好借好还，再借不难嘛。",
+      "structure": "好 + V + 好 + V，再 + V + 不难",
+      "meaning_vi": "Mượn tử tế, trả tử tế thì lần sau mượn lại không khó; nhấn mạnh chữ tín.",
+      "examples": [
+        {
+          "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+          "zh": "好借好还，再借不难嘛。",
+          "vi": "Mượn đàng hoàng, trả đàng hoàng, lần sau mượn nữa cũng không khó mà.",
+          "pinyin": "Hǎo jiè hǎo huán, zài jiè bù nán ma.",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "243a777f-ebe2-49de-a609-6ae1e07a2150"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "《黄河》",
+      "structure": "钢琴协奏曲《黄河》",
+      "meaning_vi": "Tên tác phẩm âm nhạc được dùng trong bài để luyện cấu trúc 听过.",
+      "examples": [
+        {
+          "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
+          "zh": "我听过钢琴协奏曲《黄河》。",
+          "vi": "Tôi từng nghe bản concerto piano 《Hoàng Hà》.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "077fca74-cf50-4164-80a0-217b40399296"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
+      "type": "note",
+      "order": 4,
+      "title": "……极了",
+      "structure": "Tính từ / cụm tính từ + 极了",
+      "meaning_vi": "Cực kỳ, vô cùng; dùng để cảm thán mức độ cao.",
+      "examples": [
+        {
+          "id": "2ac6cf45-ba53-4dbc-887c-e57f4e3d233c",
+          "zh": "好极了！",
+          "vi": "Hay / tốt cực kỳ.",
+          "check_needed": false
+        },
+        {
+          "id": "b7746755-213a-45a6-bdca-38d97f9735e2",
+          "zh": "这首曲子好听极了。",
+          "vi": "Bản nhạc này hay cực kỳ.",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "8fb969b7-ea3c-4f62-a650-16652a998ba7"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7bb9601d-22c6-4b07-bc26-8b7269802a02",
+      "type": "note",
+      "order": 5,
+      "title": "《梁祝》",
+      "structure": "小提琴协奏曲《梁祝》",
+      "meaning_vi": "Tên tác phẩm âm nhạc; trong bài dùng để phân biệt 听说过 và 听过.",
+      "examples": [
+        {
+          "id": "49ae3435-56e4-4efe-bf35-b5456170f88d",
+          "zh": "听说过，但是没听过。",
+          "vi": "Từng nghe nói đến, nhưng chưa từng nghe.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "1143881f-b56a-4893-900c-f7d92482e9a7",
+        "6e898255-5e01-4f04-b692-db1a83acfb9e"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "id": "93cf562e-abe6-4492-9bc3-0ae3a15345d3",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "挡",
+  "pinyin": "dǎng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đáng",
+    "meaning_vi": "chặn, cản, che",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chặn",
+      "cản",
+      "che"
+    ],
+    "short_definition_vi": "chặn, cản, che",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: thể thao, không gian.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thể thao, không gian",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "挡",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 挡, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "挡 nên được học theo nghĩa hiện đại trong cụm/tình huống: chặn, cản, che.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 挡住.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拦",
+        "pinyin": "lán",
+        "meaning_vi": "ngăn/chặn",
+        "difference_vi": "挡 nhấn chặn/che; 拦 nhấn ngăn đường/ngăn lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9472f662-46a5-48a2-be67-0f8eb5a07897",
+      "order": 1,
+      "zh": "挡住",
+      "pinyin": "",
+      "vi": "chặn lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1320b69f-9b96-43b1-b331-83a1ac3739ed",
+      "order": 2,
+      "zh": "挡球",
+      "pinyin": "",
+      "vi": "chặn bóng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "39fe7d76-9266-403e-b0ff-fdffdca26622",
+      "order": 3,
+      "zh": "挡路",
+      "pinyin": "",
+      "vi": "cản đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "895d9518-5a76-44be-ae51-88508b40f896",
+      "order": 1,
+      "zh": "他挡住了球。",
+      "pinyin": "",
+      "vi": "Anh ấy chặn được quả bóng.",
+      "analysis_vi": "挡住 có 住 làm bổ ngữ kết quả.",
+      "highlight": [
+        "挡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93cf562e-abe6-4492-9bc3-0ae3a15345d3"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 挡 được dùng trong ngữ cảnh thể thao, không gian; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cba4a083-46bf-4f79-85ce-bea42b45292c",
+      "order": 1,
+      "rule_vi": "Không nhầm 挡 dǎng với 等 děng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 挡 dǎng với 等 děng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "挡",
+    "back": "chặn, cản, che",
+    "hint": "dǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "93cf562e-abe6-4492-9bc3-0ae3a15345d3",
+    "source_lesson_vocab_id": null
+  }
+}

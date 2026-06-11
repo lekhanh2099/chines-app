@@ -1,0 +1,460 @@
+{
+  "id": "d4aa2e76-6ced-4153-8e39-68b0e4b4f1a5",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "南辕北辙",
+  "pinyin": "nán yuán běi zhé",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab",
+    "level-B-plus-or-B"
+  ],
+  "meaning": {
+    "hanviet": "Nam viên Bắc triệt",
+    "meaning_vi": "mục tiêu và hành động trái ngược nhau",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mục tiêu và hành động trái ngược nhau"
+    ],
+    "short_definition_vi": "mục tiêu và hành động trái ngược nhau",
+    "textbook_focus_vi": "mục tiêu và hành động trái ngược nhau",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "南",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "南",
+            "hanviet": "",
+            "meaning_vi": "phía Nam; chữ nguyên khối",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "辕",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "车 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "车 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "袁",
+            "hanviet": "",
+            "meaning_vi": "thành phần bên phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "北",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "北",
+            "hanviet": "",
+            "meaning_vi": "phía Bắc; chữ nguyên khối",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "辙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "车 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "车 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Đây là thành ngữ cố định, nên học bằng hình ảnh. 南 là hướng muốn đến. 北 là hướng thực tế đang đi. 辕 / 辙 đều liên quan đến xe ngựa cổ. → Hình ảnh cốt lõi: mục tiêu ở một hướng, hành động lại đi hướng ngược lại.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: không dịch máy móc là “Nam càng Bắc vết xe” trong bài học. Phải dịch theo nghĩa ẩn dụ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "南辕北辙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mục tiêu và hành động trái ngược nhau.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "背道而驰",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi ngược đường/ngược hướng, cũng chỉ trái ngược mục tiêu hoặc nguyên tắc; văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "适得其反",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kết quả ngược với mong muốn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "方向错了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sai hướng, đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 南辕北辙 nhấn “muốn một hướng nhưng làm hướng ngược”; 适得其反 nhấn “kết quả bị ngược”."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "572ee6ad-e7c2-4e68-8084-167ed20fb445",
+      "order": 1,
+      "zh": "做法和目标南辕北辙",
+      "pinyin": "",
+      "vi": "cách làm và mục tiêu trái ngược nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d63eac17-efcc-4cfe-9195-f88e75f983a2",
+      "order": 2,
+      "zh": "这不是努力，是南辕北辙",
+      "pinyin": "",
+      "vi": "đây không phải nỗ lực, mà là đi ngược mục tiêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6a7123a-b134-4bb4-8358-3ad42287c0a9",
+      "order": 3,
+      "zh": "方向错了，只会南辕北辙",
+      "pinyin": "",
+      "vi": "sai hướng thì chỉ càng xa mục tiêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ef4163e-6c3e-4b29-88fa-19803e6533d0",
+      "order": 4,
+      "zh": "和原来的目的南辕北辙",
+      "pinyin": "",
+      "vi": "trái ngược với mục đích ban đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "575f5d87-f40f-4085-90de-e6e07cb8069e",
+      "order": 5,
+      "zh": "结果南辕北辙",
+      "pinyin": "",
+      "vi": "kết quả đi ngược mục tiêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ca8ea842-07cc-432f-ae00-6ec735423c29",
+      "order": 1,
+      "zh": "你想提高听力，却只看中文翻译，这不是学习，是南辕北辙。",
+      "pinyin": "Nǐ xiǎng tígāo tīnglì, què zhǐ kàn Zhōngwén fānyì, zhè bú shì xuéxí, shì nán yuán běi zhé.",
+      "vi": "Bạn muốn nâng cao nghe, nhưng lại chỉ xem bản dịch tiếng Trung, đây không phải học, mà là đi ngược mục tiêu.",
+      "analysis_vi": "想提高听力 là mục tiêu; 只看翻译 là hành động lệch hướng.",
+      "highlight": [
+        "南辕北辙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4aa2e76-6ced-4153-8e39-68b0e4b4f1a5"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ca8fe698-b911-488d-bd7c-339214e5a2c9",
+      "order": 2,
+      "zh": "他想看懂京剧，可是完全不想了解传统艺术，这样做有点儿南辕北辙。",
+      "pinyin": "Tā xiǎng kàn dǒng Jīngjù, kěshì wánquán bù xiǎng liǎojiě chuántǒng yìshù, zhèyàng zuò yǒudiǎnr nán yuán běi zhé.",
+      "vi": "Anh ấy muốn xem hiểu Kinh kịch, nhưng lại hoàn toàn không muốn tìm hiểu nghệ thuật truyền thống, làm vậy hơi trái mục tiêu.",
+      "analysis_vi": "看懂 là hiểu được sau khi xem; muốn đạt nó thì phải có nền 传统艺术.",
+      "highlight": [
+        "南辕北辙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4aa2e76-6ced-4153-8e39-68b0e4b4f1a5"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d2bf1bba-611c-4e05-9a4e-56c78b71c713",
+      "order": 3,
+      "zh": "如果你的目标是听得懂广播，却每天只练写字，方法就南辕北辙了。",
+      "pinyin": "Rúguǒ nǐ de mùbiāo shì tīng de dǒng guǎngbō, què měitiān zhǐ liàn xiězì, fāngfǎ jiù nán yuán běi zhé le.",
+      "vi": "Nếu mục tiêu của bạn là nghe hiểu loa phát thanh, nhưng mỗi ngày chỉ luyện viết chữ, thì phương pháp đã đi ngược mục tiêu rồi.",
+      "analysis_vi": "Câu này dùng đúng tinh thần thành ngữ: mục tiêu nghe, hành động lại không phục vụ kỹ năng nghe.",
+      "highlight": [
+        "南辕北辙"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "d4aa2e76-6ced-4153-8e39-68b0e4b4f1a5"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4a132b5b-e923-472c-86aa-7e32ded897ea",
+      "order": 1,
+      "rule_vi": "Dùng 南辕北辙 cho mọi việc “khác nhau”. Không phải chỉ là khác nhau. Nó phải có quan hệ mục tiêu – hành động hoặc mong muốn – kết quả trái ngược.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你的做法和你的目标南辕北辙。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Lỗi sai phổ biến: Dùng 南辕北辙 cho mọi việc “khác nhau”. Không phải chỉ là khác nhau. Nó phải có quan hệ mục tiêu – hành động hoặc mong muốn – kết quả trái ngược. Chưa chắc đúng: 这两个节目南辕北辙。 Hai tiết mục này trái ngược nhau. Câu này hơi thiếu mục tiêu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "南辕北辙",
+    "back": "mục tiêu và hành động trái ngược nhau",
+    "hint": "nán yuán běi zhé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab",
+      "level-B-plus-or-B"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "南辕北辙 là thành ngữ từ truyện ngụ ngôn cổ Trung Quốc. Kiểu truyện này thường dùng tình huống rất đơn giản để nói đạo lý: nếu phương hướng sai, càng cố gắng càng xa mục tiêu. Tiếng Việt học Hán văn cũng rất quen kiểu “ngụ ngôn rút bài học” này.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d4aa2e76-6ced-4153-8e39-68b0e4b4f1a5",
+    "source_lesson_vocab_id": null
+  }
+}

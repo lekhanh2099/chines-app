@@ -1,0 +1,312 @@
+{
+  "id": "043a653f-28db-4edb-a6bd-fc635bd5ff53",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "代",
+  "pinyin": "dài",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ / Hình vị",
+    "raw_cn": "名 / 动 / 语素",
+    "normalized": "unknown",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "modern_music"
+  ],
+  "meaning": {
+    "hanviet": "Đại",
+    "meaning_vi": "đời; thời đại; thay thế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đời",
+      "thời đại",
+      "thay thế"
+    ],
+    "short_definition_vi": "đời; thời đại; thay thế",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "modern music",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "代",
+        "lishu_vi": "",
+        "structure_note_vi": "亻 liên quan người; 弋 là phần phải.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弋",
+            "hanviet": "dặc",
+            "meaning_vi": "cọc/bắn",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đời, thời đại, thay thế",
+        "modern_logic_vi": "亻 liên quan người; 弋 là phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亻 + 弋; nghĩa lõi là đời nối đời hoặc người này thay người kia.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "时代",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thời đại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "年代",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "niên đại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "代表",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đại diện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "代替",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thay thế",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d3dba0f0-01a3-4a2f-935a-55a8cbeb3562",
+      "order": 1,
+      "zh": "现代",
+      "pinyin": "",
+      "vi": "hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb6f6b98-6867-42d1-a1a0-a9e08c10d115",
+      "order": 2,
+      "zh": "古代",
+      "pinyin": "",
+      "vi": "cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6070aa3d-1e08-4fb6-bf5b-d4a5e64f9069",
+      "order": 3,
+      "zh": "年代",
+      "pinyin": "",
+      "vi": "niên đại/thời kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5d8ad84-7b8d-4e39-9e60-647e35bdf537",
+      "order": 4,
+      "zh": "时代",
+      "pinyin": "",
+      "vi": "thời đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "66e63ce0-64a9-4599-a357-c48eca5c8d46",
+      "order": 5,
+      "zh": "下一代",
+      "pinyin": "",
+      "vi": "thế hệ sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fef62b5a-9ff7-447e-8aaa-eb7d8ac45816",
+      "order": 1,
+      "zh": "现在的年轻人和上一代人不太一样。",
+      "pinyin": "Xiànzài de niánqīng rén hé shàng yí dài rén bù tài yíyàng.",
+      "vi": "Người trẻ hiện nay và thế hệ trước không giống nhau lắm.",
+      "analysis_vi": "上一代人 = thế hệ trước.",
+      "highlight": [
+        "代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "043a653f-28db-4edb-a6bd-fc635bd5ff53"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7f3de051-8e7f-42e0-96e1-a0cac037ace3",
+      "order": 2,
+      "zh": "每一代人喜欢的歌曲都不一样。",
+      "pinyin": "Měi yí dài rén xǐhuan de gēqǔ dōu bù yíyàng.",
+      "vi": "Những bài hát mỗi thế hệ thích đều khác nhau.",
+      "analysis_vi": "每一代人……都…… = mỗi thế hệ đều...",
+      "highlight": [
+        "代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "043a653f-28db-4edb-a6bd-fc635bd5ff53"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "代 rất hữu ích khi nói về thế hệ: 上一代, 年轻一代, 80后, 90后.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e48fb091-a3e8-45c9-9879-be3bbfd3ff9b",
+      "order": 1,
+      "rule_vi": "代 thường nằm trong từ ghép, không nên dùng trống nếu chưa có ngữ cảnh.",
+      "natural_examples": [
+        {
+          "zh": "下一代",
+          "pinyin": "xià yí dài",
+          "vi": "thế hệ sau",
+          "note_vi": "Cụm rõ nghĩa.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "下一代",
+          "pinyin": "xià yí dài",
+          "vi": "thế hệ sau",
+          "note_vi": "Cụm rõ nghĩa.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "代",
+    "back": "đời; thời đại; thay thế",
+    "hint": "dài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "modern_music"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "043a653f-28db-4edb-a6bd-fc635bd5ff53",
+    "source_lesson_vocab_id": null
+  }
+}

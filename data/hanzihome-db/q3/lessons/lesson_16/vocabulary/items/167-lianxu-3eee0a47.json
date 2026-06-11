@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_8edab17758df07e5",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "连续",
+  "pinyin": "liánxù",
+  "meaning_vi": "liên tục, nối tiếp",
+  "pos": "Động từ / Tính từ / Phó từ",
+  "pos_detail": {
+    "vi": "Động từ / Tính từ / Phó từ",
+    "cn": "动词 / 形容词 / 副词",
+    "normalized": "verb_adjective_adverb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "eec2c532-032d-402e-acc4-31faac5b8dbe",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "eec2c532-032d-402e-acc4-31faac5b8dbe",
+    "type": "vocabulary_item",
+    "order": 10,
+    "hanzi": "连续",
+    "pinyin": "liánxù",
+    "meaning_vi": "liên tục, nối tiếp",
+    "meaning_en": "to be continuous; successive",
+    "pos": "Động từ / Tính từ / Phó từ",
+    "pos_detail": {
+      "vi": "Động từ / Tính từ / Phó từ",
+      "cn": "动词 / 形容词 / 副词",
+      "normalized": "verb_adjective_adverb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "连续",
+      "back": "liánxù — liên tục, nối tiếp",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

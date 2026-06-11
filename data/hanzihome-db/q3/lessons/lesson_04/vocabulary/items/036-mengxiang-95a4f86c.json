@@ -1,0 +1,297 @@
+{
+  "id": "81d3f20f-39e0-46e3-b12f-90e1c6eb42f3",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "梦想",
+  "pinyin": "mèngxiǎng",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名 / 动",
+    "normalized": "verb_noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mộng tưởng",
+    "meaning_vi": "ước mơ, giấc mơ, điều khao khát",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ước mơ",
+      "giấc mơ",
+      "điều khao khát"
+    ],
+    "short_definition_vi": "ước mơ, giấc mơ, điều khao khát",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "梦",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "林",
+            "hanviet": "lâm",
+            "meaning_vi": "rừng",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "chiều tối, đêm",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giấc mơ, mơ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "想",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "相",
+            "hanviet": "tương",
+            "meaning_vi": "nhìn; hình ảnh",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng; suy nghĩ",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩ, muốn, nhớ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "梦想 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 梦想 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "理想",
+        "pinyin": "lǐxiǎng",
+        "meaning_vi": "lý tưởng",
+        "difference_vi": "Nghiêm túc hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "愿望",
+        "pinyin": "yuànwàng",
+        "meaning_vi": "nguyện vọng",
+        "difference_vi": "Cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "幻想",
+        "pinyin": "huànxiǎng",
+        "meaning_vi": "ảo tưởng",
+        "difference_vi": "Thiếu thực tế hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e5b3cedc-7d99-4e0a-a0ec-fd85c12c241d",
+      "order": 1,
+      "zh": "实现梦想",
+      "pinyin": "shíxiàn mèngxiǎng",
+      "vi": "thực hiện ước mơ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e493feff-ad8a-4d70-bcf3-954531dc6890",
+      "order": 2,
+      "zh": "追求梦想",
+      "pinyin": "zhuīqiú mèngxiǎng",
+      "vi": "theo đuổi ước mơ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2fd24cf-de36-4ff8-83ec-2cd2d3953c49",
+      "order": 3,
+      "zh": "梦想成真",
+      "pinyin": "mèngxiǎng chéng zhēn",
+      "vi": "ước mơ thành sự thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d518e2d0-6765-4613-bd0e-25c149da05f2",
+      "order": 4,
+      "zh": "从小的梦想",
+      "pinyin": "cóng xiǎo de mèngxiǎng",
+      "vi": "ước mơ từ nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "76ac5deb-15a0-4cc0-bc02-24c5d2a2c4ed",
+      "order": 1,
+      "zh": "他的梦想是成为一名著名的律师。",
+      "pinyin": "Tā de mèngxiǎng shì chéngwéi yì míng zhùmíng de lǜshī.",
+      "vi": "Ước mơ của anh ấy là trở thành luật sư nổi tiếng.",
+      "analysis_vi": "梦想是…… nêu ước mơ.",
+      "highlight": [
+        "梦想"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81d3f20f-39e0-46e3-b12f-90e1c6eb42f3"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "49703477-0e06-45df-94e3-5aa01b776f25",
+      "order": 2,
+      "zh": "如果只是有梦想，却一点儿也不愿意付出努力，梦想就很难实现。",
+      "pinyin": "Rúguǒ zhǐshì yǒu mèngxiǎng, què yìdiǎnr yě bú yuànyì fùchū nǔlì, mèngxiǎng jiù hěn nán shíxiàn.",
+      "vi": "Nếu chỉ có ước mơ mà không bỏ công sức chút nào, ước mơ rất khó thực hiện.",
+      "analysis_vi": "如果……就…… và 一点儿也不.",
+      "highlight": [
+        "梦想"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81d3f20f-39e0-46e3-b12f-90e1c6eb42f3"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "梦想 xuất hiện nhiều trong diễn ngôn truyền cảm hứng như 追梦, 梦想成真.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "65e39fc1-fa7b-4cfe-bdc2-ac808f7710b2",
+      "order": 1,
+      "rule_vi": "Không nói 他很梦想; nói 他很有梦想 hoặc 他一直梦想成为医生.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "梦想",
+    "back": "ước mơ, giấc mơ, điều khao khát",
+    "hint": "mèngxiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "81d3f20f-39e0-46e3-b12f-90e1c6eb42f3",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "《我生活的故事》",
+      "structure": "书名号《……》表示书名",
+      "meaning_vi": "Tự truyện của Helen Keller, được người mẹ dùng để khích lệ 小敏 vượt qua khuyết tật và tiếp tục học tập.",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "我找出海伦·凯勒写的那本著名的《我生活的故事》，鼓励他说……",
+          "pinyin": "Wǒ zhǎo chū Hǎilún·Kǎilè xiě de nà běn zhùmíng de “Wǒ Shēnghuó de Gùshi”, gǔlì tā shuō...",
+          "vi": "Tôi tìm ra quyển sách nổi tiếng Câu chuyện đời tôi do Helen Keller viết, rồi khích lệ con rằng…",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "text_paragraph_005"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "一五一十",
+      "structure": "一五一十地 + 说 / 讲 / 告诉",
+      "meaning_vi": "Kể rõ ràng, đầy đủ, không bỏ sót chi tiết nào; kể đầu đuôi ngọn ngành.",
+      "examples": [
+        {
+          "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+          "zh": "我这才把几年来替儿子上学的经过一五一十地说了出来。",
+          "pinyin": "Wǒ zhè cái bǎ jǐ nián lái tì érzi shàngxué de jīngguò yīwǔ-yīshí de shuō le chūlai.",
+          "vi": "Lúc này tôi mới kể lại rõ ràng đầu đuôi quá trình mấy năm thay con đi học.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "text_paragraph_018"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "id": "4c85bd5b-3085-44f0-9111-3b77b266d006",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "氧化碳",
+  "pinyin": "yǎnghuàtàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "化学名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Khí quyển và môi trường"
+  ],
+  "meaning": {
+    "hanviet": "Dưỡng hóa thán",
+    "meaning_vi": "oxit carbon, carbon oxide",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "oxit carbon",
+      "carbon oxide"
+    ],
+    "short_definition_vi": "oxit carbon, carbon oxide",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: oxit carbon, carbon oxide.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Khí quyển và môi trường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "氧",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "化",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "碳",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "氧化碳 trong bài được học theo nghĩa trọng tâm: oxit carbon, carbon oxide.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: oxit carbon, carbon oxide.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a2348e5f-fdc1-4c54-8cbb-b9b629d320ae",
+      "order": 1,
+      "zh": "第二，地球的大气中充满氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: oxit carbon, carbon oxide",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f0543287-03ba-4ef1-8ab0-6c24fb51d0dd",
+      "order": 1,
+      "zh": "第二，地球的大气中充满氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “氧化碳” = oxit carbon, carbon oxide.",
+      "analysis_vi": "Câu này dùng “氧化碳” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "氧化碳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c85bd5b-3085-44f0-9111-3b77b266d006"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “氧化碳” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c2047d62-7c0c-4de1-8ca8-7c2661846ef7",
+      "order": 1,
+      "rule_vi": "氧化碳 trong bài nên hiểu là oxit carbon theo văn cảnh; khi nói hóa học thật cần phân biệt 一氧化碳 và 二氧化碳.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "氧化碳",
+    "back": "oxit carbon, carbon oxide",
+    "hint": "yǎnghuàtàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Khí quyển và môi trường"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4c85bd5b-3085-44f0-9111-3b77b266d006",
+    "source_lesson_vocab_id": null
+  }
+}

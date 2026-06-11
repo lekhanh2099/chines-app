@@ -1,0 +1,310 @@
+{
+  "id": "5e21707b-d6e1-4596-b344-5e1ac9eb3954",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "艺术品",
+  "pinyin": "yìshùpǐn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nghệ thuật phẩm",
+    "meaning_vi": "tác phẩm nghệ thuật, đồ mỹ nghệ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tác phẩm nghệ thuật",
+      "đồ mỹ nghệ"
+    ],
+    "short_definition_vi": "tác phẩm nghệ thuật, đồ mỹ nghệ",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "艺",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ, cây",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghệ thuật, kỹ nghệ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "术",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây",
+            "position_vi": "thành phần chính",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kỹ thuật, phương pháp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "品",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "ba thành phần lặp",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vật phẩm, phẩm chất",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "艺术品 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 艺术品 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "工艺品",
+        "pinyin": "gōngyìpǐn",
+        "meaning_vi": "đồ thủ công mỹ nghệ",
+        "difference_vi": "Chính xác hơn cho đồ lưu niệm thủ công",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "纪念品",
+        "pinyin": "jìniànpǐn",
+        "meaning_vi": "đồ lưu niệm",
+        "difference_vi": "Không nhất thiết nghệ thuật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "作品",
+        "pinyin": "zuòpǐn",
+        "meaning_vi": "tác phẩm",
+        "difference_vi": "Rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3c8edd61-001f-4f19-ada4-1421af018330",
+      "order": 1,
+      "zh": "一件艺术品",
+      "pinyin": "yí jiàn yìshùpǐn",
+      "vi": "một tác phẩm nghệ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df255745-7236-4cf5-a4eb-40f64f27d563",
+      "order": 2,
+      "zh": "买艺术品",
+      "pinyin": "mǎi yìshùpǐn",
+      "vi": "mua tác phẩm nghệ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "349de678-caec-457e-9dcf-da2b65ef7308",
+      "order": 3,
+      "zh": "收藏艺术品",
+      "pinyin": "shōucáng yìshùpǐn",
+      "vi": "sưu tầm tác phẩm nghệ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "938b1368-c29f-4ab2-90ab-2f847142666f",
+      "order": 1,
+      "zh": "这件艺术品很有异国风情。",
+      "pinyin": "Zhè jiàn yìshùpǐn hěn yǒu yìguó fēngqíng.",
+      "vi": "Món đồ nghệ thuật này có phong vị nước ngoài.",
+      "analysis_vi": "艺术品 dùng lượng từ 件.",
+      "highlight": [
+        "艺术品"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e21707b-d6e1-4596-b344-5e1ac9eb3954"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5fbe06e3-391e-4cd3-9437-27a2dd35ab68",
+      "order": 2,
+      "zh": "有些人买艺术品不是为了收藏，而是为了记住那段特别的旅途。",
+      "pinyin": "Yǒuxiē rén mǎi yìshùpǐn bú shì wèile shōucáng, ér shì wèile jìzhù nà duàn tèbié de lǚtú.",
+      "vi": "Có người mua đồ nghệ thuật không để sưu tầm mà để nhớ hành trình đặc biệt.",
+      "analysis_vi": "不是为了……而是为了…….",
+      "highlight": [
+        "艺术品"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e21707b-d6e1-4596-b344-5e1ac9eb3954"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong du lịch, 艺术品 có thể là tranh nhỏ, tượng nhỏ, đồ thủ công có tính thẩm mỹ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4897e184-22ea-46a4-a082-7f765c522db7",
+      "order": 1,
+      "rule_vi": "艺术品, 纪念品, 特产 có thể giao nhau nhưng không đồng nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "艺术品",
+    "back": "tác phẩm nghệ thuật, đồ mỹ nghệ",
+    "hint": "yìshùpǐn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5e21707b-d6e1-4596-b344-5e1ac9eb3954",
+    "source_lesson_vocab_id": null
+  }
+}

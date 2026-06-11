@@ -1,0 +1,251 @@
+{
+  "id": "42c1ab99-3e51-4328-a1f8-39b23d8aef5c",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "发火",
+  "pinyin": "fāhuǒ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phát hỏa",
+    "meaning_vi": "nổi giận; bốc cháy/khai hỏa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nổi giận",
+      "bốc cháy/khai hỏa"
+    ],
+    "short_definition_vi": "nổi giận; bốc cháy/khai hỏa",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: cảm xúc, phản ứng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "cảm xúc, phản ứng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "发",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phát ra, xảy ra",
+        "modern_logic_vi": "Trong từ 发火, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "火",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "火 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "火 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "火 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lửa",
+        "modern_logic_vi": "Trong từ 发火, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "发火 nên được học theo nghĩa hiện đại trong cụm/tình huống: nổi giận; bốc cháy/khai hỏa.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 别发火.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "生气",
+        "pinyin": "shēngqì",
+        "meaning_vi": "giận",
+        "difference_vi": "生气 trung tính; 发火 là bùng giận/phát cáu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d0c33ca0-3b7d-45f3-bd2b-0b017a1fa699",
+      "order": 1,
+      "zh": "别发火",
+      "pinyin": "",
+      "vi": "đừng nổi giận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "81c878ec-1a38-4e6e-9046-a3182a05daf5",
+      "order": 2,
+      "zh": "突然发火",
+      "pinyin": "",
+      "vi": "đột nhiên nổi giận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36a83bed-f653-4b34-8452-1f00eeb962bb",
+      "order": 3,
+      "zh": "对某人发火",
+      "pinyin": "",
+      "vi": "nổi giận với ai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ebc3436b-60a8-4433-99d1-f9c4198d3cb0",
+      "order": 1,
+      "zh": "别发火，有话好好儿说。",
+      "pinyin": "",
+      "vi": "Đừng nổi giận, có gì thì nói đàng hoàng.",
+      "analysis_vi": "发火 trong đời sống thường là nổi giận.",
+      "highlight": [
+        "发火"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "42c1ab99-3e51-4328-a1f8-39b23d8aef5c"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 发火 được dùng trong ngữ cảnh cảm xúc, phản ứng; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8e4ad27b-6c76-4271-8694-36152c2e7c70",
+      "order": 1,
+      "rule_vi": "发火 khác 着火; 着火 là cháy thật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "发火 khác 着火; 着火 là cháy thật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "发火",
+    "back": "nổi giận; bốc cháy/khai hỏa",
+    "hint": "fāhuǒ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "42c1ab99-3e51-4328-a1f8-39b23d8aef5c",
+    "source_lesson_vocab_id": null
+  }
+}

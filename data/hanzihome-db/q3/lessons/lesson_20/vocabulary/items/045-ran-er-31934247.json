@@ -1,0 +1,284 @@
+{
+  "id": "7c5e7a8e-e382-4302-a858-aa2eb2dd2131",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "然而",
+  "pinyin": "rán’ér",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhiên nhi",
+    "meaning_vi": "tuy nhiên, thế nhưng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tuy nhiên",
+      "thế nhưng"
+    ],
+    "short_definition_vi": "tuy nhiên, thế nhưng",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "bốn chấm dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy; yếu tố trong từ nối",
+        "modern_logic_vi": "然而/不然 dùng như từ nối.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "而",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mà, và, nhưng",
+        "modern_logic_vi": "Yếu tố nối trong 然而/从而.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "然而 được dùng trong Bài 20 với nghĩa: tuy nhiên, thế nhưng.",
+    "memory_tip_vi": "Nhớ qua cụm 然而事实并非如此.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "但是",
+        "pinyin": "dànshì",
+        "meaning_vi": "nhưng",
+        "difference_vi": "Trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "可是",
+        "pinyin": "kěshì",
+        "meaning_vi": "nhưng",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c76f1e30-2460-4092-b9e2-1a54f59ae61f",
+      "order": 1,
+      "zh": "然而事实并非如此",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e5d78fc-8d67-4175-91a5-885449a6ecb7",
+      "order": 2,
+      "zh": "然而她没有同意",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0fed16c4-7537-4a48-a857-20d016fd660f",
+      "order": 3,
+      "zh": "然而结果相反",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df3d5f44-50b6-477b-80ef-22f8e7279526",
+      "order": 4,
+      "zh": "然而问题是",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d543be8-b904-4570-a86f-ee09906f2a09",
+      "order": 5,
+      "zh": "然而更重要的是",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3108c617-26c4-43c6-901f-217eb6f2e1c8",
+      "order": 6,
+      "zh": "然而事实上",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0ed9ee81-a5b0-4037-be86-8f805c49b8c1",
+      "order": 1,
+      "zh": "他很努力，然而结果并不理想。",
+      "pinyin": "Tā hěn nǔlì, rán’ér jiéguǒ bìng bù lǐxiǎng.",
+      "vi": "Anh ấy rất nỗ lực, tuy nhiên kết quả không lý tưởng.",
+      "analysis_vi": "然而 đưa chuyển ngoặt.",
+      "highlight": [
+        "然而"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c5e7a8e-e382-4302-a858-aa2eb2dd2131"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "718029bd-449b-4c21-80c7-76247e4bdeaa",
+      "order": 2,
+      "zh": "很多人以为她会因为反对导师而失去奖学金，然而事实证明，导师反而更欣赏她。",
+      "pinyin": "Hěn duō rén yǐwéi tā huì yīnwèi fǎnduì dǎoshī ér shīqù jiǎngxuéjīn, rán’ér shìshí zhèngmíng, dǎoshī fǎn’ér gèng xīnshǎng tā.",
+      "vi": "Nhiều người tưởng cô ấy sẽ mất học bổng vì phản đối thầy, tuy nhiên sự thật chứng minh thầy càng đánh giá cao cô ấy.",
+      "analysis_vi": "以为……然而事实证明…… rất hợp lập luận.",
+      "highlight": [
+        "然而"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c5e7a8e-e382-4302-a858-aa2eb2dd2131"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "然而 hợp văn viết, bài luận, kể chuyện có lập luận; khẩu ngữ thường dùng 但是/可是/不过.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "08a010b5-ea52-4855-b07d-e01b513677a3",
+      "order": 1,
+      "rule_vi": "Không đặt 然而 sau chủ ngữ kiểu dịch máy.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "她然而没有同意。",
+          "pinyin": "Tā rán’ér méiyǒu tóngyì.",
+          "vi": "Cô ấy tuy nhiên không đồng ý.",
+          "note_vi": "Vị trí gượng.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "然而，她没有同意。",
+          "pinyin": "Rán’ér, tā méiyǒu tóngyì.",
+          "vi": "Tuy nhiên, cô ấy không đồng ý.",
+          "note_vi": "然而 đứng đầu vế/câu.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "然而",
+    "back": "tuy nhiên, thế nhưng",
+    "hint": "rán’ér",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7c5e7a8e-e382-4302-a858-aa2eb2dd2131",
+    "source_lesson_vocab_id": null
+  }
+}

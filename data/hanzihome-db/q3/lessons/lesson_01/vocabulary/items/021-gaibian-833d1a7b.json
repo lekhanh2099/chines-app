@@ -1,0 +1,389 @@
+{
+  "id": "99223152-a4dc-469e-a08e-7d1a15d5ceaf",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "改变",
+  "pinyin": "gǎibiàn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cải biến",
+    "meaning_vi": "thay đổi, làm thay đổi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thay đổi",
+      "làm thay đổi"
+    ],
+    "short_definition_vi": "thay đổi, làm thay đổi",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: thay đổi, làm thay đổi.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "改",
+        "lishu_vi": "cải",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "bản thân; thành phần trái",
+            "position_vi": "trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động/hành động",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động/hành động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sửa, đổi, thay",
+        "modern_logic_vi": "Tác động để đổi trạng thái cũ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động/hành động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "变",
+        "lishu_vi": "biến",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "亦",
+            "hanviet": "diệc",
+            "meaning_vi": "thành phần giản thể",
+            "position_vi": "trên",
+            "role": "simplified_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biến đổi, thay đổi",
+        "modern_logic_vi": "Chuyển từ trạng thái này sang trạng thái khác.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "改变 trong bài dùng theo nghĩa: thay đổi, làm thay đổi. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 改变 qua văn cảnh 离家的时候: thay đổi, làm thay đổi.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "变化",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sự thay đổi/biến hóa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sửa/đổi ngắn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改正",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sửa lỗi sai",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改善",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cải thiện tốt hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "保持",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giữ nguyên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "维持",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "duy trì",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dce22b7a-b41f-40c9-ab9d-33147d2ecdaf",
+      "order": 1,
+      "zh": "改变想法",
+      "pinyin": "",
+      "vi": "thay đổi suy nghĩ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c95fe9d-9486-4816-9582-f681953f2694",
+      "order": 2,
+      "zh": "改变主意",
+      "pinyin": "",
+      "vi": "đổi ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5f5a9e5-787c-4bf7-af31-c55b134f3a80",
+      "order": 3,
+      "zh": "改变计划",
+      "pinyin": "",
+      "vi": "thay đổi kế hoạch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce4828ba-025d-4e5b-9585-a7ba9ab1175f",
+      "order": 4,
+      "zh": "改变生活",
+      "pinyin": "",
+      "vi": "thay đổi cuộc sống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "603ee171-c770-40f3-96fc-6b8ff7805327",
+      "order": 5,
+      "zh": "发生改变",
+      "pinyin": "",
+      "vi": "xảy ra thay đổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9fbf767b-253b-4bbf-b492-e67c56616bf3",
+      "order": 1,
+      "zh": "她改变了自己的想法。",
+      "pinyin": "",
+      "vi": "Cô ấy đã thay đổi suy nghĩ của mình.",
+      "analysis_vi": "改变想法 là cụm hay gặp.",
+      "highlight": [
+        "改变"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "99223152-a4dc-469e-a08e-7d1a15d5ceaf"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3fed048f-bbbd-4711-b45e-8999811fa1a9",
+      "order": 2,
+      "zh": "父母的话让她改变了计划。",
+      "pinyin": "",
+      "vi": "Lời của bố mẹ khiến cô ấy thay đổi kế hoạch.",
+      "analysis_vi": "让 + người + V diễn tả tác động.",
+      "highlight": [
+        "改变"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "99223152-a4dc-469e-a08e-7d1a15d5ceaf"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "10beba70-35fe-48b1-bf9e-14696119f9cb",
+      "order": 3,
+      "zh": "她本来想一个人去国外，可是谈完以后改变了主意。",
+      "pinyin": "",
+      "vi": "Cô ấy vốn định một mình ra nước ngoài, nhưng nói chuyện xong thì đổi ý.",
+      "analysis_vi": "本来想……可是…… diễn tả kế hoạch thay đổi.",
+      "highlight": [
+        "改变"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "99223152-a4dc-469e-a08e-7d1a15d5ceaf"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "改变 trong bài nằm giữa đổi kế hoạch cụ thể và thay đổi cách sống.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6d928710-e684-459b-bb37-ed7ccba80121",
+      "order": 1,
+      "rule_vi": "改变想法 = đổi suy nghĩ; 改正错误 = sửa lỗi. Không dùng 改正想法 nếu chỉ đổi ý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "改变",
+    "back": "thay đổi, làm thay đổi",
+    "hint": "gǎibiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_021"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "99223152-a4dc-469e-a08e-7d1a15d5ceaf",
+    "source_lesson_vocab_id": null
+  }
+}

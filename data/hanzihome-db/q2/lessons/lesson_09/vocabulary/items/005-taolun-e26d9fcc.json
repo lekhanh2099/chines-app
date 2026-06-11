@@ -1,0 +1,424 @@
+{
+  "id": "d39ed617-693a-4cd4-88e2-792f93d49f21",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "讨论",
+  "pinyin": "tǎolùn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thảo luận",
+    "meaning_vi": "thảo luận, bàn luận",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thảo luận",
+      "bàn luận"
+    ],
+    "short_definition_vi": "thảo luận, bàn luận",
+    "textbook_focus_vi": "Âm Hán Việt: thảo luận. Nghĩa chính: Thảo luận, bàn luận. Trao đổi ý kiến về một vấn đề. Dùng được trong học tập, công việc, đời thường. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "讨",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói / ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói / ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "tấc / đơn vị đo ngắn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "寸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thốn",
+              "radical_name_zh": "",
+              "hanviet": "thốn",
+              "meaning_vi": "tấc / đơn vị đo ngắn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bàn bạc, thảo luận",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "论",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói / ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói / ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "仑",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bàn luận, lý luận",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "讨 và 论 đều liên quan bàn bạc/lời nói. 讨论 = cùng nói, cùng bàn để làm rõ vấn đề.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 讨论 rộng và đời hơn 研讨. Nhưng nếu chỉ “bàn để quyết định việc thực tế”, 商量 nhiều khi tự nhiên hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "讨论",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thảo luận, dùng rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "研讨",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghiên cứu thảo luận sâu, trang trọng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "商量",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bàn bạc để quyết định việc cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "谈论",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói/bàn về một chủ đề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "争论",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tranh luận, có bất đồng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我们讨论语法问题。",
+      "Chúng tôi thảo luận vấn đề ngữ pháp.",
+      "我们商量一下明天几点出发。",
+      "Chúng ta bàn xem mai mấy giờ xuất phát.",
+      "他们争论了很久。",
+      "Họ tranh luận rất lâu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ce927b77-83a5-453e-a9c4-37390b7838bc",
+      "order": 1,
+      "zh": "讨论问题",
+      "pinyin": "",
+      "vi": "thảo luận vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bdb47ce6-a680-4359-a4de-97ffcff048e8",
+      "order": 2,
+      "zh": "讨论一下",
+      "pinyin": "",
+      "vi": "thảo luận một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c7cbf56e-4b5d-4d8f-887a-3e3c5de531b4",
+      "order": 3,
+      "zh": "小组讨论",
+      "pinyin": "",
+      "vi": "thảo luận nhóm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ac405d6-2fbe-432c-a55c-9d94d2de1b7e",
+      "order": 4,
+      "zh": "热烈讨论",
+      "pinyin": "",
+      "vi": "thảo luận sôi nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c16f96a-d01f-4740-8920-a801a0cfa8c2",
+      "order": 5,
+      "zh": "讨论结果",
+      "pinyin": "",
+      "vi": "kết quả thảo luận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb9cacab-b089-4119-84db-a2bec719e5df",
+      "order": 6,
+      "zh": "讨论内容",
+      "pinyin": "",
+      "vi": "nội dung thảo luận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cfc3756a-e4d9-4573-a6ea-2d158291a69b",
+      "order": 1,
+      "zh": "我们讨论一下这个问题。",
+      "pinyin": "Wǒmen tǎolùn yíxià zhège wèntí.",
+      "vi": "Chúng ta thảo luận vấn đề này một chút.",
+      "analysis_vi": "V 一下 làm hành động nhẹ hơn: thảo luận thử một chút.",
+      "highlight": [
+        "讨论"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "d39ed617-693a-4cd4-88e2-792f93d49f21"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "290887a3-6e33-46c0-b983-f4159544b19f",
+      "order": 2,
+      "zh": "会议开始了，大家都认真地讨论教学要求。",
+      "pinyin": "Huìyì kāishǐ le, dàjiā dōu rènzhēn de tǎolùn jiàoxué yāoqiú.",
+      "vi": "Cuộc họp bắt đầu rồi, mọi người đều nghiêm túc thảo luận yêu cầu giảng dạy.",
+      "analysis_vi": "开始了 báo tình huống mới. 认真地讨论 dùng 地.",
+      "highlight": [
+        "讨论"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "d39ed617-693a-4cd4-88e2-792f93d49f21"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a983b85a-755d-4b9a-875d-575e1abff9e3",
+      "order": 3,
+      "zh": "老师走进教室来以后，先向大家问好，然后把台湾研讨会上的讨论内容清楚地写在黑板上。",
+      "pinyin": "Lǎoshī zǒu jìn jiàoshì lái yǐhòu, xiān xiàng dàjiā wènhǎo, ránhòu bǎ Táiwān yántǎohuì shang de tǎolùn nèiróng qīngchu de xiě zài hēibǎn shang.",
+      "vi": "Sau khi thầy/cô đi vào lớp về phía chúng tôi, trước tiên gửi lời chào mọi người, sau đó viết rõ nội dung thảo luận trong hội thảo ở Đài Loan lên bảng.",
+      "analysis_vi": "走进教室来 dùng 来 vì hướng về phía người nói. 向大家问好 = gửi lời chào mọi người. 清楚地写 dùng 地.",
+      "highlight": [
+        "讨论"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "d39ed617-693a-4cd4-88e2-792f93d49f21"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong lớp học Trung Quốc, 小组讨论 là dạng hoạt động rất thường gặp. Giáo viên có thể nói: 请大家分组讨论一下 = mời mọi người chia nhóm thảo luận một chút.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d1207a4f-8554-4ff8-9c51-83a79d42434e",
+      "order": 1,
+      "rule_vi": "讨论 mang tân ngữ trực tiếp được; không nhất thiết thêm 关于 trong câu đơn giản.",
+      "natural_examples": [
+        {
+          "zh": "讨论 = thảo luận, dùng rộng.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "研讨 = nghiên cứu thảo luận sâu, trang trọng.",
+          "pinyin": "商量 = bàn bạc để quyết định việc cụ thể.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "商量 = bàn bạc để quyết định việc cụ thể.",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt nhanh:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "讨论",
+    "back": "thảo luận, bàn luận",
+    "hint": "tǎolùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d39ed617-693a-4cd4-88e2-792f93d49f21",
+    "source_lesson_vocab_id": null
+  }
+}

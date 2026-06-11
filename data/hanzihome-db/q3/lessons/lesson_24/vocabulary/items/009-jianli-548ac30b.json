@@ -1,0 +1,278 @@
+{
+  "id": "1a833b3b-f68c-4b47-9645-77d8f82fbc2e",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "建立",
+  "pinyin": "jiànlì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_24",
+    "deep_vocab",
+    "qingshang"
+  ],
+  "meaning": {
+    "hanviet": "kiến lập",
+    "meaning_vi": "xây dựng, thiết lập",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xây dựng, thiết lập"
+    ],
+    "short_definition_vi": "xây dựng, thiết lập",
+    "textbook_focus_vi": "Dùng trong Bài 24 情商 để nối chủ đề EQ, cảm xúc, tự kiểm soát và quan hệ xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, giao tiếp, giáo dục, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "建",
+        "lishu_vi": "kiến",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 建 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "Không gán bộ thủ nếu không chắc; học theo nghĩa hiện đại của cả từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "立",
+        "lishu_vi": "lập",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng, lập nên",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "立",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lập",
+              "radical_name_zh": "",
+              "hanviet": "lập",
+              "meaning_vi": "đứng, lập nên",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 立 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "立",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lập",
+          "radical_name_zh": "",
+          "hanviet": "lập",
+          "meaning_vi": "đứng, lập nên",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "建立 được ghi theo nghĩa hiện đại đã soạn; ưu tiên học qua cụm dùng thật thay vì suy diễn từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 建立关系.",
+    "warning_vi": "Không ép chiết tự nếu là tên riêng, thành ngữ cố định hoặc chữ giản thể khó suy nghĩa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên học 建立 qua cụm cố định và ví dụ trong bài 情商."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "461302ad-2c4c-480d-97aa-863efe7436fd",
+      "order": 1,
+      "zh": "建立关系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71ae2f26-2c8a-4b65-a5bc-9fb82e5ff248",
+      "order": 2,
+      "zh": "建立人际关系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a0675bc-772b-4a74-a460-e262e1f19d8e",
+      "order": 3,
+      "zh": "建立良好的关系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc8f5234-ec99-44a5-a93f-37c6cb7fbe99",
+      "order": 4,
+      "zh": "建立信任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5dd49ca9-7c61-4471-ab67-119e9734cfdd",
+      "order": 5,
+      "zh": "建立制度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26f411ff-fa93-4751-89ed-7096e1a4a27b",
+      "order": 6,
+      "zh": "建立目标",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9edfdf7e-73af-419b-b508-7bc1ed5c4d80",
+      "order": 7,
+      "zh": "建立联系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9d4bcd4f-da08-46f0-9115-a59ebb2514a7",
+      "order": 1,
+      "zh": "我们要建立良好的人际关系。",
+      "pinyin": "",
+      "vi": "",
+      "analysis_vi": "Ví dụ tự nhiên đã bám nghĩa trọng tâm của 建立 trong bài 情商.",
+      "highlight": [
+        "建立"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a833b3b-f68c-4b47-9645-77d8f82fbc2e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e40cdf2b-e4f6-41fc-9109-51b2911977e4",
+      "order": 2,
+      "zh": "本课用“建立”来说明情商、情绪和人际关系之间的联系。",
+      "pinyin": "",
+      "vi": "Bài này dùng “建立” để nói rõ mối liên hệ giữa EQ, cảm xúc và quan hệ xã hội.",
+      "analysis_vi": "Câu phục vụ ngữ cảnh hóa từ trong chủ đề bài, không phải câu dịch máy.",
+      "highlight": [
+        "建立"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a833b3b-f68c-4b47-9645-77d8f82fbc2e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 情商, 建立 được đặt vào mạch học về EQ, kiểm soát cảm xúc, quan hệ xã hội hoặc tác động của công nghệ tới giao tiếp.",
+    "tags": [
+      "usage",
+      "lesson_24"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3106c2b9-de16-45ae-8ce2-e0b5077ba658",
+      "order": 1,
+      "rule_vi": "Không dịch máy từng chữ Hán Việt của 建立; phải học theo nghĩa hiện đại và collocation.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảnh báo này giữ lại tinh thần phần lỗi sai đã soạn: tránh suy nghĩa từ mặt chữ khi từ/cụm đã có nghĩa cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "建立",
+    "back": "xây dựng, thiết lập",
+    "hint": "jiànlì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_24",
+      "qingshang"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1a833b3b-f68c-4b47-9645-77d8f82fbc2e",
+    "source_lesson_vocab_id": null
+  }
+}

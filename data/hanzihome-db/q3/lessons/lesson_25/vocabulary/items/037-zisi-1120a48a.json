@@ -1,0 +1,184 @@
+{
+  "id": "3113a44b-fb7e-4f0d-b381-60744d458d05",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "自私",
+  "pinyin": "zìsī",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tự tư",
+    "meaning_vi": "ích kỷ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ích kỷ"
+    ],
+    "short_definition_vi": "ích kỷ",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "tự",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bản thân",
+        "modern_logic_vi": "Trong từ này, 自 góp phần vào nghĩa hiện đại: bản thân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "私",
+        "lishu_vi": "tư",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "riêng, tư lợi",
+        "modern_logic_vi": "Trong từ này, 私 góp phần vào nghĩa hiện đại: riêng, tư lợi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "自私 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 很自私.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 自私 cho nghĩa riêng tư; chuyện riêng tư là 私人的事/隐私."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3c6ff739-c621-4e32-9d3e-7f932d759884",
+      "order": 1,
+      "zh": "很自私",
+      "pinyin": "",
+      "vi": "rất ích kỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a047cdc-17d5-484e-961f-aa99bb95463f",
+      "order": 2,
+      "zh": "自私的人",
+      "pinyin": "",
+      "vi": "người ích kỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "426ca596-21a5-45b6-a304-8f5b13ec4bf2",
+      "order": 3,
+      "zh": "自私自利",
+      "pinyin": "",
+      "vi": "ích kỷ tư lợi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3132f60a-551c-4351-8c97-f58439924f8d",
+      "order": 1,
+      "zh": "他只考虑自己，太自私了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 自私 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 自私; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "自私"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3113a44b-fb7e-4f0d-b381-60744d458d05"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 自私 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3466bad2-4a92-42c7-973a-f14092ce7e95",
+      "order": 1,
+      "rule_vi": "Không dùng 自私 cho nghĩa riêng tư; chuyện riêng tư là 私人的事/隐私.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自私",
+    "back": "ích kỷ",
+    "hint": "zìsī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3113a44b-fb7e-4f0d-b381-60744d458d05",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,605 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "综合填空 / 交际会话",
+  "title_vi": "Điền khuyết tổng hợp / Hội thoại giao tiếp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "f013544b-a318-4292-a467-21659afc2082",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "综合填空",
+      "title_vi": "Điền khuyết tổng hợp",
+      "supplement_vocab": [
+        {
+          "hanzi": "馅儿",
+          "pinyin": "xiànr",
+          "meaning_vi": "nhân bánh",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "嫦娥",
+          "pinyin": "Cháng’é",
+          "meaning_vi": "Hằng Nga",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "后羿",
+          "pinyin": "Hòuyì",
+          "meaning_vi": "Hậu Nghệ",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "下凡",
+          "pinyin": "xià fán",
+          "meaning_vi": "xuống trần gian",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "射",
+          "pinyin": "shè",
+          "meaning_vi": "bắn",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "西王母",
+          "pinyin": "Xīwángmǔ",
+          "meaning_vi": "Tây Vương Mẫu",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        }
+      ],
+      "text": "农历八月十五是中国的传统节日——中秋节。为什么叫中秋节呢？因为这一天是秋天正中的一天。\n\n八月十五晚上的月亮是一年中最亮、最圆的。人们用圆月代表团圆，所以中秋节又是中国家庭的团圆节。这一天，在外边工作的人要尽量赶回家①________全家人一起过节。\n\n中秋之夜，院子里摆好月饼，一家人坐②________一起，一边吃月饼、喝茶、聊天儿，一边观赏天上美丽的圆月。\n\n中秋月饼也是圆形的，表示团圆。月饼多由豆沙、枣泥、水果、果仁等作馅儿，外面还有一定的图案，吃③________香甜可口。在中国，月饼的种类很多，一到农历的八月，商店里就开始卖各种各样的月饼。\n\n中秋之夜，老人们还喜欢④________孩子们讲嫦娥奔月的故事。传说嫦娥是天神后羿的妻子。在很久以前，天上出了十个太阳，热得人们没法活下去。天神后羿就下凡来救助百姓。他用弓箭射下了九个太阳，成⑤________射日的英雄。后来，后羿与美丽的嫦娥结了婚，希望在人间过普通人的生活。一次，听说西王母那儿有长生不老药，他就去找西王母。西王母⑥________药给了他，并且告诉他：“这药要是两个人吃，可以长生不老；要是一个人吃了，就可以飞到天上。”后羿回到家，把药交给嫦娥。没想到，一些坏人听说后羿家有长生不老药，就趁后羿不在家的时候来抢这种药。嫦娥看到他们来抢药，就急忙把药放到自己嘴里，一不小心就把药吃了下去。吃了药她感到身体突然变轻了，慢慢地飞了起来。嫦娥的小白兔看到这种情况也连忙跳到她的身上，她抱⑦________小白兔飞到了月亮上。从此，嫦娥成了月神。\n\n这美丽的故事给中秋节添加了迷人的色彩。中秋之夜，无论你走到什么地方，⑧________可以看到人们纷纷走上街头，观赏明月，观看夜景。大街小巷都挂着红灯，到处充满歌声、笑声和叫卖声。",
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "和 / 跟",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "在",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "起来 / 着",
+          "answer_verified": true,
+          "source_origin": "web_answer_crosschecked",
+          "check_needed": false
+        },
+        {
+          "blank": 4,
+          "answer": "给",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "了",
+          "answer_verified": true,
+          "source_origin": "web_answer_crosschecked",
+          "check_needed": false
+        },
+        {
+          "blank": 6,
+          "answer": "把",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "着",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "都",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
+      "type": "communication_dialogue",
+      "order": 2,
+      "title": "谈论婚姻与家庭",
+      "title_vi": "Bàn về hôn nhân và gia đình",
+      "lines": [
+        {
+          "id": "e09fae7e-a0f4-49b9-b84a-b0e8ffd24338",
+          "order": 1,
+          "speaker": "A",
+          "zh": "我认为一个人如果决定要结婚，就要好好儿想一想。",
+          "vi": "Tôi cho rằng nếu một người quyết định kết hôn thì phải suy nghĩ thật kỹ.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Wǒ rènwéi yí ge rén rúguǒ juédìng yào jiéhūn, jiù yào hǎohāor xiǎng yi xiǎng."
+        },
+        {
+          "id": "022c712a-960d-4bad-b53a-cba85f07124e",
+          "order": 2,
+          "speaker": "B",
+          "zh": "想什么？",
+          "vi": "Nghĩ điều gì?",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Xiǎng shénme?"
+        },
+        {
+          "id": "43b2d1f3-fbbb-4e68-af9a-a1ef8724de1d",
+          "order": 3,
+          "speaker": "A",
+          "zh": "想想婚后要承担的责任，对妻子、对丈夫、对未来的孩子。",
+          "vi": "Nghĩ về trách nhiệm phải gánh vác sau khi kết hôn: đối với vợ, đối với chồng, đối với những đứa con tương lai.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Xiǎngxiang hūn hòu yào chéngdān de zérèn, duì qīzi, duì zhàngfu, duì wèilái de háizi."
+        },
+        {
+          "id": "61f3736b-f488-4150-8c2b-d0b8366e7cf3",
+          "order": 4,
+          "speaker": "B",
+          "zh": "结婚是为了爱情，谁结婚时还像你说的那样，还要好好儿地想一想。如果都想好了，可能就结不了婚了。反正我结婚时就没想过。",
+          "vi": "Kết hôn là vì tình yêu, ai khi kết hôn lại giống như cậu nói, còn phải suy nghĩ kỹ như vậy chứ. Nếu đều nghĩ kỹ hết rồi, có khi lại không kết hôn được nữa. Dù sao lúc tôi kết hôn thì tôi không nghĩ như vậy.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Jiéhūn shì wèile àiqíng, shéi jiéhūn shí hái xiàng nǐ shuō de nàyàng, hái yào hǎohāor de xiǎng yi xiǎng. Rúguǒ dōu xiǎng hǎo le, kěnéng jiù jié bù liǎo hūn le. Fǎnzhèng wǒ jiéhūn shí jiù méi xiǎng guo."
+        },
+        {
+          "id": "6f08174f-fab2-4cb9-a55a-ca95b6cb494f",
+          "order": 5,
+          "speaker": "A",
+          "zh": "爱情是浪漫的，但婚姻是很实际的。所以，有人结婚不久就离婚，可能就是因为他们根本不知道为什么要结婚。如果有了孩子，父母离婚有可能会影响孩子的身心健康。",
+          "vi": "Tình yêu thì lãng mạn, nhưng hôn nhân rất thực tế. Vì vậy, có người kết hôn không lâu đã ly hôn, có lẽ chính là vì họ căn bản không biết tại sao mình kết hôn. Nếu đã có con, việc cha mẹ ly hôn có thể ảnh hưởng đến sức khỏe thể chất và tinh thần của con cái.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Àiqíng shì làngmàn de, dàn hūnyīn shì hěn shíjì de. Suǒyǐ, yǒu rén jiéhūn bù jiǔ jiù líhūn, kěnéng jiù shì yīnwèi tāmen gēnběn bù zhīdào wèishénme yào jiéhūn. Rúguǒ yǒu le háizi, fùmǔ líhūn yǒu kěnéng huì yǐngxiǎng háizi de shēnxīn jiànkāng."
+        },
+        {
+          "id": "445c9147-56fa-4d05-b2e6-15232d8e8184",
+          "order": 6,
+          "speaker": "B",
+          "zh": "你没听说过这句话吗？婚姻是爱情的坟墓。",
+          "vi": "Cậu chưa nghe câu này sao? Hôn nhân là nấm mồ của tình yêu.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Nǐ méi tīngshuō guo zhè jù huà ma? Hūnyīn shì àiqíng de fénmù."
+        },
+        {
+          "id": "528af3ac-612a-4097-87d0-25cc082fb8ee",
+          "order": 7,
+          "speaker": "A",
+          "zh": "听说过，但我不同意这种说法。婚姻究竟是什么，要看夫妻双方是不是真正相爱。夫妻相爱，就会把婚姻建成幸福的宫殿；夫妻不相爱，才会把婚姻变成坟墓。",
+          "vi": "Tôi từng nghe rồi, nhưng tôi không đồng ý với cách nói đó. Hôn nhân rốt cuộc là gì, phải xem hai bên vợ chồng có thật sự yêu nhau hay không. Vợ chồng yêu nhau thì sẽ xây hôn nhân thành cung điện hạnh phúc; vợ chồng không yêu nhau thì mới biến hôn nhân thành nấm mồ.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Tīngshuō guo, dàn wǒ bù tóngyì zhè zhǒng shuōfǎ. Hūnyīn jiūjìng shì shénme, yào kàn fūqī shuāngfāng shì bú shì zhēnzhèng xiāng’ài. Fūqī xiāng’ài, jiù huì bǎ hūnyīn jiànchéng xìngfú de gōngdiàn; fūqī bù xiāng’ài, cái huì bǎ hūnyīn biànchéng fénmù."
+        },
+        {
+          "id": "9b302343-572d-46de-8785-6d206cd3e16e",
+          "order": 8,
+          "speaker": "B",
+          "zh": "不过，现在年轻人的恋爱观和婚姻观都有了很大变化。有人甚至开玩笑地说：“结婚是错误，离婚是觉悟，一生不结婚是大彻大悟。”",
+          "vi": "Nhưng hiện nay quan niệm tình yêu và hôn nhân của người trẻ đều đã thay đổi rất nhiều. Có người thậm chí còn nói đùa rằng: “Kết hôn là sai lầm, ly hôn là giác ngộ, cả đời không kết hôn là đại triệt đại ngộ.”",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Búguò, xiànzài niánqīngrén de liàn’ài guān hé hūnyīn guān dōu yǒu le hěn dà biànhuà. Yǒu rén shènzhì kāi wánxiào de shuō: “Jiéhūn shì cuòwù, líhūn shì juéwù, yìshēng bù jiéhūn shì dà chè dà wù.”"
+        },
+        {
+          "id": "b7c83e90-e212-4c98-a6d0-663e88550ffa",
+          "order": 9,
+          "speaker": "A",
+          "zh": "也许他们还不知道家的重要。我认为，热爱家庭、珍惜家庭是一种美德，家才是最温暖的地方。",
+          "vi": "Có lẽ họ vẫn chưa biết tầm quan trọng của gia đình. Tôi cho rằng yêu gia đình, trân trọng gia đình là một phẩm chất tốt đẹp; gia đình mới là nơi ấm áp nhất.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Yěxǔ tāmen hái bù zhīdào jiā de zhòngyào. Wǒ rènwéi, rè’ài jiātíng, zhēnxī jiātíng shì yì zhǒng měidé, jiā cái shì zuì wēnnuǎn de dìfang."
+        }
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ],
+  "items": [
+    {
+      "id": "f013544b-a318-4292-a467-21659afc2082",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "综合填空",
+      "title_vi": "Điền khuyết tổng hợp",
+      "supplement_vocab": [
+        {
+          "hanzi": "馅儿",
+          "pinyin": "xiànr",
+          "meaning_vi": "nhân bánh",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "嫦娥",
+          "pinyin": "Cháng’é",
+          "meaning_vi": "Hằng Nga",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "后羿",
+          "pinyin": "Hòuyì",
+          "meaning_vi": "Hậu Nghệ",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "下凡",
+          "pinyin": "xià fán",
+          "meaning_vi": "xuống trần gian",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "射",
+          "pinyin": "shè",
+          "meaning_vi": "bắn",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        },
+        {
+          "hanzi": "西王母",
+          "pinyin": "Xīwángmǔ",
+          "meaning_vi": "Tây Vương Mẫu",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "notes": []
+        }
+      ],
+      "text": "农历八月十五是中国的传统节日——中秋节。为什么叫中秋节呢？因为这一天是秋天正中的一天。\n\n八月十五晚上的月亮是一年中最亮、最圆的。人们用圆月代表团圆，所以中秋节又是中国家庭的团圆节。这一天，在外边工作的人要尽量赶回家①________全家人一起过节。\n\n中秋之夜，院子里摆好月饼，一家人坐②________一起，一边吃月饼、喝茶、聊天儿，一边观赏天上美丽的圆月。\n\n中秋月饼也是圆形的，表示团圆。月饼多由豆沙、枣泥、水果、果仁等作馅儿，外面还有一定的图案，吃③________香甜可口。在中国，月饼的种类很多，一到农历的八月，商店里就开始卖各种各样的月饼。\n\n中秋之夜，老人们还喜欢④________孩子们讲嫦娥奔月的故事。传说嫦娥是天神后羿的妻子。在很久以前，天上出了十个太阳，热得人们没法活下去。天神后羿就下凡来救助百姓。他用弓箭射下了九个太阳，成⑤________射日的英雄。后来，后羿与美丽的嫦娥结了婚，希望在人间过普通人的生活。一次，听说西王母那儿有长生不老药，他就去找西王母。西王母⑥________药给了他，并且告诉他：“这药要是两个人吃，可以长生不老；要是一个人吃了，就可以飞到天上。”后羿回到家，把药交给嫦娥。没想到，一些坏人听说后羿家有长生不老药，就趁后羿不在家的时候来抢这种药。嫦娥看到他们来抢药，就急忙把药放到自己嘴里，一不小心就把药吃了下去。吃了药她感到身体突然变轻了，慢慢地飞了起来。嫦娥的小白兔看到这种情况也连忙跳到她的身上，她抱⑦________小白兔飞到了月亮上。从此，嫦娥成了月神。\n\n这美丽的故事给中秋节添加了迷人的色彩。中秋之夜，无论你走到什么地方，⑧________可以看到人们纷纷走上街头，观赏明月，观看夜景。大街小巷都挂着红灯，到处充满歌声、笑声和叫卖声。",
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "和 / 跟",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "在",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "起来 / 着",
+          "answer_verified": true,
+          "source_origin": "web_answer_crosschecked",
+          "check_needed": false
+        },
+        {
+          "blank": 4,
+          "answer": "给",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "了",
+          "answer_verified": true,
+          "source_origin": "web_answer_crosschecked",
+          "check_needed": false
+        },
+        {
+          "blank": 6,
+          "answer": "把",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "着",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "都",
+          "answer_verified": true,
+          "source_origin": "textbook_question_answer_checked",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "answer_key": [
+        {
+          "blank": 1,
+          "answer": "和 / 跟"
+        },
+        {
+          "blank": 2,
+          "answer": "在"
+        },
+        {
+          "blank": 3,
+          "answer": "起来 / 着"
+        },
+        {
+          "blank": 4,
+          "answer": "给"
+        },
+        {
+          "blank": 5,
+          "answer": "了"
+        },
+        {
+          "blank": 6,
+          "answer": "把"
+        },
+        {
+          "blank": 7,
+          "answer": "着"
+        },
+        {
+          "blank": 8,
+          "answer": "都"
+        }
+      ]
+    },
+    {
+      "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
+      "type": "communication_dialogue",
+      "order": 2,
+      "title": "谈论婚姻与家庭",
+      "title_vi": "Bàn về hôn nhân và gia đình",
+      "lines": [
+        {
+          "id": "e09fae7e-a0f4-49b9-b84a-b0e8ffd24338",
+          "order": 1,
+          "speaker": "A",
+          "zh": "我认为一个人如果决定要结婚，就要好好儿想一想。",
+          "vi": "Tôi cho rằng nếu một người quyết định kết hôn thì phải suy nghĩ thật kỹ.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Wǒ rènwéi yí ge rén rúguǒ juédìng yào jiéhūn, jiù yào hǎohāor xiǎng yi xiǎng."
+        },
+        {
+          "id": "022c712a-960d-4bad-b53a-cba85f07124e",
+          "order": 2,
+          "speaker": "B",
+          "zh": "想什么？",
+          "vi": "Nghĩ điều gì?",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Xiǎng shénme?"
+        },
+        {
+          "id": "43b2d1f3-fbbb-4e68-af9a-a1ef8724de1d",
+          "order": 3,
+          "speaker": "A",
+          "zh": "想想婚后要承担的责任，对妻子、对丈夫、对未来的孩子。",
+          "vi": "Nghĩ về trách nhiệm phải gánh vác sau khi kết hôn: đối với vợ, đối với chồng, đối với những đứa con tương lai.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Xiǎngxiang hūn hòu yào chéngdān de zérèn, duì qīzi, duì zhàngfu, duì wèilái de háizi."
+        },
+        {
+          "id": "61f3736b-f488-4150-8c2b-d0b8366e7cf3",
+          "order": 4,
+          "speaker": "B",
+          "zh": "结婚是为了爱情，谁结婚时还像你说的那样，还要好好儿地想一想。如果都想好了，可能就结不了婚了。反正我结婚时就没想过。",
+          "vi": "Kết hôn là vì tình yêu, ai khi kết hôn lại giống như cậu nói, còn phải suy nghĩ kỹ như vậy chứ. Nếu đều nghĩ kỹ hết rồi, có khi lại không kết hôn được nữa. Dù sao lúc tôi kết hôn thì tôi không nghĩ như vậy.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Jiéhūn shì wèile àiqíng, shéi jiéhūn shí hái xiàng nǐ shuō de nàyàng, hái yào hǎohāor de xiǎng yi xiǎng. Rúguǒ dōu xiǎng hǎo le, kěnéng jiù jié bù liǎo hūn le. Fǎnzhèng wǒ jiéhūn shí jiù méi xiǎng guo."
+        },
+        {
+          "id": "6f08174f-fab2-4cb9-a55a-ca95b6cb494f",
+          "order": 5,
+          "speaker": "A",
+          "zh": "爱情是浪漫的，但婚姻是很实际的。所以，有人结婚不久就离婚，可能就是因为他们根本不知道为什么要结婚。如果有了孩子，父母离婚有可能会影响孩子的身心健康。",
+          "vi": "Tình yêu thì lãng mạn, nhưng hôn nhân rất thực tế. Vì vậy, có người kết hôn không lâu đã ly hôn, có lẽ chính là vì họ căn bản không biết tại sao mình kết hôn. Nếu đã có con, việc cha mẹ ly hôn có thể ảnh hưởng đến sức khỏe thể chất và tinh thần của con cái.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Àiqíng shì làngmàn de, dàn hūnyīn shì hěn shíjì de. Suǒyǐ, yǒu rén jiéhūn bù jiǔ jiù líhūn, kěnéng jiù shì yīnwèi tāmen gēnběn bù zhīdào wèishénme yào jiéhūn. Rúguǒ yǒu le háizi, fùmǔ líhūn yǒu kěnéng huì yǐngxiǎng háizi de shēnxīn jiànkāng."
+        },
+        {
+          "id": "445c9147-56fa-4d05-b2e6-15232d8e8184",
+          "order": 6,
+          "speaker": "B",
+          "zh": "你没听说过这句话吗？婚姻是爱情的坟墓。",
+          "vi": "Cậu chưa nghe câu này sao? Hôn nhân là nấm mồ của tình yêu.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Nǐ méi tīngshuō guo zhè jù huà ma? Hūnyīn shì àiqíng de fénmù."
+        },
+        {
+          "id": "528af3ac-612a-4097-87d0-25cc082fb8ee",
+          "order": 7,
+          "speaker": "A",
+          "zh": "听说过，但我不同意这种说法。婚姻究竟是什么，要看夫妻双方是不是真正相爱。夫妻相爱，就会把婚姻建成幸福的宫殿；夫妻不相爱，才会把婚姻变成坟墓。",
+          "vi": "Tôi từng nghe rồi, nhưng tôi không đồng ý với cách nói đó. Hôn nhân rốt cuộc là gì, phải xem hai bên vợ chồng có thật sự yêu nhau hay không. Vợ chồng yêu nhau thì sẽ xây hôn nhân thành cung điện hạnh phúc; vợ chồng không yêu nhau thì mới biến hôn nhân thành nấm mồ.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Tīngshuō guo, dàn wǒ bù tóngyì zhè zhǒng shuōfǎ. Hūnyīn jiūjìng shì shénme, yào kàn fūqī shuāngfāng shì bú shì zhēnzhèng xiāng’ài. Fūqī xiāng’ài, jiù huì bǎ hūnyīn jiànchéng xìngfú de gōngdiàn; fūqī bù xiāng’ài, cái huì bǎ hūnyīn biànchéng fénmù."
+        },
+        {
+          "id": "9b302343-572d-46de-8785-6d206cd3e16e",
+          "order": 8,
+          "speaker": "B",
+          "zh": "不过，现在年轻人的恋爱观和婚姻观都有了很大变化。有人甚至开玩笑地说：“结婚是错误，离婚是觉悟，一生不结婚是大彻大悟。”",
+          "vi": "Nhưng hiện nay quan niệm tình yêu và hôn nhân của người trẻ đều đã thay đổi rất nhiều. Có người thậm chí còn nói đùa rằng: “Kết hôn là sai lầm, ly hôn là giác ngộ, cả đời không kết hôn là đại triệt đại ngộ.”",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Búguò, xiànzài niánqīngrén de liàn’ài guān hé hūnyīn guān dōu yǒu le hěn dà biànhuà. Yǒu rén shènzhì kāi wánxiào de shuō: “Jiéhūn shì cuòwù, líhūn shì juéwù, yìshēng bù jiéhūn shì dà chè dà wù.”"
+        },
+        {
+          "id": "b7c83e90-e212-4c98-a6d0-663e88550ffa",
+          "order": 9,
+          "speaker": "A",
+          "zh": "也许他们还不知道家的重要。我认为，热爱家庭、珍惜家庭是一种美德，家才是最温暖的地方。",
+          "vi": "Có lẽ họ vẫn chưa biết tầm quan trọng của gia đình. Tôi cho rằng yêu gia đình, trân trọng gia đình là một phẩm chất tốt đẹp; gia đình mới là nơi ấm áp nhất.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "pinyin": "Yěxǔ tāmen hái bù zhīdào jiā de zhòngyào. Wǒ rènwéi, rè’ài jiātíng, zhēnxī jiātíng shì yì zhǒng měidé, jiā cái shì zuì wēnnuǎn de dìfang."
+        }
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

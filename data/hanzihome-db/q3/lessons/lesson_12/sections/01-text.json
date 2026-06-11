@@ -1,0 +1,161 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "好人难当",
+      "title_vi": "Làm người tốt khó",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "忽然发现好人难当，尽管你是诚心诚意的，有时也难免吃力不讨好。",
+          "pinyin": "Hūrán fāxiàn hǎorén nán dāng, jǐnguǎn nǐ shì chéngxīn-chéngyì de, yǒushí yě nánmiǎn chīlì bù tǎohǎo.",
+          "vi": "Bỗng nhiên tôi phát hiện ra rằng làm người tốt thật khó. Dù bạn thật lòng thật ý, đôi khi cũng khó tránh khỏi cảnh mất công mà chẳng được lòng ai.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "下班骑自行车回家，看到一个小男孩儿拿着一盒冰激凌跑过马路，不小心摔倒了，冰激凌飞出好远。小男孩儿趴在地上大哭，我连忙下车把他扶起来。这时从路旁的楼里跑出来一个女人，抱着孩子左看右看，一副心疼的样子，我想是孩子的妈妈，就安慰她说，小孩子摔一跤没关系。她双眼一瞪，对我吼道：“你骑车也不小心一点儿，这次没摔伤算你走运！”又指着地上的冰激凌说：“赔了冰激凌你可以走了！”",
+          "pinyin": "Xiàbān qí zìxíngchē huí jiā, kàndào yí ge xiǎo nánháir názhe yì hé bīngjīlíng pǎoguò mǎlù, bù xiǎoxīn shuāidǎo le, bīngjīlíng fēichū hǎo yuǎn. Xiǎo nánháir pā zài dìshang dà kū, wǒ liánmáng xià chē bǎ tā fú qǐlai. Zhè shí cóng lùpáng de lóu lǐ pǎochūlai yí ge nǚrén, bàozhe háizi zuǒ kàn yòu kàn, yí fù xīnténg de yàngzi, wǒ xiǎng shì háizi de māma, jiù ānwèi tā shuō, xiǎo háizi shuāi yì jiāo méi guānxi. Tā shuāng yǎn yí dèng, duì wǒ hǒu dào: “Nǐ qí chē yě bù xiǎoxīn yìdiǎnr, zhè cì méi shuāishāng suàn nǐ zǒuyùn!” Yòu zhǐzhe dìshang de bīngjīlíng shuō: “Péi le bīngjīlíng nǐ kěyǐ zǒu le!”",
+          "vi": "Tan làm, tôi đạp xe về nhà. Tôi thấy một cậu bé cầm một hộp kem chạy qua đường, không cẩn thận bị ngã, hộp kem văng ra rất xa. Cậu bé nằm sấp trên đất khóc lớn. Tôi vội xuống xe đỡ cậu bé dậy. Lúc đó, từ tòa nhà bên đường có một người phụ nữ chạy ra, ôm đứa bé nhìn trái nhìn phải, vẻ rất xót ruột. Tôi nghĩ đó là mẹ của đứa bé, nên an ủi cô ấy rằng trẻ con ngã một cái cũng không sao. Cô ấy trợn mắt lên, quát tôi: “Anh đi xe cũng không cẩn thận chút nào, lần này nó không bị thương xem như anh may đấy!” Rồi lại chỉ vào hộp kem dưới đất nói: “Đền hộp kem xong thì anh có thể đi!”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "上午还是晴天，中午却阴得厉害，好像要下雨。见邻居家的被子还在院子里晒着，心想，他们是双职工，恐怕不能回来收，就把被子抱进自己的单身宿舍里，免得被雨淋湿。",
+          "pinyin": "Shàngwǔ hái shì qíngtiān, zhōngwǔ què yīn de lìhai, hǎoxiàng yào xià yǔ. Jiàn línjū jiā de bèizi hái zài yuànzi lǐ shàizhe, xīn xiǎng, tāmen shì shuāngzhígōng, kǒngpà bù néng huílai shōu, jiù bǎ bèizi bào jìn zìjǐ de dānshēn sùshè lǐ, miǎnde bèi yǔ lín shī.",
+          "vi": "Buổi sáng trời vẫn còn nắng, đến trưa thì âm u dữ dội, giống như sắp mưa. Thấy chăn của nhà hàng xóm vẫn đang phơi trong sân, tôi nghĩ họ là vợ chồng đều đi làm, e rằng không thể về thu chăn được, nên tôi ôm chăn vào ký túc xá độc thân của mình, để khỏi bị mưa làm ướt.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "下午突然接到通知，要我陪领导去外地检查工作。第五天回到宿舍，才想起邻居家的被子。连忙去还，邻居却说，以为被小偷儿偷走了，就又买了一套新的。我只好向人家一遍又一遍地道歉。朋友们知道了，都说我是个“马大哈”。",
+          "pinyin": "Xiàwǔ tūrán jiēdào tōngzhī, yào wǒ péi lǐngdǎo qù wàidì jiǎnchá gōngzuò. Dì wǔ tiān huídào sùshè, cái xiǎngqǐ línjū jiā de bèizi. Liánmáng qù huán, línjū què shuō, yǐwéi bèi xiǎotōur tōu zǒu le, jiù yòu mǎi le yí tào xīn de. Wǒ zhǐhǎo xiàng rénjia yí biàn yòu yí biàn de dàoqiàn. Péngyoumen zhīdào le, dōu shuō wǒ shì ge “mǎdàhā”.",
+          "vi": "Buổi chiều tôi đột nhiên nhận được thông báo, yêu cầu tôi đi cùng lãnh đạo đến nơi khác kiểm tra công việc. Đến ngày thứ năm trở về ký túc xá, tôi mới nhớ ra chăn của nhà hàng xóm. Tôi vội đem trả, nhưng hàng xóm lại nói rằng họ tưởng chăn bị kẻ trộm lấy mất, nên đã mua một bộ mới. Tôi đành phải xin lỗi người ta hết lần này đến lần khác. Bạn bè biết chuyện, đều nói tôi là một “ma-da-ha” — người hay sơ suất, đãng trí.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "去逛公园，看见林荫道上一对青年男女手拉着手在散步，叫人好不羡慕。忽然发现姑娘的裙子后边拉链儿没拉上，很不好看。该不该告诉她？我犹豫着。游人越来越多，我替那姑娘着急，心一横就上前说了。那男的却把眼一瞪：“这么大的公园，这么多的风景你不看，却看人家姑娘的拉链儿，你无聊不无聊！”",
+          "pinyin": "Qù guàng gōngyuán, kànjiàn línyīndào shang yí duì qīngnián nánnǚ shǒu lāzhe shǒu zài sànbù, jiào rén hǎobù xiànmù. Hūrán fāxiàn gūniang de qúnzi hòubian lāliànr méi lā shàng, hěn bù hǎokàn. Gāi bù gāi gàosu tā? Wǒ yóuyùzhe. Yóurén yuèláiyuè duō, wǒ tì nà gūniang zháojí, xīn yì héng jiù shàngqián shuō le. Nà nán de què bǎ yǎn yí dèng: “Zhème dà de gōngyuán, zhème duō de fēngjǐng nǐ bù kàn, què kàn rénjia gūniang de lāliànr, nǐ wúliáo bù wúliáo!”",
+          "vi": "Đi dạo công viên, tôi thấy trên con đường rợp bóng cây có một đôi nam nữ trẻ tuổi nắm tay nhau đi dạo, khiến người ta thật ngưỡng mộ. Bỗng nhiên tôi phát hiện khóa kéo phía sau váy cô gái chưa kéo lên, nhìn rất không đẹp. Có nên nói cho cô ấy biết không? Tôi do dự. Khách tham quan càng lúc càng đông, tôi lo thay cô gái, bèn quyết tâm bước lên nói. Không ngờ người nam kia trợn mắt lên nói: “Công viên lớn như thế này, phong cảnh nhiều như thế này anh không nhìn, lại đi nhìn khóa kéo của cô gái nhà người ta, anh có rảnh rỗi đến mức vô duyên vậy không!”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "去修自行车时，一位漂亮的姑娘推着车过来打气，看她打了半天也打不进去，就说：“我来帮你打吧。”她连声道谢，说：“现在像你这样的好人真是不多了。”我听了十分得意，手中的气筒压得更加起劲儿，还想再和她多聊几句，不料，“嘭”的一声——把车胎打爆了……",
+          "pinyin": "Qù xiū zìxíngchē shí, yí wèi piàoliang de gūniang tuīzhe chē guòlai dǎ qì, kàn tā dǎ le bàntiān yě dǎ bu jìnqù, jiù shuō: “Wǒ lái bāng nǐ dǎ ba.” Tā liánshēng dàoxiè, shuō: “Xiànzài xiàng nǐ zhèyàng de hǎorén zhēnshi bù duō le.” Wǒ tīng le shífēn déyì, shǒu zhōng de qìtǒng yā de gèngjiā qǐjìnr, hái xiǎng zài hé tā duō liáo jǐ jù, bùliào, “pēng” de yì shēng — bǎ chētāi dǎ bào le……",
+          "vi": "Khi đi sửa xe đạp, có một cô gái xinh đẹp dắt xe đến bơm hơi. Thấy cô ấy bơm cả buổi mà vẫn không bơm vào được, tôi nói: “Để tôi giúp cô bơm nhé.” Cô ấy cảm ơn liên tục, nói: “Bây giờ người tốt như anh thật không còn nhiều nữa.” Nghe vậy tôi vô cùng đắc ý, tay ấn cái bơm càng hăng hơn, còn muốn nói chuyện với cô ấy thêm vài câu. Không ngờ, “bùm” một tiếng — tôi bơm nổ luôn lốp xe……",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "（根据林小龙的文章改写）",
+          "pinyin": "（Gēnjù Lín Xiǎolóng de wénzhāng gǎixiě）",
+          "vi": "Dựa theo bài viết của Lâm Tiểu Long, có chỉnh sửa.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "lesson12_text_q_001",
+          "type": "short_answer",
+          "order": 1,
+          "question": "那个孩子的妈妈为什么对“我”吼？",
+          "pinyin": "Nà ge háizi de māma wèishénme duì “wǒ” hǒu?",
+          "answer": "因为她以为孩子是“我”骑车不小心弄摔倒的。",
+          "answer_pinyin": "Yīnwèi tā yǐwéi háizi shì “wǒ” qí chē bù xiǎoxīn nòng shuāidǎo de.",
+          "vi": "Vì cô ấy tưởng đứa bé bị ngã là do “tôi” đi xe không cẩn thận.",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "lesson12_text_q_002",
+          "type": "short_answer",
+          "order": 2,
+          "question": "朋友们为什么说“我”是个“马大哈”？",
+          "pinyin": "Péngyoumen wèishénme shuō “wǒ” shì ge “mǎdàhā”?",
+          "answer": "因为“我”把邻居家的被子抱进宿舍后，出差去了，直到第五天才想起来去还，结果邻居以为被子被偷了，又买了一套新的。",
+          "answer_pinyin": "Yīnwèi “wǒ” bǎ línjū jiā de bèizi bào jìn sùshè hòu, chūchāi qù le, zhídào dì wǔ tiān cái xiǎngqǐlai qù huán, jiéguǒ línjū yǐwéi bèizi bèi tōu le, yòu mǎi le yí tào xīn de.",
+          "vi": "Vì “tôi” ôm chăn của hàng xóm vào ký túc xá rồi đi công tác, đến ngày thứ năm mới nhớ trả, khiến hàng xóm tưởng chăn bị trộm và đã mua một bộ mới.",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "lesson12_text_q_003",
+          "type": "short_answer",
+          "order": 3,
+          "question": "在公园里“我”为什么被误解？",
+          "pinyin": "Zài gōngyuán lǐ “wǒ” wèishénme bèi wùjiě?",
+          "answer": "因为“我”想提醒姑娘裙子后边的拉链儿没拉上，可她身边的男青年以为“我”故意看姑娘的拉链儿。",
+          "answer_pinyin": "Yīnwèi “wǒ” xiǎng tíxǐng gūniang qúnzi hòubian de lāliànr méi lā shàng, kě tā shēnbiān de nán qīngnián yǐwéi “wǒ” gùyì kàn gūniang de lāliànr.",
+          "vi": "Vì “tôi” muốn nhắc cô gái rằng khóa kéo sau váy chưa kéo lên, nhưng chàng trai bên cạnh cô ấy lại tưởng “tôi” cố ý nhìn khóa kéo của cô gái.",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "lesson12_text_q_004",
+          "type": "short_answer",
+          "order": 4,
+          "question": "“我”是怎么把姑娘的自行车胎打爆的？",
+          "pinyin": "“Wǒ” shì zěnme bǎ gūniang de zìxíngchē tāi dǎ bào de?",
+          "answer": "姑娘连声道谢以后，“我”十分得意，压气筒压得更加起劲儿，结果把车胎打爆了。",
+          "answer_pinyin": "Gūniang liánshēng dàoxiè yǐhòu, “wǒ” shífēn déyì, yā qìtǒng yā de gèngjiā qǐjìnr, jiéguǒ bǎ chētāi dǎ bào le.",
+          "vi": "Sau khi cô gái cảm ơn liên tục, “tôi” rất đắc ý, ấn cái bơm càng hăng, kết quả bơm nổ lốp xe.",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

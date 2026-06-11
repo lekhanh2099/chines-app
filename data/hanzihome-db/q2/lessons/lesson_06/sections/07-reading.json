@@ -1,0 +1,390 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解",
+  "title_vi": "Đọc hiểu",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "supplementary_vocabulary": [
+    {
+      "id": "97948db8-350f-468f-a584-08ac6ee8ea70",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "逛",
+      "pinyin": "guàng",
+      "meaning_vi": "đi dạo; đi chơi; dạo quanh",
+      "meaning_en": "",
+      "pos": "unknown",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "unknown",
+        "cn": "",
+        "normalized": "unknown",
+        "schema_compatible_pos": "unknown",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "票",
+      "pinyin": "piào",
+      "meaning_vi": "vé",
+      "meaning_en": "",
+      "pos": "unknown",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "unknown",
+        "cn": "",
+        "normalized": "unknown",
+        "schema_compatible_pos": "unknown",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "排队",
+      "pinyin": "pái duì",
+      "meaning_vi": "xếp hàng",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 排 + tân ngữ 队",
+        "usage_note_vi": "Có thể nói 排了五分钟队 / 排了很长时间的队; nghĩa là xếp hàng. Đây là động-tân li hợp: 排 + 队.",
+        "notes": []
+      }
+    },
+    {
+      "id": "66286879-4464-4667-b96b-edb647e8e7a6",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "汗",
+      "pinyin": "hàn",
+      "meaning_vi": "mồ hôi",
+      "meaning_en": "",
+      "pos": "unknown",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "unknown",
+        "cn": "",
+        "normalized": "unknown",
+        "schema_compatible_pos": "unknown",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "湖",
+      "pinyin": "hú",
+      "meaning_vi": "hồ",
+      "meaning_en": "",
+      "pos": "unknown",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "unknown",
+        "cn": "",
+        "normalized": "unknown",
+        "schema_compatible_pos": "unknown",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "桥",
+      "pinyin": "qiáo",
+      "meaning_vi": "cầu",
+      "meaning_en": "",
+      "pos": "unknown",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "unknown",
+        "cn": "",
+        "normalized": "unknown",
+        "schema_compatible_pos": "unknown",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fe04b57-27fb-446a-a96c-ac48b8e36867",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "划船",
+      "pinyin": "huá chuán",
+      "meaning_vi": "chèo thuyền; đi thuyền",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 划 + tân ngữ 船",
+        "usage_note_vi": "Có thể nói 划了半个小时船 / 划划船; nghĩa là chèo thuyền. Đây là động-tân li hợp: 划 + 船.",
+        "notes": []
+      }
+    },
+    {
+      "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "照相",
+      "pinyin": "zhào xiàng",
+      "meaning_vi": "chụp ảnh",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "supplementary_vocab",
+        "reading"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 照 + tân ngữ 相",
+        "usage_note_vi": "Có thể nói 照了很多相 / 照照相; nghĩa là chụp ảnh. Đây là động-tân li hợp: 照 + 相.",
+        "notes": []
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "逛公园",
+      "title_vi": "Đi chơi công viên",
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "昨天晚上我对罗兰说，听说我们学校西边有个公园，那个公园很大。公园里有山有水，很漂亮。明天是星期六，我们去公园玩儿玩儿怎么样？罗兰说，她也正想去公园散散步呢。",
+          "pinyin": "Zuótiān wǎnshang wǒ duì Luólán shuō, tīngshuō wǒmen xuéxiào xībian yǒu ge gōngyuán, nà ge gōngyuán hěn dà. Gōngyuán lǐ yǒu shān yǒu shuǐ, hěn piàoliang. Míngtiān shì Xīngqīliù, wǒmen qù gōngyuán wánr wanr zěnmeyàng? Luólán shuō, tā yě zhèng xiǎng qù gōngyuán sàn san bù ne.",
+          "vi": "Tối hôm qua tôi nói với Roland rằng, nghe nói phía tây trường chúng tôi có một công viên, công viên đó rất lớn. Trong công viên có núi có nước, rất đẹp. Ngày mai là thứ Bảy, chúng ta đi công viên chơi một chút nhé? Roland nói cô ấy cũng đang muốn đi công viên đi dạo một chút.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "我问罗兰怎么去，罗兰说，星期六坐公共汽车的人比较多，我们最好骑自行车去，还可以锻炼身体。",
+          "pinyin": "Wǒ wèn Luólán zěnme qù, Luólán shuō, Xīngqīliù zuò gōnggòng qìchē de rén bǐjiào duō, wǒmen zuìhǎo qí zìxíngchē qù, hái kěyǐ duànliàn shēntǐ.",
+          "vi": "Tôi hỏi Roland đi bằng cách nào, Roland nói thứ Bảy người đi xe buýt khá đông, tốt nhất chúng tôi nên đi xe đạp, còn có thể rèn luyện thân thể.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "今天早上，我们起得很早，吃了早饭就出发了，半个小时就到公园了。",
+          "pinyin": "Jīntiān zǎoshang, wǒmen qǐ de hěn zǎo, chī le zǎofàn jiù chūfā le, bàn ge xiǎoshí jiù dào gōngyuán le.",
+          "vi": "Sáng nay, chúng tôi dậy rất sớm, ăn sáng xong thì xuất phát; chỉ nửa tiếng là đến công viên rồi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "今天逛公园的人真多，买票要排队，我们排了五分钟才买到票。买了票我们就进去了。我和罗兰先爬山，爬了二十多分钟就爬到了山上。因为爬得太快了，我出了一身汗。从山上往下看，非常漂亮。山上有很多树，还有很多花儿。公园里有一个很大的湖，湖上有一座白色的桥。很多人在湖边散步，还有不少人在湖上划船。罗兰说，这个公园真大，真漂亮。",
+          "pinyin": "Jīntiān guàng gōngyuán de rén zhēn duō, mǎi piào yào páiduì, wǒmen pái le wǔ fēnzhōng cái mǎidào piào. Mǎi le piào wǒmen jiù jìnqù le. Wǒ hé Luólán xiān páshān, pá le èrshí duō fēnzhōng jiù pá dào le shānshang. Yīnwèi pá de tài kuài le, wǒ chū le yì shēn hàn. Cóng shānshang wǎng xià kàn, fēicháng piàoliang. Shānshang yǒu hěn duō shù, hái yǒu hěn duō huār. Gōngyuán lǐ yǒu yí ge hěn dà de hú, hú shang yǒu yí zuò báisè de qiáo. Hěn duō rén zài húbiān sànbù, hái yǒu bù shǎo rén zài hú shang huáchuán. Luólán shuō, zhè ge gōngyuán zhēn dà, zhēn piàoliang.",
+          "vi": "Hôm nay người đi công viên thật đông, mua vé phải xếp hàng, chúng tôi xếp hàng 5 phút mới mua được vé. Mua vé xong chúng tôi vào trong. Tôi và Roland trước tiên leo núi, leo hơn 20 phút thì lên đến trên núi. Vì leo quá nhanh, tôi ra mồ hôi đầy người. Từ trên núi nhìn xuống, cảnh rất đẹp. Trên núi có rất nhiều cây, còn có rất nhiều hoa. Trong công viên có một cái hồ rất lớn, trên hồ có một cây cầu màu trắng. Rất nhiều người đi dạo bên hồ, còn có không ít người chèo thuyền trên hồ. Roland nói công viên này thật lớn, thật đẹp.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "order": 5,
+          "zh": "我和罗兰在山上照了很多相。照完相我们就下山了。",
+          "pinyin": "Wǒ hé Luólán zài shānshang zhào le hěn duō xiàng. Zhào wán xiàng wǒmen jiù xiàshān le.",
+          "vi": "Tôi và Roland chụp rất nhiều ảnh trên núi. Chụp ảnh xong chúng tôi xuống núi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
+          "order": 6,
+          "zh": "我们在公园里玩儿了一个上午，看了很多地方。",
+          "pinyin": "Wǒmen zài gōngyuán lǐ wánr le yí ge shàngwǔ, kàn le hěn duō dìfang.",
+          "vi": "Chúng tôi chơi trong công viên cả một buổi sáng, tham quan rất nhiều chỗ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
+          "order": 7,
+          "zh": "我对罗兰说，学校离这个公园不太远，可以经常骑车到这儿来玩儿。爬爬山，划划船，或者跟朋友一起来散散步，聊聊天儿。罗兰说，以后我们可以再来。",
+          "pinyin": "Wǒ duì Luólán shuō, xuéxiào lí zhè ge gōngyuán bú tài yuǎn, kěyǐ jīngcháng qí chē dào zhèr lái wánr. Pá pa shān, huá hua chuán, huòzhě gēn péngyou yìqǐ lái sàn san bù, liáo liao tiānr. Luólán shuō, yǐhòu wǒmen kěyǐ zài lái.",
+          "vi": "Tôi nói với Roland rằng trường cách công viên này không xa lắm, có thể thường xuyên đạp xe đến đây chơi: leo núi một chút, chèo thuyền một chút, hoặc cùng bạn bè đến đây đi dạo, trò chuyện. Roland nói sau này chúng tôi có thể lại đến.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+          "type": "true_false",
+          "prompt": "“我”和罗兰坐公共汽车去公园玩儿了。",
+          "answer": "错",
+          "answer_verified": true,
+          "evidence": [
+            {
+              "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+              "quote": "我们最好骑自行车去"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "82b334af-11c3-4606-980f-154617982627",
+          "type": "true_false",
+          "prompt": "“我们”排了五分钟才买到票。",
+          "answer": "对",
+          "answer_verified": true,
+          "evidence": [
+            {
+              "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+              "quote": "我们排了五分钟才买到票"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
+          "type": "true_false",
+          "prompt": "“我们”先爬山了，然后又划船了，还照了很多相。",
+          "answer": "错",
+          "answer_verified": true,
+          "evidence": [
+            {
+              "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+              "quote": "还有不少人在湖上划船"
+            },
+            {
+              "paragraph_id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+              "quote": "我和罗兰在山上照了很多相"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
+          "type": "true_false",
+          "prompt": "“我们”以后还会再去那个公园。",
+          "answer": "对",
+          "answer_verified": true,
+          "evidence": [
+            {
+              "paragraph_id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
+              "quote": "以后我们可以再来"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

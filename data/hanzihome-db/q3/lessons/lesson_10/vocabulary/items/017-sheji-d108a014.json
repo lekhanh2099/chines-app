@@ -1,0 +1,300 @@
+{
+  "id": "13dcdb46-3ac5-4111-b1e5-167c2e5ee9c2",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "设计",
+  "pinyin": "shèjì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thiết kế",
+    "meaning_vi": "thiết kế, lên phương án",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thiết kế",
+      "lên phương án"
+    ],
+    "short_definition_vi": "thiết kế, lên phương án",
+    "textbook_focus_vi": "thiết kế, lên phương án",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "设",
+        "lishu_vi": "thiết",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "计",
+        "lishu_vi": "kế",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thiết kế, lên phương án",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 设计程序.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "计划",
+        "pinyin": "jìhuà",
+        "meaning_vi": "kế hoạch",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "策划",
+        "pinyin": "cèhuà",
+        "meaning_vi": "lên kế hoạch tổ chức",
+        "difference_vi": "cho sự kiện/dự án",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6403913b-310f-4235-be19-037d31b50c2a",
+      "order": 1,
+      "zh": "设计程序",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3cfb6d1d-0ab4-405f-bd29-08b03c17708d",
+      "order": 2,
+      "zh": "设计方案",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c23216e3-6ede-4f98-bacc-f49ac1ab0b9f",
+      "order": 3,
+      "zh": "设计图案",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65dd6de0-10b4-428c-88cf-dc319c526acd",
+      "order": 4,
+      "zh": "设计网页",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bde890ba-7f6a-4e24-b98d-cc9cadccb68a",
+      "order": 5,
+      "zh": "设计产品",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d04516a-e7b5-452a-931b-dffca1ecead3",
+      "order": 6,
+      "zh": "室内设计",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "82422a00-e907-431c-b9af-328cf86bce9e",
+      "order": 1,
+      "zh": "这个网页是谁设计的？",
+      "pinyin": "Zhège wǎngyè shì shéi shèjì de?",
+      "vi": "Trang web này là ai thiết kế vậy?",
+      "analysis_vi": "是……的 hỏi người thực hiện hành động.",
+      "highlight": [
+        "设计"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "13dcdb46-3ac5-4111-b1e5-167c2e5ee9c2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Với front-end, 网页设计/界面设计/UI设计 đều dùng thật.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f5197f0a-4f0f-4cba-8f5b-cd9ab2bf1406",
+      "order": 1,
+      "rule_vi": "设计 không chỉ là vẽ cho đẹp; còn là lên phương án/cấu trúc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "设计",
+    "back": "thiết kế, lên phương án",
+    "hint": "shèjì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "13dcdb46-3ac5-4111-b1e5-167c2e5ee9c2",
+    "source_lesson_vocab_id": null
+  }
+}

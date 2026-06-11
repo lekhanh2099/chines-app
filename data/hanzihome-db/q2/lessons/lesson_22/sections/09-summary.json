@@ -1,0 +1,50 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "lesson_parts": [
+    "课文",
+    "生词",
+    "专名",
+    "注释",
+    "语法 / 词语用法",
+    "练习",
+    "综合填空",
+    "交际会话",
+    "写汉字"
+  ],
+  "grammar_points": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "title": "趋向补语的引申用法"
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "title": "只有……才……"
+    }
+  ],
+  "sentence_patterns": [
+    "我想起来了。",
+    "老师，您听得出来我是谁吗？",
+    "我们还想学下去。",
+    "只有多听、多说、多练才能学好。",
+    "要是让我们自己花钱可租不起。"
+  ],
+  "coverage_summary": [
+    "text_covered",
+    "vocabulary_covered",
+    "proper_nouns_covered",
+    "notes_covered",
+    "grammar_covered",
+    "exercises_covered",
+    "reading_covered",
+    "character_writing_covered",
+    "answers_verified",
+    "pinyin_completed",
+    "supplementary_vocabulary_added"
+  ]
+}

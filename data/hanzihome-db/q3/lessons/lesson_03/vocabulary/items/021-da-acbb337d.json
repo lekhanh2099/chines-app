@@ -1,0 +1,339 @@
+{
+  "id": "d8c787c8-85d2-4d8c-b1a8-645471b6d06d",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "打",
+  "pinyin": "dǎ",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "polysemy",
+    "collocation"
+  ],
+  "meaning": {
+    "hanviet": "đả",
+    "meaning_vi": "đánh; chơi; gọi/làm trong nhiều cụm cố định",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đánh",
+      "chơi",
+      "gọi",
+      "làm trong nhiều cụm cố định"
+    ],
+    "short_definition_vi": "đánh; chơi; gọi/làm trong nhiều cụm cố định",
+    "textbook_focus_vi": "đánh; chơi; gọi/làm trong nhiều cụm cố định",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "polysemy, collocation",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "打",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, hành động bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, hành động bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, hành động bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丁",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đánh, chơi, gọi/làm trong cụm cố định",
+        "modern_logic_vi": "Trong từ này, 打 góp phần vào lớp nghĩa hiện đại: đánh, chơi, gọi/làm trong cụm cố định",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "扌 gợi thao tác bằng tay; 打 mở rộng thành động từ đa năng trong rất nhiều collocation.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dịch 打 là “đánh” trong mọi cụm: 打电话 = gọi điện, 打车 = gọi xe, 打雪仗 = chơi ném tuyết.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "玩",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "做",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "击",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拍",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0956c011-ca92-43a4-87f7-2f657289dd5a",
+      "order": 1,
+      "zh": "打雪仗",
+      "pinyin": "",
+      "vi": "chơi ném tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "376c355e-2dd4-4509-9689-1c92ea342f3c",
+      "order": 2,
+      "zh": "打电话",
+      "pinyin": "",
+      "vi": "gọi điện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3024da4c-1ea2-4f6e-80ca-badf8ea56b78",
+      "order": 3,
+      "zh": "打球",
+      "pinyin": "",
+      "vi": "chơi bóng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e3001b2-b3a2-46eb-b2f3-98f3612f4213",
+      "order": 4,
+      "zh": "打车",
+      "pinyin": "",
+      "vi": "gọi/đón xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfa829ab-9460-41c6-922a-5d5b1c436711",
+      "order": 5,
+      "zh": "打伞",
+      "pinyin": "",
+      "vi": "che ô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ffb9718-34a2-4b0f-b2a7-4dc0087d126d",
+      "order": 6,
+      "zh": "打工",
+      "pinyin": "",
+      "vi": "đi làm kiếm tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ed37f7d3-0f26-4656-bf6e-1740f1fa54bf",
+      "order": 1,
+      "zh": "下雪以后，孩子们在外面打雪仗。",
+      "pinyin": "",
+      "vi": "Sau khi tuyết rơi, bọn trẻ chơi ném tuyết bên ngoài.",
+      "analysis_vi": "打雪仗 là cụm cố định.",
+      "highlight": [
+        "打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d8c787c8-85d2-4d8c-b1a8-645471b6d06d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fdc10bff-1071-4a63-bbb0-8236fac78aa7",
+      "order": 2,
+      "zh": "冬天一到，孩子们就想堆雪人儿、打雪仗。",
+      "pinyin": "",
+      "vi": "Mùa đông vừa đến, bọn trẻ muốn đắp người tuyết và ném tuyết.",
+      "analysis_vi": "Hai hoạt động mùa đông song song.",
+      "highlight": [
+        "打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d8c787c8-85d2-4d8c-b1a8-645471b6d06d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7ad0f877-5ea5-43d3-a8d0-b4e390a6d8a5",
+      "order": 3,
+      "zh": "几个小朋友一边打雪仗，一边笑。",
+      "pinyin": "",
+      "vi": "Mấy bạn nhỏ vừa ném tuyết vừa cười.",
+      "analysis_vi": "一边……一边…….",
+      "highlight": [
+        "打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d8c787c8-85d2-4d8c-b1a8-645471b6d06d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "打 trong Bài 3 北京的四季",
+    "content_vi": "打雪仗 dùng 仗 vì mô phỏng một “trận chiến” vui bằng tuyết.",
+    "tags": [
+      "polysemy",
+      "collocation"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6c50a901-7516-45d2-9acb-883004d6bf78",
+      "order": 1,
+      "rule_vi": "Không dịch 打 là “đánh” trong mọi cụm: 打电话 = gọi điện, 打车 = gọi xe, 打雪仗 = chơi ném tuyết.",
+      "natural_examples": [
+        {
+          "zh": "下雪以后，孩子们在外面打雪仗。",
+          "pinyin": "",
+          "vi": "Sau khi tuyết rơi, bọn trẻ chơi ném tuyết bên ngoài.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 打 là “đánh” trong mọi cụm: 打电话 = gọi điện, 打车 = gọi xe, 打雪仗 = chơi ném tuyết.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "打",
+    "back": "đánh; chơi; gọi/làm trong nhiều cụm cố định",
+    "hint": "dǎ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "polysemy",
+      "collocation"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d8c787c8-85d2-4d8c-b1a8-645471b6d06d",
+    "source_lesson_vocab_id": null
+  }
+}

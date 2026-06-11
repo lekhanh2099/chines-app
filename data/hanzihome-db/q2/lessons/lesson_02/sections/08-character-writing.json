@@ -1,0 +1,99 @@
+{
+  "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
+  "type": "character_writing",
+  "order": 8,
+  "title": "写汉字",
+  "title_vi": "Viết chữ Hán",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+      "type": "character_copying",
+      "order": 1,
+      "hanzi": "拉",
+      "pinyin": "lā",
+      "meaning_vi": "kéo; trong bài dùng trong 拉肚子: tiêu chảy",
+      "note_vi": "bộ 扌 bên trái, liên quan động tác tay",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
+      "type": "character_copying",
+      "order": 2,
+      "hanzi": "肚",
+      "pinyin": "dù",
+      "meaning_vi": "bụng; trong 肚子",
+      "note_vi": "bộ 月 bên trái, trong chữ chỉ bộ phận cơ thể thường là nhục nguyệt",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
+      "type": "character_copying",
+      "order": 3,
+      "hanzi": "厉",
+      "pinyin": "lì",
+      "meaning_vi": "dữ dội; nghiêm trọng; trong 厉害",
+      "note_vi": "chú ý phần 厂 bên ngoài, không viết thành 历",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
+      "type": "character_copying",
+      "order": 4,
+      "hanzi": "害",
+      "pinyin": "hài",
+      "meaning_vi": "hại; trong 厉害 / 害",
+      "note_vi": "phía trên có 宀, dưới là phần 口",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
+      "type": "character_copying",
+      "order": 5,
+      "hanzi": "鱼",
+      "pinyin": "yú",
+      "meaning_vi": "cá",
+      "note_vi": "dạng giản thể của 魚, chú ý nét ngang cuối",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "f6fff594-0a78-4b14-b5bd-e7f236cab9d7",
+      "type": "character_copying",
+      "order": 6,
+      "hanzi": "肉",
+      "pinyin": "ròu",
+      "meaning_vi": "thịt; trong 牛肉",
+      "note_vi": "chữ độc lập, không nhầm với 月 khi làm bộ",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "8f711ecc-e82a-40ee-8e42-409a742ccf2f",
+      "type": "character_copying",
+      "order": 7,
+      "hanzi": "检",
+      "pinyin": "jiǎn",
+      "meaning_vi": "kiểm; trong 检查",
+      "note_vi": "bộ 木 bên trái",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "a45cff42-2888-4327-885f-db58f61ba547",
+      "type": "character_copying",
+      "order": 8,
+      "hanzi": "消",
+      "pinyin": "xiāo",
+      "meaning_vi": "tiêu; trong 消化",
+      "note_vi": "bộ 氵 bên trái",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

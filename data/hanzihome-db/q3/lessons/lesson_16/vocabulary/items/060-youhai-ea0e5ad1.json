@@ -1,0 +1,163 @@
+{
+  "id": "19a9edce-19e4-4f31-9162-6fcf5c76d53d",
+  "type": "deep_vocabulary_item",
+  "order": 60,
+  "hanzi": "有害",
+  "pinyin": "yǒuhài",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Khí quyển và môi trường"
+  ],
+  "meaning": {
+    "hanviet": "Hữu hại",
+    "meaning_vi": "có hại, độc hại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "có hại",
+      "độc hại"
+    ],
+    "short_definition_vi": "có hại, độc hại",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: có hại, độc hại.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Khí quyển và môi trường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "有",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "害",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "有害 trong bài được học theo nghĩa trọng tâm: có hại, độc hại.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: có hại, độc hại.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3941c16a-c815-42cb-a41d-1ea7e88a9de5",
+      "order": 1,
+      "zh": "第二，地球的大气中充满氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: có hại, độc hại",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6467129b-403c-4d91-9aa7-942dc2617a09",
+      "order": 1,
+      "zh": "第二，地球的大气中充满氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “有害” = có hại, độc hại.",
+      "analysis_vi": "Câu này dùng “有害” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "有害"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "19a9edce-19e4-4f31-9162-6fcf5c76d53d"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “有害” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5da7a4fe-0776-48ab-a757-25189f6c6246",
+      "order": 1,
+      "rule_vi": "Cần dùng “有害” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "有害",
+    "back": "có hại, độc hại",
+    "hint": "yǒuhài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Khí quyển và môi trường"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "19a9edce-19e4-4f31-9162-6fcf5c76d53d",
+    "source_lesson_vocab_id": null
+  }
+}

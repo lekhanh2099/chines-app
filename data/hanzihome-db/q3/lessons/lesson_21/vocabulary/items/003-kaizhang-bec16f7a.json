@@ -1,0 +1,286 @@
+{
+  "id": "29760d81-dcc0-41d7-b39a-d1388e814bd0",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "开张",
+  "pinyin": "kāizhāng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "khai trương",
+    "meaning_vi": "khai trương, mở cửa kinh doanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khai trương",
+      "mở cửa kinh doanh"
+    ],
+    "short_definition_vi": "khai trương, mở cửa kinh doanh",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: khai trương, mở cửa kinh doanh.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "开",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "张",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "弓",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cung",
+          "radical_name_zh": "",
+          "hanviet": "cung",
+          "meaning_vi": "cây cung",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "弓",
+            "hanviet": "cung",
+            "meaning_vi": "cây cung",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "弓",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cung",
+              "radical_name_zh": "",
+              "hanviet": "cung",
+              "meaning_vi": "cây cung",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "弓 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 张.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "开张 trong bài được hiểu theo nghĩa: khai trương, mở cửa kinh doanh. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 开张.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "开张 dùng cho cửa hàng/cơ sở kinh doanh, không dùng cho mở cửa thông thường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ce7f20f8-c8e6-4ee4-8872-71523700d342",
+      "order": 1,
+      "zh": "新开张",
+      "pinyin": "",
+      "vi": "mới khai trương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7023fe9d-e2d6-443e-8aa5-3e0b68c7ddec",
+      "order": 2,
+      "zh": "开张第一天",
+      "pinyin": "",
+      "vi": "ngày đầu khai trương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f558a142-1daa-4a29-bf21-331fba5e6e96",
+      "order": 3,
+      "zh": "正式开张",
+      "pinyin": "",
+      "vi": "chính thức khai trương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44194393-d7c6-4b0c-a154-1f3be17aab78",
+      "order": 4,
+      "zh": "刚开张不久",
+      "pinyin": "",
+      "vi": "vừa khai trương chưa lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d618086-d3cb-4812-8f2d-2101b7a42d99",
+      "order": 5,
+      "zh": "开张大吉",
+      "pinyin": "",
+      "vi": "khai trương đại cát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aa318df8-d473-4708-b420-32751e7b99ca",
+      "order": 1,
+      "zh": "这家发廊是昨天开张的。",
+      "pinyin": "",
+      "vi": "Salon tóc này khai trương hôm qua.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "开张"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "29760d81-dcc0-41d7-b39a-d1388e814bd0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dbdf49a4-4224-4594-be3f-7e8ac5018594",
+      "order": 2,
+      "zh": "新店一开张，就来了很多客人。",
+      "pinyin": "",
+      "vi": "Tiệm mới vừa khai trương là có nhiều khách đến.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "开张"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "29760d81-dcc0-41d7-b39a-d1388e814bd0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "开张 dùng cho cửa hàng/cơ sở kinh doanh, không dùng cho mở cửa thông thường.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8e89ea08-eb33-4818-a9f7-122ddc32493a",
+      "order": 1,
+      "rule_vi": "开张 dùng cho cửa hàng/cơ sở kinh doanh, không dùng cho mở cửa thông thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我开张了。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "开张 dùng cho cửa hàng/cơ sở kinh doanh, không dùng cho mở cửa thông thường.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的店开张了。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "开张 dùng cho cửa hàng/cơ sở kinh doanh, không dùng cho mở cửa thông thường.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "开张",
+    "back": "khai trương, mở cửa kinh doanh",
+    "hint": "kāizhāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "29760d81-dcc0-41d7-b39a-d1388e814bd0",
+    "source_lesson_vocab_id": null
+  }
+}

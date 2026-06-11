@@ -1,0 +1,285 @@
+{
+  "id": "d2c9021d-8f1f-4470-82b0-71af198c7d34",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "欢乐",
+  "pinyin": "huānlè",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ",
+    "raw_cn": "形 / 名",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hoan lạc",
+    "meaning_vi": "vui vẻ, vui mừng, hân hoan",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui vẻ, vui mừng, hân hoan"
+    ],
+    "short_definition_vi": "vui vẻ, vui mừng, hân hoan",
+    "textbook_focus_vi": "vui vẻ, vui mừng, hân hoan",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "欢",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay phải; lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "又",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hựu",
+              "radical_name_zh": "",
+              "hanviet": "hựu",
+              "meaning_vi": "tay phải; lại",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "又 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "há miệng, thiếu",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "há miệng, thiếu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "乐",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui; âm nhạc khi đọc yuè",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "欢乐 thường nói không khí lễ hội/tập thể, hơi văn hơn 开心/高兴.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "680448e8-6e95-4d7d-88c9-09e0302d5db5",
+      "order": 1,
+      "zh": "欢乐的节日",
+      "pinyin": "",
+      "vi": "ngày lễ vui tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26594f57-9e84-4fab-b2bf-66868f28ff22",
+      "order": 2,
+      "zh": "欢乐的气氛",
+      "pinyin": "",
+      "vi": "không khí vui vẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "302b3bef-a9b3-4cc3-b0de-7cc105843290",
+      "order": 3,
+      "zh": "充满欢乐",
+      "pinyin": "",
+      "vi": "tràn đầy niềm vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f50e9327-e9d9-42ad-95df-5fe034b2b71b",
+      "order": 4,
+      "zh": "带来欢乐",
+      "pinyin": "",
+      "vi": "mang lại niềm vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d8853af-be10-402b-8bb1-6e057c316c29",
+      "order": 5,
+      "zh": "节日的欢乐",
+      "pinyin": "",
+      "vi": "niềm vui ngày lễ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cf6d8fa3-4343-43c4-8453-831df5fd0f55",
+      "order": 1,
+      "zh": "联欢会上，人们唱歌跳舞，气氛越来越欢乐。",
+      "pinyin": "Liánhuānhuì shang, rénmen chàng gē tiào wǔ, qìfēn yuè lái yuè huānlè.",
+      "vi": "Trong buổi liên hoan, mọi người ca hát nhảy múa, không khí ngày càng vui.",
+      "analysis_vi": "越来越欢乐 gài trọng tâm Bài 16.",
+      "highlight": [
+        "欢乐"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "d2c9021d-8f1f-4470-82b0-71af198c7d34"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b858ab70-eec1-4f64-ab9b-cb7f6ca41952",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：欢乐。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: vui vẻ, vui mừng, hân hoan.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "欢乐"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "d2c9021d-8f1f-4470-82b0-71af198c7d34"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 欢乐 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a033241b-6572-4df7-9813-7cc2e5125919",
+      "order": 1,
+      "rule_vi": "Không nên nói 我今天很欢乐; khẩu ngữ dùng 我今天很开心/很高兴.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nên nói 我今天很欢乐; khẩu ngữ dùng 我今天很开心/很高兴.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "欢乐",
+    "back": "vui vẻ, vui mừng, hân hoan",
+    "hint": "huānlè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_033"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d2c9021d-8f1f-4470-82b0-71af198c7d34",
+    "source_lesson_vocab_id": null
+  }
+}

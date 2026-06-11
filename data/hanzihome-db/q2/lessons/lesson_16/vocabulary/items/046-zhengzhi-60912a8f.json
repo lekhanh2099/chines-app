@@ -1,0 +1,306 @@
+{
+  "id": "b053a53e-dac1-4dcb-a64d-3db01e5a662b",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "政治",
+  "pinyin": "zhèngzhì",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ thuộc tính",
+    "raw_cn": "名 / 区别词性",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Chính trị",
+    "meaning_vi": "chính trị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chính trị"
+    ],
+    "short_definition_vi": "chính trị",
+    "textbook_focus_vi": "chính trị",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "政",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh, tác động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh, tác động",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "ngay, đúng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chính sự, việc nhà nước",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "治",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "台",
+            "hanviet": "đài",
+            "meaning_vi": "bệ, đài; thành phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trị, quản lý, chữa trị",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "政治 = chính trị, hoạt động/quản lý liên quan nhà nước, xã hội.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d711e472-b4ce-408e-847e-059b9463215c",
+      "order": 1,
+      "zh": "政治课",
+      "pinyin": "",
+      "vi": "môn chính trị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35904786-aeb1-4b8f-a658-622562750006",
+      "order": 2,
+      "zh": "政治书",
+      "pinyin": "",
+      "vi": "sách chính trị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b515a54-4d52-49c1-b7bd-96e756938ab1",
+      "order": 3,
+      "zh": "政治问题",
+      "pinyin": "",
+      "vi": "vấn đề chính trị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aea72b46-d0f6-4f83-abd4-4c1a289d1f09",
+      "order": 4,
+      "zh": "政治家",
+      "pinyin": "",
+      "vi": "chính trị gia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce7dedc2-bc89-4153-96cb-a380e7c00235",
+      "order": 5,
+      "zh": "国际政治",
+      "pinyin": "",
+      "vi": "chính trị quốc tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ada8279-e919-40ff-8361-93d18dec5a98",
+      "order": 1,
+      "zh": "书房里放着几本政治书。",
+      "pinyin": "Shūfáng lǐ fàngzhe jǐ běn zhèngzhì shū.",
+      "vi": "Trong phòng đọc có đặt vài quyển sách chính trị.",
+      "analysis_vi": "书房里放着…… là câu tồn hiện.",
+      "highlight": [
+        "政治"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "b053a53e-dac1-4dcb-a64d-3db01e5a662b"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2b5ce1d3-08a4-4d03-81ac-ea9bbe5cf231",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：政治。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: chính trị.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "政治"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "b053a53e-dac1-4dcb-a64d-3db01e5a662b"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 政治 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3af54190-091b-47a1-9c2e-92e740726a76",
+      "order": 1,
+      "rule_vi": "政治 là chính trị; 政策 là chính sách; 政府 là chính phủ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "政治 là chính trị; 政策 là chính sách; 政府 là chính phủ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "政治",
+    "back": "chính trị",
+    "hint": "zhèngzhì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_046"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b053a53e-dac1-4dcb-a64d-3db01e5a662b",
+    "source_lesson_vocab_id": null
+  }
+}

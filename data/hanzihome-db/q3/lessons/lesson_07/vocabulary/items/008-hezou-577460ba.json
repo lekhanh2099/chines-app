@@ -1,0 +1,247 @@
+{
+  "id": "780d4104-2a10-45a6-ab6f-29146b1520fc",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "合奏",
+  "pinyin": "hézòu",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "hợp tấu",
+    "meaning_vi": "hòa tấu, cùng biểu diễn nhạc cụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hòa tấu, cùng biểu diễn nhạc cụ"
+    ],
+    "short_definition_vi": "hòa tấu, cùng biểu diễn nhạc cụ",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "合",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hợp lại, cùng nhau",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "奏",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "diễn tấu",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "合奏 = nhiều phần hợp lại để tấu nhạc.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 合奏.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "独奏",
+        "pinyin": "dúzòu",
+        "meaning_vi": "độc tấu",
+        "difference_vi": "một người/một nhạc cụ biểu diễn chính",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "演奏",
+        "pinyin": "yǎnzòu",
+        "meaning_vi": "biểu diễn nhạc cụ",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "独奏",
+          "",
+          "độc tấu",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b99c0e8f-4363-4f85-8f44-6b9b8e1eb98e",
+      "order": 1,
+      "zh": "乐队合奏",
+      "pinyin": "",
+      "vi": "ban nhạc hòa tấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "219a9345-5caa-4ba9-bc62-3aa2e3048303",
+      "order": 2,
+      "zh": "一起合奏",
+      "pinyin": "",
+      "vi": "cùng hòa tấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95d93402-5b1d-4c3b-b19f-7e39aa30525e",
+      "order": 3,
+      "zh": "合奏一首曲子",
+      "pinyin": "",
+      "vi": "hòa tấu một bản nhạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e17f682f-3787-4605-8eb7-9eb3833e7faf",
+      "order": 4,
+      "zh": "合奏得很好",
+      "pinyin": "",
+      "vi": "hòa tấu rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0cbeb3d6-a77e-4f9d-8fef-984895c1f1e6",
+      "order": 1,
+      "zh": "国王喜欢听大家一起合奏，不喜欢听一个人独奏。",
+      "pinyin": "Guówáng xǐhuan tīng dàjiā yìqǐ hézòu, bù xǐhuan tīng yí ge rén dúzòu.",
+      "vi": "Nhà vua thích nghe mọi người hòa tấu, không thích nghe độc tấu.",
+      "analysis_vi": "合奏 đối lập với 独奏.",
+      "highlight": [
+        "合奏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "780d4104-2a10-45a6-ab6f-29146b1520fc"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "83a95b1a-cc06-4592-9174-ddeb8bae4ff1",
+      "order": 2,
+      "zh": "既然是合奏，声音混在一起，国王就很难听出谁吹得差。",
+      "pinyin": "Jìrán shì hézòu, shēngyīn hùn zài yìqǐ, guówáng jiù hěn nán tīng chū shéi chuī de chà.",
+      "vi": "Đã là hòa tấu thì âm thanh lẫn vào nhau, vua khó nghe ra ai thổi kém.",
+      "analysis_vi": "听出 = nghe ra.",
+      "highlight": [
+        "合奏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "780d4104-2a10-45a6-ab6f-29146b1520fc"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "合奏 là biểu diễn phối hợp nhiều nhạc cụ, khác với nhiều người cùng thổi lung tung.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "30a5f0de-7a8f-4eb2-9334-d2bc49e17171",
+      "order": 1,
+      "rule_vi": "Không dùng 合奏 cho hát tập thể là chính; hát tập thể là 合唱.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "合奏",
+    "back": "hòa tấu, cùng biểu diễn nhạc cụ",
+    "hint": "hézòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "780d4104-2a10-45a6-ab6f-29146b1520fc",
+    "source_lesson_vocab_id": null
+  }
+}

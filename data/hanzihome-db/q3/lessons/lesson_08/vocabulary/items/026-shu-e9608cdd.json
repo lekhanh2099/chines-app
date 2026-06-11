@@ -1,0 +1,210 @@
+{
+  "id": "a4e7ca56-a5c2-4359-b785-556b0e29fc41",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "束",
+  "pinyin": "shù",
+  "pos": {
+    "raw_vi": "Lượng từ / Động từ / Danh từ",
+    "raw_cn": "量词 / 动词 / 名词",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thúc",
+    "meaning_vi": "bó, chùm; lượng từ cho hoa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bó",
+      "chùm",
+      "lượng từ cho hoa"
+    ],
+    "short_definition_vi": "bó, chùm; lượng từ cho hoa",
+    "textbook_focus_vi": "束 nghĩa là bó/buộc lại; làm lượng từ cho hoa, ánh sáng, tóc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "số lượng, hoa/quà",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "束",
+        "lishu_vi": "thúc",
+        "structure_note_vi": "Chữ gợi bó lại; học theo nghĩa lượng từ.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bó, chùm, lượng từ bó hoa",
+        "modern_logic_vi": "Trong từ này, 束 góp phần tạo nghĩa 'bó, chùm, lượng từ bó hoa'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "束 nghĩa là bó/buộc lại; làm lượng từ cho hoa, ánh sáng, tóc.",
+    "memory_tip_vi": "Nhớ qua cụm: 一束花 = một bó hoa.",
+    "warning_vi": "一束花 là bó hoa, 一朵花 là một bông hoa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "朵",
+        "pinyin": "duǒ",
+        "meaning_vi": "bông/đóa",
+        "difference_vi": "Dùng cho từng bông hoa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "把",
+        "pinyin": "bǎ",
+        "meaning_vi": "nắm/bó/cái cầm tay",
+        "difference_vi": "Không thay 束 trong 一束花 khi nói bó hoa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "一束花 là bó hoa, 一朵花 là một bông hoa."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "990dd661-8847-45ca-bf59-4d0242a55ce6",
+      "order": 1,
+      "zh": "一束花",
+      "pinyin": "yí shù huā",
+      "vi": "một bó hoa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1bebaf6f-b241-4a89-9145-2b9968c6bb0a",
+      "order": 2,
+      "zh": "一束鲜花",
+      "pinyin": "yí shù xiānhuā",
+      "vi": "một bó hoa tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c13b9531-9fdd-46bb-ac0d-ee0fc3e4ea1f",
+      "order": 3,
+      "zh": "一束光",
+      "pinyin": "yí shù guāng",
+      "vi": "một chùm tia sáng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cb722bdd-d35e-4f22-9586-ca78244ab057",
+      "order": 1,
+      "zh": "他买了一束花，准备送给赵霞。",
+      "pinyin": "Tā mǎi le yí shù huā, zhǔnbèi sòng gěi Zhào Xiá.",
+      "vi": "Anh ấy mua một bó hoa, chuẩn bị tặng Triệu Hà.",
+      "analysis_vi": "一束花 là lượng từ chuẩn cho bó hoa.",
+      "highlight": [
+        "束"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a4e7ca56-a5c2-4359-b785-556b0e29fc41"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tặng 一束花 trong cảnh tỏ tình rất rõ ý, đặc biệt là hoa hồng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "84eac28c-2f21-469f-9dd5-31b0537cf7fc",
+      "order": 1,
+      "rule_vi": "一束花 là bó hoa, 一朵花 là một bông hoa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "一个花。",
+          "pinyin": "Yí ge huā.",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Hoa không dùng 个 trong cách nói chuẩn này.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "一束花。",
+          "pinyin": "Yí shù huā.",
+          "vi": "Một bó hoa.",
+          "note_vi": "束 dùng cho bó hoa.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "束",
+    "back": "bó, chùm; lượng từ cho hoa",
+    "hint": "shù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a4e7ca56-a5c2-4359-b785-556b0e29fc41",
+    "source_lesson_vocab_id": null
+  }
+}

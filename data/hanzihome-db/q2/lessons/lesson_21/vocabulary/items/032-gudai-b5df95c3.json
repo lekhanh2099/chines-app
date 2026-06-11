@@ -1,0 +1,317 @@
+{
+  "id": "5703950c-41f5-4351-8741-549599c8e534",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "古代",
+  "pinyin": "gǔdài",
+  "pos": {
+    "raw_vi": "Danh từ chỉ thời gian",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cổ đại",
+    "meaning_vi": "thời cổ đại, thời xưa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thời cổ đại, thời xưa"
+    ],
+    "short_definition_vi": "thời cổ đại, thời xưa",
+    "textbook_focus_vi": "thời cổ đại, thời xưa",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "古",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "mười",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, âm thanh",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "xưa/cổ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "代",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弋",
+            "hanviet": "dặc",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đời/thế hệ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thời đại xa xưa trước hiện đại",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "00edff7d-bed1-458d-8208-07969284f1f1",
+      "order": 1,
+      "zh": "古代社会",
+      "pinyin": "",
+      "vi": "xã hội cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fcdb32ed-c947-4cab-8292-66390c2c9071",
+      "order": 2,
+      "zh": "古代神话",
+      "pinyin": "",
+      "vi": "thần thoại cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3651720e-22a8-46d7-a558-f72f73ee1ae6",
+      "order": 3,
+      "zh": "古代人物",
+      "pinyin": "",
+      "vi": "nhân vật cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "705a107d-138f-4fb3-a2fb-7b51e11f3807",
+      "order": 4,
+      "zh": "中国古代",
+      "pinyin": "",
+      "vi": "Trung Quốc cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ee817bb-b031-4c9b-9df9-c1a9f2b70792",
+      "order": 5,
+      "zh": "古代传说",
+      "pinyin": "",
+      "vi": "truyền thuyết cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5cff2bbc-8977-457b-80b1-3a52a6444df2",
+      "order": 1,
+      "zh": "这是一个古代神话故事。",
+      "pinyin": "Zhè shì yí ge gǔdài shénhuà gùshi.",
+      "vi": "Đây là một câu chuyện thần thoại cổ đại.",
+      "analysis_vi": "古代神话故事 là cụm danh từ nhiều tầng.",
+      "highlight": [
+        "古代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5703950c-41f5-4351-8741-549599c8e534"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4a5e76e7-e7db-401b-94ca-431602337431",
+      "order": 2,
+      "zh": "如果不了解古代，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě gǔdài, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 古代, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "古代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5703950c-41f5-4351-8741-549599c8e534"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "41e270db-27c5-4d69-8a07-f8832d621c2a",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解古代在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě gǔdài zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 古代 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "古代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5703950c-41f5-4351-8741-549599c8e534"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "古代 rộng hơn 'phong kiến' trong tiếng Việt; cần xét ngữ cảnh lịch sử.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff5ac020-a580-47c7-9e76-d6c4d644da59",
+      "order": 1,
+      "rule_vi": "Không dùng 古代 cho quá khứ cá nhân gần đây; dùng 以前。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "古代",
+    "back": "thời cổ đại, thời xưa",
+    "hint": "gǔdài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5703950c-41f5-4351-8741-549599c8e534",
+    "source_lesson_vocab_id": null
+  }
+}

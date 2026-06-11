@@ -1,0 +1,369 @@
+{
+  "id": "aa9da2bb-6951-4325-9206-16f8b8de7d11",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "语音",
+  "pinyin": "yǔyīn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ngữ âm",
+    "meaning_vi": "ngữ âm; âm thanh lời nói; voice trong ngữ cảnh số",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngữ âm",
+      "âm thanh lời nói",
+      "voice trong ngữ cảnh số"
+    ],
+    "short_definition_vi": "ngữ âm; âm thanh lời nói; voice trong ngữ cảnh số",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về ngôn ngữ, công nghệ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "ngôn ngữ, công nghệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "语",
+        "lishu_vi": "ngữ",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 语 trong từ 语音; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "吾",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 语音, chữ 语 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "音",
+        "lishu_vi": "âm",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 音 trong từ 语音; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 语音, chữ 音 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "语音 trong bài được nhớ theo nghĩa hiện đại: ngữ âm; âm thanh lời nói.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 语音材料 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "发音",
+        "pinyin": "fāyīn",
+        "meaning_vi": "phát âm; hành động phát ra âm",
+        "difference_vi": "phát âm; hành động phát ra âm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "声音",
+        "pinyin": "shēngyīn",
+        "meaning_vi": "âm thanh nói chung",
+        "difference_vi": "âm thanh nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 语音 với 发音."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "85a14cc3-83d9-4fca-95a8-a9abf88aa6ca",
+      "order": 1,
+      "zh": "语音材料",
+      "pinyin": "",
+      "vi": "tài liệu âm thanh/ngữ âm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f6e980b-7168-4136-89eb-6901437dca57",
+      "order": 2,
+      "zh": "语音练习",
+      "pinyin": "",
+      "vi": "luyện ngữ âm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbeab125-c6a0-44f7-8e65-8c453a8aa8c6",
+      "order": 3,
+      "zh": "标准语音",
+      "pinyin": "",
+      "vi": "ngữ âm chuẩn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e62fbd83-7949-41f6-afee-62bee2c752c7",
+      "order": 4,
+      "zh": "发语音",
+      "pinyin": "",
+      "vi": "gửi tin nhắn thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "afae8336-3034-47d2-a0a1-81af6126c12f",
+      "order": 5,
+      "zh": "语音消息",
+      "pinyin": "",
+      "vi": "tin nhắn thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "07496892-7223-4ad1-bd58-28786dce498a",
+      "order": 1,
+      "zh": "这个网站有很多语音材料。",
+      "pinyin": "",
+      "vi": "ngữ âm; âm thanh lời nói; voice trong ngữ cảnh số",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "语音"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aa9da2bb-6951-4325-9206-16f8b8de7d11"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "77b8b461-12e7-48f3-8e46-b2277f08dadb",
+      "order": 2,
+      "zh": "这个词语“语音”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 语音 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "语音"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aa9da2bb-6951-4325-9206-16f8b8de7d11"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bbcc3005-37d2-4f48-aa13-04c88241f137",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“语音”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 语音 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "语音"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aa9da2bb-6951-4325-9206-16f8b8de7d11"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong WeChat, 发语音 là gửi tin nhắn thoại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c89989c9-93db-4744-a725-72d95f86b08e",
+      "order": 1,
+      "rule_vi": "Không nhầm 语音 với 发音.",
+      "natural_examples": [
+        {
+          "zh": "你的发音很清楚。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "你的语音很清楚。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "你的语音很清楚。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "你的发音很清楚。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 语音 với 发音.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "语音",
+    "back": "ngữ âm; âm thanh lời nói; voice trong ngữ cảnh số",
+    "hint": "yǔyīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "aa9da2bb-6951-4325-9206-16f8b8de7d11",
+    "source_lesson_vocab_id": null
+  }
+}

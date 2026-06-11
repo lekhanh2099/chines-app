@@ -1,0 +1,329 @@
+{
+  "id": "1442393f-c235-49c3-8669-b9ef7d89a38a",
+  "type": "deep_vocabulary_item",
+  "order": 64,
+  "hanzi": "招呼",
+  "pinyin": "zhāohu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "chiêu hô",
+    "meaning_vi": "chào hỏi; tiếp đón; gọi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chào hỏi",
+      "tiếp đón",
+      "gọi"
+    ],
+    "short_definition_vi": "chào hỏi; tiếp đón; gọi",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: chào hỏi; tiếp đón; gọi.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "招",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 招.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "呼",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 呼.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "招呼 trong bài được hiểu theo nghĩa: chào hỏi; tiếp đón; gọi. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 招呼.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "招呼 trong dịch vụ là tiếp/đón/lo cho khách, không chỉ chào."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3055b969-33a2-4d20-96f7-944be2f797cf",
+      "order": 1,
+      "zh": "打招呼",
+      "pinyin": "",
+      "vi": "chào hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc848c17-b404-4b42-9cec-56bb1b216a2e",
+      "order": 2,
+      "zh": "跟他打招呼",
+      "pinyin": "",
+      "vi": "chào anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75e47d80-29d1-401c-bda4-122aef2a0a85",
+      "order": 3,
+      "zh": "招呼客人",
+      "pinyin": "",
+      "vi": "tiếp khách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a300f163-0fe7-4acc-8f1c-287d24fdc1bf",
+      "order": 4,
+      "zh": "热情地招呼",
+      "pinyin": "",
+      "vi": "tiếp đón nhiệt tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9bee3173-da1a-49cb-aa62-1952e5b2fd2d",
+      "order": 5,
+      "zh": "招呼他过来",
+      "pinyin": "",
+      "vi": "gọi anh ấy qua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "48206146-0d62-43df-a8d7-d754309b36d5",
+      "order": 1,
+      "zh": "见到老师要打招呼。",
+      "pinyin": "",
+      "vi": "Gặp thầy cô thì phải chào.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "招呼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1442393f-c235-49c3-8669-b9ef7d89a38a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a41d9bd3-9872-4dcd-8c78-2c23249487a3",
+      "order": 2,
+      "zh": "发廊里客人很多，姑娘忙着招呼大家。",
+      "pinyin": "",
+      "vi": "Trong salon đông khách, cô gái bận tiếp mọi người.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "招呼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1442393f-c235-49c3-8669-b9ef7d89a38a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "招呼 trong dịch vụ là tiếp/đón/lo cho khách, không chỉ chào.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6bfff5d5-65a6-409f-a364-ef594fa6c3a5",
+      "order": 1,
+      "rule_vi": "招呼 trong dịch vụ là tiếp/đón/lo cho khách, không chỉ chào.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "服务员打招待我们。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "招呼 trong dịch vụ là tiếp/đón/lo cho khách, không chỉ chào.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "服务员招呼我们。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "招呼 trong dịch vụ là tiếp/đón/lo cho khách, không chỉ chào.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "招呼",
+    "back": "chào hỏi; tiếp đón; gọi",
+    "hint": "zhāohu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1442393f-c235-49c3-8669-b9ef7d89a38a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "id": "4f79933e-af87-45e4-b6d5-8c2d30777dbe",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "不好意思",
+  "pinyin": "bù hǎo yìsi",
+  "pos": {
+    "raw_vi": "tính từ / cụm giao tiếp",
+    "raw_cn": "形容词 / 交际短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "emotion",
+    "politeness"
+  ],
+  "meaning": {
+    "hanviet": "Bất hảo ý tư",
+    "meaning_vi": "ngại, xấu hổ; xin lỗi nhẹ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngại, xấu hổ; xin lỗi nhẹ"
+    ],
+    "short_definition_vi": "ngại, xấu hổ; xin lỗi nhẹ",
+    "textbook_focus_vi": "Lời xin lỗi/ngại trong tình huống giao tiếp.",
+    "register_vi": "khẩu ngữ lịch sự",
+    "usage_domain_vi": "giao tiếp, xin lỗi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "不 = phủ định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "hảo",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, hay, dễ",
+        "modern_logic_vi": "好 = tốt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "意",
+        "lishu_vi": "ý",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, ý nghĩ",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ý nghĩ, ý định",
+        "modern_logic_vi": "意 = ý, ý định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "思",
+        "lishu_vi": "tư",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, suy nghĩ",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩ, suy nghĩ",
+        "modern_logic_vi": "思 = suy nghĩ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不好意思 = trong lòng thấy không tiện/không thoải mái, nên thành nghĩa ngại, khó xử, xin lỗi nhẹ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "对不起",
+        "pinyin": "",
+        "meaning_vi": "xin lỗi",
+        "difference_vi": "Nghiêm túc hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抱歉",
+        "pinyin": "",
+        "meaning_vi": "xin lỗi",
+        "difference_vi": "Trang trọng hơn 不好意思.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "害羞",
+        "pinyin": "",
+        "meaning_vi": "mắc cỡ",
+        "difference_vi": "Xấu hổ vì ngại/ngượng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "难为情",
+        "pinyin": "",
+        "meaning_vi": "khó xử, ngượng",
+        "difference_vi": "Gần với nghĩa ngại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "没关系",
+        "pinyin": "",
+        "meaning_vi": "không sao",
+        "difference_vi": "Câu đáp lại lời xin lỗi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "472a8a6a-1b2b-4708-b310-07214074f6a7",
+      "order": 1,
+      "zh": "不好意思，我来晚了",
+      "pinyin": "",
+      "vi": "xin lỗi, tôi đến muộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e90bb681-0e4c-4ac2-9a63-fcc7d2f8f0e9",
+      "order": 2,
+      "zh": "不好意思打扰一下",
+      "pinyin": "",
+      "vi": "xin lỗi, làm phiền một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80d5a791-b863-4f0e-ae97-96d130eda8dc",
+      "order": 3,
+      "zh": "不好意思问",
+      "pinyin": "",
+      "vi": "ngại hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29f6a232-1fdd-4641-ba6c-acbbe69b9bc8",
+      "order": 4,
+      "zh": "不好意思拒绝",
+      "pinyin": "",
+      "vi": "ngại từ chối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d4ed16f1-5a47-4b2a-984b-554630e5b28a",
+      "order": 5,
+      "zh": "觉得不好意思",
+      "pinyin": "",
+      "vi": "cảm thấy ngại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c3cb6b41-c5f5-42b9-bf8b-2fdfde90f23e",
+      "order": 6,
+      "zh": "被夸得不好意思",
+      "pinyin": "",
+      "vi": "được khen đến mức ngại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9787815a-b9ff-4edd-b122-077a5b7ab327",
+      "order": 7,
+      "zh": "真不好意思",
+      "pinyin": "",
+      "vi": "thật ngại / thật xin lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f3e1f94b-b764-4694-b79e-011ce2dec06b",
+      "order": 1,
+      "zh": "不好意思，我迟到了。",
+      "pinyin": "Bù hǎo yìsi, wǒ chídào le.",
+      "vi": "Xin lỗi, tôi đến muộn rồi.",
+      "analysis_vi": "不好意思 dùng như lời xin lỗi nhẹ.",
+      "highlight": [
+        "不好意思"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f79933e-af87-45e4-b6d5-8c2d30777dbe"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a8120436-3177-45ba-a4dd-e3223bab5f5d",
+      "order": 2,
+      "zh": "我不好意思告诉他，他的钱包儿被偷了。",
+      "pinyin": "Wǒ bù hǎo yìsi gàosu tā, tā de qiánbāor bèi tōu le.",
+      "vi": "Tôi ngại nói với anh ấy rằng ví của anh ấy bị trộm rồi.",
+      "analysis_vi": "不好意思 + V = ngại làm gì; vế sau ôn 被偷了.",
+      "highlight": [
+        "不好意思",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "4f79933e-af87-45e4-b6d5-8c2d30777dbe"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b6b97d6a-27b3-4fb7-942c-792f0bf27377",
+      "order": 3,
+      "zh": "他被大家笑得不好意思，只好说：“我不是故意的。”",
+      "pinyin": "Tā bèi dàjiā xiào de bù hǎo yìsi, zhǐhǎo shuō: “Wǒ bú shì gùyì de.”",
+      "vi": "Anh ấy bị mọi người cười đến mức ngại, đành nói: “Tôi không cố ý.”",
+      "analysis_vi": "Ôn 被 + tác nhân + V 得 + trạng thái; 不是故意的 nhấn không cố ý.",
+      "highlight": [
+        "不好意思",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "4f79933e-af87-45e4-b6d5-8c2d30777dbe"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不好意思 dùng nhiều để mở lời khi hỏi đường, chen lời, nhờ vả nhỏ; gần “xin lỗi / phiền bạn chút” hơn là xin lỗi nặng.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3ded3fde-c39f-47f1-90cc-f3a4d9cfc7d6",
+      "order": 1,
+      "rule_vi": "Không phải lỗi nào cũng dùng 不好意思 là đủ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "不好意思，打扰一下。",
+          "pinyin": "Bù hǎo yìsi, dǎrǎo yíxià.",
+          "vi": "Xin lỗi, làm phiền chút.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "对不起，是我的错。",
+          "pinyin": "Duìbuqǐ, shì wǒ de cuò.",
+          "vi": "Xin lỗi, là lỗi của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不好意思",
+    "back": "ngại, xấu hổ; xin lỗi nhẹ",
+    "hint": "bù hǎo yìsi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "emotion",
+      "politeness"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f79933e-af87-45e4-b6d5-8c2d30777dbe",
+    "source_lesson_vocab_id": null
+  }
+}

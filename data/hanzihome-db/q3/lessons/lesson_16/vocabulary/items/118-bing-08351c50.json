@@ -1,0 +1,152 @@
+{
+  "id": "17d8fb0a-21ba-4906-a9fd-f907d2210d44",
+  "type": "deep_vocabulary_item",
+  "order": 118,
+  "hanzi": "并",
+  "pinyin": "bìng",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "副词/连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ nối lập luận"
+  ],
+  "meaning": {
+    "hanviet": "Tịnh",
+    "meaning_vi": "đồng thời, và; không hề trong 并不",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đồng thời",
+      "và",
+      "không hề trong 并不"
+    ],
+    "short_definition_vi": "đồng thời, và; không hề trong 并不",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: đồng thời, và; không hề trong 并不.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ nối lập luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "并",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "并 trong bài được học theo nghĩa trọng tâm: đồng thời, và; không hề trong 并不.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: đồng thời, và; không hề trong 并不.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "806f7ef7-67fa-4453-9573-8649cd21bfee",
+      "order": 1,
+      "zh": "并",
+      "pinyin": "",
+      "vi": "đồng thời, và; không hề trong 并不",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "33d83489-780b-4f9a-a2a3-9d773b501ff2",
+      "order": 1,
+      "zh": "对此，我们还不能肯定，也许是些金属颗粒——它们沿着固定轨道移动，并能喷出气体，发出噪音，还会互相碰撞。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “并” = đồng thời, và; không hề trong 并不.",
+      "analysis_vi": "Câu này dùng “并” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "并"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17d8fb0a-21ba-4906-a9fd-f907d2210d44"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “并” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bdf7f773-6e07-4893-808c-3f5730c0f37e",
+      "order": 1,
+      "rule_vi": "Cần dùng “并” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "并",
+    "back": "đồng thời, và; không hề trong 并不",
+    "hint": "bìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ nối lập luận"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "17d8fb0a-21ba-4906-a9fd-f907d2210d44",
+    "source_lesson_vocab_id": null
+  }
+}

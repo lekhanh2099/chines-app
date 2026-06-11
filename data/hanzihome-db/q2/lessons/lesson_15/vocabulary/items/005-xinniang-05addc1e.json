@@ -1,0 +1,351 @@
+{
+  "id": "34719bdc-f2ca-400e-818d-1955b9559a58",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "新娘",
+  "pinyin": "xīnniáng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Tân nương",
+    "meaning_vi": "cô dâu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cô dâu"
+    ],
+    "short_definition_vi": "cô dâu",
+    "textbook_focus_vi": "cô dâu",
+    "register_vi": "",
+    "usage_domain_vi": "hôn lễ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "新",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亲-like",
+            "hanviet": "",
+            "meaning_vi": "thành phần bên trái nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "斤",
+            "hanviet": "cân",
+            "meaning_vi": "rìu/cái cân trong chữ học cổ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mới",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "娘",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, giới nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "良",
+            "hanviet": "lương",
+            "meaning_vi": "phần phải, không ép nghĩa sâu",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người nữ trong một số từ gia đình/hôn nhân",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, giới nữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "新 = mới; 娘 = người nữ trong bối cảnh hôn nhân/gia đình. 新娘 là người nữ mới kết hôn/cô dâu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "新郎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chú rể, đối ứng với 新娘",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "太太",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vợ/phu nhân, không nhất thiết trong lễ cưới",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "姑娘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cô gái, không có nghĩa cô dâu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "新娘",
+        "right": "新郎",
+        "meaning_vi": "cô dâu ↔ chú rể",
+        "note_vi": "Cặp từ cố định trong hôn lễ.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c7246830-17c0-4c76-8050-4079640db355",
+      "order": 1,
+      "zh": "新娘新郎",
+      "pinyin": "",
+      "vi": "cô dâu chú rể",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c7a5968-64fa-4757-b52e-7b0b3eb76913",
+      "order": 2,
+      "zh": "漂亮的新娘",
+      "pinyin": "",
+      "vi": "cô dâu xinh đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6204d58f-0fb2-40c5-8daa-e3b7d99ea839",
+      "order": 3,
+      "zh": "新娘穿着婚纱",
+      "pinyin": "",
+      "vi": "cô dâu mặc váy cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a382771-8c3f-4303-8cac-2204c944b5e7",
+      "order": 4,
+      "zh": "新娘化妆",
+      "pinyin": "",
+      "vi": "cô dâu trang điểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "710f505e-1f01-48d4-9360-8204144ae3e6",
+      "order": 5,
+      "zh": "新娘上台",
+      "pinyin": "",
+      "vi": "cô dâu lên sân khấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "02fbbc9a-b8e4-409f-ac83-7984b7f17235",
+      "order": 6,
+      "zh": "祝福新娘新郎",
+      "pinyin": "",
+      "vi": "chúc phúc cô dâu chú rể",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d043e042-b226-4910-b4ee-1507d38b4286",
+      "order": 1,
+      "zh": "新娘今天很漂亮。",
+      "pinyin": "Xīnniáng jīntiān hěn piàoliang.",
+      "vi": "Hôm nay cô dâu rất đẹp.",
+      "analysis_vi": "Câu nhận xét tự nhiên trong đám cưới.",
+      "highlight": [
+        "新娘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "34719bdc-f2ca-400e-818d-1955b9559a58"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f5495a85-67ee-4cbd-8213-7bb38a64186e",
+      "order": 2,
+      "zh": "新娘穿着白色婚纱，站在新郎旁边。",
+      "pinyin": "Xīnniáng chuānzhe báisè hūnshā, zhàn zài xīnláng pángbiān.",
+      "vi": "Cô dâu mặc váy cưới trắng, đứng bên cạnh chú rể.",
+      "analysis_vi": "穿着白色婚纱 miêu tả trạng thái trang phục đang mặc.",
+      "highlight": [
+        "新娘",
+        "穿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "34719bdc-f2ca-400e-818d-1955b9559a58"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "7e90a23c-5269-400c-931a-39ea62a7583c",
+      "order": 1,
+      "rule_vi": "新娘 chỉ cô dâu trong bối cảnh cưới hoặc mới cưới; không dùng để gọi “vợ” nói chung.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我太太",
+          "pinyin": "wǒ tàitai",
+          "vi": "vợ tôi",
+          "note_vi": "Tự nhiên hơn sau hôn lễ.",
+          "notes": []
+        },
+        {
+          "zh": "我妻子",
+          "pinyin": "wǒ qīzi",
+          "vi": "vợ tôi",
+          "note_vi": "Trung tính/trang trọng hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "新娘",
+    "back": "cô dâu",
+    "hint": "xīnniáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong cưới hỏi Trung Quốc, 新娘 / 新郎 thường đi với chữ 喜 hoặc 双喜; màu đỏ gắn với hỷ sự nhưng váy cưới trắng cũng phổ biến trong cưới hiện đại.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "34719bdc-f2ca-400e-818d-1955b9559a58",
+    "source_lesson_vocab_id": null
+  }
+}

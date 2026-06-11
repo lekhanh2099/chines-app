@@ -1,0 +1,327 @@
+{
+  "id": "66f28d5a-9cc1-4a1a-9a22-b5ad295aee39",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "少数",
+  "pinyin": "shǎoshù",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名/定语",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Thiểu số",
+    "meaning_vi": "số ít, thiểu số",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "số ít, thiểu số"
+    ],
+    "short_definition_vi": "số ít, thiểu số",
+    "textbook_focus_vi": "số ít, thiểu số",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "少",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ít",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "数",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "số lượng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 少数 hợp lại tạo nghĩa hiện đại trong bài: số ít, thiểu số.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "少数",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "少数 / 多数",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "多数",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "少数 / 多数",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "少数",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "少数 / 一些",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一些",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "少数 / 一些",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "少数",
+        "right": "多数",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "少数 ↔ 多数",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "少数 / 多数",
+      "少数 / 一些",
+      "少数 ↔ 多数"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c2bc231d-26c7-4b1f-885e-0d3f850818cd",
+      "order": 1,
+      "zh": "少数人",
+      "pinyin": "",
+      "vi": "少数人",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "144cf8c3-a5e4-4c74-bc73-49f5a3d74384",
+      "order": 2,
+      "zh": "少数民族",
+      "pinyin": "",
+      "vi": "少数民族",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "bcd9eb60-91cd-4fc5-9a3b-a0aa1f1e4e30",
+      "order": 3,
+      "zh": "少数地区",
+      "pinyin": "",
+      "vi": "少数地区",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f8a81d26-d2fa-4fe1-bcba-0db447f7e181",
+      "order": 4,
+      "zh": "少数学生",
+      "pinyin": "",
+      "vi": "少数学生",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ef9ed75d-cd62-4f3d-b320-d5c898f03715",
+      "order": 5,
+      "zh": "极少数",
+      "pinyin": "",
+      "vi": "极少数",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "15a111b1-18b0-464f-babf-4fa95e2fdfc0",
+      "order": 6,
+      "zh": "占少数",
+      "pinyin": "",
+      "vi": "占少数",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b2d267c4-5213-4ae1-9cae-786491cedd56",
+      "order": 1,
+      "zh": "这个词是“少数”。",
+      "pinyin": "",
+      "vi": "Từ này là “少数”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "少数"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "66f28d5a-9cc1-4a1a-9a22-b5ad295aee39"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "56fd8349-c9e8-4ad0-be45-8ad86f8b64e2",
+      "order": 2,
+      "zh": "你想怎么用“少数”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “少数” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "少数"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "66f28d5a-9cc1-4a1a-9a22-b5ad295aee39"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0a0e1045-ca4b-46f4-966f-39edfb535bd6",
+      "order": 3,
+      "zh": "我们一边复习少数，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “少数”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "少数"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "66f28d5a-9cc1-4a1a-9a22-b5ad295aee39"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "少数 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0e34dc2e-6e76-4b7e-b5b1-580bd3cb45b9",
+      "order": 1,
+      "rule_vi": "Dùng 少数 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 少数 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "少数",
+    "back": "số ít, thiểu số",
+    "hint": "shǎoshù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "66f28d5a-9cc1-4a1a-9a22-b5ad295aee39",
+    "source_lesson_vocab_id": null
+  }
+}

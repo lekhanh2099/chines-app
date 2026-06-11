@@ -1,0 +1,298 @@
+{
+  "id": "4c2ffc1e-ca5f-4cf8-8607-e6d656be86c0",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "翻滚",
+  "pinyin": "fāngǔn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "phiên cổn",
+    "meaning_vi": "cuồn cuộn, lăn lộn, sôi trào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cuồn cuộn",
+      "lăn lộn",
+      "sôi trào"
+    ],
+    "short_definition_vi": "cuồn cuộn, lăn lộn, sôi trào",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "翻",
+        "lishu_vi": "phiên",
+        "structure_note_vi": "Chữ có thành phần/bộ 羽; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "羽",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "lông, cánh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "羽",
+            "hanviet": "vũ",
+            "meaning_vi": "lông, cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羽",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "lông, cánh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "羽 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 翻 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "滚",
+        "lishu_vi": "cổn",
+        "structure_note_vi": "Chữ có thành phần/bộ 氵; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, dòng chảy",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, dòng chảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, dòng chảy",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 滚 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "翻滚 trong bài được học theo nghĩa: cuồn cuộn, lăn lộn, sôi trào.",
+    "memory_tip_vi": "Nhớ 翻滚 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "翻腾",
+        "pinyin": "fānténg",
+        "meaning_vi": "cuộn trào",
+        "difference_vi": "Văn hơn, thường dùng với sóng/mây/cảm xúc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "翻滚 dịch tùy ngữ cảnh: người lăn lộn, mây/sóng cuồn cuộn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d721f072-b552-424a-8eb7-27c5116fb95a",
+      "order": 1,
+      "zh": "乌云翻滚",
+      "pinyin": "",
+      "vi": "mây đen cuồn cuộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "707d565d-06ea-4bf5-a772-282cc5dc6fb1",
+      "order": 2,
+      "zh": "波浪翻滚",
+      "pinyin": "",
+      "vi": "sóng cuộn trào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "20cbda0a-f9e3-4859-9382-ea3d69407707",
+      "order": 3,
+      "zh": "烟雾翻滚",
+      "pinyin": "",
+      "vi": "khói cuồn cuộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a6f4b2de-1143-4b0d-980b-6a072f9bedf5",
+      "order": 1,
+      "zh": "海面上波浪翻滚，风越来越大。",
+      "pinyin": "",
+      "vi": "Trên mặt biển sóng cuồn cuộn, gió ngày càng lớn.",
+      "analysis_vi": "越来越大 chỉ mức độ tăng.",
+      "highlight": [
+        "翻滚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c2ffc1e-ca5f-4cf8-8607-e6d656be86c0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "56f9900b-15c5-4b0c-bd81-7e6b0136b07a",
+      "order": 2,
+      "zh": "祝英台跪在墓前痛哭的时候，天空乌云翻滚。",
+      "pinyin": "",
+      "vi": "Khi Chúc Anh Đài quỳ trước mộ khóc, trời mây đen cuồn cuộn.",
+      "analysis_vi": "乌云翻滚 không dịch thô là mây lăn.",
+      "highlight": [
+        "翻滚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c2ffc1e-ca5f-4cf8-8607-e6d656be86c0"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "乌云翻滚 báo hiệu biến cố trước cảnh 霹雳/墓裂.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "935fd218-990f-4914-a197-062a4be46da8",
+      "order": 1,
+      "rule_vi": "翻滚 dịch tùy ngữ cảnh: người lăn lộn, mây/sóng cuồn cuộn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "翻滚",
+    "back": "cuồn cuộn, lăn lộn, sôi trào",
+    "hint": "fāngǔn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4c2ffc1e-ca5f-4cf8-8607-e6d656be86c0",
+    "source_lesson_vocab_id": null
+  }
+}

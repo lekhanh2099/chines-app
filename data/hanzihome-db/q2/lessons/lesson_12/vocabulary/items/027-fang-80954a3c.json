@@ -1,0 +1,309 @@
+{
+  "id": "0e31c87b-8cc0-4724-8c04-4ef201eaafd0",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "放",
+  "pinyin": "fàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "actions_results"
+  ],
+  "meaning": {
+    "hanviet": "phóng",
+    "meaning_vi": "đặt, để; thả; phát ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đặt, để; thả; phát ra"
+    ],
+    "short_definition_vi": "đặt, để; thả; phát ra",
+    "textbook_focus_vi": "đặt, để; thả; phát ra",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "放",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "hướng/thành phần trái",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động/hành động",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đặt, để, thả, phát ra",
+        "modern_logic_vi": "放 có lõi đưa/để vào vị trí hoặc trạng thái.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "放 có lõi đưa/để ra hoặc vào một vị trí/trạng thái.",
+    "memory_tip_vi": "放 có lõi đưa/để ra hoặc vào một vị trí/trạng thái.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "摆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bày/đặt có trật tự",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "搁",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt/để, khẩu ngữ miền Bắc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放到",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt đến/đưa vào vị trí",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt ở",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "放进去",
+        "right": "拿出来",
+        "meaning_vi": "",
+        "note_vi": "để vào ↔ lấy ra",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "414826bf-d507-4a3e-a434-5f2ee15ba17c",
+      "order": 1,
+      "zh": "放在桌子上",
+      "pinyin": "",
+      "vi": "để trên bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e9e535d-f06a-410c-875f-5ca9baf18033",
+      "order": 2,
+      "zh": "放在包里",
+      "pinyin": "",
+      "vi": "để trong túi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb0e0d0a-b91a-4e39-a963-24f62b9c9bde",
+      "order": 3,
+      "zh": "放进口袋里",
+      "pinyin": "",
+      "vi": "bỏ vào túi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "965e5e7a-bf93-4d0e-937e-e92f3f540074",
+      "order": 4,
+      "zh": "把护照放好",
+      "pinyin": "",
+      "vi": "cất hộ chiếu cẩn thận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf22ca86-d89f-4c9a-8889-8ed46761a6b9",
+      "order": 5,
+      "zh": "放下",
+      "pinyin": "",
+      "vi": "đặt xuống/buông xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05c12aad-c0fa-43dc-b749-fb1825be775e",
+      "order": 6,
+      "zh": "放回去",
+      "pinyin": "",
+      "vi": "để lại về chỗ cũ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0e8cff61-cb14-4bdf-9255-dd3f26baa78f",
+      "order": 1,
+      "zh": "请把护照放在桌子上。",
+      "pinyin": "",
+      "vi": "Xin hãy để hộ chiếu trên bàn.",
+      "analysis_vi": "把护照放在桌子上 nói kết quả vị trí.",
+      "highlight": [
+        "放"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0e31c87b-8cc0-4724-8c04-4ef201eaafd0"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d38bb8f6-2437-4ee8-8971-f2eda8295422",
+      "order": 2,
+      "zh": "我的护照你放在哪儿了？",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi bạn để ở đâu rồi?",
+      "analysis_vi": "我的护照 là chủ đề lớn.",
+      "highlight": [
+        "放"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0e31c87b-8cc0-4724-8c04-4ef201eaafd0"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "放心 = yên tâm, không phải “đặt tim” theo nghĩa đen.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "115d97d5-6ed4-4e05-b1d7-85c946665644",
+      "order": 1,
+      "rule_vi": "Trong 把字句 với 放, vị trí kết quả đi ngay sau động từ: 放在 + nơi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我把护照放了在包里。",
+          "pinyin": "",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我把护照放在包里了。",
+          "pinyin": "",
+          "vi": "Tôi để hộ chiếu trong túi rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "放",
+    "back": "đặt, để; thả; phát ra",
+    "hint": "fàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "actions_results"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0e31c87b-8cc0-4724-8c04-4ef201eaafd0",
+    "source_lesson_vocab_id": null
+  }
+}

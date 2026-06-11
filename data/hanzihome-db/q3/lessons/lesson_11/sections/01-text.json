@@ -1,0 +1,211 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "我看见了飞碟",
+      "title_vi": "Tôi nhìn thấy đĩa bay",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "八月二十五日，在新疆，我看见了飞碟。",
+          "pinyin": "Bā yuè èrshíwǔ rì, zài Xīnjiāng, wǒ kànjiàn le fēidié.",
+          "vi": "Ngày 25 tháng 8, ở Tân Cương, tôi đã nhìn thấy đĩa bay.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "这里离乌鲁木齐有六百公里，是个非常美丽的地方。有山有水，有森林和草原，还有味道鲜美的手抓羊肉。我们几个从大城市来的人到了这里，就像到了仙境，大家都很激动。",
+          "pinyin": "Zhèlǐ lí Wūlǔmùqí yǒu liù bǎi gōnglǐ, shì ge fēicháng měilì de dìfang. Yǒu shān yǒu shuǐ, yǒu sēnlín hé cǎoyuán, hái yǒu wèidao xiānměi de shǒuzhuā yángròu. Wǒmen jǐ ge cóng dà chéngshì lái de rén dào le zhèlǐ, jiù xiàng dào le xiānjìng, dàjiā dōu hěn jīdòng.",
+          "vi": "Nơi này cách Urumqi 600 km, là một nơi vô cùng xinh đẹp. Có núi, có nước, có rừng và thảo nguyên, còn có món thịt cừu bốc tay thơm ngon. Mấy người chúng tôi từ thành phố lớn đến đây, cứ như đến chốn tiên cảnh, ai nấy đều rất xúc động.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "新疆与北京的时差大约是两个小时。晚上北京时间十点多，在新疆也就是八点多。这一天，天气非常好。晚上九点左右太阳才落下去。吃了晚饭，我和大刘一起回到饭店。忽然，听见外边有人叫我：“快，快出来看！”",
+          "pinyin": "Xīnjiāng yǔ Běijīng de shíchā dàyuē shì liǎng ge xiǎoshí. Wǎnshang Běijīng shíjiān shí diǎn duō, zài Xīnjiāng yě jiùshì bā diǎn duō. Zhè yì tiān, tiānqì fēicháng hǎo. Wǎnshang jiǔ diǎn zuǒyòu tàiyáng cái luò xiàqù. Chī le wǎnfàn, wǒ hé Dà Liú yìqǐ huídào fàndiàn. Hūrán, tīngjiàn wàibian yǒu rén jiào wǒ: “Kuài, kuài chūlai kàn!”",
+          "vi": "Tân Cương và Bắc Kinh chênh lệch thời gian khoảng hai tiếng. Buổi tối, hơn 10 giờ giờ Bắc Kinh thì ở Tân Cương mới hơn 8 giờ. Hôm đó thời tiết rất đẹp. Khoảng 9 giờ tối mặt trời mới lặn. Ăn tối xong, tôi và Đại Lưu cùng về khách sạn. Bỗng nhiên, tôi nghe bên ngoài có người gọi tôi: “Nhanh, nhanh ra xem!”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "大刘连忙跑出去了。我不知发生了什么事，仍然低着头玩儿手机。这时，大刘又马上回来，敲着我的门大叫：“快，快出来！”我立刻觉得发生了不同寻常的事情。于是，跟着其他人一起跑了出去。",
+          "pinyin": "Dà Liú liánmáng pǎo chūqù le. Wǒ bù zhī fāshēng le shénme shì, réngrán dīzhe tóu wánr shǒujī. Zhè shí, Dà Liú yòu mǎshàng huílai, qiāozhe wǒ de mén dà jiào: “Kuài, kuài chūlai!” Wǒ lìkè juéde fāshēng le bùtóng xúncháng de shìqing. Yúshì, gēnzhe qítā rén yìqǐ pǎo le chūqù.",
+          "vi": "Đại Lưu vội vàng chạy ra ngoài. Tôi không biết đã xảy ra chuyện gì, vẫn cúi đầu chơi điện thoại. Lúc này, Đại Lưu lại lập tức quay lại, vừa gõ cửa tôi vừa hét lớn: “Nhanh, nhanh ra đây!” Tôi lập tức cảm thấy đã xảy ra chuyện không bình thường. Thế là tôi chạy ra ngoài cùng những người khác.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "一出来我们便惊呆了，大家不约而同地叫了一声：“飞碟！”",
+          "pinyin": "Yì chūlai wǒmen biàn jīngdāi le, dàjiā bù yuē ér tóng de jiào le yì shēng: “Fēidié!”",
+          "vi": "Vừa ra ngoài, chúng tôi liền sững sờ. Mọi người không hẹn mà cùng kêu lên một tiếng: “Đĩa bay!”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "只见天上横着一条巨大的光束。一个飞碟快速地转着，好像悬在了空中。它那橙红色的光十分耀眼，照亮了整个西北天空，真是太神奇了！",
+          "pinyin": "Zhǐjiàn tiānshang héngzhe yì tiáo jùdà de guāngshù. Yí ge fēidié kuàisù de zhuànzhe, hǎoxiàng xuán zài le kōngzhōng. Tā nà chénghóngsè de guāng shífēn yàoyǎn, zhàoliàng le zhěnggè xīběi tiānkōng, zhēn shì tài shénqí le!",
+          "vi": "Chỉ thấy trên trời có một chùm sáng khổng lồ nằm ngang. Một chiếc đĩa bay đang xoay rất nhanh, như thể đang treo lơ lửng trên không trung. Ánh sáng màu đỏ cam của nó vô cùng chói mắt, chiếu sáng cả bầu trời Tây Bắc, thật là quá thần kỳ!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "我们几个全都举起手机拍了起来。谁都明白这是个难得的机会。",
+          "pinyin": "Wǒmen jǐ ge quán dōu jǔqǐ shǒujī pāi le qǐlai. Shéi dōu míngbai zhè shì ge nándé de jīhuì.",
+          "vi": "Mấy người chúng tôi đều giơ điện thoại lên chụp. Ai cũng hiểu rằng đây là một cơ hội hiếm có.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
+          "order": 8,
+          "zh": "突然，飞碟朝我们这边飞过来。在那一刻，我以为它要落下来了，可飞碟却停住了，又向高空慢慢飞去。然后一闪，变成了一个星星般的亮点儿。接着又一闪，不见了。只是一闪，就从一个唱片大小的飞碟变成了一个小亮点儿，这是多么快的速度啊！只是它留下的光束在空中亮了半天才渐渐地暗下去。差不多一个小时以后，天空才渐渐变回原来的一片蓝色。",
+          "pinyin": "Tūrán, fēidié cháo wǒmen zhè biān fēi guòlai. Zài nà yí kè, wǒ yǐwéi tā yào luò xiàlai le, kě fēidié què tíngzhù le, yòu xiàng gāokōng mànmàn fēi qù. Ránhòu yì shǎn, biànchéng le yí ge xīngxing bān de liàngdiǎnr. Jiēzhe yòu yì shǎn, bú jiàn le. Zhǐshì yì shǎn, jiù cóng yí ge chàngpiàn dàxiǎo de fēidié biànchéng le yí ge xiǎo liàngdiǎnr, zhè shì duōme kuài de sùdù a! Zhǐshì tā liúxià de guāngshù zài kōngzhōng liàng le bàntiān cái jiànjiàn de àn xiàqù. Chàbuduō yí ge xiǎoshí yǐhòu, tiānkōng cái jiànjiàn biàn huí yuánlái de yí piàn lánsè.",
+          "vi": "Đột nhiên, đĩa bay bay về phía chúng tôi. Vào khoảnh khắc đó, tôi tưởng nó sắp rơi xuống, nhưng đĩa bay lại dừng lại, rồi từ từ bay lên cao. Sau đó nó lóe lên một cái, biến thành một điểm sáng như ngôi sao. Tiếp đó lại lóe lên một cái nữa rồi biến mất. Chỉ một cái lóe sáng thôi, nó đã từ một chiếc đĩa bay to bằng cái đĩa hát biến thành một điểm sáng nhỏ. Tốc độ ấy nhanh biết bao! Chỉ có chùm sáng nó để lại là vẫn sáng trên không trung rất lâu rồi mới dần dần tối đi. Gần một tiếng sau, bầu trời mới dần dần trở lại màu xanh ban đầu.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
+          "order": 9,
+          "zh": "这天晚上，我们一个个都兴奋极了。互相问：“相信有飞碟了吧？”又互相回答：“相信了。” “如果那一刻飞碟下来要带你走，你去吗？” “去！” 多么痛快的回答！",
+          "pinyin": "Zhè tiān wǎnshang, wǒmen yí ge ge dōu xīngfèn jí le. Hùxiāng wèn: “Xiāngxìn yǒu fēidié le ba?” Yòu hùxiāng huídá: “Xiāngxìn le.” “Rúguǒ nà yí kè fēidié xiàlai yào dài nǐ zǒu, nǐ qù ma?” “Qù!” Duōme tòngkuai de huídá!",
+          "vi": "Tối hôm đó, từng người chúng tôi đều cực kỳ phấn khích. Chúng tôi hỏi nhau: “Tin là có đĩa bay rồi chứ?” Rồi lại tự trả lời nhau: “Tin rồi.” “Nếu khoảnh khắc đó đĩa bay hạ xuống muốn đưa bạn đi, bạn có đi không?” “Đi!” Một câu trả lời thật dứt khoát!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
+          "order": 10,
+          "zh": "已经很晚了，可我还是久久不能入睡。我相信飞碟的存在。我相信在宇宙间，不只是地球上才存在高智能生物。我相信这个世界存在着太多的可能性。",
+          "pinyin": "Yǐjīng hěn wǎn le, kě wǒ háishi jiǔjiǔ bù néng rùshuì. Wǒ xiāngxìn fēidié de cúnzài. Wǒ xiāngxìn zài yǔzhòu jiān, bú zhǐshì dìqiú shang cái cúnzài gāo zhìnéng shēngwù. Wǒ xiāngxìn zhège shìjiè cúnzàizhe tài duō de kěnéngxìng.",
+          "vi": "Đã rất khuya rồi, nhưng tôi vẫn mãi không ngủ được. Tôi tin vào sự tồn tại của đĩa bay. Tôi tin rằng trong vũ trụ, không phải chỉ trên Trái Đất mới tồn tại sinh vật có trí tuệ cao. Tôi tin rằng thế giới này tồn tại quá nhiều khả năng.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cc6c9b34-ea2c-405a-aa42-b5ec0853d4c0",
+          "order": 11,
+          "zh": "（根据池莉的文章改写）",
+          "pinyin": "(Gēnjù Chí Lì de wénzhāng gǎixiě.)",
+          "vi": "Cải biên theo bài viết của Trì Lị.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "697611d6-d756-4bef-8c61-747a1e2ed143",
+          "question": "故事发生在什么时间？什么地方？",
+          "answer": "故事发生在八月二十五日，在新疆。",
+          "answer_vi": "Câu chuyện xảy ra ngày 25 tháng 8, ở Tân Cương.",
+          "source_origin": "textbook_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "44d26a3c-42ee-4a6c-a104-f9108270847a",
+          "question": "那儿的风景怎么样？",
+          "answer": "那儿非常美丽，有山有水，有森林和草原，还有味道鲜美的手抓羊肉。",
+          "answer_vi": "Phong cảnh ở đó rất đẹp, có núi, nước, rừng và thảo nguyên, còn có thịt cừu bốc tay thơm ngon.",
+          "source_origin": "textbook_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "cc5e5d24-deb2-4553-9b75-eccacf9bd54e",
+          "question": "大刘叫“我”的时候“我”正在做什么？",
+          "answer": "大刘叫“我”的时候，“我”仍然低着头玩儿手机。",
+          "answer_vi": "Khi Đại Lưu gọi, “tôi” vẫn đang cúi đầu chơi điện thoại.",
+          "source_origin": "textbook_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "19344b26-53d0-487b-a0bd-46f214bc2b7f",
+          "question": "大刘为什么叫“我”？",
+          "answer": "因为外边发生了不同寻常的事情，大家看见了飞碟。",
+          "answer_vi": "Vì bên ngoài xảy ra chuyện khác thường, mọi người nhìn thấy đĩa bay.",
+          "source_origin": "textbook_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7423ceaf-2034-451e-9dff-b8848cc5cc61",
+          "question": "他们看见了什么东西？",
+          "answer": "他们看见了飞碟和一条巨大的光束。",
+          "answer_vi": "Họ nhìn thấy đĩa bay và một chùm sáng khổng lồ.",
+          "source_origin": "textbook_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3f653d6d-5002-4480-96f2-45136edcc868",
+          "question": "课文是怎么写飞碟的？",
+          "answer": "课文写飞碟快速地转着，好像悬在空中，橙红色的光十分耀眼，照亮了整个西北天空；后来飞碟向高空飞去，一闪就不见了。",
+          "answer_vi": "Bài khóa miêu tả đĩa bay xoay rất nhanh, như treo lơ lửng trên không, ánh sáng đỏ cam rất chói, chiếu sáng cả bầu trời Tây Bắc; sau đó nó bay lên cao, lóe lên rồi biến mất.",
+          "source_origin": "textbook_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

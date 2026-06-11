@@ -1,0 +1,358 @@
+{
+  "id": "e70f27e7-937a-4572-8b8c-bb43c627741e",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "点",
+  "pinyin": "diǎn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Lượng từ",
+    "raw_cn": "动词/名词/量词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "điểm",
+    "meaning_vi": "bấm; điểm; chút; giờ; gọi món",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bấm",
+      "điểm",
+      "chút",
+      "giờ"
+    ],
+    "short_definition_vi": "bấm; điểm; chút; giờ; gọi món",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về thao tác, thời gian, số lượng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thao tác, thời gian, số lượng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "点",
+        "lishu_vi": "điểm",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 点 trong từ 点; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa dạng dưới",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa; dạng bốn chấm dưới",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "灬 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa; dạng bốn chấm dưới",
+            "position_vi": "phần dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa dạng dưới",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa; dạng bốn chấm dưới",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "占",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phần trên chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bấm, điểm, chút",
+        "modern_logic_vi": "Trong từ 点, chữ 点 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "点 trong bài được nhớ theo nghĩa hiện đại: bấm, điểm, chút.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 点一下 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "点击",
+        "pinyin": "diǎnjī",
+        "meaning_vi": "click; thao tác công nghệ rõ hơn",
+        "difference_vi": "click; thao tác công nghệ rõ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "按",
+        "pinyin": "àn",
+        "meaning_vi": "nhấn/ấn; thường với nút vật lý",
+        "difference_vi": "nhấn/ấn; thường với nút vật lý",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "点 rất đa nghĩa; phải nhìn tân ngữ để hiểu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "27d22170-8433-44dd-826b-fc895061a2a6",
+      "order": 1,
+      "zh": "点一下",
+      "pinyin": "",
+      "vi": "bấm một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "78c35331-7cb7-465c-a168-c70868f78da5",
+      "order": 2,
+      "zh": "点鼠标",
+      "pinyin": "",
+      "vi": "bấm chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e272b90-bc88-4618-a893-c29e6d6bd86d",
+      "order": 3,
+      "zh": "点击屏幕",
+      "pinyin": "",
+      "vi": "bấm/chạm màn hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa6de1dd-e90f-4638-82fa-8323e853fb70",
+      "order": 4,
+      "zh": "点开网站",
+      "pinyin": "",
+      "vi": "bấm mở website",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "34a287d1-ab24-4851-a7ba-9003c189fd31",
+      "order": 5,
+      "zh": "点菜",
+      "pinyin": "",
+      "vi": "gọi món",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "90e63524-1a94-40de-9aa7-889c99949c80",
+      "order": 1,
+      "zh": "请用鼠标点一下。",
+      "pinyin": "",
+      "vi": "bấm; điểm; chút; giờ; gọi món",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "点"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e70f27e7-937a-4572-8b8c-bb43c627741e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c3d1e968-d3b9-45a2-aaac-fc0ab715c391",
+      "order": 2,
+      "zh": "这个词语“点”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 点 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "点"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e70f27e7-937a-4572-8b8c-bb43c627741e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2c2105d8-da1b-41f8-8b11-7ad6bff73bea",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“点”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 点 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "点"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e70f27e7-937a-4572-8b8c-bb43c627741e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "点击进入, 点击查看, 点击注册 hay gặp trên web/app Trung Quốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8f110d0d-b96c-4748-9d38-3129e672a6fb",
+      "order": 1,
+      "rule_vi": "点 rất đa nghĩa; phải nhìn tân ngữ để hiểu.",
+      "natural_examples": [
+        {
+          "zh": "我点开了老师发来的链接。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我点了老师。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我点了老师。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我点开了老师发来的链接。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "点 rất đa nghĩa; phải nhìn tân ngữ để hiểu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "点",
+    "back": "bấm; điểm; chút; giờ; gọi món",
+    "hint": "diǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e70f27e7-937a-4572-8b8c-bb43c627741e",
+    "source_lesson_vocab_id": null
+  }
+}

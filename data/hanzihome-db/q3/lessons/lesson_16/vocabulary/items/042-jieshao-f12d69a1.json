@@ -1,0 +1,162 @@
+{
+  "id": "81403e6b-2f8b-4b78-a9af-fca38be0e2ab",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "介绍",
+  "pinyin": "jièshào",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Giao tiếp và hỏi đáp"
+  ],
+  "meaning": {
+    "hanviet": "Giới thiệu",
+    "meaning_vi": "giới thiệu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giới thiệu"
+    ],
+    "short_definition_vi": "giới thiệu",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: giới thiệu.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Giao tiếp và hỏi đáp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "介",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "绍",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "介绍 trong bài được học theo nghĩa trọng tâm: giới thiệu.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: giới thiệu.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "51ad02ab-7550-460d-824f-7829f2e5a600",
+      "order": 1,
+      "zh": "格林教授，您能不能介绍一下儿，这个结论是怎么得出的？",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: giới thiệu",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "00d29583-dd90-4a23-acb8-6cc8d7e146ec",
+      "order": 1,
+      "zh": "格林教授，您能不能介绍一下儿，这个结论是怎么得出的？",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “介绍” = giới thiệu.",
+      "analysis_vi": "Câu này dùng “介绍” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "介绍"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81403e6b-2f8b-4b78-a9af-fca38be0e2ab"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “介绍” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "705cfe80-e001-44c9-a5b1-aa3034bde765",
+      "order": 1,
+      "rule_vi": "Cần dùng “介绍” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "介绍",
+    "back": "giới thiệu",
+    "hint": "jièshào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Giao tiếp và hỏi đáp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "81403e6b-2f8b-4b78-a9af-fca38be0e2ab",
+    "source_lesson_vocab_id": null
+  }
+}

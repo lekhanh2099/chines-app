@@ -1,0 +1,293 @@
+{
+  "id": "882dc4dc-b5ac-46bd-b1f4-0e05af3b1e84",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "副",
+  "pinyin": "fù",
+  "pos": {
+    "raw_vi": "Hình vị / Lượng từ",
+    "raw_cn": "语素/量词",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "phó/phụ",
+    "meaning_vi": "phó, phụ; lượng từ cho bộ, cặp, vẻ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phó, phụ; lượng từ cho bộ, cặp, vẻ"
+    ],
+    "short_definition_vi": "phó, phụ; lượng từ cho bộ, cặp, vẻ",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "副",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt, vật sắc",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "刂 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, vật sắc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, vật sắc",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刂 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 刂.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phó, phụ; lượng từ cho bộ/cặp/vẻ",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "副 thường chỉ cái phụ/đi kèm hoặc một bộ đi chung.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 副.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "双",
+        "pinyin": "shuāng",
+        "meaning_vi": "đôi/cặp",
+        "difference_vi": "dùng cho giày, đũa, vật thành đôi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "套",
+        "pinyin": "tào",
+        "meaning_vi": "bộ/set",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "主",
+          "",
+          "chính",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "061fd4d5-7be7-4f0e-8dea-8c0e9444c294",
+      "order": 1,
+      "zh": "副校长",
+      "pinyin": "",
+      "vi": "phó hiệu trưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e20f964a-e6c9-4952-b9b9-1581c6947efc",
+      "order": 2,
+      "zh": "副作用",
+      "pinyin": "",
+      "vi": "tác dụng phụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8fff1065-2ff4-4e76-a312-9a670ead3b60",
+      "order": 3,
+      "zh": "一副眼镜",
+      "pinyin": "",
+      "vi": "một cặp kính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d4c390f4-0c11-49ed-b49e-c9a1ac9e3d21",
+      "order": 4,
+      "zh": "一副得意的样子",
+      "pinyin": "",
+      "vi": "một vẻ đắc ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1ded889e-594f-41f3-87fb-d4d82f0eebde",
+      "order": 1,
+      "zh": "他戴着一副眼镜。",
+      "pinyin": "Tā dàizhe yí fù yǎnjìng.",
+      "vi": "Anh ấy đang đeo một cặp kính.",
+      "analysis_vi": "一副眼镜 là lượng từ cố định.",
+      "highlight": [
+        "副"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "882dc4dc-b5ac-46bd-b1f4-0e05af3b1e84"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b4feaef6-af1e-45fd-a975-89f2c8baa6c6",
+      "order": 2,
+      "zh": "南郭先生装出一副很会吹竽的样子。",
+      "pinyin": "Nán Guō xiānsheng zhuāng chū yí fù hěn huì chuī yú de yàngzi.",
+      "vi": "Nam Quách giả ra vẻ rất biết thổi竽.",
+      "analysis_vi": "一副……的样子 = một vẻ/dáng vẻ.",
+      "highlight": [
+        "副"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "882dc4dc-b5ac-46bd-b1f4-0e05af3b1e84"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "副 còn là lượng từ, tiếng Việt không có đối ứng trực tiếp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "620695a0-0c15-4dc0-8287-f90b1eadd1c4",
+      "order": 1,
+      "rule_vi": "Không nói 一副鞋; giày là 一双鞋.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "副",
+    "back": "phó, phụ; lượng từ cho bộ, cặp, vẻ",
+    "hint": "fù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "882dc4dc-b5ac-46bd-b1f4-0e05af3b1e84",
+    "source_lesson_vocab_id": null
+  }
+}

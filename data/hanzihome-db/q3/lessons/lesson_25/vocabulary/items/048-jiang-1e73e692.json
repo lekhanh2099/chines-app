@@ -1,0 +1,172 @@
+{
+  "id": "2cef1df2-9973-400b-afa7-e2a6b1727256",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "奖",
+  "pinyin": "jiǎng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tưởng",
+    "meaning_vi": "thưởng, khen thưởng; giải thưởng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thưởng",
+      "khen thưởng; giải thưởng"
+    ],
+    "short_definition_vi": "thưởng, khen thưởng; giải thưởng",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "奖",
+        "lishu_vi": "tưởng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thưởng",
+        "modern_logic_vi": "Trong từ này, 奖 góp phần vào nghĩa hiện đại: thưởng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "奖 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 奖给他.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 奖 jiǎng với 讲 jiǎng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fdce34d7-8dcd-48f3-966a-7f6bd1a7af0e",
+      "order": 1,
+      "zh": "奖给他",
+      "pinyin": "",
+      "vi": "thưởng cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df70d857-da08-4dd8-bba5-503488a907c6",
+      "order": 2,
+      "zh": "得奖",
+      "pinyin": "",
+      "vi": "đạt giải",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a4a4c51-5a44-4c05-b9c4-f3868e1653bd",
+      "order": 3,
+      "zh": "一等奖",
+      "pinyin": "",
+      "vi": "giải nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5cee917f-c078-4a1a-bd69-cb98aa8cca5d",
+      "order": 1,
+      "zh": "老师奖给他一本书。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 奖 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 奖; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "奖"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2cef1df2-9973-400b-afa7-e2a6b1727256"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 奖 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "95d756ea-3a0c-4038-8c79-8d6ce05d3944",
+      "order": 1,
+      "rule_vi": "Không nhầm 奖 jiǎng với 讲 jiǎng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "奖",
+    "back": "thưởng, khen thưởng; giải thưởng",
+    "hint": "jiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2cef1df2-9973-400b-afa7-e2a6b1727256",
+    "source_lesson_vocab_id": null
+  }
+}

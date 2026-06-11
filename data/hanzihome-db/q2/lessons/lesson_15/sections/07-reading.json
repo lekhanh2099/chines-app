@@ -1,0 +1,22 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền tổng hợp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze_reference",
+      "order": 1,
+      "title": "综合填空",
+      "title_vi": "Bài điền tổng hợp nằm trong phần 练习 mục 7",
+      "exercise_ref": "exercise_07",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ],
+  "note_vi": "Bài 15 hiện thấy 综合填空 trong phần 练习, chưa thấy bài 阅读理解 riêng ngoài mục này ở phần đã bóc."
+}

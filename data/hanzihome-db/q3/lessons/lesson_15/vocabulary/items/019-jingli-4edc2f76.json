@@ -1,0 +1,273 @@
+{
+  "id": "4bd4aa00-cf67-42a1-a405-9a740534bafd",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "经历",
+  "pinyin": "jīnglì",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kinh lịch",
+    "meaning_vi": "trải qua; trải nghiệm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trải qua",
+      "trải nghiệm"
+    ],
+    "short_definition_vi": "trải qua; trải nghiệm",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "经",
+        "lishu_vi": "",
+        "structure_note_vi": "经: trải qua",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trải qua",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: trải qua.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "历",
+        "lishu_vi": "",
+        "structure_note_vi": "历: trải qua; lịch sử",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trải qua; lịch sử",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: trải qua; lịch sử.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "经历 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 亲身经历.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "73ef4226-4f4a-4c87-bc82-d1806df4c90f",
+      "order": 1,
+      "zh": "亲身经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3704f514-d83c-4b87-872e-6167740c39aa",
+      "order": 2,
+      "zh": "难忘的经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8507052b-a211-482c-a6af-70f06e926b7e",
+      "order": 3,
+      "zh": "留学经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03a94e65-5287-4c5a-9a29-8607a31ed497",
+      "order": 4,
+      "zh": "经历困难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5187ee2e-e182-4829-bc65-6beb09bf8e4d",
+      "order": 1,
+      "zh": "这是一段难忘的经历。",
+      "pinyin": "",
+      "vi": "Đây là một trải nghiệm khó quên。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "经历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4bd4aa00-cf67-42a1-a405-9a740534bafd"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "40456f87-5122-4642-a36f-8cd289b96f16",
+      "order": 2,
+      "zh": "我想向大家讲一讲我的亲身经历。",
+      "pinyin": "",
+      "vi": "Tôi muốn kể với mọi người một chút về trải nghiệm bản thân。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "经历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4bd4aa00-cf67-42a1-a405-9a740534bafd"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7fdcb42c-9d53-44ca-a65d-dc8e49884490",
+      "order": 1,
+      "rule_vi": "Không nhầm 经历 với 经验。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 经历 với 经验。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "经历",
+    "back": "trải qua; trải nghiệm",
+    "hint": "jīnglì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4bd4aa00-cf67-42a1-a405-9a740534bafd",
+    "source_lesson_vocab_id": null
+  }
+}

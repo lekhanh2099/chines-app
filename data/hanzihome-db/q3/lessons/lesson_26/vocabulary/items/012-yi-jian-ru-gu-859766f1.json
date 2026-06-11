@@ -1,0 +1,320 @@
+{
+  "id": "f786dfd9-78d1-451d-a319-caa23380668c",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "一见如故",
+  "pinyin": "yí jiàn rú gù",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "nhất kiến như cố",
+    "meaning_vi": "vừa gặp đã như quen từ lâu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vừa gặp đã như quen từ lâu"
+    ],
+    "short_definition_vi": "vừa gặp đã như quen từ lâu",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "一 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "见",
+        "lishu_vi": "kiến",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "见 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "如",
+        "lishu_vi": "như",
+        "structure_note_vi": "Chữ có thành phần/bộ 女; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 如 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "故",
+        "lishu_vi": "cố",
+        "structure_note_vi": "Chữ có thành phần/bộ 攵; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "đánh, tác động, hành động",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh, tác động, hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh, tác động, hành động",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 故 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一见如故 trong bài được học theo nghĩa: vừa gặp đã như quen từ lâu.",
+    "memory_tip_vi": "Nhớ 一见如故 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一见钟情",
+        "pinyin": "yí jiàn zhōngqíng",
+        "meaning_vi": "yêu từ cái nhìn đầu tiên",
+        "difference_vi": "Thiên về tình yêu; 一见如故 chưa chắc là yêu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Giai đoạn đầu của 梁祝 nên hiểu là hợp như bạn cũ, không vội dịch thành yêu từ cái nhìn đầu tiên."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "48bd1fbd-d13f-439b-8129-eb834e664ff3",
+      "order": 1,
+      "zh": "两人一见如故",
+      "pinyin": "",
+      "vi": "hai người vừa gặp đã thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb7ecb36-870a-41fc-8f75-8c9c5b5b49db",
+      "order": 2,
+      "zh": "一见如故的朋友",
+      "pinyin": "",
+      "vi": "người bạn vừa gặp đã thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "871937b2-af69-429d-8c68-bee8aee4a382",
+      "order": 3,
+      "zh": "有一种一见如故的感觉",
+      "pinyin": "",
+      "vi": "có cảm giác như quen từ lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ea39f8e-f3c2-4da6-8431-cea5cf549723",
+      "order": 1,
+      "zh": "他们第一次见面就一见如故。",
+      "pinyin": "",
+      "vi": "Họ vừa gặp lần đầu đã như quen từ lâu.",
+      "analysis_vi": "第一次见面就…… nhấn phản ứng xảy ra ngay.",
+      "highlight": [
+        "一见如故"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f786dfd9-78d1-451d-a319-caa23380668c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7ce530a8-17da-4208-88d8-28fc3585dafd",
+      "order": 2,
+      "zh": "梁山伯和祝英台一见如故，很快就成了好朋友。",
+      "pinyin": "",
+      "vi": "Lương Sơn Bá và Chúc Anh Đài vừa gặp đã như quen lâu, rất nhanh trở thành bạn tốt.",
+      "analysis_vi": "很快就成了 báo kết quả nhanh.",
+      "highlight": [
+        "一见如故"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f786dfd9-78d1-451d-a319-caa23380668c"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Thường dùng cho quan hệ tri kỷ, hợp chí hướng trong văn học.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4c8a77c5-0415-4cdb-bcd0-36a4d21694d2",
+      "order": 1,
+      "rule_vi": "Giai đoạn đầu của 梁祝 nên hiểu là hợp như bạn cũ, không vội dịch thành yêu từ cái nhìn đầu tiên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一见如故",
+    "back": "vừa gặp đã như quen từ lâu",
+    "hint": "yí jiàn rú gù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f786dfd9-78d1-451d-a319-caa23380668c",
+    "source_lesson_vocab_id": null
+  }
+}

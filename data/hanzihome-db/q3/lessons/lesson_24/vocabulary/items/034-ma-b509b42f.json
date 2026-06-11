@@ -1,0 +1,266 @@
+{
+  "id": "74e9430a-24c8-4d36-bbbc-fc1ae73d6f7f",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "骂",
+  "pinyin": "mà",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_24",
+    "deep_vocab",
+    "qingshang"
+  ],
+  "meaning": {
+    "hanviet": "mạ",
+    "meaning_vi": "mắng, chửi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mắng, chửi"
+    ],
+    "short_definition_vi": "mắng, chửi",
+    "textbook_focus_vi": "Dùng trong Bài 24 情商 để nối chủ đề EQ, cảm xúc, tự kiểm soát và quan hệ xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, giao tiếp, giáo dục, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "骂",
+        "lishu_vi": "mạ",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 骂 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "骂 được ghi theo nghĩa hiện đại đã soạn; ưu tiên học qua cụm dùng thật thay vì suy diễn từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 骂人.",
+    "warning_vi": "Không ép chiết tự nếu là tên riêng, thành ngữ cố định hoặc chữ giản thể khó suy nghĩa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên học 骂 qua cụm cố định và ví dụ trong bài 情商."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "43cf77c4-d860-4e4b-889a-91a9c204a095",
+      "order": 1,
+      "zh": "骂人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36c38c5e-e0f9-4a79-9aaf-a49d5901e4e5",
+      "order": 2,
+      "zh": "骂了几句",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07e2f10e-fc20-4fc3-9af7-a51676717c5a",
+      "order": 3,
+      "zh": "被骂",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32d5b75a-1e1f-4a0b-9fd6-470ca5f79a60",
+      "order": 4,
+      "zh": "挨骂",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76d7b5af-af21-4adc-a0b9-f0f7a346fa85",
+      "order": 5,
+      "zh": "骂孩子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91451c35-8d2d-40dc-8ae3-f8aeac51774f",
+      "order": 6,
+      "zh": "不要骂人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "860d9a3b-8caf-44b2-a106-bf7883c78709",
+      "order": 7,
+      "zh": "一生气就骂人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0467d837-968d-4fa5-b552-b8ee7271dad1",
+      "order": 1,
+      "zh": "不要随便骂人。",
+      "pinyin": "",
+      "vi": "",
+      "analysis_vi": "Ví dụ tự nhiên đã bám nghĩa trọng tâm của 骂 trong bài 情商.",
+      "highlight": [
+        "骂"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "74e9430a-24c8-4d36-bbbc-fc1ae73d6f7f"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4981fb15-d422-4285-b83f-a68ddc1c4ecd",
+      "order": 2,
+      "zh": "本课用“骂”来说明情商、情绪和人际关系之间的联系。",
+      "pinyin": "",
+      "vi": "Bài này dùng “骂” để nói rõ mối liên hệ giữa EQ, cảm xúc và quan hệ xã hội.",
+      "analysis_vi": "Câu phục vụ ngữ cảnh hóa từ trong chủ đề bài, không phải câu dịch máy.",
+      "highlight": [
+        "骂"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "74e9430a-24c8-4d36-bbbc-fc1ae73d6f7f"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 情商, 骂 được đặt vào mạch học về EQ, kiểm soát cảm xúc, quan hệ xã hội hoặc tác động của công nghệ tới giao tiếp.",
+    "tags": [
+      "usage",
+      "lesson_24"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d069ffa6-0d59-42e9-8c9e-9b1061da2f91",
+      "order": 1,
+      "rule_vi": "Không dịch máy từng chữ Hán Việt của 骂; phải học theo nghĩa hiện đại và collocation.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảnh báo này giữ lại tinh thần phần lỗi sai đã soạn: tránh suy nghĩa từ mặt chữ khi từ/cụm đã có nghĩa cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "骂",
+    "back": "mắng, chửi",
+    "hint": "mà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_24",
+      "qingshang"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "74e9430a-24c8-4d36-bbbc-fc1ae73d6f7f",
+    "source_lesson_vocab_id": null
+  }
+}

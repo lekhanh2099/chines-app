@@ -1,0 +1,225 @@
+{
+  "id": "a3e45602-7738-46f0-9414-e06d449b06ad",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "来",
+  "pinyin": "lái",
+  "pos": {
+    "raw_vi": "Động từ / Bổ ngữ xu hướng",
+    "raw_cn": "动/趋向补语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lai",
+    "meaning_vi": "đến; lại; dùng sau động từ chỉ hướng hoặc phát sinh trạng thái",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đến",
+      "lại",
+      "dùng sau động từ chỉ hướng hoặc phát sinh trạng thái"
+    ],
+    "short_definition_vi": "đến",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến, lại; hướng về điểm nhìn",
+        "modern_logic_vi": "Trong từ 来, chữ 来 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "来 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他一听这句话，就笑了起来。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "去",
+        "pinyin": "qù",
+        "meaning_vi": "đi",
+        "difference_vi": "去 là rời xa điểm nhìn; 来 là hướng về điểm nhìn.",
+        "register_vi": "",
+        "example_zh": "他去学校了。",
+        "example_vi": "Anh ấy đi học/trường rồi.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c0df1993-2b55-4e7b-a41a-b7b80bd4df7c",
+      "order": 1,
+      "zh": "来北京",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "406326e0-8899-4af9-a3d1-d328030a3cdf",
+      "order": 2,
+      "zh": "回来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c14fae1-ec7f-46ad-b14f-a6d0b36e5d31",
+      "order": 3,
+      "zh": "过来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9228abee-2011-4b9b-8668-3c5170e9833a",
+      "order": 4,
+      "zh": "出来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "708a6874-4909-46d6-83a2-b11e5ca84e06",
+      "order": 5,
+      "zh": "起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e534edba-e259-461e-976c-01448e4b57b8",
+      "order": 6,
+      "zh": "想起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e385b16-77a2-4b68-a914-626bf065dd04",
+      "order": 7,
+      "zh": "笑起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "585698d7-862e-4a86-b3dc-b5a0c5715ae0",
+      "order": 1,
+      "zh": "他一听这句话，就笑了起来。",
+      "pinyin": "",
+      "vi": "Anh ấy vừa nghe câu đó liền bật cười.",
+      "analysis_vi": "Ví dụ dùng 来 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a3e45602-7738-46f0-9414-e06d449b06ad"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "来 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ce4e5685-9359-4a83-b05b-1f39e9eff427",
+      "order": 1,
+      "rule_vi": "Không dịch máy mọi 来 là “đến”; trong 笑起来, 想起来, 看出来, 来 là thành phần xu hướng/nghĩa mở rộng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "来",
+    "back": "đến; lại; dùng sau động từ chỉ hướng hoặc phát sinh trạng thái",
+    "hint": "lái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a3e45602-7738-46f0-9414-e06d449b06ad",
+    "source_lesson_vocab_id": null
+  }
+}

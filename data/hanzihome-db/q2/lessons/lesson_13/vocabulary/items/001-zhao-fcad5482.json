@@ -1,0 +1,318 @@
+{
+  "id": "ea75021b-c364-415a-8f81-0bc53daf0665",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "照",
+  "pinyin": "zhào",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Giới từ",
+    "raw_cn": "动/名/介",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Chiếu",
+    "meaning_vi": "chụp, chiếu sáng, soi; theo như",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chụp",
+      "chiếu sáng",
+      "soi",
+      "theo như"
+    ],
+    "short_definition_vi": "chụp, chiếu sáng, soi; theo như",
+    "textbook_focus_vi": "Âm Hán Việt: chiếu Nghĩa: Chụp ảnh, thường gặp trong 照相, 照照片. Chiếu sáng, soi vào: 阳光照进来.",
+    "register_vi": "rất thường dùng, nhưng nghĩa thay đổi theo cụm.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "照",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "召",
+            "hanviet": "",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa/ánh sáng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt, ánh sáng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chiếu, soi, chụp ảnh, căn cứ theo",
+        "modern_logic_vi": "Lõi nghĩa liên quan đến ánh sáng chiếu/soi rõ; mở rộng sang chụp ảnh vì chụp ảnh gắn với ánh sáng và hình ảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "照 có lõi nghĩa liên quan đến ánh sáng chiếu vào, soi rõ. Từ “soi/chiếu” mở rộng thành “chụp ảnh”, vì chụp ảnh vốn liên quan đến ánh sáng và hình ảnh. Trong 照片, 照相, nghĩa nghiêng về hình ảnh/chụp ảnh. Cảnh báo: 照 trong 护照 không nên hiểu là “chụp ảnh”; 护照 là từ cố định nghĩa hộ chiếu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "照 (zhào)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chụp/chiếu/soi/theo, nghĩa rộng, cần học theo cụm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拍 (pāi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chụp/quay/đập/vỗ, nghĩa rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "照相 (zhào xiàng): chụp ảnh, cách nói truyền thống và phổ thông.",
+      "拍照 (pāi zhào): chụp ảnh, khẩu ngữ hiện đại rất thường dùng.",
+      "→ Phân biệt nhanh: đời sống hiện đại nói 拍照 rất tự nhiên; trong giáo trình và cụm 照照片, 照相 vẫn gặp nhiều."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "41e2430c-fffd-4303-8d1f-7ad27cfb4f42",
+      "order": 1,
+      "zh": "照相",
+      "pinyin": "",
+      "vi": "chụp ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e3dd73c-2204-4dde-99ad-d133be85a188",
+      "order": 2,
+      "zh": "照照片",
+      "pinyin": "",
+      "vi": "chụp ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecb6e4c3-4b9f-424f-99e1-bd972934bbf4",
+      "order": 3,
+      "zh": "照规定办",
+      "pinyin": "",
+      "vi": "làm theo quy định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b00c12f-0da8-414e-b39a-da871b08b0d2",
+      "order": 4,
+      "zh": "[Đời sống] 帮我拍张照",
+      "pinyin": "",
+      "vi": "chụp giúp tôi một tấm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e89a187f-8ae6-4133-86d4-e1407d14e5b9",
+      "order": 1,
+      "zh": "这张照片照得有点儿虚，洗出来以后可能不太清楚。",
+      "pinyin": "Zhè zhāng zhàopiàn zhào de yǒudiǎnr xū, xǐ chūlai yǐhòu kěnéng bú tài qīngchu.",
+      "vi": "Tấm ảnh này chụp hơi mờ, sau khi rửa ra có thể không rõ lắm.",
+      "analysis_vi": "照得有点儿虚 đánh giá kết quả chụp; 洗出来 nói ảnh được rửa/in ra thành phẩm.",
+      "highlight": [
+        "照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea75021b-c364-415a-8f81-0bc53daf0665"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fc7115f6-fa2c-4472-b281-95467775b27a",
+      "order": 2,
+      "zh": "要洗的照片已经选好了，张张都很清楚。",
+      "pinyin": "Yào xǐ de zhàopiàn yǐjīng xuǎn hǎo le, zhāngzhāng dōu hěn qīngchu.",
+      "vi": "Những tấm ảnh cần rửa đã chọn xong rồi, tấm nào cũng rất rõ.",
+      "analysis_vi": "要洗的照片 là “ảnh cần rửa”; 选好 là chọn xong; 张张都 nhấn mạnh không tấm nào ngoại lệ.",
+      "highlight": [
+        "照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea75021b-c364-415a-8f81-0bc53daf0665"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2c135cc1-9abb-426d-b3b2-f779eec628a6",
+      "order": 3,
+      "zh": "这次去王府井，我没有一直拍照，而是慢慢儿看街上的人和风景。",
+      "pinyin": "Zhè cì qù Wángfǔjǐng, wǒ méiyǒu yìzhí pāizhào, ér shì mànmānr kàn jiē shàng de rén hé fēngjǐng.",
+      "vi": "Lần này đi Vương Phủ Tỉnh, tôi không chụp ảnh suốt, mà từ từ ngắm người và phong cảnh trên phố.",
+      "analysis_vi": "没有……而是…… tạo đối chiếu; câu này dùng 拍照 theo khẩu ngữ hiện đại, tự nhiên hơn ép 照 đơn lẻ.",
+      "highlight": [
+        "照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea75021b-c364-415a-8f81-0bc53daf0665"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở Trung Quốc hiện nay, khi nhờ người khác chụp ảnh, câu tự nhiên là 能帮我拍张照吗？ – néng bāng wǒ pāi zhāng zhào ma – có thể chụp giúp tôi một tấm không? 拍张照 khẩu ngữ hơn 照一张相.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "34221a3d-c905-4729-af41-883ad7df7525",
+      "order": 1,
+      "rule_vi": "Dùng 照 đơn lẻ quá nhiều khi nói “chụp ảnh”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我想照。",
+          "pinyin": "Câu này thiếu tân ngữ/ngữ cảnh, nghe không đủ rõ.",
+          "vi": "",
+          "note_vi": "Không nên nói cứng:",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我想拍照。",
+          "pinyin": "Wǒ xiǎng pāizhào.",
+          "vi": "Tôi muốn chụp ảnh.",
+          "note_vi": "Tự nhiên hơn:",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dùng 照 đơn lẻ quá nhiều khi nói “chụp ảnh”. Tự nhiên hơn: 我想拍照。 Wǒ xiǎng pāizhào. Tôi muốn chụp ảnh. 我想照相。 Wǒ xiǎng zhàoxiàng. Tôi muốn chụp ảnh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "照",
+    "back": "chụp, chiếu sáng, soi; theo như",
+    "hint": "zhào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "照"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ea75021b-c364-415a-8f81-0bc53daf0665",
+    "source_lesson_vocab_id": null
+  }
+}

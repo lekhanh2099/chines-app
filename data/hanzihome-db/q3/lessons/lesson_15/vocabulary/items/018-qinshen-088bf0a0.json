@@ -1,0 +1,213 @@
+{
+  "id": "a0931996-bd2f-4cb2-87d0-71001f2a4529",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "亲身",
+  "pinyin": "qīnshēn",
+  "pos": {
+    "raw_vi": "Phó từ / tính từ định ngữ",
+    "raw_cn": "副词/定语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thân thân",
+    "meaning_vi": "đích thân; chính bản thân trực tiếp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đích thân",
+      "chính bản thân trực tiếp"
+    ],
+    "short_definition_vi": "đích thân; chính bản thân trực tiếp",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "",
+        "structure_note_vi": "亲: thân; tự mình",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân; tự mình",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: thân; tự mình.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "身",
+        "lishu_vi": "",
+        "structure_note_vi": "身: bản thân",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bản thân",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: bản thân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲身 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 亲身经历.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2749e77f-4312-4217-b8e5-192b2612724d",
+      "order": 1,
+      "zh": "亲身经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13f373d4-7410-4bb9-9e0c-ae9746d716ba",
+      "order": 2,
+      "zh": "亲身体会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "958ee9ae-674f-43c0-8e3d-2ced6b386199",
+      "order": 3,
+      "zh": "亲身感受",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "143ca800-da55-419e-bead-19339e8a06af",
+      "order": 4,
+      "zh": "亲身体验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "062ae747-9024-4db9-9ff6-c93def669486",
+      "order": 1,
+      "zh": "这是我的亲身经历。",
+      "pinyin": "",
+      "vi": "Đây là trải nghiệm chính bản thân tôi đã trải qua。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "亲身"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a0931996-bd2f-4cb2-87d0-71001f2a4529"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7139abfe-63c8-4e1b-b64e-70c88e75ca1c",
+      "order": 2,
+      "zh": "从这次亲身经历来看，我觉得他们真的乐于助人。",
+      "pinyin": "",
+      "vi": "Từ trải nghiệm trực tiếp lần này, tôi thấy họ thật sự sẵn lòng giúp người。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "亲身"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a0931996-bd2f-4cb2-87d0-71001f2a4529"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "921f98e1-fa5f-4324-994e-9b821f1f24ab",
+      "order": 1,
+      "rule_vi": "Không nhầm 亲身 với 亲自。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 亲身 với 亲自。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲身",
+    "back": "đích thân; chính bản thân trực tiếp",
+    "hint": "qīnshēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a0931996-bd2f-4cb2-87d0-71001f2a4529",
+    "source_lesson_vocab_id": null
+  }
+}

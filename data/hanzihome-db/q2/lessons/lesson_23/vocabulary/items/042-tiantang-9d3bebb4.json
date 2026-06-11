@@ -1,0 +1,337 @@
+{
+  "id": "940a407d-ea16-4caf-8df0-a10d82197297",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "天堂",
+  "pinyin": "tiāntáng",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Thiên đường",
+    "meaning_vi": "thiên đường; nơi rất đẹp/rất hạnh phúc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thiên đường; nơi rất đẹp/rất hạnh phúc"
+    ],
+    "short_definition_vi": "thiên đường; nơi rất đẹp/rất hạnh phúc",
+    "textbook_focus_vi": "thiên đường; nơi rất đẹp/rất hạnh phúc",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "天",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "堂",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, mặt đất",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, mặt đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 天堂 hợp lại tạo nghĩa hiện đại trong bài: thiên đường; nơi rất đẹp/rất hạnh phúc.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "天堂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "天堂 / 乐园 / 仙境",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "乐园",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "天堂 / 乐园 / 仙境",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "仙境",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "天堂 / 乐园 / 仙境",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "天堂",
+        "right": "地狱",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "天堂 ↔ 地狱",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "天堂 / 乐园 / 仙境",
+      "天堂 ↔ 地狱"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "47aac79c-2ff9-4a09-bf4c-017c5a9b53c0",
+      "order": 1,
+      "zh": "上有天堂，下有苏杭",
+      "pinyin": "",
+      "vi": "trên có thiên đường, dưới có Tô-Hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "66972c83-1734-434a-b7e3-c2b9f1f72651",
+      "order": 2,
+      "zh": "人间天堂",
+      "pinyin": "",
+      "vi": "人间天堂",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d170fa8e-a634-4d94-a8f1-4dd54ac5d708",
+      "order": 3,
+      "zh": "购物天堂",
+      "pinyin": "",
+      "vi": "购物天堂",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "71280a2c-a3b5-4206-93a7-b1a1c576cfb7",
+      "order": 4,
+      "zh": "旅游天堂",
+      "pinyin": "",
+      "vi": "旅游天堂",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a570506e-f4f4-4fd1-8d32-80217ad939f2",
+      "order": 5,
+      "zh": "美食天堂",
+      "pinyin": "",
+      "vi": "美食天堂",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "9703ebfe-32ac-4371-bbc2-ccb0831b6d52",
+      "order": 6,
+      "zh": "像天堂一样",
+      "pinyin": "",
+      "vi": "像天堂一样",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3a15ed8e-9765-43d3-ac3f-2c5d9722ea82",
+      "order": 1,
+      "zh": "这句话里有“天堂”这个词。",
+      "pinyin": "",
+      "vi": "Trong câu này có từ/chữ “天堂”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "天堂"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "940a407d-ea16-4caf-8df0-a10d82197297"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ccee99e6-b3c9-40a5-8142-b0f4fde79684",
+      "order": 2,
+      "zh": "你觉得哪里风景最好，就可以用“天堂”来理解这句话。",
+      "pinyin": "",
+      "vi": "Bạn thấy nơi nào phong cảnh đẹp nhất thì có thể dùng “天堂” để hiểu câu này.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "天堂"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "940a407d-ea16-4caf-8df0-a10d82197297"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "17bcd662-0ac2-4449-9619-2a51ac94a883",
+      "order": 3,
+      "zh": "我们先读句子，再查意思，最后才明白“天堂”在这里的用法。",
+      "pinyin": "",
+      "vi": "Chúng tôi trước tiên đọc câu, rồi tra nghĩa, cuối cùng mới hiểu cách dùng “天堂” ở đây.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "天堂"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "940a407d-ea16-4caf-8df0-a10d82197297"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "天堂 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c533a07b-29e1-47de-bfbe-cc26dc3a697a",
+      "order": 1,
+      "rule_vi": "Dùng 天堂 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 天堂 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "天堂",
+    "back": "thiên đường; nơi rất đẹp/rất hạnh phúc",
+    "hint": "tiāntáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "940a407d-ea16-4caf-8df0-a10d82197297",
+    "source_lesson_vocab_id": null
+  }
+}

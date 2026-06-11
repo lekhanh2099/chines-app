@@ -1,0 +1,341 @@
+{
+  "id": "a44b9cbb-696b-4552-b8aa-51f40f0fa887",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "猜",
+  "pinyin": "cāi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Sai",
+    "meaning_vi": "đoán; phỏng đoán",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đoán; phỏng đoán"
+    ],
+    "short_definition_vi": "đoán; phỏng đoán",
+    "textbook_focus_vi": "đoán; phỏng đoán",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "猜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "犬",
+          "radical_variant": "犭",
+          "radical_name_vi": "bộ Khuyển",
+          "radical_name_zh": "",
+          "hanviet": "khuyển",
+          "meaning_vi": "chó, thú",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "犭 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó, thú",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó, thú",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "犭 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "",
+            "meaning_vi": "xanh; thành phần cấu tạo/biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "猜 trong tiếng hiện đại nên học theo nghĩa “đoán”. Nó thường không cần chiết tự sâu. Logic học: 猜 + 得/不 + 出来 = có đoán ra được hay không. 猜 + 得/不 + 对 = có đoán đúng được hay không.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 猜出来 nhấn “đoán ra đáp án”; 猜对 nhấn “đoán đúng”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "猜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đoán.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "估计",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ước tính, đoán dựa trên suy xét; thường lý tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "想",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghĩ, muốn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "认为",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho rằng, nhận định.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: không biết đáp án thì 猜; dựa vào tình hình để ước lượng thì 估计."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "693c7685-5a68-450e-bc76-609cd4b61811",
+      "order": 1,
+      "zh": "猜一猜",
+      "pinyin": "",
+      "vi": "đoán thử xem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "107524e4-e2ff-4803-bd53-10f7c11addea",
+      "order": 2,
+      "zh": "猜得出来",
+      "pinyin": "",
+      "vi": "đoán ra được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77c57182-d2ae-4133-9462-5a6ee71744d7",
+      "order": 3,
+      "zh": "猜不出来",
+      "pinyin": "",
+      "vi": "đoán không ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc52156a-5fa3-4035-b6f8-2ed50c05688d",
+      "order": 4,
+      "zh": "猜对了",
+      "pinyin": "",
+      "vi": "đoán đúng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "731063d5-704c-4b92-9ee0-0ef01f8511a9",
+      "order": 5,
+      "zh": "猜错了",
+      "pinyin": "",
+      "vi": "đoán sai rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0251938f-964f-4b82-8c2a-5eb476afbab3",
+      "order": 1,
+      "zh": "这个故事的结尾你猜得出来吗？",
+      "pinyin": "Zhège gùshi de jiéwěi nǐ cāi de chūlai ma?",
+      "vi": "Cái kết của câu chuyện này bạn đoán ra được không?",
+      "analysis_vi": "猜得出来 là đoán ra được đáp án/kết quả.",
+      "highlight": [
+        "猜"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "a44b9cbb-696b-4552-b8aa-51f40f0fa887"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "19533dab-7038-49b1-8124-14cf70e198fe",
+      "order": 2,
+      "zh": "演员的动作太快了，我猜不出来他想表现什么。",
+      "pinyin": "Yǎnyuán de dòngzuò tài kuài le, wǒ cāi bù chūlai tā xiǎng biǎoxiàn shénme.",
+      "vi": "Động tác của diễn viên nhanh quá, tôi đoán không ra anh ấy muốn biểu hiện điều gì.",
+      "analysis_vi": "猜不出来 nói không đoán ra ý nghĩa phía sau động tác.",
+      "highlight": [
+        "猜"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "a44b9cbb-696b-4552-b8aa-51f40f0fa887"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7df05fd9-0bd9-4b52-aa8f-0e920288af68",
+      "order": 3,
+      "zh": "你猜对了，这个人物在故事里地位很高。",
+      "pinyin": "Nǐ cāi duì le, zhège rénwù zài gùshi lǐ dìwèi hěn gāo.",
+      "vi": "Bạn đoán đúng rồi, nhân vật này trong câu chuyện có địa vị rất cao.",
+      "analysis_vi": "猜对了 nhấn kết quả đoán đúng, không phải chỉ đoán ra.",
+      "highlight": [
+        "猜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a44b9cbb-696b-4552-b8aa-51f40f0fa887"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4167f43f-4d74-445b-bcfe-bae86d4c55fe",
+      "order": 1,
+      "rule_vi": "Nhầm 猜出来 và 猜对. 猜出来",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Nhầm 猜出来 và 猜对. 猜出来 Cāi chūlai Đoán ra đáp án. 猜对",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "猜",
+    "back": "đoán; phỏng đoán",
+    "hint": "cāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong lớp tiếng Trung, giáo viên rất hay nói 你猜一猜 – em đoán thử xem. Đây là cách kéo người học tự suy luận trước khi giải thích, khá giống cách giáo viên Việt Nam nói “đoán thử coi”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a44b9cbb-696b-4552-b8aa-51f40f0fa887",
+    "source_lesson_vocab_id": null
+  }
+}

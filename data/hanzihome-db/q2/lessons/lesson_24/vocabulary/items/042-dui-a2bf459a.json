@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ec4bb0754e3b012c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "对",
+  "pinyin": "duì",
+  "meaning_vi": "đôi, cặp; lượng từ cho cặp đôi",
+  "pos": "Lượng từ",
+  "pos_detail": {
+    "vi": "Lượng từ",
+    "cn": "量词",
+    "normalized": "measure_word",
+    "schema_compatible_pos": "measure_word",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Dùng cho vật/người thành cặp: 一对夫妻.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+    "type": "vocabulary_item",
+    "order": 5,
+    "hanzi": "对",
+    "pinyin": "duì",
+    "meaning_vi": "đôi, cặp; lượng từ cho cặp đôi",
+    "meaning_en": "",
+    "pos": "Lượng từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "对",
+      "back": "duì — đôi, cặp",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Lượng từ",
+      "cn": "量词",
+      "normalized": "measure_word",
+      "schema_compatible_pos": "measure_word",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Dùng cho vật/người thành cặp: 一对夫妻.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

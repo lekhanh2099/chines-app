@@ -1,0 +1,284 @@
+{
+  "id": "149a58fc-e29a-4ea7-b5eb-f640d6d12ab2",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "彩虹",
+  "pinyin": "cǎihóng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thải hồng",
+    "meaning_vi": "cầu vồng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cầu vồng"
+    ],
+    "short_definition_vi": "cầu vồng",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "彩",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "采",
+            "hanviet": "thải",
+            "meaning_vi": "hái, lấy",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "彡",
+            "hanviet": "sam",
+            "meaning_vi": "nét trang sức, hoa văn",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "彡",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sam",
+              "radical_name_zh": "",
+              "hanviet": "sam",
+              "meaning_vi": "nét trang sức, hoa văn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "màu sắc, vẻ đẹp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "虹",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng; bộ trong nhiều chữ tự nhiên cổ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "công",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầu vồng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "彩虹 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 彩虹 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "虹",
+        "pinyin": "hóng",
+        "meaning_vi": "cầu vồng",
+        "difference_vi": "Ngắn hơn, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "霓虹",
+        "pinyin": "níhóng",
+        "meaning_vi": "neon",
+        "difference_vi": "Không phải cầu vồng tự nhiên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0ef31c27-ced2-4b29-b25e-ed9ff741b272",
+      "order": 1,
+      "zh": "一道彩虹",
+      "pinyin": "yí dào cǎihóng",
+      "vi": "một cầu vồng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ca2d14e-c426-4e2f-b686-e8fe16626bbf",
+      "order": 2,
+      "zh": "雨后的彩虹",
+      "pinyin": "yǔ hòu de cǎihóng",
+      "vi": "cầu vồng sau mưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbd97238-6156-46a7-b2d5-65a271355f56",
+      "order": 3,
+      "zh": "风雨后的彩虹",
+      "pinyin": "fēngyǔ hòu de cǎihóng",
+      "vi": "cầu vồng sau mưa gió",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "50131232-81cd-4651-819b-bb4c571a7ded",
+      "order": 1,
+      "zh": "雨停以后，天空中出现了一道彩虹。",
+      "pinyin": "Yǔ tíng yǐhòu, tiānkōng zhōng chūxiàn le yí dào cǎihóng.",
+      "vi": "Sau khi mưa tạnh, trên trời xuất hiện một cầu vồng.",
+      "analysis_vi": "彩虹 dùng lượng từ 道.",
+      "highlight": [
+        "彩虹"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "149a58fc-e29a-4ea7-b5eb-f640d6d12ab2"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e88edc2a-fda2-47bd-b32e-01eaed580eba",
+      "order": 2,
+      "zh": "不经历风雨，怎么能看见真正属于自己的彩虹呢？",
+      "pinyin": "Bù jīnglì fēngyǔ, zěnme néng kànjiàn zhēnzhèng shǔyú zìjǐ de cǎihóng ne?",
+      "vi": "Không trải qua mưa gió, sao thấy được cầu vồng của mình?",
+      "analysis_vi": "Câu hỏi tu từ, 彩虹 là ẩn dụ thành quả.",
+      "highlight": [
+        "彩虹"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "149a58fc-e29a-4ea7-b5eb-f640d6d12ab2"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不经历风雨，怎么见彩虹 là câu truyền cảm hứng quen thuộc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "840fe549-0ed1-464d-8f8a-79d052759861",
+      "order": 1,
+      "rule_vi": "Nên nói 一道彩虹, không nên viết 一个彩虹 trong bài chuẩn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "彩虹",
+    "back": "cầu vồng",
+    "hint": "cǎihóng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "149a58fc-e29a-4ea7-b5eb-f640d6d12ab2",
+    "source_lesson_vocab_id": null
+  }
+}

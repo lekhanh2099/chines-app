@@ -1,0 +1,279 @@
+{
+  "id": "7bce17e4-8100-4cff-aba3-6fb2ffdf09b2",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "能力",
+  "pinyin": "nénglì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "năng lực",
+    "meaning_vi": "năng lực, khả năng làm được việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "năng lực",
+      "khả năng làm được việc"
+    ],
+    "short_definition_vi": "năng lực làm được việc",
+    "textbook_focus_vi": "năng lực làm được việc",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "能",
+        "lishu_vi": "năng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "力",
+        "lishu_vi": "lực",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "năng lực làm được việc",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 提高能力.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "本领",
+        "pinyin": "běnlǐng",
+        "meaning_vi": "bản lĩnh/kỹ năng thực tế",
+        "difference_vi": "khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "水平",
+        "pinyin": "shuǐpíng",
+        "meaning_vi": "trình độ",
+        "difference_vi": "không hoàn toàn là năng lực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cfada38a-3c77-4c91-a1f3-c7e85c4d4b36",
+      "order": 1,
+      "zh": "提高能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cddd1642-1366-4d33-b9a9-0aa4f457f817",
+      "order": 2,
+      "zh": "工作能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "90415e9b-6b6e-4f3d-9af9-937cc14a7065",
+      "order": 3,
+      "zh": "学习能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0f6cade-f70c-4987-ac0d-75abecf40f86",
+      "order": 4,
+      "zh": "语言能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22eecb80-e3a1-41c7-b708-db8aa6398d7b",
+      "order": 5,
+      "zh": "管理能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c670c914-878f-490e-9ff4-fb8de473d97d",
+      "order": 6,
+      "zh": "解决问题的能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0ee8548-ab46-40a0-abcd-8b29ad93dfc1",
+      "order": 7,
+      "zh": "能力不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "79998071-445c-4752-9f7e-53f8b111b659",
+      "order": 1,
+      "zh": "他很有能力。",
+      "pinyin": "Tā hěn yǒu nénglì.",
+      "vi": "Anh ấy rất có năng lực.",
+      "analysis_vi": "有能力 là đánh giá người làm được việc.",
+      "highlight": [
+        "能力"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7bce17e4-8100-4cff-aba3-6fb2ffdf09b2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "能力 và 态度 là hai trục đánh giá rất công sở.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "43200b8c-7bf8-49c6-ae35-6222363762d7",
+      "order": 1,
+      "rule_vi": "能力 là năng lực làm việc; 水平 là trình độ/mức độ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "能力",
+    "back": "năng lực, khả năng làm được việc",
+    "hint": "nénglì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7bce17e4-8100-4cff-aba3-6fb2ffdf09b2",
+    "source_lesson_vocab_id": null
+  }
+}

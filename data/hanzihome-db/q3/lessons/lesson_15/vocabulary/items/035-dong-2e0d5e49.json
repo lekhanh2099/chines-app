@@ -1,0 +1,202 @@
+{
+  "id": "92ef40fe-8e43-4de2-8ec3-4695be1e98d2",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "动",
+  "pinyin": "dòng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "động",
+    "meaning_vi": "động; cử động; bắt đầu làm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "động",
+      "cử động",
+      "bắt đầu làm"
+    ],
+    "short_definition_vi": "động; cử động; bắt đầu làm",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "动",
+        "lishu_vi": "",
+        "structure_note_vi": "动: cử động",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cử động",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: cử động.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "动 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 别动.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a423492e-0992-4433-855e-0ed0bd00d7ca",
+      "order": 1,
+      "zh": "别动",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c12ca09-9144-421e-9fa0-dda3265c124b",
+      "order": 2,
+      "zh": "动一下",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aed94056-f4e8-418a-942c-bf4b526d7b54",
+      "order": 3,
+      "zh": "动手",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "785f50b0-ec6e-42d6-8f39-414421116598",
+      "order": 4,
+      "zh": "一动不动",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9b4f2b57-65a6-4283-a336-85e5a6c47420",
+      "order": 1,
+      "zh": "医生说：“别动，你的腿可能骨折了。”",
+      "pinyin": "",
+      "vi": "Bác sĩ nói: “Đừng cử động, chân của bạn có thể gãy xương.”",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "动"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "92ef40fe-8e43-4de2-8ec3-4695be1e98d2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "91dd1310-79cd-49ff-bf96-5d0e2f8e4077",
+      "order": 2,
+      "zh": "护士让我千万别乱动。",
+      "pinyin": "",
+      "vi": "Y tá bảo tôi tuyệt đối đừng cử động lung tung。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "动"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "92ef40fe-8e43-4de2-8ec3-4695be1e98d2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "19293be7-1208-4775-b9ee-2a2ad1e391e1",
+      "order": 1,
+      "rule_vi": "Không nhầm 动手 với 动手术。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 动手 với 动手术。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "动",
+    "back": "động; cử động; bắt đầu làm",
+    "hint": "dòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "92ef40fe-8e43-4de2-8ec3-4695be1e98d2",
+    "source_lesson_vocab_id": null
+  }
+}

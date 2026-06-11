@@ -1,0 +1,214 @@
+{
+  "id": "54d8ea7d-5eed-4f51-b34a-01654c95b15a",
+  "type": "deep_vocabulary_item",
+  "order": 61,
+  "hanzi": "由衷",
+  "pinyin": "yóuzhōng",
+  "pos": {
+    "raw_vi": "Phó từ / tính từ",
+    "raw_cn": "副词/形容词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "do trung",
+    "meaning_vi": "từ đáy lòng; thật lòng; chân thành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ đáy lòng",
+      "thật lòng",
+      "chân thành"
+    ],
+    "short_definition_vi": "từ đáy lòng; thật lòng; chân thành",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "由",
+        "lishu_vi": "",
+        "structure_note_vi": "由: do; từ",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "do; từ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: do; từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "衷",
+        "lishu_vi": "",
+        "structure_note_vi": "衷: lòng trong",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lòng trong",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: lòng trong.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "由衷 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 由衷地感谢.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3e2705a1-994d-4ef5-8bb7-dafe33567952",
+      "order": 1,
+      "zh": "由衷地感谢",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac7fe00b-6d00-4ef9-98b3-39b24a6a655e",
+      "order": 2,
+      "zh": "由衷感谢",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "366e2cf0-48b2-42ad-a935-dd6c7ec53138",
+      "order": 3,
+      "zh": "由衷地高兴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5cd5d65f-b7b4-410e-94f0-b0b1daec999d",
+      "order": 4,
+      "zh": "言不由衷",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "55f8746d-053b-4af1-9bbf-1353b6d623a5",
+      "order": 1,
+      "zh": "我由衷地感谢林老师。",
+      "pinyin": "",
+      "vi": "Tôi cảm ơn cô Lâm từ đáy lòng。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "由衷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54d8ea7d-5eed-4f51-b34a-01654c95b15a"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d5fb79e-cda2-4f65-8ebf-ef30f1d559d6",
+      "order": 2,
+      "zh": "老师像家人一样照顾我，这使我由衷地感动。",
+      "pinyin": "",
+      "vi": "Cô giáo chăm sóc tôi như người nhà, điều này khiến tôi cảm động từ đáy lòng。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "由衷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54d8ea7d-5eed-4f51-b34a-01654c95b15a"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e038b249-e77b-4e88-bd40-31682dbec14f",
+      "order": 1,
+      "rule_vi": "由衷 dùng cho cảm xúc thật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "由衷 dùng cho cảm xúc thật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "由衷",
+    "back": "từ đáy lòng; thật lòng; chân thành",
+    "hint": "yóuzhōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "54d8ea7d-5eed-4f51-b34a-01654c95b15a",
+    "source_lesson_vocab_id": null
+  }
+}

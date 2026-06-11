@@ -1,0 +1,314 @@
+{
+  "id": "dd26f574-5a66-4bc9-bea7-06219bd4463f",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "性急",
+  "pinyin": "xìngjí",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tính cấp",
+    "meaning_vi": "nóng tính, nóng vội, sốt ruột",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nóng tính, nóng vội, sốt ruột"
+    ],
+    "short_definition_vi": "nóng tính, nóng vội, sốt ruột",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "性",
+        "lishu_vi": "tính",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tính cách",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "急",
+        "lishu_vi": "cấp",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấp, vội",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "性急 là tính người dễ nóng vội, thiếu kiên nhẫn.",
+    "memory_tip_vi": "Nhớ 他这个人很性急.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "着急",
+        "pinyin": "",
+        "meaning_vi": "着急",
+        "difference_vi": "着急 là trạng thái nhất thời; 性急 là tính cách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "耐心",
+        "pinyin": "",
+        "meaning_vi": "耐心",
+        "difference_vi": "kiên nhẫn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0cc94860-14f4-45f6-a893-9b590e3169d4",
+      "order": 1,
+      "zh": "性急的人",
+      "pinyin": "xìngjí de rén",
+      "vi": "người nóng vội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "883581e1-2de4-4e99-a0b5-a3899caf5eea",
+      "order": 2,
+      "zh": "太性急了",
+      "pinyin": "tài xìngjí le",
+      "vi": "quá nóng vội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b814eba4-ba1a-4778-b9de-bae7be820e39",
+      "order": 3,
+      "zh": "不要性急",
+      "pinyin": "bú yào xìngjí",
+      "vi": "đừng nóng vội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ae13353-8941-4675-aaa3-7a78fc78ebd3",
+      "order": 4,
+      "zh": "性急的农民",
+      "pinyin": "xìngjí de nóngmín",
+      "vi": "người nông dân nóng vội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "135936e1-19ca-45b9-aee8-725bae2df5b9",
+      "order": 1,
+      "zh": "他这个人很性急。",
+      "pinyin": "Tā zhè ge rén hěn xìngjí.",
+      "vi": "Người này rất nóng vội.",
+      "analysis_vi": "Mô tả tính cách.",
+      "highlight": [
+        "性急"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dd26f574-5a66-4bc9-bea7-06219bd4463f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "68586145-2e73-4b73-bb06-590c48eaab66",
+      "order": 2,
+      "zh": "那个农民太性急了，看到苗长得慢，就急忙把苗往上拔。",
+      "pinyin": "Nà ge nóngmín tài xìngjí le, kàn dào miáo zhǎng de màn, jiù jímáng bǎ miáo wǎng shàng bá.",
+      "vi": "Người nông dân quá nóng vội, thấy mạ lớn chậm liền vội nhổ lên.",
+      "analysis_vi": "性急 là tính cách, 急忙 là hành động.",
+      "highlight": [
+        "性急"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dd26f574-5a66-4bc9-bea7-06219bd4463f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "性急 là tâm lý phía sau 拔苗助长.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d444c13d-b91e-45e8-8c36-7fcce0595437",
+      "order": 1,
+      "rule_vi": "Không nhầm 性急 với 着急.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我现在很性急，因为车快走了。",
+          "pinyin": "Wǒ xiànzài hěn xìngjí, yīnwèi chē kuài zǒu le.",
+          "vi": "Sai/gượng nếu nói trạng thái lúc này.",
+          "note_vi": "性急 là tính cách.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我现在很着急，因为车快走了。",
+          "pinyin": "Wǒ xiànzài hěn zháojí, yīnwèi chē kuài zǒu le.",
+          "vi": "Tôi đang rất sốt ruột vì xe sắp chạy.",
+          "note_vi": "着急 đúng cho trạng thái nhất thời.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "性急",
+    "back": "nóng tính, nóng vội, sốt ruột",
+    "hint": "xìngjí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dd26f574-5a66-4bc9-bea7-06219bd4463f",
+    "source_lesson_vocab_id": null
+  }
+}

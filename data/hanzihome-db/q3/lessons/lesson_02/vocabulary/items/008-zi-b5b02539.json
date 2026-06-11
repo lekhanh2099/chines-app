@@ -1,0 +1,346 @@
+{
+  "id": "953ab4eb-0c52-4a94-89b6-490205129bf7",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "自",
+  "pinyin": "zì",
+  "pos": {
+    "raw_vi": "Đại từ / giới từ / phó từ / yếu tố cấu tạo từ",
+    "raw_cn": "代/介/副/语素",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "morpheme"
+  ],
+  "meaning": {
+    "hanviet": "Tự",
+    "meaning_vi": "tự mình; từ, do",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự mình; từ, do"
+    ],
+    "short_definition_vi": "tự mình; từ, do",
+    "textbook_focus_vi": "tự mình; từ, do",
+    "register_vi": "",
+    "usage_domain_vi": "morpheme",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "自",
+            "hanviet": "tự",
+            "meaning_vi": "chữ độc thể; bản thân/từ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "自 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "自",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tự",
+              "radical_name_zh": "",
+              "hanviet": "tự",
+              "meaning_vi": "bản thân; từ, do",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "自 được dùng như bộ Tự trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình; từ, do",
+        "modern_logic_vi": "Tự là điểm xuất phát hoặc bản thân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "自",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tự",
+          "radical_name_zh": "",
+          "hanviet": "tự",
+          "meaning_vi": "bản thân; từ, do",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "自 được dùng như bộ Tự trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Tự là điểm xuất phát hoặc bản thân.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "自己",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "从",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "由",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "be7cf31c-edb3-4009-b5e1-05ca958527e6",
+      "order": 1,
+      "zh": "自己",
+      "pinyin": "",
+      "vi": "bản thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "867f7429-7336-4298-ac46-a178910f6029",
+      "order": 2,
+      "zh": "自学",
+      "pinyin": "",
+      "vi": "tự học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09814c50-905f-464f-bdae-5dad3613f1ab",
+      "order": 3,
+      "zh": "自我介绍",
+      "pinyin": "",
+      "vi": "tự giới thiệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad3cfa8c-c718-45fb-a36b-91254030e7d9",
+      "order": 4,
+      "zh": "来自",
+      "pinyin": "",
+      "vi": "đến từ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a140f62-5e42-4126-9dcc-2902ba8a58e5",
+      "order": 5,
+      "zh": "自从",
+      "pinyin": "",
+      "vi": "kể từ khi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2e47405-44eb-4885-b741-390626702bf6",
+      "order": 6,
+      "zh": "自然",
+      "pinyin": "",
+      "vi": "tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "739642b0-267d-480a-821d-2f17dfec0587",
+      "order": 7,
+      "zh": "自由",
+      "pinyin": "",
+      "vi": "tự do",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "684b9a3e-a278-4250-86d3-3e434c601e77",
+      "order": 8,
+      "zh": "自信",
+      "pinyin": "",
+      "vi": "tự tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7f70658f-41dd-46c6-9b76-bd9f82407a8b",
+      "order": 1,
+      "zh": "请你做一下自我介绍。",
+      "pinyin": "Qǐng nǐ zuò yíxià zìwǒ jièshào.",
+      "vi": "Bạn hãy tự giới thiệu một chút.",
+      "analysis_vi": "自我介绍 rất hay dùng trong lớp học/phỏng vấn.",
+      "highlight": [
+        "自"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "953ab4eb-0c52-4a94-89b6-490205129bf7"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e322f03-9e1b-4603-a7cc-a97309723064",
+      "order": 2,
+      "zh": "他来自美国，但是中文基本上是自学的。",
+      "pinyin": "Tā láizì Měiguó, dànshì Zhōngwén jīběnshàng shì zìxué de.",
+      "vi": "Anh ấy đến từ Mỹ, nhưng tiếng Trung về cơ bản là tự học.",
+      "analysis_vi": "是……的 nhấn cách học.",
+      "highlight": [
+        "自"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "953ab4eb-0c52-4a94-89b6-490205129bf7"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "自我介绍 là cụm cực hay trong lớp tiếng Trung và thi nói.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b6de267a-d8ce-450c-a799-171676ee6689",
+      "order": 1,
+      "rule_vi": "来自 là cụm cố định; không dịch từng chữ “lại tự”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我来自越南。",
+          "pinyin": "Wǒ láizì Yuènán.",
+          "vi": "Tôi đến từ Việt Nam.",
+          "note_vi": "Học nguyên cụm 来自.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自",
+    "back": "tự mình; từ, do",
+    "hint": "zì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "morpheme"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "953ab4eb-0c52-4a94-89b6-490205129bf7",
+    "source_lesson_vocab_id": null
+  }
+}

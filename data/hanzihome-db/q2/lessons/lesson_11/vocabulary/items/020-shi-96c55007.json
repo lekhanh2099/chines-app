@@ -1,0 +1,347 @@
+{
+  "id": "bdf2dd6f-c8ff-47fe-9402-4f488ce34489",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "实",
+  "pinyin": "shí",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形 / 语素",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thực",
+    "meaning_vi": "thật, thực tế, chắc, đầy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thật, thực tế, chắc, đầy"
+    ],
+    "short_definition_vi": "thật, thực tế, chắc, đầy",
+    "textbook_focus_vi": "thật, thực tế, chắc, đầy",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "实",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "头",
+            "hanviet": "đầu",
+            "meaning_vi": "thành phần dưới trong giản thể",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực, đầy, chắc",
+        "modern_logic_vi": "实 là giản thể của 實; không nên suy sâu theo hình giản thể.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Lõi nghĩa hiện đại của 实 là thật/có thật/chắc/đầy, thường xuất hiện trong từ ghép.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "真",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "实际",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "真实",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "实在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "虚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "虚假",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b522a1f2-37d7-4094-8b19-476b3657d39d",
+      "order": 1,
+      "zh": "实际情况",
+      "pinyin": "",
+      "vi": "tình hình thực tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d9307df5-9bf1-4167-a2f9-c46c8106f404",
+      "order": 2,
+      "zh": "实话",
+      "pinyin": "",
+      "vi": "lời thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e661a38f-f1b7-4b39-8d8d-8bcf5849a7c4",
+      "order": 3,
+      "zh": "说实话",
+      "pinyin": "",
+      "vi": "nói thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de9c1d8b-f60d-40c5-b909-bf39fafc178a",
+      "order": 4,
+      "zh": "真实情况",
+      "pinyin": "",
+      "vi": "tình hình thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de058e54-e7ea-47e6-bc0b-5df6e0e271e2",
+      "order": 5,
+      "zh": "事实",
+      "pinyin": "",
+      "vi": "sự thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "738f301d-66e3-4cde-bbdf-3ddbccc22789",
+      "order": 6,
+      "zh": "平实的语言",
+      "pinyin": "",
+      "vi": "ngôn ngữ mộc mạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7dc920d6-2eff-45fa-83fc-2a3e388de379",
+      "order": 1,
+      "zh": "说实话，我还没听懂这个语法。",
+      "pinyin": "Shuō shíhuà, wǒ hái méi tīng dǒng zhège yǔfǎ.",
+      "vi": "Nói thật, tôi vẫn chưa nghe hiểu ngữ pháp này.",
+      "analysis_vi": "说实话 là cụm mở đầu tự nhiên.",
+      "highlight": [
+        "实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bdf2dd6f-c8ff-47fe-9402-4f488ce34489"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f4a3c103-68da-4776-b35f-11062b2c8be0",
+      "order": 2,
+      "zh": "他是根据实际情况安排旅行的。",
+      "pinyin": "Tā shì gēnjù shíjì qíngkuàng ānpái lǚxíng de.",
+      "vi": "Anh ấy sắp xếp chuyến du lịch theo tình hình thực tế.",
+      "analysis_vi": "是……的 nhấn căn cứ/cách làm.",
+      "highlight": [
+        "实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bdf2dd6f-c8ff-47fe-9402-4f488ce34489"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "28078583-8667-4ad3-ab6c-feebc8abb21f",
+      "order": 3,
+      "zh": "我一看这些材料，就发现里面有些内容不太真实。",
+      "pinyin": "Wǒ yí kàn zhèxiē cáiliào, jiù fāxiàn lǐmiàn yǒu xiē nèiróng bú tài zhēnshí.",
+      "vi": "Tôi vừa xem tài liệu đã phát hiện có nội dung không thật lắm.",
+      "analysis_vi": "一看就发现 chỉ nhận ra ngay.",
+      "highlight": [
+        "实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bdf2dd6f-c8ff-47fe-9402-4f488ce34489"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "实 có liên hệ mạnh với Hán Việt: thực tế, thực sự, chân thực, sự thực.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff3e7811-f595-4b16-ae76-2c7cece64fa4",
+      "order": 1,
+      "rule_vi": "实 ít đứng một mình trong khẩu ngữ sơ cấp; muốn nói 'thật tốt' dùng 真好, không nói 实好.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "实",
+    "back": "thật, thực tế, chắc, đầy",
+    "hint": "shí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bdf2dd6f-c8ff-47fe-9402-4f488ce34489",
+    "source_lesson_vocab_id": null
+  }
+}

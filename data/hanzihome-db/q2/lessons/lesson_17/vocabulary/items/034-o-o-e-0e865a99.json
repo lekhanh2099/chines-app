@@ -1,0 +1,359 @@
+{
+  "id": "666e097a-ef90-4239-a6b7-72cd021d0362",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "哦",
+  "pinyin": "ò / ó / é",
+  "pos": {
+    "raw_vi": "Thán từ",
+    "raw_cn": "叹",
+    "normalized": "interjection",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Nga / ồ",
+    "meaning_vi": "ồ, à, ờ; thán từ biểu thị hiểu ra, ngạc nhiên hoặc đáp lời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ồ, à, ờ; thán từ biểu thị hiểu ra, ngạc nhiên hoặc đáp lời"
+    ],
+    "short_definition_vi": "ồ, à, ờ; thán từ biểu thị hiểu ra, ngạc nhiên hoặc đáp lời",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "khẩu ngữ, giao tiếp trực tiếp và chat.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "哦",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "我",
+            "hanviet": "ngã",
+            "meaning_vi": "tôi; gợi âm trong 哦",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ồ, à, ờ; thán từ đáp lời",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "哦 có bộ 口, liên quan đến miệng và âm thanh phát ra. 我 là phần phải, chủ yếu gợi âm trong chữ hiện đại. Logic nhớ nghĩa hiện đại: có bộ 口 nên liên quan âm thanh/thán từ; 哦 là âm phản ứng trong giao tiếp.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "哦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "à/ồ/ờ, nhận ra hoặc đáp lời.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "啊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm thán rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "嗯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ừ/ừm, đáp lời, đồng ý nhẹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "này/ây, gọi hoặc thở dài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "alo/này, dùng gọi người hoặc nghe điện thoại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c05ea6b0-f37d-4af4-afa1-0545ed0fc52c",
+      "order": 1,
+      "zh": "哦，我明白了",
+      "pinyin": "",
+      "vi": "à, tôi hiểu rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "20414851-4198-409b-80e8-c9c91636f4af",
+      "order": 2,
+      "zh": "哦，是这样啊",
+      "pinyin": "",
+      "vi": "à, ra là vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "67b0da37-a8fa-4e89-ab69-ab98ba33e3fd",
+      "order": 3,
+      "zh": "哦，原来如此",
+      "pinyin": "",
+      "vi": "à, hóa ra là thế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88ddf0c4-b380-4edb-84ad-da9c27250148",
+      "order": 4,
+      "zh": "哦？真的吗？",
+      "pinyin": "",
+      "vi": "ồ, thật không",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea1404b7-28f4-47b6-8b87-37239d856b12",
+      "order": 5,
+      "zh": "哦，我知道了",
+      "pinyin": "",
+      "vi": "ừ/à, tôi biết rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e1916ad-37e7-4d9b-8726-e7f8f3ec94aa",
+      "order": 6,
+      "zh": "哦，好吧",
+      "pinyin": "",
+      "vi": "ờ, được thôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "546e8b99-5538-4a94-b414-dacb324dc148",
+      "order": 7,
+      "zh": "哦，对了",
+      "pinyin": "",
+      "vi": "à, đúng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5a6f2e5f-cf13-4a4d-83c2-5824ec4390ab",
+      "order": 1,
+      "zh": "哦，我明白了。",
+      "pinyin": "Ò, wǒ míngbai le.",
+      "vi": "À, tôi hiểu rồi.",
+      "analysis_vi": "哦 biểu thị vừa hiểu ra; 了 báo thay đổi trạng thái nhận thức.",
+      "highlight": [
+        "哦"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "666e097a-ef90-4239-a6b7-72cd021d0362"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bed4921d-47f3-49a9-b8b3-293c6cc2b962",
+      "order": 2,
+      "zh": "哦，原来你想把“福”字倒着贴在门上。",
+      "pinyin": "Ò, yuánlái nǐ xiǎng bǎ “Fú” zì dàozhe tiē zài mén shang.",
+      "vi": "À, hóa ra bạn muốn dán ngược chữ “Phúc” lên cửa.",
+      "analysis_vi": "原来 nhấn phát hiện ra sự thật; 把“福”字倒着贴在门上 đúng trọng tâm bài.",
+      "highlight": [
+        "哦"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "666e097a-ef90-4239-a6b7-72cd021d0362"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d20e2dc3-1d91-4382-a40f-cd1e677dc13d",
+      "order": 3,
+      "zh": "我刚开始不知道为什么要倒着贴“福”字，听老师一解释，哦，原来是“福到了”的意思。",
+      "pinyin": "Wǒ gāng kāishǐ bù zhīdào wèishénme yào dàozhe tiē “Fú” zì, tīng lǎoshī yì jiěshì, ò, yuánlái shì “fú dào le” de yìsi.",
+      "vi": "Ban đầu tôi không biết vì sao phải dán ngược chữ Phúc, nghe thầy/cô giải thích một cái, à, hóa ra là nghĩa “phúc đến rồi”.",
+      "analysis_vi": "原来是……的意思 dùng để giải thích ý nghĩa.",
+      "highlight": [
+        "哦"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "666e097a-ef90-4239-a6b7-72cd021d0362"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 哦",
+    "content_vi": "Trong chat tiếng Trung, 哦 đôi khi hơi lạnh hoặc hờ hững nếu chỉ gửi một chữ. Thân thiện hơn có thể viết 哦哦 / 好的 / 明白啦 tùy quan hệ.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c4fa1eb6-0105-4389-91ce-137fffa3312d",
+      "order": 1,
+      "rule_vi": "Không dùng 哦 như câu trả lời lịch sự trong mọi tình huống. Với thầy cô/người lớn, an toàn hơn: 好的，我明白了。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "哦",
+    "back": "ồ, à, ờ; thán từ biểu thị hiểu ra, ngạc nhiên hoặc đáp lời",
+    "hint": "ò / ó / é",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "666e097a-ef90-4239-a6b7-72cd021d0362",
+    "source_lesson_vocab_id": null
+  }
+}

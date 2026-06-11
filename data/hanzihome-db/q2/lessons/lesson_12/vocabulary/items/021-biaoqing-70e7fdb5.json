@@ -1,0 +1,353 @@
+{
+  "id": "a82afd85-7c05-44ee-be34-256a99eca250",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "表情",
+  "pinyin": "biǎoqíng",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "appearance_behavior"
+  ],
+  "meaning": {
+    "hanviet": "biểu tình",
+    "meaning_vi": "biểu cảm, nét mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biểu cảm, nét mặt"
+    ],
+    "short_definition_vi": "biểu cảm, nét mặt",
+    "textbook_focus_vi": "biểu cảm, nét mặt",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo/vỏ ngoài",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, quần áo, vải",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "衣 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biểu thị, bề ngoài, bảng",
+        "modern_logic_vi": "表 gợi cái biểu hiện ra ngoài.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "情",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "cảm xúc/suy nghĩ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm, cảm xúc, tình hình",
+        "modern_logic_vi": "情 gắn với cảm xúc/tình cảm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "表情 = cảm xúc biểu hiện ra ngoài qua nét mặt/cử chỉ.",
+    "memory_tip_vi": "表情 = cảm xúc biểu hiện ra ngoài qua nét mặt/cử chỉ.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "脸色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sắc mặt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "神情",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thần sắc, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "样子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dáng vẻ rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "心情",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tâm trạng bên trong",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aecc3346-b34b-422e-b7dc-5c5577461094",
+      "order": 1,
+      "zh": "脸上的表情",
+      "pinyin": "",
+      "vi": "biểu cảm trên mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df4a1f84-b8f7-4c42-a96e-32fa270ef67c",
+      "order": 2,
+      "zh": "表情很奇怪",
+      "pinyin": "",
+      "vi": "biểu cảm rất lạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecfe8e6d-c4ee-4424-a892-d3f5bb060f91",
+      "order": 3,
+      "zh": "没有表情",
+      "pinyin": "",
+      "vi": "không có biểu cảm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d3d637ed-0f7f-486a-88ad-6cee1fbdb47f",
+      "order": 4,
+      "zh": "表情严肃",
+      "pinyin": "",
+      "vi": "nét mặt nghiêm túc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "850d81b9-8cdf-40d3-b6b6-ff9bf3ae92f2",
+      "order": 5,
+      "zh": "表情包",
+      "pinyin": "",
+      "vi": "sticker/meme biểu cảm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2422b9d4-86f1-4d13-9ac2-e899c2b6cb8f",
+      "order": 1,
+      "zh": "她脸上的表情很紧张。",
+      "pinyin": "",
+      "vi": "Biểu cảm trên mặt cô ấy rất căng thẳng.",
+      "analysis_vi": "脸上的表情 là cụm định ngữ với 的.",
+      "highlight": [
+        "表情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a82afd85-7c05-44ee-be34-256a99eca250"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a9968b1a-b051-4706-b2cf-231f45696743",
+      "order": 2,
+      "zh": "她这个表情你看懂了吗？",
+      "pinyin": "",
+      "vi": "Biểu cảm này của cô ấy bạn nhìn hiểu chưa?",
+      "analysis_vi": "看懂 là nhìn hiểu.",
+      "highlight": [
+        "表情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a82afd85-7c05-44ee-be34-256a99eca250"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "表情包 là sticker/meme biểu cảm trong chat.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "75689a3b-8c04-4a25-8d4a-e55726845a36",
+      "order": 1,
+      "rule_vi": "表情 không phải “biểu tình” chính trị; biểu tình là 示威/游行示威.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "人们在表情。",
+          "pinyin": "",
+          "vi": "Sai nếu muốn nói biểu tình phản đối.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "人们在示威。",
+          "pinyin": "",
+          "vi": "Mọi người đang biểu tình/thị uy phản đối.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表情",
+    "back": "biểu cảm, nét mặt",
+    "hint": "biǎoqíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "appearance_behavior"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a82afd85-7c05-44ee-be34-256a99eca250",
+    "source_lesson_vocab_id": null
+  }
+}

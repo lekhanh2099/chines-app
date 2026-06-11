@@ -1,0 +1,315 @@
+{
+  "id": "db670a44-a830-4168-b5d4-80556c7e23c9",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "桥",
+  "pinyin": "qiáo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "travel_scenery"
+  ],
+  "meaning": {
+    "hanviet": "Kiều",
+    "meaning_vi": "cây cầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cây cầu"
+    ],
+    "short_definition_vi": "cây cầu",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "travel scenery",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "桥",
+        "lishu_vi": "",
+        "structure_note_vi": "木 liên quan cây/gỗ; 乔 là phần phải.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乔",
+            "hanviet": "kiều",
+            "meaning_vi": "cao",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầu",
+        "modern_logic_vi": "木 liên quan cây/gỗ; 乔 là phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "木 gợi vật liệu gỗ thời xưa; 桥 là công trình để đi qua nước/đường/khoảng cách.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "桥梁",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầu; cầu nối ẩn dụ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "天桥",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầu vượt bộ hành",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "立交桥",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầu vượt/nút giao khác mức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "40381eb6-0414-4646-b8ee-265acdeb5f7f",
+      "order": 1,
+      "zh": "一座桥",
+      "pinyin": "",
+      "vi": "một cây cầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b769f67b-4f4a-4664-b2d1-ade01e49d75f",
+      "order": 2,
+      "zh": "桥上",
+      "pinyin": "",
+      "vi": "trên cầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba181165-ec18-4471-b6f7-70048a1de7e3",
+      "order": 3,
+      "zh": "桥下",
+      "pinyin": "",
+      "vi": "dưới cầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0cc0e67d-9b20-4ef7-a380-a13126f1e5ee",
+      "order": 4,
+      "zh": "过桥",
+      "pinyin": "",
+      "vi": "qua cầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ceefbbb-d75d-470d-b6f0-440b96ba44bd",
+      "order": 5,
+      "zh": "石桥",
+      "pinyin": "",
+      "vi": "cầu đá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b3a4ba69-865a-4a23-8bae-fff461251f1a",
+      "order": 1,
+      "zh": "湖上有一座桥。",
+      "pinyin": "Hú shang yǒu yí zuò qiáo.",
+      "vi": "Trên hồ có một cây cầu.",
+      "analysis_vi": "桥 dùng lượng từ 座.",
+      "highlight": [
+        "桥"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "db670a44-a830-4168-b5d4-80556c7e23c9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cc7e3c48-4bfa-4e14-986d-00b2a1d1d12d",
+      "order": 2,
+      "zh": "这座桥比那座桥长。",
+      "pinyin": "Zhè zuò qiáo bǐ nà zuò qiáo cháng.",
+      "vi": "Cây cầu này dài hơn cây cầu kia.",
+      "analysis_vi": "比……长 là so sánh trực tiếp.",
+      "highlight": [
+        "桥"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "db670a44-a830-4168-b5d4-80556c7e23c9"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "桥梁 còn có nghĩa ẩn dụ như 文化交流的桥梁 = cầu nối giao lưu văn hóa.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cc5756f1-206a-42ac-b409-ec0ae393b812",
+      "order": 1,
+      "rule_vi": "Lượng từ chuẩn cho 桥 là 座, không phải 个 trong văn chuẩn.",
+      "natural_examples": [
+        {
+          "zh": "一座桥",
+          "pinyin": "yí zuò qiáo",
+          "vi": "một cây cầu",
+          "note_vi": "Lượng từ chuẩn.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "一个桥",
+          "pinyin": "yí ge qiáo",
+          "vi": "",
+          "note_vi": "Khẩu ngữ có thể gặp nhưng học bài bản nên tránh.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "一个桥",
+          "pinyin": "yí ge qiáo",
+          "vi": "",
+          "note_vi": "Khẩu ngữ có thể gặp nhưng học bài bản nên tránh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "一座桥",
+          "pinyin": "yí zuò qiáo",
+          "vi": "một cây cầu",
+          "note_vi": "Lượng từ chuẩn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "桥",
+    "back": "cây cầu",
+    "hint": "qiáo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "travel_scenery"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "db670a44-a830-4168-b5d4-80556c7e23c9",
+    "source_lesson_vocab_id": null
+  }
+}

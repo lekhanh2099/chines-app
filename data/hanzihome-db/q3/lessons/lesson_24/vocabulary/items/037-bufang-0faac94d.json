@@ -1,0 +1,267 @@
+{
+  "id": "d8409e95-b949-460c-b950-a8e3df8a2c7a",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "不妨",
+  "pinyin": "bùfáng",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_24",
+    "deep_vocab",
+    "qingshang"
+  ],
+  "meaning": {
+    "hanviet": "bất phương",
+    "meaning_vi": "không ngại, có thể thử, chi bằng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không ngại, có thể thử, chi bằng"
+    ],
+    "short_definition_vi": "không ngại, có thể thử, chi bằng",
+    "textbook_focus_vi": "Dùng trong Bài 24 情商 để nối chủ đề EQ, cảm xúc, tự kiểm soát và quan hệ xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, giao tiếp, giáo dục, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 不 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "Không gán bộ thủ nếu không chắc; học theo nghĩa hiện đại của cả từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "妨",
+        "lishu_vi": "phương",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 妨 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "不妨 được ghi theo nghĩa hiện đại đã soạn; ưu tiên học qua cụm dùng thật thay vì suy diễn từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 不妨试试.",
+    "warning_vi": "Không ép chiết tự nếu là tên riêng, thành ngữ cố định hoặc chữ giản thể khó suy nghĩa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên học 不妨 qua cụm cố định và ví dụ trong bài 情商."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6787624a-4e9b-426c-ab81-3ce270ee7b0d",
+      "order": 1,
+      "zh": "不妨试试",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ee4d4b9d-5b32-4d00-9b7b-7e3bc3d6a9f4",
+      "order": 2,
+      "zh": "不妨想一想",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "512b558b-5963-478b-8f3c-c50766e817b5",
+      "order": 3,
+      "zh": "不妨换个角度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32dfe712-b8d5-4d0a-bac1-3183c1302caa",
+      "order": 4,
+      "zh": "不妨先冷静下来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b058931b-7e08-4b69-b58b-b0f6e15b5106",
+      "order": 5,
+      "zh": "不妨一笑了之",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "404921cf-fd65-402a-ac80-ac457b963142",
+      "order": 6,
+      "zh": "不妨这样做",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "50bbf0c3-4d0d-4856-83b9-f74dd98cb7e8",
+      "order": 1,
+      "zh": "这个办法不错，你不妨试试。",
+      "pinyin": "",
+      "vi": "",
+      "analysis_vi": "Ví dụ tự nhiên đã bám nghĩa trọng tâm của 不妨 trong bài 情商.",
+      "highlight": [
+        "不妨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d8409e95-b949-460c-b950-a8e3df8a2c7a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0b040081-5893-4299-b29e-faa6f086d0a7",
+      "order": 2,
+      "zh": "本课用“不妨”来说明情商、情绪和人际关系之间的联系。",
+      "pinyin": "",
+      "vi": "Bài này dùng “不妨” để nói rõ mối liên hệ giữa EQ, cảm xúc và quan hệ xã hội.",
+      "analysis_vi": "Câu phục vụ ngữ cảnh hóa từ trong chủ đề bài, không phải câu dịch máy.",
+      "highlight": [
+        "不妨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d8409e95-b949-460c-b950-a8e3df8a2c7a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 情商, 不妨 được đặt vào mạch học về EQ, kiểm soát cảm xúc, quan hệ xã hội hoặc tác động của công nghệ tới giao tiếp.",
+    "tags": [
+      "usage",
+      "lesson_24"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b599a83d-0134-4ec2-b922-20ee9dadc320",
+      "order": 1,
+      "rule_vi": "Không dịch máy từng chữ Hán Việt của 不妨; phải học theo nghĩa hiện đại và collocation.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảnh báo này giữ lại tinh thần phần lỗi sai đã soạn: tránh suy nghĩa từ mặt chữ khi từ/cụm đã có nghĩa cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不妨",
+    "back": "không ngại, có thể thử, chi bằng",
+    "hint": "bùfáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_24",
+      "qingshang"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d8409e95-b949-460c-b950-a8e3df8a2c7a",
+    "source_lesson_vocab_id": null
+  }
+}

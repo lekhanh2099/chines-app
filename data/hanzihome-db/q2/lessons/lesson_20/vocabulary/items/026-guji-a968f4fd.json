@@ -1,0 +1,414 @@
+{
+  "id": "6a8181a2-1ead-493e-b752-f3e64b025635",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "估计",
+  "pinyin": "gūjì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cổ kế",
+    "meaning_vi": "ước tính; đoán chừng; cho rằng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ước tính; đoán chừng; cho rằng"
+    ],
+    "short_definition_vi": "ước tính; đoán chừng; cho rằng",
+    "textbook_focus_vi": "ước tính; đoán chừng; cho rằng",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "估",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "古",
+            "hanviet": "",
+            "meaning_vi": "xưa, cổ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "计",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "十",
+            "hanviet": "",
+            "meaning_vi": "mười",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "估 là ước lượng, định giá sơ bộ. 计 là tính toán. → 估计 = tính/đoán sơ bộ dựa trên dữ kiện chưa đầy đủ.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 估计 không chắc 100%. Nó là phán đoán có xác suất.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "估计",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ước tính/dự đoán có cơ sở.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "猜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đoán, có thể ít cơ sở hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以为",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tưởng là, thường hóa ra có thể sai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "认为",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho rằng, nhận định.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: nhìn trời âm u rồi nói 估计要下雨; chơi câu đố không biết thì 猜一猜."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de6859d0-2019-49d7-a11c-ee4404df947d",
+      "order": 1,
+      "zh": "我估计……",
+      "pinyin": "",
+      "vi": "tôi đoán/tôi ước tính rằng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8208c4d3-1b67-46ef-a6f6-c09f78181593",
+      "order": 2,
+      "zh": "估计要下雨",
+      "pinyin": "",
+      "vi": "chắc là sắp mưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f87ecf2-5e63-4fc2-a964-888a3b4c79d4",
+      "order": 3,
+      "zh": "估计来不了",
+      "pinyin": "",
+      "vi": "chắc không đến được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "030d189c-55a9-4f63-b580-df6e260d22c4",
+      "order": 4,
+      "zh": "估计坐不下",
+      "pinyin": "",
+      "vi": "đoán là ngồi không đủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1021e928-e7f7-41b7-81e1-ad58138aaea4",
+      "order": 5,
+      "zh": "估计时间",
+      "pinyin": "",
+      "vi": "ước tính thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8519d638-60f5-495d-807a-b2937f5c8d91",
+      "order": 1,
+      "zh": "我估计他今天来不了，因为演出快开演了。",
+      "pinyin": "Wǒ gūjì tā jīntiān lái bù liǎo, yīnwèi yǎnchū kuài kāiyǎn le.",
+      "vi": "Tôi đoán hôm nay anh ấy không đến được, vì buổi diễn sắp bắt đầu rồi.",
+      "analysis_vi": "来不了 là không đến được; 估计 dựa trên thời gian hiện tại.",
+      "highlight": [
+        "估计"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "6a8181a2-1ead-493e-b752-f3e64b025635"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ae8c2195-492d-4c37-bf2a-f8430e6598ad",
+      "order": 2,
+      "zh": "这个剧场不大，我估计坐不下五百个人。",
+      "pinyin": "Zhège jùchǎng bú dà, wǒ gūjì zuò bù xià wǔ bǎi ge rén.",
+      "vi": "Nhà hát này không lớn, tôi đoán không ngồi nổi 500 người.",
+      "analysis_vi": "坐不下 là không chứa đủ chỗ ngồi.",
+      "highlight": [
+        "估计"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "6a8181a2-1ead-493e-b752-f3e64b025635"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3e748fce-7180-43a0-8121-549193d38cf6",
+      "order": 3,
+      "zh": "你先看节目单，我估计你能看懂大概内容。",
+      "pinyin": "Nǐ xiān kàn jiémùdān, wǒ gūjì nǐ néng kàn dǒng dàgài nèiróng.",
+      "vi": "Bạn xem tờ chương trình trước đi, tôi đoán bạn có thể đọc hiểu nội dung đại khái.",
+      "analysis_vi": "看懂 là đọc/xem hiểu được; 估计 làm câu bớt tuyệt đối.",
+      "highlight": [
+        "估计"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a8181a2-1ead-493e-b752-f3e64b025635"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "ba495807-a23f-407c-8ae5-08d9f34f7a97",
+      "order": 1,
+      "rule_vi": "Dùng 估计 như sự thật chắc chắn. 我估计他来不了。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Dùng 估计 như sự thật chắc chắn. 我估计他来不了。 Wǒ gūjì tā lái bù liǎo. Tôi đoán anh ấy không đến được. Nếu chắc chắn hơn:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "估计",
+    "back": "ước tính; đoán chừng; cho rằng",
+    "hint": "gūjì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong khẩu ngữ Trung Quốc, 估计 được dùng rất nhiều như “chắc là / đoán là”: 估计不行, 估计来不及, 估计听不懂. Nó mềm hơn nói chắc chắn, giống tiếng Việt “tui đoán là...”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6a8181a2-1ead-493e-b752-f3e64b025635",
+    "source_lesson_vocab_id": null
+  }
+}

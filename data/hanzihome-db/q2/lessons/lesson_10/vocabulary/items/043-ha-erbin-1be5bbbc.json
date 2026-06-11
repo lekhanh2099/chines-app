@@ -1,0 +1,494 @@
+{
+  "id": "ad2a847d-f46c-49c5-bd60-d679fe6ac25c",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "哈尔滨",
+  "pinyin": "Hā’ěrbīn",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名/地名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab",
+    "proper-name"
+  ],
+  "meaning": {
+    "hanviet": "Cáp Nhĩ Tân",
+    "meaning_vi": "thành phố Harbin",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành phố Harbin"
+    ],
+    "short_definition_vi": "thành phố Harbin",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "哈",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ Khẩu trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ Khẩu trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "尔",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "滨",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ Thủy trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ Thủy trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Đây là tên riêng địa danh, không chiết tự để học nghĩa. Cần nhớ: 哈尔滨 là phiên âm địa danh, pinyin viết hoa: Hā’ěrbīn. Cảnh báo: Không nên phân tích từng chữ 哈 / 尔 / 滨 để suy nghĩa hiện đại, vì đây là tên địa danh phiên âm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "哈尔滨",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cáp Nhĩ Tân, thành phố miền Đông Bắc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "海南岛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đảo Hải Nam, khí hậu nóng/ấm hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "北京",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bắc Kinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "西安",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tây An, cố đô.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我去过哈尔滨，也去过西安。",
+      "Tôi từng đi Cáp Nhĩ Tân, cũng từng đi Tây An.",
+      "我没去过海南岛。",
+      "Tôi chưa từng đi đảo Hải Nam."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6b7a645c-cc1d-48b6-9de5-3f074bb29278",
+      "order": 1,
+      "zh": "去哈尔滨",
+      "pinyin": "",
+      "vi": "đi Cáp Nhĩ Tân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "984ceb19-265e-478d-ac86-8e6491e1848e",
+      "order": 2,
+      "zh": "到哈尔滨旅游",
+      "pinyin": "",
+      "vi": "đến Cáp Nhĩ Tân du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "02adc04c-0482-4f3f-931c-ead48b327508",
+      "order": 3,
+      "zh": "哈尔滨的冬天",
+      "pinyin": "",
+      "vi": "mùa đông Cáp Nhĩ Tân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d7c02c04-fc13-48ad-851a-e36149e37f3f",
+      "order": 4,
+      "zh": "哈尔滨很冷",
+      "pinyin": "",
+      "vi": "Cáp Nhĩ Tân rất lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "80db4f8e-5148-483e-810f-0f2874b2d3b4",
+      "order": 5,
+      "zh": "第一次去哈尔滨",
+      "pinyin": "",
+      "vi": "lần đầu đi Cáp Nhĩ Tân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3140a694-db46-4d14-ac66-0e4cf43b0abe",
+      "order": 6,
+      "zh": "去过哈尔滨",
+      "pinyin": "",
+      "vi": "từng đi Cáp Nhĩ Tân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "00de7280-9c6d-4ad9-9c7c-44206070551c",
+      "order": 1,
+      "zh": "我去过哈尔滨。",
+      "pinyin": "Wǒ qù guo Hā’ěrbīn.",
+      "vi": "Tôi từng đi Cáp Nhĩ Tân.",
+      "analysis_vi": "去过 nhấn kinh nghiệm từng đi.",
+      "highlight": [
+        "哈尔滨"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "ad2a847d-f46c-49c5-bd60-d679fe6ac25c"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "951e2e3c-c4b5-4922-8f69-4d8c03d04ea6",
+      "order": 2,
+      "zh": "我第一次去哈尔滨的时候，天气冷极了。",
+      "pinyin": "Wǒ dì yī cì qù Hā’ěrbīn de shíhou, tiānqì lěng jí le.",
+      "vi": "Lần đầu tôi đi Cáp Nhĩ Tân, thời tiết lạnh cực kỳ.",
+      "analysis_vi": "第一次去……的时候 = khi lần đầu đi đâu. 冷极了 nhấn mức độ lạnh.",
+      "highlight": [
+        "哈尔滨"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "ad2a847d-f46c-49c5-bd60-d679fe6ac25c"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3f7e2252-606a-4479-887c-aafa9b2014f4",
+      "order": 3,
+      "zh": "我去过哈尔滨两次，第一次只看了冰灯，第二次还吃过路边的烤白薯，觉得又甜又暖和。",
+      "pinyin": "Wǒ qù guo Hā’ěrbīn liǎng cì, dì yī cì zhǐ kàn le bīngdēng, dì èr cì hái chī guo lùbiān de kǎo báishǔ, juéde yòu tián yòu nuǎnhuo.",
+      "vi": "Tôi từng đi Cáp Nhĩ Tân hai lần, lần thứ nhất chỉ xem đèn băng, lần thứ hai còn từng ăn khoai lang nướng bên đường, thấy vừa ngọt vừa ấm.",
+      "analysis_vi": "去过两次 = từng đi hai lần. 第一次 / 第二次 sắp xếp thứ tự trải nghiệm. 还吃过 = còn từng ăn.",
+      "highlight": [
+        "哈尔滨"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "ad2a847d-f46c-49c5-bd60-d679fe6ac25c"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "b7754a73-cc2c-473d-9137-36853535c12f",
+      "order": 1,
+      "rule_vi": "Tên riêng nên viết hoa pinyin:",
+      "natural_examples": [
+        {
+          "zh": "你去过哈尔滨吗？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Tên riêng nên viết hoa pinyin: Hā’ěrbīn Khi hỏi kinh nghiệm: 你去过哈尔滨吗？ Bạn từng đi Cáp Nhĩ Tân chưa?",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "哈尔滨",
+    "back": "thành phố Harbin",
+    "hint": "Hā’ěrbīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab",
+      "proper-name"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "哈尔滨 rất nổi tiếng với băng tuyết. Khi học văn hóa Trung Quốc, thành phố này thường gắn với hình ảnh mùa đông Đông Bắc, băng đăng, tuyết dày, và đồ ăn nóng ven đường.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ad2a847d-f46c-49c5-bd60-d679fe6ac25c",
+    "source_lesson_vocab_id": null
+  }
+}

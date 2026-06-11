@@ -1,0 +1,397 @@
+{
+  "id": "28662554-bc3c-4ef9-bdf3-f678753dd93a",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "病痛",
+  "pinyin": "bìngtòng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "bệnh thống",
+    "meaning_vi": "bệnh tật và đau đớn; nỗi đau do bệnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bệnh tật và đau đớn"
+    ],
+    "short_definition_vi": "bệnh tật và đau đớn; nỗi đau do bệnh",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "病",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "疒 được dùng như bộ/thành phần chỉ trường nghĩa: bệnh tật.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "疒 được dùng như bộ/thành phần chỉ trường nghĩa: bệnh tật.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "疒 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bệnh",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "痛",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "疒 được dùng như bộ/thành phần chỉ trường nghĩa: bệnh tật.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "疒 được dùng như bộ/thành phần chỉ trường nghĩa: bệnh tật.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "疒 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đau",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "病痛 được ghi nhớ theo nghĩa hiện đại: bệnh tật và đau đớn; nỗi đau do bệnh.",
+    "memory_tip_vi": "Nhớ qua cụm: 忍受病痛.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "病",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "疼痛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "痛苦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "疾病",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 病痛 cho cảm nhẹ đời thường nếu không muốn sắc thái nặng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "92e96823-9fdb-4af7-b8f5-bbc80bc975a3",
+      "order": 1,
+      "zh": "忍受病痛",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "214f5078-1abd-4a0f-91f1-886478b9974c",
+      "order": 2,
+      "zh": "摆脱病痛",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c996e38-6c06-4eb7-bd01-0504929bf3cc",
+      "order": 3,
+      "zh": "病痛折磨",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4b3b7513-1552-4211-8266-8062d0ede601",
+      "order": 4,
+      "zh": "病痛消失",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "324d4257-7083-4dd7-a4ef-a2fea9fdb726",
+      "order": 5,
+      "zh": "长期病痛",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1af976d-b8f2-4076-9a51-4d7e63104185",
+      "order": 6,
+      "zh": "减轻病痛",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e382e56b-c27f-427a-a735-603d29608283",
+      "order": 1,
+      "zh": "她忍受着长期的病痛。",
+      "pinyin": "Tā rěnshòuzhe chángqī de bìngtòng.",
+      "vi": "Cô ấy đang chịu đựng nỗi đau bệnh tật kéo dài.",
+      "analysis_vi": "忍受着 nhấn trạng thái chịu đựng kéo dài.",
+      "highlight": [
+        "病痛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "28662554-bc3c-4ef9-bdf3-f678753dd93a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ddcdf3ae-dd14-426f-9858-ad7d10126689",
+      "order": 2,
+      "zh": "即使病痛还没有完全消失，小敏也开始练习说话。",
+      "pinyin": "Jíshǐ bìngtòng hái méiyǒu wánquán xiāoshī, Xiǎomǐn yě kāishǐ liànxí shuōhuà.",
+      "vi": "Cho dù đau bệnh vẫn chưa hoàn toàn biến mất, Tiểu Mẫn cũng bắt đầu luyện nói.",
+      "analysis_vi": "即使……也…… nhấn không bỏ cuộc.",
+      "highlight": [
+        "病痛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "28662554-bc3c-4ef9-bdf3-f678753dd93a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "病痛 văn hơn 病, thường tăng sắc thái cảm xúc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fdedd288-0020-482f-884e-359442e92f86",
+      "order": 1,
+      "rule_vi": "Không dùng 病痛 cho cảm nhẹ đời thường nếu không muốn sắc thái nặng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 病痛 cho cảm nhẹ đời thường nếu không muốn sắc thái nặng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "病痛",
+    "back": "bệnh tật và đau đớn; nỗi đau do bệnh",
+    "hint": "bìngtòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "28662554-bc3c-4ef9-bdf3-f678753dd93a",
+    "source_lesson_vocab_id": null
+  }
+}

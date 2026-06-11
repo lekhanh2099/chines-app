@@ -1,0 +1,407 @@
+{
+  "id": "3d3ce74c-c21a-4e97-9747-b56539933107",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "遇到",
+  "pinyin": "yùdào",
+  "pos": {
+    "raw_vi": "động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_19",
+    "situation"
+  ],
+  "meaning": {
+    "hanviet": "Ngộ đáo",
+    "meaning_vi": "gặp phải, gặp được",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gặp phải, gặp được"
+    ],
+    "short_definition_vi": "gặp phải, gặp được",
+    "textbook_focus_vi": "Gặp phải sự cố/trộm.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình huống, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "遇",
+        "lishu_vi": "ngộ",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, di chuyển",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, di chuyển",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "禺",
+            "hanviet": "",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gặp, gặp phải",
+        "modern_logic_vi": "遇 = gặp trong quá trình đi/đời sống.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "到",
+        "lishu_vi": "đáo",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "至",
+            "hanviet": "chí",
+            "meaning_vi": "đến",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao/cắt",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến, tới, đạt đến",
+        "modern_logic_vi": "到 = tới được điểm/sự việc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "遇到 = gặp phải/gặp được một người hoặc tình huống cụ thể, thường có tính tình cờ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "碰到",
+        "pinyin": "",
+        "meaning_vi": "gặp phải, đụng phải",
+        "difference_vi": "Khẩu ngữ hơn, rất gần 遇到.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "见到",
+        "pinyin": "",
+        "meaning_vi": "gặp/nhìn thấy",
+        "difference_vi": "Thường với người/vật cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "看到",
+        "pinyin": "",
+        "meaning_vi": "nhìn thấy",
+        "difference_vi": "Nhấn thị giác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "遇见",
+        "pinyin": "",
+        "meaning_vi": "gặp",
+        "difference_vi": "Thường dùng cho gặp người, hơi văn hơn trong vài ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "遭遇",
+        "pinyin": "",
+        "meaning_vi": "gặp phải biến cố xấu",
+        "difference_vi": "Văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "64c9b720-52a6-4df4-9d83-534dc4d17eb1",
+      "order": 1,
+      "zh": "遇到困难",
+      "pinyin": "",
+      "vi": "gặp khó khăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4f70ddf9-ce98-4601-ae7a-2985ad0a6857",
+      "order": 2,
+      "zh": "遇到麻烦",
+      "pinyin": "",
+      "vi": "gặp rắc rối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4b88a61e-39dc-4682-bafb-b24e7348bc3a",
+      "order": 3,
+      "zh": "遇到危险",
+      "pinyin": "",
+      "vi": "gặp nguy hiểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d3fbe36a-3bb4-4a15-8212-f3c5722edc0f",
+      "order": 4,
+      "zh": "遇到小偷",
+      "pinyin": "",
+      "vi": "gặp phải trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a962c19-1e2f-4249-a3ae-c7b7aa878769",
+      "order": 5,
+      "zh": "遇到问题",
+      "pinyin": "",
+      "vi": "gặp vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f0af714-2e09-462c-b339-73bf9a4227b0",
+      "order": 6,
+      "zh": "遇到好人",
+      "pinyin": "",
+      "vi": "gặp người tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a622a81f-9870-412b-9c41-43bbb1297588",
+      "order": 7,
+      "zh": "遇到这种情况",
+      "pinyin": "",
+      "vi": "gặp tình huống này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1239b103-70b5-4c53-b4ea-c3eec77383d3",
+      "order": 8,
+      "zh": "一遇到……就……",
+      "pinyin": "",
+      "vi": "hễ gặp... thì...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "091304c6-ccbe-496b-a599-1bdb4fc43d95",
+      "order": 1,
+      "zh": "我今天遇到了一个老朋友。",
+      "pinyin": "Wǒ jīntiān yùdào le yí ge lǎo péngyou.",
+      "vi": "Hôm nay tôi gặp một người bạn cũ.",
+      "analysis_vi": "遇到 ở đây là gặp tình cờ một người.",
+      "highlight": [
+        "遇到"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d3ce74c-c21a-4e97-9747-b56539933107"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2faf0812-a3aa-41f0-85ed-085c1f817fab",
+      "order": 2,
+      "zh": "他上街的时候遇到了小偷，钱包儿被偷走了。",
+      "pinyin": "Tā shàngjiē de shíhou yùdào le xiǎotōu, qiánbāor bèi tōu zǒu le.",
+      "vi": "Lúc anh ấy ra phố thì gặp phải trộm, ví bị lấy mất.",
+      "analysis_vi": "遇到小偷 là gặp chuyện xấu; vế sau dùng 被偷走了.",
+      "highlight": [
+        "遇到",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "3d3ce74c-c21a-4e97-9747-b56539933107"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "03e84d71-2a48-46d0-9d59-bb4d5269eee5",
+      "order": 3,
+      "zh": "如果你在街上遇到这种情况，最好先报警，不要一个人追小偷。",
+      "pinyin": "Rúguǒ nǐ zài jiē shang yùdào zhè zhǒng qíngkuàng, zuì hǎo xiān bàojǐng, bú yào yí ge rén zhuī xiǎotōu.",
+      "vi": "Nếu bạn gặp tình huống này trên phố, tốt nhất hãy báo cảnh sát trước, đừng một mình đuổi theo tên trộm.",
+      "analysis_vi": "Ôn 如果……最好……; 遇到这种情况 rất thực dụng.",
+      "highlight": [
+        "遇到"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d3ce74c-c21a-4e97-9747-b56539933107"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Cụm 遇到困难找警察 rất thực dụng: có khó khăn thì tìm cảnh sát. Bài 19 dùng 遇到 để chuẩn bị nền nghĩa “gặp phải tình huống”.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "45ddd569-5bf1-402e-86b6-76ab0ce843ca",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 遇到 với 看到.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我看到小偷。",
+          "pinyin": "Wǒ kàn dào xiǎotōu.",
+          "vi": "Tôi nhìn thấy tên trộm.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我遇到小偷。",
+          "pinyin": "Wǒ yùdào xiǎotōu.",
+          "vi": "Tôi gặp phải trộm.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "遇到",
+    "back": "gặp phải, gặp được",
+    "hint": "yùdào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "situation"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3d3ce74c-c21a-4e97-9747-b56539933107",
+    "source_lesson_vocab_id": null
+  }
+}

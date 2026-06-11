@@ -1,0 +1,399 @@
+{
+  "id": "11036840-fb49-4c9c-9706-618e7867f9a7",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "堵车",
+  "pinyin": "dǔchē",
+  "pos": {
+    "raw_vi": "Động từ / Cụm động từ",
+    "raw_cn": "动词/动宾结构",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "traffic"
+  ],
+  "meaning": {
+    "hanviet": "Đổ xa",
+    "meaning_vi": "kẹt xe, tắc đường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kẹt xe",
+      "tắc đường"
+    ],
+    "short_definition_vi": "kẹt xe, tắc đường",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "traffic",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "堵",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất/tường/vật chắn",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "者",
+            "hanviet": "giả",
+            "meaning_vi": "phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chặn, tắc, bịt, bức tường",
+        "modern_logic_vi": "堵 là bị chặn/tắc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "车",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xe, phương tiện",
+        "modern_logic_vi": "车 là xe.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "堵 là bị chặn/tắc; 车 là xe; 堵车 là xe bị tắc trên đường.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "塞车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Kẹt xe, cũng dùng được.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "交通堵塞",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ùn tắc giao thông, trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "停车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Dừng/đậu xe, không phải kẹt xe.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Lái xe.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "交通顺畅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Giao thông thông suốt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "堵车",
+        "right": "停车",
+        "meaning_vi": "堵车 là kẹt xe; 停车 là dừng/đậu xe.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "532da5f3-9c61-4139-b125-46a992c1ea24",
+      "order": 1,
+      "zh": "今天堵车",
+      "pinyin": "",
+      "vi": "hôm nay kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6dfa80dc-bca1-4632-822a-c446893bac07",
+      "order": 2,
+      "zh": "路上堵车",
+      "pinyin": "",
+      "vi": "trên đường kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06f276c8-fd99-4364-8147-6ef73b264b95",
+      "order": 3,
+      "zh": "上班堵车",
+      "pinyin": "",
+      "vi": "đi làm bị kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58fcf0e6-7823-4914-9d03-8acbd2f7ff9a",
+      "order": 4,
+      "zh": "因为堵车迟到",
+      "pinyin": "",
+      "vi": "đến muộn vì kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d86d975-d41c-4269-a40b-e608eecef003",
+      "order": 5,
+      "zh": "堵车很严重",
+      "pinyin": "",
+      "vi": "kẹt xe rất nghiêm trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b5acb98-0ab4-42ae-a90c-d64af3604489",
+      "order": 6,
+      "zh": "不想堵车",
+      "pinyin": "",
+      "vi": "không muốn bị kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4f1668e-12f8-40c4-8df1-856865136cfc",
+      "order": 7,
+      "zh": "怕堵车",
+      "pinyin": "",
+      "vi": "sợ kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c1e6519-4444-49e1-bfd6-74cda3d74fa4",
+      "order": 8,
+      "zh": "遇到堵车",
+      "pinyin": "",
+      "vi": "gặp kẹt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cbcbcaaa-9bcb-4c05-aded-c4b2b17bf761",
+      "order": 1,
+      "zh": "今天路上很堵车。",
+      "pinyin": "Jīntiān lù shang hěn dǔchē.",
+      "vi": "Hôm nay trên đường rất kẹt xe.",
+      "analysis_vi": "路上 làm bối cảnh; 很堵车 là khẩu ngữ tự nhiên.",
+      "highlight": [
+        "堵车"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11036840-fb49-4c9c-9706-618e7867f9a7"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e7494a0d-108c-49a2-9540-a74053c18190",
+      "order": 2,
+      "zh": "要是堵车，我们就坐地铁去。",
+      "pinyin": "Yàoshi dǔchē, wǒmen jiù zuò dìtiě qù.",
+      "vi": "Nếu kẹt xe thì chúng ta đi tàu điện ngầm.",
+      "analysis_vi": "要是……就……; vế điều kiện ngắn.",
+      "highlight": [
+        "堵车"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11036840-fb49-4c9c-9706-618e7867f9a7"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8076b458-fd1f-42bf-a9ce-eb8840db1b21",
+      "order": 3,
+      "zh": "我本来想开车去看房子，可是路上堵车太严重，赶到那儿的时候，房东已经走了。",
+      "pinyin": "Wǒ běnlái xiǎng kāichē qù kàn fángzi, kěshì lù shang dǔchē tài yánzhòng, gǎn dào nàr de shíhou, fángdōng yǐjīng zǒu le.",
+      "vi": "Ban đầu tôi định lái xe đi xem nhà, nhưng trên đường kẹt xe quá nghiêm trọng, lúc tôi vội đến nơi thì chủ nhà đã đi rồi.",
+      "analysis_vi": "本来想……可是…… tạo tương phản dự định – thực tế; 赶到那儿 là vội/kịp đến đó.",
+      "highlight": [
+        "堵车"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11036840-fb49-4c9c-9706-618e7867f9a7"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở các thành phố lớn Trung Quốc, khi nói nhà ở, 交通方便不方便 và 会不会堵车 là tiêu chí thực tế.",
+    "tags": [
+      "traffic"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b3f37283-3d81-40c7-8ee9-867610fb76d0",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 堵车 với 停车.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我迟到了，因为堵车。",
+          "pinyin": "",
+          "vi": "Tôi đến muộn vì kẹt xe.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这里不能停车。",
+          "pinyin": "",
+          "vi": "Ở đây không được đậu xe.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "堵车 là kẹt xe; 停车 là dừng/đậu xe.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "堵车",
+    "back": "kẹt xe, tắc đường",
+    "hint": "dǔchē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "traffic"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "11036840-fb49-4c9c-9706-618e7867f9a7",
+    "source_lesson_vocab_id": null
+  }
+}

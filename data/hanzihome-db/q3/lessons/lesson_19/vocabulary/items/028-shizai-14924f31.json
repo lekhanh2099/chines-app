@@ -1,0 +1,355 @@
+{
+  "id": "4c881fcb-f198-4ec3-805d-e089d94317a7",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "实在",
+  "pinyin": "shízài",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "副词 / 形容词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "thực tại",
+    "meaning_vi": "thật sự, quả thật; thật thà",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thật sự",
+      "quả thật",
+      "thật thà"
+    ],
+    "short_definition_vi": "thật sự, quả thật",
+    "textbook_focus_vi": "实在 nhấn cảm xúc/tình huống là thật, không giả.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "实",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực",
+        "modern_logic_vi": "Trong từ “实在”, chữ “实” góp phần vào trường nghĩa: thật, thực",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "在",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, nơi chốn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, nơi chốn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, nơi chốn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở, tồn tại",
+        "modern_logic_vi": "Trong từ “实在”, chữ “在” góp phần vào trường nghĩa: ở, tồn tại",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "实在 nhấn cảm xúc/tình huống là thật, không giả.",
+    "memory_tip_vi": "实在 nhấn cảm xúc/tình huống là thật, không giả.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "真的",
+        "pinyin": "",
+        "meaning_vi": "thật sự, khẩu ngữ hơn",
+        "difference_vi": "thật sự, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "确实",
+        "pinyin": "",
+        "meaning_vi": "quả thực, thiên xác nhận sự thật",
+        "difference_vi": "quả thực, thiên xác nhận sự thật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a69807cc-e115-4da3-a996-5a7ed65f55ac",
+      "order": 1,
+      "zh": "实在舍不得",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e8ea487-d451-4463-84f9-f51ea597f9c6",
+      "order": 2,
+      "zh": "实在太忙了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "266499f1-b40e-45df-aac6-c61bf8b0737d",
+      "order": 3,
+      "zh": "实在没有办法",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1401765-c6d5-45e6-9035-88d88d66f0f5",
+      "order": 4,
+      "zh": "说实在的",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5089450c-09eb-4a2e-8b19-ba43345c2f4b",
+      "order": 1,
+      "zh": "我实在太累了。",
+      "pinyin": "",
+      "vi": "Tôi thật sự quá mệt.",
+      "analysis_vi": "实在 + 太 + tính từ.",
+      "highlight": [
+        "实在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c881fcb-f198-4ec3-805d-e089d94317a7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f7af2f44-97e0-4d68-923d-528df1dcc9ea",
+      "order": 2,
+      "zh": "他实在舍不得离开这个工作岗位。",
+      "pinyin": "",
+      "vi": "Anh ấy thật sự không nỡ rời vị trí công việc này.",
+      "analysis_vi": "实在 tăng cảm xúc trước 舍不得.",
+      "highlight": [
+        "实在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4c881fcb-f198-4ec3-805d-e089d94317a7"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "实在 nhấn cảm xúc/tình huống là thật, không giả.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "aecb080b-5001-4874-ab95-40bbf290e54b",
+      "order": 1,
+      "rule_vi": "实在 không dịch máy là thực tại trong mọi ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "实在 không dịch máy là thực tại trong mọi ngữ cảnh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "实在",
+    "back": "thật sự, quả thật; thật thà",
+    "hint": "shízài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4c881fcb-f198-4ec3-805d-e089d94317a7",
+    "source_lesson_vocab_id": null
+  }
+}

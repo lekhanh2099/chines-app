@@ -1,0 +1,397 @@
+{
+  "id": "bef47b0d-53df-4c6c-aee9-d02ec65967f0",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "作家",
+  "pinyin": "zuòjiā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "tác gia",
+    "meaning_vi": "nhà văn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà văn"
+    ],
+    "short_definition_vi": "người chuyên sáng tác văn học",
+    "textbook_focus_vi": "Từ vựng nghề nghiệp/văn học trong bài.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "作",
+        "lishu_vi": "",
+        "structure_note_vi": "亻 + 乍",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乍",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "làm, sáng tác",
+        "modern_logic_vi": "làm, sáng tác",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "家",
+        "lishu_vi": "",
+        "structure_note_vi": "宀 + 豕",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "豕",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà; người chuyên môn",
+        "modern_logic_vi": "nhà; người chuyên môn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "作家 được học trong bài theo nghĩa: người chuyên sáng tác văn học.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 一位作家.",
+    "warning_vi": "作家 không dùng cho mọi người viết nội dung; 作者/写作者 rộng hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "作者",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tác giả của một tác phẩm cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "写作者",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Người viết, rộng hơn 作家.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "作家 không dùng cho mọi người viết nội dung; 作者/写作者 rộng hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7c6eda10-9b41-4aa4-b070-2d17f303f4a4",
+      "order": 1,
+      "zh": "一位作家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0001af7e-9597-40d4-89b7-a0306d6f18a3",
+      "order": 2,
+      "zh": "著名作家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7db1bf01-ce66-4304-b1a7-f064d2fcb45d",
+      "order": 3,
+      "zh": "中国作家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c94ad260-6c20-42f2-8a3a-0697a08dbfca",
+      "order": 4,
+      "zh": "现代作家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47f247b2-63ed-498e-93db-698c8d540cc4",
+      "order": 5,
+      "zh": "成为作家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9849dd4c-0aed-477a-b535-8912009bdb3d",
+      "order": 6,
+      "zh": "作家的作品",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6df2e800-78fc-4e48-bd54-76aa1fb6d6b6",
+      "order": 1,
+      "zh": "他是一位很有名的作家。",
+      "pinyin": "",
+      "vi": "Ông ấy là một nhà văn rất nổi tiếng.",
+      "analysis_vi": "一位 dùng lịch sự cho người.",
+      "highlight": [
+        "作家"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bef47b0d-53df-4c6c-aee9-d02ec65967f0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f045615e-1d0b-47b2-96fd-9632810e5969",
+      "order": 2,
+      "zh": "这本书是一位新疆作家写的。",
+      "pinyin": "",
+      "vi": "Cuốn sách này do một nhà văn Tân Cương viết.",
+      "analysis_vi": "是……的 nhấn người viết.",
+      "highlight": [
+        "作家"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bef47b0d-53df-4c6c-aee9-d02ec65967f0"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "作家 thường chỉ người có tác phẩm hoặc vị thế văn học.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "af88e49e-8a00-492f-8045-fe642b54977d",
+      "order": 1,
+      "rule_vi": "作家 không dùng cho mọi người viết nội dung; 作者/写作者 rộng hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "作家 không dùng cho mọi người viết nội dung; 作者/写作者 rộng hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "作家",
+    "back": "nhà văn",
+    "hint": "zuòjiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bef47b0d-53df-4c6c-aee9-d02ec65967f0",
+    "source_lesson_vocab_id": null
+  }
+}

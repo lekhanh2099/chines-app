@@ -1,0 +1,249 @@
+{
+  "id": "c09ce976-453d-4742-980e-5bc80d338067",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "分担",
+  "pinyin": "fēndān",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "phân đảm",
+    "meaning_vi": "chia sẻ, cùng gánh vác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chia sẻ",
+      "cùng gánh vác"
+    ],
+    "short_definition_vi": "chia sẻ, cùng gánh vác",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "分",
+        "lishu_vi": "phân",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia",
+        "modern_logic_vi": "Trong từ này, 分 góp phần vào nghĩa hiện đại: chia.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "担",
+        "lishu_vi": "đảm",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gánh, đảm nhận",
+        "modern_logic_vi": "Trong từ này, 担 góp phần vào nghĩa hiện đại: gánh, đảm nhận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "分担 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 分担家务.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 分担 cho chia đồ vật; chia bánh là 分月饼."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c7ff4b21-36f0-4ecb-80e6-755d6275f4bb",
+      "order": 1,
+      "zh": "分担家务",
+      "pinyin": "",
+      "vi": "chia sẻ việc nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4223aec6-cec0-4d70-bd64-3307f4225826",
+      "order": 2,
+      "zh": "分担压力",
+      "pinyin": "",
+      "vi": "chia sẻ áp lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "40a90b89-b31a-4c0a-be36-93da6d762574",
+      "order": 3,
+      "zh": "分担责任",
+      "pinyin": "",
+      "vi": "chia sẻ trách nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "885659ef-e484-4f54-92a3-db3d10e50bab",
+      "order": 1,
+      "zh": "我们应该一起分担家务。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 分担 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 分担; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "分担"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c09ce976-453d-4742-980e-5bc80d338067"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 分担 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff3cd6cc-a135-49f7-865b-849289d77d82",
+      "order": 1,
+      "rule_vi": "Không dùng 分担 cho chia đồ vật; chia bánh là 分月饼.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "分担",
+    "back": "chia sẻ, cùng gánh vác",
+    "hint": "fēndān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c09ce976-453d-4742-980e-5bc80d338067",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "id": "abf62a25-7f67-48ef-a749-30fe255da190",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "越来越",
+  "pinyin": "yuè lái yuè",
+  "pos": {
+    "raw_vi": "Cấu trúc phó từ mức độ",
+    "raw_cn": "结构 / 副词性结构",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Việt lai việt",
+    "meaning_vi": "ngày càng, càng lúc càng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngày càng, càng lúc càng"
+    ],
+    "short_definition_vi": "ngày càng, càng lúc càng",
+    "textbook_focus_vi": "ngày càng, càng lúc càng",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "越",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "走 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "戉",
+            "hanviet": "việt",
+            "meaning_vi": "thành phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vượt; càng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến; lại",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "越来越 = càng về sau mức độ càng tăng; học như cấu trúc cố định.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "越……越……",
+        "pinyin": "",
+        "meaning_vi": "càng A càng B",
+        "difference_vi": "Nhấn quan hệ giữa hai yếu tố thay đổi theo nhau.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "更……了",
+        "pinyin": "",
+        "meaning_vi": "hơn rồi",
+        "difference_vi": "Chỉ một mức tăng, không nhất thiết là quá trình kéo dài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一天比一天……",
+        "pinyin": "",
+        "meaning_vi": "ngày này hơn ngày khác",
+        "difference_vi": "Cụ thể hóa quá trình tăng dần theo từng ngày.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "越来越好",
+        "right": "越来越差",
+        "meaning_vi": "ngày càng tốt ↔ ngày càng tệ",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5b4c2407-d7ee-47cf-a7d3-bcf6c6edd8d0",
+      "order": 1,
+      "zh": "越来越好",
+      "pinyin": "",
+      "vi": "ngày càng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0e7c62f-9888-40eb-a02b-39482ceb1318",
+      "order": 2,
+      "zh": "越来越难",
+      "pinyin": "",
+      "vi": "ngày càng khó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df3ffa38-fa6d-443b-a18c-f554da591f99",
+      "order": 3,
+      "zh": "越来越现代化",
+      "pinyin": "",
+      "vi": "ngày càng hiện đại hóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "945f01e0-b848-4476-963e-cbfba89f0e66",
+      "order": 4,
+      "zh": "越来越多",
+      "pinyin": "",
+      "vi": "ngày càng nhiều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "becb0f55-7fb9-4cd5-9fc6-ab329b27a507",
+      "order": 5,
+      "zh": "越来越喜欢",
+      "pinyin": "",
+      "vi": "ngày càng thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3504620d-6313-4572-89f0-3f0c04bb0201",
+      "order": 1,
+      "zh": "汉语越来越难了。",
+      "pinyin": "Hànyǔ yuè lái yuè nán le.",
+      "vi": "Tiếng Trung ngày càng khó rồi.",
+      "analysis_vi": "越来越 + tính từ; 了 báo trạng thái đã thay đổi.",
+      "highlight": [
+        "越来越"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "abf62a25-7f67-48ef-a749-30fe255da190"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1af9aa9b-a08f-4b13-b007-dda6fadd31f4",
+      "order": 2,
+      "zh": "这个小区越来越现代化了。",
+      "pinyin": "Zhège xiǎoqū yuè lái yuè xiàndàihuà le.",
+      "vi": "Khu dân cư này ngày càng hiện đại hóa rồi.",
+      "analysis_vi": "Gắn với nhà ở và đô thị hóa trong Bài 16.",
+      "highlight": [
+        "越来越"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "abf62a25-7f67-48ef-a749-30fe255da190"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7c38703c-3142-4455-94de-cdf37489a439",
+      "order": 3,
+      "zh": "院子里的枣树越长越高，结的枣也越来越甜。",
+      "pinyin": "Yuànzi lǐ de zǎoshù yuè zhǎng yuè gāo, jiē de zǎo yě yuè lái yuè tián.",
+      "vi": "Cây táo tàu trong sân càng lớn càng cao, quả táo kết ra cũng ngày càng ngọt.",
+      "analysis_vi": "Kết hợp 越……越…… và 越来越.",
+      "highlight": [
+        "越来越"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "abf62a25-7f67-48ef-a749-30fe255da190"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "越来越现代化 hay gặp khi nói đô thị hóa: nhà cũ, 四合院, 小区, 高楼; mặt trái là cảm giác 舍不得.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dd02a5a5-6925-4863-a45f-dc1b638b86dd",
+      "order": 1,
+      "rule_vi": "Không dùng 越来越 thay cho 越……越…….",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 越来越 thay cho 越……越…….",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "越来越",
+    "back": "ngày càng, càng lúc càng",
+    "hint": "yuè lái yuè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_001"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "abf62a25-7f67-48ef-a749-30fe255da190",
+    "source_lesson_vocab_id": null
+  }
+}

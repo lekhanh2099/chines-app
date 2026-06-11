@@ -1,0 +1,161 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "我来了两个多月了",
+      "title_vi": "Tôi đến được hơn hai tháng rồi",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "我来了两个多月了，对这儿的生活差不多已经习惯了，不过有的地方还不太习惯。总觉得这儿的气候特别干燥，宿舍周围不太干净，也不太安静，食堂里的菜太油腻。",
+          "pinyin": "",
+          "vi": "Tôi đến được hơn hai tháng rồi, đối với cuộc sống ở đây thì gần như đã quen rồi, nhưng vẫn có vài điểm còn chưa quen lắm. Tôi cứ cảm thấy khí hậu ở đây đặc biệt khô hanh, xung quanh ký túc xá không sạch lắm, cũng không yên tĩnh lắm, đồ ăn trong nhà ăn thì quá nhiều dầu mỡ.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "我每天早上七点多才起床，所以常常没时间吃早饭，喝杯牛奶就去上课了。不过，课间休息的时候，我可以去喝杯咖啡，吃一块点心。中午我去食堂吃午饭。因为吃饭的人很多，所以常常要等四五分钟才能买到饭。吃完饭，我回宿舍看书或者听一会儿音乐。中午我从来不睡午觉。",
+          "pinyin": "",
+          "vi": "Mỗi sáng hơn bảy giờ tôi mới dậy, vì vậy thường không có thời gian ăn sáng, uống một cốc sữa rồi đi học luôn. Tuy nhiên, lúc nghỉ giữa giờ, tôi có thể đi uống một cốc cà phê, ăn một miếng bánh. Buổi trưa tôi đến nhà ăn ăn cơm. Vì người ăn cơm rất đông, nên thường phải đợi bốn, năm phút mới mua được cơm. Ăn xong, tôi về ký túc xá đọc sách hoặc nghe nhạc một lát. Buổi trưa tôi chưa bao giờ ngủ trưa.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "下午，有时候上两节课，有时候自己学习。四点以后我去体育馆锻炼身体，跑步、游泳、打球或者跟老师学打太极拳。我很喜欢运动，每天都坚持锻炼一个小时，所以身体很好。",
+          "pinyin": "",
+          "vi": "Buổi chiều, có lúc tôi học hai tiết, có lúc tự học. Sau bốn giờ tôi đến nhà thi đấu rèn luyện thân thể, chạy bộ, bơi, chơi bóng hoặc học tập Thái Cực Quyền với thầy. Tôi rất thích vận động, ngày nào cũng kiên trì rèn luyện một tiếng, vì vậy sức khỏe rất tốt.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "晚饭后我常常散一会儿步，有时跟朋友聊聊天儿，然后就开始复习功课。听半个小时课文录音，练习会话，预习生词和课文。生词要记住，课文要念熟，所以每天晚上一般要复习、预习两三个小时，常常学到十一点多才睡觉。",
+          "pinyin": "",
+          "vi": "Sau bữa tối tôi thường đi dạo một lát, có lúc trò chuyện với bạn bè, sau đó bắt đầu ôn bài. Tôi nghe ghi âm bài khóa nửa tiếng, luyện hội thoại, chuẩn bị trước từ mới và bài khóa. Từ mới phải nhớ chắc, bài khóa phải đọc thuộc, nên mỗi tối thường phải ôn tập, chuẩn bị bài hai, ba tiếng, thường học đến hơn mười một giờ mới ngủ.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "我每天都很忙，但过得很愉快。我很感谢父母给我这个机会，让我来中国留学。原来打算学一年，现在我觉得一年时间太短了，准备再延长一年。",
+          "pinyin": "",
+          "vi": "Ngày nào tôi cũng rất bận, nhưng sống rất vui vẻ. Tôi rất cảm ơn bố mẹ đã cho tôi cơ hội này, để tôi đến Trung Quốc du học. Ban đầu tôi định học một năm, bây giờ tôi cảm thấy thời gian một năm quá ngắn, chuẩn bị gia hạn thêm một năm nữa.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "我每天都练一个小时",
+      "title_vi": "Mỗi ngày tôi đều luyện một tiếng",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+          "order": 1,
+          "speaker": "关经理",
+          "zh": "你好，王老师。每天都起得这么早吗？",
+          "vi": "Chào thầy Vương. Ngày nào thầy cũng dậy sớm thế à?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+          "order": 2,
+          "speaker": "王老师",
+          "zh": "对，因为我练气功，所以每天五点多就起来了。",
+          "vi": "Đúng vậy, vì tôi luyện khí công, nên ngày nào hơn năm giờ tôi cũng đã dậy rồi.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+          "order": 3,
+          "speaker": "关经理",
+          "zh": "练了多长时间了？",
+          "vi": "Thầy đã luyện được bao lâu rồi?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
+          "order": 4,
+          "speaker": "王老师",
+          "zh": "已经练了好几年了。",
+          "vi": "Đã luyện được khá nhiều năm rồi.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+          "order": 5,
+          "speaker": "关经理",
+          "zh": "每天练多长时间？",
+          "vi": "Mỗi ngày thầy luyện bao lâu?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+          "order": 6,
+          "speaker": "王老师",
+          "zh": "不一定。有时候练一个钟头，有时候半个钟头。",
+          "vi": "Không nhất định. Có lúc luyện một tiếng, có lúc nửa tiếng.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cc8da348-3e89-4f64-a680-de239f505497",
+          "order": 7,
+          "speaker": "关经理",
+          "zh": "效果怎么样？",
+          "vi": "Hiệu quả thế nào?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
+          "order": 8,
+          "speaker": "王老师",
+          "zh": "挺好的。练气功对身体很有好处。以前我有好几种慢性病呢，高血压、失眠，坚持练了几年，我的这些病差不多都好了。你也来练练吧。",
+          "vi": "Khá tốt. Luyện khí công rất có lợi cho sức khỏe. Trước đây tôi có mấy loại bệnh mãn tính như huyết áp cao, mất ngủ; kiên trì luyện mấy năm, những bệnh này của tôi gần như đều khỏi cả rồi. Anh cũng đến luyện thử đi.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
+          "order": 9,
+          "speaker": "关经理",
+          "zh": "练气功必须坚持天天练，“三天打鱼，两天晒网”不行。我也很想练，但是工作太忙，没有时间。",
+          "vi": "Luyện khí công thì nhất định phải kiên trì luyện hằng ngày; kiểu “ba ngày đánh cá, hai ngày phơi lưới” thì không được. Tôi cũng rất muốn luyện, nhưng công việc bận quá, không có thời gian.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": []
+    }
+  ]
+}

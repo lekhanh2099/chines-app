@@ -1,0 +1,286 @@
+{
+  "id": "b349a0bb-0334-4f25-b8b5-941dd240fb7f",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "亲人",
+  "pinyin": "qīnrén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thân nhân",
+    "meaning_vi": "người thân, thân nhân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người thân",
+      "thân nhân"
+    ],
+    "short_definition_vi": "người thân, thân nhân",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng, thiết lập",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, gần gũi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲人 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 亲人 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "家人",
+        "pinyin": "jiārén",
+        "meaning_vi": "người nhà",
+        "difference_vi": "Đời thường hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲戚",
+        "pinyin": "qīnqi",
+        "meaning_vi": "họ hàng",
+        "difference_vi": "Có thể không gần",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "朋友",
+        "pinyin": "péngyou",
+        "meaning_vi": "bạn bè",
+        "difference_vi": "Không phải thân thuộc gia đình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6255efb3-438f-41af-84d4-d096043b6f2d",
+      "order": 1,
+      "zh": "我的亲人",
+      "pinyin": "wǒ de qīnrén",
+      "vi": "người thân của tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2db9fabb-f35e-4286-99b1-a69573b9f9da",
+      "order": 2,
+      "zh": "想念亲人",
+      "pinyin": "xiǎngniàn qīnrén",
+      "vi": "nhớ người thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2044159a-f682-40f9-b10b-176405063587",
+      "order": 3,
+      "zh": "和亲人分别",
+      "pinyin": "hé qīnrén fēnbié",
+      "vi": "chia tay người thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62a1d772-3cd1-4808-9100-173c085b48db",
+      "order": 4,
+      "zh": "亲人的鼓励",
+      "pinyin": "qīnrén de gǔlì",
+      "vi": "sự động viên của người thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fc65ae6f-8777-4719-b763-f6ff385c738d",
+      "order": 1,
+      "zh": "他离开家以后，非常想念亲人。",
+      "pinyin": "Tā líkāi jiā yǐhòu, fēicháng xiǎngniàn qīnrén.",
+      "vi": "Sau khi rời nhà, anh ấy rất nhớ người thân.",
+      "analysis_vi": "想念亲人 là collocation tự nhiên.",
+      "highlight": [
+        "亲人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b349a0bb-0334-4f25-b8b5-941dd240fb7f"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "eded5ce8-f696-4a7e-81c8-550eec124d84",
+      "order": 2,
+      "zh": "在人生道路上，亲人的鼓励常常能让一个失去信心的人重新站起来。",
+      "pinyin": "Zài rénshēng dàolù shang, qīnrén de gǔlì chángcháng néng ràng yí ge shīqù xìnxīn de rén chóngxīn zhàn qǐlai.",
+      "vi": "Trên đường đời, sự động viên của người thân thường giúp người mất niềm tin đứng dậy lại.",
+      "analysis_vi": "失去信心的人 là định ngữ.",
+      "highlight": [
+        "亲人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b349a0bb-0334-4f25-b8b5-941dd240fb7f"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "亲人 có sắc thái tình cảm mạnh hơn 家人 khi nói xa quê, đi học xa.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "66be1857-d4da-4efa-b08b-0626e75c4b70",
+      "order": 1,
+      "rule_vi": "亲人 không phải người yêu; người yêu là 男朋友/女朋友/恋人.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲人",
+    "back": "người thân, thân nhân",
+    "hint": "qīnrén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b349a0bb-0334-4f25-b8b5-941dd240fb7f",
+    "source_lesson_vocab_id": null
+  }
+}

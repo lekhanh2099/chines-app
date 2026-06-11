@@ -1,0 +1,222 @@
+{
+  "id": "93771331-dc9e-481b-a248-45521afa5a7e",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "市",
+  "pinyin": "shì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thị",
+    "meaning_vi": "thành phố; đô thị; chợ/thị trường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành phố",
+      "đô thị",
+      "chợ/thị trường"
+    ],
+    "short_definition_vi": "thành phố",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "市",
+        "lishu_vi": "thị",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "巾",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành phố, chợ, thị trường",
+        "modern_logic_vi": "thành phố, chợ, thị trường",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "市 chỉ đô thị hoặc thị trường; trong bài là phạm vi thành phố.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 市内.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "城市",
+        "pinyin": "chéngshì",
+        "meaning_vi": "thành phố",
+        "difference_vi": "城市 phổ thông hơn khi nói city.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "市场",
+        "pinyin": "shìchǎng",
+        "meaning_vi": "thị trường/chợ",
+        "difference_vi": "市场 không phải thành phố.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "125b0aa8-7854-41fb-93b6-3b35711d07dc",
+      "order": 1,
+      "zh": "市内",
+      "pinyin": "shìnèi",
+      "vi": "trong thành phố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "256fb97e-da66-411e-9abc-09e3ab9ca7d4",
+      "order": 2,
+      "zh": "市区",
+      "pinyin": "shìqū",
+      "vi": "khu nội thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08b0fb1f-c995-44b1-8e28-ab46fed8ee35",
+      "order": 3,
+      "zh": "市中心",
+      "pinyin": "shìzhōngxīn",
+      "vi": "trung tâm thành phố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0203886d-932a-493f-b904-bc5a80147761",
+      "order": 1,
+      "zh": "这所中学在市内。",
+      "pinyin": "Zhè suǒ zhōngxué zài shìnèi.",
+      "vi": "Trường trung học này ở trong thành phố.",
+      "analysis_vi": "市内 chỉ phạm vi địa lý.",
+      "highlight": [
+        "市"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93771331-dc9e-481b-a248-45521afa5a7e"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c7707c0b-71f4-488c-af1b-6b2b15c1ea1e",
+      "order": 2,
+      "zh": "他把市内几所中学的招聘广告都看了一遍。",
+      "pinyin": "Tā bǎ shìnèi jǐ suǒ zhōngxué de zhāopìn guǎnggào dōu kàn le yí biàn.",
+      "vi": "Anh ấy xem qua quảng cáo tuyển dụng của mấy trường trong thành phố.",
+      "analysis_vi": "把广告都看了一遍 nhấn xử lý toàn bộ đối tượng.",
+      "highlight": [
+        "市"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93771331-dc9e-481b-a248-45521afa5a7e"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong tên hành chính, 市 đứng sau địa danh như 北京市, 上海市.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "812d558a-9479-477d-89fa-02e8de32c1a0",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 市内 với 室内; 市内 là trong thành phố, 室内 là trong phòng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "市",
+    "back": "thành phố; đô thị; chợ/thị trường",
+    "hint": "shì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "93771331-dc9e-481b-a248-45521afa5a7e",
+    "source_lesson_vocab_id": null
+  }
+}

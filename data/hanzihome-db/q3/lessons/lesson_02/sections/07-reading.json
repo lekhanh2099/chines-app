@@ -1,0 +1,201 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / điền tổng hợp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào chỗ trống."
+      },
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "title": "雪后爬长城",
+        "title_vi": "Sau khi tuyết rơi leo Trường Thành",
+        "zh": "星期六夜里，下了一场大雪。第二天早上起床一看，外边的雪景很美。这时我突然想带女朋友去长城看雪景。我给她打了个电话，问她愿意不愿意去长城。她说她也正要给我打电话，问我想不想去呢。\n\n太阳①______了，是个好天气。吃了早饭我们就坐车出发了。\n\n只用了两个多小时，我们②______到了长城。女朋友说：“不到长城非好汉”，今天我们到了长城，也算是好汉了。长城上没有人，很静。几个工作人员看见我们都笑③______，我不知道他们为什么笑。大概他们觉得下这么大的雪还来爬长城很奇怪④______。买了票我们就往上爬，因为有雪，爬不上⑤______。我们刚爬上去几步又滑下来，滑下来再爬上去，很有意思。长城上只有我和女朋友。爬了快一个小时了，我女朋友累⑥______有点儿爬不动了。我要拉她，她不让，一定要自己爬上去。我们爬了差不多两个小时，终于爬到了长城最⑦______的地方。站在上边往下看，眼前是一片白色的世界，真美啊！我们在长城上照了很多相，⑧______在长城上边堆了一个大雪人。\n\n下来的时候，我们一会儿扶着墙走，一会儿坐在地上往下滑，很好玩儿。\n\n今天，虽然很累，但是我们玩儿得非常高兴。\n\n你要是去长城，最好也在下雪以后去。",
+        "vi": "Bài đọc kể việc người kể chuyện và bạn gái đi Trường Thành sau một trận tuyết lớn. Hai người vừa leo vừa trượt vì tuyết, cuối cùng lên đến nơi cao nhất, chụp ảnh và đắp người tuyết.",
+        "pinyin": "Xīngqīliù yèlǐ, xià le yì cháng dà xuě. Dì-èr tiān zǎoshang qǐchuáng yí kàn, wàibian de xuějǐng hěn měi. Zhè shí wǒ tūrán xiǎng dài nǚpéngyou qù Chángchéng kàn xuějǐng. Wǒ gěi tā dǎ le ge diànhuà, wèn tā yuànyì bu yuànyì qù Chángchéng. Tā shuō tā yě zhèng yào gěi wǒ dǎ diànhuà, wèn wǒ xiǎng bu xiǎng qù ne.\n\nTàiyáng ①______ le, shì ge hǎo tiānqì. Chī le zǎofàn wǒmen jiù zuò chē chūfā le.\n\nZhǐ yòng le liǎng ge duō xiǎoshí, wǒmen ②______ dào le Chángchéng. Nǚpéngyou shuō: “Bú dào Chángchéng fēi hǎohàn”, jīntiān wǒmen dào le Chángchéng, yě suàn shì hǎohàn le. Chángchéng shang méiyǒu rén, hěn jìng. Jǐ ge gōngzuò rényuán kànjiàn wǒmen dōu xiào ③______, wǒ bù zhīdào tāmen wèishénme xiào. Dàgài tāmen juéde xià zhème dà de xuě hái lái pá Chángchéng hěn qíguài ④______. Mǎi le piào wǒmen jiù wǎng shàng pá, yīnwèi yǒu xuě, pá bù shàng ⑤______. Wǒmen gāng pá shàngqu jǐ bù yòu huá xiàlai, huá xiàlai zài pá shàngqu, hěn yǒuyìsi. Chángchéng shang zhǐ yǒu wǒ hé nǚpéngyou. Pá le kuài yí ge xiǎoshí le, wǒ nǚpéngyou lèi ⑥______ yǒudiǎnr pá bu dòng le. Wǒ yào lā tā, tā bú ràng, yídìng yào zìjǐ pá shàngqu. Wǒmen pá le chàbuduō liǎng ge xiǎoshí, zhōngyú pá dào le Chángchéng zuì ⑦______ de dìfang. Zhàn zài shàngbian wǎng xià kàn, yǎnqián shì yí piàn báisè de shìjiè, zhēn měi a! Wǒmen zài Chángchéng shang zhào le hěn duō xiàng, ⑧______ zài Chángchéng shàngbian duī le yí ge dà xuěrén.\n\nXiàlai de shíhou, wǒmen yíhuìr fúzhe qiáng zǒu, yíhuìr zuò zài dì shang wǎng xià huá, hěn hǎowánr.\n\nJīntiān, suīrán hěn lèi, dànshì wǒmen wánr de fēicháng gāoxìng.\n\nNǐ yàoshi qù Chángchéng, zuìhǎo yě zài xià xuě yǐhòu qù."
+      },
+      "blanks": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "blank_number": 1,
+          "answer": "出来",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "blank_number": 2,
+          "answer": "就",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "blank_number": 3,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "blank_number": 4,
+          "answer": "吧",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
+          "blank_number": 5,
+          "answer": "去",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
+          "blank_number": 6,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
+          "blank_number": 7,
+          "answer": "高",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
+          "blank_number": 8,
+          "answer": "还",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "supplement_vocab": [
+        {
+          "hanzi": "突然",
+          "pinyin": "tūrán",
+          "meaning_vi": "đột nhiên",
+          "pos": "Phó từ / tính từ",
+          "pos_detail": {
+            "vi": "Phó từ / tính từ",
+            "cn": "副词 / 形容词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Đột nhiên, bất ngờ.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "不到长城非好汉",
+          "pinyin": "bú dào Chángchéng fēi hǎohàn",
+          "meaning_vi": "chưa đến Vạn Lý Trường Thành thì chưa phải hảo hán",
+          "pos": "Tục ngữ / câu cố định",
+          "pos_detail": {
+            "vi": "Tục ngữ / câu cố định",
+            "cn": "俗语 / 固定句",
+            "normalized": "phrase",
+            "schema_compatible_pos": "phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Câu cố định; không phải động từ li hợp.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "奇怪",
+          "pinyin": "qíguài",
+          "meaning_vi": "kỳ lạ",
+          "pos": "Tính từ / động từ tâm lý",
+          "pos_detail": {
+            "vi": "Tính từ / động từ tâm lý",
+            "cn": "形容词 / 心理动词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Kỳ lạ; thấy lạ.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "滑",
+          "pinyin": "huá",
+          "meaning_vi": "trơn; trượt",
+          "pos": "Tính từ / động từ",
+          "pos_detail": {
+            "vi": "Tính từ / động từ",
+            "cn": "形容词 / 动词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Trơn; trượt.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "堆",
+          "pinyin": "duī",
+          "meaning_vi": "đắp; chất đống",
+          "pos": "Động từ / danh từ / lượng từ",
+          "pos_detail": {
+            "vi": "Động từ / danh từ / lượng từ",
+            "cn": "动词 / 名词 / 量词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chất đống, đắp; một đống.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "扶",
+          "pinyin": "fú",
+          "meaning_vi": "đỡ; dìu; vịn",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Đỡ, dìu, vịn bằng tay.",
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "source_origin": "pdf_crosschecked_answer",
+      "check_needed": false
+    }
+  ]
+}

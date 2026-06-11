@@ -1,0 +1,433 @@
+{
+  "id": "section_01_text",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "text_001",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "我吃了早饭就来了",
+      "title_vi": "Tôi ăn sáng xong thì đến",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "summary_vi": "小张 muốn thuê nhà gần công ty hơn nên đi xem nhà với nhân viên môi giới.",
+      "lines": [
+        {
+          "id": "text_001_line_001",
+          "order": 1,
+          "speaker": "",
+          "zh": "小张住的地方离公司太远，他想租一套近点儿的房子。今天他休息，又去看房子了。",
+          "pinyin": "Xiǎo Zhāng zhù de dìfang lí gōngsī tài yuǎn, tā xiǎng zū yí tào jìn diǎnr de fángzi. Jīntiān tā xiūxi, yòu qù kàn fángzi le.",
+          "vi": "Tiểu Trương ở quá xa công ty, anh ấy muốn thuê một căn nhà gần hơn một chút. Hôm nay anh ấy nghỉ, lại đi xem nhà.",
+          "vocab_refs": [
+            "vocab_002",
+            "vocab_022",
+            "vocab_001"
+          ],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_002",
+          "order": 2,
+          "speaker": "业务员",
+          "zh": "张先生，这么早！",
+          "pinyin": "Zhāng xiānsheng, zhème zǎo!",
+          "vi": "Anh Trương, sớm thế!",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_003",
+          "order": 3,
+          "speaker": "小张",
+          "zh": "是啊。我吃了早饭就来了。",
+          "pinyin": "Shì a. Wǒ chī le zǎofàn jiù lái le.",
+          "vi": "Đúng vậy. Tôi ăn sáng xong là đến ngay.",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_004",
+          "order": 4,
+          "speaker": "业务员",
+          "zh": "我也是。接了您的电话，八点半就到这儿了。上次您看了几套房子？",
+          "pinyin": "Wǒ yě shì. Jiē le nín de diànhuà, bā diǎn bàn jiù dào zhèr le. Shàng cì nín kàn le jǐ tào fángzi?",
+          "vi": "Tôi cũng vậy. Nhận điện thoại của anh xong, tám giờ rưỡi tôi đã đến đây rồi. Lần trước anh xem mấy căn nhà?",
+          "vocab_refs": [
+            "vocab_001",
+            "vocab_002"
+          ],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_005",
+          "order": 5,
+          "speaker": "小张",
+          "zh": "看了三套，都不太满意。有的太小，有的周围环境太乱。",
+          "pinyin": "Kàn le sān tào, dōu bú tài mǎnyì. Yǒude tài xiǎo, yǒude zhōuwéi huánjìng tài luàn.",
+          "vi": "Tôi xem ba căn, đều không hài lòng lắm. Có căn quá nhỏ, có căn thì môi trường xung quanh quá lộn xộn.",
+          "vocab_refs": [
+            "vocab_001",
+            "vocab_003",
+            "vocab_004",
+            "vocab_005",
+            "vocab_006",
+            "vocab_007"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_006",
+          "order": 6,
+          "speaker": "业务员",
+          "zh": "我再带您去看几套吧。",
+          "pinyin": "Wǒ zài dài nín qù kàn jǐ tào ba.",
+          "vi": "Để tôi lại dẫn anh đi xem thêm mấy căn nhé.",
+          "vocab_refs": [
+            "vocab_001"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_007",
+          "order": 7,
+          "speaker": "",
+          "zh": "看了房子以后。",
+          "pinyin": "Kàn le fángzi yǐhòu.",
+          "vi": "Sau khi xem nhà xong.",
+          "vocab_refs": [
+            "vocab_002"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_008",
+          "order": 8,
+          "speaker": "小张",
+          "zh": "这几套房子，厨房、卧室还可以，但是客厅面积小了点儿。有没有大一点儿的？",
+          "pinyin": "Zhè jǐ tào fángzi, chúfáng, wòshì hái kěyǐ, dànshì kètīng miànjī xiǎo le diǎnr. Yǒu méiyǒu dà yìdiǎnr de?",
+          "vi": "Mấy căn nhà này, nhà bếp và phòng ngủ thì tạm được, nhưng diện tích phòng khách hơi nhỏ một chút. Có căn nào lớn hơn một chút không?",
+          "vocab_refs": [
+            "vocab_001",
+            "vocab_002",
+            "vocab_008",
+            "vocab_009",
+            "vocab_010",
+            "vocab_011"
+          ],
+          "grammar_refs": [
+            "note_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_009",
+          "order": 9,
+          "speaker": "业务员",
+          "zh": "有，楼上18层有一套，客厅30多平（方）米。咱们上去看看吧。",
+          "pinyin": "Yǒu, lóu shàng shíbā céng yǒu yí tào, kètīng sānshí duō píng(fāng)mǐ. Zánmen shàngqu kànkan ba.",
+          "vi": "Có, trên tầng 18 có một căn, phòng khách hơn 30 mét vuông. Chúng ta lên xem thử nhé.",
+          "vocab_refs": [
+            "vocab_039",
+            "vocab_012",
+            "vocab_001",
+            "vocab_010",
+            "vocab_013",
+            "vocab_014"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_010",
+          "order": 10,
+          "speaker": "小张",
+          "zh": "这套房子下午就没有阳光了吧？",
+          "pinyin": "Zhè tào fángzi xiàwǔ jiù méiyǒu yángguāng le ba?",
+          "vi": "Căn nhà này buổi chiều là không có nắng nữa phải không?",
+          "vocab_refs": [
+            "vocab_001",
+            "vocab_002",
+            "vocab_015"
+          ],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_011",
+          "order": 11,
+          "speaker": "业务员",
+          "zh": "是的。",
+          "pinyin": "Shì de.",
+          "vi": "Đúng vậy.",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_001_line_012",
+          "order": 12,
+          "speaker": "小张",
+          "zh": "我还是想要上下午都有阳光的。",
+          "pinyin": "Wǒ háishi xiǎng yào shàngxiàwǔ dōu yǒu yángguāng de.",
+          "vi": "Tôi vẫn muốn căn mà sáng chiều đều có nắng.",
+          "vocab_refs": [
+            "vocab_016",
+            "vocab_015"
+          ],
+          "grammar_refs": [
+            "note_002"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    },
+    {
+      "id": "text_002",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "我早就下班了",
+      "title_vi": "Em đã tan làm từ lâu rồi",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "summary_vi": "小张 nói chuyện với vợ về căn nhà vừa xem, tiền thuê, môi trường và giao thông.",
+      "lines": [
+        {
+          "id": "text_002_line_001",
+          "order": 1,
+          "speaker": "",
+          "zh": "小张的妻子回来了。",
+          "pinyin": "Xiǎo Zhāng de qīzi huílai le.",
+          "vi": "Vợ của Tiểu Trương về nhà.",
+          "vocab_refs": [
+            "vocab_017"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_002",
+          "order": 2,
+          "speaker": "小张",
+          "zh": "怎么现在才下班？",
+          "pinyin": "Zěnme xiànzài cái xià bān?",
+          "vi": "Sao bây giờ em mới tan làm?",
+          "vocab_refs": [
+            "vocab_020"
+          ],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_003",
+          "order": 3,
+          "speaker": "妻子",
+          "zh": "我早就下班了。路上堵车堵得厉害。我下了班就往回赶，到现在才到家。你今天看了几套房子？",
+          "pinyin": "Wǒ zǎo jiù xià bān le. Lù shang dǔchē dǔ de lìhai. Wǒ xià le bān jiù wǎng huí gǎn, dào xiànzài cái dào jiā. Nǐ jīntiān kàn le jǐ tào fángzi?",
+          "vi": "Em tan làm từ lâu rồi. Trên đường kẹt xe dữ quá. Em tan làm là vội về ngay, đến bây giờ mới tới nhà. Hôm nay anh xem mấy căn nhà?",
+          "vocab_refs": [
+            "vocab_018",
+            "vocab_019",
+            "vocab_020",
+            "vocab_001",
+            "vocab_002"
+          ],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_004",
+          "order": 4,
+          "speaker": "小张",
+          "zh": "看了七八套。有一套我觉得不错。等你休息的时候，再一起去看看。要是你也满意，咱们就租了。",
+          "pinyin": "Kàn le qī bā tào. Yǒu yí tào wǒ juéde búcuò. Děng nǐ xiūxi de shíhou, zài yìqǐ qù kànkan. Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
+          "vi": "Anh xem bảy tám căn. Có một căn anh thấy khá được. Khi nào em nghỉ, mình lại cùng đi xem. Nếu em cũng hài lòng, chúng ta thuê luôn.",
+          "vocab_refs": [
+            "vocab_001",
+            "vocab_021",
+            "vocab_003",
+            "vocab_022"
+          ],
+          "grammar_refs": [
+            "grammar_002"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_005",
+          "order": 5,
+          "speaker": "妻子",
+          "zh": "房租多少钱？",
+          "pinyin": "Fángzū duōshao qián?",
+          "vi": "Tiền thuê nhà bao nhiêu?",
+          "vocab_refs": [
+            "vocab_023"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_006",
+          "order": 6,
+          "speaker": "小张",
+          "zh": "一个月五千块。",
+          "pinyin": "Yí ge yuè wǔqiān kuài.",
+          "vi": "Một tháng năm nghìn tệ.",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false,
+          "note_vi": "Đã đối chiếu PDF: bản này ghi 五千块, không phải 二千/三千."
+        },
+        {
+          "id": "text_002_line_007",
+          "order": 7,
+          "speaker": "妻子",
+          "zh": "怎么这么贵？",
+          "pinyin": "Zěnme zhème guì?",
+          "vi": "Sao đắt thế?",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_008",
+          "order": 8,
+          "speaker": "小张",
+          "zh": "虽然贵了点儿，但是房子真好。",
+          "pinyin": "Suīrán guì le diǎnr, dànshì fángzi zhēn hǎo.",
+          "vi": "Tuy hơi đắt một chút, nhưng căn nhà thật sự tốt.",
+          "vocab_refs": [
+            "vocab_024",
+            "vocab_002",
+            "vocab_025"
+          ],
+          "grammar_refs": [
+            "grammar_003",
+            "note_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_009",
+          "order": 9,
+          "speaker": "妻子",
+          "zh": "周围环境怎么样？",
+          "pinyin": "Zhōuwéi huánjìng zěnmeyàng?",
+          "vi": "Môi trường xung quanh thế nào?",
+          "vocab_refs": [
+            "vocab_005",
+            "vocab_006"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_010",
+          "order": 10,
+          "speaker": "小张",
+          "zh": "环境特别好。西边是山，山下边有一条小河，河边是一个很大的公园。周围非常安静。",
+          "pinyin": "Huánjìng tèbié hǎo. Xībian shì shān, shān xiàbian yǒu yì tiáo xiǎohé, hébiān shì yí ge hěn dà de gōngyuán. Zhōuwéi fēicháng ānjìng.",
+          "vi": "Môi trường đặc biệt tốt. Phía tây là núi, dưới chân núi có một con sông nhỏ, bên bờ sông là một công viên rất lớn. Xung quanh rất yên tĩnh.",
+          "vocab_refs": [
+            "vocab_006",
+            "vocab_026",
+            "vocab_027",
+            "vocab_005"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_011",
+          "order": 11,
+          "speaker": "妻子",
+          "zh": "交通方便不方便？",
+          "pinyin": "Jiāotōng fāngbiàn bu fāngbiàn?",
+          "vi": "Giao thông có thuận tiện không?",
+          "vocab_refs": [
+            "vocab_028",
+            "vocab_029"
+          ],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_002_line_012",
+          "order": 12,
+          "speaker": "小张",
+          "zh": "交通很方便。楼下就有公共汽车站，坐车十分钟就到公司了。汽车站旁边就是地铁站。附近有学校、医院和体育馆……",
+          "pinyin": "Jiāotōng hěn fāngbiàn. Lóuxià jiù yǒu gōnggòng qìchē zhàn, zuò chē shí fēnzhōng jiù dào gōngsī le. Qìchē zhàn pángbiān jiù shì dìtiě zhàn. Fùjìn yǒu xuéxiào, yīyuàn hé tǐyùguǎn...",
+          "vi": "Giao thông rất thuận tiện. Ngay dưới lầu có trạm xe buýt, đi xe mười phút là đến công ty. Bên cạnh trạm xe chính là ga tàu điện ngầm. Gần đó có trường học, bệnh viện và nhà thi đấu…",
+          "vocab_refs": [
+            "vocab_028",
+            "vocab_029",
+            "vocab_039",
+            "vocab_030",
+            "vocab_031",
+            "vocab_032",
+            "vocab_033",
+            "vocab_034",
+            "vocab_035",
+            "vocab_036"
+          ],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    }
+  ]
+}

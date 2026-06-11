@@ -1,0 +1,412 @@
+{
+  "id": "e7b17c18-9cbc-41bb-b7d1-67edeb546aa0",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "实验",
+  "pinyin": "shíyàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thực nghiệm",
+    "meaning_vi": "thí nghiệm, thực nghiệm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thí nghiệm",
+      "thực nghiệm"
+    ],
+    "short_definition_vi": "thí nghiệm, thực nghiệm",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "实",
+        "lishu_vi": "thực",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực, đầy đủ",
+        "modern_logic_vi": "Gợi sự thật/thực nghiệm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "验",
+        "lishu_vi": "nghiệm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "馬",
+          "radical_variant": "马",
+          "radical_name_vi": "bộ Mã",
+          "radical_name_zh": "",
+          "hanviet": "mã",
+          "meaning_vi": "ngựa",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "马 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "mã",
+            "meaning_vi": "ngựa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "马 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "馬",
+              "radical_variant": "马",
+              "radical_name_vi": "bộ Mã",
+              "radical_name_zh": "",
+              "hanviet": "mã",
+              "meaning_vi": "ngựa",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "马 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "佥",
+            "hanviet": "thiêm",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểm nghiệm, thử nghiệm",
+        "modern_logic_vi": "实验 = kiểm nghiệm bằng thực tế.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "实验 được dùng trong Bài 20 với nghĩa: thí nghiệm, thực nghiệm.",
+    "memory_tip_vi": "Nhớ qua cụm 做实验.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "试验",
+        "pinyin": "shìyàn",
+        "meaning_vi": "thử nghiệm",
+        "difference_vi": "Gần 实验, thiên về thử xem có hiệu quả không.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "测试",
+        "pinyin": "cèshì",
+        "meaning_vi": "kiểm tra/test",
+        "difference_vi": "Dùng nhiều trong công nghệ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b51e5ebd-c859-4c03-80a8-785e71d20e48",
+      "order": 1,
+      "zh": "做实验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ee9b863-fd1b-4be5-a4f5-f6f7bd1bbd25",
+      "order": 2,
+      "zh": "进行实验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b074772a-fdc3-4271-9810-faaa7a814409",
+      "order": 3,
+      "zh": "心理学实验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "905bb4ec-8e8f-4c43-919b-25cf535038ef",
+      "order": 4,
+      "zh": "科学实验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "211b066c-9593-4b2e-8427-a7089ea74fc5",
+      "order": 5,
+      "zh": "实验结果",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87f0f5cf-6f8d-4ef9-86f9-a858566ac7f6",
+      "order": 6,
+      "zh": "实验数据",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2271c3f0-af3c-4d7f-be58-1f207b99f9a0",
+      "order": 7,
+      "zh": "实验室",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "76b6f33a-b176-4412-b8b0-1ea10499b4b5",
+      "order": 1,
+      "zh": "这个实验很有意思。",
+      "pinyin": "Zhège shíyàn hěn yǒu yìsi.",
+      "vi": "Thí nghiệm này rất thú vị.",
+      "analysis_vi": "很有意思 là khẩu ngữ tự nhiên.",
+      "highlight": [
+        "实验"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7b17c18-9cbc-41bb-b7d1-67edeb546aa0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fdb089f1-6c4b-45cd-b043-76086420c7a3",
+      "order": 2,
+      "zh": "这个理论听起来很有道理，可是如果没有实验结果支持，就很难说服别人。",
+      "pinyin": "Zhège lǐlùn tīng qǐlai hěn yǒu dàoli, kěshì rúguǒ méiyǒu shíyàn jiéguǒ zhīchí, jiù hěn nán shuōfú biéren.",
+      "vi": "Lý thuyết này nghe có lý, nhưng nếu không có kết quả thí nghiệm hỗ trợ thì khó thuyết phục người khác.",
+      "analysis_vi": "听起来 là nghĩa mở rộng của bổ ngữ xu hướng.",
+      "highlight": [
+        "实验"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7b17c18-9cbc-41bb-b7d1-67edeb546aa0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong học thuật, 实验结果 và 数据 giúp tăng 说服力.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b6f8c118-6b85-4aaf-9297-93c9baa22963",
+      "order": 1,
+      "rule_vi": "Không nhầm 实验 với 经验.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这个结论需要经验来证明。",
+          "pinyin": "Zhège jiélùn xūyào jīngyàn lái zhèngmíng.",
+          "vi": "Kết luận này cần kinh nghiệm để chứng minh.",
+          "note_vi": "Không đúng nếu muốn nói cần thí nghiệm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个结论需要实验来证明。",
+          "pinyin": "Zhège jiélùn xūyào shíyàn lái zhèngmíng.",
+          "vi": "Kết luận này cần thí nghiệm để chứng minh.",
+          "note_vi": "实验 là thí nghiệm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "实验",
+    "back": "thí nghiệm, thực nghiệm",
+    "hint": "shíyàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e7b17c18-9cbc-41bb-b7d1-67edeb546aa0",
+    "source_lesson_vocab_id": null
+  }
+}

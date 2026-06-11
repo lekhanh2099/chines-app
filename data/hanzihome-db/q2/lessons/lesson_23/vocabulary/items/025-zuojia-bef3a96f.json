@@ -1,0 +1,373 @@
+{
+  "id": "ab6c9f21-6bfe-4d6f-a1bd-4df19743fbe9",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "作家",
+  "pinyin": "zuòjiā",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Tác gia",
+    "meaning_vi": "nhà văn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà văn"
+    ],
+    "short_definition_vi": "nhà văn",
+    "textbook_focus_vi": "nhà văn",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "作",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành vi của người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành vi của người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "家",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "phía trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 作家 hợp lại tạo nghĩa hiện đại trong bài: nhà văn.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "作家",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "作家 / 记者 / 作者",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "记者",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "作家 / 记者 / 作者",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "作者",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "作家 / 记者 / 作者",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "作家",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "作家 / 编剧",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "编剧",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "作家 / 编剧",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "作家 / 记者 / 作者",
+      "作家 / 编剧"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "14d95f5a-7ffe-4f5d-ba5e-f4c36653f015",
+      "order": 1,
+      "zh": "一位作家",
+      "pinyin": "",
+      "vi": "一位作家",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "403729f5-0598-4c61-b576-100710542e1f",
+      "order": 2,
+      "zh": "著名作家",
+      "pinyin": "",
+      "vi": "著名作家",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d48af4de-c26d-4f5c-91e7-185cffb0ca51",
+      "order": 3,
+      "zh": "青年作家",
+      "pinyin": "",
+      "vi": "青年作家",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f0e21ab8-1259-4b06-9dba-83b5ac30c50d",
+      "order": 4,
+      "zh": "中国作家",
+      "pinyin": "",
+      "vi": "中国作家",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a2ebbdf7-514d-42de-be13-eba8d173af36",
+      "order": 5,
+      "zh": "作家的作品",
+      "pinyin": "",
+      "vi": "作家的作品",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "04fba648-2751-4722-88b0-24a5befed74c",
+      "order": 6,
+      "zh": "成为作家",
+      "pinyin": "",
+      "vi": "成为作家",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9ab0724e-7740-401e-b9d9-7bea61ab2056",
+      "order": 1,
+      "zh": "这个词是“作家”。",
+      "pinyin": "",
+      "vi": "Từ này là “作家”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "作家"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "ab6c9f21-6bfe-4d6f-a1bd-4df19743fbe9"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "795bfdff-cf9d-4830-a93f-2f31ae062fa3",
+      "order": 2,
+      "zh": "你想怎么用“作家”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “作家” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "作家"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "ab6c9f21-6bfe-4d6f-a1bd-4df19743fbe9"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bccb460c-5b9f-4099-be4e-8c9dfd72a40d",
+      "order": 3,
+      "zh": "我们一边复习作家，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “作家”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "作家"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "ab6c9f21-6bfe-4d6f-a1bd-4df19743fbe9"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "作家 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "befab930-6857-46ec-b122-81f321816837",
+      "order": 1,
+      "rule_vi": "Dùng 作家 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 作家 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "作家",
+    "back": "nhà văn",
+    "hint": "zuòjiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ab6c9f21-6bfe-4d6f-a1bd-4df19743fbe9",
+    "source_lesson_vocab_id": null
+  }
+}

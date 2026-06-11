@@ -1,0 +1,1410 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: giữ đủ mọi mục bài tập theo thứ tự sách.",
+    "expected_exercise_count_from_pdf": 11,
+    "actual_exercise_count_in_json": 11,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_pdf_checked",
+    "allowed_final_status_when_incomplete": "draft_or_verified_only",
+    "blocked_final_statuses": [
+      "final_verified",
+      "final_verified_with_marked_generated_fields"
+    ]
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调，朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc to.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "jílì",
+              "right": "jìlì"
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "guīju",
+              "right": "guǐjì"
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "jiǎndān",
+              "right": "jiǎnduàn"
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "shùzì",
+              "right": "shūzi"
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "shēnqǐng",
+              "right": "shénqíng"
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "yǒuyì",
+              "right": "yóuyù"
+            },
+            {
+              "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
+              "left": "zhǎngbèi",
+              "right": "chángbèi"
+            },
+            {
+              "id": "5dcaf7e0-6d93-4034-b992-da23295bca73",
+              "left": "gǎnqíng",
+              "right": "kàngjīng"
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_chunks",
+          "title": "朗读",
+          "items": [
+            "申请留学",
+            "申请护照",
+            "申请签证",
+            "工作顺利",
+            "旅行顺利",
+            "祝你顺利",
+            "吉利的数字",
+            "吉利的话",
+            "吉利的日子",
+            "跟你开玩笑",
+            "开了一个玩笑",
+            "喜欢跟别人开玩笑",
+            "谁说我不会",
+            "谁说我没来",
+            "我怎么知道",
+            "连一个汉字也不会写",
+            "连一句汉语也不会说",
+            "只要努力就能有好成绩",
+            "只要吃了这种药你的病就能好"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Dựa vào mẫu câu, thay thế phần gợi ý.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "items": [
+        {
+          "id": "c97459c8-dcb9-449e-8fae-e0db9f5b8768",
+          "model": [
+            "A：我不知道宴会上有什么规矩。",
+            "B：你不是“中国通”吗？",
+            "（你应该知道。）"
+          ],
+          "prompts": [
+            "她叫什么名字 / 跟她在一个班",
+            "这个电影好不好 / 看过这个电影",
+            "那儿的情况 / 去过那儿",
+            "这个字念什么 / 学过汉语",
+            "她结婚了 / 她的好朋友"
+          ]
+        },
+        {
+          "id": "2cfb88e5-9525-4620-bd95-95b2014eea2e",
+          "model": [
+            "A：你怎么连这个也不懂？",
+            "B：谁说我不懂？"
+          ],
+          "prompts": [
+            "这个 / 不知道",
+            "这个故事 / 没读过",
+            "这个题 / 不会做",
+            "长城 / 没去过",
+            "这个电影 / 没看过"
+          ]
+        },
+        {
+          "id": "4cad4670-11d0-4ab4-97d3-b0236c140931",
+          "model": [
+            "只要有钱就能买好多好东西。"
+          ],
+          "prompts": [
+            "你努力 / 能学好汉语",
+            "我有时间 / 一定参加",
+            "你去 / 一定能找到他",
+            "用一点儿时间 / 能看完",
+            "报名 / 可以参加太极拳比赛"
+          ]
+        },
+        {
+          "id": "5640006a-0889-4e2f-a342-90a13acfdf02",
+          "model": [
+            "谁听了他的相声都会笑起来。"
+          ],
+          "prompts": [
+            "知道这件事 / 会告诉你",
+            "听到这件事 / 会很高兴",
+            "知道你来 / 会欢迎的",
+            "去过那儿 / 会喜欢那儿的风光",
+            "看了这个电影 / 会被感动"
+          ]
+        },
+        {
+          "id": "8ae817a9-2420-4efd-9c81-7b2e50a72c32",
+          "model": [
+            "A：你认识张东吗？",
+            "B：我连这个名字也没听说过。"
+          ],
+          "prompts": [
+            "听得懂中文广播 / 简单的汉语 / 听不懂",
+            "会中国书法 / 汉字 / 不会写",
+            "能喝白酒 / 啤酒 / 不能喝",
+            "去过上海 / 中国 / 没去过",
+            "会修车 / 开 / 不会开"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng trong khung để điền vào chỗ trống.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "word_bank": [
+        "感情",
+        "笨",
+        "认为",
+        "领导",
+        "首先",
+        "连",
+        "申请",
+        "玩笑",
+        "长久",
+        "简单"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "prompt": "我________法语的文字也不认识，更不要说看法语书了。",
+          "answer": "连",
+          "answer_verified": true
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "prompt": "这个问题很________，谁都会回答。",
+          "answer": "简单",
+          "answer_verified": true
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "prompt": "中国人________“八”是个吉利的数字。",
+          "answer": "认为",
+          "answer_verified": true
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "prompt": "他这个人就爱跟别人开________。",
+          "answer": "玩笑",
+          "answer_verified": true
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "prompt": "我想向学校________再延长一年。",
+          "answer": "申请",
+          "answer_verified": true
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "prompt": "希望我们两国人民________地友好下去。",
+          "answer": "长久",
+          "answer_verified": true
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "prompt": "________让我来给大家介绍一下儿。",
+          "answer": "首先",
+          "answer_verified": true
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "prompt": "今天的晚会，很多重要的国家________人都来了。",
+          "answer": "领导",
+          "answer_verified": true
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "prompt": "刚来时，我一点儿也不习惯，现在我对这儿已经有了________，又不想离开了。",
+          "answer": "感情",
+          "answer_verified": true
+        },
+        {
+          "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "prompt": "我真________，怎么连这么简单的问题也答不出来？",
+          "answer": "笨",
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "matching",
+      "variant": "matching",
+      "order": 4,
+      "title": "四、画线组句",
+      "title_vi": "Nối thành câu",
+      "instruction": {
+        "zh": "画线组句。",
+        "vi": "Nối A và B để tạo thành câu hoàn chỉnh.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "left": [
+        "只要你给我打电话",
+        "只要你努力",
+        "只要汉语说得好",
+        "只要吃了这种药",
+        "只要你告诉她",
+        "只要有钱"
+      ],
+      "right": [
+        "病很快就会好。",
+        "我就一定来。",
+        "就一定能把汉语学好。",
+        "就能买到好东西。",
+        "就能找到工作。",
+        "她就会帮助你。"
+      ],
+      "answers": [
+        {
+          "left_order": 1,
+          "right_order": 2
+        },
+        {
+          "left_order": 2,
+          "right_order": 3
+        },
+        {
+          "left_order": 3,
+          "right_order": 5
+        },
+        {
+          "left_order": 4,
+          "right_order": 1
+        },
+        {
+          "left_order": 5,
+          "right_order": 6
+        },
+        {
+          "left_order": 6,
+          "right_order": 4
+        }
+      ]
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 5,
+      "title": "五、用反问句完成句子",
+      "title_vi": "Dùng câu hỏi tu từ hoàn thành câu",
+      "instruction": {
+        "zh": "用反问句完成句子。",
+        "vi": "Dùng câu hỏi tu từ để hoàn thành câu.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "context": "A：来中国以前，她没学过汉语。",
+          "prompt": "B：________________________？",
+          "hint": "谁说……",
+          "answer": "谁说她没学过汉语？",
+          "answer_verified": true
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "context": "A：你没看过这个电影，你怎么知道没有意思？",
+          "prompt": "B：________________________？",
+          "hint": "谁说……",
+          "answer": "谁说我没看过这个电影？",
+          "answer_verified": true
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "context": "A：你知道这件事儿吗？",
+          "prompt": "B：________________________？",
+          "hint": "怎么……",
+          "answer": "我怎么知道呢？",
+          "answer_verified": true
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "context": "A：我的钥匙怎么找不到了？",
+          "prompt": "B：________________________？",
+          "hint": "不是……吗",
+          "answer": "不是在桌子上吗？",
+          "answer_verified": true
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "context": "A：听说小张在美国留过学。",
+          "prompt": "B：________________________？",
+          "hint": "哪里……",
+          "answer": "他哪儿在美国留过学？",
+          "answer_verified": true
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "context": "A：你知道玛丽去哪儿了吗？",
+          "prompt": "B：________________________？我今天一天都没看见她。",
+          "hint": "谁……",
+          "answer": "谁知道她去哪儿了？",
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "answer_questions",
+      "variant": "custom_textbook_task",
+      "order": 6,
+      "title": "六、用“连……也 / 都……”回答问题",
+      "title_vi": "Dùng 连……也/都 trả lời",
+      "instruction": {
+        "zh": "用“连……也 / 都……”回答问题。",
+        "vi": "Dùng 连……也/都 để trả lời câu hỏi.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "prompt": "A：听力考试难吗？\nB：很难，________________________。",
+          "answer": "连简单的句子我也听不懂",
+          "answer_verified": true
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "prompt": "A：来中国以前你学过多长时间汉语？\nB：________________________。",
+          "answer": "我连一天汉语也没学过",
+          "answer_verified": true
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "prompt": "A：听说她结婚了。\nB：胡说，________________________，跟谁结婚呢？",
+          "answer": "她连男朋友也没有",
+          "answer_verified": true
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "prompt": "A：来中国以后你去旅行过几次？\nB：________________________。",
+          "answer": "我连一次也没去过",
+          "answer_verified": true
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "prompt": "A：你看过这个电影吗？\nB：________________________。",
+          "answer": "我连这个电影的名字都没听说过",
+          "answer_verified": true
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "prompt": "A：今天上课你来得早吗？\nB：来得很早，我来时________________________。",
+          "answer": "连老师都还没来",
+          "answer_verified": true
+        },
+        {
+          "id": "d2ee010f-bdf3-46bc-b758-1c9bbab1af4b",
+          "prompt": "A：她回国以后常跟你联系吗？\nB：________________________。",
+          "answer": "她连一次电话也没给我打过",
+          "answer_verified": true
+        },
+        {
+          "id": "added_ex6_q8_20260610",
+          "prompt": "A：这些书你看完几本了？\nB：我刚借来，________________________。",
+          "answer": "我连一本也没看完",
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 7,
+      "title": "七、下列情景怎么说（用反问句）",
+      "title_vi": "Nói theo tình huống bằng câu hỏi tu từ",
+      "instruction": {
+        "zh": "下列情景怎么说（用反问句）。",
+        "vi": "Dựa vào tình huống, nói bằng câu hỏi tu từ.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "situations": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "prompt": "朋友在找钥匙，你看他的钥匙就在桌子上，你告诉他。",
+          "answer": "你的钥匙不是在桌子上吗？",
+          "answer_verified": true
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "prompt": "朋友问你的老师叫什么名字，你说不知道，你的朋友会怎么说？",
+          "answer": "你怎么连老师叫什么名字都不知道？",
+          "answer_verified": true
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "prompt": "朋友问你桂林的风景怎么样，但是你没去过，怎么说？",
+          "answer": "我没去过桂林，怎么知道那儿的风景怎么样呢？",
+          "answer_verified": true
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "prompt": "有人说你当过演员，但是你没有当过，怎么说？",
+          "answer": "谁说我当过演员？",
+          "answer_verified": true
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "prompt": "有人找玛丽，但玛丽不在，她问你，但你不知道，怎么说？",
+          "answer": "我怎么知道玛丽在哪儿呢？",
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 8,
+      "title": "八、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "prompt": "你把生词不是要预习预习吗？",
+          "answer": "你不是要把生词预习预习吗？",
+          "answer_verified": true
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "prompt": "我没见过她，怎么可能不认识她呢？",
+          "answer": "我没见过她，怎么可能认识她呢？",
+          "answer_verified": true
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "prompt": "这个演员很有名，我哪能知道呢？",
+          "answer": "这个演员很有名，我哪能不知道呢？",
+          "answer_verified": true
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "prompt": "连我看得懂这本书，你一定看得懂。",
+          "answer": "这本书连我都看得懂，你一定看得懂。",
+          "answer_verified": true
+        },
+        {
+          "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+          "prompt": "连她不会做这个题，我也不会。",
+          "answer": "连她都不会做这个题，我也不会。",
+          "answer_verified": true
+        },
+        {
+          "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+          "prompt": "我以前连一次也没有来过中国。",
+          "answer": "我以前一次也没来过中国。",
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "supplementary_vocabulary": [
+        {
+          "id": "825d34bd-24e5-4cd9-8f13-d2ae5e0dac35",
+          "hanzi": "牌照",
+          "pinyin": "páizhào",
+          "meaning_vi": "biển số; biển xe",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ biển số/giấy phép; trong bài đọc chủ yếu là biển số xe.",
+            "notes": []
+          }
+        },
+        {
+          "id": "0914fb28-105b-4797-93e2-cd2f72731272",
+          "hanzi": "伤疤",
+          "pinyin": "shāngbā",
+          "meaning_vi": "vết sẹo",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ vết sẹo; cũng có thể dùng nghĩa bóng cho tổn thương cũ.",
+            "notes": []
+          }
+        },
+        {
+          "id": "838df787-ac41-4d6c-b762-b15704f0fe4f",
+          "hanzi": "流氓",
+          "pinyin": "liúmáng",
+          "meaning_vi": "lưu manh; du côn",
+          "pos": "Danh từ / Tính từ miệt thị",
+          "pos_detail": {
+            "vi": "Danh từ / Tính từ miệt thị",
+            "cn": "名词/贬义形容词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ chê nặng, chỉ lưu manh/du côn; không dùng cho người thất nghiệp bình thường.",
+            "notes": []
+          }
+        },
+        {
+          "id": "54aaec51-6765-469b-9948-06a90db2b2c7",
+          "hanzi": "流浪",
+          "pinyin": "liúlàng",
+          "meaning_vi": "lang thang; sống lang bạt",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ sống lang thang/phiêu bạt, không có nơi ổn định.",
+            "notes": []
+          }
+        },
+        {
+          "id": "5f0c7204-3fca-496c-a3ce-e604c4409c66",
+          "hanzi": "九泉",
+          "pinyin": "jiǔquán",
+          "meaning_vi": "cửu tuyền; âm phủ",
+          "pos": "Danh từ văn học",
+          "pos_detail": {
+            "vi": "Danh từ văn học",
+            "cn": "文言/文学性名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ văn học chỉ cõi âm/suối vàng, thường trong 九泉之下.",
+            "notes": []
+          }
+        },
+        {
+          "id": "97f004f6-96f6-4386-960a-45e70801a573",
+          "hanzi": "死",
+          "pinyin": "sǐ",
+          "meaning_vi": "chết",
+          "pos": "Động từ / Tính từ / Phó từ mức độ",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ / Phó từ mức độ",
+            "cn": "动词/形容词/程度副词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Nghĩa chính là chết; trong khẩu ngữ còn làm bổ ngữ mức độ như 累死了.",
+            "notes": []
+          }
+        },
+        {
+          "id": "45c8d662-b3e0-4e2c-8657-ff0c96653086",
+          "hanzi": "救济",
+          "pinyin": "jiùjì",
+          "meaning_vi": "cứu tế",
+          "pos": "Động từ / Danh từ",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词/名词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ cứu trợ vật chất/xã hội; không phải cứu mạng khẩn cấp.",
+            "notes": []
+          }
+        },
+        {
+          "id": "796dd2ea-ec61-4927-ba16-9151ad305589",
+          "hanzi": "救命",
+          "pinyin": "jiùmìng",
+          "meaning_vi": "cứu mạng",
+          "pos": "Động từ li hợp / Thán ngữ",
+          "pos_detail": {
+            "vi": "Động từ li hợp / Thán ngữ",
+            "cn": "动宾式离合词/叹词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 救 + tân ngữ 命",
+            "usage_note_vi": "Khi là tiếng kêu 救命！ thì dùng như thán ngữ nguyên khối; khi là động từ có thể tách/chèn thành phần như 救了他的命, 救了一条命.",
+            "notes": []
+          }
+        },
+        {
+          "id": "0b92c1d5-4de6-4d1d-ba70-b9ed43326ee9",
+          "hanzi": "污染",
+          "pinyin": "wūrǎn",
+          "meaning_vi": "ô nhiễm",
+          "pos": "Động từ / Danh từ",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词/名词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ làm ô nhiễm hoặc sự ô nhiễm; thường dùng với 环境, 空气, 水.",
+            "notes": []
+          }
+        },
+        {
+          "id": "0c34fad2-3faa-472d-adf9-3d3e3dc540b8",
+          "hanzi": "凄惨",
+          "pinyin": "qīcǎn",
+          "meaning_vi": "thê thảm",
+          "pos": "Tính từ",
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Miêu tả tình cảnh/cảnh tượng thê thảm; sắc thái nặng.",
+            "notes": []
+          }
+        },
+        {
+          "id": "d8f13fac-ddd5-4db0-8c90-0e34b932d3ca",
+          "hanzi": "散",
+          "pinyin": "sàn",
+          "meaning_vi": "tan; tản ra",
+          "pos": "Động từ / Tính từ",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ",
+            "cn": "动词/形容词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "sàn: tan/giải tán; sǎn: rời rạc. Trong bài dùng sàn để liên tưởng với 三.",
+            "notes": []
+          }
+        },
+        {
+          "id": "cab530bc-261a-4437-9376-6367f402aa09",
+          "hanzi": "二流子",
+          "pinyin": "èrliúzi",
+          "meaning_vi": "kẻ lêu lổng",
+          "pos": "Danh từ miệt thị",
+          "pos_detail": {
+            "vi": "Danh từ miệt thị",
+            "cn": "贬义名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ kẻ lêu lổng/vô công rồi nghề; không dùng trung tính cho người chưa có việc.",
+            "notes": []
+          }
+        },
+        {
+          "id": "b79dec79-7155-463d-afe8-d0f8cd792bec",
+          "hanzi": "二百五",
+          "pinyin": "èrbǎiwǔ",
+          "meaning_vi": "đồ ngốc",
+          "pos": "Danh từ miệt thị",
+          "pos_detail": {
+            "vi": "Danh từ miệt thị",
+            "cn": "贬义名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ mắng người là đồ ngốc/dở hơi; khác số đếm 二百五十.",
+            "notes": []
+          }
+        },
+        {
+          "id": "dfb60bc8-4b0d-4ea8-ad96-fd297320c188",
+          "hanzi": "低人一等",
+          "pinyin": "dī rén yī děng",
+          "meaning_vi": "thấp kém hơn người khác",
+          "pos": "Cụm tính từ / Thành ngữ tính chất",
+          "pos_detail": {
+            "vi": "Cụm tính từ / Thành ngữ tính chất",
+            "cn": "形容性短语",
+            "normalized": "adjective_phrase",
+            "schema_compatible_pos": "adjective_phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ thấp hơn người khác một bậc; thường dùng với 觉得自己低人一等.",
+            "notes": []
+          }
+        },
+        {
+          "id": "f0072cd5-e3ae-4d28-90a1-af760461fc18",
+          "hanzi": "糊涂",
+          "pinyin": "hútu",
+          "meaning_vi": "hồ đồ",
+          "pos": "Tính từ",
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ hồ đồ/không sáng suốt/rối không rõ; phân biệt với 模糊, 迷糊.",
+            "notes": []
+          }
+        },
+        {
+          "id": "f87ab08c-e54e-428e-bc5f-cc311fd470db",
+          "hanzi": "一团糟",
+          "pinyin": "yìtuánzāo",
+          "meaning_vi": "rối tung",
+          "pos": "Cụm tính từ",
+          "pos_detail": {
+            "vi": "Cụm tính từ",
+            "cn": "形容性短语",
+            "normalized": "adjective_phrase",
+            "schema_compatible_pos": "adjective_phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Làm vị ngữ để chỉ tình trạng rối tung/hỗn loạn.",
+            "notes": []
+          }
+        },
+        {
+          "id": "8bc9f02c-41d0-4b65-8451-b6e590e96d84",
+          "hanzi": "一场空",
+          "pinyin": "yìchǎngkōng",
+          "meaning_vi": "công cốc",
+          "pos": "Cụm danh-tính / Cụm kết quả",
+          "pos_detail": {
+            "vi": "Cụm danh-tính / Cụm kết quả",
+            "cn": "名词性/结果性短语",
+            "normalized": "noun_phrase",
+            "schema_compatible_pos": "noun_phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ kết quả công cốc/hóa thành hư không, thường đi với 成了/变成.",
+            "notes": []
+          }
+        },
+        {
+          "id": "ddd8246c-cb93-46a4-a42c-dbdd9343c4a3",
+          "hanzi": "贬义词",
+          "pinyin": "biǎnyìcí",
+          "meaning_vi": "từ mang nghĩa xấu",
+          "pos": "Danh từ ngôn ngữ học",
+          "pos_detail": {
+            "vi": "Danh từ ngôn ngữ học",
+            "cn": "语言学名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ từ mang nghĩa xấu/sắc thái chê bai; trái với 褒义词.",
+            "notes": []
+          }
+        },
+        {
+          "id": "f3b66231-c3c1-429b-9de3-ea5dd67cc655",
+          "hanzi": "夭折",
+          "pinyin": "yāozhé",
+          "meaning_vi": "chết yểu",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ chết yểu hoặc kế hoạch/dự án thất bại giữa chừng; sắc thái nặng.",
+            "notes": []
+          }
+        },
+        {
+          "id": "15fa67fd-a926-446b-af10-10b8f72501a4",
+          "hanzi": "灵堂",
+          "pinyin": "língtáng",
+          "meaning_vi": "linh đường",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ nơi đặt linh cữu/linh vị trong tang lễ.",
+            "notes": []
+          }
+        },
+        {
+          "id": "92421972-7d7f-4354-8a3c-9289ab0ae38e",
+          "hanzi": "灵车",
+          "pinyin": "língchē",
+          "meaning_vi": "xe tang",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ xe tang/xe chở linh cữu hoặc tro cốt.",
+            "notes": []
+          }
+        },
+        {
+          "id": "3a78f2cc-34fd-4d9e-bc7d-10af686e7760",
+          "hanzi": "牙",
+          "pinyin": "yá",
+          "meaning_vi": "răng",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ răng; học theo cụm 刷牙, 牙疼, 牙医.",
+            "notes": []
+          }
+        },
+        {
+          "id": "c16da18b-c54c-4135-8e6b-fd312a5c1eab",
+          "hanzi": "揉",
+          "pinyin": "róu",
+          "meaning_vi": "vò; xoa; vo lại",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ xoa, vò, nhào bằng tay; thường đi với 眼睛, 面, 纸.",
+            "notes": []
+          }
+        },
+        {
+          "id": "0b75e592-4597-4c31-b6f2-15d07781b17c",
+          "hanzi": "抓",
+          "pinyin": "zhuā",
+          "meaning_vi": "bắt; chộp; bốc lấy",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ chộp, bắt, nắm lấy; có thể dùng nghĩa thật hoặc nghĩa mở rộng.",
+            "notes": []
+          }
+        },
+        {
+          "id": "f7ce2f5e-c89c-4c0b-9f60-b327d6e0114c",
+          "hanzi": "窗口",
+          "pinyin": "chuāngkǒu",
+          "meaning_vi": "cửa sổ; ô cửa giao dịch",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chỉ cửa sổ hoặc ô/cửa giao dịch; trong đời sống hiện đại còn có nghĩa window giao diện.",
+            "notes": []
+          }
+        },
+        {
+          "id": "added_supp_vocab_daba_20260610",
+          "hanzi": "大巴",
+          "pinyin": "dàbā",
+          "meaning_vi": "xe buýt lớn; xe khách lớn",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        }
+      ],
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "title": "哪个数字最吉利",
+        "title_vi": "Con số nào may mắn nhất",
+        "paragraphs": [
+          {
+            "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+            "order": 1,
+            "zh": "看到很多朋友买了汽车，李四也买了一辆。去办理牌照的时候，工作人员①________他，说，如果多交100块钱，车牌的最后一个号码可以随便挑。李四就多交了100块钱。",
+            "pinyin": "kàn dào hěn duō péngyou mǎi le qìchē， Lǐ Sì yě mǎi le yī liàng。 qù bànlǐ páizhào de shíhou， gōngzuò rényuán ①________ tā， shuō， rúguǒ duō jiāo 100 kuài qián， chēpái de zuì hòu yí gè hàomǎ kěyǐ suíbiàn tiāo。 Lǐ Sì jiù duō jiāo le 100 kuài qián。",
+            "vi": "Thấy nhiều bạn bè đã mua ô tô, Lý Tứ cũng mua một chiếc. Khi đi làm biển số xe, nhân viên nói với anh ấy rằng nếu nộp thêm 100 tệ thì có thể tùy ý chọn chữ số cuối cùng của biển xe. Lý Tứ bèn nộp thêm 100 tệ.",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+            "order": 2,
+            "zh": "工作人员说：“从0到3，从5到9，您选哪个数字呀？”",
+            "pinyin": "gōngzuò rényuán shuō： “cóng 0 dào 3， cóng 5 dào 9， nín xuǎn nǎ ge shùzì ya？ ”",
+            "vi": "Nhân viên nói: “Từ 0 đến 3, từ 5 đến 9, ông chọn con số nào?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+            "order": 3,
+            "zh": "李四说：“我自己决定不②________，让我跟妻子商量商量，一会儿我再来告诉您。”",
+            "pinyin": "Lǐ Sì shuō： “wǒ zìjǐ juédìng bù ②________， ràng wǒ gēn qīzi shāng liáng shāng liáng， yí huìr wǒ zài lái gàosu nín。 ”",
+            "vi": "Lý Tứ nói: “Tự tôi không quyết định được, để tôi bàn bạc với vợ một chút, lát nữa tôi sẽ quay lại nói với anh/chị.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+            "order": 4,
+            "zh": "工作人员笑着说：“您快点儿啊。”",
+            "pinyin": "gōngzuò rényuán xiào zhe shuō： “nín kuài diǎn ér a。 ”",
+            "vi": "Nhân viên cười nói: “Ông nhanh lên nhé.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+            "order": 5,
+            "zh": "李四说一会儿就来。",
+            "pinyin": "Lǐ Sì shuō yí huìr jiù lái。",
+            "vi": "Lý Tứ nói lát nữa sẽ quay lại.",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
+            "order": 6,
+            "zh": "李四回到家，对妻子讲了挑号码的事。妻子说：“就挑8嘛，还跟我商量什么？这几年只要带8的东西都卖得快，这个数字最吉利。”",
+            "pinyin": "Lǐ Sì huí dào jiā， duì qīzi jiǎng le tiāo hàomǎ de shì。 qīzi shuō： “jiù tiāo 8 ma， hái gēn wǒ shāng liáng shénme？ zhè jǐ nián zhǐyào dài 8 de dōngxi dōu mài dé kuài， zhè ge shùzì zuì jílì。 ”",
+            "vi": "Lý Tứ về nhà, kể với vợ chuyện chọn số. Vợ nói: “Cứ chọn số 8 đi, còn bàn bạc với tôi làm gì? Mấy năm nay, chỉ cần thứ gì có số 8 đều bán rất nhanh, con số này may mắn nhất.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
+            "order": 7,
+            "zh": "李四说：“8跟伤疤的‘疤’同音，不太好。我看6比较合适，六六大顺，你看行不行？”",
+            "pinyin": "Lǐ Sì shuō： “8 gēn shāngbā de ‘bā’ tóngyīn， bù tài hǎo。 wǒ kàn 6 bǐ jiào héshì， liùliù dàshùn， nǐ kàn xíng bù xíng？ ”",
+            "vi": "Lý Tứ nói: “8 đồng âm với ‘bā’ trong 伤疤, không tốt lắm. Tôi thấy số 6 khá hợp, ‘六六大顺’, em thấy được không?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "e1c38cca-fcba-4622-8fb9-fbe48b4dab2c",
+            "order": 8,
+            "zh": "妻子说：“6和‘流’谐音，流氓、流浪，多难听。我看9这个数不错，你说呢？”",
+            "pinyin": "qīzi shuō： “6 hé ‘liú’ xiéyīn， liúmáng、 liúlàng， duō nántīng。 wǒ kàn 9 zhè ge shù bù cuò， nǐ shuō ne？ ”",
+            "vi": "Vợ nói: “6 đồng âm với 流, những từ như 流氓, 流浪 nghe rất khó nghe. Tôi thấy số 9 cũng không tệ, anh nói sao?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "447970a7-ce34-4c69-94fe-bd434a89609f",
+            "order": 9,
+            "zh": "李四说：“9好什么？九泉，人一死就说去了九泉。9又和‘救’谐音，救济、救命，都是不吉利的词。还是5吧，你看5怎么样？”",
+            "pinyin": "Lǐ Sì shuō： “9 hǎo shénme？ jiǔquán， rén yī sǐ jiù shuō qù le jiǔquán。 9 yòu hé ‘jiù’ xiéyīn， jiùjì、 jiùmìng， dōu shì bù jílì de cí。 hái shì 5 ba， nǐ kàn 5 zěnmeyàng？ ”",
+            "vi": "Lý Tứ nói: “9 thì hay chỗ nào? 九泉 là cửu tuyền, người ta chết rồi mới nói là đi về cửu tuyền. 9 lại gần âm với 救, những từ như 救济, 救命 đều không may. Hay là số 5 đi, em thấy số 5 thế nào?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "9881cdaa-42b0-431a-ad38-2d9e5e9b6053",
+            "order": 10,
+            "zh": "妻子说：“5更不好了！要是倒数第二位是2、7、8的话，你念念，不就成了‘儿无、妻无、爸无’了吗？另外，5与污染的‘污’谐音，不干净。不能要5，还是7这个数合适。”",
+            "pinyin": "qīzi shuō： “5 gèng bù hǎo le！ yàoshi dàoshǔ dì èr wèi shì 2、7、8 de huà， nǐ niàn niàn， bú jiù chéng le ‘ér wú、 qī wú、 bà wú’ le ma？ lìngwài， 5 yǔ wūrǎn de ‘wū’ xiéyīn， bù gānjìng。 bù néng yào 5， hái shì 7 zhè ge shù héshì。 ”",
+            "vi": "Vợ nói: “5 càng không tốt! Nếu chữ số áp chót là 2, 7, 8 thì anh thử đọc xem, chẳng phải sẽ thành ‘không con, không vợ, không cha’ sao? Ngoài ra, 5 đồng âm với 污 trong 污染, không sạch sẽ. Không thể lấy số 5, vẫn là số 7 phù hợp hơn.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "f26b68e6-9107-428a-a7d2-6823aa2e153d",
+            "order": 11,
+            "zh": "李四说：“7和‘凄惨’的‘凄’同音，也不好。”",
+            "pinyin": "Lǐ Sì shuō： “7 hé ‘qīcǎn’ de ‘qī’ tóngyīn， yě bù hǎo。 ”",
+            "vi": "Lý Tứ nói: “7 đồng âm với 凄 trong 凄惨, cũng không tốt.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "bf7eff2f-6065-4156-b084-a67d08c406f2",
+            "order": 12,
+            "zh": "妻子说：“选3行不行？”",
+            "pinyin": "qīzi shuō： “xuǎn 3 xíng bù xíng？ ”",
+            "vi": "Vợ nói: “Chọn số 3 được không?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "5cebbb14-7594-4121-9c73-8c3b82644a2c",
+            "order": 13,
+            "zh": "李四摇摇③________说：“3就是散，就是离婚，多不吉利呀！你想想2可以不可以？”",
+            "pinyin": "Lǐ Sì yáoyao ③________ shuō： “3 jiù shì sàn， jiù shì líhūn， duō bù jílì ya！ nǐ xiǎngxiang 2 kěyǐ bù kěyǐ？ ”",
+            "vi": "Lý Tứ lắc đầu nói: “3 chính là 散, tức là ly tán, ly hôn, quá không may! Em nghĩ số 2 có được không?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "6539aad9-16f6-41cb-85bc-37373ca1b9b0",
+            "order": 14,
+            "zh": "妻子分析说：“二流子、二百五，都和2有关。2和‘儿’谐音，当儿子有低人一等的感觉。不行，不行。”",
+            "pinyin": "qīzi fēnxī shuō： “èrliúzi、 èrbǎiwǔ， dōu hé 2 yǒuguān。 2 hé ‘ér’ xiéyīn， dāng érzi yǒu dī rén yī děng de gǎnjué。 bù xíng， bù xíng。 ”",
+            "vi": "Vợ phân tích: “二流子, 二百五 đều liên quan đến số 2. 2 lại đồng âm với 儿; làm con trai thì có cảm giác thấp hơn người khác một bậc. Không được, không được.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "ee23f936-7a63-4202-af1f-c111f8cd9ea1",
+            "order": 15,
+            "zh": "李四说：“那就选1吧。”",
+            "pinyin": "Lǐ Sì shuō： “nà jiù xuǎn 1 ba。 ”",
+            "vi": "Lý Tứ nói: “Vậy thì chọn số 1 đi.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "eaa1606e-701b-482d-bb34-9ff70b2db875",
+            "order": 16,
+            "zh": "妻子说：“你怎么糊涂了？1是什么好数字呀？一团糟、一场空，1的贬义词太多。”",
+            "pinyin": "qīzi shuō： “nǐ zěnme hútu le？ 1 shì shénme hǎo shùzì ya？ yìtuánzāo、 yìchǎngkōng， 1 de biǎnyìcí tài duō。 ”",
+            "vi": "Vợ nói: “Anh hồ đồ rồi à? 1 là con số tốt gì chứ? 一团糟, 一场空, những từ mang nghĩa xấu của số 1 quá nhiều.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "03c7f67f-c0f0-4f34-81e1-dd26f270bbb8",
+            "order": 17,
+            "zh": "李四说：“没关系，在车牌号中人们不说一，说幺（yāo）。”",
+            "pinyin": "Lǐ Sì shuō： “méi guānxi， zài chēpái hào zhōng rén men bù shuō yī， shuō yāo （yāo）。 ”",
+            "vi": "Lý Tứ nói: “Không sao, trong biển số xe người ta không đọc 一, mà đọc là 幺 (yāo).”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "b4efac30-fa48-45ea-ac57-293c708832a6",
+            "order": 18,
+            "zh": "妻子说：“那就更不好了，‘幺’和‘夭’同音，夭折不就是死了吗？这个更不行了。”",
+            "pinyin": "qīzi shuō： “nà jiù gèng bù hǎo le， ‘yāo’ hé ‘yāo’ tóngyīn， yāo zhé bú jiù shì sǐ le ma？ zhè ge gèng bù xíng le。 ”",
+            "vi": "Vợ nói: “Thế lại càng không tốt, 幺 đồng âm với 夭, 夭折 chẳng phải là chết yểu sao? Số này càng không được.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "17c29274-739f-459e-8f3a-13c62ae388a8",
+            "order": 19,
+            "zh": "李四说：“那就选0吧，0怎么看都是0，永远不会有错。”",
+            "pinyin": "Lǐ Sì shuō： “nà jiù xuǎn 0 ba， 0 zěnme kàn dōu shì 0， yǒngyuǎn bú huì yǒu cuò。 ”",
+            "vi": "Lý Tứ nói: “Vậy chọn 0 đi, 0 nhìn kiểu gì cũng vẫn là 0, mãi mãi sẽ không sai.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "e2c854a9-b7c2-4682-ae85-699dea3f6a4b",
+            "order": 20,
+            "zh": "妻子说：“0和‘灵’同音，灵堂、灵车，都和死人④________关系，最不吉利了。”",
+            "pinyin": "qīzi shuō： “0 hé ‘líng’ tóngyīn， língtáng、 língchē， dōu hé sǐrén ④________ guānxi， zuì bù jílì le。 ”",
+            "vi": "Vợ nói: “0 đồng âm với 灵, 灵堂, 灵车 đều có liên quan đến người chết, không may nhất.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "050afdc9-fb93-4d50-85b5-9cea191930fd",
+            "order": 21,
+            "zh": "李四说：“那就只有4了，我认为这个数字不坏，四季发财，我李四从小到大，平安无事地长这么大，就是和‘4’有关系。”",
+            "pinyin": "Lǐ Sì shuō： “nà jiù zhǐ yǒu 4 le， wǒ rènwéi zhè ge shùzì bù huài， sìjì fācái， wǒ Lǐ Sì cóng xiǎo dào dà， píng'ān wúshì dì zhǎng zhème dà， jiù shì hé ‘4’ yǒuguānxi。 ”",
+            "vi": "Lý Tứ nói: “Vậy chỉ còn số 4 thôi. Tôi cho rằng con số này không xấu, bốn mùa phát tài; tôi là Lý Tứ, từ nhỏ đến lớn bình an vô sự lớn đến từng này, chính là có liên quan đến số 4.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "7b011a5f-9ee5-4d5b-b4c3-f278a6add04d",
+            "order": 22,
+            "zh": "妻子说：“别说了，4就是死，谁不知道这是个倒霉的数字？我们要选这个数，人家会笑掉牙的。”",
+            "pinyin": "qīzi shuō： “bié shuō le， 4 jiù shì sǐ， shuí bù zhīdao zhè shì gè dǎoméi de shùzì？ wǒmen yào xuǎn zhè ge shù， rénjia huì xiào diào yá de。 ”",
+            "vi": "Vợ nói: “Đừng nói nữa, 4 chính là 死, ai mà không biết đây là con số xui xẻo? Nếu chúng ta chọn số này, người ta sẽ cười rụng răng mất.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "6bb621dc-89bf-4969-a8ed-9cb24a788efd",
+            "order": 23,
+            "zh": "李四说：“0到9我们都研究过了，都不行，你说怎么办？”",
+            "pinyin": "Lǐ Sì shuō： “0 dào 9 wǒmen dōu yánjiū guò le， dōu bù xíng， nǐ shuō zěnme bàn？ ”",
+            "vi": "Lý Tứ nói: “Từ 0 đến 9 chúng ta đều nghiên cứu cả rồi, đều không được, em nói phải làm sao?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "ba893461-6da5-4bc7-b6b3-a679d4ffbf1b",
+            "order": 24,
+            "zh": "妻子说：“从0到9，每张纸上各写一个数字，揉成纸团，抓到哪个是⑤________吧。”",
+            "pinyin": "qīzi shuō： “cóng 0 dào 9， měi zhāng zhǐ shàng gè xiě yí gè shùzì， róu chéng zhǐtuán， zhuā dào nǎ ge shì ⑤________ ba。 ”",
+            "vi": "Vợ nói: “Từ 0 đến 9, mỗi tờ giấy viết một con số, vo thành viên giấy, bốc được số nào thì lấy số đó đi.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "1d8734eb-e0a0-4de6-8dcf-9239784ed27a",
+            "order": 25,
+            "zh": "李四说：“这个办法不错。”妻子写好10个数字，⑥________纸团放在一起，随便抓了一个，打开一看……",
+            "pinyin": "Lǐ Sì shuō： “zhè ge bànfǎ bù cuò。 ” qīzi xiě hǎo 10 gè shùzì， ⑥________ zhǐtuán fàng zài yìqǐ， suíbiàn zhuā le yí gè， dǎkāi yī kàn ……",
+            "vi": "Lý Tứ nói: “Cách này không tệ.” Vợ viết xong 10 con số, đặt các viên giấy lại với nhau, tùy tiện bắt lấy một viên, mở ra xem...",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "2fc43995-c8ba-4a8d-aee6-5e3c06c8d811",
+            "order": 26,
+            "zh": "妻子伤心地哭⑦________。",
+            "pinyin": "qīzi shāngxīn dì kū ⑦________。",
+            "vi": "Người vợ đau lòng khóc òa lên.",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "fad2fe7b-8643-4862-a25a-78c937b859bf",
+            "order": 27,
+            "zh": "李四又来到办牌照的窗口，把纸上的数字给工作人员看了一下儿，说：“就要这个数。”",
+            "pinyin": "Lǐ Sì yòu lái dào bàn páizhào de chuāngkǒu， bǎ zhǐ shàng de shùzì gěi gōngzuò rényuán kàn le yí xiàr， shuō： “jiù yào zhè ge shù。 ”",
+            "vi": "Lý Tứ lại đến cửa làm biển số, đưa con số trên giấy cho nhân viên xem một chút rồi nói: “Tôi lấy số này.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "e689b455-d4a3-4c3f-8734-cfd02e6da164",
+            "order": 28,
+            "zh": "工作人员办完手续后又把100块钱还⑧________了李四。",
+            "pinyin": "gōngzuò rényuán bàn wán shǒuxù hòu yòu bǎ 100 kuài qián hái ⑧________ le Lǐ Sì。",
+            "vi": "Nhân viên làm xong thủ tục rồi lại trả 100 tệ lại cho Lý Tứ.",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "6368e83d-45bc-46db-a2de-7e8c04076bfc",
+            "order": 29,
+            "zh": "李四问：“这100块钱怎么又还给我了？”",
+            "pinyin": "Lǐ Sì wèn： “zhè 100 kuài qián zěnme yòu huán gěi wǒ le？ ”",
+            "vi": "Lý Tứ hỏi: “Sao lại trả 100 tệ này cho tôi?”",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "3e74100c-6a24-43b9-be62-76856a3bc3f9",
+            "order": 30,
+            "zh": "工作人员说：“你选的这个数不加钱。”",
+            "pinyin": "gōngzuò rényuán shuō： “nǐ xuǎn de zhè ge shù bù jiā qián。 ”",
+            "vi": "Nhân viên nói: “Con số ông chọn không cần nộp thêm tiền.”",
+            "source_origin": "textbook",
+            "check_needed": false
+          }
+        ]
+      },
+      "blanks": [
+        {
+          "id": "cbd1817b-5531-42e4-a59e-b2d33ff6ad33",
+          "index": 1,
+          "answer": "告诉",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a089c77b-4e0e-4d45-afe0-cf9576584f50",
+          "index": 2,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b82dd7a1-0a2f-4a3d-a97e-c14b729fe438",
+          "index": 3,
+          "answer": "头",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "85e95ff5-7774-447f-ae09-c3d630d9ad55",
+          "index": 4,
+          "answer": "有",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "0fbbe0bf-c854-4e8b-8890-11a5624ee2f3",
+          "index": 5,
+          "answer": "哪个",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c39ed697-e697-49ec-a629-83ce91f70b23",
+          "index": 6,
+          "answer": "把",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "47c7e9a1-e625-4618-8d46-080b926e5a0b",
+          "index": 7,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f07aa742-c245-4c4f-aa3f-037959d42cd5",
+          "index": 8,
+          "answer": "给",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

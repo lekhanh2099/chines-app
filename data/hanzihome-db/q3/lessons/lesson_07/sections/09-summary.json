@@ -1,0 +1,80 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết bài",
+  "source_origin": "generated_second_pass",
+  "check_needed": false,
+  "summary": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "语法/词语用法",
+      "练习",
+      "阅读理解/综合填空",
+      "写汉字"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "入迷"
+      },
+      {
+        "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+        "title": "任何"
+      },
+      {
+        "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+        "title": "动词 + 下"
+      },
+      {
+        "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+        "title": "根本"
+      },
+      {
+        "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+        "title": "为了"
+      },
+      {
+        "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+        "title": "不管"
+      },
+      {
+        "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+        "title": "其中"
+      },
+      {
+        "id": "b7073860-473c-4cb7-82ba-943917998455",
+        "title": "既然"
+      }
+    ],
+    "key_patterns": [
+      "V + 得 + 入迷",
+      "任何 + 名词 + 都/也/不/没有",
+      "根本 + 不/没/没有 + 谓语",
+      "为了 + 目的，主语 + 动作",
+      "不管 + 条件/疑问词 + 都/也 + 结果",
+      "整体，其中 + 部分",
+      "既然 + 事实，就/那么 + 结论"
+    ],
+    "idioms": [
+      "滥竽充数",
+      "自相矛盾",
+      "刻舟求剑"
+    ],
+    "coverage": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": true,
+      "character_writing_covered": "no_textbook_section_found_generated_supplement_only",
+      "remaining_check": "Second-pass QA done; no remaining check_needed flags in JSON."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [],
+  "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính; tên nhân vật chỉ xuất hiện trong hội thoại."
+}

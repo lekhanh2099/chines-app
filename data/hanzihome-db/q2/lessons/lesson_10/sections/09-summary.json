@@ -1,0 +1,49 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết bài",
+  "source_origin": "generated",
+  "check_needed": false,
+  "summary": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "语法 / 词语用法",
+      "练习",
+      "阅读理解",
+      "写汉字"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "过"
+      },
+      {
+        "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+        "title": "动量补语"
+      },
+      {
+        "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+        "title": "第 + 数词"
+      }
+    ],
+    "key_patterns": [
+      "S + V + 过 + O",
+      "S + 没/没有 + V + 过 + O",
+      "V + số + động lượng từ",
+      "第 + số + lượng từ/danh từ",
+      "一次也/都没 V过"
+    ],
+    "checked_counts": {
+      "main_vocab": 36,
+      "proper_nouns": 10,
+      "supplementary_vocab": 7,
+      "character_writing": 14,
+      "exercise_items": 8
+    }
+  }
+}

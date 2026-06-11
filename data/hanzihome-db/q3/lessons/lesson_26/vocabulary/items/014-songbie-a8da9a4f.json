@@ -1,0 +1,308 @@
+{
+  "id": "8d02376b-0524-417a-8b0b-47d2069480c7",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "送别",
+  "pinyin": "sòngbié",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "tống biệt",
+    "meaning_vi": "tiễn biệt, tiễn người đi xa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiễn biệt",
+      "tiễn người đi xa"
+    ],
+    "short_definition_vi": "tiễn biệt, tiễn người đi xa",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "送",
+        "lishu_vi": "tống",
+        "structure_note_vi": "Chữ có thành phần/bộ 辶; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, chuyển động",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, chuyển động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, chuyển động",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 送 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "别",
+        "lishu_vi": "biệt",
+        "structure_note_vi": "Chữ có thành phần/bộ 刂; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt, tách",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, tách",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, tách",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刂 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 别 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "送别 trong bài được học theo nghĩa: tiễn biệt, tiễn người đi xa.",
+    "memory_tip_vi": "Nhớ 送别 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "送行",
+        "pinyin": "sòngxíng",
+        "meaning_vi": "tiễn người đi xa",
+        "difference_vi": "Nhấn hành động tiễn hơn; 送别 nhấn sắc thái chia ly hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "送别 không phải tặng quà; tặng quà là 送礼物."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "01c1a9f9-39be-48e1-812c-1ce8a0faffb0",
+      "order": 1,
+      "zh": "送别朋友",
+      "pinyin": "",
+      "vi": "tiễn biệt bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6681ce68-670d-466d-abd1-836021d02c34",
+      "order": 2,
+      "zh": "送别的时候",
+      "pinyin": "",
+      "vi": "lúc tiễn biệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "78e0eac0-3ee8-4d51-8451-6a5c667f6bdf",
+      "order": 3,
+      "zh": "依依不舍地送别",
+      "pinyin": "",
+      "vi": "lưu luyến tiễn biệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e0d2d86-99ad-44ce-a0a0-9d58213303d8",
+      "order": 4,
+      "zh": "送别诗",
+      "pinyin": "",
+      "vi": "thơ tiễn biệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "53c2c670-3a15-4c66-a64c-32e510a1f201",
+      "order": 1,
+      "zh": "明天他要回国，我们今晚去送别。",
+      "pinyin": "",
+      "vi": "Ngày mai anh ấy về nước, tối nay chúng tôi đi tiễn biệt.",
+      "analysis_vi": "去送别 có sắc thái trang trọng/tình cảm hơn 去送他.",
+      "highlight": [
+        "送别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8d02376b-0524-417a-8b0b-47d2069480c7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "36e5dab6-40cf-4459-897f-517e43be7e7b",
+      "order": 2,
+      "zh": "送别的路上，祝英台一次又一次地暗示梁山伯。",
+      "pinyin": "",
+      "vi": "Trên đường tiễn biệt, Chúc Anh Đài nhiều lần ám thị Lương Sơn Bá.",
+      "analysis_vi": "送别的路上 làm trạng ngữ bối cảnh.",
+      "highlight": [
+        "送别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8d02376b-0524-417a-8b0b-47d2069480c7"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "送别 trong văn học Trung Hoa thường gắn với lưu luyến và chia ly.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "557aaa9f-0436-4da1-8d69-3fc420e7e8de",
+      "order": 1,
+      "rule_vi": "送别 không phải tặng quà; tặng quà là 送礼物.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "送别",
+    "back": "tiễn biệt, tiễn người đi xa",
+    "hint": "sòngbié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8d02376b-0524-417a-8b0b-47d2069480c7",
+    "source_lesson_vocab_id": null
+  }
+}

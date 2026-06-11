@@ -1,0 +1,318 @@
+{
+  "id": "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "瓜",
+  "pinyin": "guā",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "fruit",
+    "agriculture"
+  ],
+  "meaning": {
+    "hanviet": "qua",
+    "meaning_vi": "dưa; bầu bí; nhóm quả dạng dưa/bầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dưa",
+      "bầu bí",
+      "nhóm quả dạng dưa",
+      "bầu"
+    ],
+    "short_definition_vi": "dưa; bầu bí; nhóm quả dạng dưa/bầu",
+    "textbook_focus_vi": "dưa; bầu bí; nhóm quả dạng dưa/bầu",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "fruit, agriculture",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "瓜",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "瓜",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưa, bầu bí",
+        "modern_logic_vi": "Trong từ này, 瓜 góp phần vào lớp nghĩa hiện đại: dưa, bầu bí",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "瓜 là chữ/bộ độc lập, nghĩa hiện đại chỉ nhóm dưa/bầu/bí.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không gọi mọi trái cây là 瓜; táo là 苹果, cam là 橙子. Trái cây nói chung là 水果.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "水果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "西瓜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "黄瓜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "南瓜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "459935d4-c4d8-4173-801d-63ddf83aa664",
+      "order": 1,
+      "zh": "西瓜",
+      "pinyin": "",
+      "vi": "dưa hấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8f2444a-63f6-47df-b340-4336662157e4",
+      "order": 2,
+      "zh": "黄瓜",
+      "pinyin": "",
+      "vi": "dưa chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd104c22-3511-4c6a-b2e3-52b077aeaf2b",
+      "order": 3,
+      "zh": "冬瓜",
+      "pinyin": "",
+      "vi": "bí đao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8eb93efe-a2a3-4d82-b124-e82838757728",
+      "order": 4,
+      "zh": "南瓜",
+      "pinyin": "",
+      "vi": "bí đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45d809ab-f8ba-42ac-ab21-27f66bf272b1",
+      "order": 5,
+      "zh": "瓜果",
+      "pinyin": "",
+      "vi": "dưa và trái cây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff91ae6f-c331-4ef3-8bbb-fd2ba0cc3276",
+      "order": 6,
+      "zh": "种瓜",
+      "pinyin": "",
+      "vi": "trồng dưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "96c6077d-bce9-4413-b9e9-87da00550e6b",
+      "order": 1,
+      "zh": "夏天吃西瓜很舒服。",
+      "pinyin": "",
+      "vi": "Mùa hè ăn dưa hấu rất dễ chịu.",
+      "analysis_vi": "西瓜 là từ thông dụng có 瓜.",
+      "highlight": [
+        "瓜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "98e1c333-d81d-4c3f-8cab-00d788fb8c06",
+      "order": 2,
+      "zh": "秋天到了，郊外有很多瓜果。",
+      "pinyin": "",
+      "vi": "Mùa thu đến, ngoại ô có nhiều dưa quả.",
+      "analysis_vi": "瓜果 gắn mùa thu/vụ mùa.",
+      "highlight": [
+        "瓜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "520c26a1-21fd-4b45-a6ab-318a8c98d813",
+      "order": 3,
+      "zh": "北京的秋天不冷不热，瓜果也很多。",
+      "pinyin": "",
+      "vi": "Mùa thu Bắc Kinh không lạnh không nóng, dưa quả cũng nhiều.",
+      "analysis_vi": "不冷不热 tả thời tiết dễ chịu.",
+      "highlight": [
+        "瓜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "瓜 trong Bài 3 北京的四季",
+    "content_vi": "吃瓜 trên mạng hiện đại còn nghĩa “hóng chuyện”, nhưng bài này là nghĩa thực.",
+    "tags": [
+      "fruit",
+      "agriculture"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "19ab7209-23b0-4f73-8f0a-ecae573002e1",
+      "order": 1,
+      "rule_vi": "Không gọi mọi trái cây là 瓜; táo là 苹果, cam là 橙子. Trái cây nói chung là 水果.",
+      "natural_examples": [
+        {
+          "zh": "夏天吃西瓜很舒服。",
+          "pinyin": "",
+          "vi": "Mùa hè ăn dưa hấu rất dễ chịu.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không gọi mọi trái cây là 瓜; táo là 苹果, cam là 橙子. Trái cây nói chung là 水果.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "瓜",
+    "back": "dưa; bầu bí; nhóm quả dạng dưa/bầu",
+    "hint": "guā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "fruit",
+      "agriculture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8",
+    "source_lesson_vocab_id": null
+  }
+}

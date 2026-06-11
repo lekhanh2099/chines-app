@@ -1,0 +1,460 @@
+{
+  "id": "dd9b0899-8374-4638-8b94-d434b80d23c6",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "管理员",
+  "pinyin": "guǎnlǐyuán",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Quản lý viên",
+    "meaning_vi": "người quản lý, nhân viên quản lý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người quản lý, nhân viên quản lý"
+    ],
+    "short_definition_vi": "người quản lý, nhân viên quản lý",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "trung tính, công việc, tổ chức, quy định.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "管",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "官",
+            "hanviet": "quan",
+            "meaning_vi": "quan/quản sự",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quản, trông coi, ống",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "理",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc/vật quý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc/vật quý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "lý",
+            "meaning_vi": "bên trong/làng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lý lẽ, sắp xếp, xử lý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "员",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "贝",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò/tiền",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người làm chức vụ, nhân viên, thành viên",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "管理 là quản lý. 员 là nhân viên/người đảm nhiệm công việc. → 管理员 = người làm nhiệm vụ quản lý. Cảnh báo: 管理员 không nhất thiết là “sếp”. Nhiều khi chỉ là nhân viên phụ trách trông coi, vận hành, kiểm tra.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "管理员",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người quản lý/phụ trách trông coi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "管理",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quản lý, động từ/danh từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "经理",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giám đốc/quản lý cấp quản trị kinh doanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "班长",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lớp trưởng, quản lý lớp theo vai trò học sinh/sinh viên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "服务员",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhân viên phục vụ, không phải người quản lý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 管理员 phụ trách quy định/thiết bị/không gian; 服务员 phục vụ khách; 经理 có chức vụ quản trị cao hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ff1f257a-20ed-44ef-91fd-cd3b73b04119",
+      "order": 1,
+      "zh": "图书馆管理员",
+      "pinyin": "",
+      "vi": "nhân viên quản lý thư viện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "365fcd58-51f2-48bc-ab3c-1dc96ebbb031",
+      "order": 2,
+      "zh": "宿舍管理员",
+      "pinyin": "",
+      "vi": "quản lý ký túc xá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23deca55-15e8-456e-919d-4b7baade394d",
+      "order": 3,
+      "zh": "系统管理员",
+      "pinyin": "",
+      "vi": "quản trị viên hệ thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a19df7e-423c-4b9d-a67f-b905156cc614",
+      "order": 4,
+      "zh": "管理员告诉大家",
+      "pinyin": "",
+      "vi": "người quản lý nói/báo cho mọi người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "627f8848-2f20-4290-b0d7-b3001a5986c2",
+      "order": 5,
+      "zh": "问管理员",
+      "pinyin": "",
+      "vi": "hỏi người quản lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3716b0b4-ee39-4385-92b8-b2703e5ba8c1",
+      "order": 1,
+      "zh": "管理员告诉我们，下午可以用这个会场。",
+      "pinyin": "Guǎnlǐyuán gàosu wǒmen, xiàwǔ kěyǐ yòng zhège huìchǎng.",
+      "vi": "Người quản lý báo với chúng tôi rằng chiều nay có thể dùng hội trường này.",
+      "analysis_vi": "告诉 + người + nội dung là mẫu rất tự nhiên: nói/báo cho ai biết điều gì.",
+      "highlight": [
+        "管理员"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "dd9b0899-8374-4638-8b94-d434b80d23c6"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5f0045d2-7e43-482e-8811-da89e6085047",
+      "order": 2,
+      "zh": "音响坏了以后，班长马上去找管理员。",
+      "pinyin": "Yīnxiǎng huài le yǐhòu, bānzhǎng mǎshàng qù zhǎo guǎnlǐyuán.",
+      "vi": "Sau khi âm thanh bị hỏng, lớp trưởng lập tức đi tìm người quản lý.",
+      "analysis_vi": "去找管理员 là đi tìm người phụ trách xử lý vấn đề, rất thực tế trong trường học/sự kiện.",
+      "highlight": [
+        "管理员"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "dd9b0899-8374-4638-8b94-d434b80d23c6"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bdda0666-e346-489a-9e3d-0495e3add08c",
+      "order": 3,
+      "zh": "管理员答应帮我们把彩灯挂起来。",
+      "pinyin": "Guǎnlǐyuán dāying bāng wǒmen bǎ cǎidēng guà qǐlai.",
+      "vi": "Người quản lý đồng ý giúp chúng tôi treo đèn màu lên.",
+      "analysis_vi": "把彩灯挂起来 là câu chữ 把: đèn màu bị tác động và được treo lên thành trạng thái mới.",
+      "highlight": [
+        "管理员"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "dd9b0899-8374-4638-8b94-d434b80d23c6"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 管理员",
+    "content_vi": "Ở ký túc xá Trung Quốc, bạn sẽ hay gặp từ 宿舍管理员 hoặc khẩu ngữ 宿管. Sinh viên còn hay gọi thân mật là 宿管阿姨 nếu người quản lý là cô/dì lớn tuổi. Cách gọi này vừa chỉ chức năng quản lý, vừa có màu đời sống học đường.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8f756ca8-e51b-4d5b-ba05-4e5a92348c32",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Tưởng 管理员 luôn là “manager” cấp cao. Không hẳn. 管理员 Guǎnlǐyuán Người phụ trách quản lý/trông coi. 经理 Jīnglǐ Giám đốc/quản lý bộ phận. Ví dụ: 图书馆管理员 Túshūguǎn guǎnlǐyuán Nhân viên quản lý thư viện.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "管理员",
+    "back": "người quản lý, nhân viên quản lý",
+    "hint": "guǎnlǐyuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dd9b0899-8374-4638-8b94-d434b80d23c6",
+    "source_lesson_vocab_id": null
+  }
+}

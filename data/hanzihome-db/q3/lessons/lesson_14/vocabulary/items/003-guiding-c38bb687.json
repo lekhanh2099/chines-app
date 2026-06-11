@@ -1,0 +1,251 @@
+{
+  "id": "5c553349-0ee5-4a88-ae2c-c51a990a7963",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "规定",
+  "pinyin": "guīdìng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词 / 动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "quy định",
+    "meaning_vi": "quy định; đặt ra quy định",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quy định",
+      "đặt ra quy định"
+    ],
+    "short_definition_vi": "quy định; đặt ra quy định",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: nội quy, gia đình, tổ chức.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "nội quy, gia đình, tổ chức",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "规",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quy tắc, khuôn phép",
+        "modern_logic_vi": "Trong từ 规定, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "定",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "định, xác định",
+        "modern_logic_vi": "Trong từ 规定, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "规定 nên được học theo nghĩa hiện đại trong cụm/tình huống: quy định; đặt ra quy định.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 一个规定.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "规则",
+        "pinyin": "guīzé",
+        "meaning_vi": "quy tắc",
+        "difference_vi": "规定 là quy định cụ thể; 规则 là quy tắc/luật chơi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "48a50e70-75a6-4488-a784-1161f441e4eb",
+      "order": 1,
+      "zh": "一个规定",
+      "pinyin": "",
+      "vi": "một quy định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8bb1e69-a402-46dc-87a8-079ab0506941",
+      "order": 2,
+      "zh": "按照规定",
+      "pinyin": "",
+      "vi": "theo quy định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e3f919bc-ace7-42e7-9852-48bbb2c92976",
+      "order": 3,
+      "zh": "违反规定",
+      "pinyin": "",
+      "vi": "vi phạm quy định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "251f7034-5a48-4a09-a69a-0ed7f107809e",
+      "order": 1,
+      "zh": "我们家有一个规定。",
+      "pinyin": "",
+      "vi": "Nhà chúng tôi có một quy định.",
+      "analysis_vi": "规定 làm danh từ chỉ nội quy/quy định cụ thể.",
+      "highlight": [
+        "规定"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5c553349-0ee5-4a88-ae2c-c51a990a7963"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 规定 được dùng trong ngữ cảnh nội quy, gia đình, tổ chức; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7084d50e-66da-480b-8b19-4714193e3687",
+      "order": 1,
+      "rule_vi": "Không nhầm 规定 với 决定; 规定 áp cho nhiều người, 决定 là quyết định việc cụ thể.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 规定 với 决定; 规定 áp cho nhiều người, 决定 là quyết định việc cụ thể.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "规定",
+    "back": "quy định; đặt ra quy định",
+    "hint": "guīdìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5c553349-0ee5-4a88-ae2c-c51a990a7963",
+    "source_lesson_vocab_id": null
+  }
+}

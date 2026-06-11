@@ -1,0 +1,200 @@
+{
+  "id": "7ccb279b-5f44-4ab6-8ad4-6bc55d4942f1",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "高中",
+  "pinyin": "gāozhōng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "education"
+  ],
+  "meaning": {
+    "hanviet": "cao trung",
+    "meaning_vi": "trung học phổ thông, cấp ba",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trung học phổ thông",
+      "cấp ba"
+    ],
+    "short_definition_vi": "trung học phổ thông, cấp ba",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "高",
+        "lishu_vi": "cao",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao",
+        "modern_logic_vi": "Trong từ/cụm này, 高 góp phần vào nghĩa hiện đại: cao.",
+        "warning_vi": "Không dịch máy từng chữ nếu đây là tên riêng/cấu trúc cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "中",
+        "lishu_vi": "trung",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giữa/trung",
+        "modern_logic_vi": "Trong từ/cụm này, 中 góp phần vào nghĩa hiện đại: giữa/trung.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "高中 cần học theo nghĩa hiện đại trong bài: trung học phổ thông, cấp ba.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 上高中.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "27841b78-babf-414e-b284-3fc4ddf863a2",
+      "order": 1,
+      "zh": "上高中",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "711bf903-ef62-4e3b-ad06-06f6629cf331",
+      "order": 2,
+      "zh": "高中生",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab34fbeb-ce07-4922-b2db-81ce29a2b1ce",
+      "order": 3,
+      "zh": "高中毕业",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dc417aa5-849b-4756-ac06-402b2974137b",
+      "order": 1,
+      "zh": "他高中毕业以后就开始工作了。",
+      "pinyin": "Tā gāozhōng bìyè yǐhòu jiù kāishǐ gōngzuò le.",
+      "vi": "Sau khi tốt nghiệp cấp ba, anh ấy bắt đầu đi làm.",
+      "analysis_vi": "高中毕业以后 là trạng ngữ thời gian.",
+      "highlight": [
+        "高中"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ccb279b-5f44-4ab6-8ad4-6bc55d4942f1"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "66444fe0-f2e0-4561-8d9d-60d057f5d66d",
+      "order": 2,
+      "zh": "他家以种地为主，可是父母还是希望他能上高中。",
+      "pinyin": "Tā jiā yǐ zhòngdì wéi zhǔ, kěshì fùmǔ háishi xīwàng tā néng shàng gāozhōng.",
+      "vi": "Nhà anh ấy chủ yếu làm ruộng nhưng cha mẹ vẫn mong anh ấy học cấp ba.",
+      "analysis_vi": "上高中 là collocation tự nhiên.",
+      "highlight": [
+        "高中"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ccb279b-5f44-4ab6-8ad4-6bc55d4942f1"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở Trung Quốc, 高中 gắn với áp lực thi lên đại học 高考.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5ebf3165-1ea7-464f-8e85-504f82e7992f",
+      "order": 1,
+      "rule_vi": "Dùng 高中 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "高中",
+    "back": "trung học phổ thông, cấp ba",
+    "hint": "gāozhōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7ccb279b-5f44-4ab6-8ad4-6bc55d4942f1",
+    "source_lesson_vocab_id": null
+  }
+}

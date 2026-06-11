@@ -1,0 +1,397 @@
+{
+  "id": "d01d7e45-d89e-47fa-bb66-2708610fae63",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "听讲",
+  "pinyin": "tīngjiǎng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "verb"
+  ],
+  "meaning": {
+    "hanviet": "thính giảng",
+    "meaning_vi": "nghe giảng, dự giờ/nghe bài giảng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghe giảng"
+    ],
+    "short_definition_vi": "nghe giảng, dự giờ/nghe bài giảng",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "听",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ/thành phần chỉ trường nghĩa: miệng, lời nói.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ/thành phần chỉ trường nghĩa: miệng, lời nói.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghe",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "讲",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ/thành phần chỉ trường nghĩa: lời nói, ngôn ngữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ/thành phần chỉ trường nghĩa: lời nói, ngôn ngữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giảng, nói",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "听讲 được ghi nhớ theo nghĩa hiện đại: nghe giảng, dự giờ/nghe bài giảng.",
+    "memory_tip_vi": "Nhớ qua cụm: 认真听讲.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "听课",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上课",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "听",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "讲课",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "听讲 không phải 听说; 听说 là nghe nói/nghe tin."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "988bf825-bd4f-4ad7-b662-b50c6a794ea5",
+      "order": 1,
+      "zh": "认真听讲",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2021304-cd44-4fd6-905d-99c696768a35",
+      "order": 2,
+      "zh": "上课听讲",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c9ecf8eb-d233-4512-acd9-8bf332b499ce",
+      "order": 3,
+      "zh": "听讲做笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d9091368-227b-41eb-af13-531ebf9fb19c",
+      "order": 4,
+      "zh": "专心听讲",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d318b050-2f29-4ef6-b75a-722eac588b94",
+      "order": 5,
+      "zh": "不认真听讲",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1829a316-957a-4ed5-b9fd-f27260ca46e4",
+      "order": 6,
+      "zh": "边听讲边记笔记",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0c4f51dc-a6fb-471c-9127-04758afe4c9f",
+      "order": 1,
+      "zh": "上课的时候要认真听讲。",
+      "pinyin": "Shàngkè de shíhou yào rènzhēn tīngjiǎng.",
+      "vi": "Khi lên lớp phải chăm chú nghe giảng.",
+      "analysis_vi": "认真 làm trạng ngữ bổ nghĩa cho 听讲.",
+      "highlight": [
+        "听讲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d01d7e45-d89e-47fa-bb66-2708610fae63"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e298eab4-762e-40c7-8a12-bf9ccfbcd3ba",
+      "order": 2,
+      "zh": "即使听不懂，也要先认真听讲，再问老师。",
+      "pinyin": "Jíshǐ tīng bu dǒng, yě yào xiān rènzhēn tīngjiǎng, zài wèn lǎoshī.",
+      "vi": "Cho dù nghe không hiểu, cũng phải chăm chú nghe giảng trước, rồi hỏi giáo viên.",
+      "analysis_vi": "先……再…… ôn trình tự hành động.",
+      "highlight": [
+        "听讲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d01d7e45-d89e-47fa-bb66-2708610fae63"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "认真听讲 là cụm rất trường học.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fe884a44-55db-4178-9989-fed5ca134240",
+      "order": 1,
+      "rule_vi": "听讲 không phải 听说; 听说 là nghe nói/nghe tin.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "听讲 không phải 听说; 听说 là nghe nói/nghe tin.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "听讲",
+    "back": "nghe giảng, dự giờ/nghe bài giảng",
+    "hint": "tīngjiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "verb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d01d7e45-d89e-47fa-bb66-2708610fae63",
+    "source_lesson_vocab_id": null
+  }
+}

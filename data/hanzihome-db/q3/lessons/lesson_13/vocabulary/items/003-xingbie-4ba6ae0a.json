@@ -1,0 +1,312 @@
+{
+  "id": "f2625fa5-7f29-41c6-bef4-44dd6ecc7a56",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "性别",
+  "pinyin": "xìngbié",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "identity"
+  ],
+  "meaning": {
+    "hanviet": "tính biệt",
+    "meaning_vi": "giới tính",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giới tính"
+    ],
+    "short_definition_vi": "giới tính",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "性",
+        "lishu_vi": "tính",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm/lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm/lòng, cảm xúc",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm/lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "生",
+            "hanviet": "sinh",
+            "meaning_vi": "sinh ra",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tính chất/giới tính",
+        "modern_logic_vi": "Trong từ/cụm này, 性 góp phần vào nghĩa hiện đại: tính chất/giới tính.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "别",
+        "lishu_vi": "biệt",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao đứng",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao đứng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phân biệt/khác",
+        "modern_logic_vi": "Trong từ/cụm này, 别 góp phần vào nghĩa hiện đại: phân biệt/khác.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "性别 cần học theo nghĩa hiện đại trong bài: giới tính.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 填写性别.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "男性",
+        "pinyin": "nánxìng",
+        "meaning_vi": "nam giới",
+        "difference_vi": "danh từ nhóm người",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "女性",
+        "pinyin": "nǚxìng",
+        "meaning_vi": "nữ giới",
+        "difference_vi": "danh từ nhóm người",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0d3fd59a-94cb-4a5f-84d5-735e786a2e53",
+      "order": 1,
+      "zh": "填写性别",
+      "pinyin": "tiánxiě xìngbié",
+      "vi": "điền giới tính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec3d85e2-eab9-4722-9b99-1853381ea69c",
+      "order": 2,
+      "zh": "性别平等",
+      "pinyin": "xìngbié píngděng",
+      "vi": "bình đẳng giới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0f764f8-78e9-4727-9e42-4143bd82d1d0",
+      "order": 3,
+      "zh": "性别差异",
+      "pinyin": "xìngbié chāyì",
+      "vi": "khác biệt giới tính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bfd7a8c1-61be-43c4-a929-060686053cd8",
+      "order": 1,
+      "zh": "这张表要填姓名、性别和职业。",
+      "pinyin": "Zhè zhāng biǎo yào tián xìngmíng, xìngbié hé zhíyè.",
+      "vi": "Tờ biểu mẫu này cần điền họ tên, giới tính và nghề nghiệp.",
+      "analysis_vi": "性别 dùng trong thông tin cá nhân.",
+      "highlight": [
+        "性别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2625fa5-7f29-41c6-bef4-44dd6ecc7a56"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "617e2659-09e5-440b-8023-2334ed596032",
+      "order": 2,
+      "zh": "这次调查以职业为主，性别只是参考信息。",
+      "pinyin": "Zhè cì diàochá yǐ zhíyè wéi zhǔ, xìngbié zhǐshì cānkǎo xìnxī.",
+      "vi": "Cuộc điều tra này lấy nghề nghiệp làm chính, giới tính chỉ là thông tin tham khảo.",
+      "analysis_vi": "以职业为主 nêu trọng tâm điều tra.",
+      "highlight": [
+        "性别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2625fa5-7f29-41c6-bef4-44dd6ecc7a56"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong form tiếng Trung, mục 性别 thường ghi ngắn 男 / 女.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9d18ced3-c445-4943-85ab-3127d4d15731",
+      "order": 1,
+      "rule_vi": "Không dùng 性别 để hỏi tên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "你的性别叫什么？",
+          "pinyin": "",
+          "vi": "Sai logic.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "你的性别是男还是女？",
+          "pinyin": "",
+          "vi": "Giới tính của bạn là nam hay nữ?",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "性别",
+    "back": "giới tính",
+    "hint": "xìngbié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f2625fa5-7f29-41c6-bef4-44dd6ecc7a56",
+    "source_lesson_vocab_id": null
+  }
+}

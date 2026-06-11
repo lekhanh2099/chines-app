@@ -1,0 +1,217 @@
+{
+  "id": "eb43ae9a-2896-449a-8bf5-e103c9b2e6ba",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "辛苦",
+  "pinyin": "xīnkǔ",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词/客套用语",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tân khổ",
+    "meaning_vi": "vất vả, cực khổ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vất vả",
+      "cực khổ"
+    ],
+    "short_definition_vi": "vất vả, cực khổ",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "辛",
+        "lishu_vi": "tân",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cay; vất vả",
+        "modern_logic_vi": "Trong từ này, 辛 góp phần vào nghĩa hiện đại: cay; vất vả.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "苦",
+        "lishu_vi": "khổ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đắng; khổ",
+        "modern_logic_vi": "Trong từ này, 苦 góp phần vào nghĩa hiện đại: đắng; khổ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "辛苦 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 工作辛苦.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khác 痛苦; 辛苦 là vất vả lao lực, 痛苦 là đau khổ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de8c0683-9ce6-4c22-a9e8-1d0d77fa7a2e",
+      "order": 1,
+      "zh": "工作辛苦",
+      "pinyin": "",
+      "vi": "công việc vất vả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72dd2f93-39e9-4898-bde3-00bcbd3c6950",
+      "order": 2,
+      "zh": "辛苦你了",
+      "pinyin": "",
+      "vi": "bạn vất vả rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f546b4cd-cbe6-4a22-870d-c3613c65ac03",
+      "order": 3,
+      "zh": "分担辛苦",
+      "pinyin": "",
+      "vi": "chia sẻ vất vả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b93d967b-fd1b-48fe-b7c8-72324daeccff",
+      "order": 1,
+      "zh": "妈妈每天工作到很晚，太辛苦了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 辛苦 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 辛苦; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "辛苦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb43ae9a-2896-449a-8bf5-e103c9b2e6ba"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 辛苦 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e71a7557-aa9c-49ac-9ebb-415354859e72",
+      "order": 1,
+      "rule_vi": "Khác 痛苦; 辛苦 là vất vả lao lực, 痛苦 là đau khổ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "辛苦",
+    "back": "vất vả, cực khổ",
+    "hint": "xīnkǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eb43ae9a-2896-449a-8bf5-e103c9b2e6ba",
+    "source_lesson_vocab_id": null
+  }
+}

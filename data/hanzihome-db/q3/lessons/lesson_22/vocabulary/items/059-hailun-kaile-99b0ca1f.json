@@ -1,0 +1,470 @@
+{
+  "id": "4942d1d2-4070-4d1d-bf56-a44312044169",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "海伦·凯勒",
+  "pinyin": "Hǎilún·Kǎilè",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "proper_noun"
+  ],
+  "meaning": {
+    "hanviet": "Helen Keller",
+    "meaning_vi": "Helen Keller",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Helen Keller"
+    ],
+    "short_definition_vi": "Helen Keller",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "thuật ngữ/tên riêng",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "海",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biển",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "伦",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần chỉ trường nghĩa: người.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần chỉ trường nghĩa: người.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm dịch trong tên",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "凯",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "山",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sơn",
+          "radical_name_zh": "",
+          "hanviet": "sơn",
+          "meaning_vi": "núi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "山 được dùng như bộ/thành phần chỉ trường nghĩa: núi.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "山 được dùng như bộ/thành phần chỉ trường nghĩa: núi.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "山 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm dịch trong tên",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "勒",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 được dùng như bộ/thành phần chỉ trường nghĩa: sức lực.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được dùng như bộ/thành phần chỉ trường nghĩa: sức lực.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm dịch trong tên",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "海伦·凯勒 được ghi nhớ theo nghĩa hiện đại: Helen Keller.",
+    "memory_tip_vi": "Nhớ qua cụm: 海伦·凯勒的故事.",
+    "warning_vi": "Tên riêng/phiên âm: không dịch nghĩa từng chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "海伦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "凯勒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安妮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch tên phiên âm theo từng chữ Hán."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6b5a9e45-11ae-457a-82fd-272e4bb1ae4d",
+      "order": 1,
+      "zh": "海伦·凯勒的故事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3be3c525-a40b-4316-a9b5-deff4741c8be",
+      "order": 2,
+      "zh": "海伦·凯勒的老师",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "741aea91-d4a7-4a06-8a27-0638ad773edd",
+      "order": 3,
+      "zh": "学习海伦·凯勒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a21c22fd-2844-4e64-90a1-d082c62a6a65",
+      "order": 4,
+      "zh": "海伦·凯勒的精神",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ab05602-e468-4f16-862c-3fe0774e5684",
+      "order": 5,
+      "zh": "像海伦·凯勒一样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8ab900c5-a89f-4750-a394-b0c61099107b",
+      "order": 1,
+      "zh": "海伦·凯勒是世界上很有名的人物。",
+      "pinyin": "Hǎilún·Kǎilè shì shìjiè shang hěn yǒumíng de rénwù.",
+      "vi": "Helen Keller là một nhân vật rất nổi tiếng trên thế giới.",
+      "analysis_vi": "很有名的人物 = nhân vật nổi tiếng.",
+      "highlight": [
+        "海伦·凯勒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4942d1d2-4070-4d1d-bf56-a44312044169"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9830cb8f-c4ba-4123-9d69-d34029fab24e",
+      "order": 2,
+      "zh": "即使海伦·凯勒看不见、听不见，她也没有放弃学习。",
+      "pinyin": "Jíshǐ Hǎilún·Kǎilè kàn bu jiàn, tīng bu jiàn, tā yě méiyǒu fàngqì xuéxí.",
+      "vi": "Cho dù Helen Keller không nhìn thấy, không nghe thấy, bà cũng không từ bỏ việc học.",
+      "analysis_vi": "看不见 / 听不见 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "海伦·凯勒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4942d1d2-4070-4d1d-bf56-a44312044169"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tên nước ngoài trong tiếng Trung thường có dấu chấm giữa các phần tên phiên âm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "edb9f4c9-5823-452f-bd79-1f3e4d7f770e",
+      "order": 1,
+      "rule_vi": "Không dịch tên phiên âm theo từng chữ Hán.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch tên phiên âm theo từng chữ Hán.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "海伦·凯勒",
+    "back": "Helen Keller",
+    "hint": "Hǎilún·Kǎilè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "proper_noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4942d1d2-4070-4d1d-bf56-a44312044169",
+    "source_lesson_vocab_id": null
+  }
+}

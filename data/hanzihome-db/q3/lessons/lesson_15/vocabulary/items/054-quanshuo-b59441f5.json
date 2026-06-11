@@ -1,0 +1,273 @@
+{
+  "id": "7ebc390d-7192-4c9f-aaaf-9273f7ac6122",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "劝说",
+  "pinyin": "quànshuō",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khuyến thuyết",
+    "meaning_vi": "khuyên bảo; thuyết phục bằng lời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khuyên bảo",
+      "thuyết phục bằng lời"
+    ],
+    "short_definition_vi": "khuyên bảo; thuyết phục bằng lời",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "劝",
+        "lishu_vi": "",
+        "structure_note_vi": "劝: khuyên",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khuyên",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: khuyên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "说",
+        "lishu_vi": "",
+        "structure_note_vi": "说: ",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: .",
+        "warning_vi": "Chưa chắc cấu tạo; không tự đoán component.",
+        "notes": [],
+        "check_needed": true,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "劝说 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 再三劝说.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7044c3a0-d98a-4fc8-a465-dc33e0e8956a",
+      "order": 1,
+      "zh": "再三劝说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70d7f01a-decb-41a2-bd5c-b65f70a896ed",
+      "order": 2,
+      "zh": "耐心劝说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "63986b7e-eccb-41fc-aff8-87f6296122e4",
+      "order": 3,
+      "zh": "劝说别人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30ee1e48-206d-478a-a344-03fb65888057",
+      "order": 4,
+      "zh": "经过劝说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "68e1910e-85a4-413f-b322-51ce33f2a600",
+      "order": 1,
+      "zh": "由于老师再三劝说，我只好答应了。",
+      "pinyin": "",
+      "vi": "Vì cô giáo khuyên đi khuyên lại nhiều lần, tôi đành đồng ý。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "劝说"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ebc390d-7192-4c9f-aaaf-9273f7ac6122"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ed4c7d41-b93d-4eb2-884f-d88ceb354fc3",
+      "order": 2,
+      "zh": "起初他不肯接受治疗，后来医生和家属耐心劝说了很久。",
+      "pinyin": "",
+      "vi": "Ban đầu anh ấy không chịu điều trị, sau đó bác sĩ và người nhà kiên nhẫn khuyên rất lâu。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "劝说"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ebc390d-7192-4c9f-aaaf-9273f7ac6122"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6e47f5f7-38fc-4830-b33e-4ecf718d1c37",
+      "order": 1,
+      "rule_vi": "劝说 không nhất thiết thuyết phục thành công.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "劝说 không nhất thiết thuyết phục thành công.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "劝说",
+    "back": "khuyên bảo; thuyết phục bằng lời",
+    "hint": "quànshuō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7ebc390d-7192-4c9f-aaaf-9273f7ac6122",
+    "source_lesson_vocab_id": null
+  }
+}

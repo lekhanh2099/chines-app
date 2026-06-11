@@ -1,0 +1,407 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法 / 语法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "uploaded_crosscheck",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "靠",
+      "title_vi": "Động từ 靠",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dựa vào / nhờ vào ai hoặc cái gì để sống, làm việc, đạt mục đích hoặc giải quyết vấn đề.",
+          "examples": [
+            {
+              "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+              "zh": "在家靠父母，出门靠朋友。",
+              "pinyin": "",
+              "vi": "Ở nhà dựa vào cha mẹ, ra ngoài dựa vào bạn bè.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+              "zh": "学习汉语不能只靠背单词。",
+              "pinyin": "",
+              "vi": "Học tiếng Trung không thể chỉ dựa vào việc học thuộc từ vựng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "靠 + Danh từ/Đại từ",
+          "meaning_vi": "Dựa vào / nhờ vào ai hoặc cái gì để sống, làm việc, đạt mục đích hoặc giải quyết vấn đề.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "靠 + Danh từ/Đại từ"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+              "zh": "在家靠父母，出门靠朋友。",
+              "pinyin": "",
+              "vi": "Ở nhà dựa vào cha mẹ, ra ngoài dựa vào bạn bè.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+              "zh": "学习汉语不能只靠背单词。",
+              "pinyin": "",
+              "vi": "Học tiếng Trung không thể chỉ dựa vào việc học thuộc từ vựng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "分别",
+      "title_vi": "Phó từ 分别",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Trong bài này nghĩa là lần lượt / riêng rẽ; dùng khi nhiều người/vật làm việc riêng hoặc đến từ các nơi khác nhau.",
+          "examples": [
+            {
+              "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+              "zh": "我们班的同学分别来自亚洲、非洲、美洲、大洋洲等。",
+              "pinyin": "",
+              "vi": "Các bạn trong lớp chúng tôi lần lượt đến từ châu Á, châu Phi, châu Mỹ, châu Đại Dương, v.v.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+              "zh": "他们分别介绍了自己的情况。",
+              "pinyin": "",
+              "vi": "Họ lần lượt giới thiệu tình hình của mình.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Chủ ngữ số nhiều + 分别 + Động từ/Cụm động từ",
+          "meaning_vi": "Trong bài này nghĩa là lần lượt / riêng rẽ; dùng khi nhiều người/vật làm việc riêng hoặc đến từ các nơi khác nhau.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "Chủ ngữ số nhiều + 分别 + Động từ/Cụm động từ"
+            }
+          ],
+          "examples": [
+            {
+              "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+              "zh": "我们班的同学分别来自亚洲、非洲、美洲、大洋洲等。",
+              "pinyin": "",
+              "vi": "Các bạn trong lớp chúng tôi lần lượt đến từ châu Á, châu Phi, châu Mỹ, châu Đại Dương, v.v.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+              "zh": "他们分别介绍了自己的情况。",
+              "pinyin": "",
+              "vi": "Họ lần lượt giới thiệu tình hình của mình.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "各",
+      "title_vi": "Đại từ 各",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nhấn mạnh từng cá thể riêng biệt trong một nhóm; khác 每 ở chỗ 各 thiên về sự riêng biệt.",
+          "examples": [
+            {
+              "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+              "zh": "各国有各国的文化。",
+              "pinyin": "",
+              "vi": "Mỗi nước có văn hóa riêng của mỗi nước.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+              "zh": "各有各的优点。",
+              "pinyin": "",
+              "vi": "Mỗi người/mỗi bên đều có ưu điểm riêng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "各 + Danh từ / 各有各的 + Danh từ",
+          "meaning_vi": "Nhấn mạnh từng cá thể riêng biệt trong một nhóm; khác 每 ở chỗ 各 thiên về sự riêng biệt.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "各 + Danh từ / 各有各的 + Danh từ"
+            }
+          ],
+          "examples": [
+            {
+              "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+              "zh": "各国有各国的文化。",
+              "pinyin": "",
+              "vi": "Mỗi nước có văn hóa riêng của mỗi nước.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+              "zh": "各有各的优点。",
+              "pinyin": "",
+              "vi": "Mỗi người/mỗi bên đều có ưu điểm riêng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "表示",
+      "title_vi": "Động từ / danh từ 表示",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Bày tỏ thái độ, tình cảm, ý kiến; hoặc biểu thị một ý nghĩa nào đó.",
+          "examples": [
+            {
+              "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+              "zh": "朋友们看到以后，都向我表示祝贺。",
+              "pinyin": "",
+              "vi": "Sau khi bạn bè nhìn thấy, ai cũng bày tỏ lời chúc mừng tôi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "857c43af-3f3e-491c-988c-f6e69807c407",
+              "zh": "我向老师表示感谢。",
+              "pinyin": "",
+              "vi": "Tôi bày tỏ sự cảm ơn với thầy/cô.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "38e52309-29d4-419f-b95a-6dad25f96eb9",
+              "zh": "红色表示喜庆。",
+              "pinyin": "",
+              "vi": "Màu đỏ biểu thị sự vui mừng, may mắn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "表示 + thái độ/tình cảm/ý kiến",
+          "meaning_vi": "Bày tỏ thái độ, tình cảm, ý kiến; hoặc biểu thị một ý nghĩa nào đó.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "表示 + thái độ/tình cảm/ý kiến"
+            }
+          ],
+          "examples": [
+            {
+              "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+              "zh": "朋友们看到以后，都向我表示祝贺。",
+              "pinyin": "",
+              "vi": "Sau khi bạn bè nhìn thấy, ai cũng bày tỏ lời chúc mừng tôi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "857c43af-3f3e-491c-988c-f6e69807c407",
+              "zh": "我向老师表示感谢。",
+              "pinyin": "",
+              "vi": "Tôi bày tỏ sự cảm ơn với thầy/cô.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "38e52309-29d4-419f-b95a-6dad25f96eb9",
+              "zh": "红色表示喜庆。",
+              "pinyin": "",
+              "vi": "Màu đỏ biểu thị sự vui mừng, may mắn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

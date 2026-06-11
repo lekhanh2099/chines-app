@@ -1,0 +1,339 @@
+{
+  "id": "0125e835-e60b-44d9-bb63-24c81c561407",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "心疼",
+  "pinyin": "xīnténg",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ tâm lý",
+    "raw_cn": "动词 / 心理形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tâm đông/đằng",
+    "meaning_vi": "xót, thương xót; tiếc của",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xót, thương xót; tiếc của"
+    ],
+    "short_definition_vi": "Xót vì người khác khổ hoặc tiếc tiền/công sức.",
+    "textbook_focus_vi": "Dùng khi thấy trẻ/người thân bị đau hoặc khi xót tiền.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "tâm",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng/cảm xúc",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng/cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng/cảm xúc",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lòng/cảm xúc",
+        "modern_logic_vi": "lòng/cảm xúc",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "疼",
+        "lishu_vi": "đông",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh/đau",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "疒 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh/đau",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh/đau",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "疒 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "疒 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đau/xót",
+        "modern_logic_vi": "đau/xót",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "心 + 疼 = trong lòng thấy đau.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "伤心",
+        "pinyin": "shāngxīn",
+        "meaning_vi": "buồn đau",
+        "difference_vi": "伤心 là buồn; 心疼 là xót thương/tiếc của.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0937ba55-ed4e-4ded-9e7e-e88720a544ba",
+      "order": 1,
+      "zh": "心疼孩子",
+      "pinyin": "",
+      "vi": "xót con",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f46e1c0f-bd8c-4375-bb90-0716af729db4",
+      "order": 2,
+      "zh": "让人心疼",
+      "pinyin": "",
+      "vi": "khiến người ta xót",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a98ac1e-bbfc-482b-b0c6-0f51253e2bc7",
+      "order": 3,
+      "zh": "心疼钱",
+      "pinyin": "",
+      "vi": "xót tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94061c34-6344-415e-b810-04667cc09be9",
+      "order": 4,
+      "zh": "心疼得不得了",
+      "pinyin": "",
+      "vi": "xót vô cùng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5d34f211-da2e-4acc-ae50-b9bd272ca016",
+      "order": 1,
+      "zh": "看到孩子哭，妈妈很心疼。",
+      "pinyin": "",
+      "vi": "Thấy đứa bé khóc, mẹ rất xót.",
+      "analysis_vi": "看到 + sự việc làm nguyên nhân cảm xúc.",
+      "highlight": [
+        "心疼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0125e835-e60b-44d9-bb63-24c81c561407"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1cda279c-c956-488d-92ea-59c755a29b12",
+      "order": 2,
+      "zh": "花这么多钱，我有点儿心疼。",
+      "pinyin": "",
+      "vi": "Tiêu nhiều tiền thế này, tôi hơi xót.",
+      "analysis_vi": "心疼 có thể là tiếc tiền.",
+      "highlight": [
+        "心疼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0125e835-e60b-44d9-bb63-24c81c561407"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8dc355bc-7e0f-49a0-97c0-411b4377c8ba",
+      "order": 1,
+      "rule_vi": "心疼 không phải “đau tim” bệnh lý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "心疼 không phải “đau tim” bệnh lý.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心疼",
+    "back": "xót, thương xót; tiếc của",
+    "hint": "xīnténg",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0125e835-e60b-44d9-bb63-24c81c561407",
+    "source_lesson_vocab_id": null
+  }
+}

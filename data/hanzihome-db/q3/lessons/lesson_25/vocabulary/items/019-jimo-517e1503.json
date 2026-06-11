@@ -1,0 +1,249 @@
+{
+  "id": "2ac9a6a6-5ff3-42b2-9b5c-c896df9f7c56",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "寂寞",
+  "pinyin": "jìmò",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词/名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tịch mịch",
+    "meaning_vi": "cô đơn, trống vắng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cô đơn",
+      "trống vắng"
+    ],
+    "short_definition_vi": "cô đơn, trống vắng",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "寂",
+        "lishu_vi": "tịch",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nơi chốn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nơi chốn",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nơi chốn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yên lặng",
+        "modern_logic_vi": "Trong từ này, 寂 góp phần vào nghĩa hiện đại: yên lặng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "寞",
+        "lishu_vi": "mịch",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nơi chốn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nơi chốn",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nơi chốn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vắng vẻ",
+        "modern_logic_vi": "Trong từ này, 寞 góp phần vào nghĩa hiện đại: vắng vẻ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "寂寞 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 感到寂寞.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Thiên về thiếu người/thiếu giao tiếp; khác 冷清 là thường nói nơi chốn vắng vẻ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f370b96d-0a56-4137-8a3c-60d84690f0e9",
+      "order": 1,
+      "zh": "感到寂寞",
+      "pinyin": "",
+      "vi": "cảm thấy cô đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a67cdf2-f7f2-464f-a1ac-7ccdd42fa053",
+      "order": 2,
+      "zh": "忍受寂寞",
+      "pinyin": "",
+      "vi": "chịu đựng trống vắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "135c15c1-f860-480f-ab9b-b281b7e69e62",
+      "order": 3,
+      "zh": "寂寞的夜晚",
+      "pinyin": "",
+      "vi": "đêm trống vắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4df94bf6-6b08-4bc3-9922-3147558d5856",
+      "order": 1,
+      "zh": "一个人住久了，难免会感到寂寞。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 寂寞 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 寂寞; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "寂寞"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2ac9a6a6-5ff3-42b2-9b5c-c896df9f7c56"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 寂寞 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6abe9533-e662-4759-b707-2b0f0c7be060",
+      "order": 1,
+      "rule_vi": "Thiên về thiếu người/thiếu giao tiếp; khác 冷清 là thường nói nơi chốn vắng vẻ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "寂寞",
+    "back": "cô đơn, trống vắng",
+    "hint": "jìmò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2ac9a6a6-5ff3-42b2-9b5c-c896df9f7c56",
+    "source_lesson_vocab_id": null
+  }
+}

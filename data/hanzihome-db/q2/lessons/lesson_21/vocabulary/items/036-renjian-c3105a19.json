@@ -1,0 +1,327 @@
+{
+  "id": "f7eb3259-e770-47fd-ab80-80221b434f7a",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "人间",
+  "pinyin": "rénjiān",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Nhân gian",
+    "meaning_vi": "nhân gian, cõi người, đời người",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhân gian, cõi người, đời người"
+    ],
+    "short_definition_vi": "nhân gian, cõi người, đời người",
+    "textbook_focus_vi": "nhân gian, cõi người, đời người",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "人 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "间",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "门 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "giữa/gian",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thế giới nơi con người sống",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7be7ee95-fdd1-4fbe-bfda-05a2746732e3",
+      "order": 1,
+      "zh": "来到人间",
+      "pinyin": "",
+      "vi": "đến nhân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36736356-9b2e-4cef-80f0-bf137e4796a7",
+      "order": 2,
+      "zh": "人间生活",
+      "pinyin": "",
+      "vi": "đời sống nhân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "566c3fe4-db8f-4ec4-9cce-ef2054f96aab",
+      "order": 3,
+      "zh": "人间烟火",
+      "pinyin": "",
+      "vi": "hơi thở đời thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15765600-2d3f-428c-8851-56969b612226",
+      "order": 4,
+      "zh": "天上人间",
+      "pinyin": "",
+      "vi": "cõi trời và nhân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb3002fe-01d8-43be-95a5-af7312b61e23",
+      "order": 5,
+      "zh": "羡慕人间",
+      "pinyin": "",
+      "vi": "ao ước nhân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e2146067-6238-4627-b05f-c9136257913b",
+      "order": 1,
+      "zh": "这个神话讲的是天上和人间的故事。",
+      "pinyin": "Zhège shénhuà jiǎng de shì tiānshang hé rénjiān de gùshi.",
+      "vi": "Thần thoại này kể về câu chuyện giữa cõi trời và nhân gian.",
+      "analysis_vi": "讲的是 nhấn nội dung được kể.",
+      "highlight": [
+        "人间"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7eb3259-e770-47fd-ab80-80221b434f7a"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e00bf73c-c5bb-4230-82bb-45c2882e3136",
+      "order": 2,
+      "zh": "如果不了解人间，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě rénjiān, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 人间, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "人间"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7eb3259-e770-47fd-ab80-80221b434f7a"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ada23732-1b59-4bf8-b905-f518198af691",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解人间在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě rénjiān zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 人间 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "人间"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7eb3259-e770-47fd-ab80-80221b434f7a"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "人间烟火 trong hiện đại gợi đời sống bình dị, ấm áp của con người.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c31793c2-5a32-4867-bcd8-0f07d7ad8119",
+      "order": 1,
+      "rule_vi": "Không dùng 人间 thay cho 社会 trong mọi ngữ cảnh; 社会 trung tính hơn。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人间",
+    "back": "nhân gian, cõi người, đời người",
+    "hint": "rénjiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f7eb3259-e770-47fd-ab80-80221b434f7a",
+    "source_lesson_vocab_id": null
+  }
+}

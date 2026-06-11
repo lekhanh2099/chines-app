@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "hanzihome-db-relations-index-v3",
+  "dataset": "q3",
+  "lessonIndex": 16,
+  "lessonId": "6cc97e1f-8402-4cd5-9726-62488f164b65",
+  "counts": {
+    "byType": {
+      "content_to_vocabulary_item": 282,
+      "lesson_vocab_to_vocabulary_item": 68,
+      "vocab_group_to_vocabulary_item": 165
+    },
+    "all": 515,
+    "checkNeededRelations": 19,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

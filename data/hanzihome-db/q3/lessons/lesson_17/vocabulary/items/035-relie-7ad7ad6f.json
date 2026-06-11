@@ -1,0 +1,326 @@
+{
+  "id": "703befa6-1cdd-4711-adf2-65a5ef0dbe98",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "热烈",
+  "pinyin": "rèliè",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhiệt liệt",
+    "meaning_vi": "nhiệt liệt, nồng nhiệt, sôi nổi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiệt liệt",
+      "nồng nhiệt",
+      "sôi nổi"
+    ],
+    "short_definition_vi": "nhiệt liệt, nồng nhiệt, sôi nổi",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "热",
+        "lishu_vi": "nhiệt",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nóng, nhiệt tình",
+        "modern_logic_vi": "nóng, nhiệt tình",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "烈",
+        "lishu_vi": "liệt",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "列",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mạnh, dữ dội",
+        "modern_logic_vi": "mạnh, dữ dội",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "热 gợi nóng/nhiệt; 烈 gợi mạnh; 热烈 là nồng nhiệt, sôi nổi.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 热烈欢迎.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "热情",
+        "pinyin": "rèqíng",
+        "meaning_vi": "nhiệt tình",
+        "difference_vi": "热情 thường nói thái độ con người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "激烈",
+        "pinyin": "jīliè",
+        "meaning_vi": "gay gắt/dữ dội",
+        "difference_vi": "激烈 thường nói tranh luận/cạnh tranh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "冷淡",
+        "pinyin": "lěngdàn",
+        "meaning_vi": "lạnh nhạt",
+        "difference_vi": "trái nghĩa",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f32fc3f5-6bdf-4a6f-96ec-4a61e0c0a143",
+      "order": 1,
+      "zh": "热烈欢迎",
+      "pinyin": "rèliè huānyíng",
+      "vi": "nhiệt liệt hoan nghênh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa3a3afb-30b1-4a05-b071-b57987a7aa56",
+      "order": 2,
+      "zh": "热烈的掌声",
+      "pinyin": "rèliè de zhǎngshēng",
+      "vi": "tiếng vỗ tay nhiệt liệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b13510a7-fb53-4b58-8638-fdb9f7304115",
+      "order": 3,
+      "zh": "讨论很热烈",
+      "pinyin": "tǎolùn hěn rèliè",
+      "vi": "thảo luận rất sôi nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9528ead4-4faf-456f-959c-f207ede99e68",
+      "order": 1,
+      "zh": "教室里响起了热烈的掌声。",
+      "pinyin": "Jiàoshì lǐ xiǎng qǐ le rèliè de zhǎngshēng.",
+      "vi": "Trong lớp vang lên tiếng vỗ tay nhiệt liệt.",
+      "analysis_vi": "热烈的掌声 là collocation tự nhiên.",
+      "highlight": [
+        "热烈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "703befa6-1cdd-4711-adf2-65a5ef0dbe98"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08fa3720-4f6f-4681-acdb-f82d9ae23c80",
+      "order": 2,
+      "zh": "他讲完以后，学生们热烈地鼓掌。",
+      "pinyin": "Tā jiǎng wán yǐhòu, xuéshengmen rèliè de gǔzhǎng.",
+      "vi": "Sau khi anh ấy giảng xong, học sinh vỗ tay nhiệt liệt.",
+      "analysis_vi": "热烈地 làm trạng ngữ cho 鼓掌.",
+      "highlight": [
+        "热烈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "703befa6-1cdd-4711-adf2-65a5ef0dbe98"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "热烈欢迎, 热烈祝贺, 热烈鼓掌 hay gặp trong sự kiện/lớp học.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "016afa78-69d3-4c67-839c-a461c8509d96",
+      "order": 1,
+      "rule_vi": "Không nói 他很热烈; nói 他很热情. 热烈 thường đi với 掌声/欢迎/讨论.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "热烈",
+    "back": "nhiệt liệt, nồng nhiệt, sôi nổi",
+    "hint": "rèliè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "703befa6-1cdd-4711-adf2-65a5ef0dbe98",
+    "source_lesson_vocab_id": null
+  }
+}

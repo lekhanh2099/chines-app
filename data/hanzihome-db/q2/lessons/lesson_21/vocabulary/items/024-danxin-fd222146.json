@@ -1,0 +1,307 @@
+{
+  "id": "9231b4c7-6ea0-4d08-b4c7-3fb3eb8e8037",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "担心",
+  "pinyin": "dānxīn",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ tâm lý",
+    "raw_cn": "动/形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đam tâm",
+    "meaning_vi": "lo lắng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lo lắng"
+    ],
+    "short_definition_vi": "lo lắng",
+    "textbook_focus_vi": "lo lắng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "担",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "旦",
+            "hanviet": "đán",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "gánh/chịu trách nhiệm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "心",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "tim/lòng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "trong lòng gánh một chuyện nên lo",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "088f861d-1bde-4a44-9483-374926330d1a",
+      "order": 1,
+      "zh": "很担心",
+      "pinyin": "",
+      "vi": "rất lo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c7ae230-9067-4090-a829-eb15a6766c65",
+      "order": 2,
+      "zh": "十分担心",
+      "pinyin": "",
+      "vi": "vô cùng lo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5eae98d5-8b45-4714-b143-210dd37a0798",
+      "order": 3,
+      "zh": "担心安全",
+      "pinyin": "",
+      "vi": "lo an toàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11dc1a1b-8ec8-4612-b9bf-9469084abaf9",
+      "order": 4,
+      "zh": "担心考试",
+      "pinyin": "",
+      "vi": "lo thi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35de9bf3-5fd1-44f5-ac33-c1bbdba9c1dc",
+      "order": 5,
+      "zh": "别担心",
+      "pinyin": "",
+      "vi": "đừng lo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a97a99fb-946b-4e94-976a-d545e825b4b9",
+      "order": 1,
+      "zh": "别担心，我听得懂。",
+      "pinyin": "Bié dānxīn, wǒ tīng de dǒng.",
+      "vi": "Đừng lo, tôi nghe hiểu được.",
+      "analysis_vi": "听得懂 là bổ ngữ khả năng khẳng định.",
+      "highlight": [
+        "担心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9231b4c7-6ea0-4d08-b4c7-3fb3eb8e8037"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d3d58da1-5bba-4979-afcd-7211c1517c29",
+      "order": 2,
+      "zh": "如果不了解担心，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě dānxīn, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 担心, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "担心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9231b4c7-6ea0-4d08-b4c7-3fb3eb8e8037"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "df59e812-6d31-4102-af23-2f5bdc77a231",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解担心在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě dānxīn zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 担心 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "担心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9231b4c7-6ea0-4d08-b4c7-3fb3eb8e8037"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "别担心 và 你放心吧 là cặp trấn an rất thường dùng.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "af2a0f67-62ae-4660-8a30-94eaa3a0a2c7",
+      "order": 1,
+      "rule_vi": "担心 + người có thể là lo cho người đó; nếu muốn lo việc gì thì nói rõ câu nhỏ phía sau。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "担心",
+    "back": "lo lắng",
+    "hint": "dānxīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9231b4c7-6ea0-4d08-b4c7-3fb3eb8e8037",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q2",
+  "lessonIndex": 7,
+  "id": "5fdf8f10-aca0-4432-8bf7-ee5e7ba9d27b",
+  "title": {
+    "zh": "我们那儿的冬天跟北京一样冷",
+    "pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng",
+    "vi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh",
+    "en": "The winter in my hometown is as cold as in Beijing"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_07.json",
+    "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_07_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 9,
+    "lessonVocabItems": 53,
+    "sourceDeepVocabItems": 40,
+    "materializedVocabItems": 54,
+    "syntheticVocabItems": 14,
+    "hanziOnlyVocabMatches": 6,
+    "relations": 205,
+    "checkNeededRelations": 20,
+    "checkNeededVocabItems": 14,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "id": "ac76a4d4-87a7-4529-a233-25b76da5f3a6",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "抬",
+  "pinyin": "tái",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "action"
+  ],
+  "meaning": {
+    "hanviet": "đài/thai",
+    "meaning_vi": "nhấc lên, nâng lên, khiêng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhấc lên",
+      "nâng lên",
+      "khiêng"
+    ],
+    "short_definition_vi": "nhấc lên, nâng lên, khiêng",
+    "textbook_focus_vi": "nhấc lên, nâng lên, khiêng",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "action",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "抬",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, hành động bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, hành động bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, hành động bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "台",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nâng, nhấc",
+        "modern_logic_vi": "Trong từ này, 抬 góp phần vào lớp nghĩa hiện đại: nâng, nhấc",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "扌 gợi thao tác bằng tay; 抬 là nâng/khiêng/đưa lên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "举",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "搬",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "扛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "低头",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放下",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b047f85c-a1ce-414a-8d6c-43cd31b1f00c",
+      "order": 1,
+      "zh": "抬头",
+      "pinyin": "",
+      "vi": "ngẩng đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "077fad6f-e054-44d3-a594-0956b281906a",
+      "order": 2,
+      "zh": "抬起头来",
+      "pinyin": "",
+      "vi": "ngẩng đầu lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "175b4be6-970e-49ae-91b3-e71ef759e269",
+      "order": 3,
+      "zh": "抬手",
+      "pinyin": "",
+      "vi": "giơ tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2340ddc4-4017-47da-86b3-ca14e291d4d5",
+      "order": 4,
+      "zh": "抬眼",
+      "pinyin": "",
+      "vi": "ngước mắt nhìn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01656570-d186-4f84-bf14-6a8c90f56aba",
+      "order": 5,
+      "zh": "抬东西",
+      "pinyin": "",
+      "vi": "khiêng đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd96c401-b2dc-4d58-b6c0-a58f70d81bc9",
+      "order": 6,
+      "zh": "抬高价格",
+      "pinyin": "",
+      "vi": "đẩy giá lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ba348b20-6d2e-4f1a-b3d1-80b04e513657",
+      "order": 1,
+      "zh": "他抬头看了看天。",
+      "pinyin": "",
+      "vi": "Anh ấy ngẩng đầu nhìn trời một chút.",
+      "analysis_vi": "抬头 là động tác ngẩng đầu.",
+      "highlight": [
+        "抬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ac76a4d4-87a7-4529-a233-25b76da5f3a6"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4cd04d39-4acd-488f-98e9-599a4f405c00",
+      "order": 2,
+      "zh": "春天一到，人们抬头就能看到大街上的鲜花。",
+      "pinyin": "",
+      "vi": "Mùa xuân đến, người ta ngẩng đầu là thấy hoa trên phố.",
+      "analysis_vi": "抬头就能看到.",
+      "highlight": [
+        "抬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ac76a4d4-87a7-4529-a233-25b76da5f3a6"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b1739254-9bff-42ce-9049-5bf4491216d8",
+      "order": 3,
+      "zh": "几个孩子把一大块雪抬起来，准备堆雪人儿。",
+      "pinyin": "",
+      "vi": "Mấy đứa trẻ nâng một tảng tuyết lớn lên, chuẩn bị đắp người tuyết.",
+      "analysis_vi": "把雪抬起来.",
+      "highlight": [
+        "抬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ac76a4d4-87a7-4529-a233-25b76da5f3a6"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "抬 trong Bài 3 北京的四季",
+    "content_vi": "抬头 vừa nghĩa thật “ngẩng đầu”, vừa có nghĩa bóng như 物价抬头.",
+    "tags": [
+      "action"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cd4f89e1-23d8-46f8-9f1a-dd7a081f8c73",
+      "order": 1,
+      "rule_vi": "Cầm điện thoại nói 拿手机, không nói 抬手机 nếu chỉ cầm.",
+      "natural_examples": [
+        {
+          "zh": "他抬头看了看天。",
+          "pinyin": "",
+          "vi": "Anh ấy ngẩng đầu nhìn trời một chút.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cầm điện thoại nói 拿手机, không nói 抬手机 nếu chỉ cầm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "抬",
+    "back": "nhấc lên, nâng lên, khiêng",
+    "hint": "tái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "action"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ac76a4d4-87a7-4529-a233-25b76da5f3a6",
+    "source_lesson_vocab_id": null
+  }
+}

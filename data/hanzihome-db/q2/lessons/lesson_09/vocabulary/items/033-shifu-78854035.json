@@ -1,0 +1,381 @@
+{
+  "id": "a9949401-46a4-41b0-a0e3-d42f0eb931fc",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "师傅",
+  "pinyin": "shīfu",
+  "pos": {
+    "raw_vi": "Danh từ / Cách xưng hô",
+    "raw_cn": "名/称呼",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Sư phụ",
+    "meaning_vi": "bác/tài xế/thợ/người có tay nghề; cách gọi lịch sự",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bác/tài xế/thợ/người có tay nghề",
+      "cách gọi lịch sự"
+    ],
+    "short_definition_vi": "bác/tài xế/thợ/người có tay nghề; cách gọi lịch sự",
+    "textbook_focus_vi": "Âm Hán Việt: sư phụ. Nghĩa chính: Người thợ có tay nghề: thợ sửa xe, thợ điện, thợ nấu ăn... Tài xế, bác lái xe. Cách gọi lịch sự với người lao động có kỹ năng hoặc người lạ làm dịch vụ. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "师",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thầy, người có chuyên môn",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự sâu nếu chữ được ghi chú là tên riêng, dạng giản thể hoặc cấu tạo hiện đại khó suy nghĩa.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "傅",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "尃",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thầy dạy, người phụ đạo",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "师 = thầy/người chuyên môn; 傅 = người dạy/kèm. 师傅 = người có tay nghề hoặc cách gọi lịch sự.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 师傅 trong đời thường không phải lúc nào cũng là “master võ công”. Với tài xế taxi, gọi 师傅 rất bình thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "师傅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bác/thầy thợ/tài xế/người làm nghề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老师",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giáo viên, thầy cô.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "司机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tài xế, danh từ nghề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "先生",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ông/ngài, lịch sự, nhưng không dùng thay 师傅 trong mọi dịch vụ đời thường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "师父",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sư phụ theo nghĩa thầy truyền đạo/võ/nghề, sắc thái khác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "老师在教室里。",
+      "Thầy/cô ở trong lớp.",
+      "师傅，麻烦您开快一点儿。",
+      "Bác tài, phiền bác chạy nhanh hơn một chút.",
+      "司机马上过来了。",
+      "Tài xế sắp qua đây ngay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d8b60b30-77c9-46c4-814d-eff6b87c30fa",
+      "order": 1,
+      "zh": "司机师傅",
+      "pinyin": "",
+      "vi": "bác tài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d994e4d2-e57b-45f8-88c2-c8353ce67fbd",
+      "order": 2,
+      "zh": "修车师傅",
+      "pinyin": "",
+      "vi": "thợ sửa xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4307f946-1339-4704-ba51-e70b35263500",
+      "order": 3,
+      "zh": "师傅，麻烦您……",
+      "pinyin": "",
+      "vi": "bác ơi, phiền bác...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9dde659c-1f80-4bdb-8f6d-271fa194c556",
+      "order": 4,
+      "zh": "老师傅",
+      "pinyin": "",
+      "vi": "thợ lành nghề/người thợ lâu năm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7be35277-1f7c-4a4d-a2b4-8da5745ee4ff",
+      "order": 5,
+      "zh": "师傅辛苦了",
+      "pinyin": "",
+      "vi": "bác/thầy vất vả rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da1470ba-fb18-4beb-b648-8279133b0d1a",
+      "order": 6,
+      "zh": "请问师傅……",
+      "pinyin": "",
+      "vi": "xin hỏi bác...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b00c96da-0fca-4782-b8c3-ca424c997191",
+      "order": 1,
+      "zh": "师傅，麻烦您开快一点儿。",
+      "pinyin": "Shīfu, máfan nín kāi kuài yìdiǎnr.",
+      "vi": "Bác tài ơi, phiền bác chạy nhanh hơn một chút.",
+      "analysis_vi": "师傅 dùng để gọi tài xế lịch sự. 麻烦您 làm lời nhờ mềm hơn.",
+      "highlight": [
+        "师傅"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a9949401-46a4-41b0-a0e3-d42f0eb931fc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "53fefeba-5334-4a06-9d37-93a26a8072f5",
+      "order": 2,
+      "zh": "师傅说：“快上来吧，要开车了。”",
+      "pinyin": "Shīfu shuō: “Kuài shànglai ba, yào kāichē le.”",
+      "vi": "Bác tài nói: “Mau lên xe đi, xe sắp chạy rồi.”",
+      "analysis_vi": "上来 vì bác tài/người nói ở trên xe. 要开车了 = xe sắp chạy rồi.",
+      "highlight": [
+        "师傅"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a9949401-46a4-41b0-a0e3-d42f0eb931fc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9b652769-d358-4fc2-8be0-43d10bf5d114",
+      "order": 3,
+      "zh": "到了大使馆门口以后，赵老师向司机师傅问好，还说：“这趟辛苦您了。”",
+      "pinyin": "Dào le dàshǐguǎn ménkǒu yǐhòu, Zhào lǎoshī xiàng sījī shīfu wènhǎo, hái shuō: “Zhè tàng xīnkǔ nín le.”",
+      "vi": "Sau khi đến cổng đại sứ quán, thầy Triệu chào hỏi bác tài, còn nói: “Chuyến này bác vất vả rồi ạ.”",
+      "analysis_vi": "向司机师傅问好 = gửi lời chào bác tài. 这趟 = chuyến này. 辛苦您了 là câu cảm ơn lịch sự.",
+      "highlight": [
+        "师傅"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a9949401-46a4-41b0-a0e3-d42f0eb931fc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở Trung Quốc, gọi tài xế taxi, bác sửa đồ, người làm dịch vụ kỹ thuật là 师傅 nghe rất tự nhiên và lịch sự. Đây là từ giao tiếp đời thường cực đáng nhớ.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ba3e6ee8-124d-4b7c-af62-b979bdc995bb",
+      "order": 1,
+      "rule_vi": "Gọi giáo viên là 老师; 师傅 thường gọi tài xế/thợ/người có tay nghề.",
+      "natural_examples": [
+        {
+          "zh": "Đừng dùng 老师 để gọi tài xế.",
+          "pinyin": "Tài xế/thợ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "师傅",
+          "pinyin": "Giáo viên:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "老师",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "师傅",
+    "back": "bác/tài xế/thợ/người có tay nghề; cách gọi lịch sự",
+    "hint": "shīfu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a9949401-46a4-41b0-a0e3-d42f0eb931fc",
+    "source_lesson_vocab_id": null
+  }
+}

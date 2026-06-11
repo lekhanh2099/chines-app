@@ -1,0 +1,426 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "跟……一样 / 跟……不一样",
+      "title_vi": "So sánh giống / không giống",
+      "level": "HSK3",
+      "tags": [
+        "comparison",
+        "语法"
+      ],
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để so sánh A và B giống hoặc không giống nhau. Khác với 比 dùng để nói hơn/kém, 跟……一样 nhấn mạnh mức độ hoặc tính chất ngang nhau.",
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "我们那儿的冬天跟北京一样冷。",
+              "pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng.",
+              "vi": "Mùa đông chỗ chúng tôi lạnh như Bắc Kinh.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
+              "zh": "我跟你不一样。",
+              "pinyin": "Wǒ gēn nǐ bù yíyàng.",
+              "vi": "Tôi không giống bạn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc khẳng định",
+          "pattern": "A + 跟 + B + 一样 + Adj / VP",
+          "meaning_vi": "A có tính chất hoặc mức độ giống B.",
+          "formulas": [
+            {
+              "label": "Khẳng định",
+              "pattern": "A 跟 B 一样 + tính từ"
+            }
+          ],
+          "examples": [
+            {
+              "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+              "zh": "他跟我一样高。",
+              "pinyin": "Tā gēn wǒ yíyàng gāo.",
+              "vi": "Anh ấy cao bằng tôi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "3c9a4bcc-7b95-4fbf-a27e-833a24841a8b",
+              "zh": "这件衣服跟那件一样贵。",
+              "pinyin": "Zhè jiàn yīfu gēn nà jiàn yíyàng guì.",
+              "vi": "Cái áo này đắt như cái kia.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "一样 đứng sau B, trước tính từ.",
+            "Không chèn 很 trước tính từ chính trong mẫu này."
+          ],
+          "source_origin": "generated",
+          "check_needed": false
+        },
+        {
+          "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Không thêm tính từ",
+          "pattern": "A + 跟 + B + 一样",
+          "meaning_vi": "A giống B nói chung, không nói rõ giống ở điểm nào.",
+          "formulas": [
+            {
+              "label": "Giống nói chung",
+              "pattern": "A 跟 B 一样"
+            }
+          ],
+          "examples": [
+            {
+              "id": "dd839fde-a24a-4a33-bc3a-4e0db7c01197",
+              "zh": "季节跟北京一样。",
+              "pinyin": "Jìjié gēn Běijīng yíyàng.",
+              "vi": "Các mùa giống Bắc Kinh.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+          "type": "grammar_negative_form",
+          "order": 4,
+          "title": "Dạng phủ định",
+          "pattern": "A + 跟 + B + 不一样",
+          "wrong_pattern": "",
+          "meaning_vi": "A không giống B.",
+          "correct_examples": [
+            {
+              "id": "f89ac453-7a3f-4fe3-a424-dc1e136bce62",
+              "zh": "气候跟北京不一样。",
+              "pinyin": "Qìhòu gēn Běijīng bù yíyàng.",
+              "vi": "Khí hậu không giống Bắc Kinh.",
+              "highlight": [
+                "跟",
+                "不一样"
+              ],
+              "explanation_vi": ""
+            }
+          ],
+          "wrong_examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
+          "type": "grammar_question_form",
+          "order": 5,
+          "title": "Dạng nghi vấn",
+          "pattern": "A + 跟 + B + 一样吗？/ A + 跟 + B + 一样不一样？",
+          "meaning_vi": "Hỏi A có giống B không.",
+          "examples": [
+            {
+              "id": "6d81a490-7d47-451c-b5d2-ffe940b59486",
+              "zh": "季节跟北京一样吗？",
+              "pinyin": "Jìjié gēn Běijīng yíyàng ma?",
+              "vi": "Các mùa có giống Bắc Kinh không?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "4e8b40b1-222a-4104-9eb5-372e426eae08",
+              "zh": "气候跟北京一样不一样？",
+              "pinyin": "Qìhòu gēn Běijīng yíyàng bù yíyàng?",
+              "vi": "Khí hậu có giống Bắc Kinh không?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "不但……而且……",
+      "title_vi": "Không những……mà còn……",
+      "level": "HSK3",
+      "tags": [
+        "complex_sentence",
+        "语法"
+      ],
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để nối hai ý theo kiểu bổ sung/tăng cấp. Vế sau thường thêm thông tin mạnh hơn hoặc đáng chú ý hơn vế trước.",
+          "examples": [
+            {
+              "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+              "zh": "不但常常下雪，而且下得很大。",
+              "pinyin": "Búdàn chángcháng xià xuě, érqiě xià de hěn dà.",
+              "vi": "Không những thường có tuyết rơi, mà tuyết còn rơi rất nhiều.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "a6012e0f-4ca0-438c-bcf0-1043d8150bda",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "S + 不但 + VP1，而且 + VP2",
+          "meaning_vi": "Không những làm/có ý 1, mà còn làm/có ý 2.",
+          "formulas": [
+            {
+              "label": "Cùng chủ ngữ",
+              "pattern": "S 不但 VP1，而且 VP2"
+            }
+          ],
+          "examples": [
+            {
+              "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
+              "zh": "他不但会说汉语，而且会写汉字。",
+              "pinyin": "Tā búdàn huì shuō Hànyǔ, érqiě huì xiě Hànzì.",
+              "vi": "Anh ấy không những biết nói tiếng Trung, mà còn biết viết chữ Hán.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
+              "zh": "这个地方不但风景漂亮，而且天气也很好。",
+              "pinyin": "Zhège dìfang búdàn fēngjǐng piàoliang, érqiě tiānqì yě hěn hǎo.",
+              "vi": "Nơi này không những phong cảnh đẹp, mà thời tiết cũng rất tốt.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Khi cùng một chủ ngữ, 不但 thường đứng sau chủ ngữ."
+          ],
+          "source_origin": "generated",
+          "check_needed": false
+        },
+        {
+          "id": "fcfef93c-e55f-46bb-9a38-17ca999a1197",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Hai vế khác chủ ngữ",
+          "pattern": "不但 + S1 + VP1，而且 + S2 + 也/还 + VP2",
+          "meaning_vi": "Không chỉ chủ thể 1 như vậy, mà chủ thể 2 cũng như vậy.",
+          "formulas": [
+            {
+              "label": "Khác chủ ngữ",
+              "pattern": "不但 S1 VP1，而且 S2 也/还 VP2"
+            }
+          ],
+          "examples": [
+            {
+              "id": "519958ea-f183-4f7d-af9d-45c6e79d137c",
+              "zh": "不但玛丽对中国历史感兴趣，而且麦克也对中国改革开放以后的一切感兴趣。",
+              "pinyin": "Búdàn Mǎlì duì Zhōngguó lìshǐ gǎn xìngqù, érqiě Màikè yě duì Zhōngguó gǎigé kāifàng yǐhòu de yíqiè gǎn xìngqù.",
+              "vi": "Không chỉ Mary có hứng thú với lịch sử Trung Quốc, mà Mike cũng có hứng thú với mọi thứ của Trung Quốc sau cải cách mở cửa.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Khi đổi chủ ngữ, 不但 thường đứng trước chủ ngữ thứ nhất."
+          ],
+          "source_origin": "generated",
+          "check_needed": false
+        },
+        {
+          "id": "7ef0fe1b-7a15-4bc5-a252-97371e9335a3",
+          "type": "grammar_negative_form",
+          "order": 4,
+          "title": "Dạng phủ định",
+          "pattern": "不但不 / 不但没 + vế 1，反而 / 而且还 + vế 2",
+          "wrong_pattern": "",
+          "meaning_vi": "Không những không..., mà trái lại/còn...",
+          "correct_examples": [
+            {
+              "id": "b8abc062-6355-4841-b60a-e8a21b568937",
+              "zh": "他不但不累，反而很高兴。",
+              "pinyin": "Tā búdàn bú lèi, fǎn’ér hěn gāoxìng.",
+              "vi": "Anh ấy không những không mệt, trái lại còn rất vui.",
+              "highlight": [
+                "不但不",
+                "反而"
+              ],
+              "explanation_vi": ""
+            }
+          ],
+          "wrong_examples": [],
+          "source_origin": "generated",
+          "check_needed": false
+        },
+        {
+          "id": "370bbfd6-4cc1-4fde-bdde-2c955c30e48c",
+          "type": "grammar_question_form",
+          "order": 5,
+          "title": "Dạng nghi vấn",
+          "pattern": "是不是不但……而且……？",
+          "meaning_vi": "Hỏi xác nhận có phải không những..., mà còn... hay không.",
+          "examples": [
+            {
+              "id": "8b6ded0e-4da3-4960-9cff-fc3c883c3be4",
+              "zh": "你们那儿是不是不但常常下雪，而且下得很大？",
+              "pinyin": "Nǐmen nàr shì bú shì búdàn chángcháng xià xuě, érqiě xià de hěn dà?",
+              "vi": "Có phải chỗ các bạn không những thường có tuyết, mà tuyết còn rơi rất lớn không?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "generated",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "id": "ed953fe4-c45c-470e-9482-95651bf2831c",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "回忆",
+  "pinyin": "huíyì",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hồi ức",
+    "meaning_vi": "hồi tưởng; ký ức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hồi tưởng",
+      "ký ức"
+    ],
+    "short_definition_vi": "hồi tưởng",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "回",
+        "lishu_vi": "hồi",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao, phạm vi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao, phạm vi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quay lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao, phạm vi",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "忆",
+        "lishu_vi": "ức",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhớ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "回忆 là quay lại trong tâm trí để nhớ chuyện quá khứ.",
+    "memory_tip_vi": "Nhớ 美好的回忆.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "记得",
+        "pinyin": "",
+        "meaning_vi": "记得",
+        "difference_vi": "记得 nhớ thông tin; 回忆 hồi tưởng chuyện quá khứ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "忘记",
+        "pinyin": "",
+        "meaning_vi": "忘记",
+        "difference_vi": "quên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a64dc85f-0a26-48d3-88d9-f1be0a13bcb2",
+      "order": 1,
+      "zh": "美好的回忆",
+      "pinyin": "měihǎo de huíyì",
+      "vi": "ký ức đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a10c7d0-2919-40dd-adaa-bfc5ab01dab4",
+      "order": 2,
+      "zh": "回忆过去",
+      "pinyin": "huíyì guòqù",
+      "vi": "hồi tưởng quá khứ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4aa7affb-065d-46ad-872e-671b924c5c38",
+      "order": 3,
+      "zh": "回忆当初",
+      "pinyin": "huíyì dāngchū",
+      "vi": "nhớ lại hồi đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ecbb7f2-13ca-4d36-b0e4-db8dc3d0469b",
+      "order": 4,
+      "zh": "留下回忆",
+      "pinyin": "liúxià huíyì",
+      "vi": "để lại ký ức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "133d2d23-2961-480c-bda7-db91299cce31",
+      "order": 1,
+      "zh": "这是一段美好的回忆。",
+      "pinyin": "Zhè shì yí duàn měihǎo de huíyì.",
+      "vi": "Đây là một đoạn ký ức đẹp.",
+      "analysis_vi": "回忆 làm danh từ.",
+      "highlight": [
+        "回忆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ed953fe4-c45c-470e-9482-95651bf2831c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c0f3516a-aaeb-414b-831f-01ad0826eb54",
+      "order": 2,
+      "zh": "每次回忆起当初得到帮助的情景，他都会感激那位慈善家。",
+      "pinyin": "Měi cì huíyì qǐ dāngchū dédào bāngzhù de qíngjǐng, tā dōu huì gǎnjī nà wèi císhànjiā.",
+      "vi": "Mỗi lần nhớ lại cảnh hồi đó được giúp, anh ấy đều biết ơn nhà từ thiện ấy.",
+      "analysis_vi": "回忆起 = nhớ lại.",
+      "highlight": [
+        "回忆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ed953fe4-c45c-470e-9482-95651bf2831c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "回忆 thường xuất hiện trong văn kể chuyện, hồi ký, bài cảm nhận.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "26b949f8-1d84-41f9-8795-d07e5baa6605",
+      "order": 1,
+      "rule_vi": "Không dùng 回忆 cho thông tin rời rạc như số điện thoại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我回忆他的电话号码。",
+          "pinyin": "Wǒ huíyì tā de diànhuà hàomǎ.",
+          "vi": "Gượng khi chỉ nhớ số điện thoại.",
+          "note_vi": "Thông tin rời rạc dùng 记得.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我记得他的电话号码。",
+          "pinyin": "Wǒ jìde tā de diànhuà hàomǎ.",
+          "vi": "Tôi nhớ số điện thoại của anh ấy.",
+          "note_vi": "记得 phù hợp.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "回忆",
+    "back": "hồi tưởng; ký ức",
+    "hint": "huíyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ed953fe4-c45c-470e-9482-95651bf2831c",
+    "source_lesson_vocab_id": null
+  }
+}

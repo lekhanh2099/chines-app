@@ -1,0 +1,250 @@
+{
+  "id": "edcbbead-3f52-492a-8e44-fa350a2eaa9f",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "月球",
+  "pinyin": "yuèqiú",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nguyệt cầu",
+    "meaning_vi": "Mặt Trăng với tư cách thiên thể",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Mặt Trăng với tư cách thiên thể"
+    ],
+    "short_definition_vi": "Mặt Trăng với tư cách thiên thể",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: thiên văn, vũ trụ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thiên văn, vũ trụ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "月",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trăng, tháng",
+        "modern_logic_vi": "Trong từ 月球, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "球",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, đá quý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, đá quý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, đá quý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quả cầu, bóng, thiên thể",
+        "modern_logic_vi": "Trong từ 月球, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "月球 nên được học theo nghĩa hiện đại trong cụm/tình huống: Mặt Trăng với tư cách thiên thể.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 登上月球.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "月亮",
+        "pinyin": "yuèliang",
+        "meaning_vi": "mặt trăng",
+        "difference_vi": "月亮 đời thường/thơ hơn; 月球 thiên văn/khoa học hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4fb40ef9-bcc4-4025-8cc7-6654c949c322",
+      "order": 1,
+      "zh": "登上月球",
+      "pinyin": "",
+      "vi": "đặt chân lên Mặt Trăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "229bd21a-b26c-4513-b2db-4b5f007d06b2",
+      "order": 2,
+      "zh": "月球表面",
+      "pinyin": "",
+      "vi": "bề mặt Mặt Trăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e48cadd3-9181-49c3-9e9e-bc8d512f6979",
+      "order": 3,
+      "zh": "月球探测",
+      "pinyin": "",
+      "vi": "thăm dò Mặt Trăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8a33d412-4227-41cd-affa-529d186ed2f5",
+      "order": 1,
+      "zh": "人类已经登上了月球。",
+      "pinyin": "",
+      "vi": "Nhân loại đã đặt chân lên Mặt Trăng.",
+      "analysis_vi": "月球 trang trọng/khoa học hơn 月亮.",
+      "highlight": [
+        "月球"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "edcbbead-3f52-492a-8e44-fa350a2eaa9f"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 月球 được dùng trong ngữ cảnh thiên văn, vũ trụ; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5384f810-27a5-4b2a-85de-4c98eb297e5d",
+      "order": 1,
+      "rule_vi": "Nói trăng tối nay đẹp thì dùng 月亮, không cần dùng 月球.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nói trăng tối nay đẹp thì dùng 月亮, không cần dùng 月球.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "月球",
+    "back": "Mặt Trăng với tư cách thiên thể",
+    "hint": "yuèqiú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "edcbbead-3f52-492a-8e44-fa350a2eaa9f",
+    "source_lesson_vocab_id": null
+  }
+}

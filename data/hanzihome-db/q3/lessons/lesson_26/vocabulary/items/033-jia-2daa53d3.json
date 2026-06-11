@@ -1,0 +1,243 @@
+{
+  "id": "f55b0ff5-bdd9-4c0a-b02d-ab8245cf7151",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "嫁",
+  "pinyin": "jià",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "giá",
+    "meaning_vi": "lấy chồng, gả đi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lấy chồng",
+      "gả đi"
+    ],
+    "short_definition_vi": "lấy chồng, gả đi",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "嫁",
+        "lishu_vi": "giá",
+        "structure_note_vi": "Chữ có thành phần/bộ 女; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 嫁 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "嫁 trong bài được học theo nghĩa: lấy chồng, gả đi.",
+    "memory_tip_vi": "Nhớ 嫁 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "娶",
+        "pinyin": "qǔ",
+        "meaning_vi": "cưới vợ",
+        "difference_vi": "Dùng từ phía nam giới; đối lập với 嫁.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 嫁 cho nam giới trong nghĩa thường; nam cưới vợ là 娶."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b2fa2d78-901a-4519-9adc-073de9120496",
+      "order": 1,
+      "zh": "嫁给他",
+      "pinyin": "",
+      "vi": "lấy/gả cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de23b3b8-907c-47e6-af10-aab850706a1e",
+      "order": 2,
+      "zh": "出嫁",
+      "pinyin": "",
+      "vi": "xuất giá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "024b0f04-8ecc-44a4-8bfc-d8b1a6bfd3f1",
+      "order": 3,
+      "zh": "被逼嫁给别人",
+      "pinyin": "",
+      "vi": "bị ép gả cho người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ebbf8482-6145-45b3-92f1-7fa31b0fc9fc",
+      "order": 1,
+      "zh": "她不想这么早嫁人。",
+      "pinyin": "",
+      "vi": "Cô ấy không muốn lấy chồng sớm như vậy.",
+      "analysis_vi": "嫁人 = người nữ lấy chồng.",
+      "highlight": [
+        "嫁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f55b0ff5-bdd9-4c0a-b02d-ab8245cf7151"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2b511d34-040d-4d0e-8f55-8fec9cdd2926",
+      "order": 2,
+      "zh": "祝英台不愿意嫁给马家的人。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài không muốn gả cho người nhà họ Mã.",
+      "analysis_vi": "嫁给 + người.",
+      "highlight": [
+        "嫁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f55b0ff5-bdd9-4c0a-b02d-ab8245cf7151"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "嫁 trong xã hội cũ kéo theo việc người nữ rời nhà về nhà chồng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cc214398-8d6c-4872-b059-6fe25625f636",
+      "order": 1,
+      "rule_vi": "Không dùng 嫁 cho nam giới trong nghĩa thường; nam cưới vợ là 娶.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "嫁",
+    "back": "lấy chồng, gả đi",
+    "hint": "jià",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f55b0ff5-bdd9-4c0a-b02d-ab8245cf7151",
+    "source_lesson_vocab_id": null
+  }
+}

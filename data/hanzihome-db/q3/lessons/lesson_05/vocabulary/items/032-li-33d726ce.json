@@ -1,0 +1,299 @@
+{
+  "id": "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "理",
+  "pinyin": "lǐ",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Hình vị",
+    "raw_cn": "动词/名词/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lý",
+    "meaning_vi": "để ý, đáp lại; xử lý; lý lẽ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "để ý",
+      "đáp lại",
+      "xử lý",
+      "lý lẽ"
+    ],
+    "short_definition_vi": "để ý, đáp lại",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "理",
+        "lishu_vi": "lý",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, vật quý",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, vật quý",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, vật quý",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "理 trong 不理我 là để ý/đáp lại; còn có nghĩa lý lẽ/xử lý trong từ ghép.",
+    "memory_tip_vi": "不理我 = không thèm để ý tôi.",
+    "warning_vi": "理 không phải luôn là lý do.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "理会",
+        "lǐhuì",
+        "để ý/chú ý",
+        "rõ nghĩa hơn"
+      ],
+      [
+        "理睬",
+        "lǐcǎi",
+        "đáp lại/để ý",
+        "hay trong phủ định"
+      ],
+      [
+        "回答",
+        "huídá",
+        "trả lời",
+        "rõ nội dung câu trả lời"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "不理我 = không thèm để ý tôi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0925ca29-0798-407e-917a-041fde837698",
+      "order": 1,
+      "zh": "不理我",
+      "pinyin": "",
+      "vi": "không để ý tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e66cf73-56dd-4571-86e9-ac12bfde9c1c",
+      "order": 2,
+      "zh": "没有理他",
+      "pinyin": "",
+      "vi": "không đáp lại anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "31cc55e0-553a-448b-8fa9-695137502ff6",
+      "order": 3,
+      "zh": "理都不理",
+      "pinyin": "",
+      "vi": "không thèm để ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d02cb220-1a5a-4aa9-8e59-ff9a3fb75d15",
+      "order": 4,
+      "zh": "别理他",
+      "pinyin": "",
+      "vi": "đừng để ý anh ta",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "869957e3-1ad0-4340-aceb-3db84e7721a8",
+      "order": 5,
+      "zh": "有道理",
+      "pinyin": "",
+      "vi": "có lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c2a5d2b5-6cd9-40eb-8e3b-77693d5e60d8",
+      "order": 1,
+      "zh": "他跟我打招呼，可是我没有理他。",
+      "pinyin": "Tā gēn wǒ dǎ zhāohu, kěshì wǒ méiyǒu lǐ tā.",
+      "vi": "Anh ấy chào tôi, nhưng tôi không đáp lại.",
+      "analysis_vi": "没有理他 = không phản ứng lại.",
+      "highlight": [
+        "理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "16965914-8565-4146-af56-c637a054da2a",
+      "order": 2,
+      "zh": "他生气了，一下午都不理我。",
+      "pinyin": "Tā shēngqì le, yí xiàwǔ dōu bù lǐ wǒ.",
+      "vi": "Anh ấy giận rồi, cả chiều không thèm để ý tôi.",
+      "analysis_vi": "不理我 sắc thái quan hệ khá mạnh.",
+      "highlight": [
+        "理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不理人 không chỉ là không trả lời mà là không tương tác/không thèm để ý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d491a05-7763-42d5-be5c-e3e70a50fe01",
+      "order": 1,
+      "rule_vi": "他不理我的问题。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他不回答我的问题。",
+          "pinyin": "Tā bù huídá wǒ de wèntí.",
+          "vi": "Anh ấy không trả lời câu hỏi của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "理 không phải luôn là lý do.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "理",
+    "back": "để ý, đáp lại; xử lý; lý lẽ",
+    "hint": "lǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8",
+    "source_lesson_vocab_id": null
+  }
+}

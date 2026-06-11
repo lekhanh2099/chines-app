@@ -1,0 +1,318 @@
+{
+  "id": "0b111a35-5657-4b54-b6cd-1ed8c5fae378",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "光束",
+  "pinyin": "guāngshù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "quang thúc",
+    "meaning_vi": "luồng sáng, chùm sáng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "luồng sáng",
+      "chùm sáng"
+    ],
+    "short_definition_vi": "ánh sáng tập trung thành một dải/luồng",
+    "textbook_focus_vi": "Trong bài là luồng sáng lớn trên trời.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "光",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ánh sáng",
+        "modern_logic_vi": "ánh sáng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "束",
+        "lishu_vi": "",
+        "structure_note_vi": "木",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bó, chùm",
+        "modern_logic_vi": "bó, chùm",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "光束 được học trong bài theo nghĩa: ánh sáng tập trung thành một dải/luồng.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 一条光束.",
+    "warning_vi": "光束 thường dùng 条/道, không nên dùng 个 tùy tiện.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "光",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ánh sáng nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亮光",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vệt ánh sáng, đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "光束 thường dùng 条/道, không nên dùng 个 tùy tiện."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9ba18e8f-a782-4b30-88d4-ffded5551f50",
+      "order": 1,
+      "zh": "一条光束",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2cb262c7-da5c-4f7f-b686-9862f9113fbb",
+      "order": 2,
+      "zh": "巨大的光束",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab1a66aa-b40d-4481-9888-341583d23e6b",
+      "order": 3,
+      "zh": "白色光束",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f5c0339-844c-4526-a6a4-568432fa1251",
+      "order": 4,
+      "zh": "橙红色的光束",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e23940c3-e797-4e1f-83e3-bf1f1f81126a",
+      "order": 5,
+      "zh": "光束照亮天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0d2fb0b6-efcd-4064-b213-a065a4012f10",
+      "order": 6,
+      "zh": "激光束",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4a9d5b99-da8d-4be9-942c-fa6b23439111",
+      "order": 1,
+      "zh": "天上出现了一条巨大的光束。",
+      "pinyin": "",
+      "vi": "Trên trời xuất hiện một luồng sáng khổng lồ.",
+      "analysis_vi": "一条 dùng cho thứ dài thành dải.",
+      "highlight": [
+        "光束"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0b111a35-5657-4b54-b6cd-1ed8c5fae378"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "17663623-ec8f-43cb-878e-56300b38734f",
+      "order": 2,
+      "zh": "我一抬头，就看见一道光束从远处照过来。",
+      "pinyin": "",
+      "vi": "Tôi vừa ngẩng đầu thì thấy một luồng sáng chiếu từ xa tới.",
+      "analysis_vi": "照过来 hướng về người nói.",
+      "highlight": [
+        "光束"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0b111a35-5657-4b54-b6cd-1ed8c5fae378"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "光束 nên dịch là luồng/chùm sáng nếu ánh sáng rõ thành dải.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "07e1eaad-9c08-4643-aafc-0e5e77263dc4",
+      "order": 1,
+      "rule_vi": "光束 thường dùng 条/道, không nên dùng 个 tùy tiện.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "光束 thường dùng 条/道, không nên dùng 个 tùy tiện.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "光束",
+    "back": "luồng sáng, chùm sáng",
+    "hint": "guāngshù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0b111a35-5657-4b54-b6cd-1ed8c5fae378",
+    "source_lesson_vocab_id": null
+  }
+}

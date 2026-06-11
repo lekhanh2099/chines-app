@@ -1,0 +1,237 @@
+{
+  "id": "ed98a20b-59ed-4e41-a5f9-e967397e4d28",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "喜悦",
+  "pinyin": "xǐyuè",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ thiên văn viết",
+    "raw_cn": "名/形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hỉ duyệt",
+    "meaning_vi": "niềm vui; vui mừng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "niềm vui",
+      "vui mừng"
+    ],
+    "short_definition_vi": "niềm vui",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "喜",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui, mừng",
+        "modern_logic_vi": "Trong từ 喜悦, chữ 喜 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "悦",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui vẻ",
+        "modern_logic_vi": "Trong từ 喜悦, chữ 悦 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "喜悦 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他想和邻居分享收获的喜悦。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "高兴",
+        "pinyin": "gāoxìng",
+        "meaning_vi": "vui",
+        "difference_vi": "高兴 khẩu ngữ phổ thông hơn 喜悦.",
+        "register_vi": "",
+        "example_zh": "我很高兴。",
+        "example_vi": "Tôi rất vui.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7e397169-b709-490b-beb6-810afd8fef1b",
+      "order": 1,
+      "zh": "分享喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41f5f315-8a20-4a40-841e-3d603e9ef0d9",
+      "order": 2,
+      "zh": "收获的喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "66ec5e7c-cf6c-43d1-b568-8c9799ef1f73",
+      "order": 3,
+      "zh": "成功的喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29b1c23a-f6e7-4ecf-a589-af99ef8b6f59",
+      "order": 4,
+      "zh": "胜利的喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6780f625-dc00-4ae3-851b-daf034869d84",
+      "order": 5,
+      "zh": "真正的喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27b00a90-c865-46b8-9505-acba81067de0",
+      "order": 6,
+      "zh": "内心的喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6a54fa7-f971-4a9d-85b7-12ecd2f4eb07",
+      "order": 7,
+      "zh": "充满喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ddaf0fa7-bcec-48c9-87c2-7b2faff49159",
+      "order": 1,
+      "zh": "他想和邻居分享收获的喜悦。",
+      "pinyin": "",
+      "vi": "Anh ấy muốn chia sẻ với hàng xóm niềm vui thu hoạch.",
+      "analysis_vi": "Ví dụ dùng 喜悦 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "喜悦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ed98a20b-59ed-4e41-a5f9-e967397e4d28"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "喜悦 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8eb38c50-c058-4d8f-9b22-4765dc8eac7a",
+      "order": 1,
+      "rule_vi": "喜悦 hơi văn viết; khẩu ngữ đời thường thường dùng 高兴 hoặc 开心.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "喜悦",
+    "back": "niềm vui; vui mừng",
+    "hint": "xǐyuè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ed98a20b-59ed-4e41-a5f9-e967397e4d28",
+    "source_lesson_vocab_id": null
+  }
+}

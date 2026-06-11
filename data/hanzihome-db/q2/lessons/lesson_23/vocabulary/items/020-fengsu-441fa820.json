@@ -1,0 +1,351 @@
+{
+  "id": "161779d8-f2f4-49eb-9339-0eec411dc614",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "风俗",
+  "pinyin": "fēngsú",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Phong tục",
+    "meaning_vi": "phong tục, tập tục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phong tục, tập tục"
+    ],
+    "short_definition_vi": "phong tục, tập tục",
+    "textbook_focus_vi": "phong tục, tập tục",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "风",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gió; phong khí",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "俗",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành vi của người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành vi của người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tục, thói xã hội",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 风俗 hợp lại tạo nghĩa hiện đại trong bài: phong tục, tập tục.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "风俗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "风俗 / 习惯 / 传统",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "习惯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "风俗 / 习惯 / 传统",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "传统",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "风俗 / 习惯 / 传统",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "风俗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "风俗 / 风格",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "风格",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "风俗 / 风格",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "风俗 / 习惯 / 传统",
+      "风俗 / 风格"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bd4551b9-7399-4b85-9cdc-80903854bb38",
+      "order": 1,
+      "zh": "当地风俗",
+      "pinyin": "",
+      "vi": "当地风俗",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "32be5684-3165-4ce8-94e0-14b58d8bf6bd",
+      "order": 2,
+      "zh": "民族风俗",
+      "pinyin": "",
+      "vi": "民族风俗",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "1f04d605-cfe5-4137-bd36-4b7769586dab",
+      "order": 3,
+      "zh": "风俗习惯",
+      "pinyin": "",
+      "vi": "风俗习惯",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "7de8c9e6-15f8-4fd4-bfa1-e121eef74387",
+      "order": 4,
+      "zh": "了解风俗",
+      "pinyin": "",
+      "vi": "了解风俗",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "224fee73-aee6-46b0-b24d-cba72555912b",
+      "order": 5,
+      "zh": "尊重风俗",
+      "pinyin": "",
+      "vi": "尊重风俗",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c5939aff-d3d8-4d0d-bddf-75f41c0c05d4",
+      "order": 6,
+      "zh": "传统风俗",
+      "pinyin": "",
+      "vi": "传统风俗",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "af4bce23-ee53-4427-8b77-ed879ffd860a",
+      "order": 1,
+      "zh": "这个词是“风俗”。",
+      "pinyin": "",
+      "vi": "Từ này là “风俗”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "风俗"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "161779d8-f2f4-49eb-9339-0eec411dc614"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a3560b8d-bcf3-4be2-a4e6-bee60eaa05c1",
+      "order": 2,
+      "zh": "你想怎么用“风俗”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “风俗” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "风俗"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "161779d8-f2f4-49eb-9339-0eec411dc614"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "772a5f24-d7be-42fa-9468-0a111187eada",
+      "order": 3,
+      "zh": "我们一边复习风俗，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “风俗”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "风俗"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "161779d8-f2f4-49eb-9339-0eec411dc614"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "风俗 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dbec7cec-c879-4a55-a481-69fad42396a5",
+      "order": 1,
+      "rule_vi": "Dùng 风俗 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 风俗 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "风俗",
+    "back": "phong tục, tập tục",
+    "hint": "fēngsú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "161779d8-f2f4-49eb-9339-0eec411dc614",
+    "source_lesson_vocab_id": null
+  }
+}

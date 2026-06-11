@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_dad77d6653470746",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "沓",
+  "pinyin": "dá",
+  "meaning_vi": "xấp, tập giấy",
+  "pos": "Lượng từ",
+  "pos_detail": {
+    "vi": "Lượng từ",
+    "cn": "量词",
+    "normalized": "measure_word",
+    "schema_compatible_pos": "measure_word",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "l18_vocab_066",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "l18_vocab_066",
+    "type": "vocabulary_item",
+    "order": 66,
+    "hanzi": "沓",
+    "pinyin": "dá",
+    "meaning_vi": "xấp, tập giấy",
+    "meaning_en": "pile of paper, etc.",
+    "pos": "Lượng từ",
+    "pos_detail": {
+      "vi": "Lượng từ",
+      "cn": "量词",
+      "normalized": "measure_word",
+      "schema_compatible_pos": "measure_word",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false,
+    "flashcard": {
+      "front": "沓",
+      "back": "dá — xấp, tập giấy",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,400 @@
+{
+  "id": "e3b55026-1967-4202-9d68-bec57ecb1f03",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "情况",
+  "pinyin": "qíngkuàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tình huống",
+    "meaning_vi": "tình hình, tình trạng, hoàn cảnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình hình",
+      "tình trạng",
+      "hoàn cảnh"
+    ],
+    "short_definition_vi": "tình hình, tình trạng, hoàn cảnh",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: tình hình, tình trạng, hoàn cảnh.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "情",
+        "lishu_vi": "tình",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm, tình hình, trạng thái",
+        "modern_logic_vi": "Liên quan đến trạng thái/cảm xúc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "况",
+        "lishu_vi": "huống",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "băng/lạnh",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "冫 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "băng/lạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兄",
+            "hanviet": "huynh",
+            "meaning_vi": "anh; thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình trạng, hoàn cảnh",
+        "modern_logic_vi": "Trong 情况/状况 chỉ trạng thái thực tế.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "băng/lạnh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "情况 trong bài dùng theo nghĩa: tình hình, tình trạng, hoàn cảnh. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 情况 qua văn cảnh 离家的时候: tình hình, tình trạng, hoàn cảnh.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "状况",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình trạng, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "情形",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảnh huống, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "事情",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sự việc/chuyện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "问题",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vấn đề cần giải quyết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c83130f6-6e0a-49f0-b561-6c76fb784ef1",
+      "order": 1,
+      "zh": "了解情况",
+      "pinyin": "",
+      "vi": "tìm hiểu tình hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "026609c1-2900-42db-813a-1c51fdeb659d",
+      "order": 2,
+      "zh": "说明情况",
+      "pinyin": "",
+      "vi": "giải thích tình hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3000659a-d932-4e7f-8733-e6bc78aacd5d",
+      "order": 3,
+      "zh": "介绍情况",
+      "pinyin": "",
+      "vi": "giới thiệu tình hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a42d6f8-05ca-4029-9b31-08e91ee7ebe8",
+      "order": 4,
+      "zh": "把情况说清楚",
+      "pinyin": "",
+      "vi": "nói rõ tình hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0515bfc-4fcd-4860-aa6d-63b2e20e6d5d",
+      "order": 5,
+      "zh": "具体情况",
+      "pinyin": "",
+      "vi": "tình hình cụ thể",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "71f4e1e0-3639-4b11-a697-921821adb04c",
+      "order": 1,
+      "zh": "你先把情况说清楚。",
+      "pinyin": "",
+      "vi": "Bạn hãy nói rõ tình hình trước.",
+      "analysis_vi": "把情况说清楚 = 把 + kết quả 清楚.",
+      "highlight": [
+        "情况"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e3b55026-1967-4202-9d68-bec57ecb1f03"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3f165007-49d0-4748-8500-e7343bb5282c",
+      "order": 2,
+      "zh": "到了国外以后，她每天都给父母介绍自己的情况。",
+      "pinyin": "",
+      "vi": "Sang nước ngoài rồi, cô ấy ngày nào cũng kể tình hình của mình cho bố mẹ.",
+      "analysis_vi": "给父母介绍情况 = kể tình hình cho bố mẹ.",
+      "highlight": [
+        "情况"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e3b55026-1967-4202-9d68-bec57ecb1f03"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cb9a2298-e226-4941-94c5-daa9a060bb7b",
+      "order": 3,
+      "zh": "她本来想一个人解决所有事情，可是情况越来越复杂，只好跟父母说实话。",
+      "pinyin": "",
+      "vi": "Cô ấy vốn muốn tự giải quyết mọi chuyện, nhưng tình hình ngày càng phức tạp nên đành nói thật với bố mẹ.",
+      "analysis_vi": "越来越复杂 diễn tả mức độ tăng.",
+      "highlight": [
+        "情况"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e3b55026-1967-4202-9d68-bec57ecb1f03"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "把情况说清楚 nghe chín chắn hơn chỉ nói 我有事.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0827f5f1-66ca-4a50-a60b-a90e848dfc85",
+      "order": 1,
+      "rule_vi": "事情 = chuyện/sự việc; 情况 = tình hình/tình trạng của sự việc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "情况",
+    "back": "tình hình, tình trạng, hoàn cảnh",
+    "hint": "qíngkuàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_046"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e3b55026-1967-4202-9d68-bec57ecb1f03",
+    "source_lesson_vocab_id": null
+  }
+}

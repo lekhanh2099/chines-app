@@ -1,0 +1,339 @@
+{
+  "id": "a8fbb3cf-ed76-4b78-91c3-d692520a0118",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "道歉",
+  "pinyin": "dàoqiàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đạo khiểm",
+    "meaning_vi": "xin lỗi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xin lỗi"
+    ],
+    "short_definition_vi": "Bày tỏ xin lỗi vì sai/làm phiền/gây thiệt hại.",
+    "textbook_focus_vi": "Cấu trúc trọng tâm: 向 + người + 道歉.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "道",
+        "lishu_vi": "đạo",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại/di chuyển",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại/di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại/di chuyển",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đường; bày tỏ; lượng từ",
+        "modern_logic_vi": "đường; bày tỏ; lượng từ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "歉",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "欠",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khiếm",
+          "radical_name_zh": "",
+          "hanviet": "khiếm",
+          "meaning_vi": "thiếu/hơi thở",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "欠 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "thiếu/hơi thở",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "thiếu/hơi thở",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "欠 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "道 = bày tỏ; 歉 = áy náy/thiếu sót.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "对不起",
+        "pinyin": "duìbuqǐ",
+        "meaning_vi": "xin lỗi",
+        "difference_vi": "对不起 là câu nói; 道歉 là động từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0f83b68e-66dd-4004-8d5f-9e09068710d5",
+      "order": 1,
+      "zh": "向别人道歉",
+      "pinyin": "",
+      "vi": "xin lỗi người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ccf5fce-5337-4429-b1c9-d8cd35e28645",
+      "order": 2,
+      "zh": "主动道歉",
+      "pinyin": "",
+      "vi": "chủ động xin lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e972e62-b05d-48a9-b1a2-54b906a831e1",
+      "order": 3,
+      "zh": "诚心诚意地道歉",
+      "pinyin": "",
+      "vi": "thật lòng xin lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15638010-4faa-48d9-a590-e51b669f780d",
+      "order": 4,
+      "zh": "接受道歉",
+      "pinyin": "",
+      "vi": "chấp nhận lời xin lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ab2ba0a0-6f44-4d50-a01f-8d9232e2d281",
+      "order": 1,
+      "zh": "我迟到了，应该向老师道歉。",
+      "pinyin": "",
+      "vi": "Tôi đến muộn rồi, nên xin lỗi thầy/cô.",
+      "analysis_vi": "向 + người + 道歉.",
+      "highlight": [
+        "道歉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8fbb3cf-ed76-4b78-91c3-d692520a0118"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b482642-d890-485b-befc-08b1503de1c3",
+      "order": 2,
+      "zh": "他把邻居的被子弄脏了，只好向邻居道歉。",
+      "pinyin": "",
+      "vi": "Anh ấy làm bẩn chăn hàng xóm, đành phải xin lỗi.",
+      "analysis_vi": "把 + O + 弄脏.",
+      "highlight": [
+        "道歉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8fbb3cf-ed76-4b78-91c3-d692520a0118"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9412f004-d01c-42fb-8a12-5fb46324b4c9",
+      "order": 1,
+      "rule_vi": "Không nói 我道歉你; phải nói 我向你道歉.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 我道歉你; phải nói 我向你道歉.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "道歉",
+    "back": "xin lỗi",
+    "hint": "dàoqiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a8fbb3cf-ed76-4b78-91c3-d692520a0118",
+    "source_lesson_vocab_id": null
+  }
+}

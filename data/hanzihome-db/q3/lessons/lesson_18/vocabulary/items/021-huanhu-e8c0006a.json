@@ -1,0 +1,299 @@
+{
+  "id": "1d81211a-c4d9-42d2-aaa6-db4b16944dab",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "欢呼",
+  "pinyin": "huānhū",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hoan hô",
+    "meaning_vi": "reo hò vui mừng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "reo hò vui mừng"
+    ],
+    "short_definition_vi": "reo hò vui mừng",
+    "textbook_focus_vi": "Reo hò vì vui mừng, phấn khích, chiến thắng hoặc chúc mừng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "欢",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "呼",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/lời nói",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/lời nói",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hô/gọi",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Reo hò vì vui mừng, phấn khích, chiến thắng hoặc chúc mừng.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 欢呼 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "鼓掌",
+        "pinyin": "",
+        "meaning_vi": "vỗ tay",
+        "difference_vi": "Hành động bằng tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喝彩",
+        "pinyin": "",
+        "meaning_vi": "reo hò tán thưởng",
+        "difference_vi": "Thường trong biểu diễn/thi đấu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喊",
+        "pinyin": "",
+        "meaning_vi": "hét/gọi",
+        "difference_vi": "Không nhất thiết vui.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "803ef021-527d-49d9-9dd3-2be52b385969",
+      "order": 1,
+      "zh": "高声欢呼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3387a0cb-f952-486c-ad8a-bf7d85fc4776",
+      "order": 2,
+      "zh": "欢呼起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c645c99-70b2-41af-8392-78bf411f2acb",
+      "order": 3,
+      "zh": "一阵欢呼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a67ebc4-e576-4c15-a02a-31b5b6a1b409",
+      "order": 4,
+      "zh": "随着欢呼声",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f86d8411-7bde-4fea-869f-0adf6a1b7653",
+      "order": 5,
+      "zh": "欢呼鼓掌",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "69782e77-12b7-468a-aaea-be597d83c379",
+      "order": 1,
+      "zh": "随着西西的欢呼，大伙儿一齐鼓掌。",
+      "pinyin": "",
+      "vi": "Theo tiếng reo vui của Tây Tây, mọi người cùng vỗ tay.",
+      "analysis_vi": "随着 + danh từ mở bối cảnh.",
+      "highlight": [
+        "欢呼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1d81211a-c4d9-42d2-aaa6-db4b16944dab"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "14ff952b-233d-4413-b991-670bfcb55221",
+      "order": 1,
+      "rule_vi": "欢呼 không dùng cho niềm vui rất nhẹ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "大家欢呼起来。",
+          "pinyin": "",
+          "vi": "Mọi người reo hò lên.",
+          "note_vi": "欢呼起来 hợp cảnh tập thể phấn khích.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "欢呼",
+    "back": "reo hò vui mừng",
+    "hint": "huānhū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1d81211a-c4d9-42d2-aaa6-db4b16944dab",
+    "source_lesson_vocab_id": null
+  }
+}

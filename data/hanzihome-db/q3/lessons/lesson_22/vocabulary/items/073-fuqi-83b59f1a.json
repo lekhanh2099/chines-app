@@ -1,0 +1,56 @@
+{
+  "id": "synthetic_vocab_ccffedd03bd7019a",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "服气",
+  "pinyin": "fúqì",
+  "meaning_vi": "phục; chịu phục; tâm phục",
+  "pos": "Tính từ / Động từ trạng thái tâm lý",
+  "pos_detail": {
+    "vi": "Tính từ / Động từ trạng thái tâm lý",
+    "cn": "形容词 / 心理状态动词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "服气 dùng như một đơn vị từ vựng biểu thị trạng thái “phục/chịu phục”.",
+    "usage_note_vi": "Trong bài là 很不服气: “rất không phục”. Không đánh dấu động từ li hợp để tránh tách sai trong app.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5f0c7204-3fca-496c-a3ce-e604c4409c66",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5f0c7204-3fca-496c-a3ce-e604c4409c66",
+    "type": "vocabulary_item",
+    "order": 5,
+    "hanzi": "服气",
+    "pinyin": "fúqì",
+    "meaning_vi": "phục; chịu phục; tâm phục",
+    "meaning_en": "",
+    "pos": "Tính từ / Động từ trạng thái tâm lý",
+    "tags": [
+      "supplementary_vocab",
+      "reading_cloze"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ / Động từ trạng thái tâm lý",
+      "cn": "形容词 / 心理状态动词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "服气 dùng như một đơn vị từ vựng biểu thị trạng thái “phục/chịu phục”.",
+      "usage_note_vi": "Trong bài là 很不服气: “rất không phục”. Không đánh dấu động từ li hợp để tránh tách sai trong app.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

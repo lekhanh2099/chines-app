@@ -1,0 +1,336 @@
+{
+  "id": "0ec83825-1f52-40ce-a556-0dc4b07afee7",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "起飞",
+  "pinyin": "qǐfēi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Khởi phi",
+    "meaning_vi": "cất cánh; phát triển nhanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cất cánh; phát triển nhanh"
+    ],
+    "short_definition_vi": "cất cánh; phát triển nhanh",
+    "textbook_focus_vi": "cất cánh; phát triển nhanh",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "起",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi/chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng dậy, bắt đầu, nổi lên",
+        "modern_logic_vi": "起 trong 起飞 gợi bắt đầu/nổi lên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi, chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "飞",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bay",
+        "modern_logic_vi": "飞 = bay; chữ giản thể không cần tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "起 là nổi lên, đứng dậy, bắt đầu hướng lên. 飞 là bay. → 起飞 = bắt đầu bay lên, cất cánh. Cảnh báo: 起飞 là hành động của máy bay/chuyến bay, không phải hành khách. Hành khách 登机, máy bay 起飞.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "登机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hành khách lên máy bay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "降落",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "máy bay hạ cánh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "到达",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đến nơi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "起飞",
+        "right": "降落",
+        "meaning_vi": "cất cánh ↔ hạ cánh",
+        "note_vi": "cất cánh ↔ hạ cánh",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "起飞: máy bay cất cánh."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "be36f379-e9c0-4eed-ac82-606afc1891fd",
+      "order": 1,
+      "zh": "飞机起飞",
+      "pinyin": "",
+      "vi": "máy bay cất cánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cd888ffd-f10e-47e0-8e01-1cda056d8ed7",
+      "order": 2,
+      "zh": "起飞时间",
+      "pinyin": "",
+      "vi": "giờ cất cánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03cd3c1b-9ce3-4964-a5be-ba74c568deef",
+      "order": 3,
+      "zh": "马上起飞",
+      "pinyin": "",
+      "vi": "sắp cất cánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "256c9c00-a7a6-4eec-b3c8-9f29a9ae6a08",
+      "order": 4,
+      "zh": "准时起飞",
+      "pinyin": "",
+      "vi": "cất cánh đúng giờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0cc3dbf2-1e4d-4ac2-bf3d-ab4ece7103b9",
+      "order": 5,
+      "zh": "延误起飞",
+      "pinyin": "",
+      "vi": "cất cánh bị trễ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e7f0f01d-0894-47cd-b1a7-cabe37e765e1",
+      "order": 1,
+      "zh": "飞机马上要起飞了，请把安全带系好。",
+      "pinyin": "Fēijī mǎshàng yào qǐfēi le, qǐng bǎ ānquándài jì hǎo.",
+      "vi": "Máy bay sắp cất cánh rồi, xin hãy thắt dây an toàn cho chắc.",
+      "analysis_vi": "把安全带系好 là câu 把 có kết quả 好, nghĩa là thắt đúng và xong.",
+      "highlight": [
+        "起飞"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "0ec83825-1f52-40ce-a556-0dc4b07afee7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ed5f3a78-e690-47e8-9dde-e458bea0a25e",
+      "order": 2,
+      "zh": "起飞以前，请把手机调成飞行模式。",
+      "pinyin": "Qǐfēi yǐqián, qǐng bǎ shǒujī tiáo chéng fēixíng móshì.",
+      "vi": "Trước khi cất cánh, xin hãy chuyển điện thoại sang chế độ máy bay.",
+      "analysis_vi": "把手机调成…… là mẫu 把 + O + V成 + kết quả mới.",
+      "highlight": [
+        "起飞"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "0ec83825-1f52-40ce-a556-0dc4b07afee7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9168d07b-1aff-47a4-bcf4-8974ada9102c",
+      "order": 3,
+      "zh": "航班原来九点起飞，后来因为天气不好延误了。",
+      "pinyin": "Hángbān yuánlái jiǔ diǎn qǐfēi, hòulái yīnwèi tiānqì bù hǎo yánwù le.",
+      "vi": "Chuyến bay vốn cất cánh lúc 9 giờ, sau đó vì thời tiết không tốt nên bị trễ.",
+      "analysis_vi": "航班起飞 là cách nói chuẩn; 延误 là bị trễ/chậm chuyến.",
+      "highlight": [
+        "起飞"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "0ec83825-1f52-40ce-a556-0dc4b07afee7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở sân bay Trung Quốc, 航班延误 – chuyến bay bị trễ – là cụm rất hay gặp trên bảng thông tin. Nếu chuyến bay đúng giờ, có thể thấy 准点 hoặc 准时起飞.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "12f1af9a-8cf0-4891-9307-eeb3cdd1af71",
+      "order": 1,
+      "rule_vi": "Nhầm người 起飞.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 起飞 theo cụm và ngữ cảnh bài 18; nghĩa chính là cất cánh; phát triển nhanh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "起飞",
+    "back": "cất cánh; phát triển nhanh",
+    "hint": "qǐfēi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0ec83825-1f52-40ce-a556-0dc4b07afee7",
+    "source_lesson_vocab_id": null
+  }
+}

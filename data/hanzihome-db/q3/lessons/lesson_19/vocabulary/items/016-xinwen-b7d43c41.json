@@ -1,0 +1,374 @@
+{
+  "id": "37e75158-21a1-4fe2-8599-d02227f0df3a",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "新闻",
+  "pinyin": "xīnwén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "tân văn",
+    "meaning_vi": "tin tức, bản tin",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tin tức",
+      "bản tin"
+    ],
+    "short_definition_vi": "tin tức, bản tin",
+    "textbook_focus_vi": "新闻 là thông tin có giá trị thời sự/báo chí.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "新",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "斤",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cân",
+          "radical_name_zh": "",
+          "hanviet": "cân",
+          "meaning_vi": "rìu/cân lượng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "斤 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "斤",
+            "hanviet": "cân",
+            "meaning_vi": "rìu/cân lượng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "斤",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "rìu/cân lượng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "斤 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "斤 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mới",
+        "modern_logic_vi": "Trong từ “新闻”, chữ “新” góp phần vào trường nghĩa: mới",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "闻",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "門",
+          "radical_variant": "门",
+          "radical_name_vi": "bộ Môn giản thể",
+          "radical_name_zh": "",
+          "hanviet": "môn",
+          "meaning_vi": "cửa",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "门 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn giản thể",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "门 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "门 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "耳",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "耳 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghe, tin tức",
+        "modern_logic_vi": "Trong từ “新闻”, chữ “闻” góp phần vào trường nghĩa: nghe, tin tức",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "新闻 là thông tin có giá trị thời sự/báo chí.",
+    "memory_tip_vi": "新闻 là thông tin có giá trị thời sự/báo chí.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "消息",
+        "pinyin": "",
+        "meaning_vi": "tin/tin nhắn đời thường hơn",
+        "difference_vi": "tin/tin nhắn đời thường hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "信息",
+        "pinyin": "",
+        "meaning_vi": "thông tin nói chung",
+        "difference_vi": "thông tin nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1cc19a80-fbba-4a8a-93bb-10518b73f67a",
+      "order": 1,
+      "zh": "一条新闻",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a30cd92-226f-4421-b7b1-e0ce50dbda36",
+      "order": 2,
+      "zh": "新闻报道",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0426cf81-2de2-4634-9244-19b72b6298d6",
+      "order": 3,
+      "zh": "抢新闻",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ceb17c5-14ac-47ba-b234-6c26e17aa644",
+      "order": 4,
+      "zh": "发布新闻",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "70f1fa4d-3cf2-461c-9691-f08e13bb85f3",
+      "order": 1,
+      "zh": "我每天晚上都看新闻。",
+      "pinyin": "",
+      "vi": "Tối nào tôi cũng xem tin tức.",
+      "analysis_vi": "看新闻 là cụm cơ bản.",
+      "highlight": [
+        "新闻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37e75158-21a1-4fe2-8599-d02227f0df3a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4dee3a96-bd8a-45a2-bf6b-7061382c6a3d",
+      "order": 2,
+      "zh": "这条新闻很重要，不能延误。",
+      "pinyin": "",
+      "vi": "Tin này rất quan trọng, không thể chậm trễ.",
+      "analysis_vi": "一条新闻 dùng lượng từ 条.",
+      "highlight": [
+        "新闻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37e75158-21a1-4fe2-8599-d02227f0df3a"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "新闻 là thông tin có giá trị thời sự/báo chí.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3290823a-3beb-499e-8715-6af93cc772f3",
+      "order": 1,
+      "rule_vi": "Tin nhắn riêng tư nên dùng 消息, không dùng 新闻.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Tin nhắn riêng tư nên dùng 消息, không dùng 新闻.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "新闻",
+    "back": "tin tức, bản tin",
+    "hint": "xīnwén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "37e75158-21a1-4fe2-8599-d02227f0df3a",
+    "source_lesson_vocab_id": null
+  }
+}

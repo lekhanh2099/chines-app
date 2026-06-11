@@ -1,0 +1,316 @@
+{
+  "id": "5d75042b-75e1-4251-ac52-3ddf92ac6936",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "洒",
+  "pinyin": "sǎ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Sái",
+    "meaning_vi": "làm đổ, rơi vãi, rắc/đổ ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm đổ, rơi vãi, rắc/đổ ra"
+    ],
+    "short_definition_vi": "làm đổ, rơi vãi, rắc/đổ ra",
+    "textbook_focus_vi": "làm đổ, rơi vãi, rắc/đổ ra",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "洒",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "西",
+            "hanviet": "tây",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rắc, vẩy, làm đổ/rơi vãi",
+        "modern_logic_vi": "洒 thường gợi nước/chất lỏng/vật nhỏ văng rải ra.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "洒 có bộ 氵, liên quan đến nước/chất lỏng. Lõi nghĩa hiện đại: chất lỏng hoặc hạt nhỏ rơi/rải ra khỏi chỗ ban đầu. → 茶洒了 = trà đổ rồi. → 把水洒出来 = làm nước đổ ra.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "倒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rót/đổ có chủ ý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "掉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rơi, rớt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "泼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hắt/tạt chất lỏng, mạnh hơn 洒.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "洒: đổ/vãi/rắc chất lỏng hoặc hạt nhỏ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "317a7fda-714f-4283-afe9-758258a24065",
+      "order": 1,
+      "zh": "茶洒了",
+      "pinyin": "",
+      "vi": "trà đổ rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc5fde97-20ec-4db7-a95d-ef35379cb493",
+      "order": 2,
+      "zh": "水洒了",
+      "pinyin": "",
+      "vi": "nước đổ/vãi rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "14aaf0d8-dcfa-4f69-a9e6-dda1cb14e96f",
+      "order": 3,
+      "zh": "洒在衣服上",
+      "pinyin": "",
+      "vi": "đổ lên quần áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e895d50-a717-44cf-88ba-721815162e22",
+      "order": 4,
+      "zh": "把茶洒出来",
+      "pinyin": "",
+      "vi": "làm trà đổ ra ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0fcfb13-92b9-439b-bfb6-0e293cf1860d",
+      "order": 5,
+      "zh": "洒了一点儿",
+      "pinyin": "",
+      "vi": "đổ/vãi một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "af296353-29a2-45b7-a907-562d3c48f724",
+      "order": 1,
+      "zh": "飞机一动，他不小心把茶洒出来了。",
+      "pinyin": "Fēijī yí dòng, tā bù xiǎoxīn bǎ chá sǎ chūlai le.",
+      "vi": "Máy bay vừa động, anh ấy bất cẩn làm trà đổ ra ngoài.",
+      "analysis_vi": "把茶洒出来了 là câu 把 có kết quả xấu; 出来 nhấn trà tràn ra khỏi ly.",
+      "highlight": [
+        "洒"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "5d75042b-75e1-4251-ac52-3ddf92ac6936"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "77e79f29-67e8-49ab-ac2a-8c8b7c9be1ba",
+      "order": 2,
+      "zh": "茶洒在裤子上了，他觉得很不好意思。",
+      "pinyin": "Chá sǎ zài kùzi shang le, tā juéde hěn bù hǎoyìsi.",
+      "vi": "Trà đổ lên quần rồi, anh ấy thấy rất ngại.",
+      "analysis_vi": "洒在……上 nói vị trí chất lỏng rơi/vãi lên bề mặt.",
+      "highlight": [
+        "洒"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "5d75042b-75e1-4251-ac52-3ddf92ac6936"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "afaef247-7057-48f4-ac18-0c19eb732c2f",
+      "order": 3,
+      "zh": "请把杯子拿稳一点儿，别把水洒在登机牌儿上。",
+      "pinyin": "Qǐng bǎ bēizi ná wěn yìdiǎnr, bié bǎ shuǐ sǎ zài dēngjīpáir shang.",
+      "vi": "Hãy cầm ly chắc hơn một chút, đừng làm nước đổ lên boarding pass.",
+      "analysis_vi": "把杯子拿稳 là cầm cho chắc; 把水洒在……上 là làm nước đổ lên vị trí cụ thể.",
+      "highlight": [
+        "洒"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "5d75042b-75e1-4251-ac52-3ddf92ac6936"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong tiếng Trung, khi làm đổ nước/trà lên người khác, câu xin lỗi tự nhiên là 不好意思，我不小心把茶洒了。 Nếu cần nhờ xử lý, có thể nói 麻烦给我一点纸巾 – phiền cho tôi ít khăn giấy.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "12a16e40-769a-4822-a7ec-8bcbd25c6b91",
+      "order": 1,
+      "rule_vi": "Nhầm 洒 và 倒.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 洒 theo cụm và ngữ cảnh bài 18; nghĩa chính là làm đổ, rơi vãi, rắc/đổ ra.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "洒",
+    "back": "làm đổ, rơi vãi, rắc/đổ ra",
+    "hint": "sǎ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5d75042b-75e1-4251-ac52-3ddf92ac6936",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_6341e9a02c9f4bf2",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "四合院儿",
+  "pinyin": "sìhéyuànr",
+  "meaning_vi": "tứ hợp viện; nhà truyền thống bốn phía bao quanh sân",
+  "pos": "noun",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+    "type": "vocabulary_item",
+    "order": 4,
+    "hanzi": "四合院儿",
+    "pinyin": "sìhéyuànr",
+    "meaning_vi": "tứ hợp viện; nhà truyền thống bốn phía bao quanh sân",
+    "meaning_en": "courtyard house",
+    "pos": "noun",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "四合院儿",
+      "back": "sìhéyuànr — tứ hợp viện; nhà truyền thống bốn phía bao quanh sân",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

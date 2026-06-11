@@ -1,0 +1,324 @@
+{
+  "id": "7826628e-1b3a-40e7-bc8d-534a8377ca07",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "凉",
+  "pinyin": "liáng / liàng",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ trạng thái",
+    "raw_cn": "形/状态动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Lương / Lượng",
+    "meaning_vi": "mát, hơi lạnh; để nguội",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mát, hơi lạnh; để nguội"
+    ],
+    "short_definition_vi": "mát, hơi lạnh; để nguội",
+    "textbook_focus_vi": "mát, hơi lạnh; để nguội",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "凉",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "lạnh/băng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "băng, lạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "京",
+            "hanviet": "kinh",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mát, hơi lạnh; để nguội",
+        "modern_logic_vi": "凉 nhẹ hơn 冷; có 冫 nên nhớ nhóm nhiệt độ thấp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "băng, lạnh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "凉 có bộ 冫, thường liên quan đến lạnh. Lõi nghĩa hiện đại: nhiệt độ thấp hơn ấm/nóng, tạo cảm giác mát hoặc nguội. → 天气凉了 = trời mát/lạnh hơn rồi. → 茶凉了 = trà nguội rồi.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "凉快",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mát mẻ, dễ chịu, thường nói thời tiết/không gian/cảm giác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冷",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lạnh, có thể khó chịu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冰",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lạnh buốt/đá, hoặc băng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "凉快",
+        "right": "闷热",
+        "meaning_vi": "mát mẻ ↔ oi bức",
+        "note_vi": "mát mẻ ↔ oi bức",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "凉: mát, nguội, hơi lạnh."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "972e401a-b8a9-4953-b503-54a1c690905d",
+      "order": 1,
+      "zh": "茶凉了",
+      "pinyin": "",
+      "vi": "trà nguội rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0c30702b-3097-41dd-8b17-0116f85ff7c5",
+      "order": 2,
+      "zh": "天气凉了",
+      "pinyin": "",
+      "vi": "trời mát/lạnh hơn rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c54dede9-b967-4c0b-9126-5534850ca97e",
+      "order": 3,
+      "zh": "有点儿凉",
+      "pinyin": "",
+      "vi": "hơi mát/hơi lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06d1478e-9496-47e7-8228-1e063506b928",
+      "order": 4,
+      "zh": "手很凉",
+      "pinyin": "",
+      "vi": "tay lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e61c6d2-d197-45e1-900d-9062640683b1",
+      "order": 5,
+      "zh": "凉水",
+      "pinyin": "",
+      "vi": "nước mát/nước nguội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f11ab24d-dc14-4b87-bd48-aaa35ac2fc2a",
+      "order": 1,
+      "zh": "茶杯里的茶已经凉了，你要不要换一杯热的？",
+      "pinyin": "Chábēi lǐ de chá yǐjīng liáng le, nǐ yào bu yào huàn yì bēi rè de?",
+      "vi": "Trà trong tách đã nguội rồi, bạn có muốn đổi một ly nóng không?",
+      "analysis_vi": "茶凉了 là trà nguội, không còn nóng.",
+      "highlight": [
+        "凉"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "7826628e-1b3a-40e7-bc8d-534a8377ca07"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e65af87a-3e63-4d25-99f5-8918a73a794c",
+      "order": 2,
+      "zh": "飞机上的空调有点儿凉，最好把外套拿出来。",
+      "pinyin": "Fēijī shang de kōngtiáo yǒudiǎnr liáng, zuìhǎo bǎ wàitào ná chūlai.",
+      "vi": "Máy lạnh trên máy bay hơi lạnh/mát, tốt nhất lấy áo khoác ra.",
+      "analysis_vi": "把外套拿出来 là câu 把 có hướng 出来, lấy áo ra để mặc.",
+      "highlight": [
+        "凉"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "7826628e-1b3a-40e7-bc8d-534a8377ca07"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ea23b1b8-998a-4f43-95e3-7ffbe6cfb470",
+      "order": 3,
+      "zh": "起飞以后，机舱里慢慢凉下来了。",
+      "pinyin": "Qǐfēi yǐhòu, jīcāng lǐ mànmàn liáng xiàlai le.",
+      "vi": "Sau khi cất cánh, trong khoang máy bay từ từ mát/lạnh xuống.",
+      "analysis_vi": "凉下来 là chuyển sang trạng thái mát hơn/lạnh hơn.",
+      "highlight": [
+        "凉"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "7826628e-1b3a-40e7-bc8d-534a8377ca07"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Người Trung khá hay phân biệt 热水 và 凉水. Ở Trung Quốc, nhiều người có thói quen uống nước ấm/nước nóng, nhất là người lớn tuổi. Vì vậy 凉水 đôi khi không được xem là lựa chọn “tốt cho bụng” trong quan niệm đời sống truyền thống.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0e4d2dfb-2025-4e18-9d0c-931a1102ad7b",
+      "order": 1,
+      "rule_vi": "Dùng 凉 và 冷 như nhau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 凉 theo cụm và ngữ cảnh bài 18; nghĩa chính là mát, hơi lạnh; để nguội.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "凉",
+    "back": "mát, hơi lạnh; để nguội",
+    "hint": "liáng / liàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7826628e-1b3a-40e7-bc8d-534a8377ca07",
+    "source_lesson_vocab_id": null
+  }
+}

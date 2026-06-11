@@ -1,0 +1,267 @@
+{
+  "id": "02531807-3858-4af5-a056-fb14cb4e463c",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "爆",
+  "pinyin": "bào",
+  "pos": {
+    "raw_vi": "Động từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动词 / 语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bạo",
+    "meaning_vi": "nổ, bùng, vỡ bật ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nổ, bùng, vỡ bật ra"
+    ],
+    "short_definition_vi": "Nổ/vỡ bật ra, thường mạnh và bất ngờ.",
+    "textbook_focus_vi": "Dùng trong 车胎爆了.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "爆",
+        "lishu_vi": "bạo",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa/cháy",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "火 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa/cháy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa/cháy",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "火 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "火 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nổ/bùng",
+        "modern_logic_vi": "nổ/bùng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 火 nên liên hệ nổ/bùng.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "破",
+        "pinyin": "pò",
+        "meaning_vi": "vỡ/rách/hỏng",
+        "difference_vi": "破 chung hơn; 爆 nhấn nổ/bật mạnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0b664aac-ff9c-4b0a-852d-4b82f3b67bb6",
+      "order": 1,
+      "zh": "车胎爆了",
+      "pinyin": "",
+      "vi": "lốp nổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4f33a760-50d7-4d1b-93bf-29a66159d353",
+      "order": 2,
+      "zh": "爆胎",
+      "pinyin": "",
+      "vi": "nổ lốp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "308c7a9f-9fb3-4e85-90e5-d3309e1f0070",
+      "order": 3,
+      "zh": "爆炸",
+      "pinyin": "",
+      "vi": "phát nổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "509624ea-9201-46fa-ab2d-468a30ec4a1a",
+      "order": 4,
+      "zh": "爆发",
+      "pinyin": "",
+      "vi": "bùng phát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8830bbb6-d3b8-4e5f-b036-e7903a020313",
+      "order": 1,
+      "zh": "车胎爆了。",
+      "pinyin": "",
+      "vi": "Lốp xe nổ rồi.",
+      "analysis_vi": "爆了 báo kết quả đột ngột.",
+      "highlight": [
+        "爆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "02531807-3858-4af5-a056-fb14cb4e463c"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "967f034a-4e4f-44d8-a325-9a6ef6192e9e",
+      "order": 2,
+      "zh": "他正在打气，车胎突然嘭的一声爆了。",
+      "pinyin": "",
+      "vi": "Anh ấy đang bơm thì lốp đột nhiên nổ bùm.",
+      "analysis_vi": "突然 + 嘭的一声 + 爆了.",
+      "highlight": [
+        "爆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "02531807-3858-4af5-a056-fb14cb4e463c"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8834d0cf-5209-4281-855a-096037218937",
+      "order": 1,
+      "rule_vi": "Không dùng 爆 cho mọi loại hỏng; 拉链儿坏了 chứ không phải 拉链儿爆了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 爆 cho mọi loại hỏng; 拉链儿坏了 chứ không phải 拉链儿爆了.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "爆",
+    "back": "nổ, bùng, vỡ bật ra",
+    "hint": "bào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "02531807-3858-4af5-a056-fb14cb4e463c",
+    "source_lesson_vocab_id": null
+  }
+}

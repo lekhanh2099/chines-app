@@ -1,0 +1,270 @@
+{
+  "id": "60faf431-9606-4cbe-9ac5-c60d9001ed91",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "标准",
+  "pinyin": "biāozhǔn",
+  "pos": {
+    "raw_vi": "Danh từ / tính từ",
+    "raw_cn": "名词/形容词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tiêu chuẩn",
+    "meaning_vi": "tiêu chuẩn; chuẩn mực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiêu chuẩn",
+      "chuẩn mực"
+    ],
+    "short_definition_vi": "tiêu chuẩn",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "标",
+        "lishu_vi": "tiêu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mốc, tiêu chí",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "准",
+        "lishu_vi": "chuẩn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuẩn",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "标准 = mốc chuẩn dùng để đánh giá.",
+    "memory_tip_vi": "Nhớ 符合标准, 达到标准.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "条件",
+        "pinyin": "",
+        "meaning_vi": "条件",
+        "difference_vi": "条件 là yếu tố cần có; 标准 là thước đo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1c21606a-1cb4-4f5e-a0dd-be8ff70b4a37",
+      "order": 1,
+      "zh": "幸福的标准",
+      "pinyin": "xìngfú de biāozhǔn",
+      "vi": "tiêu chuẩn hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1bf79956-3aa6-471a-b359-8b3ad1496fce",
+      "order": 2,
+      "zh": "统一标准",
+      "pinyin": "tǒngyī biāozhǔn",
+      "vi": "thống nhất tiêu chuẩn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27170de2-d85b-4262-8e11-e7dc7d67265a",
+      "order": 3,
+      "zh": "符合标准",
+      "pinyin": "fúhé biāozhǔn",
+      "vi": "phù hợp tiêu chuẩn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0cac405-fd22-4550-b2f1-4e903747c9ad",
+      "order": 4,
+      "zh": "达到标准",
+      "pinyin": "dádào biāozhǔn",
+      "vi": "đạt tiêu chuẩn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e768e2a9-523f-4040-9084-c2a0ff84c1b4",
+      "order": 1,
+      "zh": "这个答案不符合标准。",
+      "pinyin": "Zhè ge dá’àn bù fúhé biāozhǔn.",
+      "vi": "Đáp án này không phù hợp tiêu chuẩn.",
+      "analysis_vi": "符合标准 là collocation thường gặp.",
+      "highlight": [
+        "标准"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "60faf431-9606-4cbe-9ac5-c60d9001ed91"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "96553acb-2526-408d-98f8-5a925d0cfaa6",
+      "order": 2,
+      "zh": "对不同的人来说，幸福的标准可能完全不同。",
+      "pinyin": "Duì bùtóng de rén lái shuō, xìngfú de biāozhǔn kěnéng wánquán bùtóng.",
+      "vi": "Đối với người khác nhau, tiêu chuẩn hạnh phúc có thể hoàn toàn khác.",
+      "analysis_vi": "Gài 对……来说.",
+      "highlight": [
+        "标准"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "60faf431-9606-4cbe-9ac5-c60d9001ed91"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "标准 hay gặp trong học tập, thi cử, công việc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "19a5aa7b-01fe-483d-a283-7756f105f139",
+      "order": 1,
+      "rule_vi": "我的标准提高了 phải có ngữ cảnh rõ là tiêu chuẩn gì.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的标准提高了。",
+          "pinyin": "Wǒ de biāozhǔn tígāo le.",
+          "vi": "Mơ hồ nếu không nói tiêu chuẩn gì.",
+          "note_vi": "Cần có danh từ định rõ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "生活标准提高了。",
+          "pinyin": "Shēnghuó biāozhǔn tígāo le.",
+          "vi": "Tiêu chuẩn sống đã nâng cao.",
+          "note_vi": "生活标准 là cụm rõ nghĩa.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "标准",
+    "back": "tiêu chuẩn; chuẩn mực",
+    "hint": "biāozhǔn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "60faf431-9606-4cbe-9ac5-c60d9001ed91",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "id": "e8b6760e-1468-47f6-bf43-1c430d87b6ab",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "水仙",
+  "pinyin": "shuǐxiān",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Thủy tiên",
+    "meaning_vi": "hoa thủy tiên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hoa thủy tiên"
+    ],
+    "short_definition_vi": "hoa thủy tiên",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "hoa cảnh, Tết, trang trí nhà cửa.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "水",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "水",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nước",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "仙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "山",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiên, thần tiên; thoát tục",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "水 là nước. 仙 là tiên, thanh nhã, thoát tục. → 水仙 là tên loài hoa, không nên dịch từng chữ là “tiên nước” trong câu thường. Cảnh báo: đây là tên thực vật cố định. Khi học, nên nhớ cả cụm 水仙花.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "水仙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hoa thủy tiên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "水仙花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hoa thủy tiên, cách nói đầy đủ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hoa nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "梅花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hoa mai Trung Quốc, biểu tượng mùa đông/xuân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "牡丹",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mẫu đơn, biểu tượng phú quý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 水仙 thanh nhã, hay trang trí Tết; 牡丹 sang trọng/phú quý; 梅花 chịu lạnh, biểu tượng khí tiết."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "63e539fa-fd3d-42bb-b8db-b7d7fcb5a6ff",
+      "order": 1,
+      "zh": "水仙花",
+      "pinyin": "",
+      "vi": "hoa thủy tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "59f4fb37-42f4-4f66-8377-f14c1081e6b7",
+      "order": 2,
+      "zh": "水仙开了",
+      "pinyin": "",
+      "vi": "hoa thủy tiên nở rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11a8a11d-93b0-4a2e-a882-e4f5688300f8",
+      "order": 3,
+      "zh": "一盆水仙",
+      "pinyin": "",
+      "vi": "một chậu thủy tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46edf8c2-e3a1-4906-a629-4a8577806f8e",
+      "order": 4,
+      "zh": "把水仙放在窗台上",
+      "pinyin": "",
+      "vi": "đặt hoa thủy tiên lên bệ cửa sổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23120466-d3c5-492b-a542-ba9e9de1e035",
+      "order": 5,
+      "zh": "春节摆水仙",
+      "pinyin": "",
+      "vi": "Tết bày hoa thủy tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d65c4798-f730-4976-938f-5ca87021473b",
+      "order": 1,
+      "zh": "窗台上放着一盆水仙，花已经开了。",
+      "pinyin": "Chuāngtái shang fàngzhe yì pén shuǐxiān, huā yǐjīng kāi le.",
+      "vi": "Trên bệ cửa sổ đang đặt một chậu thủy tiên, hoa đã nở rồi.",
+      "analysis_vi": "窗台上放着…… là câu tồn hiện; 花开了 dùng 开 với nghĩa “hoa nở”.",
+      "highlight": [
+        "水仙"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "e8b6760e-1468-47f6-bf43-1c430d87b6ab"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b9b39f9e-7f42-4948-834c-b6dc153ea6be",
+      "order": 2,
+      "zh": "联欢会以前，我们把水仙放在会场前边。",
+      "pinyin": "Liánhuānhuì yǐqián, wǒmen bǎ shuǐxiān fàng zài huìchǎng qiánbian.",
+      "vi": "Trước buổi liên hoan, chúng tôi đặt hoa thủy tiên ở phía trước hội trường.",
+      "analysis_vi": "把水仙放在…… là câu chữ 把 có kết quả vị trí rõ.",
+      "highlight": [
+        "水仙"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "e8b6760e-1468-47f6-bf43-1c430d87b6ab"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b0e5e34f-a6b0-476f-876a-d4bf0320728b",
+      "order": 3,
+      "zh": "这盆水仙是老师亲手养的，所以大家都很小心。",
+      "pinyin": "Zhè pén shuǐxiān shì lǎoshī qīnshǒu yǎng de, suǒyǐ dàjiā dōu hěn xiǎoxīn.",
+      "vi": "Chậu thủy tiên này là do thầy/cô tự tay chăm, nên mọi người đều rất cẩn thận.",
+      "analysis_vi": "是……的 nhấn người thực hiện; 亲手养 làm tăng sắc thái tình cảm.",
+      "highlight": [
+        "水仙"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "e8b6760e-1468-47f6-bf43-1c430d87b6ab"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 水仙",
+    "content_vi": "Ở miền Nam Trung Quốc, đặc biệt vùng Phúc Kiến, Quảng Đông, Hồng Kông, 水仙花 thường được bày dịp Tết. Hoa nở đúng đầu năm được xem là điềm tốt, tượng trưng cho may mắn và khí xuân vào nhà.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e0f41154-771f-4518-b96c-b45fd7c590e8",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 水仙 với tên người hoặc dịch từng chữ. Tự nhiên: 水仙开了。 Shuǐxiān kāi le. Hoa thủy tiên nở rồi. 窗台上放着一盆水仙。 Chuāngtái shang fàngzhe yì pén shuǐxiān. Trên bệ cửa sổ đặt một chậu thủy tiên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "水仙",
+    "back": "hoa thủy tiên",
+    "hint": "shuǐxiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e8b6760e-1468-47f6-bf43-1c430d87b6ab",
+    "source_lesson_vocab_id": null
+  }
+}

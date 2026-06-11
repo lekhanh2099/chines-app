@@ -1,0 +1,204 @@
+{
+  "id": "03eeb32d-3aaf-4d9a-8004-2ad6aedbb5ac",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "鞋带",
+  "pinyin": "xiédài",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hài đới",
+    "meaning_vi": "dây giày",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dây giày"
+    ],
+    "short_definition_vi": "dây giày",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鞋",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "革",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cách",
+          "radical_name_zh": "",
+          "hanviet": "cách",
+          "meaning_vi": "da thuộc; đồ da",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "革",
+            "hanviet": "cách",
+            "meaning_vi": "da thuộc; đồ da",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "革",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cách",
+              "radical_name_zh": "",
+              "hanviet": "cách",
+              "meaning_vi": "da thuộc; đồ da",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "圭",
+            "hanviet": "khuê",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giày",
+        "modern_logic_vi": "鞋 = đồ đi ở chân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "带",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dây; đai; mang theo",
+        "modern_logic_vi": "Trong 鞋带, 带 = dây/đai.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "鞋带 = dây giày.",
+    "memory_tip_vi": "",
+    "warning_vi": "系 trong 系鞋带 đọc jì, nghĩa là buộc/thắt.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a711286c-9448-4881-9321-25bac09eb12f",
+      "order": 1,
+      "zh": "鞋带",
+      "pinyin": "",
+      "vi": "dây giày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9c943373-88cf-495c-9802-3bf7f6a2e80d",
+      "order": 1,
+      "zh": "你的鞋带开了，小心摔倒。",
+      "pinyin": "Nǐ de xiédài kāi le, xiǎoxīn shuāidǎo.",
+      "vi": "Dây giày của bạn tuột rồi, cẩn thận bị ngã.",
+      "analysis_vi": "系 trong 系鞋带 đọc jì, nghĩa là buộc/thắt.",
+      "level": "basic",
+      "highlight": [
+        "鞋带"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03eeb32d-3aaf-4d9a-8004-2ad6aedbb5ac"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4dfafd9b-f1f9-4e2a-9248-2ceddb4474ea",
+      "kind": "usage",
+      "text_vi": "系 trong 系鞋带 đọc jì, nghĩa là buộc/thắt.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "鞋带",
+    "back": "dây giày",
+    "hint": "xiédài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "03eeb32d-3aaf-4d9a-8004-2ad6aedbb5ac",
+    "source_lesson_vocab_id": null
+  }
+}

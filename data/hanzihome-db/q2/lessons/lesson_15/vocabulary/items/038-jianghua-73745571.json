@@ -1,0 +1,358 @@
+{
+  "id": "91fda283-ad23-4494-a9f5-e832ad3a5782",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "讲话",
+  "pinyin": "jiǎnghuà",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Giảng thoại",
+    "meaning_vi": "nói chuyện; phát biểu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nói chuyện; phát biểu"
+    ],
+    "short_definition_vi": "nói chuyện; phát biểu",
+    "textbook_focus_vi": "nói chuyện; phát biểu",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "讲",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "井",
+            "hanviet": "tỉnh",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, giảng, kể, bàn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "话",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lời nói, câu chuyện, tiếng nói",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "讲 = nói/giảng; 话 = lời nói. 讲话 = nói chuyện/phát biểu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "说话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói chuyện nói chung, khẩu ngữ rộng nhất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发言",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phát biểu ý kiến trong họp/thảo luận",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "演讲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "diễn thuyết, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "聊天",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trò chuyện phiếm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "讲话",
+        "right": "沉默",
+        "meaning_vi": "nói/phát biểu ↔ im lặng",
+        "note_vi": "Đối lập hành vi nói.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b553a914-7058-4a35-9039-d4ca98f8033b",
+      "order": 1,
+      "zh": "主持人讲话",
+      "pinyin": "",
+      "vi": "người dẫn chương trình phát biểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3c55a9a1-5fe1-4621-8d2e-e0e51fe7f8c2",
+      "order": 2,
+      "zh": "新郎讲话",
+      "pinyin": "",
+      "vi": "chú rể phát biểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47be1610-d785-4c93-b228-fa113b83d419",
+      "order": 3,
+      "zh": "老师讲话",
+      "pinyin": "",
+      "vi": "thầy/cô nói/phát biểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1dd37c65-95b9-46ff-a8a1-73c28dea789b",
+      "order": 4,
+      "zh": "上台讲话",
+      "pinyin": "",
+      "vi": "lên bục phát biểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b622e44-0047-4284-97cc-95af04e5a920",
+      "order": 5,
+      "zh": "讲话很清楚",
+      "pinyin": "",
+      "vi": "nói rất rõ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9235c005-f78f-4413-aed7-4a7aab6567ab",
+      "order": 1,
+      "zh": "主持人正在讲话。",
+      "pinyin": "Zhǔchírén zhèngzài jiǎnghuà.",
+      "vi": "Người dẫn chương trình đang phát biểu.",
+      "analysis_vi": "正在 nhấn hành động đang diễn ra.",
+      "highlight": [
+        "讲话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "91fda283-ad23-4494-a9f5-e832ad3a5782"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c6b407fe-f212-4733-932a-2da42cf5a8fe",
+      "order": 2,
+      "zh": "主持人站着讲话，手里拿着麦克风。",
+      "pinyin": "Zhǔchírén zhànzhe jiǎnghuà, shǒu lǐ názhe màikèfēng.",
+      "vi": "Người dẫn chương trình đứng phát biểu, trong tay cầm micro.",
+      "analysis_vi": "站着讲话 = đứng mà phát biểu; 拿着 = đang cầm.",
+      "highlight": [
+        "讲话",
+        "站着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "91fda283-ad23-4494-a9f5-e832ad3a5782"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "333fef8a-5846-4619-a14a-9779536abb33",
+      "order": 1,
+      "rule_vi": "Không dùng 聊天 cho phát biểu trang trọng trên bục; nói 主持人在讲台上讲话.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "讲话",
+    "back": "nói chuyện; phát biểu",
+    "hint": "jiǎnghuà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong hội nghị/lễ cưới, 讲话 thường mang sắc thái phát biểu trước tập thể.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "91fda283-ad23-4494-a9f5-e832ad3a5782",
+    "source_lesson_vocab_id": null
+  }
+}

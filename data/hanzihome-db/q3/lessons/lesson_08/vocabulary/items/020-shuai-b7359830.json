@@ -1,0 +1,203 @@
+{
+  "id": "6741c0a5-0244-47c9-aba9-5dca8b5805a1",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "甩",
+  "pinyin": "shuǎi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "suất",
+    "meaning_vi": "vung, quăng, hất; bỏ rơi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vung",
+      "quăng",
+      "hất",
+      "bỏ rơi"
+    ],
+    "short_definition_vi": "vung, quăng, hất; bỏ rơi",
+    "textbook_focus_vi": "甩 học theo động tác vung mạnh ra ngoài; mở rộng sang bỏ lại/bỏ người yêu.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "động tác, tình cảm",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "甩",
+        "lishu_vi": "suất",
+        "structure_note_vi": "Chữ độc thể; học theo động tác vung/hất.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vung, hất, quăng",
+        "modern_logic_vi": "Trong từ này, 甩 góp phần tạo nghĩa 'vung, hất, quăng'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "甩 học theo động tác vung mạnh ra ngoài; mở rộng sang bỏ lại/bỏ người yêu.",
+    "memory_tip_vi": "Nhớ qua cụm: 甩手 = vung tay.",
+    "warning_vi": "甩 mạnh hơn 放, dễ tạo cảm giác tức giận hoặc bỏ rơi.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "扔",
+        "pinyin": "rēng",
+        "meaning_vi": "ném, vứt",
+        "difference_vi": "Tập trung vào ném đi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "分手",
+        "pinyin": "fēnshǒu",
+        "meaning_vi": "chia tay",
+        "difference_vi": "Trung tính hơn 被甩 trong tình yêu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "甩 mạnh hơn 放, dễ tạo cảm giác tức giận hoặc bỏ rơi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fc356038-72d3-4c47-bb80-74df34257996",
+      "order": 1,
+      "zh": "甩手",
+      "pinyin": "shuǎi shǒu",
+      "vi": "vung tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "855ee62c-1884-4a41-8045-c2d176f15d12",
+      "order": 2,
+      "zh": "甩在后面",
+      "pinyin": "shuǎi zài hòumian",
+      "vi": "bỏ lại phía sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c6fd352-109d-4b7f-aa5f-1498c6fee803",
+      "order": 3,
+      "zh": "被女朋友甩了",
+      "pinyin": "bèi nǚpéngyou shuǎi le",
+      "vi": "bị bạn gái đá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "881bfc14-5b84-4b7e-914c-c240b0e4a249",
+      "order": 1,
+      "zh": "他一听到这个消息，就把花甩在一边。",
+      "pinyin": "Tā yì tīng dào zhège xiāoxi, jiù bǎ huā shuǎi zài yìbiān.",
+      "vi": "Anh ấy vừa nghe tin này liền quăng bó hoa sang một bên.",
+      "analysis_vi": "甩在一边 là hành động mạnh có cảm xúc.",
+      "highlight": [
+        "甩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6741c0a5-0244-47c9-aba9-5dca8b5805a1"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "被甩了 là khẩu ngữ tình yêu, nghĩa là bị đá/bị bỏ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "021e7ac0-5ed5-489d-8bdd-c55897d2b2cb",
+      "order": 1,
+      "rule_vi": "甩 mạnh hơn 放, dễ tạo cảm giác tức giận hoặc bỏ rơi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "把花放在桌子上。",
+          "pinyin": "Bǎ huā fàng zài zhuōzi shang.",
+          "vi": "Đặt hoa lên bàn.",
+          "note_vi": "Nếu không có cảm xúc mạnh, dùng 放.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "甩",
+    "back": "vung, quăng, hất; bỏ rơi",
+    "hint": "shuǎi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6741c0a5-0244-47c9-aba9-5dca8b5805a1",
+    "source_lesson_vocab_id": null
+  }
+}

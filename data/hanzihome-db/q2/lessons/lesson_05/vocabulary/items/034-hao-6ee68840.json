@@ -1,0 +1,276 @@
+{
+  "id": "4984930d-f902-443a-8d16-82c61f82c707",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "好",
+  "pinyin": "hǎo",
+  "pos": {
+    "raw_vi": "Tính từ / Bổ ngữ kết quả / Phó từ trong một số cấu trúc",
+    "raw_cn": "形 / 结果补语 / 副",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "hảo",
+    "meaning_vi": "tốt, hay; khỏe; dễ",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "tốt, hay; khỏe; dễ",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, hậu tố danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, dễ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ giới",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Đa nghĩa: tốt/khỏe/dễ/làm xong; phải học theo cụm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不错",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khá ổn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "优秀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ưu tú/xuất sắc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好处",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lợi ích, danh từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "560a6449-2493-42bb-be34-446a1d4b665f",
+      "order": 1,
+      "zh": "很好",
+      "pinyin": "",
+      "vi": "rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a7f528ad-760c-4ccf-b47d-642dc7a26a10",
+      "order": 2,
+      "zh": "挺好",
+      "pinyin": "",
+      "vi": "khá tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f8f6640-7463-4175-991c-c8f291cafb0c",
+      "order": 3,
+      "zh": "好记",
+      "pinyin": "",
+      "vi": "dễ nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4020689a-fe6a-4acd-8818-0f7254638efc",
+      "order": 1,
+      "zh": "这个词不太好记。",
+      "pinyin": "Zhège cí bú tài hǎo jì.",
+      "vi": "Từ này không dễ nhớ lắm.",
+      "en": "",
+      "highlight": [
+        "好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4984930d-f902-443a-8d16-82c61f82c707"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "挺好 nghĩa là khá ổn, không nhất thiết là cực kỳ tốt.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c1a9fbbc-2376-407b-b668-2d3e076b0707",
+      "order": 1,
+      "title_vi": "Phân biệt 好记/记好/记住",
+      "explanation_vi": "好记 là dễ nhớ; 记好 là ghi/nhớ cho tốt; 记住 là nhớ chắc.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "这个字很好记。",
+        "请把这个地址记好。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "好",
+    "back": "tốt, hay; khỏe; dễ",
+    "hint": "hǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "好"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4984930d-f902-443a-8d16-82c61f82c707",
+    "source_lesson_vocab_id": null
+  }
+}

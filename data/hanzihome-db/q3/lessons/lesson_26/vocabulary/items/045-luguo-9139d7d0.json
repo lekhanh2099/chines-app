@@ -1,0 +1,297 @@
+{
+  "id": "c5e9bc80-e5a5-45bd-94ed-c48f0786f0bc",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "路过",
+  "pinyin": "lùguò",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "lộ quá",
+    "meaning_vi": "đi ngang qua, đi qua trên đường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi ngang qua",
+      "đi qua trên đường"
+    ],
+    "short_definition_vi": "đi ngang qua, đi qua trên đường",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "路",
+        "lishu_vi": "lộ",
+        "structure_note_vi": "Chữ có thành phần/bộ 足; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân, đi lại",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân, đi lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân, đi lại",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "足 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 路 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "过",
+        "lishu_vi": "quá",
+        "structure_note_vi": "Chữ có thành phần/bộ 辶; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, chuyển động",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, chuyển động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, chuyển động",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 过 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "路过 trong bài được học theo nghĩa: đi ngang qua, đi qua trên đường.",
+    "memory_tip_vi": "Nhớ 路过 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "经过",
+        "pinyin": "jīngguò",
+        "meaning_vi": "đi qua/trải qua/quá trình",
+        "difference_vi": "Rộng nghĩa hơn, còn là danh từ “quá trình”.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "事情的经过 đúng; không nói 事情的路过."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8c89ac1f-b6f2-41c5-b1bd-e3d0c89d5944",
+      "order": 1,
+      "zh": "路过这里",
+      "pinyin": "",
+      "vi": "đi ngang qua đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e02ae8d6-251b-488b-9556-6a42c43db357",
+      "order": 2,
+      "zh": "刚好路过",
+      "pinyin": "",
+      "vi": "vừa hay đi ngang qua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ad25103-b4aa-4d0d-8b19-171026798c16",
+      "order": 3,
+      "zh": "路过坟墓",
+      "pinyin": "",
+      "vi": "đi ngang qua mộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7b268101-f126-4162-b9ad-5f003e4a98ea",
+      "order": 1,
+      "zh": "我刚才路过你家，但是没进去。",
+      "pinyin": "",
+      "vi": "Lúc nãy tôi đi ngang qua nhà bạn, nhưng không vào.",
+      "analysis_vi": "路过 cho biết nơi đó không phải đích chính.",
+      "highlight": [
+        "路过"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c5e9bc80-e5a5-45bd-94ed-c48f0786f0bc"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6c0407f2-8577-48d5-9042-8343e88388cf",
+      "order": 2,
+      "zh": "迎亲的队伍路过梁山伯的坟墓时，祝英台突然要求停下来。",
+      "pinyin": "",
+      "vi": "Khi đoàn rước dâu đi ngang qua mộ Lương Sơn Bá, Chúc Anh Đài đột nhiên yêu cầu dừng lại.",
+      "analysis_vi": "路过……时 là mẫu sát bài.",
+      "highlight": [
+        "路过"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c5e9bc80-e5a5-45bd-94ed-c48f0786f0bc"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "路过 tạo cảm giác ngẫu nhiên nhưng định mệnh trong kết cấu truyện.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "135944db-2503-4bdd-8742-7b4ed15c187e",
+      "order": 1,
+      "rule_vi": "事情的经过 đúng; không nói 事情的路过.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "路过",
+    "back": "đi ngang qua, đi qua trên đường",
+    "hint": "lùguò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c5e9bc80-e5a5-45bd-94ed-c48f0786f0bc",
+    "source_lesson_vocab_id": null
+  }
+}

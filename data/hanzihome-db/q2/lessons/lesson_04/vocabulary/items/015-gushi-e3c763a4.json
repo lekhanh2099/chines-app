@@ -1,0 +1,288 @@
+{
+  "id": "51646527-6d9d-4aa0-97ed-27e4fde426bf",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "故事",
+  "pinyin": "gùshi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "van_ban"
+  ],
+  "meaning": {
+    "hanviet": "Cố sự",
+    "meaning_vi": "câu chuyện; truyện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "câu chuyện",
+      "truyện"
+    ],
+    "short_definition_vi": "câu chuyện; truyện",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "故",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "古",
+            "hanviet": "cổ",
+            "meaning_vi": "cũ / xưa",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động / đánh khẽ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cũ, nguyên nhân, sự việc đã qua",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động / đánh khẽ",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "事",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc, sự việc, chuyện",
+        "modern_logic_vi": "Không tách sâu theo hình hiện đại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "故事 = chuyện/sự việc được kể lại thành mạch có tình tiết.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小说",
+        "pinyin": "",
+        "meaning_vi": "tiểu thuyết",
+        "difference_vi": "thể loại cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "事情",
+        "pinyin": "",
+        "meaning_vi": "sự việc",
+        "difference_vi": "không nhất thiết có tính kể chuyện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "故事",
+        "right": "事情",
+        "meaning_vi": "câu chuyện ↔ sự việc",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2f542ef6-b5b6-4829-91cb-b4b9af3575ac",
+      "order": 1,
+      "zh": "讲故事",
+      "pinyin": "",
+      "vi": "kể chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d5077f88-17dc-4d4c-98f3-226b7ea1a465",
+      "order": 2,
+      "zh": "一个故事",
+      "pinyin": "",
+      "vi": "một câu chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e7b1510-4a16-4810-a817-29ae086c9c63",
+      "order": 3,
+      "zh": "故事书",
+      "pinyin": "",
+      "vi": "sách truyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7f42ef64-a7d2-489f-bb2d-485f796500d2",
+      "order": 1,
+      "zh": "这个故事很有意思。",
+      "pinyin": "Zhège gùshi hěn yǒu yìsi.",
+      "vi": "Câu chuyện này rất thú vị.",
+      "analysis_vi": "有意思 = thú vị.",
+      "highlight": [
+        "故事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "51646527-6d9d-4aa0-97ed-27e4fde426bf"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7aaed2cd-0ddb-4f5a-ba2f-a571861654c1",
+      "order": 2,
+      "zh": "老师让我们把这个故事念完。",
+      "pinyin": "Lǎoshī ràng wǒmen bǎ zhège gùshi niàn wán.",
+      "vi": "Thầy/cô bảo chúng tôi đọc xong câu chuyện này.",
+      "analysis_vi": "念完 dùng 完.",
+      "highlight": [
+        "故事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "51646527-6d9d-4aa0-97ed-27e4fde426bf"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "故事 không chỉ là truyện thiếu nhi; có thể là chuyện đời, chuyện lịch sử.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9ad8413b-28f3-4768-a64d-da88494510d2",
+      "order": 1,
+      "rule_vi": "Không dùng 故事 máy móc cho “story” báo chí.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我有一个故事。",
+          "pinyin": "Wǒ yǒu yí ge gùshi.",
+          "vi": "Tôi có một câu chuyện.",
+          "note_vi": "Dùng khi kể chuyện.",
+          "notes": []
+        },
+        {
+          "zh": "我有一件事要告诉你。",
+          "pinyin": "Wǒ yǒu yí jiàn shì yào gàosu nǐ.",
+          "vi": "Tôi có một việc muốn nói với bạn.",
+          "note_vi": "事 là sự việc.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "故事",
+    "back": "câu chuyện; truyện",
+    "hint": "gùshi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "van_ban"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "51646527-6d9d-4aa0-97ed-27e4fde426bf",
+    "source_lesson_vocab_id": null
+  }
+}

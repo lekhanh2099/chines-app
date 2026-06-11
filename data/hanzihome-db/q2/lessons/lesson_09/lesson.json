@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q2",
+  "lessonIndex": 9,
+  "id": "e0a72335-eb76-4e72-9d14-df62242a654d",
+  "title": {
+    "zh": "快上来吧，要开车了",
+    "pinyin": "Kuài shànglai ba, yào kāi chē le",
+    "vi": "Mau lên xe đi, xe sắp chạy rồi",
+    "en": "The bus is starting up, so let's hurry"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_09.json",
+    "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_09_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 9,
+    "lessonVocabItems": 43,
+    "sourceDeepVocabItems": 37,
+    "materializedVocabItems": 43,
+    "syntheticVocabItems": 6,
+    "hanziOnlyVocabMatches": 0,
+    "relations": 182,
+    "checkNeededRelations": 6,
+    "checkNeededVocabItems": 6,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

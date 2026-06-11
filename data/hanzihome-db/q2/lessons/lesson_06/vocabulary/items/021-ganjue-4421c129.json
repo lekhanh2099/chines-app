@@ -1,0 +1,345 @@
+{
+  "id": "4ca66a15-28dd-428b-bba3-4ab658605045",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "感觉",
+  "pinyin": "gǎnjué",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名 / 动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "music_experience"
+  ],
+  "meaning": {
+    "hanviet": "Cảm giác",
+    "meaning_vi": "cảm thấy; cảm giác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cảm thấy",
+      "cảm giác"
+    ],
+    "short_definition_vi": "cảm thấy; cảm giác",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "music experience",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "感",
+        "lishu_vi": "",
+        "structure_note_vi": "心 nằm dưới liên quan cảm xúc/tâm lý; 咸 là phần trên.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/cảm xúc/tâm lý",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "咸",
+            "hanviet": "hàm",
+            "meaning_vi": "mặn/đều",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảm nhận, cảm xúc",
+        "modern_logic_vi": "心 nằm dưới liên quan cảm xúc/tâm lý; 咸 là phần trên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "觉",
+        "lishu_vi": "",
+        "structure_note_vi": "见 liên quan thấy/nhận biết.",
+        "components": [
+          {
+            "text": "见",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "見",
+              "radical_variant": "见",
+              "radical_name_vi": "bộ Kiến",
+              "radical_name_zh": "",
+              "hanviet": "kiến",
+              "meaning_vi": "thấy/nhìn",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "见 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảm thấy, nhận ra; ngủ khi đọc jiào",
+        "modern_logic_vi": "见 liên quan thấy/nhận biết.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "感 là cảm nhận bên trong, 觉 là nhận biết; 感觉 là cảm nhận/cảm thấy.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "觉得",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm thấy/cho rằng, phổ thông",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "感到",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm thấy cảm xúc/trạng thái rõ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "认为",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho rằng, lý tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0de8cab4-c521-45a4-8ac5-417e00a3daa6",
+      "order": 1,
+      "zh": "感觉很好",
+      "pinyin": "",
+      "vi": "cảm thấy rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bda568a9-dfba-4b12-a0ee-5ed5de96b8a7",
+      "order": 2,
+      "zh": "感觉不错",
+      "pinyin": "",
+      "vi": "cảm giác không tệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "459727ef-c797-4512-bc7d-9b841bd75df2",
+      "order": 3,
+      "zh": "感觉很冷",
+      "pinyin": "",
+      "vi": "cảm thấy rất lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48e00df0-4c1d-484a-a5f5-15d225a596aa",
+      "order": 4,
+      "zh": "感觉舒服",
+      "pinyin": "",
+      "vi": "cảm thấy dễ chịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb516ed6-6c3e-45fd-801d-517c0366be0a",
+      "order": 5,
+      "zh": "没有感觉",
+      "pinyin": "",
+      "vi": "không có cảm giác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "32c6e540-5b85-4954-acca-00d200b97a9a",
+      "order": 1,
+      "zh": "我感觉今天比昨天冷。",
+      "pinyin": "Wǒ gǎnjué jīntiān bǐ zuótiān lěng.",
+      "vi": "Tôi cảm thấy hôm nay lạnh hơn hôm qua.",
+      "analysis_vi": "感觉 kéo cả mệnh đề phía sau.",
+      "highlight": [
+        "感觉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4ca66a15-28dd-428b-bba3-4ab658605045"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "662be1a9-d727-4e1e-a940-21e43399cbbe",
+      "order": 2,
+      "zh": "这家旅馆不大，可是感觉很舒服。",
+      "pinyin": "Zhè jiā lǚguǎn bú dà, kěshì gǎnjué hěn shūfu.",
+      "vi": "Nhà nghỉ này không lớn nhưng cảm giác rất dễ chịu.",
+      "analysis_vi": "可是 chuyển ý; 感觉 là đánh giá chủ quan.",
+      "highlight": [
+        "感觉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4ca66a15-28dd-428b-bba3-4ab658605045"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b9c91584-0b7e-471a-9320-e38335e40d3b",
+      "order": 1,
+      "rule_vi": "Dịch 我感觉 linh hoạt là tôi thấy/tôi cảm thấy, không luôn là tôi có cảm giác.",
+      "natural_examples": [
+        {
+          "zh": "我感觉这首歌很好听。",
+          "pinyin": "Wǒ gǎnjué zhè shǒu gē hěn hǎotīng.",
+          "vi": "Tôi thấy bài hát này rất hay.",
+          "note_vi": "Dịch tự nhiên theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我感觉这首歌很好听。",
+          "pinyin": "Wǒ gǎnjué zhè shǒu gē hěn hǎotīng.",
+          "vi": "Tôi thấy bài hát này rất hay.",
+          "note_vi": "Dịch tự nhiên theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "感觉",
+    "back": "cảm thấy; cảm giác",
+    "hint": "gǎnjué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "music_experience"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4ca66a15-28dd-428b-bba3-4ab658605045",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解",
+  "title_vi": "Đọc hiểu",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "赛马",
+      "title_vi": "Đua ngựa",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "supplementary_vocab": [
+        {
+          "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
+          "hanzi": "赛",
+          "pinyin": "sài",
+          "meaning_vi": "thi đấu, đua, tranh tài",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Động từ / Danh từ",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词 / 名词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
+          "hanzi": "马",
+          "pinyin": "mǎ",
+          "meaning_vi": "ngựa",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
+          "hanzi": "国王",
+          "pinyin": "guówáng",
+          "meaning_vi": "quốc vương, nhà vua",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
+          "hanzi": "等",
+          "pinyin": "děng",
+          "meaning_vi": "hạng, cấp, loại",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Động từ / Danh từ / Trợ từ liệt kê",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ / Trợ từ liệt kê",
+            "cn": "动词 / 名词 / 助词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "077e6c6c-3462-47b0-ac93-6b325f5b1145",
+          "hanzi": "上等",
+          "pinyin": "shàngděng",
+          "meaning_vi": "hạng nhất, loại tốt",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Tính từ / Danh từ chỉ cấp bậc",
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ chỉ cấp bậc",
+            "cn": "形容词 / 名词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "1df9ccc5-a9e5-4ebb-b9ff-814448bf99a3",
+          "hanzi": "中等",
+          "pinyin": "zhōngděng",
+          "meaning_vi": "hạng trung",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Tính từ / Danh từ chỉ cấp bậc",
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ chỉ cấp bậc",
+            "cn": "形容词 / 名词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "771cae37-068b-43bf-90d2-afbb351ce227",
+          "hanzi": "下等",
+          "pinyin": "xiàděng",
+          "meaning_vi": "hạng thấp",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Tính từ / Danh từ chỉ cấp bậc",
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ chỉ cấp bậc",
+            "cn": "形容词 / 名词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "9a34b8d8-43d8-4a1c-822f-284b33d357bf",
+          "hanzi": "场",
+          "pinyin": "chǎng",
+          "meaning_vi": "lượng từ cho trận đấu / hoạt động giải trí, thể thao",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Lượng từ",
+          "pos_detail": {
+            "vi": "Lượng từ",
+            "cn": "量词",
+            "normalized": "measure_word",
+            "schema_compatible_pos": "measure_word",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "id": "25bdb49c-da31-43a4-8707-18c57b2a7d1d",
+          "hanzi": "同样",
+          "pinyin": "tóngyàng",
+          "meaning_vi": "giống nhau, cùng kiểu, cùng cách",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos": "Tính từ / Phó từ",
+          "pos_detail": {
+            "vi": "Tính từ / Phó từ",
+            "cn": "形容词 / 副词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "两千多年前，有个人叫田忌，很喜欢赛马。一天，国王对他说：“听说你又买了一些好马，我们再赛赛怎么样？”",
+          "pinyin": "Liǎng qiān duō nián qián, yǒu ge rén jiào Tián Jì, hěn xǐhuan sài mǎ. Yì tiān, guówáng duì tā shuō: “Tīngshuō nǐ yòu mǎi le yìxiē hǎo mǎ, wǒmen zài sài sai zěnmeyàng?”",
+          "vi": "Hơn hai nghìn năm trước, có một người tên là Điền Kỵ, rất thích đua ngựa. Một hôm, nhà vua nói với ông: “Nghe nói ông lại mua vài con ngựa tốt, chúng ta lại đua thử thế nào?”",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "田忌知道自己的马没有国王的好，但是又不好意思说不赛，就答应了。",
+          "pinyin": "Tián Jì zhīdào zìjǐ de mǎ méiyǒu guówáng de hǎo, dànshì yòu bù hǎoyìsi shuō bú sài, jiù dāying le.",
+          "vi": "Điền Kỵ biết ngựa của mình không tốt bằng ngựa của nhà vua, nhưng lại ngại nói không đua, nên nhận lời.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "田忌和国王的马，都分三等：上等、中等、下等。比赛进行三场，每场赛三次，按最后的得分决定输赢。",
+          "pinyin": "Tián Jì hé guówáng de mǎ, dōu fēn sān děng: shàngděng, zhōngděng, xiàděng. Bǐsài jìnxíng sān chǎng, měi chǎng sài sān cì, àn zuìhòu de défēn juédìng shūyíng.",
+          "vi": "Ngựa của Điền Kỵ và nhà vua đều chia thành ba hạng: hạng tốt, hạng trung, hạng thấp. Cuộc đua tiến hành ba trận, mỗi trận đua ba lần, dựa vào điểm số cuối cùng để quyết định thắng thua.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "比赛开始了。第一场，田忌用同等级的马跟国王赛，田忌的马都没有国王的马跑得快，结果三次都输了。",
+          "pinyin": "Bǐsài kāishǐ le. Dì yī chǎng, Tián Jì yòng tóng děngjí de mǎ gēn guówáng sài, Tián Jì de mǎ dōu méiyǒu guówáng de mǎ pǎo de kuài, jiéguǒ sān cì dōu shū le.",
+          "vi": "Cuộc đua bắt đầu. Trận thứ nhất, Điền Kỵ dùng ngựa cùng hạng để đua với nhà vua; ngựa của Điền Kỵ đều không chạy nhanh bằng ngựa của nhà vua, kết quả cả ba lần đều thua.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "order": 5,
+          "zh": "田忌输了第一场，心里很不高兴。这时一个朋友对他说：“你不能这样赛，我教你一个办法……”",
+          "pinyin": "Tián Jì shū le dì yī chǎng, xīnli hěn bù gāoxìng. Zhè shí yí ge péngyou duì tā shuō: “Nǐ bù néng zhèyàng sài, wǒ jiāo nǐ yí ge bànfǎ...”",
+          "vi": "Điền Kỵ thua trận thứ nhất, trong lòng rất không vui. Lúc này một người bạn nói với ông: “Ông không thể đua như vậy, tôi chỉ cho ông một cách...”",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
+          "order": 6,
+          "zh": "第二场比赛开始了。田忌先用下等马跟国王的上等马赛，结果田忌输了。大家都想，这场比赛田忌又要输。但是第二次比赛，当国王用中等马时，田忌却用了上等马。田忌的上等马比国王的中等马跑得快，这次田忌赢了。第三次，田忌用中等马跟国王的下等马赛，结果又赢了。这样，第二场比赛国王输了。",
+          "pinyin": "Dì èr chǎng bǐsài kāishǐ le. Tián Jì xiān yòng xiàděng mǎ gēn guówáng de shàngděng mǎ sài, jiéguǒ Tián Jì shū le. Dàjiā dōu xiǎng, zhè chǎng bǐsài Tián Jì yòu yào shū. Dànshì dì èr cì bǐsài, dāng guówáng yòng zhōngděng mǎ shí, Tián Jì què yòng le shàngděng mǎ. Tián Jì de shàngděng mǎ bǐ guówáng de zhōngděng mǎ pǎo de kuài, zhè cì Tián Jì yíng le. Dì sān cì, Tián Jì yòng zhōngděng mǎ gēn guówáng de xiàděng mǎ sài, jiéguǒ yòu yíng le. Zhèyàng, dì èr chǎng bǐsài guówáng shū le.",
+          "vi": "Trận thứ hai bắt đầu. Điền Kỵ trước tiên dùng ngựa hạng thấp đua với ngựa hạng tốt của nhà vua, kết quả Điền Kỵ thua. Mọi người đều nghĩ trận này Điền Kỵ lại sắp thua. Nhưng lần đua thứ hai, khi nhà vua dùng ngựa hạng trung, Điền Kỵ lại dùng ngựa hạng tốt. Ngựa hạng tốt của Điền Kỵ chạy nhanh hơn ngựa hạng trung của nhà vua, lần này Điền Kỵ thắng. Lần thứ ba, Điền Kỵ dùng ngựa hạng trung đua với ngựa hạng thấp của nhà vua, kết quả lại thắng. Như vậy, trận thứ hai nhà vua thua.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
+          "order": 7,
+          "zh": "第三场跟第二场一样，田忌用同样的方法又赢了国王。比赛的结果是二比一，田忌赢了。",
+          "pinyin": "Dì sān chǎng gēn dì èr chǎng yíyàng, Tián Jì yòng tóngyàng de fāngfǎ yòu yíng le guówáng. Bǐsài de jiéguǒ shì èr bǐ yī, Tián Jì yíng le.",
+          "vi": "Trận thứ ba giống trận thứ hai, Điền Kỵ dùng cùng cách đó lại thắng nhà vua. Kết quả cuộc đua là hai - một, Điền Kỵ thắng.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "translation_vi": [
+        "Hơn hai nghìn năm trước, có một người tên là Điền Kỵ, rất thích đua ngựa. Một hôm, nhà vua nói với ông: “Nghe nói ông lại mua vài con ngựa tốt, chúng ta lại đua thử thế nào?”",
+        "Điền Kỵ biết ngựa của mình không tốt bằng ngựa của nhà vua, nhưng lại ngại nói không đua, nên nhận lời.",
+        "Ngựa của Điền Kỵ và nhà vua đều chia thành ba hạng: hạng tốt, hạng trung, hạng thấp. Cuộc đua tiến hành ba trận, mỗi trận đua ba lần, dựa vào điểm số cuối cùng để quyết định thắng thua.",
+        "Cuộc đua bắt đầu. Trận thứ nhất, Điền Kỵ dùng ngựa cùng hạng để đua với nhà vua; ngựa của Điền Kỵ đều không chạy nhanh bằng ngựa của nhà vua, kết quả cả ba lần đều thua.",
+        "Điền Kỵ thua trận thứ nhất, trong lòng rất không vui. Lúc này một người bạn nói với ông: “Ông không thể đua như vậy, tôi chỉ cho ông một cách...”",
+        "Trận thứ hai bắt đầu. Điền Kỵ trước tiên dùng ngựa hạng thấp đua với ngựa hạng tốt của nhà vua, kết quả Điền Kỵ thua. Mọi người đều nghĩ trận này Điền Kỵ lại sắp thua. Nhưng lần đua thứ hai, khi nhà vua dùng ngựa hạng trung, Điền Kỵ lại dùng ngựa hạng tốt. Ngựa hạng tốt của Điền Kỵ chạy nhanh hơn ngựa hạng trung của nhà vua, lần này Điền Kỵ thắng. Lần thứ ba, Điền Kỵ dùng ngựa hạng trung đua với ngựa hạng thấp của nhà vua, kết quả lại thắng. Như vậy, trận thứ hai nhà vua thua.",
+        "Trận thứ ba giống trận thứ hai, Điền Kỵ dùng cùng cách đó lại thắng nhà vua. Kết quả cuộc đua là hai - một, Điền Kỵ thắng."
+      ],
+      "questions": [
+        {
+          "id": "e81c0412-b4fa-43e2-bd9d-e364cbcd8096",
+          "question": "比赛一共进行了几次？",
+          "answer": "比赛一共进行了九次（三场，每场三次）。",
+          "answer_vi": "Cuộc thi tổng cộng diễn ra chín lượt: ba trận, mỗi trận ba lượt.",
+          "evidence": [
+            {
+              "quote": "比赛进行三场，每场赛三次"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ad0e09b0-da17-4adf-895b-6c58a776489c",
+          "question": "田忌赢了几场？",
+          "answer": "田忌赢了两场。",
+          "answer_vi": "Điền Kỵ thắng hai trận.",
+          "evidence": [
+            {
+              "quote": "第二场比赛国王输了"
+            },
+            {
+              "quote": "第三场跟第二场一样，田忌用同样的方法又赢了国王"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3b56612b-652e-4497-a723-f04d5ec8b98e",
+          "question": "最后田忌为什么赢了国王？",
+          "answer": "因为田忌用了朋友教他的办法：先用下等马输给国王的上等马，再用上等马赢国王的中等马，用中等马赢国王的下等马，所以最后赢了国王。",
+          "answer_vi": "Vì Điền Kỵ dùng cách mà bạn chỉ: trước tiên dùng ngựa hạng thấp thua ngựa hạng tốt của nhà vua, rồi dùng ngựa hạng tốt thắng ngựa hạng trung của nhà vua, dùng ngựa hạng trung thắng ngựa hạng thấp của nhà vua, nên cuối cùng thắng nhà vua.",
+          "evidence": [
+            {
+              "quote": "田忌先用下等马跟国王的上等马赛"
+            },
+            {
+              "quote": "田忌却用了上等马"
+            },
+            {
+              "quote": "田忌用中等马跟国王的下等马赛"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

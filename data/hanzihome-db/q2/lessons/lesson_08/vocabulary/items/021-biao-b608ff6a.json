@@ -1,0 +1,309 @@
+{
+  "id": "b7ef57bd-c2ee-416a-9135-6ea827a82dd3",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "表",
+  "pinyin": "biǎo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Biểu",
+    "meaning_vi": "đồng hồ; bảng; biểu mẫu",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "đồng hồ; bảng; biểu mẫu",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "biểu",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đồng hồ, bảng, biểu thị",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Không cần chiết tự sâu. Học theo ngữ cảnh: 表 trong câu đời thường về giờ giấc thường là đồng hồ. 表格 là bảng biểu.",
+    "memory_tip_vi": "",
+    "warning_vi": "表示 là biểu thị. Cảnh báo: muốn nói rõ “đồng hồ đeo tay”, dùng 手表.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "表",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng hồ; bảng/biểu tùy ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "手表",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng hồ đeo tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng hồ treo/tủ/chuông lớn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钟表",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng hồ nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表格",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bảng biểu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我看了看表。",
+      "Tôi xem đồng hồ một chút.",
+      "墙上有一个钟。",
+      "Trên tường có một cái đồng hồ.",
+      "请填这个表格。",
+      "Vui lòng điền biểu mẫu này."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "85f620e0-6c62-4c5e-a7de-c09665c80299",
+      "order": 1,
+      "zh": "看表",
+      "pinyin": "",
+      "vi": "xem đồng hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf96ffcf-8340-4a57-a621-b8f836a550e7",
+      "order": 2,
+      "zh": "手表",
+      "pinyin": "",
+      "vi": "đồng hồ đeo tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f3029538-2b55-4fbf-ad3f-03f29a5cc24b",
+      "order": 3,
+      "zh": "表停了",
+      "pinyin": "",
+      "vi": "đồng hồ ngừng chạy rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6a43334-2f24-49f0-a1f3-63647343b878",
+      "order": 4,
+      "zh": "表坏了",
+      "pinyin": "",
+      "vi": "đồng hồ hỏng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f23b01f1-6ccd-4dfc-97ed-f3ce9312085c",
+      "order": 5,
+      "zh": "换电池",
+      "pinyin": "",
+      "vi": "thay pin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "026e882b-3c84-42b4-bfc9-0013c7c0c561",
+      "order": 6,
+      "zh": "一块表",
+      "pinyin": "",
+      "vi": "một cái đồng hồ đeo tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "775aec4c-f511-4428-9d2f-db6ee06de280",
+      "order": 1,
+      "zh": "我的表停了。",
+      "pinyin": "Wǒ de biǎo tíng le.",
+      "vi": "Đồng hồ của tôi ngừng chạy rồi.",
+      "analysis_vi": "停了 báo trạng thái mới: trước chạy, giờ ngừng.",
+      "highlight": [
+        "表"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7ef57bd-c2ee-416a-9135-6ea827a82dd3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "269929a6-14f0-444d-8cf8-80838f4e047b",
+      "order": 2,
+      "zh": "他着急地看了看表，发现快上课了。",
+      "pinyin": "Tā zháojí de kàn le kan biǎo, fāxiàn kuài shàng kè le.",
+      "vi": "Anh ấy sốt ruột xem đồng hồ một chút, phát hiện sắp vào học rồi.",
+      "analysis_vi": "着急地看 dùng 地. 快上课了 báo việc sắp xảy ra.",
+      "highlight": [
+        "表"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7ef57bd-c2ee-416a-9135-6ea827a82dd3"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bb55ac23-6cea-4a64-af16-ff480a11c0fa",
+      "order": 3,
+      "zh": "这块表跟我父亲以前送我的那块不一样，它不但更亮，而且走得更准。",
+      "pinyin": "Zhè kuài biǎo gēn wǒ fùqīn yǐqián sòng wǒ de nà kuài bù yíyàng, tā búdàn gèng liàng, érqiě zǒu de gèng zhǔn.",
+      "vi": "Cái đồng hồ này không giống cái mà bố tôi từng tặng tôi trước đây, nó không những sáng/bóng hơn mà còn chạy chuẩn hơn.",
+      "analysis_vi": "这块表 dùng lượng từ 块. 跟……不一样 ôn Bài 7. 不但……而且…… tăng tiến. 走得准 = đồng hồ chạy chuẩn.",
+      "highlight": [
+        "表"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7ef57bd-c2ee-416a-9135-6ea827a82dd3"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung, đồng hồ “chạy” dùng 走: 表走得很准 = đồng hồ chạy rất chuẩn. Đây là cách nói rất Trung, không dịch từng chữ sang tiếng Việt.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f604696-d72a-418a-8de6-240135d98d0e",
+      "order": 1,
+      "rule_vi": "Lượng từ thường dùng:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "一块表 Một cái đồng hồ đeo tay. Không nên nói: 一个表 nếu muốn chuẩn theo giáo trình.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表",
+    "back": "đồng hồ; bảng; biểu mẫu",
+    "hint": "biǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7ef57bd-c2ee-416a-9135-6ea827a82dd3",
+    "source_lesson_vocab_id": null
+  }
+}

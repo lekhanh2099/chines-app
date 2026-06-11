@@ -1,0 +1,280 @@
+{
+  "id": "4fa58c19-6457-4cf5-b481-0021fd7f3afe",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "展出",
+  "pinyin": "zhǎnchū",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "display"
+  ],
+  "meaning": {
+    "hanviet": "Triển xuất",
+    "meaning_vi": "trưng bày, triển lãm ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trưng bày, triển lãm ra"
+    ],
+    "short_definition_vi": "trưng bày, triển lãm ra",
+    "textbook_focus_vi": "trưng bày, triển lãm ra",
+    "register_vi": "",
+    "usage_domain_vi": "display",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "展",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "尸",
+            "hanviet": "thi",
+            "meaning_vi": "phần trên",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "龷/衣下",
+            "hanviet": "",
+            "meaning_vi": "phần dưới phức, không tách sâu",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mở ra, triển khai, trưng bày",
+        "modern_logic_vi": "展 trong 展出 là mở/đưa ra trưng bày.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra, xuất hiện, đưa ra",
+        "modern_logic_vi": "Chữ cơ bản chỉ hướng ra ngoài.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "展 trong 展出 là mở/đưa ra trưng bày.; Chữ cơ bản chỉ hướng ra ngoài.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "展览",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "展示",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "陈列",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "74fd8c58-09be-456a-9fd4-b5c731e1832f",
+      "order": 1,
+      "zh": "展出书画",
+      "pinyin": "",
+      "vi": "trưng bày thư họa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf77006a-3da0-4f2d-9441-4fee216c4c1b",
+      "order": 2,
+      "zh": "展出作品",
+      "pinyin": "",
+      "vi": "trưng bày tác phẩm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dcdff03f-881f-4851-9619-623318f46378",
+      "order": 3,
+      "zh": "公开展出",
+      "pinyin": "",
+      "vi": "trưng bày công khai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f139f8b5-c749-4637-a720-cd8975fe0a61",
+      "order": 4,
+      "zh": "正在展出",
+      "pinyin": "",
+      "vi": "đang được trưng bày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5819920-9bd2-4c07-b6c3-4dc7a6fc408a",
+      "order": 5,
+      "zh": "展出照片",
+      "pinyin": "",
+      "vi": "trưng bày ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "46da60fd-cea9-45e4-898b-e2d85a4bf114",
+      "order": 1,
+      "zh": "学校橱窗里展出了很多书画作品。",
+      "pinyin": "Xuéxiào chúchuāng lǐ zhǎnchū le hěn duō shūhuà zuòpǐn.",
+      "vi": "Trong tủ trưng bày của trường đã trưng bày nhiều tác phẩm thư họa.",
+      "analysis_vi": "展出了 nhấn có tác phẩm được trưng bày.",
+      "highlight": [
+        "展出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4fa58c19-6457-4cf5-b481-0021fd7f3afe"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dba827c3-037a-41f0-bfe3-e35cbaf936d4",
+      "order": 2,
+      "zh": "这些作品展出以后，很多同学一看就表示很喜欢。",
+      "pinyin": "Zhèxiē zuòpǐn zhǎnchū yǐhòu, hěn duō tóngxué yí kàn jiù biǎoshì hěn xǐhuan.",
+      "vi": "Sau khi các tác phẩm này được trưng bày, nhiều bạn vừa xem đã tỏ ý thích.",
+      "analysis_vi": "展出以后 + 一看就……",
+      "highlight": [
+        "展出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4fa58c19-6457-4cf5-b481-0021fd7f3afe"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "橱窗展出 là văn cảnh trường học rất sát bài.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "86f0fc1b-2c35-4003-9868-f11ecbe4c321",
+      "order": 1,
+      "rule_vi": "展出 không phải 发展; kinh tế phát triển là 经济发展.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "经济发展。",
+          "pinyin": "Jīngjì fāzhǎn.",
+          "vi": "Kinh tế phát triển.",
+          "note_vi": "发展 = phát triển.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "展出",
+    "back": "trưng bày, triển lãm ra",
+    "hint": "zhǎnchū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "display"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4fa58c19-6457-4cf5-b481-0021fd7f3afe",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "id": "263c3482-8e32-4ffb-a8f8-e41bd6bc2001",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "信号",
+  "pinyin": "xìnhào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Dữ liệu và quan sát"
+  ],
+  "meaning": {
+    "hanviet": "Tín hiệu",
+    "meaning_vi": "tín hiệu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tín hiệu"
+    ],
+    "short_definition_vi": "tín hiệu",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: tín hiệu.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Dữ liệu và quan sát",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "信",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "号",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "信号 trong bài được học theo nghĩa trọng tâm: tín hiệu.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: tín hiệu.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "95eb1797-3100-45c4-a034-4a807a551d65",
+      "order": 1,
+      "zh": "目前，这颗卫星停留在天壶地区的上空，正连续不断向金星发回照片和信号。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: tín hiệu",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8c57e6fc-3cdf-43e8-8fc4-db64954889b7",
+      "order": 1,
+      "zh": "目前，这颗卫星停留在天壶地区的上空，正连续不断向金星发回照片和信号。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “信号” = tín hiệu.",
+      "analysis_vi": "Câu này dùng “信号” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "信号"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "263c3482-8e32-4ffb-a8f8-e41bd6bc2001"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “信号” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3929b578-bc1c-4a09-a1a4-9f2b87be5111",
+      "order": 1,
+      "rule_vi": "Cần dùng “信号” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "信号",
+    "back": "tín hiệu",
+    "hint": "xìnhào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Dữ liệu và quan sát"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "263c3482-8e32-4ffb-a8f8-e41bd6bc2001",
+    "source_lesson_vocab_id": null
+  }
+}

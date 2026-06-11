@@ -1,0 +1,315 @@
+{
+  "id": "b61397ba-c769-40ff-b264-c413400b8f93",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "穿",
+  "pinyin": "chuān",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Xuyên",
+    "meaning_vi": "mặc; đi xuyên qua; xỏ qua",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mặc; đi xuyên qua; xỏ qua"
+    ],
+    "short_definition_vi": "mặc; đi xuyên qua; xỏ qua",
+    "textbook_focus_vi": "mặc; đi xuyên qua; xỏ qua",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "穿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "huyệt",
+            "meaning_vi": "hang/lỗ/khoảng rỗng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "huyệt",
+              "meaning_vi": "hang, lỗ, khoảng rỗng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "牙",
+            "hanviet": "nha",
+            "meaning_vi": "răng, phần dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xuyên qua, mặc, xỏ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "huyệt",
+          "meaning_vi": "hang, lỗ, khoảng rỗng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "穴 gợi khoảng rỗng/lỗ, 牙 là thành phần dưới; lõi nghĩa là xuyên qua, mở rộng thành mặc/xỏ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "戴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đeo/đội vật lên đầu, mặt, tay",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "系",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thắt/buộc dây, cà vạt, dây an toàn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "脱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cởi ra, đối lập với 穿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "脱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cởi ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "穿上",
+        "right": "脱下",
+        "meaning_vi": "mặc vào ↔ cởi ra",
+        "note_vi": "Cặp thao tác trang phục.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "95080050-e8ae-4c1f-88e9-605c9cd7921d",
+      "order": 1,
+      "zh": "穿衣服",
+      "pinyin": "",
+      "vi": "mặc quần áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9509b305-7f5c-474d-9cf3-b3052bf85a86",
+      "order": 2,
+      "zh": "穿西服",
+      "pinyin": "",
+      "vi": "mặc vest",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "320659a1-b380-4216-a857-34f9c8346130",
+      "order": 3,
+      "zh": "穿裙子",
+      "pinyin": "",
+      "vi": "mặc váy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f9fc7aa-9734-4713-82ec-35b473c53a5b",
+      "order": 4,
+      "zh": "穿鞋",
+      "pinyin": "",
+      "vi": "đi giày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2fc0ef8-c2d6-45dd-bd2b-81934b5deaec",
+      "order": 5,
+      "zh": "穿袜子",
+      "pinyin": "",
+      "vi": "mang tất/vớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75de306a-7a31-4c79-b065-1d3a9ee5c371",
+      "order": 6,
+      "zh": "穿过马路",
+      "pinyin": "",
+      "vi": "băng qua đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d459d4a4-d596-4f84-aae1-1a8788436157",
+      "order": 1,
+      "zh": "新郎今天穿了一套黑色西服。",
+      "pinyin": "Xīnláng jīntiān chuān le yí tào hēisè xīfú.",
+      "vi": "Hôm nay chú rể mặc một bộ vest đen.",
+      "analysis_vi": "穿西服 là kết hợp đúng.",
+      "highlight": [
+        "穿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b61397ba-c769-40ff-b264-c413400b8f93"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7c893bca-1b74-447a-aa04-c0bf76d00d11",
+      "order": 2,
+      "zh": "那位女士穿着红裙子，笑着和客人说话。",
+      "pinyin": "Nà wèi nǚshì chuānzhe hóng qúnzi, xiàozhe hé kèrén shuōhuà.",
+      "vi": "Người phụ nữ kia mặc váy đỏ, cười nói chuyện với khách.",
+      "analysis_vi": "穿着 là trạng thái mặc; 笑着说话 là cách thức nói.",
+      "highlight": [
+        "穿",
+        "穿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b61397ba-c769-40ff-b264-c413400b8f93"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "522e369f-cd0b-4ae7-b26e-1d1ab771aece",
+      "order": 1,
+      "rule_vi": "Không dùng 穿 cho phụ kiện như 领带 / 眼镜; nói 系领带, 戴眼镜.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "穿",
+    "back": "mặc; đi xuyên qua; xỏ qua",
+    "hint": "chuān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong đám cưới/hội nghị có thể nói 穿得正式一点儿 để góp ý mặc trang trọng hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b61397ba-c769-40ff-b264-c413400b8f93",
+    "source_lesson_vocab_id": null
+  }
+}

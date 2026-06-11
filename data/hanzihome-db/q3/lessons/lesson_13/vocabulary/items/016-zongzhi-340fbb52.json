@@ -1,0 +1,200 @@
+{
+  "id": "35c4a267-ee19-466e-9258-5d984d57bdf3",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "总之",
+  "pinyin": "zǒngzhī",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "discourse"
+  ],
+  "meaning": {
+    "hanviet": "tổng chi",
+    "meaning_vi": "tóm lại, nói chung là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tóm lại",
+      "nói chung là"
+    ],
+    "short_definition_vi": "tóm lại, nói chung là",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "总",
+        "lishu_vi": "tổng",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tổng/nói chung",
+        "modern_logic_vi": "Trong từ/cụm này, 总 góp phần vào nghĩa hiện đại: tổng/nói chung.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "之",
+        "lishu_vi": "chi",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành phần cấu tạo từ",
+        "modern_logic_vi": "Trong từ/cụm này, 之 góp phần vào nghĩa hiện đại: thành phần cấu tạo từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "总之 cần học theo nghĩa hiện đại trong bài: tóm lại, nói chung là.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 总之，…….",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "140f7b00-e803-4a1c-94d4-e2c16efef43f",
+      "order": 1,
+      "zh": "总之，……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0cc7219e-873f-4940-be1d-d53a8af6a300",
+      "order": 2,
+      "zh": "总之很难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f5a0a4c-9061-430a-aa91-78204ea1911d",
+      "order": 3,
+      "zh": "总而言之",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "05147216-65bb-4eff-bf2e-74e073deb39e",
+      "order": 1,
+      "zh": "总之，这件事不容易。",
+      "pinyin": "Zǒngzhī, zhè jiàn shì bù róngyì.",
+      "vi": "Tóm lại, việc này không dễ.",
+      "analysis_vi": "总之 đứng đầu câu để kết luận.",
+      "highlight": [
+        "总之"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "35c4a267-ee19-466e-9258-5d984d57bdf3"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b31e5ce5-47cb-4fcc-96e2-97472c74bde6",
+      "order": 2,
+      "zh": "他要上高中，还要照顾妹妹，总之，生活挺苦的。",
+      "pinyin": "Tā yào shàng gāozhōng, hái yào zhàogù mèimei, zǒngzhī, shēnghuó tǐng kǔ de.",
+      "vi": "Anh ấy phải học cấp ba, còn phải chăm em; tóm lại cuộc sống khá khổ.",
+      "analysis_vi": "总之 chốt chuỗi ý trước.",
+      "highlight": [
+        "总之"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "35c4a267-ee19-466e-9258-5d984d57bdf3"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "总之 rất hữu dụng ở câu cuối bài nói/viết để chốt ý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "846171d2-9b46-4643-b9c8-6216c0145702",
+      "order": 1,
+      "rule_vi": "Dùng 总之 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "总之",
+    "back": "tóm lại, nói chung là",
+    "hint": "zǒngzhī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "35c4a267-ee19-466e-9258-5d984d57bdf3",
+    "source_lesson_vocab_id": null
+  }
+}

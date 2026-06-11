@@ -1,0 +1,330 @@
+{
+  "id": "34371a95-a6ec-42b3-b755-d7d7b997c0e6",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "亲眼",
+  "pinyin": "qīnyǎn",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "fixed_phrases_state"
+  ],
+  "meaning": {
+    "hanviet": "thân nhãn",
+    "meaning_vi": "tận mắt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tận mắt"
+    ],
+    "short_definition_vi": "tận mắt",
+    "textbook_focus_vi": "tận mắt",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, gần, tự mình",
+        "modern_logic_vi": "亲 trong 亲眼/亲耳/亲手 nghĩa là tự mình/trực tiếp.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "眼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "艮",
+            "hanviet": "cấn",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mắt",
+        "modern_logic_vi": "眼 là mắt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲眼 = tự thân dùng mắt nhìn, chính mắt chứng kiến.",
+    "memory_tip_vi": "亲眼 = tự thân dùng mắt nhìn, chính mắt chứng kiến.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "亲耳",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tận tai",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲手",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tự tay",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲自",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đích thân, rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "看见",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhìn thấy không nhấn tận mắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "亲眼看见",
+        "right": "听别人说",
+        "meaning_vi": "",
+        "note_vi": "tận mắt thấy ↔ nghe người khác nói",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "544bee48-e7b2-4d2a-bde9-87eefb40d4f8",
+      "order": 1,
+      "zh": "亲眼看见",
+      "pinyin": "",
+      "vi": "tận mắt nhìn thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "141c1e90-f8ca-4c80-b7b4-705942ca70b8",
+      "order": 2,
+      "zh": "亲眼看到",
+      "pinyin": "",
+      "vi": "tận mắt thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e461eb46-7340-4863-ad52-7055e9e3a693",
+      "order": 3,
+      "zh": "亲眼所见",
+      "pinyin": "",
+      "vi": "điều tận mắt chứng kiến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eab76b2e-b113-4b25-bb20-cd888744f66d",
+      "order": 4,
+      "zh": "亲眼目睹",
+      "pinyin": "",
+      "vi": "tận mắt chứng kiến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85993ea2-a8f0-49a7-a4cc-1c99f8d65878",
+      "order": 5,
+      "zh": "亲眼见过",
+      "pinyin": "",
+      "vi": "từng tận mắt thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ab5583e2-74de-4178-8afe-3d0e804f989c",
+      "order": 1,
+      "zh": "这是我亲眼看见的。",
+      "pinyin": "",
+      "vi": "Đây là chuyện tôi tận mắt nhìn thấy.",
+      "analysis_vi": "是……的 nhấn nguồn chứng kiến.",
+      "highlight": [
+        "亲眼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "34371a95-a6ec-42b3-b755-d7d7b997c0e6"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bc5a9991-d629-48ba-8ebb-d4b7e23c4e5b",
+      "order": 2,
+      "zh": "他把护照放进口袋里这件事你亲眼看见了吗？",
+      "pinyin": "",
+      "vi": "Chuyện anh ấy bỏ hộ chiếu vào túi, bạn tận mắt thấy không?",
+      "analysis_vi": "这件事 là chủ đề lớn.",
+      "highlight": [
+        "亲眼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "34371a95-a6ec-42b3-b755-d7d7b997c0e6"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "亲眼看见/亲耳听到 dùng để xác nhận chứng cứ.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ba782c5b-8816-4dbe-9477-131e0c04513f",
+      "order": 1,
+      "rule_vi": "亲眼 đi với nhìn/thấy; nghe thì dùng 亲耳.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "亲眼听见",
+          "pinyin": "",
+          "vi": "Không tự nhiên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "亲耳听见",
+          "pinyin": "",
+          "vi": "tận tai nghe thấy",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲眼",
+    "back": "tận mắt",
+    "hint": "qīnyǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "fixed_phrases_state"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "34371a95-a6ec-42b3-b755-d7d7b997c0e6",
+    "source_lesson_vocab_id": null
+  }
+}

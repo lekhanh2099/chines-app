@@ -1,0 +1,415 @@
+{
+  "id": "cdd796a5-1692-4181-811b-1a537443fa7c",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "橙红",
+  "pinyin": "chénghóng",
+  "pos": {
+    "raw_vi": "Tính từ / Tên màu",
+    "raw_cn": "形容词 / 颜色词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "tranh hồng",
+    "meaning_vi": "màu đỏ cam",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "màu đỏ cam"
+    ],
+    "short_definition_vi": "sắc đỏ pha cam",
+    "textbook_focus_vi": "Trong bài tả ánh sáng/thân đĩa bay màu đỏ cam.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "橙",
+        "lishu_vi": "",
+        "structure_note_vi": "木 + 登",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "登",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cam",
+        "modern_logic_vi": "cam",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "红",
+        "lishu_vi": "",
+        "structure_note_vi": "纟 + 工",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "",
+            "meaning_vi": "thợ, công",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "工 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "工",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Công",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "thợ, công",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "工 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đỏ",
+        "modern_logic_vi": "đỏ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "橙红 được học trong bài theo nghĩa: sắc đỏ pha cam.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 橙红色.",
+    "warning_vi": "橙红 là đỏ cam, không phải chỉ màu cam đơn thuần.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "橙色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Màu cam.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "红色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Màu đỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "橙红 là đỏ cam, không phải chỉ màu cam đơn thuần."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "86e76289-fb95-4940-882a-2d83ac8116ce",
+      "order": 1,
+      "zh": "橙红色",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e14458b-2f37-4ba9-88fd-2e30a31be2ba",
+      "order": 2,
+      "zh": "橙红色的光",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4b557252-09b6-44cb-8491-ff076710ccc0",
+      "order": 3,
+      "zh": "橙红色的天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65bd2ab2-afed-4d73-ba36-346fb7a64ebc",
+      "order": 4,
+      "zh": "橙红发亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e5b138a-6c74-4095-92ff-013265fcb392",
+      "order": 5,
+      "zh": "变成橙红色",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b50bb949-a78c-4d65-b025-dc0b0f56777a",
+      "order": 1,
+      "zh": "天空变成了橙红色。",
+      "pinyin": "",
+      "vi": "Bầu trời chuyển thành màu đỏ cam.",
+      "analysis_vi": "变成 + kết quả màu sắc.",
+      "highlight": [
+        "橙红"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cdd796a5-1692-4181-811b-1a537443fa7c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ccf7fa9f-3dc2-4e90-b18e-d621d45af7d2",
+      "order": 2,
+      "zh": "我一抬头，就看见西北天空被橙红色的光照亮了。",
+      "pinyin": "",
+      "vi": "Tôi vừa ngẩng đầu thì thấy bầu trời tây bắc bị ánh sáng đỏ cam chiếu sáng.",
+      "analysis_vi": "被……照亮了 là bị động.",
+      "highlight": [
+        "橙红"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cdd796a5-1692-4181-811b-1a537443fa7c"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nhóm màu cụ thể như 橙红色, 金黄色 giúp văn miêu tả có hình ảnh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c7f9daf0-f139-4874-9494-2be2a62cb6a6",
+      "order": 1,
+      "rule_vi": "橙红 là đỏ cam, không phải chỉ màu cam đơn thuần.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "橙红 là đỏ cam, không phải chỉ màu cam đơn thuần.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "橙红",
+    "back": "màu đỏ cam",
+    "hint": "chénghóng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cdd796a5-1692-4181-811b-1a537443fa7c",
+    "source_lesson_vocab_id": null
+  }
+}

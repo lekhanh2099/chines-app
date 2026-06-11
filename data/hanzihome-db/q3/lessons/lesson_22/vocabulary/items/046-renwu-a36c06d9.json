@@ -1,0 +1,419 @@
+{
+  "id": "ef5b9a20-1954-472f-8ab8-85e6c8cb58fb",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "任务",
+  "pinyin": "rènwu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "nhiệm vụ",
+    "meaning_vi": "nhiệm vụ, công việc được giao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiệm vụ"
+    ],
+    "short_definition_vi": "nhiệm vụ, công việc được giao",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "任",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần chỉ trường nghĩa: người.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần chỉ trường nghĩa: người.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đảm nhiệm, giao phó",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "务",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 được dùng như bộ/thành phần chỉ trường nghĩa: sức lực.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được dùng như bộ/thành phần chỉ trường nghĩa: sức lực.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc, sự vụ",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "任务 được ghi nhớ theo nghĩa hiện đại: nhiệm vụ, công việc được giao.",
+    "memory_tip_vi": "Nhớ qua cụm: 完成任务.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "工作",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "作业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "责任",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "使命",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "任务 không phải lúc nào cũng là sứ mệnh lớn; nhiều khi chỉ là việc được giao."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "24c06162-1b30-44d8-b81a-83e76adbf1f7",
+      "order": 1,
+      "zh": "完成任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "340ac8c7-cc84-4931-a31a-825faf10015a",
+      "order": 2,
+      "zh": "学习任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b8ead52-fb68-41d5-b70f-aa018790d5a8",
+      "order": 3,
+      "zh": "重要任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1db5a683-582b-407a-b19d-b17690821767",
+      "order": 4,
+      "zh": "艰巨的任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e8ad9cf-4a8e-464a-8bae-37d32500158f",
+      "order": 5,
+      "zh": "接受任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d6ea86ed-d080-4270-b4e7-29da85ba387e",
+      "order": 6,
+      "zh": "分配任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e6e7520-dbce-4eff-a3c9-6fbe88c691a2",
+      "order": 7,
+      "zh": "执行任务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e6e5e26-2215-41a7-8690-631f3fbced7c",
+      "order": 8,
+      "zh": "任务很重",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1c3134af-1be5-4bdf-b05e-8c72bcdd25c6",
+      "order": 1,
+      "zh": "今天的学习任务很多。",
+      "pinyin": "Jīntiān de xuéxí rènwu hěn duō.",
+      "vi": "Nhiệm vụ học tập hôm nay rất nhiều.",
+      "analysis_vi": "学习任务 là cụm danh từ thường dùng.",
+      "highlight": [
+        "任务"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ef5b9a20-1954-472f-8ab8-85e6c8cb58fb"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f81fa810-1f83-46e7-b2ff-05afaf0dcdcd",
+      "order": 2,
+      "zh": "母亲把每天的学习任务写在本子上。",
+      "pinyin": "Mǔqīn bǎ měitiān de xuéxí rènwu xiě zài běnzi shang.",
+      "vi": "Mẹ viết nhiệm vụ học tập mỗi ngày vào sổ.",
+      "analysis_vi": "把……写在…… là 把字句 + nơi đặt kết quả.",
+      "highlight": [
+        "任务"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ef5b9a20-1954-472f-8ab8-85e6c8cb58fb"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "任务 dùng rộng trong học tập, công việc, game: 学习任务, 工作任务, 游戏任务.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5bc44ddb-9d36-4d11-ab7a-23d06a722b96",
+      "order": 1,
+      "rule_vi": "任务 không phải lúc nào cũng là sứ mệnh lớn; nhiều khi chỉ là việc được giao.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "任务 không phải lúc nào cũng là sứ mệnh lớn; nhiều khi chỉ là việc được giao.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "任务",
+    "back": "nhiệm vụ, công việc được giao",
+    "hint": "rènwu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ef5b9a20-1954-472f-8ab8-85e6c8cb58fb",
+    "source_lesson_vocab_id": null
+  }
+}

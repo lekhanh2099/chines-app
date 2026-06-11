@@ -1,0 +1,259 @@
+{
+  "id": "23c87406-b271-49fe-bcce-ed9e0958bcca",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "后来",
+  "pinyin": "hòulái",
+  "pos": {
+    "raw_vi": "Danh từ thời gian / Phó từ thời gian",
+    "raw_cn": "时间名词/副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hậu lai",
+    "meaning_vi": "sau đó; về sau",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sau đó",
+      "về sau"
+    ],
+    "short_definition_vi": "sau đó",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "后",
+        "lishu_vi": "hậu",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "lai",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "后来 chỉ phần thời gian xảy ra sau một mốc đã kể.",
+    "memory_tip_vi": "Dùng khi kể chuyện quá khứ: 刚开始……后来……",
+    "warning_vi": "Thường không dùng cho kế hoạch tương lai đơn giản.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "以后",
+        "yǐhòu",
+        "sau này/sau khi",
+        "rộng hơn, dùng cho tương lai"
+      ],
+      [
+        "之后",
+        "zhīhòu",
+        "sau đó/sau khi",
+        "trung tính, có thể đi sau cụm sự kiện"
+      ],
+      [
+        "然后",
+        "ránhòu",
+        "rồi sau đó",
+        "nối trình tự hành động"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Dùng khi kể chuyện quá khứ: 刚开始……后来……"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8fb1e6a7-68e6-4ed6-aaf3-6542616da961",
+      "order": 1,
+      "zh": "后来我发现",
+      "pinyin": "",
+      "vi": "sau đó tôi phát hiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70f69fe1-477b-4c3b-9d95-81ecc0fd5852",
+      "order": 2,
+      "zh": "后来怎么样了",
+      "pinyin": "",
+      "vi": "sau đó thế nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18ca35d8-71c7-43bc-872a-6a5c6d63816d",
+      "order": 3,
+      "zh": "后来才知道",
+      "pinyin": "",
+      "vi": "sau đó mới biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff8896e4-f9a2-455f-99cb-2ba67f46f9e2",
+      "order": 4,
+      "zh": "后来的事情",
+      "pinyin": "",
+      "vi": "chuyện sau đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe9e569a-2a7b-46e1-8e2e-e84e2792bcc5",
+      "order": 5,
+      "zh": "后来就慢慢明白了",
+      "pinyin": "",
+      "vi": "về sau dần hiểu ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "98e5996e-f5d1-4756-939d-cdc41102b58c",
+      "order": 1,
+      "zh": "后来我发现，他不是不热情，只是不太会直接答应别人。",
+      "pinyin": "Hòulái wǒ fāxiàn, tā bú shì bù rèqíng, zhǐshì bú tài huì zhíjiē dāying biérén.",
+      "vi": "Sau đó tôi phát hiện, anh ấy không phải không nhiệt tình, chỉ là không giỏi đồng ý trực tiếp với người khác.",
+      "analysis_vi": "后来我发现 rất hợp mạch kể chuyện.",
+      "highlight": [
+        "后来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "23c87406-b271-49fe-bcce-ed9e0958bcca"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ccdbb35e-e979-4529-80b0-3a71f8e99066",
+      "order": 2,
+      "zh": "我刚来北京的时候不太习惯，后来就慢慢适应了。",
+      "pinyin": "Wǒ gāng lái Běijīng de shíhou bú tài xíguàn, hòulái jiù mànmàn shìyìng le.",
+      "vi": "Lúc mới đến Bắc Kinh tôi chưa quen lắm, sau đó dần thích nghi.",
+      "analysis_vi": "刚来……的时候 đặt mốc ban đầu.",
+      "highlight": [
+        "后来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "23c87406-b271-49fe-bcce-ed9e0958bcca"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khi kể trải nghiệm văn hóa, khung 刚开始……后来……才…… rất tự nhiên.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "040fe18d-e2c3-430e-b2ab-3390a2440bc3",
+      "order": 1,
+      "rule_vi": "Không dùng 后来 thay cho 以后 khi nói kế hoạch tương lai.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我后来去中国。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我以后想去中国。",
+          "pinyin": "Wǒ yǐhòu xiǎng qù Zhōngguó.",
+          "vi": "Sau này tôi muốn đi Trung Quốc.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Thường không dùng cho kế hoạch tương lai đơn giản.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "后来",
+    "back": "sau đó; về sau",
+    "hint": "hòulái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "23c87406-b271-49fe-bcce-ed9e0958bcca",
+    "source_lesson_vocab_id": null
+  }
+}

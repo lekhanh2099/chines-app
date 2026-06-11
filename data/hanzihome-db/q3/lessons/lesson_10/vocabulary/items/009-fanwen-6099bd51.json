@@ -1,0 +1,289 @@
+{
+  "id": "0d436b57-533c-4e1c-b43e-5a169ff2842f",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "反问",
+  "pinyin": "fǎnwèn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phản vấn",
+    "meaning_vi": "hỏi ngược lại; câu hỏi tu từ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hỏi ngược lại",
+      "câu hỏi tu từ"
+    ],
+    "short_definition_vi": "hỏi ngược lại hoặc câu hỏi tu từ",
+    "textbook_focus_vi": "hỏi ngược lại hoặc câu hỏi tu từ",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "反",
+        "lishu_vi": "phản",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "问",
+        "lishu_vi": "vấn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "門",
+          "radical_variant": "门",
+          "radical_name_vi": "bộ Môn",
+          "radical_name_zh": "",
+          "hanviet": "môn",
+          "meaning_vi": "cửa",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "hỏi ngược lại hoặc câu hỏi tu từ",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 反问他.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "问",
+        "pinyin": "wèn",
+        "meaning_vi": "hỏi",
+        "difference_vi": "hỏi bình thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "质问",
+        "pinyin": "zhìwèn",
+        "meaning_vi": "chất vấn",
+        "difference_vi": "nghiêm khắc hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c6fb529b-3deb-462c-8dd7-9c6e93766eea",
+      "order": 1,
+      "zh": "反问他",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da63b8ec-a2a4-418f-9d6f-fa67e754d321",
+      "order": 2,
+      "zh": "反问一句",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e773d321-5291-4562-af4e-c04c6f0bfe08",
+      "order": 3,
+      "zh": "反问道",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be1bfe5e-2f23-48d4-9a9e-c03d8a68b33c",
+      "order": 4,
+      "zh": "用反问的语气",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d4e4a99c-37c7-4973-857a-6a51848cc6f6",
+      "order": 5,
+      "zh": "反问句",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fbbe06e3-986f-4c2a-89d0-2e82874207b8",
+      "order": 6,
+      "zh": "被他反问",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9851b370-e86f-4b58-a4f0-0fcd8b2451f4",
+      "order": 1,
+      "zh": "他反问我：“你呢？”",
+      "pinyin": "Tā fǎnwèn wǒ: “Nǐ ne?”",
+      "vi": "Anh ấy hỏi ngược lại tôi: “Còn bạn thì sao?”",
+      "analysis_vi": "反问 có sắc thái hỏi ngược/phản ứng.",
+      "highlight": [
+        "反问"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d436b57-533c-4e1c-b43e-5a169ff2842f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "反问 dễ tạo lực phản bác trong tranh luận.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9d16542a-dcc1-454b-aa3c-2e992aa3eb76",
+      "order": 1,
+      "rule_vi": "反问 không phải 反馈; phản hồi là 反馈.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "反问",
+    "back": "hỏi ngược lại; câu hỏi tu từ",
+    "hint": "fǎnwèn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0d436b57-533c-4e1c-b43e-5a169ff2842f",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "id": "b7f6a66d-d1ae-4216-b733-401be7e86c66",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "未婚夫",
+  "pinyin": "wèihūnfū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Vị hôn phu",
+    "meaning_vi": "vị hôn phu, chồng sắp cưới",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "vị hôn phu, chồng sắp cưới",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "未",
+        "lishu_vi": "vị",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chưa, tương lai",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      },
+      {
+        "hanzi": "婚",
+        "lishu_vi": "hôn",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "女",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "昏",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hôn nhân, cưới",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "女",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "夫",
+        "lishu_vi": "phu",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người đàn ông, chồng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "未 = chưa. 婚 = hôn nhân. 夫 = chồng/người nam trong quan hệ vợ chồng. → 未婚夫 = người nam chưa chính thức kết hôn nhưng đã ở vị trí chồng sắp cưới.",
+    "memory_tip_vi": "",
+    "warning_vi": "Logic nhớ nghĩa hiện đại: Chưa cưới chính thức nhưng đã hứa hôn/chuẩn bị cưới → 未婚夫.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "未婚夫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vị hôn phu, chồng sắp cưới.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "未婚妻",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vị hôn thê, vợ sắp cưới.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "男朋友",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bạn trai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "丈夫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chồng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老公",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chồng, khẩu ngữ thân mật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "他是我的男朋友。",
+      "Anh ấy là bạn trai tôi.",
+      "他是我的未婚夫。",
+      "Anh ấy là chồng sắp cưới của tôi.",
+      "他是我的丈夫。",
+      "Anh ấy là chồng tôi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e343e6bd-0854-413e-ad07-671ec2210c00",
+      "order": 1,
+      "zh": "我的未婚夫",
+      "pinyin": "",
+      "vi": "chồng sắp cưới của tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d1badce-ca40-4eea-9cdc-069670e08655",
+      "order": 2,
+      "zh": "她的未婚夫",
+      "pinyin": "",
+      "vi": "chồng sắp cưới của cô ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32f9dec9-146f-403d-90cb-5adcba17bacd",
+      "order": 3,
+      "zh": "未婚夫来了",
+      "pinyin": "",
+      "vi": "chồng sắp cưới đến rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03d99c8d-bef8-4946-8617-957afed9b142",
+      "order": 4,
+      "zh": "未婚夫家",
+      "pinyin": "",
+      "vi": "nhà bên chồng sắp cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6aa06ab7-e2d2-4da3-b9d3-7ef1a5e0d40f",
+      "order": 5,
+      "zh": "介绍未婚夫",
+      "pinyin": "",
+      "vi": "giới thiệu chồng sắp cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4366e25-065f-46cf-a2d7-1217f719415b",
+      "order": 6,
+      "zh": "跟未婚夫结婚",
+      "pinyin": "",
+      "vi": "kết hôn với chồng sắp cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "698360e9-287f-4768-98cf-bd6282d9ee75",
+      "order": 1,
+      "zh": "这是我的未婚夫。",
+      "pinyin": "Zhè shì wǒ de wèihūnfū.",
+      "vi": "Đây là chồng sắp cưới của tôi.",
+      "analysis_vi": "未婚夫 là danh từ chỉ nam giới sắp kết hôn với mình.",
+      "highlight": [
+        "未婚夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7f6a66d-d1ae-4216-b733-401be7e86c66"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "81b63426-236f-4331-84e2-2c13f3c36d95",
+      "order": 2,
+      "zh": "她的未婚夫下个月就要来我们家了。",
+      "pinyin": "Tā de wèihūnfū xià ge yuè jiù yào lái wǒmen jiā le.",
+      "vi": "Chồng sắp cưới của cô ấy tháng sau sắp đến nhà chúng tôi rồi.",
+      "analysis_vi": "下个月就要……了 dùng được với mốc thời gian cụ thể.",
+      "highlight": [
+        "未婚夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7f6a66d-d1ae-4216-b733-401be7e86c66"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "014cc38c-a6bf-46ed-82dd-bae7204cdc15",
+      "order": 3,
+      "zh": "姐姐的未婚夫第一次来家里，母亲高兴地准备火锅儿，父亲认真地把坏了的表修好，想把一切都准备得好一点儿。",
+      "pinyin": "Jiějie de wèihūnfū dì yī cì lái jiā lǐ, mǔqīn gāoxìng de zhǔnbèi huǒguōr, fùqīn rènzhēn de bǎ huài le de biǎo xiū hǎo, xiǎng bǎ yíqiè dōu zhǔnbèi de hǎo yìdiǎnr.",
+      "vi": "Chồng sắp cưới của chị gái lần đầu đến nhà, mẹ vui vẻ chuẩn bị lẩu, bố nghiêm túc sửa cái đồng hồ hỏng, muốn chuẩn bị mọi thứ tốt hơn một chút.",
+      "analysis_vi": "高兴地准备 / 认真地把……修好 dùng 地. 坏了的表 = cái đồng hồ đã hỏng. 把一切都准备得好一点儿 dùng 把字句 + 得 bổ ngữ.",
+      "highlight": [
+        "未婚夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7f6a66d-d1ae-4216-b733-401be7e86c66"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong đời thường hiện đại, nhiều người vẫn dùng 男朋友 / 女朋友 cho đến gần ngày cưới. 未婚夫 / 未婚妻 nghe chính thức hơn, thường khi đã đính hôn hoặc đã xác định cưới.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e23f77b4-e56a-4cc6-b0c5-21a0e5bcf9bc",
+      "order": 1,
+      "rule_vi": "Đừng nhầm giới tính:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "未婚夫 = chồng sắp cưới, nam. 未婚妻 = vợ sắp cưới, nữ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "未婚夫",
+    "back": "vị hôn phu, chồng sắp cưới",
+    "hint": "wèihūnfū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7f6a66d-d1ae-4216-b733-401be7e86c66",
+    "source_lesson_vocab_id": null
+  }
+}

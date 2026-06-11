@@ -1,0 +1,752 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 11,
+    "actual_exercise_count_in_json": 11,
+    "all_exercises_covered": true,
+    "note": "Exercises 1–11 are preserved. Textbook questions are extracted; generated answer samples are marked check_needed/answer_verified=false."
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读。",
+        "vi": "Phân biệt âm/thanh điệu; đọc đoạn thơ."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "speaking"
+      ],
+      "parts": [
+        {
+          "id": "82f9b16a-0baa-4450-88ae-a5c4756e2b2e",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "82c79e56-60d5-4529-9c2a-21fa36265276",
+              "left": "始终 shǐzhōng",
+              "right": "时钟 shízhōng"
+            },
+            {
+              "id": "e74c1847-ac69-441f-89d1-78f5d4cf3c26",
+              "left": "送行 sòngxíng",
+              "right": "送信 sòng xìn"
+            },
+            {
+              "id": "5fe4fb20-01c2-40c3-9c9b-3213ffeee9e6",
+              "left": "暗示 ànshì",
+              "right": "按时 ànshí"
+            },
+            {
+              "id": "8d1c3196-8bde-4da6-ae03-84c4876ed101",
+              "left": "相亲 xiāngqīn",
+              "right": "相信 xiāngxìn"
+            },
+            {
+              "id": "ea0b34ec-1e1d-45b8-9637-2ed5f767a7f4",
+              "left": "表明 biǎomíng",
+              "right": "标明 biāomíng"
+            },
+            {
+              "id": "364420c7-caf2-4a45-9cfe-26f9a68e2bd9",
+              "left": "痛哭 tòngkū",
+              "right": "痛苦 tòngkǔ"
+            }
+          ]
+        },
+        {
+          "id": "6be4fd46-7acf-499a-a2a9-5099d80f03a5",
+          "type": "poem_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "644ac23c-2af0-4808-ba24-74ce7932a0f9",
+              "text": "山伯英台两无猜，同窗共读整三载。心心相印情意深，可叹阴阳两分开。感天动地哭声哀，二人化为彩蝶来。《梁祝》一曲传千古，昭示人间有真爱。",
+              "pinyin": "Shānbó Yīngtái liǎng wú cāi, tóngchuāng gòng dú zhěng sān zǎi. Xīnxīn xiāng yìn qíngyì shēn, kě tàn yīnyáng liǎng fēn kāi. Gǎn tiān dòng dì kūshēng āi, èr rén huàwéi cǎidié lái. 'Liáng Zhù' yì qǔ chuán qiāngǔ, zhāoshì rénjiān yǒu zhēn'ài.",
+              "vi": "Sơn Bá Anh Đài vốn không nghi kỵ, cùng học suốt ba năm. Tình sâu tâm ý tương thông, tiếc thay âm dương chia cách. Tiếng khóc cảm trời động đất, hai người hóa thành bướm đẹp. Một khúc Lương Chúc truyền ngàn đời, chỉ rõ nhân gian có tình yêu thật."
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2"
+      },
+      "source_origin": "textbook",
+      "page_start": 222,
+      "page_end": 223,
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Đọc cụm từ",
+      "instruction": {
+        "zh": "读下列词语。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "家喻户晓",
+          "pinyin": "jiāyù-hùxiǎo",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "女扮男装",
+          "pinyin": "nǚbàn-nánzhuāng",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "一见如故",
+          "pinyin": "yíjiàn-rúgù",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "恍然大悟",
+          "pinyin": "huǎngrán-dàwù",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "苦苦哀求",
+          "pinyin": "kǔkǔ āiqiú",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "苦苦等待",
+          "pinyin": "kǔkǔ děngdài",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "恋恋不舍",
+          "pinyin": "liànliàn-bùshě",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "翩翩起舞",
+          "pinyin": "piānpiān qǐwǔ",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "不断暗示",
+          "pinyin": "búduàn ànshì",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "难以领悟",
+          "pinyin": "nányǐ lǐngwù",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "告别朋友",
+          "pinyin": "gàobié péngyou",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "告别父母",
+          "pinyin": "gàobié fùmǔ",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      },
+      "source_origin": "textbook",
+      "page_start": 223,
+      "page_end": 223,
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选择合适的词语填空。",
+        "vi": "Chọn từ/cụm đúng điền vào chỗ trống."
+      },
+      "parts": [
+        {
+          "id": "7959adb6-0f83-4f16-a74e-466ec827f47d",
+          "title": "A",
+          "word_bank": [
+            "宁可",
+            "经不住",
+            "始终",
+            "恍然大悟",
+            "路过",
+            "转交",
+            "家喻户晓",
+            "情谊"
+          ],
+          "questions": [
+            {
+              "id": "1a0426a9-f989-4da2-bd31-19d12c9b0e3b",
+              "prompt": "梁山伯和祝英台的故事，在中国可以说____。",
+              "answer": "家喻户晓",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "08921ff1-686c-4aa9-a3f6-be06d0031fa4",
+              "prompt": "你早上____食堂时，帮我带两个包子。",
+              "answer": "路过",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "f19a9ec2-8fb6-405e-942f-ee9d56df1f3c",
+              "prompt": "我本来不想陪她去，但是____她苦苦请求，我只好同意了。",
+              "answer": "经不住",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "8244883d-957c-4cdd-ac12-2c140c2a0b5a",
+              "prompt": "我们班的同学来自世界各国，大家共同学习生活了一年，结下了深厚的____。",
+              "answer": "情谊",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "7182e6c8-bd10-4ecf-94f2-1de4bfdaec8b",
+              "prompt": "一年来，他____坚持上课，所以，学得比别人都好。",
+              "answer": "始终",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "1b2c55ca-ee6a-497f-b077-d43734b33897",
+              "prompt": "我想拜托你把这个____给他。",
+              "answer": "转交",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "a9dc2f98-f656-410c-aad3-f71045490b45",
+              "prompt": "直到现在我才____，原来她也深深地爱着我。",
+              "answer": "恍然大悟",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "ab47abe1-348e-4d97-aebd-a5c61421af99",
+              "prompt": "我____走着去，也不坐你这破车。",
+              "answer": "宁可",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "275fcb77-2038-4ab8-bdfc-27ef149a3b4b",
+          "title": "B",
+          "questions": [
+            {
+              "id": "677e3119-df64-45a9-9d65-f1d7ac355bc3",
+              "prompt": "他之所以也搬到这个小区来住，是____这里安静，离公司也近。（因为 / 由于）",
+              "answer": "因为",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "11959e96-b4d9-491a-90e5-eca1f59e7d13",
+              "prompt": "____她学习非常刻苦，因而考上了一所名牌儿大学。（因为 / 由于）",
+              "answer": "由于",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "b60a0125-509f-4432-bec1-5cb6d5310c7e",
+              "prompt": "昨天晚上他____工作到十二点。（一直 / 始终）",
+              "answer": "一直",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "4bf2c957-77bc-40b4-8e55-eedb31e25ab0",
+              "prompt": "我在车站足足等了他两个小时，可他____没来。（一直 / 始终）",
+              "answer": "始终",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "eb16c7a4-2ce7-4096-bd1d-922dc606dea1",
+              "prompt": "我送给他一件礼物是为了向他____感谢。（表达 / 表示）",
+              "answer": "表示",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "ecca702d-8720-4253-8c48-3ad33ef25f45",
+              "prompt": "他现在的口头____能力还不行。（表达 / 表示）",
+              "answer": "表达",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 223,
+      "page_end": 224,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_idioms_and_make_sentences",
+      "order": 4,
+      "title": "四、完成下列成语并造句",
+      "title_vi": "Hoàn thành thành ngữ và đặt câu",
+      "instruction": {
+        "zh": "完成下列成语并造句。",
+        "vi": "Hoàn thành thành ngữ và đặt câu với chúng."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "一见如____",
+          "answer": "故",
+          "full_answer": "一见如故",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "恍然大____",
+          "answer": "悟",
+          "full_answer": "恍然大悟",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "家喻____晓",
+          "answer": "户",
+          "full_answer": "家喻户晓",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "恋恋不____",
+          "answer": "舍",
+          "full_answer": "恋恋不舍",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_idiom.v1"
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 224,
+      "page_end": 224,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 5,
+      "title": "五、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ trong ngoặc hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "他不想参加比赛是____。（由于）",
+          "answer_sample": "他不想参加比赛是由于最近身体不太好。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "读了这个故事，____。（十分）",
+          "answer_sample": "读了这个故事，我十分感动。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "老师的话我差不多都能听懂，但是____。（表达）",
+          "answer_sample": "老师的话我差不多都能听懂，但是还不能准确地表达出来。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "学习汉语当然应该到中国各地多走走、多看看，____。（不然）",
+          "answer_sample": "学习汉语当然应该到中国各地多走走、多看看，不然很难真正了解中国。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "____，也不交这样的男/女朋友。（宁可）",
+          "answer_sample": "我宁可一个人生活，也不交这样的男/女朋友。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "虽然那么多人说这件事是他干的，但是____。（始终）",
+          "answer_sample": "虽然那么多人说这件事是他干的，但是我始终不相信。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 224,
+      "page_end": 225,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue_with_given_words",
+      "order": 6,
+      "title": "六、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ trong ngoặc hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "prompt": "A：你怎么知道他不会干出这样的事？\nB：____。（始终）",
+          "answer_sample": "我始终相信他不会干出这样的事。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "prompt": "A：你为什么选他做你的指导老师？\nB：____。（由于）",
+          "answer_sample": "由于他学问出众，人品优秀，所以我选他做我的指导老师。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "prompt": "A：我发现他是个非常认真的人。\nB：不仅如此，他还是____。（学问）",
+          "answer_sample": "不仅如此，他还是一个学问出众的人。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "prompt": "A：____？\nB：我现在的口语和书面表达能力还不行。尤其是写，____。（十分）",
+          "answer_sample": "A：你的汉语学习怎么样？\nB：我现在的口语和书面表达能力还不行。尤其是写，十分困难。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "prompt": "A：老师，汉字对我来说太难了，我想只学口语，不学汉字，行吗？\nB：可能不行，你要真想学好汉语，就必须学习汉字，____。（不然）",
+          "answer_sample": "不然你的汉语水平很难提高。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "prompt": "A：你们以前不是好朋友吗，怎么现在连话都不说了？\nB：____。（宁可）",
+          "answer_sample": "我宁可一个人，也不想再跟他做朋友。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 225,
+      "page_end": 225,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 7,
+      "title": "七、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "sentences": {
+            "A": "这难道是因为丈夫优点不多，反而更加值得被爱吗？",
+            "B": "美满的婚姻是难得一遇的，常可以看到这种家庭。",
+            "C": "还是因为有这么一位丈夫，女人会感到更安全、更放心？",
+            "D": "不怎么出色的丈夫却有着一位十分贤惠、美丽的妻子。"
+          },
+          "answer_order": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "sentences": {
+            "A": "因此，我认为只要有合适的对象，任何时候结婚都是有道理的，而不要为了所谓的自由而逃避婚姻。",
+            "B": "她是青年时代的情人。",
+            "C": "中年时代的伴侣，晚年时代的守护者。",
+            "D": "在一个男人的生命历程中，妻子是什么呢？"
+          },
+          "answer_order": [
+            "D",
+            "B",
+            "C",
+            "A"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reorder_paragraph.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 226,
+      "page_end": 226,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 8,
+      "title": "八、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "wrong": "我决定了，无论遇到很多困难，都始终坚持学下去。",
+          "correct_sample": "我决定了，无论遇到多少困难，都要始终坚持学下去。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "wrong": "他宁可不请假去旅行，也不想上他的课。",
+          "correct_sample": "他宁可请假去旅行，也不想上他的课。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "wrong": "这个老师让我很怕，由于他常常不笑了。",
+          "correct_sample": "这个老师让我很怕，因为他常常不笑。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "wrong": "我为梁山伯和祝英台的故事非常感动。",
+          "correct_sample": "我被梁山伯和祝英台的故事深深感动了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+          "wrong": "我真想用汉语向她表示表示我的爱情。",
+          "correct_sample": "我真想用汉语向她表达我的爱情。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+          "wrong": "因为他们两人朝夕相处在一起，所以产生了很深的爱情。",
+          "correct_sample": "因为他们两人朝夕相处，所以产生了很深的爱情。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 226,
+      "page_end": 227,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "custom",
+      "variant": "language_and_context",
+      "order": 9,
+      "title": "九、情景表达",
+      "title_vi": "Biểu đạt theo ngữ cảnh",
+      "instruction": {
+        "zh": "下列句子什么情景下说？下列情景怎么说？",
+        "vi": "Các câu sau dùng trong tình huống nào? Với tình huống sau thì nói thế nào?"
+      },
+      "parts": [
+        {
+          "id": "488ae5f8-4dd9-4d3d-84f3-f8419cb45ce5",
+          "title": "下列句子什么情景下说？",
+          "items": [
+            "你如果再逼我，我宁可一死。",
+            "这时我才恍然大悟，原来他也爱我。",
+            "我真是感到很无奈。"
+          ]
+        },
+        {
+          "id": "548bb879-d19c-4be2-9294-b50338cd6fcd",
+          "title": "下列情景怎么说？",
+          "items": [
+            {
+              "prompt": "路上太拥挤，朋友问你怎么去某地，你回答他。（宁可）",
+              "answer_sample": "路上太拥挤，我宁可走着去，也不坐车。",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "prompt": "两个人一见面就无话不谈，像多年不见的老朋友一样。（一见如故）",
+              "answer_sample": "他们两个人一见如故，无话不谈。",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "prompt": "梁山伯与祝英台的爱情故事在中国没有人不知道。（家喻户晓）",
+              "answer_sample": "梁山伯与祝英台的爱情故事在中国家喻户晓。",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.context_expression.v1",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 227,
+      "page_end": 227,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "17063a8b-9f58-474f-91c4-2d8cb1e87c5d",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 10,
+      "title": "十、综合填空：端午节的由来",
+      "title_vi": "Điền tổng hợp: Nguồn gốc Tết Đoan Ngọ",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Làm bài đọc điền khuyết ở section reading."
+      },
+      "reading_ref": "reading_01_cloze_duanwu",
+      "source_origin": "textbook_question_generated_answer",
+      "page_start": 227,
+      "page_end": 229,
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "908dacce-d378-4d3b-90b7-1f687447bf45",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 11,
+      "title": "十一、交际会话：谈论恋爱与失恋",
+      "title_vi": "Giao tiếp: nói về yêu và thất tình",
+      "instruction": {
+        "zh": "谈论恋爱与失恋。",
+        "vi": "Luyện hội thoại về yêu và thất tình."
+      },
+      "communication_ref": "communication_01_love_heartbreak",
+      "source_origin": "textbook",
+      "page_start": 229,
+      "page_end": 230,
+      "answer_verified": true,
+      "check_needed": false
+    }
+  ]
+}

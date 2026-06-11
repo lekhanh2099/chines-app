@@ -1,0 +1,243 @@
+{
+  "id": "4033bdab-0235-4847-81ac-e15be44212d0",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "身边",
+  "pinyin": "shēnbiān",
+  "pos": {
+    "raw_vi": "Cụm vị trí",
+    "raw_cn": "方位短语",
+    "normalized": "noun_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "position"
+  ],
+  "meaning": {
+    "hanviet": "thân biên",
+    "meaning_vi": "bên cạnh, bên mình, xung quanh mình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bên cạnh",
+      "bên mình",
+      "xung quanh mình"
+    ],
+    "short_definition_vi": "bên cạnh, bên mình, xung quanh mình",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "身",
+        "lishu_vi": "thân",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân mình",
+        "modern_logic_vi": "Trong từ/cụm này, 身 góp phần vào nghĩa hiện đại: thân mình.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "边",
+        "lishu_vi": "biên",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi/chuyển động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/chuyển động",
+            "position_vi": "bao quanh",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi/chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bên/cạnh",
+        "modern_logic_vi": "Trong từ/cụm này, 边 góp phần vào nghĩa hiện đại: bên/cạnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "身边 cần học theo nghĩa hiện đại trong bài: bên cạnh, bên mình, xung quanh mình.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 在我身边.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2b139f22-1549-4b05-8517-03896a17fb3f",
+      "order": 1,
+      "zh": "在我身边",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e50d9b2-c562-4775-aaf1-a46af40cff17",
+      "order": 2,
+      "zh": "身边的人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0676b1e9-eb7c-4dd3-ada6-17ad24175b34",
+      "order": 3,
+      "zh": "守在身边",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8281d6a2-3d6f-4d81-bdab-d63056b8f21e",
+      "order": 1,
+      "zh": "她一直陪在母亲身边。",
+      "pinyin": "Tā yìzhí péi zài mǔqīn shēnbiān.",
+      "vi": "Cô ấy luôn ở bên cạnh mẹ.",
+      "analysis_vi": "陪在……身边 là ở bên cạnh bầu bạn/chăm nom.",
+      "highlight": [
+        "身边"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4033bdab-0235-4847-81ac-e15be44212d0"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "09085686-cc3a-4570-939c-2428e56097ef",
+      "order": 2,
+      "zh": "父亲去世以后，他决定留在母亲身边，先把家安定下来。",
+      "pinyin": "Fùqīn qùshì yǐhòu, tā juédìng liú zài mǔqīn shēnbiān, xiān bǎ jiā āndìng xiàlai.",
+      "vi": "Sau khi cha qua đời, anh ấy quyết định ở lại bên mẹ, trước tiên ổn định gia đình.",
+      "analysis_vi": "身边 mang nghĩa tình cảm gần gũi.",
+      "highlight": [
+        "身边"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4033bdab-0235-4847-81ac-e15be44212d0"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "珍惜身边的人 là cụm rất hay gặp: trân trọng người bên cạnh mình.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "716769a6-d684-4375-b4c9-57895e2fdde5",
+      "order": 1,
+      "rule_vi": "Dùng 身边 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "身边",
+    "back": "bên cạnh, bên mình, xung quanh mình",
+    "hint": "shēnbiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4033bdab-0235-4847-81ac-e15be44212d0",
+    "source_lesson_vocab_id": null
+  }
+}

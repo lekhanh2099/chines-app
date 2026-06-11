@@ -1,0 +1,413 @@
+{
+  "id": "12d4d038-0fe2-4d6d-ac39-c200ebdf5f9a",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "假期",
+  "pinyin": "jiàqī",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Giả kỳ",
+    "meaning_vi": "kỳ nghỉ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỳ nghỉ"
+    ],
+    "short_definition_vi": "kỳ nghỉ",
+    "textbook_focus_vi": "kỳ nghỉ",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "假",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": true,
+            "radical": {
+              "radical": "亻",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "unknown",
+              "notes": [],
+              "check_needed": true
+            }
+          },
+          {
+            "text": "叚",
+            "hanviet": "giả",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghỉ/phép trong 假期; giả trong nghĩa khác",
+        "modern_logic_vi": "Trong 假期 đọc jià, nghĩa là nghỉ/phép.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "亻",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "unknown",
+          "notes": [],
+          "check_needed": true
+        }
+      },
+      {
+        "hanzi": "期",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "tháng/thời gian",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng/thịt/thời gian tùy chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "其",
+            "hanviet": "kỳ",
+            "meaning_vi": "thành phần trái",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kỳ, thời hạn, khoảng thời gian",
+        "modern_logic_vi": "期 chỉ khoảng thời gian/kỳ hạn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng/thịt/thời gian tùy chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "假 = nghỉ/phép, 期 = khoảng thời gian. 假期 = khoảng thời gian nghỉ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "放假",
+        "pinyin": "",
+        "meaning_vi": "được nghỉ/cho nghỉ",
+        "difference_vi": "động từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "休息",
+        "pinyin": "",
+        "meaning_vi": "nghỉ ngơi",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "周末",
+        "pinyin": "",
+        "meaning_vi": "cuối tuần",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寒假",
+        "pinyin": "",
+        "meaning_vi": "kỳ nghỉ đông",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "暑假",
+        "pinyin": "",
+        "meaning_vi": "kỳ nghỉ hè",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ef6fad03-62da-45c4-ad5c-b558564d3863",
+      "order": 1,
+      "zh": "寒假假期",
+      "pinyin": "",
+      "vi": "kỳ nghỉ đông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22417b41-540a-4fcd-8eb2-52cb0a6e2430",
+      "order": 2,
+      "zh": "暑假假期",
+      "pinyin": "",
+      "vi": "kỳ nghỉ hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8a3f054-cd66-4265-8de8-44426fe5185b",
+      "order": 3,
+      "zh": "利用假期",
+      "pinyin": "",
+      "vi": "tận dụng kỳ nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a84c8b7-9a4f-439f-8cbc-16d25533e138",
+      "order": 4,
+      "zh": "假期安排",
+      "pinyin": "",
+      "vi": "sắp xếp kỳ nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89503b5d-292b-4de1-91b6-589e4964a27d",
+      "order": 5,
+      "zh": "假期生活",
+      "pinyin": "",
+      "vi": "đời sống trong kỳ nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c0b46bf-d5ee-420a-832f-2fa3d17deb72",
+      "order": 6,
+      "zh": "假期旅行",
+      "pinyin": "",
+      "vi": "du lịch kỳ nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d69b955a-f3e0-495c-a5fe-aeefcdbee240",
+      "order": 1,
+      "zh": "这个假期你打算去哪儿？",
+      "pinyin": "Zhège jiàqī nǐ dǎsuàn qù nǎr?",
+      "vi": "Kỳ nghỉ này bạn định đi đâu?",
+      "analysis_vi": "假期 là danh từ thời gian; 打算 hỏi dự định.",
+      "highlight": [
+        "假期"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "12d4d038-0fe2-4d6d-ac39-c200ebdf5f9a"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d94755a5-1e8e-4430-baf6-5eda08584c6a",
+      "order": 2,
+      "zh": "我是利用假期来中国旅行的。",
+      "pinyin": "Wǒ shì lìyòng jiàqī lái Zhōngguó lǚxíng de.",
+      "vi": "Tôi tận dụng kỳ nghỉ để đến Trung Quốc du lịch.",
+      "analysis_vi": "是……的 nhấn mạnh cách/mục đích.",
+      "highlight": [
+        "假期"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "12d4d038-0fe2-4d6d-ac39-c200ebdf5f9a"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c2b8fc5b-90eb-46cf-9186-a58450d20907",
+      "order": 3,
+      "zh": "假期一开始，他就把要看的书都整理好了，还安排了几天去外地旅行。",
+      "pinyin": "Jiàqī yì kāishǐ, tā jiù bǎ yào kàn de shū dōu zhěnglǐ hǎo le, hái ānpái le jǐ tiān qù wàidì lǚxíng.",
+      "vi": "Kỳ nghỉ vừa bắt đầu, anh ấy liền sắp xếp xong sách cần đọc và vài ngày đi du lịch nơi khác.",
+      "analysis_vi": "一开始就……; 把书整理好了 là 把字句 + kết quả 好.",
+      "highlight": [
+        "假期"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "12d4d038-0fe2-4d6d-ac39-c200ebdf5f9a"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong trường học Trung Quốc, 寒假 thường gắn với 春节; 暑假 thường gắn với du lịch, học thêm hoặc 打工.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c42e438a-1151-489d-a098-3c839bff160b",
+      "order": 1,
+      "rule_vi": "假期 là danh từ; 放假 là động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我假期了。",
+          "pinyin": "",
+          "vi": "Tôi kỳ nghỉ rồi.",
+          "note_vi": "Sai vì 假期 là danh từ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我放假了。",
+          "pinyin": "",
+          "vi": "Tôi được nghỉ rồi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我的假期开始了。",
+          "pinyin": "",
+          "vi": "Kỳ nghỉ của tôi bắt đầu rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "假期",
+    "back": "kỳ nghỉ",
+    "hint": "jiàqī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "12d4d038-0fe2-4d6d-ac39-c200ebdf5f9a",
+    "source_lesson_vocab_id": null
+  }
+}

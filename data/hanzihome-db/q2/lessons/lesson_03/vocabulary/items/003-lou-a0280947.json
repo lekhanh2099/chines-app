@@ -1,0 +1,377 @@
+{
+  "id": "2529f477-8de8-4220-a12d-533ce87c32d1",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "楼",
+  "pinyin": "lóu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "housing"
+  ],
+  "meaning": {
+    "hanviet": "Lâu",
+    "meaning_vi": "tòa nhà; lầu; tầng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tòa nhà",
+      "lầu",
+      "tầng"
+    ],
+    "short_definition_vi": "tòa nhà; lầu; tầng",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "housing",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "楼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây; gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "娄",
+            "hanviet": "lâu",
+            "meaning_vi": "phần âm/cấu tạo bên phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tòa nhà nhiều tầng; tầng lầu",
+        "modern_logic_vi": "Có 木 vì nhà truyền thống dùng nhiều kết cấu gỗ; nghĩa hiện đại mở rộng thành nhà tầng/tòa nhà.",
+        "warning_vi": "楼 vừa có thể chỉ cả tòa nhà, vừa có thể chỉ tầng; phải nhìn cụm.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây; gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "楼 có thể chỉ tòa nhà hoặc tầng trong tòa nhà tùy cấu trúc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "房子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nhà/căn nhà/căn hộ nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "楼房",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nhà tầng, tòa nhà có nhiều tầng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大楼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tòa nhà lớn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "层",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tầng/lớp, thiên về số tầng hoặc lớp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "楼上",
+        "right": "楼下",
+        "meaning_vi": "Trên lầu đối lập với dưới lầu.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aa6ba4fc-86db-472a-854d-246358348280",
+      "order": 1,
+      "zh": "一栋楼",
+      "pinyin": "",
+      "vi": "một tòa nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9e56613-9d68-42d5-b6c6-80e6a834d1fe",
+      "order": 2,
+      "zh": "三楼",
+      "pinyin": "",
+      "vi": "tầng ba",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87f43c42-d974-4a84-98fe-60ffa5eaffeb",
+      "order": 3,
+      "zh": "楼上",
+      "pinyin": "",
+      "vi": "trên lầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80e11d3c-ed7c-4afc-bc57-fe3196d8d24a",
+      "order": 4,
+      "zh": "楼下",
+      "pinyin": "",
+      "vi": "dưới lầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f58a2e09-9ba6-469c-9871-75ab42d66429",
+      "order": 5,
+      "zh": "办公楼",
+      "pinyin": "",
+      "vi": "tòa nhà văn phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c851fd34-6fd3-4853-a2c4-e78168db77b0",
+      "order": 6,
+      "zh": "教学楼",
+      "pinyin": "",
+      "vi": "tòa nhà giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef9288c4-27ac-4059-87f9-1757b1af5487",
+      "order": 7,
+      "zh": "宿舍楼",
+      "pinyin": "",
+      "vi": "tòa ký túc xá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c3f8d52-320b-4061-9d07-2eefe1a44e55",
+      "order": 8,
+      "zh": "高楼大厦",
+      "pinyin": "",
+      "vi": "nhà cao tầng, cao ốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "35dd9c0d-71d5-4d9d-bf18-43018cc399b1",
+      "order": 1,
+      "zh": "我住在三楼。",
+      "pinyin": "Wǒ zhù zài sān lóu.",
+      "vi": "Tôi ở tầng ba.",
+      "analysis_vi": "住在 + địa điểm; 三楼 là cách nói tầng rất thông dụng.",
+      "highlight": [
+        "楼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2529f477-8de8-4220-a12d-533ce87c32d1"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "09b62a0e-e008-47e7-a30d-39759cdda64a",
+      "order": 2,
+      "zh": "我吃了早饭就下楼来了。",
+      "pinyin": "Wǒ chī le zǎofàn jiù xià lóu lái le.",
+      "vi": "Tôi ăn sáng xong thì xuống lầu đến đây.",
+      "analysis_vi": "V了 + O + 就 + V了: 就 nhấn hành động sau xảy ra ngay sau hành động trước.",
+      "highlight": [
+        "楼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2529f477-8de8-4220-a12d-533ce87c32d1"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "600ac910-55f7-40a3-9752-5332587fc28e",
+      "order": 3,
+      "zh": "要是你找不到这栋楼，就给我打电话，我下去接你。",
+      "pinyin": "Yàoshi nǐ zhǎo bú dào zhè dòng lóu, jiù gěi wǒ dǎ diànhuà, wǒ xiàqù jiē nǐ.",
+      "vi": "Nếu bạn không tìm thấy tòa nhà này thì gọi điện cho tôi, tôi sẽ xuống đón bạn.",
+      "analysis_vi": "找不到 là bổ ngữ khả năng phủ định; 要是……就…… là giả thiết – kết quả.",
+      "highlight": [
+        "楼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2529f477-8de8-4220-a12d-533ce87c32d1"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở đô thị Trung Quốc, 办公楼、教学楼、宿舍楼 rất thường gặp. Học 楼 nên học theo nhóm loại tòa nhà, không chỉ học nghĩa 'lầu'.",
+    "tags": [
+      "housing"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a3038669-8fd7-4fb5-929d-42dfdcc2a139",
+      "order": 1,
+      "rule_vi": "楼 không hoàn toàn bằng 'nhà' trong mọi ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我想租楼。",
+          "pinyin": "",
+          "vi": "Tôi muốn thuê tòa nhà.",
+          "note_vi": "Dễ nghe thành thuê cả tòa nhà.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我想租房子。",
+          "pinyin": "Wǒ xiǎng zū fángzi.",
+          "vi": "Tôi muốn thuê nhà.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Nếu nói muốn thuê nhà, dùng 租房子/租房, không dùng 租楼 trừ khi thật sự thuê cả tòa nhà.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "楼",
+    "back": "tòa nhà; lầu; tầng",
+    "hint": "lóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "housing"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2529f477-8de8-4220-a12d-533ce87c32d1",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "id": "fd322578-fa92-42ee-8e43-55d55999caf9",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "经验",
+  "pinyin": "jīngyàn",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kinh nghiệm",
+    "meaning_vi": "kinh nghiệm; trải nghiệm; kiến thức/kỹ năng có được từ thực tế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kinh nghiệm",
+      "trải nghiệm",
+      "kiến thức/kỹ năng có được từ thực tế"
+    ],
+    "short_definition_vi": "kinh nghiệm",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "经",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trải qua; kinh qua",
+        "modern_logic_vi": "Trong từ 经验, chữ 经 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "验",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "馬",
+          "radical_variant": "马",
+          "radical_name_vi": "bộ Mã",
+          "radical_name_zh": "",
+          "hanviet": "mã",
+          "meaning_vi": "ngựa; dạng giản thể",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "马 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "mã",
+            "meaning_vi": "ngựa; dạng giản thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "馬",
+              "radical_variant": "马",
+              "radical_name_vi": "bộ Mã",
+              "radical_name_zh": "",
+              "hanviet": "mã",
+              "meaning_vi": "ngựa; dạng giản thể",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "马 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểm nghiệm/chứng nghiệm",
+        "modern_logic_vi": "Trong từ 经验, chữ 验 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "经验 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他很有经验。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "经历",
+        "pinyin": "jīnglì",
+        "meaning_vi": "trải nghiệm/sự từng trải",
+        "difference_vi": "经历 nhấn sự việc từng trải qua; 经验 là kinh nghiệm rút ra.",
+        "register_vi": "",
+        "example_zh": "这是一段难忘的经历。",
+        "example_vi": "Đây là một trải nghiệm khó quên.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cefe780d-84b7-456b-8c4f-087d4d51816e",
+      "order": 1,
+      "zh": "有经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c02e9267-ad5c-4065-9d89-a76f35c44248",
+      "order": 2,
+      "zh": "没有经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e38e5b36-2a19-426b-83af-503707cc8f92",
+      "order": 3,
+      "zh": "经验丰富",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e60c2ee3-9bcd-4ba6-bfb1-2c9a38263612",
+      "order": 4,
+      "zh": "总结经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57a31280-0ce7-44ee-8840-0f4f3e8f388d",
+      "order": 5,
+      "zh": "积累经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad889945-53f4-4b80-a86a-ec640eb26d00",
+      "order": 6,
+      "zh": "学习经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0520a262-0e68-4474-8aba-1fb10341c08a",
+      "order": 7,
+      "zh": "工作经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d4d5503-8f35-443e-b6f4-8177f7de0e01",
+      "order": 8,
+      "zh": "恋爱经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a1127ca8-7225-4036-8e8d-15d2eb22ecb2",
+      "order": 1,
+      "zh": "他很有经验。",
+      "pinyin": "",
+      "vi": "Anh ấy rất có kinh nghiệm.",
+      "analysis_vi": "Ví dụ dùng 经验 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "经验"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd322578-fa92-42ee-8e43-55d55999caf9"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "经验 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e4f522ca-d6e0-41a1-8a47-ebe2e686e035",
+      "order": 1,
+      "rule_vi": "经验 là kinh nghiệm rút ra; 经历 là trải nghiệm/sự từng trải qua; 教训 thường là bài học sau lỗi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "经验",
+    "back": "kinh nghiệm; trải nghiệm; kiến thức/kỹ năng có được từ thực tế",
+    "hint": "jīngyàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fd322578-fa92-42ee-8e43-55d55999caf9",
+    "source_lesson_vocab_id": null
+  }
+}

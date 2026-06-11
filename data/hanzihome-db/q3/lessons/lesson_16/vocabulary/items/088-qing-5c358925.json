@@ -1,0 +1,152 @@
+{
+  "id": "873f3753-1780-4123-89b3-71d91d10feb8",
+  "type": "deep_vocabulary_item",
+  "order": 88,
+  "hanzi": "请",
+  "pinyin": "qǐng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词/礼貌用语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Giao tiếp và hỏi đáp"
+  ],
+  "meaning": {
+    "hanviet": "Thỉnh",
+    "meaning_vi": "mời, xin, vui lòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mời",
+      "xin",
+      "vui lòng"
+    ],
+    "short_definition_vi": "mời, xin, vui lòng",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: mời, xin, vui lòng.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Giao tiếp và hỏi đáp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "请",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "请 trong bài được học theo nghĩa trọng tâm: mời, xin, vui lòng.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: mời, xin, vui lòng.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bd344c8e-d4f8-4d03-b095-d77a7d235599",
+      "order": 1,
+      "zh": "请看这张照片。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: mời, xin, vui lòng",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3ab9b5c4-3e18-4dd8-ac9b-ede4df7fec6f",
+      "order": 1,
+      "zh": "请看这张照片。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “请” = mời, xin, vui lòng.",
+      "analysis_vi": "Câu này dùng “请” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "请"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "873f3753-1780-4123-89b3-71d91d10feb8"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “请” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4957f4fb-47d2-4817-ae96-e4de74475b9b",
+      "order": 1,
+      "rule_vi": "Cần dùng “请” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "请",
+    "back": "mời, xin, vui lòng",
+    "hint": "qǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Giao tiếp và hỏi đáp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "873f3753-1780-4123-89b3-71d91d10feb8",
+    "source_lesson_vocab_id": null
+  }
+}

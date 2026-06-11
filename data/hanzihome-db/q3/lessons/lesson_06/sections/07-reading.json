@@ -1,0 +1,235 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / điền khuyết",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "换换搭档",
+      "supplementary_vocab": [
+        {
+          "hanzi": "搭档",
+          "pinyin": "dādàng",
+          "meaning_vi": "bạn đánh cặp; cộng sự; bạn phối hợp",
+          "pos": "Danh từ / Động từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ",
+            "cn": "名词/动词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "羽毛球",
+          "pinyin": "yǔmáoqiú",
+          "meaning_vi": "cầu lông; quả cầu lông",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "现象",
+          "pinyin": "xiànxiàng",
+          "meaning_vi": "hiện tượng",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "埋怨",
+          "pinyin": "mányuàn",
+          "meaning_vi": "oán trách; trách móc; phàn nàn",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "闹",
+          "pinyin": "nào",
+          "meaning_vi": "làm ầm lên; gây chuyện; quậy; gây rối",
+          "pos": "Động từ / Tính từ",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ",
+            "cn": "动词/形容词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "经验",
+          "pinyin": "jīngyàn",
+          "meaning_vi": "kinh nghiệm",
+          "pos": "Danh từ / Động từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ",
+            "cn": "名词/动词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "title": "换换搭档",
+        "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。",
+        "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqù le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huànhuan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
+        "vi": "Một cô bé hàng xóm làm việc ở một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh bóng, tôi phát hiện một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng phối hợp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường hay cãi nhau: nam thì nói nữ đánh không đúng, nữ thì nói nam đánh không hay. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh đôi”, tức là để mỗi bà vợ đổi sang phía đối phương rồi bắt đầu đánh lại.\n\nKết quả, trên sân bóng tràn đầy tiếng cười; hai bên đánh rất vui vẻ, không muốn rời đi."
+      },
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "个",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "的",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 4,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 6,
+          "answer": "去",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "让",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "上",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "answer_verified": true,
+      "check_needed": false,
+      "answer_key": [
+        {
+          "blank": 1,
+          "answer": "在",
+          "pinyin": "zài",
+          "explanation_vi": "在 + địa điểm + 工作: làm việc ở đâu.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "个",
+          "pinyin": "ge",
+          "explanation_vi": "一个现象: lượng từ 个 cho 现象.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "的",
+          "pinyin": "de",
+          "explanation_vi": "奇怪的是: điều kỳ lạ là...",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 4,
+          "answer": "得",
+          "pinyin": "de",
+          "explanation_vi": "打得不对: 得 dẫn bổ ngữ trình độ/kết quả đánh giá.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "得",
+          "pinyin": "de",
+          "explanation_vi": "打得不好: 得 dẫn bổ ngữ trình độ.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 6,
+          "answer": "去",
+          "pinyin": "qù",
+          "explanation_vi": "打下去: tiếp tục đánh tiếp.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "让",
+          "pinyin": "ràng",
+          "explanation_vi": "让他们“换换搭档”: bảo/để họ đổi bạn đánh đôi.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "上",
+          "pinyin": "shang",
+          "explanation_vi": "球场上: trên sân bóng.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer"
+    }
+  ]
+}

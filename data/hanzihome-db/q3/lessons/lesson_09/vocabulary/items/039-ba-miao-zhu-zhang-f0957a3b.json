@@ -1,0 +1,393 @@
+{
+  "id": "216ae1ac-298e-45cd-a1fc-3365e1781a49",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "拔苗助长",
+  "pinyin": "bá miáo zhù zhǎng",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bạt miêu trợ trưởng",
+    "meaning_vi": "nóng vội thúc ép làm hỏng việc; đốt cháy giai đoạn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nóng vội thúc ép làm hỏng việc",
+      "đốt cháy giai đoạn"
+    ],
+    "short_definition_vi": "nóng vội thúc ép làm hỏng việc",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拔",
+        "lishu_vi": "bạt",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhổ, rút",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "苗",
+        "lishu_vi": "miêu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng, đất trồng trọt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "田",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Điền",
+              "radical_name_zh": "",
+              "hanviet": "điền",
+              "meaning_vi": "ruộng, đất trồng trọt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cây non",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "助",
+        "lishu_vi": "trợ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức mạnh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức mạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giúp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức mạnh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "长",
+        "lishu_vi": "trưởng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn lên; dài",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "拔苗助长 nghĩa đen là nhổ mạ lên để giúp nó lớn; nghĩa bóng là ép nhanh làm phản tác dụng.",
+    "memory_tip_vi": "Nhớ học tiếng Trung không thể 拔苗助长.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "急于求成",
+        "pinyin": "",
+        "meaning_vi": "急于求成",
+        "difference_vi": "急于求成 là nóng vội cầu thành; 拔苗助长 nhấn hậu quả phản tác dụng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "循序渐进",
+        "pinyin": "",
+        "meaning_vi": "循序渐进",
+        "difference_vi": "tiến từng bước theo trình tự",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c73c1b4f-5420-4643-a698-c5b1c1e6aaa0",
+      "order": 1,
+      "zh": "不能拔苗助长",
+      "pinyin": "bù néng bá miáo zhù zhǎng",
+      "vi": "không thể đốt cháy giai đoạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13124ef8-b745-4a52-8ca1-ea1dd47e9ff5",
+      "order": 2,
+      "zh": "教育孩子不能拔苗助长",
+      "pinyin": "jiàoyù háizi bù néng bá miáo zhù zhǎng",
+      "vi": "giáo dục trẻ không thể ép nhanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f73c9b01-5973-4409-93f7-01bf69abc19f",
+      "order": 3,
+      "zh": "避免拔苗助长",
+      "pinyin": "bìmiǎn bá miáo zhù zhǎng",
+      "vi": "tránh phản tác dụng do nóng vội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72484d89-8255-4e55-aa23-d957b66ff51d",
+      "order": 4,
+      "zh": "拔苗助长式的教育",
+      "pinyin": "bá miáo zhù zhǎng shì de jiàoyù",
+      "vi": "kiểu giáo dục ép lớn nhanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a490bda9-2088-4a0a-bf57-ccb391bb0a5a",
+      "order": 1,
+      "zh": "学习汉语不能拔苗助长。",
+      "pinyin": "Xuéxí Hànyǔ bù néng bá miáo zhù zhǎng.",
+      "vi": "Học tiếng Trung không thể đốt cháy giai đoạn.",
+      "analysis_vi": "Thành ngữ làm vị ngữ.",
+      "highlight": [
+        "拔苗助长"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "216ae1ac-298e-45cd-a1fc-3365e1781a49"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "df948d61-cb1e-4b29-802c-0485b063d349",
+      "order": 2,
+      "zh": "父母给太大的压力，不一定是帮助，有时候反而是拔苗助长。",
+      "pinyin": "Fùmǔ gěi tài dà de yālì, bù yídìng shì bāngzhù, yǒu shíhou fǎn’ér shì bá miáo zhù zhǎng.",
+      "vi": "Cha mẹ gây áp lực quá lớn không nhất định là giúp, đôi khi lại phản tác dụng.",
+      "analysis_vi": "反而 nhấn kết quả trái ý tốt.",
+      "highlight": [
+        "拔苗助长"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "216ae1ac-298e-45cd-a1fc-3365e1781a49"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Thành ngữ này rất hay dùng trong giáo dục, gần “dục tốc bất đạt”.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7072fccc-5a42-43d6-8598-609e2a58d9fc",
+      "order": 1,
+      "rule_vi": "Không dùng 拔苗助长 cho mọi việc nhanh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他跑得很快，真是拔苗助长。",
+          "pinyin": "Tā pǎo de hěn kuài, zhēn shì bá miáo zhù zhǎng.",
+          "vi": "Sai hướng vì chỉ là chạy nhanh.",
+          "note_vi": "Không có ý ép phát triển trái quy luật.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "学习要循序渐进，不能拔苗助长。",
+          "pinyin": "Xuéxí yào xúnxù jiànjìn, bù néng bá miáo zhù zhǎng.",
+          "vi": "Học phải tiến từng bước, không được đốt cháy giai đoạn.",
+          "note_vi": "Dùng đúng ngữ cảnh phát triển/quá trình.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拔苗助长",
+    "back": "nóng vội thúc ép làm hỏng việc; đốt cháy giai đoạn",
+    "hint": "bá miáo zhù zhǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "216ae1ac-298e-45cd-a1fc-3365e1781a49",
+    "source_lesson_vocab_id": null
+  }
+}

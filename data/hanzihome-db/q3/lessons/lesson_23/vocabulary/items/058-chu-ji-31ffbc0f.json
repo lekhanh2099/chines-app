@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ed2a9196272bfac9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "初（级）",
+  "pinyin": "chū (jí)",
+  "meaning_vi": "sơ cấp; cấp đầu",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+    "type": "vocabulary_item",
+    "order": 27,
+    "hanzi": "初（级）",
+    "pinyin": "chū (jí)",
+    "meaning_vi": "sơ cấp; cấp đầu",
+    "meaning_en": "beginning; elementary",
+    "pos": "Tính từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "初（级）",
+      "back": "chū (jí) — sơ cấp; cấp đầu",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

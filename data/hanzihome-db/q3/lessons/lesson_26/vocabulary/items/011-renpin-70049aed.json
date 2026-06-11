@@ -1,0 +1,266 @@
+{
+  "id": "b1011ee4-c787-420a-8ded-6536991524c6",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "人品",
+  "pinyin": "rénpǐn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "nhân phẩm",
+    "meaning_vi": "phẩm chất con người, nhân cách",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phẩm chất con người",
+      "nhân cách"
+    ],
+    "short_definition_vi": "phẩm chất con người, nhân cách",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "nhân",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "人 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "品",
+        "lishu_vi": "phẩm",
+        "structure_note_vi": "Chữ có thành phần/bộ 口; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 品 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "人品 trong bài được học theo nghĩa: phẩm chất con người, nhân cách.",
+    "memory_tip_vi": "Nhớ 人品 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "性格",
+        "pinyin": "xìnggé",
+        "meaning_vi": "tính cách",
+        "difference_vi": "Không nhất thiết liên quan đạo đức như 人品.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 人品 với 性格: 人品好 là phẩm chất tốt; 性格好 là tính cách dễ chịu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "60b27bb0-8d90-4541-9d24-d82e4a71dd62",
+      "order": 1,
+      "zh": "人品好",
+      "pinyin": "",
+      "vi": "nhân phẩm tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "019784b9-7c10-4de8-88af-762801a9b348",
+      "order": 2,
+      "zh": "人品出众",
+      "pinyin": "",
+      "vi": "nhân phẩm nổi bật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "036f902f-da30-4bab-8834-1deeb4a6b27c",
+      "order": 3,
+      "zh": "看重人品",
+      "pinyin": "",
+      "vi": "coi trọng nhân phẩm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f3b5bb6-c4f0-4b8f-99dd-6d826e18b072",
+      "order": 4,
+      "zh": "人品有问题",
+      "pinyin": "",
+      "vi": "nhân phẩm có vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5afd3e16-cdf4-4510-b385-3ef4f39e6b4f",
+      "order": 1,
+      "zh": "他虽然话不多，但是人品很好。",
+      "pinyin": "",
+      "vi": "Anh ấy tuy không nói nhiều nhưng nhân phẩm rất tốt.",
+      "analysis_vi": "虽然……但是…… nêu đối lập.",
+      "highlight": [
+        "人品"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b1011ee4-c787-420a-8ded-6536991524c6"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5526fc0e-2a76-4215-bdd2-2724cbe9195c",
+      "order": 2,
+      "zh": "梁山伯学问好，人品也好，所以祝英台很信任他。",
+      "pinyin": "",
+      "vi": "Lương Sơn Bá học vấn tốt, nhân phẩm cũng tốt, nên Chúc Anh Đài rất tin anh.",
+      "analysis_vi": "A 好，B 也好 là liệt kê tự nhiên.",
+      "highlight": [
+        "人品"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b1011ee4-c787-420a-8ded-6536991524c6"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Người đọc sách lý tưởng trong Nho giáo cần cả 学问 và 人品.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3f098ee4-5525-4abd-a2ad-8ccca640406c",
+      "order": 1,
+      "rule_vi": "Không nhầm 人品 với 性格: 人品好 là phẩm chất tốt; 性格好 là tính cách dễ chịu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人品",
+    "back": "phẩm chất con người, nhân cách",
+    "hint": "rénpǐn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b1011ee4-c787-420a-8ded-6536991524c6",
+    "source_lesson_vocab_id": null
+  }
+}

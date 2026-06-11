@@ -1,0 +1,258 @@
+{
+  "id": "8e435b9b-314c-43ec-b926-0ce96d45d063",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "散步",
+  "pinyin": "sànbù",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Danh từ hoạt động",
+    "raw_cn": "离合动词 / 名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "tản bộ",
+    "meaning_vi": "đi dạo",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "đi dạo",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "散",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động, hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động, hành động",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tản ra, thư giãn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động, hành động",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "步",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bước",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Đi chậm/thong thả để thư giãn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "走路",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi bộ như phương tiện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "跑步",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chạy bộ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "逛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi loanh quanh xem/mua/chơi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "15de39c9-c065-45a7-8985-d8c0acb6587e",
+      "order": 1,
+      "zh": "去散步",
+      "pinyin": "",
+      "vi": "đi dạo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5abebe13-d946-4063-a577-4947b5aa4367",
+      "order": 2,
+      "zh": "饭后散步",
+      "pinyin": "",
+      "vi": "đi dạo sau bữa ăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74143199-8b44-4c18-bce8-61ad90be2c8f",
+      "order": 3,
+      "zh": "在公园散步",
+      "pinyin": "",
+      "vi": "đi dạo trong công viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d64645a2-26a7-49ed-8df7-5eeda303c16b",
+      "order": 1,
+      "zh": "他散了半个小时步。",
+      "pinyin": "Tā sàn le bàn ge xiǎoshí bù.",
+      "vi": "Anh ấy đi dạo nửa tiếng.",
+      "en": "",
+      "highlight": [
+        "散"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8e435b9b-314c-43ec-b926-0ce96d45d063"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "饭后散步 là hình ảnh đời thường ở công viên.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1b829ab4-1851-4b5d-a09e-5d397750c17f",
+      "order": 1,
+      "title_vi": "Không nhầm với 走路",
+      "explanation_vi": "走路 là phương tiện di chuyển; 散步 là đi dạo thư giãn.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "我走路去学校。",
+        "我饭后散步。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "散步",
+    "back": "đi dạo",
+    "hint": "sànbù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "散步"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8e435b9b-314c-43ec-b926-0ce96d45d063",
+    "source_lesson_vocab_id": null
+  }
+}

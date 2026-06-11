@@ -1,0 +1,39 @@
+{
+  "id": "section_07_character_writing",
+  "type": "character_writing",
+  "order": 7,
+  "title": "写汉字",
+  "title_vi": "Viết chữ Hán",
+  "items": [
+    {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "光",
+      "pinyin": "guāng",
+      "vocab_ref": "vocab_015",
+      "stroke_count": 6,
+      "radical": "儿",
+      "stroke_order_key": "光",
+      "practice": {
+        "grid_type": "田字格",
+        "repeat_count": 6
+      }
+    },
+    {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "交",
+      "pinyin": "jiāo",
+      "vocab_ref": "vocab_028",
+      "stroke_count": 6,
+      "radical": "亠",
+      "stroke_order_key": "交",
+      "practice": {
+        "grid_type": "田字格",
+        "repeat_count": 6
+      }
+    }
+  ]
+}

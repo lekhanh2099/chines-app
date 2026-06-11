@@ -1,0 +1,503 @@
+{
+  "id": "f845958c-4c76-4082-bc7d-b428176f851c",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "太极拳",
+  "pinyin": "tàijíquán",
+  "pos": {
+    "raw_vi": "Danh từ / môn võ, môn vận động",
+    "raw_cn": "名/武术项目",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "taiji",
+    "culture",
+    "health"
+  ],
+  "meaning": {
+    "hanviet": "Thái cực quyền",
+    "meaning_vi": "Thái Cực Quyền",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Thái Cực Quyền"
+    ],
+    "short_definition_vi": "Thái Cực Quyền",
+    "textbook_focus_vi": "Thái Cực Quyền",
+    "register_vi": "",
+    "usage_domain_vi": "taiji,culture,health",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "太",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "chính",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được dùng như bộ Đại trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丶",
+            "hanviet": "chủ",
+            "meaning_vi": "chấm thêm",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quá, rất, thái",
+        "modern_logic_vi": "太 trong 太极拳 là thành tố của khái niệm 太极.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được dùng như bộ Đại trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "极",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "及",
+            "hanviet": "cập",
+            "meaning_vi": "đạt tới",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cực, điểm tận cùng, rất",
+        "modern_logic_vi": "极 = cực/điểm tận cùng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "拳",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "手 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "手 được dùng như bộ Thủ trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "龹",
+            "hanviet": "quyển",
+            "meaning_vi": "thành phần trên",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nắm đấm, quyền thuật",
+        "modern_logic_vi": "手 gợi tay/quyền thuật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "手 được dùng như bộ Thủ trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "太 trong 太极拳 là thành tố của khái niệm 太极.; 极 = cực/điểm tận cùng.; 手 gợi tay/quyền thuật.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "武术",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "气功",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "健身操",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "680e18e6-a3ae-44d5-9ed9-cbe6c0534061",
+      "order": 1,
+      "zh": "练太极拳",
+      "pinyin": "",
+      "vi": "luyện Thái Cực Quyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc8553f2-b30b-49cd-bb02-5d4381cb93b9",
+      "order": 2,
+      "zh": "打太极拳",
+      "pinyin": "",
+      "vi": "tập/đánh Thái Cực Quyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eaa64163-3848-4652-9f85-5472b1cb5e41",
+      "order": 3,
+      "zh": "太极拳动作",
+      "pinyin": "",
+      "vi": "động tác Thái Cực Quyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4951d5a8-60c6-4a67-99d9-4a3415c28ced",
+      "order": 4,
+      "zh": "学习太极拳",
+      "pinyin": "",
+      "vi": "học Thái Cực Quyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f48e76d-9425-4107-95d8-b52a0b890353",
+      "order": 5,
+      "zh": "表演太极拳",
+      "pinyin": "",
+      "vi": "biểu diễn Thái Cực Quyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e79a5cb3-b26b-4ccc-9c36-085b6c09088e",
+      "order": 1,
+      "zh": "我每天早上练太极拳。",
+      "pinyin": "Wǒ měi tiān zǎoshang liàn tàijíquán.",
+      "vi": "Mỗi sáng tôi luyện Thái Cực Quyền.",
+      "analysis_vi": "练太极拳 là collocation an toàn.",
+      "highlight": [
+        "太极拳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f845958c-4c76-4082-bc7d-b428176f851c"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9cb16c3a-d819-4add-82a5-b7877fffccf8",
+      "order": 2,
+      "zh": "太极拳的动作柔和缓慢，可以增强体质。",
+      "pinyin": "Tàijíquán de dòngzuò róuhé huǎnmàn, kěyǐ zēngqiáng tǐzhì.",
+      "vi": "Động tác Thái Cực Quyền mềm mại chậm rãi, có thể tăng cường thể chất.",
+      "analysis_vi": "Gom nhiều từ trọng tâm bài.",
+      "highlight": [
+        "太极拳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f845958c-4c76-4082-bc7d-b428176f851c"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "太极拳 vừa là võ thuật truyền thống vừa thường được nhìn như vận động dưỡng sinh.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e5d53554-f978-4161-98ed-1298ea90be52",
+      "order": 1,
+      "rule_vi": "打太极 trong công việc có thể là “đùn đẩy/né trách nhiệm”, không phải tập võ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我每天练太极拳。",
+          "pinyin": "Wǒ měi tiān liàn tàijíquán.",
+          "vi": "Tôi luyện Thái Cực Quyền mỗi ngày.",
+          "note_vi": "练 tránh nhập nhằng nghĩa bóng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "太极拳",
+    "back": "Thái Cực Quyền",
+    "hint": "tàijíquán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "taiji",
+      "culture",
+      "health"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f845958c-4c76-4082-bc7d-b428176f851c",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "id": "a5dd373b-a27c-4098-b596-8d45546b4588",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "早晨",
+  "pinyin": "zǎochen",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tảo thần",
+    "meaning_vi": "buổi sáng sớm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "buổi sáng sớm"
+    ],
+    "short_definition_vi": "buổi sáng sớm",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về thời gian, sinh hoạt.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thời gian, sinh hoạt",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "早",
+        "lishu_vi": "tảo",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 早 trong từ 早晨; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "phần trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "十",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phần dưới chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 早晨, chữ 早 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "晨",
+        "lishu_vi": "thần",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 晨 trong từ 早晨; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "phần trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "辰",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phần dưới chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 早晨, chữ 晨 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "早晨 trong bài được nhớ theo nghĩa hiện đại: buổi sáng sớm.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 每天早晨 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "早上",
+        "pinyin": "zǎoshang",
+        "meaning_vi": "buổi sáng; khẩu ngữ phổ biến hơn",
+        "difference_vi": "buổi sáng; khẩu ngữ phổ biến hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上午",
+        "pinyin": "shàngwǔ",
+        "meaning_vi": "buổi sáng trước trưa; phạm vi rộng hơn",
+        "difference_vi": "buổi sáng trước trưa; phạm vi rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "晚上",
+        "pinyin": "wǎnshang",
+        "meaning_vi": "buổi tối",
+        "difference_vi": "buổi tối",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 早晨 để chỉ cả ngày; nó là khoảng sáng sớm."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "18ccde59-1e4f-4f92-80f7-54b7d1053eb5",
+      "order": 1,
+      "zh": "每天早晨",
+      "pinyin": "",
+      "vi": "mỗi sáng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc9375bb-0b25-4c7d-80f2-f7a0d3e26f06",
+      "order": 2,
+      "zh": "今天早晨",
+      "pinyin": "",
+      "vi": "sáng nay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "567a2567-b10c-42a3-ae23-1bbd20d59f6d",
+      "order": 3,
+      "zh": "明天早晨",
+      "pinyin": "",
+      "vi": "sáng mai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b5b6532-824d-4990-b5aa-3641e7a844df",
+      "order": 4,
+      "zh": "早晨起来",
+      "pinyin": "",
+      "vi": "sáng thức dậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "601e230d-319c-4f07-bdc4-19268a6cc77f",
+      "order": 5,
+      "zh": "早晨上课",
+      "pinyin": "",
+      "vi": "sáng vào lớp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0e5c376c-d2ee-4496-98c0-bef999dd35de",
+      "order": 1,
+      "zh": "我每天早晨七点起床。",
+      "pinyin": "",
+      "vi": "buổi sáng sớm",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "早晨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a5dd373b-a27c-4098-b596-8d45546b4588"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "96c7ce16-3a45-4fe3-987c-cbf88489fae8",
+      "order": 2,
+      "zh": "这个词语“早晨”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 早晨 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "早晨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a5dd373b-a27c-4098-b596-8d45546b4588"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5b525457-4d5f-47a1-a328-2a4c84966c19",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“早晨”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 早晨 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "早晨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a5dd373b-a27c-4098-b596-8d45546b4588"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "早上好 phổ biến hơn 早晨好 trong chào hỏi đời thường.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "97fbd489-0544-4d8a-8c49-b364cb88caa5",
+      "order": 1,
+      "rule_vi": "Không dùng 早晨 để chỉ cả ngày; nó là khoảng sáng sớm.",
+      "natural_examples": [
+        {
+          "zh": "我每天早晨都很忙。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我早晨都很忙。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我早晨都很忙。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我每天早晨都很忙。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dùng 早晨 để chỉ cả ngày; nó là khoảng sáng sớm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "早晨",
+    "back": "buổi sáng sớm",
+    "hint": "zǎochen",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a5dd373b-a27c-4098-b596-8d45546b4588",
+    "source_lesson_vocab_id": null
+  }
+}

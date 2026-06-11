@@ -1,0 +1,39 @@
+{
+  "id": "section_notes",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "note_001",
+      "type": "note",
+      "order": 1,
+      "title": "我知道这下完了，心中已开始打退堂鼓。",
+      "structure": "完了；打退堂鼓",
+      "meaning_vi": "完了 ở đây là ‘hỏng rồi, hết hy vọng rồi’. 打退堂鼓 ví von việc làm nửa chừng thì chùn bước/bỏ cuộc.",
+      "examples": [],
+      "source_refs": [
+        "text_p_013"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "note_002",
+      "type": "note",
+      "order": 2,
+      "title": "与其在讲台上出洋相，还不如趁早给自己找个台阶儿下去。",
+      "structure": "与其……不如……；出洋相；台阶儿",
+      "meaning_vi": "出洋相 là làm trò cười/mất mặt. 台阶儿 nghĩa đen là bậc thang, nghĩa bóng là lối thoát để tránh khó xử.",
+      "examples": [],
+      "source_refs": [
+        "text_p_013"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

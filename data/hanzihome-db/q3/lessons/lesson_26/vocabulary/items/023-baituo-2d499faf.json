@@ -1,0 +1,297 @@
+{
+  "id": "3540edf9-64d8-42b2-a88f-15c86a1a16a6",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "拜托",
+  "pinyin": "bàituō",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "bái thác",
+    "meaning_vi": "nhờ vả, gửi gắm nhờ ai làm việc gì",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhờ vả",
+      "gửi gắm nhờ ai làm việc gì"
+    ],
+    "short_definition_vi": "nhờ vả, gửi gắm nhờ ai làm việc gì",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拜",
+        "lishu_vi": "bái",
+        "structure_note_vi": "Chữ có thành phần/bộ 手; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "手 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 拜 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "托",
+        "lishu_vi": "thác",
+        "structure_note_vi": "Chữ có thành phần/bộ 扌; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 托 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "拜托 trong bài được học theo nghĩa: nhờ vả, gửi gắm nhờ ai làm việc gì.",
+    "memory_tip_vi": "Nhớ 拜托 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "麻烦",
+        "pinyin": "máfan",
+        "meaning_vi": "làm phiền, phiền ai",
+        "difference_vi": "Lịch sự đời thường hơn 拜托 trong việc nhỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không lạm dụng 拜托 cho mọi việc nhỏ; 麻烦你... tự nhiên hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dcb389d9-0363-4c70-b9e0-c0ed170ffca7",
+      "order": 1,
+      "zh": "拜托你了",
+      "pinyin": "",
+      "vi": "nhờ bạn đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e2a2c0e-5bce-4295-ad7f-ddb2c9ad3d3a",
+      "order": 2,
+      "zh": "拜托别人帮忙",
+      "pinyin": "",
+      "vi": "nhờ người khác giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "473e02c2-c819-4446-a1d1-705ef7a54e0c",
+      "order": 3,
+      "zh": "拜托师母转交",
+      "pinyin": "",
+      "vi": "nhờ sư mẫu chuyển giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7ac5b2b7-f947-422d-9a40-2cda8df994fb",
+      "order": 1,
+      "zh": "这件事就拜托你了。",
+      "pinyin": "",
+      "vi": "Chuyện này nhờ bạn vậy.",
+      "analysis_vi": "Mẫu cố định: 事情 + 就拜托你了.",
+      "highlight": [
+        "拜托"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3540edf9-64d8-42b2-a88f-15c86a1a16a6"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5f16c2ce-72f9-4e3c-b222-b6fbc6368d80",
+      "order": 2,
+      "zh": "祝英台拜托师母把玉手镯转交给梁山伯。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài nhờ sư mẫu chuyển vòng tay ngọc cho Lương Sơn Bá.",
+      "analysis_vi": "拜托 + người + 把 A 转交给 B.",
+      "highlight": [
+        "拜托"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3540edf9-64d8-42b2-a88f-15c86a1a16a6"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "拜托 vừa có thể lịch sự, vừa có thể khẩu ngữ kiểu “làm ơn đi”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "00ac1bae-65d8-4df1-a724-1177b75ed357",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 拜托 cho mọi việc nhỏ; 麻烦你... tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拜托",
+    "back": "nhờ vả, gửi gắm nhờ ai làm việc gì",
+    "hint": "bàituō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3540edf9-64d8-42b2-a88f-15c86a1a16a6",
+    "source_lesson_vocab_id": null
+  }
+}

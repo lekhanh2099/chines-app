@@ -1,0 +1,450 @@
+{
+  "id": "bd7370c7-a3cb-4ed5-9618-665192149be4",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "周末",
+  "pinyin": "zhōumò",
+  "pos": {
+    "raw_vi": "Danh từ thời gian 【时间名词】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "time_history",
+    "time"
+  ],
+  "meaning": {
+    "hanviet": "Chu mạt",
+    "meaning_vi": "cuối tuần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cuối tuần"
+    ],
+    "short_definition_vi": "cuối tuần",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "thời gian",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "周",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "冂",
+            "hanviet": "quynh",
+            "meaning_vi": "khung bao",
+            "position_vi": "ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "ô vuông/miệng",
+            "position_vi": "trong",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/lời nói/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tuần, chu kỳ, xung quanh",
+        "modern_logic_vi": "周 = tuần/chu kỳ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/lời nói/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "末",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "nét ngang trên dài",
+            "position_vi": "trên",
+            "role": "stroke_shape",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cuối, ngọn, phần cuối",
+        "modern_logic_vi": "末 = phần cuối; phân biệt với 未.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "周末 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "星期六",
+        "pinyin": "",
+        "meaning_vi": "thứ bảy",
+        "difference_vi": "Một ngày cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "星期天 / 星期日",
+        "pinyin": "",
+        "meaning_vi": "chủ nhật",
+        "difference_vi": "Một ngày cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "双休日",
+        "pinyin": "",
+        "meaning_vi": "hai ngày nghỉ cuối tuần",
+        "difference_vi": "Văn bản/chính sách hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "工作日",
+        "pinyin": "",
+        "meaning_vi": "ngày làm việc",
+        "difference_vi": "Đối lập với cuối tuần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "工作日",
+        "pinyin": "",
+        "meaning_vi": "ngày làm việc",
+        "difference_vi": "Đối lập với 周末.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e9f921d5-3b0b-4226-a58b-c64acbf20e73",
+      "order": 1,
+      "zh": "这个周末",
+      "pinyin": "",
+      "vi": "cuối tuần này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "60c2d01c-62a5-4f61-ac33-2d144bbfbf62",
+      "order": 2,
+      "zh": "上个周末",
+      "pinyin": "",
+      "vi": "cuối tuần trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "928a3fcd-3a93-4242-b5fa-9be476a4835e",
+      "order": 3,
+      "zh": "下个周末",
+      "pinyin": "",
+      "vi": "cuối tuần sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a5df7f3-4a5b-4978-90bc-47a736991bdb",
+      "order": 4,
+      "zh": "周末有空",
+      "pinyin": "",
+      "vi": "cuối tuần rảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e61606c-01f4-4925-a6d2-ccac1d7a4e85",
+      "order": 5,
+      "zh": "周末去玩儿",
+      "pinyin": "",
+      "vi": "cuối tuần đi chơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9cfce20-c205-42eb-820d-5435002b1f8c",
+      "order": 6,
+      "zh": "周末加班",
+      "pinyin": "",
+      "vi": "cuối tuần tăng ca",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f936999b-318c-49fa-a4d5-1e3c8ae9cd2b",
+      "order": 7,
+      "zh": "周末休息",
+      "pinyin": "",
+      "vi": "cuối tuần nghỉ ngơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5482b62-312e-465a-8ff6-4d641d36542b",
+      "order": 8,
+      "zh": "周末计划",
+      "pinyin": "",
+      "vi": "kế hoạch cuối tuần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ca1f353e-4c9d-47f7-aca6-d05ede518171",
+      "order": 1,
+      "zh": "你周末有空吗？",
+      "pinyin": "Nǐ zhōumò yǒu kòng ma?",
+      "vi": "Cuối tuần bạn có rảnh không?",
+      "analysis_vi": "周末 làm trạng ngữ thời gian.",
+      "highlight": [
+        "周末"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bd7370c7-a3cb-4ed5-9618-665192149be4"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "32498fbe-aa62-4803-8cc3-f398e4e8cf25",
+      "order": 2,
+      "zh": "我们这个周末不但要复习生词，而且要练习口语。",
+      "pinyin": "Wǒmen zhège zhōumò búdàn yào fùxí shēngcí, érqiě yào liànxí kǒuyǔ.",
+      "vi": "Cuối tuần này chúng tôi không những phải ôn từ mới mà còn phải luyện khẩu ngữ.",
+      "analysis_vi": "不但……而且…… nối hai việc cần làm.",
+      "highlight": [
+        "周末",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "bd7370c7-a3cb-4ed5-9618-665192149be4"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "49b62fab-d318-4b0e-91f3-60587b1f0a37",
+      "order": 3,
+      "zh": "周末的时候，如果天气跟今天一样好，我们就去公园散步。",
+      "pinyin": "Zhōumò de shíhou, rúguǒ tiānqì gēn jīntiān yíyàng hǎo, wǒmen jiù qù gōngyuán sànbù.",
+      "vi": "Cuối tuần, nếu thời tiết đẹp như hôm nay, chúng tôi sẽ đi công viên dạo bộ.",
+      "analysis_vi": "如果……就……; 跟今天一样好 là mẫu so sánh.",
+      "highlight": [
+        "周末",
+        "一样好"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "bd7370c7-a3cb-4ed5-9618-665192149be4"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "周末加班 là cụm thực tế trong đời sống công việc hiện đại ở Trung Quốc.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "27043d56-b1a2-4604-ba45-06ae25bf430f",
+      "order": 1,
+      "rule_vi": "Không viết nhầm 周末 thành 周未.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "周未",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Sai mặt chữ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "周末",
+          "pinyin": "zhōumò",
+          "vi": "cuối tuần",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "周末",
+    "back": "cuối tuần",
+    "hint": "zhōumò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "time"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bd7370c7-a3cb-4ed5-9618-665192149be4",
+    "source_lesson_vocab_id": null
+  }
+}

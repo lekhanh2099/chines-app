@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_5c8114f553fb766e",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "棉袄",
+  "pinyin": "mián'ǎo",
+  "meaning_vi": "áo bông; áo khoác bông",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ áo bông/áo khoác bông; từ đời sống, hơi truyền thống hơn áo khoác hiện đại.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+    "type": "vocabulary_item",
+    "order": 32,
+    "hanzi": "棉袄",
+    "pinyin": "mián'ǎo",
+    "meaning_vi": "áo bông; áo khoác bông",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "棉袄",
+      "back": "mián’ǎo — áo bông; áo khoác bông",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ áo bông/áo khoác bông; từ đời sống, hơi truyền thống hơn áo khoác hiện đại.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

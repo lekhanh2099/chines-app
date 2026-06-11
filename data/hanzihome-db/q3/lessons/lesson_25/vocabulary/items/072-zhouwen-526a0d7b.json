@@ -1,0 +1,248 @@
+{
+  "id": "55f9eb7f-9923-4fdd-bd2c-7f742523a144",
+  "type": "deep_vocabulary_item",
+  "order": 72,
+  "hanzi": "皱纹",
+  "pinyin": "zhòuwén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "trứu văn",
+    "meaning_vi": "nếp nhăn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nếp nhăn"
+    ],
+    "short_definition_vi": "nếp nhăn",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "皱",
+        "lishu_vi": "trứu",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "皮",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Bì",
+          "radical_name_zh": "",
+          "hanviet": "bì",
+          "meaning_vi": "da",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "皮",
+            "hanviet": "bì",
+            "meaning_vi": "da",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "皮",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bì",
+              "radical_name_zh": "",
+              "hanviet": "bì",
+              "meaning_vi": "da",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhăn",
+        "modern_logic_vi": "Trong từ này, 皱 góp phần vào nghĩa hiện đại: nhăn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "纹",
+        "lishu_vi": "văn",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ, đường nét, liên kết",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ, đường nét, liên kết",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ, đường nét, liên kết",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vân, đường nét",
+        "modern_logic_vi": "Trong từ này, 纹 góp phần vào nghĩa hiện đại: vân, đường nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "皱纹 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 眼角儿的皱纹.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho mọi loại vân; vân gỗ là 木纹."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "80927a7b-e3b0-4c38-98ae-a8aac2f36910",
+      "order": 1,
+      "zh": "眼角儿的皱纹",
+      "pinyin": "",
+      "vi": "nếp nhăn nơi khóe mắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70fe603f-3114-44e7-b463-902e61e1435a",
+      "order": 2,
+      "zh": "细细的皱纹",
+      "pinyin": "",
+      "vi": "nếp nhăn mảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ce274b9-0125-4f23-8eec-69369a376e8f",
+      "order": 3,
+      "zh": "长皱纹",
+      "pinyin": "",
+      "vi": "có nếp nhăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "532d91fc-10ba-47dd-90be-7ffbdb8acf24",
+      "order": 1,
+      "zh": "她眼角儿有了细细的皱纹。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 皱纹 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 皱纹; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "皱纹"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "55f9eb7f-9923-4fdd-bd2c-7f742523a144"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 皱纹 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "17a1b41b-7f87-4dce-87ea-1a1cec3c0fa6",
+      "order": 1,
+      "rule_vi": "Không dùng cho mọi loại vân; vân gỗ là 木纹.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "皱纹",
+    "back": "nếp nhăn",
+    "hint": "zhòuwén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "55f9eb7f-9923-4fdd-bd2c-7f742523a144",
+    "source_lesson_vocab_id": null
+  }
+}

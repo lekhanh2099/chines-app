@@ -1,0 +1,240 @@
+{
+  "id": "b756f05b-8465-4539-ac7c-83de12467056",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "按",
+  "pinyin": "àn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词 / 介词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "án",
+    "meaning_vi": "ấn, bấm; theo, căn cứ theo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ấn",
+      "bấm",
+      "theo",
+      "căn cứ theo"
+    ],
+    "short_definition_vi": "ấn, bấm; theo, căn cứ theo",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: thao tác, căn cứ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thao tác, căn cứ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "按",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ấn, bấm, theo",
+        "modern_logic_vi": "Trong từ 按, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "按 nên được học theo nghĩa hiện đại trong cụm/tình huống: ấn, bấm; theo, căn cứ theo.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 按门铃.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "点",
+        "pinyin": "diǎn",
+        "meaning_vi": "chạm/bấm",
+        "difference_vi": "按 là ấn/bấm vật lý; 点 thường là chạm/chọn trên màn hình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b1dcd95e-0593-490e-9813-718c5f0dff89",
+      "order": 1,
+      "zh": "按门铃",
+      "pinyin": "",
+      "vi": "bấm chuông cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24bf74f0-f9f3-49ee-adf8-5d28404105fb",
+      "order": 2,
+      "zh": "按一下",
+      "pinyin": "",
+      "vi": "bấm một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ee3c0cf-d79a-4f4f-a4a6-9493f4ae8fa9",
+      "order": 3,
+      "zh": "按规定",
+      "pinyin": "",
+      "vi": "theo quy định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2e75f32d-ecc7-4529-9c99-b7d02a217eb4",
+      "order": 1,
+      "zh": "请按一下门铃。",
+      "pinyin": "",
+      "vi": "Xin bấm chuông cửa một cái.",
+      "analysis_vi": "按 + vật/nút/chuông = ấn, bấm.",
+      "highlight": [
+        "按"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b756f05b-8465-4539-ac7c-83de12467056"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 按 được dùng trong ngữ cảnh thao tác, căn cứ; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "55260827-d690-4d5a-afc1-0db5c21bd9f4",
+      "order": 1,
+      "rule_vi": "Không nói 打门铃; nói 按门铃.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 打门铃; nói 按门铃.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "按",
+    "back": "ấn, bấm; theo, căn cứ theo",
+    "hint": "àn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b756f05b-8465-4539-ac7c-83de12467056",
+    "source_lesson_vocab_id": null
+  }
+}

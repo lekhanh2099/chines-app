@@ -1,0 +1,293 @@
+{
+  "id": "ceb6e16f-7af1-4a65-a9cc-dade994acd21",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "岸",
+  "pinyin": "àn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "ngạn",
+    "meaning_vi": "bờ, bờ sông, bờ biển",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bờ, bờ sông, bờ biển"
+    ],
+    "short_definition_vi": "bờ, bờ sông, bờ biển",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "岸",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "山",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sơn",
+          "radical_name_zh": "",
+          "hanviet": "sơn",
+          "meaning_vi": "núi, đất cao",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "山 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi, đất cao",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi, đất cao",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "山 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 山.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bờ nước",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "山 gợi phần đất cao/mép đất so với nước.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 岸.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "河岸",
+        "pinyin": "hé'àn",
+        "meaning_vi": "bờ sông",
+        "difference_vi": "cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "岸边",
+        "pinyin": "ànbiān",
+        "meaning_vi": "bên bờ",
+        "difference_vi": "sát bờ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "水里",
+          "",
+          "trong nước",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d1fb2540-e4f3-42ca-b428-0a966bf6535b",
+      "order": 1,
+      "zh": "河岸",
+      "pinyin": "",
+      "vi": "bờ sông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e833336-ba63-419a-99f6-a03993d86ab4",
+      "order": 2,
+      "zh": "岸边",
+      "pinyin": "",
+      "vi": "bên bờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c78ef43-0314-4090-9fc6-f3dbd1edc64f",
+      "order": 3,
+      "zh": "上岸",
+      "pinyin": "",
+      "vi": "lên bờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "14543a58-7888-45f1-b270-40cccdd0b6d4",
+      "order": 4,
+      "zh": "靠岸",
+      "pinyin": "",
+      "vi": "cập bờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bd254149-99c5-4480-930a-2193fc5d4467",
+      "order": 1,
+      "zh": "船靠岸了。",
+      "pinyin": "Chuán kào àn le.",
+      "vi": "Thuyền cập bờ rồi.",
+      "analysis_vi": "靠岸 là cụm cố định.",
+      "highlight": [
+        "岸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ceb6e16f-7af1-4a65-a9cc-dade994acd21"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dd07cdec-6485-4f8b-a530-6a5449f2c101",
+      "order": 2,
+      "zh": "船到岸边以后，他才从刻记号的地方跳下去找剑。",
+      "pinyin": "Chuán dào ànbiān yǐhòu, tā cái cóng kè jìhào de dìfang tiào xiàqù zhǎo jiàn.",
+      "vi": "Thuyền đến bên bờ rồi anh ta mới từ chỗ khắc dấu nhảy xuống tìm kiếm.",
+      "analysis_vi": "才 nhấn hành động muộn.",
+      "highlight": [
+        "岸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ceb6e16f-7af1-4a65-a9cc-dade994acd21"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "两岸 có thể có nghĩa đặc biệt trong truyền thông Hoa ngữ, nhưng bài này chỉ cần nghĩa bờ nước.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b11cc54e-698f-41bb-adad-5afd791463ba",
+      "order": 1,
+      "rule_vi": "岸 là bờ nước, không dùng cho cạnh bàn; cạnh bàn là 旁边.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "岸",
+    "back": "bờ, bờ sông, bờ biển",
+    "hint": "àn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ceb6e16f-7af1-4a65-a9cc-dade994acd21",
+    "source_lesson_vocab_id": null
+  }
+}

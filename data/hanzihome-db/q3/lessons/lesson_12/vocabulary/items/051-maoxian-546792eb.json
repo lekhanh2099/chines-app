@@ -1,0 +1,280 @@
+{
+  "id": "b2612636-1f0c-4a34-b97a-34199a8556d0",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "冒险",
+  "pinyin": "màoxiǎn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mạo hiểm",
+    "meaning_vi": "mạo hiểm, liều, chấp nhận rủi ro",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mạo hiểm, liều, chấp nhận rủi ro"
+    ],
+    "short_definition_vi": "Hành động bất chấp nguy hiểm/rủi ro.",
+    "textbook_focus_vi": "Dùng khi cảnh báo quá liều hoặc khen tinh thần dám thử.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "冒",
+        "lishu_vi": "mạo",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bất chấp/xông vào",
+        "modern_logic_vi": "bất chấp/xông vào",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "险",
+        "lishu_vi": "hiểm",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "địa hình/khu vực tùy vị trí",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "阝 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "địa hình/khu vực tùy vị trí",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "địa hình/khu vực tùy vị trí",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "阝 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "阝 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nguy hiểm",
+        "modern_logic_vi": "nguy hiểm",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "冒 + 险 = xông vào nguy hiểm.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "危险",
+        "pinyin": "wēixiǎn",
+        "meaning_vi": "nguy hiểm",
+        "difference_vi": "危险 là tính chất; 冒险 là hành động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aaeeda23-4e04-4b95-b902-7a0db64058e8",
+      "order": 1,
+      "zh": "不要冒险",
+      "pinyin": "",
+      "vi": "đừng mạo hiểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0763d14e-cfc6-4183-8ffb-62f33c082cc1",
+      "order": 2,
+      "zh": "太冒险了",
+      "pinyin": "",
+      "vi": "quá mạo hiểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18b2719f-a44d-4b58-95d8-8ba06fe2b32f",
+      "order": 3,
+      "zh": "冒险精神",
+      "pinyin": "",
+      "vi": "tinh thần mạo hiểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a789d37-9049-444c-99b6-1c5e04f3c5d4",
+      "order": 4,
+      "zh": "不值得冒险",
+      "pinyin": "",
+      "vi": "không đáng mạo hiểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "83636228-ff43-460d-b8a2-16fbb8582cc4",
+      "order": 1,
+      "zh": "这件事太冒险了。",
+      "pinyin": "",
+      "vi": "Việc này quá mạo hiểm.",
+      "analysis_vi": "太……了 thường hàm ý không nên.",
+      "highlight": [
+        "冒险"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2612636-1f0c-4a34-b97a-34199a8556d0"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "44547f45-f016-46be-963a-38753dcf925a",
+      "order": 2,
+      "zh": "车胎已经很硬了，你别再打气了，太冒险。",
+      "pinyin": "",
+      "vi": "Lốp đã rất căng rồi, đừng bơm nữa, quá mạo hiểm.",
+      "analysis_vi": "别再……了 = đừng tiếp tục.",
+      "highlight": [
+        "冒险"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2612636-1f0c-4a34-b97a-34199a8556d0"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "28db063d-5330-4b17-bcb6-fdfa9af9d097",
+      "order": 1,
+      "rule_vi": "Nơi chốn nguy hiểm dùng 危险, không dùng 冒险.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nơi chốn nguy hiểm dùng 危险, không dùng 冒险.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "冒险",
+    "back": "mạo hiểm, liều, chấp nhận rủi ro",
+    "hint": "màoxiǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b2612636-1f0c-4a34-b97a-34199a8556d0",
+    "source_lesson_vocab_id": null
+  }
+}

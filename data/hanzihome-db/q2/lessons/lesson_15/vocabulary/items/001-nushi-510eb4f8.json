@@ -1,0 +1,327 @@
+{
+  "id": "0de3072f-d3a0-4789-9b16-6fdbaa7aadd9",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "女士",
+  "pinyin": "nǚshì",
+  "pos": {
+    "raw_vi": "Danh từ / cách xưng hô",
+    "raw_cn": "名 / 称呼",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Nữ sĩ",
+    "meaning_vi": "quý bà, cô, bà",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quý bà, cô, bà"
+    ],
+    "short_definition_vi": "quý bà, cô, bà",
+    "textbook_focus_vi": "quý bà, cô, bà",
+    "register_vi": "lịch sự, trung tính",
+    "usage_domain_vi": "xưng hô",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "女",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, giới nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, giới nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nữ, phụ nữ, con gái",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, giới nữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "士",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "士",
+            "hanviet": "sĩ",
+            "meaning_vi": "người có học, người có vai trò",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người có học, người có địa vị, người chuyên môn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "女 = phụ nữ; 士 = cách gọi tôn trọng/người có vai trò. 女士 là cách gọi lịch sự dành cho phụ nữ trưởng thành.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小姐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "có thể nhạy cảm trong vài bối cảnh Mainland, không luôn an toàn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "女性",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nữ giới, thiên về phân loại giới tính/văn viết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "女生",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nữ sinh, bạn nữ trẻ/trường học",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "太太",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phu nhân/vợ, gắn với hôn nhân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "先生",
+        "right": "女士",
+        "meaning_vi": "ông/ngài ↔ bà/cô",
+        "note_vi": "Cặp xưng hô trang trọng.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ecb8255f-b848-4237-abce-7d9b97f07d94",
+      "order": 1,
+      "zh": "那位女士",
+      "pinyin": "",
+      "vi": "quý cô/người phụ nữ kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac852437-691d-41a2-b243-36f313120ded",
+      "order": 2,
+      "zh": "女士们，先生们",
+      "pinyin": "",
+      "vi": "kính thưa quý bà, quý ông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "43573a5c-9610-4bc3-af7e-d224eda1242a",
+      "order": 3,
+      "zh": "张女士",
+      "pinyin": "",
+      "vi": "cô/bà Trương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ae34e8b-939b-49bc-adb2-3a586e983f51",
+      "order": 4,
+      "zh": "一位女士",
+      "pinyin": "",
+      "vi": "một quý cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a4a453f-5748-468d-ac89-5e85be297fd2",
+      "order": 5,
+      "zh": "女士优先",
+      "pinyin": "",
+      "vi": "phụ nữ trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0b859559-0d38-4994-8e25-5ff2ee20dd71",
+      "order": 6,
+      "zh": "女士洗手间",
+      "pinyin": "",
+      "vi": "nhà vệ sinh nữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3c5e2a33-7657-41b1-a6ae-1c7b26da1065",
+      "order": 1,
+      "zh": "那位女士正在门口等服务员。",
+      "pinyin": "Nà wèi nǚshì zhèngzài ménkǒu děng fúwùyuán.",
+      "vi": "Người phụ nữ kia đang đợi nhân viên phục vụ ở cửa.",
+      "analysis_vi": "女士 là cách gọi lịch sự, phù hợp khi không biết tên hoặc quan hệ.",
+      "highlight": [
+        "女士"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0de3072f-d3a0-4789-9b16-6fdbaa7aadd9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "40b6965b-a15f-4321-a65c-acad4aa892f6",
+      "order": 2,
+      "zh": "那位女士穿着一件黑色西服，看起来很正式。",
+      "pinyin": "Nà wèi nǚshì chuānzhe yí jiàn hēisè xīfú, kàn qǐlái hěn zhèngshì.",
+      "vi": "Người phụ nữ kia mặc một bộ vest đen, trông rất trang trọng.",
+      "analysis_vi": "穿着 nhấn trạng thái trang phục đang duy trì.",
+      "highlight": [
+        "女士",
+        "穿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0de3072f-d3a0-4789-9b16-6fdbaa7aadd9"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "fa4f9f04-e6f2-4105-a581-09659225c1d5",
+      "order": 1,
+      "rule_vi": "Không dịch 女士 máy móc là “nữ sĩ” trong giao tiếp thường ngày; tiếng Việt tự nhiên thường là cô/bà/quý cô.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "女士",
+    "back": "quý bà, cô, bà",
+    "hint": "nǚshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong bối cảnh trang trọng có thể mở đầu bằng 女士们，先生们. Với người lạ, 女士 thường an toàn hơn 小姐 trong Mainland.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0de3072f-d3a0-4789-9b16-6fdbaa7aadd9",
+    "source_lesson_vocab_id": null
+  }
+}

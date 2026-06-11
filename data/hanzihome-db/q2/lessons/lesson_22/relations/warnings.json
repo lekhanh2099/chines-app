@@ -1,0 +1,98 @@
+[
+  {
+    "id": "warning_020c84ed7d8ad3b9bd9a2c90",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "9dd82e6f-4fbe-45fe-8f58-ed0e45017d6e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "下来",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_34c92ea8aba1185d16bbbddc",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "9dd82e6f-4fbe-45fe-8f58-ed0e45017d6e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "过去",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_56dd1a6a174ce3bc3e734034",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "9dd82e6f-4fbe-45fe-8f58-ed0e45017d6e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "起来",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_72bf8eec194582234b35eeea",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "9dd82e6f-4fbe-45fe-8f58-ed0e45017d6e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "下去",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_a6fa7b43bcb47300197693ea",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "9dd82e6f-4fbe-45fe-8f58-ed0e45017d6e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "过来",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_be861c861f228327d13bcd0c",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "熟",
+      "应",
+      "待",
+      "签",
+      "搞",
+      "光",
+      "肉",
+      "图",
+      "排",
+      "录",
+      "砸",
+      "缸",
+      "救",
+      "吓",
+      "抽",
+      "拍",
+      "喊"
+    ]
+  },
+  {
+    "id": "warning_f91359ddf50a7256c5cfe514",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "9dd82e6f-4fbe-45fe-8f58-ed0e45017d6e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "出来",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  }
+]

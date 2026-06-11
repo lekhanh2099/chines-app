@@ -1,0 +1,397 @@
+{
+  "id": "2ed222cd-b6a9-41ed-9cc9-848d9438e59b",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "宇宙",
+  "pinyin": "yǔzhòu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "vũ trụ",
+    "meaning_vi": "vũ trụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vũ trụ"
+    ],
+    "short_definition_vi": "toàn bộ không gian vũ trụ và các thiên thể",
+    "textbook_focus_vi": "Trong bài dùng để suy tưởng về sự sống ngoài Trái Đất.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "宇",
+        "lishu_vi": "",
+        "structure_note_vi": "宀 + 于",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "于",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không gian; mái nhà trong từ cổ",
+        "modern_logic_vi": "không gian; mái nhà trong từ cổ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "宙",
+        "lishu_vi": "",
+        "structure_note_vi": "宀 + 由",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "由",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vũ trụ/thời gian trong từ ghép",
+        "modern_logic_vi": "vũ trụ/thời gian trong từ ghép",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "宇宙 được học trong bài theo nghĩa: toàn bộ không gian vũ trụ và các thiên thể.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 宇宙中.",
+    "warning_vi": "宇宙 là vũ trụ tổng thể; 太空 là không gian ngoài Trái Đất; 天空 là bầu trời.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "太空",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Không gian ngoài Trái Đất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "天空",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bầu trời nhìn từ mặt đất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "宇宙 là vũ trụ tổng thể; 太空 là không gian ngoài Trái Đất; 天空 là bầu trời."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "eaeb9eca-8980-410c-bc7a-8110b545a0ac",
+      "order": 1,
+      "zh": "宇宙中",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dca3ac44-caaa-400a-9738-92e3a04d7667",
+      "order": 2,
+      "zh": "整个宇宙",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c4f2c87-e04c-4a1f-93ef-7fb75701f25e",
+      "order": 3,
+      "zh": "探索宇宙",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1df792f-c2ae-4e93-9779-6a20f3072da1",
+      "order": 4,
+      "zh": "宇宙飞船",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aba8c317-fd00-40fa-b475-f9080a34e588",
+      "order": 5,
+      "zh": "宇宙空间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe1c071d-dfd3-4367-bcc1-2684cd19ac4f",
+      "order": 6,
+      "zh": "宇宙生命",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "286b270d-5ca1-4af0-bbc0-d039831064c3",
+      "order": 1,
+      "zh": "我相信宇宙中可能存在别的生物。",
+      "pinyin": "",
+      "vi": "Tôi tin rằng trong vũ trụ có thể tồn tại sinh vật khác.",
+      "analysis_vi": "可能存在 nói khả năng tồn tại.",
+      "highlight": [
+        "宇宙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2ed222cd-b6a9-41ed-9cc9-848d9438e59b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2890ce61-e861-4e7f-ac0a-288775f6be99",
+      "order": 2,
+      "zh": "他看完那本关于宇宙的书，就开始思考生命的问题。",
+      "pinyin": "",
+      "vi": "Anh ấy đọc xong cuốn sách về vũ trụ thì bắt đầu suy nghĩ về vấn đề sự sống.",
+      "analysis_vi": "关于宇宙的书 là cụm định ngữ.",
+      "highlight": [
+        "宇宙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2ed222cd-b6a9-41ed-9cc9-848d9438e59b"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Chủ đề UFO thường đi với 宇宙, 地球, 生物, 可能性.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9ba7f6ee-7925-40a9-a2a6-c313ac0e0f5a",
+      "order": 1,
+      "rule_vi": "宇宙 là vũ trụ tổng thể; 太空 là không gian ngoài Trái Đất; 天空 là bầu trời.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "宇宙 là vũ trụ tổng thể; 太空 là không gian ngoài Trái Đất; 天空 là bầu trời.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "宇宙",
+    "back": "vũ trụ",
+    "hint": "yǔzhòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2ed222cd-b6a9-41ed-9cc9-848d9438e59b",
+    "source_lesson_vocab_id": null
+  }
+}

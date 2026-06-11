@@ -1,0 +1,289 @@
+{
+  "id": "cba9eba8-c9d4-432b-b05f-a682d76d386b",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "工具书",
+  "pinyin": "gōngjùshū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "công cụ thư",
+    "meaning_vi": "sách tra cứu, sách công cụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sách tra cứu"
+    ],
+    "short_definition_vi": "sách tra cứu, sách công cụ",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "工",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "công việc, công cụ",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "具",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dụng cụ, có đủ",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "书",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sách",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "工具书 được ghi nhớ theo nghĩa hiện đại: sách tra cứu, sách công cụ.",
+    "memory_tip_vi": "Nhớ qua cụm: 查工具书.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "词典",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "字典",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "参考书",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "课本",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "工具书 không phải sách dạy dùng công cụ; nó là sách dùng như công cụ tra cứu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dabba116-36d6-4b33-82ae-c61bee473796",
+      "order": 1,
+      "zh": "查工具书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "39537342-7f3e-4752-87a3-5ac33a34d1e9",
+      "order": 2,
+      "zh": "使用工具书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e75776e5-4740-47a1-9de3-f11ee472c943",
+      "order": 3,
+      "zh": "汉语工具书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c61a6af7-9e02-48a9-913c-40048b2b9241",
+      "order": 4,
+      "zh": "必备工具书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0b645d1-0105-4ba8-aaf8-615122afbaab",
+      "order": 5,
+      "zh": "常用工具书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2dfd6748-e21f-4b73-92b8-4f29f2554174",
+      "order": 6,
+      "zh": "买一本工具书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5b120985-f89f-45e6-9bdf-dae80690d4ef",
+      "order": 1,
+      "zh": "学汉语最好准备一本好词典这样的工具书。",
+      "pinyin": "Xué Hànyǔ zuì hǎo zhǔnbèi yì běn hǎo cídiǎn zhèyàng de gōngjùshū.",
+      "vi": "Học tiếng Hán tốt nhất nên chuẩn bị sách tra cứu như một quyển từ điển tốt.",
+      "analysis_vi": "这样的工具书 = loại sách công cụ như vậy.",
+      "highlight": [
+        "工具书"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cba9eba8-c9d4-432b-b05f-a682d76d386b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b51aa232-9e97-41b5-a98a-ad3b43b35e79",
+      "order": 2,
+      "zh": "即使教材里没有解释，她也会自己查工具书。",
+      "pinyin": "Jíshǐ jiàocái lǐ méiyǒu jiěshì, tā yě huì zìjǐ chá gōngjùshū.",
+      "vi": "Cho dù giáo trình không giải thích, cô ấy cũng tự tra sách công cụ.",
+      "analysis_vi": "即使……也…… nhấn tự học.",
+      "highlight": [
+        "工具书"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cba9eba8-c9d4-432b-b05f-a682d76d386b"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ điển, tự điển, bách khoa toàn thư đều có thể là 工具书.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3f350d4c-8cef-409e-a617-b9da08f8b569",
+      "order": 1,
+      "rule_vi": "工具书 không phải sách dạy dùng công cụ; nó là sách dùng như công cụ tra cứu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "工具书 không phải sách dạy dùng công cụ; nó là sách dùng như công cụ tra cứu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "工具书",
+    "back": "sách tra cứu, sách công cụ",
+    "hint": "gōngjùshū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cba9eba8-c9d4-432b-b05f-a682d76d386b",
+    "source_lesson_vocab_id": null
+  }
+}

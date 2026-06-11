@@ -1,0 +1,363 @@
+{
+  "id": "d376f7ec-3f60-46b4-9db4-04b3e5639f6f",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "住宅",
+  "pinyin": "zhùzhái",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Trú trạch",
+    "meaning_vi": "nhà ở, nơi cư trú",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà ở, nơi cư trú"
+    ],
+    "short_definition_vi": "nhà ở, nơi cư trú",
+    "textbook_focus_vi": "nhà ở, nơi cư trú",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "住",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "主",
+            "hanviet": "chủ",
+            "meaning_vi": "chủ, chính",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở, cư trú",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "宅",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乇",
+            "hanviet": "thác",
+            "meaning_vi": "thành phần hình thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà ở",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "住宅 = nhà ở/nơi cư trú, trang trọng hơn 房子.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "房子",
+        "pinyin": "",
+        "meaning_vi": "nhà/căn nhà",
+        "difference_vi": "Đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "家",
+        "pinyin": "",
+        "meaning_vi": "nhà/tổ ấm",
+        "difference_vi": "Nghiêng về gia đình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小区",
+        "pinyin": "",
+        "meaning_vi": "khu dân cư",
+        "difference_vi": "Gồm nhiều tòa/căn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7741ba47-90a9-4e9f-b42f-81ee9d2c3a12",
+      "order": 1,
+      "zh": "现代化住宅",
+      "pinyin": "",
+      "vi": "nhà ở hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53538cad-0eed-472e-aacc-1181c380efe9",
+      "order": 2,
+      "zh": "住宅小区",
+      "pinyin": "",
+      "vi": "khu dân cư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "209bb3b4-d6da-4391-8374-6db4b95900da",
+      "order": 3,
+      "zh": "住宅楼",
+      "pinyin": "",
+      "vi": "tòa nhà ở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af4b3242-d99c-4a47-b0e2-ecfc8cb53eef",
+      "order": 4,
+      "zh": "一套住宅",
+      "pinyin": "",
+      "vi": "một căn nhà ở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ddcc168b-abd8-4825-a65f-6cdfe1fed9d8",
+      "order": 5,
+      "zh": "建设住宅",
+      "pinyin": "",
+      "vi": "xây dựng nhà ở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2f67d3d5-4fa0-4dc7-b6d6-7008a071f747",
+      "order": 1,
+      "zh": "这里有很多现代化住宅。",
+      "pinyin": "Zhèlǐ yǒu hěn duō xiàndàihuà zhùzhái.",
+      "vi": "Ở đây có rất nhiều nhà ở hiện đại.",
+      "analysis_vi": "这里有…… là câu tồn tại.",
+      "highlight": [
+        "住宅"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "d376f7ec-3f60-46b4-9db4-04b3e5639f6f"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6682ddf8-fe4c-4332-bacd-6a4ae67ac50c",
+      "order": 2,
+      "zh": "四合院后边盖起了一排新住宅。",
+      "pinyin": "Sìhéyuàn hòubian gàiqǐ le yì pái xīn zhùzhái.",
+      "vi": "Phía sau tứ hợp viện đã xây lên một dãy nhà ở mới.",
+      "analysis_vi": "后边 là phương vị; 盖起了 nhấn xuất hiện công trình mới.",
+      "highlight": [
+        "住宅"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "d376f7ec-3f60-46b4-9db4-04b3e5639f6f"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "83a4917e-500d-4bea-abb2-28005aa296e7",
+      "order": 3,
+      "zh": "住宅越来越多，老院子却越来越少了。",
+      "pinyin": "Zhùzhái yuè lái yuè duō, lǎo yuànzi què yuè lái yuè shǎo le.",
+      "vi": "Nhà ở ngày càng nhiều, nhưng sân/nhà cũ lại ngày càng ít đi.",
+      "analysis_vi": "Hai vế đối lập bằng 越来越多 / 越来越少.",
+      "highlight": [
+        "住宅"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "d376f7ec-3f60-46b4-9db4-04b3e5639f6f"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "住宅 thường gắn với quy hoạch đô thị, khu chung cư, nhà ở thương mại.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "12b5f171-5a78-41d0-9016-a5f9b69b9870",
+      "order": 1,
+      "rule_vi": "Nói khẩu ngữ 'nhà tôi ở khu này' nên dùng 我家在这个小区 hơn là 我的住宅...",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nói khẩu ngữ 'nhà tôi ở khu này' nên dùng 我家在这个小区 hơn là 我的住宅...",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "住宅",
+    "back": "nhà ở, nơi cư trú",
+    "hint": "zhùzhái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_015"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d376f7ec-3f60-46b4-9db4-04b3e5639f6f",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "id": "430724e4-10e4-4816-987c-ea7c4d550a6f",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "于是",
+  "pinyin": "yúshì",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "ư thị",
+    "meaning_vi": "thế là, vì vậy, do đó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thế là",
+      "vì vậy",
+      "do đó"
+    ],
+    "short_definition_vi": "thế là, vì vậy, do đó",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "于",
+        "lishu_vi": "ư",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở, tại",
+        "modern_logic_vi": "Trong từ này, 于 góp phần vào nghĩa hiện đại: ở, tại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "thị",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là",
+        "modern_logic_vi": "Trong từ này, 是 góp phần vào nghĩa hiện đại: là.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "于是 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 于是我就…….",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khác 然后: 于是 có quan hệ tình huống → kết quả, 然后 chỉ trình tự."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f4bd3c85-5cda-410d-a457-133c0548cee5",
+      "order": 1,
+      "zh": "于是我就……",
+      "pinyin": "",
+      "vi": "thế là tôi liền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a66e09f-99d6-4123-bbc7-718cf5d47bab",
+      "order": 2,
+      "zh": "于是他决定……",
+      "pinyin": "",
+      "vi": "thế là anh ấy quyết định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "884e7394-9cee-449c-bab0-ea60d15ced7e",
+      "order": 3,
+      "zh": "于是问题出现了",
+      "pinyin": "",
+      "vi": "vấn đề xuất hiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5285fc8e-37ca-4ccf-8912-c8d4f641d321",
+      "order": 1,
+      "zh": "外面下雨了，于是我们没有出去。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 于是 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 于是; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "于是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "430724e4-10e4-4816-987c-ea7c4d550a6f"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 于是 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6aa91177-d30c-4de6-bb13-d2366bb8fe6c",
+      "order": 1,
+      "rule_vi": "Khác 然后: 于是 có quan hệ tình huống → kết quả, 然后 chỉ trình tự.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "于是",
+    "back": "thế là, vì vậy, do đó",
+    "hint": "yúshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "430724e4-10e4-4816-987c-ea7c4d550a6f",
+    "source_lesson_vocab_id": null
+  }
+}

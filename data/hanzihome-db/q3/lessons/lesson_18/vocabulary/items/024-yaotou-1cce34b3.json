@@ -1,0 +1,288 @@
+{
+  "id": "472ae999-2102-4c9c-9fcf-92b888449c14",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "摇头",
+  "pinyin": "yáotóu",
+  "pos": {
+    "raw_vi": "Động từ / Cụm động-tân",
+    "raw_cn": "动宾短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dao đầu",
+    "meaning_vi": "lắc đầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lắc đầu"
+    ],
+    "short_definition_vi": "lắc đầu",
+    "textbook_focus_vi": "Lắc đầu để phủ định, bất lực, thất vọng hoặc không muốn nói.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "摇",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lắc/lay",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "头",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đầu",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Lắc đầu để phủ định, bất lực, thất vọng hoặc không muốn nói.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 摇头 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "点头",
+        "pinyin": "",
+        "meaning_vi": "gật đầu",
+        "difference_vi": "Trái nghĩa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "摆手",
+        "pinyin": "",
+        "meaning_vi": "xua tay",
+        "difference_vi": "Thường từ chối hoặc nói không cần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a2203af6-eaee-46ea-9869-80ed3dbc0904",
+      "order": 1,
+      "zh": "摇摇头",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23747580-77cc-436b-a471-6ccb955a3059",
+      "order": 2,
+      "zh": "摇头说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac2953a9-6c2f-4fac-9cbc-088ed49dc5d1",
+      "order": 3,
+      "zh": "失望地摇头",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4081721e-9724-4c55-86ba-be8dbfa7eb7e",
+      "order": 4,
+      "zh": "摇头拒绝",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5845154e-a1e8-453c-b14e-4d8e305168f2",
+      "order": 5,
+      "zh": "边摇头边说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6e7e20d4-db9f-41b0-92c4-6999e03c78a1",
+      "order": 1,
+      "zh": "她摇摇头，没有回答。",
+      "pinyin": "",
+      "vi": "Cô ấy lắc đầu, không trả lời.",
+      "analysis_vi": "摇摇头 là dạng lặp nhẹ.",
+      "highlight": [
+        "摇头"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "472ae999-2102-4c9c-9fcf-92b888449c14"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c2be8422-71a7-4744-ab22-e4f644d1e1d4",
+      "order": 1,
+      "rule_vi": "摇头 không phải đau đầu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "她摇摇头。",
+          "pinyin": "",
+          "vi": "Cô ấy lắc đầu.",
+          "note_vi": "Chỉ hành động lắc đầu.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "摇头",
+    "back": "lắc đầu",
+    "hint": "yáotóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "472ae999-2102-4c9c-9fcf-92b888449c14",
+    "source_lesson_vocab_id": null
+  }
+}

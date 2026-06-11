@@ -1,0 +1,345 @@
+{
+  "id": "3949b682-8dc1-4929-b352-1d4029670c39",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "尤其",
+  "pinyin": "yóuqí",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Vưu kỳ",
+    "meaning_vi": "đặc biệt là, nhất là",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "đặc biệt là, nhất là",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "尤",
+        "lishu_vi": "vưu",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đặc biệt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      },
+      {
+        "hanzi": "其",
+        "lishu_vi": "kỳ",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nó, ấy, trong đó",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "尤其 học theo logic nghĩa hiện đại và các cụm dùng trong bài; không ép khảo cổ chữ nếu không chắc.",
+    "memory_tip_vi": "",
+    "warning_vi": "Chỉ dùng component nhìn thấy chắc chắn; phần chưa chắc được để trống ở cấp chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "尤其",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặc biệt là, nhấn một mục nổi bật trong nhóm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "特别",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặc biệt/rất; vừa là phó từ vừa là tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "尤其是",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhất là…, thường đứng trước danh từ/cụm danh từ/mệnh đề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "最",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhất, dùng trong so sánh cao nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "更",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hơn, không nhất thiết nêu ví dụ nổi bật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2f5f8596-04bb-4577-a726-7970edb29680",
+      "order": 1,
+      "zh": "尤其喜欢",
+      "pinyin": "",
+      "vi": "đặc biệt thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a890e2a-b551-46f3-9a2f-5b555921cd01",
+      "order": 2,
+      "zh": "尤其是夏天",
+      "pinyin": "",
+      "vi": "nhất là mùa hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a838bc01-acc9-4c93-951b-702ca8456ce6",
+      "order": 3,
+      "zh": "尤其重要",
+      "pinyin": "",
+      "vi": "đặc biệt quan trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1af38f87-909b-49d4-9c7d-a73316e9cc25",
+      "order": 4,
+      "zh": "尤其明显",
+      "pinyin": "",
+      "vi": "đặc biệt rõ ràng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d763f05-a310-4646-91f7-12793b627528",
+      "order": 5,
+      "zh": "尤其漂亮",
+      "pinyin": "",
+      "vi": "đặc biệt đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b13f7d0-4ace-45db-b95f-aab901837531",
+      "order": 6,
+      "zh": "尤其需要注意",
+      "pinyin": "",
+      "vi": "đặc biệt cần chú ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77b2ef57-0a76-490b-ad60-2210857ecdc9",
+      "order": 7,
+      "zh": "我尤其喜欢……",
+      "pinyin": "",
+      "vi": "tôi đặc biệt thích…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f201642b-8c95-4394-b281-1f3c834bed4e",
+      "order": 8,
+      "zh": "……，尤其是……",
+      "pinyin": "",
+      "vi": "…, nhất là…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3873f469-0eae-44d8-bcae-ea80de029e00",
+      "order": 1,
+      "zh": "我喜欢中国菜，尤其喜欢火锅儿。",
+      "pinyin": "Wǒ xǐhuan Zhōngguó cài, yóuqí xǐhuan huǒguōr.",
+      "vi": "Tôi thích món Trung Quốc, đặc biệt thích lẩu.",
+      "analysis_vi": "尤其 nêu một món nổi bật trong nhóm 中国菜.",
+      "highlight": [
+        "尤其"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3949b682-8dc1-4929-b352-1d4029670c39"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7fff9bfe-2d52-4f84-870d-97803640dd46",
+      "order": 2,
+      "zh": "冬天快要到了，北方的天气越来越冷，尤其是早上。",
+      "pinyin": "Dōngtiān kuài yào dào le, běifāng de tiānqì yuè lái yuè lěng, yóuqí shì zǎoshang.",
+      "vi": "Mùa đông sắp đến rồi, thời tiết miền Bắc ngày càng lạnh, nhất là buổi sáng.",
+      "analysis_vi": "快要……了 báo mùa đông sắp đến; 尤其是早上 nêu thời điểm nổi bật.",
+      "highlight": [
+        "尤其"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3949b682-8dc1-4929-b352-1d4029670c39"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "892e21c1-e87a-4d0d-90d3-32e6c91f5233",
+      "order": 3,
+      "zh": "我们班的同学都觉得这课的词有点儿难，尤其是“人家”和“靠”。",
+      "pinyin": "Wǒmen bān de tóngxué dōu juéde zhè kè de cí yǒudiǎnr nán, yóuqí shì “rénjia” hé “kào”.",
+      "vi": "Các bạn trong lớp đều thấy từ bài này hơi khó, nhất là “人家” và “靠”.",
+      "analysis_vi": "尤其是 + danh từ/cụm danh từ dùng để nêu phần nổi bật.",
+      "highlight": [
+        "尤其"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3949b682-8dc1-4929-b352-1d4029670c39"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Người Việt hay dùng “đặc biệt là” khá giống 尤其是, nhưng tiếng Trung đặt 尤其 trước phần cần nhấn.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff3be427-8f15-4865-9966-927e515a7411",
+      "order": 1,
+      "rule_vi": "Không đặt 尤其 lung tung cuối câu. Nói: 我喜欢旅游，尤其喜欢去山里.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "尤其",
+    "back": "đặc biệt là, nhất là",
+    "hint": "yóuqí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3949b682-8dc1-4929-b352-1d4029670c39",
+    "source_lesson_vocab_id": null
+  }
+}

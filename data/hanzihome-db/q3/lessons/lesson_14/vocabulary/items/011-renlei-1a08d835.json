@@ -1,0 +1,310 @@
+{
+  "id": "b08b84d9-5946-461b-8eb6-f069f3df7f68",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "人类",
+  "pinyin": "rénlèi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhân loại",
+    "meaning_vi": "loài người, nhân loại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "loài người",
+      "nhân loại"
+    ],
+    "short_definition_vi": "loài người, nhân loại",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: xã hội, khoa học.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "xã hội, khoa học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "人 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "人 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Trong từ 人类, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "类",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "米",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mễ",
+          "radical_name_zh": "",
+          "hanviet": "mễ",
+          "meaning_vi": "gạo",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "米 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "米",
+            "hanviet": "mễ",
+            "meaning_vi": "gạo",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "米",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mễ",
+              "radical_name_zh": "",
+              "hanviet": "mễ",
+              "meaning_vi": "gạo",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "米 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "米 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "loại, chủng loại",
+        "modern_logic_vi": "Trong từ 人类, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "人类 nên được học theo nghĩa hiện đại trong cụm/tình huống: loài người, nhân loại.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 人类社会.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "人们",
+        "pinyin": "rénmen",
+        "meaning_vi": "mọi người",
+        "difference_vi": "人类 là cấp loài; 人们 là mọi người trong xã hội/nhóm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3bbd44e6-a384-414c-b0cd-b116c34b0ccc",
+      "order": 1,
+      "zh": "人类社会",
+      "pinyin": "",
+      "vi": "xã hội loài người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ebb30a41-bd82-4ab8-bcad-06d2206da199",
+      "order": 2,
+      "zh": "人类历史",
+      "pinyin": "",
+      "vi": "lịch sử nhân loại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f35d16d4-e68c-48c4-9149-6ac4497fa36d",
+      "order": 3,
+      "zh": "全人类",
+      "pinyin": "",
+      "vi": "toàn nhân loại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "973c8e14-6daa-472e-8978-fb4074361229",
+      "order": 1,
+      "zh": "人类应该保护地球。",
+      "pinyin": "",
+      "vi": "Nhân loại nên bảo vệ Trái Đất.",
+      "analysis_vi": "人类 chỉ con người ở cấp loài/toàn thể.",
+      "highlight": [
+        "人类"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b08b84d9-5946-461b-8eb6-f069f3df7f68"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 人类 được dùng trong ngữ cảnh xã hội, khoa học; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b42b6434-78f2-406b-8101-a4d676b1d094",
+      "order": 1,
+      "rule_vi": "Không dùng 人类 cho một nhóm người nhỏ trong phòng; nói 很多人.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 人类 cho một nhóm người nhỏ trong phòng; nói 很多人.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人类",
+    "back": "loài người, nhân loại",
+    "hint": "rénlèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b08b84d9-5946-461b-8eb6-f069f3df7f68",
+    "source_lesson_vocab_id": null
+  }
+}

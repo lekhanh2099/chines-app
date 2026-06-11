@@ -1,0 +1,269 @@
+{
+  "id": "e8cefba3-377f-47c2-8d60-f79dccf4bcac",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "答",
+  "pinyin": "dá / dā",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "thi_cu"
+  ],
+  "meaning": {
+    "hanviet": "Đáp",
+    "meaning_vi": "trả lời; đáp lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trả lời",
+      "đáp lại"
+    ],
+    "short_definition_vi": "trả lời; đáp lại",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "答",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "合",
+            "hanviet": "hợp",
+            "meaning_vi": "thành phần dưới / biểu âm",
+            "position_vi": "bên dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trả lời, đáp lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "答 trong bài đọc dá, đi trong 答题, 答对, 答错.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "回答",
+        "pinyin": "",
+        "meaning_vi": "trả lời",
+        "difference_vi": "dùng rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "答案",
+        "pinyin": "",
+        "meaning_vi": "đáp án",
+        "difference_vi": "danh từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "答对",
+        "right": "答错",
+        "meaning_vi": "trả lời đúng ↔ trả lời sai",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b7c7eed5-459d-4890-b4df-8ad5d55d89ea",
+      "order": 1,
+      "zh": "答题",
+      "pinyin": "",
+      "vi": "trả lời câu hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbd684bd-16cc-4217-b251-ebcff013003c",
+      "order": 2,
+      "zh": "答对",
+      "pinyin": "",
+      "vi": "trả lời đúng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32982d11-c9f9-4731-844b-dc8ca8e21c18",
+      "order": 3,
+      "zh": "答错",
+      "pinyin": "",
+      "vi": "trả lời sai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b278996a-2744-4c30-9522-8a205ff5a942",
+      "order": 1,
+      "zh": "这道题你答对了。",
+      "pinyin": "Zhè dào tí nǐ dá duì le.",
+      "vi": "Câu này bạn trả lời đúng rồi.",
+      "analysis_vi": "答对了 = trả lời đúng.",
+      "highlight": [
+        "答"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e8cefba3-377f-47c2-8d60-f79dccf4bcac"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "853f528f-1456-4620-a9af-49bfa22b9272",
+      "order": 2,
+      "zh": "安娜把第一道题答错了。",
+      "pinyin": "Ānnà bǎ dì-yī dào tí dá cuò le.",
+      "vi": "Anna trả lời sai câu thứ nhất rồi.",
+      "analysis_vi": "答错了 dùng 错.",
+      "highlight": [
+        "答"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e8cefba3-377f-47c2-8d60-f79dccf4bcac"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "答题 dùng cho bài thi; đời thường hay dùng 回答/回复.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1e6f9962-6a1c-4e9d-b489-eb0832e86a08",
+      "order": 1,
+      "rule_vi": "Không nhầm 答 với 答案.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这道题的答案是什么？",
+          "pinyin": "Zhè dào tí de dá’àn shì shénme?",
+          "vi": "Đáp án của câu này là gì?",
+          "note_vi": "答案 là danh từ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "答",
+    "back": "trả lời; đáp lại",
+    "hint": "dá / dā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "thi_cu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e8cefba3-377f-47c2-8d60-f79dccf4bcac",
+    "source_lesson_vocab_id": null
+  }
+}

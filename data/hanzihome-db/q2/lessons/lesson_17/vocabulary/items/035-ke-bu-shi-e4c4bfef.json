@@ -1,0 +1,375 @@
+{
+  "id": "7b5ee534-b23a-4221-9ac3-fd466cfd890b",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "可不是",
+  "pinyin": "kě bú shì",
+  "pos": {
+    "raw_vi": "Cụm khẩu ngữ / Thán ngữ xác nhận",
+    "raw_cn": "口语表达",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Khả bất thị",
+    "meaning_vi": "đúng vậy mà, chẳng phải vậy sao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đúng vậy mà, chẳng phải vậy sao"
+    ],
+    "short_definition_vi": "đúng vậy mà, chẳng phải vậy sao",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "khẩu ngữ, tự nhiên trong hội thoại. Có thể hiểu gần tiếng Việt: “Ừ đúng rồi đó”, “Chứ còn gì nữa”, “Đúng quá còn gì”.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có thể, được; nhấn mạnh trong cụm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "đúng/thẳng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là, đúng, phải",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "可 ở đây tăng sắc thái khẳng định. 不是 nhìn như phủ định, nhưng cả cụm 可不是 lại dùng để xác nhận mạnh. → 可不是！ = đúng quá / đúng vậy mà. Cảnh báo: đừng dịch từng chữ thành “có thể không phải”. Đây là cụm khẩu ngữ cố định.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "可不是",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đúng vậy mà, đồng tình mạnh, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "是啊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đúng vậy, nhẹ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "对啊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đúng rồi, khẩu ngữ phổ biến.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "可不是嘛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đúng quá còn gì, khẩu ngữ hơn, thân mật hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 是啊 trung tính; 可不是 có cảm giác “tôi cũng thấy đúng như vậy”."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8291df8d-1165-495e-9b0f-785c77e4f881",
+      "order": 1,
+      "zh": "可不是！",
+      "pinyin": "",
+      "vi": "đúng vậy mà!",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c945bd51-b81f-4c85-b184-e440cc3051f9",
+      "order": 2,
+      "zh": "可不是嘛！",
+      "pinyin": "",
+      "vi": "đúng quá còn gì!",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b090990d-8da0-4402-8764-621e1b261535",
+      "order": 3,
+      "zh": "可不是吗？",
+      "pinyin": "",
+      "vi": "chẳng phải vậy sao?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e4e430e-db10-4fd8-8e03-3383234b406d",
+      "order": 4,
+      "zh": "哦，可不是！",
+      "pinyin": "",
+      "vi": "à đúng vậy thật!",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7d432dcc-6bfd-4272-9b35-97fad7e105a0",
+      "order": 1,
+      "zh": "A：这个“福”字贴倒了。B：可不是！这样才有“福到了”的意思。",
+      "pinyin": "A: Zhège “Fú” zì tiē dào le. B: Kě bú shì! Zhèyàng cái yǒu “fú dào le” de yìsi.",
+      "vi": "A: Chữ “Phúc” này dán ngược rồi. B: Đúng vậy mà! Như vậy mới có nghĩa “phúc đến rồi”.",
+      "analysis_vi": "可不是 xác nhận mạnh; 贴倒了 là dán ngược.",
+      "highlight": [
+        "可不是"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "7b5ee534-b23a-4221-9ac3-fd466cfd890b"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bf470592-08ea-4203-bf60-74d3dcbacb2a",
+      "order": 2,
+      "zh": "A：会场布置得真漂亮。B：可不是，都是同学们亲手布置的。",
+      "pinyin": "A: Huìchǎng bùzhì de zhēn piàoliang. B: Kě bú shì, dōu shì tóngxuémen qīnshǒu bùzhì de.",
+      "vi": "A: Hội trường trang trí đẹp thật. B: Đúng vậy, đều là các bạn học tự tay trang trí đó.",
+      "analysis_vi": "都是……亲手布置的 nhấn người thực hiện và công sức.",
+      "highlight": [
+        "可不是"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "7b5ee534-b23a-4221-9ac3-fd466cfd890b"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "09ca2e7c-2482-4237-8532-cb859422c32a",
+      "order": 3,
+      "zh": "A：音响声音太大了。B：可不是，管理员刚才也让我们调小一点儿。",
+      "pinyin": "A: Yīnxiǎng shēngyīn tài dà le. B: Kě bú shì, guǎnlǐyuán gāngcái yě ràng wǒmen tiáo xiǎo yìdiǎnr.",
+      "vi": "A: Âm thanh loa to quá. B: Đúng vậy, người quản lý vừa nãy cũng bảo chúng ta chỉnh nhỏ lại một chút.",
+      "analysis_vi": "调小一点儿 là chỉnh nhỏ xuống; dùng tốt với 音响 / 声音.",
+      "highlight": [
+        "可不是"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "7b5ee534-b23a-4221-9ac3-fd466cfd890b"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 可不是",
+    "content_vi": "可不是嘛 là kiểu phản hồi rất đời thường ở miền Bắc Trung Quốc, nghe thân mật và có chút “đúng quá còn gì”. Trong giao tiếp thân quen, cụm này giúp câu trả lời có cảm xúc hơn 对.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "56a4a8bb-1768-45a6-bb82-82bd3c0019f1",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dịch từng chữ 可不是 thành phủ định. Không hiểu theo nghĩa: có thể không phải Mà hiểu là: đúng vậy mà / chứ còn gì nữa Ví dụ: A：今天真冷。B：可不是！ A: Jīntiān zhēn lěng. B: Kě bú shì! A: Hôm nay lạnh thật. B: Đúng vậy mà!",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "可不是",
+    "back": "đúng vậy mà, chẳng phải vậy sao",
+    "hint": "kě bú shì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7b5ee534-b23a-4221-9ac3-fd466cfd890b",
+    "source_lesson_vocab_id": null
+  }
+}

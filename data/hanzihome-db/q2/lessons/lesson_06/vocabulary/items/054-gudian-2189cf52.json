@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ceead50dce929ea9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "古典",
+  "pinyin": "gǔdiǎn",
+  "meaning_vi": "cổ điển",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "a3118f18-848b-4715-9657-5bec503a41a2",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "a3118f18-848b-4715-9657-5bec503a41a2",
+    "type": "vocabulary_item",
+    "order": 35,
+    "hanzi": "古典",
+    "pinyin": "gǔdiǎn",
+    "meaning_vi": "cổ điển",
+    "meaning_en": "classical",
+    "pos": "Tính từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "古典",
+      "back": "gǔdiǎn — cổ điển",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

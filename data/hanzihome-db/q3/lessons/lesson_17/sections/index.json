@@ -1,0 +1,66 @@
+[
+  {
+    "id": "section_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "file": "01-text.json"
+  },
+  {
+    "id": "section_vocab",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng chính",
+    "file": "02-vocabulary.json"
+  },
+  {
+    "id": "section_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "file": "03-proper-nouns.json"
+  },
+  {
+    "id": "section_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "file": "04-notes.json"
+  },
+  {
+    "id": "section_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "词语用法",
+    "title_vi": "Cách dùng từ / Ngữ pháp",
+    "file": "05-grammar.json"
+  },
+  {
+    "id": "section_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "file": "06-exercises.json"
+  },
+  {
+    "id": "section_char_writing",
+    "type": "character_writing",
+    "order": 7,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "file": "07-character-writing.json"
+  },
+  {
+    "id": "section_summary",
+    "type": "summary",
+    "order": 8,
+    "title": "总结",
+    "title_vi": "Tổng kết",
+    "file": "08-summary.json"
+  }
+]

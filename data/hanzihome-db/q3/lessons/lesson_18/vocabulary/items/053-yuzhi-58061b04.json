@@ -1,0 +1,268 @@
+{
+  "id": "61ca5c88-c86c-4376-ba4b-cdc3277f0d1e",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "预知",
+  "pinyin": "yùzhī",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dự tri",
+    "meaning_vi": "biết trước, tiên liệu trước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biết trước",
+      "tiên liệu trước"
+    ],
+    "short_definition_vi": "biết trước, tiên liệu trước",
+    "textbook_focus_vi": "Biết trước điều chưa xảy ra; hơi văn.",
+    "register_vi": "hơi văn / theo ngữ cảnh bài",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "预",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trước/dự trước",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "知",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/lời nói",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Biết trước điều chưa xảy ra; hơi văn.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 预知 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "预测",
+        "pinyin": "",
+        "meaning_vi": "dự đoán",
+        "difference_vi": "Thường dựa trên dữ liệu/phân tích.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "预料",
+        "pinyin": "",
+        "meaning_vi": "dự liệu",
+        "difference_vi": "Lường trước.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "知道",
+        "pinyin": "",
+        "meaning_vi": "biết",
+        "difference_vi": "Rộng hơn, không nhất thiết trước.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c9179ea2-8659-4ce9-922d-63a8f68e21a6",
+      "order": 1,
+      "zh": "不可预知",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18f0df35-6c39-40d4-8132-84a1e0426dc3",
+      "order": 2,
+      "zh": "预知未来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05937ee4-d3c7-4e04-9e01-0e5edbf7e980",
+      "order": 3,
+      "zh": "无法预知",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a01ffe76-cb10-42b6-bf24-935384da1f5f",
+      "order": 4,
+      "zh": "很难预知",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0278edf-0500-44b1-8156-d7638f445eaf",
+      "order": 5,
+      "zh": "未来不可预知",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3309215c-e5f8-421e-ba97-8b09e0660772",
+      "order": 1,
+      "zh": "她带着这场甜蜜的梦，飞向不可预知的未来。",
+      "pinyin": "",
+      "vi": "Cô ấy mang giấc mơ ngọt ngào ấy bay về phía tương lai không thể biết trước.",
+      "analysis_vi": "不可预知的未来 là định ngữ văn.",
+      "highlight": [
+        "预知"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "61ca5c88-c86c-4376-ba4b-cdc3277f0d1e"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "00231f3c-f9f3-4f19-a5e6-4557b65f1d2f",
+      "order": 1,
+      "rule_vi": "预知 không dùng cho thông tin bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我预知他的电话号码。",
+          "pinyin": "",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Số điện thoại là thông tin, dùng 知道.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我知道他的电话号码。",
+          "pinyin": "",
+          "vi": "Tôi biết số điện thoại của anh ấy.",
+          "note_vi": "知道 đúng hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "预知",
+    "back": "biết trước, tiên liệu trước",
+    "hint": "yùzhī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "61ca5c88-c86c-4376-ba4b-cdc3277f0d1e",
+    "source_lesson_vocab_id": null
+  }
+}

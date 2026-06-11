@@ -1,0 +1,250 @@
+{
+  "id": "1253faff-bd96-4362-8f65-f23b5988f92a",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "看样子",
+  "pinyin": "kàn yàngzi",
+  "pos": {
+    "raw_vi": "phrase",
+    "raw_cn": "",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khán dạng tử",
+    "meaning_vi": "xem ra; nhìn có vẻ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xem ra",
+      "nhìn có vẻ"
+    ],
+    "short_definition_vi": "xem ra; nhìn có vẻ",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "看",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "龵",
+            "hanviet": "thủ",
+            "meaning_vi": "dạng tay phía trên",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt; nhìn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt; nhìn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhìn; xem",
+        "modern_logic_vi": "Có 目 nên liên quan nhìn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "样",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây; gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây; gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây; gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dáng vẻ; kiểu",
+        "modern_logic_vi": "样子 = dáng vẻ bên ngoài.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố danh từ",
+        "modern_logic_vi": "Trong 样子 không dịch riêng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "看样子 = xem ra; nhìn có vẻ.",
+    "memory_tip_vi": "",
+    "warning_vi": "看样子 là phán đoán, không phải khẳng định tuyệt đối.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "995ae774-3414-4ae1-992e-b4f814ce3b99",
+      "order": 1,
+      "zh": "看样子",
+      "pinyin": "",
+      "vi": "xem ra; nhìn có vẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dbd40e11-10c6-47d8-9d3e-7f20cdd8162d",
+      "order": 1,
+      "zh": "看样子，他遇到了困难。",
+      "pinyin": "Kàn yàngzi, tā yùdào le kùnnan.",
+      "vi": "Xem ra anh ấy gặp khó khăn rồi.",
+      "analysis_vi": "看样子 là phán đoán, không phải khẳng định tuyệt đối.",
+      "level": "basic",
+      "highlight": [
+        "看样子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1253faff-bd96-4362-8f65-f23b5988f92a"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "968182a4-186d-4920-b63b-439d27bd8a2d",
+      "kind": "usage",
+      "text_vi": "看样子 là phán đoán, không phải khẳng định tuyệt đối.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "看样子",
+    "back": "xem ra; nhìn có vẻ",
+    "hint": "kàn yàngzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1253faff-bd96-4362-8f65-f23b5988f92a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "id": "181228d5-7d6f-4000-9d15-287d4ea1f234",
+  "type": "deep_vocabulary_item",
+  "order": 162,
+  "hanzi": "宇宙",
+  "pinyin": "yǔzhòu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Hàng không vũ trụ và quan sát"
+  ],
+  "meaning": {
+    "hanviet": "Vũ trụ",
+    "meaning_vi": "vũ trụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vũ trụ"
+    ],
+    "short_definition_vi": "vũ trụ",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: vũ trụ.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Hàng không vũ trụ và quan sát",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "宇",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "宙",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "宇宙 trong bài được học theo nghĩa trọng tâm: vũ trụ.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: vũ trụ.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "太空",
+        "pinyin": "tàikōng",
+        "meaning_vi": "không gian ngoài Trái Đất",
+        "difference_vi": "宇宙 là toàn vũ trụ; 太空 là outer space.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "24a1ac23-4b5c-4025-9209-57654c45e073",
+      "order": 1,
+      "zh": "我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: vũ trụ",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "20ae1c1b-a3da-4502-86d2-2d88aa0850be",
+      "order": 1,
+      "zh": "我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “宇宙” = vũ trụ.",
+      "analysis_vi": "Câu này dùng “宇宙” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "宇宙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "181228d5-7d6f-4000-9d15-287d4ea1f234"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “宇宙” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "38262f85-4a80-4f77-9f2f-1a460a020bd6",
+      "order": 1,
+      "rule_vi": "Cần dùng “宇宙” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "宇宙",
+    "back": "vũ trụ",
+    "hint": "yǔzhòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Hàng không vũ trụ và quan sát"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "181228d5-7d6f-4000-9d15-287d4ea1f234",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "d4e5b544-671a-429a-802b-fa48dfdcc122",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "让步",
+  "pinyin": "ràngbù",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhượng bộ",
+    "meaning_vi": "nhượng bộ, lùi một bước, chịu nhường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhượng bộ",
+      "lùi một bước",
+      "chịu nhường"
+    ],
+    "short_definition_vi": "nhượng bộ, lùi một bước, chịu nhường",
+    "textbook_focus_vi": "让 = nhường/để cho, 步 = bước. 让步 = nhường một bước, nhượng bộ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tranh luận, quan hệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "让",
+        "lishu_vi": "nhượng",
+        "structure_note_vi": "讠 + 上; liên quan lời cho phép/nhường.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhường, để cho",
+        "modern_logic_vi": "Trong từ này, 让 góp phần tạo nghĩa 'nhường, để cho'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "步",
+        "lishu_vi": "bộ",
+        "structure_note_vi": "止 gợi bàn chân/dừng.",
+        "main_radical": {
+          "radical": "止",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chỉ",
+          "radical_name_zh": "",
+          "hanviet": "chỉ",
+          "meaning_vi": "dừng, bàn chân",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng, bàn chân",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "止",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chỉ",
+              "radical_name_zh": "",
+              "hanviet": "chỉ",
+              "meaning_vi": "dừng, bàn chân",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bước chân",
+        "modern_logic_vi": "Trong từ này, 步 góp phần tạo nghĩa 'bước chân'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "让 = nhường/để cho, 步 = bước. 让步 = nhường một bước, nhượng bộ.",
+    "memory_tip_vi": "Nhớ qua cụm: 不肯让步 = không chịu nhượng bộ.",
+    "warning_vi": "让步 khác cấu trúc 让 + người + V.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "妥协",
+        "pinyin": "tuǒxié",
+        "meaning_vi": "thỏa hiệp",
+        "difference_vi": "Hai bên nhường để đạt kết quả.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "坚持",
+        "pinyin": "jiānchí",
+        "meaning_vi": "kiên trì/giữ ý",
+        "difference_vi": "Đối lập trong nhiều ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "让步 khác cấu trúc 让 + người + V."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a5dde483-d39e-4805-a93e-75e84e69574d",
+      "order": 1,
+      "zh": "不肯让步",
+      "pinyin": "bù kěn ràngbù",
+      "vi": "không chịu nhượng bộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a662753-92ae-4eca-b2d8-2e5ff14c16a9",
+      "order": 2,
+      "zh": "互相让步",
+      "pinyin": "hùxiāng ràngbù",
+      "vi": "nhường nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc567aa9-8e8a-4680-92a5-48790b665af3",
+      "order": 3,
+      "zh": "让一步",
+      "pinyin": "ràng yí bù",
+      "vi": "nhường một bước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8f28393b-0631-49e2-9667-15430817c3f8",
+      "order": 1,
+      "zh": "他们本来互不相让，后来各自想了想，才决定都让一步。",
+      "pinyin": "Tāmen běnlái hù bù xiāng ràng, hòulái gèzì xiǎng le xiǎng, cái juédìng dōu ràng yí bù.",
+      "vi": "Ban đầu họ không ai nhường ai, sau đó mỗi người nghĩ lại, mới quyết định đều nhường một bước.",
+      "analysis_vi": "让一步 là cách nói hình tượng cho nhượng bộ.",
+      "highlight": [
+        "让步"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4e5b544-671a-429a-802b-fa48dfdcc122"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong tình cảm, 让步 không đồng nghĩa thua; nó có thể là cách giữ quan hệ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1a2ce837-3b2a-4e5e-be23-aa40015e7ba0",
+      "order": 1,
+      "rule_vi": "让步 khác cấu trúc 让 + người + V.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他终于让步了。",
+          "pinyin": "Tā zhōngyú ràngbù le.",
+          "vi": "Cuối cùng anh ấy cũng nhượng bộ.",
+          "note_vi": "让步 là động từ nguyên khối.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "让步",
+    "back": "nhượng bộ, lùi một bước, chịu nhường",
+    "hint": "ràngbù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d4e5b544-671a-429a-802b-fa48dfdcc122",
+    "source_lesson_vocab_id": null
+  }
+}

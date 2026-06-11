@@ -1,0 +1,268 @@
+{
+  "id": "eb897ceb-a090-4155-8eb4-2a3990d4c625",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "免费",
+  "pinyin": "miǎnfèi",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ chức năng",
+    "raw_cn": "动词 / 形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "miễn phí",
+    "meaning_vi": "miễn phí, không thu tiền",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "miễn phí",
+      "không thu tiền"
+    ],
+    "short_definition_vi": "miễn phí",
+    "textbook_focus_vi": "miễn phí",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "免",
+        "lishu_vi": "miễn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "费",
+        "lishu_vi": "phí",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "tiền bạc, tài vật",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tiền bạc, tài vật",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "tiền bạc, tài vật",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "miễn phí",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 免费服务.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "优惠",
+        "pinyin": "yōuhuì",
+        "meaning_vi": "ưu đãi",
+        "difference_vi": "chưa chắc miễn phí",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "便宜",
+        "pinyin": "piányi",
+        "meaning_vi": "rẻ",
+        "difference_vi": "vẫn phải trả tiền",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "994b84f3-0bf4-427b-881f-d32749658938",
+      "order": 1,
+      "zh": "免费服务",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7eab4e54-f5a3-45b9-97c1-f7287dfd075e",
+      "order": 2,
+      "zh": "免费试用",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "969752cd-a9ac-4f42-afa6-77444a77e305",
+      "order": 3,
+      "zh": "免费学习",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33d9dd59-cb32-4b39-b073-4baecc13e16f",
+      "order": 4,
+      "zh": "免费入场",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06c1422b-a1e9-4a03-883b-2e40c1e94e6a",
+      "order": 5,
+      "zh": "免费提供",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a92d933-4a72-460a-b262-86fed3aaa0af",
+      "order": 6,
+      "zh": "免费使用",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6f7f181a-462a-448e-9df4-e7e89a89e354",
+      "order": 1,
+      "zh": "这个软件可以免费使用。",
+      "pinyin": "Zhège ruǎnjiàn kěyǐ miǎnfèi shǐyòng.",
+      "vi": "Phần mềm này có thể sử dụng miễn phí.",
+      "analysis_vi": "免费 + V = làm gì đó miễn phí.",
+      "highlight": [
+        "免费"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb897ceb-a090-4155-8eb4-2a3990d4c625"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "免费试用 có thể chỉ là dùng thử miễn phí, sau đó mới thu phí.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dfc9d3fd-f858-4a4c-98e6-c3b5459c8aa5",
+      "order": 1,
+      "rule_vi": "免费 khác 优惠 và 便宜.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "免费",
+    "back": "miễn phí, không thu tiền",
+    "hint": "miǎnfèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eb897ceb-a090-4155-8eb4-2a3990d4c625",
+    "source_lesson_vocab_id": null
+  }
+}

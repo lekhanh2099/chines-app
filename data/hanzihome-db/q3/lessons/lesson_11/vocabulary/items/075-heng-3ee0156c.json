@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_bcebec96e3c72f25",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "横",
+  "pinyin": "héng",
+  "meaning_vi": "nằm ngang; ngang",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "c99a633b-27a2-429b-a139-44113a84c189",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "c99a633b-27a2-429b-a139-44113a84c189",
+    "type": "vocabulary_item",
+    "order": 22,
+    "hanzi": "横",
+    "pinyin": "héng",
+    "meaning_vi": "nằm ngang; ngang",
+    "meaning_en": "",
+    "pos": "Tính từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "横",
+      "back": "héng — nằm ngang; ngang",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

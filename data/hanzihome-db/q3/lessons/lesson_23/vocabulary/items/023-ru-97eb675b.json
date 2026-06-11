@@ -1,0 +1,299 @@
+{
+  "id": "6baf4b4a-a26e-48cf-857d-6bd37f7f61f2",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "入",
+  "pinyin": "rù",
+  "pos": {
+    "raw_vi": "Động từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动词/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhập",
+    "meaning_vi": "vào; nhập vào; gia nhập",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vào",
+      "nhập vào",
+      "gia nhập"
+    ],
+    "short_definition_vi": "vào; nhập vào; gia nhập",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về hướng chuyển động, học vụ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "hướng chuyển động, học vụ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "入",
+        "lishu_vi": "nhập",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 入 trong từ 入; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vào, nhập vào",
+        "modern_logic_vi": "Trong từ 入, chữ 入 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "入 trong bài được nhớ theo nghĩa hiện đại: vào, nhập vào.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 入学 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "进",
+        "pinyin": "jìn",
+        "meaning_vi": "đi vào; khẩu ngữ hơn",
+        "difference_vi": "đi vào; khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "进入",
+        "pinyin": "jìnrù",
+        "meaning_vi": "đi vào; trang trọng hơn",
+        "difference_vi": "đi vào; trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "出",
+        "pinyin": "chū",
+        "meaning_vi": "ra",
+        "difference_vi": "ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "入 văn hơn 进; khẩu ngữ thường dùng 进/进入."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a3fbe40c-42a1-4e23-ab44-1cdd8867d74e",
+      "order": 1,
+      "zh": "入学",
+      "pinyin": "",
+      "vi": "nhập học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e45d10bf-4c76-4718-ba42-76825ea24676",
+      "order": 2,
+      "zh": "入门",
+      "pinyin": "",
+      "vi": "nhập môn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af1f45cc-d222-4d3b-b949-356018e4302e",
+      "order": 3,
+      "zh": "入口",
+      "pinyin": "",
+      "vi": "lối vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1cceda1e-8dcc-431c-8e46-a3d265c79ad3",
+      "order": 4,
+      "zh": "进入网站",
+      "pinyin": "",
+      "vi": "vào website",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74350d4f-6859-4f9f-9ab3-bce7a0553217",
+      "order": 5,
+      "zh": "入初级班",
+      "pinyin": "",
+      "vi": "vào lớp sơ cấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e63c34d5-be09-4627-8c63-986564faf5f2",
+      "order": 1,
+      "zh": "学生注册以后就可以进入网站学习。",
+      "pinyin": "",
+      "vi": "vào; nhập vào; gia nhập",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "入"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6baf4b4a-a26e-48cf-857d-6bd37f7f61f2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a7e6f7e0-b374-4b02-9b5a-720d22fa05a1",
+      "order": 2,
+      "zh": "这个词语“入”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 入 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "入"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6baf4b4a-a26e-48cf-857d-6bd37f7f61f2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bac0eef9-a2ac-4ae6-92ba-51d1932b5143",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“入”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 入 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "入"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6baf4b4a-a26e-48cf-857d-6bd37f7f61f2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "入 thường xuất hiện trong từ ghép học vụ như 入学, 入门.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e8809dbd-33eb-409c-a712-300c4f382254",
+      "order": 1,
+      "rule_vi": "入 văn hơn 进; khẩu ngữ thường dùng 进/进入.",
+      "natural_examples": [
+        {
+          "zh": "我进教室了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我入教室了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我入教室了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我进教室了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "入 văn hơn 进; khẩu ngữ thường dùng 进/进入.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "入",
+    "back": "vào; nhập vào; gia nhập",
+    "hint": "rù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6baf4b4a-a26e-48cf-857d-6bd37f7f61f2",
+    "source_lesson_vocab_id": null
+  }
+}

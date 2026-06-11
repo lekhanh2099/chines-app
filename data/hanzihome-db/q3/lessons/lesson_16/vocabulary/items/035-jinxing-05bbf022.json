@@ -1,0 +1,163 @@
+{
+  "id": "24fd78bd-28f5-4731-94d3-e1a614f72222",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "进行",
+  "pinyin": "jìnxíng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Thời gian và tiến trình"
+  ],
+  "meaning": {
+    "hanviet": "Tiến hành",
+    "meaning_vi": "tiến hành, đang diễn ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiến hành",
+      "đang diễn ra"
+    ],
+    "short_definition_vi": "tiến hành, đang diễn ra",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: tiến hành, đang diễn ra.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Thời gian và tiến trình",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "进",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "行",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "进行 trong bài được học theo nghĩa trọng tâm: tiến hành, đang diễn ra.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: tiến hành, đang diễn ra.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "867b7f3a-9ef5-48b8-907e-0716a2d17bb0",
+      "order": 1,
+      "zh": "在金星科技大学里，一个记者招待会正在进行。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: tiến hành, đang diễn ra",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c3a88088-517e-41b1-8643-8e7d999e0d56",
+      "order": 1,
+      "zh": "在金星科技大学里，一个记者招待会正在进行。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “进行” = tiến hành, đang diễn ra.",
+      "analysis_vi": "Câu này dùng “进行” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "进行"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24fd78bd-28f5-4731-94d3-e1a614f72222"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “进行” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e10ec69f-e5b1-4f50-be31-5a23f96a1d0a",
+      "order": 1,
+      "rule_vi": "Cần dùng “进行” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "进行",
+    "back": "tiến hành, đang diễn ra",
+    "hint": "jìnxíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Thời gian và tiến trình"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "24fd78bd-28f5-4731-94d3-e1a614f72222",
+    "source_lesson_vocab_id": null
+  }
+}

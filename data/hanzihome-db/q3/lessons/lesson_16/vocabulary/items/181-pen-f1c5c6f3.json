@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_ca20a17812c0254f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "喷",
+  "pinyin": "pēn",
+  "meaning_vi": "phun, phun ra",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "f19949e7-f65e-4c2e-92d8-d151d7bc5dcb",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "f19949e7-f65e-4c2e-92d8-d151d7bc5dcb",
+    "type": "vocabulary_item",
+    "order": 51,
+    "hanzi": "喷",
+    "pinyin": "pēn",
+    "meaning_vi": "phun, phun ra",
+    "meaning_en": "to spurt; to spout",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "喷",
+      "back": "pēn — phun, phun ra",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

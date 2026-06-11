@@ -1,0 +1,120 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "proper_001",
+      "type": "proper_noun_item",
+      "order": 1,
+      "hanzi": "田芳",
+      "pinyin": "Tián Fāng",
+      "meaning_vi": "Điền Phương",
+      "meaning_en": "",
+      "pos": "Tên riêng",
+      "tags": [
+        "person_name",
+        "textbook_name"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "proper_002",
+      "type": "proper_noun_item",
+      "order": 2,
+      "hanzi": "张东",
+      "pinyin": "Zhāng Dōng",
+      "meaning_vi": "Trương Đông",
+      "meaning_en": "",
+      "pos": "Tên riêng",
+      "tags": [
+        "person_name",
+        "textbook_name"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "proper_003",
+      "type": "proper_noun_item",
+      "order": 3,
+      "hanzi": "江苹",
+      "pinyin": "Jiāng Píng",
+      "meaning_vi": "Giang Bình",
+      "meaning_en": "",
+      "pos": "Tên riêng",
+      "tags": [
+        "person_name",
+        "reading_name"
+      ],
+      "source_origin": "textbook_reading",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "proper_004",
+      "type": "proper_noun_item",
+      "order": 4,
+      "hanzi": "HSK",
+      "pinyin": "HSK",
+      "meaning_vi": "Kỳ thi năng lực tiếng Trung HSK",
+      "meaning_en": "",
+      "pos": "Tên riêng / Tên kỳ thi",
+      "tags": [
+        "exam_name",
+        "exercise_vocab"
+      ],
+      "source_origin": "exercise",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tên riêng / Tên kỳ thi",
+        "cn": "专名 / 考试名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    }
+  ],
+  "empty_reason_vi": ""
+}

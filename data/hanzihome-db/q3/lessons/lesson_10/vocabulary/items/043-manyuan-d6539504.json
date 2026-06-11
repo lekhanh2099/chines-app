@@ -1,0 +1,300 @@
+{
+  "id": "67e8e6d1-316c-4fe9-aad9-8dd970a514a9",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "埋怨",
+  "pinyin": "mányuàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mai oán / mán oán",
+    "meaning_vi": "oán trách, phàn nàn trách móc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "oán trách",
+      "phàn nàn trách móc"
+    ],
+    "short_definition_vi": "oán trách, phàn nàn trách móc",
+    "textbook_focus_vi": "oán trách, phàn nàn trách móc",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "埋",
+        "lishu_vi": "mai/mán",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "怨",
+        "lishu_vi": "oán",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "oán trách, phàn nàn trách móc",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 埋怨别人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "抱怨",
+        "pinyin": "bàoyuàn",
+        "meaning_vi": "phàn nàn",
+        "difference_vi": "rộng và nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "责怪",
+        "pinyin": "zéguài",
+        "meaning_vi": "trách móc",
+        "difference_vi": "trực tiếp hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "679895b6-861e-4a8d-ba4d-bb7d9e2a4575",
+      "order": 1,
+      "zh": "埋怨别人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "317b8673-fc7b-4773-a028-c0b410cf37c1",
+      "order": 2,
+      "zh": "埋怨自己",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "267ce0dc-adb1-4858-a0b0-cb891239e7eb",
+      "order": 3,
+      "zh": "别埋怨我",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f072675-4d38-4c84-9447-1108f8ff9c0d",
+      "order": 4,
+      "zh": "总是埋怨",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a3add69-b08a-404c-9844-ab8f233ec992",
+      "order": 5,
+      "zh": "互相埋怨",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a0d33ce-61eb-420e-9c3e-c061d00d6091",
+      "order": 6,
+      "zh": "埋怨头儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "25508d4e-6f88-4b30-b53a-a137e2b7d51c",
+      "order": 1,
+      "zh": "你别埋怨我，这不是我的错。",
+      "pinyin": "Nǐ bié mányuàn wǒ, zhè bú shì wǒ de cuò.",
+      "vi": "Bạn đừng trách tôi, đây không phải lỗi của tôi.",
+      "analysis_vi": "埋怨 + người = oán trách ai.",
+      "highlight": [
+        "埋怨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "67e8e6d1-316c-4fe9-aad9-8dd970a514a9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "埋怨 trong công sở dễ nghe như đổ lỗi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "51df3993-b899-4363-9281-0d0c7628f91e",
+      "order": 1,
+      "rule_vi": "埋怨 đọc mányuàn, không đọc máiyuàn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "埋怨",
+    "back": "oán trách, phàn nàn trách móc",
+    "hint": "mányuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "67e8e6d1-316c-4fe9-aad9-8dd970a514a9",
+    "source_lesson_vocab_id": null
+  }
+}

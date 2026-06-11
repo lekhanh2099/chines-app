@@ -1,0 +1,237 @@
+{
+  "id": "56a4dc63-225f-4124-9865-28d36d1d761b",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "丈夫",
+  "pinyin": "zhàngfu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trượng phu",
+    "meaning_vi": "chồng; người đàn ông trưởng thành trong nghĩa cũ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chồng",
+      "người đàn ông trưởng thành trong nghĩa cũ"
+    ],
+    "short_definition_vi": "chồng",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "丈",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đơn vị đo cổ; trong 丈夫",
+        "modern_logic_vi": "Trong từ 丈夫, chữ 丈 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "夫",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người đàn ông/chồng",
+        "modern_logic_vi": "Trong từ 丈夫, chữ 夫 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "丈夫 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 她的丈夫是医生。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "老公",
+        "pinyin": "lǎogōng",
+        "meaning_vi": "chồng",
+        "difference_vi": "老公 khẩu ngữ thân mật hơn 丈夫.",
+        "register_vi": "",
+        "example_zh": "她老公很忙。",
+        "example_vi": "Chồng cô ấy rất bận.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b7929b6d-4860-447c-af01-86f316ffe428",
+      "order": 1,
+      "zh": "她的丈夫",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df129b5a-72ca-4223-97ce-347c77b050f4",
+      "order": 2,
+      "zh": "我的丈夫",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89410615-1462-4210-9c1e-c4859c70de1b",
+      "order": 3,
+      "zh": "丈夫和妻子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a9af01f-b532-4c48-b253-0cad9b601ffd",
+      "order": 4,
+      "zh": "丈夫的表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50b311d4-bf49-497c-a74a-6aa061fd595b",
+      "order": 5,
+      "zh": "丈夫很警惕",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70106ca3-ff4f-4aab-860a-559875c5e6f3",
+      "order": 6,
+      "zh": "前夫",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4678f1c1-6636-46b4-bf25-dbee72ca9fc3",
+      "order": 7,
+      "zh": "现任丈夫",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "df30bf18-8992-4d55-ab3d-e5324347817a",
+      "order": 1,
+      "zh": "她的丈夫是医生。",
+      "pinyin": "",
+      "vi": "Chồng cô ấy là bác sĩ.",
+      "analysis_vi": "Ví dụ dùng 丈夫 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "丈夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "56a4dc63-225f-4124-9865-28d36d1d761b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "丈夫 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "643b24c9-19e8-4623-836d-27ece715ebaa",
+      "order": 1,
+      "rule_vi": "丈夫 hiện đại chủ yếu là chồng; không dùng cho bạn trai.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "丈夫",
+    "back": "chồng; người đàn ông trưởng thành trong nghĩa cũ",
+    "hint": "zhàngfu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "56a4dc63-225f-4124-9865-28d36d1d761b",
+    "source_lesson_vocab_id": null
+  }
+}

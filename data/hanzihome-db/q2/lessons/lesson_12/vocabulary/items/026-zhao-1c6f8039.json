@@ -1,0 +1,321 @@
+{
+  "id": "007bfd88-9a6b-4b1d-a7e5-143ca06d3067",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "找",
+  "pinyin": "zhǎo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "actions_results"
+  ],
+  "meaning": {
+    "hanviet": "trảo",
+    "meaning_vi": "tìm, tìm kiếm; tìm gặp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tìm, tìm kiếm; tìm gặp"
+    ],
+    "short_definition_vi": "tìm, tìm kiếm; tìm gặp",
+    "textbook_focus_vi": "tìm, tìm kiếm; tìm gặp",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "找",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí cổ/thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tìm, tìm kiếm",
+        "modern_logic_vi": "找 là hành động chủ động tìm kiếm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "找 = hành động chủ động tìm kiếm người/vật.",
+    "memory_tip_vi": "找 = hành động chủ động tìm kiếm người/vật.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "寻找",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tìm kiếm, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "找到",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tìm thấy, nhấn kết quả",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "找着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tìm thấy, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发现",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phát hiện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "找到了",
+        "right": "没找到",
+        "meaning_vi": "",
+        "note_vi": "tìm thấy rồi ↔ không tìm thấy",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "053cd7a4-78f0-43df-a83b-7ca77ee4566e",
+      "order": 1,
+      "zh": "找护照",
+      "pinyin": "",
+      "vi": "tìm hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f0e9ddf-2ccb-4714-a7e6-13351775f49d",
+      "order": 2,
+      "zh": "找人",
+      "pinyin": "",
+      "vi": "tìm người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4abe731f-7ffb-42a6-b863-28b2800102cb",
+      "order": 3,
+      "zh": "找工作",
+      "pinyin": "",
+      "vi": "tìm việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eabedccd-9013-4d87-a901-8f91777a2f4c",
+      "order": 4,
+      "zh": "找到了",
+      "pinyin": "",
+      "vi": "tìm thấy rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a469df0-aab9-4710-b9b9-d90fb3c924a6",
+      "order": 5,
+      "zh": "找不着",
+      "pinyin": "",
+      "vi": "không tìm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be92c6f6-4335-4275-accf-ed0853b23f88",
+      "order": 6,
+      "zh": "有人找你",
+      "pinyin": "",
+      "vi": "có người tìm/gặp bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d73a6cff-ba13-4e09-b480-8f026bc96164",
+      "order": 1,
+      "zh": "我在找我的护照。",
+      "pinyin": "",
+      "vi": "Tôi đang tìm hộ chiếu của tôi.",
+      "analysis_vi": "在 + V chỉ hành động đang diễn ra.",
+      "highlight": [
+        "找"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "007bfd88-9a6b-4b1d-a7e5-143ca06d3067"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3a9c09f6-4229-4b5c-81a7-e923e0c26b33",
+      "order": 2,
+      "zh": "我的护照你找到了没有？",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi bạn tìm thấy chưa?",
+      "analysis_vi": "我的护照 là chủ đề lớn; 找到了没有 hỏi kết quả.",
+      "highlight": [
+        "找"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "007bfd88-9a6b-4b1d-a7e5-143ca06d3067"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "找你 thường nghĩa là có người muốn gặp/nói với bạn.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "eb5ab898-9901-486c-a6dc-f5c6a44e1689",
+      "order": 1,
+      "rule_vi": "找 là quá trình tìm; 发现 là phát hiện/nhận ra kết quả hoặc sự thật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我找了半天，才发现护照在口袋里。",
+          "pinyin": "",
+          "vi": "Tôi tìm mãi, cuối cùng mới phát hiện hộ chiếu ở trong túi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "找",
+    "back": "tìm, tìm kiếm; tìm gặp",
+    "hint": "zhǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "actions_results"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "007bfd88-9a6b-4b1d-a7e5-143ca06d3067",
+    "source_lesson_vocab_id": null
+  }
+}

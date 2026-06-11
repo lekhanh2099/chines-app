@@ -1,0 +1,1901 @@
+{
+  "id": "f94782c0-1a5b-4ac6-8e80-00ee67b921ee",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "e445482b-5dfb-4e4d-be15-a6ddc3d407d6",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "提高",
+      "pinyin": "tígāo",
+      "meaning_vi": "nâng cao; cải thiện",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "提高",
+        "back": "tígāo — nâng cao; cải thiện",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7c11902e-1d0f-4d36-a0a8-e29ce3363083",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "贸易",
+      "pinyin": "màoyì",
+      "meaning_vi": "thương mại; buôn bán",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "贸易",
+        "back": "màoyì — thương mại; buôn bán",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1f72846c-0b58-4c33-b394-bb11234389b9",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "愤怒",
+      "pinyin": "fènnù",
+      "meaning_vi": "phẫn nộ; tức giận mạnh",
+      "meaning_en": "",
+      "pos": "Tính từ / Danh từ trạng thái",
+      "pos_detail": {
+        "vi": "Tính từ / Danh từ trạng thái",
+        "cn": "形容词 / 名词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ / Danh từ trạng thái. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "愤怒",
+        "back": "fènnù — phẫn nộ; tức giận mạnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "8ff21822-8b99-4c7d-ab7f-31e27ec73c46",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "头儿",
+      "pinyin": "tóur",
+      "meaning_vi": "sếp; người phụ trách; người đứng đầu nhóm nhỏ",
+      "meaning_en": "",
+      "pos": "Danh từ khẩu ngữ",
+      "pos_detail": {
+        "vi": "Danh từ khẩu ngữ",
+        "cn": "名词 / 口语",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ khẩu ngữ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "头儿",
+        "back": "tóur — sếp; người phụ trách; người đứng đầu nhóm nhỏ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "fb62ec61-b9c2-4d51-b5ca-e9dc72b130b6",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "改天",
+      "pinyin": "gǎitiān",
+      "meaning_vi": "hôm khác; ngày khác",
+      "meaning_en": "",
+      "pos": "Danh từ thời gian / Phó từ thời gian",
+      "pos_detail": {
+        "vi": "Danh từ thời gian / Phó từ thời gian",
+        "cn": "时间名词 / 时间副词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ thời gian / Phó từ thời gian. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "改天",
+        "back": "gǎitiān — hôm khác; ngày khác",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "076e8277-4def-4809-b33a-cfca786b8deb",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "拍",
+      "pinyin": "pāi",
+      "meaning_vi": "vỗ; đập nhẹ; chụp; quay",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "拍",
+        "back": "pāi — vỗ; đập nhẹ; chụp; quay",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "549952be-5cf1-4f68-8c8a-333c9cb40b8d",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "弄",
+      "pinyin": "nòng",
+      "meaning_vi": "làm; xử lý; làm cho thành",
+      "meaning_en": "",
+      "pos": "Động từ khẩu ngữ",
+      "pos_detail": {
+        "vi": "Động từ khẩu ngữ",
+        "cn": "动词 / 口语",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ khẩu ngữ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "弄",
+        "back": "nòng — làm; xử lý; làm cho thành",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "39c5fe4b-6285-4914-a377-c1e5e21eb62a",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "技巧",
+      "pinyin": "jìqiǎo",
+      "meaning_vi": "kỹ năng; kỹ xảo; mẹo xử lý",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "技巧",
+        "back": "jìqiǎo — kỹ năng; kỹ xảo; mẹo xử lý",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "3a9e2166-2b82-4c78-adb0-5d01c5f1fef1",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "反问",
+      "pinyin": "fǎnwèn",
+      "meaning_vi": "hỏi ngược lại; câu hỏi tu từ",
+      "meaning_en": "",
+      "pos": "Động từ / Danh từ",
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ / Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "反问",
+        "back": "fǎnwèn — hỏi ngược lại; câu hỏi tu từ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "572d828a-70fb-44d2-998c-94c4cd791a3b",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "君子",
+      "pinyin": "jūnzǐ",
+      "meaning_vi": "quân tử; người có phẩm chất cao",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "君子",
+        "back": "jūnzǐ — quân tử; người có phẩm chất cao",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "8e5e12c4-7229-4a27-896b-4f2245452138",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "报仇",
+      "pinyin": "bàochóu",
+      "meaning_vi": "báo thù; trả thù",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 报 + tân ngữ 仇",
+        "usage_note_vi": "Có thể nói 报了仇 / 为某人报仇; sắc thái mạnh, không dùng cho chuyện nhỏ.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "报仇",
+        "back": "bàochóu — báo thù; trả thù",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "74e4f5cd-cc23-45a7-beca-40d2374661a7",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "商业",
+      "pinyin": "shāngyè",
+      "meaning_vi": "thương mại; kinh doanh",
+      "meaning_en": "",
+      "pos": "Danh từ / Định ngữ",
+      "pos_detail": {
+        "vi": "Danh từ / Định ngữ",
+        "cn": "名词 / 定语",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ / Định ngữ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "商业",
+        "back": "shāngyè — thương mại; kinh doanh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "aaeca17f-375d-4759-b614-e6be1ebcfb48",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "文件",
+      "pinyin": "wénjiàn",
+      "meaning_vi": "tài liệu; văn bản; file",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "文件",
+        "back": "wénjiàn — tài liệu; văn bản; file",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "a3a6a7a1-0170-465e-b951-c53e6f3258b3",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "熟练",
+      "pinyin": "shúliàn",
+      "meaning_vi": "thành thạo; thuần thục",
+      "meaning_en": "",
+      "pos": "Tính từ",
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "熟练",
+        "back": "shúliàn — thành thạo; thuần thục",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "12d305ac-d392-45f0-b439-a8b69b1067d5",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "操作",
+      "pinyin": "cāozuò",
+      "meaning_vi": "thao tác; vận hành",
+      "meaning_en": "",
+      "pos": "Động từ / Danh từ",
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ / Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "操作",
+        "back": "cāozuò — thao tác; vận hành",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "67175b18-ee08-4669-8771-c5fbd4b963d3",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "程序",
+      "pinyin": "chéngxù",
+      "meaning_vi": "quy trình; trình tự; chương trình",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "程序",
+        "back": "chéngxù — quy trình; trình tự; chương trình",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "11765cba-d513-4ad2-8f92-cd090e6e952a",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "设计",
+      "pinyin": "shèjì",
+      "meaning_vi": "thiết kế; lên phương án",
+      "meaning_en": "",
+      "pos": "Động từ / Danh từ",
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ / Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "设计",
+        "back": "shèjì — thiết kế; lên phương án",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "0658be15-2b1d-4480-b8a1-f017ff9270be",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "甚至",
+      "pinyin": "shènzhì",
+      "meaning_vi": "thậm chí; đến mức",
+      "meaning_en": "",
+      "pos": "Phó từ / Liên từ tăng tiến",
+      "pos_detail": {
+        "vi": "Phó từ / Liên từ tăng tiến",
+        "cn": "副词 / 递进连词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Phó từ / Liên từ tăng tiến. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "甚至",
+        "back": "shènzhì — thậm chí; đến mức",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "bcfd6d4d-f026-4645-a9c7-b6cc61a9ca86",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "修理",
+      "pinyin": "xiūlǐ",
+      "meaning_vi": "sửa chữa",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "修理",
+        "back": "xiūlǐ — sửa chữa",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "393c11ff-6652-4eb1-a445-340287bb3155",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "打印机",
+      "pinyin": "dǎyìnjī",
+      "meaning_vi": "máy in",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "打印机",
+        "back": "dǎyìnjī — máy in",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "f9abc88e-7611-45d4-970f-4333b601990f",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "复印机",
+      "pinyin": "fùyìnjī",
+      "meaning_vi": "máy photocopy; máy sao chụp",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "复印机",
+        "back": "fùyìnjī — máy photocopy; máy sao chụp",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "a8b18274-0b99-4eaf-abc8-529cc368bbab",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "毛病",
+      "pinyin": "máobìng",
+      "meaning_vi": "lỗi; khuyết điểm; tật xấu; trục trặc; bệnh vặt",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "毛病",
+        "back": "máobìng — lỗi; khuyết điểm; tật xấu; trục trặc; bệnh vặt",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "2019b1f7-a9fa-4fce-a4c7-05604a9a6674",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "当作",
+      "pinyin": "dàngzuò",
+      "meaning_vi": "coi như; xem như; cho là",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "当作",
+        "back": "dàngzuò — coi như; xem như; cho là",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d6462d90-2181-4712-99d4-d3d741392eb0",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "免费",
+      "pinyin": "miǎnfèi",
+      "meaning_vi": "miễn phí; không thu tiền",
+      "meaning_en": "",
+      "pos": "Tính từ / Phó từ",
+      "pos_detail": {
+        "vi": "Tính từ / Phó từ",
+        "cn": "形容词 / 副词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ / Phó từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "免费",
+        "back": "miǎnfèi — miễn phí; không thu tiền",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "9dfeae4a-cf8a-40df-bfe7-ff8dfc268cb0",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "既……又……",
+      "pinyin": "jì……yòu……",
+      "meaning_vi": "vừa……vừa……",
+      "meaning_en": "",
+      "pos": "Liên từ / Cấu trúc liên kết song song",
+      "pos_detail": {
+        "vi": "Liên từ / Cấu trúc liên kết song song",
+        "cn": "并列关联结构",
+        "normalized": "conjunction",
+        "schema_compatible_pos": "conjunction",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Liên từ / Cấu trúc liên kết song song. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "既……又……",
+        "back": "jì……yòu…… — vừa……vừa……",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "8969744c-df1c-47a3-8789-c095a03c7e02",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "出气",
+      "pinyin": "chūqì",
+      "meaning_vi": "hả giận; trút giận; xả giận",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 出 + tân ngữ 气",
+        "usage_note_vi": "Có thể nói 出了一口气; thường dùng trong 拿别人出气 = trút giận lên người khác.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "出气",
+        "back": "chūqì — hả giận; trút giận; xả giận",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "557ffebf-0379-4336-8202-7b59af7f602b",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "听从",
+      "pinyin": "tīngcóng",
+      "meaning_vi": "nghe theo; tuân theo",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "听从",
+        "back": "tīngcóng — nghe theo; tuân theo",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "75eebb76-ea28-4cd8-a833-0f5ef1da3fd1",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "从此",
+      "pinyin": "cóngcǐ",
+      "meaning_vi": "từ đó; kể từ đó",
+      "meaning_en": "",
+      "pos": "Phó từ thời gian",
+      "pos_detail": {
+        "vi": "Phó từ thời gian",
+        "cn": "时间副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Phó từ thời gian. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "从此",
+        "back": "cóngcǐ — từ đó; kể từ đó",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "94979be8-2db0-43da-8a0a-1b98d89da6af",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "刻苦",
+      "pinyin": "kèkǔ",
+      "meaning_vi": "chăm chỉ chịu khó; khổ luyện",
+      "meaning_en": "",
+      "pos": "Tính từ / Phó từ trạng thái",
+      "pos_detail": {
+        "vi": "Tính từ / Phó từ trạng thái",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ / Phó từ trạng thái. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "刻苦",
+        "back": "kèkǔ — chăm chỉ chịu khó; khổ luyện",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "712a4552-3262-4e2f-a4bf-6e88e1b7bb64",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "留",
+      "pinyin": "liú",
+      "meaning_vi": "ở lại; giữ lại; để lại; lưu lại",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "留",
+        "back": "liú — ở lại; giữ lại; để lại; lưu lại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "40185cf4-37cb-4161-b1f2-3cca52b27415",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "加班",
+      "pinyin": "jiābān",
+      "meaning_vi": "tăng ca; làm thêm giờ",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 加 + tân ngữ 班",
+        "usage_note_vi": "Có thể nói 加了三天班 / 加班加到很晚; nghĩa là làm thêm giờ/tăng ca.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "加班",
+        "back": "jiābān — tăng ca; làm thêm giờ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ef66234a-c09f-46fc-83c0-4620b8c60d0f",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "开夜车",
+      "pinyin": "kāi yèchē",
+      "meaning_vi": "thức khuya học/làm; cày đêm; lái xe ban đêm",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合短语",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 开 + tân ngữ 夜车",
+        "usage_note_vi": "Có thể nói 开了几天夜车; nghĩa mở rộng là thức khuya học/làm để kịp tiến độ.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "开夜车",
+        "back": "kāi yèchē — thức khuya học/làm; cày đêm; lái xe ban đêm",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98fea529-4f14-4df3-be3e-0359a7d85227",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "偶然",
+      "pinyin": "ǒurán",
+      "meaning_vi": "tình cờ; ngẫu nhiên",
+      "meaning_en": "",
+      "pos": "Phó từ / Tính từ",
+      "pos_detail": {
+        "vi": "Phó từ / Tính từ",
+        "cn": "副词 / 形容词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Phó từ / Tính từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "偶然",
+        "back": "ǒurán — tình cờ; ngẫu nhiên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "f94cb1b2-c5ee-44c7-9c0a-9d5611b44568",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "刮目相看",
+      "pinyin": "guāmù xiāngkàn",
+      "meaning_vi": "nhìn bằng con mắt khác; đánh giá lại theo hướng tốt hơn",
+      "meaning_en": "",
+      "pos": "Thành ngữ",
+      "pos_detail": {
+        "vi": "Thành ngữ",
+        "cn": "成语",
+        "normalized": "idiom",
+        "schema_compatible_pos": "idiom",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Thành ngữ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "刮目相看",
+        "back": "guāmù xiāngkàn — nhìn bằng con mắt khác; đánh giá lại theo hướng tốt hơn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "63c76d14-df53-4abf-8966-652bbf21b9e0",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "担当",
+      "pinyin": "dāndāng",
+      "meaning_vi": "đảm nhận; gánh vác; có trách nhiệm",
+      "meaning_en": "",
+      "pos": "Động từ / Danh từ phẩm chất",
+      "pos_detail": {
+        "vi": "Động từ / Danh từ phẩm chất",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ / Danh từ phẩm chất. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "担当",
+        "back": "dāndāng — đảm nhận; gánh vác; có trách nhiệm",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d333fb9e-d9c7-4716-87d0-2bede622b6c3",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "重任",
+      "pinyin": "zhòngrèn",
+      "meaning_vi": "trọng trách; nhiệm vụ quan trọng",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "重任",
+        "back": "zhòngrèn — trọng trách; nhiệm vụ quan trọng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "c2680488-7f2b-42a6-8964-ef517611a874",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "升职",
+      "pinyin": "shēngzhí",
+      "meaning_vi": "thăng chức; lên chức",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 升 + tân ngữ 职",
+        "usage_note_vi": "Có thể nói 升了职 / 升职加薪; nghĩa là được thăng chức.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "升职",
+        "back": "shēngzhí — thăng chức; lên chức",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e59b700b-e694-4a3f-8ca1-de628ce7337a",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "薪",
+      "pinyin": "xīn",
+      "meaning_vi": "lương; tiền công; củi (nghĩa gốc)",
+      "meaning_en": "",
+      "pos": "Danh từ / Hình vị",
+      "pos_detail": {
+        "vi": "Danh từ / Hình vị",
+        "cn": "名词 / 语素",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ / Hình vị. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "薪",
+        "back": "xīn — lương; tiền công; củi (nghĩa gốc)",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "f541635d-2850-4a7e-a532-332ebf812004",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "红人",
+      "pinyin": "hóngrén",
+      "meaning_vi": "người được trọng dụng; người được sếp ưu ái; người đang hot",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "红人",
+        "back": "hóngrén — người được trọng dụng; người được sếp ưu ái; người đang hot",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "0f91d211-3485-473e-ad3d-f0c16630c3fd",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "重视",
+      "pinyin": "zhòngshì",
+      "meaning_vi": "coi trọng; xem trọng; chú trọng",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "重视",
+        "back": "zhòngshì — coi trọng; xem trọng; chú trọng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "42cef7df-b2e8-4f8d-bdbb-b64f31edb81d",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "能力",
+      "pinyin": "nénglì",
+      "meaning_vi": "năng lực; khả năng làm được việc",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "能力",
+        "back": "nénglì — năng lực; khả năng làm được việc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "31eae6eb-1ce4-4435-896e-aee2df6b83d9",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "足",
+      "pinyin": "zú",
+      "meaning_vi": "đủ; đầy đủ; chân; đáng/đủ để",
+      "meaning_en": "",
+      "pos": "Tính từ / Danh từ / Hình vị",
+      "pos_detail": {
+        "vi": "Tính từ / Danh từ / Hình vị",
+        "cn": "形容词 / 名词 / 语素",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ / Danh từ / Hình vị. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "足",
+        "back": "zú — đủ; đầy đủ; chân; đáng/đủ để",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "3d17e603-7464-463e-bed7-c463e04ce436",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "埋怨",
+      "pinyin": "mányuàn",
+      "meaning_vi": "oán trách; trách móc; phàn nàn trách người khác",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "埋怨",
+        "back": "mányuàn — oán trách; trách móc; phàn nàn trách người khác",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "597f221f-4cb3-4a2d-ad54-d29486df1388",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "态度",
+      "pinyin": "tàidu",
+      "meaning_vi": "thái độ; lập trường; cách cư xử",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "态度",
+        "back": "tàidu — thái độ; lập trường; cách cư xử",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1b90976e-703c-4817-b6fc-52f077ed32dc",
+      "type": "vocabulary_item",
+      "order": 45,
+      "hanzi": "犯",
+      "pinyin": "fàn",
+      "meaning_vi": "phạm; mắc phải; vi phạm; tái phát",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+        "notes": []
+      },
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "犯",
+        "back": "fàn — phạm; mắc phải; vi phạm; tái phát",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ],
+        "tags": [
+          "main_vocab"
+        ],
+        "notes": []
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

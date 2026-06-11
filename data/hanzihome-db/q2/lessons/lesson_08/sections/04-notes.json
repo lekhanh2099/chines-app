@@ -1,0 +1,71 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "pdf_textbook_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "有什么事吗？",
+      "structure": "有什么 + 名词 / 事情 + 吗？",
+      "meaning_vi": "Dùng để hỏi có chuyện gì không, có việc gì không.",
+      "examples": [],
+      "source_refs": [],
+      "source_origin": "pdf_textbook_checked",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "还早着呢",
+      "structure": "还 + 形容词 / 状态词 + 着呢",
+      "meaning_vi": "着呢 đặt sau tính từ hoặc một số động từ tâm lý để nhấn mạnh mức độ, gần với 很: 还早着呢 = vẫn còn sớm lắm.",
+      "examples": [],
+      "source_refs": [],
+      "source_origin": "pdf_textbook_checked",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "该换电池了",
+      "structure": "该 + 动词 / 动词短语 + 了",
+      "meaning_vi": "该……了 biểu thị theo tình hình/kinh nghiệm thì đã đến lúc nên hoặc phải làm việc gì đó.",
+      "examples": [],
+      "source_refs": [],
+      "source_origin": "pdf_textbook_checked",
+      "check_needed": false
+    },
+    {
+      "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
+      "type": "note",
+      "order": 4,
+      "title": "都七点五十了",
+      "structure": "都 + 时间 / 数量 + 了",
+      "meaning_vi": "都……了 thường đặt với từ thời gian, tuổi tác, số lượng để nhấn mạnh “đã đến mức ấy rồi”, thường có sắc thái muộn/nhiều/bất ngờ.",
+      "examples": [],
+      "source_refs": [],
+      "source_origin": "pdf_textbook_checked",
+      "check_needed": false
+    },
+    {
+      "id": "7bb9601d-22c6-4b07-bc26-8b7269802a02",
+      "type": "note",
+      "order": 5,
+      "title": "有什么好事啦？",
+      "structure": "有什么 + 好事 + 啦？",
+      "meaning_vi": "啦 là dạng hòa âm của 了 + 啊, ở đây biểu thị sắc thái nghi vấn thân mật: Có chuyện vui gì thế?",
+      "examples": [],
+      "source_refs": [],
+      "source_origin": "pdf_textbook_checked",
+      "check_needed": false
+    }
+  ]
+}

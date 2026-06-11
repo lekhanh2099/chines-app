@@ -1,0 +1,280 @@
+{
+  "id": "4f43703a-06b6-4b73-9383-9b823cca6694",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "欣喜",
+  "pinyin": "xīnxǐ",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ tâm lý",
+    "raw_cn": "形容词 / 心理动词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hân hỉ",
+    "meaning_vi": "vui mừng, hân hoan",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui mừng, hân hoan"
+    ],
+    "short_definition_vi": "Vui mừng rõ, sắc thái văn hơn 高兴.",
+    "textbook_focus_vi": "Dùng khi có tin tốt/phát hiện tốt.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "欣",
+        "lishu_vi": "hân",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "欠",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khiếm",
+          "radical_name_zh": "",
+          "hanviet": "khiếm",
+          "meaning_vi": "thiếu/hơi thở",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "欠 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "thiếu/hơi thở",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "thiếu/hơi thở",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "欠 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui",
+        "modern_logic_vi": "vui",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "喜",
+        "lishu_vi": "hỉ",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mừng",
+        "modern_logic_vi": "mừng",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "欣 và 喜 đều kéo nghĩa về vui mừng.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "高兴",
+        "pinyin": "gāoxìng",
+        "meaning_vi": "vui",
+        "difference_vi": "高兴 phổ thông hơn; 欣喜 trang trọng/văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e03a0f7c-aca5-423b-94e8-6389b6caf041",
+      "order": 1,
+      "zh": "感到欣喜",
+      "pinyin": "",
+      "vi": "cảm thấy vui mừng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03c24ab0-0f42-458f-9b23-20eae120cb6b",
+      "order": 2,
+      "zh": "十分欣喜",
+      "pinyin": "",
+      "vi": "vô cùng vui mừng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e133c8f7-8772-4738-a1c1-7da1b0fc2442",
+      "order": 3,
+      "zh": "欣喜地发现",
+      "pinyin": "",
+      "vi": "vui mừng phát hiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "67e98024-917b-4799-a24d-d00d49bdaada",
+      "order": 4,
+      "zh": "欣喜若狂",
+      "pinyin": "",
+      "vi": "vui mừng đến phát cuồng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e17f6c61-7364-4b6a-9730-aaf61834a2af",
+      "order": 1,
+      "zh": "听到这个消息，他十分欣喜。",
+      "pinyin": "",
+      "vi": "Nghe tin này, anh ấy vô cùng vui mừng.",
+      "analysis_vi": "十分 làm sắc thái văn hơn.",
+      "highlight": [
+        "欣喜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f43703a-06b6-4b73-9383-9b823cca6694"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a172c638-a169-4bd8-a6bf-2e40ee973aad",
+      "order": 2,
+      "zh": "老人连声道谢，他心里又欣喜又不好意思。",
+      "pinyin": "",
+      "vi": "Cụ già cảm ơn rối rít, anh ấy vừa vui vừa ngại.",
+      "analysis_vi": "又……又…… nối hai cảm xúc.",
+      "highlight": [
+        "欣喜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f43703a-06b6-4b73-9383-9b823cca6694"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0d019b35-7303-4ffd-a01c-481b6d00f4f7",
+      "order": 1,
+      "rule_vi": "Đời thường vui bình thường dùng 开心/高兴; 欣喜 hơi văn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đời thường vui bình thường dùng 开心/高兴; 欣喜 hơi văn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "欣喜",
+    "back": "vui mừng, hân hoan",
+    "hint": "xīnxǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f43703a-06b6-4b73-9383-9b823cca6694",
+    "source_lesson_vocab_id": null
+  }
+}

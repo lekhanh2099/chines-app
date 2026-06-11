@@ -1,0 +1,329 @@
+{
+  "id": "27db64ef-1ae0-4a45-955d-a009b67f1936",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "算账",
+  "pinyin": "suànzhàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "离合动词/动宾短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "toán trướng",
+    "meaning_vi": "tính sổ; thanh toán sổ sách; tính chuyện với ai",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tính sổ",
+      "thanh toán sổ sách",
+      "tính chuyện với ai"
+    ],
+    "short_definition_vi": "tính sổ; thanh toán sổ sách; tính chuyện với ai",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: tính sổ; thanh toán sổ sách; tính chuyện với ai.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "算",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre, thẻ tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre, thẻ tre",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre, thẻ tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 算.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "账",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "tiền/tài sản",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tiền/tài sản",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "tiền/tài sản",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "贝 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 账.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "算账 trong bài được hiểu theo nghĩa: tính sổ; thanh toán sổ sách; tính chuyện với ai. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 算账.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Đi ăn thanh toán dùng 结账/买单, không dùng 算账 trong khẩu ngữ thông thường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c761eee0-153b-4f75-8fc6-afc22a75b10a",
+      "order": 1,
+      "zh": "算账",
+      "pinyin": "",
+      "vi": "tính sổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06dbffdf-681a-4d98-84a1-311a17ec5b63",
+      "order": 2,
+      "zh": "找人算账",
+      "pinyin": "",
+      "vi": "tìm ai tính sổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "561b291d-b960-4068-87b1-4a7013171252",
+      "order": 3,
+      "zh": "跟他算账",
+      "pinyin": "",
+      "vi": "tính sổ với anh ta",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb6ce7ea-9ddb-448c-9d17-33cfcadbd2b7",
+      "order": 4,
+      "zh": "算清账",
+      "pinyin": "",
+      "vi": "tính rõ sổ sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a746995-1926-46de-9245-2694e8e7ace5",
+      "order": 5,
+      "zh": "秋后算账",
+      "pinyin": "",
+      "vi": "tính sổ sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3b87f7ff-2bdc-4f4e-8be1-e676d8b8b0cf",
+      "order": 1,
+      "zh": "如果这家发廊真伤害了客人，客人可以找他们算账。",
+      "pinyin": "",
+      "vi": "Nếu salon thật sự gây hại cho khách, khách có thể tìm họ tính sổ.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "算账"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "27db64ef-1ae0-4a45-955d-a009b67f1936"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c84160e3-fca0-40fe-b694-6c0b3df9edea",
+      "order": 2,
+      "zh": "我本来不想把事情闹大，可朋友们劝我去找发廊算账。",
+      "pinyin": "",
+      "vi": "Ban đầu tôi không muốn làm lớn chuyện, nhưng bạn bè khuyên tôi đi tính sổ với salon.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "算账"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "27db64ef-1ae0-4a45-955d-a009b67f1936"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "Đi ăn thanh toán dùng 结账/买单, không dùng 算账 trong khẩu ngữ thông thường.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0a27c75c-df8e-45c8-ab26-cd82fc72034a",
+      "order": 1,
+      "rule_vi": "Đi ăn thanh toán dùng 结账/买单, không dùng 算账 trong khẩu ngữ thông thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "服务员，我要算账。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "Đi ăn thanh toán dùng 结账/买单, không dùng 算账 trong khẩu ngữ thông thường.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "服务员，结账。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Đi ăn thanh toán dùng 结账/买单, không dùng 算账 trong khẩu ngữ thông thường.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "算账",
+    "back": "tính sổ; thanh toán sổ sách; tính chuyện với ai",
+    "hint": "suànzhàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "27db64ef-1ae0-4a45-955d-a009b67f1936",
+    "source_lesson_vocab_id": null
+  }
+}

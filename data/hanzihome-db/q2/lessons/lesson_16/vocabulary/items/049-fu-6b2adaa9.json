@@ -1,0 +1,253 @@
+{
+  "id": "79efb80d-2613-4c0f-9dbe-84b778f8c59c",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "幅",
+  "pinyin": "fú",
+  "pos": {
+    "raw_vi": "Lượng từ / Danh từ",
+    "raw_cn": "量 / 名",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bức / Phúc",
+    "meaning_vi": "lượng từ cho tranh, vải, vật dạng phẳng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lượng từ cho tranh, vải, vật dạng phẳng"
+    ],
+    "short_definition_vi": "lượng từ cho tranh, vải, vật dạng phẳng",
+    "textbook_focus_vi": "lượng từ cho tranh, vải, vật dạng phẳng",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "幅",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn, vải",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn, vải",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "巾 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "畐",
+            "hanviet": "phúc",
+            "meaning_vi": "thành phần biểu âm/hình thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bề rộng, tấm; lượng từ cho tranh/vải",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "幅 là lượng từ cho tranh, bản đồ, thư pháp, vải dạng tấm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0bab1974-1468-4044-8627-e05d46453d68",
+      "order": 1,
+      "zh": "一幅画",
+      "pinyin": "",
+      "vi": "một bức tranh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2eef321f-bc40-4503-9e0c-e6564f44033f",
+      "order": 2,
+      "zh": "这幅画",
+      "pinyin": "",
+      "vi": "bức tranh này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "803fd5bb-f3ac-433a-8222-f8f130553695",
+      "order": 3,
+      "zh": "一幅地图",
+      "pinyin": "",
+      "vi": "một tấm bản đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0fd11d6a-7bb0-440d-9938-159ffca1acad",
+      "order": 4,
+      "zh": "一幅对联",
+      "pinyin": "",
+      "vi": "một bức câu đối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b3d46dfd-774b-45a7-b55b-8f29bb12d763",
+      "order": 5,
+      "zh": "墙上挂着一幅画",
+      "pinyin": "",
+      "vi": "trên tường treo một bức tranh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a33e9d5a-eef4-4c9c-bf48-17885d666a25",
+      "order": 1,
+      "zh": "墙上挂着一幅画。",
+      "pinyin": "Qiáng shang guàzhe yì fú huà.",
+      "vi": "Trên tường có treo một bức tranh.",
+      "analysis_vi": "Câu tồn hiện mẫu: 墙上 + 挂着 + 一幅画.",
+      "highlight": [
+        "幅"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "79efb80d-2613-4c0f-9dbe-84b778f8c59c"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b51f6ee0-8b2a-425d-8f10-18a3cc4e0087",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：幅。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: lượng từ cho tranh, vải, vật dạng phẳng.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "幅"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "79efb80d-2613-4c0f-9dbe-84b778f8c59c"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 幅 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "12d6a57c-6f66-449d-a00f-04f2f8aea1ec",
+      "order": 1,
+      "rule_vi": "Không dùng 本 cho tranh; nói 一幅画.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 本 cho tranh; nói 一幅画.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "幅",
+    "back": "lượng từ cho tranh, vải, vật dạng phẳng",
+    "hint": "fú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_049"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "79efb80d-2613-4c0f-9dbe-84b778f8c59c",
+    "source_lesson_vocab_id": null
+  }
+}

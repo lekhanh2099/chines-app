@@ -1,0 +1,259 @@
+{
+  "id": "f2e94823-d8a4-46af-9124-7519206e73fd",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "其实",
+  "pinyin": "qíshí",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kỳ thực",
+    "meaning_vi": "thực ra; thật ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thực ra",
+      "thật ra"
+    ],
+    "short_definition_vi": "thực ra",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "其",
+        "lishu_vi": "kỳ",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "实",
+        "lishu_vi": "thực",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "其实 nêu sự thật phía sau một nhận định/vẻ ngoài.",
+    "memory_tip_vi": "Nhớ: 其实 = bóc lớp thật phía sau.",
+    "warning_vi": "Không dùng khi câu không có lớp đối chiếu/ngầm sửa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "实在",
+        "shízài",
+        "thật sự",
+        "nhấn mức độ/chân thật"
+      ],
+      [
+        "事实上",
+        "shìshí shang",
+        "trên thực tế",
+        "trang trọng hơn"
+      ],
+      [
+        "原来",
+        "yuánlái",
+        "thì ra",
+        "nhấn phát hiện mới"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nhớ: 其实 = bóc lớp thật phía sau."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c3639589-04b3-437f-b15a-eafce77cda47",
+      "order": 1,
+      "zh": "其实不是这样",
+      "pinyin": "",
+      "vi": "thực ra không phải vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f158688-b301-4011-bfc4-43e9a3449c7f",
+      "order": 2,
+      "zh": "其实我早就知道了",
+      "pinyin": "",
+      "vi": "thực ra tôi đã biết từ lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1eddd1d-328f-4fc5-a63b-4e524a409e26",
+      "order": 3,
+      "zh": "其实没那么难",
+      "pinyin": "",
+      "vi": "thực ra không khó đến thế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "216b5602-742a-417b-a7cb-bdf1707b33ce",
+      "order": 4,
+      "zh": "其实他人很好",
+      "pinyin": "",
+      "vi": "thực ra con người anh ấy rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30900e88-02ca-421f-aa09-4863aa3b16cb",
+      "order": 5,
+      "zh": "说实话，其实",
+      "pinyin": "",
+      "vi": "nói thật thì thực ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd069abd-09e7-47d7-a3fd-59f76e8c7436",
+      "order": 1,
+      "zh": "他说自己很忙，其实他只是不想去。",
+      "pinyin": "Tā shuō zìjǐ hěn máng, qíshí tā zhǐshì bù xiǎng qù.",
+      "vi": "Anh ấy nói mình rất bận, thực ra chỉ là không muốn đi.",
+      "analysis_vi": "其实 bóc lớp nghĩa thật sau lời nói.",
+      "highlight": [
+        "其实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2e94823-d8a4-46af-9124-7519206e73fd"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c46b8e06-9658-46b9-ac4b-8d000fba1f41",
+      "order": 2,
+      "zh": "其实，“回头再说”不一定是真的要以后再谈。",
+      "pinyin": "Qíshí, “huítóu zài shuō” bù yídìng shì zhēn de yào yǐhòu zài tán.",
+      "vi": "Thực ra, “để sau rồi nói” không nhất định là thật sự muốn sau này bàn tiếp.",
+      "analysis_vi": "不一定 giảm độ chắc chắn.",
+      "highlight": [
+        "其实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2e94823-d8a4-46af-9124-7519206e73fd"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "其实 thường đứng đầu câu để chuẩn bị cho thông tin khác với vẻ ngoài.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2f8830fd-dcc7-49f5-bd4f-80d96d49c4e5",
+      "order": 1,
+      "rule_vi": "其实 cần một đối chiếu ngầm hoặc rõ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "其实我吃饭。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我说不饿，其实我还没吃饭。",
+          "pinyin": "Wǒ shuō bú è, qíshí wǒ hái méi chī fàn.",
+          "vi": "Tôi nói không đói, thực ra vẫn chưa ăn cơm.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dùng khi câu không có lớp đối chiếu/ngầm sửa.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "其实",
+    "back": "thực ra; thật ra",
+    "hint": "qíshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f2e94823-d8a4-46af-9124-7519206e73fd",
+    "source_lesson_vocab_id": null
+  }
+}

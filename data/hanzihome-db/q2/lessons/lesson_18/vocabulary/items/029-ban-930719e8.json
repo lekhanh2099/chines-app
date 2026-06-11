@@ -1,0 +1,316 @@
+{
+  "id": "101b870c-e7fb-45dd-a2b5-0caf7d8f90d7",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "扳",
+  "pinyin": "bān",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Ban",
+    "meaning_vi": "gạt, bẻ, kéo/gạt bằng tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gạt, bẻ, kéo/gạt bằng tay"
+    ],
+    "short_definition_vi": "gạt, bẻ, kéo/gạt bằng tay",
+    "textbook_focus_vi": "gạt, bẻ, kéo/gạt bằng tay",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "扳",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "反",
+            "hanviet": "phản",
+            "meaning_vi": "ngược/lật lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gạt, kéo, bẻ vật cứng",
+        "modern_logic_vi": "扳 = dùng tay tác động lực làm vật đổi hướng/trạng thái.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "扳 có bộ 扌, liên quan đến thao tác bằng tay. Lõi nghĩa hiện đại: dùng tay kéo/gạt/bẻ một vật làm nó đổi vị trí. → 扳开关 = gạt công tắc. → 扳一下卡子 = gạt/mở cái khóa một cái.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kéo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "按",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bấm/ấn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "推",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đẩy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "扳: gạt/bẻ/cạy bằng tay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "48291ec6-6218-4dec-951e-17190373c73b",
+      "order": 1,
+      "zh": "扳开关",
+      "pinyin": "",
+      "vi": "gạt công tắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05ce752b-f8ae-4567-8cbb-d0e2c261be7a",
+      "order": 2,
+      "zh": "扳一下",
+      "pinyin": "",
+      "vi": "gạt/bẻ một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2bd9cb00-cc5d-4576-8b06-7683a2d72f2d",
+      "order": 3,
+      "zh": "扳卡子",
+      "pinyin": "",
+      "vi": "gạt/mở khóa kẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e58b1309-2dee-47e5-b854-23665cd8dbe0",
+      "order": 4,
+      "zh": "扳下来",
+      "pinyin": "",
+      "vi": "gạt xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ca3c570-7c44-42a1-9403-3963bfdf8a89",
+      "order": 5,
+      "zh": "扳上去",
+      "pinyin": "",
+      "vi": "gạt lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c10919f8-836d-4650-9cb5-21318fb4d992",
+      "order": 1,
+      "zh": "机舱里太暗了，请把灯的开关扳一下。",
+      "pinyin": "Jīcāng lǐ tài àn le, qǐng bǎ dēng de kāiguān bān yíxià.",
+      "vi": "Trong khoang tối quá, xin hãy gạt công tắc đèn một cái.",
+      "analysis_vi": "把开关扳一下 là câu 把 với thao tác ngắn 一下.",
+      "highlight": [
+        "扳"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "101b870c-e7fb-45dd-a2b5-0caf7d8f90d7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d3138739-2ed4-4ba9-b49c-133de6d3dade",
+      "order": 2,
+      "zh": "要解开安全带的时候，轻轻扳一下卡子就可以了。",
+      "pinyin": "Yào jiěkāi ānquándài de shíhou, qīngqīng bān yíxià kǎzi jiù kěyǐ le.",
+      "vi": "Khi muốn tháo dây an toàn, gạt nhẹ khóa một cái là được.",
+      "analysis_vi": "扳一下卡子 là thao tác mở khóa/gài; 轻轻 nhấn làm nhẹ tay.",
+      "highlight": [
+        "扳"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "101b870c-e7fb-45dd-a2b5-0caf7d8f90d7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "716f5fa1-5e02-4c52-8f2a-2eb8d61dc256",
+      "order": 3,
+      "zh": "他不会用这个开关，扳了半天灯也没亮。",
+      "pinyin": "Tā bú huì yòng zhège kāiguān, bān le bàntiān dēng yě méi liàng.",
+      "vi": "Anh ấy không biết dùng công tắc này, gạt mãi mà đèn vẫn không sáng.",
+      "analysis_vi": "扳了半天 là gạt/tìm cách gạt rất lâu; 灯没亮 là đèn không sáng.",
+      "highlight": [
+        "扳"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "101b870c-e7fb-45dd-a2b5-0caf7d8f90d7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong tiếng Trung, thao tác thiết bị thường phân rất rõ: 按 nút bấm, 扳 công tắc/cần gạt, 拉 dây hoặc tay kéo, 插 đầu cắm. Nhớ nhóm động tác này sẽ giúp nghe hướng dẫn trên máy bay dễ hơn nhiều.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d0bf6247-f852-4f23-809d-9b7488e75a54",
+      "order": 1,
+      "rule_vi": "Dùng 按 cho mọi loại công tắc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 扳 theo cụm và ngữ cảnh bài 18; nghĩa chính là gạt, bẻ, kéo/gạt bằng tay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "扳",
+    "back": "gạt, bẻ, kéo/gạt bằng tay",
+    "hint": "bān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "101b870c-e7fb-45dd-a2b5-0caf7d8f90d7",
+    "source_lesson_vocab_id": null
+  }
+}

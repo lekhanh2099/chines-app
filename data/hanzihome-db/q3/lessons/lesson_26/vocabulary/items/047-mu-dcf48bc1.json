@@ -1,0 +1,254 @@
+{
+  "id": "3f46c7d1-82cc-49a9-b21b-6b5bc6c9be22",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "墓",
+  "pinyin": "mù",
+  "pos": {
+    "raw_vi": "Danh từ / ngữ tố",
+    "raw_cn": "名词 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "mộ",
+    "meaning_vi": "mộ, nơi chôn cất người chết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mộ",
+      "nơi chôn cất người chết"
+    ],
+    "short_definition_vi": "mộ, nơi chôn cất người chết",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "墓",
+        "lishu_vi": "mộ",
+        "structure_note_vi": "Chữ có thành phần/bộ 土; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 墓 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "墓 trong bài được học theo nghĩa: mộ, nơi chôn cất người chết.",
+    "memory_tip_vi": "Nhớ 墓 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "坟",
+        "pinyin": "fén",
+        "meaning_vi": "nấm mộ/mộ",
+        "difference_vi": "Khẩu ngữ/dân gian hơn 墓 trong nhiều ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 墓 với 暮; 墓 là mộ, 暮 là chiều tối."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "772512cd-9eb6-4337-9161-e7ee6a0f1ace",
+      "order": 1,
+      "zh": "墓前",
+      "pinyin": "",
+      "vi": "trước mộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cddb25a2-1a74-4f89-8339-599d6bdb8370",
+      "order": 2,
+      "zh": "墓地",
+      "pinyin": "",
+      "vi": "khu mộ/nghĩa trang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87beb602-b53f-4d27-bfd3-3ebe668670c8",
+      "order": 3,
+      "zh": "墓碑",
+      "pinyin": "",
+      "vi": "bia mộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c37a1bae-c251-4647-a241-e8f59fe9ef22",
+      "order": 4,
+      "zh": "古墓",
+      "pinyin": "",
+      "vi": "mộ cổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "90f0ce28-39df-4035-88f9-b8b00b83f6c5",
+      "order": 1,
+      "zh": "墓前放着一束花。",
+      "pinyin": "",
+      "vi": "Trước mộ có đặt một bó hoa.",
+      "analysis_vi": "Câu tồn hiện: địa điểm + V着 + vật.",
+      "highlight": [
+        "墓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3f46c7d1-82cc-49a9-b21b-6b5bc6c9be22"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2ee85baa-22d8-425e-a7e1-6ebbf105f7e4",
+      "order": 2,
+      "zh": "祝英台来到梁山伯墓前，忍不住痛哭起来。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài đến trước mộ Lương Sơn Bá, không nhịn được bật khóc.",
+      "analysis_vi": "来到……前 + 哭起来.",
+      "highlight": [
+        "墓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3f46c7d1-82cc-49a9-b21b-6b5bc6c9be22"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "墓 trong truyện là cánh cửa dẫn tới kết thúc huyền thoại hóa bướm.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "58f9c1f7-6940-488b-a256-36e52bed875a",
+      "order": 1,
+      "rule_vi": "Không nhầm 墓 với 暮; 墓 là mộ, 暮 là chiều tối.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "墓",
+    "back": "mộ, nơi chôn cất người chết",
+    "hint": "mù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3f46c7d1-82cc-49a9-b21b-6b5bc6c9be22",
+    "source_lesson_vocab_id": null
+  }
+}

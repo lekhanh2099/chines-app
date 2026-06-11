@@ -1,0 +1,379 @@
+{
+  "id": "dccee9b4-04f7-419b-b3fd-7f375845c70d",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "网站",
+  "pinyin": "wǎngzhàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "võng trạm",
+    "meaning_vi": "website, trang web",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "website",
+      "trang web"
+    ],
+    "short_definition_vi": "website, trang web",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về công nghệ, học online.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công nghệ, học online",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "网",
+        "lishu_vi": "võng",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 网 trong từ 网站; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "网",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 网站, chữ 网 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "站",
+        "lishu_vi": "trạm",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 站 trong từ 网站; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "立",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lập",
+          "radical_name_zh": "",
+          "hanviet": "lập",
+          "meaning_vi": "đứng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "立 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "立 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "立",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lập",
+              "radical_name_zh": "",
+              "hanviet": "lập",
+              "meaning_vi": "đứng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "立 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "占",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 网站, chữ 站 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "网站 trong bài được nhớ theo nghĩa hiện đại: website, trang web.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 教学网站 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "网页",
+        "pinyin": "wǎngyè",
+        "meaning_vi": "một trang web riêng lẻ",
+        "difference_vi": "một trang web riêng lẻ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "网址",
+        "pinyin": "wǎngzhǐ",
+        "meaning_vi": "địa chỉ web, URL",
+        "difference_vi": "địa chỉ web, URL",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 网站 với 网址."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ceae990e-dec2-4f63-96ad-865d3a2325dc",
+      "order": 1,
+      "zh": "教学网站",
+      "pinyin": "",
+      "vi": "website dạy học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30ba7116-e551-4a67-b55f-bed98d66efdd",
+      "order": 2,
+      "zh": "学校网站",
+      "pinyin": "",
+      "vi": "website của trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29cc6135-3915-4f2a-9da7-1ef12a95f59f",
+      "order": 3,
+      "zh": "访问网站",
+      "pinyin": "",
+      "vi": "truy cập website",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "abcc1017-fd32-4477-a5d2-bbf6e34d0d90",
+      "order": 4,
+      "zh": "打开网站",
+      "pinyin": "",
+      "vi": "mở website",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ea36ee9-11dd-4872-8fec-7a06d5a794d6",
+      "order": 5,
+      "zh": "登录网站",
+      "pinyin": "",
+      "vi": "đăng nhập website",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "33ba13ef-02f4-4632-8bd0-7867a23eac32",
+      "order": 1,
+      "zh": "这个网站可以学习汉语。",
+      "pinyin": "",
+      "vi": "website, trang web",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "网站"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dccee9b4-04f7-419b-b3fd-7f375845c70d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2739b52e-534d-444e-b624-157563bec633",
+      "order": 2,
+      "zh": "这个词语“网站”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 网站 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "网站"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dccee9b4-04f7-419b-b3fd-7f375845c70d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "588f9440-c174-4fec-b834-362aaac5844b",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“网站”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 网站 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "网站"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dccee9b4-04f7-419b-b3fd-7f375845c70d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hiện nay 平台 hay được dùng khi dịch vụ không chỉ có website mà còn có app.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "26428e0f-62af-4950-bf1b-ddfd2673e68c",
+      "order": 1,
+      "rule_vi": "Không nhầm 网站 với 网址.",
+      "natural_examples": [
+        {
+          "zh": "请把网址发给我。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "请把你的网站发给我。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "请把你的网站发给我。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "请把网址发给我。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 网站 với 网址.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "网站",
+    "back": "website, trang web",
+    "hint": "wǎngzhàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dccee9b4-04f7-419b-b3fd-7f375845c70d",
+    "source_lesson_vocab_id": null
+  }
+}

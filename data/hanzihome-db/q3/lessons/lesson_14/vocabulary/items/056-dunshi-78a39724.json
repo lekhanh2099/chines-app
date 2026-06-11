@@ -1,0 +1,311 @@
+{
+  "id": "defebf79-f0a9-4f42-83e5-b43dcde1910b",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "顿时",
+  "pinyin": "dùnshí",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đốn thời",
+    "meaning_vi": "lập tức, ngay lúc đó, bỗng chốc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lập tức",
+      "ngay lúc đó",
+      "bỗng chốc"
+    ],
+    "short_definition_vi": "lập tức, ngay lúc đó, bỗng chốc",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: thời gian, phản ứng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thời gian, phản ứng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "顿",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu, trang",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "页 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu, trang",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu, trang",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "页 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "页 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lập tức, dừng; bữa/lần",
+        "modern_logic_vi": "Trong từ 顿时, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "时",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 顿时, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "顿时 nên được học theo nghĩa hiện đại trong cụm/tình huống: lập tức, ngay lúc đó, bỗng chốc.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 顿时明白了.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "马上",
+        "pinyin": "mǎshàng",
+        "meaning_vi": "ngay",
+        "difference_vi": "顿时 kể phản ứng tức thì; 马上 dùng rộng cho hành động sắp làm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d94c8456-1193-4e8b-8a07-d6c40b8ef8a1",
+      "order": 1,
+      "zh": "顿时明白了",
+      "pinyin": "",
+      "vi": "lập tức hiểu ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33758984-260c-4921-b79b-6b54e8536848",
+      "order": 2,
+      "zh": "顿时笑了起来",
+      "pinyin": "",
+      "vi": "lập tức bật cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1df4d2f-be2f-45da-b46f-f5765015870d",
+      "order": 3,
+      "zh": "顿时安静下来",
+      "pinyin": "",
+      "vi": "lập tức yên lặng xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9fa146ad-0d48-4b06-86fc-54345b905ca7",
+      "order": 1,
+      "zh": "大家顿时笑了起来。",
+      "pinyin": "",
+      "vi": "Mọi người lập tức bật cười.",
+      "analysis_vi": "顿时 thường kể phản ứng/thay đổi ngay sau kích thích.",
+      "highlight": [
+        "顿时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "defebf79-f0a9-4f42-83e5-b43dcde1910b"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 顿时 được dùng trong ngữ cảnh thời gian, phản ứng; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "992a2723-a966-4683-9f2f-957b0ba4227a",
+      "order": 1,
+      "rule_vi": "Không dùng 顿时 cho kế hoạch tương lai kiểu 我顿时去; dùng 马上.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 顿时 cho kế hoạch tương lai kiểu 我顿时去; dùng 马上.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "顿时",
+    "back": "lập tức, ngay lúc đó, bỗng chốc",
+    "hint": "dùnshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "defebf79-f0a9-4f42-83e5-b43dcde1910b",
+    "source_lesson_vocab_id": null
+  }
+}

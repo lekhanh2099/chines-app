@@ -1,0 +1,268 @@
+{
+  "id": "f4fe511d-e23e-45bd-902c-ad317e91e7a5",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "足",
+  "pinyin": "zú",
+  "pos": {
+    "raw_vi": "Tính từ / Yếu tố cấu tạo từ",
+    "raw_cn": "形容词 / 语素",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "túc",
+    "meaning_vi": "đủ; chân; đáng, đủ để",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đủ",
+      "chân",
+      "đáng",
+      "đủ để"
+    ],
+    "short_definition_vi": "đủ trong 不足/足够; cũng là chân",
+    "textbook_focus_vi": "đủ trong 不足/足够; cũng là chân",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "足",
+        "lishu_vi": "túc",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân, bàn chân",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân, bàn chân",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân, bàn chân",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "đủ trong 不足/足够; cũng là chân",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 不足.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "够",
+        "pinyin": "gòu",
+        "meaning_vi": "đủ",
+        "difference_vi": "khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "充足",
+        "pinyin": "chōngzú",
+        "meaning_vi": "đầy đủ/dồi dào",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "379d7f28-dedd-45b7-b247-042be9acf063",
+      "order": 1,
+      "zh": "不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4caeacb1-8649-4755-8ab8-685474c6ab1f",
+      "order": 2,
+      "zh": "能力不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9f640f8-e851-4c31-b39a-410bc331fab4",
+      "order": 3,
+      "zh": "经验不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "982d2da1-54f3-4dc7-8864-22669352c34f",
+      "order": 4,
+      "zh": "足够",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c44c7c1-78e8-4efa-a247-bcbf5ee7d1ac",
+      "order": 5,
+      "zh": "足够的时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85ef6ed8-9985-4d39-bde2-2c8982c6d4d6",
+      "order": 6,
+      "zh": "充足的准备",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a4fcfb3-d822-4e37-a5f7-e34ae4b92600",
+      "order": 7,
+      "zh": "不足为奇",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "512c6990-1f5b-4b92-88fc-b934f37f8a90",
+      "order": 1,
+      "zh": "我的经验还不足。",
+      "pinyin": "Wǒ de jīngyàn hái bùzú.",
+      "vi": "Kinh nghiệm của tôi vẫn còn chưa đủ.",
+      "analysis_vi": "不足 = thiếu, chưa đủ.",
+      "highlight": [
+        "足"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f4fe511d-e23e-45bd-902c-ad317e91e7a5"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不足 mềm và khách quan hơn nói 我不行.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0b9db1b9-90aa-4632-b150-5acbc3bee6e0",
+      "order": 1,
+      "rule_vi": "不足 không liên quan nghĩa chân trong ngữ cảnh này.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "足",
+    "back": "đủ; chân; đáng, đủ để",
+    "hint": "zú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f4fe511d-e23e-45bd-902c-ad317e91e7a5",
+    "source_lesson_vocab_id": null
+  }
+}

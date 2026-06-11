@@ -1,0 +1,331 @@
+{
+  "id": "b7e76547-768d-49ce-a89d-8eec651d5d48",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "男朋友",
+  "pinyin": "nánpéngyou",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nam bằng hữu",
+    "meaning_vi": "bạn trai, người yêu nam",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bạn trai",
+      "người yêu nam"
+    ],
+    "short_definition_vi": "bạn trai, người yêu nam",
+    "textbook_focus_vi": "男 = nam, 朋友 = bạn. Trong ngữ cảnh hiện đại, 我的男朋友 thường là người yêu nam.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình yêu, quan hệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "男",
+        "lishu_vi": "nam",
+        "structure_note_vi": "田 + 力; không suy diễn giới hiện đại.",
+        "main_radical": {
+          "radical": "田",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Điền",
+          "radical_name_zh": "",
+          "hanviet": "điền",
+          "meaning_vi": "ruộng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "田",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Điền",
+              "radical_name_zh": "",
+              "hanviet": "điền",
+              "meaning_vi": "ruộng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nam, con trai",
+        "modern_logic_vi": "Trong từ này, 男 góp phần tạo nghĩa 'nam, con trai'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "朋",
+        "lishu_vi": "bằng",
+        "structure_note_vi": "Hai phần 月; học theo nghĩa bạn bè.",
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng, thân thể trong nhiều chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng, thân thể trong nhiều chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng, thân thể trong nhiều chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bạn bè",
+        "modern_logic_vi": "Trong từ này, 朋 góp phần tạo nghĩa 'bạn bè'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "友",
+        "lishu_vi": "hữu",
+        "structure_note_vi": "又 gốc liên quan tay; nghĩa bạn.",
+        "main_radical": {
+          "radical": "又",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hựu",
+          "radical_name_zh": "",
+          "hanviet": "hựu",
+          "meaning_vi": "tay phải, lại",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay phải, lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "又",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hựu",
+              "radical_name_zh": "",
+              "hanviet": "hựu",
+              "meaning_vi": "tay phải, lại",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bạn",
+        "modern_logic_vi": "Trong từ này, 友 góp phần tạo nghĩa 'bạn'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "男 = nam, 朋友 = bạn. Trong ngữ cảnh hiện đại, 我的男朋友 thường là người yêu nam.",
+    "memory_tip_vi": "Nhớ qua cụm: 我的男朋友 = bạn trai của tôi.",
+    "warning_vi": "男朋友 rất dễ hiểu là người yêu, không dùng bừa cho bạn nam bình thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "男孩儿",
+        "pinyin": "nánháir",
+        "meaning_vi": "chàng trai/bé trai",
+        "difference_vi": "Không nhất thiết là người yêu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "男生",
+        "pinyin": "nánshēng",
+        "meaning_vi": "nam sinh/bạn nam",
+        "difference_vi": "Dùng trong trường học.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "男朋友 rất dễ hiểu là người yêu, không dùng bừa cho bạn nam bình thường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "88b00e0f-b797-40cf-9e41-79f2ce1594e3",
+      "order": 1,
+      "zh": "我的男朋友",
+      "pinyin": "wǒ de nánpéngyou",
+      "vi": "bạn trai của tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "52ddba56-11ed-4f65-953d-120fe300eb51",
+      "order": 2,
+      "zh": "交男朋友",
+      "pinyin": "jiāo nánpéngyou",
+      "vi": "quen/có bạn trai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2297367-589c-4b80-8d6d-1c2098dc7c74",
+      "order": 3,
+      "zh": "她有男朋友了",
+      "pinyin": "tā yǒu nánpéngyou le",
+      "vi": "cô ấy có bạn trai rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a31c52c0-2ef5-4e2c-8458-fa9ca688dbf0",
+      "order": 1,
+      "zh": "他以为余辉是赵霞的男朋友，所以心里很不是滋味。",
+      "pinyin": "Tā yǐwéi Yú Huī shì Zhào Xiá de nánpéngyou, suǒyǐ xīnli hěn bú shì zīwèi.",
+      "vi": "Anh ấy tưởng Dư Huy là bạn trai của Triệu Hà nên trong lòng khó chịu.",
+      "analysis_vi": "男朋友 ở đây là người yêu nam.",
+      "highlight": [
+        "男朋友"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7e76547-768d-49ce-a89d-8eec651d5d48"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "男朋友/女朋友 trong tiếng Trung hiện đại thường mặc định là người yêu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a8727e7c-1fc3-463a-b473-7438e8896866",
+      "order": 1,
+      "rule_vi": "男朋友 rất dễ hiểu là người yêu, không dùng bừa cho bạn nam bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我有一个男朋友。",
+          "pinyin": "Wǒ yǒu yí ge nánpéngyou.",
+          "vi": "Dễ hiểu là tôi có một bạn trai/người yêu.",
+          "note_vi": "Không dùng nếu chỉ là bạn nam.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我有一个男性朋友。",
+          "pinyin": "Wǒ yǒu yí ge nánxìng péngyou.",
+          "vi": "Tôi có một người bạn nam.",
+          "note_vi": "Rõ là bạn nam, không phải người yêu.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "男朋友",
+    "back": "bạn trai, người yêu nam",
+    "hint": "nánpéngyou",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7e76547-768d-49ce-a89d-8eec651d5d48",
+    "source_lesson_vocab_id": null
+  }
+}

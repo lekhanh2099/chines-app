@@ -1,0 +1,268 @@
+{
+  "id": "d31d8911-5634-46a0-9db4-28a18e1721d3",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "提高",
+  "pinyin": "tígāo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đề cao",
+    "meaning_vi": "nâng cao, cải thiện lên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nâng cao",
+      "cải thiện lên"
+    ],
+    "short_definition_vi": "làm cho trình độ, năng lực hoặc chất lượng cao hơn trước",
+    "textbook_focus_vi": "làm cho trình độ, năng lực hoặc chất lượng cao hơn trước",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "提",
+        "lishu_vi": "đề",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "高",
+        "lishu_vi": "cao",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "làm cho trình độ, năng lực hoặc chất lượng cao hơn trước",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 提高水平.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "提升",
+        "pinyin": "tíshēng",
+        "meaning_vi": "nâng lên/cải thiện",
+        "difference_vi": "hiện đại trong công việc hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改善",
+        "pinyin": "gǎishàn",
+        "meaning_vi": "cải thiện",
+        "difference_vi": "nhấn làm tình trạng tốt hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ad90c891-7986-4db8-919c-946d0d362ee9",
+      "order": 1,
+      "zh": "提高水平",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8921b80-65a6-494b-9e08-f858b8aced62",
+      "order": 2,
+      "zh": "提高能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1fb58934-a835-41d4-9e99-246f166378e6",
+      "order": 3,
+      "zh": "提高效率",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc79d3ac-ddce-4373-a116-e2b98fe463dc",
+      "order": 4,
+      "zh": "提高质量",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a9054f0-1a68-4228-8c64-0af03eb1cc9b",
+      "order": 5,
+      "zh": "提高成绩",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06341ded-1524-45d3-87d8-5a329e16b72b",
+      "order": 6,
+      "zh": "提高自己",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "81b74290-9d91-48f1-9c58-7054f14e45eb",
+      "order": 1,
+      "zh": "我想提高自己的汉语水平。",
+      "pinyin": "Wǒ xiǎng tígāo zìjǐ de Hànyǔ shuǐpíng.",
+      "vi": "Tôi muốn nâng cao trình độ tiếng Trung của mình.",
+      "analysis_vi": "提高 + trình độ/năng lực là kết hợp tự nhiên.",
+      "highlight": [
+        "提高"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d31d8911-5634-46a0-9db4-28a18e1721d3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "提高自己 hơi giáo trình; ngoài đời cũng hay nói 提升自己.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "569d14e6-7335-4577-a708-6fd4499ebd2f",
+      "order": 1,
+      "rule_vi": "提高 thường cần tân ngữ là một mặt/năng lực/chỉ số; không nói *我想提高我.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "提高",
+    "back": "nâng cao, cải thiện lên",
+    "hint": "tígāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d31d8911-5634-46a0-9db4-28a18e1721d3",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "id": "8fcb2dc2-0456-49f5-acdf-b77a4782bfa1",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "考",
+  "pinyin": "kǎo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_01",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khảo",
+    "meaning_vi": "thi; kiểm tra; thi vào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thi",
+      "kiểm tra",
+      "thi vào"
+    ],
+    "short_definition_vi": "thi; kiểm tra; thi vào",
+    "textbook_focus_vi": "Bài 1 Quyển 2: 田芳去哪儿了",
+    "register_vi": "học tập, thi cử, tuyển sinh.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "考",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "考 có nghĩa là kiểm tra năng lực/kiến thức qua kỳ thi. Cụm cần nhớ: 考试 = kỳ thi / thi. 考托福 = thi TOEFL. 考大学 = thi đại học. 考上大学 = thi đỗ đại học. 考得好 = thi tốt. 考不好 = thi không tốt. Cảnh báo: 考 là động từ; 考试 có thể là danh từ hoặc động từ.",
+    "memory_tip_vi": "",
+    "warning_vi": "考 là động từ; 考试 có thể là danh từ hoặc động từ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "考",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thi, kiểm tra.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "考试",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỳ thi / thi, đầy đủ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "测验",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bài kiểm tra nhỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "报名",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đăng ký thi, không phải thi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "申请",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nộp đơn xin, không phải thi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我报名托福考试。",
+      "Tôi đăng ký kỳ thi TOEFL.",
+      "我明天考托福。",
+      "Mai tôi thi TOEFL."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a4248802-7e39-4fa5-a423-56dc9e13d1c1",
+      "order": 1,
+      "zh": "考托福",
+      "pinyin": "",
+      "vi": "thi TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5aa93b62-efa0-4bc9-8907-6578689b0a83",
+      "order": 2,
+      "zh": "考大学",
+      "pinyin": "",
+      "vi": "thi đại học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "31a1a741-c1d7-4282-9dc2-f922ed30d0c8",
+      "order": 3,
+      "zh": "考上大学",
+      "pinyin": "",
+      "vi": "thi đỗ đại học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7602c5b8-8db7-4392-a865-b78485ac3b48",
+      "order": 4,
+      "zh": "考得很好",
+      "pinyin": "",
+      "vi": "thi rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb017779-8e5e-4a34-a9f6-d49225bae3c6",
+      "order": 5,
+      "zh": "考不好",
+      "pinyin": "",
+      "vi": "thi không tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69490ef5-9fd7-4b01-a7f3-4428d81926ed",
+      "order": 6,
+      "zh": "考满分",
+      "pinyin": "",
+      "vi": "thi được điểm tuyệt đối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5f1eeada-4712-4530-8688-a380d30caf16",
+      "order": 1,
+      "zh": "她明天考托福。",
+      "pinyin": "Tā míngtiān kǎo Tuōfú.",
+      "vi": "Ngày mai cô ấy thi TOEFL.",
+      "analysis_vi": "考 + tên kỳ thi/môn thi = thi kỳ thi/môn đó.",
+      "highlight": [
+        "考"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8fcb2dc2-0456-49f5-acdf-b77a4782bfa1"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9e93ae0f-3a46-4107-a419-8ef6f55e2de8",
+      "order": 2,
+      "zh": "只有认真复习，才可能考得好。",
+      "pinyin": "Zhǐyǒu rènzhēn fùxí, cái kěnéng kǎo de hǎo.",
+      "vi": "Chỉ có ôn tập nghiêm túc thì mới có thể thi tốt.",
+      "analysis_vi": "只有……才…… là điều kiện cần. 考得好 là bổ ngữ trạng thái/kết quả đánh giá việc thi.",
+      "highlight": [
+        "考"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8fcb2dc2-0456-49f5-acdf-b77a4782bfa1"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a515af63-94df-43a9-88b4-15fc79b8f600",
+      "order": 3,
+      "zh": "考试前一天，他把老师讲过的语法一点点复习了一遍，连最容易忘的“再”和“又”也重新写下来，所以这次考得比上次好多了。",
+      "pinyin": "Kǎoshì qián yì tiān, tā bǎ lǎoshī jiǎng guo de yǔfǎ yìdiǎndiǎn fùxí le yí biàn, lián zuì róngyì wàng de “zài” hé “yòu” yě chóngxīn xiě xiàlai, suǒyǐ zhè cì kǎo de bǐ shàng cì hǎo duō le.",
+      "vi": "Một ngày trước kỳ thi, anh ấy ôn lại từng chút ngữ pháp thầy/cô đã giảng một lượt, ngay cả “再” và “又” dễ quên nhất cũng viết lại, nên lần này thi tốt hơn lần trước nhiều.",
+      "analysis_vi": "考试前一天 là trạng ngữ thời gian. 把语法复习了一遍 là 把字句 + 一遍. 连……也…… nhấn cả điểm dễ quên cũng ôn. 比上次好多了 là so sánh mức độ chênh lệch.",
+      "highlight": [
+        "考"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8fcb2dc2-0456-49f5-acdf-b77a4782bfa1"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Văn hóa học tập Trung Quốc rất nặng thi cử, nên 考 xuất hiện cực nhiều: 高考, 中考, 考研, 考公务员, 考托福. Học chữ này phải học theo cụm, vì mỗi cụm là một bối cảnh xã hội khác nhau.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dfec90c6-d6fc-4368-aab0-c4a52006ddbc",
+      "order": 1,
+      "rule_vi": "Nhầm 考 và 报名.",
+      "natural_examples": [
+        {
+          "zh": "Nhầm 考 và 报名.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我报名托福。",
+          "pinyin": "Wǒ bàomíng Tuōfú.",
+          "vi": "Tôi đăng ký TOEFL.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我考托福。",
+          "pinyin": "Wǒ kǎo Tuōfú.",
+          "vi": "Tôi thi TOEFL.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "Tiếp phần cuối của Bài 1 nha: 热情 → 哭. Nhóm này là nhiệt tình / gặp mặt / chúc đi đường bình an / khóc, rất hợp để ôn 了, 着, 出来, 得, 一……就……, 连……都……, 送行.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nhầm 考 và 报名.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "考",
+    "back": "thi; kiểm tra; thi vào",
+    "hint": "kǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_01",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "hanyu2/bai01/vocab/035",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8fcb2dc2-0456-49f5-acdf-b77a4782bfa1",
+    "source_lesson_vocab_id": null
+  }
+}

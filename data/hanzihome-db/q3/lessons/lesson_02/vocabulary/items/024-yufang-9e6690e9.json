@@ -1,0 +1,436 @@
+{
+  "id": "0469c121-d073-4309-a3dc-5694724da308",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "预防",
+  "pinyin": "yùfáng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "health",
+    "prevention"
+  ],
+  "meaning": {
+    "hanviet": "Dự phòng",
+    "meaning_vi": "phòng ngừa, phòng trước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phòng ngừa, phòng trước"
+    ],
+    "short_definition_vi": "phòng ngừa, phòng trước",
+    "textbook_focus_vi": "phòng ngừa, phòng trước",
+    "register_vi": "",
+    "usage_domain_vi": "health,prevention",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "预",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "予",
+            "hanviet": "dư/dữ",
+            "meaning_vi": "thành phần trái",
+            "position_vi": "trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu/trang; dạng giản thể của 頁",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "页 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu, trang; dạng giản thể của 頁",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "页 được dùng như bộ Hiệt trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trước, dự trước",
+        "modern_logic_vi": "预 gợi điều làm trước.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu, trang; dạng giản thể của 頁",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "页 được dùng như bộ Hiệt trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "防",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "thành phần bên trái",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "阝 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "đồi đất hoặc khu ấp, vị trí tùy bên",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "阝 được dùng như bộ Phụ/Ấp trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phòng, ngăn, đề phòng",
+        "modern_logic_vi": "防 = ngăn/phòng trước.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "đồi đất hoặc khu ấp, vị trí tùy bên",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "阝 được dùng như bộ Phụ/Ấp trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "预 gợi điều làm trước.; 防 = ngăn/phòng trước.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "防止",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "防备",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "治疗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "治疗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3307fa82-9eb8-4873-8b4a-6d29ef5112bd",
+      "order": 1,
+      "zh": "预防疾病",
+      "pinyin": "",
+      "vi": "phòng bệnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d654bb16-a116-4e09-b7d9-9fe08aa2ecfd",
+      "order": 2,
+      "zh": "预防感冒",
+      "pinyin": "",
+      "vi": "phòng cảm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c21ec3c5-9258-41c0-bbb7-4c93ed2d94ca",
+      "order": 3,
+      "zh": "预防事故",
+      "pinyin": "",
+      "vi": "phòng tai nạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d498842c-79d5-46b6-a3f1-0664d9df515c",
+      "order": 4,
+      "zh": "预防近视",
+      "pinyin": "",
+      "vi": "phòng cận thị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "86acaf75-72e1-4388-88d4-0e8eba2bc402",
+      "order": 5,
+      "zh": "提前预防",
+      "pinyin": "",
+      "vi": "phòng trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ca05835-cce4-45f3-a960-4325c3485c77",
+      "order": 6,
+      "zh": "预防为主",
+      "pinyin": "",
+      "vi": "lấy phòng ngừa làm chính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "245f502a-ac11-4b00-9d2a-a8b6ab19c42b",
+      "order": 1,
+      "zh": "经常洗手可以预防感冒。",
+      "pinyin": "Jīngcháng xǐ shǒu kěyǐ yùfáng gǎnmào.",
+      "vi": "Thường xuyên rửa tay có thể phòng cảm.",
+      "analysis_vi": "预防 + bệnh/vấn đề.",
+      "highlight": [
+        "预防"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0469c121-d073-4309-a3dc-5694724da308"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0e2b5ea1-51dd-4fff-a392-5bf4def0fb6d",
+      "order": 2,
+      "zh": "练太极拳有增强体质、预防疾病的作用。",
+      "pinyin": "Liàn tàijíquán yǒu zēngqiáng tǐzhì, yùfáng jíbìng de zuòyòng.",
+      "vi": "Luyện Thái Cực Quyền có tác dụng tăng cường thể chất, phòng bệnh.",
+      "analysis_vi": "有……的作用 = có tác dụng.",
+      "highlight": [
+        "预防"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0469c121-d073-4309-a3dc-5694724da308"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "预防为主 là khẩu hiệu sức khỏe/y tế công cộng rất hay gặp.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "142ccf19-d1c5-4dd5-b9c4-386182c2e89b",
+      "order": 1,
+      "rule_vi": "预防 là trước khi bệnh xảy ra; đã bệnh rồi thì 治疗/看病/吃药.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "预防疾病",
+          "pinyin": "Yùfáng jíbìng",
+          "vi": "phòng bệnh",
+          "note_vi": "Trước khi bệnh xảy ra.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "预防",
+    "back": "phòng ngừa, phòng trước",
+    "hint": "yùfáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "health",
+      "prevention"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0469c121-d073-4309-a3dc-5694724da308",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "id": "6584f5ec-8766-4455-80b2-cd662783c91a",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "其中",
+  "pinyin": "qízhōng",
+  "pos": {
+    "raw_vi": "Danh từ vị trí / Đại từ",
+    "raw_cn": "方位名词/代词性成分",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "kỳ trung",
+    "meaning_vi": "trong đó, trong số đó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trong đó, trong số đó"
+    ],
+    "short_definition_vi": "trong đó, trong số đó",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "其",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nó, ấy, trong đó",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "中",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giữa, trong",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "其 + 中 = ở trong phần đã nói.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 其中.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "里面",
+        "pinyin": "lǐmiàn",
+        "meaning_vi": "bên trong",
+        "difference_vi": "thiên về không gian cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "当中",
+        "pinyin": "dāngzhōng",
+        "meaning_vi": "trong số đó/ở giữa",
+        "difference_vi": "khẩu ngữ hơn trong vài ngữ cảnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "全部",
+          "",
+          "toàn bộ",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "242499f8-3ad7-4792-ad0d-4a9309b03a8b",
+      "order": 1,
+      "zh": "其中一个",
+      "pinyin": "",
+      "vi": "một trong số đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5cdc76ae-bc94-4061-87ea-6fbcebd1a73e",
+      "order": 2,
+      "zh": "其中之一",
+      "pinyin": "",
+      "vi": "một trong số đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35bb8238-94d8-42bf-89d0-692b4d0487fb",
+      "order": 3,
+      "zh": "其中包括",
+      "pinyin": "",
+      "vi": "trong đó bao gồm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d84831e-37ad-40bb-8372-b4ef82fb3bbb",
+      "order": 4,
+      "zh": "其中有一个人",
+      "pinyin": "",
+      "vi": "trong đó có một người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a52b9ffc-2002-483a-befe-d00254e6347d",
+      "order": 1,
+      "zh": "我们班有二十个学生，其中三个是越南人。",
+      "pinyin": "Wǒmen bān yǒu èrshí ge xuésheng, qízhōng sān ge shì Yuènán rén.",
+      "vi": "Lớp chúng tôi có 20 học sinh, trong đó 3 người là người Việt.",
+      "analysis_vi": "其中 lấy một phần từ tổng thể.",
+      "highlight": [
+        "其中"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6584f5ec-8766-4455-80b2-cd662783c91a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ee8b31c9-a21c-414d-91fd-8892f8c5bcf8",
+      "order": 2,
+      "zh": "乐队里有很多人，其中一个人根本不会吹竽。",
+      "pinyin": "Yuèduì lǐ yǒu hěn duō rén, qízhōng yí ge rén gēnběn bú huì chuī yú.",
+      "vi": "Trong ban nhạc có nhiều người, trong đó có một người hoàn toàn không biết thổi竽.",
+      "analysis_vi": "其中一个人 chỉ một người trong nhóm.",
+      "highlight": [
+        "其中"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6584f5ec-8766-4455-80b2-cd662783c91a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "其中 hơi viết hơn 里面, hợp tóm tắt và phân tích văn bản.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5ab84ae3-466c-4461-b8eb-d08d908a0533",
+      "order": 1,
+      "rule_vi": "Không dùng 其中 khi chưa có tổng thể phía trước.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "其中",
+    "back": "trong đó, trong số đó",
+    "hint": "qízhōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6584f5ec-8766-4455-80b2-cd662783c91a",
+    "source_lesson_vocab_id": null
+  }
+}

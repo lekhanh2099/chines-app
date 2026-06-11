@@ -1,0 +1,403 @@
+{
+  "id": "a2eb2880-dbb7-4782-a3ec-4f013a7b5181",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "划船",
+  "pinyin": "huá chuán",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "activity",
+    "lake"
+  ],
+  "meaning": {
+    "hanviet": "hoạch thuyền",
+    "meaning_vi": "chèo thuyền; rowing",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chèo thuyền",
+      "rowing"
+    ],
+    "short_definition_vi": "chèo thuyền; rowing",
+    "textbook_focus_vi": "chèo thuyền; rowing",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "activity, lake",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "划",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí cổ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "戈",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Qua",
+              "radical_name_zh": "",
+              "hanviet": "qua",
+              "meaning_vi": "vũ khí cổ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chèo/quẹt/vạch tùy âm",
+        "modern_logic_vi": "Trong từ này, 划 góp phần vào lớp nghĩa hiện đại: chèo/quẹt/vạch tùy âm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "船",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "舟",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chu",
+          "radical_name_zh": "",
+          "hanviet": "chu",
+          "meaning_vi": "thuyền",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "舟",
+            "hanviet": "chu",
+            "meaning_vi": "thuyền",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "舟",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chu",
+              "radical_name_zh": "",
+              "hanviet": "chu",
+              "meaning_vi": "thuyền",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "㕣",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuyền, tàu",
+        "modern_logic_vi": "Trong từ này, 船 góp phần vào lớp nghĩa hiện đại: thuyền, tàu",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "划 = chèo/quạt nước; 船 = thuyền. 划船 là dùng mái chèo làm thuyền đi.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "坐船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "乘船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "游船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e4e10b64-55eb-4cc3-abea-504025b69b02",
+      "order": 1,
+      "zh": "去划船",
+      "pinyin": "",
+      "vi": "đi chèo thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f2739b1-f19e-44be-b0bf-f62fd2c671e7",
+      "order": 2,
+      "zh": "在湖上划船",
+      "pinyin": "",
+      "vi": "chèo thuyền trên hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5184ebde-a029-4d5b-8b20-4be594fbfc12",
+      "order": 3,
+      "zh": "一起划船",
+      "pinyin": "",
+      "vi": "cùng chèo thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "52e798b8-19c8-4f04-b877-65d7782d6b35",
+      "order": 4,
+      "zh": "划小船",
+      "pinyin": "",
+      "vi": "chèo thuyền nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ece0ccfa-95da-4279-89b3-d3fd5fece3e8",
+      "order": 5,
+      "zh": "划船比赛",
+      "pinyin": "",
+      "vi": "cuộc thi chèo thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3626bf15-9910-41d6-81d8-fb2a2d99df2e",
+      "order": 6,
+      "zh": "不会划船",
+      "pinyin": "",
+      "vi": "không biết chèo thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a6a0e7b7-f913-4b8a-a4c9-bc182e759f44",
+      "order": 1,
+      "zh": "我们周末去北海划船吧。",
+      "pinyin": "",
+      "vi": "Cuối tuần mình đi Bắc Hải chèo thuyền đi.",
+      "analysis_vi": "去 + địa điểm + V.",
+      "highlight": [
+        "划船"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2eb2880-dbb7-4782-a3ec-4f013a7b5181"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "94bbbcc1-f699-4b97-92ed-1b348bdbc54b",
+      "order": 2,
+      "zh": "春天一到，湖上就有很多人在划船。",
+      "pinyin": "",
+      "vi": "Mùa xuân vừa đến, trên hồ có nhiều người đang chèo thuyền.",
+      "analysis_vi": "湖上有…… tồn hiện.",
+      "highlight": [
+        "划船"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2eb2880-dbb7-4782-a3ec-4f013a7b5181"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7f50401a-6167-4ecc-bed4-c11e98413e51",
+      "order": 3,
+      "zh": "风大起来了，他们只好把船划回岸边。",
+      "pinyin": "",
+      "vi": "Gió mạnh lên, họ đành chèo thuyền về bờ.",
+      "analysis_vi": "把船划回岸边 = chèo thuyền trở lại bờ.",
+      "highlight": [
+        "划船"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2eb2880-dbb7-4782-a3ec-4f013a7b5181"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "划船 trong Bài 3 北京的四季",
+    "content_vi": "Chèo thuyền trong công viên là hoạt động phổ biến khi tả mùa xuân/hè.",
+    "tags": [
+      "activity",
+      "lake"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "44bfff64-58f6-4357-a200-67ac10e8f4c7",
+      "order": 1,
+      "rule_vi": "划船 là chèo thuyền, không phải 画船 “vẽ thuyền”. 划 đọc huá trong từ này.",
+      "natural_examples": [
+        {
+          "zh": "我们周末去北海划船吧。",
+          "pinyin": "",
+          "vi": "Cuối tuần mình đi Bắc Hải chèo thuyền đi.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "划船 là chèo thuyền, không phải 画船 “vẽ thuyền”. 划 đọc huá trong từ này.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "划船",
+    "back": "chèo thuyền; rowing",
+    "hint": "huá chuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "activity",
+      "lake"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a2eb2880-dbb7-4782-a3ec-4f013a7b5181",
+    "source_lesson_vocab_id": null
+  }
+}

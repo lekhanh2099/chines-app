@@ -1,0 +1,83 @@
+[
+  {
+    "id": "7a30a576-79d1-4ddc-b301-813ed39ef379",
+    "order": 1,
+    "title_vi": "Khó khăn / trợ giúp / an toàn giao thông",
+    "words": [
+      "困难",
+      "警察",
+      "十字路口儿",
+      "来往",
+      "敢",
+      "立即",
+      "扶",
+      "车闸",
+      "罚款",
+      "敬礼",
+      "礼貌"
+    ],
+    "notes": []
+  },
+  {
+    "id": "37bf0a0e-6559-47f0-abba-e58ba7cc14f5",
+    "order": 2,
+    "title_vi": "Quan sát / cảm xúc / tình huống",
+    "words": [
+      "到处",
+      "看样子",
+      "情景",
+      "感动",
+      "可",
+      "发生",
+      "急忙",
+      "紧",
+      "握"
+    ],
+    "notes": []
+  },
+  {
+    "id": "ec46e047-a5cf-4bf0-ba7d-ea2d9471ac3e",
+    "order": 3,
+    "title_vi": "Cơ thể / hành động chăm sóc",
+    "words": [
+      "腿脚",
+      "滚",
+      "抱",
+      "鞋",
+      "鞋带",
+      "脚",
+      "腰",
+      "照顾"
+    ],
+    "notes": []
+  },
+  {
+    "id": "5f06b8a0-72c0-42ad-bc0a-22b7bb3db4ca",
+    "order": 4,
+    "title_vi": "Người / quan hệ xã hội",
+    "words": [
+      "夫妻",
+      "叔叔"
+    ],
+    "notes": []
+  },
+  {
+    "id": "0386e174-dbb6-469e-a95e-6117ea1bcb24",
+    "order": 5,
+    "title_vi": "Văn hóa nghệ thuật / đồ vật",
+    "words": [
+      "梅",
+      "图",
+      "画家",
+      "松",
+      "竹",
+      "叫作",
+      "岁寒三友",
+      "字画",
+      "过奖",
+      "工具箱",
+      "钳子"
+    ],
+    "notes": []
+  }
+]

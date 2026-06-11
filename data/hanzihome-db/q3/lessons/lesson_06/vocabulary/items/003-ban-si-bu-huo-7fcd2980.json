@@ -1,0 +1,253 @@
+{
+  "id": "b11154a4-2cbc-4be4-befe-357439be6e21",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "半死不活",
+  "pinyin": "bàn sǐ bù huó",
+  "pos": {
+    "raw_vi": "Thành ngữ / Cụm tính từ",
+    "raw_cn": "成语/形容词性短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bán tử bất hoạt",
+    "meaning_vi": "nửa sống nửa chết; thiếu sức sống, èo uột",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nửa sống nửa chết",
+      "thiếu sức sống",
+      "èo uột"
+    ],
+    "short_definition_vi": "nửa sống nửa chết",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "半",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một nửa",
+        "modern_logic_vi": "Trong từ 半死不活, chữ 半 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "死",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chết",
+        "modern_logic_vi": "Trong từ 半死不活, chữ 死 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ 半死不活, chữ 不 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "活",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sống",
+        "modern_logic_vi": "Trong từ 半死不活, chữ 活 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "半死不活 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 这棵葡萄树去年半死不活的。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "没精神",
+        "pinyin": "méi jīngshen",
+        "meaning_vi": "không có tinh thần",
+        "difference_vi": "Nhẹ hơn 半死不活, thường nói về người.",
+        "register_vi": "",
+        "example_zh": "他今天没精神。",
+        "example_vi": "Hôm nay anh ấy không có tinh thần.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a7169d2e-2356-4d5c-bef2-7092da871cd9",
+      "order": 1,
+      "zh": "半死不活的样子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01658e88-ca4a-435e-b8ed-f4d94606d4e8",
+      "order": 2,
+      "zh": "半死不活的葡萄树",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b75fbc80-931f-4849-8feb-0923295cb574",
+      "order": 3,
+      "zh": "累得半死不活",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "435f05b4-2730-4968-a313-3e3a6f20ce98",
+      "order": 4,
+      "zh": "饿得半死不活",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a21f8ba-c3d3-41ec-95cd-d98e0d9e1df9",
+      "order": 5,
+      "zh": "生意半死不活",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "49f6c126-a46d-437f-b0f4-4cf4911d6550",
+      "order": 6,
+      "zh": "看起来半死不活",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8f820817-d91b-4f6e-bd32-eeafe266b685",
+      "order": 1,
+      "zh": "这棵葡萄树去年半死不活的。",
+      "pinyin": "",
+      "vi": "Cây nho này năm ngoái trông nửa sống nửa chết.",
+      "analysis_vi": "Ví dụ dùng 半死不活 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "半死不活"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b11154a4-2cbc-4be4-befe-357439be6e21"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "半死不活 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "acafd066-116b-4102-802c-6b81c87940a4",
+      "order": 1,
+      "rule_vi": "Không nên dùng trực tiếp với người bệnh nặng vì dễ thô; muốn nhẹ hơn dùng 很虚弱.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "半死不活",
+    "back": "nửa sống nửa chết; thiếu sức sống, èo uột",
+    "hint": "bàn sǐ bù huó",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b11154a4-2cbc-4be4-befe-357439be6e21",
+    "source_lesson_vocab_id": null
+  }
+}

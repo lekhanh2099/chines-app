@@ -1,0 +1,349 @@
+{
+  "id": "3d5b1818-f567-4e25-8da4-37b0df45df00",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "坏处",
+  "pinyin": "huàichu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "hoại xứ",
+    "meaning_vi": "tác hại, điểm xấu, mặt bất lợi",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "tác hại, điểm xấu, mặt bất lợi",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "坏",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, vật chất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, vật chất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "不",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xấu, hỏng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, vật chất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "处",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "夂",
+            "hanviet": "truy",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "夂",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Truy",
+              "radical_name_zh": "",
+              "hanviet": "truy",
+              "meaning_vi": "thành phần cấu chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "夂 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói; thành phần cấu chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "卜",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bốc",
+              "radical_name_zh": "",
+              "hanviet": "bốc",
+              "meaning_vi": "bói; thành phần cấu chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "卜 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chù: chỗ/điểm; chǔ: xử lý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "夂",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Truy",
+          "radical_name_zh": "",
+          "hanviet": "truy",
+          "meaning_vi": "thành phần cấu chữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "夂 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Mặt xấu/điểm xấu của một việc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "缺点",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khuyết điểm/nhược điểm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "害处",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tác hại rõ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "弊端",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a015611d-1291-4800-8ab9-8af2fd9082ae",
+      "order": 1,
+      "zh": "有坏处",
+      "pinyin": "",
+      "vi": "có hại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "365c2b4d-bf20-4780-afb7-55e4d6fd5ba8",
+      "order": 2,
+      "zh": "对身体有坏处",
+      "pinyin": "",
+      "vi": "có hại cho sức khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a97ca72-fe07-4e82-a7c0-d09261bee404",
+      "order": 3,
+      "zh": "坏处很多",
+      "pinyin": "",
+      "vi": "có nhiều tác hại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1488e684-afc2-433b-a080-5abaef72796c",
+      "order": 1,
+      "zh": "睡得太晚对身体有坏处。",
+      "pinyin": "Shuì de tài wǎn duì shēntǐ yǒu huàichu.",
+      "vi": "Ngủ quá muộn có hại cho sức khỏe.",
+      "en": "",
+      "highlight": [
+        "坏处"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d5b1818-f567-4e25-8da4-37b0df45df00"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "好处/坏处 là cặp tiện khi viết đoạn lợi-hại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2a0a5fab-9c73-43c0-8383-11ef7be6479e",
+      "order": 1,
+      "title_vi": "Không nhầm với 坏事",
+      "explanation_vi": "坏处 là tác hại; 坏事 là chuyện xấu.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "熬夜有坏处。",
+        "这不是坏事。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "坏处",
+    "back": "tác hại, điểm xấu, mặt bất lợi",
+    "hint": "huàichu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "坏处"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3d5b1818-f567-4e25-8da4-37b0df45df00",
+    "source_lesson_vocab_id": null
+  }
+}

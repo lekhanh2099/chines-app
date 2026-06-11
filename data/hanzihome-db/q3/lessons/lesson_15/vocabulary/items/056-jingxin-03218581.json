@@ -1,0 +1,334 @@
+{
+  "id": "4a744437-2a3f-488f-8b8e-0b609c33f8b6",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "精心",
+  "pinyin": "jīngxīn",
+  "pos": {
+    "raw_vi": "Phó từ / tính từ",
+    "raw_cn": "副词/形容词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tinh tâm",
+    "meaning_vi": "hết sức cẩn thận; tận tâm; chu đáo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hết sức cẩn thận",
+      "tận tâm",
+      "chu đáo"
+    ],
+    "short_definition_vi": "hết sức cẩn thận; tận tâm; chu đáo",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "精",
+        "lishu_vi": "",
+        "structure_note_vi": "精: tinh; kỹ",
+        "components": [
+          {
+            "text": "米",
+            "hanviet": "mễ",
+            "meaning_vi": "gạo",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "米",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mễ",
+              "radical_name_zh": "",
+              "hanviet": "mễ",
+              "meaning_vi": "gạo",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "米 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "米 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tinh; kỹ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: tinh; kỹ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "米",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mễ",
+          "radical_name_zh": "",
+          "hanviet": "mễ",
+          "meaning_vi": "gạo",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "米 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "心",
+        "lishu_vi": "",
+        "structure_note_vi": "心: lòng",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng; tâm trí",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng; tâm trí",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lòng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: lòng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng; tâm trí",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "精心 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 精心照顾.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a2152233-680d-4dda-8708-1c410552589e",
+      "order": 1,
+      "zh": "精心照顾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a1aed98-2783-4ef2-aa08-f4a557efafa6",
+      "order": 2,
+      "zh": "精心准备",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "831a5a6c-d512-45bf-90ed-a83feb3a40f3",
+      "order": 3,
+      "zh": "精心安排",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0865e46-741d-480d-8093-7d2c3f2f9f54",
+      "order": 4,
+      "zh": "精心设计",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5beee83e-cf86-4a1c-9237-b4a6d2688959",
+      "order": 1,
+      "zh": "老师像妈妈一样精心照顾我。",
+      "pinyin": "",
+      "vi": "Cô giáo chăm sóc tôi tận tình như mẹ。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "精心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4a744437-2a3f-488f-8b8e-0b609c33f8b6"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "087edc19-ad9d-476e-8368-3605ec72d8a1",
+      "order": 2,
+      "zh": "由于老师精心照顾，我的伤好得很快。",
+      "pinyin": "",
+      "vi": "Nhờ cô giáo chăm sóc tận tình, vết thương của tôi khỏi rất nhanh。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "精心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4a744437-2a3f-488f-8b8e-0b609c33f8b6"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c2ecfd0d-7cbe-4b25-915f-de577b620f01",
+      "order": 1,
+      "rule_vi": "Không dùng 精心 cho hành động quá đơn giản.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 精心 cho hành động quá đơn giản.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "精心",
+    "back": "hết sức cẩn thận; tận tâm; chu đáo",
+    "hint": "jīngxīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4a744437-2a3f-488f-8b8e-0b609c33f8b6",
+    "source_lesson_vocab_id": null
+  }
+}

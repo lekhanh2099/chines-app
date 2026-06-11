@@ -1,0 +1,258 @@
+{
+  "id": "888d537d-fc41-4904-9de8-4a7da15ddeca",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "技巧",
+  "pinyin": "jìqiǎo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kỹ xảo",
+    "meaning_vi": "kỹ năng, kỹ thuật khéo léo, mẹo làm việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỹ năng",
+      "kỹ thuật khéo léo",
+      "mẹo làm việc"
+    ],
+    "short_definition_vi": "kỹ năng, mẹo làm việc khéo",
+    "textbook_focus_vi": "kỹ năng, mẹo làm việc khéo",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "技",
+        "lishu_vi": "kỹ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "巧",
+        "lishu_vi": "xảo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "kỹ năng, mẹo làm việc khéo",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 学习技巧.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "技术",
+        "pinyin": "jìshù",
+        "meaning_vi": "kỹ thuật, công nghệ",
+        "difference_vi": "chuyên môn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5014e419-aec3-42cf-9717-0d19ec5b8bf5",
+      "order": 1,
+      "zh": "学习技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24fb39ff-f69b-49f4-bfa9-45ad52de7e55",
+      "order": 2,
+      "zh": "说话技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ac46ff4-11ff-4760-9435-4c48db235aeb",
+      "order": 3,
+      "zh": "沟通技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1413385-4fb2-44fb-882a-e873a33ae2d1",
+      "order": 4,
+      "zh": "工作技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a92ff5f-2133-4616-955c-0f5f1cfdcc01",
+      "order": 5,
+      "zh": "贸易技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d070a40f-2bbc-4546-8eee-59f6e23e6a9a",
+      "order": 6,
+      "zh": "销售技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "95dc80a5-77fa-4784-8a7b-a0b6cd3fb51c",
+      "order": 1,
+      "zh": "学语言也需要技巧。",
+      "pinyin": "Xué yǔyán yě xūyào jìqiǎo.",
+      "vi": "Học ngôn ngữ cũng cần kỹ năng/phương pháp.",
+      "analysis_vi": "技巧 là kỹ năng xử lý khéo.",
+      "highlight": [
+        "技巧"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "888d537d-fc41-4904-9de8-4a7da15ddeca"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "技巧 không nhất thiết tiêu cực; 技术 thiên về kỹ thuật/công nghệ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ec6fa2a4-bb22-4bd2-94c3-f5604a433687",
+      "order": 1,
+      "rule_vi": "技巧 khác 技术: 技巧 là kỹ năng/mẹo khéo, 技术 là kỹ thuật chuyên môn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "技巧",
+    "back": "kỹ năng, kỹ thuật khéo léo, mẹo làm việc",
+    "hint": "jìqiǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "888d537d-fc41-4904-9de8-4a7da15ddeca",
+    "source_lesson_vocab_id": null
+  }
+}

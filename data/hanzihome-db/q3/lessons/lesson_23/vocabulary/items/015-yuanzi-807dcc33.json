@@ -1,0 +1,417 @@
+{
+  "id": "f2637190-dc71-46cc-a92d-020d55f7411e",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "原子",
+  "pinyin": "yuánzǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nguyên tử",
+    "meaning_vi": "nguyên tử",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nguyên tử"
+    ],
+    "short_definition_vi": "nguyên tử",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về hóa học, vật lý.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "hóa học, vật lý",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "原",
+        "lishu_vi": "nguyên",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 原 trong từ 原子; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "厂",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hán",
+          "radical_name_zh": "",
+          "hanviet": "hán",
+          "meaning_vi": "vách núi/mái che trong chữ Hán",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "厂 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "hán",
+            "meaning_vi": "vách núi/mái che trong chữ Hán",
+            "position_vi": "phần bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "厂 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "厂",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hán",
+              "radical_name_zh": "",
+              "hanviet": "hán",
+              "meaning_vi": "vách núi/mái che trong chữ Hán",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "厂 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 原子, chữ 原 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "tử",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 子 trong từ 原子; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, hạt, phần tử",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hạt, phần tử",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, hạt, phần tử",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 原子, chữ 子 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "原子 trong bài được nhớ theo nghĩa hiện đại: nguyên tử.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 氢原子 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分子",
+        "pinyin": "fēnzǐ",
+        "meaning_vi": "phân tử; thường gồm nhiều nguyên tử",
+        "difference_vi": "phân tử; thường gồm nhiều nguyên tử",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "元素",
+        "pinyin": "yuánsù",
+        "meaning_vi": "nguyên tố hóa học",
+        "difference_vi": "nguyên tố hóa học",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không hiểu 子 trong 原子 là con người/con cái."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cf38869e-c48d-4122-8683-223abcdc771a",
+      "order": 1,
+      "zh": "氢原子",
+      "pinyin": "",
+      "vi": "nguyên tử hydro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1571c0e-9bcf-459a-a174-020c3f30fae2",
+      "order": 2,
+      "zh": "氧原子",
+      "pinyin": "",
+      "vi": "nguyên tử oxy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3df48759-2a60-4061-87fc-b28f639018ca",
+      "order": 3,
+      "zh": "原子结构",
+      "pinyin": "",
+      "vi": "cấu trúc nguyên tử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ea40a7d-6ea4-4df9-a76b-b10cc04c2161",
+      "order": 4,
+      "zh": "原子核",
+      "pinyin": "",
+      "vi": "hạt nhân nguyên tử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e79f8cb3-e73d-4335-b481-cf1a7ffe41ef",
+      "order": 5,
+      "zh": "原子之间",
+      "pinyin": "",
+      "vi": "giữa các nguyên tử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9e3d93e8-671e-45bb-9d34-9c71e9a6abc2",
+      "order": 1,
+      "zh": "水分子里有氢原子和氧原子。",
+      "pinyin": "",
+      "vi": "nguyên tử",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "原子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2637190-dc71-46cc-a92d-020d55f7411e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "62d82e2d-f3fb-4c09-8e09-b3bac8f7f326",
+      "order": 2,
+      "zh": "这个词语“原子”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 原子 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "原子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2637190-dc71-46cc-a92d-020d55f7411e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6d756599-6f2c-4985-99d6-4573f2768f6d",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“原子”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 原子 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "原子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2637190-dc71-46cc-a92d-020d55f7411e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong học online, 原子 thường được minh họa bằng 模型 hoặc 动画.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6ec22003-4dc3-4753-adb1-bbbca2a0cbcf",
+      "order": 1,
+      "rule_vi": "Không hiểu 子 trong 原子 là con người/con cái.",
+      "natural_examples": [
+        {
+          "zh": "原子是构成物质的基本单位之一。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "原子是一个孩子。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "原子是一个孩子。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "原子是构成物质的基本单位之一。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không hiểu 子 trong 原子 là con người/con cái.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "原子",
+    "back": "nguyên tử",
+    "hint": "yuánzǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f2637190-dc71-46cc-a92d-020d55f7411e",
+    "source_lesson_vocab_id": null
+  }
+}

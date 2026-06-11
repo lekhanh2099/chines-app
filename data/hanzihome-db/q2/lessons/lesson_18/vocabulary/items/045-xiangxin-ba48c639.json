@@ -1,0 +1,401 @@
+{
+  "id": "f90440a4-64ce-441d-8fcf-5d3ca476c5fb",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "相信",
+  "pinyin": "xiāngxìn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Tương tín",
+    "meaning_vi": "tin, tin tưởng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tin, tin tưởng"
+    ],
+    "short_definition_vi": "tin, tin tưởng",
+    "textbook_focus_vi": "tin, tin tưởng",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "相",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lẫn nhau; xem xét; dáng vẻ",
+        "modern_logic_vi": "Trong 相信, 相 hỗ trợ nghĩa hướng qua lại/đối tượng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "信",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "言",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/văn bản",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, văn bản",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tin; thư; tín nhiệm",
+        "modern_logic_vi": "信 có lõi tin/lời đáng tin.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "相 trong từ này có cảm giác liên quan lẫn nhau/đối tượng. 信 là tin, tín nhiệm. → 相信 = đặt niềm tin vào người/việc/lời nói. Cảnh báo: 相信 là tin về mặt nhận thức/niềm tin; 信任 là tin cậy sâu hơn vào con người/hệ thống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "信任",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tin cậy, tín nhiệm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "觉得",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm thấy/cho rằng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "认为",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho rằng, nhận định.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "相信",
+        "right": "怀疑",
+        "meaning_vi": "tin ↔ nghi ngờ",
+        "note_vi": "tin ↔ nghi ngờ",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "相信: tin, tin rằng điều gì đúng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f9c897cf-423a-4090-885c-d64ab34c8bf9",
+      "order": 1,
+      "zh": "相信你",
+      "pinyin": "",
+      "vi": "tin bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "050be906-28b9-4a74-b09d-e071ccaf2ca9",
+      "order": 2,
+      "zh": "相信他的话",
+      "pinyin": "",
+      "vi": "tin lời anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1171d321-6abb-4b31-9822-991babd61a05",
+      "order": 3,
+      "zh": "相信自己",
+      "pinyin": "",
+      "vi": "tin bản thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "79d12800-3331-4d46-b6e3-e5d28a257657",
+      "order": 4,
+      "zh": "我相信……",
+      "pinyin": "",
+      "vi": "tôi tin rằng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b32d83a-1728-4c5d-a096-48321a1523e5",
+      "order": 5,
+      "zh": "不敢相信",
+      "pinyin": "",
+      "vi": "không dám tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f24ae962-c396-47b1-bb4e-aee9bfd9ff3e",
+      "order": 1,
+      "zh": "我相信空姐会帮我们把问题解决好。",
+      "pinyin": "Wǒ xiāngxìn kōngjiě huì bāng wǒmen bǎ wèntí jiějué hǎo.",
+      "vi": "Tôi tin tiếp viên sẽ giúp chúng ta giải quyết tốt vấn đề.",
+      "analysis_vi": "相信 + mệnh đề; 把问题解决好 là câu 把 có kết quả tốt.",
+      "highlight": [
+        "相信"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "f90440a4-64ce-441d-8fcf-5d3ca476c5fb"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b65d07ee-12a6-48d2-bf59-ad8334dfda0e",
+      "order": 2,
+      "zh": "他不相信这个价钱这么便宜，又问了一遍。",
+      "pinyin": "Tā bù xiāngxìn zhège jiàqian zhème piányi, yòu wèn le yí biàn.",
+      "vi": "Anh ấy không tin giá này rẻ như vậy, nên hỏi lại một lần nữa.",
+      "analysis_vi": "不相信 + sự việc; 又问了一遍 là hỏi lại một lượt/lần.",
+      "highlight": [
+        "相信"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "f90440a4-64ce-441d-8fcf-5d3ca476c5fb"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "52edbaf0-fbd0-45d0-9076-63eb78f4a1f6",
+      "order": 3,
+      "zh": "办理手续以前，我相信自己把护照放在包里了。",
+      "pinyin": "Bànlǐ shǒuxù yǐqián, wǒ xiāngxìn zìjǐ bǎ hùzhào fàng zài bāo lǐ le.",
+      "vi": "Trước khi làm thủ tục, tôi tin là mình đã để hộ chiếu trong túi rồi.",
+      "analysis_vi": "相信自己…… là tin vào trí nhớ/việc mình làm; 把护照放在包里 là vị trí đã xử lý.",
+      "highlight": [
+        "相信"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "f90440a4-64ce-441d-8fcf-5d3ca476c5fb"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong giao tiếp Trung Quốc, 相信我 nghe mạnh như “tin tôi đi”. Nếu muốn mềm hơn, có thể nói 你可以放心 – bạn cứ yên tâm. 放心 rất hay dùng khi trấn an người khác.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dad69c3c-c471-49a1-a7b1-1be865a6932a",
+      "order": 1,
+      "rule_vi": "Nhầm 相信 và 信任.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 相信 theo cụm và ngữ cảnh bài 18; nghĩa chính là tin, tin tưởng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "相信",
+    "back": "tin, tin tưởng",
+    "hint": "xiāngxìn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f90440a4-64ce-441d-8fcf-5d3ca476c5fb",
+    "source_lesson_vocab_id": null
+  }
+}

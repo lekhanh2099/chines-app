@@ -1,0 +1,281 @@
+{
+  "id": "0bb532df-3e71-4071-a05d-5a310a7f098e",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "透",
+  "pinyin": "tòu",
+  "pos": {
+    "raw_vi": "Động từ / Bổ ngữ",
+    "raw_cn": "动词/结果补语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "thấu",
+    "meaning_vi": "xuyên qua, thông suốt; thấu, hết mức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xuyên qua, thông suốt; thấu, hết mức"
+    ],
+    "short_definition_vi": "xuyên qua, thông suốt; thấu, hết mức",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "透",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi, di chuyển",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 辶.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xuyên qua, thấu",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "辶 gợi đi xuyên qua phạm vi → thấu qua.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 透.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "穿",
+        "pinyin": "chuān",
+        "meaning_vi": "xuyên/mặc",
+        "difference_vi": "trong 穿过 là đi xuyên qua",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "通",
+        "pinyin": "tōng",
+        "meaning_vi": "thông, suốt",
+        "difference_vi": "liên thông",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c2dc82a8-2d67-4d5c-ab6a-a80322729433",
+      "order": 1,
+      "zh": "刺透盾",
+      "pinyin": "",
+      "vi": "đâm thủng khiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d262feb9-c02d-45d2-b47c-2bb1b8dad250",
+      "order": 2,
+      "zh": "刺不透它",
+      "pinyin": "",
+      "vi": "đâm không thủng nó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b47dad09-9675-4078-9c52-9b8e7fac4b8d",
+      "order": 3,
+      "zh": "看透问题",
+      "pinyin": "",
+      "vi": "nhìn thấu vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "013b7204-14c8-4bfc-ad24-50bf0442c84f",
+      "order": 4,
+      "zh": "湿透了",
+      "pinyin": "",
+      "vi": "ướt sũng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dc75a1f1-e87b-4c75-bb21-47c35797dfc2",
+      "order": 1,
+      "zh": "这把刀太钝，连纸也刺不透。",
+      "pinyin": "Zhè bǎ dāo tài dùn, lián zhǐ yě cì bù tòu.",
+      "vi": "Con dao này cùn quá, ngay cả giấy cũng đâm không thủng.",
+      "analysis_vi": "连……也…… nhấn mức độ.",
+      "highlight": [
+        "透"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0bb532df-3e71-4071-a05d-5a310a7f098e"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6ad67f6e-54e5-4ecf-9ebd-a98c5655b664",
+      "order": 2,
+      "zh": "如果这个盾真的什么都刺不透，那你的矛再锋利，也不可能刺透它。",
+      "pinyin": "Rúguǒ zhège dùn zhēn de shénme dōu cì bù tòu, nà nǐ de máo zài fēnglì, yě bù kěnéng cì tòu tā.",
+      "vi": "Nếu khiên này gì cũng đâm không thủng, mâu dù sắc mấy cũng không thể đâm thủng.",
+      "analysis_vi": "再……也…… = dù đến mấy cũng….",
+      "highlight": [
+        "透"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0bb532df-3e71-4071-a05d-5a310a7f098e"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "透 đi sau động từ làm bổ ngữ kết quả: 看透, 刺透, 湿透.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f6931007-b9fc-470e-8300-046cb186bc33",
+      "order": 1,
+      "rule_vi": "刺不透 nhấn không đạt kết quả/khả năng, không phải 不刺透.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "透",
+    "back": "xuyên qua, thông suốt; thấu, hết mức",
+    "hint": "tòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0bb532df-3e71-4071-a05d-5a310a7f098e",
+    "source_lesson_vocab_id": null
+  }
+}

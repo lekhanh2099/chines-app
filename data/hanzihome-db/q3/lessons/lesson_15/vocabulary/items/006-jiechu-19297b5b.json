@@ -1,0 +1,274 @@
+{
+  "id": "03fa0d3d-f0e2-4b9f-8758-f885940a1d2e",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "接触",
+  "pinyin": "jiēchù",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tiếp xúc",
+    "meaning_vi": "tiếp xúc; tiếp cận; chạm vào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiếp xúc",
+      "tiếp cận",
+      "chạm vào"
+    ],
+    "short_definition_vi": "tiếp xúc; tiếp cận; chạm vào",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "接",
+        "lishu_vi": "",
+        "structure_note_vi": "接: tiếp cận",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay; động tác bằng tay",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay; động tác bằng tay",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiếp cận",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: tiếp cận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay; động tác bằng tay",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "触",
+        "lishu_vi": "",
+        "structure_note_vi": "触: chạm",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chạm",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: chạm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "接触 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 接触到的人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c2bf73ed-d0db-49d4-90d3-1cc26792ecfa",
+      "order": 1,
+      "zh": "接触到的人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf91e09c-8f3b-4cfc-9fee-4aa3549d5db0",
+      "order": 2,
+      "zh": "第一次接触",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f4e4cef-04d2-4b7e-937f-70149601c709",
+      "order": 3,
+      "zh": "接触中国文化",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2af0abca-d1a1-4eb5-a9f7-d6add77497ef",
+      "order": 4,
+      "zh": "直接接触",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "805675b2-16ec-48d4-8422-a9973c6daf5f",
+      "order": 1,
+      "zh": "从我接触到的人来看，他们大都很热情。",
+      "pinyin": "",
+      "vi": "Từ những người tôi từng tiếp xúc mà xét, họ phần lớn đều rất nhiệt tình。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "接触"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03fa0d3d-f0e2-4b9f-8758-f885940a1d2e"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "02494d91-7ddd-4a05-b569-e67a10d1e61f",
+      "order": 2,
+      "zh": "来中国以后，我接触到了很多热心人。",
+      "pinyin": "",
+      "vi": "Sau khi đến Trung Quốc, tôi tiếp xúc với rất nhiều người nhiệt tình。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "接触"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03fa0d3d-f0e2-4b9f-8758-f885940a1d2e"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6ce8ad5a-c6cb-4cb7-a2b1-7d92e22627f0",
+      "order": 1,
+      "rule_vi": "Nếu chỉ muốn nói quen bạn, dùng 认识朋友 tự nhiên hơn 接触朋友。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nếu chỉ muốn nói quen bạn, dùng 认识朋友 tự nhiên hơn 接触朋友。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "接触",
+    "back": "tiếp xúc; tiếp cận; chạm vào",
+    "hint": "jiēchù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "03fa0d3d-f0e2-4b9f-8758-f885940a1d2e",
+    "source_lesson_vocab_id": null
+  }
+}

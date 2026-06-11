@@ -1,0 +1,67 @@
+{
+  "id": "synthetic_vocab_ce675a642dd501dd",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "放松",
+  "pinyin": "fàngsōng",
+  "meaning_vi": "thả lỏng, thư giãn",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Động từ chỉ thả lỏng/thư giãn; không phải động từ li hợp.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "275b46f4-3166-48b7-9766-58384178d1be",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "275b46f4-3166-48b7-9766-58384178d1be",
+    "type": "vocabulary_item",
+    "order": 34,
+    "hanzi": "放松",
+    "pinyin": "fàngsōng",
+    "meaning_vi": "thả lỏng, thư giãn",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "放松",
+      "back": "fàngsōng — thả lỏng, thư giãn",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "generated_from_松_collocation_not_pdf_main_vocab",
+    "check_needed": false,
+    "notes": [],
+    "note_vi": "Không nằm trong bảng 生词 chính của PDF Lesson 24; được giữ lại vì file nguồn đã có và là từ phái sinh/collocation của 松.",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Động từ chỉ thả lỏng/thư giãn; không phải động từ li hợp.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

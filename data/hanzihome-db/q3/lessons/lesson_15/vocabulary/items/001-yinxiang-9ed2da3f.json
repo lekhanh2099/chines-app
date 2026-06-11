@@ -1,0 +1,213 @@
+{
+  "id": "38427764-5653-4e16-8583-af62d7a0f7bb",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "印象",
+  "pinyin": "yìnxiàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ấn tượng",
+    "meaning_vi": "ấn tượng; hình ảnh/cảm giác còn lưu lại sau khi tiếp xúc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ấn tượng",
+      "hình ảnh/cảm giác còn lưu lại sau khi tiếp xúc"
+    ],
+    "short_definition_vi": "ấn tượng; hình ảnh/cảm giác còn lưu lại sau khi tiếp xúc",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "印",
+        "lishu_vi": "",
+        "structure_note_vi": "印: in; dấu ấn",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "in; dấu ấn",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: in; dấu ấn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "象",
+        "lishu_vi": "",
+        "structure_note_vi": "象: hình tượng; dáng vẻ",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hình tượng; dáng vẻ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: hình tượng; dáng vẻ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "印象 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 第一印象.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2a0fe92a-f677-436d-9515-6bb2bc59c586",
+      "order": 1,
+      "zh": "第一印象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5849da0b-7053-417e-8feb-d7a540476e8b",
+      "order": 2,
+      "zh": "印象深刻",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a17e673-c02c-49dd-b6e6-7308e65cdda1",
+      "order": 3,
+      "zh": "留下印象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6f0bcb2-312b-41de-b86e-675663b3a7ed",
+      "order": 4,
+      "zh": "给人留下好印象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "67c4c241-cad5-4534-b526-8d282b2e30a9",
+      "order": 1,
+      "zh": "他给我的第一印象很好。",
+      "pinyin": "",
+      "vi": "Ấn tượng đầu tiên anh ấy để lại cho tôi rất tốt。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "印象"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "38427764-5653-4e16-8583-af62d7a0f7bb"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "304daef8-d7c3-4202-9f62-610258613624",
+      "order": 2,
+      "zh": "这次留学给我留下了很深刻的印象。",
+      "pinyin": "",
+      "vi": "Lần du học này để lại cho tôi ấn tượng rất sâu sắc。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "印象"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "38427764-5653-4e16-8583-af62d7a0f7bb"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2eda8b63-3bd9-417e-9994-300b4375cc6e",
+      "order": 1,
+      "rule_vi": "Không dùng 印象 như động từ; nói 我对她的印象很好 hoặc 她给我留下了好印象。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 印象 như động từ; nói 我对她的印象很好 hoặc 她给我留下了好印象。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "印象",
+    "back": "ấn tượng; hình ảnh/cảm giác còn lưu lại sau khi tiếp xúc",
+    "hint": "yìnxiàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "38427764-5653-4e16-8583-af62d7a0f7bb",
+    "source_lesson_vocab_id": null
+  }
+}

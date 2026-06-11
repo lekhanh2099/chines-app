@@ -1,0 +1,307 @@
+{
+  "id": "63f1b18f-6973-45cd-ba8a-1282ec8c4437",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "附文",
+  "pinyin": "fùwén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Phụ văn",
+    "meaning_vi": "phần văn bản kèm theo, bài đọc/phụ văn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phần văn bản kèm theo, bài đọc/phụ văn"
+    ],
+    "short_definition_vi": "phần văn bản kèm theo, bài đọc/phụ văn",
+    "textbook_focus_vi": "phần văn bản kèm theo, bài đọc/phụ văn",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "附",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ",
+            "meaning_vi": "gò/quan hệ phụ thuộc",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "阝 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "阜",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ",
+              "radical_name_zh": "",
+              "hanviet": "phụ",
+              "meaning_vi": "gò/quan hệ phụ thuộc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "付",
+            "hanviet": "phó",
+            "meaning_vi": "giao/phó",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "kèm theo/phụ vào",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "文",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "文",
+            "hanviet": "văn",
+            "meaning_vi": "chữ viết/văn hóa",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "文 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "文",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Văn",
+              "radical_name_zh": "",
+              "hanviet": "văn",
+              "meaning_vi": "chữ viết/văn hóa",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "văn/chữ viết",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "văn bản kèm thêm phần chính",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4fca7981-9b8c-4240-8df4-3d4a59fefe60",
+      "order": 1,
+      "zh": "课后附文",
+      "pinyin": "",
+      "vi": "phụ văn sau bài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c094fad-0c39-400e-9a69-896bdd1ac8c9",
+      "order": 2,
+      "zh": "阅读附文",
+      "pinyin": "",
+      "vi": "đọc phụ văn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f155e9b-22d2-430c-8128-79af65670b58",
+      "order": 3,
+      "zh": "附文内容",
+      "pinyin": "",
+      "vi": "nội dung phụ văn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a7d1f9e-1555-48d9-93c3-b52b86ce56d6",
+      "order": 4,
+      "zh": "这篇附文",
+      "pinyin": "",
+      "vi": "bài phụ văn này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "399b3ab8-052a-45e7-9421-1a9250495713",
+      "order": 5,
+      "zh": "附文部分",
+      "pinyin": "",
+      "vi": "phần phụ văn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "434f3a42-9b29-4e1b-bf6c-f87e5a6ab039",
+      "order": 1,
+      "zh": "这课的附文讲的是“南辕北辙”的故事。",
+      "pinyin": "Zhè kè de fùwén jiǎng de shì “Nán yuán běi zhé” de gùshi.",
+      "vi": "Phụ văn của bài này kể câu chuyện Nam Viên Bắc Triệt.",
+      "analysis_vi": "讲的是 nhấn nội dung được kể.",
+      "highlight": [
+        "附文"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "63f1b18f-6973-45cd-ba8a-1282ec8c4437"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "191a4032-29a7-4ba0-8931-abd40c399b2d",
+      "order": 2,
+      "zh": "如果不了解附文，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě fùwén, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 附文, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "附文"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "63f1b18f-6973-45cd-ba8a-1282ec8c4437"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d37856cb-3c6c-4544-9443-ba6e9fdd55ee",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解附文在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě fùwén zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 附文 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "附文"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "63f1b18f-6973-45cd-ba8a-1282ec8c4437"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Sách tiếng Trung hay dùng phụ văn để đưa thành ngữ, ngụ ngôn, văn hóa vào sau bài chính.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e0c76eb3-5744-4464-a7b2-fa015cc6e0c0",
+      "order": 1,
+      "rule_vi": "附文 không phải từ giao tiếp thường ngày; tài liệu bổ sung nói 补充材料。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "附文",
+    "back": "phần văn bản kèm theo, bài đọc/phụ văn",
+    "hint": "fùwén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "63f1b18f-6973-45cd-ba8a-1282ec8c4437",
+    "source_lesson_vocab_id": null
+  }
+}

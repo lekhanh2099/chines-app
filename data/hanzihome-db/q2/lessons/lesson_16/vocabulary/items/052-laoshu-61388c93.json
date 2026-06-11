@@ -1,0 +1,255 @@
+{
+  "id": "c5b50dfb-da08-4a82-a4bf-051d4dde31a4",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "老鼠",
+  "pinyin": "lǎoshǔ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lão thử",
+    "meaning_vi": "chuột",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuột"
+    ],
+    "short_definition_vi": "chuột",
+    "textbook_focus_vi": "chuột",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "老",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "già, lâu; trong 老鼠 không phải chuột già",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "鼠",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "鼠",
+            "hanviet": "thử",
+            "meaning_vi": "chuột",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "鼠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thử",
+              "radical_name_zh": "",
+              "hanviet": "thử",
+              "meaning_vi": "chuột",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "鼠 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuột",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "老鼠 là chuột nói chung, thường chỉ chuột nhà.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6020f169-b1d0-4e11-b63f-7ea23f409bfa",
+      "order": 1,
+      "zh": "一只老鼠",
+      "pinyin": "",
+      "vi": "một con chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09ff5d00-22ea-401d-8ff1-d371f811fe1d",
+      "order": 2,
+      "zh": "看见老鼠",
+      "pinyin": "",
+      "vi": "nhìn thấy chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47b17011-3f25-4a09-87e3-3cf3af9518e1",
+      "order": 3,
+      "zh": "抓老鼠",
+      "pinyin": "",
+      "vi": "bắt chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1fd7af3-0023-4bb9-8c00-e8659a8c2bb1",
+      "order": 4,
+      "zh": "怕老鼠",
+      "pinyin": "",
+      "vi": "sợ chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cd8eef99-d8d6-400a-9e6c-e0da77d705f5",
+      "order": 5,
+      "zh": "猫抓老鼠",
+      "pinyin": "",
+      "vi": "mèo bắt chuột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dc485cb9-4518-4a60-9805-6c72e68d1288",
+      "order": 1,
+      "zh": "沙发下面跑出来一只老鼠。",
+      "pinyin": "Shāfā xiàmiàn pǎo chūlai yì zhī lǎoshǔ.",
+      "vi": "Dưới sofa có một con chuột chạy ra.",
+      "analysis_vi": "Câu tồn hiện/xuất hiện: vị trí + 跑出来 + 一只老鼠.",
+      "highlight": [
+        "老鼠"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "c5b50dfb-da08-4a82-a4bf-051d4dde31a4"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9f1244c9-b076-4b9c-8faa-b78528b9647e",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：老鼠。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: chuột.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "老鼠"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "c5b50dfb-da08-4a82-a4bf-051d4dde31a4"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 老鼠 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dc8d5c12-db32-4e5c-85b8-e51eb11d891a",
+      "order": 1,
+      "rule_vi": "老鼠 không phải 'chuột già'; 老 là thành phần cố định của tên gọi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "老鼠 không phải 'chuột già'; 老 là thành phần cố định của tên gọi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "老鼠",
+    "back": "chuột",
+    "hint": "lǎoshǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_052"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c5b50dfb-da08-4a82-a4bf-051d4dde31a4",
+    "source_lesson_vocab_id": null
+  }
+}

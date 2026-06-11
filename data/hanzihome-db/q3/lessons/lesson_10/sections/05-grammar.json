@@ -1,0 +1,623 @@
+{
+  "id": "6afd96eb-f0ec-441b-b4b4-b1bc7be454e6",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法 / 语法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "291dbd9f-d7a8-48b3-89e0-9175a7c78687",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "弄",
+      "title_vi": "弄",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "57ae2843-d9e5-48c2-82c3-637c6e09037e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Động từ khẩu ngữ nghĩa rộng: làm, xử lý, làm cho thành một trạng thái/kết quả.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "612eaa5a-89bf-48e0-966e-4e8309838fa9",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "弄 + tân ngữ / 弄 + 结果补语",
+          "meaning_vi": "làm; xử lý; khiến thành kết quả",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "弄 + tân ngữ / 弄 + 结果补语"
+            }
+          ],
+          "examples": [
+            {
+              "id": "1cf50cbb-623a-4dcd-988c-d01071b3bbb4",
+              "zh": "你对你们公司的业务完全弄清楚了吗？",
+              "pinyin": "nǐ duì nǐmen gōngsī de yèwù wánquán nòng qīngchu le ma？",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "弄"
+              ],
+              "grammar_refs": [
+                "291dbd9f-d7a8-48b3-89e0-9175a7c78687"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "a3bdca18-1336-4a79-a08b-4239c53d15ff",
+              "zh": "电脑坏了，我来弄。",
+              "pinyin": "diànnǎo huài le，wǒ lái nòng。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "弄"
+              ],
+              "grammar_refs": [
+                "291dbd9f-d7a8-48b3-89e0-9175a7c78687"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            },
+            {
+              "id": "df309984-f754-47d2-b99a-3cc75d5096fa",
+              "zh": "别把衣服弄脏了。",
+              "pinyin": "bié bǎ yīfu nòng zāng le。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "弄"
+              ],
+              "grammar_refs": [
+                "291dbd9f-d7a8-48b3-89e0-9175a7c78687"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "474927bc-72e0-46ec-954a-4e541eafc966",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "搞",
+      "title_vi": "搞",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "868f2461-ea4d-42dd-989d-7f1208e7f757",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Làm, tiến hành, xử lý; phạm vi rộng hơn 弄, có thể dùng với công việc, hoạt động, nghiên cứu, kỹ thuật.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "bb796594-6ebf-4d5b-89ce-c4d60dafc8ef",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "搞 + 活动/研究/工作; 搞 + 清楚/明白/通",
+          "meaning_vi": "làm; tiến hành; làm cho thông suốt",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "搞 + 活动/研究/工作; 搞 + 清楚/明白/通"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2695c2e4-018d-46a5-b091-d2243bd89f95",
+              "zh": "对于他们做国际贸易的技巧完全搞通了吗？",
+              "pinyin": "duìyú tāmen zuò guójì màoyì de jìqiǎo wánquán gǎo tōng le ma？",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "搞"
+              ],
+              "grammar_refs": [
+                "474927bc-72e0-46ec-954a-4e541eafc966"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "6f4bb602-62bb-4cf2-a55d-e51f2658ee8d",
+              "zh": "他在大学里搞研究。",
+              "pinyin": "tā zài dàxué lǐ gǎo yánjiū。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "搞"
+              ],
+              "grammar_refs": [
+                "474927bc-72e0-46ec-954a-4e541eafc966"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            },
+            {
+              "id": "9c241f44-8753-45ef-9f8f-7d2a33d74b84",
+              "zh": "这件事还没搞清楚。",
+              "pinyin": "zhè jiàn shì hái méi gǎo qīngchu。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "搞"
+              ],
+              "grammar_refs": [
+                "474927bc-72e0-46ec-954a-4e541eafc966"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "ecd23374-1730-4343-b588-3cd2fb99db79",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "甚至",
+      "title_vi": "甚至",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "ebf24a41-e210-4ad3-9685-68e35317d54b",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Đẩy ý lên mức cao hơn hoặc bất ngờ hơn điều vừa nói; nghĩa là “thậm chí”.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "60cc3e06-e5c0-4709-b582-8ecfde467e2d",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "A，甚至 B / 甚至连……都/也……",
+          "meaning_vi": "thậm chí",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "A，甚至 B / 甚至连……都/也……"
+            }
+          ],
+          "examples": [
+            {
+              "id": "fa6a9e85-c9f2-495f-a163-f92fd35bdf13",
+              "zh": "甚至连怎么修理打印机、复印机的小毛病都要学会。",
+              "pinyin": "shènzhì lián zěnme xiūlǐ dǎyìnjī、fùyìnjī de xiǎo máobìng dōu yào xuéhuì。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "甚至"
+              ],
+              "grammar_refs": [
+                "ecd23374-1730-4343-b588-3cd2fb99db79"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "6e08fd11-cd2a-40de-b6d6-eb3d81261b6a",
+              "zh": "他很忙，甚至周末也不休息。",
+              "pinyin": "tā hěn máng，shènzhì zhōumò yě bù xiūxi。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "甚至"
+              ],
+              "grammar_refs": [
+                "ecd23374-1730-4343-b588-3cd2fb99db79"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "b4846970-136f-4e6d-89ae-b39baab05492",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "以后",
+      "title_vi": "以后",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "30ffb252-3de5-4052-bb35-00bb4b32fbb1",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Chỉ thời gian sau một mốc hoặc sau một sự kiện.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "81bd6f10-7372-465c-b096-1b5a16368fec",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "时间/事件 + 以后; V/句子 + 以后",
+          "meaning_vi": "sau khi; về sau",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "时间/事件 + 以后; V/句子 + 以后"
+            }
+          ],
+          "examples": [
+            {
+              "id": "76f01a30-55a3-442c-80fd-ae994e0d25b0",
+              "zh": "什么东西都搞通了以后再走。",
+              "pinyin": "shénme dōngxi dōu gǎo tōng le yǐhòu zài zǒu。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "以后"
+              ],
+              "grammar_refs": [
+                "b4846970-136f-4e6d-89ae-b39baab05492"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "adc0cd62-baeb-4896-ab3e-f447afba9608",
+              "zh": "毕业以后，我想去中国工作。",
+              "pinyin": "bìyè yǐhòu，wǒ xiǎng qù Zhōngguó gōngzuò。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "以后"
+              ],
+              "grammar_refs": [
+                "b4846970-136f-4e6d-89ae-b39baab05492"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "56484844-874c-4f9e-ae8b-174d5c2ee195",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "偶然",
+      "title_vi": "偶然",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "34e5854b-59ea-46e9-b4bb-22aa3a3ff840",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Chỉ sự việc xảy ra tình cờ, không cố ý, không có kế hoạch.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "9f79cf62-2389-48a6-923b-119ab68769f9",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "偶然 + V; 偶然的 + N",
+          "meaning_vi": "tình cờ; ngẫu nhiên",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "偶然 + V; 偶然的 + N"
+            }
+          ],
+          "examples": [
+            {
+              "id": "6168c0ea-12c3-4493-9dbd-00e945dd9408",
+              "zh": "一年之后，那位朋友偶然遇到他。",
+              "pinyin": "yì nián zhīhòu，nà wèi péngyou ǒurán yùdào tā。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "偶然"
+              ],
+              "grammar_refs": [
+                "56484844-874c-4f9e-ae8b-174d5c2ee195"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "1eff3784-884d-4905-93b8-0b68ee92f6ba",
+              "zh": "我偶然在街上遇见了老同学。",
+              "pinyin": "wǒ ǒurán zài jiēshang yùjiàn le lǎo tóngxué。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "偶然"
+              ],
+              "grammar_refs": [
+                "56484844-874c-4f9e-ae8b-174d5c2ee195"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "d903d4bd-81f8-4c39-96da-09641708c8f3",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "却",
+      "title_vi": "却",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6f2b3d70-9a75-4d1e-b8db-6c50613af7ee",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Biểu thị chuyển ý/trái dự đoán; thường đứng sau chủ ngữ.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "9018017a-6455-40e1-8593-cd3dbee965dc",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "主语 + 却 + 谓语",
+          "meaning_vi": "nhưng; thế mà; lại",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "主语 + 却 + 谓语"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2716ad3e-3088-4163-9cfe-08b7b951f063",
+              "zh": "你的能力不足，却又不努力学习。",
+              "pinyin": "nǐ de nénglì bùzú，què yòu bù nǔlì xuéxí。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "却"
+              ],
+              "grammar_refs": [
+                "d903d4bd-81f8-4c39-96da-09641708c8f3"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "0aeecc18-a902-40f5-be52-daf23df8d7b9",
+              "zh": "大家都来了，他却没来。",
+              "pinyin": "dàjiā dōu lái le，tā què méi lái。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "却"
+              ],
+              "grammar_refs": [
+                "d903d4bd-81f8-4c39-96da-09641708c8f3"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "a79c9e4b-99ee-4ef9-a11d-7b9eb240f03b",
+      "type": "grammar_point",
+      "order": 7,
+      "title": "既……又……",
+      "title_vi": "既……又……",
+      "level": "HSK3+",
+      "tags": [
+        "from_text_sentence_pattern"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "5acc5b86-2183-43ad-aba0-9faad1c3d067",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nối hai đặc điểm, hành động hoặc kết quả cùng tồn tại.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "6e6b7ad1-5342-4149-a0a0-b0f0f99dd838",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "既 + A，又 + B",
+          "meaning_vi": "vừa A vừa B",
+          "formulas": [
+            {
+              "label": "pattern",
+              "pattern": "既 + A，又 + B"
+            }
+          ],
+          "examples": [
+            {
+              "id": "b48b7180-b1c0-4f86-94f6-e6c16c9dcc5a",
+              "zh": "不是既出了气，又有许多收获吗？",
+              "pinyin": "bú shì jì chū le qì，yòu yǒu xǔduō shōuhuò ma？",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "既……又……"
+              ],
+              "grammar_refs": [
+                "a79c9e4b-99ee-4ef9-a11d-7b9eb240f03b"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "afdd7cc9-a26c-480f-af57-f2e85c0a003e",
+              "zh": "这样做既省时间，又省钱。",
+              "pinyin": "zhèyàng zuò jì shěng shíjiān，yòu shěng qián。",
+              "vi": "",
+              "en": "",
+              "highlight": [
+                "既……又……"
+              ],
+              "grammar_refs": [
+                "a79c9e4b-99ee-4ef9-a11d-7b9eb240f03b"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

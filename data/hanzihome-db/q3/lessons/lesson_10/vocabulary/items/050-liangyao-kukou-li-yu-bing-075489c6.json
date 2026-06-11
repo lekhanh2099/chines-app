@@ -1,0 +1,395 @@
+{
+  "id": "8f21da1a-3748-4218-a716-e971eef69b86",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "良药苦口利于病",
+  "pinyin": "liángyào kǔkǒu lì yú bìng",
+  "pos": {
+    "raw_vi": "Tục ngữ / Cách ngôn",
+    "raw_cn": "谚语 / 格言",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lương dược khổ khẩu lợi vu bệnh",
+    "meaning_vi": "thuốc tốt đắng miệng nhưng có lợi cho bệnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuốc tốt đắng miệng nhưng có lợi cho bệnh"
+    ],
+    "short_definition_vi": "thuốc tốt đắng miệng nhưng có lợi cho bệnh",
+    "textbook_focus_vi": "thuốc tốt đắng miệng nhưng có lợi cho bệnh",
+    "register_vi": "sách vở/văn hóa",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "良",
+        "lishu_vi": "lương",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "药",
+        "lishu_vi": "dược",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "苦",
+        "lishu_vi": "khổ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "口",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "利",
+        "lishu_vi": "lợi",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt, khắc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, khắc",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, khắc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "于",
+        "lishu_vi": "vu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "病",
+        "lishu_vi": "bệnh",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thuốc tốt đắng miệng nhưng có lợi cho bệnh",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 良药苦口.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忠言逆耳利于行",
+        "pinyin": "zhōngyán nì’ěr lì yú xíng",
+        "meaning_vi": "lời thật trái tai có lợi cho hành động",
+        "difference_vi": "cặp nghĩa gần",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7c97e4e0-5617-4939-8a61-0f666f739ac6",
+      "order": 1,
+      "zh": "良药苦口",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b571329-3e89-431c-85d5-c031e8076fa6",
+      "order": 2,
+      "zh": "良药苦口利于病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7da3222-2030-44d3-a3b4-f81362f22a15",
+      "order": 3,
+      "zh": "良药苦口，忠言逆耳",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37b16e60-e8e6-48eb-9c75-2c9e6dc26030",
+      "order": 4,
+      "zh": "听得进良药苦口的话",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "494e660d-19e4-451e-be4e-30d51d07bf61",
+      "order": 1,
+      "zh": "头儿的话虽然不好听，但良药苦口利于病。",
+      "pinyin": "Tóur de huà suīrán bù hǎotīng, dàn liángyào kǔkǒu lì yú bìng.",
+      "vi": "Lời sếp tuy khó nghe, nhưng thuốc tốt đắng miệng mà có lợi cho bệnh.",
+      "analysis_vi": "虽然……但…… nối hai ý ngược.",
+      "highlight": [
+        "良药苦口利于病"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8f21da1a-3748-4218-a716-e971eef69b86"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu này nhấn điều có ích thật sự có thể khó chịu lúc đầu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2ea4792b-1680-4b3b-911a-c7ac7a28152f",
+      "order": 1,
+      "rule_vi": "Không dùng câu này để biện minh cho lời xúc phạm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "良药苦口利于病",
+    "back": "thuốc tốt đắng miệng nhưng có lợi cho bệnh",
+    "hint": "liángyào kǔkǒu lì yú bìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8f21da1a-3748-4218-a716-e971eef69b86",
+    "source_lesson_vocab_id": null
+  }
+}

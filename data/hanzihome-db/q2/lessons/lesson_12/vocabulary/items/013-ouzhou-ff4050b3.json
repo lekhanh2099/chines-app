@@ -1,0 +1,347 @@
+{
+  "id": "755b809b-3bd6-4d0a-8683-3a8d5988768e",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "欧洲",
+  "pinyin": "Ōuzhōu",
+  "pos": {
+    "raw_vi": "Danh từ riêng / Địa danh",
+    "raw_cn": "",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "event_level"
+  ],
+  "meaning": {
+    "hanviet": "Âu châu",
+    "meaning_vi": "châu Âu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "châu Âu"
+    ],
+    "short_definition_vi": "châu Âu",
+    "textbook_focus_vi": "châu Âu",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "欧",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "区",
+            "hanviet": "khu",
+            "meaning_vi": "khu vực",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "thành phần bên phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Âu, châu Âu",
+        "modern_logic_vi": "欧 trong 欧洲 học như tên khu vực.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "洲",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "州",
+            "hanviet": "châu",
+            "meaning_vi": "vùng đất/châu",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "châu lục",
+        "modern_logic_vi": "洲 gợi vùng/châu lục liên quan địa lý nước/đất.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "欧洲 là châu Âu; 欧 nên học như âm/tên khu vực, 洲 là châu lục.",
+    "memory_tip_vi": "欧洲 là châu Âu; 欧 nên học như âm/tên khu vực, 洲 là châu lục.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "欧盟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Liên minh châu Âu, không đồng nghĩa 欧洲",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "欧美",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Âu-Mỹ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "西方",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phương Tây, nghĩa rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亚洲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "châu Á",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "亚洲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "châu Á",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "欧洲",
+        "right": "亚洲",
+        "meaning_vi": "",
+        "note_vi": "châu Âu ↔ châu Á",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c04993a5-84d0-4b90-a828-f8c01cfc0994",
+      "order": 1,
+      "zh": "去欧洲",
+      "pinyin": "",
+      "vi": "đi châu Âu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "263df874-ee1f-4d29-bb57-a473e400c7ca",
+      "order": 2,
+      "zh": "欧洲国家",
+      "pinyin": "",
+      "vi": "quốc gia châu Âu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc3a1129-1d62-4bba-a67c-894f7d66724c",
+      "order": 3,
+      "zh": "欧洲旅行",
+      "pinyin": "",
+      "vi": "du lịch châu Âu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df2611fc-0b61-47c1-803e-26d2b6773732",
+      "order": 4,
+      "zh": "欧洲文化",
+      "pinyin": "",
+      "vi": "văn hóa châu Âu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3b16ef94-5c75-4e3d-b9f6-ce65e4268885",
+      "order": 5,
+      "zh": "欧洲锦标赛",
+      "pinyin": "",
+      "vi": "giải vô địch châu Âu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0568eb9f-7134-4635-806c-e8a6c6624364",
+      "order": 1,
+      "zh": "他明年想去欧洲旅行。",
+      "pinyin": "",
+      "vi": "Sang năm anh ấy muốn đi du lịch châu Âu.",
+      "analysis_vi": "去欧洲旅行 là cụm tự nhiên.",
+      "highlight": [
+        "欧洲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "755b809b-3bd6-4d0a-8683-3a8d5988768e"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c4292e2a-41d7-430b-a2ac-2049b82020f1",
+      "order": 2,
+      "zh": "欧洲的签证你办好了吗？",
+      "pinyin": "",
+      "vi": "Visa đi châu Âu bạn làm xong chưa?",
+      "analysis_vi": "欧洲的签证 là chủ đề lớn; 办好 nhấn kết quả.",
+      "highlight": [
+        "欧洲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "755b809b-3bd6-4d0a-8683-3a8d5988768e"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "欧洲 là châu lục, 欧盟 là EU.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ea5763e8-ec3d-4f69-afd9-cd4d2d27a9f3",
+      "order": 1,
+      "rule_vi": "Không dùng 欧洲 để chỉ toàn bộ phương Tây; 西方文化 rộng hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "欧洲",
+    "back": "châu Âu",
+    "hint": "Ōuzhōu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "event_level"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "755b809b-3bd6-4d0a-8683-3a8d5988768e",
+    "source_lesson_vocab_id": null
+  }
+}

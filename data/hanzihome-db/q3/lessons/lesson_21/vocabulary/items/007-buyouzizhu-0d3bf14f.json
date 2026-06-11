@@ -1,0 +1,268 @@
+{
+  "id": "e130db17-26b2-4912-9e4f-a432057fa974",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "不由自主",
+  "pinyin": "bùyóuzìzhǔ",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语/短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "bất do tự chủ",
+    "meaning_vi": "không tự chủ được, bất giác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không tự chủ được",
+      "bất giác"
+    ],
+    "short_definition_vi": "không tự chủ được, bất giác",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: không tự chủ được, bất giác.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "由",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "自",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "主",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不由自主 trong bài được hiểu theo nghĩa: không tự chủ được, bất giác. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 不由自主.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "不由自主 nhấn phản ứng không tự chủ; khẩu ngữ có thể dùng 忍不住."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3bbedefa-977c-48ad-8348-8373b6fab623",
+      "order": 1,
+      "zh": "不由自主地笑了",
+      "pinyin": "",
+      "vi": "bất giác cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "513022ea-8092-471a-9717-46b53b5cd5ae",
+      "order": 2,
+      "zh": "不由自主地哭了",
+      "pinyin": "",
+      "vi": "không kìm được mà khóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48bf6802-2652-4fa5-83d7-90bf4a5bd660",
+      "order": 3,
+      "zh": "不由自主地走进去",
+      "pinyin": "",
+      "vi": "bất giác bước vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e0b3710c-7b1b-41f6-b09c-076fde264e9f",
+      "order": 4,
+      "zh": "不由自主地想起",
+      "pinyin": "",
+      "vi": "bất giác nhớ đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7668ae86-2ab3-463b-bd3b-f5ed70990838",
+      "order": 5,
+      "zh": "不由自主地紧张起来",
+      "pinyin": "",
+      "vi": "bất giác căng thẳng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "958fa51f-9e00-4599-9788-e827e88c2ce5",
+      "order": 1,
+      "zh": "听到这句话，我不由自主地笑了。",
+      "pinyin": "",
+      "vi": "Nghe câu này, tôi bất giác bật cười.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "不由自主"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e130db17-26b2-4912-9e4f-a432057fa974"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d4a80d3e-5577-472d-a8cc-e7e5f16fbf90",
+      "order": 2,
+      "zh": "我还是不由自主地走进了那家发廊。",
+      "pinyin": "",
+      "vi": "Tôi vẫn không tự chủ được mà bước vào salon đó.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "不由自主"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e130db17-26b2-4912-9e4f-a432057fa974"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "不由自主 nhấn phản ứng không tự chủ; khẩu ngữ có thể dùng 忍不住.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dbfed707-a1af-4b4a-b1f8-59f8f21ed68e",
+      "order": 1,
+      "rule_vi": "不由自主 nhấn phản ứng không tự chủ; khẩu ngữ có thể dùng 忍不住.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我不由自主地计划了三个月。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "不由自主 nhấn phản ứng không tự chủ; khẩu ngữ có thể dùng 忍不住.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我早就计划了三个月。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "不由自主 nhấn phản ứng không tự chủ; khẩu ngữ có thể dùng 忍不住.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不由自主",
+    "back": "không tự chủ được, bất giác",
+    "hint": "bùyóuzìzhǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e130db17-26b2-4912-9e4f-a432057fa974",
+    "source_lesson_vocab_id": null
+  }
+}

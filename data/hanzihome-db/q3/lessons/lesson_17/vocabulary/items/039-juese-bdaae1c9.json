@@ -1,0 +1,306 @@
+{
+  "id": "459d66b6-6a25-4326-b069-e6aa1b53f9e8",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "角色",
+  "pinyin": "juésè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giác sắc",
+    "meaning_vi": "vai diễn; vai trò",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vai diễn",
+      "vai trò"
+    ],
+    "short_definition_vi": "vai diễn",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "角",
+        "lishu_vi": "giác",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "角",
+            "hanviet": "giác",
+            "meaning_vi": "góc, sừng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "角 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "角",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Giác",
+              "radical_name_zh": "",
+              "hanviet": "giác",
+              "meaning_vi": "góc, sừng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "góc, sừng, vai diễn",
+        "modern_logic_vi": "góc, sừng, vai diễn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "角",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Giác",
+          "radical_name_zh": "",
+          "hanviet": "giác",
+          "meaning_vi": "góc, sừng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "色",
+        "lishu_vi": "sắc",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "色",
+            "hanviet": "sắc",
+            "meaning_vi": "màu sắc, sắc thái",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "色 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "色",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sắc",
+              "radical_name_zh": "",
+              "hanviet": "sắc",
+              "meaning_vi": "màu sắc, sắc thái",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "màu sắc, sắc thái",
+        "modern_logic_vi": "màu sắc, sắc thái",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "色",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sắc",
+          "radical_name_zh": "",
+          "hanviet": "sắc",
+          "meaning_vi": "màu sắc, sắc thái",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "角色 là vai diễn hoặc vai trò xã hội mà một người đảm nhận.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 扮演角色.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "人物",
+        "pinyin": "rénwù",
+        "meaning_vi": "nhân vật",
+        "difference_vi": "人物 là người/nhân vật, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "身份",
+        "pinyin": "shēnfèn",
+        "meaning_vi": "thân phận/tư cách",
+        "difference_vi": "身份 là identity/tư cách, không hẳn vai trò hành động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "95242413-b617-467d-b9ac-496d174729a5",
+      "order": 1,
+      "zh": "扮演角色",
+      "pinyin": "bànyǎn juésè",
+      "vi": "đóng vai/đảm nhận vai trò",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eee4a1a7-e46e-4654-8782-4f0cef411370",
+      "order": 2,
+      "zh": "教师的角色",
+      "pinyin": "jiàoshī de juésè",
+      "vi": "vai trò giáo viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68555478-0d4b-4246-bbd5-7f49f233a5c1",
+      "order": 3,
+      "zh": "进入角色",
+      "pinyin": "jìnrù juésè",
+      "vi": "nhập vai/đúng vai trò",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "be2b0dc9-07c3-4dc5-be02-180ee7bf36ce",
+      "order": 1,
+      "zh": "老师在课堂上有很重要的角色。",
+      "pinyin": "Lǎoshī zài kètáng shang yǒu hěn zhòngyào de juésè.",
+      "vi": "Giáo viên có vai trò rất quan trọng trong lớp học.",
+      "analysis_vi": "角色 là vai trò xã hội/chức năng.",
+      "highlight": [
+        "角色"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "459d66b6-6a25-4326-b069-e6aa1b53f9e8"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f381f6b5-5ff5-4e9b-825e-a5d0dc85aebb",
+      "order": 2,
+      "zh": "他一走上讲台，就必须进入老师这个角色。",
+      "pinyin": "Tā yì zǒu shàng jiǎngtái, jiù bìxū jìnrù lǎoshī zhège juésè.",
+      "vi": "Vừa bước lên bục giảng, anh ấy phải nhập vào vai trò giáo viên.",
+      "analysis_vi": "进入角色 là cụm cố định.",
+      "highlight": [
+        "角色"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "459d66b6-6a25-4326-b069-e6aa1b53f9e8"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "角色 dùng rộng trong giáo dục, xã hội học và công việc: 教师角色, 学生角色, 管理者角色.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "99067a66-d262-4b10-8de4-4e6035013bd4",
+      "order": 1,
+      "rule_vi": "Không nhầm 角色 với 颜色; 角色 là vai trò/vai diễn, 颜色 là màu sắc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "角色",
+    "back": "vai diễn; vai trò",
+    "hint": "juésè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "459d66b6-6a25-4326-b069-e6aa1b53f9e8",
+    "source_lesson_vocab_id": null
+  }
+}

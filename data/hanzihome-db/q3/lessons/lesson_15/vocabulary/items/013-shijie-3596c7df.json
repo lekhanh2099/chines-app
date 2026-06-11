@@ -1,0 +1,273 @@
+{
+  "id": "a04917ad-b53e-4e8d-958a-44d0c2ae4875",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "世界",
+  "pinyin": "shìjiè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thế giới",
+    "meaning_vi": "thế giới; phạm vi rộng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thế giới",
+      "phạm vi rộng"
+    ],
+    "short_definition_vi": "thế giới; phạm vi rộng",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "世",
+        "lishu_vi": "",
+        "structure_note_vi": "世: đời",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đời",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: đời.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "界",
+        "lishu_vi": "",
+        "structure_note_vi": "界: phạm vi",
+        "components": [
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng/vùng",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "田",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Điền",
+              "radical_name_zh": "",
+              "hanviet": "điền",
+              "meaning_vi": "ruộng/vùng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "田 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "田 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phạm vi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: phạm vi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "田",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Điền",
+          "radical_name_zh": "",
+          "hanviet": "điền",
+          "meaning_vi": "ruộng/vùng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "田 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "世界 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 世界上.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3bc4d78c-74e7-4c06-98a3-2bde28c7c471",
+      "order": 1,
+      "zh": "世界上",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fab28a9f-c3bc-4932-815c-832dca688ec0",
+      "order": 2,
+      "zh": "全世界",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a5f3a25-2c34-4ae1-8aab-9065618b58c3",
+      "order": 3,
+      "zh": "世界各地",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53167c00-1c83-43b1-becd-db8f7c50f33d",
+      "order": 4,
+      "zh": "内心世界",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "be5e1737-e4d5-42f0-a0e5-06dbb7df23e4",
+      "order": 1,
+      "zh": "世界上有很多不同的文化。",
+      "pinyin": "",
+      "vi": "Trên thế giới có rất nhiều nền văn hóa khác nhau。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "世界"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a04917ad-b53e-4e8d-958a-44d0c2ae4875"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "47196ba9-333b-4b96-9ae1-f4d99a506ce5",
+      "order": 2,
+      "zh": "世界上任何国家的人都有好坏之分。",
+      "pinyin": "",
+      "vi": "Trên thế giới, người ở bất kỳ quốc gia nào cũng có người tốt người xấu。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "世界"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a04917ad-b53e-4e8d-958a-44d0c2ae4875"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2693aef3-dd57-411b-bab7-dbbeada8f875",
+      "order": 1,
+      "rule_vi": "Nói “trên thế giới” là 世界上, không dịch máy thành 在世界。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nói “trên thế giới” là 世界上, không dịch máy thành 在世界。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "世界",
+    "back": "thế giới; phạm vi rộng",
+    "hint": "shìjiè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a04917ad-b53e-4e8d-958a-44d0c2ae4875",
+    "source_lesson_vocab_id": null
+  }
+}

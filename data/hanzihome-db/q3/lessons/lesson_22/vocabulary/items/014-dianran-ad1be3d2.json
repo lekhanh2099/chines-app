@@ -1,0 +1,397 @@
+{
+  "id": "b8e20de6-9ee7-432c-b9db-d175f800cc80",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "点燃",
+  "pinyin": "diǎnrán",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "verb"
+  ],
+  "meaning": {
+    "hanviet": "điểm nhiên",
+    "meaning_vi": "châm lửa, thắp lên, khơi dậy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "châm lửa"
+    ],
+    "short_definition_vi": "châm lửa, thắp lên, khơi dậy",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "点",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "灬 được dùng như bộ/thành phần chỉ trường nghĩa: lửa, nhiệt.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 được dùng như bộ/thành phần chỉ trường nghĩa: lửa, nhiệt.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "châm, điểm",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "燃",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "火 được dùng như bộ/thành phần chỉ trường nghĩa: lửa.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "火 được dùng như bộ/thành phần chỉ trường nghĩa: lửa.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "火 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cháy",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "点燃 được ghi nhớ theo nghĩa hiện đại: châm lửa, thắp lên, khơi dậy.",
+    "memory_tip_vi": "Nhớ qua cụm: 点燃火柴.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "点",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "燃烧",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "点着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "激发",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "点燃 thường cần tân ngữ: 点燃蜡烛, 点燃希望."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "59d45cde-45cf-4c32-8129-4e1bf6d1c306",
+      "order": 1,
+      "zh": "点燃火柴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57f9e541-9904-46fb-bea0-cda4f3cb520d",
+      "order": 2,
+      "zh": "点燃蜡烛",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de46f68a-fd63-4c07-8b15-ffe2702a0582",
+      "order": 3,
+      "zh": "点燃希望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1ee0752-8732-4722-8052-2e662e1f20f5",
+      "order": 4,
+      "zh": "点燃梦想",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c56ffce-76de-4136-b453-5bf296012fa6",
+      "order": 5,
+      "zh": "点燃热情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bda27a39-a84e-4615-a64b-7442453d0f89",
+      "order": 6,
+      "zh": "点燃心中的火",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "75c8ce88-128c-4f27-9208-daf755aacd7b",
+      "order": 1,
+      "zh": "他点燃了一支蜡烛。",
+      "pinyin": "Tā diǎnrán le yì zhī làzhú.",
+      "vi": "Anh ấy thắp một cây nến.",
+      "analysis_vi": "点燃 dùng nghĩa gốc: làm vật bắt lửa.",
+      "highlight": [
+        "点燃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8e20de6-9ee7-432c-b9db-d175f800cc80"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5e76214f-7435-4435-8db8-dd5c58204e9c",
+      "order": 2,
+      "zh": "母亲的话点燃了孩子心中的希望。",
+      "pinyin": "Mǔqīn de huà diǎnrán le háizi xīnzhōng de xīwàng.",
+      "vi": "Lời của mẹ đã thắp lên hy vọng trong lòng đứa trẻ.",
+      "analysis_vi": "点燃希望 là nghĩa ẩn dụ.",
+      "highlight": [
+        "点燃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8e20de6-9ee7-432c-b9db-d175f800cc80"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "点燃希望 là ẩn dụ quen thuộc: thắp lên hy vọng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "30114b7f-add4-4d96-8e41-8ab6b9a672e6",
+      "order": 1,
+      "rule_vi": "点燃 thường cần tân ngữ: 点燃蜡烛, 点燃希望.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "点燃 thường cần tân ngữ: 点燃蜡烛, 点燃希望.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "点燃",
+    "back": "châm lửa, thắp lên, khơi dậy",
+    "hint": "diǎnrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "verb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b8e20de6-9ee7-432c-b9db-d175f800cc80",
+    "source_lesson_vocab_id": null
+  }
+}

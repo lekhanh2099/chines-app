@@ -1,0 +1,297 @@
+{
+  "id": "0bcd60e7-4bbb-48dc-baf1-0a073f6da356",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "选择",
+  "pinyin": "xuǎnzé",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb_noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tuyển trạch",
+    "meaning_vi": "lựa chọn, chọn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lựa chọn",
+      "chọn"
+    ],
+    "short_definition_vi": "lựa chọn, chọn",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "选",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, chuyển động",
+            "position_vi": "bao ngoài/bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "先",
+            "hanviet": "tiên",
+            "meaning_vi": "trước",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chọn",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "择",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, hành động bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chọn, lựa",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "选择 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 选择 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "挑选",
+        "pinyin": "tiāoxuǎn",
+        "meaning_vi": "chọn kỹ",
+        "difference_vi": "Từ nhiều món/người cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "决定",
+        "pinyin": "juédìng",
+        "meaning_vi": "quyết định",
+        "difference_vi": "Bước chốt sau cân nhắc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抉择",
+        "pinyin": "juézé",
+        "meaning_vi": "lựa chọn khó",
+        "difference_vi": "Văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "58231c39-75ed-4577-a66e-300b4bc55798",
+      "order": 1,
+      "zh": "选择专业",
+      "pinyin": "xuǎnzé zhuānyè",
+      "vi": "chọn chuyên ngành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e30917d-09d2-42ae-8267-0df295f14cef",
+      "order": 2,
+      "zh": "选择道路",
+      "pinyin": "xuǎnzé dàolù",
+      "vi": "chọn con đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d067330-4af1-40b3-a10c-98352ecf0fb0",
+      "order": 3,
+      "zh": "做出选择",
+      "pinyin": "zuòchū xuǎnzé",
+      "vi": "đưa ra lựa chọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b42417f5-8752-4b6b-b1a7-3d1363700b36",
+      "order": 4,
+      "zh": "自己的选择",
+      "pinyin": "zìjǐ de xuǎnzé",
+      "vi": "lựa chọn của mình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "14fc6dfe-38ae-4f4b-af84-d6780ae79be9",
+      "order": 1,
+      "zh": "这是我自己的选择。",
+      "pinyin": "Zhè shì wǒ zìjǐ de xuǎnzé.",
+      "vi": "Đây là lựa chọn của chính tôi.",
+      "analysis_vi": "选择 là danh từ.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0bcd60e7-4bbb-48dc-baf1-0a073f6da356"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ffbb8912-1fbf-4d62-953f-ebf48d6935cf",
+      "order": 2,
+      "zh": "人生道路上，每个人都会面对很多选择。",
+      "pinyin": "Rénshēng dàolù shang, měi ge rén dōu huì miànduì hěn duō xuǎnzé.",
+      "vi": "Trên đường đời, mỗi người đều sẽ đối mặt nhiều lựa chọn.",
+      "analysis_vi": "面对选择 là cụm tự nhiên.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0bcd60e7-4bbb-48dc-baf1-0a073f6da356"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "选择自己的道路 gần tiếng Việt 'chọn con đường của mình'.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d806b667-80b8-4b0a-b339-97cf5f67053c",
+      "order": 1,
+      "rule_vi": "选择 là quá trình chọn; 决定 là quyết định cuối cùng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "选择",
+    "back": "lựa chọn, chọn",
+    "hint": "xuǎnzé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0bcd60e7-4bbb-48dc-baf1-0a073f6da356",
+    "source_lesson_vocab_id": null
+  }
+}

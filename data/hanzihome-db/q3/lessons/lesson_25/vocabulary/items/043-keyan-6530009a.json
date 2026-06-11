@@ -1,0 +1,248 @@
+{
+  "id": "14cdc394-052a-434a-97ee-b5fe5edba956",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "科研",
+  "pinyin": "kēyán",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词/简称",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "khoa nghiên",
+    "meaning_vi": "nghiên cứu khoa học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghiên cứu khoa học"
+    ],
+    "short_definition_vi": "nghiên cứu khoa học",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "科",
+        "lishu_vi": "khoa",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa, cây lương thực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa, cây lương thực",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa, cây lương thực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khoa, ngành",
+        "modern_logic_vi": "Trong từ này, 科 góp phần vào nghĩa hiện đại: khoa, ngành.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "研",
+        "lishu_vi": "nghiên",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "thạch",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "thạch",
+            "meaning_vi": "đá",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "thạch",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghiên cứu",
+        "modern_logic_vi": "Trong từ này, 研 góp phần vào nghĩa hiện đại: nghiên cứu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "科研 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 科研成绩.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho việc học bình thường; học tiếng Trung là 学习汉语."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de94bf1d-de33-4c39-9035-e84ee15307e0",
+      "order": 1,
+      "zh": "科研成绩",
+      "pinyin": "",
+      "vi": "thành tích nghiên cứu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f542579-4c40-4e40-b78d-eab410bfd4db",
+      "order": 2,
+      "zh": "科研成果",
+      "pinyin": "",
+      "vi": "thành quả nghiên cứu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91c04c99-227b-4445-a0ee-32f28ee48e51",
+      "order": 3,
+      "zh": "从事科研",
+      "pinyin": "",
+      "vi": "làm nghiên cứu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e93347d9-95d3-4988-938a-8c5c89dd3bbf",
+      "order": 1,
+      "zh": "他大学毕业以后一直从事科研工作。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 科研 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 科研; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "科研"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "14cdc394-052a-434a-97ee-b5fe5edba956"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 科研 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4673972b-46d0-40c7-b636-d0feb8fb202e",
+      "order": 1,
+      "rule_vi": "Không dùng cho việc học bình thường; học tiếng Trung là 学习汉语.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "科研",
+    "back": "nghiên cứu khoa học",
+    "hint": "kēyán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "14cdc394-052a-434a-97ee-b5fe5edba956",
+    "source_lesson_vocab_id": null
+  }
+}

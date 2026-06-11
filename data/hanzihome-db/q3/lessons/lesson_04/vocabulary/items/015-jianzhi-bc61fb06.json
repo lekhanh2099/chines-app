@@ -1,0 +1,254 @@
+{
+  "id": "16ef401f-76f8-4c1f-9ad4-3b46fa37fd69",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "简直",
+  "pinyin": "jiǎnzhí",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giản trực",
+    "meaning_vi": "đúng là, quả thật là, gần như là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đúng là",
+      "quả thật là",
+      "gần như là"
+    ],
+    "short_definition_vi": "đúng là, quả thật là, gần như là",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "简",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre, thẻ tre",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "间",
+            "hanviet": "gian",
+            "meaning_vi": "khoảng, giữa",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đơn giản, giản lược",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "直",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thẳng, trực tiếp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "简直 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 简直 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "真",
+        "pinyin": "zhēn",
+        "meaning_vi": "thật là",
+        "difference_vi": "Nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "几乎",
+        "pinyin": "jīhū",
+        "meaning_vi": "gần như",
+        "difference_vi": "Khách quan hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "847b4967-1292-42b9-a93c-73af655a4961",
+      "order": 1,
+      "zh": "简直太好了",
+      "pinyin": "jiǎnzhí tài hǎo le",
+      "vi": "đúng là quá tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc80b30c-98d5-4d48-966f-c2d66717774d",
+      "order": 2,
+      "zh": "简直不敢相信",
+      "pinyin": "jiǎnzhí bù gǎn xiāngxìn",
+      "vi": "thật không dám tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2bb20fcc-df74-4220-b0b5-1b19c37b517b",
+      "order": 3,
+      "zh": "简直太可笑了",
+      "pinyin": "jiǎnzhí tài kěxiào le",
+      "vi": "đúng là quá lố bịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e1065d93-b097-4961-9291-f5830415d40c",
+      "order": 1,
+      "zh": "这件事简直太可笑了。",
+      "pinyin": "Zhè jiàn shì jiǎnzhí tài kěxiào le.",
+      "vi": "Chuyện này đúng là quá buồn cười.",
+      "analysis_vi": "简直 tăng mức độ đánh giá.",
+      "highlight": [
+        "简直"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "16ef401f-76f8-4c1f-9ad4-3b46fa37fd69"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "865b9b26-ad47-41b6-b9fe-c4e102c3f25f",
+      "order": 2,
+      "zh": "听完他的理想以后，我简直不敢相信。",
+      "pinyin": "Tīng wán tā de lǐxiǎng yǐhòu, wǒ jiǎnzhí bù gǎn xiāngxìn.",
+      "vi": "Sau khi nghe lý tưởng của anh ấy, tôi thật không dám tin.",
+      "analysis_vi": "简直不敢相信 diễn tả ngạc nhiên mạnh.",
+      "highlight": [
+        "简直"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "16ef401f-76f8-4c1f-9ad4-3b46fa37fd69"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "简直 dùng để cường điệu trong khẩu ngữ và văn viết.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "139ea998-dc9e-43ff-b1f6-4374bfe07433",
+      "order": 1,
+      "rule_vi": "Không dùng 简直 cho sự thật trung tính như 今天是星期二.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "简直",
+    "back": "đúng là, quả thật là, gần như là",
+    "hint": "jiǎnzhí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "16ef401f-76f8-4c1f-9ad4-3b46fa37fd69",
+    "source_lesson_vocab_id": null
+  }
+}

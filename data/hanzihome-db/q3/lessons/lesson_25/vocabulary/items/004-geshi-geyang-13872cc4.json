@@ -1,0 +1,243 @@
+{
+  "id": "2a4bc6b0-d5ad-4a6a-a762-0fc624f7a1be",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "各式各样",
+  "pinyin": "gèshì gèyàng",
+  "pos": {
+    "raw_vi": "Cụm từ",
+    "raw_cn": "固定短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "các thức các dạng",
+    "meaning_vi": "đủ kiểu, đủ loại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đủ kiểu",
+      "đủ loại"
+    ],
+    "short_definition_vi": "đủ kiểu, đủ loại",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "各",
+        "lishu_vi": "các",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mỗi, từng",
+        "modern_logic_vi": "Trong từ này, 各 góp phần vào nghĩa hiện đại: mỗi, từng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "式",
+        "lishu_vi": "thức",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểu, dạng",
+        "modern_logic_vi": "Trong từ này, 式 góp phần vào nghĩa hiện đại: kiểu, dạng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "各",
+        "lishu_vi": "các",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mỗi, từng",
+        "modern_logic_vi": "Trong từ này, 各 góp phần vào nghĩa hiện đại: mỗi, từng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "样",
+        "lishu_vi": "dạng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểu dáng",
+        "modern_logic_vi": "Trong từ này, 样 góp phần vào nghĩa hiện đại: kiểu dáng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "各式各样 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 各式各样的月饼.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Có thể gần 各种各样; nhớ viết 样, không viết 羊."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e85766c5-1afd-4c67-8a55-43933c8765f1",
+      "order": 1,
+      "zh": "各式各样的月饼",
+      "pinyin": "",
+      "vi": "đủ loại bánh Trung thu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "846638ee-16a5-433b-ac66-ec441ae445ff",
+      "order": 2,
+      "zh": "各式各样的问题",
+      "pinyin": "",
+      "vi": "đủ loại vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8da5325-13f1-42f1-a7bb-01ed4eab92d9",
+      "order": 3,
+      "zh": "各式各样的活动",
+      "pinyin": "",
+      "vi": "đủ kiểu hoạt động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "42bb5011-fe46-417d-adaa-a32277391a10",
+      "order": 1,
+      "zh": "商店里有各式各样的月饼。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 各式各样 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 各式各样; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "各式各样"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2a4bc6b0-d5ad-4a6a-a762-0fc624f7a1be"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 各式各样 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "21636887-3165-40a8-8ebe-ee4aeb523465",
+      "order": 1,
+      "rule_vi": "Có thể gần 各种各样; nhớ viết 样, không viết 羊.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "各式各样",
+    "back": "đủ kiểu, đủ loại",
+    "hint": "gèshì gèyàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2a4bc6b0-d5ad-4a6a-a762-0fc624f7a1be",
+    "source_lesson_vocab_id": null
+  }
+}

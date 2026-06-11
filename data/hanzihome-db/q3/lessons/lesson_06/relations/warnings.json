@@ -1,0 +1,37 @@
+[
+  {
+    "id": "warning_3bc0f142a4cecd18fa338f53",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "来",
+      "当",
+      "串",
+      "紫",
+      "摘",
+      "捏",
+      "颗",
+      "嘴",
+      "白",
+      "低",
+      "传",
+      "露",
+      "蹦",
+      "跳",
+      "闹",
+      "并"
+    ]
+  },
+  {
+    "id": "warning_b6d62f8b44405e1221d9654e",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "61e243c9-a090-48a0-abaa-e9e96c43187b",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "term": "分享收获的喜悦",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  }
+]

@@ -1,0 +1,265 @@
+{
+  "id": "ee37dafc-d77b-4863-9d64-0abc5306b014",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "鼓励",
+  "pinyin": "gǔlì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cổ lệ",
+    "meaning_vi": "động viên, khích lệ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "động viên",
+      "khích lệ"
+    ],
+    "short_definition_vi": "động viên, khích lệ",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鼓",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trống; cổ vũ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "励",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khuyến khích, thúc đẩy",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "鼓励 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 鼓励 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "安慰",
+        "pinyin": "ānwèi",
+        "meaning_vi": "an ủi",
+        "difference_vi": "Khi người khác buồn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "激励",
+        "pinyin": "jīlì",
+        "meaning_vi": "khích lệ/thúc đẩy",
+        "difference_vi": "Mạnh hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打击",
+        "pinyin": "dǎjī",
+        "meaning_vi": "đả kích",
+        "difference_vi": "Trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3399b1d8-a02b-4927-94f1-5844f8a5cd07",
+      "order": 1,
+      "zh": "鼓励学生",
+      "pinyin": "gǔlì xuésheng",
+      "vi": "động viên học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eef8f21b-8b8a-411e-be03-e489c67f4410",
+      "order": 2,
+      "zh": "互相鼓励",
+      "pinyin": "hùxiāng gǔlì",
+      "vi": "động viên lẫn nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18f3065d-9b37-4e6d-b534-fcc036475d85",
+      "order": 3,
+      "zh": "受到鼓励",
+      "pinyin": "shòudào gǔlì",
+      "vi": "được động viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "344702b5-d973-410d-8385-ce6e9dab0990",
+      "order": 4,
+      "zh": "亲人的鼓励",
+      "pinyin": "qīnrén de gǔlì",
+      "vi": "sự động viên của người thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d80f29c5-25e1-4559-b45f-a62a3c95be5b",
+      "order": 1,
+      "zh": "老师常常鼓励我们多说汉语。",
+      "pinyin": "Lǎoshī chángcháng gǔlì wǒmen duō shuō Hànyǔ.",
+      "vi": "Thầy/cô thường động viên chúng tôi nói tiếng Hán nhiều hơn.",
+      "analysis_vi": "鼓励 + người + làm gì.",
+      "highlight": [
+        "鼓励"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ee37dafc-d77b-4863-9d64-0abc5306b014"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ae902590-4851-417b-a665-fb3eab12deb0",
+      "order": 2,
+      "zh": "亲人的鼓励让他重新有了信心。",
+      "pinyin": "Qīnrén de gǔlì ràng tā chóngxīn yǒu le xìnxīn.",
+      "vi": "Sự động viên của người thân khiến anh ấy có lại niềm tin.",
+      "analysis_vi": "让 + người + trạng thái mới.",
+      "highlight": [
+        "鼓励"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ee37dafc-d77b-4863-9d64-0abc5306b014"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "鼓励式教育 là cách nói về giáo dục bằng khích lệ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "736cc2af-a57e-4af7-a705-6d5050de6841",
+      "order": 1,
+      "rule_vi": "鼓励 khác 安慰: thất bại thì bạn bè có thể 安慰 và 鼓励.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "鼓励",
+    "back": "động viên, khích lệ",
+    "hint": "gǔlì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ee37dafc-d77b-4863-9d64-0abc5306b014",
+    "source_lesson_vocab_id": null
+  }
+}

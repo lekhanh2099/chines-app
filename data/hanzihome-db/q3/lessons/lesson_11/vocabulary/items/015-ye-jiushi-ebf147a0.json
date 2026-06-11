@@ -1,0 +1,319 @@
+{
+  "id": "0708152d-fdd7-4e5c-aefa-876f3de97019",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "也就是",
+  "pinyin": "yě jiùshì",
+  "pos": {
+    "raw_vi": "Cụm nối giải thích",
+    "raw_cn": "解释性短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "dã tựu thị",
+    "meaning_vi": "cũng tức là, nói cách khác là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cũng tức là",
+      "nói cách khác là"
+    ],
+    "short_definition_vi": "dùng để giải thích lại một mốc/ý bằng cách khác",
+    "textbook_focus_vi": "Trong bài dùng để đổi mốc giờ Bắc Kinh sang thời gian ở Tân Cương.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "也",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cũng",
+        "modern_logic_vi": "cũng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "就",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "liền, chính là",
+        "modern_logic_vi": "liền, chính là",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "日",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là",
+        "modern_logic_vi": "là",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "也就是 được học trong bài theo nghĩa: dùng để giải thích lại một mốc/ý bằng cách khác.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 也就是八点多.",
+    "warning_vi": "Không dùng 也就是 để nối hai ý không tương đương.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "也就是说",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Rõ tính giải thích hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "换句话说",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nói cách khác; văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 也就是 để nối hai ý không tương đương."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "77002899-b833-4edc-b732-006f30da5a98",
+      "order": 1,
+      "zh": "也就是八点多",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f42d2f5-d2aa-4b0d-9a26-84eb67b35521",
+      "order": 2,
+      "zh": "也就是这个意思",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "61b607e0-78d1-4629-9dbe-e17745ccbb6c",
+      "order": 3,
+      "zh": "也就是说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d064f42-31da-4b8d-a155-22e292e5278d",
+      "order": 4,
+      "zh": "换句话说，也就是……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3497373c-2cbd-4d58-b5bb-7b006d287989",
+      "order": 5,
+      "zh": "A，也就是B",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d59570c3-4bc7-484a-8edb-fb4f4ae29272",
+      "order": 1,
+      "zh": "北京时间十点多，在新疆也就是八点多。",
+      "pinyin": "",
+      "vi": "Theo giờ Bắc Kinh là hơn 10 giờ, ở Tân Cương tức là hơn 8 giờ.",
+      "analysis_vi": "也就是 giải thích cùng một thời điểm theo hệ quy chiếu khác.",
+      "highlight": [
+        "也就是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0708152d-fdd7-4e5c-aefa-876f3de97019"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b98cce68-ca36-4f2b-9c18-f48bac61cfe4",
+      "order": 2,
+      "zh": "每天学习三个小时，也就是一周二十一个小时左右。",
+      "pinyin": "",
+      "vi": "Mỗi ngày học ba tiếng, tức là khoảng 21 tiếng một tuần.",
+      "analysis_vi": "也就是 dùng để quy đổi/diễn giải lại.",
+      "highlight": [
+        "也就是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0708152d-fdd7-4e5c-aefa-876f3de97019"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "也就是 / 也就是说 / 换句话说 giúp diễn giải ý khi thuyết trình hoặc giải thích bài.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "34235fe5-1e69-46cf-8b25-1ce7c03bd350",
+      "order": 1,
+      "rule_vi": "Không dùng 也就是 để nối hai ý không tương đương.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 也就是 để nối hai ý không tương đương.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "也就是",
+    "back": "cũng tức là, nói cách khác là",
+    "hint": "yě jiùshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0708152d-fdd7-4e5c-aefa-876f3de97019",
+    "source_lesson_vocab_id": null
+  }
+}

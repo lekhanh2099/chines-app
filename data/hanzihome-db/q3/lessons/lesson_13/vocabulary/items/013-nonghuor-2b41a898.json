@@ -1,0 +1,213 @@
+{
+  "id": "5f0e26b4-4bf3-42b7-8b06-3bdd3cebdc11",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "农活儿",
+  "pinyin": "nónghuór",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "rural"
+  ],
+  "meaning": {
+    "hanviet": "nông hoạt",
+    "meaning_vi": "việc nhà nông, việc đồng áng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "việc nhà nông",
+      "việc đồng áng"
+    ],
+    "short_definition_vi": "việc nhà nông, việc đồng áng",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "农",
+        "lishu_vi": "nông",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nông nghiệp",
+        "modern_logic_vi": "Trong từ/cụm này, 农 góp phần vào nghĩa hiện đại: nông nghiệp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "活",
+        "lishu_vi": "hoạt",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc/sống",
+        "modern_logic_vi": "Trong từ/cụm này, 活 góp phần vào nghĩa hiện đại: việc/sống.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố/đứa trẻ",
+        "modern_logic_vi": "Trong từ/cụm này, 儿 góp phần vào nghĩa hiện đại: hậu tố/đứa trẻ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "农活儿 cần học theo nghĩa hiện đại trong bài: việc nhà nông, việc đồng áng.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 干农活儿.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c2505efa-125c-463d-9fcf-6c38aa30db53",
+      "order": 1,
+      "zh": "干农活儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6106338c-2b05-48a7-aad7-87832891bb12",
+      "order": 2,
+      "zh": "帮父母干农活儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11b0d87f-c2a4-4adc-9e9b-d0a15a84a936",
+      "order": 3,
+      "zh": "农活儿很累",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f4240f88-5ab6-4683-9b22-63166e6629be",
+      "order": 1,
+      "zh": "今天农活儿很多，大家都很累。",
+      "pinyin": "Jīntiān nónghuór hěn duō, dàjiā dōu hěn lèi.",
+      "vi": "Hôm nay việc đồng áng rất nhiều, mọi người đều mệt.",
+      "analysis_vi": "农活儿很多 nói lượng việc.",
+      "highlight": [
+        "农活儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5f0e26b4-4bf3-42b7-8b06-3bdd3cebdc11"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0c1288cc-6c5e-4d48-9db9-6cc8b4e78982",
+      "order": 2,
+      "zh": "他家以种地为主，所以他从小就会干农活儿。",
+      "pinyin": "Tā jiā yǐ zhòngdì wéi zhǔ, suǒyǐ tā cóng xiǎo jiù huì gàn nónghuór.",
+      "vi": "Nhà anh ấy chủ yếu làm ruộng nên từ nhỏ đã biết làm việc đồng áng.",
+      "analysis_vi": "干农活儿 là cụm tự nhiên.",
+      "highlight": [
+        "农活儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5f0e26b4-4bf3-42b7-8b06-3bdd3cebdc11"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "儿 hóa làm từ nghe đời sống/khẩu ngữ miền Bắc hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d4273266-04c3-4e9a-8bd9-83ee58b8a7ac",
+      "order": 1,
+      "rule_vi": "Dùng 农活儿 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "农活儿",
+    "back": "việc nhà nông, việc đồng áng",
+    "hint": "nónghuór",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5f0e26b4-4bf3-42b7-8b06-3bdd3cebdc11",
+    "source_lesson_vocab_id": null
+  }
+}

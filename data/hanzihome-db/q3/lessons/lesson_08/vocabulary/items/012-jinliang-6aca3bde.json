@@ -1,0 +1,246 @@
+{
+  "id": "607c5d4b-655b-4075-8dba-ba3a58681dcf",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "尽量",
+  "pinyin": "jǐnliàng",
+  "pos": {
+    "raw_vi": "Phó từ / Động từ",
+    "raw_cn": "副词 / 动词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tận lượng",
+    "meaning_vi": "cố gắng hết sức, trong khả năng tối đa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cố gắng hết sức",
+      "trong khả năng tối đa"
+    ],
+    "short_definition_vi": "cố gắng hết sức, trong khả năng tối đa",
+    "textbook_focus_vi": "尽 = hết/tận, 量 = lượng/mức. 尽量 = làm trong mức tối đa có thể.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "mức độ, nỗ lực",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "尽",
+        "lishu_vi": "tận",
+        "structure_note_vi": "Chữ giản thể; học theo nghĩa hiện đại.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hết, cố hết",
+        "modern_logic_vi": "Trong từ này, 尽 góp phần tạo nghĩa 'hết, cố hết'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "量",
+        "lishu_vi": "lượng",
+        "structure_note_vi": "日 + 里; học theo nghĩa lượng/mức.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lượng, đo lường",
+        "modern_logic_vi": "Trong từ này, 量 góp phần tạo nghĩa 'lượng, đo lường'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "尽 = hết/tận, 量 = lượng/mức. 尽量 = làm trong mức tối đa có thể.",
+    "memory_tip_vi": "Nhớ qua cụm: 尽量早点儿来 = cố gắng đến sớm.",
+    "warning_vi": "尽量 không mạnh bằng 一定.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "努力",
+        "pinyin": "nǔlì",
+        "meaning_vi": "nỗ lực",
+        "difference_vi": "Có thể là động từ/tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一定",
+        "pinyin": "yídìng",
+        "meaning_vi": "nhất định",
+        "difference_vi": "Mạnh hơn 尽量.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "尽量 không mạnh bằng 一定."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "81ad40ac-e317-4ca3-b146-00d828f6ab08",
+      "order": 1,
+      "zh": "尽量早点儿来",
+      "pinyin": "jǐnliàng zǎodiǎnr lái",
+      "vi": "cố gắng đến sớm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f85f64d-7eeb-4135-b615-91ddad8347c2",
+      "order": 2,
+      "zh": "尽量自然一点儿",
+      "pinyin": "jǐnliàng zìrán yìdiǎnr",
+      "vi": "cố tự nhiên hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a62bae36-dcbc-401d-8d13-7e3ae1fc985d",
+      "order": 3,
+      "zh": "尽量不迟到",
+      "pinyin": "jǐnliàng bù chídào",
+      "vi": "cố không đến muộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "07203619-c82b-4ae8-bfab-b9a0bcb1ba63",
+      "order": 1,
+      "zh": "我尽量装得自然一点儿，可是一看见赵霞，心里就紧张。",
+      "pinyin": "Wǒ jǐnliàng zhuāng de zìrán yìdiǎnr, kěshì yí kànjiàn Zhào Xiá, xīnli jiù jǐnzhāng.",
+      "vi": "Tôi cố tỏ ra tự nhiên hơn, nhưng vừa thấy Triệu Hà là căng thẳng.",
+      "analysis_vi": "尽量 cho thấy cố trong khả năng, không tuyệt đối.",
+      "highlight": [
+        "尽量"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "607c5d4b-655b-4075-8dba-ba3a58681dcf"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "尽量 giúp lời nhắc mềm hơn mệnh lệnh trực tiếp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1d3634e7-ad61-4035-a778-5e19f6979345",
+      "order": 1,
+      "rule_vi": "尽量 không mạnh bằng 一定.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我尽量来。",
+          "pinyin": "Wǒ jǐnliàng lái.",
+          "vi": "Tôi sẽ cố đến.",
+          "note_vi": "Nghĩa là chưa chắc 100%.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "尽量",
+    "back": "cố gắng hết sức, trong khả năng tối đa",
+    "hint": "jǐnliàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "607c5d4b-655b-4075-8dba-ba3a58681dcf",
+    "source_lesson_vocab_id": null
+  }
+}

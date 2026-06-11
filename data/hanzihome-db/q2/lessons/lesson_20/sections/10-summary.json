@@ -1,0 +1,60 @@
+{
+  "id": "8e88dc2d-d19b-4cbb-aa04-f38eb9b383c7",
+  "type": "summary",
+  "order": 10,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "summary": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "语法 / 词语用法",
+      "练习",
+      "阅读理解 / 综合填空",
+      "交际会话",
+      "写汉字"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "可能补语（一）"
+      },
+      {
+        "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+        "title": "结果补语 dạng khả năng"
+      },
+      {
+        "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+        "title": "动词 + 得 / 不 + 了"
+      },
+      {
+        "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+        "title": "动词 + 得 / 不 + 下"
+      }
+    ],
+    "main_patterns": [
+      "V + 得 + 补语",
+      "V + 不 + 补语",
+      "V + 得 + 了 / V + 不 + 了",
+      "V + 得 + 下 / V + 不 + 下"
+    ],
+    "coverage": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": true,
+      "communication_covered": true,
+      "character_writing_covered": true,
+      "remaining_check_needed": [],
+      "exercise_answers_checked": true,
+      "pdf_crosschecked": true
+    }
+  }
+}

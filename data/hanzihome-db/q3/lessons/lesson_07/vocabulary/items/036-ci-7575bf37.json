@@ -1,0 +1,293 @@
+{
+  "id": "79cd1bc3-af47-490b-9924-55c4a4947259",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "刺",
+  "pinyin": "cì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "thứ/thích",
+    "meaning_vi": "đâm, chọc; kích thích; châm biếm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đâm, chọc; kích thích; châm biếm"
+    ],
+    "short_definition_vi": "đâm, chọc; kích thích; châm biếm",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "刺",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt, vật sắc",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "刂 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, vật sắc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, vật sắc",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刂 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 刂.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đâm, chọc",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "刂 gợi vật sắc tác động vào vật khác.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 刺.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "扎",
+        "pinyin": "zhā",
+        "meaning_vi": "chích/đâm",
+        "difference_vi": "hay dùng với kim",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "戳",
+        "pinyin": "chuō",
+        "meaning_vi": "chọc/thọc",
+        "difference_vi": "khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "挡住",
+          "",
+          "chặn lại",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "86493da6-005e-43d2-9c44-a7cf973a4f1b",
+      "order": 1,
+      "zh": "刺透",
+      "pinyin": "",
+      "vi": "đâm thủng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c91922e-1eea-4401-875e-2624d2b7448b",
+      "order": 2,
+      "zh": "刺不透",
+      "pinyin": "",
+      "vi": "đâm không thủng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1491b73d-c6d7-4236-99f4-49c3972c8ef9",
+      "order": 3,
+      "zh": "刺伤",
+      "pinyin": "",
+      "vi": "đâm bị thương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d043d71-b8e5-4afa-bd51-2616456b6503",
+      "order": 4,
+      "zh": "讽刺",
+      "pinyin": "",
+      "vi": "châm biếm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "99bb514a-16fe-4d9b-8ef4-80b6f5771d13",
+      "order": 1,
+      "zh": "他说自己的矛能刺透任何盾。",
+      "pinyin": "Tā shuō zìjǐ de máo néng cì tòu rènhé dùn.",
+      "vi": "Anh ta nói mâu của mình có thể đâm thủng bất kỳ cái khiên nào.",
+      "analysis_vi": "刺透 = V + bổ ngữ kết quả.",
+      "highlight": [
+        "刺"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "79cd1bc3-af47-490b-9924-55c4a4947259"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d0a6897-6e8e-48d5-831f-4727ae975fa2",
+      "order": 2,
+      "zh": "如果你的矛能刺透任何盾，那它能不能刺透你自己的盾？",
+      "pinyin": "Rúguǒ nǐ de máo néng cì tòu rènhé dùn, nà tā néng bu néng cì tòu nǐ zìjǐ de dùn?",
+      "vi": "Nếu mâu của anh đâm thủng mọi khiên, nó có đâm thủng khiên của anh không?",
+      "analysis_vi": "能不能 là nghi vấn chính phản.",
+      "highlight": [
+        "刺"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "79cd1bc3-af47-490b-9924-55c4a4947259"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "刺 còn có nghĩa châm biếm trong 讽刺, nhưng bài này là nghĩa vật lý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96d32c28-d217-4801-9eed-843c6712340f",
+      "order": 1,
+      "rule_vi": "刺 phải học theo cụm: 刺透, 刺耳, 刺激, 讽刺.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "刺",
+    "back": "đâm, chọc; kích thích; châm biếm",
+    "hint": "cì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "79cd1bc3-af47-490b-9924-55c4a4947259",
+    "source_lesson_vocab_id": null
+  }
+}

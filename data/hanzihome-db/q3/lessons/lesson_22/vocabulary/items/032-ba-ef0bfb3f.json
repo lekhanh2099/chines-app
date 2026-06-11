@@ -1,0 +1,314 @@
+{
+  "id": "6a7ed2b6-65ab-43b9-9134-6c3b131831d0",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "把",
+  "pinyin": "bǎ",
+  "pos": {
+    "raw_vi": "Giới từ / Động từ / Lượng từ",
+    "raw_cn": "介词/动词/量词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "preposition"
+  ],
+  "meaning": {
+    "hanviet": "bả",
+    "meaning_vi": "đem, lấy; giới từ đưa tân ngữ lên trước để xử lý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đem"
+    ],
+    "short_definition_vi": "đem, lấy; giới từ đưa tân ngữ lên trước để xử lý",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "把",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần chỉ trường nghĩa: tay, động tác bằng tay.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần chỉ trường nghĩa: tay, động tác bằng tay.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầm, đem đối tượng xử lý",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "把 được ghi nhớ theo nghĩa hiện đại: đem, lấy; giới từ đưa tân ngữ lên trước để xử lý.",
+    "memory_tip_vi": "Nhớ qua cụm: 把话记下来.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "被",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "用",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Câu 把 thường cần kết quả/hướng/trạng thái sau động từ; phủ định đặt trước 把."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fc55a71c-4899-4b02-9872-92ff0f490c57",
+      "order": 1,
+      "zh": "把话记下来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "67e66062-4aca-460a-9a9c-b9e0f89e54bd",
+      "order": 2,
+      "zh": "把事情说清楚",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef432ece-4920-4335-979f-19159ba2d672",
+      "order": 3,
+      "zh": "把门关上",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54e9053d-be3e-4d05-ab6f-cde49c1510a8",
+      "order": 4,
+      "zh": "把书拿出来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cff7a977-dc28-4192-b8d1-a0e19876331d",
+      "order": 5,
+      "zh": "把病人送进医院",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b131073e-9a2a-4229-a64c-adeae99ba0f1",
+      "order": 6,
+      "zh": "把饭吃完",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b51913c1-2fdb-44d0-81ce-7f9a6647ca69",
+      "order": 1,
+      "zh": "请把门关上。",
+      "pinyin": "Qǐng bǎ mén guān shang.",
+      "vi": "Xin hãy đóng cửa lại.",
+      "analysis_vi": "把门关上 nhấn kết quả: cửa được đóng lại.",
+      "highlight": [
+        "把"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a7ed2b6-65ab-43b9-9134-6c3b131831d0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b4dd6317-9df4-4768-9b95-1f157f8a3ce9",
+      "order": 2,
+      "zh": "母亲把医生的话一五一十地记下来。",
+      "pinyin": "Mǔqīn bǎ yīshēng de huà yīwǔ-yīshí de jì xiàlai.",
+      "vi": "Người mẹ ghi lại đầy đủ lời bác sĩ.",
+      "analysis_vi": "把 + 医生的话 + 记下来 là xử lý đối tượng thành kết quả.",
+      "highlight": [
+        "把"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a7ed2b6-65ab-43b9-9134-6c3b131831d0"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "把字句 nhấn đối tượng đã bị xử lý thành kết quả gì.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e2409eb2-9012-4b61-94c4-92707170a893",
+      "order": 1,
+      "rule_vi": "Câu 把 thường cần kết quả/hướng/trạng thái sau động từ; phủ định đặt trước 把.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Câu 把 thường cần kết quả/hướng/trạng thái sau động từ; phủ định đặt trước 把.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "把",
+    "back": "đem, lấy; giới từ đưa tân ngữ lên trước để xử lý",
+    "hint": "bǎ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "preposition"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6a7ed2b6-65ab-43b9-9134-6c3b131831d0",
+    "source_lesson_vocab_id": null
+  }
+}

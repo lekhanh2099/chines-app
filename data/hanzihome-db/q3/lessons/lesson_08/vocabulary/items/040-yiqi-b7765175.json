@@ -1,0 +1,254 @@
+{
+  "id": "8f00c387-2b89-46a2-8a2b-c5a1d0802470",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "一起",
+  "pinyin": "yìqǐ",
+  "pos": {
+    "raw_vi": "Phó từ / Cụm vị trí",
+    "raw_cn": "副词 / 处所表达",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhất khởi",
+    "meaning_vi": "cùng nhau, cùng một chỗ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cùng nhau",
+      "cùng một chỗ"
+    ],
+    "short_definition_vi": "cùng nhau, cùng một chỗ",
+    "textbook_focus_vi": "一 + 起 = cùng trong một khối/hành động. 一起 = cùng nhau; 在一起 có thể là ở bên nhau/yêu nhau.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "quan hệ, hành động chung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Chữ số cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "Trong từ này, 一 góp phần tạo nghĩa 'một'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "起",
+        "lishu_vi": "khởi",
+        "structure_note_vi": "走 + 己; liên quan chuyển động/bắt đầu.",
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi, chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng dậy, bắt đầu",
+        "modern_logic_vi": "Trong từ này, 起 góp phần tạo nghĩa 'đứng dậy, bắt đầu'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一 + 起 = cùng trong một khối/hành động. 一起 = cùng nhau; 在一起 có thể là ở bên nhau/yêu nhau.",
+    "memory_tip_vi": "Nhớ qua cụm: 一起去 = cùng đi.",
+    "warning_vi": "一起 đứng trước động từ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一块儿",
+        "pinyin": "yíkuàir",
+        "meaning_vi": "cùng nhau",
+        "difference_vi": "Khẩu ngữ Bắc phương hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "各自",
+        "pinyin": "gèzì",
+        "meaning_vi": "mỗi người riêng",
+        "difference_vi": "Đối lập với 一起.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "一起 đứng trước động từ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ded97d76-0e1c-4f72-9262-fb20242f353e",
+      "order": 1,
+      "zh": "一起去",
+      "pinyin": "yìqǐ qù",
+      "vi": "cùng đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3390b6b4-5354-4619-a17d-37cab552fe96",
+      "order": 2,
+      "zh": "一起聊天",
+      "pinyin": "yìqǐ liáotiān",
+      "vi": "trò chuyện cùng nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3550493f-6ef4-48dd-a7a1-12ebb0187cf3",
+      "order": 3,
+      "zh": "在一起",
+      "pinyin": "zài yìqǐ",
+      "vi": "ở bên nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c00eb4d9-d66b-4640-9ebd-47f34a7cee8b",
+      "order": 1,
+      "zh": "赵霞和余辉常常一起聊天，所以很多同学以为他们在谈恋爱。",
+      "pinyin": "Zhào Xiá hé Yú Huī chángcháng yìqǐ liáotiān, suǒyǐ hěn duō tóngxué yǐwéi tāmen zài tán liàn’ài.",
+      "vi": "Triệu Hà và Dư Huy thường trò chuyện cùng nhau nên nhiều bạn tưởng họ đang yêu.",
+      "analysis_vi": "以为 cho thấy có thể là hiểu lầm.",
+      "highlight": [
+        "一起"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8f00c387-2b89-46a2-8a2b-c5a1d0802470"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "他们在一起了 trong ngữ cảnh tình yêu thường nghĩa là họ thành một cặp rồi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b35ad846-cedb-488d-b3cd-3042773563bf",
+      "order": 1,
+      "rule_vi": "一起 đứng trước động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我们去一起。",
+          "pinyin": "Wǒmen qù yìqǐ.",
+          "vi": "Sai trật tự.",
+          "note_vi": "一起 phải đứng trước động từ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我们一起去。",
+          "pinyin": "Wǒmen yìqǐ qù.",
+          "vi": "Chúng ta cùng đi.",
+          "note_vi": "Vị trí đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一起",
+    "back": "cùng nhau, cùng một chỗ",
+    "hint": "yìqǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8f00c387-2b89-46a2-8a2b-c5a1d0802470",
+    "source_lesson_vocab_id": null
+  }
+}

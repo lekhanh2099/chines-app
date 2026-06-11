@@ -1,0 +1,325 @@
+{
+  "id": "02704bd4-cf5b-4a73-a0ba-76ee4f32f164",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "试讲",
+  "pinyin": "shìjiǎng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thí giảng",
+    "meaning_vi": "giảng thử",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giảng thử"
+    ],
+    "short_definition_vi": "giảng thử",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "试",
+        "lishu_vi": "thí",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "式",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thử, kiểm tra",
+        "modern_logic_vi": "thử, kiểm tra",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "讲",
+        "lishu_vi": "giảng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "井",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, giảng, trình bày",
+        "modern_logic_vi": "nói, giảng, trình bày",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "试 là thử, 讲 là giảng; 试讲 là giảng thử để kiểm tra năng lực.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 参加试讲.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "讲课",
+        "pinyin": "jiǎngkè",
+        "meaning_vi": "giảng bài",
+        "difference_vi": "讲课 là giảng bài nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "说课",
+        "pinyin": "shuōkè",
+        "meaning_vi": "trình bày thiết kế bài dạy",
+        "difference_vi": "说课 là nói về cách dạy, không trực tiếp dạy như thật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ff873a51-017a-4547-95a8-bf19d068e579",
+      "order": 1,
+      "zh": "参加试讲",
+      "pinyin": "cānjiā shìjiǎng",
+      "vi": "tham gia giảng thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2bb260e-beeb-4a2d-bbb1-dc2fac607c09",
+      "order": 2,
+      "zh": "准备试讲",
+      "pinyin": "zhǔnbèi shìjiǎng",
+      "vi": "chuẩn bị giảng thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "499ce8fa-100d-41c6-8c0c-e45b58f4a47f",
+      "order": 3,
+      "zh": "试讲教案",
+      "pinyin": "shìjiǎng jiào’àn",
+      "vi": "giáo án giảng thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f9204439-25db-460d-98a2-3bc33750a50e",
+      "order": 1,
+      "zh": "明天上午我要去学校试讲。",
+      "pinyin": "Míngtiān shàngwǔ wǒ yào qù xuéxiào shìjiǎng.",
+      "vi": "Sáng mai tôi phải đến trường giảng thử.",
+      "analysis_vi": "去学校试讲 nêu mục đích rõ.",
+      "highlight": [
+        "试讲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "02704bd4-cf5b-4a73-a0ba-76ee4f32f164"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2e312dea-8936-4460-9590-641d9ebbdf56",
+      "order": 2,
+      "zh": "他把试讲内容准备了好几遍，还是有点儿紧张。",
+      "pinyin": "Tā bǎ shìjiǎng nèiróng zhǔnbèi le hǎo jǐ biàn, háishi yǒudiǎnr jǐnzhāng.",
+      "vi": "Anh ấy chuẩn bị nội dung giảng thử mấy lượt mà vẫn hơi căng.",
+      "analysis_vi": "把内容准备了好几遍 nhấn xử lý nhiều lần.",
+      "highlight": [
+        "试讲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "02704bd4-cf5b-4a73-a0ba-76ee4f32f164"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "试讲 thường là một phần trong tuyển giáo viên hoặc phỏng vấn nghiệp vụ dạy học.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1ea74602-36e1-4012-926a-e726fd4e4d6e",
+      "order": 1,
+      "rule_vi": "Không nói 试说 một bài; nói 试讲一课 nếu muốn 'giảng thử một bài'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "试讲",
+    "back": "giảng thử",
+    "hint": "shìjiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "02704bd4-cf5b-4a73-a0ba-76ee4f32f164",
+    "source_lesson_vocab_id": null
+  }
+}

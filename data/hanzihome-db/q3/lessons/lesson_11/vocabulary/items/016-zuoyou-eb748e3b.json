@@ -1,0 +1,368 @@
+{
+  "id": "5a0e1400-2db7-4da5-807f-ae40a4f6107e",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "左右",
+  "pinyin": "zuǒyòu",
+  "pos": {
+    "raw_vi": "Danh từ / Thành phần ước lượng",
+    "raw_cn": "名词 / 约数成分",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "tả hữu",
+    "meaning_vi": "khoảng; trái phải; xung quanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khoảng",
+      "trái phải",
+      "xung quanh"
+    ],
+    "short_definition_vi": "đứng sau số lượng/thời gian để nói xấp xỉ",
+    "textbook_focus_vi": "Trong bài dùng ở 九点左右.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "左",
+        "lishu_vi": "",
+        "structure_note_vi": "工",
+        "components": [
+          {
+            "text": "工",
+            "hanviet": "",
+            "meaning_vi": "thợ, công",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "工 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "工",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Công",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "thợ, công",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "工 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trái",
+        "modern_logic_vi": "trái",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "工",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Công",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "thợ, công",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "工 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "右",
+        "lishu_vi": "",
+        "structure_note_vi": "口",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phải",
+        "modern_logic_vi": "phải",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "左右 được học trong bài theo nghĩa: đứng sau số lượng/thời gian để nói xấp xỉ.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 九点左右.",
+    "warning_vi": "Không đặt 左右 trước con số: nói 九点左右, không nói 左右九点.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "大约",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Thường đứng trước số lượng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "差不多",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không đặt 左右 trước con số: nói 九点左右, không nói 左右九点."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "159110c0-a2fd-4f78-a707-4c9fd0108a74",
+      "order": 1,
+      "zh": "九点左右",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1b7e870-5555-4ebb-9086-02903c314b82",
+      "order": 2,
+      "zh": "两个小时左右",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32c95222-3dd8-4234-8113-ae94989eb5c8",
+      "order": 3,
+      "zh": "三公里左右",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26b879f6-61f2-41b2-a88b-8937f513e36f",
+      "order": 4,
+      "zh": "二十个人左右",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "40476543-beab-494b-8536-9f455172a627",
+      "order": 5,
+      "zh": "左右两边",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "48f00fd3-8eec-466e-9441-f8b4ed5c3847",
+      "order": 1,
+      "zh": "晚上九点左右太阳才落下去。",
+      "pinyin": "",
+      "vi": "Khoảng 9 giờ tối mặt trời mới lặn.",
+      "analysis_vi": "左右 đứng sau mốc thời gian.",
+      "highlight": [
+        "左右"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5a0e1400-2db7-4da5-807f-ae40a4f6107e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6582b124-d414-4e0f-9bbf-b9978eb9f27e",
+      "order": 2,
+      "zh": "他一看表，就发现已经九点左右了。",
+      "pinyin": "",
+      "vi": "Anh ấy vừa nhìn đồng hồ thì phát hiện đã khoảng 9 giờ.",
+      "analysis_vi": "一看……就发现 nói phát hiện ngay.",
+      "highlight": [
+        "左右"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5a0e1400-2db7-4da5-807f-ae40a4f6107e"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "左右 nghĩa gốc là trái phải, mở rộng thành khoảng quanh một mốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0cade23f-757b-4f98-96b8-fe7c378ce7e8",
+      "order": 1,
+      "rule_vi": "Không đặt 左右 trước con số: nói 九点左右, không nói 左右九点.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không đặt 左右 trước con số: nói 九点左右, không nói 左右九点.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "左右",
+    "back": "khoảng; trái phải; xung quanh",
+    "hint": "zuǒyòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5a0e1400-2db7-4da5-807f-ae40a4f6107e",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "id": "2b9d267f-5e6b-4895-98bd-26ffaece08e8",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "异国他乡",
+  "pinyin": "yìguó tāxiāng",
+  "pos": {
+    "raw_vi": "Cụm danh từ / Cố định",
+    "raw_cn": "名词性短语 / 固定表达",
+    "normalized": "noun_phrase",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dị quốc tha hương",
+    "meaning_vi": "đất khách quê người, nơi xa quê ở nước khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đất khách quê người",
+      "nơi xa quê ở nước khác"
+    ],
+    "short_definition_vi": "đất khách quê người, nơi xa quê ở nước khác",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "hơi văn / chuyên biệt theo ngữ cảnh",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "异",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khác, lạ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "国",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao quanh",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "玉",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nước, quốc gia",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "他",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "也",
+            "hanviet": "dã",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khác, người khác",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "乡",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quê, làng quê",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "异国他乡 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 异国他乡 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "国外",
+        "pinyin": "guówài",
+        "meaning_vi": "nước ngoài",
+        "difference_vi": "Trung tính địa lý",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "他乡",
+        "pinyin": "tāxiāng",
+        "meaning_vi": "đất khách",
+        "difference_vi": "Không nhất thiết nước ngoài",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "家乡",
+        "pinyin": "jiāxiāng",
+        "meaning_vi": "quê hương",
+        "difference_vi": "Trái hướng cảm giác",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6c91734a-1a89-4049-b757-95fd53214c6f",
+      "order": 1,
+      "zh": "在异国他乡",
+      "pinyin": "zài yìguó tāxiāng",
+      "vi": "ở đất khách quê người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c00f01f3-bbc6-45df-b5a8-9367e2f0716a",
+      "order": 2,
+      "zh": "独自在异国他乡",
+      "pinyin": "dúzì zài yìguó tāxiāng",
+      "vi": "một mình nơi đất khách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "221c1ad6-2a11-4c15-b232-444923fed688",
+      "order": 3,
+      "zh": "异国他乡的生活",
+      "pinyin": "yìguó tāxiāng de shēnghuó",
+      "vi": "cuộc sống nơi đất khách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c2da00f3-e712-48b7-940d-1569a7eadee1",
+      "order": 1,
+      "zh": "他一个人在异国他乡，常常想家。",
+      "pinyin": "Tā yí ge rén zài yìguó tāxiāng, chángcháng xiǎng jiā.",
+      "vi": "Anh ấy một mình nơi đất khách, thường nhớ nhà.",
+      "analysis_vi": "一个人 nhấn cô đơn.",
+      "highlight": [
+        "异国他乡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2b9d267f-5e6b-4895-98bd-26ffaece08e8"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "192a86f3-7a8d-47d3-b3fc-2c989298d7b4",
+      "order": 2,
+      "zh": "虽然她身在异国他乡，可是亲人的鼓励让她一点儿也没有失去信心。",
+      "pinyin": "Suīrán tā shēn zài yìguó tāxiāng, kěshì qīnrén de gǔlì ràng tā yìdiǎnr yě méiyǒu shīqù xìnxīn.",
+      "vi": "Tuy ở đất khách, sự động viên của người thân khiến cô ấy không mất niềm tin.",
+      "analysis_vi": "虽然……可是…….",
+      "highlight": [
+        "异国他乡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2b9d267f-5e6b-4895-98bd-26ffaece08e8"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "异国他乡 gần tiếng Việt 'tha hương nơi đất khách'.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8f587eb6-4467-4dd8-945a-d95ebf65f7ca",
+      "order": 1,
+      "rule_vi": "Không dùng 异国他乡 cho mọi câu ở nước ngoài; trung tính là 在国外学习.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "异国他乡",
+    "back": "đất khách quê người, nơi xa quê ở nước khác",
+    "hint": "yìguó tāxiāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2b9d267f-5e6b-4895-98bd-26ffaece08e8",
+    "source_lesson_vocab_id": null
+  }
+}

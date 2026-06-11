@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_a8a6a6d9a09a7eed",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "曲阜",
+  "pinyin": "Qūfù",
+  "meaning_vi": "Khúc Phụ, quê hương của Khổng Tử",
+  "pos": "Tên riêng",
+  "pos_detail": {
+    "vi": "Tên riêng",
+    "cn": "专名",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "323842d9-8046-4a08-b867-e86539587bd3",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "323842d9-8046-4a08-b867-e86539587bd3",
+    "type": "vocabulary_item",
+    "order": 63,
+    "hanzi": "曲阜",
+    "pinyin": "Qūfù",
+    "meaning_vi": "Khúc Phụ, quê hương của Khổng Tử",
+    "meaning_en": "Qufu, the hometown of Confucius",
+    "pos": "Tên riêng",
+    "tags": [
+      "supplementary_vocab",
+      "proper_noun"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "曲阜",
+      "back": "Qūfù — Khúc Phụ, quê hương của Khổng Tử",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_supplementary_added",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tên riêng",
+      "cn": "专名",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

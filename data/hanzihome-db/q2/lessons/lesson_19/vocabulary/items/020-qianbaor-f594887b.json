@@ -1,0 +1,398 @@
+{
+  "id": "d0293756-cd15-44a7-a4b0-0efff42edaec",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "钱包儿",
+  "pinyin": "qiánbāor",
+  "pos": {
+    "raw_vi": "danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_19",
+    "lost_item"
+  ],
+  "meaning": {
+    "hanviet": "Tiền bao nhi",
+    "meaning_vi": "ví tiền",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ví tiền"
+    ],
+    "short_definition_vi": "ví tiền",
+    "textbook_focus_vi": "Vật bị mất/trộm trong bài.",
+    "register_vi": "đời sống, 儿 hóa khẩu ngữ",
+    "usage_domain_vi": "đồ cá nhân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "钱",
+        "lishu_vi": "tiền",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại, tiền bạc",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại, tiền bạc",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "戋",
+            "hanviet": "",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiền",
+        "modern_logic_vi": "钱 = tiền.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "包",
+        "lishu_vi": "bao",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "勹",
+            "hanviet": "bao",
+            "meaning_vi": "bao bọc",
+            "position_vi": "bên ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "勹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bao",
+              "radical_name_zh": "",
+              "hanviet": "bao",
+              "meaning_vi": "bao bọc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "túi, gói, bọc",
+        "modern_logic_vi": "包 = túi/gói/bọc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố 儿 hóa",
+        "modern_logic_vi": "儿 là hậu tố khẩu ngữ Bắc phương.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "钱 = tiền; 包 = túi/gói; 钱包 = túi đựng tiền; 钱包儿 là dạng 儿 hóa.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "钱包",
+        "pinyin": "",
+        "meaning_vi": "ví tiền",
+        "difference_vi": "Dạng không 儿 hóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "皮夹子",
+        "pinyin": "",
+        "meaning_vi": "ví da, bóp da",
+        "difference_vi": "Nhấn kiểu/chất liệu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "包",
+        "pinyin": "",
+        "meaning_vi": "túi nói chung",
+        "difference_vi": "Rộng hơn 钱包儿.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "手提包",
+        "pinyin": "",
+        "meaning_vi": "túi xách tay",
+        "difference_vi": "Không nhất thiết là ví tiền.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2b699f0f-665d-4cdd-a915-cf60d7f80662",
+      "order": 1,
+      "zh": "钱包儿不见了",
+      "pinyin": "",
+      "vi": "ví tiền không thấy đâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea9f943b-8bac-4fcf-81d1-974304234208",
+      "order": 2,
+      "zh": "钱包儿丢了",
+      "pinyin": "",
+      "vi": "ví bị mất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd2e737c-fed9-4e96-8a7a-33d325e5d159",
+      "order": 3,
+      "zh": "钱包儿被偷了",
+      "pinyin": "",
+      "vi": "ví bị trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2696e13-f733-48f4-bb79-d3860bb80122",
+      "order": 4,
+      "zh": "钱包儿被小偷偷走了",
+      "pinyin": "",
+      "vi": "ví bị tên trộm lấy mất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d7022fe-78fe-4f1c-99cb-ce13eb7dd7ab",
+      "order": 5,
+      "zh": "打开钱包儿",
+      "pinyin": "",
+      "vi": "mở ví",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ed0884e-bea7-438e-a4ff-16e6463f3e93",
+      "order": 6,
+      "zh": "把钱放进钱包儿里",
+      "pinyin": "",
+      "vi": "bỏ tiền vào ví",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6eaa66aa-dffc-4567-add1-f8c50d884a77",
+      "order": 7,
+      "zh": "保管好钱包儿",
+      "pinyin": "",
+      "vi": "giữ kỹ ví tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0dae5218-b32c-4ec3-9738-a0ac7d8b1ed5",
+      "order": 1,
+      "zh": "我的钱包儿不见了。",
+      "pinyin": "Wǒ de qiánbāor bú jiàn le.",
+      "vi": "Ví tiền của tôi không thấy đâu nữa.",
+      "analysis_vi": "不见了 báo tình huống mới: trước còn thấy, giờ không thấy.",
+      "highlight": [
+        "钱包儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d0293756-cd15-44a7-a4b0-0efff42edaec"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "80409c4f-181f-425f-9cc0-bd94f374b2d7",
+      "order": 2,
+      "zh": "他的钱包儿被小偷偷走了。",
+      "pinyin": "Tā de qiánbāor bèi xiǎotōu tōu zǒu le.",
+      "vi": "Ví của anh ấy bị tên trộm lấy mất.",
+      "analysis_vi": "被小偷 là tác nhân; 偷走了 là kết quả.",
+      "highlight": [
+        "钱包儿",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "d0293756-cd15-44a7-a4b0-0efff42edaec"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "881448d4-7db7-4bbe-b937-99338f765d4b",
+      "order": 3,
+      "zh": "我一上街就发现钱包儿不见了，可能是在公共汽车上被人偷走的。",
+      "pinyin": "Wǒ yí shàngjiē jiù fāxiàn qiánbāor bú jiàn le, kěnéng shì zài gōnggòng qìchē shang bèi rén tōu zǒu de.",
+      "vi": "Tôi vừa ra phố thì phát hiện ví không thấy đâu nữa, có lẽ là bị người ta lấy mất trên xe buýt.",
+      "analysis_vi": "Ôn 一……就……, 被字句 và 是……的.",
+      "highlight": [
+        "钱包儿",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "d0293756-cd15-44a7-a4b0-0efff42edaec"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở Trung Quốc hiện nay thanh toán điện thoại rất phổ biến, nhưng 钱包丢了 / 钱包被偷了 vẫn thực dụng khi mất tiền mặt hoặc giấy tờ.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b7e8dd10-a85a-467c-8de1-5b698f495f48",
+      "order": 1,
+      "rule_vi": "钱包儿 là vật, không dùng như động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我钱包儿了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的钱包儿丢了。",
+          "pinyin": "Wǒ de qiánbāor diū le.",
+          "vi": "Ví của tôi bị mất rồi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我的钱包儿被偷了。",
+          "pinyin": "Wǒ de qiánbāor bèi tōu le.",
+          "vi": "Ví của tôi bị trộm rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "钱包儿",
+    "back": "ví tiền",
+    "hint": "qiánbāor",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "lost_item"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d0293756-cd15-44a7-a4b0-0efff42edaec",
+    "source_lesson_vocab_id": null
+  }
+}

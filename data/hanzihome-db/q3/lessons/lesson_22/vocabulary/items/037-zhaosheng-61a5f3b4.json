@@ -1,0 +1,348 @@
+{
+  "id": "db530b62-89cc-41c9-abca-65e8a5deab8f",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "招生",
+  "pinyin": "zhāoshēng",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "verb"
+  ],
+  "meaning": {
+    "hanviet": "chiêu sinh",
+    "meaning_vi": "tuyển sinh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tuyển sinh"
+    ],
+    "short_definition_vi": "tuyển sinh",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "招",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần chỉ trường nghĩa: tay, động tác bằng tay.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần chỉ trường nghĩa: tay, động tác bằng tay.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tuyển, gọi",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "生",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sinh, học sinh",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "招生 được ghi nhớ theo nghĩa hiện đại: tuyển sinh.",
+    "memory_tip_vi": "Nhớ qua cụm: 招生简章.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "报名",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "录取",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "招聘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "招收",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Trường 招生; học sinh 报名. Không nói học sinh tự 招生 cho mình."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c0768f13-a624-4bfa-b789-e8938f9d4792",
+      "order": 1,
+      "zh": "招生简章",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bcc53c36-3bb7-426a-aaae-46ac158e1bf2",
+      "order": 2,
+      "zh": "招生工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ab09b06-db9c-4941-b64e-ea2f5f63d652",
+      "order": 3,
+      "zh": "开始招生",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ada37628-69d3-44fb-9d04-1935d1f69168",
+      "order": 4,
+      "zh": "停止招生",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "578b67c0-32d8-44a4-b0a4-814696700c5b",
+      "order": 5,
+      "zh": "招生人数",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c222db1c-f204-4606-b222-123a81a7c1b0",
+      "order": 6,
+      "zh": "招生计划",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0bc936be-597a-4af4-b936-571c45bea0c0",
+      "order": 7,
+      "zh": "招生办公室",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "98f3c314-5221-4ffc-ae35-002ea018173a",
+      "order": 1,
+      "zh": "这所大学今年开始招生。",
+      "pinyin": "Zhè suǒ dàxué jīnnián kāishǐ zhāoshēng.",
+      "vi": "Trường đại học này năm nay bắt đầu tuyển sinh.",
+      "analysis_vi": "招生 là hoạt động từ phía nhà trường.",
+      "highlight": [
+        "招生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "db530b62-89cc-41c9-abca-65e8a5deab8f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2d6296fb-a57f-4a0f-892d-bb87772440db",
+      "order": 2,
+      "zh": "母亲把招生简章看了一遍又一遍。",
+      "pinyin": "Mǔqīn bǎ zhāoshēng jiǎnzhāng kàn le yí biàn yòu yí biàn.",
+      "vi": "Người mẹ xem đi xem lại thông báo tuyển sinh.",
+      "analysis_vi": "把招生简章看…… là 把字句.",
+      "highlight": [
+        "招生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "db530b62-89cc-41c9-abca-65e8a5deab8f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "招生简章 là thông báo/đề án tuyển sinh rất hay gặp trên website trường.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8fc580ee-1bc5-4a00-910e-dd45e9b042fd",
+      "order": 1,
+      "rule_vi": "Trường 招生; học sinh 报名. Không nói học sinh tự 招生 cho mình.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Trường 招生; học sinh 报名. Không nói học sinh tự 招生 cho mình.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "招生",
+    "back": "tuyển sinh",
+    "hint": "zhāoshēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "verb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "db530b62-89cc-41c9-abca-65e8a5deab8f",
+    "source_lesson_vocab_id": null
+  }
+}

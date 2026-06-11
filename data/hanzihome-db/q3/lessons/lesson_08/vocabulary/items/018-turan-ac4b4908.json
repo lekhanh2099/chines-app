@@ -1,0 +1,286 @@
+{
+  "id": "91a982b8-186f-4d1f-9099-35382f894cd4",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "突然",
+  "pinyin": "tūrán",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "副词 / 形容词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đột nhiên",
+    "meaning_vi": "đột nhiên, bất ngờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đột nhiên",
+      "bất ngờ"
+    ],
+    "short_definition_vi": "đột nhiên, bất ngờ",
+    "textbook_focus_vi": "突 gợi sự bật ra/đột ngột, 然 tạo trạng thái. 突然 = xảy ra bất ngờ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình huống, bước ngoặt",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "突",
+        "lishu_vi": "đột",
+        "structure_note_vi": "穴 + 犬; học theo nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "huyệt",
+          "meaning_vi": "hang, lỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "huyệt",
+            "meaning_vi": "hang, lỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "huyệt",
+              "meaning_vi": "hang, lỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đột ngột, xông ra",
+        "modern_logic_vi": "Trong từ này, 突 góp phần tạo nghĩa 'đột ngột, xông ra'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "灬 là hỏa dưới; học theo từ ghép.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy, trạng thái",
+        "modern_logic_vi": "Trong từ này, 然 góp phần tạo nghĩa 'như vậy, trạng thái'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "突 gợi sự bật ra/đột ngột, 然 tạo trạng thái. 突然 = xảy ra bất ngờ.",
+    "memory_tip_vi": "Nhớ qua cụm: 突然想起来 = đột nhiên nhớ ra.",
+    "warning_vi": "突然 đứng trước động từ hoặc đầu vế, không đặt sau động từ theo kiểu tiếng Việt.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忽然",
+        "pinyin": "hūrán",
+        "meaning_vi": "bỗng nhiên",
+        "difference_vi": "Gần nghĩa, hơi văn/kể chuyện hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一下子",
+        "pinyin": "yíxiàzi",
+        "meaning_vi": "lập tức/một cái",
+        "difference_vi": "Nhấn tốc độ thay đổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "突然 đứng trước động từ hoặc đầu vế, không đặt sau động từ theo kiểu tiếng Việt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5b57326f-67a1-45cc-858c-2378b3a4c25d",
+      "order": 1,
+      "zh": "突然想起来",
+      "pinyin": "tūrán xiǎngqǐlai",
+      "vi": "đột nhiên nhớ ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b9fd78f-4098-461d-b229-bd12a256d517",
+      "order": 2,
+      "zh": "突然出现",
+      "pinyin": "tūrán chūxiàn",
+      "vi": "đột nhiên xuất hiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "058a50bb-deba-4e5b-8d1a-7ce6dbdc6b74",
+      "order": 3,
+      "zh": "突然停下来",
+      "pinyin": "tūrán tíng xiàlai",
+      "vi": "đột nhiên dừng lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "90d4c7db-618a-4344-86a2-461bdf921253",
+      "order": 1,
+      "zh": "他正想离开，赵霞突然敲门进来了。",
+      "pinyin": "Tā zhèng xiǎng líkāi, Zhào Xiá tūrán qiāo mén jìnlái le.",
+      "vi": "Anh ấy đang định rời đi thì Triệu Hà đột nhiên gõ cửa bước vào.",
+      "analysis_vi": "突然 tạo bước ngoặt trong câu kể.",
+      "highlight": [
+        "突然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "91a982b8-186f-4d1f-9099-35382f894cd4"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "突然 thường tạo điểm ngoặt trong văn kể chuyện.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "068950f2-913e-4b2d-87f4-5978319588da",
+      "order": 1,
+      "rule_vi": "突然 đứng trước động từ hoặc đầu vế, không đặt sau động từ theo kiểu tiếng Việt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他来了突然。",
+          "pinyin": "Tā lái le tūrán.",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Vị trí phó từ sai.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他突然来了。",
+          "pinyin": "Tā tūrán lái le.",
+          "vi": "Anh ấy đột nhiên đến.",
+          "note_vi": "突然 đứng trước động từ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "突然",
+    "back": "đột nhiên, bất ngờ",
+    "hint": "tūrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "91a982b8-186f-4d1f-9099-35382f894cd4",
+    "source_lesson_vocab_id": null
+  }
+}

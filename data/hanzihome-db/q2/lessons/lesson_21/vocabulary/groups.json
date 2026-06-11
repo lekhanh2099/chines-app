@@ -1,0 +1,120 @@
+[
+  {
+    "id": "2ffb8c7e-fa55-42a0-8072-d7100473497d",
+    "order": 1,
+    "title_vi": "Biểu diễn / sân khấu / phim ảnh",
+    "words": [
+      "演出",
+      "演员",
+      "武打",
+      "动作",
+      "精彩",
+      "表现",
+      "人物",
+      "服装",
+      "开演",
+      "节目单"
+    ],
+    "notes": []
+  },
+  {
+    "id": "a0ce53e6-f2d1-4a18-8a30-6c73114b0d3a",
+    "order": 2,
+    "title_vi": "Xã hội / địa vị / tính cách",
+    "words": [
+      "社会",
+      "地位",
+      "性格"
+    ],
+    "notes": []
+  },
+  {
+    "id": "dc7171a7-a26e-42ea-aa9b-67d4e99f99ad",
+    "order": 3,
+    "title_vi": "Mức độ / đánh giá / cảm nhận",
+    "words": [
+      "十分",
+      "有趣",
+      "羡慕",
+      "简直"
+    ],
+    "notes": []
+  },
+  {
+    "id": "d92481c4-3a9f-4a19-bfa5-a93bf3fc6b5e",
+    "order": 4,
+    "title_vi": "Văn hóa / truyền thống / nghệ thuật",
+    "words": [
+      "传统",
+      "传",
+      "艺术",
+      "古代",
+      "神话",
+      "天上",
+      "人间"
+    ],
+    "notes": []
+  },
+  {
+    "id": "b9271351-9ec0-426d-bb43-ce8deb1fe827",
+    "order": 5,
+    "title_vi": "Hiểu biết / lựa chọn / ước hẹn / lo lắng",
+    "words": [
+      "了解",
+      "选择",
+      "约",
+      "担心",
+      "估计"
+    ],
+    "notes": []
+  },
+  {
+    "id": "de7d9472-bec5-4b84-809c-9818fb037a99",
+    "order": 6,
+    "title_vi": "Từ chức năng / ngữ pháp / bổ ngữ",
+    "words": [
+      "的话",
+      "了",
+      "下",
+      "满",
+      "单",
+      "内",
+      "无",
+      "篇",
+      "指"
+    ],
+    "notes": []
+  },
+  {
+    "id": "27185aaa-6ab5-4e81-ab25-ededf649a1c5",
+    "order": 7,
+    "title_vi": "Địa hình / thiên nhiên / vị giác / truyền thông",
+    "words": [
+      "桥",
+      "雾",
+      "广播",
+      "辣",
+      "酸",
+      "苦",
+      "甜"
+    ],
+    "notes": []
+  },
+  {
+    "id": "b64c5552-9170-4418-8d13-5b485ea7a455",
+    "order": 8,
+    "title_vi": "Truyện ngụ ngôn / nhân vật / hành động",
+    "words": [
+      "南辕北辙",
+      "附文",
+      "赶",
+      "挑",
+      "车夫",
+      "身强力壮",
+      "技术",
+      "道理",
+      "继续"
+    ],
+    "notes": []
+  }
+]

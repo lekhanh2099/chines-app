@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ac9a0cc837ce455d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "熊猫",
+  "pinyin": "xióngmāo",
+  "meaning_vi": "gấu trúc",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "type": "vocabulary_item",
+    "order": 30,
+    "hanzi": "熊猫",
+    "pinyin": "xióngmāo",
+    "meaning_vi": "gấu trúc",
+    "meaning_en": "panda",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "熊猫",
+      "back": "xióngmāo — gấu trúc",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

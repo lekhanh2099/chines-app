@@ -1,0 +1,208 @@
+{
+  "id": "40e9ec0a-3a8c-4b3f-9de9-e841436709cf",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "午觉",
+  "pinyin": "wǔjiào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "ngọ giác",
+    "meaning_vi": "giấc ngủ trưa",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "giấc ngủ trưa",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "午",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "buổi trưa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "觉",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giấc ngủ khi đọc jiào",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Giấc ngủ vào buổi trưa; thường đi với 睡.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "午睡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngủ trưa, hơi sách vở hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "休息",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghỉ ngơi, không nhất thiết ngủ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "睡觉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngủ nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "199f403f-66c4-46a6-926a-564b1dad969e",
+      "order": 1,
+      "zh": "睡午觉",
+      "pinyin": "",
+      "vi": "ngủ trưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "120ecdd8-75c9-4b94-bda5-3a5105cc50ca",
+      "order": 2,
+      "zh": "午觉时间",
+      "pinyin": "",
+      "vi": "thời gian ngủ trưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22f61bb9-f603-4648-8060-bf4c8021a0f3",
+      "order": 3,
+      "zh": "习惯睡午觉",
+      "pinyin": "",
+      "vi": "quen ngủ trưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b54976e7-1d7e-4c8a-8c47-a527a2f6a9b7",
+      "order": 1,
+      "zh": "我每天中午睡午觉。",
+      "pinyin": "Wǒ měitiān zhōngwǔ shuì wǔjiào.",
+      "vi": "Mỗi trưa tôi ngủ trưa.",
+      "en": "",
+      "highlight": [
+        "午觉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "40e9ec0a-3a8c-4b3f-9de9-e841436709cf"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "午休/午睡 phổ biến ở nhiều trường học và công sở.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f9c049e-6bb7-45dc-ba06-146d5c6b443e",
+      "order": 1,
+      "title_vi": "Không dùng 做午觉",
+      "explanation_vi": "Ngủ trưa là 睡午觉.",
+      "wrong_examples": [
+        "我做午觉。"
+      ],
+      "correct_examples": [
+        "我睡午觉。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "午觉",
+    "back": "giấc ngủ trưa",
+    "hint": "wǔjiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "午觉"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "40e9ec0a-3a8c-4b3f-9de9-e841436709cf",
+    "source_lesson_vocab_id": null
+  }
+}

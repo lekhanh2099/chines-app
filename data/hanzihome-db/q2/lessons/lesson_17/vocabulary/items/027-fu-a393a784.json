@@ -1,0 +1,328 @@
+{
+  "id": "ace21fa7-a562-4101-884e-a0b12ca84999",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "副",
+  "pinyin": "fù",
+  "pos": {
+    "raw_vi": "Lượng từ / Yếu tố cấu tạo từ",
+    "raw_cn": "量/语素",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Phó",
+    "meaning_vi": "bộ, cặp; phó/phụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bộ, cặp; phó/phụ"
+    ],
+    "short_definition_vi": "bộ, cặp; phó/phụ",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "lượng từ quan trọng, dễ nhầm với 双, 幅, 份.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "副",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao/cắt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao/cắt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "畐",
+            "hanviet": "phúc",
+            "meaning_vi": "thành phần gợi âm, liên hệ đầy đủ trong một số giải thích",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phó/phụ; lượng từ cho bộ/cặp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "副 khi làm lượng từ thường nhấn một bộ/cặp hoàn chỉnh. → 一副对联儿 = một bộ câu đối gồm hai vế. → 一副眼镜 = một cặp kính. Cảnh báo: với 对联儿, 一副对联儿 rất tự nhiên vì câu đối đi thành cặp hai bên cửa.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "副",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bộ/cặp hoàn chỉnh, như kính, găng tay, câu đối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "幅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bức/tấm, dùng cho tranh, thư pháp, câu đối treo/dán.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "双",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đôi tự nhiên như giày, tay, mắt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "份",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phần/bản/món/tấm lòng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 一副对联儿 nhấn bộ câu đối hai vế; 一幅画 là một bức tranh; 一份礼物 là một phần/món quà."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "78a847f3-b38f-4863-bd0f-6eebeb4a6734",
+      "order": 1,
+      "zh": "一副对联儿",
+      "pinyin": "",
+      "vi": "một bộ câu đối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f10911e-e8ce-4207-9ca3-0503a4a16361",
+      "order": 2,
+      "zh": "一副眼镜",
+      "pinyin": "",
+      "vi": "một cặp kính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6855e319-31b1-4865-b0ff-6b6fb519aed7",
+      "order": 3,
+      "zh": "一副手套",
+      "pinyin": "",
+      "vi": "một đôi găng tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ee933fa-d203-45c8-a937-5cdb5fa12a69",
+      "order": 4,
+      "zh": "副班长",
+      "pinyin": "",
+      "vi": "lớp phó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2bc950c-3cce-4903-98ac-dfc0c8be00ce",
+      "order": 5,
+      "zh": "一副很高兴的样子",
+      "pinyin": "",
+      "vi": "một vẻ rất vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ca8fa47d-8afd-453e-9a50-bfa28d8dbf78",
+      "order": 1,
+      "zh": "我们把一副对联儿贴在大门两边。",
+      "pinyin": "Wǒmen bǎ yí fù duìliánr tiē zài dàmén liǎng biān.",
+      "vi": "Chúng tôi dán một bộ câu đối ở hai bên cửa chính.",
+      "analysis_vi": "一副对联儿 nhấn câu đối là một cặp; 把……贴在…… là câu 把 có vị trí rõ.",
+      "highlight": [
+        "副"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "ace21fa7-a562-4101-884e-a0b12ca84999"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "57e6ada4-6aa1-405b-9d4d-bc035da307b6",
+      "order": 2,
+      "zh": "桌子上放着一副对联儿和一个红色的“福”字。",
+      "pinyin": "Zhuōzi shang fàngzhe yí fù duìliánr hé yí ge hóngsè de “Fú” zì.",
+      "vi": "Trên bàn đang đặt một bộ câu đối và một chữ “Phúc” màu đỏ.",
+      "analysis_vi": "桌子上放着…… là câu tồn hiện; đồ vật chưa được dán, đang nằm trên bàn.",
+      "highlight": [
+        "副"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "ace21fa7-a562-4101-884e-a0b12ca84999"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "44081774-b58a-4030-9f20-2910210d3014",
+      "order": 3,
+      "zh": "副班长答应帮我们把彩带挂起来。",
+      "pinyin": "Fù bānzhǎng dāying bāng wǒmen bǎ cǎidài guà qǐlai.",
+      "vi": "Lớp phó đồng ý giúp chúng tôi treo dây ruy băng màu lên.",
+      "analysis_vi": "副班长 là chức vụ phó; 把彩带挂起来 là câu chữ 把 có kết quả treo lên.",
+      "highlight": [
+        "副"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "ace21fa7-a562-4101-884e-a0b12ca84999"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 副",
+    "content_vi": "Câu đối Tết thường là một 副 vì có hai vế dọc dán hai bên cửa. Phía trên có thể thêm 横批 – câu ngang. Khi đọc câu đối truyền thống, thứ tự thường liên quan đến hướng dán và cách viết chữ cổ từ phải sang trái, nên không phải cứ thấy bên trái là đọc trước.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8b4f9930-760e-40ef-8c38-70981fc51690",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 副, 幅, 份. 一副对联儿 Yí fù duìliánr Một bộ câu đối. 一幅画 Yì fú huà Một bức tranh. 一份礼物 Yí fèn lǐwù Một món/phần quà.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "副",
+    "back": "bộ, cặp; phó/phụ",
+    "hint": "fù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ace21fa7-a562-4101-884e-a0b12ca84999",
+    "source_lesson_vocab_id": null
+  }
+}

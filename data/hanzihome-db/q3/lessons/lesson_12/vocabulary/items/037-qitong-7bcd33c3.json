@@ -1,0 +1,339 @@
+{
+  "id": "3c73a3a0-d58b-4724-b18d-a2c62a048c88",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "气筒",
+  "pinyin": "qìtǒng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khí đồng",
+    "meaning_vi": "ống bơm, bơm hơi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ống bơm, bơm hơi"
+    ],
+    "short_definition_vi": "Dụng cụ bơm hơi, thường là bơm xe/bơm bóng.",
+    "textbook_focus_vi": "Dùng với 打气, 车胎.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "气",
+        "lishu_vi": "khí",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "气",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khí",
+          "radical_name_zh": "",
+          "hanviet": "khí",
+          "meaning_vi": "khí/hơi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "气 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "气",
+            "hanviet": "khí",
+            "meaning_vi": "khí/hơi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "气",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khí",
+              "radical_name_zh": "",
+              "hanviet": "khí",
+              "meaning_vi": "khí/hơi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "气 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "气 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hơi/khí/tinh thần",
+        "modern_logic_vi": "hơi/khí/tinh thần",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "筒",
+        "lishu_vi": "đồng",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre/vật dạng ống",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "竹 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre/vật dạng ống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre/vật dạng ống",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "竹 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ống",
+        "modern_logic_vi": "ống",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "气 = hơi; 筒 = ống.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "气泵",
+        "pinyin": "qìbèng",
+        "meaning_vi": "máy bơm khí",
+        "difference_vi": "气泵 kỹ thuật/điện hơn; 气筒 thường là bơm tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "671b3646-24df-4155-b6f3-6b83e84bd16a",
+      "order": 1,
+      "zh": "一个气筒",
+      "pinyin": "",
+      "vi": "một cái bơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72ae7002-ad3a-4b74-b81c-c2d01b525456",
+      "order": 2,
+      "zh": "打气筒",
+      "pinyin": "",
+      "vi": "bơm xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "215cb300-c3a1-4803-ac52-1c811f16e349",
+      "order": 3,
+      "zh": "用气筒打气",
+      "pinyin": "",
+      "vi": "dùng bơm để bơm hơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "556b331c-2503-422f-b82e-60b2d40f68c3",
+      "order": 4,
+      "zh": "气筒坏了",
+      "pinyin": "",
+      "vi": "bơm hỏng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "80ed6a01-002a-4249-b81f-0927028ab8cf",
+      "order": 1,
+      "zh": "我的车胎没气了，你有气筒吗？",
+      "pinyin": "",
+      "vi": "Lốp xe tôi hết hơi rồi, bạn có bơm không?",
+      "analysis_vi": "气筒 là dụng cụ.",
+      "highlight": [
+        "气筒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c73a3a0-d58b-4724-b18d-a2c62a048c88"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "66ec5181-7cd9-4a5b-beba-7435f0820d85",
+      "order": 2,
+      "zh": "他拿来一个气筒，想给车胎打气。",
+      "pinyin": "",
+      "vi": "Anh ấy mang tới một cái bơm để bơm lốp.",
+      "analysis_vi": "给车胎打气.",
+      "highlight": [
+        "气筒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c73a3a0-d58b-4724-b18d-a2c62a048c88"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8412cf7a-a948-49b8-9acf-f2ce8baebc9f",
+      "order": 1,
+      "rule_vi": "气筒 là dụng cụ, không phải 气 hay 打气.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "气筒 là dụng cụ, không phải 气 hay 打气.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "气筒",
+    "back": "ống bơm, bơm hơi",
+    "hint": "qìtǒng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3c73a3a0-d58b-4724-b18d-a2c62a048c88",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "id": "52d293e3-82f7-49c6-94ad-1c2546418f92",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "落下",
+  "pinyin": "luòxià / làxià",
+  "pos": {
+    "raw_vi": "Động từ xu hướng / Động từ",
+    "raw_cn": "动词/趋向结构",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lạc hạ",
+    "meaning_vi": "rơi xuống; bỏ quên, để sót lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rơi xuống",
+      "bỏ quên",
+      "để sót lại"
+    ],
+    "short_definition_vi": "rơi xuống; bỏ quên, để sót lại",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: rơi xuống; bỏ quên, để sót lại.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "落",
+        "lishu_vi": "lạc/lạc",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "洛",
+            "hanviet": "lạc",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rơi xuống; bỏ sót trong một số cách đọc",
+        "modern_logic_vi": "Rơi hoặc bị bỏ lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "下",
+        "lishu_vi": "hạ",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưới, xuống",
+        "modern_logic_vi": "Hướng xuống/phía dưới.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "落下 trong bài dùng theo nghĩa: rơi xuống; bỏ quên, để sót lại. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 落下 qua văn cảnh 离家的时候: rơi xuống; bỏ quên, để sót lại.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "掉下",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rơi xuống, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "留下",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "để lại/lưu lại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忘带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên mang theo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "落后",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tụt lại phía sau",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "带上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mang theo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拿走",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lấy đi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "捡起来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhặt lên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c99caca5-0949-4456-a5f3-f1161f8a3889",
+      "order": 1,
+      "zh": "落下眼泪",
+      "pinyin": "",
+      "vi": "nước mắt rơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb0be2f3-99a8-48c1-9124-6d0114a69689",
+      "order": 2,
+      "zh": "树叶落下",
+      "pinyin": "",
+      "vi": "lá rơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ba6f44e-e664-4736-a518-a37dd901f3a7",
+      "order": 3,
+      "zh": "把包落下了",
+      "pinyin": "",
+      "vi": "bỏ quên túi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4b5526d-be57-4ca3-8140-893aa4487d1e",
+      "order": 4,
+      "zh": "落下东西",
+      "pinyin": "",
+      "vi": "bỏ quên đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "849d2d1c-d8a8-4dc6-8dd7-4e708423b9c7",
+      "order": 5,
+      "zh": "别落下什么",
+      "pinyin": "",
+      "vi": "đừng bỏ quên gì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bc84d54e-4b7c-4cfe-85a6-e3a91b8c5b61",
+      "order": 1,
+      "zh": "眼泪从她脸上落下来了。",
+      "pinyin": "",
+      "vi": "Nước mắt từ mặt cô ấy rơi xuống.",
+      "analysis_vi": "luòxià = rơi xuống.",
+      "highlight": [
+        "落下"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "52d293e3-82f7-49c6-94ad-1c2546418f92"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "38dec872-d670-4ee5-8976-490e7b61f0f9",
+      "order": 2,
+      "zh": "她太着急了，把戒指落在家里了。",
+      "pinyin": "",
+      "vi": "Cô ấy vội quá, bỏ quên nhẫn ở nhà.",
+      "analysis_vi": "là 在家里 = bỏ quên ở nhà.",
+      "highlight": [
+        "落"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "52d293e3-82f7-49c6-94ad-1c2546418f92"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c5e28b59-20e7-4f95-8e49-fc11c800ca34",
+      "order": 3,
+      "zh": "临出发前，母亲再三嘱咐她检查行李，别把重要的东西落下。",
+      "pinyin": "",
+      "vi": "Trước khi xuất phát, mẹ dặn đi dặn lại kiểm tra hành lý, đừng bỏ quên đồ quan trọng.",
+      "analysis_vi": "别把……落下 là mẫu cảnh báo thực tế.",
+      "highlight": [
+        "落下"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "52d293e3-82f7-49c6-94ad-1c2546418f92"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "Trước khi đi xa, 别落下东西 là câu dặn rất đời thường.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7ff2156b-99a2-436c-a808-3b9f13769ca0",
+      "order": 1,
+      "rule_vi": "Phân biệt luòxià = rơi xuống; làxià = bỏ quên/để sót.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "落下",
+    "back": "rơi xuống; bỏ quên, để sót lại",
+    "hint": "luòxià / làxià",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_045"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "52d293e3-82f7-49c6-94ad-1c2546418f92",
+    "source_lesson_vocab_id": null
+  }
+}

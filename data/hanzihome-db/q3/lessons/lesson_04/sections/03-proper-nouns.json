@@ -1,0 +1,22 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "bcde0ec8-7426-41cc-93b4-e9fdca7cd477",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "南京",
+      "pinyin": "Nánjīng",
+      "meaning_vi": "Nam Kinh; thành phố Nam Kinh",
+      "meaning_en": "Nanjing, the capital of Jiangsu Province",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

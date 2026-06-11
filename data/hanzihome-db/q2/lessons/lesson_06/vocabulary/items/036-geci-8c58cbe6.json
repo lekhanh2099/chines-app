@@ -1,0 +1,354 @@
+{
+  "id": "dcb6ba6b-653f-4939-af70-f5435ebf5226",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "歌词",
+  "pinyin": "gēcí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "people_activity"
+  ],
+  "meaning": {
+    "hanviet": "Ca từ",
+    "meaning_vi": "lời bài hát",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lời bài hát"
+    ],
+    "short_definition_vi": "lời bài hát",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "people activity",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "歌",
+        "lishu_vi": "",
+        "structure_note_vi": "哥 + 欠; 欠 liên quan miệng/hơi thở trong nhiều chữ.",
+        "components": [
+          {
+            "text": "哥",
+            "hanviet": "ca",
+            "meaning_vi": "anh trai/âm ca",
+            "position_vi": "bên trái/trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "欠",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "há miệng/thở",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hát, bài hát",
+        "modern_logic_vi": "哥 + 欠; 欠 liên quan miệng/hơi thở trong nhiều chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "词",
+        "lishu_vi": "",
+        "structure_note_vi": "讠 liên quan lời nói/ngôn ngữ; 司 là phần phải.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "司",
+            "hanviet": "ti",
+            "meaning_vi": "quản lý",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "từ, lời",
+        "modern_logic_vi": "讠 liên quan lời nói/ngôn ngữ; 司 là phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "歌 là bài hát, 词 là lời/từ; 歌词 là lời của bài hát.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "词语",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từ ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "生词",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từ mới",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "旋律",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giai điệu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "37213f3c-99b9-4db5-b647-743c12510714",
+      "order": 1,
+      "zh": "中文歌词",
+      "pinyin": "",
+      "vi": "lời bài hát tiếng Trung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53503b7b-e442-41b3-a7d6-ed7cccb9b2ca",
+      "order": 2,
+      "zh": "歌词很简单",
+      "pinyin": "",
+      "vi": "lời bài hát rất đơn giản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c09e395b-a372-4f37-b419-cc390768b252",
+      "order": 3,
+      "zh": "听懂歌词",
+      "pinyin": "",
+      "vi": "nghe hiểu lời bài hát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "958cc9cf-9783-4d30-ae67-e4b38bf9df0d",
+      "order": 4,
+      "zh": "记住歌词",
+      "pinyin": "",
+      "vi": "nhớ lời bài hát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a4098d3-22d5-48c2-84ca-82d2982d1ea9",
+      "order": 5,
+      "zh": "歌词的意思",
+      "pinyin": "",
+      "vi": "nghĩa của lời bài hát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ea05b4ef-f66e-4578-8de8-ac1a51d3a9af",
+      "order": 1,
+      "zh": "这首歌的歌词很简单。",
+      "pinyin": "Zhè shǒu gē de gēcí hěn jiǎndān.",
+      "vi": "Lời bài hát này rất đơn giản.",
+      "analysis_vi": "这首歌的歌词 = lời của bài hát này.",
+      "highlight": [
+        "歌词"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dcb6ba6b-653f-4939-af70-f5435ebf5226"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7893cb96-0bf5-48e0-89d4-fd8734506553",
+      "order": 2,
+      "zh": "我下载了几首中文歌曲，可是有些歌词还是听不懂。",
+      "pinyin": "Wǒ xiàzài le jǐ shǒu Zhōngwén gēqǔ, kěshì yǒuxiē gēcí háishi tīng bù dǒng.",
+      "vi": "Tôi tải mấy bài tiếng Trung, nhưng có vài lời vẫn không hiểu.",
+      "analysis_vi": "听不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "歌词"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dcb6ba6b-653f-4939-af70-f5435ebf5226"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Học tiếng Trung qua nhạc cần chú ý lời bài hát hay tỉnh lược và dùng ẩn dụ.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "aceaf32a-48e6-480e-83dc-cf66d6d8681d",
+      "order": 1,
+      "rule_vi": "歌词 là lời bài hát, không phải từ vựng bài hát.",
+      "natural_examples": [
+        {
+          "zh": "我不懂这句歌词。",
+          "pinyin": "Wǒ bù dǒng zhè jù gēcí.",
+          "vi": "Tôi không hiểu câu lời bài hát này.",
+          "note_vi": "Dịch theo cả câu hát.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我不懂这句歌词。",
+          "pinyin": "Wǒ bù dǒng zhè jù gēcí.",
+          "vi": "Tôi không hiểu câu lời bài hát này.",
+          "note_vi": "Dịch theo cả câu hát.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "歌词",
+    "back": "lời bài hát",
+    "hint": "gēcí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "people_activity"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dcb6ba6b-653f-4939-af70-f5435ebf5226",
+    "source_lesson_vocab_id": null
+  }
+}

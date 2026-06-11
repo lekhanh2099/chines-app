@@ -1,0 +1,330 @@
+{
+  "id": "385c7b49-9eea-4a79-813f-890d58885ed5",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "开",
+  "pinyin": "kāi",
+  "pos": {
+    "raw_vi": "Động từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_01",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khai",
+    "meaning_vi": "mở; bật; lái; bắt đầu; tổ chức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mở",
+      "bật",
+      "lái",
+      "bắt đầu",
+      "tổ chức"
+    ],
+    "short_definition_vi": "mở; bật; lái; bắt đầu; tổ chức",
+    "textbook_focus_vi": "Bài 1 Quyển 2: 田芳去哪儿了",
+    "register_vi": "",
+    "usage_domain_vi": "Trong Bài 1, trọng tâm là 开机, 开门, 开灯, và 开着.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "开",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "开 có lõi nghĩa “mở ra / làm cho bắt đầu hoạt động”. Từ đó mở rộng: 开门 = mở cửa. 开灯 = bật đèn. 开机 = mở máy. 开车 = lái xe. 开会 = họp / mở cuộc họp. Cảnh báo: tiếng Trung dùng 开 cho cả “mở” và “bật”, không giống tiếng Việt hoàn toàn.",
+    "memory_tip_vi": "",
+    "warning_vi": "tiếng Trung dùng 开 cho cả “mở” và “bật”, không giống tiếng Việt hoàn toàn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mở/bật/lái/tổ chức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "关",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đóng/tắt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mở ra, bật lên, thường có tân ngữ cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开始",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bắt đầu, rõ nghĩa thời gian hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đang mở/bật, trạng thái duy trì.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "门开着。",
+      "Cửa đang mở.",
+      "灯开着。",
+      "Đèn đang bật.",
+      "会议开始了。",
+      "Cuộc họp bắt đầu rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "41416d73-c101-4199-8538-51da200269a1",
+      "order": 1,
+      "zh": "开门",
+      "pinyin": "",
+      "vi": "mở cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38262512-aff0-40ba-94ae-7f97681c9afd",
+      "order": 2,
+      "zh": "开灯",
+      "pinyin": "",
+      "vi": "bật đèn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70ac9d98-e1d1-42d0-97ce-4110b4c4ee78",
+      "order": 3,
+      "zh": "开机",
+      "pinyin": "",
+      "vi": "mở máy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e02d51f3-38b0-4e1c-9799-a488e3977869",
+      "order": 4,
+      "zh": "开车",
+      "pinyin": "",
+      "vi": "lái xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c9bba701-f845-4bcb-86db-f109a274ff09",
+      "order": 5,
+      "zh": "开会",
+      "pinyin": "",
+      "vi": "họp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "061e1a6e-1b71-44be-96d4-5cba58156ed0",
+      "order": 6,
+      "zh": "开着",
+      "pinyin": "",
+      "vi": "đang mở/bật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c8a00986-3f80-4ebf-97b0-c1cea74c4d5c",
+      "order": 1,
+      "zh": "门开着，田芳可能在家。",
+      "pinyin": "Mén kāizhe, Tián Fāng kěnéng zài jiā.",
+      "vi": "Cửa đang mở, có thể Điền Phương ở nhà.",
+      "analysis_vi": "开着 dùng 着 chỉ trạng thái cửa đang mở, không nhấn hành động mở.",
+      "highlight": [
+        "开"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "385c7b49-9eea-4a79-813f-890d58885ed5"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dbf5f7c8-96d8-42c3-9bdd-6a0f1d04321e",
+      "order": 2,
+      "zh": "你把灯开着吧，我还要再看一会儿书。",
+      "pinyin": "Nǐ bǎ dēng kāizhe ba, wǒ hái yào zài kàn yíhuìr shū.",
+      "vi": "Bạn cứ để đèn bật nhé, tôi còn muốn đọc sách thêm một lát.",
+      "analysis_vi": "把灯开着 là 把字句 với 着, nghĩa là làm cho đèn ở trạng thái bật và giữ nguyên. 再看一会儿 dùng 再 vì hành động đọc thêm sẽ xảy ra tiếp.",
+      "highlight": [
+        "开"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "385c7b49-9eea-4a79-813f-890d58885ed5"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "12403618-345d-49d1-b884-915021abe08d",
+      "order": 3,
+      "zh": "教室里没有人，可是窗户开着，灯也开着，老师只好回来把它们都关上。",
+      "pinyin": "Jiàoshì lǐ méiyǒu rén, kěshì chuānghu kāizhe, dēng yě kāizhe, lǎoshī zhǐhǎo huílai bǎ tāmen dōu guān shang.",
+      "vi": "Trong lớp không có ai, nhưng cửa sổ đang mở, đèn cũng đang bật, thầy/cô đành quay lại đóng/tắt hết chúng.",
+      "analysis_vi": "Chủ-vị chính là 老师只好回来把它们都关上. Trước đó là bối cảnh: 教室里没有人 / 窗户开着 / 灯开着. 把它们关上 là 把字句 với kết quả 上.",
+      "highlight": [
+        "开"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "385c7b49-9eea-4a79-813f-890d58885ed5"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Người Việt dễ thấy lạ vì tiếng Trung nói 开灯 là “mở đèn/bật đèn”, 开空调 là “bật điều hòa”, 开车 là “lái xe”. Học 开 theo cụm sẽ nhanh hơn học một nghĩa đơn lẻ.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "16e9c6f2-b58b-4ac2-bad7-2ac7e179fe67",
+      "order": 1,
+      "rule_vi": "Nhầm 开了 và 开着.",
+      "natural_examples": [
+        {
+          "zh": "Nhầm 开了 và 开着.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "门开了。",
+          "pinyin": "Mén kāi le.",
+          "vi": "Cửa mở rồi. Nhấn thay đổi trạng thái.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "门开着。",
+          "pinyin": "Mén kāizhe.",
+          "vi": "Cửa đang mở. Nhấn trạng thái duy trì.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nhầm 开了 và 开着.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "开",
+    "back": "mở; bật; lái; bắt đầu; tổ chức",
+    "hint": "kāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_01",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "hanyu2/bai01/vocab/016",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "385c7b49-9eea-4a79-813f-890d58885ed5",
+    "source_lesson_vocab_id": null
+  }
+}

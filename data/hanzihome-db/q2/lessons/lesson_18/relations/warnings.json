@@ -1,0 +1,75 @@
+[
+  {
+    "id": "warning_304e025bd4d2615b55686614",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "5b699eb9-9255-4edf-9518-c157331e1e72",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.6"
+    },
+    "term": "把 + O + V + 着",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_3f5dad8197e15c6637272b91",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "5b699eb9-9255-4edf-9518-c157331e1e72",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.6"
+    },
+    "term": "把 + O + V + 在 / 到 + địa điểm",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_9944752e39a6e33de9f098f2",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "5b699eb9-9255-4edf-9518-c157331e1e72",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.6"
+    },
+    "term": "把 + O + V + 成 + kết quả mới",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  },
+  {
+    "id": "warning_a026dfd960557ef792aea48e",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "登",
+      "票",
+      "卡",
+      "装",
+      "掏",
+      "插",
+      "扳",
+      "洒",
+      "称",
+      "手",
+      "腿",
+      "带",
+      "暗",
+      "亮",
+      "凉",
+      "冷",
+      "赛",
+      "塞"
+    ]
+  },
+  {
+    "id": "warning_ec0b40d7f4bc7d317453824b",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "5b699eb9-9255-4edf-9518-c157331e1e72",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.6"
+    },
+    "term": "把 + O + V + 给 + người nhận",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  }
+]

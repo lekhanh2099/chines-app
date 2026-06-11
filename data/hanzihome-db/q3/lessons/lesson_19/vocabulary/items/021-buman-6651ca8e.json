@@ -1,0 +1,295 @@
+{
+  "id": "ff26e488-7abc-4475-b8c3-3313f0375a54",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "不满",
+  "pinyin": "bùmǎn",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ",
+    "raw_cn": "形容词 / 名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "bất mãn",
+    "meaning_vi": "không hài lòng, bất mãn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không hài lòng",
+      "bất mãn"
+    ],
+    "short_definition_vi": "không hài lòng, bất mãn",
+    "textbook_focus_vi": "Không đầy/không thỏa mãn chuyển thành nghĩa không hài lòng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ “不满”, chữ “不” góp phần vào trường nghĩa: không",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "满",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy ba chấm",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy ba chấm",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đầy, thỏa mãn",
+        "modern_logic_vi": "Trong từ “不满”, chữ “满” góp phần vào trường nghĩa: đầy, thỏa mãn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Không đầy/không thỏa mãn chuyển thành nghĩa không hài lòng.",
+    "memory_tip_vi": "Không đầy/không thỏa mãn chuyển thành nghĩa không hài lòng.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不满意",
+        "pinyin": "",
+        "meaning_vi": "không hài lòng, trực tiếp hơn",
+        "difference_vi": "không hài lòng, trực tiếp hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抱怨",
+        "pinyin": "",
+        "meaning_vi": "phàn nàn, hành động nói ra",
+        "difference_vi": "phàn nàn, hành động nói ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3b79d16f-23e2-4a7d-a57e-43c0b88ddd4f",
+      "order": 1,
+      "zh": "感到不满",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5685152-827f-4883-8fdf-2bee1d2b6d8c",
+      "order": 2,
+      "zh": "表示不满",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50223fb1-9d9a-4d38-a355-877ee186d0dc",
+      "order": 3,
+      "zh": "引起不满",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99430ed7-cfef-4275-af2c-383c430fc1da",
+      "order": 4,
+      "zh": "对……不满",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "195b34e4-6e06-411f-973e-f05315bf25ad",
+      "order": 1,
+      "zh": "他对这个结果很不满。",
+      "pinyin": "",
+      "vi": "Anh ấy rất không hài lòng với kết quả này.",
+      "analysis_vi": "对……不满.",
+      "highlight": [
+        "不满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ff26e488-7abc-4475-b8c3-3313f0375a54"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7c524aa0-e5b9-4a3d-a6dc-322d38251906",
+      "order": 2,
+      "zh": "工作中出了差错，引起了同事的不满。",
+      "pinyin": "",
+      "vi": "Công việc xảy ra sai sót, gây bất mãn của đồng nghiệp.",
+      "analysis_vi": "引起不满 là cụm văn viết.",
+      "highlight": [
+        "不满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ff26e488-7abc-4475-b8c3-3313f0375a54"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Không đầy/không thỏa mãn chuyển thành nghĩa không hài lòng.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7fec5820-d890-481a-8403-81547872ec59",
+      "order": 1,
+      "rule_vi": "不满 có thể là không hài lòng, không nhất thiết là phản kháng dữ dội.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "不满 có thể là không hài lòng, không nhất thiết là phản kháng dữ dội.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不满",
+    "back": "không hài lòng, bất mãn",
+    "hint": "bùmǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ff26e488-7abc-4475-b8c3-3313f0375a54",
+    "source_lesson_vocab_id": null
+  }
+}

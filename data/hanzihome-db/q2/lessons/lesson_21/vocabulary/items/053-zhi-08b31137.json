@@ -1,0 +1,265 @@
+{
+  "id": "f4a778d7-8e0a-40e9-80a6-80d8fdf00562",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "指",
+  "pinyin": "zhǐ",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Chỉ",
+    "meaning_vi": "chỉ, chỉ vào; ngón tay; chỉ ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chỉ, chỉ vào; ngón tay; chỉ ra"
+    ],
+    "short_definition_vi": "chỉ, chỉ vào; ngón tay; chỉ ra",
+    "textbook_focus_vi": "chỉ, chỉ vào; ngón tay; chỉ ra",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "指",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "旨",
+            "hanviet": "chỉ",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "chỉ/chỉ ra",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "dùng tay chỉ hướng/đối tượng, mở rộng thành chỉ ra ý nghĩa/vấn đề",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "af49976a-bac5-4a55-a2fa-8a2ae5d7133e",
+      "order": 1,
+      "zh": "指路",
+      "pinyin": "",
+      "vi": "chỉ đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "67f79fb9-7020-43f8-ac13-45318bfd158b",
+      "order": 2,
+      "zh": "指着地图",
+      "pinyin": "",
+      "vi": "chỉ vào bản đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ed04766-971d-4331-bc18-5d6dce75a671",
+      "order": 3,
+      "zh": "指给我看",
+      "pinyin": "",
+      "vi": "chỉ cho tôi xem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6c341aa-161e-4343-9999-76233db51641",
+      "order": 4,
+      "zh": "指出问题",
+      "pinyin": "",
+      "vi": "chỉ ra vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a17e082-d34b-4209-976c-d6845e87be3f",
+      "order": 5,
+      "zh": "指的是……",
+      "pinyin": "",
+      "vi": "ý chỉ là...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "43bad536-8743-4959-83d4-083e37532fd0",
+      "order": 1,
+      "zh": "他指着地图说：“楚国在南边。”",
+      "pinyin": "Tā zhǐzhe dìtú shuō: “Chǔguó zài nánbian.”",
+      "vi": "Anh ấy chỉ vào bản đồ và nói: 'Nước Sở ở phía nam.'",
+      "analysis_vi": "指着 dùng 着 chỉ trạng thái tay đang chỉ.",
+      "highlight": [
+        "指"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f4a778d7-8e0a-40e9-80a6-80d8fdf00562"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bd7f699b-de2d-4314-87b3-7c6f3f5b0814",
+      "order": 2,
+      "zh": "如果不了解指，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě zhǐ, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 指, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "指"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f4a778d7-8e0a-40e9-80a6-80d8fdf00562"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ae48659c-b048-4031-9c47-b677e224f211",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解指在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě zhǐ zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 指 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "指"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f4a778d7-8e0a-40e9-80a6-80d8fdf00562"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "这个词指的是…… là cách giải thích nghĩa rất hay gặp trong lớp học.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "82376886-b083-49f2-8e64-894ddad6c0eb",
+      "order": 1,
+      "rule_vi": "Không nhầm 指, 只, 纸; cùng âm gần zhǐ nhưng nghĩa khác。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "指",
+    "back": "chỉ, chỉ vào; ngón tay; chỉ ra",
+    "hint": "zhǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f4a778d7-8e0a-40e9-80a6-80d8fdf00562",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_13b5733f2b579f4b",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "一氧化碳",
+  "pinyin": "yīyǎnghuàtàn",
+  "meaning_vi": "khí carbon monoxide, khí CO",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "259a56af-42ed-444c-a87e-59b53190dba5",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "259a56af-42ed-444c-a87e-59b53190dba5",
+    "type": "vocabulary_item",
+    "order": 32,
+    "hanzi": "一氧化碳",
+    "pinyin": "yīyǎnghuàtàn",
+    "meaning_vi": "khí carbon monoxide, khí CO",
+    "meaning_en": "carbon monoxide",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "一氧化碳",
+      "back": "yīyǎnghuàtàn — khí carbon monoxide, khí CO",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,311 @@
+{
+  "id": "b2f6805f-bf70-4764-8d6d-512e42d739ad",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "结束",
+  "pinyin": "jiéshù",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kết thúc",
+    "meaning_vi": "kết thúc, chấm dứt, hoàn tất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kết thúc",
+      "chấm dứt",
+      "hoàn tất"
+    ],
+    "short_definition_vi": "kết thúc, chấm dứt, hoàn tất",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về thời gian, hoạt động.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thời gian, hoạt động",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "结",
+        "lishu_vi": "kết",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 结 trong từ 结束; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 结束, chữ 结 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "束",
+        "lishu_vi": "thúc",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 束 trong từ 结束; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 结束, chữ 束 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "结束 trong bài được nhớ theo nghĩa hiện đại: kết thúc.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 课程结束 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "完成",
+        "pinyin": "wánchéng",
+        "meaning_vi": "hoàn thành; nhấn nhiệm vụ đã xong",
+        "difference_vi": "hoàn thành; nhấn nhiệm vụ đã xong",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "完",
+        "pinyin": "wán",
+        "meaning_vi": "xong; khẩu ngữ hơn",
+        "difference_vi": "xong; khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "开始",
+        "pinyin": "kāishǐ",
+        "meaning_vi": "bắt đầu",
+        "difference_vi": "bắt đầu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "结束 nhấn quá trình dừng lại; 完成 nhấn nhiệm vụ làm xong."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0fa6cdaa-e0dc-4cbf-8ecd-c17ea1eb1e0e",
+      "order": 1,
+      "zh": "课程结束",
+      "pinyin": "",
+      "vi": "khóa học kết thúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c775386-3dec-42a8-942c-b6b8a9201bb8",
+      "order": 2,
+      "zh": "训练结束",
+      "pinyin": "",
+      "vi": "buổi luyện kết thúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d7ae39f5-31bc-4a9b-b87a-3e00adf5bbb2",
+      "order": 3,
+      "zh": "会议结束",
+      "pinyin": "",
+      "vi": "cuộc họp kết thúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "64e8903f-7869-46fa-9589-a05476d4be0e",
+      "order": 4,
+      "zh": "活动结束",
+      "pinyin": "",
+      "vi": "hoạt động kết thúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2489c864-f65f-41f9-9ff1-1c3bdc6eaebc",
+      "order": 5,
+      "zh": "结束工作",
+      "pinyin": "",
+      "vi": "kết thúc công việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ec7c49f2-da79-4638-8ef7-4b184124d0d3",
+      "order": 1,
+      "zh": "今天的课程已经结束了。",
+      "pinyin": "",
+      "vi": "kết thúc, chấm dứt, hoàn tất",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "结束"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2f6805f-bf70-4764-8d6d-512e42d739ad"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "63b3acda-b2da-41ec-9b45-89553b80037e",
+      "order": 2,
+      "zh": "这个词语“结束”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 结束 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "结束"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2f6805f-bf70-4764-8d6d-512e42d739ad"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c95a58ac-bad8-421d-8e30-120b711715dd",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“结束”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 结束 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "结束"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2f6805f-bf70-4764-8d6d-512e42d739ad"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "课程结束后 là cụm thông báo/học vụ rất hay gặp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d67ca3b8-651f-4fc0-a061-46c488c109d2",
+      "order": 1,
+      "rule_vi": "结束 nhấn quá trình dừng lại; 完成 nhấn nhiệm vụ làm xong.",
+      "natural_examples": [
+        {
+          "zh": "作业完成了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "作业结束了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "作业结束了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "作业完成了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "结束 nhấn quá trình dừng lại; 完成 nhấn nhiệm vụ làm xong.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "结束",
+    "back": "kết thúc, chấm dứt, hoàn tất",
+    "hint": "jiéshù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b2f6805f-bf70-4764-8d6d-512e42d739ad",
+    "source_lesson_vocab_id": null
+  }
+}

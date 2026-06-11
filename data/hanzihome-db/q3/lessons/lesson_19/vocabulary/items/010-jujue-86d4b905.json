@@ -1,0 +1,394 @@
+{
+  "id": "a380867d-1922-486d-963d-e0e801678027",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "拒绝",
+  "pinyin": "jùjué",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "cự tuyệt",
+    "meaning_vi": "từ chối, khước từ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ chối",
+      "khước từ"
+    ],
+    "short_definition_vi": "từ chối, khước từ",
+    "textbook_focus_vi": "拒 tuyệt là hành động không chấp nhận yêu cầu/lời mời/cơ hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拒",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ đứng",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, hành động bằng tay",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, hành động bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ đứng",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, hành động bằng tay",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "巨",
+            "hanviet": "cự",
+            "meaning_vi": "lớn; ở đây chủ yếu là thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "巨 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chống lại, từ chối",
+        "modern_logic_vi": "Trong từ “拒绝”, chữ “拒” góp phần vào trường nghĩa: chống lại, từ chối",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "绝",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch giản thể",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ, sự nối kết",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ, sự nối kết",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch giản thể",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ, sự nối kết",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "色",
+            "hanviet": "sắc",
+            "meaning_vi": "màu sắc; ở đây chủ yếu là thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "色 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dứt, tuyệt",
+        "modern_logic_vi": "Trong từ “拒绝”, chữ “绝” góp phần vào trường nghĩa: dứt, tuyệt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "拒 tuyệt là hành động không chấp nhận yêu cầu/lời mời/cơ hội.",
+    "memory_tip_vi": "拒 tuyệt là hành động không chấp nhận yêu cầu/lời mời/cơ hội.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不接受",
+        "pinyin": "",
+        "meaning_vi": "không chấp nhận, trung tính hơn",
+        "difference_vi": "không chấp nhận, trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "推辞",
+        "pinyin": "",
+        "meaning_vi": "từ chối khéo",
+        "difference_vi": "từ chối khéo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4f49996e-6f0d-4f18-87b5-865eeb57268c",
+      "order": 1,
+      "zh": "拒绝邀请",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15c0b8fd-cc91-4e83-af01-1f9a8b2edd54",
+      "order": 2,
+      "zh": "拒绝请求",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71d4f785-8329-466c-97bb-5b86992deaf0",
+      "order": 3,
+      "zh": "被拒绝",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0112e815-6118-42c5-b2f7-464867e967fd",
+      "order": 4,
+      "zh": "一次又一次地被拒绝",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "802e5106-04de-41b3-8eaf-4c1b0edf62ae",
+      "order": 1,
+      "zh": "他被好几家公司拒绝了。",
+      "pinyin": "",
+      "vi": "Anh ấy bị mấy công ty từ chối.",
+      "analysis_vi": "被 + tác nhân + 拒绝.",
+      "highlight": [
+        "拒绝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a380867d-1922-486d-963d-e0e801678027"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1a9e6b1b-fba8-4cb7-b2a7-c38f1a8ec6ad",
+      "order": 2,
+      "zh": "他一次又一次地求职，却一次又一次地被拒绝。",
+      "pinyin": "",
+      "vi": "Anh ấy nhiều lần đi tìm việc nhưng cũng nhiều lần bị từ chối.",
+      "analysis_vi": "一次又一次地 nhấn lặp lại.",
+      "highlight": [
+        "拒绝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a380867d-1922-486d-963d-e0e801678027"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "拒 tuyệt là hành động không chấp nhận yêu cầu/lời mời/cơ hội.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bdbda8e1-c535-439d-abe0-efbc9c2b4621",
+      "order": 1,
+      "rule_vi": "拒绝 thường cần tân ngữ nếu ngữ cảnh chưa rõ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "拒绝 thường cần tân ngữ nếu ngữ cảnh chưa rõ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拒绝",
+    "back": "từ chối, khước từ",
+    "hint": "jùjué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a380867d-1922-486d-963d-e0e801678027",
+    "source_lesson_vocab_id": null
+  }
+}

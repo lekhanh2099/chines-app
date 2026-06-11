@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_a6ab80fae2edb31e",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "比",
+  "pinyin": "bǐ",
+  "meaning_vi": "so sánh; không bằng được trong 比不了",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Trong 比不了你们年轻人 nghĩa là không so được/không bằng được; khác với giới từ 比 trong câu so sánh.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+    "type": "vocabulary_item",
+    "order": 10,
+    "hanzi": "比",
+    "pinyin": "bǐ",
+    "meaning_vi": "so sánh; không bằng được trong 比不了",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "比",
+      "back": "bǐ — so sánh; không bằng được trong 比不了",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Trong 比不了你们年轻人 nghĩa là không so được/không bằng được; khác với giới từ 比 trong câu so sánh.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

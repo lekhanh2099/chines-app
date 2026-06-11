@@ -1,0 +1,60 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết bài",
+  "source_origin": "generated",
+  "check_needed": false,
+  "summary": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "语法 / 词语用法",
+      "练习",
+      "阅读理解 / 综合填空",
+      "写汉字"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "动作的完成：动词 + 了"
+      },
+      {
+        "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+        "title": "因为……所以……"
+      },
+      {
+        "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+        "title": "Mẫu phụ trợ: 先……然后……再…… / V + 一下儿 / V+V / 别...了"
+      }
+    ],
+    "key_patterns": [
+      "你怎么了？",
+      "肚子疼得厉害。",
+      "昨天吃什么了？",
+      "就吃了一些鱼和牛肉。",
+      "化验结果出来了吗？",
+      "我是不是得了肠炎？",
+      "不是肠炎，只是消化不好。",
+      "一天三次，一次两片，饭后吃。",
+      "因为感到寂寞，所以心情不好，很难过。",
+      "别难过了。",
+      "我们一起去跳跳舞吧。",
+      "吃了晚饭就去吧。"
+    ],
+    "coverage": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": true,
+      "character_writing_covered": true,
+      "remaining_check_needed": "Các bài mở có đáp án mẫu tự nhiên; bài đóng và đọc hiểu đã đối chiếu lại."
+    }
+  }
+}

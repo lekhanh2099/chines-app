@@ -1,0 +1,291 @@
+{
+  "id": "304a32bd-dfe9-491c-a275-26585a244aae",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "毒药",
+  "pinyin": "dúyào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "độc dược",
+    "meaning_vi": "thuốc độc; chất độc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuốc độc",
+      "chất độc"
+    ],
+    "short_definition_vi": "thuốc độc",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "毒",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "độc",
+        "modern_logic_vi": "Trong từ 毒药, chữ 毒 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "药",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ, cây cỏ",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ, cây cỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ, cây cỏ",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuốc",
+        "modern_logic_vi": "Trong từ 毒药, chữ 药 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "毒药 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 这里面没有毒药，你别害怕。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "毒品",
+        "pinyin": "dúpǐn",
+        "meaning_vi": "ma túy",
+        "difference_vi": "毒品 không phải thuốc độc nói chung.",
+        "register_vi": "",
+        "example_zh": "远离毒品。",
+        "example_vi": "Tránh xa ma túy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "630a15e2-c28c-4d12-887d-745eb542e1f1",
+      "order": 1,
+      "zh": "吃了毒药",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c286865-cf9c-4ea4-b8be-6dae0b4b3c98",
+      "order": 2,
+      "zh": "下毒药",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d6124508-2d06-4856-9c25-a863f504f74a",
+      "order": 3,
+      "zh": "毒药中毒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a2ea418-d161-43bf-b5f5-508583d32f01",
+      "order": 4,
+      "zh": "有毒药",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "25bd9429-c98e-4213-bec6-82a8a1b29c8a",
+      "order": 5,
+      "zh": "像毒药一样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b44ead6c-fd07-4b02-b1f2-dc318a759fa9",
+      "order": 6,
+      "zh": "精神毒药",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3729d34a-26bd-4801-ba84-13119fdedeed",
+      "order": 7,
+      "zh": "毒药瓶",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d6dc1f50-10a7-463e-a9ad-a61a255908b4",
+      "order": 1,
+      "zh": "这里面没有毒药，你别害怕。",
+      "pinyin": "",
+      "vi": "Bên trong này không có thuốc độc đâu, bạn đừng sợ.",
+      "analysis_vi": "Ví dụ dùng 毒药 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "毒药"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "304a32bd-dfe9-491c-a275-26585a244aae"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "毒药 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "813c22a1-1c7b-41ec-9649-7e3c965c9325",
+      "order": 1,
+      "rule_vi": "药 là thuốc nói chung; 毒药 là thuốc độc/chất độc; 毒品 là ma túy.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "毒药",
+    "back": "thuốc độc; chất độc",
+    "hint": "dúyào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "304a32bd-dfe9-491c-a275-26585a244aae",
+    "source_lesson_vocab_id": null
+  }
+}

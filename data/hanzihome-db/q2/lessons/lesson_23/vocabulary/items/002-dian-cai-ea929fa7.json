@@ -1,0 +1,373 @@
+{
+  "id": "9995dcc2-c2cc-4e50-ba91-d893b713e122",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "点菜",
+  "pinyin": "diǎn cài",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "动",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Điểm thái",
+    "meaning_vi": "gọi món",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gọi món"
+    ],
+    "short_definition_vi": "gọi món",
+    "textbook_focus_vi": "gọi món",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "点",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa; bốn chấm hỏa",
+            "position_vi": "phía dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa; bốn chấm hỏa",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chấm, điểm, chọn/gọi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "菜",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây, thực vật",
+            "position_vi": "phía trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây, thực vật",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "món ăn, rau",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 点菜 hợp lại tạo nghĩa hiện đại trong bài: gọi món.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "点菜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "点菜 / 叫菜 / 订餐",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "叫菜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "点菜 / 叫菜 / 订餐",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "订餐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "点菜 / 叫菜 / 订餐",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "菜单",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "菜单 / 菜",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "菜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "菜单 / 菜",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "点菜 / 叫菜 / 订餐",
+      "菜单 / 菜"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5c6a14d2-ec93-4ad4-b3c9-767bf7c6b0eb",
+      "order": 1,
+      "zh": "点菜",
+      "pinyin": "",
+      "vi": "点菜",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ea00f633-0dca-48b6-8df3-7174a8f103cc",
+      "order": 2,
+      "zh": "开始点菜",
+      "pinyin": "",
+      "vi": "开始点菜",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "e6c52132-15ed-48f5-aa44-87d7fccd0417",
+      "order": 3,
+      "zh": "请你点菜",
+      "pinyin": "",
+      "vi": "请你点菜",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "8711695f-4d94-415a-bc00-412d21dab860",
+      "order": 4,
+      "zh": "点几个菜",
+      "pinyin": "",
+      "vi": "点几个菜",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3fb31cc8-433b-4865-8eb8-7aa1578c7bce",
+      "order": 5,
+      "zh": "点一道菜",
+      "pinyin": "",
+      "vi": "点一道菜",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "b66c95f2-552b-44c3-a060-0677ceb70056",
+      "order": 6,
+      "zh": "看菜单点菜",
+      "pinyin": "",
+      "vi": "看菜单点菜",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "11099ed2-c395-4441-b587-00959c6906d6",
+      "order": 1,
+      "zh": "这个词是“点菜”。",
+      "pinyin": "",
+      "vi": "Từ này là “点菜”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "点菜"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "9995dcc2-c2cc-4e50-ba91-d893b713e122"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "da17f07c-f7ae-4ac7-b8b5-3708e57a4556",
+      "order": 2,
+      "zh": "你想怎么用“点菜”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “点菜” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "点菜"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "9995dcc2-c2cc-4e50-ba91-d893b713e122"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d8870237-9151-4ddf-813b-c7c4517a426f",
+      "order": 3,
+      "zh": "我们一边复习点菜，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “点菜”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "点菜"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "9995dcc2-c2cc-4e50-ba91-d893b713e122"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "点菜 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "56156d2c-9d0f-4ad4-bb83-841e2ae4a6e3",
+      "order": 1,
+      "rule_vi": "Dùng 点菜 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 点菜 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "点菜",
+    "back": "gọi món",
+    "hint": "diǎn cài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9995dcc2-c2cc-4e50-ba91-d893b713e122",
+    "source_lesson_vocab_id": null
+  }
+}

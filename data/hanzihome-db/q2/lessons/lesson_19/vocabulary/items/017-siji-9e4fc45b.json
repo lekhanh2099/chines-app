@@ -1,0 +1,358 @@
+{
+  "id": "2b20a7c7-890c-483c-9606-37e43fee9368",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "司机",
+  "pinyin": "sījī",
+  "pos": {
+    "raw_vi": "danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "traffic",
+    "person"
+  ],
+  "meaning": {
+    "hanviet": "Ti cơ",
+    "meaning_vi": "tài xế, người lái xe",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tài xế, người lái xe"
+    ],
+    "short_definition_vi": "tài xế, người lái xe",
+    "textbook_focus_vi": "Người liên quan trong tình huống giao thông.",
+    "register_vi": "đời sống",
+    "usage_domain_vi": "giao thông",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "司",
+        "lishu_vi": "ti",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phụ trách, quản lý",
+        "modern_logic_vi": "司 = phụ trách/điều khiển.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "机",
+        "lishu_vi": "cơ",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "几",
+            "hanviet": "kỷ",
+            "meaning_vi": "thành phần bên phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "máy móc, cơ hội, cơ cấu",
+        "modern_logic_vi": "机 trong 司机 liên quan máy/phương tiện.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "司 = phụ trách/điều khiển; 机 = máy/phương tiện. 司机 = người điều khiển phương tiện, hiện đại chủ yếu là tài xế.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "驾驶员",
+        "pinyin": "",
+        "meaning_vi": "người lái xe/phương tiện",
+        "difference_vi": "Trang trọng/chuyên môn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "师傅",
+        "pinyin": "",
+        "meaning_vi": "bác/anh tài xế",
+        "difference_vi": "Cách gọi thân mật/lịch sự trong đời sống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "乘客",
+        "pinyin": "",
+        "meaning_vi": "hành khách",
+        "difference_vi": "Đối lập vai trò với 司机.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "车主",
+        "pinyin": "",
+        "meaning_vi": "chủ xe",
+        "difference_vi": "Không nhất thiết là người lái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "司机",
+        "right": "乘客",
+        "meaning_vi": "tài xế ↔ hành khách",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "eae4fc85-5706-4d20-90de-c008db71f99d",
+      "order": 1,
+      "zh": "出租车司机",
+      "pinyin": "",
+      "vi": "tài xế taxi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e7c4f03d-35c6-46a6-ad7c-cc6c6a67d38d",
+      "order": 2,
+      "zh": "公交车司机",
+      "pinyin": "",
+      "vi": "tài xế xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8fba31d5-ec54-43ac-8774-38f476452f70",
+      "order": 3,
+      "zh": "司机师傅",
+      "pinyin": "",
+      "vi": "bác/anh tài xế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e67736c6-4c4b-4706-87a6-614706fb3804",
+      "order": 4,
+      "zh": "司机开车",
+      "pinyin": "",
+      "vi": "tài xế lái xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26038806-ce34-49dd-b956-3b3fc05f18f6",
+      "order": 5,
+      "zh": "司机停车",
+      "pinyin": "",
+      "vi": "tài xế dừng xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf1f1b4f-453a-4b1e-9188-f9d03e62d1ff",
+      "order": 6,
+      "zh": "司机开得太快",
+      "pinyin": "",
+      "vi": "tài xế lái quá nhanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94c334a9-faee-42fe-aadd-8e704f2698f6",
+      "order": 7,
+      "zh": "叫司机停车",
+      "pinyin": "",
+      "vi": "bảo tài xế dừng xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d864ec1c-c0ec-4e3b-b585-b1b9ec19e068",
+      "order": 1,
+      "zh": "司机开车开得很快。",
+      "pinyin": "Sījī kāi chē kāi de hěn kuài.",
+      "vi": "Tài xế lái xe rất nhanh.",
+      "analysis_vi": "开车开得很快 dùng 得 để nói lái nhanh thế nào.",
+      "highlight": [
+        "司机"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2b20a7c7-890c-483c-9606-37e43fee9368"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4184be14-6544-44d4-9704-a5bf90582670",
+      "order": 2,
+      "zh": "司机开得太快，把老人撞倒了。",
+      "pinyin": "Sījī kāi de tài kuài, bǎ lǎorén zhuàng dǎo le.",
+      "vi": "Tài xế lái quá nhanh, đâm cụ già ngã.",
+      "analysis_vi": "把字句 nhấn 老人 bị tác động đến kết quả 倒.",
+      "highlight": [
+        "司机",
+        "撞倒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2b20a7c7-890c-483c-9606-37e43fee9368"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7b8494d8-2ee8-4f9d-968f-07f29dadd387",
+      "order": 3,
+      "zh": "我一看见他腿上流着血，就马上叫司机停车。",
+      "pinyin": "Wǒ yí kànjiàn tā tuǐ shang liúzhe xiě, jiù mǎshàng jiào sījī tíng chē.",
+      "vi": "Tôi vừa thấy chân anh ấy đang chảy máu thì lập tức bảo tài xế dừng xe.",
+      "analysis_vi": "叫司机停车 = bảo tài xế dừng xe, không phải bị động.",
+      "highlight": [
+        "司机"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2b20a7c7-890c-483c-9606-37e43fee9368"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khi đi taxi/gọi xe ở Trung Quốc, gọi tài xế là 师傅 khá tự nhiên: 师傅，麻烦您在前面停一下。",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "42239eff-f455-49f1-a83e-4d93e8eec0f2",
+      "order": 1,
+      "rule_vi": "司机 là người lái xe, không phải động từ “lái xe”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我司机去学校。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我是司机。",
+          "pinyin": "Wǒ shì sījī.",
+          "vi": "Tôi là tài xế.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我开车去学校。",
+          "pinyin": "Wǒ kāi chē qù xuéxiào.",
+          "vi": "Tôi lái xe đi học/trường.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "司机",
+    "back": "tài xế, người lái xe",
+    "hint": "sījī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "traffic",
+      "person"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2b20a7c7-890c-483c-9606-37e43fee9368",
+    "source_lesson_vocab_id": null
+  }
+}

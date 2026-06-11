@@ -1,0 +1,237 @@
+{
+  "id": "a8a0684e-dbe6-4dd9-8a20-92a8ea034090",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "分享",
+  "pinyin": "fēnxiǎng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phân hưởng",
+    "meaning_vi": "chia sẻ; cùng hưởng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chia sẻ",
+      "cùng hưởng"
+    ],
+    "short_definition_vi": "chia sẻ",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "分",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia",
+        "modern_logic_vi": "Trong từ 分享, chữ 分 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "享",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hưởng, cùng hưởng",
+        "modern_logic_vi": "Trong từ 分享, chữ 享 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "分享 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他想跟邻居分享自己的收获。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "交流",
+        "pinyin": "jiāoliú",
+        "meaning_vi": "trao đổi",
+        "difference_vi": "交流 là trao đổi hai chiều; 分享 là chia sẻ điều gì cho người khác.",
+        "register_vi": "",
+        "example_zh": "我们交流经验。",
+        "example_vi": "Chúng tôi trao đổi kinh nghiệm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "591da6a8-c026-4230-9e6f-f022696bf6a3",
+      "order": 1,
+      "zh": "分享收获",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4038644-5063-4261-ae5f-7f4b7d5b4b8c",
+      "order": 2,
+      "zh": "分享喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "555066a7-f8e4-4676-b527-9b038f9a96c2",
+      "order": 3,
+      "zh": "分享经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cfaecc2-e07b-40c6-822a-b0c8cd4348b1",
+      "order": 4,
+      "zh": "分享照片",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a4412cc-bf72-4df5-ba83-344884dcdacf",
+      "order": 5,
+      "zh": "分享视频",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d88fa07-6e9c-4862-a8b7-a5d767eec815",
+      "order": 6,
+      "zh": "分享链接",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fb12d1f-d71f-46e0-9731-d5a1982984d7",
+      "order": 7,
+      "zh": "跟朋友分享",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "757a158b-bc31-40a2-8387-4052bec19d78",
+      "order": 1,
+      "zh": "他想跟邻居分享自己的收获。",
+      "pinyin": "",
+      "vi": "Anh ấy muốn chia sẻ thành quả của mình với hàng xóm.",
+      "analysis_vi": "Ví dụ dùng 分享 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "分享"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8a0684e-dbe6-4dd9-8a20-92a8ea034090"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "分享 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fc6036c7-dad0-46fa-b905-b1134f424681",
+      "order": 1,
+      "rule_vi": "Công thức tự nhiên: 跟 + người + 分享 + điều gì; không nên nói cụt 我想分享 nếu ngữ cảnh chưa rõ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "分享",
+    "back": "chia sẻ; cùng hưởng",
+    "hint": "fēnxiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a8a0684e-dbe6-4dd9-8a20-92a8ea034090",
+    "source_lesson_vocab_id": null
+  }
+}

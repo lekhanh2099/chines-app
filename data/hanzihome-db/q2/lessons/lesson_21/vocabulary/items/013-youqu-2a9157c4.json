@@ -1,0 +1,317 @@
+{
+  "id": "4d2209a5-0e28-4261-9358-422fa03db97f",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "有趣",
+  "pinyin": "yǒuqù",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hữu thú",
+    "meaning_vi": "thú vị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thú vị"
+    ],
+    "short_definition_vi": "thú vị",
+    "textbook_focus_vi": "thú vị",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "有",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng/thịt tùy chữ",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng/thịt tùy chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "𠂇",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "có",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "趣",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi/chạy",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "走 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi/chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "取",
+            "hanviet": "thủ",
+            "meaning_vi": "lấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "thú vị/hứng thú",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "có cái thú/kích thích tò mò",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e7d96e93-d7df-495d-b1ee-1254f199dd93",
+      "order": 1,
+      "zh": "很有趣",
+      "pinyin": "",
+      "vi": "rất thú vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc5c8ab3-0f1f-40a4-8c1b-28bbcf6bdf47",
+      "order": 2,
+      "zh": "十分有趣",
+      "pinyin": "",
+      "vi": "vô cùng thú vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32e196af-da37-44a9-a280-a2a476ce3b5b",
+      "order": 3,
+      "zh": "有趣的人物",
+      "pinyin": "",
+      "vi": "nhân vật thú vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "365da276-31c1-4e36-a067-1f0d7a0db5ec",
+      "order": 4,
+      "zh": "有趣的故事",
+      "pinyin": "",
+      "vi": "câu chuyện thú vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5fbb670a-b48c-4846-a0f6-1553613e76ea",
+      "order": 5,
+      "zh": "越来越有趣",
+      "pinyin": "",
+      "vi": "càng lúc càng thú vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "af6f7a29-7630-4a08-bfc8-41434b45300f",
+      "order": 1,
+      "zh": "这个故事很有趣。",
+      "pinyin": "Zhège gùshi hěn yǒuqù.",
+      "vi": "Câu chuyện này rất thú vị.",
+      "analysis_vi": "很 + 有趣 là cách nói cơ bản.",
+      "highlight": [
+        "有趣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d2209a5-0e28-4261-9358-422fa03db97f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "537f660e-6463-439f-b952-517e80489979",
+      "order": 2,
+      "zh": "如果不了解有趣，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě yǒuqù, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 有趣, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "有趣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d2209a5-0e28-4261-9358-422fa03db97f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7bb6a3c8-fbb6-4b45-aff6-0e85b8fde2ea",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解有趣在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě yǒuqù zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 有趣 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "有趣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d2209a5-0e28-4261-9358-422fa03db97f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khen nghệ thuật truyền thống bằng 有趣 nhấn có cái để tìm hiểu; 精彩 nhấn đáng xem.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f2f96ba-5ebf-4f03-a263-b85ed7aebb1f",
+      "order": 1,
+      "rule_vi": "Không dùng 有趣 để khen món ăn ngon; món ăn ngon là 好吃。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "有趣",
+    "back": "thú vị",
+    "hint": "yǒuqù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4d2209a5-0e28-4261-9358-422fa03db97f",
+    "source_lesson_vocab_id": null
+  }
+}

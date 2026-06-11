@@ -1,0 +1,310 @@
+{
+  "id": "a623fe2a-0218-41cc-bfb4-0dc3d8a1522e",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "沉重",
+  "pinyin": "chénzhòng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trầm trọng",
+    "meaning_vi": "nặng nề, nghiêm trọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nặng nề",
+      "nghiêm trọng"
+    ],
+    "short_definition_vi": "nặng nề, nghiêm trọng",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "沉",
+        "lishu_vi": "trầm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìm, lắng xuống, nặng",
+        "modern_logic_vi": "chìm, lắng xuống, nặng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "重",
+        "lishu_vi": "trọng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "千",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "里",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nặng, quan trọng",
+        "modern_logic_vi": "nặng, quan trọng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Từ lõi nghĩa chìm/nặng mở rộng sang tâm trạng, đả kích, áp lực nặng nề.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 沉重的打击.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "严重",
+        "pinyin": "yánzhòng",
+        "meaning_vi": "nghiêm trọng",
+        "difference_vi": "严重 nói mức độ vấn đề; 沉重 thiên về cảm giác/đả kích nặng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "重",
+        "pinyin": "zhòng",
+        "meaning_vi": "nặng",
+        "difference_vi": "重 rộng và đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "轻松",
+        "pinyin": "qīngsōng",
+        "meaning_vi": "nhẹ nhõm",
+        "difference_vi": "trái nghĩa theo cảm giác",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "44af40dd-eed9-4084-b7be-d529b4c3952e",
+      "order": 1,
+      "zh": "沉重的打击",
+      "pinyin": "chénzhòng de dǎjī",
+      "vi": "cú đả kích nặng nề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71b331e4-29a3-4fcb-a0d7-c0c788202056",
+      "order": 2,
+      "zh": "心情沉重",
+      "pinyin": "xīnqíng chénzhòng",
+      "vi": "tâm trạng nặng nề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca81059d-ea5e-4674-8185-43d84c40e843",
+      "order": 3,
+      "zh": "沉重的负担",
+      "pinyin": "chénzhòng de fùdān",
+      "vi": "gánh nặng nề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "29d74ceb-ac4e-44c1-bc4d-17111a8c2286",
+      "order": 1,
+      "zh": "听到这个消息以后，他的心情很沉重。",
+      "pinyin": "Tīng dào zhège xiāoxi yǐhòu, tā de xīnqíng hěn chénzhòng.",
+      "vi": "Sau khi nghe tin này, tâm trạng anh ấy rất nặng nề.",
+      "analysis_vi": "心情沉重 là collocation tự nhiên.",
+      "highlight": [
+        "沉重"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a623fe2a-0218-41cc-bfb4-0dc3d8a1522e"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "57b9719a-b118-418e-b38e-578c7ed68c0a",
+      "order": 2,
+      "zh": "第一次面试失败，对他来说是一次沉重的打击。",
+      "pinyin": "Dì yī cì miànshì shībài, duì tā lái shuō shì yí cì chénzhòng de dǎjī.",
+      "vi": "Lần đầu phỏng vấn thất bại là cú đả kích nặng nề đối với anh ấy.",
+      "analysis_vi": "沉重的打击 sát mạch bài.",
+      "highlight": [
+        "沉重"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a623fe2a-0218-41cc-bfb4-0dc3d8a1522e"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "沉重 thường xuất hiện trong văn kể chuyện, tin tức hoặc đoạn miêu tả biến cố tâm lý.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "71a0c948-f671-48f5-a899-3c24e4effafb",
+      "order": 1,
+      "rule_vi": "Không dùng 沉重 cho mọi vật nặng trong khẩu ngữ thường ngày.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这个包很沉重。",
+          "pinyin": "Zhège bāo hěn chénzhòng.",
+          "vi": "Không tự nhiên trong khẩu ngữ: cái túi này nặng nề.",
+          "note_vi": "Dùng quá văn/sai sắc thái.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个包很重。",
+          "pinyin": "Zhège bāo hěn zhòng.",
+          "vi": "Cái túi này nặng.",
+          "note_vi": "重 phù hợp vật lý hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "沉重",
+    "back": "nặng nề, nghiêm trọng",
+    "hint": "chénzhòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a623fe2a-0218-41cc-bfb4-0dc3d8a1522e",
+    "source_lesson_vocab_id": null
+  }
+}

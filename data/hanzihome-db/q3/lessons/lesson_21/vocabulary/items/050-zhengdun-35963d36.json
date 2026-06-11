@@ -1,0 +1,328 @@
+{
+  "id": "d67f706c-e328-46d4-8a3b-9746b6a9ce3b",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "整顿",
+  "pinyin": "zhěngdùn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "chỉnh đốn",
+    "meaning_vi": "chỉnh đốn, chấn chỉnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chỉnh đốn",
+      "chấn chỉnh"
+    ],
+    "short_definition_vi": "chỉnh đốn, chấn chỉnh",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: chỉnh đốn, chấn chỉnh.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "整",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "động tác chỉnh sửa",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "động tác chỉnh sửa",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "động tác chỉnh sửa",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 整.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "顿",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu/trang",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu/trang",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu/trang",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "页 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 顿.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "整顿 trong bài được hiểu theo nghĩa: chỉnh đốn, chấn chỉnh. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 整顿.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "整顿 dùng cho tổ chức/trật tự/cơ sở, không phải dọn phòng thường ngày."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e0a4628b-fb6a-4981-8da2-2f5ebd35e778",
+      "order": 1,
+      "zh": "停业整顿",
+      "pinyin": "",
+      "vi": "ngừng kinh doanh để chỉnh đốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff10f4b3-68f9-4b19-8ec2-d40467dd9bc0",
+      "order": 2,
+      "zh": "进行整顿",
+      "pinyin": "",
+      "vi": "tiến hành chỉnh đốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e46f83b-2a43-40ce-b887-bbe4be3db261",
+      "order": 3,
+      "zh": "整顿市场",
+      "pinyin": "",
+      "vi": "chấn chỉnh thị trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fc71840-b221-4290-a456-831e081c8d03",
+      "order": 4,
+      "zh": "整顿秩序",
+      "pinyin": "",
+      "vi": "chấn chỉnh trật tự",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8dcc591-7658-4c24-a682-bd615422c4d5",
+      "order": 5,
+      "zh": "被要求整顿",
+      "pinyin": "",
+      "vi": "bị yêu cầu chỉnh đốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ad48f718-e1cd-4d61-a325-6ace4ccf35c5",
+      "order": 1,
+      "zh": "这家店因为服务不好，被要求停业整顿。",
+      "pinyin": "",
+      "vi": "Cửa hàng này vì phục vụ không tốt nên bị yêu cầu ngừng kinh doanh để chỉnh đốn.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "整顿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d67f706c-e328-46d4-8a3b-9746b6a9ce3b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "67b76684-757c-451c-8293-ac110ea717f1",
+      "order": 2,
+      "zh": "朋友们开玩笑说，应该让那家发廊停业整顿。",
+      "pinyin": "",
+      "vi": "Bạn bè đùa rằng nên để salon đó ngừng kinh doanh chỉnh đốn.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "整顿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d67f706c-e328-46d4-8a3b-9746b6a9ce3b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "整顿 dùng cho tổ chức/trật tự/cơ sở, không phải dọn phòng thường ngày.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "314ed7ab-3e49-4779-a7d0-323129433e28",
+      "order": 1,
+      "rule_vi": "整顿 dùng cho tổ chức/trật tự/cơ sở, không phải dọn phòng thường ngày.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我整顿房间。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "整顿 dùng cho tổ chức/trật tự/cơ sở, không phải dọn phòng thường ngày.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我收拾房间。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "整顿 dùng cho tổ chức/trật tự/cơ sở, không phải dọn phòng thường ngày.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "整顿",
+    "back": "chỉnh đốn, chấn chỉnh",
+    "hint": "zhěngdùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d67f706c-e328-46d4-8a3b-9746b6a9ce3b",
+    "source_lesson_vocab_id": null
+  }
+}

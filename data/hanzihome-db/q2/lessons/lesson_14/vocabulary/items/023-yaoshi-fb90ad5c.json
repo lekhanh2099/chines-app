@@ -1,0 +1,354 @@
+{
+  "id": "429ba09d-4119-45bf-9167-23357c91f262",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "钥匙",
+  "pinyin": "yàoshi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Thược thi",
+    "meaning_vi": "chìa khóa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chìa khóa"
+    ],
+    "short_definition_vi": "chìa khóa",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, nhà cửa, ký túc xá, khách sạn, học tập.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "钥",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng/tháng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìa khóa/khóa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "钥 liên quan đến chìa khóa/khóa. 匙 là cái thìa trong nghĩa khác, nhưng trong 钥匙 là thành phần cố định chỉ chìa khóa.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "匙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "是",
+            "hanviet": "thị",
+            "meaning_vi": "là/đúng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "匕",
+            "hanviet": "chủy",
+            "meaning_vi": "muỗng/dao nhỏ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìa/muỗng trong một số từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "匙 là cái thìa trong nghĩa khác, nhưng trong 钥匙 là thành phần cố định chỉ chìa khóa. → 钥匙 học như một từ cố định, không tách nghĩa từng chữ quá xa.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 钥匙 học như một từ cố định, không tách nghĩa từng chữ quá xa.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 钥匙 thường đọc nhẹ ở âm thứ hai trong khẩu ngữ: yàoshi.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "钥匙 (yàoshi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chìa khóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钥匙链 (yàoshi liàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "móc khóa/dây chìa khóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "房卡 (fángkǎ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thẻ phòng, key card.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "密码 (mìmǎ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mật mã/mật khẩu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 钥匙 là chìa khóa vật lý; 房卡 là thẻ phòng; 密码 là mã/mật khẩu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "92823534-1992-4538-8120-505aa9d7f0db",
+      "order": 1,
+      "zh": "一把钥匙",
+      "pinyin": "",
+      "vi": "một chiếc chìa khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f1a98e2-3e79-4c99-9738-6991b2d45729",
+      "order": 2,
+      "zh": "拔钥匙",
+      "pinyin": "",
+      "vi": "rút chìa khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6b12afd-0b8f-4c62-b6f1-fd28be7c3ded",
+      "order": 3,
+      "zh": "钥匙忘拔下来了",
+      "pinyin": "",
+      "vi": "chìa khóa quên rút ra rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4d37698-51e2-46eb-9d23-fffc6093ae4d",
+      "order": 4,
+      "zh": "钥匙找不到了",
+      "pinyin": "",
+      "vi": "chìa khóa không tìm thấy nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c2ceb709-9786-4ebb-b379-af1b0e0e318d",
+      "order": 1,
+      "zh": "钥匙忘拔下来了，房门外面还插着呢。",
+      "pinyin": "Yàoshi wàng bá xiàlai le, fángmén wàimian hái chāzhe ne.",
+      "vi": "Chìa khóa quên rút ra rồi, vẫn còn đang cắm bên ngoài cửa phòng.",
+      "analysis_vi": "拔下来 là rút chìa khóa ra khỏi chỗ đang cắm; 插着 nói trạng thái vẫn đang cắm.",
+      "highlight": [
+        "钥匙"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "429ba09d-4119-45bf-9167-23357c91f262"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "14f78a14-cf8a-4594-96ff-aa891d84e3b3",
+      "order": 2,
+      "zh": "我的钥匙你拿出来了吗？我刚才放在包里了。",
+      "pinyin": "Wǒ de yàoshi nǐ ná chūlai le ma? Wǒ gāngcái fàng zài bāo lǐ le.",
+      "vi": "Chìa khóa của tôi bạn lấy ra chưa? Nãy tôi để trong túi rồi.",
+      "analysis_vi": "我的钥匙 là chủ đề lớn; 你拿出来了吗 hỏi kết quả lấy ra.",
+      "highlight": [
+        "钥匙"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "429ba09d-4119-45bf-9167-23357c91f262"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "28bf7a2b-9d74-4067-9191-b27f552afad7",
+      "order": 3,
+      "zh": "学语言没有一把万能钥匙，最重要的是每天都用一点儿。",
+      "pinyin": "Xué yǔyán méiyǒu yì bǎ wànnéng yàoshi, zuì zhòngyào de shì měitiān dōu yòng yìdiǎnr.",
+      "vi": "Học ngôn ngữ không có một chiếc chìa khóa vạn năng, điều quan trọng nhất là mỗi ngày đều dùng một chút.",
+      "analysis_vi": "钥匙 dùng nghĩa bóng: phương pháp then chốt để mở vấn đề.",
+      "highlight": [
+        "钥匙"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "429ba09d-4119-45bf-9167-23357c91f262"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "be711b94-7e6b-4d7e-9d30-68b147d4ca1d",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "钥匙",
+    "back": "chìa khóa",
+    "hint": "yàoshi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Ở khách sạn hoặc ký túc xá Trung Quốc, ngoài 钥匙, bạn sẽ gặp 房卡. Khi trả phòng, người ta có thể nói 请把房卡交回来 – vui lòng trả thẻ phòng lại.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "429ba09d-4119-45bf-9167-23357c91f262",
+    "source_lesson_vocab_id": null
+  }
+}

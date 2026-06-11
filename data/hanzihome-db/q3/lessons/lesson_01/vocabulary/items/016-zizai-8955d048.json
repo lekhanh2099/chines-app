@@ -1,0 +1,392 @@
+{
+  "id": "b1aa65a5-e62b-4ba3-8170-3fe52a31c21d",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "自在",
+  "pinyin": "zìzài",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tự tại",
+    "meaning_vi": "thoải mái, tự nhiên, không gò bó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thoải mái",
+      "tự nhiên",
+      "không gò bó"
+    ],
+    "short_definition_vi": "thoải mái, tự nhiên, không gò bó",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: thoải mái, tự nhiên, không gò bó.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "tự",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "自",
+            "hanviet": "tự",
+            "meaning_vi": "bản thân",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "自 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "自",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tự",
+              "radical_name_zh": "",
+              "hanviet": "tự",
+              "meaning_vi": "bản thân",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bản thân, tự mình",
+        "modern_logic_vi": "Hướng về chính bản thân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "自",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tự",
+          "radical_name_zh": "",
+          "hanviet": "tự",
+          "meaning_vi": "bản thân",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "在",
+        "lishu_vi": "tại",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở, tồn tại, đang",
+        "modern_logic_vi": "Chỉ vị trí/trạng thái tồn tại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "自在 trong bài dùng theo nghĩa: thoải mái, tự nhiên, không gò bó. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 自在 qua văn cảnh 离家的时候: thoải mái, tự nhiên, không gò bó.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "自由",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tự do, rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "舒服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dễ chịu, thoải mái cơ thể/cảm giác",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "轻松",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhẹ nhàng, ít áp lực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "拘束",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gò bó",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不自在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không thoải mái",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "38db975c-cb2a-4a04-9429-bfe2e25732b9",
+      "order": 1,
+      "zh": "很自在",
+      "pinyin": "",
+      "vi": "rất thoải mái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3cd8fbd1-c3ec-4c8c-9ee3-784583d008f3",
+      "order": 2,
+      "zh": "不自在",
+      "pinyin": "",
+      "vi": "không thoải mái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6e8866d-3b9a-4138-8aa8-ba41e66037d2",
+      "order": 3,
+      "zh": "自由自在",
+      "pinyin": "",
+      "vi": "tự do tự tại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2bb7515b-c9c3-40c3-9e11-fcabc3adac53",
+      "order": 4,
+      "zh": "过得很自在",
+      "pinyin": "",
+      "vi": "sống rất thoải mái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2678991-e693-467b-a8c0-735d6ec3f085",
+      "order": 5,
+      "zh": "觉得自在",
+      "pinyin": "",
+      "vi": "cảm thấy thoải mái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b1c321e5-9cca-45cc-8b9b-ec58157a82bf",
+      "order": 1,
+      "zh": "一个人住虽然有点儿孤独，但是也很自在。",
+      "pinyin": "",
+      "vi": "Sống một mình tuy hơi cô đơn nhưng cũng thoải mái.",
+      "analysis_vi": "自在 là cảm giác không gò bó.",
+      "highlight": [
+        "自在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b1aa65a5-e62b-4ba3-8170-3fe52a31c21d"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "eef00a54-3d4c-46ef-bf24-0ac1ef3c3c2e",
+      "order": 2,
+      "zh": "她以为离开家以后会很自在，没想到第一天晚上就想家了。",
+      "pinyin": "",
+      "vi": "Cô ấy tưởng rời nhà sẽ thoải mái, không ngờ tối đầu đã nhớ nhà.",
+      "analysis_vi": "以为……没想到…… đối lập tưởng tượng và thực tế.",
+      "highlight": [
+        "自在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b1aa65a5-e62b-4ba3-8170-3fe52a31c21d"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "66e8dcb4-36fd-4fa0-b35b-eb1220b5062b",
+      "order": 3,
+      "zh": "真正的独立不是想做什么就做什么，而是能自在地安排生活。",
+      "pinyin": "",
+      "vi": "Độc lập thật sự không phải muốn gì làm nấy, mà là có thể tự nhiên sắp xếp cuộc sống.",
+      "analysis_vi": "不是……而是…… sửa nghĩa.",
+      "highlight": [
+        "自在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b1aa65a5-e62b-4ba3-8170-3fe52a31c21d"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "自在 trong tiếng Trung đời thường hơn 'tự tại' tiếng Việt, dùng để nói cảm giác sống/giao tiếp.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c1ac7cca-b488-41ca-9081-cf4841fd9b8b",
+      "order": 1,
+      "rule_vi": "不自在 là mất tự nhiên/không thoải mái, không phải bị cấm đoán tự do.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自在",
+    "back": "thoải mái, tự nhiên, không gò bó",
+    "hint": "zìzài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_016"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b1aa65a5-e62b-4ba3-8170-3fe52a31c21d",
+    "source_lesson_vocab_id": null
+  }
+}

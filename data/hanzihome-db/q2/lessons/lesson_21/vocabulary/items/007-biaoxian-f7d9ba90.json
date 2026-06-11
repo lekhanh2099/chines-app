@@ -1,0 +1,371 @@
+{
+  "id": "29a9bcb0-6edb-4b71-b31a-da78725c603f",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "表现",
+  "pinyin": "biǎoxiàn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Biểu hiện",
+    "meaning_vi": "biểu hiện; thể hiện; sự thể hiện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biểu hiện; thể hiện; sự thể hiện"
+    ],
+    "short_definition_vi": "biểu hiện; thể hiện; sự thể hiện",
+    "textbook_focus_vi": "biểu hiện; thể hiện; sự thể hiện",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo/quần áo",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "衣 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo/quần áo",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "bề ngoài/biểu thị",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "现",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc/vương",
+            "meaning_vi": "ngọc/vua tùy chữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc dạng 王",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc/vua tùy chữ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "hiện ra/hiện tại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thể hiện ra ngoài",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "表达",
+        "pinyin": "",
+        "meaning_vi": "biểu đạt",
+        "difference_vi": "nhấn nói/viết ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表示",
+        "pinyin": "",
+        "meaning_vi": "bày tỏ/biểu thị",
+        "difference_vi": "thường với thái độ, ý kiến",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "体现",
+        "pinyin": "",
+        "meaning_vi": "thể hiện giá trị/đặc điểm",
+        "difference_vi": "văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "679bb1ca-0da7-4efc-832f-b9ffc29d00eb",
+      "order": 1,
+      "zh": "表现很好",
+      "pinyin": "",
+      "vi": "biểu hiện tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3becec20-324d-4e05-b593-d070ab318852",
+      "order": 2,
+      "zh": "表现人物",
+      "pinyin": "",
+      "vi": "thể hiện nhân vật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c8f7c20-a161-440a-b2fa-1a6a9a40b28f",
+      "order": 3,
+      "zh": "表现性格",
+      "pinyin": "",
+      "vi": "thể hiện tính cách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d6e3029-9e3c-4c4b-b9a0-848f550eed97",
+      "order": 4,
+      "zh": "表现感情",
+      "pinyin": "",
+      "vi": "thể hiện tình cảm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0726f252-4982-4ea1-88b5-a81a2f5160ed",
+      "order": 5,
+      "zh": "表现出来",
+      "pinyin": "",
+      "vi": "thể hiện ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "046109e7-c404-48f0-9fb3-e854b6fca41a",
+      "order": 1,
+      "zh": "这个演员今天表现得很好。",
+      "pinyin": "Zhège yǎnyuán jīntiān biǎoxiàn de hěn hǎo.",
+      "vi": "Diễn viên này hôm nay thể hiện rất tốt.",
+      "analysis_vi": "表现得很好 là bổ ngữ trạng thái.",
+      "highlight": [
+        "表现"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "29a9bcb0-6edb-4b71-b31a-da78725c603f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a729157f-097a-4e6e-879b-2954ee6e2da4",
+      "order": 2,
+      "zh": "这个动作太难了，他表现不出来人物的感情。",
+      "pinyin": "Zhège dòngzuò tài nán le, tā biǎoxiàn bù chūlai rénwù de gǎnqíng.",
+      "vi": "Động tác này khó quá, anh ấy không thể hiện ra được tình cảm nhân vật.",
+      "analysis_vi": "表现不出来 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "表现"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "29a9bcb0-6edb-4b71-b31a-da78725c603f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "55c754e5-4d6d-47c3-9311-8fad09f395ae",
+      "order": 3,
+      "zh": "只要演员能把人物的性格表现出来，观众就看得懂故事。",
+      "pinyin": "Zhǐyào yǎnyuán néng bǎ rénwù de xìnggé biǎoxiàn chūlai, guānzhòng jiù kàn de dǒng gùshi.",
+      "vi": "Chỉ cần diễn viên thể hiện được tính cách nhân vật, khán giả sẽ hiểu câu chuyện.",
+      "analysis_vi": "把……表现出来 + 看得懂.",
+      "highlight": [
+        "表现"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "29a9bcb0-6edb-4b71-b31a-da78725c603f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "表现力 là khả năng biểu hiện cảm xúc/nghệ thuật, rất hợp khi nhận xét sân khấu.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9c221c90-2e81-4af2-a8da-1fb8c3a31d6f",
+      "order": 1,
+      "rule_vi": "Không nhầm 表现 với 表演: 表演 là biểu diễn, 表现 là thể hiện/biểu hiện.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表现",
+    "back": "biểu hiện; thể hiện; sự thể hiện",
+    "hint": "biǎoxiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "29a9bcb0-6edb-4b71-b31a-da78725c603f",
+    "source_lesson_vocab_id": null
+  }
+}

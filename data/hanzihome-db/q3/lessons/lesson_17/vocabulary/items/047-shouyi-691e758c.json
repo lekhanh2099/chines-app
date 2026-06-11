@@ -1,0 +1,295 @@
+{
+  "id": "184f12f6-7872-474a-be1b-a9b6c41408b1",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "受益",
+  "pinyin": "shòuyì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thụ ích",
+    "meaning_vi": "được lợi, được ích, hưởng lợi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "được lợi",
+      "được ích",
+      "hưởng lợi"
+    ],
+    "short_definition_vi": "được lợi, được ích, hưởng lợi",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "受",
+        "lishu_vi": "thụ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "爫",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhận, chịu, tiếp nhận",
+        "modern_logic_vi": "nhận, chịu, tiếp nhận",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "益",
+        "lishu_vi": "ích",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "皿",
+            "hanviet": "mãnh",
+            "meaning_vi": "đồ đựng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "皿 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "皿",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mãnh",
+              "radical_name_zh": "",
+              "hanviet": "mãnh",
+              "meaning_vi": "đồ đựng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lợi ích, có ích, tăng thêm",
+        "modern_logic_vi": "lợi ích, có ích, tăng thêm",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "皿",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mãnh",
+          "radical_name_zh": "",
+          "hanviet": "mãnh",
+          "meaning_vi": "đồ đựng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "受 là nhận/chịu; 益 là lợi ích; 受益 là nhận được lợi ích.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 受益不浅.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "有帮助",
+        "pinyin": "yǒu bāngzhù",
+        "meaning_vi": "có giúp ích",
+        "difference_vi": "有帮助 khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "获益",
+        "pinyin": "huòyì",
+        "meaning_vi": "thu được lợi ích",
+        "difference_vi": "获益 văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "受害",
+        "pinyin": "shòuhài",
+        "meaning_vi": "chịu hại",
+        "difference_vi": "trái nghĩa",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2a49f672-cad4-4eb3-b719-077ef4f3cd1e",
+      "order": 1,
+      "zh": "受益不浅",
+      "pinyin": "shòuyì bù qiǎn",
+      "vi": "được lợi không ít",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e2fc2a5-7905-407f-a21e-2fcdc8ede9ee",
+      "order": 2,
+      "zh": "一生受益",
+      "pinyin": "yìshēng shòuyì",
+      "vi": "được ích cả đời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26f8bc5a-6570-45a8-98ac-476fcd8fadc0",
+      "order": 3,
+      "zh": "从中受益",
+      "pinyin": "cóng zhōng shòuyì",
+      "vi": "được lợi từ đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6e2843b3-bc02-4ee7-a959-ba097a332593",
+      "order": 1,
+      "zh": "这次经历让我受益很多。",
+      "pinyin": "Zhè cì jīnglì ràng wǒ shòuyì hěn duō.",
+      "vi": "Trải nghiệm này khiến tôi học được rất nhiều.",
+      "analysis_vi": "让 + người + 受益 rất tự nhiên.",
+      "highlight": [
+        "受益"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "184f12f6-7872-474a-be1b-a9b6c41408b1"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "53f33552-5697-4a39-a716-90de59996c6b",
+      "order": 2,
+      "zh": "校长的话虽然很简单，却让我一生受益。",
+      "pinyin": "Xiàozhǎng de huà suīrán hěn jiǎndān, què ràng wǒ yìshēng shòuyì.",
+      "vi": "Lời hiệu trưởng tuy đơn giản nhưng khiến tôi được ích cả đời.",
+      "analysis_vi": "虽然……却…… tạo đối lập.",
+      "highlight": [
+        "受益"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "184f12f6-7872-474a-be1b-a9b6c41408b1"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "受益匪浅 là cụm trang trọng thường dùng sau bài học/trải nghiệm.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dc5e4fc2-5bda-4230-948e-4c32531feff9",
+      "order": 1,
+      "rule_vi": "Không nói 我受益了很多东西; nói 我受益很多 hoặc 我学到了很多.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "受益",
+    "back": "được lợi, được ích, hưởng lợi",
+    "hint": "shòuyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "184f12f6-7872-474a-be1b-a9b6c41408b1",
+    "source_lesson_vocab_id": null
+  }
+}

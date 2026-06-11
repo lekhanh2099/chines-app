@@ -1,0 +1,417 @@
+{
+  "id": "8196798f-ada5-440b-bf05-570d56fb418b",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "明显",
+  "pinyin": "míngxiǎn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "minh hiển",
+    "meaning_vi": "rõ ràng, rõ rệt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rõ ràng",
+      "rõ rệt"
+    ],
+    "short_definition_vi": "dễ nhận thấy, rõ rệt khi quan sát hoặc so sánh",
+    "textbook_focus_vi": "Trong bài tả 白色涡流 rõ ràng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "明",
+        "lishu_vi": "",
+        "structure_note_vi": "日 + 月",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "月",
+            "hanviet": "",
+            "meaning_vi": "mặt trăng; dạng liên quan thân thể trong một số chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mặt trăng; dạng liên quan thân thể trong một số chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng, rõ",
+        "modern_logic_vi": "sáng, rõ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "显",
+        "lishu_vi": "",
+        "structure_note_vi": "日",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiện rõ",
+        "modern_logic_vi": "hiện rõ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "明显 được học trong bài theo nghĩa: dễ nhận thấy, rõ rệt khi quan sát hoặc so sánh.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 明显的变化.",
+    "warning_vi": "Không nhầm 明显 với 明白: 明显 là rõ rệt, 明白 là hiểu.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "清楚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Rõ; có thể nhìn/nghe/hiểu rõ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "显然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Hiển nhiên, phó từ đánh giá cả câu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 明显 với 明白: 明显 là rõ rệt, 明白 là hiểu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c8360b51-a11b-4d08-854c-7c3c86ee05a1",
+      "order": 1,
+      "zh": "明显的变化",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfb04bc6-bd03-4fc5-9c23-fae4fc13cd4b",
+      "order": 2,
+      "zh": "明显的区别",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b1f4652-7fd1-4477-aaa8-73fddadfaaae",
+      "order": 3,
+      "zh": "很明显",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54cfe82a-f1ab-4f43-b608-9df253f96eb9",
+      "order": 4,
+      "zh": "不太明显",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1555ac2e-c2ee-43fb-ae42-9234a9fbf367",
+      "order": 5,
+      "zh": "越来越明显",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00c0b93c-8074-4645-a86e-1e79d0823b82",
+      "order": 6,
+      "zh": "效果明显",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "20b21145-4551-486d-86fe-29acb38c8cf3",
+      "order": 1,
+      "zh": "天空中出现了两条明显的白色涡流。",
+      "pinyin": "",
+      "vi": "Trên bầu trời xuất hiện hai luồng xoáy trắng rõ rệt.",
+      "analysis_vi": "明显的 làm định ngữ.",
+      "highlight": [
+        "明显"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8196798f-ada5-440b-bf05-570d56fb418b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8c47054b-7f58-40ca-9468-8058750e82ea",
+      "order": 2,
+      "zh": "他一比较这两张照片，就发现颜色的变化非常明显。",
+      "pinyin": "",
+      "vi": "Anh ấy vừa so sánh hai ảnh thì thấy sự thay đổi màu sắc rất rõ.",
+      "analysis_vi": "一比较……就发现 nói phát hiện sau thao tác.",
+      "highlight": [
+        "明显"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8196798f-ada5-440b-bf05-570d56fb418b"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "明显 rất hữu ích trong bài phân tích: 明显增加, 明显下降.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fb06207d-b1f6-476d-b82a-ed0a8c8e257a",
+      "order": 1,
+      "rule_vi": "Không nhầm 明显 với 明白: 明显 là rõ rệt, 明白 là hiểu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 明显 với 明白: 明显 là rõ rệt, 明白 là hiểu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "明显",
+    "back": "rõ ràng, rõ rệt",
+    "hint": "míngxiǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8196798f-ada5-440b-bf05-570d56fb418b",
+    "source_lesson_vocab_id": null
+  }
+}

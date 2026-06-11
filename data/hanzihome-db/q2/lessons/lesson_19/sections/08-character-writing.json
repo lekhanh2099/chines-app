@@ -1,0 +1,161 @@
+{
+  "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
+  "type": "character_writing",
+  "order": 8,
+  "title": "写汉字",
+  "title_vi": "Viết chữ Hán",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "aad14e40-909c-4109-90e7-621f4189f0b3",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "被",
+      "pinyin": "bèi",
+      "meaning_vi": "bị; bởi",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "6d5b0450-6953-435b-81b1-d3171a7352c9",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "似",
+      "pinyin": "shì",
+      "meaning_vi": "giống như; tựa như",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "aad41840-8c36-4bdf-a7fc-b014dd608d68",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "骨",
+      "pinyin": "gǔ",
+      "meaning_vi": "xương",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "33e0fabb-227c-40d9-bc43-246cf509c6c1",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "紧",
+      "pinyin": "jǐn",
+      "meaning_vi": "chặt; gấp; nghiêm trọng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "06e519f0-19be-4ba0-b737-907d5fe2802d",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "伤",
+      "pinyin": "shāng",
+      "meaning_vi": "bị thương; làm bị thương",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "74c47b82-9ae9-4bf4-867f-36350dde5f05",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "腿",
+      "pinyin": "tuǐ",
+      "meaning_vi": "chân",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "0c15f502-09c5-467b-a6eb-d3e02c35acfc",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "街",
+      "pinyin": "jiē",
+      "meaning_vi": "phố; đường phố",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "a24ed5c7-b480-45a7-94be-e90826976297",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "偷",
+      "pinyin": "tōu",
+      "meaning_vi": "trộm; ăn cắp",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "a27a4fd6-b82f-4a75-92e4-f774028dfdbb",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "骗",
+      "pinyin": "piàn",
+      "meaning_vi": "lừa; lừa gạt",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7781c61a-5fcc-4082-aaa1-bff96dce8eba",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "浪",
+      "pinyin": "làng",
+      "meaning_vi": "sóng; phóng túng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "712178bc-d255-4e93-a2cb-7bc104503a04",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "费",
+      "pinyin": "fèi",
+      "meaning_vi": "phí; tốn",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d1ddbeef-30fa-48b7-b9f1-26acb0b2486c",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "遇",
+      "pinyin": "yù",
+      "meaning_vi": "gặp; gặp phải",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1c2578a5-01ff-452e-ae0a-79e17aa6be87",
+      "type": "character_writing_item",
+      "order": 13,
+      "hanzi": "傻",
+      "pinyin": "shǎ",
+      "meaning_vi": "ngốc; khờ",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "fa845a2d-4433-4859-b289-4f261af56f13",
+      "type": "character_writing_item",
+      "order": 14,
+      "hanzi": "罚",
+      "pinyin": "fá",
+      "meaning_vi": "phạt",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "632f5550-6d34-4f73-8305-b40d94d0ff8b",
+      "type": "character_writing_item",
+      "order": 15,
+      "hanzi": "戒",
+      "pinyin": "jiè",
+      "meaning_vi": "cai; bỏ; răn",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

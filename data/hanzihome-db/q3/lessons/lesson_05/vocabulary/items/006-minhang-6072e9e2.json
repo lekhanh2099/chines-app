@@ -1,0 +1,317 @@
+{
+  "id": "73a175b7-962a-43a3-8cb4-24e91c4edf52",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "民航",
+  "pinyin": "mínháng",
+  "pos": {
+    "raw_vi": "Danh từ / Từ viết tắt",
+    "raw_cn": "名词/简称",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dân hàng",
+    "meaning_vi": "hàng không dân dụng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hàng không dân dụng"
+    ],
+    "short_definition_vi": "hàng không dân dụng",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "民",
+        "lishu_vi": "dân",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "航",
+        "lishu_vi": "hàng",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "舟",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chu",
+          "radical_name_zh": "",
+          "hanviet": "chu",
+          "meaning_vi": "thuyền; đi lại bằng đường thủy/hàng không trong từ hiện đại",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "舟 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "舟",
+            "hanviet": "chu",
+            "meaning_vi": "thuyền; đi lại bằng đường thủy/hàng không trong từ hiện đại",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "舟",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chu",
+              "radical_name_zh": "",
+              "hanviet": "chu",
+              "meaning_vi": "thuyền; đi lại bằng đường thủy/hàng không trong từ hiện đại",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "舟 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "舟 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "民航 là viết tắt của 民用航空, chỉ ngành/hệ thống hàng không dân dụng.",
+    "memory_tip_vi": "Nhớ: 民 = dân sự, 航 = hàng không/hàng hải.",
+    "warning_vi": "Không dịch thành chuyến bay; chuyến bay là 航班.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "航空公司",
+        "hángkōng gōngsī",
+        "hãng hàng không",
+        "chỉ công ty cụ thể"
+      ],
+      [
+        "飞机",
+        "fēijī",
+        "máy bay",
+        "phương tiện"
+      ],
+      [
+        "航班",
+        "hángbān",
+        "chuyến bay",
+        "lượt bay cụ thể"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nhớ: 民 = dân sự, 航 = hàng không/hàng hải."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e1b4833a-c25f-416b-8d80-71a4113877ec",
+      "order": 1,
+      "zh": "中国民航",
+      "pinyin": "",
+      "vi": "Hàng không dân dụng Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ddb026b1-315b-4fa7-a24d-a23912c04051",
+      "order": 2,
+      "zh": "民航飞机",
+      "pinyin": "",
+      "vi": "máy bay dân dụng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "851f798e-5eb1-4123-9c7f-0f4582ec6b16",
+      "order": 3,
+      "zh": "民航局",
+      "pinyin": "",
+      "vi": "cục hàng không dân dụng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ada7995-c788-4e02-a40b-bbc86753ce39",
+      "order": 4,
+      "zh": "民航业",
+      "pinyin": "",
+      "vi": "ngành hàng không dân dụng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "380c418d-92d6-4129-84a3-3585c3936dd6",
+      "order": 5,
+      "zh": "民航安全",
+      "pinyin": "",
+      "vi": "an toàn hàng không dân dụng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aa00897b-ab5c-4609-aae1-d6bf4bd858a6",
+      "order": 1,
+      "zh": "我在香港坐上了中国民航的飞机。",
+      "pinyin": "Wǒ zài Xiānggǎng zuòshàng le Zhōngguó Mínháng de fēijī.",
+      "vi": "Tôi lên máy bay của Hàng không dân dụng Trung Quốc ở Hồng Kông.",
+      "analysis_vi": "坐上了飞机 = đã lên được máy bay.",
+      "highlight": [
+        "民航"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "73a175b7-962a-43a3-8cb4-24e91c4edf52"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2bc388d8-477a-4c0f-aa6b-87c7139c2b07",
+      "order": 2,
+      "zh": "他以前在民航工作，所以对机场和航班都很熟悉。",
+      "pinyin": "Tā yǐqián zài mínháng gōngzuò, suǒyǐ duì jīchǎng hé hángbān dōu hěn shúxī.",
+      "vi": "Trước đây anh ấy làm trong ngành hàng không dân dụng, nên rất quen sân bay và chuyến bay.",
+      "analysis_vi": "对……熟悉 = quen thuộc với.",
+      "highlight": [
+        "民航"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "73a175b7-962a-43a3-8cb4-24e91c4edf52"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hiện đại thường nói 航空公司 khi chỉ hãng bay cụ thể.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "db76897e-e49b-41be-a9aa-5d6927e72034",
+      "order": 1,
+      "rule_vi": "Phân biệt 民航 và 航班.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我订了一个民航。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我订了一个航班。",
+          "pinyin": "Wǒ dìng le yí ge hángbān.",
+          "vi": "Tôi đặt một chuyến bay.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dịch thành chuyến bay; chuyến bay là 航班.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "民航",
+    "back": "hàng không dân dụng",
+    "hint": "mínháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "73a175b7-962a-43a3-8cb4-24e91c4edf52",
+    "source_lesson_vocab_id": null
+  }
+}

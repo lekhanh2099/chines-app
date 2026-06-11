@@ -1,0 +1,292 @@
+{
+  "id": "545905b8-a02f-4dca-8e63-fc92e8f52d3a",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "挂",
+  "pinyin": "guà",
+  "pos": {
+    "raw_vi": "Động từ / lượng từ",
+    "raw_cn": "动 / 量",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Quải",
+    "meaning_vi": "treo, móc, mắc; nhớ nhung; đăng ký",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "treo, móc, mắc; nhớ nhung; đăng ký"
+    ],
+    "short_definition_vi": "treo, móc, mắc; nhớ nhung; đăng ký",
+    "textbook_focus_vi": "treo, móc, mắc; nhớ nhung; đăng ký",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "挂",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "圭",
+            "hanviet": "khuê",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "treo, móc, mắc; ghi danh; nhớ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "挂 có 扌 nên liên quan thao tác bằng tay; trong bài là treo/móc vật lên một chỗ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "贴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dán áp sát lên bề mặt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "摆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bày/đặt trên mặt phẳng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt/để nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "挂上",
+        "right": "取下",
+        "meaning_vi": "treo lên ↔ lấy xuống",
+        "note_vi": "Cặp thao tác.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c50cbd64-216a-418e-8cd6-9336f384794d",
+      "order": 1,
+      "zh": "挂灯笼",
+      "pinyin": "",
+      "vi": "treo đèn lồng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d107ac8-0fb7-43b6-ae5d-a065e9a110fa",
+      "order": 2,
+      "zh": "挂画",
+      "pinyin": "",
+      "vi": "treo tranh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f7251384-fc3c-4f37-be1d-092c1938f560",
+      "order": 3,
+      "zh": "挂在墙上",
+      "pinyin": "",
+      "vi": "treo trên tường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "270e8dcd-e5a2-4bcf-83d7-56ad8e60c394",
+      "order": 4,
+      "zh": "墙上挂着画",
+      "pinyin": "",
+      "vi": "trên tường treo tranh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c6162055-92ee-4a87-b004-64987d5bf8ec",
+      "order": 5,
+      "zh": "挂号",
+      "pinyin": "",
+      "vi": "đăng ký khám/lấy số",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aec3a1ec-acd9-4acf-8735-569653cb957e",
+      "order": 1,
+      "zh": "服务员把灯笼挂在门口。",
+      "pinyin": "Fúwùyuán bǎ dēnglong guà zài ménkǒu.",
+      "vi": "Nhân viên phục vụ treo đèn lồng ở cửa.",
+      "analysis_vi": "把灯笼挂在门口 là 把字句 + vị trí kết quả.",
+      "highlight": [
+        "挂"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "545905b8-a02f-4dca-8e63-fc92e8f52d3a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "866d422e-581f-48b8-9a9d-c66078107b25",
+      "order": 2,
+      "zh": "墙上挂着两个红灯笼。",
+      "pinyin": "Qiáng shàng guàzhe liǎng ge hóng dēnglong.",
+      "vi": "Trên tường treo hai chiếc đèn lồng đỏ.",
+      "analysis_vi": "挂着 tả trạng thái đèn đang được treo.",
+      "highlight": [
+        "挂",
+        "挂着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "545905b8-a02f-4dca-8e63-fc92e8f52d3a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "631af55b-4490-4ea5-9281-eae07623bd8b",
+      "order": 1,
+      "rule_vi": "Không nói 贴灯笼 nếu ý là treo đèn lồng; nói 挂灯笼.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "挂",
+    "back": "treo, móc, mắc; nhớ nhung; đăng ký",
+    "hint": "guà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trang trí cưới hỏi: 贴喜字 là dán chữ hỷ, 挂灯笼 là treo đèn lồng.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "545905b8-a02f-4dca-8e63-fc92e8f52d3a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "id": "00e3efab-30e2-4df9-801d-d6d684d46c6a",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "有关",
+  "pinyin": "yǒuguān",
+  "pos": {
+    "raw_vi": "Động từ / Giới từ hóa",
+    "raw_cn": "动词/介化用法",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hữu quan",
+    "meaning_vi": "có liên quan; liên quan đến",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "có liên quan",
+      "liên quan đến"
+    ],
+    "short_definition_vi": "có liên quan; liên quan đến",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về học thuật, hành chính, chủ đề.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, hành chính, chủ đề",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "有",
+        "lishu_vi": "hữu",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 有 trong từ 有关; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 有关, chữ 有 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "关",
+        "lishu_vi": "quan",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 关 trong từ 有关; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 有关, chữ 关 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "有关 trong bài được nhớ theo nghĩa hiện đại: có liên quan.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 有关问题 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "关于",
+        "pinyin": "guānyú",
+        "meaning_vi": "về chủ đề; dùng mở chủ đề văn bản",
+        "difference_vi": "về chủ đề; dùng mở chủ đề văn bản",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "相关",
+        "pinyin": "xiāngguān",
+        "meaning_vi": "liên quan; thường làm định ngữ",
+        "difference_vi": "liên quan; thường làm định ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "无关",
+        "pinyin": "wúguān",
+        "meaning_vi": "không liên quan",
+        "difference_vi": "không liên quan",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khung tự nhiên là 跟/和……有关 hoặc 有关……的问题."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f1377376-5ae2-42a9-9564-5503733eb316",
+      "order": 1,
+      "zh": "有关问题",
+      "pinyin": "",
+      "vi": "vấn đề liên quan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "830f82d6-88d6-4f8d-8cee-2755c2e11c80",
+      "order": 2,
+      "zh": "有关资料",
+      "pinyin": "",
+      "vi": "tài liệu liên quan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be7f4058-673a-40a9-b26a-60fefbb32073",
+      "order": 3,
+      "zh": "有关规定",
+      "pinyin": "",
+      "vi": "quy định liên quan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9719f01-d5a8-4d9a-a5b5-09f4d9bfa900",
+      "order": 4,
+      "zh": "跟学习有关",
+      "pinyin": "",
+      "vi": "có liên quan đến học tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e733a1d-57f2-4bf0-8edb-b313f8be75f2",
+      "order": 5,
+      "zh": "与……有关",
+      "pinyin": "",
+      "vi": "có liên quan với…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c961460c-3ed7-4642-8e9b-2b899ff5fd6e",
+      "order": 1,
+      "zh": "这个问题跟网络学习有关。",
+      "pinyin": "",
+      "vi": "có liên quan; liên quan đến",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "有关"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "00e3efab-30e2-4df9-801d-d6d684d46c6a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "db916efa-2080-4707-8910-c463f3e4eab1",
+      "order": 2,
+      "zh": "这个词语“有关”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 有关 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "有关"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "00e3efab-30e2-4df9-801d-d6d684d46c6a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4254c41b-d325-4fdc-8c13-f8b6d41badd4",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“有关”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 有关 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "有关"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "00e3efab-30e2-4df9-801d-d6d684d46c6a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "有关部门 là cụm hành chính rất hay gặp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f3246fba-9b0e-4746-ab13-475bf1f0d7d7",
+      "order": 1,
+      "rule_vi": "Khung tự nhiên là 跟/和……有关 hoặc 有关……的问题.",
+      "natural_examples": [
+        {
+          "zh": "这个问题跟网络学习有关。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "这个问题有关网络学习。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "这个问题有关网络学习。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个问题跟网络学习有关。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Khung tự nhiên là 跟/和……有关 hoặc 有关……的问题.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "有关",
+    "back": "có liên quan; liên quan đến",
+    "hint": "yǒuguān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "00e3efab-30e2-4df9-801d-d6d684d46c6a",
+    "source_lesson_vocab_id": null
+  }
+}

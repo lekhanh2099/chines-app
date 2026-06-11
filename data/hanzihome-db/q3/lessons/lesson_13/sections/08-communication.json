@@ -1,0 +1,161 @@
+{
+  "id": "l13_section_008",
+  "type": "communication",
+  "order": 8,
+  "title": "交际会话",
+  "title_vi": "Hội thoại giao tiếp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "l13_comm_001",
+      "type": "communication_dialogue",
+      "order": 1,
+      "title": "十、交际会话：谈论苦与甜",
+      "title_vi": "Hội thoại giao tiếp: Nói về khổ và ngọt",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "l13_line_036",
+          "order": 1,
+          "speaker": "A",
+          "zh": "我现在才真正感到“在家千日好，出门一时难”了。",
+          "pinyin": "Wǒ xiànzài cái zhēnzhèng gǎndào “zài jiā qiān rì hǎo, chū mén yì shí nán” le.",
+          "vi": "Bây giờ tôi mới thật sự cảm nhận được câu ‘ở nhà nghìn ngày thì tốt, ra ngoài một lúc cũng khó’.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_037",
+          "order": 2,
+          "speaker": "B",
+          "zh": "又遇到什么困难了？",
+          "pinyin": "Yòu yùdào shénme kùnnan le?",
+          "vi": "Lại gặp khó khăn gì rồi?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_038",
+          "order": 3,
+          "speaker": "A",
+          "zh": "困难多了，我得自己做饭、洗衣服、买东西，还得自己打扫房间，总之都挺难的。",
+          "pinyin": "Kùnnan duō le, wǒ děi zìjǐ zuò fàn, xǐ yīfu, mǎi dōngxi, hái děi zìjǐ dǎsǎo fángjiān, zǒngzhī dōu tǐng nán de.",
+          "vi": "Khó khăn nhiều lắm. Tôi phải tự nấu cơm, giặt quần áo, mua đồ, còn phải tự dọn phòng; tóm lại cái gì cũng khá khó.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_039",
+          "order": 4,
+          "speaker": "B",
+          "zh": "你听说过“好男儿志在四方”这句话吗？",
+          "pinyin": "Nǐ tīngshuō guo “hǎo nán’ér zhì zài sìfāng” zhè jù huà ma?",
+          "vi": "Bạn từng nghe câu ‘nam nhi tốt chí ở bốn phương’ chưa?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_040",
+          "order": 5,
+          "speaker": "A",
+          "zh": "听说过。我就是想锻炼锻炼自己，才出国来留学的。",
+          "pinyin": "Tīngshuō guo. Wǒ jiù shì xiǎng duànliàn duànliàn zìjǐ, cái chū guó lái liúxué de.",
+          "vi": "Nghe rồi. Chính vì muốn rèn luyện bản thân nên tôi mới ra nước ngoài du học.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_041",
+          "order": 6,
+          "speaker": "B",
+          "zh": "既然这样，你还叫什么苦呢？锻炼自己就是要吃苦嘛。",
+          "pinyin": "Jìrán zhèyàng, nǐ hái jiào shénme kǔ ne? Duànliàn zìjǐ jiù shì yào chī kǔ ma.",
+          "vi": "Nếu đã như vậy thì bạn còn than khổ gì nữa? Rèn luyện bản thân thì phải chịu khổ mà.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_042",
+          "order": 7,
+          "speaker": "A",
+          "zh": "话虽然这么说，可是遇到困难时，还是有点儿想家，尽管也知道不可能再像以前那样一直过舒服日子了。",
+          "pinyin": "Huà suīrán zhème shuō, kěshì yùdào kùnnan shí, háishi yǒu diǎnr xiǎng jiā, jǐnguǎn yě zhīdào bù kěnéng zài xiàng yǐqián nàyàng yìzhí guò shūfu rìzi le.",
+          "vi": "Nói thì nói vậy, nhưng khi gặp khó khăn vẫn hơi nhớ nhà, dù cũng biết không thể cứ sống thoải mái như trước nữa.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_043",
+          "order": 8,
+          "speaker": "B",
+          "zh": "我觉得对年轻人来说，吃点儿苦有好处。",
+          "pinyin": "Wǒ juéde duì niánqīng rén lái shuō, chī diǎnr kǔ yǒu hǎochu.",
+          "vi": "Tôi thấy đối với người trẻ, chịu khổ một chút là có lợi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_044",
+          "order": 9,
+          "speaker": "A",
+          "zh": "你怎么跟我爸爸说的一样？我爸爸总对我说，年轻人吃点儿苦，就是财富。我真不明白，苦怎么会是财富呢？",
+          "pinyin": "Nǐ zěnme gēn wǒ bàba shuō de yíyàng? Wǒ bàba zǒng duì wǒ shuō, niánqīng rén chī diǎnr kǔ, jiù shì cáifù. Wǒ zhēn bù míngbai, kǔ zěnme huì shì cáifù ne?",
+          "vi": "Sao bạn nói giống bố tôi vậy? Bố tôi luôn nói rằng người trẻ chịu khổ một chút chính là tài sản. Tôi thật không hiểu, khổ sao lại là tài sản được?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_045",
+          "order": 10,
+          "speaker": "B",
+          "zh": "吃得苦中苦，才有甜上甜嘛。",
+          "pinyin": "Chī de kǔ zhōng kǔ, cái yǒu tián shàng tián ma.",
+          "vi": "Chịu được cái khổ trong khổ, mới có cái ngọt trên ngọt mà.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "key_phrases": [
+        "在家千日好，出门一时难",
+        "好男儿志在四方",
+        "锻炼锻炼自己",
+        "你还叫什么苦呢？",
+        "吃点儿苦有好处",
+        "苦怎么会是财富呢？",
+        "吃得苦中苦，才有甜上甜"
+      ]
+    }
+  ]
+}

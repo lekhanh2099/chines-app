@@ -1,0 +1,251 @@
+{
+  "id": "0936a744-0d4a-4bff-8dfa-d34f2fdb820e",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "似乎",
+  "pinyin": "sìhū",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tự hồ",
+    "meaning_vi": "dường như, có vẻ như",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dường như",
+      "có vẻ như"
+    ],
+    "short_definition_vi": "dường như, có vẻ như",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: suy đoán, miêu tả.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "suy đoán, miêu tả",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "似",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giống như, tựa như",
+        "modern_logic_vi": "Trong từ 似乎, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "乎",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yếu tố trong từ, ngữ khí",
+        "modern_logic_vi": "Trong từ 似乎, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "似乎 nên được học theo nghĩa hiện đại trong cụm/tình huống: dường như, có vẻ như.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 似乎有点儿累.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好像",
+        "pinyin": "hǎoxiàng",
+        "meaning_vi": "hình như",
+        "difference_vi": "好像 khẩu ngữ hơn; 似乎 hơi văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aa49608c-ad0c-4024-bd7c-9a6c07879bd6",
+      "order": 1,
+      "zh": "似乎有点儿累",
+      "pinyin": "",
+      "vi": "có vẻ hơi mệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf9da637-54c7-454d-af68-94cf6f2e5c25",
+      "order": 2,
+      "zh": "似乎没听清楚",
+      "pinyin": "",
+      "vi": "hình như không nghe rõ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb6ea74d-3f0f-43b4-b899-cf7d74f69a12",
+      "order": 3,
+      "zh": "似乎不太高兴",
+      "pinyin": "",
+      "vi": "có vẻ không vui lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7da47c5a-299b-4043-968d-788768656b40",
+      "order": 1,
+      "zh": "他似乎不太高兴。",
+      "pinyin": "",
+      "vi": "Anh ấy có vẻ không vui lắm.",
+      "analysis_vi": "似乎 diễn tả suy đoán, không khẳng định chắc.",
+      "highlight": [
+        "似乎"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0936a744-0d4a-4bff-8dfa-d34f2fdb820e"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 似乎 được dùng trong ngữ cảnh suy đoán, miêu tả; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ef9e4502-2d16-44d9-830b-c30c9b81fc58",
+      "order": 1,
+      "rule_vi": "Không dùng 似乎 khi đã biết chắc 100%.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 似乎 khi đã biết chắc 100%.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "似乎",
+    "back": "dường như, có vẻ như",
+    "hint": "sìhū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0936a744-0d4a-4bff-8dfa-d34f2fdb820e",
+    "source_lesson_vocab_id": null
+  }
+}

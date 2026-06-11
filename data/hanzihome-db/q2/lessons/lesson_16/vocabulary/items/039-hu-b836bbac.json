@@ -1,0 +1,253 @@
+{
+  "id": "a8b2fd67-a16d-46c6-aee9-c5ae0ec54d07",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "湖",
+  "pinyin": "hú",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hồ",
+    "meaning_vi": "hồ, ao hồ lớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hồ, ao hồ lớn"
+    ],
+    "short_definition_vi": "hồ, ao hồ lớn",
+    "textbook_focus_vi": "hồ, ao hồ lớn",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "湖",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "胡",
+            "hanviet": "hồ",
+            "meaning_vi": "thành phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hồ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "湖 = hồ, vùng nước lớn trên đất liền.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2d463d2a-6d92-44f0-95d1-a2c90be41fa9",
+      "order": 1,
+      "zh": "一个湖",
+      "pinyin": "",
+      "vi": "một cái hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aacc9331-4b63-4422-b62b-27647f7f32f1",
+      "order": 2,
+      "zh": "湖边",
+      "pinyin": "",
+      "vi": "bên hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82778e5e-682b-4802-b3e3-c467ae151549",
+      "order": 3,
+      "zh": "湖里",
+      "pinyin": "",
+      "vi": "trong hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4fb0b3e0-2867-4c7c-990e-db940b5a8d0e",
+      "order": 4,
+      "zh": "湖水",
+      "pinyin": "",
+      "vi": "nước hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1b217b0-6734-4d86-bd70-1dd5d874cf17",
+      "order": 5,
+      "zh": "西湖",
+      "pinyin": "",
+      "vi": "Tây Hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c25761a4-6190-4ad8-afc9-ae8192dce53b",
+      "order": 1,
+      "zh": "这个小区旁边有一个湖。",
+      "pinyin": "Zhège xiǎoqū pángbiān yǒu yí ge hú.",
+      "vi": "Bên cạnh khu dân cư này có một cái hồ.",
+      "analysis_vi": "小区旁边有…… là câu tồn tại.",
+      "highlight": [
+        "湖"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "a8b2fd67-a16d-46c6-aee9-c5ae0ec54d07"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "20344239-d1f3-4443-9ce3-c43be680dc70",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：湖。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: hồ, ao hồ lớn.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "湖"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "a8b2fd67-a16d-46c6-aee9-c5ae0ec54d07"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 湖 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "77519b88-de84-434e-bfd2-641069b495af",
+      "order": 1,
+      "rule_vi": "湖 là hồ; 河 là sông; 海 là biển.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "湖 là hồ; 河 là sông; 海 là biển.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "湖",
+    "back": "hồ, ao hồ lớn",
+    "hint": "hú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_039"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a8b2fd67-a16d-46c6-aee9-c5ae0ec54d07",
+    "source_lesson_vocab_id": null
+  }
+}

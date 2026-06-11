@@ -1,0 +1,400 @@
+{
+  "id": "81022c69-6bdf-4ff5-82d7-fe4684b19c2a",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "因此",
+  "pinyin": "yīncǐ",
+  "pos": {
+    "raw_vi": "Liên từ / Phó từ liên kết",
+    "raw_cn": "连词/关联副词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhân thử",
+    "meaning_vi": "vì vậy, do đó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vì vậy",
+      "do đó"
+    ],
+    "short_definition_vi": "vì vậy, do đó",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: vì vậy, do đó.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "因",
+        "lishu_vi": "nhân",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao ngoài",
+            "position_vi": "ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "囗 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao ngoài",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nguyên nhân, vì",
+        "modern_logic_vi": "Chỉ nguyên nhân/căn cứ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao ngoài",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "此",
+        "lishu_vi": "thử",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng/chân",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "止 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "止",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chỉ",
+              "radical_name_zh": "",
+              "hanviet": "chỉ",
+              "meaning_vi": "dừng/chân",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "匕",
+            "hanviet": "chủy",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "này, việc này",
+        "modern_logic_vi": "Chỉ việc/cái này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "止",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chỉ",
+          "radical_name_zh": "",
+          "hanviet": "chỉ",
+          "meaning_vi": "dừng/chân",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "因此 trong bài dùng theo nghĩa: vì vậy, do đó. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 因此 qua văn cảnh 离家的时候: vì vậy, do đó.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "所以",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho nên, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "于是",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thế là, nhấn hành động tiếp sau",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "因而",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "do đó, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "原因/结果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nguyên nhân/kết quả",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2088d08d-0c08-47a2-a2b2-bd07c60bea1e",
+      "order": 1,
+      "zh": "因此决定",
+      "pinyin": "",
+      "vi": "vì vậy quyết định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1fd237cf-8acd-4ae3-8975-9034bdd68b09",
+      "order": 2,
+      "zh": "因此不能",
+      "pinyin": "",
+      "vi": "vì vậy không thể",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00a48c98-e8de-4f98-b3f2-97bed4fabe8a",
+      "order": 3,
+      "zh": "因此感到",
+      "pinyin": "",
+      "vi": "vì vậy cảm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e635f71-636c-41eb-bcd0-a29465c854af",
+      "order": 4,
+      "zh": "因此改变",
+      "pinyin": "",
+      "vi": "vì vậy thay đổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "490f3700-0153-4916-9bf1-01ff64edb4dd",
+      "order": 5,
+      "zh": "由于……因此……",
+      "pinyin": "",
+      "vi": "do... vì vậy...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a30aadaf-3ca6-4909-92b0-bdf706b5d775",
+      "order": 1,
+      "zh": "她是独生女，因此父母特别舍不得她离开家。",
+      "pinyin": "",
+      "vi": "Cô ấy là con gái một, vì vậy bố mẹ đặc biệt không nỡ để cô ấy rời nhà.",
+      "analysis_vi": "因此 nối nguyên nhân và kết quả.",
+      "highlight": [
+        "因此"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81022c69-6bdf-4ff5-82d7-fe4684b19c2a"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c5964140-5c49-4655-9381-51c4f5d2745d",
+      "order": 2,
+      "zh": "她一直想独立生活，因此瞒着父母报了名。",
+      "pinyin": "",
+      "vi": "Cô ấy luôn muốn sống tự lập, vì vậy giấu bố mẹ đăng ký.",
+      "analysis_vi": "因此 làm mạch câu văn viết rõ hơn 所以.",
+      "highlight": [
+        "因此"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81022c69-6bdf-4ff5-82d7-fe4684b19c2a"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3eb2b8fa-b85a-4df2-9f87-53ae09437e31",
+      "order": 3,
+      "zh": "对于出国这件事，她考虑了很久，因此能把自己的想法说清楚。",
+      "pinyin": "",
+      "vi": "Đối với chuyện ra nước ngoài, cô ấy suy nghĩ rất lâu nên có thể nói rõ suy nghĩ.",
+      "analysis_vi": "对于…… nêu đối tượng bàn luận.",
+      "highlight": [
+        "因此"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81022c69-6bdf-4ff5-82d7-fe4684b19c2a"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "因此 hợp văn viết/bài luận hơn lạm dụng 所以.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d9aa21bb-fc72-4ea8-8f0a-a54e6d867b9c",
+      "order": 1,
+      "rule_vi": "Không chồng 因为...因此所以...; chọn 因为...所以... hoặc vế trước + 因此.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "因此",
+    "back": "vì vậy, do đó",
+    "hint": "yīncǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_008"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "81022c69-6bdf-4ff5-82d7-fe4684b19c2a",
+    "source_lesson_vocab_id": null
+  }
+}

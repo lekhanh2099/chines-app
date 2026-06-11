@@ -1,0 +1,287 @@
+{
+  "id": "5537fa6c-39dd-443d-9d7d-b9104e1a5e3f",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "十分",
+  "pinyin": "shífēn",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thập phân",
+    "meaning_vi": "rất, vô cùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rất, vô cùng"
+    ],
+    "short_definition_vi": "rất, vô cùng",
+    "textbook_focus_vi": "rất, vô cùng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "十",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "mười",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "mười",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "分",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "八",
+            "hanviet": "bát",
+            "meaning_vi": "",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刀 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "chia/phần/phút",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "mười phần/đủ mức, mở rộng thành rất",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d4ef437d-1cf2-47ff-b33f-cd604d2dc908",
+      "order": 1,
+      "zh": "十分精彩",
+      "pinyin": "",
+      "vi": "vô cùng đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30c584f0-409f-4e1b-8573-53bf7d05242b",
+      "order": 2,
+      "zh": "十分有趣",
+      "pinyin": "",
+      "vi": "rất thú vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e012abe4-7c38-4cd0-a710-675fdfea8269",
+      "order": 3,
+      "zh": "十分重要",
+      "pinyin": "",
+      "vi": "rất quan trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6eb13125-0a10-4e6d-b63e-ed6f6c83968a",
+      "order": 4,
+      "zh": "十分担心",
+      "pinyin": "",
+      "vi": "rất lo lắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2427cb3a-7785-4729-bc50-9c5b3dec897c",
+      "order": 5,
+      "zh": "十分复杂",
+      "pinyin": "",
+      "vi": "rất phức tạp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "15756fcf-f9c4-4a43-9e8c-2e1e7353dca8",
+      "order": 1,
+      "zh": "这场演出十分精彩。",
+      "pinyin": "Zhè chǎng yǎnchū shífēn jīngcǎi.",
+      "vi": "Buổi biểu diễn này vô cùng đặc sắc.",
+      "analysis_vi": "十分 + tính từ; hơi văn hơn 很.",
+      "highlight": [
+        "十分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5537fa6c-39dd-443d-9d7d-b9104e1a5e3f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9d9296b3-4466-4453-9eab-0213d55b89d9",
+      "order": 2,
+      "zh": "如果不了解十分，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě shífēn, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 十分, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "十分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5537fa6c-39dd-443d-9d7d-b9104e1a5e3f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7677ed75-21d8-4fc3-a5dc-35ff1f2353b2",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解十分在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě shífēn zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 十分 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "十分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5537fa6c-39dd-443d-9d7d-b9104e1a5e3f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "十分 hay gặp trong văn giới thiệu chương trình, bảo tàng, bài đọc; khẩu ngữ hay dùng 特别/挺 hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ab3cf66a-59ca-4d03-ad8a-5be87e93e328",
+      "order": 1,
+      "rule_vi": "Không dùng 十分 trước động từ thường nếu không có cấu trúc phù hợp。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "十分",
+    "back": "rất, vô cùng",
+    "hint": "shífēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5537fa6c-39dd-443d-9d7d-b9104e1a5e3f",
+    "source_lesson_vocab_id": null
+  }
+}

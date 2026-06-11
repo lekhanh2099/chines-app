@@ -1,0 +1,1373 @@
+{
+  "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "病",
+      "pinyin": "bìng",
+      "meaning_vi": "bệnh; ốm; bị bệnh",
+      "meaning_en": "illness; to be ill",
+      "pos": "Danh từ / Động từ trạng thái",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "病",
+        "back": "bìng — bệnh; ốm; bị bệnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ trạng thái",
+        "cn": "名词 / 动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "病人",
+      "pinyin": "bìngrén",
+      "meaning_vi": "bệnh nhân; người bệnh",
+      "meaning_en": "patient",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "病人",
+        "back": "bìngrén — bệnh nhân; người bệnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "肚子",
+      "pinyin": "dùzi",
+      "meaning_vi": "bụng",
+      "meaning_en": "belly; abdomen",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "肚子",
+        "back": "dùzi — bụng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "厉害",
+      "pinyin": "lìhai",
+      "meaning_vi": "dữ dội; nghiêm trọng; lợi hại/giỏi tùy ngữ cảnh",
+      "meaning_en": "severe; serious",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "厉害",
+        "back": "lìhai — dữ dội; nghiêm trọng; lợi hại/giỏi tùy ngữ cảnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "96496113-b897-4cca-a571-7c57260b4c1f",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "了",
+      "pinyin": "le",
+      "meaning_vi": "trợ từ biểu thị hoàn thành hoặc thay đổi tình huống",
+      "meaning_en": "aspect particle; modal particle",
+      "pos": "Trợ từ",
+      "tags": [
+        "hanyu_2_1",
+        "lesson_02",
+        "main_vocab",
+        "added_after_pdf_check"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "了",
+        "back": "le — trợ từ biểu thị hoàn thành hoặc thay đổi tình huống",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Trợ từ",
+        "cn": "助词",
+        "normalized": "particle",
+        "schema_compatible_pos": "particle",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "害",
+      "pinyin": "hài",
+      "meaning_vi": "hại; gây hại; yếu tố trong 厉害",
+      "meaning_en": "to harm",
+      "pos": "Động từ / Yếu tố cấu tạo từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "害",
+        "back": "hài — hại; gây hại; yếu tố trong 厉害",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Yếu tố cấu tạo từ",
+        "cn": "动词 / 语素",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "meaning_vi": "viên; lát; mảnh; lượng từ cho vật mỏng/thuốc viên",
+      "meaning_en": "slice; piece; measure word",
+      "pos": "Lượng từ / Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "片",
+        "back": "piàn — viên; lát; mảnh; lượng từ cho vật mỏng/thuốc viên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Lượng từ / Danh từ",
+        "cn": "量词 / 名词",
+        "normalized": "measure_word",
+        "schema_compatible_pos": "measure_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "拉肚子",
+      "pinyin": "lā dùzi",
+      "meaning_vi": "tiêu chảy; bị đi ngoài",
+      "meaning_en": "to have diarrhea",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "拉肚子",
+        "back": "lā dùzi — tiêu chảy; bị đi ngoài",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 拉 + tân ngữ 肚子",
+        "usage_note_vi": "Có thể nói 拉了三天肚子; khi thêm bổ ngữ mức độ thường nói 拉肚子拉得很厉害.",
+        "notes": []
+      }
+    },
+    {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "拉",
+      "pinyin": "lā",
+      "meaning_vi": "kéo; lôi; trong 拉肚子 nghĩa là đi ngoài/tiêu chảy",
+      "meaning_en": "to pull",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "拉",
+        "back": "lā — kéo; lôi; trong 拉肚子 nghĩa là đi ngoài/tiêu chảy",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "鱼",
+      "pinyin": "yú",
+      "meaning_vi": "cá",
+      "meaning_en": "fish",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "鱼",
+        "back": "yú — cá",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "牛肉",
+      "pinyin": "niúròu",
+      "meaning_vi": "thịt bò",
+      "meaning_en": "beef",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "牛肉",
+        "back": "niúròu — thịt bò",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "化验",
+      "pinyin": "huàyàn",
+      "meaning_vi": "xét nghiệm; kiểm nghiệm bằng mẫu",
+      "meaning_en": "laboratory test",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "化验",
+        "back": "huàyàn — xét nghiệm; kiểm nghiệm bằng mẫu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "检查",
+      "pinyin": "jiǎnchá",
+      "meaning_vi": "kiểm tra; khám",
+      "meaning_en": "to inspect; examine",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "检查",
+        "back": "jiǎnchá — kiểm tra; khám",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "大便",
+      "pinyin": "dàbiàn",
+      "meaning_vi": "đại tiện; phân",
+      "meaning_en": "stool; bowel movement",
+      "pos": "Danh từ / Động từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "大便",
+        "back": "dàbiàn — đại tiện; phân",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词 / 动词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "小便",
+      "pinyin": "xiǎobiàn",
+      "meaning_vi": "tiểu tiện; nước tiểu",
+      "meaning_en": "urine; urination",
+      "pos": "Danh từ / Động từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "小便",
+        "back": "xiǎobiàn — tiểu tiện; nước tiểu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词 / 动词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "结果",
+      "pinyin": "jiéguǒ",
+      "meaning_vi": "kết quả",
+      "meaning_en": "result",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "结果",
+        "back": "jiéguǒ — kết quả",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "出来",
+      "pinyin": "chūlai",
+      "meaning_vi": "đi ra; xuất hiện; có kết quả",
+      "meaning_en": "to come out",
+      "pos": "Động từ / Bổ ngữ xu hướng",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "出来",
+        "back": "chūlai — đi ra; xuất hiện; có kết quả",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Bổ ngữ xu hướng",
+        "cn": "动词 / 趋向补语",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "得",
+      "pinyin": "dé",
+      "meaning_vi": "mắc; bị; đạt được; cũng đọc de/děi ở chức năng khác",
+      "meaning_en": "to get; to contract",
+      "pos": "Động từ / Trợ từ / Động từ tình thái",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "得",
+        "back": "dé — mắc; bị; đạt được; cũng đọc de/děi ở chức năng khác",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Trợ từ / Động từ tình thái",
+        "cn": "动词 / 助词 / 能愿动词",
+        "normalized": "grammar_word",
+        "schema_compatible_pos": "grammar_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài có 得了肠炎 đọc dé; 疼得厉害 đọc de; khẩu ngữ 得 đi trước động từ có thể đọc děi.",
+        "notes": []
+      }
+    },
+    {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "肠炎",
+      "pinyin": "chángyán",
+      "meaning_vi": "viêm ruột",
+      "meaning_en": "enteritis",
+      "pos": "Danh từ bệnh lý",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "肠炎",
+        "back": "chángyán — viêm ruột",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ bệnh lý",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "消化",
+      "pinyin": "xiāohuà",
+      "meaning_vi": "tiêu hóa",
+      "meaning_en": "to digest",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "消化",
+        "back": "xiāohuà — tiêu hóa",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "开（药）",
+      "pinyin": "kāi (yào)",
+      "meaning_vi": "kê thuốc",
+      "meaning_en": "to prescribe medicine",
+      "pos": "Động từ li hợp / Cụm động-tân",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "开（药）",
+        "back": "kāi (yào) — kê thuốc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp / Cụm động-tân",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 开 + tân ngữ 药",
+        "usage_note_vi": "Có thể nói 开了一些药 / 给病人开药; chủ thể thường là bác sĩ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "打针",
+      "pinyin": "dǎ zhēn",
+      "meaning_vi": "tiêm; chích thuốc",
+      "meaning_en": "to have an injection",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "打针",
+        "back": "dǎ zhēn — tiêm; chích thuốc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 打 + tân ngữ 针",
+        "usage_note_vi": "Có thể nói 打了一针; 打针 là cụm động-tân cố định, không dịch là “đánh kim”.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "后",
+      "pinyin": "hòu",
+      "meaning_vi": "sau; phía sau; về sau",
+      "meaning_en": "after; behind",
+      "pos": "Danh từ chỉ thời gian/vị trí",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "后",
+        "back": "hòu — sau; phía sau; về sau",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ chỉ thời gian/vị trí",
+        "cn": "名词 / 方位词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "173409e7-a2ad-4e05-a409-6d8b3dc2203d",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "哭",
+      "pinyin": "kū",
+      "meaning_vi": "khóc",
+      "meaning_en": "to cry; to weep",
+      "pos": "Động từ",
+      "tags": [
+        "hanyu_2_1",
+        "lesson_02",
+        "main_vocab",
+        "added_after_pdf_check"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "哭",
+        "back": "kū — khóc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "寂寞",
+      "pinyin": "jìmò",
+      "meaning_vi": "cô đơn; lẻ loi",
+      "meaning_en": "lonely",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "寂寞",
+        "back": "jìmò — cô đơn; lẻ loi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "所以",
+      "pinyin": "suǒyǐ",
+      "meaning_vi": "cho nên; vì vậy",
+      "meaning_en": "therefore",
+      "pos": "Liên từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "所以",
+        "back": "suǒyǐ — cho nên; vì vậy",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Liên từ",
+        "cn": "连词",
+        "normalized": "conjunction",
+        "schema_compatible_pos": "conjunction",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "难过",
+      "pinyin": "nánguò",
+      "meaning_vi": "buồn; khó chịu; đau lòng",
+      "meaning_en": "sad; upset",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "难过",
+        "back": "nánguò — buồn; khó chịu; đau lòng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "别",
+      "pinyin": "bié",
+      "meaning_vi": "đừng; không nên",
+      "meaning_en": "do not",
+      "pos": "Phó từ phủ định mệnh lệnh",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "别",
+        "back": "bié — đừng; không nên",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ phủ định mệnh lệnh",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "礼堂",
+      "pinyin": "lǐtáng",
+      "meaning_vi": "lễ đường; hội trường",
+      "meaning_en": "auditorium",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "礼堂",
+        "back": "lǐtáng — lễ đường; hội trường",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "舞会",
+      "pinyin": "wǔhuì",
+      "meaning_vi": "buổi khiêu vũ; vũ hội",
+      "meaning_en": "dance party; ball",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "舞会",
+        "back": "wǔhuì — buổi khiêu vũ; vũ hội",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "跳舞",
+      "pinyin": "tiào wǔ",
+      "meaning_vi": "nhảy múa; khiêu vũ",
+      "meaning_en": "to dance",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "跳舞",
+        "back": "tiào wǔ — nhảy múa; khiêu vũ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 跳 + tân ngữ 舞",
+        "usage_note_vi": "Có thể nói 跳跳舞, 跳了一个小时舞; khi dùng 得 thường lặp động từ: 跳舞跳得很好.",
+        "notes": []
+      }
+    },
+    {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "发烧",
+      "pinyin": "fāshāo",
+      "meaning_vi": "sốt; bị sốt",
+      "meaning_en": "to have a fever",
+      "pos": "Động từ li hợp / Cụm động-tân",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "发烧",
+        "back": "fāshāo — sốt; bị sốt",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp / Cụm động-tân",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 发 + tân ngữ 烧",
+        "usage_note_vi": "Có thể nói 发了三天烧; thường dùng nguyên cụm 发烧了 trong hội thoại.",
+        "notes": []
+      }
+    },
+    {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "嗓子",
+      "pinyin": "sǎngzi",
+      "meaning_vi": "cổ họng; giọng",
+      "meaning_en": "throat; voice",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "嗓子",
+        "back": "sǎngzi — cổ họng; giọng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "出汗",
+      "pinyin": "chū hàn",
+      "meaning_vi": "ra mồ hôi; đổ mồ hôi",
+      "meaning_en": "to sweat",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "hanyu_2_1",
+        "lesson_02"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "出汗",
+        "back": "chū hàn — ra mồ hôi; đổ mồ hôi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 出 + tân ngữ 汗",
+        "usage_note_vi": "Có thể tách: 出了很多汗; không nói 出汗了很多.",
+        "notes": []
+      }
+    }
+  ]
+}

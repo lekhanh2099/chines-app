@@ -1,0 +1,362 @@
+{
+  "id": "c2bd6834-9339-4616-8a7d-c32c02284224",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "品尝",
+  "pinyin": "pǐncháng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Phẩm thường",
+    "meaning_vi": "nếm thử, thưởng thức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nếm thử, thưởng thức"
+    ],
+    "short_definition_vi": "nếm thử, thưởng thức",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "văn hơn, lịch sự hơn, có cảm giác “thưởng thức” chứ không chỉ “nếm một miếng”.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "品",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phẩm chất, loại, thưởng thức/đánh giá",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "尝",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "⺌",
+            "hanviet": "tiểu biến thể",
+            "meaning_vi": "thành phần giản thể nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "冖",
+            "hanviet": "mịch",
+            "meaning_vi": "mái che",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "mây/nói",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nếm, thử, từng trải qua",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "品 có nghĩa là phẩm, phẩm vị, thưởng thức, đánh giá chất lượng. 尝 là nếm. → 品尝 = nếm để cảm nhận hương vị/chất lượng. Cảnh báo: trong nói thường ngày, 尝尝 tự nhiên hơn; 品尝 hợp văn viết, giới thiệu món ăn, du lịch, lễ hội.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "品尝",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nếm thử, thưởng thức; trang trọng, có cảm nhận.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "尝",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nếm, thử vị; đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吃",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ăn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喝",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "uống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "试吃",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ăn thử, thường gặp trong cửa hàng/siêu thị.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: ông nội mời khách ăn thử có thể nói 尝尝; bài giới thiệu món đặc sản dùng 品尝特色小吃 rất đẹp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "86d49a1c-01d0-4d81-a2db-160aeb00babe",
+      "order": 1,
+      "zh": "品尝美食",
+      "pinyin": "",
+      "vi": "thưởng thức món ngon",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c3d5da2-ecda-4b46-bf87-9be4918f0b15",
+      "order": 2,
+      "zh": "品尝特色小吃",
+      "pinyin": "",
+      "vi": "thưởng thức món ăn vặt đặc sắc/đặc sản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e0830d2e-1c36-40d7-bc5a-c560783b7dc9",
+      "order": 3,
+      "zh": "品尝中国茶",
+      "pinyin": "",
+      "vi": "thưởng thức trà Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c17c6e5-4c9a-4301-8d0c-4201540b17cc",
+      "order": 4,
+      "zh": "请大家品尝",
+      "pinyin": "",
+      "vi": "mời mọi người thưởng thức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5400010e-f6d2-4b9d-8470-493dac81b7a6",
+      "order": 1,
+      "zh": "客人来了以后，爷爷亲手端出一盘红枣，请大家品尝。",
+      "pinyin": "Kèrén lái le yǐhòu, yéye qīnshǒu duān chū yì pán hóngzǎo, qǐng dàjiā pǐncháng.",
+      "vi": "Sau khi khách đến, ông nội tự tay bưng ra một đĩa táo đỏ, mời mọi người thưởng thức.",
+      "analysis_vi": "亲手端出 nhấn tự tay bưng ra; 品尝 trang trọng hơn 尝尝, hợp tiếp khách.",
+      "highlight": [
+        "品尝"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "c2bd6834-9339-4616-8a7d-c32c02284224"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08c53344-e81f-48c3-a337-64c713b06e7c",
+      "order": 2,
+      "zh": "春节联欢会上，大家可以品尝不同地方的特色小吃。",
+      "pinyin": "Chūnjié liánhuānhuì shang, dàjiā kěyǐ pǐncháng bù tóng dìfang de tèsè xiǎochī.",
+      "vi": "Trong buổi liên hoan Tết, mọi người có thể thưởng thức món ăn vặt đặc sắc của các vùng khác nhau.",
+      "analysis_vi": "品尝 + món ăn rất tự nhiên trong bối cảnh lễ hội/giới thiệu ẩm thực.",
+      "highlight": [
+        "品尝"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "c2bd6834-9339-4616-8a7d-c32c02284224"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6dde6ef3-9fa5-41c2-aca9-70579268e366",
+      "order": 3,
+      "zh": "你先别急着评价，最好先品尝一下，再说自己的意见。",
+      "pinyin": "Nǐ xiān bié jízhe píngjià, zuìhǎo xiān pǐncháng yíxià, zài shuō zìjǐ de yìjiàn.",
+      "vi": "Bạn đừng vội đánh giá trước, tốt nhất nếm thử một chút rồi hãy nói ý kiến của mình.",
+      "analysis_vi": "最好先……再…… là lời khuyên có trình tự; 品尝一下 làm giọng nhẹ hơn.",
+      "highlight": [
+        "品尝"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "c2bd6834-9339-4616-8a7d-c32c02284224"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 品尝",
+    "content_vi": "Khi giới thiệu ẩm thực Trung Quốc, 品尝 rất hay xuất hiện: 品尝北京烤鸭, 品尝中国茶, 品尝地方特色菜. Nó tạo cảm giác lịch sự và có văn hóa hơn 吃.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d71071e1-913e-4142-99fc-9e4a49311188",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 品尝 cho tình huống quá đời thường làm câu bị sang quá mức. Đời thường: 你尝尝这个。 Nǐ chángchang zhège. Bạn nếm thử cái này đi. Trang trọng hơn: 欢迎大家品尝我们的特色菜。 Huānyíng dàjiā pǐncháng wǒmen de tèsè cài. Hoan nghênh mọi người thưởng thức món…",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "品尝",
+    "back": "nếm thử, thưởng thức",
+    "hint": "pǐncháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c2bd6834-9339-4616-8a7d-c32c02284224",
+    "source_lesson_vocab_id": null
+  }
+}

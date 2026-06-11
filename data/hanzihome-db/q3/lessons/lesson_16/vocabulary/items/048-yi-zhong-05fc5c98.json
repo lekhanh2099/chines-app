@@ -1,0 +1,162 @@
+{
+  "id": "b5dd3f11-8389-4a9b-ae65-07d18dd02570",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "一种",
+  "pinyin": "yì zhǒng",
+  "pos": {
+    "raw_vi": "Cụm cố định",
+    "raw_cn": "数量短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Số lượng và phạm vi"
+  ],
+  "meaning": {
+    "hanviet": "Nhất chủng",
+    "meaning_vi": "một loại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "một loại"
+    ],
+    "short_definition_vi": "một loại",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: một loại.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Số lượng và phạm vi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "种",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一种 trong bài được học theo nghĩa trọng tâm: một loại.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: một loại.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e772e06f-66c7-4531-beb7-9e02b0b8e103",
+      "order": 1,
+      "zh": "首先，天壶区的地面都由一种坚硬无比的混凝土覆盖着，这就是说，任何植物都不能生长。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: một loại",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9b899b1b-886c-49a8-8afa-a02da1f01674",
+      "order": 1,
+      "zh": "首先，天壶区的地面都由一种坚硬无比的混凝土覆盖着，这就是说，任何植物都不能生长。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “一种” = một loại.",
+      "analysis_vi": "Câu này dùng “一种” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "一种"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b5dd3f11-8389-4a9b-ae65-07d18dd02570"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “一种” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2a1e4c61-b8e5-4ddc-8cd1-10da44f94c50",
+      "order": 1,
+      "rule_vi": "Cần dùng “一种” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一种",
+    "back": "một loại",
+    "hint": "yì zhǒng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Số lượng và phạm vi"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b5dd3f11-8389-4a9b-ae65-07d18dd02570",
+    "source_lesson_vocab_id": null
+  }
+}

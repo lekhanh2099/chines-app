@@ -1,0 +1,56 @@
+{
+  "id": "synthetic_vocab_d59296f240097a44",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "叶",
+  "pinyin": "yè",
+  "meaning_vi": "lá",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+    "type": "vocabulary_item",
+    "order": 19,
+    "hanzi": "叶",
+    "pinyin": "yè",
+    "meaning_vi": "lá",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "pdf_textbook_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

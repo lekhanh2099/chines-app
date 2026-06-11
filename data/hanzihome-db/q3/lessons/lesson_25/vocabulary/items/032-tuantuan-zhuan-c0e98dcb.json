@@ -1,0 +1,230 @@
+{
+  "id": "31a183c3-f260-4896-8c83-1cb1353e9cc3",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "团团转",
+  "pinyin": "tuántuán zhuàn",
+  "pos": {
+    "raw_vi": "Cụm từ",
+    "raw_cn": "熟语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "đoàn đoàn chuyển",
+    "meaning_vi": "xoay như chong chóng, bận/cuống quay vòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xoay như chong chóng",
+      "bận/cuống quay vòng"
+    ],
+    "short_definition_vi": "xoay như chong chóng, bận/cuống quay vòng",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "团",
+        "lishu_vi": "đoàn",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tròn; nhóm",
+        "modern_logic_vi": "Trong từ này, 团 góp phần vào nghĩa hiện đại: tròn; nhóm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "团",
+        "lishu_vi": "đoàn",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tròn; nhóm",
+        "modern_logic_vi": "Trong từ này, 团 góp phần vào nghĩa hiện đại: tròn; nhóm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "转",
+        "lishu_vi": "chuyển",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe, chuyển động",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe, chuyển động",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe, chuyển động",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xoay, chuyển",
+        "modern_logic_vi": "Trong từ này, 转 góp phần vào nghĩa hiện đại: xoay, chuyển.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "团团转 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 忙得团团转.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Thường đi với 忙得/急得; đứng một mình có thể chỉ quay vòng vòng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "41c50552-6dc4-4113-b8da-abd82450bf54",
+      "order": 1,
+      "zh": "忙得团团转",
+      "pinyin": "",
+      "vi": "bận quay như chong chóng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d293034b-43e4-49fe-94b1-b4b3219aefb9",
+      "order": 2,
+      "zh": "急得团团转",
+      "pinyin": "",
+      "vi": "cuống đến quay vòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27c3e713-fe02-4279-80d5-0c3b16a9fd1d",
+      "order": 3,
+      "zh": "在屋里团团转",
+      "pinyin": "",
+      "vi": "đi vòng vòng trong phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "807f029e-0006-46f5-a8a6-b00149bacc89",
+      "order": 1,
+      "zh": "今天客人太多，服务员忙得团团转。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 团团转 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 团团转; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "团团转"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "31a183c3-f260-4896-8c83-1cb1353e9cc3"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 团团转 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4f20b240-2722-4e0d-a3a8-7f8cfceb99b3",
+      "order": 1,
+      "rule_vi": "Thường đi với 忙得/急得; đứng một mình có thể chỉ quay vòng vòng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "团团转",
+    "back": "xoay như chong chóng, bận/cuống quay vòng",
+    "hint": "tuántuán zhuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "31a183c3-f260-4896-8c83-1cb1353e9cc3",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 读后复述",
+  "title_vi": "Đọc hiểu / Đọc rồi kể lại",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "variant": "read_and_retell",
+      "order": 1,
+      "title": "读后复述",
+      "title_vi": "Đọc xong rồi kể lại",
+      "supplementary_words": [
+        {
+          "hanzi": "得",
+          "pinyin": "děi",
+          "meaning_vi": "phải, cần phải",
+          "pos": "Động từ năng nguyện / Trợ động từ",
+          "pos_detail": {
+            "vi": "Động từ năng nguyện / Trợ động từ",
+            "cn": "能愿动词 / 助动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "平时",
+          "pinyin": "píngshí",
+          "meaning_vi": "bình thường, thường ngày",
+          "pos": "Danh từ thời gian / Phó từ",
+          "pos_detail": {
+            "vi": "Danh từ thời gian / Phó từ",
+            "cn": "时间名词 / 副词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "怕",
+          "pinyin": "pà",
+          "meaning_vi": "sợ, e rằng",
+          "pos": "Động từ tâm lý",
+          "pos_detail": {
+            "vi": "Động từ tâm lý",
+            "cn": "心理动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "早上起床一看，外边正在下雪，就想得早点出发。平时我一般七点才从家里走，今天怕迟到，六点钟就出来了。刚出门就摔了一跤，眼镜儿也摔在地上摔坏了。你说倒霉不倒霉。路上又碰上一起交通事故，我的车整整堵了二十分钟。快八点了才到办公室。差点儿迟到。",
+          "pinyin": "Zǎoshang qǐchuáng yí kàn, wàibian zhèngzài xià xuě, jiù xiǎng děi zǎodiǎn chūfā. Píngshí wǒ yìbān qī diǎn cái cóng jiālǐ zǒu, jīntiān pà chídào, liù diǎn zhōng jiù chūlai le. Gāng chūmén jiù shuāi le yì jiāo, yǎnjìngr yě shuāi zài dìshang shuāihuài le. Nǐ shuō dǎoméi bù dǎoméi. Lùshang yòu pèng shàng yì qǐ jiāotōng shìgù, wǒ de chē zhěngzhěng dǔ le èrshí fēnzhōng. Kuài bā diǎn le cái dào bàngōngshì. Chàdiǎnr chídào.",
+          "vi": "Sáng dậy nhìn ra thì thấy bên ngoài đang tuyết rơi, nên tôi nghĩ phải xuất phát sớm hơn một chút. Bình thường tôi thường bảy giờ mới rời nhà, hôm nay sợ đến muộn nên sáu giờ đã ra khỏi nhà rồi. Vừa ra khỏi cửa thì tôi ngã một cú, kính cũng rơi xuống đất vỡ mất. Bạn nói xem có xui không chứ. Trên đường lại gặp một vụ tai nạn giao thông, xe của tôi bị kẹt trọn hai mươi phút. Gần tám giờ mới đến văn phòng. Suýt nữa thì đến muộn.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "城市交通是一个大问题。骑自行车的人多，有汽车的人也一年比一年多；有的人又不遵守交通规则，这是造成交通拥挤的主要原因。小黄说，最好赶快发展地铁。我想也是。",
+          "pinyin": "Chéngshì jiāotōng shì yí ge dà wèntí. Qí zìxíngchē de rén duō, yǒu qìchē de rén yě yì nián bǐ yì nián duō; yǒu de rén yòu bù zūnshǒu jiāotōng guīzé, zhè shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn. Xiǎo Huáng shuō, zuì hǎo gǎnkuài fāzhǎn dìtiě. Wǒ xiǎng yě shì.",
+          "vi": "Giao thông đô thị là một vấn đề lớn. Người đi xe đạp thì nhiều, số người có ô tô cũng năm sau nhiều hơn năm trước; có người lại không tuân thủ quy tắc giao thông, đây là nguyên nhân chính gây ùn tắc giao thông. Tiểu Hoàng nói tốt nhất là nhanh chóng phát triển tàu điện ngầm. Tôi cũng nghĩ như vậy.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "tasks": [
+        {
+          "id": "df48746e-7d35-4d12-a9d2-82bf888920e9",
+          "type": "retell_text",
+          "prompt_zh": "读后复述。",
+          "prompt_vi": "Đọc xong rồi kể lại.",
+          "grading": {
+            "mode": "manual"
+          }
+        }
+      ],
+      "retell_key_points": [
+        "早上外边正在下雪。",
+        "“我”怕迟到，所以六点钟就出门了。",
+        "刚出门就摔了一跤，眼镜儿摔坏了。",
+        "路上又碰上一起交通事故，车堵了二十分钟。",
+        "快八点了才到办公室，差点儿迟到。",
+        "城市交通是一个大问题。",
+        "骑自行车的人多，有汽车的人也一年比一年多。",
+        "有的人不遵守交通规则，造成交通拥挤。",
+        "最好赶快发展地铁。"
+      ],
+      "sample_retell_generated": {
+        "zh": "今天早上外边正在下雪，所以我想得早点出发。平时我七点才从家里走，今天怕迟到，六点钟就出来了。没想到刚出门就摔了一跤，眼镜儿也摔坏了。路上又碰上一起交通事故，我的车堵了二十分钟，快八点才到办公室，差点儿迟到。我觉得城市交通是一个大问题，因为骑自行车的人很多，有汽车的人也一年比一年多，还有一些人不遵守交通规则，所以交通越来越拥挤。最好赶快发展地铁。",
+        "source_origin": "generated",
+        "answer_verified": true,
+        "check_needed": false
+      },
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

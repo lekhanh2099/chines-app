@@ -1,0 +1,313 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "什么最重要",
+      "title_vi": "Điều gì quan trọng nhất",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "d6885762-e133-4e37-b0f3-bdadf2059bf2",
+          "order": 1,
+          "zh": "彭艺云是在英国留学的中国学生。一天，她去牛津大学面试，穿得很朴素，也没戴什么首饰。朋友劝她说：“去考牛津这所世界上最有名的贵族大学，而且还要接受世界著名的阿加尔教授的面试，你这副样子怎么能给人家良好的第一印象呢？”",
+          "pinyin": "Péng Yìyún shì zài Yīngguó liúxué de Zhōngguó xuésheng. Yì tiān, tā qù Niújīn Dàxué miànshì, chuān de hěn pǔsù, yě méi dài shénme shǒushi. Péngyou quàn tā shuō: “Qù kǎo Niújīn zhè suǒ shìjiè shang zuì yǒumíng de guìzú dàxué, érqiě hái yào jiēshòu shìjiè zhùmíng de Ājiā'ěr jiàoshòu de miànshì, nǐ zhè fù yàngzi zěnme néng gěi rénjia liánghǎo de dì-yī yìnxiàng ne?”",
+          "vi": "Bành Nghệ Vân là một du học sinh Trung Quốc đang du học ở Anh. Một hôm, cô đến Đại học Oxford phỏng vấn, ăn mặc rất giản dị, cũng không đeo trang sức gì. Bạn cô khuyên: “Đi thi vào Oxford, một đại học quý tộc nổi tiếng nhất thế giới, lại còn phải trải qua buổi phỏng vấn của giáo sư Archer nổi tiếng thế giới, dáng vẻ như thế này của cậu làm sao tạo được ấn tượng đầu tiên tốt với người ta?”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a3594fb3-b627-42c9-b5e4-73c91bcf9f3e",
+          "order": 2,
+          "zh": "“我本来也不是什么贵族，何必要装出贵族的样子呢？再说，考得上考不上，凭的是知识和才能，不是衣服。”她的自信使朋友觉得很有道理。然而，让人吃惊的是，面试时她竟然跟阿加尔教授争论了起来。教授很生气。",
+          "pinyin": "“Wǒ běnlái yě bú shì shénme guìzú, hébì yào zhuāng chū guìzú de yàngzi ne? Zàishuō, kǎo de shàng kǎo bu shàng, píng de shì zhīshi hé cáinéng, bú shì yīfu.” Tā de zìxìn shǐ péngyou juéde hěn yǒu dàoli. Rán'ér, ràng rén chījīng de shì, miànshì shí tā jìngrán gēn Ājiā'ěr jiàoshòu zhēnglùn le qǐlai. Jiàoshòu hěn shēngqì.",
+          "vi": "“Mình vốn cũng chẳng phải quý tộc gì, hà tất phải giả ra dáng vẻ quý tộc? Hơn nữa, thi đỗ được hay không là dựa vào tri thức và tài năng, chứ không phải quần áo.” Sự tự tin của cô khiến bạn cô thấy lời cô rất có lý. Tuy nhiên, điều khiến người ta kinh ngạc là trong lúc phỏng vấn cô lại bắt đầu tranh luận với giáo sư Archer. Giáo sư rất tức giận.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "1fbcac26-4b80-4b96-bb07-170c2070e485",
+          "order": 3,
+          "zh": "“你以为你可以说服我吗？”教授大声地说。",
+          "pinyin": "“Nǐ yǐwéi nǐ kěyǐ shuōfú wǒ ma?” jiàoshòu dàshēng de shuō.",
+          "vi": "“Cô tưởng cô có thể thuyết phục tôi sao?” giáo sư lớn tiếng nói.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c2f056fa-27b0-44f8-840b-865ee6be193d",
+          "order": 4,
+          "zh": "“当然不一定，因为我还没出生时，您已经是心理学家了。”彭艺云毫不示弱地回答，“但是实验可以。不过要是没有人做这些实验，那就永远也不会有人知道您和我谁对谁错了。”",
+          "pinyin": "“Dāngrán bù yídìng, yīnwèi wǒ hái méi chūshēng shí, nín yǐjīng shì xīnlǐxuéjiā le.” Péng Yìyún háo bù shìruò de huídá, “Dànshì shíyàn kěyǐ. Búguò yàoshi méiyǒu rén zuò zhèxiē shíyàn, nà jiù yǒngyuǎn yě bú huì yǒu rén zhīdào nín hé wǒ shéi duì shéi cuò le.”",
+          "vi": "“Đương nhiên chưa chắc, vì khi em còn chưa sinh ra thì thầy đã là nhà tâm lý học rồi.” Bành Nghệ Vân đáp không hề tỏ ra yếu thế: “Nhưng thí nghiệm thì có thể. Có điều nếu không ai làm những thí nghiệm này, vậy thì mãi mãi cũng sẽ không ai biết giữa thầy và em ai đúng ai sai.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "07494e3f-dee4-4154-bc9d-5cdc3dc71964",
+          "order": 5,
+          "zh": "“这就是你的实验方案吗？我马上可以指出它的好几个错误。”",
+          "pinyin": "“Zhè jiù shì nǐ de shíyàn fāng'àn ma? Wǒ mǎshàng kěyǐ zhǐchū tā de hǎo jǐ ge cuòwù.”",
+          "vi": "“Đây chính là phương án thí nghiệm của cô sao? Tôi có thể lập tức chỉ ra mấy lỗi của nó.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "43a9b8f1-775f-4c54-867b-f872415a892e",
+          "order": 6,
+          "zh": "“这只能说明实验方案还不成熟。要是您收我当您的学生，自然可以把它改得更好。”",
+          "pinyin": "“Zhè zhǐ néng shuōmíng shíyàn fāng'àn hái bù chéngshú. Yàoshi nín shōu wǒ dāng nín de xuésheng, zìrán kěyǐ bǎ tā gǎi de gèng hǎo.”",
+          "vi": "“Điều này chỉ có thể chứng tỏ phương án thí nghiệm vẫn chưa hoàn thiện. Nếu thầy nhận em làm học trò của thầy, đương nhiên có thể sửa nó tốt hơn.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9555ed51-513b-466e-a5d0-3659ea695800",
+          "order": 7,
+          "zh": "“你想让我指导一个反对我的研究生吗？”",
+          "pinyin": "“Nǐ xiǎng ràng wǒ zhǐdǎo yí ge fǎnduì wǒ de yánjiūshēng ma?”",
+          "vi": "“Cô muốn tôi hướng dẫn một nghiên cứu sinh phản đối tôi sao?”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "924f4cda-633e-4244-97ef-2d4078caffe0",
+          "order": 8,
+          "zh": "“是的，我是这样想的。”她笑了笑，“可是跟您争过以后，我知道牛津大学是不可能录取我了。”",
+          "pinyin": "“Shì de, wǒ shì zhèyàng xiǎng de.” Tā xiào le xiào, “Kěshì gēn nín zhēng guo yǐhòu, wǒ zhīdào Niújīn Dàxué shì bù kěnéng lùqǔ wǒ le.”",
+          "vi": "“Vâng, em nghĩ như vậy.” Cô mỉm cười, “Nhưng sau khi đã tranh luận với thầy, em biết Đại học Oxford chắc chắn không thể nhận em nữa rồi.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7ef9dd89-2b71-4ae5-aa1d-57737c08b958",
+          "order": 9,
+          "zh": "“你为什么选择‘行为治疗’这门课？又为什么选择我做你的导师呢？”",
+          "pinyin": "“Nǐ wèishénme xuǎnzé ‘xíngwéi zhìliáo’ zhè mén kè? Yòu wèishénme xuǎnzé wǒ zuò nǐ de dǎoshī ne?”",
+          "vi": "“Vì sao cô chọn môn ‘liệu pháp hành vi’? Lại vì sao chọn tôi làm thầy hướng dẫn của cô?”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5310d724-368b-47fa-8c59-2c7fe694c3f0",
+          "order": 10,
+          "zh": "“您在书里曾写道：‘行为治疗的目的，是使那些心灵痛苦的人能够回到正常生活中去，从而享受正常人都拥有的幸福和权利。’说实在的，您书里的理论我并不都赞成，可我同意这句话。我想我们的分歧只是怎样才能做得更好些，怎样才能更好地治疗病人。”",
+          "pinyin": "“Nín zài shū lǐ céng xiě dào: ‘Xíngwéi zhìliáo de mùdì, shì shǐ nàxiē xīnlíng tòngkǔ de rén nénggòu huí dào zhèngcháng shēnghuó zhōng qù, cóng'ér xiǎngshòu zhèngcháng rén dōu yōngyǒu de xìngfú hé quánlì.’ Shuō shízài de, nín shū lǐ de lǐlùn wǒ bìng bù dōu zànchéng, kě wǒ tóngyì zhè jù huà. Wǒ xiǎng wǒmen de fēnqí zhǐ shì zěnyàng cái néng zuò de gèng hǎo xiē, zěnyàng cái néng gèng hǎo de zhìliáo bìngrén.”",
+          "vi": "“Trong sách thầy từng viết: ‘Mục đích của liệu pháp hành vi là khiến những người đau khổ về tinh thần có thể quay trở lại cuộc sống bình thường, từ đó hưởng hạnh phúc và quyền lợi mà người bình thường đều có.’ Nói thật, lý thuyết trong sách của thầy em không phải đều tán thành, nhưng em đồng ý với câu này. Em nghĩ bất đồng giữa chúng ta chỉ là làm thế nào mới có thể làm tốt hơn, làm thế nào mới có thể chữa trị bệnh nhân tốt hơn.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "de9e65ce-c47b-46b8-a876-7db0cf6d1109",
+          "order": 11,
+          "zh": "“谢谢你，彭小姐，你可以走了。”",
+          "pinyin": "“Xièxie nǐ, Péng xiǎojiě, nǐ kěyǐ zǒu le.”",
+          "vi": "“Cảm ơn cô, cô Bành, cô có thể đi rồi.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5266d734-4fd8-4f98-863f-75b34eb77010",
+          "order": 12,
+          "zh": "“谢谢您，阿加尔教授，再见！”",
+          "pinyin": "“Xièxie nín, Ājiā'ěr jiàoshòu, zàijiàn!”",
+          "vi": "“Cảm ơn thầy, giáo sư Archer, tạm biệt!”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d9aba5ac-5329-4be8-bba8-ab746be6cd6a",
+          "order": 13,
+          "zh": "彭艺云非常希望做阿加尔教授的研究生。因为阿加尔不仅是国际著名的心理学教授，而且他的研究生都有奖学金。彭艺云付不起几千英镑的学费，必须争取得到奖学金，不然她就没办法再继续学下去了。不过阿加尔对学生的要求很严格，总是挑了又挑，选了又选，四五年才收一两名。朋友为她担心，批评她不该跟教授争论。“既然奖学金对你那么重要，你又明明知道阿加尔教授非常严格，为什么还要跟他争论呢？”",
+          "pinyin": "Péng Yìyún fēicháng xīwàng zuò Ājiā'ěr jiàoshòu de yánjiūshēng. Yīnwèi Ājiā'ěr bùjǐn shì guójì zhùmíng de xīnlǐxué jiàoshòu, érqiě tā de yánjiūshēng dōu yǒu jiǎngxuéjīn. Péng Yìyún fù bu qǐ jǐ qiān yīngbàng de xuéfèi, bìxū zhēngqǔ dédào jiǎngxuéjīn, bùrán tā jiù méi bànfǎ zài jìxù xué xiàqu le. Búguò Ājiā'ěr duì xuésheng de yāoqiú hěn yángé, zǒng shì tiāo le yòu tiāo, xuǎn le yòu xuǎn, sì wǔ nián cái shōu yì liǎng míng. Péngyou wèi tā dānxīn, pīpíng tā bù gāi gēn jiàoshòu zhēnglùn. “Jìrán jiǎngxuéjīn duì nǐ nàme zhòngyào, nǐ yòu míngmíng zhīdào Ājiā'ěr jiàoshòu fēicháng yángé, wèishénme hái yào gēn tā zhēnglùn ne?”",
+          "vi": "Bành Nghệ Vân rất mong được làm nghiên cứu sinh của giáo sư Archer. Vì Archer không chỉ là giáo sư tâm lý học nổi tiếng quốc tế, mà nghiên cứu sinh của ông đều có học bổng. Bành Nghệ Vân không trả nổi học phí mấy nghìn bảng Anh, buộc phải cố giành học bổng, nếu không cô sẽ không còn cách nào học tiếp nữa. Nhưng Archer yêu cầu sinh viên rất nghiêm, luôn chọn đi chọn lại, bốn năm năm mới nhận một hai người. Bạn cô lo cho cô, phê bình cô không nên tranh luận với giáo sư: “Đã biết học bổng quan trọng với cậu như vậy, lại rõ ràng biết giáo sư Archer rất nghiêm, vì sao còn tranh luận với ông ấy?”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "31f23cda-06c9-43a4-97cd-98e0fe7c82b3",
+          "order": 14,
+          "zh": "她笑了笑说：“如果你不爱一个姑娘，你能为了钱而说爱她吗？”",
+          "pinyin": "Tā xiào le xiào shuō: “Rúguǒ nǐ bú ài yí ge gūniang, nǐ néng wèile qián ér shuō ài tā ma?”",
+          "vi": "Cô mỉm cười nói: “Nếu bạn không yêu một cô gái, bạn có thể vì tiền mà nói yêu cô ấy không?”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c16a6154-f9d4-4082-9472-d6fb14d252aa",
+          "order": 15,
+          "zh": "“那当然很难！”朋友承认说，“可你……”",
+          "pinyin": "“Nà dāngrán hěn nán!” péngyou chéngrèn shuō, “Kě nǐ……”",
+          "vi": "“Vậy đương nhiên rất khó!” bạn cô thừa nhận, “Nhưng cậu…”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "bd0da37c-ff28-434d-aa9a-c4bc824c67dc",
+          "order": 16,
+          "zh": "“那么在科学上，违心地赞成自己认为错误的理论，那就更难。假如你在爱情上欺骗，受骗的只是一个人；可在科学上欺骗，只是为了钱而不坚持正确的观点，受害的将是成千上万的病人。我想，如果我那样做了，我这一生都会受到良心的谴责。”她说，“一个搞科学研究的人，最重要的就是要敢于坚持真理，敢于坚持自己的观点。当然也要敢于修正错误。”",
+          "pinyin": "“Nàme zài kēxué shang, wéixīn de zànchéng zìjǐ rènwéi cuòwù de lǐlùn, nà jiù gèng nán. Jiǎrú nǐ zài àiqíng shang qīpiàn, shòupiàn de zhǐ shì yí ge rén; kě zài kēxué shang qīpiàn, zhǐ shì wèile qián ér bù jiānchí zhèngquè de guāndiǎn, shòuhài de jiāng shì chéng qiān shàng wàn de bìngrén. Wǒ xiǎng, rúguǒ wǒ nàyàng zuò le, wǒ zhè yì shēng dōu huì shòudào liángxīn de qiǎnzé.” Tā shuō, “Yí ge gǎo kēxué yánjiū de rén, zuì zhòngyào de jiù shì yào gǎnyú jiānchí zhēnlǐ, gǎnyú jiānchí zìjǐ de guāndiǎn. Dāngrán yě yào gǎnyú xiūzhèng cuòwù.”",
+          "vi": "“Vậy thì trong khoa học, trái lương tâm mà tán thành lý thuyết bản thân cho là sai thì còn khó hơn. Giả như bạn lừa dối trong tình yêu, người bị lừa chỉ là một người; nhưng lừa dối trong khoa học, chỉ vì tiền mà không kiên trì quan điểm đúng đắn, người bị hại sẽ là hàng nghìn hàng vạn bệnh nhân. Mình nghĩ nếu mình làm như vậy, cả đời này mình sẽ bị lương tâm khiển trách.” Cô nói: “Một người làm nghiên cứu khoa học, điều quan trọng nhất chính là phải dám kiên trì chân lý, dám kiên trì quan điểm của mình. Đương nhiên cũng phải dám sửa lỗi.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b1cbea99-afd0-41d3-99fb-d7e3fb924d7a",
+          "order": 17,
+          "zh": "面试结果出来了。",
+          "pinyin": "Miànshì jiéguǒ chūlái le.",
+          "vi": "Kết quả phỏng vấn đã có.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5ff2d835-83e7-4c20-98fc-b877853837ea",
+          "order": 18,
+          "zh": "大厅里挤满了人。秘书宣布：“获得阿加尔教授博士研究生资格的是来自中国的伦敦大学学生彭艺云小姐！”",
+          "pinyin": "Dàtīng lǐ jǐ mǎn le rén. Mìshū xuānbù: “Huòdé Ājiā'ěr jiàoshòu bóshì yánjiūshēng zīgé de shì láizì Zhōngguó de Lúndūn Dàxué xuésheng Péng Yìyún xiǎojiě!”",
+          "vi": "Trong đại sảnh chật kín người. Thư ký tuyên bố: “Người giành được tư cách nghiên cứu sinh tiến sĩ của giáo sư Archer là cô Bành Nghệ Vân, sinh viên Đại học London đến từ Trung Quốc!”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c2af6203-50df-407e-a2eb-6a453ab3d159",
+          "order": 19,
+          "zh": "阿加尔教授站起来，他走到彭艺云的跟前，当着众人对她说：“你看，我的孩子，你跟我争论了两个小时，我还是决定要录取你。你知道为什么吗？我喜欢你的真诚和坦白，也欣赏你的勇气。我要你做我的研究生，是让你在我的支持下，尽情地反对我的理论。如果事实证明你是错的，我当然会高兴；要是我们俩都对，我更高兴；要是你是对的，我是错的，哈！你想象不到我将会多么高兴！不错，你还没有出生时，我就是一个心理学家了，可我希望到我死的时候，你能成为比我更好的、更优秀的心理学家。只有这样，世界才有希望。”",
+          "pinyin": "Ājiā'ěr jiàoshòu zhàn qǐlai, tā zǒu dào Péng Yìyún de gēnqián, dāngzhe zhòngrén duì tā shuō: “Nǐ kàn, wǒ de háizi, nǐ gēn wǒ zhēnglùn le liǎng ge xiǎoshí, wǒ háishi juédìng yào lùqǔ nǐ. Nǐ zhīdào wèishénme ma? Wǒ xǐhuan nǐ de zhēnchéng hé tǎnbái, yě xīnshǎng nǐ de yǒngqì. Wǒ yào nǐ zuò wǒ de yánjiūshēng, shì ràng nǐ zài wǒ de zhīchí xià, jìnqíng de fǎnduì wǒ de lǐlùn. Rúguǒ shìshí zhèngmíng nǐ shì cuò de, wǒ dāngrán huì gāoxìng; yàoshi wǒmen liǎ dōu duì, wǒ gèng gāoxìng; yàoshi nǐ shì duì de, wǒ shì cuò de, hā! Nǐ xiǎngxiàng bu dào wǒ jiāng huì duōme gāoxìng! Búcuò, nǐ hái méiyǒu chūshēng shí, wǒ jiù shì yí ge xīnlǐxuéjiā le, kě wǒ xīwàng dào wǒ sǐ de shíhou, nǐ néng chéngwéi bǐ wǒ gèng hǎo de, gèng yōuxiù de xīnlǐxuéjiā. Zhǐyǒu zhèyàng, shìjiè cái yǒu xīwàng.”",
+          "vi": "Giáo sư Archer đứng dậy, đi đến trước mặt Bành Nghệ Vân, trước mặt mọi người nói với cô: “Con à, con đã tranh luận với ta hai tiếng đồng hồ, nhưng ta vẫn quyết định nhận con. Con biết vì sao không? Ta thích sự chân thành và thẳng thắn của con, cũng đánh giá cao dũng khí của con. Ta muốn con làm nghiên cứu sinh của ta là để con, dưới sự ủng hộ của ta, thỏa sức phản đối lý thuyết của ta. Nếu sự thật chứng minh con sai, ta đương nhiên sẽ vui; nếu hai chúng ta đều đúng, ta càng vui; nếu con đúng, ta sai, ha! Con không tưởng tượng được ta sẽ vui đến mức nào đâu! Đúng vậy, khi con còn chưa sinh ra, ta đã là một nhà tâm lý học rồi, nhưng ta hy vọng đến khi ta chết, con có thể trở thành nhà tâm lý học tốt hơn ta, ưu tú hơn ta. Chỉ có như vậy, thế giới mới có hy vọng.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "daa5f358-cc9e-4192-8a68-12367b2f277f",
+          "order": 20,
+          "zh": "彭艺云被深深地感动了。她终于实现了自己的愿望，作为阿加尔教授的博士研究生，走进了她向往已久的牛津大学。",
+          "pinyin": "Péng Yìyún bèi shēnshēn de gǎndòng le. Tā zhōngyú shíxiàn le zìjǐ de yuànwàng, zuòwéi Ājiā'ěr jiàoshòu de bóshì yánjiūshēng, zǒu jìn le tā xiàngwǎng yǐ jiǔ de Niújīn Dàxué.",
+          "vi": "Bành Nghệ Vân vô cùng xúc động. Cuối cùng cô đã thực hiện được nguyện vọng của mình, với tư cách nghiên cứu sinh tiến sĩ của giáo sư Archer, bước vào Đại học Oxford mà cô đã ao ước từ lâu.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "697611d6-d756-4bef-8c61-747a1e2ed143",
+          "question": "彭艺云为什么穿着朴素的衣服去参加面试？",
+          "answer": "因为她认为自己本来不是什么贵族，没必要装出贵族的样子；而且考得上考不上凭的是知识和才能，不是衣服。",
+          "source_origin": "textbook_question_answer_inferred",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "44d26a3c-42ee-4a6c-a104-f9108270847a",
+          "question": "她为什么和阿加尔教授争论？",
+          "answer": "因为她并不完全赞成阿加尔教授书里的理论，认为可以通过实验来证明谁对谁错，也想把实验方案做得更好。",
+          "source_origin": "textbook_question_answer_inferred",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "cc5e5d24-deb2-4553-9b75-eccacf9bd54e",
+          "question": "她为什么希望成为阿加尔教授的研究生？",
+          "answer": "因为阿加尔是国际著名的心理学教授，而且他的研究生都有奖学金；彭艺云付不起学费，必须争取得到奖学金。",
+          "source_origin": "textbook_question_answer_inferred",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "19344b26-53d0-487b-a0bd-46f214bc2b7f",
+          "question": "她的朋友为什么批评她？",
+          "answer": "因为朋友觉得奖学金对她很重要，而阿加尔教授又非常严格，她不该在面试时跟教授争论。",
+          "source_origin": "textbook_question_answer_inferred",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7423ceaf-2034-451e-9dff-b8848cc5cc61",
+          "question": "阿加尔教授为什么要收她作自己的研究生？",
+          "answer": "因为他喜欢她的真诚和坦白，也欣赏她敢于坚持观点、敢于坚持真理的勇气。",
+          "source_origin": "textbook_question_answer_inferred",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3f653d6d-5002-4480-96f2-45136edcc868",
+          "question": "用彭艺云或阿加尔的身份讲述这个故事。",
+          "answer": "示例：我是彭艺云。去牛津大学面试时，我穿得很朴素，因为我认为重要的是知识和才能。面试中我和阿加尔教授争论了起来，虽然我以为自己不会被录取，但我不愿违心地赞成错误的理论。后来教授欣赏我的真诚、坦白和勇气，决定录取我做他的博士研究生。",
+          "source_origin": "textbook_question_answer_inferred",
+          "answer_verified": false,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

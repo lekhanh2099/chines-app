@@ -1,0 +1,429 @@
+{
+  "id": "c82d20f2-73c3-4069-afd7-ffb6f05dba83",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "细",
+  "pinyin": "xì",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tế",
+    "meaning_vi": "nhỏ, mảnh, kỹ, chi tiết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhỏ, mảnh, kỹ, chi tiết"
+    ],
+    "short_definition_vi": "nhỏ, mảnh, kỹ, chi tiết",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "细",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ Mịch trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ Mịch trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "细 có lõi nghĩa là “nhỏ, mảnh, không thô”. Logic hiện đại: Vật dài nhỏ → 细. Hạt/bột mịn → 细.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "细",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mảnh, nhỏ, mịn; chi tiết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhỏ về kích thước chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "薄",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mỏng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "粗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thô, to, dày, đối lập với 细.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "仔细",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cẩn thận, kỹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "这根针很细。",
+      "Cây kim này rất mảnh.",
+      "这个房间很小。",
+      "Căn phòng này rất nhỏ.",
+      "这本书很薄。",
+      "Quyển sách này rất mỏng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "32cf677f-e8e2-4e89-8ffa-599db1d2f410",
+      "order": 1,
+      "zh": "针很细",
+      "pinyin": "",
+      "vi": "kim rất mảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "7366eeac-f582-45a1-9cd3-897bb949697c",
+      "order": 2,
+      "zh": "线很细",
+      "pinyin": "",
+      "vi": "sợi chỉ rất mảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ecb203eb-61ea-4b5a-b8e2-4e8f5aa25f0e",
+      "order": 3,
+      "zh": "细细的针",
+      "pinyin": "",
+      "vi": "cây kim nhỏ xíu/mảnh mảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "8fb6b490-750a-400b-b759-2f0a344f4856",
+      "order": 4,
+      "zh": "细声音",
+      "pinyin": "",
+      "vi": "giọng nhỏ/mảnh, ít dùng độc lập hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "82ec10f9-1edd-4c28-a3f1-e158716c3dfc",
+      "order": 5,
+      "zh": "仔细看",
+      "pinyin": "",
+      "vi": "nhìn kỹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "96ee3b82-bcd3-4dd6-a21e-8949dc992e9d",
+      "order": 6,
+      "zh": "详细说明",
+      "pinyin": "",
+      "vi": "giải thích chi tiết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a83c8cee-2541-41f9-80d7-d482d2007799",
+      "order": 1,
+      "zh": "这根针很细。",
+      "pinyin": "Zhè gēn zhēn hěn xì.",
+      "vi": "Cây kim này rất nhỏ/mảnh.",
+      "analysis_vi": "细 tả vật dài, mảnh như kim.",
+      "highlight": [
+        "细"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "c82d20f2-73c3-4069-afd7-ffb6f05dba83"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c15b359a-049e-4c46-b712-ec839a574c81",
+      "order": 2,
+      "zh": "我第一次看见这么细的针，心里有点儿害怕。",
+      "pinyin": "Wǒ dì yī cì kànjiàn zhème xì de zhēn, xīn lǐ yǒudiǎnr hàipà.",
+      "vi": "Lần đầu tôi nhìn thấy cây kim nhỏ như vậy, trong lòng hơi sợ.",
+      "analysis_vi": "第一次 là lần đầu. 这么细的针 = cây kim mảnh như vậy.",
+      "highlight": [
+        "细"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "c82d20f2-73c3-4069-afd7-ffb6f05dba83"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08e6cd08-d554-4121-8ab6-11a47a109b2e",
+      "order": 3,
+      "zh": "中医给我摸过两次脉以后，拿出一根很细的针，清楚地告诉我：“这种方法不太疼，你别紧张。”",
+      "pinyin": "Zhōngyī gěi wǒ mō guo liǎng cì mài yǐhòu, ná chū yì gēn hěn xì de zhēn, qīngchu de gàosu wǒ: “Zhè zhǒng fāngfǎ bú tài téng, nǐ bié jǐnzhāng.”",
+      "vi": "Sau khi bác sĩ Đông y bắt mạch cho tôi hai lần, ông ấy lấy ra một cây kim rất nhỏ và nói rõ với tôi: “Phương pháp này không đau lắm, bạn đừng căng thẳng.”",
+      "analysis_vi": "摸过两次脉 = từng/bắt mạch hai lần. 一根很细的针 = một cây kim rất mảnh. 清楚地告诉 dùng 地.",
+      "highlight": [
+        "细"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "c82d20f2-73c3-4069-afd7-ffb6f05dba83"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "aff1ea0f-dfe4-43f5-af9a-2a0c2f0a00f6",
+      "order": 1,
+      "rule_vi": "Phân biệt:",
+      "natural_examples": [
+        {
+          "zh": "小 = nhỏ nói chung.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "细 = mảnh, nhỏ nét, mịn, tỉ mỉ.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "小房间",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt: 小 = nhỏ nói chung. 细 = mảnh, nhỏ nét, mịn, tỉ mỉ. Ví dụ: 小房间 Căn phòng nhỏ. 细针 Kim mảnh. 仔细看 Nhìn kỹ/cẩn thận.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "细",
+    "back": "nhỏ, mảnh, kỹ, chi tiết",
+    "hint": "xì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi tả kim châm cứu, tiếng Trung dùng 细 rất tự nhiên vì kim dài và mảnh. Nếu nói 小针, vẫn hiểu là kim nhỏ, nhưng 细针 / 很细的针 sát hơn với cảm giác “mảnh”.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c82d20f2-73c3-4069-afd7-ffb6f05dba83",
+    "source_lesson_vocab_id": null
+  }
+}

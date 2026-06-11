@@ -1,0 +1,332 @@
+{
+  "id": "2f9f9a9b-c354-4b5a-8298-93e9eba723d7",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "带",
+  "pinyin": "dài",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Đới",
+    "meaning_vi": "dây, đai; mang theo; dẫn theo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dây, đai; mang theo; dẫn theo"
+    ],
+    "short_definition_vi": "dây, đai; mang theo; dẫn theo",
+    "textbook_focus_vi": "dây, đai; mang theo; dẫn theo",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "带",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn, vải",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dây/đai; mang theo; dẫn theo",
+        "modern_logic_vi": "带 gợi dây/dải, mở rộng sang mang theo/dẫn theo.",
+        "warning_vi": "Không tách sâu phần trên giản thể.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "巾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cân",
+          "radical_name_zh": "",
+          "hanviet": "cân",
+          "meaning_vi": "khăn, vải",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "带 có lõi nghĩa liên quan đến dải/dây và việc mang theo bên mình. Từ “dây/dải” mở rộng sang “mang theo/dẫn theo”. → 安全带 = dây an toàn. → 带护照 = mang hộ chiếu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầm, lấy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "提",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "搬",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyển/bê.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "戴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đội/đeo phụ kiện lên người, khác chữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "托运行李",
+        "right": "随身携带",
+        "meaning_vi": "ký gửi hành lý ↔ mang theo bên người",
+        "note_vi": "ký gửi hành lý ↔ mang theo bên người",
+        "notes": []
+      },
+      {
+        "left": "带",
+        "right": "戴",
+        "meaning_vi": "mang theo ↔ đeo",
+        "note_vi": "mang theo ↔ đeo",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "带: mang theo/dẫn theo."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0ce732c1-9667-4fc5-b009-1af568610d7b",
+      "order": 1,
+      "zh": "带护照",
+      "pinyin": "",
+      "vi": "mang hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cc92ef4-3357-498d-b69c-0e77b470ed0d",
+      "order": 2,
+      "zh": "带行李",
+      "pinyin": "",
+      "vi": "mang hành lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "51d3b82d-2ec3-4a15-b108-28a7844e068b",
+      "order": 3,
+      "zh": "带孩子",
+      "pinyin": "",
+      "vi": "dẫn con theo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9dcad0f-e208-4c40-8c2e-2505a685e010",
+      "order": 4,
+      "zh": "安全带",
+      "pinyin": "",
+      "vi": "dây an toàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41532f3a-f446-4493-9a7b-b3352d4da925",
+      "order": 5,
+      "zh": "皮带",
+      "pinyin": "",
+      "vi": "dây nịt/thắt lưng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cb5a71cd-5c13-46ad-b0f7-a867c36db2a3",
+      "order": 1,
+      "zh": "去机场以前，别忘了带护照和机票。",
+      "pinyin": "Qù jīchǎng yǐqián, bié wàng le dài hùzhào hé jīpiào.",
+      "vi": "Trước khi đi sân bay, đừng quên mang hộ chiếu và vé máy bay.",
+      "analysis_vi": "带护照和机票 là mang theo bên người, chưa phải lấy ra hay đưa cho ai.",
+      "highlight": [
+        "带"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "2f9f9a9b-c354-4b5a-8298-93e9eba723d7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7915139d-168d-459c-ba79-f8ced1ff3d3e",
+      "order": 2,
+      "zh": "办理手续的时候，请把带来的证件都拿出来。",
+      "pinyin": "Bànlǐ shǒuxù de shíhou, qǐng bǎ dài lái de zhèngjiàn dōu ná chūlai.",
+      "vi": "Khi làm thủ tục, xin hãy lấy tất cả giấy tờ đã mang đến ra.",
+      "analysis_vi": "带来的证件 = giấy tờ mang đến; 把……拿出来 là lấy ra để xuất trình.",
+      "highlight": [
+        "带"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "2f9f9a9b-c354-4b5a-8298-93e9eba723d7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8629a0e2-a151-4f59-b203-fc8fa071f78f",
+      "order": 3,
+      "zh": "他带了两个孩子，还带了三件行李，所以走得很慢。",
+      "pinyin": "Tā dài le liǎng ge háizi, hái dài le sān jiàn xíngli, suǒyǐ zǒu de hěn màn.",
+      "vi": "Anh ấy dẫn theo hai đứa trẻ, còn mang theo ba kiện hành lý, nên đi rất chậm.",
+      "analysis_vi": "带孩子 là dẫn theo người; 带行李 là mang theo đồ.",
+      "highlight": [
+        "带"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "2f9f9a9b-c354-4b5a-8298-93e9eba723d7"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khi đi xa, người Trung rất hay nhắc nhau 证件带了吗？ – mang giấy tờ chưa? 证件 là từ bao quát cho hộ chiếu, căn cước, thẻ sinh viên, giấy tờ cần kiểm tra.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "878dd1ac-1de6-47e1-8e75-c7af7e9886ce",
+      "order": 1,
+      "rule_vi": "Nhầm 带 và 戴 vì cùng đọc dài.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 带 theo cụm và ngữ cảnh bài 18; nghĩa chính là dây, đai; mang theo; dẫn theo.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "带",
+    "back": "dây, đai; mang theo; dẫn theo",
+    "hint": "dài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2f9f9a9b-c354-4b5a-8298-93e9eba723d7",
+    "source_lesson_vocab_id": null
+  }
+}

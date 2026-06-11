@@ -1,0 +1,312 @@
+{
+  "id": "bf0d3f91-9501-460b-880d-805883b16a76",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "录取",
+  "pinyin": "lùqǔ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lục thủ",
+    "meaning_vi": "tuyển nhận, nhận vào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tuyển nhận",
+      "nhận vào"
+    ],
+    "short_definition_vi": "tuyển nhận, nhận vào",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "录",
+        "lishu_vi": "lục",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ghi chép, thu, tuyển ghi danh",
+        "modern_logic_vi": "录取 = ghi nhận và chọn lấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "取",
+        "lishu_vi": "thủ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lấy, nhận, đạt được",
+        "modern_logic_vi": "录取 là chọn lấy người đạt yêu cầu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "录取 được dùng trong Bài 20 với nghĩa: tuyển nhận, nhận vào.",
+    "memory_tip_vi": "Nhớ qua cụm 被录取.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "录用",
+        "pinyin": "lùyòng",
+        "meaning_vi": "tuyển dụng",
+        "difference_vi": "Dùng nhiều trong công việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "考上",
+        "pinyin": "kǎoshàng",
+        "meaning_vi": "thi đỗ vào",
+        "difference_vi": "Nhấn kết quả thi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "落选",
+        "pinyin": "luòxuǎn",
+        "meaning_vi": "bị loại",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拒绝",
+        "pinyin": "jùjué",
+        "meaning_vi": "từ chối",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7be3ab25-7b5a-489d-82c0-1de5b7da0741",
+      "order": 1,
+      "zh": "被录取",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9f061ee-ddd7-47fb-bf5f-04ddab09ea8c",
+      "order": 2,
+      "zh": "正式录取",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09f3689a-82a2-49ba-9a10-906218531411",
+      "order": 3,
+      "zh": "录取结果",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "501bef1c-11c9-40f1-a713-70711421980a",
+      "order": 4,
+      "zh": "录取名单",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e89a4651-847a-4bf3-b087-d4718d815e2d",
+      "order": 5,
+      "zh": "录取通知书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2eb7ad49-64df-42a4-a760-da9aa35a8f2d",
+      "order": 6,
+      "zh": "大学录取",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a141219-b5c3-4ea9-bf88-71e59aa001b4",
+      "order": 7,
+      "zh": "录取资格",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "976428ec-ade3-4492-ac7d-1b5644489c3f",
+      "order": 1,
+      "zh": "她被牛津大学录取了。",
+      "pinyin": "Tā bèi Niújīn Dàxué lùqǔ le.",
+      "vi": "Cô ấy đã được Đại học Oxford nhận.",
+      "analysis_vi": "被录取 là bị động mang nghĩa tích cực.",
+      "highlight": [
+        "录取"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bf0d3f91-9501-460b-880d-805883b16a76"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c9520f65-571d-459b-bcfb-093184ef32c1",
+      "order": 2,
+      "zh": "很多人以为她反对导师以后不会被录取，然而事实证明，导师更欣赏她的坦白和勇气。",
+      "pinyin": "Hěn duō rén yǐwéi tā fǎnduì dǎoshī yǐhòu bú huì bèi lùqǔ, rán’ér shìshí zhèngmíng, dǎoshī gèng xīnshǎng tā de tǎnbái hé yǒngqì.",
+      "vi": "Nhiều người tưởng cô ấy sẽ không được nhận sau khi phản đối thầy, nhưng sự thật chứng minh thầy đánh giá cao sự thẳng thắn và dũng khí của cô ấy.",
+      "analysis_vi": "以为……然而事实证明…… đưa chuyển ngoặt.",
+      "highlight": [
+        "录取"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bf0d3f91-9501-460b-880d-805883b16a76"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "录取通知书 là giấy báo trúng tuyển, rất hay gặp trong bối cảnh giáo dục Trung Quốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e217fc62-ca3a-4f36-8212-d299fbed0903",
+      "order": 1,
+      "rule_vi": "学校录取了我 tự nhiên hơn 学校接受了我 trong tuyển sinh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我被学校录取了。",
+          "pinyin": "Wǒ bèi xuéxiào lùqǔ le.",
+          "vi": "Tôi đã được nhà trường nhận.",
+          "note_vi": "被录取 là cách nói chuẩn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "录取",
+    "back": "tuyển nhận, nhận vào",
+    "hint": "lùqǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bf0d3f91-9501-460b-880d-805883b16a76",
+    "source_lesson_vocab_id": null
+  }
+}

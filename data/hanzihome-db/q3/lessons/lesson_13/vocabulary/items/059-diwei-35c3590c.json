@@ -1,0 +1,286 @@
+{
+  "id": "4b50b4d6-f9e6-428b-86ab-28f004ddc8dd",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "地位",
+  "pinyin": "dìwèi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "status"
+  ],
+  "meaning": {
+    "hanviet": "địa vị",
+    "meaning_vi": "địa vị, vị thế, vị trí xã hội/học thuật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "địa vị",
+      "vị thế",
+      "vị trí xã hội",
+      "học thuật"
+    ],
+    "short_definition_vi": "địa vị, vị thế, vị trí xã hội/học thuật",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "地",
+        "lishu_vi": "địa",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "也",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đất/nơi chốn",
+        "modern_logic_vi": "Trong từ/cụm này, 地 góp phần vào nghĩa hiện đại: đất/nơi chốn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "位",
+        "lishu_vi": "vị",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng/lập",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vị trí/chỗ đứng",
+        "modern_logic_vi": "Trong từ/cụm này, 位 góp phần vào nghĩa hiện đại: vị trí/chỗ đứng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "地位 cần học theo nghĩa hiện đại trong bài: địa vị, vị thế, vị trí xã hội/học thuật.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 社会地位.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2ff7e37f-fef6-4a48-b673-b7d36ebdc9c1",
+      "order": 1,
+      "zh": "社会地位",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72e8649e-19ea-4faa-9ee2-2e36ea3093c9",
+      "order": 2,
+      "zh": "历史地位",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a05cda4-0576-4d5b-9a29-86e04dd8cbc4",
+      "order": 3,
+      "zh": "有重要地位",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "96872d3c-e37b-4a76-8a14-1c572ad62be5",
+      "order": 1,
+      "zh": "他在这个家庭里的地位很重要。",
+      "pinyin": "Tā zài zhège jiātíng lǐ de dìwèi hěn zhòngyào.",
+      "vi": "Vị trí/vai trò của anh ấy trong gia đình rất quan trọng.",
+      "analysis_vi": "在……里的地位 nêu vị thế trong phạm vi xã hội.",
+      "highlight": [
+        "地位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4b50b4d6-f9e6-428b-86ab-28f004ddc8dd"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bf07bbc8-e1e4-47ad-8d3a-564966bc0837",
+      "order": 2,
+      "zh": "《徐霞客游记》在中国地理学史上有很高的地位。",
+      "pinyin": "“Xú Xiákè Yóujì” zài Zhōngguó dìlǐxué shǐ shang yǒu hěn gāo de dìwèi.",
+      "vi": "Từ Hà Khách du ký có vị trí rất cao trong lịch sử địa lý học Trung Quốc.",
+      "analysis_vi": "在……史上有很高的地位 là khung văn viết.",
+      "highlight": [
+        "地位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4b50b4d6-f9e6-428b-86ab-28f004ddc8dd"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "地位 khi nói tác phẩm là vị trí học thuật/lịch sử, không phải chỗ ngồi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "36de1ab0-4466-421b-b739-f95ae30cad9d",
+      "order": 1,
+      "rule_vi": "Dùng 地位 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "地位",
+    "back": "địa vị, vị thế, vị trí xã hội/học thuật",
+    "hint": "dìwèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4b50b4d6-f9e6-428b-86ab-28f004ddc8dd",
+    "source_lesson_vocab_id": null
+  }
+}

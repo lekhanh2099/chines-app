@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_300e27b2998b70cf",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "兴致勃勃",
+  "pinyin": "xìngzhì bóbó",
+  "meaning_vi": "hứng thú dạt dào; rất hào hứng",
+  "pos": "Cụm từ / Thành ngữ",
+  "pos_detail": {
+    "vi": "Cụm từ / Thành ngữ",
+    "cn": "短语 / 成语",
+    "normalized": "phrase",
+    "schema_compatible_pos": "phrase",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5eb118ab-07b1-43ef-a8d6-906233e40736",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5eb118ab-07b1-43ef-a8d6-906233e40736",
+    "type": "vocabulary_item",
+    "order": 49,
+    "hanzi": "兴致勃勃",
+    "pinyin": "xìngzhì bóbó",
+    "meaning_vi": "hứng thú dạt dào; rất hào hứng",
+    "meaning_en": "",
+    "pos": "Cụm từ / Thành ngữ",
+    "pos_detail": {
+      "vi": "Cụm từ / Thành ngữ",
+      "cn": "短语 / 成语",
+      "normalized": "phrase",
+      "schema_compatible_pos": "phrase",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "兴致勃勃",
+      "back": "xìngzhì bóbó — hứng thú dạt dào; rất hào hứng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_crosschecked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

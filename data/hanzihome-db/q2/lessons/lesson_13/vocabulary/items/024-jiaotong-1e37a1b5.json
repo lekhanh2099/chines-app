@@ -1,0 +1,317 @@
+{
+  "id": "84088b44-87a7-47d6-883e-e95f60fd78b6",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "交通",
+  "pinyin": "jiāotōng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Giao thông",
+    "meaning_vi": "giao thông, đi lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giao thông",
+      "đi lại"
+    ],
+    "short_definition_vi": "giao thông, đi lại",
+    "textbook_focus_vi": "Âm Hán Việt: giao thông Nghĩa: Giao thông, việc đi lại của người và phương tiện. Hệ thống đường sá, xe cộ, vận chuyển.",
+    "register_vi": "đời sống, đô thị, tin tức, du lịch.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "交",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giao nhau, trao đổi, kết giao",
+        "modern_logic_vi": "交 liên quan qua lại/giao nhau.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "通",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "甬",
+            "hanviet": "dũng",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thông, thông suốt, thông qua",
+        "modern_logic_vi": "交通 = sự qua lại thông suốt, nghĩa hiện đại là giao thông.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "交 là giao nhau, qua lại. 通 là thông suốt, đi được, nối thông. → 交通 = sự qua lại thông suốt giữa người, xe, địa điểm. Cảnh báo: 交通 không phải “giao tiếp” giữa người với người. Giao tiếp là 交流 / 沟通.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "交流 (jiāoliú)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giao lưu, trao đổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "沟通 (gōutōng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giao tiếp, trao đổi để hiểu nhau.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "运输 (yùnshū)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vận tải, chuyên chở hàng/người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "交通 (jiāotōng): giao thông, đi lại.",
+      "→ Phân biệt nhanh: xe cộ đường sá là 交通; nói chuyện trao đổi là 交流 / 沟通."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ac620627-70de-4d33-8e8d-568533af1b13",
+      "order": 1,
+      "zh": "交通规则",
+      "pinyin": "",
+      "vi": "quy tắc giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88c0e079-d223-4914-a90e-af6b96b02c10",
+      "order": 2,
+      "zh": "交通事故",
+      "pinyin": "",
+      "vi": "tai nạn giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99bad58e-2ecc-474c-b88b-29d00de0230f",
+      "order": 3,
+      "zh": "交通拥挤",
+      "pinyin": "",
+      "vi": "giao thông ùn tắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2360477-6377-4629-b98f-d5d6f5af39f6",
+      "order": 4,
+      "zh": "[Đời sống] 交通很方便",
+      "pinyin": "",
+      "vi": "giao thông rất tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8d00bb7b-6dec-4a1c-b9b6-1025928c187e",
+      "order": 1,
+      "zh": "这个城市的交通一年比一年方便。",
+      "pinyin": "Zhège chéngshì de jiāotōng yì nián bǐ yì nián fāngbiàn.",
+      "vi": "Giao thông của thành phố này năm này qua năm khác càng tiện hơn.",
+      "analysis_vi": "一年比一年…… diễn tả sự thay đổi tăng dần theo thời gian.",
+      "highlight": [
+        "交通"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "84088b44-87a7-47d6-883e-e95f60fd78b6"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "de12039a-8ac5-4108-b767-673df717a8ac",
+      "order": 2,
+      "zh": "交通事故的主要原因，你们查清楚了吗？",
+      "pinyin": "Jiāotōng shìgù de zhǔyào yuányīn, nǐmen chá qīngchu le ma?",
+      "vi": "Nguyên nhân chính của tai nạn giao thông, các bạn đã điều tra rõ chưa?",
+      "analysis_vi": "交通事故的主要原因 là chủ đề; 查清楚了吗 hỏi kết quả làm rõ.",
+      "highlight": [
+        "交通"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "84088b44-87a7-47d6-883e-e95f60fd78b6"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d1d51623-233a-4107-8d1c-42907203d6fe",
+      "order": 3,
+      "zh": "去王府井的时候，最好先看地图，因为那一带交通很复杂。",
+      "pinyin": "Qù Wángfǔjǐng de shíhou, zuìhǎo xiān kàn dìtú, yīnwèi nà yí dài jiāotōng hěn fùzá.",
+      "vi": "Khi đi Vương Phủ Tỉnh, tốt nhất xem bản đồ trước, vì khu đó giao thông khá phức tạp.",
+      "analysis_vi": "那一带 là khu vực đó; câu dùng được thật trong bối cảnh đi chơi/du lịch.",
+      "highlight": [
+        "交通"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "84088b44-87a7-47d6-883e-e95f60fd78b6"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở các thành phố lớn Trung Quốc, 地铁 là phương tiện cực quan trọng để tránh 交通拥挤. Khi hỏi đường, câu 这里交通方便吗？ rất tự nhiên.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f9ab430e-aad4-48f0-82b6-1397cf38843c",
+      "order": 1,
+      "rule_vi": "Dịch “giao tiếp” thành 交通.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我想提高中文交通能力。",
+          "pinyin": "Đúng:",
+          "vi": "",
+          "note_vi": "Sai:",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我想提高中文交流能力。",
+          "pinyin": "Wǒ xiǎng tígāo Zhōngwén jiāoliú nénglì.",
+          "vi": "Tôi muốn nâng cao năng lực giao tiếp tiếng Trung.",
+          "note_vi": "Đúng:",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dịch “giao tiếp” thành 交通. Sai: 我想提高中文交通能力。 Đúng: 我想提高中文交流能力。 Wǒ xiǎng tígāo Zhōngwén jiāoliú nénglì. Tôi muốn nâng cao năng lực giao tiếp tiếng Trung.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "交通",
+    "back": "giao thông, đi lại",
+    "hint": "jiāotōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "交通"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "84088b44-87a7-47d6-883e-e95f60fd78b6",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "id": "cf7470b0-d8a7-45c0-a8d3-2ef93ff64fa2",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "占",
+  "pinyin": "zhàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_24",
+    "deep_vocab",
+    "qingshang"
+  ],
+  "meaning": {
+    "hanviet": "chiếm",
+    "meaning_vi": "chiếm, chiếm giữ, chiếm tỷ lệ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chiếm, chiếm giữ, chiếm tỷ lệ"
+    ],
+    "short_definition_vi": "chiếm, chiếm giữ, chiếm tỷ lệ",
+    "textbook_focus_vi": "Dùng trong Bài 24 情商 để nối chủ đề EQ, cảm xúc, tự kiểm soát và quan hệ xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, giao tiếp, giáo dục, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "占",
+        "lishu_vi": "chiếm",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy đã nêu trong phần từ vựng; không ép nguồn gốc chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói, dấu hiệu",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "卜",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bốc",
+              "radical_name_zh": "",
+              "hanviet": "bốc",
+              "meaning_vi": "bói, dấu hiệu",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại được học theo từ/cụm trong bài.",
+        "modern_logic_vi": "Trong từ này, 占 góp phần vào nghĩa chung của cụm, ưu tiên nhớ theo ngữ cảnh bài 情商.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "卜",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Bốc",
+          "radical_name_zh": "",
+          "hanviet": "bốc",
+          "meaning_vi": "bói, dấu hiệu",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "占 được ghi theo nghĩa hiện đại đã soạn; ưu tiên học qua cụm dùng thật thay vì suy diễn từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 占百分之二十.",
+    "warning_vi": "Không ép chiết tự nếu là tên riêng, thành ngữ cố định hoặc chữ giản thể khó suy nghĩa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên học 占 qua cụm cố định và ví dụ trong bài 情商."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0ecd2d94-eb65-404d-88ed-ee0d736ffdf2",
+      "order": 1,
+      "zh": "占百分之二十",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75f5f7db-1f5a-4c53-bbed-da840b29cf0b",
+      "order": 2,
+      "zh": "占很大比例",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0567feb2-777b-489e-9b0e-3083c06ea455",
+      "order": 3,
+      "zh": "占一部分",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6fe9ab16-85f9-4957-b923-383844152e37",
+      "order": 4,
+      "zh": "占座位",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "069497b6-fc39-46a9-808c-11311de361f7",
+      "order": 5,
+      "zh": "占时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f3129c0-629f-449f-976d-888f1b08fc3d",
+      "order": 6,
+      "zh": "占地方",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8b1fdf8-aa42-45d7-a59e-84e1ea711a74",
+      "order": 7,
+      "zh": "占优势",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0019fbe6-3f3e-416c-a963-bc12d1d6503f",
+      "order": 1,
+      "zh": "女生占全班人数的百分之六十。",
+      "pinyin": "",
+      "vi": "",
+      "analysis_vi": "Ví dụ tự nhiên đã bám nghĩa trọng tâm của 占 trong bài 情商.",
+      "highlight": [
+        "占"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf7470b0-d8a7-45c0-a8d3-2ef93ff64fa2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2457c70d-6b17-42b6-9766-a74d7e510db5",
+      "order": 2,
+      "zh": "本课用“占”来说明情商、情绪和人际关系之间的联系。",
+      "pinyin": "",
+      "vi": "Bài này dùng “占” để nói rõ mối liên hệ giữa EQ, cảm xúc và quan hệ xã hội.",
+      "analysis_vi": "Câu phục vụ ngữ cảnh hóa từ trong chủ đề bài, không phải câu dịch máy.",
+      "highlight": [
+        "占"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf7470b0-d8a7-45c0-a8d3-2ef93ff64fa2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 情商, 占 được đặt vào mạch học về EQ, kiểm soát cảm xúc, quan hệ xã hội hoặc tác động của công nghệ tới giao tiếp.",
+    "tags": [
+      "usage",
+      "lesson_24"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d4340443-647c-43c7-b693-afebdcd56df9",
+      "order": 1,
+      "rule_vi": "Không dịch máy từng chữ Hán Việt của 占; phải học theo nghĩa hiện đại và collocation.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảnh báo này giữ lại tinh thần phần lỗi sai đã soạn: tránh suy nghĩa từ mặt chữ khi từ/cụm đã có nghĩa cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "占",
+    "back": "chiếm, chiếm giữ, chiếm tỷ lệ",
+    "hint": "zhàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_24",
+      "qingshang"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cf7470b0-d8a7-45c0-a8d3-2ef93ff64fa2",
+    "source_lesson_vocab_id": null
+  }
+}

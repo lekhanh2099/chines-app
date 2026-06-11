@@ -1,0 +1,283 @@
+{
+  "id": "cc8422a6-d40e-4f66-992b-6b38a453e66f",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "西服",
+  "pinyin": "xīfú",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Tây phục",
+    "meaning_vi": "âu phục, vest, đồ Tây",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "âu phục, vest, đồ Tây"
+    ],
+    "short_definition_vi": "âu phục, vest, đồ Tây",
+    "textbook_focus_vi": "âu phục, vest, đồ Tây",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "西",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "西",
+            "hanviet": "tây",
+            "meaning_vi": "phía Tây",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phía Tây, phương Tây",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "服",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy bên trái",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quần áo; phục vụ; phục tùng",
+        "modern_logic_vi": "Trong 西服 hoặc 服务 nên học theo cụm, không ép nghĩa từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "西 = phương Tây; 服 = quần áo. 西服 = quần áo kiểu Tây/âu phục.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "西装",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cách nói vest/suit rất phổ biến hiện nay",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "衣服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần áo nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "制服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng phục/trang phục theo quy định",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "西服",
+        "right": "中服",
+        "meaning_vi": "âu phục ↔ trang phục kiểu Trung",
+        "note_vi": "Đối chiếu kiểu trang phục.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "98f3653b-5e62-4067-9f21-1d3f58df2b60",
+      "order": 1,
+      "zh": "一套西服",
+      "pinyin": "",
+      "vi": "một bộ vest",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eef5a35d-16dd-4e48-a1b1-dff03b981cab",
+      "order": 2,
+      "zh": "穿西服",
+      "pinyin": "",
+      "vi": "mặc vest",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbbb2ae0-bf6c-404c-a1fe-80be2d3f7f6b",
+      "order": 3,
+      "zh": "黑色西服",
+      "pinyin": "",
+      "vi": "vest đen",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f3cba780-fedb-414f-91e9-11c7515819d3",
+      "order": 4,
+      "zh": "西服很正式",
+      "pinyin": "",
+      "vi": "vest rất trang trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d7dae54-9bef-499b-a42c-f31a0bb42c43",
+      "order": 5,
+      "zh": "西服配领带",
+      "pinyin": "",
+      "vi": "vest phối cà vạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cb3f7172-6b36-4f07-bb25-adc44375ffde",
+      "order": 1,
+      "zh": "新郎今天穿了一套黑色西服。",
+      "pinyin": "Xīnláng jīntiān chuān le yí tào hēisè xīfú.",
+      "vi": "Hôm nay chú rể mặc một bộ vest đen.",
+      "analysis_vi": "一套西服 dùng lượng từ 套 cho bộ trang phục.",
+      "highlight": [
+        "西服"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cc8422a6-d40e-4f66-992b-6b38a453e66f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "956c73cb-0ea4-4b8f-8fa6-97f1fe747036",
+      "order": 2,
+      "zh": "新郎穿着西服，系着领带，站在新娘旁边。",
+      "pinyin": "Xīnláng chuānzhe xīfú, jìzhe lǐngdài, zhàn zài xīnniáng pángbiān.",
+      "vi": "Chú rể mặc vest, thắt cà vạt, đứng bên cạnh cô dâu.",
+      "analysis_vi": "穿着 và 系着 đều là V + 着.",
+      "highlight": [
+        "西服",
+        "穿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cc8422a6-d40e-4f66-992b-6b38a453e66f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "dd6a05d6-7ceb-4f45-af60-e2d1c2a6297d",
+      "order": 1,
+      "rule_vi": "Mặc vest nói 穿西服 / 穿西装, không dùng 戴.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "西服",
+    "back": "âu phục, vest, đồ Tây",
+    "hint": "xīfú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong khẩu ngữ hiện nay, 西装 thường nghe tự nhiên hơn 西服 khi nói vest/suit.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cc8422a6-d40e-4f66-992b-6b38a453e66f",
+    "source_lesson_vocab_id": null
+  }
+}

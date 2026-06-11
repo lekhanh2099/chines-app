@@ -1,0 +1,236 @@
+{
+  "id": "f3885a9a-31a4-4413-8bc1-ab56a45a38d2",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "与",
+  "pinyin": "yǔ",
+  "pos": {
+    "raw_vi": "Giới từ / Liên từ",
+    "raw_cn": "介词 / 连词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "dữ",
+    "meaning_vi": "và; với; cùng với",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "và",
+      "với",
+      "cùng với"
+    ],
+    "short_definition_vi": "từ nối văn viết, nghĩa gần 和/跟 trong nhiều ngữ cảnh",
+    "textbook_focus_vi": "Trong bài dùng ở 新疆与北京的时差.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "与",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "với, và",
+        "modern_logic_vi": "với, và",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "与 được học trong bài theo nghĩa: từ nối văn viết, nghĩa gần 和/跟 trong nhiều ngữ cảnh.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 与北京的时差.",
+    "warning_vi": "Không lạm dụng 与 trong khẩu ngữ; 和/跟 thường tự nhiên hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "和",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trung tính và dùng rộng hơn 与.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "跟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Khẩu ngữ hơn 与.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không lạm dụng 与 trong khẩu ngữ; 和/跟 thường tự nhiên hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8a168d44-b763-405f-aadb-8fadefaf8b68",
+      "order": 1,
+      "zh": "与北京的时差",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "639382cb-a11f-44f0-94ea-84f466e5f4fc",
+      "order": 2,
+      "zh": "与朋友一起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0b5b44a-aca4-4197-8e5a-db86dbcb3054",
+      "order": 3,
+      "zh": "与……有关",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0450179b-9143-4058-b982-e70c4da9cbbd",
+      "order": 4,
+      "zh": "与……不同",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fdaea2ff-488f-46fb-b014-e9cd93ed2271",
+      "order": 5,
+      "zh": "人与自然",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c1c56378-c1af-4df5-a1b0-0dc63f960687",
+      "order": 1,
+      "zh": "新疆与北京有时差。",
+      "pinyin": "",
+      "vi": "Tân Cương và Bắc Kinh có chênh lệch giờ.",
+      "analysis_vi": "与 nối hai địa danh, sắc thái hơi văn.",
+      "highlight": [
+        "与"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f3885a9a-31a4-4413-8bc1-ab56a45a38d2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "57ab4685-7c30-45ab-bc19-05fa46c4b54c",
+      "order": 2,
+      "zh": "我与朋友一起去。",
+      "pinyin": "",
+      "vi": "Tôi đi cùng bạn.",
+      "analysis_vi": "Đúng nhưng khẩu ngữ thường nói 跟朋友一起去.",
+      "highlight": [
+        "与"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f3885a9a-31a4-4413-8bc1-ab56a45a38d2"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "与 rất hay gặp trong tiêu đề, văn viết, tài liệu: 人与自然, 语言与文化.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "69e11c4c-d9a8-4034-b841-0a4e2e7d648a",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 与 trong khẩu ngữ; 和/跟 thường tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không lạm dụng 与 trong khẩu ngữ; 和/跟 thường tự nhiên hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "与",
+    "back": "và; với; cùng với",
+    "hint": "yǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f3885a9a-31a4-4413-8bc1-ab56a45a38d2",
+    "source_lesson_vocab_id": null
+  }
+}

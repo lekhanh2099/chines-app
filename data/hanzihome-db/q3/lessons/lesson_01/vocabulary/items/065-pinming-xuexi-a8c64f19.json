@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_a9ea53a6d12d647b",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "拼命学习",
+  "pinyin": "pīnmìng xuéxí",
+  "meaning_vi": "học hết sức",
+  "pos": "Cụm trạng-động",
+  "pos_detail": {
+    "vi": "Cụm trạng-động",
+    "cn": "状中短语",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "phó từ 拼命 + động từ 学习",
+    "usage_note_vi": "Không phải động từ li hợp; 拼命 làm trạng ngữ chỉ mức độ cố gắng.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
+    "type": "vocabulary_item",
+    "order": 53,
+    "hanzi": "拼命学习",
+    "pinyin": "pīnmìng xuéxí",
+    "meaning_vi": "học hết sức",
+    "meaning_en": "",
+    "pos": "Cụm trạng-động",
+    "tags": [
+      "exercise_phrase"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "拼命学习",
+      "back": "pīnmìng xuéxí — học hết sức",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Cụm trạng-động",
+      "cn": "状中短语",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "phó từ 拼命 + động từ 学习",
+      "usage_note_vi": "Không phải động từ li hợp; 拼命 làm trạng ngữ chỉ mức độ cố gắng.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

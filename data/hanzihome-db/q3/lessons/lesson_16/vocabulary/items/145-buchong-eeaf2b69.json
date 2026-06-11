@@ -1,0 +1,163 @@
+{
+  "id": "fa71871c-11f6-4953-b466-023bc1ee9f9d",
+  "type": "deep_vocabulary_item",
+  "order": 145,
+  "hanzi": "补充",
+  "pinyin": "bǔchōng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Kế hoạch và dự án"
+  ],
+  "meaning": {
+    "hanviet": "Bổ sung",
+    "meaning_vi": "bổ sung, thêm vào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bổ sung",
+      "thêm vào"
+    ],
+    "short_definition_vi": "bổ sung, thêm vào",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: bổ sung, thêm vào.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Kế hoạch và dự án",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "补",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "充",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "补充 trong bài được học theo nghĩa trọng tâm: bổ sung, thêm vào.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: bổ sung, thêm vào.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d23d6ed2-ae01-428a-9ec4-f8f7b0174549",
+      "order": 1,
+      "zh": "不过，只要能拿到补充资金，我们会马上继续开展工作的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: bổ sung, thêm vào",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0599c6fd-bc99-4736-bad8-6b56bd204e38",
+      "order": 1,
+      "zh": "不过，只要能拿到补充资金，我们会马上继续开展工作的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “补充” = bổ sung, thêm vào.",
+      "analysis_vi": "Câu này dùng “补充” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "补充"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa71871c-11f6-4953-b466-023bc1ee9f9d"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “补充” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6429d83b-51e3-475a-8ab5-a31bd5562707",
+      "order": 1,
+      "rule_vi": "Cần dùng “补充” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "补充",
+    "back": "bổ sung, thêm vào",
+    "hint": "bǔchōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Kế hoạch và dự án"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fa71871c-11f6-4953-b466-023bc1ee9f9d",
+    "source_lesson_vocab_id": null
+  }
+}

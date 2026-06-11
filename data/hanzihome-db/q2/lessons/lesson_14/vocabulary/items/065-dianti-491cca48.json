@@ -1,0 +1,333 @@
+{
+  "id": "1240f86b-3845-4020-a359-5f5bfe07ea0e",
+  "type": "deep_vocabulary_item",
+  "order": 65,
+  "hanzi": "电梯",
+  "pinyin": "diàntī",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Điện thê",
+    "meaning_vi": "thang máy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thang máy"
+    ],
+    "short_definition_vi": "thang máy",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "nhà ở, trung tâm thương mại, khách sạn, giao thông trong tòa nhà.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "电",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "电 là điện. → 电梯 = thang chạy bằng điện, tức thang máy.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "梯",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弟",
+            "hanviet": "đệ",
+            "meaning_vi": "em trai",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thang",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "梯 là thang. → 电梯 = thang chạy bằng điện, tức thang máy.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 电梯 = thang chạy bằng điện, tức thang máy.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 电梯 trong tiếng Trung thường chỉ thang máy; thang cuốn là 扶梯 / 自动扶梯.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "电梯 (diàntī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thang máy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "楼梯 (lóutī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầu thang bộ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "扶梯 (fútī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thang cuốn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "自动扶梯 (zìdòng fútī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thang cuốn tự động, cách nói đầy đủ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 坐电梯 là đi thang máy; 走楼梯 là đi cầu thang bộ; 坐扶梯 là đi thang cuốn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d67e6221-5587-476b-b88b-69dd3098e78d",
+      "order": 1,
+      "zh": "坐电梯",
+      "pinyin": "",
+      "vi": "đi thang máy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "985b87f8-1715-4dbe-ae10-e9671251016d",
+      "order": 2,
+      "zh": "等电梯",
+      "pinyin": "",
+      "vi": "đợi thang máy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d64c218-9caa-4033-a956-b24afc0f6d67",
+      "order": 3,
+      "zh": "电梯坏了",
+      "pinyin": "",
+      "vi": "thang máy hỏng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7505afb9-5a32-432f-a7fc-12356ed20afb",
+      "order": 4,
+      "zh": "电梯上不去",
+      "pinyin": "",
+      "vi": "thang máy không lên được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "64e79b71-81a8-47a9-8e94-956c7de7f087",
+      "order": 1,
+      "zh": "商场里人太多，电梯一下子挤满了。",
+      "pinyin": "Shāngchǎng lǐ rén tài duō, diàntī yíxiàzi jǐ mǎn le.",
+      "vi": "Trong trung tâm thương mại người quá đông, thang máy chốc lát đã chật kín.",
+      "analysis_vi": "一下子 nhấn thay đổi xảy ra rất nhanh; 挤满了 là chen đầy rồi.",
+      "highlight": [
+        "电梯"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "1240f86b-3845-4020-a359-5f5bfe07ea0e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f47a75d4-6c8e-49f6-800d-605a91345e91",
+      "order": 2,
+      "zh": "电梯坏了，我们只好走楼梯上去。",
+      "pinyin": "Diàntī huài le, wǒmen zhǐhǎo zǒu lóutī shàngqù.",
+      "vi": "Thang máy hỏng rồi, chúng tôi đành đi cầu thang bộ lên.",
+      "analysis_vi": "只好 là đành phải; 走楼梯上去 nói đi lên bằng cầu thang bộ.",
+      "highlight": [
+        "电梯"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "1240f86b-3845-4020-a359-5f5bfe07ea0e"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3273d762-18c8-4138-a5d0-4f0eed4ee4fb",
+      "order": 3,
+      "zh": "他提着两个纸箱走进电梯，出来的时候已经累坏了。",
+      "pinyin": "Tā tízhe liǎng ge zhǐxiāng zǒu jìn diàntī, chūlai de shíhou yǐjīng lèi huài le.",
+      "vi": "Anh ấy xách hai thùng giấy đi vào thang máy, lúc đi ra thì đã mệt rã rời.",
+      "analysis_vi": "走进电梯 là đi vào thang máy; 出来 là từ trong thang máy ra ngoài.",
+      "highlight": [
+        "电梯"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "1240f86b-3845-4020-a359-5f5bfe07ea0e"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4391632f-4e99-4319-b10b-3d004918d322",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm thang máy và thang cuốn. 电梯",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "电梯",
+    "back": "thang máy",
+    "hint": "diàntī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Ở Trung Quốc, trong tòa nhà cao tầng thường nói 坐电梯上去 / 坐电梯下来. Nếu đông quá không vào được, có thể nói 电梯太挤了.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1240f86b-3845-4020-a359-5f5bfe07ea0e",
+    "source_lesson_vocab_id": null
+  }
+}

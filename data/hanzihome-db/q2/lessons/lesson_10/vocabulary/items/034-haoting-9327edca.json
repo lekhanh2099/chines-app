@@ -1,0 +1,509 @@
+{
+  "id": "32503153-45e7-4439-8b8b-edc2aa197091",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "好听",
+  "pinyin": "hǎotīng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hảo thính",
+    "meaning_vi": "nghe hay, dễ nghe",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghe hay, dễ nghe"
+    ],
+    "short_definition_vi": "nghe hay, dễ nghe",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được dùng như bộ Nữ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, hay.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ giới",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được dùng như bộ Nữ trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "听",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ Khẩu trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghe.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ Khẩu trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "好 = tốt, hay. 听 = nghe. → 好听 = nghe vào thấy hay/dễ chịu. Logic hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好听",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghe hay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好看",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhìn đẹp, xem hay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好吃",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ăn ngon.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好喝",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "uống ngon.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "动听",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghe cảm động/dễ rung động, văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "这首歌很好听。",
+      "Bài hát này rất hay.",
+      "这个电影很好看。",
+      "Bộ phim này rất hay/đẹp.",
+      "烤鸭很好吃。",
+      "Vịt quay rất ngon."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c77ec041-eeb2-4944-9e73-5dd468330215",
+      "order": 1,
+      "zh": "很好听",
+      "pinyin": "",
+      "vi": "rất hay, dễ nghe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2a6fcc77-f164-4a31-97cc-f1ea0c7629d2",
+      "order": 2,
+      "zh": "好听极了",
+      "pinyin": "",
+      "vi": "hay cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3362335b-a9d4-4f59-b55f-f9e4d1ad4286",
+      "order": 3,
+      "zh": "声音好听",
+      "pinyin": "",
+      "vi": "giọng hay/dễ nghe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "06040d0e-8cb9-41ff-a9e3-89622518c745",
+      "order": 4,
+      "zh": "曲子好听",
+      "pinyin": "",
+      "vi": "bản nhạc hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "b9f17e54-bb69-4066-afc6-bfe9d6a4f657",
+      "order": 5,
+      "zh": "名字好听",
+      "pinyin": "",
+      "vi": "tên nghe hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "44b124d4-d47a-4b6d-b0e7-324b946b1375",
+      "order": 6,
+      "zh": "听起来很好听",
+      "pinyin": "",
+      "vi": "nghe lên rất hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "018791a7-3685-48a2-82ec-7fc65ab19a93",
+      "order": 1,
+      "zh": "这首曲子好听极了。",
+      "pinyin": "Zhè shǒu qǔzi hǎotīng jí le.",
+      "vi": "Bản nhạc này hay cực kỳ.",
+      "analysis_vi": "好听 + 极了 = nghe hay cực kỳ.",
+      "highlight": [
+        "好听"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "32503153-45e7-4439-8b8b-edc2aa197091"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7b16c355-644e-44a2-a949-b5c311ece374",
+      "order": 2,
+      "zh": "我听过一遍《梁祝》，觉得小提琴的声音很好听。",
+      "pinyin": "Wǒ tīng guo yí biàn “Liáng Zhù”, juéde xiǎotíqín de shēngyīn hěn hǎotīng.",
+      "vi": "Tôi từng nghe “Lương Chúc” một lượt, thấy âm thanh của violin rất hay.",
+      "analysis_vi": "听过一遍 = nghe qua một lượt từ đầu đến cuối. 声音很好听 = âm thanh dễ nghe.",
+      "highlight": [
+        "好听"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "32503153-45e7-4439-8b8b-edc2aa197091"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f95fa279-20d9-4e20-9b5c-2c914e398ec5",
+      "order": 3,
+      "zh": "我以前没听过钢琴协奏曲《黄河》，第一次亲耳听的时候，才发现它不但有力量，而且好听极了。",
+      "pinyin": "Wǒ yǐqián méi tīng guo gāngqín xiézòuqǔ “Huáng Hé”, dì yī cì qīněr tīng de shíhou, cái fāxiàn tā búdàn yǒu lìliàng, érqiě hǎotīng jí le.",
+      "vi": "Trước đây tôi chưa từng nghe concerto piano “Hoàng Hà”, lần đầu nghe tận tai mới phát hiện nó không những có sức mạnh mà còn hay cực kỳ.",
+      "analysis_vi": "没听过 = chưa từng nghe. 第一次亲耳听 = lần đầu tận tai nghe. 不但……而且…… tăng tiến.",
+      "highlight": [
+        "好听"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "32503153-45e7-4439-8b8b-edc2aa197091"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "2f28cf49-a6c5-4442-93f5-649bdb683ff7",
+      "order": 1,
+      "rule_vi": "Đừng dùng sai theo giác quan:",
+      "natural_examples": [
+        {
+          "zh": "好吃",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "好看",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "好喝",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "好听",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Đừng dùng sai theo giác quan: Nghe hay: 好听 Ăn ngon: 好吃 Nhìn đẹp / phim hay: 好看 Uống ngon: 好喝",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "好听",
+    "back": "nghe hay, dễ nghe",
+    "hint": "hǎotīng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi khen nhạc Trung Quốc, có thể nói đơn giản 很好听. Nếu muốn nói sâu hơn, có thể thêm cảm giác: 很感人, 很有力量, 很有中国味儿.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "32503153-45e7-4439-8b8b-edc2aa197091",
+    "source_lesson_vocab_id": null
+  }
+}

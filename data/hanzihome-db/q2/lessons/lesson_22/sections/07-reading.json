@@ -1,0 +1,122 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Bài đọc / Điền tổng hợp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 7,
+      "title": "七、综合填空",
+      "title_vi": "Điền tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền tổng hợp vào chỗ trống."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "司马光",
+          "pinyin": "Sīmǎ Guāng",
+          "meaning_vi": "Tư Mã Quang"
+        },
+        {
+          "hanzi": "砸",
+          "pinyin": "zá",
+          "meaning_vi": "đập; nện; đập vỡ"
+        },
+        {
+          "hanzi": "缸",
+          "pinyin": "gāng",
+          "meaning_vi": "chum; vại"
+        },
+        {
+          "hanzi": "喊",
+          "pinyin": "hǎn",
+          "meaning_vi": "hét; hô"
+        },
+        {
+          "hanzi": "救",
+          "pinyin": "jiù",
+          "meaning_vi": "cứu"
+        },
+        {
+          "hanzi": "吓",
+          "pinyin": "xià",
+          "meaning_vi": "làm sợ; dọa"
+        },
+        {
+          "hanzi": "连忙",
+          "pinyin": "liánmáng",
+          "meaning_vi": "vội vàng; lập tức"
+        },
+        {
+          "hanzi": "石头",
+          "pinyin": "shítou",
+          "meaning_vi": "đá; hòn đá"
+        }
+      ],
+      "passage": {
+        "id": "f013544b-a318-4292-a467-21659afc2082",
+        "title": "司马光砸缸",
+        "title_vi": "Tư Mã Quang đập chum",
+        "text_with_blanks": "这是一个中国古时候的故事。\n\n有一天，司马光和小朋友们在院子里玩儿。院子里有个大水缸，水缸里装满了水。他们玩儿得正高兴的时候，一个小朋友不小心掉①______水缸里去了。一个孩子看见了，就大声喊了②______：“救人啊！救人啊！有人掉到水缸里③______了。” 有的孩子吓得哭了④______。水缸很大，不容易从上面救人。司马光看到这种情况，很快想⑤______了一个好办法。他连忙搬起一块石头，跑了过来，向水缸砸去，一下子⑥______水缸砸破了。水缸里的水都流了⑦______。掉在水缸里的小朋友得救了。\n\n看到从水缸里爬出来的小朋友，大家都笑了⑧______。",
+        "completed_text": "这是一个中国古时候的故事。\n\n有一天，司马光和小朋友们在院子里玩儿。院子里有个大水缸，水缸里装满了水。他们玩儿得正高兴的时候，一个小朋友不小心掉到水缸里去了。一个孩子看见了，就大声喊了起来：“救人啊！救人啊！有人掉到水缸里去了。” 有的孩子吓得哭了起来。水缸很大，不容易从上面救人。司马光看到这种情况，很快想出了一个好办法。他连忙搬起一块石头，跑了过来，向水缸砸去，一下子把水缸砸破了。水缸里的水都流了出来。掉在水缸里的小朋友得救了。\n\n看到从水缸里爬出来的小朋友，大家都笑了起来。",
+        "vi": "Đây là một câu chuyện thời xưa của Trung Quốc.\n\nMột hôm, Tư Mã Quang và các bạn nhỏ chơi trong sân. Trong sân có một cái chum nước lớn, trong chum chứa đầy nước. Khi các bạn đang chơi rất vui, một bạn nhỏ không cẩn thận rơi vào trong chum nước. Một đứa trẻ nhìn thấy liền hét lên: “Cứu người! Cứu người! Có người rơi vào chum nước rồi!” Có vài đứa trẻ sợ đến phát khóc. Chum nước rất lớn, không dễ cứu người từ phía trên. Tư Mã Quang nhìn thấy tình huống này, rất nhanh nghĩ ra một cách hay. Cậu vội vàng bê một hòn đá lên, chạy tới, đập vào chum nước, một cái đã đập vỡ chum. Nước trong chum đều chảy ra ngoài. Bạn nhỏ rơi vào chum nước được cứu.\n\nNhìn thấy bạn nhỏ bò ra từ trong chum nước, mọi người đều bật cười."
+      },
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "到",
+          "answer_verified": true
+        },
+        {
+          "blank": 2,
+          "answer": "起来",
+          "answer_verified": true
+        },
+        {
+          "blank": 3,
+          "answer": "去",
+          "answer_verified": true
+        },
+        {
+          "blank": 4,
+          "answer": "起来",
+          "answer_verified": true
+        },
+        {
+          "blank": 5,
+          "answer": "出",
+          "answer_verified": true
+        },
+        {
+          "blank": 6,
+          "answer": "把",
+          "answer_verified": true
+        },
+        {
+          "blank": 7,
+          "answer": "出来",
+          "answer_verified": true
+        },
+        {
+          "blank": 8,
+          "answer": "起来",
+          "answer_verified": true
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reading_cloze.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_verified_answer",
+      "check_needed": false
+    }
+  ],
+  "note_vi": "Bài 22 không thấy 阅读理解 riêng; bài đọc thêm nằm dưới dạng 综合填空：司马光砸缸."
+}

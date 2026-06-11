@@ -1,0 +1,318 @@
+{
+  "id": "bd8e0fd8-e97c-4398-bc0b-7de8e1bf3000",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "学然后知不足",
+  "pinyin": "xué rán hòu zhī bùzú",
+  "pos": {
+    "raw_vi": "Câu văn ngôn / Cách ngôn",
+    "raw_cn": "文言句 / 格言",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "học nhiên hậu tri bất túc",
+    "meaning_vi": "học rồi mới biết mình còn thiếu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "học rồi mới biết mình còn thiếu"
+    ],
+    "short_definition_vi": "học rồi mới biết mình còn thiếu",
+    "textbook_focus_vi": "học rồi mới biết mình còn thiếu",
+    "register_vi": "sách vở/văn hóa",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "后",
+        "lishu_vi": "hậu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "知",
+        "lishu_vi": "tri",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "足",
+        "lishu_vi": "túc",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân, bàn chân",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân, bàn chân",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân, bàn chân",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "học rồi mới biết mình còn thiếu",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 学然后知不足.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "学而不厌",
+        "pinyin": "xué ér bú yàn",
+        "meaning_vi": "học không chán",
+        "difference_vi": "nhấn thái độ học dài lâu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0d8092f6-a747-4ca5-9f83-05a89b26978f",
+      "order": 1,
+      "zh": "学然后知不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a607109-15ec-448c-8c06-b577ed5fb528",
+      "order": 2,
+      "zh": "教然后知困",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da9ff517-601d-4a75-a6b1-1b66642dd4ad",
+      "order": 3,
+      "zh": "真正做到学然后知不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "273fc5e6-9fc8-4ded-82cb-024c8840c2f7",
+      "order": 4,
+      "zh": "懂得学然后知不足",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8cc907bc-0519-4109-a69a-a9f5e56b98b4",
+      "order": 1,
+      "zh": "他学习以后，才明白什么叫“学然后知不足”。",
+      "pinyin": "Tā xuéxí yǐhòu, cái míngbai shénme jiào “xué rán hòu zhī bùzú”.",
+      "vi": "Sau khi học, anh ấy mới hiểu thế nào là “học rồi mới biết mình còn thiếu”.",
+      "analysis_vi": "才明白 nhấn nhận ra sau trải nghiệm.",
+      "highlight": [
+        "学然后知不足"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bd8e0fd8-e97c-4398-bc0b-7de8e1bf3000"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu này hợp tinh thần tự nhận thiếu sót để tiến bộ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "56649f86-7778-42fb-bd4c-2cf1da9c82de",
+      "order": 1,
+      "rule_vi": "Câu này hợp văn viết/tổng kết, không phải khẩu ngữ ngày nào cũng dùng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "学然后知不足",
+    "back": "học rồi mới biết mình còn thiếu",
+    "hint": "xué rán hòu zhī bùzú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bd8e0fd8-e97c-4398-bc0b-7de8e1bf3000",
+    "source_lesson_vocab_id": null
+  }
+}

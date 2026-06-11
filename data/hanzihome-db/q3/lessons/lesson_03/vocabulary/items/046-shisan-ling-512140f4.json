@@ -1,0 +1,416 @@
+{
+  "id": "eefdeb01-2fba-4b2b-9988-94937f35412a",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "十三陵",
+  "pinyin": "Shísān Líng",
+  "pos": {
+    "raw_vi": "proper_noun",
+    "raw_cn": "",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "proper_noun",
+    "history"
+  ],
+  "meaning": {
+    "hanviet": "Thập Tam Lăng",
+    "meaning_vi": "Thập Tam Lăng; quần thể lăng mộ nhà Minh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Thập Tam Lăng",
+      "quần thể lăng mộ nhà Minh"
+    ],
+    "short_definition_vi": "Thập Tam Lăng; quần thể lăng mộ nhà Minh",
+    "textbook_focus_vi": "Thập Tam Lăng; quần thể lăng mộ nhà Minh",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "proper_noun, history",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "十",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "十",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thập",
+          "radical_name_zh": "",
+          "hanviet": "thập",
+          "meaning_vi": "mười",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "mười",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "十",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thập",
+              "radical_name_zh": "",
+              "hanviet": "thập",
+              "meaning_vi": "mười",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mười",
+        "modern_logic_vi": "Trong từ này, 十 góp phần vào lớp nghĩa hiện đại: mười",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "三",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "三",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ba",
+        "modern_logic_vi": "Trong từ này, 三 góp phần vào lớp nghĩa hiện đại: ba",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "陵",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "夌",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lăng mộ lớn",
+        "modern_logic_vi": "Trong từ này, 陵 góp phần vào lớp nghĩa hiện đại: lăng mộ lớn",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "十三 = mười ba; 陵 = lăng mộ lớn. 十三陵 là tên riêng lịch sử.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dịch 十三陵 là “mười ba mộ”; nên dịch Thập Tam Lăng hoặc quần thể lăng mộ 13 hoàng đế nhà Minh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "陵墓",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "墓",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "故宫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长城",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "北海",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6564f238-8af3-4541-a65d-5c0f009a2c7c",
+      "order": 1,
+      "zh": "明十三陵",
+      "pinyin": "",
+      "vi": "Thập Tam Lăng nhà Minh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c667f5b5-062c-4ba8-ab36-491e6663d381",
+      "order": 2,
+      "zh": "去十三陵",
+      "pinyin": "",
+      "vi": "đi Thập Tam Lăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "770f89c6-2ee4-4f74-a069-8760ef43a3d3",
+      "order": 3,
+      "zh": "游十三陵",
+      "pinyin": "",
+      "vi": "tham quan Thập Tam Lăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1814fd3e-2364-49f1-acc9-0f2c27b86359",
+      "order": 4,
+      "zh": "十三陵景区",
+      "pinyin": "",
+      "vi": "khu thắng cảnh Thập Tam Lăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "157477e5-8045-4a6a-adad-b24088524395",
+      "order": 5,
+      "zh": "十三陵的历史",
+      "pinyin": "",
+      "vi": "lịch sử Thập Tam Lăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ceeec0e-2aa4-4178-bb54-02a49bc346bb",
+      "order": 6,
+      "zh": "参观十三陵",
+      "pinyin": "",
+      "vi": "tham quan Thập Tam Lăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28d673a2-aab7-4364-9864-26e5c8c749af",
+      "order": 1,
+      "zh": "明天我们去十三陵参观。",
+      "pinyin": "",
+      "vi": "Ngày mai chúng tôi đi tham quan Thập Tam Lăng.",
+      "analysis_vi": "参观 dùng cho di tích.",
+      "highlight": [
+        "十三陵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eefdeb01-2fba-4b2b-9988-94937f35412a"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "257d75d3-56f5-4503-98cb-972202d4feac",
+      "order": 2,
+      "zh": "每年都有很多游人去十三陵了解明朝的历史。",
+      "pinyin": "",
+      "vi": "Mỗi năm có nhiều du khách đi Thập Tam Lăng tìm hiểu lịch sử nhà Minh.",
+      "analysis_vi": "了解历史.",
+      "highlight": [
+        "十三陵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eefdeb01-2fba-4b2b-9988-94937f35412a"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c57c13e8-0aae-4801-aef3-db3c16b8a71c",
+      "order": 3,
+      "zh": "十三陵更适合了解历史。",
+      "pinyin": "",
+      "vi": "Thập Tam Lăng hợp hơn để tìm hiểu lịch sử.",
+      "analysis_vi": "So sánh chức năng du lịch.",
+      "highlight": [
+        "十三陵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eefdeb01-2fba-4b2b-9988-94937f35412a"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "十三陵 trong Bài 3 北京的四季",
+    "content_vi": "Địa danh này cho thấy Bắc Kinh là thành phố lịch sử, không chỉ có cảnh bốn mùa.",
+    "tags": [
+      "proper_noun",
+      "history"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "371ba0e7-d1bf-472f-ac04-635765e4c0dd",
+      "order": 1,
+      "rule_vi": "Không dịch 十三陵 là “mười ba mộ”; nên dịch Thập Tam Lăng hoặc quần thể lăng mộ 13 hoàng đế nhà Minh.",
+      "natural_examples": [
+        {
+          "zh": "明天我们去十三陵参观。",
+          "pinyin": "",
+          "vi": "Ngày mai chúng tôi đi tham quan Thập Tam Lăng.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 十三陵 là “mười ba mộ”; nên dịch Thập Tam Lăng hoặc quần thể lăng mộ 13 hoàng đế nhà Minh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "十三陵",
+    "back": "Thập Tam Lăng; quần thể lăng mộ nhà Minh",
+    "hint": "Shísān Líng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "proper_noun",
+      "history"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eefdeb01-2fba-4b2b-9988-94937f35412a",
+    "source_lesson_vocab_id": null
+  }
+}

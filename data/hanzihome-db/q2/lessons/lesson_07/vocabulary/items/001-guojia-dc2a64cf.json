@@ -1,0 +1,434 @@
+{
+  "id": "4994761f-e78a-47e7-ad75-b2d1368a78d3",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "国家",
+  "pinyin": "guójiā",
+  "pos": {
+    "raw_vi": "Danh từ 【名词】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "country_region",
+    "country",
+    "society"
+  ],
+  "meaning": {
+    "hanviet": "Quốc gia",
+    "meaning_vi": "quốc gia; nhà nước; đất nước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quốc gia",
+      "nhà nước",
+      "đất nước"
+    ],
+    "short_definition_vi": "quốc gia",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "quốc gia / xã hội",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "国",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao quanh",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "vây quanh/bao bọc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "玉",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nước, quốc gia",
+        "modern_logic_vi": "国 = nước/quốc gia; chữ giản thể không nên suy nghĩa từ từng nét.",
+        "warning_vi": "Không nên nhớ kiểu “trong nước có ngọc”.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "vây quanh/bao bọc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "家",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "豕",
+            "hanviet": "thỉ",
+            "meaning_vi": "lợn/heo",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà, gia đình, chuyên gia",
+        "modern_logic_vi": "家 gợi nhà/gia đình; trong 国家 tạo ý “ngôi nhà lớn chung”.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "国 = nước; 家 = nhà. 国家 = cộng đồng/chủ thể chính trị gọi là quốc gia hoặc nhà nước.",
+    "memory_tip_vi": "Nhớ 国家 như “ngôi nhà lớn chung” của một cộng đồng.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "祖国",
+        "pinyin": "",
+        "meaning_vi": "tổ quốc",
+        "difference_vi": "Trang trọng, có sắc thái tình cảm hơn 国家.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "中国",
+        "pinyin": "",
+        "meaning_vi": "Trung Quốc",
+        "difference_vi": "Tên riêng một quốc gia cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "外国",
+        "pinyin": "",
+        "meaning_vi": "nước ngoài",
+        "difference_vi": "Đối lập với nước mình trong nhiều ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "外国",
+        "pinyin": "",
+        "meaning_vi": "nước ngoài",
+        "difference_vi": "Đối lập với quốc gia/ngữ cảnh nội địa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "国家",
+        "right": "家",
+        "meaning_vi": "quốc gia vs nhà/gia đình",
+        "note_vi": "国家 là đơn vị xã hội-chính trị; 家 là nhà hoặc gia đình.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bd1b234e-4ead-4262-b540-3a35ac1f354d",
+      "order": 1,
+      "zh": "一个国家",
+      "pinyin": "",
+      "vi": "một quốc gia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f356a78b-c459-4a84-ab4f-e0ffcfd1f6b3",
+      "order": 2,
+      "zh": "发展中国家",
+      "pinyin": "",
+      "vi": "nước đang phát triển",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d294ef44-30fd-49f1-9f94-a0b6d49a6e68",
+      "order": 3,
+      "zh": "发达国家",
+      "pinyin": "",
+      "vi": "nước phát triển",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56a3a11a-ba3e-416c-93b3-ba1d4a8c5c09",
+      "order": 4,
+      "zh": "国家队",
+      "pinyin": "",
+      "vi": "đội tuyển quốc gia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "25f84639-ebdd-4843-808c-8c08643ed391",
+      "order": 5,
+      "zh": "国家规定",
+      "pinyin": "",
+      "vi": "quy định nhà nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94f140a7-708e-4593-8f6d-a601481fad2b",
+      "order": 6,
+      "zh": "国家安全",
+      "pinyin": "",
+      "vi": "an ninh quốc gia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a1485ad-d7db-47f7-bbee-5e581ceefc62",
+      "order": 7,
+      "zh": "国家政策",
+      "pinyin": "",
+      "vi": "chính sách quốc gia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cfd70746-cabb-4c9f-aaae-c44137ee0f4b",
+      "order": 1,
+      "zh": "中国是一个很大的国家。",
+      "pinyin": "Zhōngguó shì yí ge hěn dà de guójiā.",
+      "vi": "Trung Quốc là một quốc gia rất lớn.",
+      "analysis_vi": "一个国家 là cụm danh từ cơ bản; 很大的 làm định ngữ trước 国家.",
+      "highlight": [
+        "国家"
+      ],
+      "grammar_refs": [
+        "grammar_adj_predicate"
+      ],
+      "vocab_refs": [
+        "4994761f-e78a-47e7-ad75-b2d1368a78d3"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "391aa9e7-0f8d-40e4-8783-71cb862627f4",
+      "order": 2,
+      "zh": "这个国家的冬天跟北京一样冷。",
+      "pinyin": "Zhège guójiā de dōngtiān gēn Běijīng yíyàng lěng.",
+      "vi": "Mùa đông của quốc gia này lạnh như Bắc Kinh.",
+      "analysis_vi": "Gắn mẫu A 跟 B 一样 + tính từ.",
+      "highlight": [
+        "国家",
+        "跟",
+        "一样冷"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "4994761f-e78a-47e7-ad75-b2d1368a78d3"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "65765747-a6b5-4144-942a-66ccc8991478",
+      "order": 3,
+      "zh": "我以前没去过那个国家，只在画册上看过那儿的春天和秋天。",
+      "pinyin": "Wǒ yǐqián méi qùguo nàge guójiā, zhǐ zài huàcè shang kànguo nàr de chūntiān hé qiūtiān.",
+      "vi": "Trước đây tôi chưa từng đến quốc gia đó, chỉ từng xem mùa xuân và mùa thu ở đó trong tập tranh ảnh.",
+      "analysis_vi": "没去过 chỉ chưa từng có kinh nghiệm; 只 giới hạn phạm vi.",
+      "highlight": [
+        "国家",
+        "画册",
+        "春天",
+        "秋天"
+      ],
+      "grammar_refs": [
+        "grammar_experience_guo"
+      ],
+      "vocab_refs": [
+        "4994761f-e78a-47e7-ad75-b2d1368a78d3"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "国家 trong tiếng Trung hiện đại đôi khi nghiêng về “nhà nước / cấp chính quyền”, như 国家规定 = quy định của nhà nước, không nên dịch máy thành “đất nước quy định”.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ef2a0084-74ce-410f-902a-be0744e6929b",
+      "order": 1,
+      "rule_vi": "Không dùng 国家 để nói quê hương cấp tỉnh/thành phố.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的国家是河内。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Sai logic nếu muốn nói “quê tôi là Hà Nội”.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的家乡是河内。",
+          "pinyin": "Wǒ de jiāxiāng shì Hénèi.",
+          "vi": "Quê tôi là Hà Nội.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Quê hương/nơi sinh sống thường dùng 家乡, không dùng 国家 nếu không nói cấp quốc gia.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "国家",
+    "back": "quốc gia; nhà nước; đất nước",
+    "hint": "guójiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "country",
+      "society"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4994761f-e78a-47e7-ad75-b2d1368a78d3",
+    "source_lesson_vocab_id": null
+  }
+}

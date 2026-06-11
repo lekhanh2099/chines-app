@@ -1,0 +1,1022 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_unverified"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "",
+        "vi": "Phân biệt phát âm, thanh điệu và đọc theo."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "dōngxi — dōngxī",
+            "shùnbiàn — suíbiàn",
+            "máfan — mái fàn",
+            "xīnkǔ — xìngfú",
+            "zhùyì — zhǔyì",
+            "wèn hǎo — wènhào",
+            "yāoqiú — yāoqǐng",
+            "qīngchu — qīngchǔ"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud",
+          "title": "朗读",
+          "items": [
+            "上来",
+            "下来",
+            "进来",
+            "出来",
+            "回来",
+            "过来",
+            "起来",
+            "上去",
+            "下去",
+            "进去",
+            "出去",
+            "回去",
+            "过去",
+            "带来",
+            "带去",
+            "拿来",
+            "拿去",
+            "跑来",
+            "跑去",
+            "上楼来",
+            "下楼去",
+            "进教室来",
+            "出教室去",
+            "回学校来",
+            "到大使馆去",
+            "带来一些东西",
+            "捎去一些苹果",
+            "买来一本词典",
+            "带去一件衣服"
+          ],
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Luyện thay thế",
+      "instruction": {
+        "zh": "",
+        "vi": "Thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "sample": "A：她从台湾回来了吗？\nB：回来了。",
+          "prompts": [
+            "楼下 — 上来",
+            "山上 — 下来",
+            "里边 — 出来",
+            "那边 — 过来",
+            "外边 — 进来"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "sample": "A：他上来了吗？\nB：还没呢，一会儿就上来。",
+          "prompts": [
+            "下来",
+            "进来",
+            "出来",
+            "回来",
+            "过来",
+            "起来"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "sample": "A：林老师在楼上等你呢，快上去吧。\nB：我马上就上去。",
+          "prompts": [
+            "楼下 — 下去",
+            "里边 — 进去",
+            "外边 — 出去",
+            "那边 — 过去",
+            "学校 — 回去"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "sample": "A：看见玛丽了吗？\nB：我看见她进教室去了。",
+          "prompts": [
+            "上楼去",
+            "下楼去",
+            "回宿舍去",
+            "到那边去",
+            "进图书馆去",
+            "出校门去"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
+          "sample": "A：林老师呢？\nB：她到台湾去了。",
+          "prompts": [
+            "进公园去",
+            "回学校去",
+            "到教室去",
+            "到河那边去",
+            "下楼去",
+            "上山去"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "eb298846-dba5-4ab4-aaae-f9f806a8bb4e",
+          "sample": "A：我给你带来了一本书。\nB：谢谢！",
+          "prompts": [
+            "找 — 一张北京地图",
+            "借 — 一个照相机",
+            "买 — 几张光盘",
+            "送 — 一些饺子",
+            "请 — 一位翻译",
+            "拿 — 一把伞"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "37ed4d47-7018-472f-9a7d-f84636e571d6",
+          "sample": "A：你给她带去了什么？\nB：给她带去了一些水果。",
+          "prompts": [
+            "发 — 几张照片",
+            "捎 — 一些中药",
+            "送 — 一些新杂志",
+            "拿 — 一个照相机",
+            "寄 — 一件大衣"
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "0cc9f2c6-a796-421a-99ae-6ef4ac606907",
+          "sample": "A：你进去的时候，他在做什么呢？\nB：他正在看书呢。",
+          "prompts": [
+            "听音乐",
+            "睡觉",
+            "做练习",
+            "看电视",
+            "打电话",
+            "聊天儿"
+          ],
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "",
+        "vi": "Chọn từ đúng điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "word_bank": [
+        "准时",
+        "取",
+        "麻烦",
+        "拿",
+        "参观",
+        "去",
+        "顺便",
+        "清楚",
+        "要求",
+        "大约"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "order": 1,
+          "prompt": "______你给他带一件衣服去，好吗？",
+          "answer": "麻烦",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "麻烦 đặt đầu câu để nhờ người khác giúp một việc."
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "order": 2,
+          "prompt": "林老师到台湾开教学研讨会______了。",
+          "answer": "去",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "到台湾开会去了: đi Đài Loan dự hội thảo."
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "order": 3,
+          "prompt": "我进城去看展览，______买了这本画册来，你看怎么样？",
+          "answer": "顺便",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "顺便 = tiện thể, nhân tiện."
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "order": 4,
+          "prompt": "今天______展览的人真多！",
+          "answer": "参观",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "参观展览 = tham quan triển lãm."
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "order": 5,
+          "prompt": "老师说明天参观，是上午去还是下午去，我没听______。",
+          "answer": "清楚",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "听清楚 = nghe rõ."
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "order": 6,
+          "prompt": "她回宿舍去______手机了，我们等她一会儿吧。",
+          "answer": "拿",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "拿手机 = lấy điện thoại."
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "order": 7,
+          "prompt": "我现在到银行______钱去，你跟我一起去吧。",
+          "answer": "取",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "取钱 = rút/lấy tiền."
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "order": 8,
+          "prompt": "老师每天七点五十______到教室。",
+          "answer": "准时",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "准时到教室 = đến lớp đúng giờ."
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "order": 9,
+          "prompt": "老师______我们多听、多读、多说、多写。",
+          "answer": "要求",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "要求某人做某事 = yêu cầu ai làm gì."
+        },
+        {
+          "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "order": 10,
+          "prompt": "今天的作业我______做了两个小时才做完。",
+          "answer": "大约",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "大约做了两个小时 = làm khoảng hai tiếng."
+        }
+      ]
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 4,
+      "title": "四、朗读下列各组会话并指出说话人或话中人的位置",
+      "title_vi": "Đọc hội thoại và chỉ vị trí",
+      "instruction": {
+        "zh": "",
+        "vi": "Đọc các đoạn hội thoại và chỉ ra vị trí của người nói/người được nhắc đến."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "order": 1,
+          "prompt": "她上来了吗？ / 还没有呢。",
+          "answer": "A在：上边；B在：上边。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "order": 2,
+          "prompt": "麦克从山上下来了吗？ / 他还没下来呢。",
+          "answer": "A在：山下；B在：山下。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "order": 3,
+          "prompt": "外边太冷，快进屋来吧。 / 我不进去了，家里还有事儿。",
+          "answer": "A在：屋里；B在：屋外。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "order": 4,
+          "prompt": "林老师进教室去了吗？ / 刚进去。",
+          "answer": "A在：教室外；B在：教室外。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "order": 5,
+          "prompt": "她们从展览馆出来了吗？ / 还没出来呢。",
+          "answer": "A在：展览馆外；B在：展览馆外。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "order": 6,
+          "prompt": "书店要关门了，我们出去吧。 / 走吧。",
+          "answer": "A在：书店里；B在：书店里。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
+          "order": 7,
+          "prompt": "你爸爸回家去了吗？ / 回来了。",
+          "answer": "A在：家外/别处；B在：家里。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        },
+        {
+          "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
+          "order": 8,
+          "prompt": "他们过来了吗？ / 还没呢。",
+          "answer": "A在：这边；B在：这边。",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Căn cứ vào 来/去: 来 hướng về phía người nói/điểm mốc, 去 hướng rời xa điểm mốc."
+        }
+      ]
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "fill_blank",
+      "variant": "free_fill_blank",
+      "order": 5,
+      "title": "五、用“来”或“去”填空",
+      "title_vi": "Điền 来 hoặc 去",
+      "instruction": {
+        "zh": "",
+        "vi": "Điền 来 hoặc 去 vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "order": 1,
+          "prompt": "他刚从我这儿过______。",
+          "answer": "去",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "order": 2,
+          "prompt": "我看见她刚进图书馆______了。",
+          "answer": "去",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "order": 3,
+          "prompt": "他上午不在家，出______了。",
+          "answer": "去",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "order": 4,
+          "prompt": "A：你进______的时候，他起______了没有？ B：没起______呢。 A：还发烧吗？ B：不发烧了。",
+          "answer": [
+            "来",
+            "来",
+            "来"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "order": 5,
+          "prompt": "A：你爸爸回______了吗？ B：还没有呢。 A：他到哪儿______了？ B：他到超市买东西______了。",
+          "answer": [
+            "来",
+            "去",
+            "去"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "order": 6,
+          "prompt": "A：火车票买______了吗？ B：买______了。 A：哪天的？ B：后天下午一点的。",
+          "answer": [
+            "来",
+            "来"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+          "order": 7,
+          "prompt": "A：（在家里）外边很冷，快进屋______吧。 B：（在屋外）我不进______了。",
+          "answer": [
+            "来",
+            "去"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+          "order": 8,
+          "prompt": "A：（在外边）王老师在吗？ B：（在办公室）不在，他回家______了。",
+          "answer": "去",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "d38e7b1c-6533-4269-8c64-92d347b1b862",
+          "order": 9,
+          "prompt": "A：（在车上）你上______吗？ B：（在车下）人太多，我不上______了。我上那辆车______。",
+          "answer": [
+            "来",
+            "去",
+            "去"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "83a54682-8969-4c13-acc8-df735eb43ff8",
+          "order": 10,
+          "prompt": "A：（在楼上）玛丽，你下______不下______？ B：（在楼上）等等我，我跟你一起下______。",
+          "answer": [
+            "去",
+            "去",
+            "去"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        },
+        {
+          "id": "6ddaf379-99df-4855-9edf-ae0b220ad3a7",
+          "order": 11,
+          "prompt": "A：（在办公室）小林，你能过______一下儿吗？ B：（在办公室）好，我马上过______。",
+          "answer": [
+            "来",
+            "去"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Điền theo điểm nhìn trong ngoặc hoặc theo hướng của hành động so với người nói."
+        }
+      ]
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 6,
+      "title": "六、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "",
+        "vi": "Sửa câu sai."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "order": 1,
+          "prompt": "玛丽回去宿舍拿照相机了。",
+          "answer": "玛丽回宿舍去拿照相机了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "宿舍 là tân ngữ nơi chốn, đặt giữa 回 và 去.",
+          "correct_sentence": "玛丽回宿舍去拿照相机了。"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "order": 2,
+          "prompt": "林老师已经上来车了。",
+          "answer": "林老师已经上车来了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "车 là nơi chốn/phương tiện, đặt trước 来; không nói 上来车.",
+          "correct_sentence": "林老师已经上车来了。"
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "order": 3,
+          "prompt": "他下星期就回去美国了。",
+          "answer": "他下星期就回美国去了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "美国 là nơi chốn, đặt giữa 回 và 去.",
+          "correct_sentence": "他下星期就回美国去了。"
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "order": 4,
+          "prompt": "要是你回来学校，就给我打电话。",
+          "answer": "要是你回学校来，就给我打电话。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "学校 là nơi chốn, đặt giữa 回 và 来; 来 cho thấy người nói ở/trông về phía trường.",
+          "correct_sentence": "要是你回学校来，就给我打电话。"
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "order": 5,
+          "prompt": "他进去展览馆了。",
+          "answer": "他进展览馆去了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "展览馆 là nơi chốn, đặt giữa 进 và 去.",
+          "correct_sentence": "他进展览馆去了。"
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "order": 6,
+          "prompt": "他喜欢进来我的房间跟我聊天儿。",
+          "answer": "他喜欢进我的房间来跟我聊天儿。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "我的房间 là nơi chốn, đặt giữa 进 và 来.",
+          "correct_sentence": "他喜欢进我的房间来跟我聊天儿。"
+        }
+      ]
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "fill_blank",
+      "variant": "free_fill_blank",
+      "order": 7,
+      "title": "七、用“动词 + 来 / 去”填空",
+      "title_vi": "Điền động từ + 来/去",
+      "instruction": {
+        "zh": "",
+        "vi": "Điền cụm động từ + 来/去 thích hợp."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "order": 1,
+          "prompt": "我正在屋里看书的时候，小林______了一个电话。她说她刚开完教学研讨会，从台湾______了。经过香港的时候，她到小赵家去了。小赵让她问我好，还让她给我______一些东西。小林说：“我给您______。”我说：“我______取吧。”她说：“我正好要______楼______办点儿事儿，顺便就给您______了。”\n\n一会儿，小林从楼下______了。她给我______了小赵的东西。我说：“麻烦你跑来一趟，快______屋______坐一会儿吧。”小林说：“不了，不______了，我爱人还在楼下等我呢，我们要出去办点儿事儿。”说完，她就______楼______了。",
+          "answer": [
+            "打来",
+            "回来",
+            "捎来",
+            "送去",
+            "过去",
+            "下",
+            "去",
+            "带去",
+            "上来",
+            "带来",
+            "进",
+            "来",
+            "进去",
+            "下",
+            "去"
+          ],
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "Theo bài khóa: 打来电话、从台湾回来、捎来东西、送去、过去取、下楼去、带去、从楼下上来、带来东西、进屋来、不进去、下楼去了。"
+        }
+      ]
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "",
+        "vi": "Luyện hội thoại giao tiếp."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "dialogues": [
+        {
+          "id": "9d10590c-3dd7-4287-b930-4f4dbe1e9afb",
+          "title": "看望",
+          "lines": [
+            {
+              "speaker": "A",
+              "zh": "下午我们到医院看看小马吧。",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "B",
+              "zh": "好啊。",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "A",
+              "zh": "给她带点儿什么东西呢？",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "B",
+              "zh": "带点儿水果去吧。",
+              "vi": "",
+              "pinyin": ""
+            }
+          ]
+        },
+        {
+          "id": "57e12e55-5de1-4145-b9ff-e71fe2cc59e2",
+          "title": "提供帮助",
+          "lines": [
+            {
+              "speaker": "山本",
+              "zh": "外边下雨了，你带伞了吗？",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "罗兰",
+              "zh": "没有。",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "山本",
+              "zh": "这把雨伞给你用吧。",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "罗兰",
+              "zh": "那你呢？",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "山本",
+              "zh": "我还有一把。",
+              "vi": "",
+              "pinyin": ""
+            },
+            {
+              "speaker": "罗兰",
+              "zh": "谢谢！",
+              "vi": "",
+              "pinyin": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_comprehension",
+      "variant": "retell_text",
+      "order": 9,
+      "title": "九、读后说",
+      "title_vi": "Đọc xong kể lại",
+      "instruction": {
+        "zh": "",
+        "vi": "Đọc đoạn văn rồi kể lại."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "09774607-50d1-46ab-a769-9d723c536d13",
+          "order": 1,
+          "zh": "今天我带同学们去参观展览。快到出发的时间了，就叫同学们快上车。我们坐的是三号车，麦克不想坐这辆车，他朋友在五号车上，他想到五号车去，问我行不行，我说：“行，你过去吧。”",
+          "vi": "Hôm nay tôi dẫn các bạn học đi tham quan triển lãm. Sắp đến giờ xuất phát, tôi liền gọi các bạn mau lên xe. Chúng tôi ngồi xe số 3; Mike không muốn ngồi chiếc xe này, bạn cậu ấy ở xe số 5, cậu ấy muốn sang xe số 5 nên hỏi tôi có được không, tôi nói: “Được, em qua đó đi.”",
+          "pinyin": "Jīntiān wǒ dài tóngxuémen qù cānguān zhǎnlǎn. Kuài dào chūfā de shíjiān le, jiù jiào tóngxuémen kuài shàng chē. Wǒmen zuò de shì sān hào chē, Màikè bù xiǎng zuò zhè liàng chē, tā péngyou zài wǔ hào chē shang, tā xiǎng dào wǔ hào chē qù, wèn wǒ xíng bù xíng, wǒ shuō: “Xíng, nǐ guòqù ba.”",
+          "check_needed": false
+        },
+        {
+          "id": "79df4efa-6d58-462c-b963-4f377e7c72df",
+          "order": 2,
+          "zh": "就要开车了，玛丽还没来。我问玛丽怎么没来，山本说：“她忘带照相机了，又回宿舍去拿了，马上就回来。”过了一会儿，玛丽跑来了。",
+          "vi": "Xe sắp chạy rồi mà Mary vẫn chưa đến. Tôi hỏi sao Mary chưa đến, Yamamoto nói: “Bạn ấy quên mang máy ảnh, lại quay về ký túc xá lấy, sắp quay lại ngay.” Một lát sau, Mary chạy đến.",
+          "pinyin": "Jiù yào kāi chē le, Mǎlì hái méi lái. Wǒ wèn Mǎlì zěnme méi lái, Shānběn shuō: “Tā wàng dài zhàoxiàngjī le, yòu huí sùshè qù ná le, mǎshàng jiù huílai.” Guò le yíhuìr, Mǎlì pǎolai le.",
+          "check_needed": false
+        },
+        {
+          "id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+          "order": 3,
+          "zh": "我看同学们都上来了，就对大家说：“这个展览大约要参观两个半小时。参观完以后，四点钟准时坐车回学校。大家要记住开车的时间。不回来的同学要跟老师说一声。”",
+          "vi": "Tôi thấy các bạn đều đã lên xe, liền nói với mọi người: “Triển lãm này khoảng phải tham quan hai tiếng rưỡi. Sau khi tham quan xong, đúng bốn giờ ngồi xe về trường. Mọi người phải nhớ giờ xe chạy. Bạn nào không quay về thì phải báo với thầy/cô một tiếng.”",
+          "pinyin": "Wǒ kàn tóngxuémen dōu shànglai le, jiù duì dàjiā shuō: “Zhège zhǎnlǎn dàyuē yào cānguān liǎng ge bàn xiǎoshí. Cānguān wán yǐhòu, sì diǎn zhōng zhǔnshí zuò chē huí xuéxiào. Dàjiā yào jìzhù kāi chē de shíjiān. Bù huílai de tóngxué yào gēn lǎoshī shuō yì shēng.”",
+          "check_needed": false
+        },
+        {
+          "id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+          "order": 4,
+          "zh": "说完，我们就出发了。到了展览馆，玛丽对我说，她看完展览以后，要到大使馆去看一个朋友，不跟我们一起回学校去了。",
+          "vi": "Nói xong, chúng tôi xuất phát. Đến phòng triển lãm, Mary nói với tôi rằng sau khi xem xong triển lãm, bạn ấy muốn đến đại sứ quán thăm một người bạn, không về trường cùng chúng tôi nữa.",
+          "pinyin": "Shuō wán, wǒmen jiù chūfā le. Dào le zhǎnlǎnguǎn, Mǎlì duì wǒ shuō, tā kàn wán zhǎnlǎn yǐhòu, yào dào dàshǐguǎn qù kàn yí ge péngyou, bù gēn wǒmen yìqǐ huí xuéxiào qù le.",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
+          "order": 1,
+          "question": "今天老师带同学们去哪儿？",
+          "answer": "今天老师带同学们去参观展览。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
+          "order": 2,
+          "question": "他们坐的是几号车？",
+          "answer": "他们坐的是三号车。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
+          "order": 3,
+          "question": "麦克为什么想到五号车去？",
+          "answer": "因为麦克的朋友在五号车上，所以他想到五号车去。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
+          "order": 4,
+          "question": "玛丽为什么还没来？",
+          "answer": "因为玛丽忘带照相机了，又回宿舍去拿了。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "5e69569d-fb68-4a4b-943a-6680d390f578",
+          "order": 5,
+          "question": "这个展览大约要参观多长时间？",
+          "answer": "这个展览大约要参观两个半小时。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "4d8667e1-afa3-4893-809b-1dd743530070",
+          "order": 6,
+          "question": "参观完以后，大家几点坐车回学校？",
+          "answer": "参观完以后，大家四点钟准时坐车回学校。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "c2e8bbec-969a-4f76-b243-0a3db97223ca",
+          "order": 7,
+          "question": "不回来的同学要做什么？",
+          "answer": "不回来的同学要跟老师说一声。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        },
+        {
+          "id": "90eb5c02-7da8-4592-833f-c358ad5b748e",
+          "order": 8,
+          "question": "到了展览馆以后，玛丽想去哪儿？",
+          "answer": "到了展览馆以后，玛丽想去大使馆看一个朋友。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "Đáp án lấy trực tiếp từ bài đọc trong mục 九、读后说."
+        }
+      ]
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "character_writing",
+      "variant": "character_copying",
+      "order": 10,
+      "title": "十、写汉字",
+      "title_vi": "Viết chữ Hán",
+      "instruction": {
+        "zh": "",
+        "vi": "Luyện viết chữ Hán."
+      },
+      "difficulty": "normal",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "characters": [
+        {
+          "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+          "order": 1,
+          "hanzi": "辛",
+          "pinyin": "xīn",
+          "meaning_vi": "vất vả; cay"
+        },
+        {
+          "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
+          "order": 2,
+          "hanzi": "苦",
+          "pinyin": "kǔ",
+          "meaning_vi": "khổ; đắng"
+        },
+        {
+          "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
+          "order": 3,
+          "hanzi": "麻",
+          "pinyin": "má",
+          "meaning_vi": "gai; tê; rắc rối"
+        },
+        {
+          "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
+          "order": 4,
+          "hanzi": "烦",
+          "pinyin": "fán",
+          "meaning_vi": "phiền; bực"
+        },
+        {
+          "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
+          "order": 5,
+          "hanzi": "送",
+          "pinyin": "sòng",
+          "meaning_vi": "đưa; tiễn; tặng"
+        },
+        {
+          "id": "f6fff594-0a78-4b14-b5bd-e7f236cab9d7",
+          "order": 6,
+          "hanzi": "展",
+          "pinyin": "zhǎn",
+          "meaning_vi": "mở ra; triển khai"
+        },
+        {
+          "id": "8f711ecc-e82a-40ee-8e42-409a742ccf2f",
+          "order": 7,
+          "hanzi": "览",
+          "pinyin": "lǎn",
+          "meaning_vi": "xem; đọc lướt"
+        },
+        {
+          "id": "a45cff42-2888-4327-885f-db58f61ba547",
+          "order": 8,
+          "hanzi": "向",
+          "pinyin": "xiàng",
+          "meaning_vi": "hướng về; về phía"
+        },
+        {
+          "id": "9d5b2511-534c-4f43-a8b2-b80a2deb7a8e",
+          "order": 9,
+          "hanzi": "座",
+          "pinyin": "zuò",
+          "meaning_vi": "chỗ ngồi; tòa"
+        },
+        {
+          "id": "e7261155-052b-4251-b30a-9334f98de4d5",
+          "order": 10,
+          "hanzi": "注",
+          "pinyin": "zhù",
+          "meaning_vi": "chú ý; ghi chú"
+        },
+        {
+          "id": "082014f2-68b8-463f-84f2-4e1348b09a8d",
+          "order": 11,
+          "hanzi": "约",
+          "pinyin": "yuē",
+          "meaning_vi": "khoảng; hẹn"
+        },
+        {
+          "id": "db44b358-2100-40d8-b4c0-4b02f320740b",
+          "order": 12,
+          "hanzi": "求",
+          "pinyin": "qiú",
+          "meaning_vi": "yêu cầu; tìm kiếm"
+        },
+        {
+          "id": "342759c8-1e30-46f6-a3e8-d5fa745c59bf",
+          "order": 13,
+          "hanzi": "清",
+          "pinyin": "qīng",
+          "meaning_vi": "trong; rõ; sạch"
+        },
+        {
+          "id": "a7e98744-4e5d-4dd7-80fc-17a503714d70",
+          "order": 14,
+          "hanzi": "楚",
+          "pinyin": "chǔ",
+          "meaning_vi": "rõ ràng"
+        },
+        {
+          "id": "5aba6740-83ed-4a46-8230-b5d3f011442a",
+          "order": 15,
+          "hanzi": "声",
+          "pinyin": "shēng",
+          "meaning_vi": "tiếng; âm thanh"
+        },
+        {
+          "id": "517282a7-bdfc-4a69-bf6a-2f8bcf6bd2b3",
+          "order": 16,
+          "hanzi": "使",
+          "pinyin": "shǐ",
+          "meaning_vi": "sai khiến; khiến cho"
+        }
+      ]
+    }
+  ]
+}

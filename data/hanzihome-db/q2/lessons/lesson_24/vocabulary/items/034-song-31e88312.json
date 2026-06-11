@@ -1,0 +1,193 @@
+{
+  "id": "9281e000-0755-4fc8-8367-a32a302a2354",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "松",
+  "pinyin": "sōng",
+  "pos": {
+    "raw_vi": "noun/adjective/verb",
+    "raw_cn": "",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tùng",
+    "meaning_vi": "cây tùng/thông; lỏng; thả lỏng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cây tùng/thông",
+      "lỏng",
+      "thả lỏng"
+    ],
+    "short_definition_vi": "cây tùng/thông; lỏng; thả lỏng",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "松",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây; gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây; gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây; gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "公",
+            "hanviet": "công",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tùng/thông; lỏng",
+        "modern_logic_vi": "Có 木 nên nghĩa cây; nghĩa lỏng học theo từ vựng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "松 = cây tùng/thông; lỏng; thả lỏng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Đừng thấy 松 là luôn dịch cây tùng; 鞋带松了 = dây giày lỏng rồi.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "06d24545-a2be-4a65-9a2b-021ec9af03be",
+      "order": 1,
+      "zh": "松",
+      "pinyin": "",
+      "vi": "cây tùng/thông; lỏng; thả lỏng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b4ba2a32-7953-43fc-9dd2-b4fd44da2758",
+      "order": 1,
+      "zh": "这幅画上有松、竹、梅。",
+      "pinyin": "Zhè fú huà shang yǒu sōng, zhú, méi.",
+      "vi": "Trên bức tranh này có tùng, trúc, mai.",
+      "analysis_vi": "Đừng thấy 松 là luôn dịch cây tùng; 鞋带松了 = dây giày lỏng rồi.",
+      "level": "basic",
+      "highlight": [
+        "松"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9281e000-0755-4fc8-8367-a32a302a2354"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7255b02c-bb65-4e6c-b440-3775867a974c",
+      "kind": "usage",
+      "text_vi": "Đừng thấy 松 là luôn dịch cây tùng; 鞋带松了 = dây giày lỏng rồi.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "松",
+    "back": "cây tùng/thông; lỏng; thả lỏng",
+    "hint": "sōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9281e000-0755-4fc8-8367-a32a302a2354",
+    "source_lesson_vocab_id": null
+  }
+}

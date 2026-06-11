@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_6405501a5d1e4352",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "饭馆儿",
+  "pinyin": "fànguǎnr",
+  "meaning_vi": "quán ăn, nhà hàng nhỏ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+    "type": "vocabulary_item",
+    "order": 35,
+    "hanzi": "饭馆儿",
+    "pinyin": "fànguǎnr",
+    "meaning_vi": "quán ăn, nhà hàng nhỏ",
+    "meaning_en": "restaurant",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "饭馆儿",
+      "back": "fànguǎnr — quán ăn, nhà hàng nhỏ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

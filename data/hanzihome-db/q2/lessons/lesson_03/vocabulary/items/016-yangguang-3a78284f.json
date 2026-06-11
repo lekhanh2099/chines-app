@@ -1,0 +1,446 @@
+{
+  "id": "3a17542d-27da-444e-b1a5-b0ee9eb01ee6",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "阳光",
+  "pinyin": "yángguāng",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ sắc thái hiện đại",
+    "raw_cn": "名词/形容词化用法",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "housing",
+    "environment"
+  ],
+  "meaning": {
+    "hanviet": "Dương quang",
+    "meaning_vi": "ánh nắng, ánh mặt trời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ánh nắng",
+      "ánh mặt trời"
+    ],
+    "short_definition_vi": "ánh nắng, ánh mặt trời",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "housing, environment",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "阳",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "phụ trái; vị trí/địa hình trong nhiều chữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp dạng đứng",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "gò đất/vùng đất; địa danh, vị trí",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời; ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dương, mặt trời, phía có nắng, tích cực",
+        "modern_logic_vi": "阳 liên quan mặt trời/dương.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp dạng đứng",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "gò đất/vùng đất; địa danh, vị trí",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "光",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "⺌",
+            "hanviet": "",
+            "meaning_vi": "phần trên nhìn thấy",
+            "position_vi": "phần trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "儿",
+            "hanviet": "nhi",
+            "meaning_vi": "phần dưới nhìn thấy",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ánh sáng, sáng, hết sạch tùy cụm",
+        "modern_logic_vi": "光 là ánh sáng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "阳 liên quan mặt trời/dương; 光 là ánh sáng; 阳光 là ánh sáng mặt trời.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "太阳",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Mặt trời.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "光线",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ánh sáng/tia sáng, trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "灯光",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ánh đèn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Sáng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "阴暗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tối, âm u.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "阴暗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tối, âm u.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "阳光",
+        "right": "阳关",
+        "meaning_vi": "阳光 là ánh nắng; 阳关 là địa danh/cửa ải cổ, không hợp ngữ cảnh nhà cửa.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ed756eb3-557a-4cc0-a02b-f26ab09bcb39",
+      "order": 1,
+      "zh": "阳光很好",
+      "pinyin": "",
+      "vi": "ánh nắng rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5fb9274-ed40-4924-883b-fbe15787905b",
+      "order": 2,
+      "zh": "阳光充足",
+      "pinyin": "",
+      "vi": "ánh nắng đầy đủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80be04ee-ba18-47ca-b083-765144180f89",
+      "order": 3,
+      "zh": "阳光明媚",
+      "pinyin": "",
+      "vi": "nắng đẹp, ánh nắng rực rỡ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d6860e7-1e26-4de5-89e5-3143e8a14138",
+      "order": 4,
+      "zh": "阳光照进来",
+      "pinyin": "",
+      "vi": "ánh nắng chiếu vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e3a284a-a8e2-479c-8a5d-56e169f4f1e6",
+      "order": 5,
+      "zh": "客厅阳光很好",
+      "pinyin": "",
+      "vi": "phòng khách có ánh nắng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2e1ca4f-8285-4c7f-8633-48aec6a630bf",
+      "order": 6,
+      "zh": "卧室阳光不错",
+      "pinyin": "",
+      "vi": "phòng ngủ có ánh nắng khá ổn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "839f8852-e969-4753-9894-11b5837d6339",
+      "order": 7,
+      "zh": "没有阳光",
+      "pinyin": "",
+      "vi": "không có ánh nắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa01938c-c3d6-461c-a6c1-dcd08d731f03",
+      "order": 8,
+      "zh": "阳光太强",
+      "pinyin": "",
+      "vi": "nắng quá gắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d9ddf2e5-468d-4d24-aac6-1d5f986d2cc5",
+      "order": 1,
+      "zh": "今天阳光很好。",
+      "pinyin": "Jīntiān yángguāng hěn hǎo.",
+      "vi": "Hôm nay nắng rất đẹp.",
+      "analysis_vi": "阳光很好 là cách nói tự nhiên, không cần dịch cứng 'ánh nắng rất tốt'.",
+      "highlight": [
+        "阳光"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3a17542d-27da-444e-b1a5-b0ee9eb01ee6"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2d72561e-dcfe-423b-9daf-4df445f9d28d",
+      "order": 2,
+      "zh": "这套房子虽然在六楼，但是阳光很好。",
+      "pinyin": "Zhè tào fángzi suīrán zài liù lóu, dànshì yángguāng hěn hǎo.",
+      "vi": "Căn nhà này tuy ở tầng sáu, nhưng ánh nắng rất tốt.",
+      "analysis_vi": "虽然……但是……; vế sau đưa ưu điểm bù cho nhược điểm tầng cao.",
+      "highlight": [
+        "阳光"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3a17542d-27da-444e-b1a5-b0ee9eb01ee6"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "df94c135-c79d-4459-8bc4-911ae3ee12e3",
+      "order": 3,
+      "zh": "我们上去看了以后，才发现客厅的阳光比照片上看起来还好。",
+      "pinyin": "Wǒmen shàngqù kàn le yǐhòu, cái fāxiàn kètīng de yángguāng bǐ zhàopiàn shang kàn qǐlai hái hǎo.",
+      "vi": "Sau khi chúng tôi lên xem rồi mới phát hiện ánh nắng trong phòng khách còn tốt hơn nhìn trên ảnh.",
+      "analysis_vi": "才发现 nhấn phát hiện sau khi xem thật; 比……还好 = còn tốt hơn so với.",
+      "highlight": [
+        "阳光"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3a17542d-27da-444e-b1a5-b0ee9eb01ee6"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "采光 là từ rất hay gặp trong bất động sản, nghĩa là khả năng lấy sáng tự nhiên. 阳光很好 là cách nói đời sống; 采光好 là cách nói quảng cáo nhà ở.",
+    "tags": [
+      "housing",
+      "environment"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "04c0d3b7-750f-492b-8295-d7858acfcb37",
+      "order": 1,
+      "rule_vi": "Nguồn danh sách cũ ghi 阳关, nhưng ngữ cảnh nhà cửa cần 阳光.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这套房子阳关很好。",
+          "pinyin": "",
+          "vi": "Căn này Dương Quan rất tốt.",
+          "note_vi": "Sai ngữ cảnh nhà cửa nếu muốn nói ánh nắng.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这套房子阳光很好。",
+          "pinyin": "Zhè tào fángzi yángguāng hěn hǎo.",
+          "vi": "Căn này có ánh nắng rất tốt.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "阳光 là ánh nắng; 阳关 là địa danh/cửa ải cổ, không dùng để nói ánh nắng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "阳光",
+    "back": "ánh nắng, ánh mặt trời",
+    "hint": "yángguāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "housing",
+      "environment"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3a17542d-27da-444e-b1a5-b0ee9eb01ee6",
+    "source_lesson_vocab_id": null
+  }
+}

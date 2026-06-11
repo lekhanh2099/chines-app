@@ -1,0 +1,585 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法",
+  "title_vi": "Cách dùng từ / ngữ pháp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "从……来看",
+      "title_vi": "从……来看",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Xét từ góc độ/căn cứ nào đó rồi đưa ra nhận xét hoặc kết luận.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "从 + góc độ / phương diện / tình huống + 来看，……",
+          "meaning_vi": "Xét từ..., nhìn từ..., căn cứ vào...",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "从 + góc độ / phương diện / tình huống + 来看，……"
+            }
+          ],
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "从我接触到的人来看，他们大都心地善良，待人热情，也乐于助人。",
+              "pinyin": "Cóng wǒ jiēchù dào de rén lái kàn, tāmen dàdōu xīndì shànliáng, dàirén rèqíng, yě lèyú zhùrén.",
+              "vi": "Xét từ những người tôi từng tiếp xúc, phần lớn họ đều lương thiện, nhiệt tình và sẵn lòng giúp đỡ người khác.",
+              "en": "",
+              "highlight": [
+                "从……来看"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
+              "zh": "从这次的考试成绩来看，同学们学习都很努力。",
+              "pinyin": "Cóng zhè cì de kǎoshì chéngjì lái kàn, tóngxuémen xuéxí dōu hěn nǔlì.",
+              "vi": "Xét từ kết quả kỳ thi lần này, các bạn học đều rất cố gắng.",
+              "en": "",
+              "highlight": [
+                "从……来看"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "当然",
+      "title_vi": "当然",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Có thể làm phó từ hoặc thành phần xen vào để bổ sung/nhấn mạnh điều hiển nhiên.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "当然 + 动词 / 应该 / 会 / 能；……是当然的",
+          "meaning_vi": "Đương nhiên; tất nhiên; là điều hợp lẽ.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "当然 + 动词 / 应该 / 会 / 能；……是当然的"
+            }
+          ],
+          "examples": [
+            {
+              "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+              "zh": "你昨天没来上课，当然不知道。",
+              "pinyin": "Nǐ zuótiān méi lái shàngkè, dāngrán bù zhīdào.",
+              "vi": "Hôm qua bạn không đi học, tất nhiên là không biết.",
+              "en": "",
+              "highlight": [
+                "当然"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
+              "zh": "他爷爷去世了，心情不好是当然的。",
+              "pinyin": "Tā yéye qùshì le, xīnqíng bù hǎo shì dāngrán de.",
+              "vi": "Ông anh ấy mất rồi, tâm trạng không tốt là điều đương nhiên.",
+              "en": "",
+              "highlight": [
+                "当然"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "向来",
+      "title_vi": "向来",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Diễn tả thói quen hoặc trạng thái từ trước đến nay vẫn như vậy.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "主语 + 向来 + 动词 / 形容词",
+          "meaning_vi": "Từ trước đến nay; vốn dĩ; xưa nay.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "主语 + 向来 + 动词 / 形容词"
+            }
+          ],
+          "examples": [
+            {
+              "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
+              "zh": "我这个人向来不爱运动。",
+              "pinyin": "Wǒ zhège rén xiànglái bù ài yùndòng.",
+              "vi": "Tôi vốn dĩ từ trước đến nay không thích vận động.",
+              "en": "",
+              "highlight": [
+                "向来"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
+              "zh": "她向来做事认真，从不马虎。",
+              "pinyin": "Tā xiànglái zuò shì rènzhēn, cóng bù mǎhu.",
+              "vi": "Cô ấy xưa nay làm việc nghiêm túc, chưa bao giờ qua loa.",
+              "en": "",
+              "highlight": [
+                "向来"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "不时",
+      "title_vi": "不时",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Chỉ một hành động hoặc tình huống lặp lại nhiều lần trong một quá trình.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "主语 + 不时地 + 动词",
+          "meaning_vi": "Thỉnh thoảng; từng lúc; chốc chốc lại.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "主语 + 不时地 + 动词"
+            }
+          ],
+          "examples": [
+            {
+              "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
+              "zh": "司机一路上不时地回头看看我们。",
+              "pinyin": "Sījī yí lù shang bùshí de huítóu kànkan wǒmen.",
+              "vi": "Tài xế trên đường thỉnh thoảng quay đầu nhìn chúng tôi.",
+              "en": "",
+              "highlight": [
+                "不时"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "6829a99e-8c28-481f-a33f-c15c2f232489",
+              "zh": "他做着练习，不时地查查词典。",
+              "pinyin": "Tā zuòzhe liànxí, bùshí de cháchá cídiǎn.",
+              "vi": "Anh ấy làm bài tập, thỉnh thoảng lại tra từ điển.",
+              "en": "",
+              "highlight": [
+                "不时"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "非……不可",
+      "title_vi": "非……不可",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Cấu trúc nhấn mạnh ý “nhất định phải...”, hoặc quyết tâm mạnh.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "非 + 动词 / cụm động từ + 不可",
+          "meaning_vi": "Nhất định phải; không làm không được.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "非 + 动词 / cụm động từ + 不可"
+            }
+          ],
+          "examples": [
+            {
+              "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
+              "zh": "林老师见我躺在床上不能动，就非要我住到她家去不可。",
+              "pinyin": "Lín lǎoshī jiàn wǒ tǎng zài chuáng shang bù néng dòng, jiù fēi yào wǒ zhù dào tā jiā qù bùkě.",
+              "vi": "Cô Lâm thấy tôi nằm trên giường không thể cử động, liền nhất định bắt tôi đến ở nhà cô ấy.",
+              "en": "",
+              "highlight": [
+                "非……不可"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "f9e042a0-fdff-4bbd-ae63-c89fd60a5d8e",
+              "zh": "这次球赛我们非赢他们不可。",
+              "pinyin": "Zhè cì qiúsài wǒmen fēi yíng tāmen bùkě.",
+              "vi": "Trận bóng lần này chúng tôi nhất định phải thắng họ.",
+              "en": "",
+              "highlight": [
+                "非……不可"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "千万",
+      "title_vi": "千万",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nhấn mạnh lời dặn dò, khuyên nhủ hoặc nhắc nhở.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "36af8925-9df2-4371-9cce-405d3672953f",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "千万 + 要 / 别 / 不要 + 动词",
+          "meaning_vi": "Nhất định phải; tuyệt đối đừng.",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "千万 + 要 / 别 / 不要 + 动词"
+            }
+          ],
+          "examples": [
+            {
+              "id": "dac06a15-2133-4363-b088-fba19458cb07",
+              "zh": "千万别客气，你就把老师家当作自己的家吧。",
+              "pinyin": "Qiānwàn bié kèqi, nǐ jiù bǎ lǎoshī jiā dàngzuò zìjǐ de jiā ba.",
+              "vi": "Nhất định đừng khách sáo, em cứ xem nhà cô như nhà mình nhé.",
+              "en": "",
+              "highlight": [
+                "千万"
+              ],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "787830ab-30e2-4c8f-aeed-8007cc3a0cb6",
+              "zh": "你千万别走，等我回来。",
+              "pinyin": "Nǐ qiānwàn bié zǒu, děng wǒ huílái.",
+              "vi": "Bạn nhất định đừng đi, đợi tôi quay lại.",
+              "en": "",
+              "highlight": [
+                "千万"
+              ],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "type": "grammar_point",
+      "order": 7,
+      "title": "每当……，都……",
+      "title_vi": "每当……，都……",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "aa4bd385-d335-46aa-b357-a29252478df1",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nói mỗi khi A xảy ra thì B đều xảy ra; nhấn mạnh quan hệ lặp lại.",
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "bd6bb145-4592-4726-b2d2-6c72d9ac0a68",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "每当 + sự việc / thời điểm，主语 + 都 + kết quả / phản ứng",
+          "meaning_vi": "Mỗi khi..., đều...",
+          "formulas": [
+            {
+              "label": "Cấu trúc",
+              "pattern": "每当 + sự việc / thời điểm，主语 + 都 + kết quả / phản ứng"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2f2e651f-ea3f-4597-a43a-76e867638000",
+              "zh": "每当回忆起这段往事，我都由衷地感谢老师。",
+              "pinyin": "Měi dāng huíyì qǐ zhè duàn wǎngshì, wǒ dōu yóuzhōng de gǎnxiè lǎoshī.",
+              "vi": "Mỗi khi nhớ lại chuyện cũ này, tôi đều thật lòng cảm ơn cô giáo.",
+              "en": "",
+              "highlight": [
+                "每当……，都……"
+              ],
+              "grammar_refs": [
+                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "610f3b70-9977-49e3-a33d-72a1f7f03c9c",
+              "zh": "每当我感到孤独和无助时，同学们都会关心帮助我。",
+              "pinyin": "Měi dāng wǒ gǎndào gūdú hé wúzhù shí, tóngxuémen dōu huì guānxīn bāngzhù wǒ.",
+              "vi": "Mỗi khi tôi cảm thấy cô đơn và bất lực, các bạn học đều quan tâm giúp đỡ tôi.",
+              "en": "",
+              "highlight": [
+                "每当……，都……"
+              ],
+              "grammar_refs": [
+                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

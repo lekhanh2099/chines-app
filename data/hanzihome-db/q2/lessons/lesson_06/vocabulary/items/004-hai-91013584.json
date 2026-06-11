@@ -1,0 +1,326 @@
+{
+  "id": "fb4a9b42-edf1-4c93-887a-4a9ee95d05df",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "还",
+  "pinyin": "hái",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "comparison_degree"
+  ],
+  "meaning": {
+    "hanviet": "Hoàn",
+    "meaning_vi": "vẫn, còn; còn... hơn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vẫn",
+      "còn",
+      "còn... hơn"
+    ],
+    "short_definition_vi": "vẫn, còn; còn... hơn",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "comparison degree",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "还",
+        "lishu_vi": "",
+        "structure_note_vi": "辶 liên quan chuyển động; 不 là thành phần nhìn thấy.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bao ngoài/bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại/chuyển động",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "不",
+            "hanviet": "bất",
+            "meaning_vi": "không",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vẫn, còn; trả lại khi đọc huán",
+        "modern_logic_vi": "辶 liên quan chuyển động; 不 là thành phần nhìn thấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "还 trong bài này đọc hái, chỉ sự tiếp tục hoặc tăng thêm trong so sánh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "也",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cũng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "又",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lại, thường đã xảy ra thêm lần nữa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "更",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hơn nữa/càng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "仍然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vẫn, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f1df474b-1f85-488a-9156-4c6762666be0",
+      "order": 1,
+      "zh": "还没",
+      "pinyin": "",
+      "vi": "vẫn chưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f294ee6-acda-40e1-b67e-d83f061b4a20",
+      "order": 2,
+      "zh": "还可以",
+      "pinyin": "",
+      "vi": "cũng được/tạm ổn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d895fa6-2a43-426e-a6c0-f95619ce3255",
+      "order": 3,
+      "zh": "还不错",
+      "pinyin": "",
+      "vi": "cũng không tệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fed27f94-e9ba-444e-8a04-64151dc4f546",
+      "order": 4,
+      "zh": "比……还……",
+      "pinyin": "",
+      "vi": "còn... hơn...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33e7c88b-4d29-482a-b45f-78ff01f8d368",
+      "order": 5,
+      "zh": "还有",
+      "pinyin": "",
+      "vi": "còn có",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "af23db90-dde4-4c7a-8f07-c59e99b7ef38",
+      "order": 1,
+      "zh": "现在还早，我们再等一会儿吧。",
+      "pinyin": "Xiànzài hái zǎo, wǒmen zài děng yíhuìr ba.",
+      "vi": "Bây giờ vẫn còn sớm, chúng ta đợi thêm một lát đi.",
+      "analysis_vi": "还早 là vẫn còn sớm.",
+      "highlight": [
+        "还"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fb4a9b42-edf1-4c93-887a-4a9ee95d05df"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0768182f-e9f0-412f-a641-511ab7733f04",
+      "order": 2,
+      "zh": "这首歌比那首歌还好听。",
+      "pinyin": "Zhè shǒu gē bǐ nà shǒu gē hái hǎotīng.",
+      "vi": "Bài hát này còn hay hơn bài kia.",
+      "analysis_vi": "比……还…… nhấn vượt hơn kỳ vọng.",
+      "highlight": [
+        "还"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fb4a9b42-edf1-4c93-887a-4a9ee95d05df"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f508cdef-81be-4a13-a102-e12f42f8f12b",
+      "order": 1,
+      "rule_vi": "Phân biệt 还 hái = vẫn/còn và 还 huán = trả lại.",
+      "natural_examples": [
+        {
+          "zh": "我还没吃饭。",
+          "pinyin": "Wǒ hái méi chī fàn.",
+          "vi": "Tôi vẫn chưa ăn cơm.",
+          "note_vi": "还 đọc hái.",
+          "notes": []
+        },
+        {
+          "zh": "我还书了。",
+          "pinyin": "Wǒ huán shū le.",
+          "vi": "Tôi trả sách rồi.",
+          "note_vi": "还 đọc huán.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我还没吃饭。",
+          "pinyin": "Wǒ hái méi chī fàn.",
+          "vi": "Tôi vẫn chưa ăn cơm.",
+          "note_vi": "还 đọc hái.",
+          "notes": []
+        },
+        {
+          "zh": "我还书了。",
+          "pinyin": "Wǒ huán shū le.",
+          "vi": "Tôi trả sách rồi.",
+          "note_vi": "还 đọc huán.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "还",
+    "back": "vẫn, còn; còn... hơn",
+    "hint": "hái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "comparison_degree"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fb4a9b42-edf1-4c93-887a-4a9ee95d05df",
+    "source_lesson_vocab_id": null
+  }
+}

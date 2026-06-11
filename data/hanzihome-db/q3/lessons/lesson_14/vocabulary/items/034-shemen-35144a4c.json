@@ -1,0 +1,309 @@
+{
+  "id": "bbf433a4-d639-4021-8987-3e55b7ed2c12",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "射门",
+  "pinyin": "shèmén",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "xạ môn",
+    "meaning_vi": "sút/đưa bóng về phía khung thành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sút/đưa bóng về phía khung thành"
+    ],
+    "short_definition_vi": "sút/đưa bóng về phía khung thành",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: thể thao.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thể thao",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "射",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "身",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thân",
+          "radical_name_zh": "",
+          "hanviet": "thân",
+          "meaning_vi": "thân thể",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "身 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "身",
+            "hanviet": "thân",
+            "meaning_vi": "thân thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "身",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thân",
+              "radical_name_zh": "",
+              "hanviet": "thân",
+              "meaning_vi": "thân thể",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "身 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "身 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bắn, phóng, sút",
+        "modern_logic_vi": "Trong từ 射门, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "门",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "門",
+          "radical_variant": "门",
+          "radical_name_vi": "bộ Môn",
+          "radical_name_zh": "",
+          "hanviet": "môn",
+          "meaning_vi": "cửa",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "门 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "门 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "门 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cửa",
+        "modern_logic_vi": "Trong từ 射门, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "射门 nên được học theo nghĩa hiện đại trong cụm/tình huống: sút/đưa bóng về phía khung thành.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 准备射门.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "进球",
+        "pinyin": "jìnqiú",
+        "meaning_vi": "ghi bàn",
+        "difference_vi": "射门 là cú sút; 进球 là kết quả bóng vào lưới.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b146c8da-0bb2-4462-bdf4-943a828e51f6",
+      "order": 1,
+      "zh": "准备射门",
+      "pinyin": "",
+      "vi": "chuẩn bị sút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d77ab5c2-13e9-4876-a8b0-70c6675aacb5",
+      "order": 2,
+      "zh": "一次射门",
+      "pinyin": "",
+      "vi": "một cú sút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e230dab1-4289-465f-ba59-3b0c29367776",
+      "order": 3,
+      "zh": "射门被挡住了",
+      "pinyin": "",
+      "vi": "cú sút bị chặn lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "620fe00a-919a-4140-8fe9-4ef67f176848",
+      "order": 1,
+      "zh": "他准备射门。",
+      "pinyin": "",
+      "vi": "Anh ấy chuẩn bị sút bóng.",
+      "analysis_vi": "射门 là hành động dứt điểm, chưa chắc ghi bàn.",
+      "highlight": [
+        "射门"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbf433a4-d639-4021-8987-3e55b7ed2c12"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 射门 được dùng trong ngữ cảnh thể thao; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "57ab2cf9-baad-4a78-915d-2ceda368b8dd",
+      "order": 1,
+      "rule_vi": "射门 không có nghĩa tự động 进球; sút chưa chắc vào.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "射门 không có nghĩa tự động 进球; sút chưa chắc vào.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "射门",
+    "back": "sút/đưa bóng về phía khung thành",
+    "hint": "shèmén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bbf433a4-d639-4021-8987-3e55b7ed2c12",
+    "source_lesson_vocab_id": null
+  }
+}

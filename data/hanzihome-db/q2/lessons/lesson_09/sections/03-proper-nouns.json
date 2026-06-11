@@ -1,0 +1,41 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "台湾",
+      "pinyin": "Táiwān",
+      "meaning_vi": "Đài Loan",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "香港",
+      "pinyin": "Xiānggǎng",
+      "meaning_vi": "Hồng Kông",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "赵",
+      "pinyin": "Zhào",
+      "meaning_vi": "họ Triệu",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "id": "7340b1e8-6d48-46b8-9605-d680497fe47a",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "翻来覆去",
+  "pinyin": "fān lái fù qù",
+  "pos": {
+    "raw_vi": "Thành ngữ / Cụm động từ",
+    "raw_cn": "成语 / 动词性短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phiên lai phúc khứ",
+    "meaning_vi": "trằn trọc; lặp đi lặp lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trằn trọc",
+      "lặp đi lặp lại"
+    ],
+    "short_definition_vi": "trằn trọc; lặp đi lặp lại",
+    "textbook_focus_vi": "翻来覆去 = lật qua lật lại; mở rộng thành trằn trọc hoặc nghĩ/nói lặp đi lặp lại.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm trạng, lặp lại",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "翻",
+        "lishu_vi": "phiên",
+        "structure_note_vi": "番 + 羽; học theo nghĩa lật/trở.",
+        "main_radical": {
+          "radical": "羽",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "lông chim, cánh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "羽",
+            "hanviet": "vũ",
+            "meaning_vi": "lông chim, cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羽",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "lông chim, cánh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lật, trở",
+        "modern_logic_vi": "Trong từ này, 翻 góp phần tạo nghĩa 'lật, trở'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "Không tách sâu; học theo nghĩa hiện đại trong từ.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "覆",
+        "lishu_vi": "phúc",
+        "structure_note_vi": "Chữ phức; học theo nghĩa trong cụm.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lật úp, che phủ, lặp lại",
+        "modern_logic_vi": "Trong từ này, 覆 góp phần tạo nghĩa 'lật úp, che phủ, lặp lại'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "去",
+        "lishu_vi": "khứ",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi",
+        "modern_logic_vi": "Trong từ này, 去 góp phần tạo nghĩa 'đi'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "翻来覆去 = lật qua lật lại; mở rộng thành trằn trọc hoặc nghĩ/nói lặp đi lặp lại.",
+    "memory_tip_vi": "Nhớ qua cụm: 翻来覆去睡不着 = trằn trọc không ngủ được.",
+    "warning_vi": "Không dùng 翻来覆去 cho đi tới đi lui trong phòng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "反复",
+        "pinyin": "fǎnfù",
+        "meaning_vi": "lặp đi lặp lại",
+        "difference_vi": "Trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "睡不着",
+        "pinyin": "shuì bù zháo",
+        "meaning_vi": "không ngủ được",
+        "difference_vi": "Chỉ kết quả, không có hình ảnh trở mình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 翻来覆去 cho đi tới đi lui trong phòng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aa0beb6c-f437-44ab-8666-edac22abcd7f",
+      "order": 1,
+      "zh": "翻来覆去睡不着",
+      "pinyin": "fān lái fù qù shuì bù zháo",
+      "vi": "trằn trọc không ngủ được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "562983c4-c15f-43d6-b80e-18eb62f1fba6",
+      "order": 2,
+      "zh": "翻来覆去地想",
+      "pinyin": "fān lái fù qù de xiǎng",
+      "vi": "nghĩ đi nghĩ lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c29671d-2942-402e-8bda-6b7667be125c",
+      "order": 3,
+      "zh": "翻来覆去地看",
+      "pinyin": "fān lái fù qù de kàn",
+      "vi": "xem đi xem lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f343747e-cb3b-4867-a62b-ae64cfece079",
+      "order": 1,
+      "zh": "他昨晚在床上翻来覆去，一直睡不着。",
+      "pinyin": "Tā zuówǎn zài chuáng shang fān lái fù qù, yìzhí shuì bù zháo.",
+      "vi": "Tối qua anh ấy trằn trọc trên giường, mãi không ngủ được.",
+      "analysis_vi": "睡不着 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "翻来覆去"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7340b1e8-6d48-46b8-9605-d680497fe47a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Rất hợp văn kể tâm lý, nhất là khi nhân vật bối rối vì tình cảm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ec2ea2a3-9478-4fa0-ab79-f2049bbba947",
+      "order": 1,
+      "rule_vi": "Không dùng 翻来覆去 cho đi tới đi lui trong phòng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他在房间里走来走去。",
+          "pinyin": "Tā zài fángjiān lǐ zǒu lái zǒu qù.",
+          "vi": "Anh ấy đi tới đi lui trong phòng.",
+          "note_vi": "Đi qua đi lại dùng 走来走去.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "翻来覆去",
+    "back": "trằn trọc; lặp đi lặp lại",
+    "hint": "fān lái fù qù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7340b1e8-6d48-46b8-9605-d680497fe47a",
+    "source_lesson_vocab_id": null
+  }
+}

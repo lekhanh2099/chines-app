@@ -1,0 +1,327 @@
+{
+  "id": "370b60b8-9c42-48d8-bc0c-9c04a619ddd1",
+  "type": "deep_vocabulary_item",
+  "order": 67,
+  "hanzi": "等候",
+  "pinyin": "děnghòu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "đẳng hậu",
+    "meaning_vi": "chờ đợi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chờ đợi"
+    ],
+    "short_definition_vi": "chờ đợi",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: chờ đợi.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "等",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 等.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "候",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 候.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "等候 trong bài được hiểu theo nghĩa: chờ đợi. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 等候.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "等候 trang trọng/lịch sự hơn 等."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "37eea998-7d6f-4106-8e2d-5bde84dc9403",
+      "order": 1,
+      "zh": "排队等候",
+      "pinyin": "",
+      "vi": "xếp hàng chờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e427b062-77bb-42b1-b995-43cbb856bb3e",
+      "order": 2,
+      "zh": "请等候",
+      "pinyin": "",
+      "vi": "xin chờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5fc8ef3-1931-4dcc-8b81-c87f61d5f272",
+      "order": 3,
+      "zh": "在外面等候",
+      "pinyin": "",
+      "vi": "chờ bên ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb76a8d7-8c09-4834-8cf9-25c7894ddfae",
+      "order": 4,
+      "zh": "等候通知",
+      "pinyin": "",
+      "vi": "chờ thông báo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b96cff9c-ddbb-45c1-aed5-87f4bc6d2a3b",
+      "order": 5,
+      "zh": "正在等候",
+      "pinyin": "",
+      "vi": "đang chờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "43628585-4794-4b62-97aa-355e80c290d5",
+      "order": 1,
+      "zh": "请在门口等候。",
+      "pinyin": "",
+      "vi": "Xin chờ ở cửa.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "等候"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "370b60b8-9c42-48d8-bc0c-9c04a619ddd1"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0da9dabe-a2b5-4a0f-8ba5-3ce74b54ccd6",
+      "order": 2,
+      "zh": "发廊里有好几个人在排队等候。",
+      "pinyin": "",
+      "vi": "Trong salon có mấy người đang xếp hàng chờ.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "等候"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "370b60b8-9c42-48d8-bc0c-9c04a619ddd1"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "等候 trang trọng/lịch sự hơn 等.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5f782fe6-11be-4e18-874f-672d169d4f72",
+      "order": 1,
+      "rule_vi": "等候 trang trọng/lịch sự hơn 等.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "等候我一下。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "等候 trang trọng/lịch sự hơn 等.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "等我一下。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "等候 trang trọng/lịch sự hơn 等.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "等候",
+    "back": "chờ đợi",
+    "hint": "děnghòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "370b60b8-9c42-48d8-bc0c-9c04a619ddd1",
+    "source_lesson_vocab_id": null
+  }
+}

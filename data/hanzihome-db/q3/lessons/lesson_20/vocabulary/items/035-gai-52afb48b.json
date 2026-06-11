@@ -1,0 +1,301 @@
+{
+  "id": "2db075cf-a16d-4869-a682-4add0035fb41",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "改",
+  "pinyin": "gǎi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cải",
+    "meaning_vi": "sửa, thay đổi, đổi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sửa",
+      "thay đổi",
+      "đổi"
+    ],
+    "short_definition_vi": "sửa, thay đổi, đổi",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "改",
+        "lishu_vi": "cải",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "bản thân",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sửa, đổi, thay đổi",
+        "modern_logic_vi": "改 là sửa/đổi cái cũ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "改 được dùng trong Bài 20 với nghĩa: sửa, thay đổi, đổi.",
+    "memory_tip_vi": "Nhớ qua cụm 改错.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "改变",
+        "pinyin": "gǎibiàn",
+        "meaning_vi": "thay đổi",
+        "difference_vi": "Thường cho tình hình/ý kiến/kế hoạch.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "修改",
+        "pinyin": "xiūgǎi",
+        "meaning_vi": "chỉnh sửa",
+        "difference_vi": "Dùng cho văn bản, phương án.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "保持",
+        "pinyin": "bǎochí",
+        "meaning_vi": "giữ nguyên",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fd4d2bc1-071d-4026-9204-c9e034f50dc0",
+      "order": 1,
+      "zh": "改错",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70367f6f-ae58-4784-9245-af3a0454d2fc",
+      "order": 2,
+      "zh": "改答案",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2cc7ca38-9acd-4aa5-a15d-a309a8ddd70c",
+      "order": 3,
+      "zh": "改作业",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "949321a9-0ca8-4595-a226-df88195380e5",
+      "order": 4,
+      "zh": "改观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9eb7b11e-c3ec-41a5-b1bf-eca97536a589",
+      "order": 5,
+      "zh": "改方案",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d589f06f-4052-48e6-a816-d748fec9da86",
+      "order": 6,
+      "zh": "改名字",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57524738-aca2-4a8f-8f49-3a4e4af960a4",
+      "order": 7,
+      "zh": "改时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ffb5a65-4f1c-44cc-bbf2-a2493bc237e9",
+      "order": 1,
+      "zh": "这个字写错了，你改一下。",
+      "pinyin": "Zhège zì xiě cuò le, nǐ gǎi yíxià.",
+      "vi": "Chữ này viết sai rồi, bạn sửa chút đi.",
+      "analysis_vi": "改一下 khẩu ngữ, sửa nhẹ.",
+      "highlight": [
+        "改"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2db075cf-a16d-4869-a682-4add0035fb41"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "76a75af4-950d-4ad1-b21a-391d60db86a0",
+      "order": 2,
+      "zh": "如果事实证明自己错了，她愿意改；可是如果没有证据，她不愿违心地改观点。",
+      "pinyin": "Rúguǒ shìshí zhèngmíng zìjǐ cuò le, tā yuànyì gǎi; kěshì rúguǒ méiyǒu zhèngjù, tā bú yuàn wéixīn de gǎi guāndiǎn.",
+      "vi": "Nếu sự thật chứng minh mình sai, cô ấy sẵn sàng sửa; nếu không có chứng cứ thì không trái lòng đổi quan điểm.",
+      "analysis_vi": "Hai vế 如果 đối lập rõ.",
+      "highlight": [
+        "改"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2db075cf-a16d-4869-a682-4add0035fb41"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "改 rất rộng; văn viết cần chọn 修改/改正/改善/改革 đúng ngữ cảnh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "921fe9f0-96a2-4ecc-ba70-6629df175ed1",
+      "order": 1,
+      "rule_vi": "Không dùng 改 thay cho sửa đồ hỏng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "改车",
+          "pinyin": "gǎi chē",
+          "vi": "độ/cải tạo xe.",
+          "note_vi": "Không phải sửa xe hỏng thông thường.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "修车",
+          "pinyin": "xiū chē",
+          "vi": "sửa xe.",
+          "note_vi": "修 dùng cho sửa đồ hỏng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "改",
+    "back": "sửa, thay đổi, đổi",
+    "hint": "gǎi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2db075cf-a16d-4869-a682-4add0035fb41",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "id": "477fe166-0a68-4fb0-97b1-a875443f89d4",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "恋爱",
+  "pinyin": "liàn’ài",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Luyến ái",
+    "meaning_vi": "tình yêu nam nữ; yêu đương",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình yêu nam nữ",
+      "yêu đương"
+    ],
+    "short_definition_vi": "tình yêu nam nữ; yêu đương",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "恋",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, cảm xúc, suy nghĩ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ Tâm trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lưu luyến, quyến luyến, yêu nhớ.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, cảm xúc, suy nghĩ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ Tâm trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "爱",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yêu.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "恋 = lưu luyến, quyến luyến, yêu nhớ. 爱 = yêu. → 恋爱 = tình yêu đôi lứa / trạng thái yêu đương. Logic hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "恋爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình yêu đôi lứa, yêu đương.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "爱情",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình yêu, khái niệm rộng và văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "yêu, động từ/danh từ rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喜欢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thích.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "谈恋爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hẹn hò/yêu đương, cụm đời thường nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "爱情很复杂。",
+      "Tình yêu rất phức tạp.",
+      "他喜欢她。",
+      "Anh ấy thích cô ấy.",
+      "他们在谈恋爱。",
+      "Họ đang yêu nhau."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e20dd96b-8dfa-4726-8ccb-835f54a7ccfb",
+      "order": 1,
+      "zh": "恋爱经验",
+      "pinyin": "",
+      "vi": "kinh nghiệm yêu đương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "4505497e-9593-4b84-b828-ed3075974b5e",
+      "order": 2,
+      "zh": "恋爱关系",
+      "pinyin": "",
+      "vi": "quan hệ yêu đương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6d1dd456-95a6-4ed8-a1ed-20d2c0beb9e8",
+      "order": 3,
+      "zh": "谈恋爱",
+      "pinyin": "",
+      "vi": "yêu đương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2b3264d3-da53-4c6a-8731-c4dd5284db63",
+      "order": 4,
+      "zh": "第一次恋爱",
+      "pinyin": "",
+      "vi": "mối tình/lần yêu đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2c066aef-a9a9-45dc-ae35-2b7a0e205920",
+      "order": 5,
+      "zh": "自由恋爱",
+      "pinyin": "",
+      "vi": "tự do yêu đương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "426a62f6-308c-4658-a8b4-32b18c836a75",
+      "order": 6,
+      "zh": "恋爱故事",
+      "pinyin": "",
+      "vi": "câu chuyện tình yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fb2c5e88-8033-4d13-a076-0a834b719b82",
+      "order": 1,
+      "zh": "这是一个恋爱故事。",
+      "pinyin": "Zhè shì yí ge liàn’ài gùshi.",
+      "vi": "Đây là một câu chuyện tình yêu.",
+      "analysis_vi": "恋爱 làm định ngữ bổ nghĩa cho 故事.",
+      "highlight": [
+        "恋爱"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "477fe166-0a68-4fb0-97b1-a875443f89d4"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ecabf759-b2a4-4460-87b9-6fa542c3684f",
+      "order": 2,
+      "zh": "他没有恋爱经验，所以第一次约会的时候很紧张。",
+      "pinyin": "Tā méiyǒu liàn’ài jīngyàn, suǒyǐ dì yī cì yuēhuì de shíhou hěn jǐnzhāng.",
+      "vi": "Anh ấy không có kinh nghiệm yêu đương, nên lần đầu hẹn hò rất căng thẳng.",
+      "analysis_vi": "恋爱经验 = kinh nghiệm yêu đương. 第一次 = lần đầu.",
+      "highlight": [
+        "恋爱"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "477fe166-0a68-4fb0-97b1-a875443f89d4"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5af29221-cbf5-4cc1-8e45-4836b1cdc376",
+      "order": 3,
+      "zh": "我以前只听过《梁祝》的故事，后来亲耳听了这首小提琴协奏曲一遍，才觉得这个恋爱故事感人极了。",
+      "pinyin": "Wǒ yǐqián zhǐ tīng guo “Liáng Zhù” de gùshi, hòulái qīněr tīng le zhè shǒu xiǎotíqín xiézòuqǔ yí biàn, cái juéde zhège liàn’ài gùshi gǎnrén jí le.",
+      "vi": "Trước đây tôi chỉ từng nghe câu chuyện “Lương Chúc”, sau đó tận tai nghe bản concerto violin này một lượt, mới thấy câu chuyện tình yêu này cảm động cực kỳ.",
+      "analysis_vi": "听过故事 = từng nghe câu chuyện. 听了一遍 = nghe một lượt từ đầu đến cuối. 感人极了 = cảm động cực kỳ.",
+      "highlight": [
+        "恋爱"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "477fe166-0a68-4fb0-97b1-a875443f89d4"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "906408be-722f-42b6-b403-3377030d8cb1",
+      "order": 1,
+      "rule_vi": "Đời thường nói “đang yêu”:",
+      "natural_examples": [
+        {
+          "zh": "他们在谈恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他们正在恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Đời thường nói “đang yêu”: 他们在谈恋爱。 Tự nhiên hơn. Không nên lạm dụng: 他们正在恋爱。 Hiểu được nhưng hơi sách/văn hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "恋爱",
+    "back": "tình yêu nam nữ; yêu đương",
+    "hint": "liàn’ài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "《梁祝》 thường được hiểu như một câu chuyện tình yêu bi thương nổi tiếng của Trung Quốc, hay được ví với “Romeo và Juliet” trong cách giới thiệu quốc tế. Vì vậy từ 恋爱 / 爱情 đi với tác phẩm này rất tự nhiên.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "477fe166-0a68-4fb0-97b1-a875443f89d4",
+    "source_lesson_vocab_id": null
+  }
+}

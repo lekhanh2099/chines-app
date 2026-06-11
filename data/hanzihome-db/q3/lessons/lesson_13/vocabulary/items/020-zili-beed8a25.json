@@ -1,0 +1,200 @@
+{
+  "id": "fae782e1-02a4-401a-9ff7-d2546bbc31f5",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "自立",
+  "pinyin": "zìlì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "growth"
+  ],
+  "meaning": {
+    "hanviet": "tự lập",
+    "meaning_vi": "tự lập, đứng vững bằng chính mình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự lập",
+      "đứng vững bằng chính mình"
+    ],
+    "short_definition_vi": "tự lập, đứng vững bằng chính mình",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "tự",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình",
+        "modern_logic_vi": "Trong từ/cụm này, 自 góp phần vào nghĩa hiện đại: tự mình.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "立",
+        "lishu_vi": "lập",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng/lập",
+        "modern_logic_vi": "Trong từ/cụm này, 立 góp phần vào nghĩa hiện đại: đứng/lập.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "自立 cần học theo nghĩa hiện đại trong bài: tự lập, đứng vững bằng chính mình.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 学会自立.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e0409e88-24b8-4ee3-a71d-a961fd00ee0a",
+      "order": 1,
+      "zh": "学会自立",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec890257-7c54-463b-878f-d85d9d803126",
+      "order": 2,
+      "zh": "生活自立",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c5f4774-7142-4222-80a5-78adf8dc4d0e",
+      "order": 3,
+      "zh": "经济自立",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "07a3260c-00c1-4ad5-a2fa-02c3977ba456",
+      "order": 1,
+      "zh": "年轻人应该学会自立。",
+      "pinyin": "Niánqīng rén yīnggāi xuéhuì zìlì.",
+      "vi": "Người trẻ nên học cách tự lập.",
+      "analysis_vi": "学会自立 là cụm tự nhiên.",
+      "highlight": [
+        "自立"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fae782e1-02a4-401a-9ff7-d2546bbc31f5"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "defb1005-bfce-4f16-8bf7-ed232ef35147",
+      "order": 2,
+      "zh": "父母不能照顾孩子一辈子，孩子总得慢慢儿自立。",
+      "pinyin": "Fùmǔ bù néng zhàogù háizi yí bèi zi, háizi zǒng děi mànmānr zìlì.",
+      "vi": "Cha mẹ không thể chăm con cả đời, con cái rốt cuộc phải dần tự lập.",
+      "analysis_vi": "慢慢儿自立 là quá trình trưởng thành.",
+      "highlight": [
+        "自立"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fae782e1-02a4-401a-9ff7-d2546bbc31f5"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "自立 không chỉ là kiếm tiền, mà còn là tự quyết định và tự chịu trách nhiệm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bbb66de8-236c-4bb4-a642-0574ec3e2212",
+      "order": 1,
+      "rule_vi": "Dùng 自立 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自立",
+    "back": "tự lập, đứng vững bằng chính mình",
+    "hint": "zìlì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fae782e1-02a4-401a-9ff7-d2546bbc31f5",
+    "source_lesson_vocab_id": null
+  }
+}

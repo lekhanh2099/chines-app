@@ -1,0 +1,275 @@
+{
+  "id": "9ae62c14-58bf-4638-b767-c7e989c9833f",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "哪怕",
+  "pinyin": "nǎpà",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "grammar"
+  ],
+  "meaning": {
+    "hanviet": "na phạ",
+    "meaning_vi": "dù cho, cho dù, dẫu cho",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dù cho",
+      "cho dù",
+      "dẫu cho"
+    ],
+    "short_definition_vi": "dù cho, cho dù, dẫu cho",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "哪",
+        "lishu_vi": "na",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nào/đâu",
+        "modern_logic_vi": "Trong từ/cụm này, 哪 góp phần vào nghĩa hiện đại: nào/đâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "怕",
+        "lishu_vi": "phạ",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm/lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm/lòng, cảm xúc",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm/lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "trắng",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sợ/e ngại",
+        "modern_logic_vi": "Trong từ/cụm này, 怕 góp phần vào nghĩa hiện đại: sợ/e ngại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "哪怕 cần học theo nghĩa hiện đại trong bài: dù cho, cho dù, dẫu cho.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 哪怕再难.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "52236115-a536-467a-99f7-d154432a55a5",
+      "order": 1,
+      "zh": "哪怕再难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37d44418-0f76-4e6b-b993-3f0dda6c4bed",
+      "order": 2,
+      "zh": "哪怕失败",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "73112b6e-0eae-4c5d-97a6-8d80557c3d2d",
+      "order": 3,
+      "zh": "哪怕没有人支持",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fab7c948-f196-469c-b2e0-b84d017075e0",
+      "order": 1,
+      "zh": "哪怕很难，我也要试试。",
+      "pinyin": "Nǎpà hěn nán, wǒ yě yào shìshi.",
+      "vi": "Dù rất khó, tôi cũng muốn thử.",
+      "analysis_vi": "哪怕……也…… là khung cơ bản.",
+      "highlight": [
+        "哪怕"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ae62c14-58bf-4638-b767-c7e989c9833f"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f40075eb-b1d2-4041-947c-d2b7dd7429d6",
+      "order": 2,
+      "zh": "哪怕家里以种地为主，他也不想放弃学习。",
+      "pinyin": "Nǎpà jiālǐ yǐ zhòngdì wéi zhǔ, tā yě bù xiǎng fàngqì xuéxí.",
+      "vi": "Dù nhà chủ yếu làm ruộng, anh ấy cũng không muốn bỏ học.",
+      "analysis_vi": "以种地为主 gài bài.",
+      "highlight": [
+        "哪怕"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ae62c14-58bf-4638-b767-c7e989c9833f"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "哪怕 rất hợp khi nói ý chí, trách nhiệm và vượt khó.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4a69d9e7-4260-40d7-9359-7d1a116bd6da",
+      "order": 1,
+      "rule_vi": "Dùng 哪怕 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "哪怕",
+    "back": "dù cho, cho dù, dẫu cho",
+    "hint": "nǎpà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9ae62c14-58bf-4638-b767-c7e989c9833f",
+    "source_lesson_vocab_id": null
+  }
+}

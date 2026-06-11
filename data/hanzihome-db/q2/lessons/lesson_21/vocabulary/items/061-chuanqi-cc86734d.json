@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_587b3368a099eb42",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "喘气",
+  "pinyin": "chuǎnqì",
+  "meaning_vi": "thở dốc; thở hổn hển",
+  "pos": "Động từ li hợp",
+  "pos_detail": {
+    "vi": "Động từ li hợp",
+    "cn": "动宾式离合词",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": true,
+    "separable_type": "động-tân / 离合词",
+    "structure_vi": "động từ 喘 + tân ngữ 气",
+    "usage_note_vi": "Có thể nói 喘着气, 喘了一口气, 喘不上气; nghĩa là thở dốc/thở hổn hển.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+    "type": "vocabulary_item",
+    "order": 2,
+    "hanzi": "喘气",
+    "pinyin": "chuǎnqì",
+    "meaning_vi": "thở dốc; thở hổn hển",
+    "meaning_en": "",
+    "pos": "Động từ li hợp",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "喘气",
+      "back": "chuǎnqì — thở dốc; thở hổn hển",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ li hợp",
+      "cn": "动宾式离合词",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": true,
+      "separable_type": "động-tân / 离合词",
+      "structure_vi": "động từ 喘 + tân ngữ 气",
+      "usage_note_vi": "Có thể nói 喘着气, 喘了一口气, 喘不上气; nghĩa là thở dốc/thở hổn hển.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

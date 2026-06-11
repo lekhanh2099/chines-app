@@ -1,0 +1,218 @@
+{
+  "id": "433c02e4-ea2e-4314-aeea-dcf413633812",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "简直",
+  "pinyin": "jiǎnzhí",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "giản trực",
+    "meaning_vi": "quả thật là, đúng là, gần như là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quả thật là",
+      "đúng là",
+      "gần như là"
+    ],
+    "short_definition_vi": "quả thật là, đúng là, gần như là",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "简",
+        "lishu_vi": "giản",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "⺮",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre, trúc",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "⺮",
+            "hanviet": "trúc",
+            "meaning_vi": "tre, trúc",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "⺮",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre, trúc",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đơn giản",
+        "modern_logic_vi": "Trong từ này, 简 góp phần vào nghĩa hiện đại: đơn giản.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "直",
+        "lishu_vi": "trực",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thẳng",
+        "modern_logic_vi": "Trong từ này, 直 góp phần vào nghĩa hiện đại: thẳng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "简直 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 简直是…….",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch theo mặt chữ đơn giản + thẳng; đây là phó từ nhấn mạnh."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8459c1f7-69ce-4bd1-bda9-05be6361b39d",
+      "order": 1,
+      "zh": "简直是……",
+      "pinyin": "",
+      "vi": "quả thật là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58d7f482-f6d9-450b-9c9b-ed7cabd08a12",
+      "order": 2,
+      "zh": "简直太……了",
+      "pinyin": "",
+      "vi": "đúng là quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74dc2cdc-214a-40d6-a293-0001361fa7c2",
+      "order": 3,
+      "zh": "简直不能相信",
+      "pinyin": "",
+      "vi": "thật không thể tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "78550eb0-c8f3-401c-9895-1f2d6e809cd1",
+      "order": 1,
+      "zh": "这件事简直不能相信。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 简直 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 简直; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "简直"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "433c02e4-ea2e-4314-aeea-dcf413633812"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 简直 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "169fc702-589c-4426-bf33-04ec5376d010",
+      "order": 1,
+      "rule_vi": "Không dịch theo mặt chữ đơn giản + thẳng; đây là phó từ nhấn mạnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "简直",
+    "back": "quả thật là, đúng là, gần như là",
+    "hint": "jiǎnzhí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "433c02e4-ea2e-4314-aeea-dcf413633812",
+    "source_lesson_vocab_id": null
+  }
+}

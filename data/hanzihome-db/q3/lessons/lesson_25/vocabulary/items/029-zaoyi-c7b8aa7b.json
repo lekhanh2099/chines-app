@@ -1,0 +1,217 @@
+{
+  "id": "d096122e-ac2f-427a-8409-36573dd040a8",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "早已",
+  "pinyin": "zǎoyǐ",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tảo dĩ",
+    "meaning_vi": "đã từ lâu, sớm đã",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đã từ lâu",
+      "sớm đã"
+    ],
+    "short_definition_vi": "đã từ lâu, sớm đã",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "早",
+        "lishu_vi": "tảo",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sớm",
+        "modern_logic_vi": "Trong từ này, 早 góp phần vào nghĩa hiện đại: sớm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "已",
+        "lishu_vi": "dĩ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đã",
+        "modern_logic_vi": "Trong từ này, 已 góp phần vào nghĩa hiện đại: đã.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "早已 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 早已准备好.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng với việc vừa mới xảy ra như 刚刚."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f0b53b8d-e268-4ff4-b0f1-98d46aa762f7",
+      "order": 1,
+      "zh": "早已准备好",
+      "pinyin": "",
+      "vi": "đã chuẩn bị từ lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "348fbcf1-20bd-4bae-86ab-d7f778ca96a1",
+      "order": 2,
+      "zh": "早已知道",
+      "pinyin": "",
+      "vi": "đã biết từ lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a66bdedc-8a39-48a6-8991-3f286c302db6",
+      "order": 3,
+      "zh": "早已习惯",
+      "pinyin": "",
+      "vi": "đã quen từ lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5c2a7950-6b43-44f8-8a16-dad9eb286b0d",
+      "order": 1,
+      "zh": "他早已知道这个消息了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 早已 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 早已; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "早已"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d096122e-ac2f-427a-8409-36573dd040a8"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 早已 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9f78011b-06b6-45f8-ada5-693bda679ff6",
+      "order": 1,
+      "rule_vi": "Không dùng với việc vừa mới xảy ra như 刚刚.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "早已",
+    "back": "đã từ lâu, sớm đã",
+    "hint": "zǎoyǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d096122e-ac2f-427a-8409-36573dd040a8",
+    "source_lesson_vocab_id": null
+  }
+}

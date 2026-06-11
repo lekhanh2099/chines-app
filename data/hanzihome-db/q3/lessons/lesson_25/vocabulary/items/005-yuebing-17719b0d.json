@@ -1,0 +1,216 @@
+{
+  "id": "2d5dcf42-0e3c-4705-8bdf-3097186c88b2",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "月饼",
+  "pinyin": "yuèbǐng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "nguyệt bính",
+    "meaning_vi": "bánh Trung thu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bánh Trung thu"
+    ],
+    "short_definition_vi": "bánh Trung thu",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "月",
+        "lishu_vi": "nguyệt",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng; tháng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng; tháng",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng; tháng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trăng; tháng",
+        "modern_logic_vi": "Trong từ này, 月 góp phần vào nghĩa hiện đại: trăng; tháng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "饼",
+        "lishu_vi": "bính",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bánh",
+        "modern_logic_vi": "Trong từ này, 饼 góp phần vào nghĩa hiện đại: bánh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "月饼 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 吃月饼.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch máy là bánh mặt trăng; tiếng Việt tự nhiên là bánh Trung thu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "07266c59-37ba-4d25-b655-323b0c5337d8",
+      "order": 1,
+      "zh": "吃月饼",
+      "pinyin": "",
+      "vi": "ăn bánh Trung thu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29f65b19-7802-4e65-954d-3f54155ade19",
+      "order": 2,
+      "zh": "送月饼",
+      "pinyin": "",
+      "vi": "biếu bánh Trung thu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05fd5205-73a3-4aea-a3fb-75cbdac8d4c7",
+      "order": 3,
+      "zh": "一盒月饼",
+      "pinyin": "",
+      "vi": "một hộp bánh Trung thu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "60d604cb-b352-4036-ac7a-5a91e0df00ec",
+      "order": 1,
+      "zh": "中秋节我们一般吃月饼。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 月饼 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 月饼; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "月饼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2d5dcf42-0e3c-4705-8bdf-3097186c88b2"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 月饼 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a0f8d829-c956-4fe6-aeca-5420eeba3d4c",
+      "order": 1,
+      "rule_vi": "Không dịch máy là bánh mặt trăng; tiếng Việt tự nhiên là bánh Trung thu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "月饼",
+    "back": "bánh Trung thu",
+    "hint": "yuèbǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2d5dcf42-0e3c-4705-8bdf-3097186c88b2",
+    "source_lesson_vocab_id": null
+  }
+}

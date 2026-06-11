@@ -1,0 +1,311 @@
+{
+  "id": "f50556a2-81ea-4fdc-905f-64232e18cb24",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "地面",
+  "pinyin": "dìmiàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "địa diện",
+    "meaning_vi": "mặt đất, nền đất; mặt sàn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mặt đất",
+      "nền đất",
+      "mặt sàn"
+    ],
+    "short_definition_vi": "mặt đất, nền đất",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "地",
+        "lishu_vi": "địa",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, mặt đất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, mặt đất",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, mặt đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "面",
+        "lishu_vi": "diện",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "地面 = bề mặt của đất hoặc mặt sàn.",
+    "memory_tip_vi": "上到地面 = lên tới mặt đất.",
+    "warning_vi": "Không nhầm 地面 với 地铁.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "地上",
+        "dìshang",
+        "trên nền/dưới đất",
+        "vị trí vật nằm"
+      ],
+      [
+        "地板",
+        "dìbǎn",
+        "sàn nhà",
+        "lớp sàn trong nhà"
+      ],
+      [
+        "路面",
+        "lùmiàn",
+        "mặt đường",
+        "bề mặt đường"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "上到地面 = lên tới mặt đất."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6abc0a84-fddb-40ff-80fe-9cb001f30a93",
+      "order": 1,
+      "zh": "上到地面",
+      "pinyin": "",
+      "vi": "lên tới mặt đất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1953419-5333-4e57-a8bf-514115897b17",
+      "order": 2,
+      "zh": "离开地面",
+      "pinyin": "",
+      "vi": "rời mặt đất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f2de206-dbe7-4c7b-b28a-9d1b97cb1e1e",
+      "order": 3,
+      "zh": "地面很滑",
+      "pinyin": "",
+      "vi": "mặt đất rất trơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4910823-80fc-4291-bc8f-a018873f51bd",
+      "order": 4,
+      "zh": "水泥地面",
+      "pinyin": "",
+      "vi": "nền xi măng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa087d33-c98c-4db7-a669-22efedb55848",
+      "order": 5,
+      "zh": "地面交通",
+      "pinyin": "",
+      "vi": "giao thông mặt đất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "065feb7f-8b60-4c2d-87d1-a4aa836802bc",
+      "order": 1,
+      "zh": "下了地铁以后，我上到地面，才发现自己走错了。",
+      "pinyin": "Xià le dìtiě yǐhòu, wǒ shàng dào dìmiàn, cái fāxiàn zìjǐ zǒu cuò le.",
+      "vi": "Sau khi xuống tàu điện ngầm, tôi lên mặt đất mới phát hiện đi nhầm.",
+      "analysis_vi": "才发现 nhấn nhận ra muộn.",
+      "highlight": [
+        "地面"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f50556a2-81ea-4fdc-905f-64232e18cb24"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fe6b24f6-7182-45fb-9a6f-de2fce7dc5ef",
+      "order": 2,
+      "zh": "地面上有水，你走路小心一点儿。",
+      "pinyin": "Dìmiàn shang yǒu shuǐ, nǐ zǒulù xiǎoxīn yìdiǎnr.",
+      "vi": "Trên nền có nước, đi cẩn thận chút.",
+      "analysis_vi": "Câu tồn hiện: nơi chốn + 有 + vật.",
+      "highlight": [
+        "地面"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f50556a2-81ea-4fdc-905f-64232e18cb24"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở ga tàu điện ngầm nhiều cửa ra, lên mặt đất mới phát hiện sai cửa là chuyện rất thường.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4b83aa88-0a4d-448e-85ad-22e4314ed0bd",
+      "order": 1,
+      "rule_vi": "我坐地面去学校。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我坐地铁去学校。",
+          "pinyin": "Wǒ zuò dìtiě qù xuéxiào.",
+          "vi": "Tôi đi tàu điện ngầm đến trường.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 地面 với 地铁.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "地面",
+    "back": "mặt đất, nền đất; mặt sàn",
+    "hint": "dìmiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f50556a2-81ea-4fdc-905f-64232e18cb24",
+    "source_lesson_vocab_id": null
+  }
+}

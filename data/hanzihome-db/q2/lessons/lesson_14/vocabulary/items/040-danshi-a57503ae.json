@@ -1,0 +1,355 @@
+{
+  "id": "f83a32a2-96a9-458a-89b6-b3b00964349f",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "但是",
+  "pinyin": "dànshì",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Đãn thị",
+    "meaning_vi": "nhưng, nhưng mà",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhưng",
+      "nhưng mà"
+    ],
+    "short_definition_vi": "nhưng, nhưng mà",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "trung tính, rõ ràng, an toàn hơn 却 với người mới học.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "但",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "旦",
+            "hanviet": "đán",
+            "meaning_vi": "sáng sớm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhưng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "但是 là liên từ cố định, học theo chức năng nối ý đối lập. Vế trước đưa ra thông tin A; 但是 đưa vế sau B có hướng khác hoặc hạn chế A.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "đúng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là, đúng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "但是 là liên từ cố định, học theo chức năng nối ý đối lập. Vế trước đưa ra thông tin A; 但是 đưa vế sau B có hướng khác hoặc hạn chế A.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "但是 là liên từ cố định, học theo chức năng nối ý đối lập. Vế trước đưa ra thông tin A; 但是 đưa vế sau B có hướng khác hoặc hạn chế A.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: không nên dùng 但是 quá nhiều trong một đoạn; có thể thay bằng 不过, 可是, hoặc dùng 却 nếu muốn câu gọn hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "但是 (dànshì)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhưng, trung tính, rõ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "可是 (kěshì)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhưng, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不过 (búguò)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhưng mà, mềm hơn, hay dùng khi bổ sung hạn chế nhẹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "却 (què)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhưng lại, nhấn trái dự đoán.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: mới học dùng 但是 an toàn; muốn câu tự nhiên hơn có thể dùng 不过 / 可是; muốn nhấn bất ngờ dùng 却."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "38568f6b-7bfc-4a0d-9a67-8c0a0c926fa7",
+      "order": 1,
+      "zh": "但是我觉得……",
+      "pinyin": "",
+      "vi": "nhưng tôi thấy rằng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a244932e-fc99-4dd6-8e34-b9fcf81d6eec",
+      "order": 2,
+      "zh": "但是没有办法",
+      "pinyin": "",
+      "vi": "nhưng không có cách nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44588e30-6643-47dd-9204-2803c436b504",
+      "order": 3,
+      "zh": "但是要注意",
+      "pinyin": "",
+      "vi": "nhưng cần chú ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de1900a4-789d-48b8-b624-3e3f43e52a83",
+      "order": 4,
+      "zh": "但是话说回来",
+      "pinyin": "",
+      "vi": "nhưng nói đi cũng phải nói lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bdd89b2c-9397-44b5-ba5f-92d0228b4214",
+      "order": 1,
+      "zh": "我想把这本书买回来，但是包已经太重了。",
+      "pinyin": "Wǒ xiǎng bǎ zhè běn shū mǎi huílai, dànshì bāo yǐjīng tài zhòng le.",
+      "vi": "Tôi muốn mua quyển sách này về, nhưng túi đã quá nặng rồi.",
+      "analysis_vi": "买回来 nhấn mua rồi mang về; 但是 nối mong muốn với trở ngại thực tế.",
+      "highlight": [
+        "但是"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "f83a32a2-96a9-458a-89b6-b3b00964349f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fdd6cac4-6d46-40a8-b0dc-7c4b39970cff",
+      "order": 2,
+      "zh": "商场很热闹，但是电梯口人太多，我们只好走楼梯上去。",
+      "pinyin": "Shāngchǎng hěn rènao, dànshì diàntīkǒu rén tài duō, wǒmen zhǐhǎo zǒu lóutī shàngqù.",
+      "vi": "Trung tâm thương mại rất náo nhiệt, nhưng cửa thang máy quá đông, chúng tôi đành đi cầu thang bộ lên.",
+      "analysis_vi": "走楼梯上去 là đi cầu thang lên trên; 只好 diễn tả lựa chọn bất đắc dĩ.",
+      "highlight": [
+        "但是"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "f83a32a2-96a9-458a-89b6-b3b00964349f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "16589e73-a6e7-46b5-8283-6c371d7313fc",
+      "order": 3,
+      "zh": "这个句子语法上没错，但是说出来不太自然。",
+      "pinyin": "Zhège jùzi yǔfǎ shàng méi cuò, dànshì shuō chūlai bú tài zìrán.",
+      "vi": "Câu này về ngữ pháp không sai, nhưng nói ra không tự nhiên lắm.",
+      "analysis_vi": "说出来 là nói ra thành lời; câu này rất hợp khi tự sửa ví dụ.",
+      "highlight": [
+        "但是"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "f83a32a2-96a9-458a-89b6-b3b00964349f"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4d316530-1155-4c15-877e-8b3e829edd98",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 但是 sau 虽然 rồi quên cấu trúc tự nhiên. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "但是",
+    "back": "nhưng, nhưng mà",
+    "hint": "dànshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong nói chuyện, người Trung thường dùng 但是 / 可是 / 不过 linh hoạt. 但是 rõ ràng nhưng hơi “sách” nếu dùng liên tục; 不过 nghe mềm hơn trong nhiều tình huống.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f83a32a2-96a9-458a-89b6-b3b00964349f",
+    "source_lesson_vocab_id": null
+  }
+}

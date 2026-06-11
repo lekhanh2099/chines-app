@@ -1,0 +1,337 @@
+{
+  "id": "ffa47f5a-1595-49f6-b3a2-b52cf4fac22f",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "函授",
+  "pinyin": "hánshòu",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "hàm thụ",
+    "meaning_vi": "học/giảng dạy hàm thụ, đào tạo từ xa kiểu thư tín",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "học/giảng dạy hàm thụ"
+    ],
+    "short_definition_vi": "học/giảng dạy hàm thụ, đào tạo từ xa kiểu thư tín",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "thuật ngữ/tên riêng",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "函",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thư tín, công văn",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "授",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần chỉ trường nghĩa: tay, động tác bằng tay.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần chỉ trường nghĩa: tay, động tác bằng tay.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "truyền dạy, trao",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "函授 được ghi nhớ theo nghĩa hiện đại: học/giảng dạy hàm thụ, đào tạo từ xa kiểu thư tín.",
+    "memory_tip_vi": "Nhớ qua cụm: 函授大学.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "面授",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "远程教育",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "网络教育",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "在线课程",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "函授 không phải dạy thư pháp hay trao thư; là học/dạy từ xa kiểu thư tín."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7fd1519d-d1af-407b-955b-7d64e77cff89",
+      "order": 1,
+      "zh": "函授大学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "381d6b3f-6990-4043-9fab-d7867793bf9a",
+      "order": 2,
+      "zh": "函授课程",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74c53bcf-c2c3-4f29-b22a-0650d91b9216",
+      "order": 3,
+      "zh": "函授教育",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22954393-5f25-434a-97d4-3710153805f5",
+      "order": 4,
+      "zh": "函授站",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd796473-7dad-4349-b9c0-4f213669b77b",
+      "order": 5,
+      "zh": "参加函授学习",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c64d1e0f-0288-4615-a5fa-c11436ff359e",
+      "order": 6,
+      "zh": "函授本科",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d81fa610-aaf8-4c7a-8c27-ea9a8ac6edb3",
+      "order": 1,
+      "zh": "他通过函授学习文学。",
+      "pinyin": "Tā tōngguò hánshòu xuéxí wénxué.",
+      "vi": "Anh ấy học văn học thông qua hình thức hàm thụ.",
+      "analysis_vi": "通过 + phương thức = thông qua cách nào đó.",
+      "highlight": [
+        "函授"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ffa47f5a-1595-49f6-b3a2-b52cf4fac22f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "96ff1a58-0ed4-4f49-b645-ad6483716848",
+      "order": 2,
+      "zh": "即使不能每天去学校，她也可以参加函授学习。",
+      "pinyin": "Jíshǐ bù néng měitiān qù xuéxiào, tā yě kěyǐ cānjiā hánshòu xuéxí.",
+      "vi": "Cho dù không thể đến trường mỗi ngày, cô ấy vẫn có thể học hàm thụ.",
+      "analysis_vi": "即使……也…… nhấn vẫn có cách học.",
+      "highlight": [
+        "函授"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ffa47f5a-1595-49f6-b3a2-b52cf4fac22f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ này hơi cũ, hiện đại thường nói 在线学习 / 网络课程.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "901ae575-fff6-4bce-8765-89aec6d6c005",
+      "order": 1,
+      "rule_vi": "函授 không phải dạy thư pháp hay trao thư; là học/dạy từ xa kiểu thư tín.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "函授 không phải dạy thư pháp hay trao thư; là học/dạy từ xa kiểu thư tín.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "函授",
+    "back": "học/giảng dạy hàm thụ, đào tạo từ xa kiểu thư tín",
+    "hint": "hánshòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ffa47f5a-1595-49f6-b3a2-b52cf4fac22f",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "synthetic_vocab_7d23692a4b6e927f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "必须",
+  "pinyin": "bìxū",
+  "meaning_vi": "nhất định phải; bắt buộc phải",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+    "type": "vocabulary_item",
+    "order": 39,
+    "hanzi": "必须",
+    "pinyin": "bìxū",
+    "meaning_vi": "nhất định phải; bắt buộc phải",
+    "meaning_en": "",
+    "pos": "Phó từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

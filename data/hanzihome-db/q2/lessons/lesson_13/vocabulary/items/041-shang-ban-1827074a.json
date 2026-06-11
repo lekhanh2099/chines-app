@@ -1,0 +1,86 @@
+{
+  "id": "synthetic_vocab_4b9aa476adc0438f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "上班",
+  "pinyin": "shàng bān",
+  "meaning_vi": "đi làm, vào ca làm",
+  "pos": "Động từ li hợp",
+  "pos_detail": {
+    "vi": "Động từ li hợp",
+    "cn": "动宾式离合词",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": true,
+    "separable_type": "động-tân / 离合词",
+    "structure_vi": "động từ 上 + tân ngữ 班",
+    "usage_note_vi": "Có thể nói 上了一天班 / 上了三年班; trong khẩu ngữ dùng rất thường xuyên như cụm động từ đi làm.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+    "type": "vocabulary_item",
+    "order": 21,
+    "hanzi": "上班",
+    "pinyin": "shàng bān",
+    "meaning_vi": "đi làm, vào ca làm",
+    "meaning_en": "",
+    "pos": "Động từ li hợp",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "上班",
+      "back": "shàng bān — đi làm, vào ca làm",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "subitems": [
+      {
+        "hanzi": "下班",
+        "pinyin": "xià bān",
+        "meaning_vi": "tan làm, hết ca làm",
+        "pos": "Động từ li hợp",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "pos_detail": {
+          "vi": "Động từ li hợp",
+          "cn": "动宾式离合词",
+          "normalized": "verb_phrase",
+          "schema_compatible_pos": "verb_phrase",
+          "is_separable_verb": true,
+          "separable_type": "động-tân / 离合词",
+          "structure_vi": "động từ 下 + tân ngữ 班",
+          "usage_note_vi": "Có thể nói 下了班再去; đối lập với 上班.",
+          "notes": []
+        }
+      }
+    ],
+    "pos_detail": {
+      "vi": "Động từ li hợp",
+      "cn": "动宾式离合词",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": true,
+      "separable_type": "động-tân / 离合词",
+      "structure_vi": "động từ 上 + tân ngữ 班",
+      "usage_note_vi": "Có thể nói 上了一天班 / 上了三年班; trong khẩu ngữ dùng rất thường xuyên như cụm động từ đi làm.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,375 @@
+{
+  "id": "6aa518b9-0920-4d82-b4c6-a111213deca1",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "倒",
+  "pinyin": "dǎo / dào",
+  "pos": {
+    "raw_vi": "động từ / bổ ngữ kết quả / phó từ",
+    "raw_cn": "动词 / 结果补语 / 副词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_19",
+    "result_complement"
+  ],
+  "meaning": {
+    "hanviet": "Đảo",
+    "meaning_vi": "ngã; đổ; rót; ngược lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngã; đổ; rót; ngược lại"
+    ],
+    "short_definition_vi": "ngã; đổ; rót; ngược lại",
+    "textbook_focus_vi": "Bổ ngữ kết quả trong 撞倒.",
+    "register_vi": "đời sống",
+    "usage_domain_vi": "tai nạn, tư thế, hành động",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "倒",
+        "lishu_vi": "đảo",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "到",
+            "hanviet": "đáo",
+            "meaning_vi": "đến; thành phần ghi âm/cấu tạo",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngã, đổ; rót; đảo ngược",
+        "modern_logic_vi": "dǎo nhớ là người/vật mất thăng bằng đổ xuống; dào nhớ là nghiêng để rót hoặc đảo chiều.",
+        "warning_vi": "Cùng một chữ đổi âm là đổi nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Trong bài này trọng tâm là 倒 dǎo trong 撞倒: bị đâm/va làm ngã.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "摔倒",
+        "pinyin": "",
+        "meaning_vi": "té ngã",
+        "difference_vi": "Thường do trượt/vấp/tự té.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "跌倒",
+        "pinyin": "",
+        "meaning_vi": "ngã",
+        "difference_vi": "Hơi sách vở hơn 摔倒.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "撞倒",
+        "pinyin": "",
+        "meaning_vi": "đâm làm ngã",
+        "difference_vi": "Ngã do tác động va/đâm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "躺",
+        "pinyin": "",
+        "meaning_vi": "nằm",
+        "difference_vi": "Tư thế nằm, không nhất thiết do ngã.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "站起来",
+        "right": "倒下",
+        "meaning_vi": "đứng dậy ↔ ngã xuống",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "faf28c07-7540-4821-b1fd-5faef7a47f51",
+      "order": 1,
+      "zh": "摔倒",
+      "pinyin": "",
+      "vi": "té ngã",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "175da46c-0929-4964-96b4-b88adc177844",
+      "order": 2,
+      "zh": "跌倒",
+      "pinyin": "",
+      "vi": "ngã",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d2c54bb-2037-4aef-9dc6-ed5378ab91a1",
+      "order": 3,
+      "zh": "撞倒",
+      "pinyin": "",
+      "vi": "đâm ngã",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "19615a6a-0607-4b6c-ae1e-36048b34b437",
+      "order": 4,
+      "zh": "倒下",
+      "pinyin": "",
+      "vi": "ngã xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "926008f1-7b03-4a92-bb09-4e645b77acf9",
+      "order": 5,
+      "zh": "倒在地上",
+      "pinyin": "",
+      "vi": "ngã/đổ xuống đất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38e3d6c8-fa49-4fbc-bc54-fd0342eaa0a5",
+      "order": 6,
+      "zh": "倒水",
+      "pinyin": "",
+      "vi": "rót nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a85fd6b-9018-433e-b4b4-92a99f9a9b74",
+      "order": 7,
+      "zh": "倒茶",
+      "pinyin": "",
+      "vi": "rót trà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ed05379-e4a2-44bb-a083-90b882bb0339",
+      "order": 8,
+      "zh": "倒过来",
+      "pinyin": "",
+      "vi": "đảo ngược lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f0c49fb4-4b60-4488-9d02-e93637605965",
+      "order": 1,
+      "zh": "他不小心摔倒了。",
+      "pinyin": "Tā bù xiǎoxīn shuāi dǎo le.",
+      "vi": "Anh ấy không cẩn thận nên té ngã.",
+      "analysis_vi": "摔倒 là té ngã; 倒 đọc dǎo.",
+      "highlight": [
+        "倒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6aa518b9-0920-4d82-b4c6-a111213deca1"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c1af8599-fcb7-42e1-9625-97bc9d782a04",
+      "order": 2,
+      "zh": "他被一辆自行车撞倒了。",
+      "pinyin": "Tā bèi yí liàng zìxíngchē zhuàng dǎo le.",
+      "vi": "Anh ấy bị một chiếc xe đạp đâm ngã.",
+      "analysis_vi": "被 + tác nhân + 撞倒了 có kết quả rõ: bị đâm đến mức ngã.",
+      "highlight": [
+        "被",
+        "撞倒"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "6aa518b9-0920-4d82-b4c6-a111213deca1"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "004b0e2d-dacc-42f3-8e3d-929906651e9a",
+      "order": 3,
+      "zh": "他一看到老人摔倒，就马上跑过去扶她起来。",
+      "pinyin": "Tā yí kàn dào lǎorén shuāi dǎo, jiù mǎshàng pǎo guòqù fú tā qǐlái.",
+      "vi": "Anh ấy vừa thấy cụ già té ngã thì lập tức chạy qua đỡ bà ấy dậy.",
+      "analysis_vi": "Ôn 一……就…… và bổ ngữ xu hướng 过去 / 起来.",
+      "highlight": [
+        "倒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6aa518b9-0920-4d82-b4c6-a111213deca1"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "老人摔倒了 thường là tình huống nghiêm trọng vì có thể liên quan gãy xương/chấn thương; không nên dịch quá nhẹ.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5ea96c60-9767-4b1a-b74e-f91073362118",
+      "order": 1,
+      "rule_vi": "Đọc sai âm sẽ đổi nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "摔倒 dào",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "倒水 dǎo",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "摔倒",
+          "pinyin": "shuāi dǎo",
+          "vi": "té ngã",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "倒水",
+          "pinyin": "dào shuǐ",
+          "vi": "rót nước",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "倒",
+    "back": "ngã; đổ; rót; ngược lại",
+    "hint": "dǎo / dào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "result_complement"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6aa518b9-0920-4d82-b4c6-a111213deca1",
+    "source_lesson_vocab_id": null
+  }
+}

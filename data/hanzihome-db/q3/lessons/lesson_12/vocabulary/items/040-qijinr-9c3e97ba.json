@@ -1,0 +1,352 @@
+{
+  "id": "7580a916-57bb-46ba-90d0-ecdf1b7012d5",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "起劲儿",
+  "pinyin": "qǐjìnr",
+  "pos": {
+    "raw_vi": "Tính từ trạng thái",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khởi kính nhi",
+    "meaning_vi": "hăng hái, có hứng, làm rất sung",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hăng hái, có hứng, làm rất sung"
+    ],
+    "short_definition_vi": "Có khí thế/hứng thú khi làm gì.",
+    "textbook_focus_vi": "Dùng trong 越干越起劲儿.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "起",
+        "lishu_vi": "khởi",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi/chạy",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "走 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi/chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi/chạy",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "走 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "走 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nổi lên/bắt đầu",
+        "modern_logic_vi": "nổi lên/bắt đầu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "劲",
+        "lishu_vi": "kính",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức/lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức/lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức/lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sức/khí thế",
+        "modern_logic_vi": "sức/khí thế",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố 儿化",
+        "modern_logic_vi": "hậu tố 儿化",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "起 + 劲 = khí thế nổi lên.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "有兴趣",
+        "pinyin": "yǒu xìngqù",
+        "meaning_vi": "có hứng thú",
+        "difference_vi": "有兴趣 là có quan tâm; 起劲儿 là làm/nói rất hăng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "60647038-73d5-45a1-b046-8980730e1125",
+      "order": 1,
+      "zh": "说得很起劲儿",
+      "pinyin": "",
+      "vi": "nói rất hăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e054011-2852-4fd5-81d9-15c08f986a71",
+      "order": 2,
+      "zh": "干得很起劲儿",
+      "pinyin": "",
+      "vi": "làm rất hăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d3c353c-d79f-4caf-8865-872c35de46b1",
+      "order": 3,
+      "zh": "越干越起劲儿",
+      "pinyin": "",
+      "vi": "càng làm càng hăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c731657-b3ed-4c2a-995c-3589797adf12",
+      "order": 4,
+      "zh": "玩得很起劲儿",
+      "pinyin": "",
+      "vi": "chơi rất sung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e09e9311-d501-4d01-8923-89f093a62e83",
+      "order": 1,
+      "zh": "他们聊得很起劲儿。",
+      "pinyin": "",
+      "vi": "Họ nói chuyện rất hào hứng.",
+      "analysis_vi": "得 chỉ mức độ của 聊.",
+      "highlight": [
+        "起劲儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7580a916-57bb-46ba-90d0-ecdf1b7012d5"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ad5e81e6-3321-4ad7-94af-b591f6d8370b",
+      "order": 2,
+      "zh": "他越打气越起劲儿。",
+      "pinyin": "",
+      "vi": "Anh ấy càng bơm càng hăng.",
+      "analysis_vi": "越……越…….",
+      "highlight": [
+        "起劲儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7580a916-57bb-46ba-90d0-ecdf1b7012d5"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5c57f575-ecf1-43b9-8b42-18f5527c9868",
+      "order": 1,
+      "rule_vi": "Không dùng 起劲儿 cho cảm xúc buồn/tĩnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 起劲儿 cho cảm xúc buồn/tĩnh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "起劲儿",
+    "back": "hăng hái, có hứng, làm rất sung",
+    "hint": "qǐjìnr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7580a916-57bb-46ba-90d0-ecdf1b7012d5",
+    "source_lesson_vocab_id": null
+  }
+}

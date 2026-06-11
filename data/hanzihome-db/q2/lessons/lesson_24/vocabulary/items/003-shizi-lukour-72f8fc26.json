@@ -1,0 +1,421 @@
+{
+  "id": "5335c29a-79dd-431d-815c-ed80d90000f3",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "十字路口儿",
+  "pinyin": "shízì lùkǒur",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thập tự lộ khẩu nhi",
+    "meaning_vi": "ngã tư đường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngã tư đường"
+    ],
+    "short_definition_vi": "ngã tư đường",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "十",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "số mười; hình chữ thập",
+        "modern_logic_vi": "十字 = hình chữ thập.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "字",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con; thành phần tạo chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chữ; ký tự",
+        "modern_logic_vi": "字 = chữ/ký tự.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "路",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân; đi lại",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân; đi lại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân; đi lại",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "各",
+            "hanviet": "",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đường",
+        "modern_logic_vi": "Có 足 nên gợi liên hệ đi lại, đường sá.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "口",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng; lời nói; âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng; lời nói; âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng; lời nói; âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "miệng; cửa; lối mở",
+        "modern_logic_vi": "Trong 路口, 口 = lối mở/giao điểm của đường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm uốn lưỡi/erhua trong từ này",
+        "modern_logic_vi": "Không mang nghĩa đứa trẻ trong từ này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "十字路口儿 = ngã tư đường.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dịch máy là “cửa đường chữ thập”; dịch tự nhiên là ngã tư.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "十字路口",
+        "pinyin": "",
+        "meaning_vi": "ngã tư",
+        "difference_vi": "Trung tính hơn, không có 儿.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "路口",
+        "pinyin": "",
+        "meaning_vi": "giao lộ/đầu đường",
+        "difference_vi": "Không nhất thiết là ngã tư.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "交叉路口",
+        "pinyin": "",
+        "meaning_vi": "giao lộ",
+        "difference_vi": "Chính thức hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bb0ec5ba-7dae-421e-b4dc-e0dd4c3b8a2f",
+      "order": 1,
+      "zh": "在十字路口儿",
+      "pinyin": "",
+      "vi": "ở ngã tư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "266383ea-d698-466a-b769-96d95192013d",
+      "order": 2,
+      "zh": "过十字路口儿",
+      "pinyin": "",
+      "vi": "băng qua ngã tư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bab738e3-b352-4185-bc0c-e5a9443e1abd",
+      "order": 3,
+      "zh": "十字路口儿旁边",
+      "pinyin": "",
+      "vi": "bên cạnh ngã tư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "541b055d-23f3-41b1-8efa-87c290f30f26",
+      "order": 4,
+      "zh": "十字路口儿站着一位警察",
+      "pinyin": "",
+      "vi": "ở ngã tư có một cảnh sát đang đứng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85d24456-421e-4b75-982d-960a1bbcc15e",
+      "order": 5,
+      "zh": "到十字路口儿往左拐",
+      "pinyin": "",
+      "vi": "đến ngã tư thì rẽ trái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5623d761-b66c-4a36-be5c-76289d01e0af",
+      "order": 1,
+      "zh": "十字路口儿站着一位警察。",
+      "pinyin": "Shízì lùkǒur zhànzhe yí wèi jǐngchá.",
+      "vi": "Ở ngã tư có một cảnh sát đang đứng.",
+      "analysis_vi": "Câu tồn hiện: địa điểm + V着 + người/vật.",
+      "level": "basic",
+      "highlight": [
+        "十字路口儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5335c29a-79dd-431d-815c-ed80d90000f3"
+      ],
+      "notes": []
+    },
+    {
+      "id": "bb16ae06-c833-41c0-8949-d40b8bc4a3e0",
+      "order": 2,
+      "zh": "到前面的十字路口儿往右拐，就能看到医院。",
+      "pinyin": "Dào qiánmiàn de shízì lùkǒur wǎng yòu guǎi, jiù néng kàndào yīyuàn.",
+      "vi": "Đến ngã tư phía trước rẽ phải là thấy bệnh viện.",
+      "analysis_vi": "Câu chỉ đường tự nhiên.",
+      "level": "expanded",
+      "highlight": [
+        "十字路口儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5335c29a-79dd-431d-815c-ed80d90000f3"
+      ],
+      "notes": []
+    },
+    {
+      "id": "051ecc82-928d-4c09-9a6d-9eeb3fc85a00",
+      "order": 3,
+      "zh": "这个十字路口儿车很多，过马路的时候一定要小心。",
+      "pinyin": "Zhège shízì lùkǒur chē hěn duō, guò mǎlù de shíhou yídìng yào xiǎoxīn.",
+      "vi": "Ngã tư này xe rất nhiều, khi qua đường nhất định phải cẩn thận.",
+      "analysis_vi": "车很多 là cách nói tự nhiên.",
+      "level": "complex",
+      "highlight": [
+        "十字路口儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5335c29a-79dd-431d-815c-ed80d90000f3"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "儿化 như 路口儿 thường gặp trong khẩu ngữ miền Bắc; văn viết/phổ thông trung tính có thể bỏ 儿.",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7812c617-b8ae-4e10-8112-e7d071373f6b",
+      "kind": "usage",
+      "text_vi": "Không dịch máy là “cửa đường chữ thập”; dịch tự nhiên là ngã tư.",
+      "wrong_examples": [
+        "我在十字路口儿的里面。"
+      ],
+      "correct_examples": [
+        "我在十字路口儿。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "十字路口儿",
+    "back": "ngã tư đường",
+    "hint": "shízì lùkǒur",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5335c29a-79dd-431d-815c-ed80d90000f3",
+    "source_lesson_vocab_id": null
+  }
+}

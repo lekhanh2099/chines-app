@@ -1,0 +1,266 @@
+{
+  "id": "2fb6a643-1e43-4669-9f85-a3a9a433af47",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "兼职",
+  "pinyin": "jiānzhí",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb_noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kiêm chức",
+    "meaning_vi": "làm thêm, việc làm thêm; kiêm nhiệm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm thêm",
+      "việc làm thêm",
+      "kiêm nhiệm"
+    ],
+    "short_definition_vi": "làm thêm, việc làm thêm",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "兼",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiêm, đồng thời làm",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "职",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chức vụ, nghề nghiệp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "兼职 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 兼职 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打工",
+        "pinyin": "dǎgōng",
+        "meaning_vi": "đi làm kiếm tiền/làm thuê",
+        "difference_vi": "Rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "全职",
+        "pinyin": "quánzhí",
+        "meaning_vi": "toàn thời gian",
+        "difference_vi": "Trái với兼职",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "临时工",
+        "pinyin": "línshígōng",
+        "meaning_vi": "lao động tạm thời",
+        "difference_vi": "Tạm thời hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "df751b33-668e-42c7-aeb6-3d3511336f14",
+      "order": 1,
+      "zh": "做兼职",
+      "pinyin": "zuò jiānzhí",
+      "vi": "làm thêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "984999f0-ee47-4bca-af87-0856d4c23d4c",
+      "order": 2,
+      "zh": "找兼职",
+      "pinyin": "zhǎo jiānzhí",
+      "vi": "tìm việc làm thêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1bba2de-c1af-4720-a69b-901117c07657",
+      "order": 3,
+      "zh": "一份兼职",
+      "pinyin": "yí fèn jiānzhí",
+      "vi": "một việc làm thêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d88c511f-7665-414a-8b32-1a17f8bc9c78",
+      "order": 4,
+      "zh": "兼职老师",
+      "pinyin": "jiānzhí lǎoshī",
+      "vi": "giáo viên part-time/kiêm nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "01c6ec19-0a2b-4057-a49b-970f2f7cd1ff",
+      "order": 1,
+      "zh": "我周末做兼职。",
+      "pinyin": "Wǒ zhōumò zuò jiānzhí.",
+      "vi": "Cuối tuần tôi làm thêm.",
+      "analysis_vi": "做兼职 là cách nói đời thường.",
+      "highlight": [
+        "兼职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2fb6a643-1e43-4669-9f85-a3a9a433af47"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "839a38f4-a176-4989-861c-1375958b71bc",
+      "order": 2,
+      "zh": "他一边学习，一边兼职，所以每天都很忙。",
+      "pinyin": "Tā yìbiān xuéxí, yìbiān jiānzhí, suǒyǐ měi tiān dōu hěn máng.",
+      "vi": "Anh ấy vừa học vừa làm thêm nên ngày nào cũng bận.",
+      "analysis_vi": "一边……一边…….",
+      "highlight": [
+        "兼职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2fb6a643-1e43-4669-9f85-a3a9a433af47"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Với sinh viên, 兼职 gần 'làm thêm'; 打工 rộng hơn là đi làm kiếm tiền/làm thuê.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d017db2d-a35b-433d-9343-df9d0b841911",
+      "order": 1,
+      "rule_vi": "Không nói 我兼职一个工作; nói 我做一份兼职/找了一份兼职工作.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "兼职",
+    "back": "làm thêm, việc làm thêm; kiêm nhiệm",
+    "hint": "jiānzhí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2fb6a643-1e43-4669-9f85-a3a9a433af47",
+    "source_lesson_vocab_id": null
+  }
+}

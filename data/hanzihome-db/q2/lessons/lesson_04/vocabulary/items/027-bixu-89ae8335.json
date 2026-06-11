@@ -1,0 +1,304 @@
+{
+  "id": "20460f34-3b29-4a79-a4e5-ecfc72d30349",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "必须",
+  "pinyin": "bìxū",
+  "pos": {
+    "raw_vi": "Phó từ / Động từ tình thái",
+    "raw_cn": "副 / 能愿动词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "tinh_thai"
+  ],
+  "meaning": {
+    "hanviet": "Tất tu",
+    "meaning_vi": "phải; bắt buộc phải; cần thiết phải",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phải",
+      "bắt buộc phải",
+      "cần thiết phải"
+    ],
+    "short_definition_vi": "phải; bắt buộc phải; cần thiết phải",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "必",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhất định, tất yếu, bắt buộc",
+        "modern_logic_vi": "",
+        "warning_vi": "Không phân tích sâu hình thể nếu chưa kiểm chứng.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "须",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "bộ Hiệt / thành phần",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu / trang trong chữ hiện đại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "彡",
+            "hanviet": "",
+            "meaning_vi": "nét bên trái",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cần, phải",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu / trang trong chữ hiện đại",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "必须 = bắt buộc phải, mạnh hơn 要.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "要",
+        "pinyin": "",
+        "meaning_vi": "cần/phải/muốn",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "应该",
+        "pinyin": "",
+        "meaning_vi": "nên",
+        "difference_vi": "yếu hơn 必须",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一定要",
+        "pinyin": "",
+        "meaning_vi": "nhất định phải",
+        "difference_vi": "gần 必须",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不必",
+        "pinyin": "",
+        "meaning_vi": "không cần",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4b810f88-aa5f-4b5a-82e6-a1972f3060bb",
+      "order": 1,
+      "zh": "必须去",
+      "pinyin": "",
+      "vi": "bắt buộc phải đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7dc5a1cb-03c9-4c7d-89a3-ccbeaaf0dcc8",
+      "order": 2,
+      "zh": "必须做完",
+      "pinyin": "",
+      "vi": "bắt buộc phải làm xong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "895c748d-f4b4-444f-b348-bbad16623b8a",
+      "order": 3,
+      "zh": "不必担心",
+      "pinyin": "",
+      "vi": "không cần lo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2d7f8867-b74b-48b0-a7fc-78b936e1801b",
+      "order": 1,
+      "zh": "你必须做完作业。",
+      "pinyin": "Nǐ bìxū zuò wán zuòyè.",
+      "vi": "Bạn bắt buộc phải làm xong bài tập.",
+      "analysis_vi": "必须 đứng trước cụm động từ.",
+      "highlight": [
+        "必须"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "20460f34-3b29-4a79-a4e5-ecfc72d30349"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "de71de75-5b66-4f6f-9447-d100f6de23cb",
+      "order": 2,
+      "zh": "这些句子必须改成正确的。",
+      "pinyin": "Zhèxiē jùzi bìxū gǎi chéng zhèngquè de.",
+      "vi": "Những câu này bắt buộc phải sửa thành câu đúng.",
+      "analysis_vi": "改成 dùng 成.",
+      "highlight": [
+        "必须"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "20460f34-3b29-4a79-a4e5-ecfc72d30349"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "必须 sắc thái mạnh; nếu muốn mềm hơn có thể dùng 应该 / 最好.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "37ff9e46-5912-4b96-b388-213bc0c9b4a0",
+      "order": 1,
+      "rule_vi": "Không nhầm 必须 và 需要.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你必须交作业。",
+          "pinyin": "Nǐ bìxū jiāo zuòyè.",
+          "vi": "Bạn bắt buộc phải nộp bài.",
+          "note_vi": "Bắt buộc.",
+          "notes": []
+        },
+        {
+          "zh": "我需要一点儿时间。",
+          "pinyin": "Wǒ xūyào yìdiǎnr shíjiān.",
+          "vi": "Tôi cần một chút thời gian.",
+          "note_vi": "Cần, không nhất thiết bắt buộc.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "必须",
+    "back": "phải; bắt buộc phải; cần thiết phải",
+    "hint": "bìxū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "tinh_thai"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "20460f34-3b29-4a79-a4e5-ecfc72d30349",
+    "source_lesson_vocab_id": null
+  }
+}

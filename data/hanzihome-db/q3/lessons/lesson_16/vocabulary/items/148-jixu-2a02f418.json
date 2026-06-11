@@ -1,0 +1,162 @@
+{
+  "id": "39ebb8ea-f3f4-4732-8895-69a4ba5939e7",
+  "type": "deep_vocabulary_item",
+  "order": 148,
+  "hanzi": "继续",
+  "pinyin": "jìxù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词/副词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Thời gian và tiến trình"
+  ],
+  "meaning": {
+    "hanviet": "Kế tục",
+    "meaning_vi": "tiếp tục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiếp tục"
+    ],
+    "short_definition_vi": "tiếp tục",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: tiếp tục.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Thời gian và tiến trình",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "继",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "续",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "继续 trong bài được học theo nghĩa trọng tâm: tiếp tục.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: tiếp tục.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0244cbae-5937-4c18-8c99-0cc376bc8a7c",
+      "order": 1,
+      "zh": "不过，只要能拿到补充资金，我们会马上继续开展工作的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: tiếp tục",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ac5c5f32-0e39-4e4d-9c1a-7033a6973b3e",
+      "order": 1,
+      "zh": "不过，只要能拿到补充资金，我们会马上继续开展工作的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “继续” = tiếp tục.",
+      "analysis_vi": "Câu này dùng “继续” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "继续"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "39ebb8ea-f3f4-4732-8895-69a4ba5939e7"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “继续” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4f7fb40e-9b25-484d-b938-6914f01639ac",
+      "order": 1,
+      "rule_vi": "Cần dùng “继续” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "继续",
+    "back": "tiếp tục",
+    "hint": "jìxù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Thời gian và tiến trình"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "39ebb8ea-f3f4-4732-8895-69a4ba5939e7",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "id": "d0f20fab-e763-4aa3-b54b-2c66e365e736",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "骗",
+  "pinyin": "piàn",
+  "pos": {
+    "raw_vi": "động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "deception"
+  ],
+  "meaning": {
+    "hanviet": "Phiến",
+    "meaning_vi": "lừa, lừa gạt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lừa, lừa gạt"
+    ],
+    "short_definition_vi": "lừa, lừa gạt",
+    "textbook_focus_vi": "Hành động lừa trong 被骗 / 受骗.",
+    "register_vi": "đời sống",
+    "usage_domain_vi": "lừa đảo, lời nói",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "骗",
+        "lishu_vi": "phiến",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "mã",
+            "meaning_vi": "ngựa",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "馬",
+              "radical_variant": "马",
+              "radical_name_vi": "bộ Mã",
+              "radical_name_zh": "",
+              "hanviet": "mã",
+              "meaning_vi": "ngựa",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "扁",
+            "hanviet": "biển",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lừa, lừa gạt",
+        "modern_logic_vi": "骗 = dùng thủ đoạn/lời nói làm người khác tin sai.",
+        "warning_vi": "Không cố giải thích bằng 马 theo nghĩa hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "骗 là lừa bằng lời nói hoặc thủ đoạn; trọng tâm: 骗人, 被骗, 受骗, 骗子.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "欺骗",
+        "pinyin": "",
+        "meaning_vi": "lừa dối",
+        "difference_vi": "Trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "诈骗",
+        "pinyin": "",
+        "meaning_vi": "lừa đảo",
+        "difference_vi": "Thường liên quan pháp luật/tiền bạc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哄",
+        "pinyin": "",
+        "meaning_vi": "dỗ",
+        "difference_vi": "Có thể nhẹ hơn 骗.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "偷",
+        "pinyin": "",
+        "meaning_vi": "trộm",
+        "difference_vi": "Lấy lén đồ vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抢",
+        "pinyin": "",
+        "meaning_vi": "cướp",
+        "difference_vi": "Dùng sức/đe dọa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "骗人",
+        "right": "说实话",
+        "meaning_vi": "lừa người ↔ nói thật",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c10ee727-eeb6-4143-a935-1a4e54104c66",
+      "order": 1,
+      "zh": "骗人",
+      "pinyin": "",
+      "vi": "lừa người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9cb84732-49be-4709-af18-ddf52a2d0cc1",
+      "order": 2,
+      "zh": "骗钱",
+      "pinyin": "",
+      "vi": "lừa tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b73a871c-f7de-43ee-8a80-5bd1cbd2fc03",
+      "order": 3,
+      "zh": "骗我",
+      "pinyin": "",
+      "vi": "lừa tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "656504d2-c423-4d00-8d3d-023fa3b494c1",
+      "order": 4,
+      "zh": "被骗了",
+      "pinyin": "",
+      "vi": "bị lừa rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "069179fe-7d42-47f9-8884-62022d9e0272",
+      "order": 5,
+      "zh": "受骗",
+      "pinyin": "",
+      "vi": "bị lừa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35e8a56c-ac84-41ef-b6b2-673f5da492f0",
+      "order": 6,
+      "zh": "骗子",
+      "pinyin": "",
+      "vi": "kẻ lừa đảo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a813082-a982-4c3e-9df3-16ac9093fa41",
+      "order": 7,
+      "zh": "骗局",
+      "pinyin": "",
+      "vi": "trò lừa đảo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "40cba7ca-d929-4090-941b-ef3caa8a1b23",
+      "order": 8,
+      "zh": "骗取信任",
+      "pinyin": "",
+      "vi": "lừa lấy lòng tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2ccf60c2-8ef4-4587-8b2f-34f979e453d1",
+      "order": 1,
+      "zh": "你别骗我。",
+      "pinyin": "Nǐ bié piàn wǒ.",
+      "vi": "Bạn đừng lừa tôi.",
+      "analysis_vi": "别 + động từ là mệnh lệnh phủ định.",
+      "highlight": [
+        "骗"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d0f20fab-e763-4aa3-b54b-2c66e365e736"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d9849de3-02f0-47a4-92b3-6c238b825eee",
+      "order": 2,
+      "zh": "他在街上被人骗了钱。",
+      "pinyin": "Tā zài jiē shang bèi rén piàn le qián.",
+      "vi": "Anh ấy bị người ta lừa mất tiền trên phố.",
+      "analysis_vi": "被人骗了钱 là bị động; 钱 là thứ bị lừa lấy.",
+      "highlight": [
+        "骗",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "d0f20fab-e763-4aa3-b54b-2c66e365e736"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a83b08ea-a8db-47fa-806b-3a60d8504b0c",
+      "order": 3,
+      "zh": "他一听说可以很快赚大钱，就相信了那个人的话，结果被骗了。",
+      "pinyin": "Tā yì tīngshuō kěyǐ hěn kuài zhuàn dà qián, jiù xiāngxìn le nà ge rén de huà, jiéguǒ bèi piàn le.",
+      "vi": "Anh ấy vừa nghe nói có thể kiếm nhiều tiền rất nhanh thì tin lời người đó, kết quả bị lừa.",
+      "analysis_vi": "Ôn 一……就……; 被骗了 không cần nêu tác nhân nếu chỉ nhấn kết quả.",
+      "highlight": [
+        "骗",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "d0f20fab-e763-4aa3-b54b-2c66e365e736"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Lừa đảo qua mạng thường gọi là 网络诈骗. 骗 đời thường hơn: nói dối nhỏ, lừa tiền, lừa tình cảm, lừa lấy lòng tin.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "97667099-6fcc-4592-8557-8b560b909179",
+      "order": 1,
+      "rule_vi": "骗 khác 偷.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他偷了我的钱包儿。",
+          "pinyin": "Tā tōu le wǒ de qiánbāor.",
+          "vi": "Anh ta trộm ví của tôi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他骗了我的钱。",
+          "pinyin": "Tā piàn le wǒ de qián.",
+          "vi": "Anh ta lừa tiền của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "骗",
+    "back": "lừa, lừa gạt",
+    "hint": "piàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "deception"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d0f20fab-e763-4aa3-b54b-2c66e365e736",
+    "source_lesson_vocab_id": null
+  }
+}

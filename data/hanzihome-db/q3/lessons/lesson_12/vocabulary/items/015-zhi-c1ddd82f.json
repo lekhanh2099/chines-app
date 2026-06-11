@@ -1,0 +1,267 @@
+{
+  "id": "f54931fa-8f31-4ae8-bf87-ac417865d33d",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "指",
+  "pinyin": "zhǐ",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chỉ",
+    "meaning_vi": "chỉ, trỏ; ngón tay; ý nói là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chỉ, trỏ; ngón tay; ý nói là"
+    ],
+    "short_definition_vi": "Chỉ bằng tay hoặc chỉ nghĩa/quy chiếu.",
+    "textbook_focus_vi": "Dùng trong 指着, 手指, 指的是.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "指",
+        "lishu_vi": "chỉ",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay/thao tác",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay/thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay/thao tác",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chỉ/trỏ",
+        "modern_logic_vi": "chỉ/trỏ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 扌 nên nhớ hành động bằng tay.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "盯",
+        "pinyin": "dīng",
+        "meaning_vi": "nhìn chằm chằm",
+        "difference_vi": "盯 là nhìn bằng mắt; 指 là hành động tay/quy chiếu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "624fd54f-dba9-447e-8aa7-fd7c971748af",
+      "order": 1,
+      "zh": "指着我",
+      "pinyin": "",
+      "vi": "chỉ vào tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f3ea93d2-441e-4ac9-a9b1-261f7f6beb06",
+      "order": 2,
+      "zh": "指了指",
+      "pinyin": "",
+      "vi": "chỉ chỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c7ec048-c986-4d72-a076-45d3c586bd51",
+      "order": 3,
+      "zh": "手指",
+      "pinyin": "",
+      "vi": "ngón tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc89b023-c852-4721-90dc-76d7bc8179b2",
+      "order": 4,
+      "zh": "指的是",
+      "pinyin": "",
+      "vi": "ý chỉ là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0eee9bae-6a3b-44e0-bd98-04aa27e02219",
+      "order": 1,
+      "zh": "他指着门口，让我出去。",
+      "pinyin": "",
+      "vi": "Anh ấy chỉ vào cửa, bảo tôi ra ngoài.",
+      "analysis_vi": "指着 chỉ trạng thái đang chỉ.",
+      "highlight": [
+        "指"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f54931fa-8f31-4ae8-bf87-ac417865d33d"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "266a6986-cc8e-4600-9dca-e6c9cbb6f376",
+      "order": 2,
+      "zh": "孩子指着那盒冰激凌说：“我要吃这个。”",
+      "pinyin": "",
+      "vi": "Đứa bé chỉ vào hộp kem đó nói: con muốn ăn cái này.",
+      "analysis_vi": "指着 + vật + 说.",
+      "highlight": [
+        "指"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f54931fa-8f31-4ae8-bf87-ac417865d33d"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0d0dd16d-f424-4086-9dca-fe1be7844b97",
+      "order": 1,
+      "rule_vi": "手指 mới là ngón tay; 指 một mình thường là chỉ/trỏ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "手指 mới là ngón tay; 指 một mình thường là chỉ/trỏ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "指",
+    "back": "chỉ, trỏ; ngón tay; ý nói là",
+    "hint": "zhǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f54931fa-8f31-4ae8-bf87-ac417865d33d",
+    "source_lesson_vocab_id": null
+  }
+}

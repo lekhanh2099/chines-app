@@ -1,0 +1,392 @@
+{
+  "id": "6a7b1399-8d01-45b6-8030-d372f45b99a9",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "要求",
+  "pinyin": "yāoqiú",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Yêu cầu",
+    "meaning_vi": "yêu cầu, đòi hỏi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "yêu cầu",
+      "đòi hỏi"
+    ],
+    "short_definition_vi": "yêu cầu, đòi hỏi",
+    "textbook_focus_vi": "Âm Hán Việt: yêu cầu. Nghĩa chính: Yêu cầu, đòi hỏi. Đưa ra yêu cầu với ai. Điều kiện/tiêu chuẩn cần đạt. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "要",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "覀",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "muốn, cần, yêu cầu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "求",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "求",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tìm kiếm, cầu xin, yêu cầu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "要 = muốn/đòi hỏi; 求 = cầu/tìm/đề nghị. 要求 = nêu điều kiện hoặc mong muốn để người khác thực hiện.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 要求 mạnh hơn 请. 请 là mời/xin, còn 要求 là yêu cầu rõ ràng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "要求",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "yêu cầu, đòi hỏi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "请求",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thỉnh cầu, yêu cầu nhờ vả, lịch sự hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "请",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mời/xin, nhẹ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "需要",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "规定",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quy định.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "老师要求我们准时到。",
+      "Thầy/cô yêu cầu chúng tôi đến đúng giờ.",
+      "我请求你帮我。",
+      "Tôi thỉnh cầu bạn giúp tôi. Trang trọng.",
+      "请你帮我一下。",
+      "Xin bạn giúp tôi một chút."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "92fc71e4-db64-488f-b90c-8917d68259e7",
+      "order": 1,
+      "zh": "要求很高",
+      "pinyin": "",
+      "vi": "yêu cầu rất cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48d1e512-97df-4a7a-8632-a55161ca1ca5",
+      "order": 2,
+      "zh": "教学要求",
+      "pinyin": "",
+      "vi": "yêu cầu giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9f53703-a753-41e2-a74b-5ce5d75980d0",
+      "order": 3,
+      "zh": "展览要求",
+      "pinyin": "",
+      "vi": "yêu cầu triển lãm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4625cb2-14a6-4bf9-8f7b-172e81b3b860",
+      "order": 4,
+      "zh": "要求大家……",
+      "pinyin": "",
+      "vi": "yêu cầu mọi người...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e6eb5e0-f03c-4a7f-8e3a-b2a70c364750",
+      "order": 5,
+      "zh": "达到要求",
+      "pinyin": "",
+      "vi": "đạt yêu cầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0667b003-5d01-4a82-b5df-2f17c2fd1a9d",
+      "order": 6,
+      "zh": "按照要求",
+      "pinyin": "",
+      "vi": "theo yêu cầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e97df05c-63b5-47b0-96bb-f0336ee5bf57",
+      "order": 1,
+      "zh": "老师要求我们准时到。",
+      "pinyin": "Lǎoshī yāoqiú wǒmen zhǔnshí dào.",
+      "vi": "Thầy/cô yêu cầu chúng tôi đến đúng giờ.",
+      "analysis_vi": "要求 + người + V = yêu cầu ai làm gì.",
+      "highlight": [
+        "要求"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "6a7b1399-8d01-45b6-8030-d372f45b99a9"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2018db7e-3043-4bc8-a35f-ca6aca5da9a0",
+      "order": 2,
+      "zh": "研讨会要开始了，赵老师要求大家马上进去。",
+      "pinyin": "Yántǎohuì yào kāishǐ le, Zhào lǎoshī yāoqiú dàjiā mǎshàng jìnqù.",
+      "vi": "Hội thảo sắp bắt đầu rồi, thầy Triệu yêu cầu mọi người vào trong ngay.",
+      "analysis_vi": "要开始了 báo sắp xảy ra. 马上进去 = vào trong ngay.",
+      "highlight": [
+        "要求"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "6a7b1399-8d01-45b6-8030-d372f45b99a9"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "607ddc1b-fdbc-4c27-b4fb-dadcad429d88",
+      "order": 3,
+      "zh": "经过讨论以后，老师把这次文物展览的要求写在黑板上，又清楚地说了一遍，免得大家听不清楚。",
+      "pinyin": "Jīngguò tǎolùn yǐhòu, lǎoshī bǎ zhè cì wénwù zhǎnlǎn de yāoqiú xiě zài hēibǎn shang, yòu qīngchu de shuō le yí biàn, miǎnde dàjiā tīng bu qīngchu.",
+      "vi": "Sau khi thảo luận, thầy/cô viết yêu cầu của triển lãm văn vật lần này lên bảng, rồi nói rõ lại một lần nữa, tránh để mọi người nghe không rõ.",
+      "analysis_vi": "把要求写在黑板上 là 把字句 + vị trí kết quả. 清楚地说 dùng 地. 听不清楚 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "要求"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "6a7b1399-8d01-45b6-8030-d372f45b99a9"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong trường học, công việc, cơ quan, 要求 là từ rất hay gặp: 学习要求, 工作要求, 申请要求, 签证要求. Nó thường gắn với tiêu chuẩn cần đạt, không chỉ là lời nhờ.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2a02d982-3bbe-4d91-8c3a-ae3a5c45c823",
+      "order": 1,
+      "rule_vi": "要求 là yêu cầu/điều kiện do ai đó nêu ra; 需要 là nhu cầu/cần thiết.",
+      "natural_examples": [
+        {
+          "zh": "要求 có hai vai:",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这个要求很高。",
+          "pinyin": "Yêu cầu này rất cao.",
+          "vi": "Động từ:",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "老师要求我们认真学习。",
+          "pinyin": "Thầy/cô yêu cầu chúng tôi học nghiêm túc.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Danh từ: Động từ:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "要求",
+    "back": "yêu cầu, đòi hỏi",
+    "hint": "yāoqiú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6a7b1399-8d01-45b6-8030-d372f45b99a9",
+    "source_lesson_vocab_id": null
+  }
+}

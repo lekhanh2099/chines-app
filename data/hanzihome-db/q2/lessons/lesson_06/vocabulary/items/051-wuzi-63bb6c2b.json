@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_335e4b3a49def4d8",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "屋子",
+  "pinyin": "wūzi",
+  "meaning_vi": "phòng; căn phòng; nhà ở trong ngữ cảnh nói chung",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "3a306d78-8cdb-435f-bd89-bfa865f369ef",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "3a306d78-8cdb-435f-bd89-bfa865f369ef",
+    "type": "vocabulary_item",
+    "order": 23,
+    "hanzi": "屋子",
+    "pinyin": "wūzi",
+    "meaning_vi": "phòng; căn phòng; nhà ở trong ngữ cảnh nói chung",
+    "meaning_en": "room",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "屋子",
+      "back": "wūzi — phòng; căn phòng; nhà ở trong ngữ cảnh nói chung",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

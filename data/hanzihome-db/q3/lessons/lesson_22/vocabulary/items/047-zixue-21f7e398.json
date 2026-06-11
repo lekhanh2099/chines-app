@@ -1,0 +1,359 @@
+{
+  "id": "14078866-6dce-482f-8dab-484f59746d69",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "自学",
+  "pinyin": "zìxué",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "verb"
+  ],
+  "meaning": {
+    "hanviet": "tự học",
+    "meaning_vi": "tự học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự học"
+    ],
+    "short_definition_vi": "tự học",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng như bộ/thành phần chỉ trường nghĩa: con, trẻ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ/thành phần chỉ trường nghĩa: con, trẻ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "自学 được ghi nhớ theo nghĩa hiện đại: tự học.",
+    "memory_tip_vi": "Nhớ qua cụm: 自学汉语.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "学习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上课",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "听讲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "预习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "复习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "自学 không có nghĩa học không hệ thống; tự học vẫn có thể theo giáo trình."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "49a758fd-5f98-4a8f-bb08-7533fef0b869",
+      "order": 1,
+      "zh": "自学汉语",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0aad9590-6c4b-4195-bbe1-26fd791dbffb",
+      "order": 2,
+      "zh": "自学文学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8555bfc0-b52c-4430-9fc3-825961c51013",
+      "order": 3,
+      "zh": "自学能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17c1e239-d4f9-4c65-8bb9-2e29187a5a57",
+      "order": 4,
+      "zh": "坚持自学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d21384a4-709c-4619-834f-e4d7da2ab3d5",
+      "order": 5,
+      "zh": "通过自学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d18c4657-5e84-4bd7-bf25-97d232e26324",
+      "order": 6,
+      "zh": "自学教材",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4011cd14-a926-4899-a2bf-c2b5114c5fc9",
+      "order": 7,
+      "zh": "自学成才",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d476a948-d93e-4273-9595-e4941de8cb85",
+      "order": 1,
+      "zh": "他没有老师，只好自学汉语。",
+      "pinyin": "Tā méiyǒu lǎoshī, zhǐhǎo zìxué Hànyǔ.",
+      "vi": "Anh ấy không có giáo viên, đành phải tự học tiếng Hán.",
+      "analysis_vi": "只好 = đành phải.",
+      "highlight": [
+        "自学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "14078866-6dce-482f-8dab-484f59746d69"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "66e4b006-2606-4cf5-9964-769af86915e9",
+      "order": 2,
+      "zh": "母亲不是替小敏完成任务，而是培养她自学的能力。",
+      "pinyin": "Mǔqīn bú shì tì Xiǎomǐn wánchéng rènwu, ér shì péiyǎng tā zìxué de nénglì.",
+      "vi": "Mẹ không làm thay nhiệm vụ cho Tiểu Mẫn, mà rèn năng lực tự học của cô ấy.",
+      "analysis_vi": "不是……而是…… sửa trọng tâm.",
+      "highlight": [
+        "自学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "14078866-6dce-482f-8dab-484f59746d69"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "自学能力 là năng lực tự đặt mục tiêu, tìm tài liệu và kiểm tra kết quả.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c46b52f3-6a92-44cc-b271-ff5cfde1b1fa",
+      "order": 1,
+      "rule_vi": "自学 không có nghĩa học không hệ thống; tự học vẫn có thể theo giáo trình.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "自学 không có nghĩa học không hệ thống; tự học vẫn có thể theo giáo trình.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自学",
+    "back": "tự học",
+    "hint": "zìxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "verb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "14078866-6dce-482f-8dab-484f59746d69",
+    "source_lesson_vocab_id": null
+  }
+}

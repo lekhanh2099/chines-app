@@ -1,0 +1,428 @@
+{
+  "id": "97ad5b81-4144-46c6-95d7-fc4ce84ca502",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "制订",
+  "pinyin": "zhìdìng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chế đính",
+    "meaning_vi": "lập ra, xây dựng kế hoạch/quy định",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lập ra",
+      "xây dựng kế hoạch/quy định"
+    ],
+    "short_definition_vi": "lập ra, xây dựng kế hoạch/quy định",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về kế hoạch, quy định, giáo dục.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "kế hoạch, quy định, giáo dục",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "制",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 制 trong từ 制订; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao đứng",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "刂 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "bên phải chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刂 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao đứng",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刂 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 制订, chữ 制 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "订",
+        "lishu_vi": "đính",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 订 trong từ 制订; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丁",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 制订, chữ 订 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "制订 trong bài được nhớ theo nghĩa hiện đại: lập ra kế hoạch/quy định.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 制订计划 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "制定",
+        "pinyin": "zhìdìng",
+        "meaning_vi": "đặt ra/ban hành chính thức; hay dùng với chính sách",
+        "difference_vi": "đặt ra/ban hành chính thức; hay dùng với chính sách",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拟订",
+        "pinyin": "nǐdìng",
+        "meaning_vi": "dự thảo",
+        "difference_vi": "dự thảo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 制订 với 制作."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ed50054e-bd2e-4a80-97b4-51c7e811b2aa",
+      "order": 1,
+      "zh": "制订计划",
+      "pinyin": "",
+      "vi": "lập kế hoạch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8959e277-1cad-4542-af2d-615466bb37ce",
+      "order": 2,
+      "zh": "制订学习计划",
+      "pinyin": "",
+      "vi": "lập kế hoạch học tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89e24cf9-fa57-441a-910b-fa6dbc3d0f81",
+      "order": 3,
+      "zh": "制订教学计划",
+      "pinyin": "",
+      "vi": "lập kế hoạch giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d5c599b-c1ac-4be0-8ed3-c8f1467e80c8",
+      "order": 4,
+      "zh": "制订方案",
+      "pinyin": "",
+      "vi": "lập phương án",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc11ff1e-21e9-4697-9713-c414ed0637ad",
+      "order": 5,
+      "zh": "制订规则",
+      "pinyin": "",
+      "vi": "đặt ra quy tắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2f85401b-40ca-41ea-96c1-58f259b35047",
+      "order": 1,
+      "zh": "老师为学生制订了一个学习计划。",
+      "pinyin": "",
+      "vi": "lập ra, xây dựng kế hoạch/quy định",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "制订"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "97ad5b81-4144-46c6-95d7-fc4ce84ca502"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9a1e8b6e-28b1-47f1-9105-5fbc07280837",
+      "order": 2,
+      "zh": "这个词语“制订”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 制订 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "制订"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "97ad5b81-4144-46c6-95d7-fc4ce84ca502"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d0f64805-21c2-4e6e-b2a7-7b95fb30e459",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“制订”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 制订 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "制订"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "97ad5b81-4144-46c6-95d7-fc4ce84ca502"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "制订学习计划 là cụm rất hay gặp trong văn bản giáo dục.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0258eb85-cb0c-417b-884b-3866c397c905",
+      "order": 1,
+      "rule_vi": "Không nhầm 制订 với 制作.",
+      "natural_examples": [
+        {
+          "zh": "制订学习计划。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "制作学习计划。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "制作学习计划。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "制订学习计划。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 制订 với 制作.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "制订",
+    "back": "lập ra, xây dựng kế hoạch/quy định",
+    "hint": "zhìdìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "97ad5b81-4144-46c6-95d7-fc4ce84ca502",
+    "source_lesson_vocab_id": null
+  }
+}

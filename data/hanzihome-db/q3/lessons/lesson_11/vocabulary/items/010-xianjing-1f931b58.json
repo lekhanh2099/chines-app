@@ -1,0 +1,387 @@
+{
+  "id": "8b231f58-59ff-46cd-a84a-06e4dd81ad47",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "仙境",
+  "pinyin": "xiānjìng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "tiên cảnh",
+    "meaning_vi": "cảnh tiên, nơi đẹp như chốn thần tiên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cảnh tiên",
+      "nơi đẹp như chốn thần tiên"
+    ],
+    "short_definition_vi": "nơi/cảnh đẹp đến mức giống chốn thần tiên",
+    "textbook_focus_vi": "Dùng để tả cảm giác khi đến vùng thiên nhiên rất đẹp.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "仙",
+        "lishu_vi": "",
+        "structure_note_vi": "亻 + 山",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "山",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiên",
+        "modern_logic_vi": "tiên",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "境",
+        "lishu_vi": "",
+        "structure_note_vi": "土 + 竟",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "竟",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảnh, cảnh giới",
+        "modern_logic_vi": "cảnh, cảnh giới",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "仙境 được học trong bài theo nghĩa: nơi/cảnh đẹp đến mức giống chốn thần tiên.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 像仙境一样.",
+    "warning_vi": "Không dùng 仙境 cho mọi cảnh đẹp bình thường; nó hơi văn và phóng đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "风景",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phong cảnh trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "美景",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cảnh đẹp, dễ dùng hơn 仙境.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 仙境 cho mọi cảnh đẹp bình thường; nó hơi văn và phóng đại."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f390511f-6074-4509-86a7-a3ebc4900bdc",
+      "order": 1,
+      "zh": "像仙境一样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bae03d45-6eee-4c3f-9e7f-4c03030692c6",
+      "order": 2,
+      "zh": "到了仙境",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "822bc735-26d2-4a63-a8b1-65e90797c81d",
+      "order": 3,
+      "zh": "人间仙境",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "615eb79a-99f6-4bda-a847-7a53c0c89cf9",
+      "order": 4,
+      "zh": "美丽的仙境",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "51f1c170-0afe-4c7a-b639-e09880b8ecb1",
+      "order": 5,
+      "zh": "仿佛进入了仙境",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "173106ab-ddb5-4b61-b1c1-2e0e0ee78a55",
+      "order": 1,
+      "zh": "这个地方太美了，像仙境一样。",
+      "pinyin": "",
+      "vi": "Nơi này đẹp quá, giống như tiên cảnh vậy.",
+      "analysis_vi": "像……一样 dùng để so sánh.",
+      "highlight": [
+        "仙境"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b231f58-59ff-46cd-a84a-06e4dd81ad47"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "660e63bc-7aaf-4629-a110-db9fc67c09ba",
+      "order": 2,
+      "zh": "我一走进那片草原，就觉得自己好像来到了仙境。",
+      "pinyin": "",
+      "vi": "Tôi vừa bước vào vùng thảo nguyên đó thì thấy như đến tiên cảnh.",
+      "analysis_vi": "好像 làm sắc thái so sánh/cảm nhận.",
+      "highlight": [
+        "仙境"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b231f58-59ff-46cd-a84a-06e4dd81ad47"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "仙境 liên quan hình tượng 仙 trong văn hóa Trung Hoa, nhưng khi tả cảnh không nhất thiết có nghĩa tôn giáo.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e7ffe925-89e9-48e2-a957-7485e085ff4d",
+      "order": 1,
+      "rule_vi": "Không dùng 仙境 cho mọi cảnh đẹp bình thường; nó hơi văn và phóng đại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 仙境 cho mọi cảnh đẹp bình thường; nó hơi văn và phóng đại.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "仙境",
+    "back": "cảnh tiên, nơi đẹp như chốn thần tiên",
+    "hint": "xiānjìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8b231f58-59ff-46cd-a84a-06e4dd81ad47",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,437 @@
+{
+  "id": "88b340b4-68fa-476e-90e7-2a141f805c8b",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "精彩",
+  "pinyin": "jīngcǎi",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tinh thái",
+    "meaning_vi": "đặc sắc, hấp dẫn, xuất sắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đặc sắc, hấp dẫn, xuất sắc"
+    ],
+    "short_definition_vi": "đặc sắc, hấp dẫn, xuất sắc",
+    "textbook_focus_vi": "đặc sắc, hấp dẫn, xuất sắc",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "精",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "米",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mễ",
+          "radical_name_zh": "",
+          "hanviet": "mễ",
+          "meaning_vi": "gạo, hạt",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "米 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "米",
+            "hanviet": "mễ",
+            "meaning_vi": "gạo, hạt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "米",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mễ",
+              "radical_name_zh": "",
+              "hanviet": "mễ",
+              "meaning_vi": "gạo, hạt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "米 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "",
+            "meaning_vi": "xanh; thành phần cấu tạo/biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "彩",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "彡",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sam",
+          "radical_name_zh": "",
+          "hanviet": "sam",
+          "meaning_vi": "hoa văn, dáng vẻ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彡 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "采",
+            "hanviet": "",
+            "meaning_vi": "hái, chọn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "彡",
+            "hanviet": "sam",
+            "meaning_vi": "hoa văn, dáng vẻ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "彡",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sam",
+              "radical_name_zh": "",
+              "hanviet": "sam",
+              "meaning_vi": "hoa văn, dáng vẻ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彡 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "精 là tinh, tinh túy, tốt, kỹ. 彩 là màu sắc, vẻ rực rỡ. → 精彩 = có phần tinh túy, nổi bật, hấp dẫn.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 精彩 không dùng cho mọi kiểu “đẹp”. Người đẹp thường nói 漂亮, không nói 人很精彩 trong nghĩa ngoại hình.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "精彩",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặc sắc, hấp dẫn, xuất sắc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好看",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hay/đẹp để xem, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有趣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thú vị.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "漂亮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đẹp về ngoại hình/hình thức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 演出很精彩; 演员很漂亮; 故事很有趣."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2ed9a0b6-b1b7-41c8-847c-bbe92a4380e1",
+      "order": 1,
+      "zh": "演出很精彩",
+      "pinyin": "",
+      "vi": "buổi biểu diễn rất đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "692512fb-bffc-4afb-9c2b-1e761f3ffd0d",
+      "order": 2,
+      "zh": "节目很精彩",
+      "pinyin": "",
+      "vi": "tiết mục/chương trình rất hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7025e3af-8e78-4db0-b902-b3414035504f",
+      "order": 3,
+      "zh": "精彩的表演",
+      "pinyin": "",
+      "vi": "màn biểu diễn đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "053c6854-bff7-4355-bfd8-4f9b31af007d",
+      "order": 4,
+      "zh": "精彩内容",
+      "pinyin": "",
+      "vi": "nội dung đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16639d21-4c35-4f10-8de2-cb58b35bc48a",
+      "order": 5,
+      "zh": "精彩极了",
+      "pinyin": "",
+      "vi": "cực kỳ đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2e947808-30e1-443e-a26e-ddc9247e5713",
+      "order": 1,
+      "zh": "这场演出精彩极了，虽然有些地方我听不懂。",
+      "pinyin": "Zhè chǎng yǎnchū jīngcǎi jí le, suīrán yǒuxiē dìfang wǒ tīng bù dǒng.",
+      "vi": "Buổi biểu diễn này cực kỳ đặc sắc, tuy có vài chỗ tôi nghe không hiểu.",
+      "analysis_vi": "听不懂 là không nghe hiểu; vẫn có thể thấy biểu diễn 精彩 qua hình ảnh, động tác.",
+      "highlight": [
+        "精彩"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "88b340b4-68fa-476e-90e7-2a141f805c8b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "357e9e53-3611-4841-9a66-c0233539f67f",
+      "order": 2,
+      "zh": "演员的武打动作很精彩，观众一下子就安静下来了。",
+      "pinyin": "Yǎnyuán de wǔdǎ dòngzuò hěn jīngcǎi, guānzhòng yíxiàzi jiù ānjìng xiàlai le.",
+      "vi": "Động tác võ thuật của diễn viên rất đặc sắc, khán giả lập tức yên lặng lại.",
+      "analysis_vi": "精彩 đánh giá màn diễn; 安静下来 là chuyển sang trạng thái yên lặng.",
+      "highlight": [
+        "精彩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "88b340b4-68fa-476e-90e7-2a141f805c8b"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a97f495c-d012-478f-a5e5-ca88b6ec9510",
+      "order": 3,
+      "zh": "如果不了解人物的性格，就看不出这个动作精彩在哪里。",
+      "pinyin": "Rúguǒ bù liǎojiě rénwù de xìnggé, jiù kàn bù chū zhège dòngzuò jīngcǎi zài nǎlǐ.",
+      "vi": "Nếu không hiểu tính cách nhân vật, sẽ nhìn không ra động tác này đặc sắc ở chỗ nào.",
+      "analysis_vi": "看不出……在哪里 = nhìn không ra điểm nằm ở đâu; rất hợp với phân tích nghệ thuật.",
+      "highlight": [
+        "精彩"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "88b340b4-68fa-476e-90e7-2a141f805c8b"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "f899da71-4fdd-41f7-b3dc-6b83ef9ad181",
+      "order": 1,
+      "rule_vi": "Dùng 精彩 để khen ngoại hình người. Không tự nhiên",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "她很精彩。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "她很漂亮。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "她的表演很精彩。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Lỗi sai phổ biến: Dùng 精彩 để khen ngoại hình người. Không tự nhiên: 她很精彩。 Tự nhiên: 她很漂亮。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "精彩",
+    "back": "đặc sắc, hấp dẫn, xuất sắc",
+    "hint": "jīngcǎi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Sau khi xem biểu diễn ở Trung Quốc, khen 演出很精彩 nghe tự nhiên và lịch sự hơn chỉ nói 很好. Nếu muốn khen mạnh, có thể nói 太精彩了！ – hay/đặc sắc quá!",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "88b340b4-68fa-476e-90e7-2a141f805c8b",
+    "source_lesson_vocab_id": null
+  }
+}

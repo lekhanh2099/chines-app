@@ -1,0 +1,916 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: giữ đủ tất cả mục bài tập theo thứ tự sách.",
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_checked",
+    "blocked_final_statuses": []
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调，朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "dìwèi — tǐhuì",
+            "yǒuqù — yǒu qì",
+            "yìshù — yīshù",
+            "gūjì — gùjì",
+            "yǐngxiǎng — yìnxiàng",
+            "zhǐshì — zhīshi"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_group",
+          "title": "朗读",
+          "items": [
+            "看得见 / 看不见",
+            "听得懂 / 听不懂",
+            "看得清楚 / 看不清楚",
+            "去得了 / 去不了",
+            "吃得了 / 吃不了",
+            "来得了 / 来不了",
+            "买得到 / 买不到",
+            "做得到 / 做不到",
+            "看得到 / 看不到",
+            "坐得下 / 坐不下",
+            "装得下 / 装不下",
+            "放得下 / 放不下",
+            "上得去 / 上不去",
+            "进得去 / 进不去",
+            "出得去 / 出不去"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+        "zh": "替换。",
+        "vi": "Thay từ theo mẫu."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "篇",
+          "pinyin": "piān",
+          "meaning_vi": "lượng từ cho bài viết, tác phẩm"
+        },
+        {
+          "hanzi": "桥",
+          "pinyin": "qiáo",
+          "meaning_vi": "cây cầu"
+        },
+        {
+          "hanzi": "雾",
+          "pinyin": "wù",
+          "meaning_vi": "sương mù"
+        },
+        {
+          "hanzi": "广播",
+          "pinyin": "guǎngbō",
+          "meaning_vi": "phát thanh; radio"
+        },
+        {
+          "hanzi": "辣",
+          "pinyin": "là",
+          "meaning_vi": "cay"
+        }
+      ],
+      "groups": [
+        {
+          "id": "918add38-1481-4dfe-a2eb-3de2bf72223b",
+          "model": "A：你看得懂这个句子吗？\nB：看得懂。",
+          "items": [
+            {
+              "id": "9b9177ad-bf59-43fc-a31d-47205de54559",
+              "prompt": "听 / 懂 / 老师的话"
+            },
+            {
+              "id": "eeb6ff13-8504-4128-8fc5-85a83fa18190",
+              "prompt": "看 / 懂 / 这篇课文"
+            },
+            {
+              "id": "f8232727-e1ba-46c7-a24e-2e17d1da90b9",
+              "prompt": "看 / 见 / 上面的字"
+            },
+            {
+              "id": "a8083b53-feae-416d-b1de-642c47583022",
+              "prompt": "听 / 见 / 我的声音"
+            }
+          ]
+        },
+        {
+          "id": "77bad2ef-1a73-4bc4-add8-a40bf57850fb",
+          "model": "A：你看得见黑板上的字吗？\nB：我眼睛不好，看不见 / 看不清楚。",
+          "items": [
+            {
+              "id": "fdd9e2e9-4162-4373-97b2-58ebff304dca",
+              "prompt": "前面的人 / 太黑"
+            },
+            {
+              "id": "951edfc5-6c70-432c-8997-5e8b7db1cc98",
+              "prompt": "前边那座桥 / 离得太远"
+            },
+            {
+              "id": "5f63c60e-00c0-4d75-affc-db38ab215d41",
+              "prompt": "这本词典上的字 / 字太小"
+            },
+            {
+              "id": "7f4a4b89-3628-4f21-8529-f86e00ba7825",
+              "prompt": "节目单上的字 / 我没戴眼镜儿"
+            },
+            {
+              "id": "ad18a69d-07b4-4da9-8303-147e1f6886f1",
+              "prompt": "那辆汽车 / 雾太大"
+            }
+          ]
+        },
+        {
+          "id": "3d4b8f85-b0a6-40a3-87a1-a414e7ed5803",
+          "model": "A：火车票买得到买不到？\nB：买得到。",
+          "items": [
+            {
+              "id": "be4ae916-a1dc-4c72-9620-31a819a3df44",
+              "prompt": "飞机票 / 买"
+            },
+            {
+              "id": "aa68d903-9162-4ba4-9f63-ef23e1f3fa95",
+              "prompt": "张大夫 / 请"
+            },
+            {
+              "id": "7b8edd24-fa6d-4f57-be9b-7d7cd7512b75",
+              "prompt": "他住的地方 / 找"
+            },
+            {
+              "id": "3c8d98fd-e32e-4b6c-bce7-360be78b6d54",
+              "prompt": "这本书 / 借"
+            },
+            {
+              "id": "db19cf9d-f417-44d3-99d6-7b3762d6a4df",
+              "prompt": "中文广播 / 听"
+            }
+          ]
+        },
+        {
+          "id": "166751d2-6415-42ee-a9b0-1d48c33f712b",
+          "model": "A：上得去吗？\nB：车上人太多，上不去。",
+          "items": [
+            {
+              "id": "59f03800-557c-43f2-a141-cab111889753",
+              "prompt": "进 / 没有钥匙"
+            },
+            {
+              "id": "1907ffb3-c756-4fc9-87fa-bf9040794186",
+              "prompt": "下 / 前边没有路"
+            },
+            {
+              "id": "9d453cd5-ab1e-4b90-9891-b613a6788aee",
+              "prompt": "过 / 没有桥"
+            },
+            {
+              "id": "567afbf5-4dab-4c73-8dea-d8e8fb5a35c5",
+              "prompt": "出 / 前边堵车"
+            },
+            {
+              "id": "7dd98245-ca6c-421b-83d5-07ce994110bb",
+              "prompt": "回 / 买不到机票"
+            }
+          ]
+        },
+        {
+          "id": "c11959c2-5d1e-427d-9b8b-3e2b6c40c022",
+          "model": "A：你去得了吗？\nB：我有事儿，去不了。",
+          "items": [
+            {
+              "id": "e888b1a5-d8a6-4351-8113-42b13d5fd689",
+              "prompt": "来 / 我没有时间"
+            },
+            {
+              "id": "fe6eb493-7959-4940-88db-473a6b62a249",
+              "prompt": "吃 / 饺子要得太多了"
+            },
+            {
+              "id": "d817a224-2788-4be4-8cc5-68f32dd93ccc",
+              "prompt": "吃 / 菜太辣了"
+            },
+            {
+              "id": "87df83de-a83d-4d69-8a24-8f7f2cc58546",
+              "prompt": "拿 / 东西太多"
+            },
+            {
+              "id": "4fac24d6-c288-4397-844c-627c744c53f2",
+              "prompt": "参加 / 我身体不舒服"
+            }
+          ]
+        },
+        {
+          "id": "94c86e6d-6dfa-497b-9e21-6faa3f47c33c",
+          "model": "A：这个剧场坐得下坐不下五百人？\nB：这个剧场太小，坐不下。",
+          "items": [
+            {
+              "id": "12ae13f2-bc3c-4333-96dd-c6d74dd97c0b",
+              "prompt": "这个教室 / 坐 / 二十个人"
+            },
+            {
+              "id": "1dd67d40-9357-4a98-8b3b-86cde80b5412",
+              "prompt": "这个房间 / 住 / 四个人"
+            },
+            {
+              "id": "701f3d3d-10f9-4ce5-bfdb-da9f89c6458a",
+              "prompt": "那个屋子 / 放 / 这张桌子"
+            },
+            {
+              "id": "840d41c8-07a3-40a8-b42c-fb1050149562",
+              "prompt": "这张纸 / 写 / 四个大字"
+            },
+            {
+              "id": "f6bbcb10-b1f7-4416-a8c8-803f49e6883f",
+              "prompt": "这个书架 / 摆 / 这些书"
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống."
+      },
+      "parts": [
+        {
+          "id": "a6f7cca9-476b-4ad4-acfd-b1e7edf544a2",
+          "title": "A",
+          "word_bank": [
+            "肯定",
+            "影响",
+            "估计",
+            "性格",
+            "内容",
+            "只是",
+            "担心",
+            "艺术",
+            "武打",
+            "只好"
+          ],
+          "questions": [
+            "我最喜欢看他演的______片。",
+            "我喜欢她那活泼开朗的______。",
+            "你请假去旅行，老师______不准。",
+            "因为太晚了，没有公共汽车了，______打的去。",
+            "京剧是中国的传统______，听说年轻人不太喜欢。",
+            "她是受姐姐的______才来中国学汉语的。",
+            "我______对京剧感兴趣，但不会唱。",
+            "她现在还不来，我______是遇到什么事了。",
+            "不用______，妈妈的病很快就会好的。",
+            "这本书的______怎么样？"
+          ],
+          "answers": [
+            "武打",
+            "性格",
+            "肯定",
+            "只好",
+            "艺术",
+            "影响",
+            "只是",
+            "估计",
+            "担心",
+            "内容"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c1dcda40-952b-400d-a5fc-d2e6342e30e8",
+          "title": "B",
+          "questions": [
+            {
+              "prompt": "请代我______你爸爸妈妈问好。",
+              "choices": [
+                "给",
+                "把",
+                "被",
+                "向"
+              ],
+              "answer": "向",
+              "answer_verified": true
+            },
+            {
+              "prompt": "她现在不在办公室，她家里有电话，你把电话______。",
+              "choices": [
+                "到她家里去打吧",
+                "去她家里打吧",
+                "打到她家里去吧",
+                "打去她家里吧"
+              ],
+              "answer": "打到她家里去吧",
+              "answer_verified": true
+            },
+            {
+              "prompt": "我看这本杂志______有一张照片，很像你。",
+              "choices": [
+                "里",
+                "中",
+                "上",
+                "下"
+              ],
+              "answer": "上",
+              "answer_verified": true
+            },
+            {
+              "prompt": "昨天晚上我一直学习到很晚才睡，只______。",
+              "choices": [
+                "睡觉了四五个小时",
+                "四五个小时睡觉",
+                "睡了四五个小时觉",
+                "睡四个五个小时觉"
+              ],
+              "answer": "睡了四五个小时觉",
+              "answer_verified": true
+            },
+            {
+              "prompt": "这篇课文比较难，我______。",
+              "choices": [
+                "看得不懂",
+                "不看懂",
+                "看得懂",
+                "看不懂"
+              ],
+              "answer": "看不懂",
+              "answer_verified": true
+            },
+            {
+              "prompt": "A：我现在能进去找他吗？\nB：对不起，他正在上课，现在还______。",
+              "choices": [
+                "进不去",
+                "不能进去",
+                "进得去",
+                "进得不去"
+              ],
+              "answer": "不能进去",
+              "answer_verified": true
+            }
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_manual_checked",
+      "check_needed": false,
+      "answer_verified": true
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 4,
+      "title": "四、用下列词组填空",
+      "title_vi": "Dùng cụm từ cho sẵn điền vào chỗ trống",
+      "instruction": {
+        "zh": "用下列词组填空。",
+        "vi": "Dùng các cụm sau điền vào chỗ trống."
+      },
+      "word_bank": [
+        "看不懂",
+        "看得完",
+        "拿不了",
+        "放不下",
+        "参加得了",
+        "买得到",
+        "坐不下",
+        "听不懂",
+        "出不去",
+        "起得来"
+      ],
+      "questions": [
+        "这本书很好，我也想买一本，还______吗？",
+        "玛丽，明天晚上我们准备举行圣诞晚会，你______吗？",
+        "我们明天早上六点出发，你______吗？",
+        "东西太多了，她一个人______，你去帮帮她吧。",
+        "从这儿______，我们走那个门吧。",
+        "房间太小，______那么多人。",
+        "书太多了，家里的书架已经______了。",
+        "老师的话我听得懂，但是还______中文广播。",
+        "借了这么多的书，你一个月______吗？",
+        "我的汉语水平很低，还______中文小说儿。"
+      ],
+      "answers": [
+        "买得到",
+        "参加得了",
+        "起得来",
+        "拿不了",
+        "出不去",
+        "坐不下",
+        "放不下",
+        "听不懂",
+        "看得完",
+        "看不懂"
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_manual_checked",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 5,
+      "title": "五、完成句子",
+      "title_vi": "Hoàn thành câu",
+      "instruction": {
+        "zh": "完成句子。",
+        "vi": "Hoàn thành câu theo ngữ cảnh."
+      },
+      "example": {
+        "A": "明天去得了公园吗？",
+        "B": "要是下雨的话，就去不了了。"
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "A：这本书图书馆借得到借不到？\nB：______，借不到。"
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "A：我想看这个展览，不知道买得到买不到票？\nB：______，买不到。"
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "A：你星期天回得来吗？\nB：______，回得来。"
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "A：明天我们去看展览，你跟我们一起去吧。\nB：______，可能去不了。"
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "A：晚上七点去看京剧，六点以前你回得来回不来？\nB：______，回得来。"
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "A：黑板上的字你看得清楚看不清楚？\nB：______，看不清楚。"
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook",
+      "check_needed": false,
+      "suggested_answers": [
+        {
+          "question_order": 1,
+          "answer": "要是已经被别人借走了的话，就借不到。",
+          "answer_verified": true
+        },
+        {
+          "question_order": 2,
+          "answer": "要是票已经卖完了的话，就买不到。",
+          "answer_verified": true
+        },
+        {
+          "question_order": 3,
+          "answer": "要是星期天没有别的事的话，就回得来。",
+          "answer_verified": true
+        },
+        {
+          "question_order": 4,
+          "answer": "要是明天有事的话，可能去不了。",
+          "answer_verified": true
+        },
+        {
+          "question_order": 5,
+          "answer": "要是不堵车的话，回得来。",
+          "answer_verified": true
+        },
+        {
+          "question_order": 6,
+          "answer": "要是坐得太远的话，看不清楚。",
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 6,
+      "title": "六、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        "中文广播说得太快了，我不能听懂。",
+        "今天的作业太多了，我做到十点也不做完。",
+        "你把中文小说儿看得懂看不懂？",
+        "因为买不了机票，今天我不能回去。",
+        "我把今天的作业做得完。",
+        "刚来中国时，我一句汉语也没听懂。",
+        "这些菜你吃得完吃得不完？",
+        "这个包儿放得不下这么多书。"
+      ],
+      "answer_verified": true,
+      "notes_vi": [
+        "Kiểm tra lỗi 可能补语, vị trí tân ngữ, 不 + 补语, không dùng 把 với 可能补语."
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "answers": [
+        {
+          "order": 1,
+          "corrected": "中文广播说得太快了，我听不懂。",
+          "note_vi": "可能补语直接用 听不懂，不用 不能听懂。"
+        },
+        {
+          "order": 2,
+          "corrected": "今天的作业太多了，我做到十点也做不完。",
+          "note_vi": "否 định khả năng hoàn thành: 做不完。"
+        },
+        {
+          "order": 3,
+          "corrected": "中文小说儿你看得懂看不懂？",
+          "note_vi": "可能补语 không dùng trong 把字句; đưa tân ngữ lên làm chủ đề."
+        },
+        {
+          "order": 4,
+          "corrected": "因为买不到机票，今天我不能回去。",
+          "note_vi": "买不到 chỉ không đạt được kết quả mua vé; 买不了 nghiêng về điều kiện/khả năng không cho phép mua, không sát câu này bằng 买不到."
+        },
+        {
+          "order": 5,
+          "corrected": "今天的作业我做得完。",
+          "note_vi": "Không dùng 把 với 可能补语 trong mẫu này."
+        },
+        {
+          "order": 6,
+          "corrected": "刚来中国时，我一句汉语也听不懂。",
+          "note_vi": "Ở đây muốn nói trạng thái năng lực lúc mới đến: một câu tiếng Hán cũng nghe không hiểu, nên dùng 听不懂; không dùng 没听懂 nếu nói năng lực chung."
+        },
+        {
+          "order": 7,
+          "corrected": "这些菜你吃得完吃不完？",
+          "note_vi": "Dạng hỏi chính-phản: V得完 V不完, không nói 得不完."
+        },
+        {
+          "order": 8,
+          "corrected": "这个包儿放不下这么多书。",
+          "note_vi": "Phủ định khả năng chứa: 放不下, không nói 放得不下."
+        }
+      ]
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "custom",
+      "variant": "communication_prompt",
+      "order": 7,
+      "title": "七、下列情景怎么说",
+      "title_vi": "Nói thế nào trong các tình huống sau",
+      "instruction": {
+        "zh": "用“动词 + 可能补语”表达。",
+        "vi": "Dùng động từ + bổ ngữ khả năng để diễn đạt."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "prompt": "朋友请你去参加一个舞会，你有事不能去，怎么对朋友说？",
+          "expected_patterns": [
+            "去不了"
+          ],
+          "suggested_answer": "对不起，我今天有事，去不了了。",
+          "suggested_answer_pinyin": "Duìbuqǐ, wǒ jīntiān yǒu shì, qù bu liǎo le.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "prompt": "你踢球时腿摔伤了，今天不能去上课了，怎么打电话向老师请假？",
+          "expected_patterns": [
+            "上不了课",
+            "去不了"
+          ],
+          "suggested_answer": "老师，我踢球时腿摔伤了，今天上不了课，想请一天假。",
+          "suggested_answer_pinyin": "Lǎoshī, wǒ tī qiú shí tuǐ shuāi shāng le, jīntiān shàng bu liǎo kè, xiǎng qǐng yì tiān jià.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "prompt": "你买了很多东西，自己拿不了，正好看见麦克过来，你想请他帮你拿，怎么说？",
+          "expected_patterns": [
+            "拿不了",
+            "帮我拿一下"
+          ],
+          "suggested_answer": "麦克，我买的东西太多了，一个人拿不了，你能帮我拿一下吗？",
+          "suggested_answer_pinyin": "Màikè, wǒ mǎi de dōngxi tài duō le, yí ge rén ná bu liǎo, nǐ néng bāng wǒ ná yíxià ma?",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "prompt": "上听力课时你的耳机没有声音，你怎么对老师说？",
+          "expected_patterns": [
+            "听不见",
+            "听不到声音"
+          ],
+          "suggested_answer": "老师，我的耳机没有声音，听不见。",
+          "suggested_answer_pinyin": "Lǎoshī, wǒ de ěrjī méiyǒu shēngyīn, tīng bu jiàn.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_manual_checked",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 8,
+      "title": "八、综合填空",
+      "title_vi": "Bài đọc điền chỗ trống",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "reading_ref": "reading_01",
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "blank": 1,
+          "prompt": "1 ______"
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "blank": 2,
+          "prompt": "2 ______"
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "blank": 3,
+          "prompt": "3 ______"
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "blank": 4,
+          "prompt": "4 ______"
+        },
+        {
+          "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+          "blank": 5,
+          "prompt": "5 ______"
+        },
+        {
+          "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+          "blank": 6,
+          "prompt": "6 ______"
+        },
+        {
+          "id": "a38bba23-f596-4371-82c0-14a75cbc3dee",
+          "blank": 7,
+          "prompt": "7 ______"
+        },
+        {
+          "id": "97b922c5-eca7-4c57-817f-978352efaddc",
+          "blank": 8,
+          "prompt": "8 ______"
+        }
+      ],
+      "suggested_answers": [
+        {
+          "blank": 1,
+          "answer": "车上",
+          "answer_verified": true
+        },
+        {
+          "blank": 2,
+          "answer": "得",
+          "answer_verified": true
+        },
+        {
+          "blank": 3,
+          "answer": "就",
+          "answer_verified": true
+        },
+        {
+          "blank": 4,
+          "answer": "快",
+          "answer_verified": true
+        },
+        {
+          "blank": 5,
+          "answer": "可是",
+          "answer_verified": true
+        },
+        {
+          "blank": 6,
+          "answer": "继续",
+          "answer_verified": true
+        },
+        {
+          "blank": 7,
+          "answer": "怎么",
+          "answer_verified": true
+        },
+        {
+          "blank": 8,
+          "answer": "了",
+          "answer_verified": true
+        }
+      ],
+      "source_origin": "textbook_question_manual_checked",
+      "check_needed": false,
+      "answer_verified": true
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 9,
+      "title": "九、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp."
+      },
+      "dialogues": [
+        {
+          "id": "8c35ce4f-427e-48c9-b6d1-8ce1d9e4cf87",
+          "title": "拒绝",
+          "title_vi": "Từ chối",
+          "lines": [
+            {
+              "speaker": "A",
+              "zh": "星期六我们一起去看京剧，怎么样？",
+              "vi": "Thứ bảy chúng ta cùng đi xem Kinh kịch, được không?"
+            },
+            {
+              "speaker": "B",
+              "zh": "京剧我看不懂，不想去。",
+              "vi": "Kinh kịch tôi xem không hiểu, không muốn đi."
+            },
+            {
+              "speaker": "A",
+              "zh": "这么多东西你一个人可能拿不了，我来帮你拿吧。",
+              "vi": "Nhiều đồ thế này một mình bạn có lẽ cầm không nổi, để tôi giúp bạn cầm nhé."
+            },
+            {
+              "speaker": "B",
+              "zh": "谢谢，不用了。我拿得了。",
+              "vi": "Cảm ơn, không cần đâu. Tôi cầm được."
+            }
+          ]
+        },
+        {
+          "id": "be03e24a-ec79-4457-9578-c49dcf323e88",
+          "title": "通知",
+          "title_vi": "Thông báo",
+          "lines": [
+            {
+              "speaker": "女",
+              "zh": "喂，是赵教授吗？",
+              "vi": "Alo, có phải giáo sư Triệu không ạ?"
+            },
+            {
+              "speaker": "男",
+              "zh": "我是赵文。你是哪位？",
+              "vi": "Tôi là Triệu Văn. Bạn là ai?"
+            },
+            {
+              "speaker": "女",
+              "zh": "我是小张。",
+              "vi": "Em là Tiểu Trương."
+            },
+            {
+              "speaker": "男",
+              "zh": "小张，有什么事儿吗？",
+              "vi": "Tiểu Trương, có việc gì không?"
+            },
+            {
+              "speaker": "女",
+              "zh": "请您明天上午参加一个会。",
+              "vi": "Mời thầy sáng mai tham gia một cuộc họp."
+            },
+            {
+              "speaker": "男",
+              "zh": "在什么地方？",
+              "vi": "Ở đâu?"
+            },
+            {
+              "speaker": "女",
+              "zh": "在三楼会议室。",
+              "vi": "Ở phòng họp tầng ba."
+            },
+            {
+              "speaker": "男",
+              "zh": "几点？",
+              "vi": "Mấy giờ?"
+            },
+            {
+              "speaker": "女",
+              "zh": "八点半。",
+              "vi": "Tám giờ rưỡi."
+            },
+            {
+              "speaker": "男",
+              "zh": "好，知道了。",
+              "vi": "Được, tôi biết rồi."
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "character_writing",
+      "variant": "character_copying",
+      "order": 10,
+      "title": "十、写汉字",
+      "title_vi": "Viết chữ Hán",
+      "instruction": {
+        "zh": "写汉字。",
+        "vi": "Luyện viết chữ Hán."
+      },
+      "characters": [
+        {
+          "hanzi": "猜",
+          "pinyin": "cāi"
+        },
+        {
+          "hanzi": "脸",
+          "pinyin": "liǎn"
+        },
+        {
+          "hanzi": "社",
+          "pinyin": "shè"
+        },
+        {
+          "hanzi": "性",
+          "pinyin": "xìng"
+        },
+        {
+          "hanzi": "格",
+          "pinyin": "gé"
+        },
+        {
+          "hanzi": "艺",
+          "pinyin": "yì"
+        },
+        {
+          "hanzi": "术",
+          "pinyin": "shù"
+        },
+        {
+          "hanzi": "满",
+          "pinyin": "mǎn"
+        },
+        {
+          "hanzi": "担",
+          "pinyin": "dān"
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

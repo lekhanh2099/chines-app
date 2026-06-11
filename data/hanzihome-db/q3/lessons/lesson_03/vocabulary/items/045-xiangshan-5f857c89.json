@@ -1,0 +1,394 @@
+{
+  "id": "379d06e4-6234-4de9-9afe-5ac8f96fe229",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "香山",
+  "pinyin": "Xiāngshān",
+  "pos": {
+    "raw_vi": "proper_noun",
+    "raw_cn": "",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "proper_noun",
+    "beijing"
+  ],
+  "meaning": {
+    "hanviet": "Hương Sơn",
+    "meaning_vi": "Hương Sơn; Công viên/núi Hương Sơn ở Bắc Kinh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Hương Sơn",
+      "Công viên",
+      "núi Hương Sơn ở Bắc Kinh"
+    ],
+    "short_definition_vi": "Hương Sơn; Công viên/núi Hương Sơn ở Bắc Kinh",
+    "textbook_focus_vi": "Hương Sơn; Công viên/núi Hương Sơn ở Bắc Kinh",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "proper_noun, beijing",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "香",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa, cây lương thực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa, cây lương thực",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa, cây lương thực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thơm, hương",
+        "modern_logic_vi": "Trong từ này, 香 góp phần vào lớp nghĩa hiện đại: thơm, hương",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "山",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "山",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sơn",
+          "radical_name_zh": "",
+          "hanviet": "sơn",
+          "meaning_vi": "núi",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "núi",
+        "modern_logic_vi": "Trong từ này, 山 góp phần vào lớp nghĩa hiện đại: núi",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "香 = hương/thơm; 山 = núi. Đây là tên riêng địa danh, không dịch là “núi thơm”.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "北海",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "十三陵",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长城",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "颐和园",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "02fbfba0-f20c-4cd0-a4f1-5f99d62304f0",
+      "order": 1,
+      "zh": "香山公园",
+      "pinyin": "",
+      "vi": "Công viên Hương Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6bdac3c1-3a91-4ee6-a5d9-73a521424b06",
+      "order": 2,
+      "zh": "去香山",
+      "pinyin": "",
+      "vi": "đi Hương Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f4cb396-2312-4fff-852c-7c03fb3ddb19",
+      "order": 3,
+      "zh": "香山的红叶",
+      "pinyin": "",
+      "vi": "lá đỏ Hương Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b45457e8-bfdb-4189-81f5-5dbd65b14b7c",
+      "order": 4,
+      "zh": "爬香山",
+      "pinyin": "",
+      "vi": "leo Hương Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ac7e01c-23e8-4651-8107-329abaa45ed4",
+      "order": 5,
+      "zh": "游香山",
+      "pinyin": "",
+      "vi": "tham quan Hương Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13d624ac-5434-4cc0-8bc6-5940ab71c532",
+      "order": 6,
+      "zh": "到香山看红叶",
+      "pinyin": "",
+      "vi": "đến Hương Sơn ngắm lá đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5ae54a64-b9e4-45d8-b291-121d8db66294",
+      "order": 1,
+      "zh": "秋天，我们想去香山看红叶。",
+      "pinyin": "",
+      "vi": "Mùa thu, chúng tôi muốn đi Hương Sơn ngắm lá đỏ.",
+      "analysis_vi": "去 + địa điểm + V.",
+      "highlight": [
+        "香山"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "379d06e4-6234-4de9-9afe-5ac8f96fe229"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1885e34d-cdb8-4a97-9153-c998ea7eefef",
+      "order": 2,
+      "zh": "每到秋天，香山的游人就特别多。",
+      "pinyin": "",
+      "vi": "Mỗi mùa thu, du khách ở Hương Sơn đặc biệt đông.",
+      "analysis_vi": "每到……就…….",
+      "highlight": [
+        "香山"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "379d06e4-6234-4de9-9afe-5ac8f96fe229"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "28c1679b-96b4-493e-874e-429f12de56e1",
+      "order": 3,
+      "zh": "香山更适合秋天去看红叶。",
+      "pinyin": "",
+      "vi": "Hương Sơn hợp hơn để ngắm lá đỏ mùa thu.",
+      "analysis_vi": "更适合 tạo so sánh với địa danh khác.",
+      "highlight": [
+        "香山"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "379d06e4-6234-4de9-9afe-5ac8f96fe229"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "香山 trong Bài 3 北京的四季",
+    "content_vi": "香山红叶 là tín hiệu văn hóa mùa thu Bắc Kinh.",
+    "tags": [
+      "proper_noun",
+      "beijing"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d0a7154-f80a-4488-b382-53b046bb57f7",
+      "order": 1,
+      "rule_vi": "香山 trong bài là Hương Sơn ở Bắc Kinh; đừng nhầm với các Hương Sơn khác.",
+      "natural_examples": [
+        {
+          "zh": "秋天，我们想去香山看红叶。",
+          "pinyin": "",
+          "vi": "Mùa thu, chúng tôi muốn đi Hương Sơn ngắm lá đỏ.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "香山 trong bài là Hương Sơn ở Bắc Kinh; đừng nhầm với các Hương Sơn khác.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "香山",
+    "back": "Hương Sơn; Công viên/núi Hương Sơn ở Bắc Kinh",
+    "hint": "Xiāngshān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "proper_noun",
+      "beijing"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "379d06e4-6234-4de9-9afe-5ac8f96fe229",
+    "source_lesson_vocab_id": null
+  }
+}

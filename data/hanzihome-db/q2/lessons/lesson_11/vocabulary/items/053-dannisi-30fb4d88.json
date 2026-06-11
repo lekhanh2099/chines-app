@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_eac75a9b9ec8e6f1",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "丹尼斯",
+  "pinyin": "Dānnísī",
+  "meaning_vi": "Denise",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+    "type": "proper_noun",
+    "order": 1,
+    "hanzi": "丹尼斯",
+    "pinyin": "Dānnísī",
+    "meaning_vi": "Denise",
+    "meaning_en": "Denise",
+    "source_origin": "textbook_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

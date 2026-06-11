@@ -1,0 +1,359 @@
+{
+  "id": "94c12d91-63c9-4720-a93c-44fd520a4b3b",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "难看",
+  "pinyin": "nánkàn",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Nan khán",
+    "meaning_vi": "khó coi, xấu, không đẹp; mất mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khó coi, xấu, không đẹp; mất mặt"
+    ],
+    "short_definition_vi": "khó coi, xấu, không đẹp; mất mặt",
+    "textbook_focus_vi": "khó coi, xấu, không đẹp; mất mặt",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "难",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "隹",
+            "hanviet": "chuy",
+            "meaning_vi": "chim đuôi ngắn",
+            "position_vi": "bên phải chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "隹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chuy",
+              "radical_name_zh": "",
+              "hanviet": "chuy",
+              "meaning_vi": "chim đuôi ngắn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khó",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "看",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt, nhìn",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 难看 hợp lại tạo nghĩa hiện đại trong bài: khó coi, xấu, không đẹp; mất mặt.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "难看",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "难看 / 不好看 / 丑",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不好看",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "难看 / 不好看 / 丑",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "丑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "难看 / 不好看 / 丑",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "难看",
+        "right": "好看",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "难看 ↔ 好看",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "难看 / 不好看 / 丑",
+      "难看 ↔ 好看"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bea24e31-c3db-45ad-b140-80503af6ae57",
+      "order": 1,
+      "zh": "很难看",
+      "pinyin": "",
+      "vi": "很难看",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f1859d09-463e-41fe-b7ed-c3b8d9c3b0cc",
+      "order": 2,
+      "zh": "有点儿难看",
+      "pinyin": "",
+      "vi": "有点儿难看",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a5a95269-d6f5-4706-97a5-f1c0f7185ed7",
+      "order": 3,
+      "zh": "脸色难看",
+      "pinyin": "",
+      "vi": "脸色难看",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d90db1f7-7671-49ef-bd34-8ec1126ceb3c",
+      "order": 4,
+      "zh": "样子难看",
+      "pinyin": "",
+      "vi": "样子难看",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c00c46f4-9573-4d4b-a2e6-6413f21ae759",
+      "order": 5,
+      "zh": "颜色难看",
+      "pinyin": "",
+      "vi": "颜色难看",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "0f3d0483-283c-43ac-ac32-8638846b9bcd",
+      "order": 6,
+      "zh": "这样做很难看",
+      "pinyin": "",
+      "vi": "这样做很难看",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0d77dcc3-faad-49f3-8a80-70c17874ecf5",
+      "order": 1,
+      "zh": "这个词是“难看”。",
+      "pinyin": "",
+      "vi": "Từ này là “难看”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "难看"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "94c12d91-63c9-4720-a93c-44fd520a4b3b"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "38312d10-a748-49b3-b850-0342017fe0a4",
+      "order": 2,
+      "zh": "你想怎么用“难看”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “难看” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "难看"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "94c12d91-63c9-4720-a93c-44fd520a4b3b"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9ba2c41b-d709-4752-ae70-ebb079aa60e5",
+      "order": 3,
+      "zh": "我们一边复习难看，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “难看”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "难看"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "94c12d91-63c9-4720-a93c-44fd520a4b3b"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "难看 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fe63ddb2-5ce3-4f1b-8322-f96b27fab46c",
+      "order": 1,
+      "rule_vi": "Dùng 难看 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 难看 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "难看",
+    "back": "khó coi, xấu, không đẹp; mất mặt",
+    "hint": "nánkàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "94c12d91-63c9-4720-a93c-44fd520a4b3b",
+    "source_lesson_vocab_id": null
+  }
+}

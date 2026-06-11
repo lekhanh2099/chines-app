@@ -1,0 +1,383 @@
+{
+  "id": "8cea6b39-34cc-4ada-b23a-61a1a755aee6",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "打交道",
+  "pinyin": "dǎ jiāodào",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đả giao đạo",
+    "meaning_vi": "giao thiệp, qua lại, tiếp xúc xử lý việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giao thiệp",
+      "qua lại",
+      "tiếp xúc xử lý việc"
+    ],
+    "short_definition_vi": "giao thiệp, qua lại, tiếp xúc xử lý việc",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "打",
+        "lishu_vi": "đả",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "交",
+        "lishu_vi": "giao",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "道",
+        "lishu_vi": "đạo",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, chuyển động, con đường",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, chuyển động, con đường",
+            "position_vi": "bao ngoài/bên dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, chuyển động, con đường",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "打交道 là qua lại/làm việc/giao tiếp với người, tổ chức hoặc lĩnh vực.",
+    "memory_tip_vi": "跟人打交道 = xử lý quan hệ với người.",
+    "warning_vi": "Không trộn với 交朋友.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "交朋友",
+        "jiāo péngyou",
+        "kết bạn",
+        "mục tiêu là làm bạn"
+      ],
+      [
+        "来往",
+        "láiwǎng",
+        "qua lại",
+        "có liên hệ"
+      ],
+      [
+        "相处",
+        "xiāngchǔ",
+        "ở/tiếp xúc hòa hợp",
+        "nhấn cách chung sống"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "跟人打交道 = xử lý quan hệ với người."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5c59ccde-87d9-41dd-89b6-e6e46b411bd8",
+      "order": 1,
+      "zh": "跟人打交道",
+      "pinyin": "",
+      "vi": "giao thiệp với người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6106f666-0ef0-4980-ac4b-0922757e7f9b",
+      "order": 2,
+      "zh": "不好打交道",
+      "pinyin": "",
+      "vi": "khó giao thiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac9c76ee-dd2b-4891-9c88-54bb432a75f9",
+      "order": 3,
+      "zh": "经常打交道",
+      "pinyin": "",
+      "vi": "thường xuyên qua lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c69b0ba-09f5-4b8d-b330-9a636f6906d3",
+      "order": 4,
+      "zh": "跟客户打交道",
+      "pinyin": "",
+      "vi": "làm việc với khách hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76e915c9-c796-447c-b009-c64cd825abbc",
+      "order": 5,
+      "zh": "跟钱打交道",
+      "pinyin": "",
+      "vi": "làm việc liên quan tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0f44a1df-cf0c-473a-a115-e9d83fa24156",
+      "order": 1,
+      "zh": "他这个人很热情，不难打交道。",
+      "pinyin": "Tā zhège rén hěn rèqíng, bù nán dǎ jiāodào.",
+      "vi": "Người này rất nhiệt tình, không khó giao thiệp.",
+      "analysis_vi": "好/难 + 打交道.",
+      "highlight": [
+        "打交道"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8cea6b39-34cc-4ada-b23a-61a1a755aee6"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "195b713d-69b4-4c41-8dd0-f4dc4c06c712",
+      "order": 2,
+      "zh": "我以前没跟他打过交道，所以不太了解他。",
+      "pinyin": "Wǒ yǐqián méi gēn tā dǎguo jiāodào, suǒyǐ bú tài liǎojiě tā.",
+      "vi": "Trước đây tôi chưa từng tiếp xúc với anh ấy, nên không hiểu lắm.",
+      "analysis_vi": "打过交道 = từng có qua lại.",
+      "highlight": [
+        "打交道"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8cea6b39-34cc-4ada-b23a-61a1a755aee6"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "会跟人打交道 là năng lực xã hội: biết ứng xử, nhờ vả, từ chối, đáp lễ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3ad99a98-c9d5-4ff2-b5fa-8a3f6361ebfc",
+      "order": 1,
+      "rule_vi": "我跟他交朋友道。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我跟他打过交道。",
+          "pinyin": "Wǒ gēn tā dǎguo jiāodào.",
+          "vi": "Tôi từng tiếp xúc/làm việc với anh ấy.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Không trộn với 交朋友.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "打交道",
+    "back": "giao thiệp, qua lại, tiếp xúc xử lý việc",
+    "hint": "dǎ jiāodào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8cea6b39-34cc-4ada-b23a-61a1a755aee6",
+    "source_lesson_vocab_id": null
+  }
+}

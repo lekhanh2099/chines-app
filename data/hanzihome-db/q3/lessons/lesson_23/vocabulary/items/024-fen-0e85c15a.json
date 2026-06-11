@@ -1,0 +1,399 @@
+{
+  "id": "c87c451b-8589-4d7e-9f4e-8160c493fcc5",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "分",
+  "pinyin": "fēn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Lượng từ",
+    "raw_cn": "动词/名词/量词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phân",
+    "meaning_vi": "chia; phân loại; điểm; phút",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chia",
+      "phân loại",
+      "điểm",
+      "phút"
+    ],
+    "short_definition_vi": "chia; phân loại; điểm; phút",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về phân loại, điểm số, thời gian.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "phân loại, điểm số, thời gian",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "分",
+        "lishu_vi": "phân/phận",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 分 trong từ 分; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "八",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Bát",
+          "radical_name_zh": "",
+          "hanviet": "bát",
+          "meaning_vi": "chia tách, số tám",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "八 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "八",
+            "hanviet": "bát",
+            "meaning_vi": "chia tách, số tám",
+            "position_vi": "phần trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "八 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "八",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bát",
+              "radical_name_zh": "",
+              "hanviet": "bát",
+              "meaning_vi": "chia tách, số tám",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "八 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "phần dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刀 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刀 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia, phân loại",
+        "modern_logic_vi": "Trong từ 分, chữ 分 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "分 trong bài được nhớ theo nghĩa hiện đại: chia, phân loại.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 分班 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分开",
+        "pinyin": "fēnkāi",
+        "meaning_vi": "tách ra rõ",
+        "difference_vi": "tách ra rõ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "分类",
+        "pinyin": "fēnlèi",
+        "meaning_vi": "phân loại",
+        "difference_vi": "phân loại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "合",
+        "pinyin": "hé",
+        "meaning_vi": "hợp lại",
+        "difference_vi": "hợp lại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "分 có nhiều âm; 分班 đọc fēn, 成分 đọc fèn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9c4eff08-91ea-4a9e-a1e6-c7b627c65233",
+      "order": 1,
+      "zh": "分班",
+      "pinyin": "",
+      "vi": "chia lớp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5eb6304f-1b6b-4c37-b022-d984852ad1cf",
+      "order": 2,
+      "zh": "分成两组",
+      "pinyin": "",
+      "vi": "chia thành hai nhóm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d6e591f-22f1-4acd-875b-28cd185df21f",
+      "order": 3,
+      "zh": "分到初级班",
+      "pinyin": "",
+      "vi": "xếp vào lớp sơ cấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "96e53532-720e-4aff-9624-7cb534fc6f47",
+      "order": 4,
+      "zh": "分清楚",
+      "pinyin": "",
+      "vi": "phân biệt rõ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c97201f5-ba06-49b1-857c-fc941543b977",
+      "order": 5,
+      "zh": "得一百分",
+      "pinyin": "",
+      "vi": "được 100 điểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3e3ca9d0-f196-4b14-9bcb-3dab9dffcbf9",
+      "order": 1,
+      "zh": "老师把学生分成三个班。",
+      "pinyin": "",
+      "vi": "chia; phân loại; điểm; phút",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c87c451b-8589-4d7e-9f4e-8160c493fcc5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "18e84d18-c84a-4dbe-896d-b312403b4047",
+      "order": 2,
+      "zh": "这个词语“分”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 分 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c87c451b-8589-4d7e-9f4e-8160c493fcc5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "96e8f4ed-3528-4575-bb3e-475da7ff905c",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“分”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 分 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c87c451b-8589-4d7e-9f4e-8160c493fcc5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong học vụ, 分班考试 là kiểm tra xếp lớp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7b0e1a1d-0c17-4aff-9b78-ab9040fa6056",
+      "order": 1,
+      "rule_vi": "分 có nhiều âm; 分班 đọc fēn, 成分 đọc fèn.",
+      "natural_examples": [
+        {
+          "zh": "成分 chéngfèn",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "成分 chéngfēn",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "成分 chéngfēn",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "成分 chéngfèn",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "分 có nhiều âm; 分班 đọc fēn, 成分 đọc fèn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "分",
+    "back": "chia; phân loại; điểm; phút",
+    "hint": "fēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c87c451b-8589-4d7e-9f4e-8160c493fcc5",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "id": "e27f41c9-1409-440f-bb1e-c2943f20d61c",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "记号",
+  "pinyin": "jìhào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "ký hiệu",
+    "meaning_vi": "dấu hiệu, dấu đánh dấu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dấu hiệu, dấu đánh dấu"
+    ],
+    "short_definition_vi": "dấu hiệu, dấu đánh dấu",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "记",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 讠.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ghi nhớ, ghi lại",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "号",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 口.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "số hiệu, ký hiệu",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "记 + 号 = dấu dùng để ghi nhớ và nhận diện.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 记号.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "标记",
+        "pinyin": "biāojì",
+        "meaning_vi": "dấu hiệu/đánh dấu",
+        "difference_vi": "chuẩn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "符号",
+        "pinyin": "fúhào",
+        "meaning_vi": "ký hiệu",
+        "difference_vi": "có ý nghĩa quy ước",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "30e41acd-5438-4052-bf21-a7b2bb93722f",
+      "order": 1,
+      "zh": "做记号",
+      "pinyin": "",
+      "vi": "đánh dấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd1317f2-e0fa-46b1-9b9e-8bb2333e6b49",
+      "order": 2,
+      "zh": "刻记号",
+      "pinyin": "",
+      "vi": "khắc dấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4c654a2-b75c-48a1-b47a-7cf9a55c58d4",
+      "order": 3,
+      "zh": "留下记号",
+      "pinyin": "",
+      "vi": "để lại dấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfacbbaa-e479-4f03-a4da-086ada574177",
+      "order": 4,
+      "zh": "明显的记号",
+      "pinyin": "",
+      "vi": "dấu rõ ràng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "03c22c68-ff8c-499c-83cb-734504a265b2",
+      "order": 1,
+      "zh": "他在船上做了一个记号。",
+      "pinyin": "Tā zài chuán shang zuò le yí ge jìhào.",
+      "vi": "Anh ta đánh một dấu lên thuyền.",
+      "analysis_vi": "做记号 là cụm tự nhiên.",
+      "highlight": [
+        "记号"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e27f41c9-1409-440f-bb1e-c2943f20d61c"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "089702b2-c153-4f8f-b3bd-32ce3f0c8739",
+      "order": 2,
+      "zh": "剑掉进水里以后，他急忙在船上刻了一个记号。",
+      "pinyin": "Jiàn diào jìn shuǐ lǐ yǐhòu, tā jímáng zài chuán shang kè le yí ge jìhào.",
+      "vi": "Sau khi kiếm rơi xuống nước, anh ta vội khắc một dấu trên thuyền.",
+      "analysis_vi": "刻了一个记号 = khắc một dấu.",
+      "highlight": [
+        "记号"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e27f41c9-1409-440f-bb1e-c2943f20d61c"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khi học sách tiếng Trung, 做记号 rất hữu ích để đánh dấu từ khó/câu hay.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4861fb16-18a7-4a72-a1a5-84c356e0e9d3",
+      "order": 1,
+      "rule_vi": "记号 là dấu đánh dấu; 号码 là số hiệu/số điện thoại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "记号",
+    "back": "dấu hiệu, dấu đánh dấu",
+    "hint": "jìhào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e27f41c9-1409-440f-bb1e-c2943f20d61c",
+    "source_lesson_vocab_id": null
+  }
+}

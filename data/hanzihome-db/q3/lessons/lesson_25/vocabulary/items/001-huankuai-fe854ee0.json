@@ -1,0 +1,249 @@
+{
+  "id": "0c805351-ba54-4ef2-8dbd-d5ee9114098f",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "欢快",
+  "pinyin": "huānkuài",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "hoan khoái",
+    "meaning_vi": "vui vẻ, rộn ràng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui vẻ",
+      "rộn ràng"
+    ],
+    "short_definition_vi": "vui vẻ, rộn ràng",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "欢",
+        "lishu_vi": "hoan",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "欠",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khiếm",
+          "radical_name_zh": "",
+          "hanviet": "khiếm",
+          "meaning_vi": "há miệng, hơi thở",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "há miệng, hơi thở",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "há miệng, hơi thở",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui",
+        "modern_logic_vi": "Trong từ này, 欢 góp phần vào nghĩa hiện đại: vui.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "快",
+        "lishu_vi": "khoái",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, cảm xúc",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhanh; vui sướng",
+        "modern_logic_vi": "Trong từ này, 快 góp phần vào nghĩa hiện đại: nhanh; vui sướng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "欢快 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 欢快的笑声.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Dùng để miêu tả âm thanh/không khí vui tươi; không dùng phổ biến để tự nói 我很欢快."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7dfb77db-2c94-4dc8-bd47-ca77c719b2f0",
+      "order": 1,
+      "zh": "欢快的笑声",
+      "pinyin": "",
+      "vi": "tiếng cười vui vẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb633af7-d110-445e-8923-786b92f5621a",
+      "order": 2,
+      "zh": "欢快的音乐",
+      "pinyin": "",
+      "vi": "âm nhạc vui tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9f3754b-1bb6-4177-b053-5c27cbdc4809",
+      "order": 3,
+      "zh": "气氛很欢快",
+      "pinyin": "",
+      "vi": "bầu không khí rất vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cc1e1a99-b244-49af-a3f6-0909e8a0061e",
+      "order": 1,
+      "zh": "院子里传来一阵欢快的笑声。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 欢快 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 欢快; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "欢快"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0c805351-ba54-4ef2-8dbd-d5ee9114098f"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 欢快 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "46127e3e-8a46-4f62-b4de-9b2e728918df",
+      "order": 1,
+      "rule_vi": "Dùng để miêu tả âm thanh/không khí vui tươi; không dùng phổ biến để tự nói 我很欢快.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "欢快",
+    "back": "vui vẻ, rộn ràng",
+    "hint": "huānkuài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0c805351-ba54-4ef2-8dbd-d5ee9114098f",
+    "source_lesson_vocab_id": null
+  }
+}

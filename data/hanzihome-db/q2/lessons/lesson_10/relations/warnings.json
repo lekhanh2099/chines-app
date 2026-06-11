@@ -1,0 +1,27 @@
+[
+  {
+    "id": "warning_960c70dddf63360a0755c07c",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "过",
+      "苦",
+      "甜",
+      "糖",
+      "摸",
+      "脉",
+      "治",
+      "针",
+      "细",
+      "第",
+      "鸭",
+      "鸡",
+      "家",
+      "曲",
+      "还",
+      "嘛",
+      "谎",
+      "烤"
+    ]
+  }
+]

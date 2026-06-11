@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_f362f4768dbd4371",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "窗",
+  "pinyin": "chuāng",
+  "meaning_vi": "cửa sổ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Danh từ đơn âm “cửa sổ”, thường xuất hiện trong 开窗 / 窗外.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+    "type": "vocabulary_item",
+    "order": 16,
+    "hanzi": "窗",
+    "pinyin": "chuāng",
+    "meaning_vi": "cửa sổ",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab",
+      "related_word"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "窗",
+      "back": "chuāng — cửa sổ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Danh từ đơn âm “cửa sổ”, thường xuất hiện trong 开窗 / 窗外.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,234 @@
+{
+  "id": "bb8d467c-9610-41b3-b345-192c00c237c0",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "沉",
+  "pinyin": "chén",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动词 / 形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trầm",
+    "meaning_vi": "chìm; nặng; trầm xuống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chìm",
+      "nặng",
+      "trầm xuống"
+    ],
+    "short_definition_vi": "chìm; nặng; trầm xuống",
+    "textbook_focus_vi": "沉 có 氵, nghĩa gốc liên quan chìm trong nước; mở rộng sang tâm trạng/sắc mặt trầm xuống.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "vật lý, tâm trạng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "沉",
+        "lishu_vi": "trầm",
+        "structure_note_vi": "氵 liên quan nước; nghĩa gốc chìm.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìm, nặng, trầm xuống",
+        "modern_logic_vi": "Trong từ này, 沉 góp phần tạo nghĩa 'chìm, nặng, trầm xuống'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "沉 có 氵, nghĩa gốc liên quan chìm trong nước; mở rộng sang tâm trạng/sắc mặt trầm xuống.",
+    "memory_tip_vi": "Nhớ qua cụm: 心一沉 = lòng chùng xuống.",
+    "warning_vi": "沉 và 重 đều có nghĩa nặng nhưng không thay nhau mọi nơi.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "重",
+        "pinyin": "zhòng",
+        "meaning_vi": "nặng",
+        "difference_vi": "Trung tính hơn, dùng rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "沉重",
+        "pinyin": "chénzhòng",
+        "meaning_vi": "nặng nề",
+        "difference_vi": "Hay dùng cho tâm trạng/vật nặng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "沉 và 重 đều có nghĩa nặng nhưng không thay nhau mọi nơi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6a36cd74-7e41-4c3d-b4ed-085d7856050c",
+      "order": 1,
+      "zh": "心一沉",
+      "pinyin": "xīn yì chén",
+      "vi": "lòng chùng xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "297ca3a8-38d3-4289-86be-9b6d0b419426",
+      "order": 2,
+      "zh": "沉下去",
+      "pinyin": "chén xiàqù",
+      "vi": "chìm/trầm xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "083e1671-62f5-4864-92a6-eb2d943cd21b",
+      "order": 3,
+      "zh": "脸色沉了下来",
+      "pinyin": "liǎnsè chén le xiàlai",
+      "vi": "sắc mặt trầm xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bfde02c8-63fc-4116-a453-32130203cf02",
+      "order": 1,
+      "zh": "听到这个消息，他的心一下子沉了下去。",
+      "pinyin": "Tīng dào zhège xiāoxi, tā de xīn yíxiàzi chén le xiàqù.",
+      "vi": "Nghe tin này, lòng anh ấy lập tức trầm xuống.",
+      "analysis_vi": "沉下去 là hướng đi xuống, dùng ẩn dụ cảm xúc.",
+      "highlight": [
+        "沉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bb8d467c-9610-41b3-b345-192c00c237c0"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "心沉了下去 là cách tả tâm lý gián tiếp trong văn kể chuyện.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bb01050e-03ca-4832-8ccf-b98a1204dbcc",
+      "order": 1,
+      "rule_vi": "沉 và 重 đều có nghĩa nặng nhưng không thay nhau mọi nơi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "心情很沉重。",
+          "pinyin": "Xīnqíng hěn chénzhòng.",
+          "vi": "Tâm trạng rất nặng nề.",
+          "note_vi": "Tâm trạng dùng 沉重 tự nhiên hơn 很重.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "沉",
+    "back": "chìm; nặng; trầm xuống",
+    "hint": "chén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bb8d467c-9610-41b3-b345-192c00c237c0",
+    "source_lesson_vocab_id": null
+  }
+}

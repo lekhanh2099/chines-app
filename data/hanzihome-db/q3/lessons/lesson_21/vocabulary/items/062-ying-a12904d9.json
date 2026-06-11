@@ -1,0 +1,275 @@
+{
+  "id": "35898181-9aa4-47d3-bf42-59a2c3692421",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "硬",
+  "pinyin": "yìng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形/副",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "ngạnh",
+    "meaning_vi": "cứng; nhất quyết, khăng khăng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cứng",
+      "nhất quyết",
+      "khăng khăng"
+    ],
+    "short_definition_vi": "cứng; nhất quyết, khăng khăng",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: cứng; nhất quyết, khăng khăng.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "硬",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "thạch",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "thạch",
+            "meaning_vi": "đá",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "thạch",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "石 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 硬.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "硬 trong bài được hiểu theo nghĩa: cứng; nhất quyết, khăng khăng. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 硬.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "硬 từ nghĩa cứng vật lý mở rộng thành thái độ cứng/nhất quyết."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e47aa70e-f493-4d1f-b790-64710d81a043",
+      "order": 1,
+      "zh": "很硬",
+      "pinyin": "",
+      "vi": "rất cứng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23639293-2359-433f-b7e5-8d2fffb2ffd3",
+      "order": 2,
+      "zh": "态度很硬",
+      "pinyin": "",
+      "vi": "thái độ cứng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11984a55-a6bd-42c3-b67c-a365d9f6a31b",
+      "order": 3,
+      "zh": "硬是不收钱",
+      "pinyin": "",
+      "vi": "nhất quyết không lấy tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75d49927-30dd-41f2-94c8-d02052695e1f",
+      "order": 4,
+      "zh": "硬要去",
+      "pinyin": "",
+      "vi": "cứ nhất quyết muốn đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e59ef1e-20ad-48fd-8f10-c2250cd33999",
+      "order": 5,
+      "zh": "硬拉着我去",
+      "pinyin": "",
+      "vi": "cứ kéo tôi đi bằng được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7c572725-80da-42e5-acf6-d96ff247f21e",
+      "order": 1,
+      "zh": "这把椅子太硬了，坐着不舒服。",
+      "pinyin": "",
+      "vi": "Cái ghế này cứng quá, ngồi không thoải mái.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "硬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "35898181-9aa4-47d3-bf42-59a2c3692421"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d2bcb924-70cf-44f8-b69e-d4cdf601e39c",
+      "order": 2,
+      "zh": "理完发以后，她硬是不收我的钱。",
+      "pinyin": "",
+      "vi": "Sau khi cắt tóc xong, cô ấy nhất quyết không lấy tiền của tôi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "硬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "35898181-9aa4-47d3-bf42-59a2c3692421"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "硬 từ nghĩa cứng vật lý mở rộng thành thái độ cứng/nhất quyết.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2585b1ac-221c-449e-b7ea-675daeb48b91",
+      "order": 1,
+      "rule_vi": "硬 từ nghĩa cứng vật lý mở rộng thành thái độ cứng/nhất quyết.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "她硬钱。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "硬 từ nghĩa cứng vật lý mở rộng thành thái độ cứng/nhất quyết.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "她硬是不收钱。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "硬 từ nghĩa cứng vật lý mở rộng thành thái độ cứng/nhất quyết.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "硬",
+    "back": "cứng; nhất quyết, khăng khăng",
+    "hint": "yìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "35898181-9aa4-47d3-bf42-59a2c3692421",
+    "source_lesson_vocab_id": null
+  }
+}

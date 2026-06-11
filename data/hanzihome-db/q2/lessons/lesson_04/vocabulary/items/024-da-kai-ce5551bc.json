@@ -1,0 +1,312 @@
+{
+  "id": "8c6bda65-d1c9-4fd9-9905-9ce99151711e",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "打开",
+  "pinyin": "dǎ kāi",
+  "pos": {
+    "raw_vi": "Động từ / Cụm kết quả",
+    "raw_cn": "动",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "dong_tac"
+  ],
+  "meaning": {
+    "hanviet": "Đả khai",
+    "meaning_vi": "mở ra; bật lên; mở rộng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mở ra",
+      "bật lên",
+      "mở rộng"
+    ],
+    "short_definition_vi": "mở ra; bật lên; mở rộng",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "打",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay / thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay / thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丁",
+            "hanviet": "đinh",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đánh, gõ, thao tác",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay / thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "开",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "廾",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mở, bắt đầu, bật, lái, tổ chức",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "打开 = làm cho vật từ đóng thành mở.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "开",
+        "pinyin": "",
+        "meaning_vi": "mở/bật/lái/tổ chức",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "翻开",
+        "pinyin": "",
+        "meaning_vi": "lật mở",
+        "difference_vi": "hay dùng với sách",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "合上",
+        "pinyin": "",
+        "meaning_vi": "gấp/khép lại",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "打开",
+        "right": "合上",
+        "meaning_vi": "mở ra ↔ gấp lại",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c44f1158-5277-472d-a47c-2e8480ba6797",
+      "order": 1,
+      "zh": "打开书",
+      "pinyin": "",
+      "vi": "mở sách ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c24f285a-9ad3-4065-aebc-0ae6e195e049",
+      "order": 2,
+      "zh": "打开门",
+      "pinyin": "",
+      "vi": "mở cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6159bf65-8bea-4b04-9d03-bcc13eda12cf",
+      "order": 3,
+      "zh": "打开文件",
+      "pinyin": "",
+      "vi": "mở file",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "93670274-48c4-439c-8b3f-40919c62befb",
+      "order": 1,
+      "zh": "请打开书。",
+      "pinyin": "Qǐng dǎkāi shū.",
+      "vi": "Hãy mở sách ra.",
+      "analysis_vi": "Câu lớp học cơ bản.",
+      "highlight": [
+        "打开"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8c6bda65-d1c9-4fd9-9905-9ce99151711e"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "212c68e6-e79f-4256-9d09-6964272dce61",
+      "order": 2,
+      "zh": "安娜打开书以后，发现自己做错了两道题。",
+      "pinyin": "Ānnà dǎkāi shū yǐhòu, fāxiàn zìjǐ zuò cuò le liǎng dào tí.",
+      "vi": "Sau khi Anna mở sách ra, cô ấy phát hiện mình làm sai hai câu.",
+      "analysis_vi": "做错了 dùng 错.",
+      "highlight": [
+        "打开"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8c6bda65-d1c9-4fd9-9905-9ce99151711e"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "打开书 / 合上书 là cặp câu lệnh lớp học rất thông dụng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "afbb230e-fb6d-489b-8ec8-20a7673ed607",
+      "order": 1,
+      "rule_vi": "开 nghĩa rộng, phải học theo cụm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "打开书",
+          "pinyin": "dǎkāi shū",
+          "vi": "mở sách ra",
+          "note_vi": "打开 = mở ra.",
+          "notes": []
+        },
+        {
+          "zh": "开会",
+          "pinyin": "kāi huì",
+          "vi": "họp",
+          "note_vi": "开 nghĩa khác theo cụm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "打开",
+    "back": "mở ra; bật lên; mở rộng",
+    "hint": "dǎ kāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "dong_tac"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8c6bda65-d1c9-4fd9-9905-9ce99151711e",
+    "source_lesson_vocab_id": null
+  }
+}

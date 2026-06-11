@@ -1,0 +1,337 @@
+{
+  "id": "1a6206f4-81a2-4b6e-bad1-2568da6735da",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "长城",
+  "pinyin": "Chángchéng",
+  "pos": {
+    "raw_vi": "Tên riêng / danh từ địa lý-văn hóa",
+    "raw_cn": "专名/名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "place",
+    "culture"
+  ],
+  "meaning": {
+    "hanviet": "Trường Thành",
+    "meaning_vi": "Vạn Lý Trường Thành; thành dài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Vạn Lý Trường Thành; thành dài"
+    ],
+    "short_definition_vi": "Vạn Lý Trường Thành; thành dài",
+    "textbook_focus_vi": "Vạn Lý Trường Thành; thành dài",
+    "register_vi": "",
+    "usage_domain_vi": "place,culture",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "长",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dài; trưởng/lớn lên ở cách đọc khác",
+        "modern_logic_vi": "Chữ giản thể không tách sâu; trong 长城 đọc cháng = dài.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "城",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, nền",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ Thổ trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "成",
+            "hanviet": "thành",
+            "meaning_vi": "gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành, thành lũy, thành phố",
+        "modern_logic_vi": "土 gợi thành lũy/đất; 城 là thành.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, nền",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ Thổ trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Chữ giản thể không tách sâu; trong 长城 đọc cháng = dài.; 土 gợi thành lũy/đất; 城 là thành.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "万里长城",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "城墙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "城市",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5d126279-29aa-434e-a485-3b5d2a0db7ca",
+      "order": 1,
+      "zh": "去长城",
+      "pinyin": "",
+      "vi": "đi Trường Thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c8a1a0a-6346-477f-a9a3-db1ca9205db9",
+      "order": 2,
+      "zh": "爬长城",
+      "pinyin": "",
+      "vi": "leo Trường Thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b45a6efe-eff9-420f-9da6-b5c97275875c",
+      "order": 3,
+      "zh": "登长城",
+      "pinyin": "",
+      "vi": "lên Trường Thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a91316c0-1d18-4492-9549-1ba50d1e9048",
+      "order": 4,
+      "zh": "参观长城",
+      "pinyin": "",
+      "vi": "tham quan Trường Thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e8958a4-f195-4f99-bf1c-56c38b7c52af",
+      "order": 5,
+      "zh": "万里长城",
+      "pinyin": "",
+      "vi": "Vạn Lý Trường Thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2406eb9a-1fa0-4342-94f8-dab5641b8ca3",
+      "order": 1,
+      "zh": "我想去长城看看。",
+      "pinyin": "Wǒ xiǎng qù Chángchéng kànkan.",
+      "vi": "Tôi muốn đi Trường Thành xem thử.",
+      "analysis_vi": "去 + địa điểm + 看看.",
+      "highlight": [
+        "长城"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a6206f4-81a2-4b6e-bad1-2568da6735da"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "54d93ed8-d4ba-420e-9f02-00892794edd2",
+      "order": 2,
+      "zh": "爬长城的时候，路有点儿滑，老师让我们互相扶着走。",
+      "pinyin": "Pá Chángchéng de shíhou, lù yǒudiǎnr huá, lǎoshī ràng wǒmen hùxiāng fúzhe zǒu.",
+      "vi": "Khi leo Trường Thành, đường hơi trơn, thầy/cô bảo chúng tôi dìu nhau đi.",
+      "analysis_vi": "扶着走 dùng 着 chỉ trạng thái đi kèm.",
+      "highlight": [
+        "长城"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a6206f4-81a2-4b6e-bad1-2568da6735da"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "长城 là biểu tượng lịch sử-văn hóa mạnh của Trung Quốc, gắn với câu 不到长城非好汉.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "07d1e2e7-880b-4adb-b0d3-f96865b5c368",
+      "order": 1,
+      "rule_vi": "长城 không phải 城市; 城市 là thành phố.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我住在城市里。",
+          "pinyin": "Wǒ zhù zài chéngshì lǐ.",
+          "vi": "Tôi sống trong thành phố.",
+          "note_vi": "Thành phố dùng 城市.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "长城",
+    "back": "Vạn Lý Trường Thành; thành dài",
+    "hint": "Chángchéng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "place",
+      "culture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1a6206f4-81a2-4b6e-bad1-2568da6735da",
+    "source_lesson_vocab_id": null
+  }
+}

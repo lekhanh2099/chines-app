@@ -1,0 +1,458 @@
+{
+  "id": "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "国庆节",
+  "pinyin": "Guóqìng Jié",
+  "pos": {
+    "raw_vi": "proper_noun",
+    "raw_cn": "",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "holiday",
+    "china"
+  ],
+  "meaning": {
+    "hanviet": "Quốc khánh tiết",
+    "meaning_vi": "Quốc khánh Trung Quốc; ngày Quốc khánh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Quốc khánh Trung Quốc",
+      "ngày Quốc khánh"
+    ],
+    "short_definition_vi": "Quốc khánh Trung Quốc; ngày Quốc khánh",
+    "textbook_focus_vi": "Quốc khánh Trung Quốc; ngày Quốc khánh",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "holiday, china",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "国",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "bao quanh, phạm vi",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "bao quanh, phạm vi",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh, phạm vi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "玉",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quốc gia",
+        "modern_logic_vi": "Trong từ này, 国 góp phần vào lớp nghĩa hiện đại: quốc gia",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "庆",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chúc mừng, kỷ niệm",
+        "modern_logic_vi": "Trong từ này, 庆 góp phần vào lớp nghĩa hiện đại: chúc mừng, kỷ niệm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "节",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây, thực vật",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây, thực vật",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây, thực vật",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "卩",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngày lễ, tiết, đốt",
+        "modern_logic_vi": "Trong từ này, 节 góp phần vào lớp nghĩa hiện đại: ngày lễ, tiết, đốt",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "国 = quốc gia; 庆 = kỷ niệm/chúc mừng; 节 = ngày lễ. 国庆节 là ngày lễ mừng quốc gia.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "春节",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "中秋节",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "劳动节",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "节日",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "假期",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0c8c7d8a-794c-46d6-b43b-c528a166bb1e",
+      "order": 1,
+      "zh": "国庆节到了",
+      "pinyin": "",
+      "vi": "Quốc khánh đến rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d9e3acaf-ddba-41c2-8a97-d88dd22b9846",
+      "order": 2,
+      "zh": "国庆节假期",
+      "pinyin": "",
+      "vi": "kỳ nghỉ Quốc khánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98764c15-be03-4628-a769-d3b96c47130f",
+      "order": 3,
+      "zh": "庆祝国庆节",
+      "pinyin": "",
+      "vi": "kỷ niệm Quốc khánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62cb6f0e-5cb5-40d5-95b6-9713f9227aee",
+      "order": 4,
+      "zh": "国庆节的时候",
+      "pinyin": "",
+      "vi": "vào dịp Quốc khánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4324d9e0-b8a3-4036-9bcf-ef30a6ab25ca",
+      "order": 5,
+      "zh": "国庆节快乐",
+      "pinyin": "",
+      "vi": "chúc mừng Quốc khánh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e373f4d-95dd-4d5d-9d35-742e3c51fb84",
+      "order": 6,
+      "zh": "国庆节放假",
+      "pinyin": "",
+      "vi": "Quốc khánh được nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a30a23a7-06f6-450f-af0f-7319a9fb4ed4",
+      "order": 1,
+      "zh": "十月一日是中国的国庆节。",
+      "pinyin": "",
+      "vi": "Ngày 1 tháng 10 là Quốc khánh Trung Quốc.",
+      "analysis_vi": "Câu định nghĩa A 是 B.",
+      "highlight": [
+        "国庆节"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "15b6b6d4-aeec-4304-a1af-7b2a6358c248",
+      "order": 2,
+      "zh": "每到国庆节，北京的大街上就挂满了红旗。",
+      "pinyin": "",
+      "vi": "Mỗi dịp Quốc khánh, phố Bắc Kinh treo đầy cờ đỏ.",
+      "analysis_vi": "每到……就…….",
+      "highlight": [
+        "国庆节"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "32789e66-6223-4db5-81e3-abaac4f0f550",
+      "order": 3,
+      "zh": "国庆节假期，很多游人来到北京。",
+      "pinyin": "",
+      "vi": "Kỳ nghỉ Quốc khánh, rất nhiều du khách đến Bắc Kinh.",
+      "analysis_vi": "国庆节假期 là kỳ nghỉ, không chỉ một ngày.",
+      "highlight": [
+        "国庆节"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "国庆节 trong Bài 3 北京的四季",
+    "content_vi": "Quốc khánh Trung Quốc gắn với kỳ nghỉ dài, phố xá treo cờ và du lịch đông.",
+    "tags": [
+      "holiday",
+      "china"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "775ca682-9b75-4a8f-8fa4-e0d6b5a8b7c9",
+      "order": 1,
+      "rule_vi": "Trong bài Trung Quốc, 国庆节 mặc định là Quốc khánh Trung Quốc, không phải Quốc khánh Việt Nam.",
+      "natural_examples": [
+        {
+          "zh": "十月一日是中国的国庆节。",
+          "pinyin": "",
+          "vi": "Ngày 1 tháng 10 là Quốc khánh Trung Quốc.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Trong bài Trung Quốc, 国庆节 mặc định là Quốc khánh Trung Quốc, không phải Quốc khánh Việt Nam.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "国庆节",
+    "back": "Quốc khánh Trung Quốc; ngày Quốc khánh",
+    "hint": "Guóqìng Jié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "holiday",
+      "china"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d",
+    "source_lesson_vocab_id": null
+  }
+}

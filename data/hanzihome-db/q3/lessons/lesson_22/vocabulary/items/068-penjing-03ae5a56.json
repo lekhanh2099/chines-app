@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_fbd7fde8e2c9b731",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "盆景",
+  "pinyin": "pénjǐng",
+  "meaning_vi": "bonsai; cây cảnh trong chậu",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "9abc5789-0caa-4699-a5f3-b6099b75d0fa",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "9abc5789-0caa-4699-a5f3-b6099b75d0fa",
+    "type": "vocabulary_item",
+    "order": 61,
+    "hanzi": "盆景",
+    "pinyin": "pénjǐng",
+    "meaning_vi": "bonsai; cây cảnh trong chậu",
+    "meaning_en": "potted landscape",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "盆景",
+      "back": "pénjǐng — bonsai; cây cảnh trong chậu",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

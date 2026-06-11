@@ -1,0 +1,297 @@
+{
+  "id": "f23d56dc-4872-4a46-a502-8a6edaf32062",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "情谊",
+  "pinyin": "qíngyì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "tình nghị",
+    "meaning_vi": "tình nghĩa, tình cảm gắn bó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình nghĩa",
+      "tình cảm gắn bó"
+    ],
+    "short_definition_vi": "tình nghĩa, tình cảm gắn bó",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "情",
+        "lishu_vi": "tình",
+        "structure_note_vi": "Chữ có thành phần/bộ 忄; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 情 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "谊",
+        "lishu_vi": "nghị",
+        "structure_note_vi": "Chữ có thành phần/bộ 讠; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 谊 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "情谊 trong bài được học theo nghĩa: tình nghĩa, tình cảm gắn bó.",
+    "memory_tip_vi": "Nhớ 情谊 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "感情",
+        "pinyin": "gǎnqíng",
+        "meaning_vi": "tình cảm",
+        "difference_vi": "Rộng hơn 情谊.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 情谊 cho quan hệ công việc bình thường nếu không có gắn bó tình nghĩa."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "01fc401f-e3dd-4069-b4c2-b1f902dd0e1b",
+      "order": 1,
+      "zh": "深厚的情谊",
+      "pinyin": "",
+      "vi": "tình nghĩa sâu đậm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c7db7cee-8bcc-4c79-8229-0504649e08d5",
+      "order": 2,
+      "zh": "兄弟情谊",
+      "pinyin": "",
+      "vi": "tình nghĩa anh em",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "892494c5-f327-478c-bff2-2fc5ab520673",
+      "order": 3,
+      "zh": "结下情谊",
+      "pinyin": "",
+      "vi": "kết nên tình nghĩa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "eccfb3cf-d8b4-4007-8328-aea1620ba067",
+      "order": 1,
+      "zh": "他们之间有很深的情谊。",
+      "pinyin": "",
+      "vi": "Giữa họ có tình nghĩa rất sâu.",
+      "analysis_vi": "他们之间有…… nói quan hệ giữa hai bên.",
+      "highlight": [
+        "情谊"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f23d56dc-4872-4a46-a502-8a6edaf32062"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4ed1a619-39be-417e-8b90-92992aa8d1f4",
+      "order": 2,
+      "zh": "三年的同窗生活让梁山伯和祝英台结下了深厚的情谊。",
+      "pinyin": "",
+      "vi": "Ba năm học cùng khiến Lương Sơn Bá và Chúc Anh Đài kết nên tình nghĩa sâu đậm.",
+      "analysis_vi": "结下深厚的情谊 là cụm trọng tâm.",
+      "highlight": [
+        "情谊"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f23d56dc-4872-4a46-a502-8a6edaf32062"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "情谊 văn hơn 关系 và hợp với truyện cổ.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "eeaee84a-69c2-4017-ba34-257393abf9d8",
+      "order": 1,
+      "rule_vi": "Không dùng 情谊 cho quan hệ công việc bình thường nếu không có gắn bó tình nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "情谊",
+    "back": "tình nghĩa, tình cảm gắn bó",
+    "hint": "qíngyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f23d56dc-4872-4a46-a502-8a6edaf32062",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "id": "48f7242b-5ba0-45eb-9124-7e98aea7bb0e",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "贸易",
+  "pinyin": "màoyì",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名词 / 动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mậu dịch",
+    "meaning_vi": "thương mại, buôn bán, giao dịch thương mại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thương mại",
+      "buôn bán",
+      "giao dịch thương mại"
+    ],
+    "short_definition_vi": "hoạt động mua bán, trao đổi hàng hóa",
+    "textbook_focus_vi": "hoạt động mua bán, trao đổi hàng hóa",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "贸",
+        "lishu_vi": "mậu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "tiền bạc, tài vật",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tiền bạc, tài vật",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "tiền bạc, tài vật",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "易",
+        "lishu_vi": "dịch",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "hoạt động mua bán, trao đổi hàng hóa",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 贸易公司.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "商业",
+        "pinyin": "shāngyè",
+        "meaning_vi": "thương mại/kinh doanh",
+        "difference_vi": "rộng hơn 贸易",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "交易",
+        "pinyin": "jiāoyì",
+        "meaning_vi": "giao dịch",
+        "difference_vi": "dùng cho nhiều loại giao dịch",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f639a740-3879-46fa-8ec8-160ef95af7c4",
+      "order": 1,
+      "zh": "贸易公司",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b6d7ae1-56bf-430b-a816-61d5f447dd79",
+      "order": 2,
+      "zh": "国际贸易",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "511f62ea-382a-413c-b5c7-724d15cd85ef",
+      "order": 3,
+      "zh": "对外贸易",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7dc4021-ab2e-4772-bdd7-abedcdb14d5a",
+      "order": 4,
+      "zh": "国内贸易",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ef2dcae-0a80-4851-9fe0-e298ec82021a",
+      "order": 5,
+      "zh": "贸易合作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec02eb77-755b-44f2-a563-8bf5bae9a93a",
+      "order": 6,
+      "zh": "贸易合同",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2f35df75-5072-48a3-839d-92bcbe6643e7",
+      "order": 1,
+      "zh": "他的父亲在一家贸易公司工作。",
+      "pinyin": "Tā de fùqīn zài yì jiā màoyì gōngsī gōngzuò.",
+      "vi": "Bố anh ấy làm việc ở một công ty thương mại.",
+      "analysis_vi": "一家 dùng cho công ty/tổ chức kinh doanh.",
+      "highlight": [
+        "贸易"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48f7242b-5ba0-45eb-9124-7e98aea7bb0e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "贸易公司 / 外贸 rất hay gặp trong môi trường xuất nhập khẩu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1cc4fa27-ac6d-47dd-a11d-2cde009abc71",
+      "order": 1,
+      "rule_vi": "Không dịch cứng 贸易 là “mậu dịch” nếu ngữ cảnh đời thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "贸易",
+    "back": "thương mại, buôn bán, giao dịch thương mại",
+    "hint": "màoyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "48f7242b-5ba0-45eb-9124-7e98aea7bb0e",
+    "source_lesson_vocab_id": null
+  }
+}

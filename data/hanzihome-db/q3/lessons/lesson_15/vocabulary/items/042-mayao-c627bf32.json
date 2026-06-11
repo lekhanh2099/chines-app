@@ -1,0 +1,273 @@
+{
+  "id": "15a6a4ac-c31a-403b-92af-bd1300b040bd",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "麻药",
+  "pinyin": "máyào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ma dược",
+    "meaning_vi": "thuốc tê; thuốc mê/thuốc gây mê",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuốc tê",
+      "thuốc mê/thuốc gây mê"
+    ],
+    "short_definition_vi": "thuốc tê; thuốc mê/thuốc gây mê",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "麻",
+        "lishu_vi": "",
+        "structure_note_vi": "麻: tê",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tê",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: tê.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "药",
+        "lishu_vi": "",
+        "structure_note_vi": "药: thuốc",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuốc",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: thuốc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "麻药 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 打麻药.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cbb52655-49b3-42b9-83d5-3a6ccc87a69c",
+      "order": 1,
+      "zh": "打麻药",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05171635-19c4-4465-8b0e-32b5f5364c97",
+      "order": 2,
+      "zh": "麻药起作用了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0c675c9-190b-42c6-b6b0-2273a82050ce",
+      "order": 3,
+      "zh": "麻药过了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "480e3ebe-922e-4ed2-8f03-fa96b1b605f9",
+      "order": 4,
+      "zh": "止痛药",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0f9349f7-cfff-4895-a2c0-47fbb5ba398c",
+      "order": 1,
+      "zh": "医生给我打了麻药，所以我不疼了。",
+      "pinyin": "",
+      "vi": "Bác sĩ đã dùng/tiêm thuốc tê cho tôi nên tôi không đau nữa。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "麻药"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "15a6a4ac-c31a-403b-92af-bd1300b040bd"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cf273783-821d-48a7-9e9c-c0904629495c",
+      "order": 2,
+      "zh": "可能是打了麻药，现在腿不太疼了。",
+      "pinyin": "",
+      "vi": "Có lẽ do đã dùng thuốc tê, bây giờ chân không đau lắm nữa。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "麻药"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "15a6a4ac-c31a-403b-92af-bd1300b040bd"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8539dca0-30a1-47d4-9178-3db601c0869b",
+      "order": 1,
+      "rule_vi": "麻药 trong bài không phải ma túy.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "麻药 trong bài không phải ma túy.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "麻药",
+    "back": "thuốc tê; thuốc mê/thuốc gây mê",
+    "hint": "máyào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "15a6a4ac-c31a-403b-92af-bd1300b040bd",
+    "source_lesson_vocab_id": null
+  }
+}

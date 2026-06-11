@@ -1,0 +1,265 @@
+{
+  "id": "d2c22582-bde2-4965-a7ea-1477555abfee",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "人参",
+  "pinyin": "rénshēn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhân sâm",
+    "meaning_vi": "nhân sâm, cây sâm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhân sâm",
+      "cây sâm"
+    ],
+    "short_definition_vi": "nhân sâm, cây sâm",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "参",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sâm trong 人参; tham trong 参加",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "人参 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 人参 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "西洋参",
+        "pinyin": "xīyángshēn",
+        "meaning_vi": "sâm Mỹ",
+        "difference_vi": "Loại khác",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "高丽参",
+        "pinyin": "Gāolíshēn",
+        "meaning_vi": "sâm Cao Ly",
+        "difference_vi": "Sâm Hàn/Cao Ly",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "海参",
+        "pinyin": "hǎishēn",
+        "meaning_vi": "hải sâm",
+        "difference_vi": "Không phải nhân sâm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f038db2a-cab1-48e5-99b7-ce31001d3266",
+      "order": 1,
+      "zh": "一根人参",
+      "pinyin": "yì gēn rénshēn",
+      "vi": "một củ/rễ nhân sâm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "833d9043-5a2c-4e5d-b504-cd1208f5faca",
+      "order": 2,
+      "zh": "东北人参",
+      "pinyin": "Dōngběi rénshēn",
+      "vi": "nhân sâm Đông Bắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f978709b-2920-49c0-8b09-6ecef1f7cad0",
+      "order": 3,
+      "zh": "人参茶",
+      "pinyin": "rénshēn chá",
+      "vi": "trà nhân sâm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6e2739d-5820-4e36-90e2-c51c96db7751",
+      "order": 4,
+      "zh": "人参片",
+      "pinyin": "rénshēn piàn",
+      "vi": "lát nhân sâm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f531c013-f756-478c-8e58-8202a1747146",
+      "order": 1,
+      "zh": "他给父母买了一盒人参。",
+      "pinyin": "Tā gěi fùmǔ mǎi le yì hé rénshēn.",
+      "vi": "Anh ấy mua cho bố mẹ một hộp nhân sâm.",
+      "analysis_vi": "给父母买 = mua cho bố mẹ.",
+      "highlight": [
+        "人参"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d2c22582-bde2-4965-a7ea-1477555abfee"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "575a33c4-45bf-422d-93c8-7817f48b3d2f",
+      "order": 2,
+      "zh": "这种人参是当地很有名的特产。",
+      "pinyin": "Zhè zhǒng rénshēn shì dāngdì hěn yǒumíng de tèchǎn.",
+      "vi": "Loại nhân sâm này là đặc sản nổi tiếng địa phương.",
+      "analysis_vi": "当地特产.",
+      "highlight": [
+        "人参"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d2c22582-bde2-4965-a7ea-1477555abfee"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nhân sâm thường được xem là quà biếu bổ dưỡng trong văn hóa Đông Á.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "129b4144-cbfc-4163-afbf-c4c0db7fc6ec",
+      "order": 1,
+      "rule_vi": "人参 đọc rénshēn; 参 trong 参加 đọc cān.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人参",
+    "back": "nhân sâm, cây sâm",
+    "hint": "rénshēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d2c22582-bde2-4965-a7ea-1477555abfee",
+    "source_lesson_vocab_id": null
+  }
+}

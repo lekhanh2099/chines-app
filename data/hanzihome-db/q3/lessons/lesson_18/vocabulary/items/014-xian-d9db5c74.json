@@ -1,0 +1,297 @@
+{
+  "id": "22477455-87dc-45cf-8c7e-20a2be90a3ee",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "显",
+  "pinyin": "xiǎn",
+  "pos": {
+    "raw_vi": "Động từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动 / 语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hiển",
+    "meaning_vi": "hiện ra, lộ ra, tỏ ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiện ra",
+      "lộ ra",
+      "tỏ ra"
+    ],
+    "short_definition_vi": "hiện ra, lộ ra, tỏ ra",
+    "textbook_focus_vi": "Lộ ra cho người khác thấy, thường đi với 出 hoặc 得.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "显",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiện rõ/lộ ra",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Lộ ra cho người khác thấy, thường đi với 出 hoặc 得.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 显 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "显出",
+        "pinyin": "",
+        "meaning_vi": "lộ ra",
+        "difference_vi": "Nhấn biểu hiện ra ngoài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "显示",
+        "pinyin": "",
+        "meaning_vi": "hiển thị/cho thấy",
+        "difference_vi": "Dùng với dữ liệu/kết quả.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "露出",
+        "pinyin": "",
+        "meaning_vi": "lộ ra",
+        "difference_vi": "Cụ thể hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "41dcb134-b61f-41f2-a6cc-8cad52b40e5c",
+      "order": 1,
+      "zh": "显出失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a8a27d8b-afa2-4fe4-80b0-0d852cb3f9f7",
+      "order": 2,
+      "zh": "显出笑容",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6544936b-6fd0-4343-bbdd-0c4074e3295d",
+      "order": 3,
+      "zh": "显得很紧张",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f85e20a-d401-4a9e-aa67-ca6e22625828",
+      "order": 4,
+      "zh": "明显",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "796b6d7f-eab7-42d2-b482-5bc2d1ee7e73",
+      "order": 5,
+      "zh": "显示结果",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "11f3a2c9-3153-4be7-8ec2-69fc474a92d3",
+      "order": 1,
+      "zh": "她脸上显出一点儿失望。",
+      "pinyin": "",
+      "vi": "Trên mặt cô ấy lộ ra chút thất vọng.",
+      "analysis_vi": "显出 + cảm xúc/trạng thái.",
+      "highlight": [
+        "显"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "22477455-87dc-45cf-8c7e-20a2be90a3ee"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0f08dae2-92a3-4f8c-a1ae-4e1acb163fdd",
+      "order": 1,
+      "rule_vi": "Không nói 显一个失望.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "脸上显一个失望。",
+          "pinyin": "",
+          "vi": "Sai cấu trúc.",
+          "note_vi": "Không dùng 显 + một cảm xúc như lượng từ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "脸上显出一点儿失望。",
+          "pinyin": "",
+          "vi": "Trên mặt lộ ra chút thất vọng.",
+          "note_vi": "显出 là cấu trúc đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "显",
+    "back": "hiện ra, lộ ra, tỏ ra",
+    "hint": "xiǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "22477455-87dc-45cf-8c7e-20a2be90a3ee",
+    "source_lesson_vocab_id": null
+  }
+}

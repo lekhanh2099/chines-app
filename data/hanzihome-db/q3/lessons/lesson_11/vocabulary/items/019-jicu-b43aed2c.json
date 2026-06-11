@@ -1,0 +1,377 @@
+{
+  "id": "afcd3e1f-ce5e-4283-a8dc-64064c8fa2b7",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "急促",
+  "pinyin": "jícù",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "cấp xúc",
+    "meaning_vi": "gấp gáp, dồn dập",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gấp gáp",
+      "dồn dập"
+    ],
+    "short_definition_vi": "nhanh và gấp, thường tả âm thanh/hơi thở/nhịp",
+    "textbook_focus_vi": "Dùng để tạo nhịp căng trong văn kể chuyện.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "急",
+        "lishu_vi": "",
+        "structure_note_vi": "心",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "",
+            "meaning_vi": "tim, lòng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "tim, lòng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấp, vội",
+        "modern_logic_vi": "gấp, vội",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "tim, lòng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "促",
+        "lishu_vi": "",
+        "structure_note_vi": "亻 + 足",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "足",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thúc, gấp",
+        "modern_logic_vi": "thúc, gấp",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "急促 được học trong bài theo nghĩa: nhanh và gấp, thường tả âm thanh/hơi thở/nhịp.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 急促的脚步声.",
+    "warning_vi": "Làm trạng ngữ thường dùng 急促地 + V, không đặt 急促 tùy tiện trước động từ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "着急",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Sốt ruột, tâm lý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "匆忙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vội vàng trong hành động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Làm trạng ngữ thường dùng 急促地 + V, không đặt 急促 tùy tiện trước động từ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "33a37210-fd17-4ffe-b0f0-ce78e5231a1e",
+      "order": 1,
+      "zh": "急促的脚步声",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83e5aab5-f12e-45cc-ac95-e6660aeb2fcf",
+      "order": 2,
+      "zh": "急促的呼吸",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83977b2f-9dde-4f23-a6f9-6208cd0fce2e",
+      "order": 3,
+      "zh": "急促地敲门",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5693988b-156b-4b6d-a77c-2572507e0329",
+      "order": 4,
+      "zh": "急促地说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0c75996-27c0-422f-bea3-c1f239c00245",
+      "order": 5,
+      "zh": "声音很急促",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "12e29b74-338c-471d-8c2c-d7458b2660e1",
+      "order": 1,
+      "zh": "门外传来急促的脚步声。",
+      "pinyin": "",
+      "vi": "Bên ngoài cửa vọng đến tiếng bước chân gấp gáp.",
+      "analysis_vi": "急促的 làm định ngữ cho 脚步声.",
+      "highlight": [
+        "急促"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "afcd3e1f-ce5e-4283-a8dc-64064c8fa2b7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f6a04a5e-b10f-490c-bf4a-e84b9a008d12",
+      "order": 2,
+      "zh": "大刘急促地敲着门。",
+      "pinyin": "",
+      "vi": "Đại Lưu gõ cửa dồn dập.",
+      "analysis_vi": "急促地 làm trạng ngữ, cần 地.",
+      "highlight": [
+        "急促"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "afcd3e1f-ce5e-4283-a8dc-64064c8fa2b7"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "急促 hay xuất hiện trong văn kể chuyện để tạo cảm giác khẩn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "009ef4fd-19f8-433c-9a3a-e584e88573e4",
+      "order": 1,
+      "rule_vi": "Làm trạng ngữ thường dùng 急促地 + V, không đặt 急促 tùy tiện trước động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Làm trạng ngữ thường dùng 急促地 + V, không đặt 急促 tùy tiện trước động từ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "急促",
+    "back": "gấp gáp, dồn dập",
+    "hint": "jícù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "afcd3e1f-ce5e-4283-a8dc-64064c8fa2b7",
+    "source_lesson_vocab_id": null
+  }
+}

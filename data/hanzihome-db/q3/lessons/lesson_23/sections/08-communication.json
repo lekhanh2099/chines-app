@@ -1,0 +1,117 @@
+{
+  "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
+  "type": "communication",
+  "order": 8,
+  "title": "交际会话",
+  "title_vi": "Hội thoại giao tiếp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
+      "type": "communication_dialogue",
+      "variant": "talking_about_regret",
+      "order": 1,
+      "title": "说“遗憾”",
+      "title_vi": "Nói về “tiếc nuối”",
+      "function": "talking_about_regret",
+      "function_vi": "Nói về điều tiếc nuối / cảm giác tiếc nuối",
+      "dialogue": [
+        {
+          "id": "adc8bc14-48b3-46e2-9001-fda44c8b6761",
+          "speaker": "A",
+          "text": "今天上课时，老师问我们什么情况下会感到“遗憾”。",
+          "pinyin": "Jīntiān shàngkè shí, lǎoshī wèn wǒmen shénme qíngkuàng xià huì gǎndào “yíhàn”.",
+          "vi": "Hôm nay khi lên lớp, giáo viên hỏi chúng tôi trong tình huống nào sẽ cảm thấy “tiếc nuối”.",
+          "audio_key": ""
+        },
+        {
+          "id": "d4f07f51-68ef-4b82-89c7-2926a7c2a91c",
+          "speaker": "B",
+          "text": "你是怎么回答的？",
+          "pinyin": "Nǐ shì zěnme huídá de?",
+          "vi": "Bạn đã trả lời thế nào?",
+          "audio_key": ""
+        },
+        {
+          "id": "5b13a89e-5e67-4d02-ac6d-b32e54af0b23",
+          "speaker": "A",
+          "text": "我没有回答。",
+          "pinyin": "Wǒ méiyǒu huídá.",
+          "vi": "Tôi không trả lời.",
+          "audio_key": ""
+        },
+        {
+          "id": "d1db9a35-358d-4c35-b3e2-4397f60755c1",
+          "speaker": "B",
+          "text": "为什么？难道你没有遗憾的事儿吗？",
+          "pinyin": "Wèishénme? Nándào nǐ méiyǒu yíhàn de shìr ma?",
+          "vi": "Tại sao? Lẽ nào bạn không có chuyện gì tiếc nuối à?",
+          "audio_key": ""
+        },
+        {
+          "id": "1db70a56-57cb-4f5c-82a1-d904553148f0",
+          "speaker": "A",
+          "text": "我哪能没有遗憾的事儿呢？正因为我感到遗憾的事儿太多了，所以不知道怎么回答了。",
+          "pinyin": "Wǒ nǎ néng méiyǒu yíhàn de shìr ne? Zhèng yīnwèi wǒ gǎndào yíhàn de shìr tài duō le, suǒyǐ bù zhīdào zěnme huídá le.",
+          "vi": "Sao tôi có thể không có chuyện tiếc nuối được chứ? Chính vì những chuyện tôi thấy tiếc nuối quá nhiều, nên không biết trả lời thế nào.",
+          "audio_key": ""
+        },
+        {
+          "id": "cc3f8306-ac55-4efa-91d5-3f345f236dc2",
+          "speaker": "B",
+          "text": "你有什么遗憾呢？",
+          "pinyin": "Nǐ yǒu shénme yíhàn ne?",
+          "vi": "Bạn có điều gì tiếc nuối?",
+          "audio_key": ""
+        },
+        {
+          "id": "cefa67a4-1369-41e7-956d-e5d95776fb35",
+          "speaker": "A",
+          "text": "比如说我爱玩儿，可是上课的时候不能玩儿，这不是遗憾吗？我爱看足球比赛，一场很好的比赛没看着，当然很遗憾。不过最遗憾的还是到现在还没有女朋友。",
+          "pinyin": "Bǐrú shuō wǒ ài wánr, kěshì shàngkè de shíhou bù néng wánr, zhè bú shì yíhàn ma? Wǒ ài kàn zúqiú bǐsài, yì chǎng hěn hǎo de bǐsài méi kàn zháo, dāngrán hěn yíhàn. Búguò zuì yíhàn de háishi dào xiànzài hái méiyǒu nǚ péngyou.",
+          "vi": "Ví dụ như tôi thích chơi, nhưng lúc lên lớp không được chơi, chẳng phải đó là tiếc nuối sao? Tôi thích xem bóng đá, một trận rất hay mà không xem được thì đương nhiên rất tiếc. Nhưng tiếc nhất vẫn là đến bây giờ vẫn chưa có bạn gái.",
+          "audio_key": ""
+        },
+        {
+          "id": "01287ba3-d781-4680-80c8-197cac06c002",
+          "speaker": "B",
+          "text": "那是够遗憾的。",
+          "pinyin": "Nà shì gòu yíhàn de.",
+          "vi": "Thế thì đúng là khá tiếc thật.",
+          "audio_key": ""
+        },
+        {
+          "id": "0a086229-c085-47ac-aa78-191cc9c5959c",
+          "speaker": "A",
+          "text": "你就没有遗憾的事儿吗？",
+          "pinyin": "Nǐ jiù méiyǒu yíhàn de shìr ma?",
+          "vi": "Bạn thì không có chuyện gì tiếc nuối à?",
+          "audio_key": ""
+        },
+        {
+          "id": "48f72c36-1eba-499b-86b8-6f4179918b94",
+          "speaker": "B",
+          "text": "谁能没有遗憾的事儿呢？不过，我认为遗憾也是一种感觉，如果你努力去做了，即使没得到理想的结果，也不必感到遗憾，因为你努力了。要是每天都为没有得到什么而感到遗憾的话，那才真是遗憾呢。",
+          "pinyin": "Shéi néng méiyǒu yíhàn de shìr ne? Búguò, wǒ rènwéi yíhàn yě shì yì zhǒng gǎnjué, rúguǒ nǐ nǔlì qù zuò le, jíshǐ méi dédào lǐxiǎng de jiéguǒ, yě búbì gǎndào yíhàn, yīnwèi nǐ nǔlì le. Yàoshi měitiān dōu wèi méiyǒu dédào shénme ér gǎndào yíhàn de huà, nà cái zhēn shì yíhàn ne.",
+          "vi": "Ai có thể không có chuyện tiếc nuối chứ? Nhưng tôi cho rằng tiếc nuối cũng là một loại cảm giác. Nếu bạn đã cố gắng làm rồi, dù không đạt được kết quả lý tưởng thì cũng không cần cảm thấy tiếc, vì bạn đã cố gắng. Nếu ngày nào cũng vì không đạt được điều gì đó mà thấy tiếc, vậy mới thật sự là đáng tiếc.",
+          "audio_key": ""
+        },
+        {
+          "id": "fbe69d8d-1d58-4abc-8c5d-9d8c20bc0d92",
+          "speaker": "A",
+          "text": "你说的也对。",
+          "pinyin": "Nǐ shuō de yě duì.",
+          "vi": "Bạn nói cũng đúng.",
+          "audio_key": ""
+        }
+      ],
+      "practice_tasks": [],
+      "rendering": {
+        "renderer": "communication_dialogue"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

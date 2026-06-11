@@ -1,0 +1,392 @@
+{
+  "id": "d291cd4b-3f14-4e37-ade2-d05f7ddf9be6",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "经常",
+  "pinyin": "jīngcháng",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kinh thường",
+    "meaning_vi": "thường xuyên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thường xuyên"
+    ],
+    "short_definition_vi": "thường xuyên",
+    "textbook_focus_vi": "thường xuyên",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "经",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "qua, trải qua, thường",
+        "modern_logic_vi": "Phần phải giản thể không nên tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "常",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn/vải",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thường, thường xuyên, bình thường",
+        "modern_logic_vi": "常 = thường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "经常 = hành động lặp lại ổn định, thường xuyên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "常常",
+        "pinyin": "",
+        "meaning_vi": "thường hay",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "平常",
+        "pinyin": "",
+        "meaning_vi": "bình thường/ngày thường",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "总是",
+        "pinyin": "",
+        "meaning_vi": "luôn luôn",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "偶尔",
+        "pinyin": "",
+        "meaning_vi": "thỉnh thoảng",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "偶尔",
+        "pinyin": "",
+        "meaning_vi": "thỉnh thoảng",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aa335550-587d-4e01-a462-5d3005bac37f",
+      "order": 1,
+      "zh": "经常去",
+      "pinyin": "",
+      "vi": "thường xuyên đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01f3d081-2b29-4c30-9322-175415cc2038",
+      "order": 2,
+      "zh": "经常见面",
+      "pinyin": "",
+      "vi": "thường xuyên gặp mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5847643-8ba5-40c3-b997-3f3e58e4b265",
+      "order": 3,
+      "zh": "经常打电话",
+      "pinyin": "",
+      "vi": "thường xuyên gọi điện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfd1f4ea-2fc1-42b4-b8c7-8f766df2f19c",
+      "order": 4,
+      "zh": "经常帮助别人",
+      "pinyin": "",
+      "vi": "thường xuyên giúp người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "59fb3be2-400b-47a6-a1f8-d3325d53d0b3",
+      "order": 5,
+      "zh": "经常迟到",
+      "pinyin": "",
+      "vi": "thường xuyên đến muộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a6d0a5c-c3ab-4246-8daf-9fd5d9b5c79d",
+      "order": 6,
+      "zh": "经常练习",
+      "pinyin": "",
+      "vi": "thường xuyên luyện tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7c153e26-fae8-4f0a-b87d-f7fdced5e83b",
+      "order": 1,
+      "zh": "他经常帮助同学。",
+      "pinyin": "Tā jīngcháng bāngzhù tóngxué.",
+      "vi": "Anh ấy thường xuyên giúp bạn học.",
+      "analysis_vi": "经常 đứng trước động từ.",
+      "highlight": [
+        "经常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d291cd4b-3f14-4e37-ade2-d05f7ddf9be6"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "255628a8-2b1f-4d24-b00e-7dc4cd898d85",
+      "order": 2,
+      "zh": "他是经常利用假期出去旅行的。",
+      "pinyin": "Tā shì jīngcháng lìyòng jiàqī chūqù lǚxíng de.",
+      "vi": "Anh ấy thường tận dụng kỳ nghỉ để đi du lịch.",
+      "analysis_vi": "是……的 nhấn thói quen/cách làm.",
+      "highlight": [
+        "经常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d291cd4b-3f14-4e37-ade2-d05f7ddf9be6"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a29f4615-ed32-485b-9847-a2595786a304",
+      "order": 3,
+      "zh": "他以前经常把声调读错，后来每天练习，慢慢儿就好多了。",
+      "pinyin": "Tā yǐqián jīngcháng bǎ shēngdiào dú cuò, hòulái měi tiān liànxí, mànmānr jiù hǎo duō le.",
+      "vi": "Trước đây anh ấy thường đọc sai thanh điệu; sau này luyện mỗi ngày nên khá hơn.",
+      "analysis_vi": "把声调读错 là 把字句 + kết quả 错.",
+      "highlight": [
+        "经常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d291cd4b-3f14-4e37-ade2-d05f7ddf9be6"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "经常 an toàn hơn 老是 khi chỉ thói quen, vì 老是 đôi khi có sắc thái phàn nàn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "16288511-e620-49f8-9f7a-65cce9e855bb",
+      "order": 1,
+      "rule_vi": "经常 đứng trước động từ, không đặt sau động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "经常",
+    "back": "thường xuyên",
+    "hint": "jīngcháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d291cd4b-3f14-4e37-ade2-d05f7ddf9be6",
+    "source_lesson_vocab_id": null
+  }
+}

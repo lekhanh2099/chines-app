@@ -1,0 +1,265 @@
+{
+  "id": "e24df874-9b32-410a-bf03-5fb83a225a9d",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "约",
+  "pinyin": "yuē",
+  "pos": {
+    "raw_vi": "Động từ / Phó từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动/副/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ước",
+    "meaning_vi": "hẹn; khoảng; ràng buộc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hẹn; khoảng; ràng buộc"
+    ],
+    "short_definition_vi": "hẹn; khoảng; ràng buộc",
+    "textbook_focus_vi": "hẹn; khoảng; ràng buộc",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "约",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ, sự nối kết",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ, sự nối kết",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "勺",
+            "hanviet": "chước",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "hẹn/khoảng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "hẹn/thỏa thuận hoặc ước lượng",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fc2c6f75-7437-42d8-a02d-b4f91f03aa7c",
+      "order": 1,
+      "zh": "约朋友",
+      "pinyin": "",
+      "vi": "hẹn bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e418512-a858-48f7-b1bc-482468d9031e",
+      "order": 2,
+      "zh": "约时间",
+      "pinyin": "",
+      "vi": "hẹn thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "866ef862-cb0f-4415-96af-0f5fd7f26e13",
+      "order": 3,
+      "zh": "约好了",
+      "pinyin": "",
+      "vi": "hẹn xong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "634fc3a4-c5a7-41ca-9d13-a8d0699bc44d",
+      "order": 4,
+      "zh": "下次再约",
+      "pinyin": "",
+      "vi": "lần sau hẹn tiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2866c51b-5cf4-4140-bd2b-40f6607a773a",
+      "order": 5,
+      "zh": "预约医生",
+      "pinyin": "",
+      "vi": "đặt lịch khám",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c023e944-1739-43ae-9775-65727a655e72",
+      "order": 1,
+      "zh": "我们明天再约时间吧。",
+      "pinyin": "Wǒmen míngtiān zài yuē shíjiān ba.",
+      "vi": "Ngày mai chúng ta hẹn thời gian tiếp nhé.",
+      "analysis_vi": "约时间 là hẹn thời gian.",
+      "highlight": [
+        "约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e24df874-9b32-410a-bf03-5fb83a225a9d"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "57eea656-45af-42d1-846c-84d21df18d66",
+      "order": 2,
+      "zh": "如果不了解约，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě yuē, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 约, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e24df874-9b32-410a-bf03-5fb83a225a9d"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e89a0f2b-cbcc-4a90-ae5b-0e21398d304b",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解约在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě yuē zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 约 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e24df874-9b32-410a-bf03-5fb83a225a9d"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "预约 rất hay dùng trong dịch vụ hiện đại: đặt lịch khám, bảo tàng, nhà hàng, giấy tờ.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "84140e7d-b28b-450c-abf8-2728a062aebb",
+      "order": 1,
+      "rule_vi": "约会 dễ bị hiểu là hẹn hò; muốn trung tính nói 约朋友见面。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "约",
+    "back": "hẹn; khoảng; ràng buộc",
+    "hint": "yuē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e24df874-9b32-410a-bf03-5fb83a225a9d",
+    "source_lesson_vocab_id": null
+  }
+}

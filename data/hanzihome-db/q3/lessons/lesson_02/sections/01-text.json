@@ -1,0 +1,181 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "一封信",
+      "title_vi": "Một bức thư",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "爸爸妈妈：\n你们好！爸爸还那么忙吗？一定要注意身体啊！",
+          "pinyin": "Bàba māma:\nNǐmen hǎo! Bàba hái nàme máng ma? Yídìng yào zhùyì shēntǐ a!",
+          "vi": "Các bố mẹ kính mến: Bố mẹ khỏe không ạ? Bố vẫn bận như vậy sao? Nhất định phải chú ý giữ gìn sức khỏe nhé!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "你们寄来的生日礼物上星期就收到了。我现在一切都很好，吃得好，睡得好，学习也不错。你们就放心吧。",
+          "pinyin": "Nǐmen jì lái de shēngrì lǐwù shàng xīngqī jiù shōudào le. Wǒ xiànzài yíqiè dōu hěn hǎo, chī de hǎo, shuì de hǎo, xuéxí yě búcuò. Nǐmen jiù fàngxīn ba.",
+          "vi": "Món quà sinh nhật bố mẹ gửi đến, con đã nhận được từ tuần trước rồi. Bây giờ mọi thứ của con đều rất tốt, ăn ngon, ngủ ngon, học cũng khá ổn. Bố mẹ cứ yên tâm nhé.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "刚来时是有很多地方不习惯，但是现在基本上已经习惯了这里的生活。学习上也没有什么问题。中国人常说：“在家靠父母，出门靠朋友。”我现在交了好多朋友。",
+          "pinyin": "Gāng lái shí shì yǒu hěn duō dìfang bù xíguàn, dànshì xiànzài jīběnshang yǐjīng xíguàn le zhèlǐ de shēnghuó. Xuéxí shang yě méiyǒu shénme wèntí. Zhōngguó rén cháng shuō: “Zài jiā kào fùmǔ, chūmén kào péngyou.” Wǒ xiànzài jiāo le hǎoduō péngyou.",
+          "vi": "Lúc mới đến đúng là có nhiều chỗ chưa quen, nhưng bây giờ về cơ bản con đã quen với cuộc sống ở đây rồi. Việc học cũng không có vấn đề gì. Người Trung Quốc thường nói: “Ở nhà dựa vào bố mẹ, ra ngoài dựa vào bạn bè.” Bây giờ con đã kết bạn được rất nhiều bạn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "今天给你们发过去的几张照片，第一张就是我们全班同学一起给我过生日的情景。我们班的同学分别来自亚洲、非洲、欧洲、美洲、大洋洲等五大洲十一个国家。能跟这么多同学一起学习，认识这么多世界各国来的朋友，我感到非常高兴。大家一起学习，一起聊天儿，一起参加各种课外活动。同学们互相关心，互相帮助，非常团结。所以我每天都过得很愉快。站在我旁边那个高个子、黄头发、蓝眼睛的小伙子，就是我的好朋友，长得很帅吧？我们俩常常一起玩儿，还一起学打太极拳。",
+          "pinyin": "Jīntiān gěi nǐmen fā guòqu de jǐ zhāng zhàopiàn, dì-yī zhāng jiùshì wǒmen quán bān tóngxué yìqǐ gěi wǒ guò shēngrì de qíngjǐng. Wǒmen bān de tóngxué fēnbié láizì Yàzhōu, Fēizhōu, Ōuzhōu, Měizhōu, Dàyángzhōu děng wǔ dà zhōu shíyí ge guójiā. Néng gēn zhème duō tóngxué yìqǐ xuéxí, rènshi zhème duō shìjiè gèguó lái de péngyou, wǒ gǎndào fēicháng gāoxìng. Dàjiā yìqǐ xuéxí, yìqǐ liáotiānr, yìqǐ cānjiā gèzhǒng kèwài huódòng. Tóngxuémen hùxiāng guānxīn, hùxiāng bāngzhù, fēicháng tuánjié. Suǒyǐ wǒ měitiān dōu guò de hěn yúkuài. Zhàn zài wǒ pángbiān nà ge gāo gèzi, huáng tóufa, lán yǎnjing de xiǎohuǒzi, jiùshì wǒ de hǎo péngyou, zhǎng de hěn shuài ba? Wǒmen liǎ chángcháng yìqǐ wánr, hái yìqǐ xué dǎ tàijíquán.",
+          "vi": "Mấy tấm ảnh hôm nay con gửi cho bố mẹ, tấm thứ nhất là cảnh cả lớp cùng tổ chức sinh nhật cho con. Các bạn trong lớp con lần lượt đến từ châu Á, châu Phi, châu Âu, châu Mỹ, châu Đại Dương — năm châu lớn, mười một quốc gia. Có thể học cùng nhiều bạn như vậy, quen biết nhiều bạn từ các nước trên thế giới, con cảm thấy rất vui. Mọi người cùng học, cùng trò chuyện, cùng tham gia các hoạt động ngoại khóa. Các bạn quan tâm và giúp đỡ lẫn nhau, rất đoàn kết. Vì vậy mỗi ngày con đều sống rất vui vẻ. Cậu bạn cao cao, tóc vàng, mắt xanh đứng bên cạnh con chính là bạn tốt của con, trông rất đẹp trai đúng không? Hai chúng con thường cùng đi chơi, còn cùng học Thái Cực Quyền.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "第二张就是我学打太极拳时拍下来的。现在我每星期有两个下午去体育馆学打太极拳。太极拳是一种很有意思的运动，动作柔和缓慢，优美舒展，又有增强体质、预防疾病的作用，所以，是一项很受欢迎的体育运动。我每次练完以后，都觉得全身特别舒服。回国后我想教爸爸妈妈学打太极拳。",
+          "pinyin": "Dì-èr zhāng jiùshì wǒ xué dǎ tàijíquán shí pāi xiàlai de. Xiànzài wǒ měi xīngqī yǒu liǎng ge xiàwǔ qù tǐyùguǎn xué dǎ tàijíquán. Tàijíquán shì yì zhǒng hěn yǒuyìsi de yùndòng, dòngzuò róuhé huǎnmàn, yōuměi shūzhǎn, yòu yǒu zēngqiáng tǐzhì, yùfáng jíbìng de zuòyòng, suǒyǐ shì yí xiàng hěn shòu huānyíng de tǐyù yùndòng. Wǒ měi cì liàn wán yǐhòu, dōu juéde quánshēn tèbié shūfu. Huíguó hòu wǒ xiǎng jiāo bàba māma xué dǎ tàijíquán.",
+          "vi": "Tấm thứ hai là ảnh chụp lúc con học Thái Cực Quyền. Bây giờ mỗi tuần con có hai buổi chiều đến nhà thi đấu học Thái Cực Quyền. Thái Cực Quyền là một môn vận động rất thú vị, động tác mềm mại chậm rãi, đẹp và khoáng đạt, lại có tác dụng tăng cường thể chất, phòng ngừa bệnh tật, vì vậy đây là một môn thể thao rất được yêu thích. Mỗi lần luyện xong, con đều cảm thấy toàn thân đặc biệt dễ chịu. Sau khi về nước, con muốn dạy bố mẹ học Thái Cực Quyền.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "第三张是我在用毛笔画画儿，写汉字。除了学习汉语以外，我还参加了一个书画学习班，学用毛笔写字、画中国画儿。我觉得十分有趣。上星期我画了一幅竹子，写了一首唐诗，老师说我画得很好，还把它拿去，挂在学校的展览橱窗里展出了，我看了以后觉得又高兴又不好意思。朋友们看到以后，都向我表示祝贺。",
+          "pinyin": "Dì-sān zhāng shì wǒ zài yòng máobǐ huà huàr, xiě Hànzì. Chúle xuéxí Hànyǔ yǐwài, wǒ hái cānjiā le yí ge shūhuà xuéxí bān, xué yòng máobǐ xiě zì, huà Zhōngguó huàr. Wǒ juéde shífēn yǒuqù. Shàng xīngqī wǒ huà le yì fú zhúzi, xiě le yì shǒu Tángshī, lǎoshī shuō wǒ huà de hěn hǎo, hái bǎ tā ná qù, guà zài xuéxiào de zhǎnlǎn chúchuāng lǐ zhǎnchū le. Wǒ kàn le yǐhòu juéde yòu gāoxìng yòu bù hǎoyìsi. Péngyoumen kàndào yǐhòu, dōu xiàng wǒ biǎoshì zhùhè.",
+          "vi": "Tấm thứ ba là lúc con đang dùng bút lông vẽ tranh, viết chữ Hán. Ngoài học tiếng Hán ra, con còn tham gia một lớp học thư họa, học dùng bút lông viết chữ, vẽ tranh Trung Quốc. Con thấy rất thú vị. Tuần trước con vẽ một bức trúc, viết một bài thơ Đường. Thầy/cô nói con vẽ rất đẹp, còn đem treo trong tủ kính triển lãm của trường. Sau khi xem, con vừa vui vừa ngại. Sau khi bạn bè nhìn thấy, ai cũng chúc mừng con.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "对了，我还学会了用筷子吃饭。最后一张就是我在用筷子吃饭。前天我们去吃北京烤鸭时，我让朋友把我用筷子吃饭的样子拍了下来，你们看看，怎么样？好玩儿吧？",
+          "pinyin": "Duì le, wǒ hái xuéhuì le yòng kuàizi chīfàn. Zuìhòu yì zhāng jiùshì wǒ zài yòng kuàizi chīfàn. Qiántiān wǒmen qù chī Běijīng kǎoyā shí, wǒ ràng péngyou bǎ wǒ yòng kuàizi chīfàn de yàngzi pāi le xiàlai, nǐmen kànkan, zěnmeyàng? Hǎowánr ba?",
+          "vi": "À đúng rồi, con còn học được cách dùng đũa ăn cơm nữa. Tấm cuối cùng chính là ảnh con đang dùng đũa ăn cơm. Hôm kia lúc chúng con đi ăn vịt quay Bắc Kinh, con nhờ bạn chụp lại dáng vẻ con dùng đũa ăn cơm. Bố mẹ xem thử đi, thế nào ạ? Thú vị đúng không?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
+          "order": 8,
+          "zh": "爸爸妈妈担心北京的冬天天冷，怕我不适应，可是我一点儿也不觉得冷。也许北京也变暖和了吧。在家的时候，一到冬天我都会感冒一两次。现在来中国快半年了，因为每天坚持锻炼，一次病也没得过。",
+          "pinyin": "Bàba māma dānxīn Běijīng de dōngtiān tiān lěng, pà wǒ bù shìyìng, kěshì wǒ yìdiǎnr yě bù juéde lěng. Yěxǔ Běijīng yě biàn nuǎnhuo le ba. Zài jiā de shíhou, yí dào dōngtiān wǒ dōu huì gǎnmào yì liǎng cì. Xiànzài lái Zhōngguó kuài bàn nián le, yīnwèi měitiān jiānchí duànliàn, yí cì bìng yě méi dé guo.",
+          "vi": "Bố mẹ lo mùa đông Bắc Kinh quá lạnh, sợ con không thích nghi được, nhưng con chẳng thấy lạnh chút nào. Có lẽ Bắc Kinh cũng đã trở nên ấm hơn rồi chăng. Khi còn ở nhà, cứ đến mùa đông là con đều bị cảm một hai lần. Bây giờ con đến Trung Quốc gần nửa năm rồi, vì ngày nào cũng kiên trì rèn luyện nên chưa bị bệnh lần nào.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
+          "order": 9,
+          "zh": "就写到这儿吧。我要跟朋友一起出去了。\n祝爸爸妈妈身体健康！\n玛丽\n一月二十八日",
+          "pinyin": "Jiù xiě dào zhèr ba. Wǒ yào gēn péngyou yìqǐ chūqù le.\nZhù bàba māma shēntǐ jiànkāng!\nMǎlì\nYī yuè èrshíbā rì",
+          "vi": "Con viết đến đây thôi nhé. Con phải cùng bạn ra ngoài rồi. Chúc bố mẹ mạnh khỏe! Mary. Ngày 28 tháng 1.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
+          "question": "玛丽现在在哪儿？",
+          "answer": "玛丽现在在中国。",
+          "source_origin": "textbook_question_text_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
+          "question": "她现在生活得怎么样？",
+          "answer": "她现在一切都很好，吃得好，睡得好，学习也不错。",
+          "source_origin": "textbook_question_text_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
+          "question": "她参加了一个什么班？",
+          "answer": "她参加了一个书画学习班。",
+          "source_origin": "textbook_question_text_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
+          "question": "她以前会用筷子吗？现在呢？",
+          "answer": "她以前不会用筷子，现在学会了用筷子吃饭。",
+          "source_origin": "textbook_question_text_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
+          "question": "她来中国多长时间了？",
+          "answer": "她来中国快半年了。",
+          "source_origin": "textbook_question_text_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
+          "question": "介绍一下儿这几张照片。",
+          "answer": "第一张是全班同学一起给她过生日的情景；第二张是她学打太极拳时拍下来的；第三张是她用毛笔画画儿、写汉字；最后一张是她用筷子吃饭的样子。",
+          "source_origin": "textbook_question_text_answer_verified",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

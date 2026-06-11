@@ -1,0 +1,280 @@
+{
+  "id": "4901093e-49f0-4d67-8366-56a2e6fa80f8",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "走运",
+  "pinyin": "zǒuyùn",
+  "pos": {
+    "raw_vi": "Động từ / Cụm động từ",
+    "raw_cn": "动词 / 动词短语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tẩu vận",
+    "meaning_vi": "gặp may, may mắn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gặp may, may mắn"
+    ],
+    "short_definition_vi": "Gặp may do vận may tới.",
+    "textbook_focus_vi": "Dùng khi kết quả tốt có yếu tố may.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "走",
+        "lishu_vi": "tẩu",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi",
+        "modern_logic_vi": "đi",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "运",
+        "lishu_vi": "vận",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại/di chuyển",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại/di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại/di chuyển",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vận may",
+        "modern_logic_vi": "vận may",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "走 + 运 = vận may chạy tới.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "幸运",
+        "pinyin": "xìngyùn",
+        "meaning_vi": "may mắn",
+        "difference_vi": "幸运 trung tính hơn; 走运 khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "13a65f99-8b23-4d77-9f06-c510e373ea3d",
+      "order": 1,
+      "zh": "真走运",
+      "pinyin": "",
+      "vi": "may thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b46209fc-cb27-4510-a245-00c3b10df8da",
+      "order": 2,
+      "zh": "太走运了",
+      "pinyin": "",
+      "vi": "quá may",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "374f265d-3071-4354-96e1-d47383bf06af",
+      "order": 3,
+      "zh": "不太走运",
+      "pinyin": "",
+      "vi": "không may lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36c5b515-5614-4b08-b3fb-ead502d79b9a",
+      "order": 4,
+      "zh": "走了好运",
+      "pinyin": "",
+      "vi": "gặp vận may",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a995f7a8-290e-46fd-9751-1da2a8a3b4ea",
+      "order": 1,
+      "zh": "你真走运，刚到车站车就来了。",
+      "pinyin": "",
+      "vi": "Bạn may thật, vừa tới trạm thì xe đến.",
+      "analysis_vi": "刚……就…… nêu việc đến rất đúng lúc.",
+      "highlight": [
+        "走运"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4901093e-49f0-4d67-8366-56a2e6fa80f8"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "05116c70-da19-4a6a-a09d-d3daa90c1af4",
+      "order": 2,
+      "zh": "他本来以为会迟到，没想到一出门就打到车了，真走运。",
+      "pinyin": "",
+      "vi": "Anh ấy tưởng sẽ muộn, không ngờ vừa ra cửa đã bắt được xe, may thật.",
+      "analysis_vi": "打到车 là bắt được xe.",
+      "highlight": [
+        "走运"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4901093e-49f0-4d67-8366-56a2e6fa80f8"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b2d8cd2c-4709-4311-8bd6-7ac44f3701fe",
+      "order": 1,
+      "rule_vi": "Không dùng 走运 để khen năng lực chính.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 走运 để khen năng lực chính.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "走运",
+    "back": "gặp may, may mắn",
+    "hint": "zǒuyùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4901093e-49f0-4d67-8366-56a2e6fa80f8",
+    "source_lesson_vocab_id": null
+  }
+}

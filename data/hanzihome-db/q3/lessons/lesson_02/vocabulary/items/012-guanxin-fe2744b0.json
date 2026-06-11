@@ -1,0 +1,348 @@
+{
+  "id": "50aa38c7-5419-4c86-a841-ade00975d317",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "关心",
+  "pinyin": "guānxīn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "relationship"
+  ],
+  "meaning": {
+    "hanviet": "Quan tâm",
+    "meaning_vi": "quan tâm, để ý, lo lắng chăm sóc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quan tâm, để ý, lo lắng chăm sóc"
+    ],
+    "short_definition_vi": "quan tâm, để ý, lo lắng chăm sóc",
+    "textbook_focus_vi": "quan tâm, để ý, lo lắng chăm sóc",
+    "register_vi": "",
+    "usage_domain_vi": "relationship",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "关",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đóng, liên quan, cửa ải",
+        "modern_logic_vi": "Chữ giản thể hiện đại không nên tách sâu; học theo cụm 关心/关系/关门.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "心",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, suy nghĩ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, suy nghĩ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ Tâm trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tim, lòng, cảm xúc",
+        "modern_logic_vi": "心 gợi trạng thái bên trong.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, suy nghĩ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ Tâm trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Chữ giản thể hiện đại không nên tách sâu; học theo cụm 关心/关系/关门.; 心 gợi trạng thái bên trong.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "关注",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "关怀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "在乎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "忽视",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不管",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "469573e4-dfe0-4850-8a62-dd10e391331d",
+      "order": 1,
+      "zh": "关心同学",
+      "pinyin": "",
+      "vi": "quan tâm bạn học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5577d9b4-33fa-4a72-8f82-f740612e992f",
+      "order": 2,
+      "zh": "关心朋友",
+      "pinyin": "",
+      "vi": "quan tâm bạn bè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a6f64985-b669-4e34-8d63-945418689b61",
+      "order": 3,
+      "zh": "关心身体",
+      "pinyin": "",
+      "vi": "quan tâm sức khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3dffc5f0-81e7-4e61-b00c-0a11769e0fc6",
+      "order": 4,
+      "zh": "互相关心",
+      "pinyin": "",
+      "vi": "quan tâm lẫn nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "556e6b4f-035d-42f9-8c4f-c8025afa3449",
+      "order": 5,
+      "zh": "不太关心",
+      "pinyin": "",
+      "vi": "không quan tâm lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0b48f22e-7273-4166-830c-cd1583c6fd0c",
+      "order": 1,
+      "zh": "老师很关心我们的学习。",
+      "pinyin": "Lǎoshī hěn guānxīn wǒmen de xuéxí.",
+      "vi": "Thầy/cô rất quan tâm việc học của chúng tôi.",
+      "analysis_vi": "关心 + người/việc.",
+      "highlight": [
+        "关心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "50aa38c7-5419-4c86-a841-ade00975d317"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5816924f-a2c5-476d-9ca5-9754eb71d16a",
+      "order": 2,
+      "zh": "同学们应该互相关心，互相帮助。",
+      "pinyin": "Tóngxuémen yīnggāi hùxiāng guānxīn, hùxiāng bāngzhù.",
+      "vi": "Các bạn học nên quan tâm lẫn nhau, giúp đỡ lẫn nhau.",
+      "analysis_vi": "互相 + động từ = lẫn nhau.",
+      "highlight": [
+        "关心"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "50aa38c7-5419-4c86-a841-ade00975d317"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "互相关心、互相帮助、团结友爱 là cụm giáo dục tập thể rất hay trong bài đọc Trung Quốc.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "84ff6a0d-4652-44d1-b34d-421776c26c7d",
+      "order": 1,
+      "rule_vi": "我很关心你 tự nhiên hơn 我对你很关心 trong câu đơn giản.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我很关心你。",
+          "pinyin": "Wǒ hěn guānxīn nǐ.",
+          "vi": "Tôi rất quan tâm bạn.",
+          "note_vi": "Cấu trúc trực tiếp an toàn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "关心",
+    "back": "quan tâm, để ý, lo lắng chăm sóc",
+    "hint": "guānxīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "relationship"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "50aa38c7-5419-4c86-a841-ade00975d317",
+    "source_lesson_vocab_id": null
+  }
+}

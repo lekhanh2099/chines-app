@@ -1,0 +1,422 @@
+{
+  "id": "9834826b-3b7e-403d-b766-f4376d3e4eb5",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "下去",
+  "pinyin": "xiàqù",
+  "pos": {
+    "raw_vi": "Động từ xu hướng / Bổ ngữ xu hướng",
+    "raw_cn": "趋向动词/趋向补语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Hạ khứ",
+    "meaning_vi": "đi xuống; xuống đó; tiếp tục xuống/tiếp tục làm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi xuống",
+      "xuống đó",
+      "tiếp tục xuống/tiếp tục làm"
+    ],
+    "short_definition_vi": "đi xuống; xuống đó; tiếp tục xuống/tiếp tục làm",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "directional_complement",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "下",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "下",
+            "hanviet": "hạ",
+            "meaning_vi": "dưới, xuống",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưới, xuống, tiếp theo",
+        "modern_logic_vi": "下 là hướng xuống/dưới.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "去",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "厶",
+            "hanviet": "tư",
+            "meaning_vi": "phần dưới",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi, rời đi, hướng xa người nói",
+        "modern_logic_vi": "去 chỉ hướng xa người nói.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "下 là xuống; 去 là đi xa người nói; 下去 là đi xuống đó/xuống dưới theo hướng xa người nói.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "下来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xuống đây, hướng về phía người nói.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Lên đó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Lên đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "说下去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nói tiếp, nghĩa mở rộng của 下去.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "坚持下去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tiếp tục kiên trì.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "上去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Lên đó, đối lập 下去.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "下去",
+        "right": "下来",
+        "meaning_vi": "去 hướng xa người nói; 来 hướng về người nói.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4420763c-e3d2-462f-a5cf-b30b99b87684",
+      "order": 1,
+      "zh": "下去看看",
+      "pinyin": "",
+      "vi": "xuống xem thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "93a190fe-f99b-4bda-8a77-6b708c454b74",
+      "order": 2,
+      "zh": "走下去",
+      "pinyin": "",
+      "vi": "đi bộ xuống/đi tiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29a61247-3abd-4765-805e-567968ea0fba",
+      "order": 3,
+      "zh": "坐电梯下去",
+      "pinyin": "",
+      "vi": "đi thang máy xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57b29355-2b2c-4ca8-9b23-b8deebc6c158",
+      "order": 4,
+      "zh": "从楼上下去",
+      "pinyin": "",
+      "vi": "từ trên lầu đi xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3624f681-5d7c-4972-853f-12c41946db51",
+      "order": 5,
+      "zh": "拿下去",
+      "pinyin": "",
+      "vi": "mang xuống đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3b8dbe21-1167-4e88-91b2-e40f4d708431",
+      "order": 6,
+      "zh": "搬下去",
+      "pinyin": "",
+      "vi": "chuyển xuống đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f23c47c9-9b78-4b10-be5c-f8ec36851b47",
+      "order": 7,
+      "zh": "说下去",
+      "pinyin": "",
+      "vi": "nói tiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07bd534b-cd0f-456a-b7fa-9377c05abb80",
+      "order": 8,
+      "zh": "坚持下去",
+      "pinyin": "",
+      "vi": "tiếp tục kiên trì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e139dd85-8a54-449f-837b-8e707f3a312a",
+      "order": 1,
+      "zh": "我们坐电梯下去吧。",
+      "pinyin": "Wǒmen zuò diàntī xiàqù ba.",
+      "vi": "Chúng ta đi thang máy xuống đi.",
+      "analysis_vi": "坐电梯 = đi thang máy; 下去 chỉ hướng xuống xa người nói.",
+      "highlight": [
+        "下去"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9834826b-3b7e-403d-b766-f4376d3e4eb5"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5e0adb2b-a6c6-4dc6-af8f-8fbd78eac309",
+      "order": 2,
+      "zh": "虽然楼不高，但是每天上去下去也很累。",
+      "pinyin": "Suīrán lóu bù gāo, dànshì měitiān shàngqù xiàqù yě hěn lèi.",
+      "vi": "Tuy tòa nhà không cao, nhưng mỗi ngày đi lên đi xuống cũng rất mệt.",
+      "analysis_vi": "虽然……但是……; 上去下去 dùng cặp hướng lên/xuống.",
+      "highlight": [
+        "下去"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9834826b-3b7e-403d-b766-f4376d3e4eb5"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "14d1baea-2c64-4eb1-b27c-14575cc1b5d3",
+      "order": 3,
+      "zh": "看完房子以后，我们从六楼走下去，妻子才说：这套房子不错，就是交通不太方便。",
+      "pinyin": "Kàn wán fángzi yǐhòu, wǒmen cóng liù lóu zǒu xiàqù, qīzi cái shuō: Zhè tào fángzi búcuò, jiùshì jiāotōng bú tài fāngbiàn.",
+      "vi": "Sau khi xem nhà xong, chúng tôi đi bộ từ tầng sáu xuống, vợ tôi mới nói: Căn này khá ổn, chỉ là giao thông không tiện lắm.",
+      "analysis_vi": "看完房子以后 là trạng ngữ thời gian; 才说 nhấn nói ra muộn.",
+      "highlight": [
+        "下去"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9834826b-3b7e-403d-b766-f4376d3e4eb5"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở nhà cao tầng không có thang máy, 上去下去 là vấn đề thật khi thuê nhà.",
+    "tags": [
+      "directional_complement"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e488c2f4-a3ae-4e6e-95e5-fe56ca85ee87",
+      "order": 1,
+      "rule_vi": "Phân biệt 下去 và 下来.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你下来吧。",
+          "pinyin": "Nǐ xiàlái ba.",
+          "vi": "Bạn xuống đây đi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "你下去吧。",
+          "pinyin": "Nǐ xiàqù ba.",
+          "vi": "Bạn xuống đó đi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Người nói ở dưới gọi người trên xuống chỗ mình dùng 下来; người nói ở trên bảo đi xuống xa mình dùng 下去.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "下去",
+    "back": "đi xuống; xuống đó; tiếp tục xuống/tiếp tục làm",
+    "hint": "xiàqù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "directional_complement"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9834826b-3b7e-403d-b766-f4376d3e4eb5",
+    "source_lesson_vocab_id": null
+  }
+}

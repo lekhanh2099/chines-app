@@ -1,0 +1,317 @@
+{
+  "id": "2a94d3b5-68be-4c79-9c45-83ce8ba15da3",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "飞碟",
+  "pinyin": "fēidié",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "phi điệp",
+    "meaning_vi": "đĩa bay, UFO",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đĩa bay",
+      "UFO"
+    ],
+    "short_definition_vi": "vật thể bay không xác định thường được hình dung có dạng cái đĩa",
+    "textbook_focus_vi": "Từ trung tâm của bài, chỉ vật thể lạ người kể nhìn thấy ở Tân Cương.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "飞",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bay",
+        "modern_logic_vi": "bay",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "碟",
+        "lishu_vi": "",
+        "structure_note_vi": "石 + 枼",
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "",
+            "meaning_vi": "đá",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "石 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "石 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "枼",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đĩa nhỏ, vật hình đĩa",
+        "modern_logic_vi": "đĩa nhỏ, vật hình đĩa",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "石 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "飞碟 được học trong bài theo nghĩa: vật thể bay không xác định thường được hình dung có dạng cái đĩa.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 看见飞碟.",
+    "warning_vi": "飞碟 là UFO/đĩa bay, không phải cái đĩa ăn đang bay.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不明飞行物",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trang trọng/báo chí hơn 飞碟.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "飞机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Máy bay bình thường, không phải UFO.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "飞碟 là UFO/đĩa bay, không phải cái đĩa ăn đang bay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de113450-a04c-417d-b6e0-f2cd33b87a41",
+      "order": 1,
+      "zh": "看见飞碟",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aaf9c89b-78a4-4c2d-b586-ce0a136e9c1d",
+      "order": 2,
+      "zh": "发现飞碟",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d16680f5-d352-4485-8303-37b987ef0abe",
+      "order": 3,
+      "zh": "飞碟出现了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3919783d-a88a-4fa4-ab5c-c9138ad12fd6",
+      "order": 4,
+      "zh": "飞碟悬在空中",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bac4824a-3c9b-454b-8037-bca3cd6d2569",
+      "order": 5,
+      "zh": "相信飞碟的存在",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2a50d96b-a8db-4b37-8fb0-191c27522e1e",
+      "order": 1,
+      "zh": "昨天晚上，我看见了一个飞碟。",
+      "pinyin": "",
+      "vi": "Tối qua, tôi nhìn thấy một chiếc đĩa bay.",
+      "analysis_vi": "看见了 nhấn mạnh kết quả nhìn thấy.",
+      "highlight": [
+        "飞碟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2a94d3b5-68be-4c79-9c45-83ce8ba15da3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "777bcaaa-4084-4a84-8c0e-4bf2416657ed",
+      "order": 2,
+      "zh": "我一抬头，就看见一个飞碟悬在空中。",
+      "pinyin": "",
+      "vi": "Tôi vừa ngẩng đầu lên thì thấy một chiếc đĩa bay lơ lửng trên không.",
+      "analysis_vi": "一……就…… nói phản ứng xảy ra ngay.",
+      "highlight": [
+        "飞碟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2a94d3b5-68be-4c79-9c45-83ce8ba15da3"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "飞碟 trong bài thiên về cách nói kể chuyện; văn báo chí/khoa học có thể dùng 不明飞行物.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4dfbc061-3c72-476b-8e15-a90d1944bc0c",
+      "order": 1,
+      "rule_vi": "飞碟 là UFO/đĩa bay, không phải cái đĩa ăn đang bay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "飞碟 là UFO/đĩa bay, không phải cái đĩa ăn đang bay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "飞碟",
+    "back": "đĩa bay, UFO",
+    "hint": "fēidié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2a94d3b5-68be-4c79-9c45-83ce8ba15da3",
+    "source_lesson_vocab_id": null
+  }
+}

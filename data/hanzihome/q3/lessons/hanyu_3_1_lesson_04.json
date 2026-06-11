@@ -7,13 +7,7 @@
    "vi": "Lý tưởng",
    "en": "Ideal"
   },
-  "tags": [
-   "hanyu_3_1",
-   "lesson_04",
-   "coverage_first",
-   "pdf_checked",
-   "content_final_checked"
-  ],
+  "tags": ["hanyu_3_1", "lesson_04", "coverage_first", "pdf_checked", "content_final_checked"],
   "sections": [
    {
     "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
@@ -317,12 +311,7 @@
       "flashcard": {
        "front": "理想",
        "back": "lǐxiǎng — lý tưởng; lý tưởng, phù hợp mong muốn",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -353,12 +342,7 @@
       "flashcard": {
        "front": "专业",
        "back": "zhuānyè — chuyên ngành; chuyên môn; chuyên nghiệp",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -389,12 +373,7 @@
       "flashcard": {
        "front": "当时",
        "back": "dāngshí — lúc đó; khi ấy",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -425,12 +404,7 @@
       "flashcard": {
        "front": "赞成",
        "back": "zànchéng — tán thành; đồng ý",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -461,12 +435,7 @@
       "flashcard": {
        "front": "系",
        "back": "xì — khoa; hệ; ngành trong trường đại học",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -497,12 +466,7 @@
       "flashcard": {
        "front": "著名",
        "back": "zhùmíng — nổi tiếng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -533,12 +497,7 @@
       "flashcard": {
        "front": "旅途",
        "back": "lǚtú — hành trình; trong chuyến đi",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -569,12 +528,7 @@
       "flashcard": {
        "front": "宾馆",
        "back": "bīnguǎn — khách sạn",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -605,12 +559,7 @@
       "flashcard": {
        "front": "地图",
        "back": "dìtú — bản đồ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -641,12 +590,7 @@
       "flashcard": {
        "front": "对面",
        "back": "duìmiàn — đối diện; phía đối diện",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -677,12 +621,7 @@
       "flashcard": {
        "front": "好像",
        "back": "hǎoxiàng — hình như; dường như; có vẻ như",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -713,12 +652,7 @@
       "flashcard": {
        "front": "心事",
        "back": "xīnshì — tâm sự; điều lo nghĩ trong lòng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -749,12 +683,7 @@
       "flashcard": {
        "front": "交谈",
        "back": "jiāotán — trò chuyện; nói chuyện qua lại",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -785,12 +714,7 @@
       "flashcard": {
        "front": "所",
        "back": "suǒ — lượng từ cho nhà, trường học, bệnh viện, cơ quan…",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -821,12 +745,7 @@
       "flashcard": {
        "front": "简直",
        "back": "jiǎnzhí — đúng là; quả thực là; gần như là",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -857,12 +776,7 @@
       "flashcard": {
        "front": "分别",
        "back": "fēnbié — chia tay; phân biệt; lần lượt",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -893,12 +807,7 @@
       "flashcard": {
        "front": "彩虹",
        "back": "cǎihóng — cầu vồng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -929,12 +838,7 @@
       "flashcard": {
        "front": "意义",
        "back": "yìyì — ý nghĩa; giá trị",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -965,12 +869,7 @@
       "flashcard": {
        "front": "风雨",
        "back": "fēngyǔ — mưa gió; thử thách, gian khổ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1001,12 +900,7 @@
       "flashcard": {
        "front": "成功",
        "back": "chénggōng — thành công; thành công",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1037,12 +931,7 @@
       "flashcard": {
        "front": "从",
        "back": "cóng — từng; từ trước đến nay (dùng trước phủ định như 从不)",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1073,12 +962,7 @@
       "flashcard": {
        "front": "酸甜苦辣",
        "back": "suān-tián-kǔ-là — chua ngọt đắng cay; đủ mọi vui buồn trong đời",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1109,12 +993,7 @@
       "flashcard": {
        "front": "段",
        "back": "duàn — đoạn; khoảng; lượng từ cho thời gian, đường, đoạn văn",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1145,12 +1024,7 @@
       "flashcard": {
        "front": "梦",
        "back": "mèng — giấc mơ; mơ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1181,12 +1055,7 @@
       "flashcard": {
        "front": "亲人",
        "back": "qīnrén — người thân; thân nhân",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1217,12 +1086,7 @@
       "flashcard": {
        "front": "女儿",
        "back": "nǚ'ér — con gái",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1253,12 +1117,7 @@
       "flashcard": {
        "front": "失败",
        "back": "shībài — thất bại",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1289,12 +1148,7 @@
       "flashcard": {
        "front": "失去",
        "back": "shīqù — mất đi; đánh mất",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1325,12 +1179,7 @@
       "flashcard": {
        "front": "信心",
        "back": "xìnxīn — lòng tin; sự tự tin",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1361,12 +1210,7 @@
       "flashcard": {
        "front": "选择",
        "back": "xuǎnzé — lựa chọn; chọn",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1397,12 +1241,7 @@
       "flashcard": {
        "front": "道路",
        "back": "dàolù — con đường; đường lối",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1433,12 +1272,7 @@
       "flashcard": {
        "front": "人生",
        "back": "rénshēng — đời người; cuộc đời",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1469,12 +1303,7 @@
       "flashcard": {
        "front": "退缩",
        "back": "tuìsuō — lùi bước; chùn bước",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1505,12 +1334,7 @@
       "flashcard": {
        "front": "取得",
        "back": "qǔdé — đạt được; giành được",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1541,12 +1365,7 @@
       "flashcard": {
        "front": "鼓励",
        "back": "gǔlì — động viên; khích lệ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1577,12 +1396,7 @@
       "flashcard": {
        "front": "梦想",
        "back": "mèngxiǎng — ước mơ; mơ ước",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1613,12 +1427,7 @@
       "flashcard": {
        "front": "可笑",
        "back": "kěxiào — buồn cười; nực cười; lố bịch",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1649,12 +1458,7 @@
       "flashcard": {
        "front": "坚强",
        "back": "jiānqiáng — kiên cường; mạnh mẽ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1685,12 +1489,7 @@
       "flashcard": {
        "front": "付出",
        "back": "fùchū — bỏ ra; trả giá; dốc ra",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1721,12 +1520,7 @@
       "flashcard": {
        "front": "艰苦",
        "back": "jiānkǔ — gian khổ; khó khăn vất vả",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1757,12 +1551,7 @@
       "flashcard": {
        "front": "当然",
        "back": "dāngrán — đương nhiên; tất nhiên",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -1793,12 +1582,7 @@
       "flashcard": {
        "front": "一点儿也不……",
        "back": "yìdiǎnr yě bù... — một chút cũng không…",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -1829,12 +1613,7 @@
       "flashcard": {
        "front": "一点儿都不……",
        "back": "yìdiǎnr dōu bù... — một chút cũng không…",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -1865,12 +1644,7 @@
       "flashcard": {
        "front": "剩",
        "back": "shèng — còn lại; thừa lại",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -1901,12 +1675,7 @@
       "flashcard": {
        "front": "袋鼠",
        "back": "dàishǔ — chuột túi",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -1937,12 +1706,7 @@
       "flashcard": {
        "front": "异国风情",
        "back": "yìguó fēngqíng — phong vị / nét văn hóa nước ngoài",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -1973,12 +1737,7 @@
       "flashcard": {
        "front": "异国他乡",
        "back": "yìguó tāxiāng — đất khách quê người; nơi xứ lạ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2009,12 +1768,7 @@
       "flashcard": {
        "front": "急不可待",
        "back": "jí bù kě dài — nóng lòng không thể chờ được",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2045,12 +1799,7 @@
       "flashcard": {
        "front": "特产",
        "back": "tèchǎn — đặc sản",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2081,12 +1830,7 @@
       "flashcard": {
        "front": "艺术品",
        "back": "yìshùpǐn — tác phẩm nghệ thuật; đồ mỹ nghệ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2117,12 +1861,7 @@
       "flashcard": {
        "front": "制造",
        "back": "zhìzào — chế tạo; sản xuất",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2153,12 +1892,7 @@
       "flashcard": {
        "front": "钥匙链儿",
        "back": "yàoshi liànr — móc chìa khóa",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2189,12 +1923,7 @@
       "flashcard": {
        "front": "转业",
        "back": "zhuǎnyè — chuyển nghề; chuyển ngành",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2225,12 +1954,7 @@
       "flashcard": {
        "front": "出名",
        "back": "chūmíng — nổi tiếng; có tiếng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2261,12 +1985,7 @@
       "flashcard": {
        "front": "新诗",
        "back": "xīnshī — thơ mới",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2297,12 +2016,7 @@
       "flashcard": {
        "front": "坦然",
        "back": "tǎnrán — bình thản; thản nhiên",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2333,12 +2047,7 @@
       "flashcard": {
        "front": "兼职",
        "back": "jiānzhí — làm thêm; kiêm chức; việc làm thêm",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2369,12 +2078,7 @@
       "flashcard": {
        "front": "人参",
        "back": "rénshēn — nhân sâm",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2405,12 +2109,7 @@
       "flashcard": {
        "front": "核能",
        "back": "hénéng — năng lượng hạt nhân",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2441,12 +2140,7 @@
       "flashcard": {
        "front": "孤立",
        "back": "gūlì — cô lập; bị cô lập",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook/generated_mixed",
@@ -2508,7 +2202,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_001",
       "type": "grammar_point",
       "order": 1,
       "title": "一点儿 + 也/都 + 不/没……",
@@ -2616,7 +2310,7 @@
       ]
      },
      {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_002",
       "type": "grammar_point",
       "order": 2,
       "title": "当然",
@@ -2712,7 +2406,7 @@
       ]
      },
      {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_003",
       "type": "grammar_point",
       "order": 3,
       "title": "不过",
@@ -2777,7 +2471,7 @@
       ]
      },
      {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_004",
       "type": "grammar_point",
       "order": 4,
       "title": "简直",
@@ -2852,15 +2546,13 @@
           "check_needed": false
          }
         ],
-        "notes_vi": [
-         "简直 không chỉ là “rất”, mà thường mang sắc thái cảm xúc mạnh hoặc bất ngờ."
-        ],
+        "notes_vi": ["简直 không chỉ là “rất”, mà thường mang sắc thái cảm xúc mạnh hoặc bất ngờ."],
         "check_needed": false
        }
       ]
      },
      {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_005",
       "type": "grammar_point",
       "order": 5,
       "title": "从",
@@ -2935,15 +2627,13 @@
           "check_needed": false
          }
         ],
-        "notes_vi": [
-         "Bài này nhấn cách dùng 从 trước phủ định, tương tự 从来."
-        ],
+        "notes_vi": ["Bài này nhấn cách dùng 从 trước phủ định, tương tự 从来."],
         "check_needed": false
        }
       ]
      },
      {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_006",
       "type": "grammar_point",
       "order": 6,
       "title": "偷偷儿",
@@ -3008,7 +2698,7 @@
       ]
      },
      {
-      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "id": "grammar_007",
       "type": "grammar_point",
       "order": 7,
       "title": "V着V着就……",
@@ -3600,9 +3290,7 @@
         "prompt": "说实话，能不能实现自己的理想，我______。",
         "given": "一点儿 + 也 / 都 + 没……",
         "answer": "说实话，能不能实现自己的理想，我一点儿信心都没有。",
-        "acceptable_answers": [
-         "说实话，能不能实现自己的理想，我一点儿信心都没有。"
-        ],
+        "acceptable_answers": ["说实话，能不能实现自己的理想，我一点儿信心都没有。"],
         "source_origin": "textbook_answer_key_crosschecked",
         "answer_verified": true,
         "check_needed": false
@@ -3650,9 +3338,7 @@
         "prompt": "这幅画儿画得太好了，画儿上的鱼______。",
         "given": "简直",
         "answer": "这幅画儿画得太好了，画儿上的鱼简直跟真的一样。",
-        "acceptable_answers": [
-         "这幅画儿画得太好了，画儿上的鱼简直跟真的一样。"
-        ],
+        "acceptable_answers": ["这幅画儿画得太好了，画儿上的鱼简直跟真的一样。"],
         "source_origin": "textbook_answer_key_crosschecked",
         "answer_verified": true,
         "check_needed": false
@@ -3778,9 +3464,7 @@
         "prompt": "A：刚才广播里说什么？\nB：说得太快，我______。",
         "given": "简直",
         "answer": "A：刚才广播里说什么？\nB：说得太快，我简直跟不上。",
-        "acceptable_answers": [
-         "A：刚才广播里说什么？\nB：说得太快，我简直跟不上。"
-        ],
+        "acceptable_answers": ["A：刚才广播里说什么？\nB：说得太快，我简直跟不上。"],
         "source_origin": "textbook_answer_key_crosschecked",
         "answer_verified": true,
         "check_needed": false

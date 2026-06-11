@@ -1,0 +1,106 @@
+{
+  "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
+  "type": "communication",
+  "order": 8,
+  "title": "交际会话",
+  "title_vi": "Hội thoại giao tiếp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话：商量",
+      "title_vi": "Hội thoại giao tiếp: bàn bạc",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp theo chủ đề bàn bạc."
+      },
+      "topic": "商量",
+      "key_sentence": "我跟你商量一件事儿。",
+      "dialogue_lines": [
+        {
+          "speaker": "A",
+          "zh": "妈妈，我跟你商量一件事儿。",
+          "vi": "Mẹ ơi, con bàn với mẹ một chuyện.",
+          "pinyin": "Māma, wǒ gēn nǐ shāngliang yí jiàn shìr."
+        },
+        {
+          "speaker": "B",
+          "zh": "什么事儿？",
+          "vi": "Chuyện gì?",
+          "pinyin": "Shénme shìr?"
+        },
+        {
+          "speaker": "A",
+          "zh": "我想去中国留学。",
+          "vi": "Con muốn đi Trung Quốc du học.",
+          "pinyin": "Wǒ xiǎng qù Zhōngguó liúxué."
+        },
+        {
+          "speaker": "B",
+          "zh": "你怎么有这样的想法？你不打算结婚了？",
+          "vi": "Sao con lại có suy nghĩ như vậy? Con không định kết hôn nữa à?",
+          "pinyin": "Nǐ zěnme yǒu zhèyàng de xiǎngfǎ? Nǐ bù dǎsuàn jiéhūn le?"
+        },
+        {
+          "speaker": "A",
+          "zh": "我就去一年，结婚的事儿回来以后再说。",
+          "vi": "Con chỉ đi một năm thôi, chuyện kết hôn sau khi về rồi nói tiếp.",
+          "pinyin": "Wǒ jiù qù yì nián, jiéhūn de shìr huílái yǐhòu zài shuō."
+        },
+        {
+          "speaker": "B",
+          "zh": "你现在的工作不是挺好吗？回来以后找不到工作怎么办？",
+          "vi": "Công việc hiện tại của con không phải khá tốt sao? Sau khi về không tìm được việc thì làm sao?",
+          "pinyin": "Nǐ xiànzài de gōngzuò bú shì tǐng hǎo ma? Huílái yǐhòu zhǎo bú dào gōngzuò zěnme bàn?"
+        },
+        {
+          "speaker": "A",
+          "zh": "不会的。我已经学了一年汉语了，可是，说得还不太好，我想去中国学一年，回来后能找到更好的工作。",
+          "vi": "Không đâu ạ. Con đã học tiếng Hán một năm rồi, nhưng nói vẫn chưa tốt lắm. Con muốn đi Trung Quốc học một năm, sau khi về có thể tìm được công việc tốt hơn.",
+          "pinyin": "Bú huì de. Wǒ yǐjīng xué le yì nián Hànyǔ le, kěshì, shuō de hái bù tài hǎo, wǒ xiǎng qù Zhōngguó xué yì nián, huílái hòu néng zhǎo dào gèng hǎo de gōngzuò."
+        },
+        {
+          "speaker": "B",
+          "zh": "你跟你爸爸说了吗？",
+          "vi": "Con nói với bố con chưa?",
+          "pinyin": "Nǐ gēn nǐ bàba shuō le ma?"
+        },
+        {
+          "speaker": "A",
+          "zh": "爸爸没问题，主要是你。",
+          "vi": "Bố không có vấn đề gì, chủ yếu là mẹ thôi.",
+          "pinyin": "Bàba méi wèntí, zhǔyào shì nǐ."
+        },
+        {
+          "speaker": "B",
+          "zh": "我不同意你就不去了吗？我还不知道你的性格，决定了的事情，谁说也不行。",
+          "vi": "Nếu mẹ không đồng ý thì con không đi nữa à? Mẹ còn lạ gì tính con, chuyện đã quyết định rồi thì ai nói cũng không được.",
+          "pinyin": "Wǒ bù tóngyì nǐ jiù bú qù le ma? Wǒ hái bù zhīdào nǐ de xìnggé, juédìng le de shìqing, shéi shuō yě bù xíng."
+        },
+        {
+          "speaker": "A",
+          "zh": "妈妈，一年时间很快就会过去的。",
+          "vi": "Mẹ à, thời gian một năm sẽ trôi qua rất nhanh thôi.",
+          "pinyin": "Māma, yì nián shíjiān hěn kuài jiù huì guòqu de."
+        },
+        {
+          "speaker": "B",
+          "zh": "小鸟长大了，翅膀硬了，该飞了。",
+          "vi": "Chim nhỏ lớn rồi, cánh cứng rồi, đến lúc phải bay rồi.",
+          "pinyin": "Xiǎo niǎo zhǎng dà le, chìbang yìng le, gāi fēi le."
+        }
+      ],
+      "notes_vi": [
+        "我跟你商量一件事儿: câu mở đầu tự nhiên khi muốn bàn một chuyện quan trọng.",
+        "回来以后再说: sau khi về rồi nói tiếp, dùng để tạm gác một chuyện.",
+        "翅膀硬了，该飞了: cách nói hình ảnh chỉ con cái đã trưởng thành, đến lúc tự lập."
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

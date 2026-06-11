@@ -1,0 +1,318 @@
+{
+  "id": "64b3eb24-4e6f-4f9a-a32c-f37eede73b3a",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "奖学金",
+  "pinyin": "jiǎngxuéjīn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tưởng học kim",
+    "meaning_vi": "học bổng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "học bổng"
+    ],
+    "short_definition_vi": "học bổng",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "奖",
+        "lishu_vi": "tưởng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thưởng, khuyến khích",
+        "modern_logic_vi": "奖学金 là tiền thưởng/hỗ trợ học tập.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, trường học",
+        "modern_logic_vi": "Dùng trong 学费/奖学金/心理学.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "金",
+        "lishu_vi": "kim",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "金",
+            "hanviet": "kim",
+            "meaning_vi": "vàng, kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vàng, kim loại, tiền",
+        "modern_logic_vi": "Trong 奖学金 gợi tiền/học bổng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "奖学金 được dùng trong Bài 20 với nghĩa: học bổng.",
+    "memory_tip_vi": "Nhớ qua cụm 申请奖学金.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "助学金",
+        "pinyin": "zhùxuéjīn",
+        "meaning_vi": "trợ cấp học tập",
+        "difference_vi": "Nhấn hỗ trợ tài chính.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "奖金",
+        "pinyin": "jiǎngjīn",
+        "meaning_vi": "tiền thưởng",
+        "difference_vi": "Tiền thưởng nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4466f96e-c3d9-4204-bb14-4d2a8c51198f",
+      "order": 1,
+      "zh": "申请奖学金",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6fd82db5-2227-483a-b079-71932be2d186",
+      "order": 2,
+      "zh": "拿到奖学金",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "044558d3-a324-42dd-9b02-bf5f751bcd39",
+      "order": 3,
+      "zh": "获得奖学金",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b4d6d84-9381-47b9-909d-e6c9b3dafbad",
+      "order": 4,
+      "zh": "全额奖学金",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba0f706f-88e4-4a4b-a430-bc8d1a3868ca",
+      "order": 5,
+      "zh": "半额奖学金",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ee6c48d-9469-4067-b6f7-1158c6b7a8c6",
+      "order": 6,
+      "zh": "奖学金资格",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0b75e87d-1d24-4bef-8816-4dbf3360b5ed",
+      "order": 1,
+      "zh": "她拿到了牛津大学的奖学金。",
+      "pinyin": "Tā nádào le Niújīn Dàxué de jiǎngxuéjīn.",
+      "vi": "Cô ấy nhận được học bổng Đại học Oxford.",
+      "analysis_vi": "拿到奖学金 nhấn kết quả đạt được.",
+      "highlight": [
+        "奖学金"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "64b3eb24-4e6f-4f9a-a32c-f37eede73b3a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2bf8efd0-0ebd-4f53-ace1-9c883c6cc555",
+      "order": 2,
+      "zh": "她没有为了奖学金欺骗导师。",
+      "pinyin": "Tā méiyǒu wèile jiǎngxuéjīn qīpiàn dǎoshī.",
+      "vi": "Cô ấy không vì học bổng mà lừa dối thầy hướng dẫn.",
+      "analysis_vi": "为了奖学金 nêu động cơ lợi ích.",
+      "highlight": [
+        "奖学金"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "64b3eb24-4e6f-4f9a-a32c-f37eede73b3a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "全额奖学金 có thể bao gồm nhiều khoản tùy chương trình, không nên mặc định học bổng nào cũng bao hết.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f7afe48c-4178-4e13-8f36-607efff40ca6",
+      "order": 1,
+      "rule_vi": "Không nhầm 奖学金 với 学费.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我申请了学费。",
+          "pinyin": "Wǒ shēnqǐng le xuéfèi.",
+          "vi": "Tôi xin học phí.",
+          "note_vi": "Sai nếu muốn nói xin học bổng.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我申请了奖学金。",
+          "pinyin": "Wǒ shēnqǐng le jiǎngxuéjīn.",
+          "vi": "Tôi đã nộp đơn xin học bổng.",
+          "note_vi": "奖学金 là học bổng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "奖学金",
+    "back": "học bổng",
+    "hint": "jiǎngxuéjīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "64b3eb24-4e6f-4f9a-a32c-f37eede73b3a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "id": "da30b01c-373a-4550-a51f-1d348c86d190",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "忽然",
+  "pinyin": "hūrán",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Hốt nhiên",
+    "meaning_vi": "bỗng nhiên, đột nhiên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bỗng nhiên",
+      "đột nhiên"
+    ],
+    "short_definition_vi": "bỗng nhiên, đột nhiên",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "hơi văn/kể chuyện hơn 突然, nhưng vẫn rất thông dụng.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "忽",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "勿",
+            "hanviet": "vật",
+            "meaning_vi": "chớ/đừng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim/lòng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thoáng qua, lơ là",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "忽 có nghĩa đột ngột, không chú ý, thoáng qua. → 忽然 = sự việc bỗng xảy ra như vậy, bất ngờ xuất hiện.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy, trạng thái",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "然 là như vậy, trạng thái như vậy. → 忽然 = sự việc bỗng xảy ra như vậy, bất ngờ xuất hiện.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 忽然 = sự việc bỗng xảy ra như vậy, bất ngờ xuất hiện.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 忽然 thường đứng trước động từ hoặc cả vế câu, không dùng như tính từ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忽然 (hūrán)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bỗng nhiên, tự nhiên xảy ra; hơi thiên kể chuyện/cảm giác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "突然 (tūrán)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đột nhiên, bất ngờ; dùng rất rộng, cả khẩu ngữ và văn viết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一下子 (yíxiàzi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trong chốc lát, một cái là; nhấn tốc độ nhanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忽然觉得 (hūrán juéde)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bỗng cảm thấy, bỗng nhận ra về cảm giác/suy nghĩ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 忽然 / 突然 đều là đột nhiên; 一下子 nhấn “một phát/ngay lập tức”; 忽然觉得 chuyên cho cảm nhận xuất hiện."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3e77b1e2-7018-4eeb-b128-90ff0e29b717",
+      "order": 1,
+      "zh": "忽然想起来",
+      "pinyin": "",
+      "vi": "bỗng nhớ ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48fd37af-bdd3-47cb-a522-8695f4776378",
+      "order": 2,
+      "zh": "忽然觉得",
+      "pinyin": "",
+      "vi": "bỗng cảm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fe07b3a-bada-49d5-bbd7-188f426e83dc",
+      "order": 3,
+      "zh": "忽然下雨了",
+      "pinyin": "",
+      "vi": "bỗng nhiên mưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d69217ab-e3a1-4fcc-8a4b-e49c66754c6c",
+      "order": 4,
+      "zh": "他忽然停下来了",
+      "pinyin": "",
+      "vi": "anh ấy bỗng dừng lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f08895f4-1645-40b4-9a59-2013f6263e74",
+      "order": 1,
+      "zh": "走到楼下的时候，他忽然想起来钥匙忘拔下来了。",
+      "pinyin": "Zǒu dào lóu xià de shíhou, tā hūrán xiǎng qǐlai yàoshi wàng bá xiàlai le.",
+      "vi": "Khi đi xuống dưới lầu, anh ấy bỗng nhớ ra chìa khóa quên rút ra rồi.",
+      "analysis_vi": "想起来 là nhớ ra; 拔下来 là rút chìa khóa khỏi ổ.",
+      "highlight": [
+        "忽然"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "da30b01c-373a-4550-a51f-1d348c86d190"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2f6e2859-e9be-41e5-b8c6-f16f513e3921",
+      "order": 2,
+      "zh": "他刚走进商场，忽然听见有人在后面叫他。",
+      "pinyin": "Tā gāng zǒu jìn shāngchǎng, hūrán tīngjiàn yǒu rén zài hòumian jiào tā.",
+      "vi": "Anh ấy vừa đi vào trung tâm thương mại thì bỗng nghe thấy có người gọi phía sau.",
+      "analysis_vi": "走进商场 là đi vào trong; 忽然听见 tạo tình huống bất ngờ trong mạch kể.",
+      "highlight": [
+        "忽然"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "da30b01c-373a-4550-a51f-1d348c86d190"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ab858bd7-ffa2-47c1-b73b-57e3c56c69c2",
+      "order": 3,
+      "zh": "我整理例句的时候，忽然发现这个词以前学过。",
+      "pinyin": "Wǒ zhěnglǐ lìjù de shíhou, hūrán fāxiàn zhège cí yǐqián xué guo.",
+      "vi": "Khi整理 câu ví dụ, tôi bỗng phát hiện từ này trước đây đã học rồi.",
+      "analysis_vi": "忽然发现 nói một nhận ra bất ngờ; câu hợp ôn cuốn chiếu.",
+      "highlight": [
+        "忽然"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "da30b01c-373a-4550-a51f-1d348c86d190"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "f781aa19-98e0-4856-8e86-5b9abca2d766",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 忽然 để nói trạng thái kéo dài bình thường. Không tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "忽然",
+    "back": "bỗng nhiên, đột nhiên",
+    "hint": "hūrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "忽然 rất hay xuất hiện trong văn kể chuyện, kiểu đang kể một chuỗi sự việc rồi có biến bất ngờ. Nó làm câu có màu “truyện” hơn 突然 một chút.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "da30b01c-373a-4550-a51f-1d348c86d190",
+    "source_lesson_vocab_id": null
+  }
+}

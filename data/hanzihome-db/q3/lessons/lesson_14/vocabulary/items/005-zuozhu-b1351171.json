@@ -1,0 +1,240 @@
+{
+  "id": "bde072bc-31a6-428c-a8c1-cb30982cfef9",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "做主",
+  "pinyin": "zuòzhǔ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tác chủ",
+    "meaning_vi": "làm chủ, quyết định, có tiếng nói cuối",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm chủ",
+      "quyết định",
+      "có tiếng nói cuối"
+    ],
+    "short_definition_vi": "làm chủ, quyết định, có tiếng nói cuối",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: gia đình, quyết định.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "gia đình, quyết định",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "做",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "làm",
+        "modern_logic_vi": "Trong từ 做主, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "主",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chủ, chính, quyết định",
+        "modern_logic_vi": "Trong từ 做主, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "做主 nên được học theo nghĩa hiện đại trong cụm/tình huống: làm chủ, quyết định, có tiếng nói cuối.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 由我做主.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8ab73cc0-0f9e-4302-ab87-4c04f663de63",
+      "order": 1,
+      "zh": "由我做主",
+      "pinyin": "",
+      "vi": "do tôi quyết định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2328d9d-9a8c-4109-850e-05390d59f045",
+      "order": 2,
+      "zh": "自己做主",
+      "pinyin": "",
+      "vi": "tự mình quyết định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4337fa5-b321-4438-a7cb-c6fcad1d9380",
+      "order": 3,
+      "zh": "不能做主",
+      "pinyin": "",
+      "vi": "không thể tự quyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fa0e7ca6-7985-4438-97ec-6243a57fd2db",
+      "order": 1,
+      "zh": "这件事我不能做主。",
+      "pinyin": "",
+      "vi": "Việc này tôi không thể tự quyết.",
+      "analysis_vi": "做主 nhấn quyền quyết định cuối cùng.",
+      "highlight": [
+        "做主"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bde072bc-31a6-428c-a8c1-cb30982cfef9"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 做主 được dùng trong ngữ cảnh gia đình, quyết định; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "43a8f887-a7d8-416b-b55d-4047aa02f632",
+      "order": 1,
+      "rule_vi": "Không dùng 做主 cho “làm chủ tiếng Trung”; dùng 掌握汉语.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 做主 cho “làm chủ tiếng Trung”; dùng 掌握汉语.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "做主",
+    "back": "làm chủ, quyết định, có tiếng nói cuối",
+    "hint": "zuòzhǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bde072bc-31a6-428c-a8c1-cb30982cfef9",
+    "source_lesson_vocab_id": null
+  }
+}

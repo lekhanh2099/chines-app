@@ -1,0 +1,189 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền từ tổng hợp",
+  "source_origin": "textbook_generated_second_pass",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "刻舟求剑",
+      "title_vi": "Khắc thuyền tìm kiếm",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "supplementary_vocab": [
+        {
+          "hanzi": "刻舟求剑",
+          "pinyin": "kèzhōu qiújiàn",
+          "meaning_vi": "khắc thuyền tìm kiếm; làm việc máy móc, cố chấp",
+          "pos": "Thành ngữ",
+          "pos_detail": {
+            "vi": "Thành ngữ",
+            "cn": "成语",
+            "normalized": "phrase",
+            "schema_compatible_pos": "phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "刻",
+          "pinyin": "kè",
+          "meaning_vi": "khắc; khoảnh khắc",
+          "pos": "Động từ / danh từ thời gian",
+          "pos_detail": {
+            "vi": "Động từ / danh từ thời gian",
+            "cn": "动词/时间名词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "剑",
+          "pinyin": "jiàn",
+          "meaning_vi": "kiếm",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "记号",
+          "pinyin": "jìhào",
+          "meaning_vi": "dấu đánh dấu",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "岸",
+          "pinyin": "àn",
+          "meaning_vi": "bờ",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "从前，有一个人坐船过河，船走到河中间的时候，他不小心把身上带的剑掉到河里去了。这个人马上在船上刻了一个记号，还自言自语地说：“我的剑就是从这儿掉到河里去的。”",
+          "vi": "Ngày xưa, có một người ngồi thuyền qua sông. Khi thuyền đi đến giữa sông, anh ta bất cẩn làm rơi thanh kiếm mang theo bên người xuống sông. Người này lập tức khắc một dấu trên thuyền, còn tự nói với mình: “Kiếm của ta chính là rơi từ chỗ này xuống sông.”",
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false,
+          "pinyin": "Cóngqián, yǒu yí ge rén zuò chuán guò hé, chuán zǒu dào hé zhōngjiān de shíhou, tā bù xiǎoxīn bǎ shēn shang dài de jiàn diào dào hé lǐ qù le. Zhège rén mǎshàng zài chuán shang kè le yí ge jìhào, hái zìyán-zìyǔ de shuō: “Wǒ de jiàn jiù shì cóng zhèr diào dào hé lǐ qù de.”"
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "船在河里走了好久，终于到了岸边。这个人急忙从船上刻着记号的地方跳下水去找他的剑。你想，他怎么能找到他的剑呢？",
+          "vi": "Thuyền đi trên sông rất lâu, cuối cùng cũng đến bờ. Người này vội vàng từ chỗ có khắc dấu trên thuyền nhảy xuống nước để tìm kiếm của mình. Bạn nghĩ xem, anh ta làm sao có thể tìm thấy thanh kiếm ấy được?",
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false,
+          "pinyin": "Chuán zài hé lǐ zǒu le hǎo jiǔ, zhōngyú dào le ànbiān. Zhège rén jímáng cóng chuán shang kèzhe jìhào de dìfang tiào xià shuǐ qù zhǎo tā de jiàn. Nǐ xiǎng, tā zěnme néng zhǎodào tā de jiàn ne?"
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "这也是中国一个很有名的成语故事，名字叫“刻舟求剑”。",
+          "vi": "Đây cũng là một câu chuyện thành ngữ rất nổi tiếng của Trung Quốc, tên là “刻舟求剑”.",
+          "source_origin": "textbook_question_generated_answer",
+          "check_needed": false,
+          "pinyin": "Zhè yě shì Zhōngguó yí ge hěn yǒumíng de chéngyǔ gùshi, míngzi jiào “kèzhōu qiújiàn”."
+        }
+      ],
+      "cloze": {
+        "passage_with_blanks": "从前，有一个人坐船过①____，船走到河中间的时候，他不小心②____身上带的剑掉到河里③____了。这个人马上在船上刻了一个记号，还自言自语地说：“我的剑就是④____这儿掉到河里去的。”\n\n船在河里走了好久，终于到了岸边。这个人急忙从船上刻着记号的地方跳下水⑤____找他的剑。你想，他怎么能⑥____到他的剑呢？\n\n这也是中国一个很有名的成语故事，名字叫“刻舟求剑”。",
+        "answers": [
+          "河",
+          "把",
+          "去",
+          "从",
+          "去",
+          "找"
+        ],
+        "answer_verified": true
+      },
+      "comprehension_questions": [
+        {
+          "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+          "question": "这个人坐船做什么？",
+          "answer": "他坐船过河。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "82b334af-11c3-4606-980f-154617982627",
+          "question": "他的剑是怎么掉到河里的？",
+          "answer": "他不小心把身上带的剑掉到河里去了。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
+          "question": "剑掉到河里以后，他做了什么？",
+          "answer": "他马上在船上刻了一个记号。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
+          "question": "“刻舟求剑”这个成语说明什么道理？",
+          "answer": "做事不能太死板，要根据情况的变化想办法。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "answers": [],
+      "answer_key": []
+    }
+  ]
+}

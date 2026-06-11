@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_089f153a90d3bc17",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "不断",
+  "pinyin": "bùduàn",
+  "meaning_vi": "không ngừng, liên tục",
+  "pos": "Động từ / Phó từ / Tính từ",
+  "pos_detail": {
+    "vi": "Động từ / Phó từ / Tính từ",
+    "cn": "动词 / 副词 / 形容词",
+    "normalized": "verb_adverb_adjective",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5e47d467-8ad2-457e-b8d4-6866bad5c422",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5e47d467-8ad2-457e-b8d4-6866bad5c422",
+    "type": "vocabulary_item",
+    "order": 11,
+    "hanzi": "不断",
+    "pinyin": "bùduàn",
+    "meaning_vi": "không ngừng, liên tục",
+    "meaning_en": "to be unceasing; constantly",
+    "pos": "Động từ / Phó từ / Tính từ",
+    "pos_detail": {
+      "vi": "Động từ / Phó từ / Tính từ",
+      "cn": "动词 / 副词 / 形容词",
+      "normalized": "verb_adverb_adjective",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "不断",
+      "back": "bùduàn — không ngừng, liên tục",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

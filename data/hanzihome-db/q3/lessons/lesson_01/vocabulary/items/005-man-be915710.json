@@ -1,0 +1,377 @@
+{
+  "id": "dc3aa578-906b-427b-a31c-db1d7252ddd6",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "瞒",
+  "pinyin": "mán",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "man",
+    "meaning_vi": "giấu, giấu giếm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giấu",
+      "giấu giếm"
+    ],
+    "short_definition_vi": "giấu, giấu giếm",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: giấu, giấu giếm.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "瞒",
+        "lishu_vi": "man",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "目 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ",
+            "position_vi": "trên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "两",
+            "hanviet": "lưỡng",
+            "meaning_vi": "hai; thành phần giản thể",
+            "position_vi": "dưới phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giấu, che giấu",
+        "modern_logic_vi": "Có mắt nhưng làm người khác không thấy sự thật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "瞒 trong bài dùng theo nghĩa: giấu, giấu giếm.",
+    "memory_tip_vi": "Nhớ 瞒 qua văn cảnh 离家的时候: giấu, giấu giếm.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "骗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lừa, nặng hơn 瞒",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "藏",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấu/cất đồ vật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "保密",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giữ bí mật, trung tính/trang trọng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "告诉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói cho biết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "说实话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói thật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aeeb9dd8-9340-4539-9c6e-d6b03b1b35c6",
+      "order": 1,
+      "zh": "瞒着父母",
+      "pinyin": "",
+      "vi": "giấu bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07699e75-a797-4042-9da1-35037d90ecae",
+      "order": 2,
+      "zh": "瞒不住",
+      "pinyin": "",
+      "vi": "không giấu nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9fe5cdd1-5dbb-44b5-9837-4031e9a786ea",
+      "order": 3,
+      "zh": "瞒了很久",
+      "pinyin": "",
+      "vi": "giấu rất lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2654afa2-f526-48ea-93c0-84a60172eaf1",
+      "order": 4,
+      "zh": "故意瞒着",
+      "pinyin": "",
+      "vi": "cố ý giấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ac64e2b-81b7-491e-bdae-d2d2d1b904b6",
+      "order": 5,
+      "zh": "不想瞒你",
+      "pinyin": "",
+      "vi": "không muốn giấu bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "47443081-1620-4d68-9a5b-3664cec7c7b4",
+      "order": 1,
+      "zh": "她不想瞒父母，可是又怕他们不同意。",
+      "pinyin": "",
+      "vi": "Cô ấy không muốn giấu bố mẹ nhưng lại sợ họ không đồng ý.",
+      "analysis_vi": "瞒 + người = giấu ai.",
+      "highlight": [
+        "瞒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dc3aa578-906b-427b-a31c-db1d7252ddd6"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b348b50d-4689-409a-b9b9-6b1669564ac2",
+      "order": 2,
+      "zh": "她瞒着父母报了名，后来才说实话。",
+      "pinyin": "",
+      "vi": "Cô ấy giấu bố mẹ đăng ký, sau đó mới nói thật.",
+      "analysis_vi": "瞒着 + người + làm gì.",
+      "highlight": [
+        "瞒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dc3aa578-906b-427b-a31c-db1d7252ddd6"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "14ee07dd-1209-4233-897e-0ce89014e414",
+      "order": 3,
+      "zh": "这件事你瞒得了一时，瞒不了一辈子。",
+      "pinyin": "",
+      "vi": "Chuyện này bạn giấu được một lúc, không giấu được cả đời.",
+      "analysis_vi": "瞒得了/瞒不了 là bổ ngữ khả năng.",
+      "highlight": [
+        "瞒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dc3aa578-906b-427b-a31c-db1d7252ddd6"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "Trong chuyện đi xa, 瞒着父母 thường tạo xung đột gia đình vì không bàn bạc trước.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9e1b5912-c972-4abc-9674-92374173d371",
+      "order": 1,
+      "rule_vi": "Giấu đồ vật dùng 藏 tự nhiên hơn; 瞒 thường là giấu thông tin với người.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "瞒",
+    "back": "giấu, giấu giếm",
+    "hint": "mán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_005"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dc3aa578-906b-427b-a31c-db1d7252ddd6",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "id": "6c709fc8-e628-4a42-b0e9-5c6b84f2fdb4",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "旅行社",
+  "pinyin": "lǚxíngshè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lữ hành xã",
+    "meaning_vi": "công ty du lịch / hãng lữ hành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "công ty du lịch / hãng lữ hành"
+    ],
+    "short_definition_vi": "công ty du lịch / hãng lữ hành",
+    "textbook_focus_vi": "công ty du lịch / hãng lữ hành",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "旅",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi xa, du lịch",
+        "modern_logic_vi": "旅 = lữ hành/du lịch.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "行",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi, thực hiện, ngành nghề",
+        "modern_logic_vi": "Trong 旅行 đọc xíng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "社",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "thị",
+            "meaning_vi": "lễ nghi/thần linh",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xã, tổ chức, cơ quan",
+        "modern_logic_vi": "社 trong từ hiện đại chỉ tổ chức/đơn vị.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "旅行 = du lịch; 社 = tổ chức/đơn vị. 旅行社 = đơn vị tổ chức dịch vụ du lịch.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "旅游公司",
+        "pinyin": "",
+        "meaning_vi": "công ty du lịch",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "旅游团",
+        "pinyin": "",
+        "meaning_vi": "đoàn du lịch",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "导游",
+        "pinyin": "",
+        "meaning_vi": "hướng dẫn viên",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "自由行",
+        "pinyin": "",
+        "meaning_vi": "du lịch tự túc",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6af07abf-e787-4975-89b7-48e989dd6232",
+      "order": 1,
+      "zh": "一家旅行社",
+      "pinyin": "",
+      "vi": "một công ty du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f93aab83-0212-4664-8796-5df3262954db",
+      "order": 2,
+      "zh": "去旅行社打工",
+      "pinyin": "",
+      "vi": "làm ở công ty du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c040525d-ce59-416c-923b-24b5eb7c7466",
+      "order": 3,
+      "zh": "旅行社安排",
+      "pinyin": "",
+      "vi": "công ty du lịch sắp xếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23a245e6-8b4b-46b7-bbe2-e68afff84fd5",
+      "order": 4,
+      "zh": "旅行社组织的旅游团",
+      "pinyin": "",
+      "vi": "đoàn do công ty du lịch tổ chức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1511e19-5a13-4126-9294-eb5671e43bc8",
+      "order": 5,
+      "zh": "通过旅行社报名",
+      "pinyin": "",
+      "vi": "đăng ký qua công ty du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c140a318-20a8-4cb2-81e8-90513ea8404c",
+      "order": 1,
+      "zh": "这家旅行社的导游很热情。",
+      "pinyin": "Zhè jiā lǚxíngshè de dǎoyóu hěn rèqíng.",
+      "vi": "Hướng dẫn viên của công ty du lịch này rất nhiệt tình.",
+      "analysis_vi": "家 là lượng từ cho công ty/cửa hàng.",
+      "highlight": [
+        "旅行社"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c709fc8-e628-4a42-b0e9-5c6b84f2fdb4"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3d7283eb-d90f-4c52-8662-6403dad228b3",
+      "order": 2,
+      "zh": "这个旅游团是旅行社组织的。",
+      "pinyin": "Zhège lǚyóutuán shì lǚxíngshè zǔzhī de.",
+      "vi": "Đoàn du lịch này do công ty du lịch tổ chức.",
+      "analysis_vi": "是……的 nhấn mạnh bên tổ chức.",
+      "highlight": [
+        "旅行社"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c709fc8-e628-4a42-b0e9-5c6b84f2fdb4"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d51217b1-caa7-452b-a083-78656f191d41",
+      "order": 3,
+      "zh": "他一放暑假，就去一家旅行社打工，主要帮导游安排材料。",
+      "pinyin": "Tā yí fàng shǔjià, jiù qù yì jiā lǚxíngshè dǎgōng, zhǔyào bāng dǎoyóu ānpái cáiliào.",
+      "vi": "Anh ấy vừa nghỉ hè là đi làm thêm ở một công ty du lịch.",
+      "analysis_vi": "一放暑假就…… chỉ việc xảy ra ngay.",
+      "highlight": [
+        "旅行社"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c709fc8-e628-4a42-b0e9-5c6b84f2fdb4"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "旅行社 đứng sau việc tổ chức tour, khách sạn, xe, vé tham quan, 导游.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2aa2476a-f359-42f3-9417-042b9617f558",
+      "order": 1,
+      "rule_vi": "Không dùng 旅行社 để chỉ đoàn du lịch; đoàn du lịch là 旅游团.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "旅行社",
+    "back": "công ty du lịch / hãng lữ hành",
+    "hint": "lǚxíngshè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6c709fc8-e628-4a42-b0e9-5c6b84f2fdb4",
+    "source_lesson_vocab_id": null
+  }
+}

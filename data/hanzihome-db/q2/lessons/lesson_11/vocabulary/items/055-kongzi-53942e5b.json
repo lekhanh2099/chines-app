@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_d16e7ea5a317194e",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "孔子",
+  "pinyin": "Kǒngzǐ",
+  "meaning_vi": "Khổng Tử",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+    "type": "proper_noun",
+    "order": 3,
+    "hanzi": "孔子",
+    "pinyin": "Kǒngzǐ",
+    "meaning_vi": "Khổng Tử",
+    "meaning_en": "Confucius",
+    "source_origin": "textbook_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_e9be6eb481d80162",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "与",
+  "pinyin": "yǔ",
+  "meaning_vi": "với; cùng với; và",
+  "pos": "Giới từ / Liên từ",
+  "pos_detail": {
+    "vi": "Giới từ / Liên từ",
+    "cn": "介词 / 连词",
+    "normalized": "preposition",
+    "schema_compatible_pos": "preposition",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_044",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_044",
+    "type": "vocabulary_item",
+    "order": 44,
+    "hanzi": "与",
+    "pinyin": "yǔ",
+    "meaning_vi": "với; cùng với; và",
+    "meaning_en": "with; and",
+    "pos": "Giới từ / Liên từ",
+    "pos_detail": {
+      "vi": "Giới từ / Liên từ",
+      "cn": "介词 / 连词",
+      "normalized": "preposition",
+      "schema_compatible_pos": "preposition",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "与",
+      "back": "yǔ — với; cùng với; và",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

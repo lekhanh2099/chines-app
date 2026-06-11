@@ -1,0 +1,337 @@
+{
+  "id": "ae5c70b4-809d-4ec6-8003-45a7e235815e",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "社会",
+  "pinyin": "shèhuì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xã hội",
+    "meaning_vi": "xã hội",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xã hội"
+    ],
+    "short_definition_vi": "xã hội",
+    "textbook_focus_vi": "xã hội",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "社",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "thị",
+            "meaning_vi": "lễ nghi/thần linh",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "礻 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "lễ nghi/thần linh",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "xã/cộng đồng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "会",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "人 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "hội/họp/biết/có thể",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "cộng đồng/hệ thống quan hệ con người",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6e33fa0e-07e5-4831-b022-e71aa9eb838f",
+      "order": 1,
+      "zh": "社会地位",
+      "pinyin": "",
+      "vi": "địa vị xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0294adb-ba43-4e06-8766-6594db926fba",
+      "order": 2,
+      "zh": "社会生活",
+      "pinyin": "",
+      "vi": "đời sống xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c363482-4ecd-40fc-b961-4de33a7494f8",
+      "order": 3,
+      "zh": "现代社会",
+      "pinyin": "",
+      "vi": "xã hội hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd27b535-dd32-4edf-93fa-1f3563b3167a",
+      "order": 4,
+      "zh": "进入社会",
+      "pinyin": "",
+      "vi": "bước vào xã hội/đi làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e6ebcb6-f822-4dca-b660-5efa114ce607",
+      "order": 5,
+      "zh": "社会影响",
+      "pinyin": "",
+      "vi": "ảnh hưởng xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1a8d2dfa-9c1f-4a7a-8c9c-aec91b08fcd2",
+      "order": 1,
+      "zh": "这个故事表现了古代社会的生活。",
+      "pinyin": "Zhège gùshi biǎoxiàn le gǔdài shèhuì de shēnghuó.",
+      "vi": "Câu chuyện này thể hiện đời sống xã hội cổ đại.",
+      "analysis_vi": "表现了 dùng để giới thiệu nội dung.",
+      "highlight": [
+        "社会"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae5c70b4-809d-4ec6-8003-45a7e235815e"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "16771d62-f354-4299-b80a-b343fa8f5115",
+      "order": 2,
+      "zh": "如果不了解社会，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě shèhuì, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 社会, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "社会"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae5c70b4-809d-4ec6-8003-45a7e235815e"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "db6dc831-9eb8-44cd-a206-e6d7688cf146",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解社会在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě shèhuì zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 社会 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "社会"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae5c70b4-809d-4ec6-8003-45a7e235815e"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Phân tích tác phẩm cổ Trung Quốc thường phải xét 社会地位 vì trật tự xã hội ảnh hưởng lời nói và hành động.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8865a5cf-1103-45c5-94e0-d21dd81a8e85",
+      "order": 1,
+      "rule_vi": "Không nhầm 社会 với 会社; công ty hiện đại là 公司。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "社会",
+    "back": "xã hội",
+    "hint": "shèhuì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ae5c70b4-809d-4ec6-8003-45a7e235815e",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "id": "9b196a93-cb38-41f9-ab56-19b1e3397f5b",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "里",
+  "pinyin": "lǐ",
+  "pos": {
+    "raw_vi": "Danh từ phương vị",
+    "raw_cn": "方位名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "lý",
+    "meaning_vi": "trong, bên trong; dặm Trung Quốc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trong",
+      "bên trong",
+      "dặm Trung Quốc"
+    ],
+    "short_definition_vi": "trong, bên trong; dặm Trung Quốc",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "里",
+        "lishu_vi": "lý",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "里 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "里 trong bài được học theo nghĩa: trong, bên trong; dặm Trung Quốc.",
+    "memory_tip_vi": "Nhớ 里 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "里面",
+        "pinyin": "lǐmiàn",
+        "meaning_vi": "bên trong",
+        "difference_vi": "Rõ và đầy đủ hơn 里 trong nhiều câu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Với 把: nói 把书放在书包里, không nói 把书放了在书包里."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9d966c0c-e111-4e8e-b87f-4babea6d8453",
+      "order": 1,
+      "zh": "书包里",
+      "pinyin": "",
+      "vi": "trong cặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ce5fd43-5f65-42bf-8516-562cde851ab7",
+      "order": 2,
+      "zh": "故事里",
+      "pinyin": "",
+      "vi": "trong câu chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8b5cb51-fae8-4ced-a207-318aef410d85",
+      "order": 3,
+      "zh": "心里",
+      "pinyin": "",
+      "vi": "trong lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "606664ea-5d23-456f-aea5-1cea62fb4a60",
+      "order": 4,
+      "zh": "家里",
+      "pinyin": "",
+      "vi": "trong nhà/nhà mình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f8f0389e-d3c6-4533-b12f-16ce0ddd0dbf",
+      "order": 1,
+      "zh": "书包里有一本书。",
+      "pinyin": "",
+      "vi": "Trong cặp có một quyển sách.",
+      "analysis_vi": "Địa điểm + 有 + vật.",
+      "highlight": [
+        "里"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9b196a93-cb38-41f9-ab56-19b1e3397f5b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "55aa8a64-c803-4be9-acb7-6427864ff966",
+      "order": 2,
+      "zh": "她把玉手镯放在包里，准备拜托师母转交给梁山伯。",
+      "pinyin": "",
+      "vi": "Cô ấy đặt vòng tay ngọc trong túi, chuẩn bị nhờ sư mẫu chuyển cho Lương Sơn Bá.",
+      "analysis_vi": "把 A 放在 B 里 là cấu trúc quan trọng.",
+      "highlight": [
+        "里"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9b196a93-cb38-41f9-ab56-19b1e3397f5b"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Người Việt dễ bỏ phương vị; tiếng Trung thường cần N + 里.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2c439945-3672-4cb5-9b7f-7799eafb4b77",
+      "order": 1,
+      "rule_vi": "Với 把: nói 把书放在书包里, không nói 把书放了在书包里.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "里",
+    "back": "trong, bên trong; dặm Trung Quốc",
+    "hint": "lǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9b196a93-cb38-41f9-ab56-19b1e3397f5b",
+    "source_lesson_vocab_id": null
+  }
+}

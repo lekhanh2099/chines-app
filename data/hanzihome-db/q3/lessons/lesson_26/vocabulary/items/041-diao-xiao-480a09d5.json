@@ -1,0 +1,213 @@
+{
+  "id": "963adc06-43b8-40d4-b25b-6eac682093db",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "吊孝",
+  "pinyin": "diào xiào",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "điếu hiếu",
+    "meaning_vi": "đi viếng tang, phúng viếng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi viếng tang",
+      "phúng viếng"
+    ],
+    "short_definition_vi": "đi viếng tang, phúng viếng",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吊",
+        "lishu_vi": "điếu",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "吊 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "孝",
+        "lishu_vi": "hiếu",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "孝 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "吊孝 trong bài được học theo nghĩa: đi viếng tang, phúng viếng.",
+    "memory_tip_vi": "Nhớ 吊孝 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吊唁",
+        "pinyin": "diàoyàn",
+        "meaning_vi": "chia buồn/viếng tang",
+        "difference_vi": "Trang trọng hơn 吊孝.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 吊孝 cho thăm bệnh; thăm bệnh là 看望."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "13dbac38-a26f-40ad-a41c-bc07f2121961",
+      "order": 1,
+      "zh": "去吊孝",
+      "pinyin": "",
+      "vi": "đi viếng tang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecd64f59-af3c-48da-910d-f38c6cbcdbfc",
+      "order": 2,
+      "zh": "到梁家吊孝",
+      "pinyin": "",
+      "vi": "đến nhà họ Lương viếng tang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecaa25af-5bbb-4b2d-9f58-91ff4a507494",
+      "order": 3,
+      "zh": "吊孝的人",
+      "pinyin": "",
+      "vi": "người đi viếng tang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f3bd4c97-b62e-48e7-b384-4b4cf95448f4",
+      "order": 1,
+      "zh": "听说老人去世了，邻居们都去吊孝。",
+      "pinyin": "",
+      "vi": "Nghe nói cụ già qua đời, hàng xóm đều đi viếng tang.",
+      "analysis_vi": "去世 là cách nói lịch sự cho qua đời.",
+      "highlight": [
+        "吊孝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "963adc06-43b8-40d4-b25b-6eac682093db"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08823ecb-4dfc-478c-a737-6b89a06898ef",
+      "order": 2,
+      "zh": "祝英台坚决要求去梁家吊孝。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài kiên quyết yêu cầu đến nhà họ Lương viếng tang.",
+      "analysis_vi": "坚决要求 + V.",
+      "highlight": [
+        "吊孝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "963adc06-43b8-40d4-b25b-6eac682093db"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "吊孝 là nghi lễ tang, không phải thăm người bệnh.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c50fe42d-2ba4-42d7-92d9-b892d2adaf63",
+      "order": 1,
+      "rule_vi": "Không dùng 吊孝 cho thăm bệnh; thăm bệnh là 看望.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吊孝",
+    "back": "đi viếng tang, phúng viếng",
+    "hint": "diào xiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "963adc06-43b8-40d4-b25b-6eac682093db",
+    "source_lesson_vocab_id": null
+  }
+}

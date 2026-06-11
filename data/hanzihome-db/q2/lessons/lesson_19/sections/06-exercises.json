@@ -1,0 +1,979 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: preserve all exercise sections from the PDF order; do not mark final_verified unless answer key is checked.",
+    "expected_exercise_count_from_pdf": 9,
+    "actual_exercise_count_in_json": 9,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_pdf_crosschecked_answers_added",
+    "allowed_final_status_when_incomplete": "verified",
+    "blocked_final_statuses": [
+      "final_verified",
+      "final_verified_with_marked_generated_fields"
+    ]
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调，朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc theo."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "gǔtou",
+              "right": "kǔtóu",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "xiǎoxīn",
+              "right": "xiàoxīn",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "yùdào",
+              "right": "yùdiào",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "kěqì",
+              "right": "kèqī",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "yùnqi",
+              "right": "yìqì",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "chōu yān",
+              "right": "shǒuxiān",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_items",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "丢了钱包儿",
+              "pinyin": "Diū le qiánbāor",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "丢了东西",
+              "pinyin": "Diū le dōngxi",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "丢了护照",
+              "pinyin": "Diū le hùzhào",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "d08c4311-c1e6-40a3-b502-9a3f9140607d",
+              "text": "丢了自行车",
+              "pinyin": "Diū le zìxíngchē",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "2de586f4-3987-4413-b296-88e87f7b2af2",
+              "text": "浪费钱",
+              "pinyin": "Làngfèi qián",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "0a05bd24-1be3-4240-bcf0-7112a84ca9ae",
+              "text": "浪费时间",
+              "pinyin": "Làngfèi shíjiān",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "69f1997b-58c5-4b9b-a007-fadb1405cb1c",
+              "text": "浪费水",
+              "pinyin": "Làngfèi shuǐ",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "e8769d7d-1b18-41fe-93ab-54a1b416ee31",
+              "text": "浪费电",
+              "pinyin": "Làngfèi diàn",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "4120cc5d-0811-4c8b-ae92-1269c9ab61af",
+              "text": "差点儿撞伤",
+              "pinyin": "Chàdiǎnr zhuàng shāng",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "41f7aaa1-0a54-490a-94bc-2a50f627bf4c",
+              "text": "差点儿撞坏",
+              "pinyin": "Chàdiǎnr zhuàng huài",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "3315eda0-caa0-4aa3-a769-b5aad9b737d8",
+              "text": "差点儿丢了",
+              "pinyin": "Chàdiǎnr diū le",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "50abeba5-7a85-4505-85c6-9938e709226b",
+              "text": "差点儿忘了",
+              "pinyin": "Chàdiǎnr wàng le",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "f8765c48-a6b9-4e8a-a97d-504cb82ab72e",
+              "text": "被人偷了",
+              "pinyin": "Bèi rén tōu le",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "08fa0e9e-be65-435e-8c70-771b668e7279",
+              "text": "被人骗了",
+              "pinyin": "Bèi rén piàn le",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "f017645e-345e-461a-91e1-073ef6422d18",
+              "text": "让车撞了",
+              "pinyin": "Ràng chē zhuàng le",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "b1dea84a-8f91-48c0-8cb2-6073b4110a0a",
+              "text": "让雨淋了",
+              "pinyin": "Ràng yǔ lín le",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "19f5cd7e-6bad-4ec6-8591-87e3c23c031e",
+              "text": "淋得像落汤鸡似的",
+              "pinyin": "Lín de xiàng luòtāngjī shìde",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "323ccc92-600b-490b-8d33-61c20bf533e1",
+              "text": "高兴得像孩子似的",
+              "pinyin": "Gāoxìng de xiàng háizi shìde",
+              "vi": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Thay thế theo mẫu."
+      },
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "type": "supplement_vocab",
+          "title": "补充生词",
+          "items": [
+            {
+              "id": "14a2fd4e-422b-41e5-a35e-0090a73e94e9",
+              "hanzi": "卷尺",
+              "pinyin": "juǎnchǐ",
+              "meaning_vi": "thước cuộn",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "9ae1dd0f-ac63-45bb-b37a-3ba43f52333a",
+              "hanzi": "电子秤",
+              "pinyin": "diànzǐchèng",
+              "meaning_vi": "cân điện tử",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "11cb9a22-2ecf-4eb0-a389-ff1bd7e1bc8a",
+              "hanzi": "钳子",
+              "pinyin": "qiánzi",
+              "meaning_vi": "kìm",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "6fcfa553-6ac8-4bc3-997b-bf043d08e84c",
+              "hanzi": "剪刀",
+              "pinyin": "jiǎndāo",
+              "meaning_vi": "kéo",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "9d381001-b051-473c-a25d-01792ed6de1f",
+              "hanzi": "拍",
+              "pinyin": "pāi",
+              "meaning_vi": "chụp; quay; vỗ",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "type": "substitution_pattern",
+          "pattern": "A：怎么了？\nB：我的腿被自行车撞伤了。",
+          "items": [
+            "眼镜儿让我摔坏",
+            "钱包儿让小偷儿偷走",
+            "自行车让人撞坏",
+            "衣服被雨淋湿",
+            "咖啡让我碰洒"
+          ]
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "type": "substitution_pattern",
+          "pattern": "A：骨头被撞伤了没有？\nB：没有。骨头没有被撞伤。",
+          "items": [
+            "头 — 撞伤",
+            "腿 — 撞伤",
+            "自行车 — 撞坏",
+            "钱 — 偷走",
+            "手机 — 摔坏"
+          ]
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "type": "substitution_pattern",
+          "pattern": "A：把你的车借给我用用，好吗？\nB：对不起，我的车叫朋友骑去了。",
+          "items": [
+            "卷尺 — 拿走",
+            "伞 — 拿走",
+            "电子秤 — 拿走",
+            "钳子 — 借去",
+            "剪刀 — 借去"
+          ]
+        },
+        {
+          "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
+          "type": "substitution_pattern",
+          "pattern": "A：听说他被公司派到中国去工作了。\nB：是。",
+          "items": [
+            "她被学校送到国外去留学",
+            "他被送到医院去",
+            "他被自行车撞伤",
+            "麦克的钱包儿被小偷儿偷走",
+            "这本小说儿被拍成电影",
+            "这本小说儿被翻译成英文"
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "word_bank": [
+        "故意",
+        "偷",
+        "淋",
+        "要紧",
+        "骗",
+        "丢",
+        "罚",
+        "叫",
+        "撞",
+        "给"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "prompt": "真倒霉，刚买的自行车就被小偷儿________走了。",
+          "answer": "偷",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "prompt": "因为没带雨伞，被________得像落汤鸡似的。",
+          "answer": "淋",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "prompt": "因为行李超重，被机场________了一百多块钱。",
+          "answer": "罚",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "prompt": "A：真对不起！ B：没什么，你又不是________的。",
+          "answer": "故意",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "prompt": "A：你的腿怎么了？ B：让自行车________了一下儿。",
+          "answer": "撞",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "prompt": "A：她的伤________吗？ B：不要紧，骨头没被碰伤，只是流了一点儿血。",
+          "answer": "要紧",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "prompt": "他被那个算命的________走了一百块钱。",
+          "answer": "骗",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "prompt": "A：你的手提包儿呢？ B：手提包儿让我不小心________了。",
+          "answer": "丢",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "prompt": "A：把你的车借________我用用好吗？ B：我的车________张东借去了。",
+          "answer": "给；叫",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/pdf_crosschecked",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "substitution_or_transform_drill",
+      "order": 4,
+      "title": "四、用“被、叫、让”改写下列句子",
+      "title_vi": "Dùng 被、叫、让 viết lại câu",
+      "instruction": {
+        "zh": "用“被、叫、让”改写下列句子。",
+        "vi": "Dùng 被、叫、让 viết lại các câu sau."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "一个姑娘捡到我的钱包儿以后，给我送来了。",
+          "sample_answer": "我的钱包儿被一个姑娘捡到以后，给我送来了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "他不小心把杯子打碎了。",
+          "sample_answer": "杯子让他不小心打碎了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "大风把树上的苹果刮掉了。",
+          "sample_answer": "树上的苹果被大风刮掉了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "张东把我的自行车骑走了。",
+          "sample_answer": "我的自行车叫张东骑走了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "玛丽把我的书借去了。",
+          "sample_answer": "我的书让玛丽借去了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "她把那些旧杂志都卖了。",
+          "sample_answer": "那些旧杂志都被她卖了。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/pdf_crosschecked",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 5,
+      "title": "五、下列情景怎么说",
+      "title_vi": "Nói thế nào trong tình huống sau",
+      "instruction": {
+        "zh": "下列情景怎么说。",
+        "vi": "Dựa vào tình huống, nói bằng tiếng Trung. Nên dùng 被、叫、让."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "下课后，你发现同桌把你的书拿走了，把他的书给你留下了，怎么说？",
+          "sample_answer": "我的书被同桌拿走了，他的书却给我留下了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "你滑冰时把腿摔伤了，同学问你怎么了，你怎么回答他？",
+          "sample_answer": "我滑冰的时候，腿被摔伤了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "你不小心把杯子碰到地上摔碎了，妈妈问你，你怎么回答？",
+          "sample_answer": "真对不起，杯子让我不小心碰到地上摔碎了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "去看电影，到电影院门口才发现记错时间了，朋友问你，你怎么说？",
+          "sample_answer": "电影时间被我记错了，我们来晚了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "下雨了，朋友从外边回来，衣服都淋湿了，你要他把衣服换下来，怎么说？",
+          "sample_answer": "你的衣服都被雨淋湿了，快换下来吧。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/pdf_crosschecked",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 6,
+      "title": "六、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "wrong": "我的衣服都让雨湿了。",
+          "sample_answer": "我的衣服都让雨淋湿了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "wrong": "真对不起，你的相机让我坏了。",
+          "sample_answer": "真对不起，你的相机让我弄坏了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "wrong": "我的自行车叫借走了。",
+          "sample_answer": "我的自行车叫人借走了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "wrong": "我没被自行车撞倒了。",
+          "sample_answer": "我没被自行车撞倒。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "wrong": "钥匙被我忘拔下来了。",
+          "sample_answer": "钥匙我忘拔下来了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "wrong": "我们班好几个同学都被感冒了。",
+          "sample_answer": "我们班好几个同学都感冒了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "d2ee010f-bdf3-46bc-b758-1c9bbab1af4b",
+          "wrong": "我们刚到公园就被天下雨了。",
+          "sample_answer": "我们刚到公园天就下雨了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8cd8da84-508c-4d14-9ec6-23425cabd8b3",
+          "wrong": "今天的作业被我没做完。",
+          "sample_answer": "今天的作业我没做完。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/pdf_crosschecked",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 7,
+      "title": "七、综合填空",
+      "title_vi": "Đọc điền chỗ trống",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào chỗ trống."
+      },
+      "supplement_vocab": [
+        {
+          "id": "d7ee33ab-af06-45bd-a1b0-6695be862e92",
+          "hanzi": "解雇",
+          "pinyin": "jiěgù",
+          "meaning_vi": "sa thải; cho nghỉ việc",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "55131a17-12db-4401-bfc4-a812f2644348",
+          "hanzi": "炒鱿鱼",
+          "pinyin": "chǎo yóuyú",
+          "meaning_vi": "bị sa thải; cho nghỉ việc",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "35f8e278-f93b-453b-acf2-e4c6177dd3b6",
+          "hanzi": "束",
+          "pinyin": "shù",
+          "meaning_vi": "bó; bó hoa",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "3a833c4e-d193-4e6f-95aa-9181f48837c3",
+          "hanzi": "卡片",
+          "pinyin": "kǎpiàn",
+          "meaning_vi": "tấm thiệp; tấm thẻ",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "aca531be-3212-4146-be91-7417f7d25bcc",
+          "hanzi": "致",
+          "pinyin": "zhì",
+          "meaning_vi": "gửi đến; dâng đến",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d611d66c-be89-4f71-b415-2e83b64b38ea",
+          "hanzi": "哀悼",
+          "pinyin": "āidào",
+          "meaning_vi": "thương tiếc; ai điếu",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "1dfdf985-9657-4106-9291-7a828cc270e4",
+          "hanzi": "贺卡",
+          "pinyin": "hèkǎ",
+          "meaning_vi": "thiệp chúc mừng",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e4c8e14b-f0d4-4fb9-a3d2-3c305ef98c67",
+          "hanzi": "葬礼",
+          "pinyin": "zànglǐ",
+          "meaning_vi": "tang lễ",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "passage": {
+        "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+        "title": "我被解雇了",
+        "zh": "“你还①________那家花店工作吗？”\n“不了，我②________老板炒鱿鱼了。”\n“为什么？”\n“每次给人家送花儿之前，我得在每束花儿里放上一③________卡片。上次，我把两张卡片放错了。”\n“你是怎么放④________？”\n“我⑤________送到婚礼上去的花儿里放上了一张‘致以深深的哀悼’；而那张新婚贺卡却被我放到了送给葬礼的花儿里去了。”\n“上面写的什么？”\n“祝你们⑥________新的家幸福快乐！”",
+        "vi": "Bài đọc đục lỗ về một người bị đuổi việc ở tiệm hoa vì đặt nhầm thiệp cưới và thiệp tang lễ.",
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      "questions": [
+        {
+          "id": "ea84edc6-f522-428f-889f-62cd0f10f3e1",
+          "blank_index": 1,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "cd5df31d-ccbb-452f-a6ef-3c265cce79b1",
+          "blank_index": 2,
+          "answer": "被 / 让 / 叫",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6f8caccf-6fa4-491f-a5d9-7ae329639604",
+          "blank_index": 3,
+          "answer": "张",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "996eac2a-c37d-4c01-8179-988dc007cb6a",
+          "blank_index": 4,
+          "answer": "错的",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "d3ba029f-4d57-465e-92ed-2fe2abbeb69c",
+          "blank_index": 5,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "5517b91a-0bb1-4eee-8615-a7638c987f86",
+          "blank_index": 6,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/pdf_crosschecked",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp."
+      },
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "打听",
+          "lines": [
+            {
+              "speaker": "A",
+              "zh": "听说你先生出国了？"
+            },
+            {
+              "speaker": "B",
+              "zh": "是啊，他被公司派到中国去工作了。"
+            },
+            {
+              "speaker": "A",
+              "zh": "你去吗？"
+            },
+            {
+              "speaker": "B",
+              "zh": "我下个月就去。"
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "相信",
+          "support_vocab": [
+            {
+              "hanzi": "脖子",
+              "pinyin": "bózi",
+              "meaning_vi": "cổ"
+            },
+            {
+              "hanzi": "灵",
+              "pinyin": "líng",
+              "meaning_vi": "linh nghiệm; hiệu quả"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "玛丽",
+              "zh": "你的脖子还疼吗？"
+            },
+            {
+              "speaker": "麦克",
+              "zh": "一点儿也不疼了。"
+            },
+            {
+              "speaker": "玛丽",
+              "zh": "吃的什么药？"
+            },
+            {
+              "speaker": "麦克",
+              "zh": "什么药也没吃就好了。"
+            },
+            {
+              "speaker": "玛丽",
+              "zh": "真的？我不相信。"
+            },
+            {
+              "speaker": "麦克",
+              "zh": "真的！我不骗你。是让大夫按摩好的。"
+            },
+            {
+              "speaker": "玛丽",
+              "zh": "是吗？按摩有那么灵吗？"
+            },
+            {
+              "speaker": "麦克",
+              "zh": "开始我也不相信。大夫按摩以后，马上就不疼了。我才相信按摩真好，又舒服又治病。"
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "character_writing",
+      "variant": "character_copying",
+      "order": 9,
+      "title": "九、写汉字",
+      "title_vi": "Viết chữ Hán",
+      "instruction": {
+        "zh": "写汉字。",
+        "vi": "Viết chữ Hán theo mẫu."
+      },
+      "items": [
+        {
+          "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+          "hanzi": "被",
+          "pinyin": "bèi",
+          "meaning_vi": "bị; bởi",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
+          "hanzi": "似",
+          "pinyin": "shì",
+          "meaning_vi": "giống như; tựa như",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
+          "hanzi": "骨",
+          "pinyin": "gǔ",
+          "meaning_vi": "xương",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
+          "hanzi": "紧",
+          "pinyin": "jǐn",
+          "meaning_vi": "chặt; gấp; nghiêm trọng",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
+          "hanzi": "伤",
+          "pinyin": "shāng",
+          "meaning_vi": "bị thương; làm bị thương",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f6fff594-0a78-4b14-b5bd-e7f236cab9d7",
+          "hanzi": "腿",
+          "pinyin": "tuǐ",
+          "meaning_vi": "chân",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "8f711ecc-e82a-40ee-8e42-409a742ccf2f",
+          "hanzi": "街",
+          "pinyin": "jiē",
+          "meaning_vi": "phố; đường phố",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a45cff42-2888-4327-885f-db58f61ba547",
+          "hanzi": "偷",
+          "pinyin": "tōu",
+          "meaning_vi": "trộm; ăn cắp",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9d5b2511-534c-4f43-a8b2-b80a2deb7a8e",
+          "hanzi": "骗",
+          "pinyin": "piàn",
+          "meaning_vi": "lừa; lừa gạt",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7261155-052b-4251-b30a-9334f98de4d5",
+          "hanzi": "浪",
+          "pinyin": "làng",
+          "meaning_vi": "sóng; phóng túng",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "082014f2-68b8-463f-84f2-4e1348b09a8d",
+          "hanzi": "费",
+          "pinyin": "fèi",
+          "meaning_vi": "phí; tốn",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "db44b358-2100-40d8-b4c0-4b02f320740b",
+          "hanzi": "遇",
+          "pinyin": "yù",
+          "meaning_vi": "gặp; gặp phải",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "342759c8-1e30-46f6-a3e8-d5fa745c59bf",
+          "hanzi": "傻",
+          "pinyin": "shǎ",
+          "meaning_vi": "ngốc; khờ",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a7e98744-4e5d-4dd7-80fc-17a503714d70",
+          "hanzi": "罚",
+          "pinyin": "fá",
+          "meaning_vi": "phạt",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5aba6740-83ed-4a46-8230-b5d3f011442a",
+          "hanzi": "戒",
+          "pinyin": "jiè",
+          "meaning_vi": "cai; bỏ; răn",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

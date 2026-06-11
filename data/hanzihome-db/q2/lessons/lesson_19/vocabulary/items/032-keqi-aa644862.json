@@ -1,0 +1,340 @@
+{
+  "id": "85ca1f2b-0339-4929-8f7e-1a537c0bd8a4",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "可气",
+  "pinyin": "kěqì",
+  "pos": {
+    "raw_vi": "tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_19",
+    "emotion"
+  ],
+  "meaning": {
+    "hanviet": "Khả khí",
+    "meaning_vi": "đáng tức, gây bực mình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đáng tức, gây bực mình"
+    ],
+    "short_definition_vi": "đáng tức, gây bực mình",
+    "textbook_focus_vi": "Đánh giá cảm xúc bực tức trong sự cố.",
+    "register_vi": "khẩu ngữ / hơi sách vở hơn 气人",
+    "usage_domain_vi": "cảm xúc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "khả",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có thể, đáng, được",
+        "modern_logic_vi": "可 trong từ này gần nghĩa “đáng”.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "气",
+        "lishu_vi": "khí",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khí, hơi, giận",
+        "modern_logic_vi": "气 trong từ này là tức giận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "可 = đáng; 气 = tức giận. 可气 = đáng tức, khiến người ta bực.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "生气",
+        "pinyin": "",
+        "meaning_vi": "tức giận",
+        "difference_vi": "Chỉ trạng thái cảm xúc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "气人",
+        "pinyin": "",
+        "meaning_vi": "làm người ta tức",
+        "difference_vi": "Khẩu ngữ mạnh, đời thường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "可恨",
+        "pinyin": "",
+        "meaning_vi": "đáng ghét/đáng hận",
+        "difference_vi": "Mạnh hơn 可气.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "讨厌",
+        "pinyin": "",
+        "meaning_vi": "đáng ghét, phiền",
+        "difference_vi": "Rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "客气",
+        "pinyin": "",
+        "meaning_vi": "khách sáo, lịch sự",
+        "difference_vi": "Dễ nhầm âm, nghĩa khác hoàn toàn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "可气",
+        "right": "可喜",
+        "meaning_vi": "đáng tức ↔ đáng mừng",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d785247a-7f41-4d65-b45c-ad3e1aaad94f",
+      "order": 1,
+      "zh": "真可气",
+      "pinyin": "",
+      "vi": "tức thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32cb1347-1d2d-40e6-84d8-adb7d554ee80",
+      "order": 2,
+      "zh": "太可气了",
+      "pinyin": "",
+      "vi": "tức quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba54c74a-e67a-41ad-a693-ecbdd95f4385",
+      "order": 3,
+      "zh": "最可气的是……",
+      "pinyin": "",
+      "vi": "đáng tức nhất là...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "60e9b156-29bd-4723-bb71-5ad5b043b5e4",
+      "order": 4,
+      "zh": "这件事很可气",
+      "pinyin": "",
+      "vi": "chuyện này rất đáng tức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8812cc12-4e34-4488-8c78-efd1d2fa9984",
+      "order": 5,
+      "zh": "他说的话真可气",
+      "pinyin": "",
+      "vi": "lời anh ta nói tức thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22bd1788-19e0-48e1-b83a-cd835c34f7e3",
+      "order": 6,
+      "zh": "可气可笑",
+      "pinyin": "",
+      "vi": "vừa tức vừa buồn cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d39e3046-6f72-4a71-b913-205a305db793",
+      "order": 7,
+      "zh": "让人觉得可气",
+      "pinyin": "",
+      "vi": "khiến người ta thấy bực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9c793237-b915-4c12-b248-d5e58a01fa99",
+      "order": 1,
+      "zh": "他明明错了，还不道歉，真可气。",
+      "pinyin": "Tā míngmíng cuò le, hái bú dàoqiàn, zhēn kěqì.",
+      "vi": "Anh ta rõ ràng sai rồi mà còn không xin lỗi, tức thật.",
+      "analysis_vi": "明明……还…… nhấn sự trái lý.",
+      "highlight": [
+        "可气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85ca1f2b-0339-4929-8f7e-1a537c0bd8a4"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "952a911f-6e1b-4c13-916d-92151a5c407f",
+      "order": 2,
+      "zh": "最可气的是，他把老人撞倒了，还说不是故意的。",
+      "pinyin": "Zuì kěqì de shì, tā bǎ lǎorén zhuàng dǎo le, hái shuō bú shì gùyì de.",
+      "vi": "Tức nhất là anh ta đâm cụ già ngã rồi mà còn nói không cố ý.",
+      "analysis_vi": "Ôn 把字句 và 不是故意的.",
+      "highlight": [
+        "可气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85ca1f2b-0339-4929-8f7e-1a537c0bd8a4"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "942791af-b23a-4cab-92d7-04a258a5d35b",
+      "order": 3,
+      "zh": "我的钱包儿被偷了已经很倒霉了，更可气的是，里面还有证件。",
+      "pinyin": "Wǒ de qiánbāor bèi tōu le yǐjīng hěn dǎoméi le, gèng kěqì de shì, lǐmiàn hái yǒu zhèngjiàn.",
+      "vi": "Ví của tôi bị trộm đã rất xui rồi, bực hơn nữa là bên trong còn có giấy tờ.",
+      "analysis_vi": "更可气的是…… nâng mức độ bực lên.",
+      "highlight": [
+        "可气",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "85ca1f2b-0339-4929-8f7e-1a537c0bd8a4"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khẩu ngữ hay dùng 太气人了！ thay 可气. 可气 hơi sách vở hơn 气人 một chút nhưng vẫn dùng được.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3c7cc893-778b-44bb-84dc-9c1bfb5d8acb",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 可气 với 客气.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你太客气了。",
+          "pinyin": "Nǐ tài kèqi le.",
+          "vi": "Bạn khách sáo quá.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这件事太可气了。",
+          "pinyin": "Zhè jiàn shì tài kěqì le.",
+          "vi": "Chuyện này tức quá.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "可气",
+    "back": "đáng tức, gây bực mình",
+    "hint": "kěqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "emotion"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "85ca1f2b-0339-4929-8f7e-1a537c0bd8a4",
+    "source_lesson_vocab_id": null
+  }
+}

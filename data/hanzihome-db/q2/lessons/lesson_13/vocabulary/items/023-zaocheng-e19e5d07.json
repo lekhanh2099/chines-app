@@ -1,0 +1,314 @@
+{
+  "id": "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "造成",
+  "pinyin": "zàochéng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tạo thành",
+    "meaning_vi": "gây ra, tạo thành hậu quả",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gây ra",
+      "tạo thành hậu quả"
+    ],
+    "short_definition_vi": "gây ra, tạo thành hậu quả",
+    "textbook_focus_vi": "Âm Hán Việt: tạo thành Nghĩa: Gây ra một kết quả, thường là kết quả xấu hoặc nghiêm trọng. Tạo thành một tình trạng, hậu quả, ảnh hưởng.",
+    "register_vi": "hơi trang trọng hơn 引起, thường dùng trong phân tích nguyên nhân – hậu quả.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "造",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "告",
+            "hanviet": "cáo",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tạo ra, chế tạo, gây nên",
+        "modern_logic_vi": "造 góp nghĩa tạo/gây.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "成",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành, hoàn thành, trở thành",
+        "modern_logic_vi": "造成 = làm cho một kết quả thành ra như vậy, thường kết quả xấu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "造 là tạo ra, làm ra. 成 là thành, đạt kết quả. → 造成 = làm cho một kết quả hình thành. Cảnh báo: 造成 thường đi với hậu quả không tốt. Không nên dùng cho kết quả vui đơn giản.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "引起 (yǐnqǐ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gây nên, làm nảy sinh phản ứng/sự chú ý/vấn đề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "导致 (dǎozhì)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dẫn đến, thường dùng trong văn viết/phân tích nguyên nhân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "造成 (zàochéng): gây ra hậu quả/tình trạng, thường tiêu cực.",
+      "产生 (chǎnshēng): sinh ra, phát sinh, trung tính hơn.",
+      "→ Phân biệt nhanh: 造成损失 rất tự nhiên; 引起注意 rất tự nhiên; 导致后果 văn phân tích hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f7d4b24c-9a72-45b4-a134-166707605663",
+      "order": 1,
+      "zh": "造成事故",
+      "pinyin": "",
+      "vi": "gây ra tai nạn/sự cố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc00d3af-3f4f-4fe5-aa60-50de912cd5f5",
+      "order": 2,
+      "zh": "造成交通拥挤",
+      "pinyin": "",
+      "vi": "gây ùn tắc giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c97fca3-ef50-4688-88e6-28586e38a32b",
+      "order": 3,
+      "zh": "造成影响",
+      "pinyin": "",
+      "vi": "gây ảnh hưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce4c9948-4b3d-4f9a-8881-154aaabd72ab",
+      "order": 4,
+      "zh": "[Tin tức] 造成严重后果",
+      "pinyin": "",
+      "vi": "gây hậu quả nghiêm trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e9aff115-778e-4cf5-ab68-29284960b2d7",
+      "order": 1,
+      "zh": "这起事故造成了严重的交通拥挤。",
+      "pinyin": "Zhè qǐ shìgù zàochéng le yánzhòng de jiāotōng yōngjǐ.",
+      "vi": "Vụ tai nạn này đã gây ra ùn tắc giao thông nghiêm trọng.",
+      "analysis_vi": "造成 nối nguyên nhân 事故 với kết quả 交通拥挤.",
+      "highlight": [
+        "造成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "37b03edb-b9a0-47eb-b36e-a7c31ba75280",
+      "order": 2,
+      "zh": "照片删错了，可能会造成很大的麻烦。",
+      "pinyin": "Zhàopiàn shān cuò le, kěnéng huì zàochéng hěn dà de máfan.",
+      "vi": "Ảnh bị xóa nhầm rồi, có thể sẽ gây ra rắc rối lớn.",
+      "analysis_vi": "删错了 là kết quả thao tác sai; 造成麻烦 là hậu quả phát sinh.",
+      "highlight": [
+        "造成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ec20d479-81b4-402c-9f4b-7403cb42827a",
+      "order": 3,
+      "zh": "学习时例句写得不清楚，会造成以后复习困难。",
+      "pinyin": "Xuéxí shí lìjù xiě de bù qīngchu, huì zàochéng yǐhòu fùxí kùnnan.",
+      "vi": "Khi học, câu ví dụ viết không rõ sẽ gây khó khăn cho việc ôn tập sau này.",
+      "analysis_vi": "写得不清楚 là nguyên nhân; 造成……困难 là hậu quả học tập.",
+      "highlight": [
+        "造成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tin tức Trung Quốc, 造成 rất hay đi với hậu quả: 造成损失, 造成人员受伤, 造成交通拥堵. Đây là văn phong báo chí/chính thức.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "35f23305-7925-467c-834f-fa5239badfb2",
+      "order": 1,
+      "rule_vi": "Dùng 造成 với kết quả tích cực đơn giản.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这件事造成了我很高兴。",
+          "pinyin": "Tự nhiên:",
+          "vi": "",
+          "note_vi": "Không tự nhiên:",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这件事让我很高兴。",
+          "pinyin": "Zhè jiàn shì ràng wǒ hěn gāoxìng.",
+          "vi": "Chuyện này khiến tôi rất vui.",
+          "note_vi": "Tự nhiên:",
+          "notes": []
+        },
+        {
+          "zh": "这件事造成了很大的影响。",
+          "pinyin": "Zhè jiàn shì zàochéng le hěn dà de yǐngxiǎng.",
+          "vi": "Chuyện này đã gây ra ảnh hưởng lớn.",
+          "note_vi": "Tự nhiên với 造成:",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dùng 造成 với kết quả tích cực đơn giản. Không tự nhiên: 这件事造成了我很高兴。 Tự nhiên: 这件事让我很高兴。 Zhè jiàn shì ràng wǒ hěn gāoxìng. Chuyện này khiến tôi rất vui. Tự nhiên với 造成:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "造成",
+    "back": "gây ra, tạo thành hậu quả",
+    "hint": "zàochéng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "造成"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da",
+    "source_lesson_vocab_id": null
+  }
+}

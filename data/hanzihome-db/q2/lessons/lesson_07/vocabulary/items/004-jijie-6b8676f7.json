@@ -1,0 +1,440 @@
+{
+  "id": "165aa5d5-feff-47d8-9b69-856b94c5673e",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "季节",
+  "pinyin": "jìjié",
+  "pos": {
+    "raw_vi": "Danh từ 【名词】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "weather",
+    "season"
+  ],
+  "meaning": {
+    "hanviet": "Quý tiết",
+    "meaning_vi": "mùa; mùa vụ; thời kỳ trong năm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mùa",
+      "mùa vụ",
+      "thời kỳ trong năm"
+    ],
+    "short_definition_vi": "mùa",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "mùa / thời tiết",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "季",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa/ngũ cốc",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa/ngũ cốc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con/trẻ",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mùa, quý, thời kỳ",
+        "modern_logic_vi": "季 liên quan mùa/kỳ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa/ngũ cốc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "节",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ/cây",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ/cây cỏ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卩",
+            "hanviet": "tiết",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiết, đoạn, dịp lễ, chừng mực",
+        "modern_logic_vi": "节 gợi một đoạn/thời điểm; trong 季节 là đoạn mùa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ/cây cỏ",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "季 = mùa/kỳ; 节 = đoạn/tiết. 季节 = một đoạn thời gian trong năm có đặc điểm riêng.",
+    "memory_tip_vi": "Nhớ 季节 theo trục 春夏秋冬.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "季",
+        "pinyin": "",
+        "meaning_vi": "quý/mùa",
+        "difference_vi": "Thường đi trong từ ghép như 春季.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "节气",
+        "pinyin": "",
+        "meaning_vi": "tiết khí",
+        "difference_vi": "Hệ 24 tiết khí truyền thống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "天气",
+        "pinyin": "",
+        "meaning_vi": "thời tiết",
+        "difference_vi": "Thời tiết ngắn hạn; không phải mùa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "气候",
+        "pinyin": "",
+        "meaning_vi": "khí hậu",
+        "difference_vi": "Đặc điểm thời tiết dài hạn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "春/秋; 夏/冬",
+        "pinyin": "",
+        "meaning_vi": "cặp mùa đối lập",
+        "difference_vi": "Đối lập theo cặp mùa tùy ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f5419529-f161-4f51-8e16-0ec947c836f1",
+      "order": 1,
+      "zh": "四个季节",
+      "pinyin": "",
+      "vi": "bốn mùa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0837a91-1a16-4f2d-afdd-63cb91bcdbe4",
+      "order": 2,
+      "zh": "不同的季节",
+      "pinyin": "",
+      "vi": "các mùa khác nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8adf786-23fb-4979-82a8-98d8264ebc75",
+      "order": 3,
+      "zh": "这个季节",
+      "pinyin": "",
+      "vi": "mùa này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4578edd-513e-4765-b15f-30cb9ac67640",
+      "order": 4,
+      "zh": "春天这个季节",
+      "pinyin": "",
+      "vi": "mùa xuân này / mùa xuân là mùa...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d46f4e4-77ad-4429-8d9a-da2950e6d869",
+      "order": 5,
+      "zh": "旅游季节",
+      "pinyin": "",
+      "vi": "mùa du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe9e6559-1558-4724-b3f6-db6a9b75552a",
+      "order": 6,
+      "zh": "雨季",
+      "pinyin": "",
+      "vi": "mùa mưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e740a179-68c5-48b8-9a99-5c924443fd87",
+      "order": 7,
+      "zh": "考试季",
+      "pinyin": "",
+      "vi": "mùa thi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83bcc3c0-1ee8-4625-8424-87f24ff7dece",
+      "order": 8,
+      "zh": "季节变化",
+      "pinyin": "",
+      "vi": "sự thay đổi mùa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1749f965-30d4-4fd5-b589-eb02882d4f77",
+      "order": 1,
+      "zh": "你最喜欢哪个季节？",
+      "pinyin": "Nǐ zuì xǐhuan nǎ ge jìjié?",
+      "vi": "Bạn thích mùa nào nhất?",
+      "analysis_vi": "哪个季节 = mùa nào.",
+      "highlight": [
+        "季节"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "165aa5d5-feff-47d8-9b69-856b94c5673e"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ef564bc9-e734-4307-8af5-fabcd2c24ad8",
+      "order": 2,
+      "zh": "我们那儿的季节跟北京不太一样。",
+      "pinyin": "Wǒmen nàr de jìjié gēn Běijīng bú tài yíyàng.",
+      "vi": "Các mùa ở chỗ chúng tôi không giống Bắc Kinh lắm.",
+      "analysis_vi": "不太 làm sắc thái mềm hơn.",
+      "highlight": [
+        "季节",
+        "不太一样"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "165aa5d5-feff-47d8-9b69-856b94c5673e"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7f9ff24c-81bb-4327-a0e2-4154e7b1fb2c",
+      "order": 3,
+      "zh": "不同的季节有不同的风景，春天可以看花，夏天可以去湖边划船。",
+      "pinyin": "Bùtóng de jìjié yǒu bùtóng de fēngjǐng, chūntiān kěyǐ kàn huā, xiàtiān kěyǐ qù húbiān huáchuán.",
+      "vi": "Các mùa khác nhau có phong cảnh khác nhau; mùa xuân có thể ngắm hoa, mùa hè có thể đi chèo thuyền bên hồ.",
+      "analysis_vi": "不同的季节 làm chủ ngữ; 春天 / 夏天 làm trạng ngữ thời gian.",
+      "highlight": [
+        "季节",
+        "春天",
+        "夏天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "165aa5d5-feff-47d8-9b69-856b94c5673e"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Văn hóa Trung Quốc có hệ thống 二十四节气 – 24 tiết khí, nhưng ở bài này chỉ cần nắm 季节 = mùa.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3fdd85ed-5042-4e95-ab4d-f6f853216e02",
+      "order": 1,
+      "rule_vi": "Không dùng 季节 để nói thời tiết trong ngày.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "今天的季节很冷。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Sai vì 季节 là mùa, không phải thời tiết hôm nay.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "今天的天气很冷。",
+          "pinyin": "Jīntiān de tiānqì hěn lěng.",
+          "vi": "Thời tiết hôm nay rất lạnh.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "季节 = mùa; 天气 = thời tiết.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "季节",
+    "back": "mùa; mùa vụ; thời kỳ trong năm",
+    "hint": "jìjié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "season"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "165aa5d5-feff-47d8-9b69-856b94c5673e",
+    "source_lesson_vocab_id": null
+  }
+}

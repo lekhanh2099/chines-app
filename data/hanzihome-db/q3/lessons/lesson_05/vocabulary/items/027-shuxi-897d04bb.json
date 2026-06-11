@@ -1,0 +1,376 @@
+{
+  "id": "207201bf-2cc0-40d8-a22e-1ae2ce0c2825",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "熟悉",
+  "pinyin": "shúxī",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ trạng thái",
+    "raw_cn": "形容词/动词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thục tất",
+    "meaning_vi": "quen thuộc, biết rõ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quen thuộc",
+      "biết rõ"
+    ],
+    "short_definition_vi": "quen thuộc, biết rõ",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "熟",
+        "lishu_vi": "thục",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "灬 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "bên dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "悉",
+        "lishu_vi": "tất",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+            "position_vi": "bên dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "熟悉 = quen đến mức biết rõ người/nơi/việc.",
+    "memory_tip_vi": "对 + N + 熟悉.",
+    "warning_vi": "Với người thân quen, 跟他很熟 tự nhiên hơn 我熟悉他.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "认识",
+        "rènshi",
+        "quen biết/nhận ra",
+        "biết có tồn tại/quen sơ"
+      ],
+      [
+        "了解",
+        "liǎojiě",
+        "hiểu rõ",
+        "hiểu tình hình/bản chất"
+      ],
+      [
+        "习惯",
+        "xíguàn",
+        "quen với",
+        "quen thói quen/môi trường"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "对 + N + 熟悉."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1e0d2d18-c47c-40cc-9e52-3361dfbeedbb",
+      "order": 1,
+      "zh": "熟悉环境",
+      "pinyin": "",
+      "vi": "quen môi trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b6d8fc8-5573-458c-b68b-5c7f6d4d718b",
+      "order": 2,
+      "zh": "熟悉路线",
+      "pinyin": "",
+      "vi": "quen đường tuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d8adb3a-0be2-4b05-acec-89dfbf8c5e84",
+      "order": 3,
+      "zh": "对这里很熟悉",
+      "pinyin": "",
+      "vi": "rất quen nơi này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa1b6cd5-1875-4539-adc6-704b2b6f0cf3",
+      "order": 4,
+      "zh": "不太熟悉",
+      "pinyin": "",
+      "vi": "không quen lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "323dc641-350c-4dda-bd5d-cb7e740422b1",
+      "order": 5,
+      "zh": "熟悉的地方",
+      "pinyin": "",
+      "vi": "nơi quen thuộc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f85aa8fe-2e16-4283-8ae0-9043fe942573",
+      "order": 1,
+      "zh": "我刚来北京，对这里的路还不太熟悉。",
+      "pinyin": "Wǒ gāng lái Běijīng, duì zhèlǐ de lù hái bú tài shúxī.",
+      "vi": "Tôi vừa đến Bắc Kinh, chưa quen đường ở đây lắm.",
+      "analysis_vi": "对 + N + 熟悉.",
+      "highlight": [
+        "熟悉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "207201bf-2cc0-40d8-a22e-1ae2ce0c2825"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0ccaaf71-d79d-4bad-8968-6631da2a21a8",
+      "order": 2,
+      "zh": "这个车站我很熟悉，以前每天都从这里坐车。",
+      "pinyin": "Zhège chēzhàn wǒ hěn shúxī, yǐqián měi tiān dōu cóng zhèlǐ zuò chē.",
+      "vi": "Trạm xe này tôi rất quen, trước đây ngày nào cũng bắt xe ở đây.",
+      "analysis_vi": "Đưa đối tượng lên đầu câu được.",
+      "highlight": [
+        "熟悉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "207201bf-2cc0-40d8-a22e-1ae2ce0c2825"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "我对这儿不太熟悉 là câu hỏi đường mềm hơn 我不知道路.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a0c41a60-6c62-444a-9293-25a124199781",
+      "order": 1,
+      "rule_vi": "我熟悉他。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我对这条路很熟悉。",
+          "pinyin": "Wǒ duì zhè tiáo lù hěn shúxī.",
+          "vi": "Tôi rất quen con đường này.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我跟他很熟。",
+          "pinyin": "Wǒ gēn tā hěn shú.",
+          "vi": "Tôi rất thân/quen với anh ấy.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Với người thân quen, 跟他很熟 tự nhiên hơn 我熟悉他.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "熟悉",
+    "back": "quen thuộc, biết rõ",
+    "hint": "shúxī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "207201bf-2cc0-40d8-a22e-1ae2ce0c2825",
+    "source_lesson_vocab_id": null
+  }
+}

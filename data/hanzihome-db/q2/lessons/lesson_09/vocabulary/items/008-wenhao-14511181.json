@@ -1,0 +1,428 @@
+{
+  "id": "ad7ca85f-0122-403f-8a62-4dd34d0dfe57",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "问好",
+  "pinyin": "wènhǎo",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Cụm động-tân",
+    "raw_cn": "离合动词/动宾短语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Vấn hảo",
+    "meaning_vi": "hỏi thăm, gửi lời chào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hỏi thăm",
+      "gửi lời chào"
+    ],
+    "short_definition_vi": "hỏi thăm, gửi lời chào",
+    "textbook_focus_vi": "Âm Hán Việt: vấn hảo. Nghĩa chính: Hỏi thăm sức khỏe/tình hình. Gửi lời chào, gửi lời hỏi thăm. Thường dùng trong cấu trúc 向 + người + 问好. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "问",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / lời nói / âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng / lời nói / âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hỏi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con / trẻ nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con / trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, khỏe, ổn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "问 = hỏi; 好 = khỏe/ổn. 问好 = hỏi thăm, gửi lời chào hỏi.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 问好 khác 问问题.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "问好",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hỏi thăm, gửi lời chào.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打招呼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chào hỏi, bắt chuyện, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "问候",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hỏi thăm, trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "问问题",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hỏi vấn đề/câu hỏi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "祝好",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chúc tốt lành, thường cuối thư/tin nhắn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我向老师问好。",
+      "Tôi gửi lời chào thầy/cô.",
+      "他跟我打招呼。",
+      "Anh ấy chào tôi.",
+      "我想问一个问题。",
+      "Tôi muốn hỏi một câu hỏi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "db1932bb-ef84-4bfd-8d1d-fdba0ac9b44e",
+      "order": 1,
+      "zh": "向老师问好",
+      "pinyin": "",
+      "vi": "gửi lời hỏi thăm/chào thầy cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83704f35-720b-491d-992f-94b4dc03803f",
+      "order": 2,
+      "zh": "向父母问好",
+      "pinyin": "",
+      "vi": "gửi lời hỏi thăm bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03defe19-e99f-4f20-9221-0ff67dc34729",
+      "order": 3,
+      "zh": "代我问好",
+      "pinyin": "",
+      "vi": "thay tôi gửi lời hỏi thăm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2cb6fbe-6f00-457a-a9d7-5a500951d1ca",
+      "order": 4,
+      "zh": "请代我向……问好",
+      "pinyin": "",
+      "vi": "xin thay tôi gửi lời hỏi thăm đến...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ccab7e95-8163-4f39-adb8-ca2678f7b370",
+      "order": 5,
+      "zh": "问个好",
+      "pinyin": "",
+      "vi": "chào hỏi một tiếng, khẩu ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35f4b1a7-44fe-450c-b236-c9587ac8114a",
+      "order": 6,
+      "zh": "互相问好",
+      "pinyin": "",
+      "vi": "hỏi thăm/chào nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "226a9787-f894-4891-b87a-bd028828dc66",
+      "order": 1,
+      "zh": "请向你父母问好。",
+      "pinyin": "Qǐng xiàng nǐ fùmǔ wènhǎo.",
+      "vi": "Xin gửi lời hỏi thăm bố mẹ bạn.",
+      "analysis_vi": "向 + người + 问好 là mẫu chuẩn để gửi lời hỏi thăm.",
+      "highlight": [
+        "问好"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "ad7ca85f-0122-403f-8a62-4dd34d0dfe57"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c81786bb-d561-447a-a35f-01fb1587a4bc",
+      "order": 2,
+      "zh": "赵老师走进教室来以后，先向大家问好。",
+      "pinyin": "Zhào lǎoshī zǒu jìn jiàoshì lái yǐhòu, xiān xiàng dàjiā wènhǎo.",
+      "vi": "Sau khi thầy Triệu đi vào lớp về phía chúng tôi, thầy trước tiên chào hỏi mọi người.",
+      "analysis_vi": "走进教室来 dùng 来 vì hướng vào phía người nói. 先…… chỉ thứ tự hành động.",
+      "highlight": [
+        "问好"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "ad7ca85f-0122-403f-8a62-4dd34d0dfe57"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "82d9c9a1-ed98-4466-af14-36f613a2db06",
+      "order": 3,
+      "zh": "老师从香港开会回来以后，让我代他向参加研讨会的朋友们问好，还给他们捎去了一些新的教学资料。",
+      "pinyin": "Lǎoshī cóng Xiānggǎng kāihuì huílai yǐhòu, ràng wǒ dài tā xiàng cānjiā yántǎohuì de péngyoumen wènhǎo, hái gěi tāmen shāo qù le yìxiē xīn de jiàoxué zīliào.",
+      "vi": "Sau khi thầy/cô từ Hồng Kông họp về, thầy/cô bảo tôi thay thầy/cô gửi lời hỏi thăm đến những người bạn tham gia hội thảo, còn tiện gửi cho họ một ít tài liệu giảng dạy mới.",
+      "analysis_vi": "从香港……回来以后 là sau khi từ Hồng Kông trở về. 代他向……问好 = thay thầy/cô hỏi thăm. 捎去 dùng 去 vì gửi tài liệu ra xa phía người nói.",
+      "highlight": [
+        "问好"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "ad7ca85f-0122-403f-8a62-4dd34d0dfe57"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Mẫu 请代我向你父母问好 rất lịch sự và tự nhiên trong tiếng Trung. Khi nói với người lớn tuổi, bạn bè thân hoặc đối tác, câu này tạo cảm giác có giáo dưỡng.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "965434b8-5fc0-4133-92fb-e6fc84fc7047",
+      "order": 1,
+      "rule_vi": "Lưu ý sử dụng từ đúng văn cảnh, tránh dịch máy.",
+      "natural_examples": [
+        {
+          "zh": "问好老师 ❌",
+          "pinyin": "Nên nói:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "向老师问好。",
+          "pinyin": "Xiàng lǎoshī wènhǎo.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "问好",
+    "back": "hỏi thăm, gửi lời chào",
+    "hint": "wènhǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ad7ca85f-0122-403f-8a62-4dd34d0dfe57",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "b5e185f7-85bc-43b3-8e7e-f7ef4c25caa0",
+      "type": "note",
+      "order": 1,
+      "title": "没有什么呀！",
+      "structure": "没有什么 + N / VP",
+      "meaning_vi": "Trong câu này, 什么 không biểu thị nghi vấn mà chỉ sự vật/sự việc không xác định; dịch tự nhiên là 'không có gì mà / có gì đâu'.",
+      "examples": [
+        {
+          "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+          "zh": "没有什么问题。",
+          "vi": "Không có vấn đề gì.",
+          "highlight": [
+            "什么"
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Méiyǒu shénme wèntí."
+        },
+        {
+          "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
+          "zh": "我没有什么事。",
+          "vi": "Tôi không có việc gì đâu.",
+          "highlight": [
+            "什么"
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Wǒ méiyǒu shénme shì."
+        }
+      ],
+      "source_refs": [
+        "72ab83c3-9f46-4bac-b61c-5c84920d0a2a"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

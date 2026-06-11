@@ -1,0 +1,11 @@
+{
+  "id": "l13_section_009",
+  "type": "character_writing",
+  "order": 9,
+  "title": "写汉字",
+  "title_vi": "Luyện viết chữ Hán",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [],
+  "empty_reason_vi": "Đã kiểm lại PDF Bài 13: không thấy mục 写汉字 riêng; giữ section trống để không đổi cấu trúc file."
+}

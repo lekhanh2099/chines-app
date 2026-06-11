@@ -1,0 +1,298 @@
+{
+  "id": "41f4da0d-4537-467d-b99a-8e36caa6c722",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "制造",
+  "pinyin": "zhìzào",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chế tạo",
+    "meaning_vi": "chế tạo, sản xuất; tạo ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chế tạo",
+      "sản xuất",
+      "tạo ra"
+    ],
+    "short_definition_vi": "chế tạo, sản xuất",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "制",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao đứng",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chế tạo, quy định",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "造",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, chuyển động",
+            "position_vi": "bao ngoài/bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "告",
+            "hanviet": "cáo",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tạo, làm ra",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "制造 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 制造 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "生产",
+        "pinyin": "shēngchǎn",
+        "meaning_vi": "sản xuất",
+        "difference_vi": "Rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "制作",
+        "pinyin": "zhìzuò",
+        "meaning_vi": "chế tác/làm",
+        "difference_vi": "Video, món ăn, thủ công",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "造成",
+        "pinyin": "zàochéng",
+        "meaning_vi": "gây ra",
+        "difference_vi": "Thường hậu quả không tốt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "62b16c4c-edab-444a-ba4a-392277836c95",
+      "order": 1,
+      "zh": "制造汽车",
+      "pinyin": "zhìzào qìchē",
+      "vi": "chế tạo ô tô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d89fc75-c1a9-4e25-ab05-e17aa1386421",
+      "order": 2,
+      "zh": "制造产品",
+      "pinyin": "zhìzào chǎnpǐn",
+      "vi": "sản xuất sản phẩm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfe9e106-4182-43a3-9e73-19490369f162",
+      "order": 3,
+      "zh": "制造机会",
+      "pinyin": "zhìzào jīhuì",
+      "vi": "tạo cơ hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "40f4962e-7489-452d-9db7-c6481c99116e",
+      "order": 4,
+      "zh": "制造麻烦",
+      "pinyin": "zhìzào máfan",
+      "vi": "gây rắc rối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dfa305b6-8a86-4e58-8771-bcfd8fb359f8",
+      "order": 1,
+      "zh": "这家工厂制造汽车。",
+      "pinyin": "Zhè jiā gōngchǎng zhìzào qìchē.",
+      "vi": "Nhà máy này chế tạo ô tô.",
+      "analysis_vi": "制造 + sản phẩm.",
+      "highlight": [
+        "制造"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "41f4da0d-4537-467d-b99a-8e36caa6c722"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6fe0ee38-d16e-4eee-a7c1-6696b7df7baf",
+      "order": 2,
+      "zh": "这些小艺术品都是手工制造的。",
+      "pinyin": "Zhèxiē xiǎo yìshùpǐn dōu shì shǒugōng zhìzào de.",
+      "vi": "Những món đồ nghệ thuật nhỏ này đều làm thủ công.",
+      "analysis_vi": "是……的 nhấn cách thức.",
+      "highlight": [
+        "制造"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "41f4da0d-4537-467d-b99a-8e36caa6c722"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "中国制造 là cụm rất quen trên hàng hóa, tương đương Made in China.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1262350d-a385-405e-88bd-2624fe641cea",
+      "order": 1,
+      "rule_vi": "Không dùng 制造 cho nấu cơm/làm bài: nói 做饭, 做作业.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "制造",
+    "back": "chế tạo, sản xuất; tạo ra",
+    "hint": "zhìzào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "41f4da0d-4537-467d-b99a-8e36caa6c722",
+    "source_lesson_vocab_id": null
+  }
+}

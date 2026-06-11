@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_9d69b8f9d68e10b3",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "落",
+  "pinyin": "luò",
+  "meaning_vi": "rơi; rụng; tụt xuống",
+  "pos": "Động từ",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+    "type": "vocabulary_item",
+    "order": 25,
+    "hanzi": "落",
+    "pinyin": "luò",
+    "meaning_vi": "rơi; rụng; tụt xuống",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "落",
+      "back": "luò — rơi; rụng; tụt xuống",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/uploaded_crosscheck",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

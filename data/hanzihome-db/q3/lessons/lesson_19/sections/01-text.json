@@ -1,0 +1,173 @@
+{
+  "id": "section_text",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "text_block_001",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "无声的泪",
+      "title_vi": "Những giọt nước mắt lặng thầm",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "text_p_01",
+          "order": 1,
+          "zh": "多年前的一场意外，使我由正常人变成了一个残疾人，其中的人情冷暖常常让我流泪。说心里话，我对人性是有些失望的，尤其是在找工作受到歧视时。我几乎失去了求职的勇气，但为了生活，又不得不再三去求职，一次又一次地受到被拒绝的打击。",
+          "pinyin": "Duōnián qián de yì chǎng yìwài, shǐ wǒ yóu zhèngcháng rén biànchéng le yí ge cánjí rén, qízhōng de rénqíng lěngnuǎn chángcháng ràng wǒ liúlèi. Shuō xīnlǐhuà, wǒ duì rénxìng shì yǒuxiē shīwàng de, yóuqí shì zài zhǎo gōngzuò shòudào qíshì shí. Wǒ jīhū shīqù le qiúzhí de yǒngqì, dàn wèile shēnghuó, yòu bùdébù zàisān qù qiúzhí, yí cì yòu yí cì de shòudào bèi jùjué de dǎjī.",
+          "vi": "Một tai nạn nhiều năm trước khiến tôi từ một người bình thường trở thành một người khuyết tật. Những ấm lạnh của tình người trong đó thường khiến tôi rơi nước mắt. Nói thật lòng, tôi có phần thất vọng về nhân tính, nhất là khi bị kỳ thị trong lúc tìm việc. Tôi gần như mất hết dũng khí tìm việc, nhưng vì cuộc sống, lại buộc phải nhiều lần đi xin việc và hết lần này đến lần khác chịu cú sốc bị từ chối.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_02",
+          "order": 2,
+          "zh": "后来，我终于进了一家报社，负责信息处理与资料管理。这工作非常适合我，同事们对我也非常友好，非常关心，使我对人生又充满了信心。",
+          "pinyin": "Hòulái, wǒ zhōngyú jìn le yì jiā bàoshè, fùzé xìnxī chǔlǐ yǔ zīliào guǎnlǐ. Zhè gōngzuò fēicháng shìhé wǒ, tóngshìmen duì wǒ yě fēicháng yǒuhǎo, fēicháng guānxīn, shǐ wǒ duì rénshēng yòu chōngmǎn le xìnxīn.",
+          "vi": "Sau đó, cuối cùng tôi vào được một tòa soạn báo, phụ trách xử lý thông tin và quản lý tư liệu. Công việc này rất phù hợp với tôi; đồng nghiệp cũng rất thân thiện và quan tâm đến tôi, khiến tôi lại tràn đầy niềm tin vào cuộc đời.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_03",
+          "order": 3,
+          "zh": "有一次，发生了一个重大事件，同事们为了抢新闻忙得团团转，我的工作一下子变得重要起来。由于大家对资料的要求非常急，而我因为听不到声音而使工作变得很困难，这不仅延误了宝贵的时间，也出了不少差错。",
+          "pinyin": "Yǒu yí cì, fāshēng le yí ge zhòngdà shìjiàn, tóngshìmen wèile qiǎng xīnwén máng de tuántuán zhuàn, wǒ de gōngzuò yíxiàzi biàn de zhòngyào qǐlai. Yóuyú dàjiā duì zīliào de yāoqiú fēicháng jí, ér wǒ yīnwèi tīng bu dào shēngyīn ér shǐ gōngzuò biàn de hěn kùnnan, zhè bùjǐn yánwù le bǎoguì de shíjiān, yě chū le bù shǎo chācuò.",
+          "vi": "Một lần, xảy ra một sự kiện lớn. Các đồng nghiệp vì tranh tin mà bận xoay như chong chóng, công việc của tôi bỗng trở nên quan trọng. Do mọi người cần tư liệu rất gấp, còn tôi vì không nghe được âm thanh nên công việc trở nên rất khó khăn; điều này không chỉ làm chậm trễ thời gian quý báu mà còn gây ra không ít sai sót.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_04",
+          "order": 4,
+          "zh": "事后，同事的不满，使得单位领导不得不重新考虑，我到底适合不适合继续在这儿工作。有人提出把我调离报社。这不仅是为了单位，也是为我好。但我实在舍不得离开这个我热爱的工作岗位，就跑去向领导保证，我可以认真改进，可以加快速度，一定会胜任这份工作。",
+          "pinyin": "Shìhòu, tóngshì de bùmǎn, shǐde dānwèi lǐngdǎo bùdébù chóngxīn kǎolǜ, wǒ dàodǐ shìhé bù shìhé jìxù zài zhèr gōngzuò. Yǒu rén tíchū bǎ wǒ diàolí bàoshè. Zhè bùjǐn shì wèile dānwèi, yě shì wèi wǒ hǎo. Dàn wǒ shízài shěbude líkāi zhège wǒ rè’ài de gōngzuò gǎngwèi, jiù pǎo qù xiàng lǐngdǎo bǎozhèng, wǒ kěyǐ rènzhēn gǎijìn, kěyǐ jiākuài sùdù, yídìng huì shèngrèn zhè fèn gōngzuò.",
+          "vi": "Sau sự việc, sự không hài lòng của đồng nghiệp khiến lãnh đạo đơn vị buộc phải xem xét lại rốt cuộc tôi có còn phù hợp để tiếp tục làm việc ở đây hay không. Có người đề xuất điều chuyển tôi khỏi tòa soạn. Việc này không chỉ vì đơn vị, mà cũng là vì tốt cho tôi. Nhưng tôi thật sự không nỡ rời khỏi vị trí công việc mà mình yêu quý, bèn chạy đến bảo đảm với lãnh đạo rằng tôi có thể nghiêm túc cải tiến, có thể tăng tốc độ, nhất định sẽ đảm nhiệm được công việc này.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_05",
+          "order": 5,
+          "zh": "从领导的眼神和表情中我看不出他是什么态度，可是，我想，他不可能让我再待在这儿了。这对我真是个沉重的打击。由于疑心作怪，我感到同事们不再像以往那样热情了。过去他们有任何活动都会叫我参加，可是最近他们每星期一、三、五晚上都有活动，地点就在活动室，却根本不通知我。我也故意装作不知道。一天，我实在控制不住了，就趁他们活动时，装作要拿东西，进了活动室。",
+          "pinyin": "Cóng lǐngdǎo de yǎnshén hé biǎoqíng zhōng wǒ kàn bu chū tā shì shénme tàidu, kěshì, wǒ xiǎng, tā bù kěnéng ràng wǒ zài dāi zài zhèr le. Zhè duì wǒ zhēn shì ge chénzhòng de dǎjī. Yóuyú yíxīn zuòguài, wǒ gǎndào tóngshìmen bú zài xiàng yǐwǎng nàyàng rèqíng le. Guòqù tāmen yǒu rènhé huódòng dōu huì jiào wǒ cānjiā, kěshì zuìjìn tāmen měi xīngqī yī, sān, wǔ wǎnshang dōu yǒu huódòng, dìdiǎn jiù zài huódòngshì, què gēnběn bù tōngzhī wǒ. Wǒ yě gùyì zhuāngzuò bù zhīdào. Yì tiān, wǒ shízài kòngzhì bú zhù le, jiù chèn tāmen huódòng shí, zhuāngzuò yào ná dōngxi, jìn le huódòngshì.",
+          "vi": "Từ ánh mắt và biểu cảm của lãnh đạo, tôi không nhìn ra thái độ của ông ấy là gì, nhưng tôi nghĩ ông ấy không thể để tôi ở lại đây nữa. Điều này thật sự là một cú sốc nặng nề đối với tôi. Vì lòng nghi ngờ tác quái, tôi cảm thấy đồng nghiệp không còn nhiệt tình như trước. Trước đây hễ có hoạt động gì họ đều gọi tôi tham gia, nhưng gần đây tối thứ Hai, thứ Tư, thứ Sáu hằng tuần họ đều có hoạt động, địa điểm ở ngay phòng hoạt động, vậy mà hoàn toàn không thông báo cho tôi. Tôi cũng cố ý giả vờ không biết. Một hôm, tôi thật sự không kìm được nữa, liền nhân lúc họ đang hoạt động, giả vờ muốn lấy đồ rồi đi vào phòng hoạt động.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_06",
+          "order": 6,
+          "zh": "当我打开大门时，他们都吓了一跳，而我更是吃了一惊。原来他们不是在打牌或举行舞会等活动，而是请了一位手语老师在教他们学手语。不仅同事们个个都在，连领导也在。",
+          "pinyin": "Dāng wǒ dǎkāi dàmén shí, tāmen dōu xià le yí tiào, ér wǒ gèng shì chī le yì jīng. Yuánlái tāmen bú shì zài dǎpái huò jǔxíng wǔhuì děng huódòng, ér shì qǐng le yí wèi shǒuyǔ lǎoshī zài jiāo tāmen xué shǒuyǔ. Bùjǐn tóngshìmen gè ge dōu zài, lián lǐngdǎo yě zài.",
+          "vi": "Khi tôi mở cửa lớn, họ đều giật mình, còn tôi thì càng kinh ngạc hơn. Hóa ra họ không phải đang đánh bài hay tổ chức vũ hội gì, mà đã mời một giáo viên thủ ngữ đến dạy họ học ngôn ngữ ký hiệu. Không chỉ từng đồng nghiệp đều có mặt, ngay cả lãnh đạo cũng ở đó.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_07",
+          "order": 7,
+          "zh": "为了解决在工作中与我沟通的困难，同事们都放弃了下班后的休息时间，认真地学手语，来配合我的工作。为了不把我调走，他们付出了多少心血啊！",
+          "pinyin": "Wèile jiějué zài gōngzuò zhōng yǔ wǒ gōutōng de kùnnan, tóngshìmen dōu fàngqì le xiàbān hòu de xiūxi shíjiān, rènzhēn de xué shǒuyǔ, lái pèihé wǒ de gōngzuò. Wèile bù bǎ wǒ diàozǒu, tāmen fùchū le duōshǎo xīnxuè a!",
+          "vi": "Để giải quyết khó khăn trong việc giao tiếp với tôi khi làm việc, các đồng nghiệp đều từ bỏ thời gian nghỉ sau giờ làm, nghiêm túc học thủ ngữ để phối hợp với công việc của tôi. Để không điều chuyển tôi đi, họ đã bỏ ra biết bao tâm huyết!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_08",
+          "order": 8,
+          "zh": "第一次，我发现了自己的无知，也发现了人性的崇高和美好；也是第一次，我流下了不是感伤而是感激的泪水。",
+          "pinyin": "Dì yí cì, wǒ fāxiàn le zìjǐ de wúzhī, yě fāxiàn le rénxìng de chónggāo hé měihǎo; yě shì dì yí cì, wǒ liú xià le bú shì gǎnshāng ér shì gǎnjī de lèishuǐ.",
+          "vi": "Lần đầu tiên, tôi nhận ra sự thiếu hiểu biết của mình, cũng nhận ra sự cao cả và tốt đẹp của nhân tính; cũng là lần đầu tiên, tôi rơi những giọt nước mắt không phải vì đau buồn mà vì cảm kích.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "text_p_09",
+          "order": 9,
+          "zh": "（根据郑春妹的文章《无语人生》改写）",
+          "pinyin": "Gēnjù Zhèng Chūnmèi de wénzhāng “Wúyǔ rénshēng” gǎixiě.",
+          "vi": "Phỏng theo bài viết “Cuộc đời không lời” của Trịnh Xuân Muội.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "lines": [],
+      "comprehension_questions": [
+        {
+          "id": "comp_q_001",
+          "question": "“我”为什么对人性有些失望？",
+          "answer": "因为“我”在找工作时受到歧视，一次又一次地受到被拒绝的打击。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "comp_q_002",
+          "question": "“我”在报社做什么工作？“我”对自己的工作满意吗？",
+          "answer": "“我”负责信息处理与资料管理。这个工作非常适合“我”，同事们也非常友好、关心，使“我”对人生又充满了信心，所以“我”对这份工作很满意。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "comp_q_003",
+          "question": "后来因为什么事引起了同事的不满？",
+          "answer": "因为发生重大事件时，大家急需资料，而“我”因为听不到声音使工作变得困难，不仅延误了宝贵的时间，也出了不少差错。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "comp_q_004",
+          "question": "“我”希望领导把“我”调离这个单位吗？",
+          "answer": "不希望。“我”实在舍不得离开这个自己热爱的工作岗位，还向领导保证会认真改进、加快速度，胜任这份工作。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "comp_q_005",
+          "question": "“我”为什么流下了感激的泪水？",
+          "answer": "因为“我”发现同事和领导为了配合“我”的工作、避免把“我”调走，放弃下班后的休息时间认真学习手语，付出了很多心血。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

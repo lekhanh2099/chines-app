@@ -1,0 +1,89 @@
+[
+  {
+    "id": "2c9d07ca-875b-458f-a039-addeb7b245f9",
+    "order": 1,
+    "title_vi": "Bị động / chịu tác động",
+    "words": [
+      "被",
+      "让",
+      "叫",
+      "受"
+    ],
+    "notes": []
+  },
+  {
+    "id": "8d2f6012-ca0a-44fe-9dcb-5f71493f3cdb",
+    "order": 2,
+    "title_vi": "Tai nạn / bị thương / cơ thể",
+    "words": [
+      "腿",
+      "撞",
+      "倒",
+      "伤",
+      "要紧",
+      "不要紧",
+      "流",
+      "血",
+      "骨头",
+      "躺"
+    ],
+    "notes": []
+  },
+  {
+    "id": "4ea834bd-215f-44a2-aa1b-6e93c643c39c",
+    "order": 3,
+    "title_vi": "Ra đường / giao thông / người liên quan",
+    "words": [
+      "上街",
+      "街",
+      "司机",
+      "拉",
+      "自行车"
+    ],
+    "notes": []
+  },
+  {
+    "id": "4e724dd0-add1-47d5-8be4-71521e4b6cb0",
+    "order": 4,
+    "title_vi": "Sự cố xấu / mất đồ / bị lừa",
+    "words": [
+      "钱包儿",
+      "偷",
+      "小偷",
+      "遇到",
+      "淋",
+      "落汤鸡",
+      "受骗",
+      "骗"
+    ],
+    "notes": []
+  },
+  {
+    "id": "0889d9d9-1e74-4de9-b041-82a2428cac82",
+    "order": 5,
+    "title_vi": "Cảm xúc / đánh giá sự việc",
+    "words": [
+      "不好意思",
+      "故意",
+      "小心",
+      "唉",
+      "可气",
+      "傻",
+      "运气"
+    ],
+    "notes": []
+  },
+  {
+    "id": "b5633818-f527-4077-9dae-51ce7c0d27d9",
+    "order": 6,
+    "title_vi": "Thói quen / quyết định / xử phạt",
+    "words": [
+      "抽烟",
+      "戒",
+      "罚",
+      "决定",
+      "浪费"
+    ],
+    "notes": []
+  }
+]

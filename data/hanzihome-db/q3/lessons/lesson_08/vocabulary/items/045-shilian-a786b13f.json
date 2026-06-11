@@ -1,0 +1,254 @@
+{
+  "id": "e5f6019a-a286-44cf-890d-f3a1cd519931",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "失恋",
+  "pinyin": "shīliàn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ trạng thái",
+    "raw_cn": "动词 / 情感状态名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thất luyến",
+    "meaning_vi": "thất tình, mất tình yêu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thất tình",
+      "mất tình yêu"
+    ],
+    "short_definition_vi": "thất tình, mất tình yêu",
+    "textbook_focus_vi": "失 = mất, 恋 = tình yêu/lưu luyến. 失恋 = mất tình yêu, thất tình.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình yêu, cảm xúc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "失",
+        "lishu_vi": "thất",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất, sai, thất bại",
+        "modern_logic_vi": "Trong từ này, 失 góp phần tạo nghĩa 'mất, sai, thất bại'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "恋",
+        "lishu_vi": "luyến",
+        "structure_note_vi": "亦 + 心; chữ giản thể, nhớ theo nghĩa tình cảm trong lòng.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lưu luyến, yêu nhớ",
+        "modern_logic_vi": "Trong từ này, 恋 góp phần tạo nghĩa 'lưu luyến, yêu nhớ'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "失 = mất, 恋 = tình yêu/lưu luyến. 失恋 = mất tình yêu, thất tình.",
+    "memory_tip_vi": "Nhớ qua cụm: 失恋了 = thất tình rồi.",
+    "warning_vi": "失恋 không phải đang yêu.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分手",
+        "pinyin": "fēnshǒu",
+        "meaning_vi": "chia tay",
+        "difference_vi": "Trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "被甩",
+        "pinyin": "bèi shuǎi",
+        "meaning_vi": "bị đá",
+        "difference_vi": "Khẩu ngữ mạnh hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "失恋 không phải đang yêu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fc6e3091-3344-45dc-a4ee-41ce5ff5eb2f",
+      "order": 1,
+      "zh": "失恋了",
+      "pinyin": "shīliàn le",
+      "vi": "thất tình rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a66e2f3-a3f4-476b-9ec3-ca1da7de3047",
+      "order": 2,
+      "zh": "失恋以后",
+      "pinyin": "shīliàn yǐhòu",
+      "vi": "sau khi thất tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "984d357b-56c8-4a43-b91a-78df98ae8b98",
+      "order": 3,
+      "zh": "失恋的滋味",
+      "pinyin": "shīliàn de zīwèi",
+      "vi": "cảm giác thất tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1b102e4a-e647-4dc9-a50c-1d448c4e5ac6",
+      "order": 1,
+      "zh": "他以为赵霞喜欢的是余辉，所以觉得自己快要失恋了。",
+      "pinyin": "Tā yǐwéi Zhào Xiá xǐhuan de shì Yú Huī, suǒyǐ juéde zìjǐ kuàiyào shīliàn le.",
+      "vi": "Anh ấy tưởng người Triệu Hà thích là Dư Huy nên thấy mình sắp thất tình.",
+      "analysis_vi": "快要……了 = sắp xảy ra.",
+      "highlight": [
+        "失恋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5f6019a-a286-44cf-890d-f3a1cd519931"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "失恋了 dùng phổ biến nhưng dễ chạm cảm xúc, nên cẩn thận khi nói với người đang đau thật.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b74c637e-c1d9-4b6e-a838-727bada24dc1",
+      "order": 1,
+      "rule_vi": "失恋 không phải đang yêu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他们失恋了。",
+          "pinyin": "Tāmen shīliàn le.",
+          "vi": "Sai nếu muốn nói họ đang yêu nhau.",
+          "note_vi": "失恋 là thất tình/chia tay đau khổ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他们在谈恋爱。",
+          "pinyin": "Tāmen zài tán liàn’ài.",
+          "vi": "Họ đang yêu nhau.",
+          "note_vi": "Nói đang yêu dùng 谈恋爱.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "失恋",
+    "back": "thất tình, mất tình yêu",
+    "hint": "shīliàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e5f6019a-a286-44cf-890d-f3a1cd519931",
+    "source_lesson_vocab_id": null
+  }
+}

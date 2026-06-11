@@ -1,0 +1,221 @@
+{
+  "id": "a4c9ad09-1ee2-44be-a223-d96ffef6b7e7",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "单身",
+  "pinyin": "dānshēn",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ trạng thái",
+    "raw_cn": "名词 / 状态形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đơn thân",
+    "meaning_vi": "độc thân; một mình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "độc thân; một mình"
+    ],
+    "short_definition_vi": "Không có vợ/chồng/người yêu trong hiện tại, hoặc một mình tùy ngữ cảnh.",
+    "textbook_focus_vi": "Dùng trong 单身生活, 单身汉.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "单",
+        "lishu_vi": "đơn",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đơn/lẻ",
+        "modern_logic_vi": "đơn/lẻ",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "身",
+        "lishu_vi": "thân",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân/bản thân",
+        "modern_logic_vi": "thân/bản thân",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "单 + 身 = một thân một mình.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "未婚",
+        "pinyin": "wèihūn",
+        "meaning_vi": "chưa kết hôn",
+        "difference_vi": "未婚 là trạng thái pháp lý; 单身 là trạng thái quan hệ hiện tại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "87db1ac6-36fb-4d74-b8f4-8c2400a4d63e",
+      "order": 1,
+      "zh": "单身生活",
+      "pinyin": "",
+      "vi": "cuộc sống độc thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "314ad96e-ac33-46e1-a8d9-b5861ee720af",
+      "order": 2,
+      "zh": "单身汉",
+      "pinyin": "",
+      "vi": "đàn ông độc thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfa0aabb-5f59-4106-9638-5455c1c5b668",
+      "order": 3,
+      "zh": "保持单身",
+      "pinyin": "",
+      "vi": "giữ độc thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f252fead-b1ce-423c-b0b9-7d2b69e456f6",
+      "order": 4,
+      "zh": "现在单身",
+      "pinyin": "",
+      "vi": "hiện đang độc thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "674a5282-27ff-4594-bf81-73b67e5000fa",
+      "order": 1,
+      "zh": "他现在还是单身。",
+      "pinyin": "",
+      "vi": "Hiện tại anh ấy vẫn độc thân.",
+      "analysis_vi": "还是 nhấn trạng thái tiếp tục.",
+      "highlight": [
+        "单身"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a4c9ad09-1ee2-44be-a223-d96ffef6b7e7"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e31aca51-a8bd-400d-a47a-2aeef052edae",
+      "order": 2,
+      "zh": "虽然他是单身，但是他一点儿也不觉得孤单。",
+      "pinyin": "",
+      "vi": "Tuy anh ấy độc thân nhưng không hề thấy cô đơn.",
+      "analysis_vi": "虽然……但是…….",
+      "highlight": [
+        "单身"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a4c9ad09-1ee2-44be-a223-d96ffef6b7e7"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1aa22697-68e3-4fcb-bc99-ab1b466a15a0",
+      "order": 1,
+      "rule_vi": "Không dùng 单身 để nói mọi trường hợp “đi một mình”; dùng 一个人.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 单身 để nói mọi trường hợp “đi một mình”; dùng 一个人.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "单身",
+    "back": "độc thân; một mình",
+    "hint": "dānshēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a4c9ad09-1ee2-44be-a223-d96ffef6b7e7",
+    "source_lesson_vocab_id": null
+  }
+}

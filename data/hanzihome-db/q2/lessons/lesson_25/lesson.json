@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q2",
+  "lessonIndex": 25,
+  "id": "a1201520-a569-4744-b315-23e86882cf64",
+  "title": {
+    "zh": "吉利的数字",
+    "pinyin": "Jílì de shùzì",
+    "vi": "Những con số may mắn",
+    "en": "Lucky numbers"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_25.json",
+    "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_25_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 9,
+    "lessonVocabItems": 45,
+    "sourceDeepVocabItems": 67,
+    "materializedVocabItems": 71,
+    "syntheticVocabItems": 4,
+    "hanziOnlyVocabMatches": 2,
+    "relations": 223,
+    "checkNeededRelations": 6,
+    "checkNeededVocabItems": 4,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

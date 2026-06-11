@@ -1,0 +1,401 @@
+{
+  "id": "b0a6d630-9705-445e-bee0-b1651ca55453",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "假如",
+  "pinyin": "jiǎrú",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giả như",
+    "meaning_vi": "nếu như, giả sử",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nếu như",
+      "giả sử"
+    ],
+    "short_definition_vi": "nếu như, giả sử",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "假",
+        "lishu_vi": "giả",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giả, nếu, giả sử",
+        "modern_logic_vi": "假如 đưa giả thiết.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "如",
+        "lishu_vi": "như",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ giới",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như, nếu",
+        "modern_logic_vi": "假如 = giả sử như vậy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "假如 được dùng trong Bài 20 với nghĩa: nếu như, giả sử.",
+    "memory_tip_vi": "Nhớ qua cụm 假如有一天.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "如果",
+        "pinyin": "rúguǒ",
+        "meaning_vi": "nếu",
+        "difference_vi": "Phổ biến nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "要是",
+        "pinyin": "yàoshi",
+        "meaning_vi": "nếu",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e470bd1e-2c1c-4cc2-8923-a9f2ba9867bd",
+      "order": 1,
+      "zh": "假如有一天",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "807b8623-13cb-4a6d-9cd1-a784a9de7347",
+      "order": 2,
+      "zh": "假如我是你",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "328ff571-ee6f-4ee0-a989-5e3a5dc98926",
+      "order": 3,
+      "zh": "假如没有事实",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5cb2b5e8-d3d3-4de4-a22d-d39e2540647a",
+      "order": 4,
+      "zh": "假如她被录取",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1adc8a9c-7acf-47be-95c3-305b38e7e857",
+      "order": 5,
+      "zh": "假如你不同意",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0788567-2c50-4a52-bd25-df6e68fecbae",
+      "order": 6,
+      "zh": "假如……就……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "10ba6d40-4fd1-42ed-a208-800b59c47c21",
+      "order": 1,
+      "zh": "假如我是你，我会说实话。",
+      "pinyin": "Jiǎrú wǒ shì nǐ, wǒ huì shuō shíhuà.",
+      "vi": "Nếu tôi là bạn, tôi sẽ nói thật.",
+      "analysis_vi": "假如 đặt giả thiết.",
+      "highlight": [
+        "假如"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b0a6d630-9705-445e-bee0-b1651ca55453"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "852016e0-07eb-42ca-9a1c-633ce1efcae5",
+      "order": 2,
+      "zh": "假如一个学生不敢反对错误的理论，只会接受导师的观点，那他很难成为真正的研究者。",
+      "pinyin": "Jiǎrú yí ge xuésheng bù gǎn fǎnduì cuòwù de lǐlùn, zhǐ huì jiēshòu dǎoshī de guāndiǎn, nà tā hěn nán chéngwéi zhēnzhèng de yánjiūzhě.",
+      "vi": "Nếu một sinh viên không dám phản đối lý thuyết sai mà chỉ biết chấp nhận quan điểm của thầy, người đó khó thành nhà nghiên cứu thực sự.",
+      "analysis_vi": "假如……那…… đưa giả thiết-kết luận.",
+      "highlight": [
+        "假如"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b0a6d630-9705-445e-bee0-b1651ca55453"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "假如 hợp văn kể chuyện, lập luận, tình huống giả định có tính suy nghĩ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a3d670f7-771e-498d-ba37-127eaa6884d0",
+      "order": 1,
+      "rule_vi": "Không lẫn 假如 với 比如.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "比如我有时间，我就去。",
+          "pinyin": "Bǐrú wǒ yǒu shíjiān, wǒ jiù qù.",
+          "vi": "Ví dụ tôi có thời gian thì tôi đi.",
+          "note_vi": "比如 là ví dụ, không phải nếu.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "假如我有时间，我就去。",
+          "pinyin": "Jiǎrú wǒ yǒu shíjiān, wǒ jiù qù.",
+          "vi": "Nếu tôi có thời gian, tôi sẽ đi.",
+          "note_vi": "假如 = nếu như.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "假如",
+    "back": "nếu như, giả sử",
+    "hint": "jiǎrú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b0a6d630-9705-445e-bee0-b1651ca55453",
+    "source_lesson_vocab_id": null
+  }
+}

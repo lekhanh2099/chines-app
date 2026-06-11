@@ -1,0 +1,412 @@
+{
+  "id": "b3c273b0-91b1-48fb-8308-b811d4068dab",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "羽毛球",
+  "pinyin": "yǔmáoqiú",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vũ mao cầu",
+    "meaning_vi": "cầu lông; quả cầu lông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cầu lông",
+      "quả cầu lông"
+    ],
+    "short_definition_vi": "cầu lông",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "羽",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "羽",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "lông vũ, cánh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "羽 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "羽",
+            "hanviet": "vũ",
+            "meaning_vi": "lông vũ, cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羽",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "lông vũ, cánh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "羽 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lông vũ",
+        "modern_logic_vi": "Trong từ 羽毛球, chữ 羽 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "毛",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "毛",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mao",
+          "radical_name_zh": "",
+          "hanviet": "mao",
+          "meaning_vi": "lông",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "毛 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "毛",
+            "hanviet": "mao",
+            "meaning_vi": "lông",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "毛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mao",
+              "radical_name_zh": "",
+              "hanviet": "mao",
+              "meaning_vi": "lông",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "毛 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lông",
+        "modern_logic_vi": "Trong từ 羽毛球, chữ 毛 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "球",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc/Vương",
+          "radical_name_zh": "",
+          "hanviet": "ngọc/vương",
+          "meaning_vi": "ngọc, vật quý; dạng 王 ở bên trái",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc/vương",
+            "meaning_vi": "ngọc, vật quý; dạng 王 ở bên trái",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc/Vương",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc, vật quý; dạng 王 ở bên trái",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bóng/quả cầu",
+        "modern_logic_vi": "Trong từ 羽毛球, chữ 球 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "羽毛球 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 我周末常常去打羽毛球。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "乒乓球",
+        "pinyin": "pīngpāngqiú",
+        "meaning_vi": "bóng bàn",
+        "difference_vi": "Môn thể thao khác, cũng dùng 打.",
+        "register_vi": "",
+        "example_zh": "我喜欢打乒乓球。",
+        "example_vi": "Tôi thích chơi bóng bàn.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f30920e6-1939-4b62-b07c-78ed03709f5f",
+      "order": 1,
+      "zh": "打羽毛球",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "275c2a43-89aa-449a-ade0-a8113fd0ae12",
+      "order": 2,
+      "zh": "羽毛球拍",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "406d15e4-ed90-412b-b41c-4261f390cd2c",
+      "order": 3,
+      "zh": "羽毛球场",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d02dcba-2fe4-4f29-9b5a-3b21ad7e81b2",
+      "order": 4,
+      "zh": "羽毛球比赛",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24a4c29c-6f36-47b7-a305-20f7e7787d84",
+      "order": 5,
+      "zh": "羽毛球双打",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fdecd375-f8d8-467c-8247-78a421364abf",
+      "order": 6,
+      "zh": "羽毛球搭档",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68f12b23-45eb-4da3-8045-d39dd6aef3a6",
+      "order": 7,
+      "zh": "羽毛球运动员",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5034eca5-cf80-4dd2-b09e-4c1ff811d7f4",
+      "order": 1,
+      "zh": "我周末常常去打羽毛球。",
+      "pinyin": "",
+      "vi": "Cuối tuần tôi thường đi đánh cầu lông.",
+      "analysis_vi": "Ví dụ dùng 羽毛球 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "羽毛球"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b3c273b0-91b1-48fb-8308-b811d4068dab"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "羽毛球 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "036b31fb-5adb-4858-a6d0-32e755ba4fdf",
+      "order": 1,
+      "rule_vi": "Nói chuẩn là 打羽毛球; 玩羽毛球 chỉ là chơi cho vui, kém chuẩn hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "羽毛球",
+    "back": "cầu lông; quả cầu lông",
+    "hint": "yǔmáoqiú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b3c273b0-91b1-48fb-8308-b811d4068dab",
+    "source_lesson_vocab_id": null
+  }
+}

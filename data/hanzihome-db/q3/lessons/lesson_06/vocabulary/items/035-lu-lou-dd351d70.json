@@ -1,0 +1,279 @@
+{
+  "id": "c7f75128-d7d6-42df-b422-fa7c909ff71e",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "露",
+  "pinyin": "lù / lòu",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lộ",
+    "meaning_vi": "sương; lộ ra; để lộ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sương",
+      "lộ ra",
+      "để lộ"
+    ],
+    "short_definition_vi": "sương",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "露",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "雨",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "mưa, hiện tượng khí trời",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "雨 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa, hiện tượng khí trời",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa, hiện tượng khí trời",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "雨 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sương; lộ ra",
+        "modern_logic_vi": "Trong từ 露, chữ 露 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "露 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 她露出了高兴的表情。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "出现",
+        "pinyin": "chūxiàn",
+        "meaning_vi": "xuất hiện",
+        "difference_vi": "出现 trung tính; 露出 nhấn cái bị che/ẩn lộ ra.",
+        "register_vi": "",
+        "example_zh": "问题出现了。",
+        "example_vi": "Vấn đề xuất hiện rồi.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "541ab78d-8b15-42c5-b9b6-4aa619156838",
+      "order": 1,
+      "zh": "露出笑容",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1214a727-a696-4eb4-aea0-f12db23032ed",
+      "order": 2,
+      "zh": "露出表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0a552a7-eadd-4f84-89a2-0bb45bffb0ad",
+      "order": 3,
+      "zh": "露出牙齿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f2c0292-3160-4802-a1d9-5bd4f559df79",
+      "order": 4,
+      "zh": "露出来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "486a783c-9233-4651-8a23-da2d36baecbf",
+      "order": 5,
+      "zh": "露脸",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a85d85b8-ec78-4254-a13f-e960ece52be2",
+      "order": 6,
+      "zh": "露马脚",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0823389a-ab42-456a-91dd-b3b4f30423be",
+      "order": 7,
+      "zh": "暴露问题",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5908e349-df4a-4b22-bb23-bbb844a47089",
+      "order": 1,
+      "zh": "她露出了高兴的表情。",
+      "pinyin": "",
+      "vi": "Cô ấy lộ ra vẻ mặt vui mừng.",
+      "analysis_vi": "Ví dụ dùng 露 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "露"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7f75128-d7d6-42df-b422-fa7c909ff71e"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "露 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8568c0f0-ff6f-4132-99c2-51c8ec5f27d7",
+      "order": 1,
+      "rule_vi": "露水 đọc lùshuǐ; 露出笑容 trong khẩu ngữ thường đọc lòuchū.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "露",
+    "back": "sương; lộ ra; để lộ",
+    "hint": "lù / lòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c7f75128-d7d6-42df-b422-fa7c909ff71e",
+    "source_lesson_vocab_id": null
+  }
+}

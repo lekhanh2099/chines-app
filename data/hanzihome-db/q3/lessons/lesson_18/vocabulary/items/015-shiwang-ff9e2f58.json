@@ -1,0 +1,278 @@
+{
+  "id": "a2ca3631-94f2-4fb0-baf4-8b629812d418",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "失望",
+  "pinyin": "shīwàng",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ",
+    "raw_cn": "形 / 动",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thất vọng",
+    "meaning_vi": "thất vọng, mất hy vọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thất vọng",
+      "mất hy vọng"
+    ],
+    "short_definition_vi": "thất vọng, mất hy vọng",
+    "textbook_focus_vi": "Hy vọng không thành nên buồn/hụt hẫng hoặc mất lòng tin.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "失",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất/sai sót",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "望",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục/nguyệt",
+            "meaning_vi": "thân thể/trăng tùy chữ",
+            "position_vi": "dưới/trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "王",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "dưới/phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hy vọng/nhìn xa",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Hy vọng không thành nên buồn/hụt hẫng hoặc mất lòng tin.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 失望 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "难过",
+        "pinyin": "",
+        "meaning_vi": "buồn",
+        "difference_vi": "Rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "灰心",
+        "pinyin": "",
+        "meaning_vi": "nản lòng",
+        "difference_vi": "Mất tinh thần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "绝望",
+        "pinyin": "",
+        "meaning_vi": "tuyệt vọng",
+        "difference_vi": "Nặng hơn nhiều.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "28c0e630-8711-4713-ab8b-0b6c01a336c5",
+      "order": 1,
+      "zh": "感到失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4639ed3a-615c-462b-9a96-87bed43606bd",
+      "order": 2,
+      "zh": "很失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d94dfc55-0c3d-494f-b4d7-e6bb822f4f65",
+      "order": 3,
+      "zh": "有点儿失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a77e1b0d-5181-45b1-9b41-59e4b182e715",
+      "order": 4,
+      "zh": "对他失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f98cb02e-0f50-49a6-8f60-eb74a0df0624",
+      "order": 5,
+      "zh": "让人失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f74594b7-a016-4a06-9c1a-050325af1231",
+      "order": 1,
+      "zh": "西西脸上显出一点儿失望。",
+      "pinyin": "",
+      "vi": "Trên mặt Tây Tây lộ ra chút thất vọng.",
+      "analysis_vi": "一点儿 làm mức độ nhẹ.",
+      "highlight": [
+        "失望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2ca3631-94f2-4fb0-baf4-8b629812d418"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e1082421-aff2-4087-ac7a-0a256d390138",
+      "order": 1,
+      "rule_vi": "Không nói 我失望你.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我失望你。",
+          "pinyin": "",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Thiếu 对 hoặc 让 cấu trúc.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我对你很失望。",
+          "pinyin": "",
+          "vi": "Tôi rất thất vọng về bạn.",
+          "note_vi": "对 + người + 失望.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "失望",
+    "back": "thất vọng, mất hy vọng",
+    "hint": "shīwàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a2ca3631-94f2-4fb0-baf4-8b629812d418",
+    "source_lesson_vocab_id": null
+  }
+}

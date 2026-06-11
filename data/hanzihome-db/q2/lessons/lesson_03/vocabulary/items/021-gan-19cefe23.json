@@ -1,0 +1,410 @@
+{
+  "id": "0548b0df-0140-472f-be84-af23f5078745",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "赶",
+  "pinyin": "gǎn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "traffic",
+    "action"
+  ],
+  "meaning": {
+    "hanviet": "Cản / Cản đuổi",
+    "meaning_vi": "vội; đuổi; kịp; chạy cho kịp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vội",
+      "đuổi",
+      "kịp",
+      "chạy cho kịp"
+    ],
+    "short_definition_vi": "vội; đuổi; kịp; chạy cho kịp",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "traffic, action",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "赶",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi/chạy",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi; chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "干",
+            "hanviet": "can",
+            "meaning_vi": "phần phải gợi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đuổi, chạy cho kịp, vội làm, xua",
+        "modern_logic_vi": "Có 走 nên nhớ lõi di chuyển gấp/đuổi theo cho kịp.",
+        "warning_vi": "赶 không chỉ là 'đuổi'.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi; chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "赶 có lõi là di chuyển/làm gấp để kịp; mở rộng sang chạy deadline.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "赶快",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nhanh lên, mau lên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "来得及",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Kịp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赶得上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đuổi/kịp được.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "迟到",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đến muộn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "错过",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bỏ lỡ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "赶不上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Không kịp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "赶得上",
+        "right": "赶不上",
+        "meaning_vi": "Kịp đối lập với không kịp.",
+        "note_vi": "",
+        "notes": []
+      },
+      {
+        "left": "来得及",
+        "right": "来不及",
+        "meaning_vi": "Kịp đối lập với không kịp.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a3fe0188-e9bc-49bc-ac84-baec338cf05f",
+      "order": 1,
+      "zh": "赶时间",
+      "pinyin": "",
+      "vi": "vội thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77db680b-b631-404d-91ca-b013c144b061",
+      "order": 2,
+      "zh": "赶车",
+      "pinyin": "",
+      "vi": "vội bắt xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e11db11a-de49-4299-a16d-9c8503daefa7",
+      "order": 3,
+      "zh": "赶火车",
+      "pinyin": "",
+      "vi": "vội bắt tàu hỏa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71e16dfb-9bff-4175-a732-686e0831aa03",
+      "order": 4,
+      "zh": "赶飞机",
+      "pinyin": "",
+      "vi": "vội bắt máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45e953db-87e1-41d4-933c-8d04ff3d47a8",
+      "order": 5,
+      "zh": "赶到",
+      "pinyin": "",
+      "vi": "vội đến/kịp đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ebfdd90-c588-4b2d-9689-22d919c08cc6",
+      "order": 6,
+      "zh": "赶不上",
+      "pinyin": "",
+      "vi": "không kịp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01392501-5b73-4fb4-9411-2f17d9004f02",
+      "order": 7,
+      "zh": "赶得上",
+      "pinyin": "",
+      "vi": "kịp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d7fe19fa-7374-4c53-b1a9-74c2ab58fdc9",
+      "order": 8,
+      "zh": "赶作业",
+      "pinyin": "",
+      "vi": "làm bài gấp/chạy deadline bài tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "02841309-0ada-4900-8fc6-e8148ac00b3a",
+      "order": 1,
+      "zh": "我得赶车，先走了。",
+      "pinyin": "Wǒ děi gǎn chē, xiān zǒu le.",
+      "vi": "Tôi phải bắt xe cho kịp, đi trước đây.",
+      "analysis_vi": "得 đọc děi, nghĩa là phải; 赶车 = vội bắt xe.",
+      "highlight": [
+        "赶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0548b0df-0140-472f-be84-af23f5078745"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6643fb3e-56dc-42f8-b569-7498c753690c",
+      "order": 2,
+      "zh": "要是现在不走，我们就赶不上公共汽车了。",
+      "pinyin": "Yàoshi xiànzài bù zǒu, wǒmen jiù gǎn bú shàng gōnggòng qìchē le.",
+      "vi": "Nếu bây giờ không đi, chúng ta sẽ không kịp xe buýt.",
+      "analysis_vi": "要是……就……; 赶不上 = không kịp.",
+      "highlight": [
+        "赶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0548b0df-0140-472f-be84-af23f5078745"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f4142bec-cf6a-498d-9a46-7ab1a839953a",
+      "order": 3,
+      "zh": "因为路上堵车，我赶到车站的时候，公共汽车已经开走了。",
+      "pinyin": "Yīnwèi lù shang dǔchē, wǒ gǎn dào chēzhàn de shíhou, gōnggòng qìchē yǐjīng kāi zǒu le.",
+      "vi": "Vì trên đường kẹt xe, lúc tôi vội đến trạm xe thì xe buýt đã chạy đi rồi.",
+      "analysis_vi": "赶到车站的时候 = lúc vội đến trạm; 已经开走了 báo kết quả đã xảy ra.",
+      "highlight": [
+        "赶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0548b0df-0140-472f-be84-af23f5078745"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong học tập/làm việc, 赶作业、赶论文、赶项目 giống 'chạy deadline'. Người mới học trước hết nắm 赶车 / 赶时间 / 赶不上.",
+    "tags": [
+      "traffic",
+      "action"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d913426d-09f3-4908-9858-5fb55cf379fd",
+      "order": 1,
+      "rule_vi": "Đừng dịch 赶车 thành 'đuổi xe'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我在赶车。",
+          "pinyin": "",
+          "vi": "Tôi đang vội bắt xe.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我赶不上车了。",
+          "pinyin": "",
+          "vi": "Tôi không kịp xe rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Thường nó nghĩa là bắt xe cho kịp.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "赶",
+    "back": "vội; đuổi; kịp; chạy cho kịp",
+    "hint": "gǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "traffic",
+      "action"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0548b0df-0140-472f-be84-af23f5078745",
+    "source_lesson_vocab_id": null
+  }
+}

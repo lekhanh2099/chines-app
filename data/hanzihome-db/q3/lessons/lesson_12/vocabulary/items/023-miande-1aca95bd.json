@@ -1,0 +1,280 @@
+{
+  "id": "89e3761e-3880-4b0d-94da-18d0dcae2802",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "免得",
+  "pinyin": "miǎnde",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "miễn đắc",
+    "meaning_vi": "để khỏi, tránh cho khỏi, kẻo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "để khỏi, tránh cho khỏi, kẻo"
+    ],
+    "short_definition_vi": "Làm A để tránh kết quả xấu B.",
+    "textbook_focus_vi": "Dùng mẫu A，免得 B.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "免",
+        "lishu_vi": "miễn",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tránh/miễn",
+        "modern_logic_vi": "tránh/miễn",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "đắc",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "彳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Xích",
+          "radical_name_zh": "",
+          "hanviet": "xích",
+          "meaning_vi": "bước đi/hành động",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彳 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi/hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi/hành động",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彳 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đạt/được",
+        "modern_logic_vi": "đạt/được",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Từ chức năng; học theo khung tránh hậu quả xấu.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "省得",
+        "pinyin": "shěngde",
+        "meaning_vi": "đỡ phải/khỏi",
+        "difference_vi": "省得 nhấn đỡ phiền/đỡ mất công hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5d0ea5a4-98ec-4bd6-94ca-973d23fea387",
+      "order": 1,
+      "zh": "免得忘了",
+      "pinyin": "",
+      "vi": "để khỏi quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7015849-fac2-4d1f-892c-90bafc5ce78e",
+      "order": 2,
+      "zh": "免得迟到",
+      "pinyin": "",
+      "vi": "để khỏi đến muộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9418dd72-3098-4f57-b927-5081bea3f083",
+      "order": 3,
+      "zh": "免得找不到",
+      "pinyin": "",
+      "vi": "để khỏi không tìm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e062441-6a98-457e-9683-3c79f7bdcc88",
+      "order": 4,
+      "zh": "免得别人误会",
+      "pinyin": "",
+      "vi": "để khỏi bị hiểu lầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd94a5bf-9272-4dea-a133-852269b206e0",
+      "order": 1,
+      "zh": "你把地址写下来，免得忘了。",
+      "pinyin": "",
+      "vi": "Bạn ghi địa chỉ lại, để khỏi quên.",
+      "analysis_vi": "把 + O + 写下来.",
+      "highlight": [
+        "免得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89e3761e-3880-4b0d-94da-18d0dcae2802"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c1b7953a-150e-4af9-b2b3-5085f8d46d38",
+      "order": 2,
+      "zh": "快把被子收进来，免得一会儿下雨弄湿了。",
+      "pinyin": "",
+      "vi": "Mau thu chăn vào kẻo lát nữa mưa làm ướt.",
+      "analysis_vi": "免得 nêu kết quả xấu cần tránh.",
+      "highlight": [
+        "免得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89e3761e-3880-4b0d-94da-18d0dcae2802"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e0406c9b-5fb2-4204-b195-9567bd362f6d",
+      "order": 1,
+      "rule_vi": "Sau 免得 thường là kết quả không mong muốn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Sau 免得 thường là kết quả không mong muốn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "免得",
+    "back": "để khỏi, tránh cho khỏi, kẻo",
+    "hint": "miǎnde",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "89e3761e-3880-4b0d-94da-18d0dcae2802",
+    "source_lesson_vocab_id": null
+  }
+}

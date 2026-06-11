@@ -1,0 +1,386 @@
+{
+  "id": "1fa70d6c-f9ce-47d9-9867-3e3e5b4319d8",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "口形",
+  "pinyin": "kǒuxíng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "khẩu hình",
+    "meaning_vi": "hình miệng, khẩu hình khi phát âm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hình miệng"
+    ],
+    "short_definition_vi": "hình miệng, khẩu hình khi phát âm",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "口",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ/thành phần chỉ trường nghĩa: miệng, lời nói.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ/thành phần chỉ trường nghĩa: miệng, lời nói.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "miệng",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "形",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "彡",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sam",
+          "radical_name_zh": "",
+          "hanviet": "sam",
+          "meaning_vi": "đường nét, hình dáng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彡 được dùng như bộ/thành phần chỉ trường nghĩa: đường nét, hình dáng.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "彡",
+            "hanviet": "sam",
+            "meaning_vi": "đường nét, hình dáng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彡",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sam",
+              "radical_name_zh": "",
+              "hanviet": "sam",
+              "meaning_vi": "đường nét, hình dáng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彡 được dùng như bộ/thành phần chỉ trường nghĩa: đường nét, hình dáng.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彡 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hình dạng",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "口形 được ghi nhớ theo nghĩa hiện đại: hình miệng, khẩu hình khi phát âm.",
+    "memory_tip_vi": "Nhớ qua cụm: 看口形.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "口型",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "嘴形",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发音",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "口形 là danh từ; không nói 我口形这个音."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d55af67a-45cf-4767-a203-b3453bcdb747",
+      "order": 1,
+      "zh": "看口形",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7359aacf-1f7d-4297-804c-11dc26f7debd",
+      "order": 2,
+      "zh": "模仿口形",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e7b298a0-3ef7-41e1-a911-dcf39ae46432",
+      "order": 3,
+      "zh": "注意口形",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d63fc13-2fb0-44ce-b68c-fd4c99f4e019",
+      "order": 4,
+      "zh": "口形清楚",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f989b79-7174-4da7-a9f6-e3c77d8b70bb",
+      "order": 5,
+      "zh": "根据口形判断",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94d17ef5-7490-472b-bada-29c4d82071b2",
+      "order": 6,
+      "zh": "练习口形",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "481f320b-1c04-4836-90b7-e65d74d4d4f2",
+      "order": 1,
+      "zh": "老师让我们注意他的口形。",
+      "pinyin": "Lǎoshī ràng wǒmen zhùyì tā de kǒuxíng.",
+      "vi": "Giáo viên bảo chúng tôi chú ý khẩu hình của thầy/cô.",
+      "analysis_vi": "注意 + tân ngữ = chú ý vào cái gì.",
+      "highlight": [
+        "口形"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1fa70d6c-f9ce-47d9-9867-3e3e5b4319d8"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "795a796f-1e4d-4ad4-a6a8-b7dc7faa7cd7",
+      "order": 2,
+      "zh": "小敏听不见声音，只能看母亲的口形来学习发音。",
+      "pinyin": "Xiǎomǐn tīng bu jiàn shēngyīn, zhǐ néng kàn mǔqīn de kǒuxíng lái xuéxí fāyīn.",
+      "vi": "Tiểu Mẫn không nghe thấy âm thanh, chỉ có thể nhìn khẩu hình của mẹ để học phát âm.",
+      "analysis_vi": "听不见 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "口形"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1fa70d6c-f9ce-47d9-9867-3e3e5b4319d8"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "口型 hiện đại thường gặp hơn trong nhiều ngữ cảnh, nhưng bài dùng 口形.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "69a57fa8-83b5-45bd-b605-b5baf4bd56c0",
+      "order": 1,
+      "rule_vi": "口形 là danh từ; không nói 我口形这个音.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "口形 là danh từ; không nói 我口形这个音.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "口形",
+    "back": "hình miệng, khẩu hình khi phát âm",
+    "hint": "kǒuxíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1fa70d6c-f9ce-47d9-9867-3e3e5b4319d8",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "id": "45af6dac-0481-4399-978c-01af90e02b65",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "收入",
+  "pinyin": "shōurù",
+  "pos": {
+    "raw_vi": "Danh từ / động từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thu nhập",
+    "meaning_vi": "thu nhập; khoản tiền nhận vào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thu nhập",
+      "khoản tiền nhận vào"
+    ],
+    "short_definition_vi": "thu nhập",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "收",
+        "lishu_vi": "thu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh, tác động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh, tác động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thu, nhận",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "đánh, tác động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "入",
+        "lishu_vi": "nhập",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "入",
+            "hanviet": "nhập",
+            "meaning_vi": "vào",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "入",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhập",
+              "radical_name_zh": "",
+              "hanviet": "nhập",
+              "meaning_vi": "vào",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vào",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "入",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhập",
+          "radical_name_zh": "",
+          "hanviet": "nhập",
+          "meaning_vi": "vào",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "收入 là tiền được thu vào, rộng hơn lương.",
+    "memory_tip_vi": "Nhớ 收入高/低, 家庭收入.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "工资",
+        "pinyin": "",
+        "meaning_vi": "工资",
+        "difference_vi": "工资 là lương; 收入 gồm lương và nguồn khác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "支出",
+        "pinyin": "",
+        "meaning_vi": "支出",
+        "difference_vi": "chi tiêu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7d52b9dd-9043-4a76-b83f-dd1a5dcb7167",
+      "order": 1,
+      "zh": "月收入",
+      "pinyin": "yuè shōurù",
+      "vi": "thu nhập tháng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15104bdd-6f73-4ed2-a251-e97b0c702242",
+      "order": 2,
+      "zh": "家庭收入",
+      "pinyin": "jiātíng shōurù",
+      "vi": "thu nhập gia đình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a547f18-1e5e-475d-9efa-ebe8d55c6114",
+      "order": 3,
+      "zh": "收入很高",
+      "pinyin": "shōurù hěn gāo",
+      "vi": "thu nhập rất cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6bb275e6-a03b-477c-8ffd-fba9b0118c4d",
+      "order": 4,
+      "zh": "增加收入",
+      "pinyin": "zēngjiā shōurù",
+      "vi": "tăng thu nhập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e202b1d9-17dc-4088-82dd-a49f289b10c4",
+      "order": 1,
+      "zh": "他的收入不太高。",
+      "pinyin": "Tā de shōurù bú tài gāo.",
+      "vi": "Thu nhập của anh ấy không cao lắm.",
+      "analysis_vi": "收入高/低 là collocation chuẩn.",
+      "highlight": [
+        "收入"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45af6dac-0481-4399-978c-01af90e02b65"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8a0c8579-5cfa-4cc8-8dea-fc820ce86b3e",
+      "order": 2,
+      "zh": "收入很重要，但不是幸福的唯一标准。",
+      "pinyin": "Shōurù hěn zhòngyào, dàn bú shì xìngfú de wéiyī biāozhǔn.",
+      "vi": "Thu nhập quan trọng, nhưng không phải tiêu chuẩn duy nhất của hạnh phúc.",
+      "analysis_vi": "Sát chủ đề bài.",
+      "highlight": [
+        "收入"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45af6dac-0481-4399-978c-01af90e02b65"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hỏi 你收入多少？ với người không thân là thô.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "828217d8-6c96-498b-a8f4-cf56cf084228",
+      "order": 1,
+      "rule_vi": "Không nhầm 收入 với 工资.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的收入是公司发的基本工资。",
+          "pinyin": "Wǒ de shōurù shì gōngsī fā de jīběn gōngzī.",
+          "vi": "Câu có thể hẹp quá nếu có nguồn khác.",
+          "note_vi": "收入 rộng hơn 工资.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的工资是每月八千块。",
+          "pinyin": "Wǒ de gōngzī shì měi yuè bāqiān kuài.",
+          "vi": "Lương tôi mỗi tháng 8000.",
+          "note_vi": "工资 đúng khi chỉ lương.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "收入",
+    "back": "thu nhập; khoản tiền nhận vào",
+    "hint": "shōurù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "45af6dac-0481-4399-978c-01af90e02b65",
+    "source_lesson_vocab_id": null
+  }
+}

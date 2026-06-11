@@ -1,0 +1,337 @@
+{
+  "id": "8ec5d4b6-5771-4221-94e4-2430fea92def",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "渴",
+  "pinyin": "kě",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Khát",
+    "meaning_vi": "khát nước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khát nước"
+    ],
+    "short_definition_vi": "khát nước",
+    "textbook_focus_vi": "khát nước",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "渴",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khát nước",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 渴 hợp lại tạo nghĩa hiện đại trong bài: khát nước.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "渴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "渴 / 饿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "饿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "渴 / 饿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "口渴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "口渴 / 渴",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "渴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "口渴 / 渴",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "渴",
+        "right": "不渴",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "渴 ↔ 不渴",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "渴 / 饿",
+      "口渴 / 渴",
+      "渴 ↔ 不渴"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "01492a61-397f-4ed7-b822-e4e3af697c90",
+      "order": 1,
+      "zh": "我渴了",
+      "pinyin": "",
+      "vi": "我渴了",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d56fa9fd-db77-4969-b815-0c041153acfb",
+      "order": 2,
+      "zh": "有点儿渴",
+      "pinyin": "",
+      "vi": "有点儿渴",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "858eb30a-01c9-49b3-8b80-2ff19d11cd69",
+      "order": 3,
+      "zh": "太渴了",
+      "pinyin": "",
+      "vi": "太渴了",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "b60e8ac8-5b62-4f4f-9289-8af97994b4d8",
+      "order": 4,
+      "zh": "又渴又累",
+      "pinyin": "",
+      "vi": "又渴又累",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dda1d104-dda1-497c-a5db-b0794bd5d84c",
+      "order": 5,
+      "zh": "口渴",
+      "pinyin": "",
+      "vi": "口渴",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ea541569-43bb-4b96-9e83-e0d28595eb97",
+      "order": 6,
+      "zh": "渴得要命",
+      "pinyin": "",
+      "vi": "渴得要命",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "11490aed-ee99-4488-a1f8-4187f2dd5f12",
+      "order": 1,
+      "zh": "这个词是“渴”。",
+      "pinyin": "",
+      "vi": "Từ này là “渴”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "渴"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "8ec5d4b6-5771-4221-94e4-2430fea92def"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6348a2a1-d659-4b9b-83fb-60b9a7c639ef",
+      "order": 2,
+      "zh": "你想怎么用“渴”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “渴” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "渴"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "8ec5d4b6-5771-4221-94e4-2430fea92def"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6b734093-0df7-400a-ae3d-aafa6798f7de",
+      "order": 3,
+      "zh": "我们一边复习渴，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “渴”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "渴"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "8ec5d4b6-5771-4221-94e4-2430fea92def"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "渴 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "990ff82f-b143-48e7-9800-0b0a50a18eba",
+      "order": 1,
+      "rule_vi": "Dùng 渴 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 渴 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "渴",
+    "back": "khát nước",
+    "hint": "kě",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8ec5d4b6-5771-4221-94e4-2430fea92def",
+    "source_lesson_vocab_id": null
+  }
+}

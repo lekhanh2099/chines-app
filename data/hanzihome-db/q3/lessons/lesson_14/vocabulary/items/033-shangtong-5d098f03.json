@@ -1,0 +1,310 @@
+{
+  "id": "bae20d50-3ed5-45b9-bced-f10481334d7a",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "伤痛",
+  "pinyin": "shāngtòng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thương thống",
+    "meaning_vi": "đau do bị thương; nỗi đau thể xác/tinh thần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đau do bị thương",
+      "nỗi đau thể xác/tinh thần"
+    ],
+    "short_definition_vi": "đau do bị thương; nỗi đau thể xác/tinh thần",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: y tế, cảm xúc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "y tế, cảm xúc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "伤",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bị thương, tổn hại",
+        "modern_logic_vi": "Trong từ 伤痛, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "痛",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật, đau ốm",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "疒 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật, đau ốm",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật, đau ốm",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "疒 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "疒 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đau",
+        "modern_logic_vi": "Trong từ 伤痛, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "伤痛 nên được học theo nghĩa hiện đại trong cụm/tình huống: đau do bị thương; nỗi đau thể xác/tinh thần.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 查看伤痛.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "疼",
+        "pinyin": "téng",
+        "meaning_vi": "đau",
+        "difference_vi": "疼 khẩu ngữ trực tiếp hơn; 伤痛 nghiêng về đau do bị thương/nỗi đau.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "79fb61c7-4a43-458c-b590-ec56c36b84f2",
+      "order": 1,
+      "zh": "查看伤痛",
+      "pinyin": "",
+      "vi": "xem xét chỗ đau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1a647b3-7029-497a-8f8b-84f3c3723564",
+      "order": 2,
+      "zh": "强忍伤痛",
+      "pinyin": "",
+      "vi": "cố chịu đau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f039457-f19f-4b74-b76f-7a2dfa1da029",
+      "order": 3,
+      "zh": "心里的伤痛",
+      "pinyin": "",
+      "vi": "nỗi đau trong lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1faab913-92ef-435a-99ab-956f98ec7031",
+      "order": 1,
+      "zh": "医生先查看他的伤痛。",
+      "pinyin": "",
+      "vi": "Bác sĩ trước tiên xem xét chỗ đau/chấn thương của anh ấy.",
+      "analysis_vi": "伤痛 trong bài là đau do chấn thương.",
+      "highlight": [
+        "伤痛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bae20d50-3ed5-45b9-bced-f10481334d7a"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 伤痛 được dùng trong ngữ cảnh y tế, cảm xúc; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f3d2e388-8a36-47ff-b9f7-ab05ed6eefec",
+      "order": 1,
+      "rule_vi": "Đời thường đau đầu nói 头疼, không nói 头有伤痛.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đời thường đau đầu nói 头疼, không nói 头有伤痛.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "伤痛",
+    "back": "đau do bị thương; nỗi đau thể xác/tinh thần",
+    "hint": "shāngtòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bae20d50-3ed5-45b9-bced-f10481334d7a",
+    "source_lesson_vocab_id": null
+  }
+}

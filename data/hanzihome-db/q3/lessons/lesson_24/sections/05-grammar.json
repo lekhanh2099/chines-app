@@ -1,0 +1,529 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "以及",
+      "title_vi": "以及",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để nối các thành phần song song, thiên về văn viết hơn 和.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "A、B 以及 C",
+          "meaning_vi": "Dùng để nối các thành phần song song, thiên về văn viết hơn 和.",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "A、B 以及 C"
+            }
+          ],
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "情商包括如何控制情绪，如何培养主动做事的动力，以及如何建立良好的人际关系等。",
+              "pinyin": "qíngshāng bāokuò rúhé kòngzhì qíngxù, rúhé péiyǎng zhǔdòng zuòshì de dònglì, yǐjí rúhé jiànlì liánghǎo de rénjì guānxi děng.",
+              "vi": "EQ gồm cách kiểm soát cảm xúc, bồi dưỡng động lực chủ động làm việc, cũng như xây dựng quan hệ xã hội tốt.",
+              "highlight": [
+                "以及"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "参加这次影展的有中外不少电影制片厂最新制作的故事片、动画片以及译制片。",
+              "pinyin": "cānjiā zhè cì yǐng zhǎn de yǒu zhōng wài bù shǎo diàn yǐng zhì piàn chǎng zuì xīn zhì zuò de gù shì piàn dòng huà piàn yǐjí yì zhì piàn.",
+              "vi": "Tham gia triển lãm phim lần này có phim truyện, phim hoạt hình và phim lồng tiếng mới nhất do nhiều hãng phim Trung Quốc và nước ngoài sản xuất.",
+              "highlight": [
+                "以及"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "可见",
+      "title_vi": "可见",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để rút ra kết luận từ thông tin đã nói phía trước: có thể thấy rằng, chứng tỏ rằng.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "事实 / 情况。可见，结论。",
+          "meaning_vi": "Dùng để rút ra kết luận từ thông tin đã nói phía trước: có thể thấy rằng, chứng tỏ rằng.",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "事实 / 情况。可见，结论。"
+            }
+          ],
+          "examples": [
+            {
+              "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+              "zh": "可见，智商并不是一个人成功的唯一因素。",
+              "pinyin": "kějiàn, zhìshāng bìng bù shì yí ge rén chénggōng de wéiyī yīnsù.",
+              "vi": "Có thể thấy IQ không phải yếu tố duy nhất làm nên thành công của một người.",
+              "highlight": [
+                "可见"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
+              "zh": "她的屋子亮着灯呢，可见她已经回来了。",
+              "pinyin": "tā de wū zi liàng zhe dēng ne, kějiàn tā yǐjīng huílái le.",
+              "vi": "Phòng cô ấy đang sáng đèn, chứng tỏ cô ấy đã về rồi.",
+              "highlight": [
+                "可见"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "以……为……",
+      "title_vi": "以……为……",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Cấu trúc khá trang trọng: lấy A làm B, coi A là B, hoặc lấy A làm tiêu chuẩn.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "以 A 为 B",
+          "meaning_vi": "Cấu trúc khá trang trọng: lấy A làm B, coi A là B, hoặc lấy A làm tiêu chuẩn.",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "以 A 为 B"
+            }
+          ],
+          "examples": [
+            {
+              "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
+              "zh": "你以她为目标，就算你能做到，最多是和她一样好，而不会比她更好。",
+              "pinyin": "nǐ yǐ tā wéi mùbiāo, jiùsuàn nǐ néng zuòdào, zuìduō shì hé tā yíyàng hǎo, ér bú huì bǐ tā gèng hǎo.",
+              "vi": "Bạn lấy cô ấy làm mục tiêu, cho dù làm được thì nhiều nhất cũng chỉ tốt bằng cô ấy, chứ không thể tốt hơn cô ấy.",
+              "highlight": [
+                "以"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
+              "zh": "词的读音应该以词典的注音为标准。",
+              "pinyin": "cí de dú yīn yīnggāi yǐ cí diǎn de zhù yīn wèi biāozhǔn.",
+              "vi": "Cách đọc của từ nên lấy chú âm trong từ điển làm chuẩn.",
+              "highlight": [
+                "以"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "算",
+      "title_vi": "算",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Có nghĩa tính toán, tính vào, hoặc coi như. Trong 就算 nghĩa là cho dù.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "算 + 结果 / 算上 + 对象 / 算 + 评价",
+          "meaning_vi": "Có nghĩa tính toán, tính vào, hoặc coi như. Trong 就算 nghĩa là cho dù.",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "算 + 结果 / 算上 + 对象 / 算 + 评价"
+            }
+          ],
+          "examples": [
+            {
+              "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
+              "zh": "你算算今天一共花了多少钱。",
+              "pinyin": "nǐ suàn suàn jīn tiān yī gòng huā le duō shǎo qián.",
+              "vi": "Bạn tính thử hôm nay tổng cộng tiêu bao nhiêu tiền.",
+              "highlight": [
+                "算"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
+              "zh": "我到现在才算弄懂“把”字句的用法。",
+              "pinyin": "wǒ dào xiànzài cái suàn nòng dǒng bǎ zì jù de yòng fǎ.",
+              "vi": "Đến bây giờ tôi mới xem như hiểu rõ cách dùng câu chữ 把.",
+              "highlight": [
+                "算"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "往往",
+      "title_vi": "往往",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Diễn tả sự việc thường xảy ra, có tính quy luật hoặc xu hướng; khác 常常 ở sắc thái tổng kết quy luật.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "主语 + 往往 + 谓语",
+          "meaning_vi": "Diễn tả sự việc thường xảy ra, có tính quy luật hoặc xu hướng; khác 常常 ở sắc thái tổng kết quy luật.",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "主语 + 往往 + 谓语"
+            }
+          ],
+          "examples": [
+            {
+              "id": "6bf266cb-265d-4e6d-9c03-ff8d7f47ff9a",
+              "zh": "人往往不能控制自己。",
+              "pinyin": "rén wǎngwǎng bù néng kòngzhì zìjǐ.",
+              "vi": "Con người thường không kiểm soát được bản thân.",
+              "highlight": [
+                "往往"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "8775efc2-08d3-431f-ba3d-04de4aa5337e",
+              "zh": "年轻人往往喜欢说以后怎么样怎么样，而老年人则常常说以前怎么样怎么样。",
+              "pinyin": "nián qīng rén wǎngwǎng xǐhuan shuō yǐ hòu zěnme yàng zěnme yàng, ér lǎo nián rén zé chángcháng shuō yǐ qián zěnme yàng zěnme yàng.",
+              "vi": "Người trẻ thường thích nói sau này sẽ thế này thế kia, còn người già thì thường nói trước đây thế này thế kia.",
+              "highlight": [
+                "往往"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "是否",
+      "title_vi": "是否",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nghĩa là có hay không, liệu có… hay không; văn viết hơn 是不是.",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "36af8925-9df2-4371-9cce-405d3672953f",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "是否 + 谓语",
+          "meaning_vi": "Nghĩa là có hay không, liệu có… hay không; văn viết hơn 是不是.",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "是否 + 谓语"
+            }
+          ],
+          "examples": [
+            {
+              "id": "41c8d735-a12e-4c22-a8de-add795878b00",
+              "zh": "你是否会大骂他一声呢？",
+              "pinyin": "nǐ shìfǒu huì dà mà tā yì shēng ne?",
+              "vi": "Liệu bạn có mắng to anh ta một câu không?",
+              "highlight": [
+                "是否"
+              ],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "fa49881f-80d9-4b41-8556-91172ec7046c",
+              "zh": "我不知道她是否同意我们这样做。",
+              "pinyin": "wǒ bù zhī dào tā shìfǒu tóngyì wǒmen zhèyàng zuò.",
+              "vi": "Tôi không biết cô ấy có đồng ý để chúng ta làm như vậy không.",
+              "highlight": [
+                "是否"
+              ],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "type": "grammar_point",
+      "order": 7,
+      "title": "不妨",
+      "title_vi": "不妨",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "aa4bd385-d335-46aa-b357-a29252478df1",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Đưa lời khuyên mềm: thử… cũng được, chi bằng…, không ngại…",
+          "examples": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "bd6bb145-4592-4726-b2d2-6c72d9ac0a68",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "不妨 + 动词 / 动词短语",
+          "meaning_vi": "Đưa lời khuyên mềm: thử… cũng được, chi bằng…, không ngại…",
+          "formulas": [
+            {
+              "label": "Mẫu chính",
+              "pattern": "不妨 + 动词 / 动词短语"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2c1d1a39-aff8-418a-9813-624d4b06e892",
+              "zh": "我们不妨以风趣、温和的态度解释当时的情况。",
+              "pinyin": "wǒmen bùfáng yǐ fēngqù wēnhé de tàidu jiěshì dāngshí de qíngkuàng.",
+              "vi": "Chúng ta có thể thử dùng thái độ hài hước, ôn hòa để giải thích tình huống lúc đó.",
+              "highlight": [
+                "不妨"
+              ],
+              "grammar_refs": [
+                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            },
+            {
+              "id": "7011ba59-80c0-4b7b-a888-fb7674ebb297",
+              "zh": "你有什么心里话，不妨跟老师说说。",
+              "pinyin": "nǐ yǒu shénme xīnlǐhuà, bùfáng gēn lǎoshī shuō shuō.",
+              "vi": "Bạn có tâm sự gì thì có thể nói thử với thầy/cô.",
+              "highlight": [
+                "不妨"
+              ],
+              "grammar_refs": [
+                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook_pdf_checked",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

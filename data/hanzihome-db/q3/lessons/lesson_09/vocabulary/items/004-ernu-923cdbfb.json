@@ -1,0 +1,326 @@
+{
+  "id": "04f0a09f-cd04-4eff-b4be-317b6e0fd1f2",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "儿女",
+  "pinyin": "érnǚ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhi nữ",
+    "meaning_vi": "con cái; con trai và con gái",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "con cái",
+      "con trai và con gái"
+    ],
+    "short_definition_vi": "con cái",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "儿",
+            "hanviet": "nhân nhi",
+            "meaning_vi": "người, trẻ nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "儿",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân nhi",
+              "radical_name_zh": "",
+              "hanviet": "nhân nhi",
+              "meaning_vi": "người, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, trẻ nhỏ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "儿",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân nhi",
+          "radical_name_zh": "",
+          "hanviet": "nhân nhi",
+          "meaning_vi": "người, trẻ nhỏ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "女",
+        "lishu_vi": "nữ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nữ, con gái",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "儿 là con/trẻ, 女 là nữ/con gái; 儿女 gộp lại chỉ con cái.",
+    "memory_tip_vi": "Nhớ 儿女 thường nhìn từ góc cha mẹ/gia đình.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "孩子",
+        "pinyin": "háizi",
+        "meaning_vi": "trẻ con, con",
+        "difference_vi": "Khẩu ngữ rộng hơn; 儿女 nghiêng về con cái nhìn từ cha mẹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "子女",
+        "pinyin": "zǐnǚ",
+        "meaning_vi": "con cái",
+        "difference_vi": "Trang trọng hơn 儿女.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "父母",
+        "pinyin": "fùmǔ",
+        "meaning_vi": "cha mẹ",
+        "difference_vi": "Vai đối ứng trong gia đình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "91498a3e-56f6-4ada-b4ea-367234624e3f",
+      "order": 1,
+      "zh": "为了儿女",
+      "pinyin": "wèile érnǚ",
+      "vi": "vì con cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d9a5322-b0da-4f3b-8609-2f98a4837355",
+      "order": 2,
+      "zh": "教育儿女",
+      "pinyin": "jiàoyù érnǚ",
+      "vi": "giáo dục con cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "695c50aa-cb8b-4c38-93b0-3af797c9be02",
+      "order": 3,
+      "zh": "抚养儿女",
+      "pinyin": "fǔyǎng érnǚ",
+      "vi": "nuôi dưỡng con cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "996a3f40-2951-48f6-bdb6-85eb118b9d4b",
+      "order": 4,
+      "zh": "儿女的幸福",
+      "pinyin": "érnǚ de xìngfú",
+      "vi": "hạnh phúc của con cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f9b59ec2-f430-470c-b4df-a9d1c84bbee2",
+      "order": 1,
+      "zh": "他的儿女都已经长大了。",
+      "pinyin": "Tā de érnǚ dōu yǐjīng zhǎngdà le.",
+      "vi": "Con cái của ông ấy đều đã lớn rồi.",
+      "analysis_vi": "儿女 chỉ chung con cái.",
+      "highlight": [
+        "儿女"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "04f0a09f-cd04-4eff-b4be-317b6e0fd1f2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4e923671-a65f-4f7a-96e0-565fb13bbbd9",
+      "order": 2,
+      "zh": "对很多父母来说，儿女的幸福比自己的幸福更重要。",
+      "pinyin": "Duì hěn duō fùmǔ lái shuō, érnǚ de xìngfú bǐ zìjǐ de xìngfú gèng zhòngyào.",
+      "vi": "Đối với nhiều cha mẹ, hạnh phúc của con cái quan trọng hơn hạnh phúc của bản thân.",
+      "analysis_vi": "Gài 对……来说 và 比.",
+      "highlight": [
+        "儿女"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "04f0a09f-cd04-4eff-b4be-317b6e0fd1f2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "儿女 kéo theo trường nghĩa 父母, 抚养, 孝顺, 责任, 幸福.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "81559682-1896-449f-be5d-43526586bbfe",
+      "order": 1,
+      "rule_vi": "Không nhầm 儿女 với 女儿.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我有两个女儿。",
+          "pinyin": "Wǒ yǒu liǎng ge nǚ’ér.",
+          "vi": "Tôi có hai con gái; không phải con cái nói chung.",
+          "note_vi": "女儿 là con gái.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我有两个儿女。",
+          "pinyin": "Wǒ yǒu liǎng ge érnǚ.",
+          "vi": "Tôi có hai người con.",
+          "note_vi": "儿女 là con cái nói chung.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "儿女",
+    "back": "con cái; con trai và con gái",
+    "hint": "érnǚ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "04f0a09f-cd04-4eff-b4be-317b6e0fd1f2",
+    "source_lesson_vocab_id": null
+  }
+}

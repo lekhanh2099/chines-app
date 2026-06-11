@@ -1,0 +1,397 @@
+{
+  "id": "640b7c5b-dfa8-4d0a-852e-46710310e10a",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "相貌",
+  "pinyin": "xiàngmào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "noun"
+  ],
+  "meaning": {
+    "hanviet": "tướng mạo",
+    "meaning_vi": "dung mạo, diện mạo, vẻ ngoài khuôn mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dung mạo"
+    ],
+    "short_definition_vi": "dung mạo, diện mạo, vẻ ngoài khuôn mặt",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "相",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt, nhìn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "目 được dùng như bộ/thành phần chỉ trường nghĩa: mắt, nhìn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt, nhìn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 được dùng như bộ/thành phần chỉ trường nghĩa: mắt, nhìn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "目 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dáng vẻ, nhìn",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "貌",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "豸",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trãi",
+          "radical_name_zh": "",
+          "hanviet": "trãi",
+          "meaning_vi": "loài thú",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "豸 được dùng như bộ/thành phần chỉ trường nghĩa: loài thú.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "豸",
+            "hanviet": "trãi",
+            "meaning_vi": "loài thú",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "豸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trãi",
+              "radical_name_zh": "",
+              "hanviet": "trãi",
+              "meaning_vi": "loài thú",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "豸 được dùng như bộ/thành phần chỉ trường nghĩa: loài thú.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "豸 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dung mạo",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "相貌 được ghi nhớ theo nghĩa hiện đại: dung mạo, diện mạo, vẻ ngoài khuôn mặt.",
+    "memory_tip_vi": "Nhớ qua cụm: 相貌端正.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "长相",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "容貌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "外貌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "样子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "相貌 không phải 性格; một bên là vẻ ngoài, một bên là tính cách."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2fc271fd-a3f5-46f2-8f1b-f9bf0c1f2f76",
+      "order": 1,
+      "zh": "相貌端正",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2181247-9bde-45c4-86b8-e6f401ed1fc1",
+      "order": 2,
+      "zh": "相貌普通",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ef9eb0f-5ff3-478b-bd5b-f0e2cb50b48b",
+      "order": 3,
+      "zh": "相貌出众",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d724c355-b25a-4959-aa57-be7390002730",
+      "order": 4,
+      "zh": "相貌清秀",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "329b9295-881c-489c-a398-5350d9350622",
+      "order": 5,
+      "zh": "只看相貌",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e70b644-a486-40cc-bc98-ece7432fa530",
+      "order": 6,
+      "zh": "相貌和性格",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "97a4dfd4-3336-4945-8c46-ca3f8ed53be0",
+      "order": 1,
+      "zh": "她相貌普通，可是很有耐心。",
+      "pinyin": "Tā xiàngmào pǔtōng, kěshì hěn yǒu nàixīn.",
+      "vi": "Cô ấy có dung mạo bình thường, nhưng rất kiên nhẫn.",
+      "analysis_vi": "相貌普通 nói vẻ ngoài; 可是 chuyển sang phẩm chất.",
+      "highlight": [
+        "相貌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "640b7c5b-dfa8-4d0a-852e-46710310e10a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c9ef8fb4-72ae-4d61-afaf-10e0eb13bae4",
+      "order": 2,
+      "zh": "母亲告诉小敏，不论相貌怎么样，最重要的是有独立生活的能力。",
+      "pinyin": "Mǔqīn gàosu Xiǎomǐn, búlùn xiàngmào zěnmeyàng, zuì zhòngyào de shì yǒu dúlì shēnghuó de nénglì.",
+      "vi": "Mẹ nói với Tiểu Mẫn rằng bất kể dung mạo thế nào, quan trọng nhất là có năng lực sống độc lập.",
+      "analysis_vi": "不论…… nhấn điều kiện bên ngoài không quyết định giá trị.",
+      "highlight": [
+        "相貌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "640b7c5b-dfa8-4d0a-852e-46710310e10a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nói trực tiếp về dung mạo người khác có thể nhạy cảm trong giao tiếp hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4cc75cd2-ad45-4ce6-bfca-b7d604253f77",
+      "order": 1,
+      "rule_vi": "相貌 không phải 性格; một bên là vẻ ngoài, một bên là tính cách.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "相貌 không phải 性格; một bên là vẻ ngoài, một bên là tính cách.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "相貌",
+    "back": "dung mạo, diện mạo, vẻ ngoài khuôn mặt",
+    "hint": "xiàngmào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "640b7c5b-dfa8-4d0a-852e-46710310e10a",
+    "source_lesson_vocab_id": null
+  }
+}

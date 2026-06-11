@@ -1,0 +1,361 @@
+{
+  "id": "0d2d1e99-5326-4c43-a82b-460ee5bd4fb4",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "真理",
+  "pinyin": "zhēnlǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chân lý",
+    "meaning_vi": "chân lý, sự thật đúng đắn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chân lý",
+      "sự thật đúng đắn"
+    ],
+    "short_definition_vi": "chân lý, sự thật đúng đắn",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "真",
+        "lishu_vi": "chân",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, chân thật",
+        "modern_logic_vi": "真理 = cái lý đúng thật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "理",
+        "lishu_vi": "lý",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, vật quý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, vật quý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, vật quý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "lí",
+            "meaning_vi": "bên trong",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lý lẽ, nguyên lý, xử lý",
+        "modern_logic_vi": "心理/理论 đều liên quan logic/nguyên lý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "真理 được dùng trong Bài 20 với nghĩa: chân lý, sự thật đúng đắn.",
+    "memory_tip_vi": "Nhớ qua cụm 追求真理.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "事实",
+        "pinyin": "shìshí",
+        "meaning_vi": "sự thật",
+        "difference_vi": "Sự việc cụ thể/khách quan.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "真相",
+        "pinyin": "zhēnxiàng",
+        "meaning_vi": "chân tướng",
+        "difference_vi": "Sự thật phía sau một vụ việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "谬误",
+        "pinyin": "miùwù",
+        "meaning_vi": "sai lầm",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d71d1cf0-f7ae-40b4-a883-67edd4e863d2",
+      "order": 1,
+      "zh": "追求真理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7434e3ab-041f-4562-9d83-6013d5f40af8",
+      "order": 2,
+      "zh": "坚持真理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1ee9f24-8a27-4cab-ae33-865d53c54c19",
+      "order": 3,
+      "zh": "发现真理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b26f2f8a-7746-4eed-a342-f06b541974bb",
+      "order": 4,
+      "zh": "检验真理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f7cfbf0-aa1a-40fb-a08d-83f0448dcb73",
+      "order": 5,
+      "zh": "科学真理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35d33438-039e-4d33-91fa-90db62fbb01a",
+      "order": 6,
+      "zh": "客观真理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e608ecaa-edb1-42c6-a26b-9947c533dad8",
+      "order": 1,
+      "zh": "科学研究应该追求真理。",
+      "pinyin": "Kēxué yánjiū yīnggāi zhuīqiú zhēnlǐ.",
+      "vi": "Nghiên cứu khoa học nên theo đuổi chân lý.",
+      "analysis_vi": "追求真理 là collocation học thuật.",
+      "highlight": [
+        "真理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d2d1e99-5326-4c43-a82b-460ee5bd4fb4"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c6d9bf50-46a6-44eb-9b4d-2dd91897b614",
+      "order": 2,
+      "zh": "如果一个观点没有事实支持，也没有实验结果证明，就不能轻易把它当成真理。",
+      "pinyin": "Rúguǒ yí ge guāndiǎn méiyǒu shìshí zhīchí, yě méiyǒu shíyàn jiéguǒ zhèngmíng, jiù bù néng qīngyì bǎ tā dàngchéng zhēnlǐ.",
+      "vi": "Nếu một quan điểm không có sự thật và kết quả thí nghiệm chứng minh thì không thể dễ xem nó là chân lý.",
+      "analysis_vi": "把……当成…… = xem A là B.",
+      "highlight": [
+        "真理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d2d1e99-5326-4c43-a82b-460ee5bd4fb4"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "真理 có màu sắc học thuật/triết học/chính luận, không dùng thay 事实 trong mọi câu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fa8a1c29-a70f-4fde-b977-0d2093c9609f",
+      "order": 1,
+      "rule_vi": "Không nhầm 真理 với 真相.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我们要查清真理。",
+          "pinyin": "Wǒmen yào cháqīng zhēnlǐ.",
+          "vi": "Chúng ta phải điều tra rõ chân lý.",
+          "note_vi": "Sai nếu nói một vụ việc cụ thể.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我们要查清真相。",
+          "pinyin": "Wǒmen yào cháqīng zhēnxiàng.",
+          "vi": "Chúng ta phải điều tra rõ chân tướng.",
+          "note_vi": "真相 hợp điều tra sự việc.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "真理",
+    "back": "chân lý, sự thật đúng đắn",
+    "hint": "zhēnlǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0d2d1e99-5326-4c43-a82b-460ee5bd4fb4",
+    "source_lesson_vocab_id": null
+  }
+}

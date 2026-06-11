@@ -1,0 +1,302 @@
+{
+  "id": "7b10273d-b0fb-4008-98bd-6746d6eaec28",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "老外",
+  "pinyin": "lǎowài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lão ngoại",
+    "meaning_vi": "người nước ngoài; người ngoài nghề",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người nước ngoài; người ngoài nghề"
+    ],
+    "short_definition_vi": "người nước ngoài; người ngoài nghề",
+    "textbook_focus_vi": "người nước ngoài; người ngoài nghề",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "老",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "già; tiền tố thân mật",
+        "modern_logic_vi": "老 là tiền tố trong 老外.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "外",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "buổi tối",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "夕",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tịch",
+              "radical_name_zh": "",
+              "hanviet": "tịch",
+              "meaning_vi": "chiều tối",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "卜",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bốc",
+              "radical_name_zh": "",
+              "hanviet": "bốc",
+              "meaning_vi": "bói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngoài, bên ngoài, nước ngoài",
+        "modern_logic_vi": "外 = phía ngoài/nước ngoài.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "夕",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tịch",
+          "radical_name_zh": "",
+          "hanviet": "tịch",
+          "meaning_vi": "chiều tối",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "老 là tiền tố khẩu ngữ/thân mật, 外 = bên ngoài/nước ngoài. 老外 = người nước ngoài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "25c9ceb0-bfce-4c5f-97e8-7a9ece4c3321",
+      "order": 1,
+      "zh": "一个老外",
+      "pinyin": "",
+      "vi": "một người nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "419f7383-052a-4ab4-a59d-d2c8ba3c9ed6",
+      "order": 2,
+      "zh": "那个老外",
+      "pinyin": "",
+      "vi": "người nước ngoài kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a76373f3-38f5-490c-b371-8b34e088efb0",
+      "order": 3,
+      "zh": "老外朋友",
+      "pinyin": "",
+      "vi": "bạn nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c0c0f4d-78ce-4749-84f9-a4710ebf1ced",
+      "order": 4,
+      "zh": "老外说汉语",
+      "pinyin": "",
+      "vi": "người nước ngoài nói tiếng Hán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9145b74f-cd78-4df0-8842-b9f8a49a1ad8",
+      "order": 5,
+      "zh": "外国人",
+      "pinyin": "",
+      "vi": "người nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a03fe2f3-a185-49f5-b73c-16412e80b3e0",
+      "order": 6,
+      "zh": "外宾",
+      "pinyin": "",
+      "vi": "khách nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "be448c2d-990d-4e38-b5c6-dc2290d2161c",
+      "order": 1,
+      "zh": "那个老外汉语说得很好。",
+      "pinyin": "Nà ge lǎowài Hànyǔ shuō de hěn hǎo.",
+      "vi": "Người nước ngoài kia nói tiếng Hán rất tốt.",
+      "analysis_vi": "老外 là khẩu ngữ.",
+      "highlight": [
+        "老外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7b10273d-b0fb-4008-98bd-6746d6eaec28"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5578be72-47b2-4d7b-b8dc-83b4152082eb",
+      "order": 2,
+      "zh": "他不是老外，他是在中国长大的华人。",
+      "pinyin": "Tā bú shì lǎowài, tā shì zài Zhōngguó zhǎng dà de Huárén.",
+      "vi": "Anh ấy không phải người nước ngoài, mà là người Hoa lớn lên ở Trung Quốc.",
+      "analysis_vi": "不是……是…… sửa nhận định.",
+      "highlight": [
+        "老外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7b10273d-b0fb-4008-98bd-6746d6eaec28"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "19aa1c5f-b3a7-493f-9ce8-11d06780aeb8",
+      "order": 3,
+      "zh": "一听见那个老外用中文问路，大家都觉得很惊喜。",
+      "pinyin": "Yì tīngjiàn nà ge lǎowài yòng Zhōngwén wèn lù, dàjiā dōu juéde hěn jīngxǐ.",
+      "vi": "Vừa nghe người nước ngoài kia dùng tiếng Trung hỏi đường, mọi người đều thấy bất ngờ vui mừng.",
+      "analysis_vi": "用中文问路 = dùng tiếng Trung hỏi đường.",
+      "highlight": [
+        "老外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7b10273d-b0fb-4008-98bd-6746d6eaec28"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "老外 phổ biến khẩu ngữ nhưng có thể hơi gắn nhãn người ngoài; văn cảnh lịch sự dùng 外国人 / 外籍人士.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b438e2b2-e591-4676-86e6-2be1d95f7938",
+      "order": 1,
+      "rule_vi": "Không dùng 老外 trong văn bản trang trọng; cũng không nhầm 老外 với 外行.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "老外",
+    "back": "người nước ngoài; người ngoài nghề",
+    "hint": "lǎowài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7b10273d-b0fb-4008-98bd-6746d6eaec28",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,1076 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook_generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_pdf_checked",
+    "allowed_final_status_when_incomplete": "draft_or_verified_only"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读。",
+        "vi": "Phân biệt âm/thanh điệu; đọc câu."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "葡萄 pútao",
+              "right": "辅导 fǔdǎo",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "生意 shēngyi",
+              "right": "生疑 shēng yí",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "收获 shōuhuò",
+              "right": "售货 shòu huò",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "意外 yìwài",
+              "right": "以外 yǐwài",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "真正 zhēnzhèng",
+              "right": "真诚 zhēnchéng",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "不经一事，不长一智。",
+              "pinyin": "Bù jīng yí shì, bù zhǎng yí zhì.",
+              "vi": "Không trải qua một việc thì không thêm một phần trí khôn.",
+              "check_needed": false
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "不比不知道，一比吓一跳。",
+              "pinyin": "Bù bǐ bù zhīdào, yí bǐ xià yí tiào.",
+              "vi": "Không so thì không biết, vừa so thì giật mình.",
+              "check_needed": false
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "无求到处人情好，不饮随它酒价高。",
+              "pinyin": "Wú qiú dàochù rénqíng hǎo, bù yǐn suí tā jiǔjià gāo.",
+              "vi": "Không cầu cạnh ai thì đi đâu tình người cũng tốt; không uống rượu thì mặc giá rượu cao.",
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Đọc cụm từ",
+      "instruction": {
+        "zh": "朗读。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "一脸警惕",
+          "pinyin": "Yì liǎn jǐngtì",
+          "vi": "mặt đầy vẻ cảnh giác",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "一脸汗",
+          "pinyin": "Yì liǎn hàn",
+          "vi": "mặt đầy mồ hôi",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "一身汗",
+          "pinyin": "Yì shēn hàn",
+          "vi": "toàn thân đầy mồ hôi",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "真正的朋友",
+          "pinyin": "Zhēnzhèng de péngyou",
+          "vi": "người bạn thật sự",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "真正的友谊",
+          "pinyin": "Zhēnzhèng de yǒuyì",
+          "vi": "tình bạn thật sự",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "真正好吃",
+          "pinyin": "Zhēnzhèng hǎochī",
+          "vi": "thật sự ngon",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "有些意外",
+          "pinyin": "Yǒuxiē yìwài",
+          "vi": "hơi bất ngờ",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "有些犹豫",
+          "pinyin": "Yǒuxiē yóuyù",
+          "vi": "hơi do dự",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "有些尴尬",
+          "pinyin": "Yǒuxiē gāngà",
+          "vi": "hơi lúng túng/khó xử",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "分享收获的喜悦",
+          "pinyin": "Fēnxiǎng shōuhuò de xǐyuè",
+          "vi": "chia sẻ niềm vui thu hoạch",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "分享胜利的喜悦",
+          "pinyin": "Fēnxiǎng shènglì de xǐyuè",
+          "vi": "chia sẻ niềm vui chiến thắng",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "分享成功的喜悦",
+          "pinyin": "Fēnxiǎng chénggōng de xǐyuè",
+          "vi": "chia sẻ niềm vui thành công",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "结了许多葡萄",
+          "pinyin": "Jié le xǔduō pútao",
+          "vi": "ra/kết rất nhiều nho",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "结了很多苹果",
+          "pinyin": "Jié le hěn duō píngguǒ",
+          "vi": "ra/kết rất nhiều táo",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "结了很多枣",
+          "pinyin": "Jié le hěn duō zǎo",
+          "vi": "ra/kết rất nhiều táo tàu",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "word_bank": [
+        "高兴",
+        "许多",
+        "意外",
+        "不料",
+        "尴尬",
+        "真正",
+        "注视",
+        "传",
+        "分享",
+        "竟然",
+        "半死不活"
+      ],
+      "questions": [
+        [
+          "ex03_q01",
+          "我不会养花儿，我家的花儿都让我养得______的。",
+          "半死不活"
+        ],
+        [
+          "ex03_q02",
+          "我们出门时天气还很好，______走到半路突然下起雨来了。",
+          "不料"
+        ],
+        [
+          "ex03_q03",
+          "他刚学了半年汉语，______能说得这么好。",
+          "竟然"
+        ],
+        [
+          "ex03_q04",
+          "来中国后我交了______朋友。",
+          "许多"
+        ],
+        [
+          "ex03_q05",
+          "我愿意和朋友______快乐。",
+          "分享"
+        ],
+        [
+          "ex03_q06",
+          "拿到毕业证时，我的心里有说不出的______。",
+          "高兴"
+        ],
+        [
+          "ex03_q07",
+          "这件事让我感到很______。",
+          "意外"
+        ],
+        [
+          "ex03_q08",
+          "他的表情很______。",
+          "尴尬"
+        ],
+        [
+          "ex03_q09",
+          "他们两个是______的朋友。",
+          "真正"
+        ],
+        [
+          "ex03_q10",
+          "这个消息是怎么______到你耳朵里去的？",
+          "传"
+        ],
+        [
+          "ex03_q11",
+          "上课时，同学们都______着黑板。",
+          "注视"
+        ]
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_key": [
+        {
+          "id": "ex03_q01",
+          "answer": "半死不活",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q02",
+          "answer": "不料",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q03",
+          "answer": "竟然",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q04",
+          "answer": "许多",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q05",
+          "answer": "分享",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q06",
+          "answer": "高兴",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q07",
+          "answer": "意外",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q08",
+          "answer": "尴尬",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q09",
+          "answer": "真正",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q10",
+          "answer": "传",
+          "check_needed": false,
+          "answer_verified": true
+        },
+        {
+          "id": "ex03_q11",
+          "answer": "注视",
+          "check_needed": false,
+          "answer_verified": true
+        }
+      ]
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ/cụm trong ngoặc để hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "我正要做饭，____________________。",
+          "given_words": [
+            "不料"
+          ],
+          "sample_answer": "我正要做饭，不料停电了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "我们已经好多年没见过面了，____________________。",
+          "given_words": [
+            "竟然"
+          ],
+          "sample_answer": "我们已经好多年没见过面了，竟然在北京又见面了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "今年，当葡萄熟了的时候，____________________。",
+          "given_words": [
+            "也许"
+          ],
+          "sample_answer": "今年，当葡萄熟了的时候，也许我会送一些给朋友尝尝。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "我和一个中国同学去饭馆儿吃饭，吃完饭，他坚持要替我付钱，____________________。",
+          "given_words": [
+            "只好"
+          ],
+          "sample_answer": "我和一个中国同学去饭馆儿吃饭，吃完饭，他坚持要替我付钱，我只好让他替我付了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "我跟这位同学不太熟，____________________。",
+          "given_words": [
+            "只是"
+          ],
+          "sample_answer": "我跟这位同学不太熟，只是见过几次面。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "我对她说的那些话，____________________。",
+          "given_words": [
+            "意外"
+          ],
+          "sample_answer": "我对她说的那些话，让她感到很意外。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_verified": true
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ/cụm trong ngoặc để hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "dialogue": [
+            "A：这是你养的花儿啊？",
+            "B：是啊。我不太会养花儿，____________________。"
+          ],
+          "given_words": [
+            "半死不活"
+          ],
+          "sample_answer": "是啊。我不太会养花儿，养得半死不活的。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "dialogue": [
+            "A：我送给你那盆花儿长得好吗？",
+            "B：开始的时候长得好极了，____________________。"
+          ],
+          "given_words": [
+            "不料"
+          ],
+          "sample_answer": "开始的时候长得好极了，不料后来慢慢死了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "dialogue": [
+            "A：今天，我多找了一个顾客八十块钱，____________________。",
+            "B：是吗？你遇到好人了。"
+          ],
+          "given_words": [
+            "不料"
+          ],
+          "sample_answer": "今天，我多找了一个顾客八十块钱，不料他又给我送回来了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "dialogue": [
+            "A：你听说了吗？小王跟小马离婚了。",
+            "B：是吗？____________________。"
+          ],
+          "given_words": [
+            "意外"
+          ],
+          "sample_answer": "是吗？我感到很意外。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "dialogue": [
+            "A：他愿意跟我们一起去吗？",
+            "B：他跟我说他愿意，可是____________________。"
+          ],
+          "given_words": [
+            "看得出来",
+            "并不"
+          ],
+          "sample_answer": "他跟我说他愿意，可是看得出来，他并不想去。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_verified": true
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "sentences": [
+            "因此，来中国留学后，我就去音乐学院找了一位老师教我弹琵琶。",
+            "他留给我最初的印象是太严厉，脸上没有一点儿笑容。",
+            "来中国以前，我就觉得中国的琵琶非常神奇，也非常有意思。",
+            "和老师第一次见面时我有点儿不好意思。"
+          ],
+          "answer_order": [
+            3,
+            1,
+            4,
+            2
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "sentences": [
+            "有着读书人那种“心底无私天地宽”的品格。",
+            "我的老师都是很好的人，他们的收入虽然远没有国外的高。",
+            "面对外面花花绿绿的世界，他们的心里却很平静。",
+            "可他们好像不太在乎这些。",
+            "因此，我感到很幸运，遇到了这么好的老师，他们的优秀品格将影响我的一生。"
+          ],
+          "answer_order": [
+            2,
+            4,
+            3,
+            1,
+            5
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_verified": true
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        [
+          "虽然我们两个不久认识，但很快成了好朋友。",
+          "虽然我们两个认识不久，但很快成了好朋友。"
+        ],
+        [
+          "今天该上口语课，老师不料没来。",
+          "今天该上口语课，不料老师没来。"
+        ],
+        [
+          "每次舞会她都不参加，没想到今天竟然她参加。",
+          "每次舞会她都不参加，没想到今天她竟然参加了。"
+        ],
+        [
+          "她是我的老师并是我的朋友。",
+          "她是我的老师，也是我的朋友。"
+        ],
+        [
+          "星期六晚上我都特别睡得晚。",
+          "星期六晚上我都睡得特别晚。"
+        ],
+        [
+          "学校里的花儿开得非常特别好看。",
+          "学校里的花儿开得特别好看。"
+        ]
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_key": [
+        {
+          "wrong": "虽然我们两个不久认识，但很快成了好朋友。",
+          "answer": "虽然我们两个认识不久，但很快成了好朋友。",
+          "explanation_vi": "不久 phải đặt sau động từ 认识 để tạo “quen biết chưa lâu”.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "wrong": "今天该上口语课，老师不料没来。",
+          "answer": "今天该上口语课，不料老师没来。",
+          "explanation_vi": "不料 là liên từ mở vế chuyển ngoặt, không đặt trực tiếp trước chủ ngữ trong vị trí phó từ như 老师不料没来.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "wrong": "每次舞会她都不参加，没想到今天竟然她参加。",
+          "answer": "每次舞会她都不参加，没想到今天她竟然参加了。",
+          "explanation_vi": "竟然 đứng sau chủ ngữ; 参加了 báo sự việc đã xảy ra ngoài dự đoán.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "wrong": "她是我的老师并是我的朋友。",
+          "answer": "她是我的老师，也是我的朋友。",
+          "explanation_vi": "并 thường dùng trước phủ định để nhấn mạnh; câu khẳng định song song dùng 也/又/既…又….",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "wrong": "星期六晚上我都特别睡得晚。",
+          "answer": "星期六晚上我都睡得特别晚。",
+          "explanation_vi": "特别修饰 晚 trong bổ ngữ trình độ, nên đặt sau 得.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "wrong": "学校里的花儿开得非常特别好看。",
+          "answer": "学校里的花儿开得特别好看。",
+          "explanation_vi": "非常 và 特别 đều là phó từ mức độ, đặt chồng nhau ở đây rườm/không tự nhiên; giữ một là đủ.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "下列句子什么情景下说？下列情景怎么说？",
+        "vi": "Các câu sau dùng trong tình huống nào? Gặp tình huống sau thì nói thế nào?"
+      },
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "下列句子什么情景下说？",
+          "items": [
+            {
+              "id": "533030ea-90d1-444f-8f68-b2da7c9f8843",
+              "sentence": "我想让朋友和我分享快乐和喜悦。",
+              "sample_context_vi": "Khi có chuyện vui, thành công hoặc tin tốt và muốn chia sẻ với bạn bè.",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "1e233739-0502-4639-967a-6dce08e3aa7a",
+              "sentence": "没办法，我只好这样做。",
+              "sample_context_vi": "Khi không còn lựa chọn tốt hơn, đành phải làm vậy.",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "07d32c05-2b20-493e-8863-32b8c7bfd4c7",
+              "sentence": "当时我真的感到非常尴尬。",
+              "sample_context_vi": "Khi rơi vào tình huống khó xử, ngượng ngùng.",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "下列情景怎么说？",
+          "items": [
+            {
+              "id": "173cd187-b113-4f52-a24d-2816d6362c1b",
+              "situation": "你的书包丢了，不久有人给你送回来了。",
+              "given_words": [
+                "没想到"
+              ],
+              "sample_answer": "没想到有人把我的书包送回来了。",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "95e6d2c0-2cad-46c0-8b8c-1949809fd221",
+              "situation": "你买了一件和朋友一样的衣服，但价钱却比朋友的贵得多。",
+              "given_words": [
+                "竟然"
+              ],
+              "sample_answer": "没想到我买的衣服竟然比朋友的贵得多。",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "2fbf72b0-004a-4598-bcdd-e7ab6b8eea1d",
+              "situation": "你送给朋友一件小礼物，他问你为什么。",
+              "given_words": [
+                "只是"
+              ],
+              "sample_answer": "我只是想送你一件小礼物，没别的意思。",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền từ vào bài đọc",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ/cụm thích hợp vào chỗ trống."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "搭档",
+          "pinyin": "dādàng",
+          "meaning_vi": "bạn đánh cặp; cộng sự; bạn phối hợp",
+          "pos": "Danh từ / Động từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ",
+            "cn": "名词/动词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "羽毛球",
+          "pinyin": "yǔmáoqiú",
+          "meaning_vi": "cầu lông; quả cầu lông",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "现象",
+          "pinyin": "xiànxiàng",
+          "meaning_vi": "hiện tượng",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "埋怨",
+          "pinyin": "mányuàn",
+          "meaning_vi": "oán trách; trách móc; phàn nàn",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "闹",
+          "pinyin": "nào",
+          "meaning_vi": "làm ầm lên; gây chuyện; quậy; gây rối",
+          "pos": "Động từ / Tính từ",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ",
+            "cn": "动词/形容词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "经验",
+          "pinyin": "jīngyàn",
+          "meaning_vi": "kinh nghiệm",
+          "pos": "Danh từ / Động từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ",
+            "cn": "名词/动词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "title": "换换搭档",
+        "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。",
+        "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqù le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huànhuan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
+        "vi": "Một cô bé hàng xóm làm việc ở một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh bóng, tôi phát hiện một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng phối hợp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường hay cãi nhau: nam thì nói nữ đánh không đúng, nữ thì nói nam đánh không hay. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh đôi”, tức là để mỗi bà vợ đổi sang phía đối phương rồi bắt đầu đánh lại.\n\nKết quả, trên sân bóng tràn đầy tiếng cười; hai bên đánh rất vui vẻ, không muốn rời đi."
+      },
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "个",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "的",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 4,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 6,
+          "answer": "去",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "让",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "上",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_key": [
+        {
+          "blank": 1,
+          "answer": "在",
+          "pinyin": "zài",
+          "explanation_vi": "在 + địa điểm + 工作: làm việc ở đâu.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "个",
+          "pinyin": "ge",
+          "explanation_vi": "一个现象: lượng từ 个 cho 现象.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "的",
+          "pinyin": "de",
+          "explanation_vi": "奇怪的是: điều kỳ lạ là...",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 4,
+          "answer": "得",
+          "pinyin": "de",
+          "explanation_vi": "打得不对: 得 dẫn bổ ngữ trình độ/kết quả đánh giá.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "得",
+          "pinyin": "de",
+          "explanation_vi": "打得不好: 得 dẫn bổ ngữ trình độ.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 6,
+          "answer": "去",
+          "pinyin": "qù",
+          "explanation_vi": "打下去: tiếp tục đánh tiếp.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "让",
+          "pinyin": "ràng",
+          "explanation_vi": "让他们“换换搭档”: bảo/để họ đổi bạn đánh đôi.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "上",
+          "pinyin": "shang",
+          "explanation_vi": "球场上: trên sân bóng.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "追问。",
+        "vi": "Luyện hỏi tiếp / hỏi chi tiết."
+      },
+      "topic": {
+        "zh": "追问",
+        "vi": "Hỏi tiếp / hỏi cho rõ chi tiết",
+        "en": "Making a detailed inquiry"
+      },
+      "dialogue": [
+        {
+          "speaker": "A",
+          "zh": "我问你一个问题，可以吗？",
+          "pinyin": "Wǒ wèn nǐ yí ge wèntí, kěyǐ ma?",
+          "vi": "Tôi hỏi bạn một vấn đề, được không?"
+        },
+        {
+          "speaker": "B",
+          "zh": "当然可以。什么问题？你说吧。",
+          "pinyin": "Dāngrán kěyǐ. Shénme wèntí? Nǐ shuō ba.",
+          "vi": "Đương nhiên được. Vấn đề gì? Bạn nói đi."
+        },
+        {
+          "speaker": "A",
+          "zh": "我的问题是，一个人该不该和别人分享快乐和喜悦？",
+          "pinyin": "Wǒ de wèntí shì, yí ge rén gāi bù gāi hé biérén fēnxiǎng kuàilè hé xǐyuè?",
+          "vi": "Vấn đề của tôi là, một người có nên chia sẻ niềm vui và sự vui mừng với người khác hay không?"
+        },
+        {
+          "speaker": "B",
+          "zh": "当然应该。一个善良的人，在他得到快乐的时候，会自然地想到与别人分享。",
+          "pinyin": "Dāngrán yīnggāi. Yí ge shànliáng de rén, zài tā dédào kuàilè de shíhou, huì zìrán de xiǎngdào yǔ biérén fēnxiǎng.",
+          "vi": "Đương nhiên là nên. Một người lương thiện, khi có được niềm vui, sẽ tự nhiên nghĩ đến việc chia sẻ với người khác."
+        },
+        {
+          "speaker": "A",
+          "zh": "那为什么这个送葡萄的人竟遇到那么多的麻烦？",
+          "pinyin": "Nà wèishénme zhè ge sòng pútao de rén jìng yùdào nàme duō de máfan?",
+          "vi": "Vậy vì sao người tặng nho này lại gặp nhiều rắc rối như vậy?"
+        },
+        {
+          "speaker": "B",
+          "zh": "我想这个故事当然不只是说送葡萄，它表现的是人和人之间的关系。",
+          "pinyin": "Wǒ xiǎng zhè ge gùshi dāngrán bú zhǐ shì shuō sòng pútao, tā biǎoxiàn de shì rén hé rén zhījiān de guānxi.",
+          "vi": "Tôi nghĩ câu chuyện này đương nhiên không chỉ nói chuyện tặng nho; điều nó thể hiện là quan hệ giữa người với người."
+        },
+        {
+          "speaker": "A",
+          "zh": "人和人之间的关系为什么这么复杂？为什么善良的人总是那么容易被误解？",
+          "pinyin": "Rén hé rén zhījiān de guānxi wèishénme zhème fùzá? Wèishénme shànliáng de rén zǒng shì nàme róngyì bèi wùjiě?",
+          "vi": "Vì sao quan hệ giữa người với người lại phức tạp như vậy? Vì sao người lương thiện luôn dễ bị hiểu lầm như thế?"
+        },
+        {
+          "speaker": "B",
+          "zh": "这可能就是作者想要告诉我们的吧。",
+          "pinyin": "Zhè kěnéng jiù shì zuòzhě xiǎng yào gàosu wǒmen de ba.",
+          "vi": "Đây có lẽ chính là điều tác giả muốn nói với chúng ta."
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

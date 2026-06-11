@@ -1,0 +1,489 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook_generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "疑问代词的活用",
+      "title_vi": "Đại từ nghi vấn dùng mở rộng",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "谁、什么、哪儿、怎么 không chỉ dùng để hỏi. Khi đi với 都/也 hoặc lặp lại theo mẫu điều kiện, chúng chỉ nghĩa bất kỳ ai/cái gì/nơi nào/cách nào.",
+          "examples": [
+            {
+              "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+              "zh": "什么都可以。",
+              "pinyin": "Shénme dōu kěyǐ.",
+              "vi": "Món gì cũng được.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+              "zh": "谁都可以报名。",
+              "pinyin": "Shéi dōu kěyǐ bàomíng.",
+              "vi": "Ai cũng có thể đăng ký.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "b7a3d982-8f73-4ed4-b3d6-828fba6e2949",
+              "zh": "哪儿好玩儿就去哪儿。",
+              "pinyin": "Nǎr hǎowánr jiù qù nǎr.",
+              "vi": "Chỗ nào vui thì đi chỗ đó.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "疑问代词 + 都/也 + 肯定/否定",
+          "pattern": "谁/什么/哪儿/怎么 + 都/也 + V/Adj/不/没……",
+          "meaning_vi": "Ai cũng / cái gì cũng / nơi nào cũng / thế nào cũng; hoặc không ai / không gì / không nơi nào.",
+          "formulas": [
+            {
+              "label": "khẳng định",
+              "pattern": "疑问代词 + 都/也 + 肯定"
+            },
+            {
+              "label": "phủ định",
+              "pattern": "疑问代词 + 都/也 + 不/没"
+            }
+          ],
+          "examples": [
+            {
+              "id": "7aa9ef46-6f3d-4ea1-b0f6-1ba89dd9b81b",
+              "zh": "什么都没吃。",
+              "pinyin": "Shénme dōu méi chī.",
+              "vi": "Chưa ăn gì cả.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "58943086-638c-4919-b0ca-007b22e954eb",
+              "zh": "怎么说都不行。",
+              "pinyin": "Zěnme shuō dōu bù xíng.",
+              "vi": "Nói thế nào cũng không được.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "疑问代词 lặp lại",
+          "pattern": "疑问代词 + 条件 + 就 + 动作",
+          "meaning_vi": "Cái nào/nơi nào/cách nào phù hợp thì làm theo cái đó.",
+          "formulas": [
+            {
+              "label": "mẫu",
+              "pattern": "什么/哪儿/怎么 + 条件 + 就 + V + 什么/哪儿/怎么"
+            }
+          ],
+          "examples": [
+            {
+              "id": "f695da48-2229-4bfe-bba6-da73b6f01a56",
+              "zh": "什么好吃吃什么。",
+              "pinyin": "Shénme hǎochī chī shénme.",
+              "vi": "Món nào ngon thì ăn món đó.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "ea19f0da-a2ab-4e04-93a4-ec516d98065a",
+              "zh": "你说喝什么就喝什么吧。",
+              "pinyin": "Nǐ shuō hē shénme jiù hē shénme ba.",
+              "vi": "Bạn nói uống gì thì uống cái đó đi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "一边……一边……",
+      "title_vi": "Vừa... vừa...",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nói hai hành động diễn ra song song trong cùng một khoảng thời gian. Hai hành động phải có khả năng xảy ra đồng thời.",
+          "examples": [
+            {
+              "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+              "zh": "一边旅行一边练习说汉语。",
+              "pinyin": "Yìbiān lǚxíng yìbiān liànxí shuō Hànyǔ.",
+              "vi": "Vừa đi du lịch vừa luyện nói tiếng Hán.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "一边 + V1 + 一边 + V2 / 边 + V1 + 边 + V2",
+          "meaning_vi": "Vừa làm V1 vừa làm V2.",
+          "formulas": [
+            {
+              "label": "đầy đủ",
+              "pattern": "一边V1，一边V2"
+            },
+            {
+              "label": "rút gọn",
+              "pattern": "边V1边V2"
+            }
+          ],
+          "examples": [
+            {
+              "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+              "zh": "他一边吃饭，一边看电视。",
+              "pinyin": "Tā yìbiān chī fàn, yìbiān kàn diànshì.",
+              "vi": "Anh ấy vừa ăn cơm vừa xem TV.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "e32b9b44-0167-4608-818f-ad358140a4ff",
+              "zh": "我们边走边聊。",
+              "pinyin": "Wǒmen biān zǒu biān liáo.",
+              "vi": "Chúng tôi vừa đi vừa nói chuyện.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "先……再……然后……最后……",
+      "title_vi": "Trình tự hành động",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để xếp trình tự hành động/kế hoạch/lộ trình: trước tiên → rồi → sau đó → cuối cùng.",
+          "examples": [
+            {
+              "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+              "zh": "我打算先去西安看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
+              "pinyin": "Wǒ dǎsuàn xiān qù Xī'ān kàn Bēilín hé Bīngmǎyǒng, zài dào Chóngqìng, cóng Chóngqìng zuò chuán yóulǎn Chángjiāng Sānxiá, ránhòu qù Yúnnán, Guìlín, zuìhòu qù Sūzhōu hé Hángzhōu.",
+              "vi": "Tôi định trước tiên đi Tây An xem Rừng Bia và Binh Mã Dũng, rồi đến Trùng Khánh, sau đó đi Vân Nam, Quế Lâm, cuối cùng đi Tô Châu và Hàng Châu.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "先 + A，再 + B，然后 + C，最后 + D",
+          "meaning_vi": "Trước tiên làm A, rồi B, sau đó C, cuối cùng D.",
+          "formulas": [
+            {
+              "label": "đầy đủ",
+              "pattern": "先……再……然后……最后……"
+            },
+            {
+              "label": "ngắn",
+              "pattern": "先……再……"
+            }
+          ],
+          "examples": [
+            {
+              "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+              "zh": "你先写作业，再看电视。",
+              "pinyin": "Nǐ xiān xiě zuòyè, zài kàn diànshì.",
+              "vi": "Bạn làm bài tập trước, rồi xem TV.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "除了……以外，……都……",
+      "title_vi": "Ngoài... ra, đều...",
+      "level": "HSK3+",
+      "tags": [
+        "句型"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "Cấu trúc",
+          "pattern": "除了 + ngoại lệ + 以外，phần còn lại + 都……",
+          "meaning_vi": "Nêu một ngoại lệ bị loại ra, sau đó nói các lựa chọn còn lại đều được/đều đúng.",
+          "examples": [
+            {
+              "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+              "zh": "除了骑自行车以外，怎么去都行。",
+              "pinyin": "Chúle qí zìxíngchē yǐwài, zěnme qù dōu xíng.",
+              "vi": "Ngoài đi xe đạp ra, đi bằng cách nào cũng được.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "只要……就……",
+      "title_vi": "Chỉ cần... thì...",
+      "level": "HSK3+",
+      "tags": [
+        "句型"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "Cấu trúc",
+          "pattern": "只要 + điều kiện，就 + kết quả",
+          "meaning_vi": "Nhấn mạnh điều kiện đủ: chỉ cần điều kiện trước thỏa mãn thì kết quả sau có thể xảy ra/chấp nhận được.",
+          "examples": [
+            {
+              "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
+              "zh": "只要玩儿得开心，多花点儿钱也值得。",
+              "pinyin": "Zhǐyào wánr de kāixīn, duō huā diǎnr qián yě zhídé.",
+              "vi": "Chỉ cần chơi vui, tốn thêm chút tiền cũng đáng.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "对……感兴趣",
+      "title_vi": "Hứng thú với...",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "36af8925-9df2-4371-9cce-405d3672953f",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "Cấu trúc",
+          "pattern": "对 + người/việc/lĩnh vực + 感兴趣",
+          "meaning_vi": "Diễn tả hứng thú với một đối tượng, lĩnh vực hoặc sự việc.",
+          "examples": [
+            {
+              "id": "efefab30-bcd8-4248-a5e1-9730cca9d249",
+              "zh": "我对云南少数民族的风俗很感兴趣。",
+              "pinyin": "Wǒ duì Yúnnán shǎoshù mínzú de fēngsú hěn gǎn xìngqù.",
+              "vi": "Tôi rất hứng thú với phong tục của các dân tộc thiểu số ở Vân Nam.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

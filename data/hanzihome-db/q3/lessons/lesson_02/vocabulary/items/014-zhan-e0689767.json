@@ -1,0 +1,359 @@
+{
+  "id": "cf9f1cc6-3cb2-49b8-ae2f-78965ab8de4f",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "站",
+  "pinyin": "zhàn",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "posture",
+    "place"
+  ],
+  "meaning": {
+    "hanviet": "Trạm",
+    "meaning_vi": "đứng; trạm, ga",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đứng; trạm, ga"
+    ],
+    "short_definition_vi": "đứng; trạm, ga",
+    "textbook_focus_vi": "đứng; trạm, ga",
+    "register_vi": "",
+    "usage_domain_vi": "posture,place",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "站",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "立 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "立",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lập",
+              "radical_name_zh": "",
+              "hanviet": "lập",
+              "meaning_vi": "đứng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "立 được dùng như bộ Lập trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "占",
+            "hanviet": "chiêm",
+            "meaning_vi": "gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng; trạm/ga",
+        "modern_logic_vi": "立 gợi rất rõ hành động đứng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "立",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lập",
+          "radical_name_zh": "",
+          "hanviet": "lập",
+          "meaning_vi": "đứng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "立 được dùng như bộ Lập trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "立 gợi rất rõ hành động đứng.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "站着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "站起来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "站住",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "坐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "走",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "435013d9-c2e5-4912-a379-055894b0a903",
+      "order": 1,
+      "zh": "站起来",
+      "pinyin": "",
+      "vi": "đứng dậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb00ca95-ca47-4fbb-bea3-aeede6873f29",
+      "order": 2,
+      "zh": "站着",
+      "pinyin": "",
+      "vi": "đang đứng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ccb6613-26d8-4a49-9105-62df30e50764",
+      "order": 3,
+      "zh": "站住",
+      "pinyin": "",
+      "vi": "đứng lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5bd5015c-96b9-4a96-ae0d-02951db9feff",
+      "order": 4,
+      "zh": "站在门口",
+      "pinyin": "",
+      "vi": "đứng ở cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ba9dd44-7b8a-4b68-8ac0-2975412f7d91",
+      "order": 5,
+      "zh": "车站",
+      "pinyin": "",
+      "vi": "trạm xe/ga",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b07e9b1f-f3c9-413b-9409-ddeb559d8163",
+      "order": 6,
+      "zh": "网站",
+      "pinyin": "",
+      "vi": "website",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "68b0d4c1-0ac2-4841-b65e-e273078ef955",
+      "order": 1,
+      "zh": "他站在教室门口。",
+      "pinyin": "Tā zhàn zài jiàoshì ménkǒu.",
+      "vi": "Anh ấy đứng ở cửa lớp.",
+      "analysis_vi": "站在 + địa điểm.",
+      "highlight": [
+        "站"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf9f1cc6-3cb2-49b8-ae2f-78965ab8de4f"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "99be9c3b-5815-47fc-9c68-b9962187dba1",
+      "order": 2,
+      "zh": "课外活动开始了，大家都站在操场上，等老师教我们练太极拳。",
+      "pinyin": "Kèwài huódòng kāishǐ le, dàjiā dōu zhàn zài cāochǎng shang, děng lǎoshī jiāo wǒmen liàn tàijíquán.",
+      "vi": "Hoạt động ngoại khóa bắt đầu, mọi người đứng trên sân chờ thầy/cô dạy luyện Thái Cực Quyền.",
+      "analysis_vi": "站在操场上 = đứng ở sân.",
+      "highlight": [
+        "站"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf9f1cc6-3cb2-49b8-ae2f-78965ab8de4f"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "网站 là nghĩa mở rộng hiện đại: “trạm/điểm” trên mạng, tức website.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9e29e7b7-5808-4883-95f5-4f34818125f5",
+      "order": 1,
+      "rule_vi": "站 và 战 cùng âm zhàn nhưng khác chữ nghĩa; 站 có 立 liên quan đứng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他站在门口。",
+          "pinyin": "Tā zhàn zài ménkǒu.",
+          "vi": "Anh ấy đứng ở cửa.",
+          "note_vi": "站 = đứng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "站",
+    "back": "đứng; trạm, ga",
+    "hint": "zhàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "posture",
+      "place"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cf9f1cc6-3cb2-49b8-ae2f-78965ab8de4f",
+    "source_lesson_vocab_id": null
+  }
+}

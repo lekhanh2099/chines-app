@@ -1,0 +1,283 @@
+{
+  "id": "09598aad-6429-4729-aa8c-85bae7ce4413",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "少",
+  "pinyin": "shǎo",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ / Phó từ",
+    "raw_cn": "形/动/副",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab",
+    "number_culture"
+  ],
+  "meaning": {
+    "hanviet": "Thiểu",
+    "meaning_vi": "ít, thiếu; bớt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ít, thiếu",
+      "bớt"
+    ],
+    "short_definition_vi": "ít, thiếu; bớt",
+    "textbook_focus_vi": "Âm Hán Việt: thiểu.",
+    "register_vi": "đời sống, số lượng, thói quen, so sánh.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "少",
+        "lishu_vi": "thiểu",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ít, thiếu, bớt",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "人少 = người ít. 少一个 = thiếu một cái/người.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 少 đọc shǎo khi nghĩa là ít. 少年 shàonián đọc shào, nghĩa là thiếu niên.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "少",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ít, thiếu, bớt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhỏ về kích thước/tuổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不多",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không nhiều, nhẹ hơn 少 trong một số ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "缺",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thiếu, thiếu hụt, nhấn không đủ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 人少 = ít người.",
+      "→ 年纪小 = tuổi nhỏ.",
+      "→ 缺钱 = thiếu tiền."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c7adaefc-7491-4062-b30b-92a1f492aa80",
+      "order": 1,
+      "zh": "人少",
+      "pinyin": "",
+      "vi": "ít người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c873e20-b742-4654-ae41-d410a33fb890",
+      "order": 2,
+      "zh": "少一点儿",
+      "pinyin": "",
+      "vi": "ít hơn một chút / bớt chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3573762e-95b1-4c12-b778-a29d27140160",
+      "order": 3,
+      "zh": "少吃",
+      "pinyin": "",
+      "vi": "ăn ít lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7747e272-515a-4473-a112-2b2687064142",
+      "order": 4,
+      "zh": "少说话",
+      "pinyin": "",
+      "vi": "nói ít lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb655187-0f1a-43db-97a6-036182006020",
+      "order": 5,
+      "zh": "不少人",
+      "pinyin": "",
+      "vi": "không ít người, khá nhiều người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "26b67a9f-dd65-4ded-bda3-885d57bb493b",
+      "order": 1,
+      "zh": "今天来的人很少。",
+      "pinyin": "Jīntiān lái de rén hěn shǎo.",
+      "vi": "Hôm nay người đến rất ít.",
+      "analysis_vi": "来的人 là “những người đến”; 少 đánh giá số lượng.",
+      "highlight": [
+        "少"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "09598aad-6429-4729-aa8c-85bae7ce4413"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "006f4daa-a2a8-46c2-90c6-fbba821721d4",
+      "order": 2,
+      "zh": "你不是说这个数字很吉利吗？怎么买的人这么少呢？",
+      "pinyin": "Nǐ bú shì shuō zhège shùzì hěn jílì ma? Zěnme mǎi de rén zhème shǎo ne?",
+      "vi": "Chẳng phải bạn nói con số này rất may mắn sao? Sao người mua lại ít thế?",
+      "analysis_vi": "不是……吗？ là câu hỏi tu từ để nhắc lại điều người kia từng nói. 怎么……呢？ ở đây không chỉ hỏi, mà có sắc thái ngạc nhiên/không hiểu.",
+      "highlight": [
+        "少"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "09598aad-6429-4729-aa8c-85bae7ce4413"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0d71ee7-22a7-4eeb-bb13-68ded9bbf383",
+      "order": 3,
+      "zh": "教室里坐着不少学生，可是老师一问谁能解释“谐音”，大家都安静下来，连平时最爱说话的人也说不出来。",
+      "pinyin": "Jiàoshì lǐ zuòzhe bù shǎo xuésheng, kěshì lǎoshī yí wèn shéi néng jiěshì “xiéyīn”, dàjiā dōu ānjìng xiàlai, lián píngshí zuì ài shuōhuà de rén yě shuō bù chūlai.",
+      "vi": "Trong lớp có khá nhiều học sinh đang ngồi, nhưng thầy/cô vừa hỏi ai có thể giải thích “đồng âm”, mọi người đều im xuống, ngay cả người bình thường thích nói nhất cũng không nói ra được.",
+      "analysis_vi": "教室里坐着不少学生 là câu tồn hiện. 不少 = không ít, khá nhiều. 安静下来 là chuyển sang trạng thái yên lặng. 连……也…… nhấn trường hợp đáng lẽ nói được mà vẫn không nói được. 说不出来 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "少"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "09598aad-6429-4729-aa8c-85bae7ce4413"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung, 不少 rất hay dùng để nói “khá nhiều” một cách mềm hơn 很多. Ví dụ 不少人认为…… nghe giống “không ít người cho rằng...”, khá hợp văn viết và bài nói.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "434a3bc9-1733-4def-b483-bea5fcbea260",
+      "order": 1,
+      "rule_vi": "Nhầm 少 shǎo và 小 xiǎo.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "人很少。 Rén hěn shǎo. Người rất ít.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "少",
+    "back": "ít, thiếu; bớt",
+    "hint": "shǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab",
+      "number_culture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "09598aad-6429-4729-aa8c-85bae7ce4413",
+    "source_lesson_vocab_id": null
+  }
+}

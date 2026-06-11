@@ -1,0 +1,175 @@
+{
+  "id": "f801fd04-12d1-41bf-907c-c0a1216d7a9c",
+  "type": "deep_vocabulary_item",
+  "order": 81,
+  "hanzi": "重量",
+  "pinyin": "zhòngliàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Số lượng và mức độ"
+  ],
+  "meaning": {
+    "hanviet": "Trọng lượng",
+    "meaning_vi": "trọng lượng, cân nặng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trọng lượng",
+      "cân nặng"
+    ],
+    "short_definition_vi": "trọng lượng, cân nặng",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: trọng lượng, cân nặng.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Số lượng và mức độ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "重",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "量",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "重量 trong bài được học theo nghĩa trọng tâm: trọng lượng, cân nặng.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: trọng lượng, cân nặng.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "体重",
+        "pinyin": "tǐzhòng",
+        "meaning_vi": "cân nặng cơ thể",
+        "difference_vi": "重量 dùng cho vật; 体重 dùng cho người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7b84006f-397d-4115-9cfe-bce11aac2589",
+      "order": 1,
+      "zh": "这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: trọng lượng, cân nặng",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6caa210b-0614-45be-8305-74d30eaa96d5",
+      "order": 1,
+      "zh": "这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “重量” = trọng lượng, cân nặng.",
+      "analysis_vi": "Câu này dùng “重量” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "重量"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f801fd04-12d1-41bf-907c-c0a1216d7a9c"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “重量” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3a9e9aad-d04f-4c3f-8f6c-cd2ae5b1ceae",
+      "order": 1,
+      "rule_vi": "Cần dùng “重量” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "重量",
+    "back": "trọng lượng, cân nặng",
+    "hint": "zhòngliàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Số lượng và mức độ"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f801fd04-12d1-41bf-907c-c0a1216d7a9c",
+    "source_lesson_vocab_id": null
+  }
+}

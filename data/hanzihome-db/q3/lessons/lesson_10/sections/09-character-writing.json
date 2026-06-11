@@ -1,0 +1,232 @@
+{
+  "id": "d533447f-d576-4e84-9a51-9dd012c491db",
+  "type": "character_writing",
+  "order": 9,
+  "title": "写汉字",
+  "title_vi": "Luyện viết chữ Hán",
+  "source_origin": "generated",
+  "check_needed": false,
+  "empty_textbook_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF; danh sách dưới đây là generated để hỗ trợ app luyện viết.",
+  "items": [
+    {
+      "id": "9c3098b4-90c2-4380-97ec-96d1c54f3039",
+      "type": "character_copying",
+      "order": 1,
+      "character": "提",
+      "pinyin": "tí",
+      "note_vi": "trong 提高",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "提"
+    },
+    {
+      "id": "7d8e71bc-b551-408a-b182-74eda371468d",
+      "type": "character_copying",
+      "order": 2,
+      "character": "高",
+      "pinyin": "gāo",
+      "note_vi": "trong 提高",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "高"
+    },
+    {
+      "id": "cf230dd4-6c1d-4e90-9ffd-0f937a5b44c9",
+      "type": "character_copying",
+      "order": 3,
+      "character": "贸",
+      "pinyin": "mào",
+      "note_vi": "trong 贸易",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "贸"
+    },
+    {
+      "id": "e6415746-85f6-449e-bdbc-a62be9368028",
+      "type": "character_copying",
+      "order": 4,
+      "character": "怒",
+      "pinyin": "nù",
+      "note_vi": "trong 愤怒",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "怒"
+    },
+    {
+      "id": "8a282ee4-f883-4618-aff2-983f1a17ea4f",
+      "type": "character_copying",
+      "order": 5,
+      "character": "技",
+      "pinyin": "jì",
+      "note_vi": "trong 技巧",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "技"
+    },
+    {
+      "id": "667c2fd0-3070-4712-bc92-39e94b674ab8",
+      "type": "character_copying",
+      "order": 6,
+      "character": "巧",
+      "pinyin": "qiǎo",
+      "note_vi": "trong 技巧",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "巧"
+    },
+    {
+      "id": "d8c1a250-45ad-4138-a73f-778a8c6f8f75",
+      "type": "character_copying",
+      "order": 7,
+      "character": "仇",
+      "pinyin": "chóu",
+      "note_vi": "trong 报仇",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "仇"
+    },
+    {
+      "id": "57ec8885-42c9-4577-ad57-5713cd90b957",
+      "type": "character_copying",
+      "order": 8,
+      "character": "商",
+      "pinyin": "shāng",
+      "note_vi": "trong 商业",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "商"
+    },
+    {
+      "id": "f1f87a16-39da-4804-839d-0486146d38ec",
+      "type": "character_copying",
+      "order": 9,
+      "character": "件",
+      "pinyin": "jiàn",
+      "note_vi": "trong 文件",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "件"
+    },
+    {
+      "id": "015e6b5a-579c-4600-bcb2-f0868fd6dbcb",
+      "type": "character_copying",
+      "order": 10,
+      "character": "练",
+      "pinyin": "liàn",
+      "note_vi": "trong 熟练",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "练"
+    },
+    {
+      "id": "d1f4c76e-fedf-44d7-b44a-a0038e329784",
+      "type": "character_copying",
+      "order": 11,
+      "character": "操",
+      "pinyin": "cāo",
+      "note_vi": "trong 操作",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "操"
+    },
+    {
+      "id": "8e7ded0e-9c9e-447e-b2a0-965c19179534",
+      "type": "character_copying",
+      "order": 12,
+      "character": "序",
+      "pinyin": "xù",
+      "note_vi": "trong 程序",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "序"
+    },
+    {
+      "id": "c76e17b5-a458-4ea3-8065-443b1c57201d",
+      "type": "character_copying",
+      "order": 13,
+      "character": "设",
+      "pinyin": "shè",
+      "note_vi": "trong 设计",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "设"
+    },
+    {
+      "id": "444f48f1-ddd3-4666-b7fb-93f8fecfca9a",
+      "type": "character_copying",
+      "order": 14,
+      "character": "修",
+      "pinyin": "xiū",
+      "note_vi": "trong 修理",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "修"
+    },
+    {
+      "id": "9ab082d6-1080-4111-a886-5ed7cebcb2ac",
+      "type": "character_copying",
+      "order": 15,
+      "character": "复",
+      "pinyin": "fù",
+      "note_vi": "trong 复印机",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "复"
+    },
+    {
+      "id": "333d4b86-53e0-4059-b91b-d913a043f43c",
+      "type": "character_copying",
+      "order": 16,
+      "character": "费",
+      "pinyin": "fèi",
+      "note_vi": "trong 免费",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "费"
+    },
+    {
+      "id": "cc03159c-88d9-49f4-af56-a47d1e57ae2c",
+      "type": "character_copying",
+      "order": 17,
+      "character": "刻",
+      "pinyin": "kè",
+      "note_vi": "trong 刻苦",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "刻"
+    },
+    {
+      "id": "7257dfe4-edc4-4680-b34d-476d1937263f",
+      "type": "character_copying",
+      "order": 18,
+      "character": "偶",
+      "pinyin": "ǒu",
+      "note_vi": "trong 偶然",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "偶"
+    },
+    {
+      "id": "ba9aceaf-6ec1-4e85-a280-32df7299f0e1",
+      "type": "character_copying",
+      "order": 19,
+      "character": "担",
+      "pinyin": "dān",
+      "note_vi": "trong 担当",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "担"
+    },
+    {
+      "id": "00d6f09e-90d3-4ecc-987c-814f5dcdbd2f",
+      "type": "character_copying",
+      "order": 20,
+      "character": "薪",
+      "pinyin": "xīn",
+      "note_vi": "trong 加薪 / 薪",
+      "source_origin": "generated",
+      "check_needed": false,
+      "hanzi": "薪"
+    }
+  ]
+}

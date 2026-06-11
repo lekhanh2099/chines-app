@@ -1,0 +1,242 @@
+{
+  "id": "3207fdbb-0114-44d7-9b18-0ead57b7a861",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "翻山",
+  "pinyin": "fān shān",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "reading"
+  ],
+  "meaning": {
+    "hanviet": "phiên sơn",
+    "meaning_vi": "vượt núi, trèo qua núi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vượt núi",
+      "trèo qua núi"
+    ],
+    "short_definition_vi": "vượt núi, trèo qua núi",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "翻",
+        "lishu_vi": "phiên",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "羽",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "lông/cánh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "羽",
+            "hanviet": "vũ",
+            "meaning_vi": "lông/cánh",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羽",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "lông/cánh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "番",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lật/vượt qua",
+        "modern_logic_vi": "Trong từ/cụm này, 翻 góp phần vào nghĩa hiện đại: lật/vượt qua.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "山",
+        "lishu_vi": "sơn",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "núi",
+        "modern_logic_vi": "Trong từ/cụm này, 山 góp phần vào nghĩa hiện đại: núi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "翻山 cần học theo nghĩa hiện đại trong bài: vượt núi, trèo qua núi.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 翻山.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4fb10fd0-bc10-4a53-a566-30e10a5d7516",
+      "order": 1,
+      "zh": "翻山",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7242ac62-2a0f-45b4-a06b-97a2a73194d0",
+      "order": 2,
+      "zh": "翻过一座山",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46894a99-b7dc-4e21-ae0b-aad36a9e046f",
+      "order": 3,
+      "zh": "翻山越岭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1f6c1bcb-0c7d-463a-9961-841bb09a1288",
+      "order": 1,
+      "zh": "他们翻过了一座大山。",
+      "pinyin": "Tāmen fānguò le yí zuò dà shān.",
+      "vi": "Họ đã vượt qua một ngọn núi lớn.",
+      "analysis_vi": "翻过了 nhấn kết quả qua được.",
+      "highlight": [
+        "翻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3207fdbb-0114-44d7-9b18-0ead57b7a861"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1599fdfd-e095-4c17-b938-3d5571d0e890",
+      "order": 2,
+      "zh": "哪怕一路要翻山涉水，他也没有放弃游历四方的志向。",
+      "pinyin": "Nǎpà yílù yào fān shān shè shuǐ, tā yě méiyǒu fàngqì yóulì sìfāng de zhìxiàng.",
+      "vi": "Dù phải vượt núi lội nước, ông cũng không bỏ chí hướng đi bốn phương.",
+      "analysis_vi": "翻山涉水 nhấn hành trình vất vả.",
+      "highlight": [
+        "翻山"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3207fdbb-0114-44d7-9b18-0ead57b7a861"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong du ký cổ, vượt núi là biểu tượng của ý chí và hành trình thực địa.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "78b822e9-2d5c-446d-aaa3-b9b81c7b04ad",
+      "order": 1,
+      "rule_vi": "Dùng 翻山 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "翻山",
+    "back": "vượt núi, trèo qua núi",
+    "hint": "fān shān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3207fdbb-0114-44d7-9b18-0ead57b7a861",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "synthetic_vocab_911b8b808e76a83c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "空调",
+  "pinyin": "kōngtiáo",
+  "meaning_vi": "máy lạnh; điều hòa",
+  "pos": "noun",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "1190511f-5970-4304-8f84-d7201b287aeb",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+    "type": "vocabulary_item",
+    "order": 34,
+    "hanzi": "空调",
+    "pinyin": "kōngtiáo",
+    "meaning_vi": "máy lạnh; điều hòa",
+    "meaning_en": "air conditioner",
+    "pos": "noun",
+    "tags": [
+      "supplementary_vocab",
+      "expanded_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "空调",
+      "back": "kōngtiáo — máy lạnh; điều hòa",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

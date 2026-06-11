@@ -1,0 +1,315 @@
+{
+  "id": "d462d514-05df-4697-b1cf-119abc2ec57c",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "求职",
+  "pinyin": "qiúzhí",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "cầu chức",
+    "meaning_vi": "tìm việc, xin việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tìm việc",
+      "xin việc"
+    ],
+    "short_definition_vi": "tìm việc, xin việc",
+    "textbook_focus_vi": "求职 dùng trang trọng trong tuyển dụng/CV hơn 找工作.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "求",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầu, tìm, mong có được",
+        "modern_logic_vi": "Trong từ “求职”, chữ “求” góp phần vào trường nghĩa: cầu, tìm, mong có được",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "职",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "耳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhĩ",
+          "radical_name_zh": "",
+          "hanviet": "nhĩ",
+          "meaning_vi": "tai",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "耳 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "耳 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "耳 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "只",
+            "hanviet": "chỉ",
+            "meaning_vi": "chỉ, chiếc; thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "只 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chức vụ, nghề nghiệp",
+        "modern_logic_vi": "Trong từ “求职”, chữ “职” góp phần vào trường nghĩa: chức vụ, nghề nghiệp",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "求职 dùng trang trọng trong tuyển dụng/CV hơn 找工作.",
+    "memory_tip_vi": "求职 dùng trang trọng trong tuyển dụng/CV hơn 找工作.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "找工作",
+        "pinyin": "",
+        "meaning_vi": "tìm việc, khẩu ngữ hơn",
+        "difference_vi": "tìm việc, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "应聘",
+        "pinyin": "",
+        "meaning_vi": "ứng tuyển vào vị trí cụ thể",
+        "difference_vi": "ứng tuyển vào vị trí cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dd17d84c-9523-490c-9b8e-2d82af2e7319",
+      "order": 1,
+      "zh": "求职过程",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "175913cd-802b-483c-b9a7-bf66d7f29cc8",
+      "order": 2,
+      "zh": "求职信",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "361a6d2f-09b5-43f7-b81b-f810d6daa307",
+      "order": 3,
+      "zh": "求职者",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e1a7c5f-b633-42d1-ba7e-3ea618877046",
+      "order": 4,
+      "zh": "求职面试",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ebb487d6-a063-497c-98db-b828731a810b",
+      "order": 1,
+      "zh": "他最近一直在求职。",
+      "pinyin": "",
+      "vi": "Gần đây anh ấy vẫn luôn tìm việc.",
+      "analysis_vi": "一直在 + V nhấn kéo dài.",
+      "highlight": [
+        "求职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d462d514-05df-4697-b1cf-119abc2ec57c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "29e9fd27-7cdb-4bd1-a2f6-b38a8ada2922",
+      "order": 2,
+      "zh": "为了生活，他不得不再三去求职。",
+      "pinyin": "",
+      "vi": "Vì cuộc sống, anh ấy buộc phải nhiều lần đi tìm việc.",
+      "analysis_vi": "不得不 nhấn bị hoàn cảnh ép.",
+      "highlight": [
+        "求职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d462d514-05df-4697-b1cf-119abc2ec57c"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "求职 dùng trang trọng trong tuyển dụng/CV hơn 找工作.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "489abd96-9b23-4a79-ba3a-272745cac370",
+      "order": 1,
+      "rule_vi": "求职 là người đi tìm việc; 招聘 là công ty tuyển dụng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "求职 là người đi tìm việc; 招聘 là công ty tuyển dụng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "求职",
+    "back": "tìm việc, xin việc",
+    "hint": "qiúzhí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d462d514-05df-4697-b1cf-119abc2ec57c",
+    "source_lesson_vocab_id": null
+  }
+}

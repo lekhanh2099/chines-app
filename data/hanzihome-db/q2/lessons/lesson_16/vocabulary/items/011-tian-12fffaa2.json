@@ -1,0 +1,338 @@
+{
+  "id": "9b54405b-9de4-4715-9c8f-bad4d796b6f1",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "甜",
+  "pinyin": "tián",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Điềm",
+    "meaning_vi": "ngọt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngọt"
+    ],
+    "short_definition_vi": "ngọt",
+    "textbook_focus_vi": "ngọt",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "甜",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "舌",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thiệt",
+              "radical_name_zh": "",
+              "hanviet": "thiệt",
+              "meaning_vi": "lưỡi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "舌 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "甘",
+            "hanviet": "cam",
+            "meaning_vi": "ngọt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "甘",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cam",
+              "radical_name_zh": "",
+              "hanviet": "cam",
+              "meaning_vi": "ngọt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "甘 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngọt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "甜 = ngọt; dùng cho vị, cũng mở rộng thành ngọt ngào.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "甘",
+        "pinyin": "",
+        "meaning_vi": "ngọt",
+        "difference_vi": "Văn hơn; nghĩa mở rộng khác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "甜美",
+        "pinyin": "",
+        "meaning_vi": "ngọt ngào, đẹp/dễ chịu",
+        "difference_vi": "Mở rộng sắc thái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好吃",
+        "pinyin": "",
+        "meaning_vi": "ngon",
+        "difference_vi": "Rộng hơn, không nhất thiết ngọt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "甜",
+        "right": "苦",
+        "meaning_vi": "ngọt ↔ đắng/khổ",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "26d1f6cb-b38c-4af3-99b1-e9776fa1cb06",
+      "order": 1,
+      "zh": "很甜",
+      "pinyin": "",
+      "vi": "rất ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1408e89d-403e-421a-b414-3265199e50cc",
+      "order": 2,
+      "zh": "太甜了",
+      "pinyin": "",
+      "vi": "ngọt quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75abf7f9-43d5-41c0-8f8c-0fd25110954c",
+      "order": 3,
+      "zh": "甜甜的",
+      "pinyin": "",
+      "vi": "ngọt ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1a111ae-643f-4076-80d5-d1fcf55249b5",
+      "order": 4,
+      "zh": "又甜又香",
+      "pinyin": "",
+      "vi": "vừa ngọt vừa thơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cd777c81-488b-4a1d-ae4f-3861ebd70e88",
+      "order": 5,
+      "zh": "甜点",
+      "pinyin": "",
+      "vi": "món tráng miệng / đồ ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "636a8273-35bd-4de7-ac1c-006d393210fb",
+      "order": 1,
+      "zh": "这些枣很甜。",
+      "pinyin": "Zhèxiē zǎo hěn tián.",
+      "vi": "Mấy quả táo tàu này rất ngọt.",
+      "analysis_vi": "Câu tính từ cơ bản; 很 giúp câu tự nhiên.",
+      "highlight": [
+        "甜"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9b54405b-9de4-4715-9c8f-bad4d796b6f1"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b22dc2a2-7fdc-4194-bf75-9e5792ad2b39",
+      "order": 2,
+      "zh": "树上结的枣越来越甜了。",
+      "pinyin": "Shù shang jiē de zǎo yuè lái yuè tián le.",
+      "vi": "Táo tàu kết trên cây ngày càng ngọt rồi.",
+      "analysis_vi": "越来越甜 nói mức độ vị ngọt tăng dần.",
+      "highlight": [
+        "甜"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9b54405b-9de4-4715-9c8f-bad4d796b6f1"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f3a0e181-4b4c-40fc-870b-b754979eb51e",
+      "order": 3,
+      "zh": "爷爷让我尝一尝，我一吃就觉得又甜又香。",
+      "pinyin": "Yéye ràng wǒ cháng yi cháng, wǒ yì chī jiù juéde yòu tián yòu xiāng.",
+      "vi": "Ông nội bảo tôi nếm thử, tôi vừa ăn đã thấy vừa ngọt vừa thơm.",
+      "analysis_vi": "又甜又香 liệt kê hai tính chất.",
+      "highlight": [
+        "甜"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9b54405b-9de4-4715-9c8f-bad4d796b6f1"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "甜 còn đi vào 甜蜜, 甜言蜜语; khi nói món ăn hiểu thẳng là vị ngọt.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d74e0e7d-8113-4e1f-89cd-d188c31df4d3",
+      "order": 1,
+      "rule_vi": "好吃 là ngon; 甜 là ngọt, không thay thế nhau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "好吃 là ngon; 甜 là ngọt, không thay thế nhau.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "甜",
+    "back": "ngọt",
+    "hint": "tián",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_011"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9b54405b-9de4-4715-9c8f-bad4d796b6f1",
+    "source_lesson_vocab_id": null
+  }
+}

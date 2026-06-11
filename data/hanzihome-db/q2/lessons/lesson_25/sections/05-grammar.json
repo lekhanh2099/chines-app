@@ -1,0 +1,413 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "反问句",
+      "title_vi": "Câu hỏi tu từ",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Câu có hình thức câu hỏi nhưng mục đích không phải hỏi thông tin; dùng để nhấn mạnh khẳng định, phủ định, trách nhẹ hoặc phản bác.",
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "你怎么能不去呢？",
+              "pinyin": "nǐ zěnme néng bù qù ne？",
+              "vi": "Sao bạn có thể không đi được chứ? → Bạn đương nhiên phải đi.",
+              "en": "",
+              "highlight": [
+                "怎么能不去呢"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "没 + V + 吗？",
+          "pattern": "没 + 动词 / 词组 + 吗？",
+          "meaning_vi": "Dùng để hỏi ngược, thường mang sắc thái “rõ vậy mà bạn không biết / không thấy sao?”",
+          "formulas": [
+            {
+              "label": "rhetorical_negative_question",
+              "pattern": "没 + V + 吗？"
+            }
+          ],
+          "examples": [
+            {
+              "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
+              "zh": "这件事你没听说过吗？",
+              "pinyin": "zhè jiàn shì nǐ méi tīng shuō guò ma？",
+              "vi": "Việc này bạn chưa từng nghe nói sao? → Bạn đáng lẽ phải nghe nói rồi.",
+              "en": "",
+              "highlight": [
+                "没听说过吗"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+              "zh": "你没看见吗？他就在这儿。",
+              "pinyin": "nǐ méi kàn jiàn ma？ tā jiù zài zhèr。",
+              "vi": "Bạn không nhìn thấy sao? Anh ấy ở ngay đây mà.",
+              "en": "",
+              "highlight": [
+                "没看见吗"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Thường có sắc thái trách nhẹ, ngạc nhiên hoặc nhấn mạnh điều người nói cho là hiển nhiên."
+          ]
+        },
+        {
+          "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Dùng đại từ nghi vấn để hỏi tu từ",
+          "pattern": "怎么 / 谁 / 哪儿 + ...？",
+          "meaning_vi": "Đại từ nghi vấn không hỏi thật, mà dùng để phản bác hoặc nhấn mạnh thái độ.",
+          "formulas": [
+            {
+              "label": "rhetorical_pronoun",
+              "pattern": "疑问代词 + ...？"
+            }
+          ],
+          "examples": [
+            {
+              "id": "3c9a4bcc-7b95-4fbf-a27e-833a24841a8b",
+              "zh": "你不告诉我，我怎么知道呢？",
+              "pinyin": "nǐ bù gàosu wǒ， wǒ zěnme zhīdao ne？",
+              "vi": "Bạn không nói cho tôi, làm sao tôi biết được? → Tôi không thể biết.",
+              "en": "",
+              "highlight": [
+                "怎么知道呢"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "dd839fde-a24a-4a33-bc3a-4e0db7c01197",
+              "zh": "谁说我不去？",
+              "pinyin": "shuí shuō wǒ bù qù？",
+              "vi": "Ai nói tôi không đi? → Tôi đương nhiên đi.",
+              "en": "",
+              "highlight": [
+                "谁说"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "6d81a490-7d47-451c-b5d2-ffe940b59486",
+              "zh": "他哪儿去过美国？",
+              "pinyin": "tā nǎr qù guò měi guó？",
+              "vi": "Anh ấy đi Mỹ bao giờ chứ? → Anh ấy chưa từng đi Mỹ.",
+              "en": "",
+              "highlight": [
+                "哪儿"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": []
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "连……也 / 都……",
+      "title_vi": "Ngay cả... cũng...",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "emphasis"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Đưa một trường hợp đặc biệt/cực đoan ra để nhấn mạnh. Khi trường hợp đó còn như vậy, các trường hợp khác càng khỏi nói.",
+          "examples": []
+        },
+        {
+          "id": "a6012e0f-4ca0-438c-bcf0-1043d8150bda",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Dùng trong câu phủ định",
+          "pattern": "连 + A + 也 / 都 + 不 / 没 + V",
+          "meaning_vi": "Ngay cả A còn không..., huống chi những cái khác.",
+          "formulas": [
+            {
+              "label": "negative_emphasis",
+              "pattern": "连 + A + 也/都 + 不/没 + V"
+            }
+          ],
+          "examples": [
+            {
+              "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+              "zh": "来北京快半年了，她连长城也没去过。",
+              "pinyin": "lái Běijīng kuài bànnián le， tā lián Chángchéng yě méi qù guò。",
+              "vi": "Đến Bắc Kinh gần nửa năm rồi, cô ấy ngay cả Vạn Lý Trường Thành cũng chưa từng đi.",
+              "en": "",
+              "highlight": [
+                "连长城也没去过"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
+              "zh": "你怎么连这么简单的问题也不会回答？",
+              "pinyin": "nǐ zěnme lián zhème jiǎndān de wèntí yě bú huì huídá？",
+              "vi": "Sao bạn ngay cả câu hỏi đơn giản thế này cũng không biết trả lời?",
+              "en": "",
+              "highlight": [
+                "连这么简单的问题也不会回答"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": []
+        },
+        {
+          "id": "fcfef93c-e55f-46bb-9a38-17ca999a1197",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Dùng trong câu khẳng định",
+          "pattern": "连 + A + 都 + V / Adj",
+          "meaning_vi": "Ngay cả A cũng..., nhấn mạnh mức độ cao hoặc phạm vi rộng.",
+          "formulas": [
+            {
+              "label": "affirmative_emphasis",
+              "pattern": "连 + A + 都 + V/Adj"
+            }
+          ],
+          "examples": [
+            {
+              "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
+              "zh": "连校长都参加了我们的联欢晚会。",
+              "pinyin": "lián xiàozhǎng dōu cānjiā le wǒmen de liánhuān wǎnhuì。",
+              "vi": "Ngay cả hiệu trưởng cũng tham gia buổi liên hoan của chúng tôi.",
+              "en": "",
+              "highlight": [
+                "连校长都"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "519958ea-f183-4f7d-af9d-45c6e79d137c",
+              "zh": "这么简单的问题连孩子都会回答。",
+              "pinyin": "zhème jiǎndān de wèntí lián hái zi dū huì huídá。",
+              "vi": "Câu hỏi đơn giản thế này ngay cả trẻ con cũng biết trả lời.",
+              "en": "",
+              "highlight": [
+                "连孩子都会回答"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Trong câu khẳng định, 连……都…… thường tự nhiên và ổn định hơn 连……也……."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "二次否定",
+      "title_vi": "Phủ định hai lần để nhấn mạnh khẳng định",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "emphasis"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng hai yếu tố phủ định trong cùng một câu để tạo nghĩa khẳng định mạnh hơn câu khẳng định thường.",
+          "examples": []
+        },
+        {
+          "id": "6b417a86-ee99-4c94-b342-c9bff5f564c5",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "没有 + 不 + V / Adj + 的",
+          "pattern": "没有 + 不 + V / Adj + 的",
+          "meaning_vi": "Không có cái nào là không... → tất cả đều...",
+          "formulas": [
+            {
+              "label": "double_negative_01",
+              "pattern": "没有 + 不 + V/Adj + 的"
+            }
+          ],
+          "examples": [
+            {
+              "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
+              "zh": "中国的事我没有不知道的。",
+              "pinyin": "Zhōngguó de shì wǒ méiyǒu bù zhīdao de。",
+              "vi": "Chuyện của Trung Quốc không có chuyện nào tôi không biết. → Chuyện gì của Trung Quốc tôi cũng biết.",
+              "en": "",
+              "highlight": [
+                "没有不知道的"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
+              "zh": "这个问题没有人不知道。",
+              "pinyin": "zhè ge wèntí méiyǒu rén bù zhīdao。",
+              "vi": "Vấn đề này không ai là không biết. → Ai cũng biết.",
+              "en": "",
+              "highlight": [
+                "没有人不知道"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": []
+        },
+        {
+          "id": "d0e5a393-126f-4376-9fcb-f6cf84482c86",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "不能不 + V",
+          "pattern": "不能不 + 动词",
+          "meaning_vi": "Không thể không làm → bắt buộc phải làm / nhất định phải làm.",
+          "formulas": [
+            {
+              "label": "double_negative_02",
+              "pattern": "不能不 + V"
+            }
+          ],
+          "examples": [
+            {
+              "id": "11c0241f-0901-42a3-879e-03e8696d3e40",
+              "zh": "你不能不去。",
+              "pinyin": "nǐ bù néng bù qù。",
+              "vi": "Bạn không thể không đi. → Bạn nhất định phải đi.",
+              "en": "",
+              "highlight": [
+                "不能不去"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "8b618ede-e231-4d0f-9a2b-514c4c44abcd",
+              "zh": "这么重要的事，你不能不知道。",
+              "pinyin": "zhème zhòngyào de shì， nǐ bù néng bù zhīdao。",
+              "vi": "Việc quan trọng thế này, bạn không thể không biết. → Bạn nhất định phải biết.",
+              "en": "",
+              "highlight": [
+                "不能不知道"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": []
+        }
+      ]
+    }
+  ]
+}

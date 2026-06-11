@@ -1,0 +1,317 @@
+{
+  "id": "b0911567-a968-405f-9e7c-8428bf8a2bdf",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "选择",
+  "pinyin": "xuǎnzé",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tuyển trạch",
+    "meaning_vi": "lựa chọn; sự lựa chọn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lựa chọn; sự lựa chọn"
+    ],
+    "short_definition_vi": "lựa chọn; sự lựa chọn",
+    "textbook_focus_vi": "lựa chọn; sự lựa chọn",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "选",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, di chuyển",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "先",
+            "hanviet": "tiên",
+            "meaning_vi": "trước",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "chọn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "择",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "泽",
+            "hanviet": "",
+            "meaning_vi": "phần giản hóa",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "chọn/lựa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "chọn sau khi cân nhắc nhiều khả năng",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3ffdf60c-3365-46ee-86ab-54689ceb4099",
+      "order": 1,
+      "zh": "做出选择",
+      "pinyin": "",
+      "vi": "đưa ra lựa chọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "979df511-3155-4747-8152-33dc803ccb7b",
+      "order": 2,
+      "zh": "选择专业",
+      "pinyin": "",
+      "vi": "chọn ngành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0debafbe-9031-47e9-a63e-eecc23c40341",
+      "order": 3,
+      "zh": "选择节目",
+      "pinyin": "",
+      "vi": "chọn tiết mục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "836f7800-e249-4f16-8d3a-193de9f000e1",
+      "order": 4,
+      "zh": "正确的选择",
+      "pinyin": "",
+      "vi": "lựa chọn đúng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4627be61-7596-40e2-aa34-b23b7d99b0a7",
+      "order": 5,
+      "zh": "没有选择",
+      "pinyin": "",
+      "vi": "không có lựa chọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "abda3b32-848a-49a6-9572-b2162a4065e9",
+      "order": 1,
+      "zh": "节目太多了，我不知道该怎么选择。",
+      "pinyin": "Jiémù tài duō le, wǒ bù zhīdào gāi zěnme xuǎnzé.",
+      "vi": "Chương trình nhiều quá, tôi không biết nên chọn thế nào.",
+      "analysis_vi": "怎么选择 dùng khi có nhiều phương án.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b0911567-a968-405f-9e7c-8428bf8a2bdf"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5f79cd1e-c330-4201-a532-c5d756788d5b",
+      "order": 2,
+      "zh": "如果不了解选择，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě xuǎnzé, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 选择, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b0911567-a968-405f-9e7c-8428bf8a2bdf"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9c5a7599-1be1-42e7-9d0b-94bc8abf1b06",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解选择在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě xuǎnzé zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 选择 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "选择"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b0911567-a968-405f-9e7c-8428bf8a2bdf"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Xem trước 节目单 giúp lựa chọn tiết mục dễ hiểu hơn khi xem nghệ thuật truyền thống.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6774d2a0-6203-4d08-a91f-8b03ba15f54f",
+      "order": 1,
+      "rule_vi": "选择 trang trọng hơn 选; 挑 thường là chọn kỹ đồ/người cụ thể。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "选择",
+    "back": "lựa chọn; sự lựa chọn",
+    "hint": "xuǎnzé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b0911567-a968-405f-9e7c-8428bf8a2bdf",
+    "source_lesson_vocab_id": null
+  }
+}

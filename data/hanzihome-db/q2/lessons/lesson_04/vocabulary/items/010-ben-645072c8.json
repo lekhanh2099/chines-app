@@ -1,0 +1,282 @@
+{
+  "id": "afebfb30-a4e2-47c2-ba91-8e63fbd434b0",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "笨",
+  "pinyin": "bèn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "bai_04",
+    "canh_bao"
+  ],
+  "meaning": {
+    "hanviet": "Bổn",
+    "meaning_vi": "ngu; vụng; chậm hiểu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngu",
+      "vụng",
+      "chậm hiểu"
+    ],
+    "short_definition_vi": "ngu; vụng; chậm hiểu",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "笨",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "本",
+            "hanviet": "bản",
+            "meaning_vi": "thành phần biểu âm",
+            "position_vi": "bên dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngu, vụng, không linh hoạt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "笨 = chậm hiểu/không khéo; là từ chê người.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "傻",
+        "pinyin": "",
+        "meaning_vi": "ngốc, khờ",
+        "difference_vi": "gần nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "蠢",
+        "pinyin": "",
+        "meaning_vi": "ngu xuẩn",
+        "difference_vi": "nặng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "聪明",
+        "pinyin": "",
+        "meaning_vi": "thông minh",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8943874d-a90e-4672-8e1a-a69d27f4ed3d",
+      "order": 1,
+      "zh": "很笨",
+      "pinyin": "",
+      "vi": "rất ngốc/vụng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "21531af7-4f90-4a60-90e4-6b47fb5a5d77",
+      "order": 2,
+      "zh": "笨办法",
+      "pinyin": "",
+      "vi": "cách vụng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b417db2c-2efa-4d69-a516-d86e5e07cecf",
+      "order": 3,
+      "zh": "笨鸟先飞",
+      "pinyin": "",
+      "vi": "chim vụng bay trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3e8c355d-107f-4be6-8077-78011986b885",
+      "order": 1,
+      "zh": "我不笨，只是还没学会。",
+      "pinyin": "Wǒ bù bèn, zhǐshì hái méi xué huì.",
+      "vi": "Tôi không ngốc, chỉ là vẫn chưa học được thôi.",
+      "analysis_vi": "学会 là bổ ngữ kết quả.",
+      "highlight": [
+        "笨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "afebfb30-a4e2-47c2-ba91-8e63fbd434b0"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dbc49d35-1533-42db-b9b4-99a6ca17ecbc",
+      "order": 2,
+      "zh": "这道题我做错了，不是因为我笨。",
+      "pinyin": "Zhè dào tí wǒ zuò cuò le, bú shì yīnwèi wǒ bèn.",
+      "vi": "Câu này tôi làm sai không phải vì tôi ngốc.",
+      "analysis_vi": "不是因为 sửa nguyên nhân.",
+      "highlight": [
+        "笨"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "afebfb30-a4e2-47c2-ba91-8e63fbd434b0"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "笨鸟先飞 nhắc người học yếu thì nên bắt đầu sớm hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "45882254-c847-4bc9-ac47-c9f2890775e7",
+      "order": 1,
+      "rule_vi": "Không nên nói trực tiếp 你很笨.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "你很笨。",
+          "pinyin": "Nǐ hěn bèn.",
+          "vi": "Bạn rất ngu/vụng.",
+          "note_vi": "Dễ xúc phạm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个地方你还没弄懂。",
+          "pinyin": "Zhège dìfang nǐ hái méi nòng dǒng.",
+          "vi": "Chỗ này bạn vẫn chưa hiểu rõ.",
+          "note_vi": "Mềm hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "笨",
+    "back": "ngu; vụng; chậm hiểu",
+    "hint": "bèn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "canh_bao"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "afebfb30-a4e2-47c2-ba91-8e63fbd434b0",
+    "source_lesson_vocab_id": null
+  }
+}

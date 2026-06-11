@@ -1,0 +1,327 @@
+{
+  "id": "4ba7b9f5-cdc4-4aed-a15a-6962be9757b4",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "一言一行",
+  "pinyin": "yī yán yī xíng",
+  "pos": {
+    "raw_vi": "Thành ngữ / Cụm danh từ",
+    "raw_cn": "",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "appearance_behavior"
+  ],
+  "meaning": {
+    "hanviet": "nhất ngôn nhất hành",
+    "meaning_vi": "từng lời nói, từng hành động",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từng lời nói, từng hành động"
+    ],
+    "short_definition_vi": "từng lời nói, từng hành động",
+    "textbook_focus_vi": "từng lời nói, từng hành động",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "một",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "一 là một/từng cái trong cấu trúc lặp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "言",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "言",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lời nói",
+        "modern_logic_vi": "言 là lời nói/ngôn ngữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "một",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "一 là một/từng cái trong cấu trúc lặp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "行",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi, làm, hành động",
+        "modern_logic_vi": "行 trong 言行 đọc xíng, nghĩa là hành động.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一言一行 = một lời nói, một hành động → từng lời từng việc.",
+    "memory_tip_vi": "一言一行 = một lời nói, một hành động → từng lời từng việc.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一举一动",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từng cử chỉ/hành động",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "言行",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lời nói và hành động nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一言一语",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từng lời nói, chỉ phần nói",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "一言一行",
+        "right": "一举一动",
+        "meaning_vi": "",
+        "note_vi": "gồm lời nói + hành động ↔ chủ yếu cử chỉ/hành động",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f05e560a-24fd-40bf-9ff8-1504312d9124",
+      "order": 1,
+      "zh": "他的一言一行",
+      "pinyin": "",
+      "vi": "từng lời nói và hành động của anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13d5b9b1-9f03-44f5-816b-3ebd0be31ca6",
+      "order": 2,
+      "zh": "注意一言一行",
+      "pinyin": "",
+      "vi": "chú ý từng lời nói và hành động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a58fdd59-73a5-4508-bf23-58ea5aaf932a",
+      "order": 3,
+      "zh": "规范一言一行",
+      "pinyin": "",
+      "vi": "giữ chuẩn từng lời nói hành động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d3b2df69-29cf-412c-aa8a-847f819b6e4c",
+      "order": 4,
+      "zh": "老师的一言一行",
+      "pinyin": "",
+      "vi": "từng lời nói hành động của thầy/cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf9ed0e3-969a-4139-a1bb-118bbdbd9a44",
+      "order": 5,
+      "zh": "父母的一言一行",
+      "pinyin": "",
+      "vi": "từng lời nói hành động của cha mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "772e5114-146c-4aab-b994-74cb853415dc",
+      "order": 1,
+      "zh": "老师的一言一行都会影响学生。",
+      "pinyin": "",
+      "vi": "Từng lời nói và hành động của thầy/cô đều ảnh hưởng đến học sinh.",
+      "analysis_vi": "都 nhấn toàn bộ.",
+      "highlight": [
+        "一言一行"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4ba7b9f5-cdc4-4aed-a15a-6962be9757b4"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "79de2d48-2608-46a7-bc93-88e2a4d2b777",
+      "order": 2,
+      "zh": "这个人的一言一行你都记住了吗？",
+      "pinyin": "",
+      "vi": "Từng lời nói và hành động của người này bạn đều nhớ hết chưa?",
+      "analysis_vi": "记住 là bổ ngữ kết quả.",
+      "highlight": [
+        "一言一行"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4ba7b9f5-cdc4-4aed-a15a-6962be9757b4"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Thường xuất hiện trong giáo dục, nghề giáo, gia đình, hình ảnh công chúng.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0aa8fc64-ca96-41e5-9070-37879107a69d",
+      "order": 1,
+      "rule_vi": "行 trong 一言一行 đọc xíng, không đọc háng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "一言一行 yī yán yī xíng",
+          "pinyin": "",
+          "vi": "từng lời nói và hành động",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一言一行",
+    "back": "từng lời nói, từng hành động",
+    "hint": "yī yán yī xíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "appearance_behavior"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4ba7b9f5-cdc4-4aed-a15a-6962be9757b4",
+    "source_lesson_vocab_id": null
+  }
+}

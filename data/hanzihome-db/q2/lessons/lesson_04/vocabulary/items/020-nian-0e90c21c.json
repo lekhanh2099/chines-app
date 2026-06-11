@@ -1,0 +1,278 @@
+{
+  "id": "89d2624b-4ae3-4bed-8cac-7669c5d9dd8d",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "念",
+  "pinyin": "niàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "phat_am"
+  ],
+  "meaning": {
+    "hanviet": "Niệm",
+    "meaning_vi": "đọc thành tiếng; nhớ; nghĩ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đọc thành tiếng",
+      "nhớ",
+      "nghĩ"
+    ],
+    "short_definition_vi": "đọc thành tiếng; nhớ; nghĩ",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "念",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "今",
+            "hanviet": "kim",
+            "meaning_vi": "nay / thành phần biểu âm",
+            "position_vi": "bên trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "suy nghĩ / ghi nhớ",
+            "position_vi": "bên dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "suy nghĩ / cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhớ; đọc thành tiếng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "suy nghĩ / cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "念 trong bài = đọc thành tiếng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "读",
+        "pinyin": "",
+        "meaning_vi": "đọc nói chung",
+        "difference_vi": "có thể đọc thầm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "朗读",
+        "pinyin": "",
+        "meaning_vi": "đọc to",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "念",
+        "right": "读",
+        "meaning_vi": "đọc thành tiếng ↔ đọc nói chung",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "79c2aa8b-c9cd-4ea1-8f19-43a956ce3a19",
+      "order": 1,
+      "zh": "念课文",
+      "pinyin": "",
+      "vi": "đọc bài khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4894da1-f250-4a0d-9f50-bf5c73f13709",
+      "order": 2,
+      "zh": "念一遍",
+      "pinyin": "",
+      "vi": "đọc một lượt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28f974ad-b52e-4d93-8069-a9f1dc82a5c5",
+      "order": 3,
+      "zh": "念错",
+      "pinyin": "",
+      "vi": "đọc sai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd0fd9da-0cdb-4059-a8d5-0393ff612201",
+      "order": 1,
+      "zh": "这个词怎么念？",
+      "pinyin": "Zhège cí zěnme niàn?",
+      "vi": "Từ này đọc thế nào?",
+      "analysis_vi": "怎么念 hỏi cách đọc.",
+      "highlight": [
+        "念"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89d2624b-4ae3-4bed-8cac-7669c5d9dd8d"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5325e6f4-ab2c-41c3-9323-fa0043069add",
+      "order": 2,
+      "zh": "安娜把这个句子念错了。",
+      "pinyin": "Ānnà bǎ zhège jùzi niàn cuò le.",
+      "vi": "Anna đọc sai câu này rồi.",
+      "analysis_vi": "念错了 dùng 错.",
+      "highlight": [
+        "念"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89d2624b-4ae3-4bed-8cac-7669c5d9dd8d"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong lớp học 念 thường là đọc bài/từ/câu thành tiếng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "64e87413-bc11-49cf-a0ca-2ad90c529efd",
+      "order": 1,
+      "rule_vi": "Hỏi cách đọc chữ nên dùng 怎么念.",
+      "natural_examples": [],
+      "unnatural_examples": [
+        {
+          "zh": "这个字怎么说？",
+          "pinyin": "Zhège zì zěnme shuō?",
+          "vi": "Chữ này nói thế nào?",
+          "note_vi": "Kém chính xác nếu hỏi cách đọc chữ.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这个字怎么念？",
+          "pinyin": "Zhège zì zěnme niàn?",
+          "vi": "Chữ này đọc thế nào?",
+          "note_vi": "Hỏi phát âm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "念",
+    "back": "đọc thành tiếng; nhớ; nghĩ",
+    "hint": "niàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "phat_am"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "89d2624b-4ae3-4bed-8cac-7669c5d9dd8d",
+    "source_lesson_vocab_id": null
+  }
+}

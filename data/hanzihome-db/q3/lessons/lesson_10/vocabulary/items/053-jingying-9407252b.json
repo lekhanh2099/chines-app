@@ -1,0 +1,71 @@
+{
+  "id": "synthetic_vocab_ab6f3e0ec62f78c9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "经营",
+  "pinyin": "jīngyíng",
+  "meaning_vi": "kinh doanh; quản lý vận hành",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "8eba5dd1-5c70-49be-8252-fac5f68cd9ba",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "8eba5dd1-5c70-49be-8252-fac5f68cd9ba",
+    "type": "vocabulary_item",
+    "order": 2,
+    "hanzi": "经营",
+    "pinyin": "jīngyíng",
+    "meaning_vi": "kinh doanh; quản lý vận hành",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "经营",
+      "back": "jīngyíng — kinh doanh; quản lý vận hành",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ],
+      "tags": [
+        "supplementary_vocab",
+        "reading_vocab"
+      ],
+      "notes": []
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

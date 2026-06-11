@@ -1,0 +1,68 @@
+{
+  "id": "synthetic_vocab_7cb1110a883a49d5",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "大巴",
+  "pinyin": "dàbā",
+  "meaning_vi": "xe buýt lớn; xe khách lớn",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_044",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_044",
+    "type": "vocabulary_item",
+    "order": 44,
+    "hanzi": "大巴",
+    "pinyin": "dàbā",
+    "meaning_vi": "xe buýt lớn; xe khách lớn",
+    "meaning_en": "coach; large bus",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "prior_user_list_extra"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "大巴",
+      "back": "dàbā — xe buýt lớn; xe khách lớn",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "prior_user_list_extra",
+    "check_needed": false,
+    "notes": [
+      "Giữ lại vì có trong danh sách chuẩn hóa trước đó của người dùng; không nằm trong bảng 生词 chính của PDF bài 3."
+    ]
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,229 @@
+{
+  "id": "1b45aae5-e2e9-4eb9-8759-bcbb62e226c7",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "董事长",
+  "pinyin": "dǒngshìzhǎng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "đổng sự trưởng",
+    "meaning_vi": "chủ tịch hội đồng quản trị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chủ tịch hội đồng quản trị"
+    ],
+    "short_definition_vi": "chủ tịch hội đồng quản trị",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "董",
+        "lishu_vi": "đổng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quản lý; họ Đổng",
+        "modern_logic_vi": "Trong từ này, 董 góp phần vào nghĩa hiện đại: quản lý; họ Đổng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "事",
+        "lishu_vi": "sự",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc",
+        "modern_logic_vi": "Trong từ này, 事 góp phần vào nghĩa hiện đại: việc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "长",
+        "lishu_vi": "trưởng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người đứng đầu; dài",
+        "modern_logic_vi": "Trong từ này, 长 góp phần vào nghĩa hiện đại: người đứng đầu; dài.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "董事长 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 公司董事长.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "长 trong 董事长 đọc zhǎng, không đọc cháng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "56568115-c68c-41c2-b9bf-bb2e4ae47db7",
+      "order": 1,
+      "zh": "公司董事长",
+      "pinyin": "",
+      "vi": "chủ tịch công ty/HĐQT",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd335cc7-a978-4e32-94e2-0d1de79c1e42",
+      "order": 2,
+      "zh": "担任董事长",
+      "pinyin": "",
+      "vi": "đảm nhiệm chủ tịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f1c49b8-fafb-4ac3-9e9f-ec3db00a025a",
+      "order": 3,
+      "zh": "董事长办公室",
+      "pinyin": "",
+      "vi": "văn phòng chủ tịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "98b4b803-d47e-4c61-bf13-391adc75d346",
+      "order": 1,
+      "zh": "她是一家公司的董事长。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 董事长 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 董事长; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "董事长"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1b45aae5-e2e9-4eb9-8759-bcbb62e226c7"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 董事长 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "496f3279-2671-47dc-ba85-3785e35ec8dc",
+      "order": 1,
+      "rule_vi": "长 trong 董事长 đọc zhǎng, không đọc cháng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "董事长",
+    "back": "chủ tịch hội đồng quản trị",
+    "hint": "dǒngshìzhǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1b45aae5-e2e9-4eb9-8759-bcbb62e226c7",
+    "source_lesson_vocab_id": null
+  }
+}

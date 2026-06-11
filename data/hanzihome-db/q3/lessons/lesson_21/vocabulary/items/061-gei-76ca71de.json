@@ -1,0 +1,276 @@
+{
+  "id": "266dcb49-a689-4728-bc02-402b977c846d",
+  "type": "deep_vocabulary_item",
+  "order": 61,
+  "hanzi": "给",
+  "pinyin": "gěi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动/介/助",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "cấp",
+    "meaning_vi": "cho, đưa cho; để cho; dấu nhấn trong câu xử lý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cho",
+      "đưa cho",
+      "để cho",
+      "dấu nhấn trong câu xử lý"
+    ],
+    "short_definition_vi": "cho, đưa cho; để cho; dấu nhấn trong câu xử lý",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: cho, đưa cho; để cho; dấu nhấn trong câu xử lý.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "给",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 给.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "给 trong bài được hiểu theo nghĩa: cho, đưa cho; để cho; dấu nhấn trong câu xử lý. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 给.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch mọi 给 là “cho”; trong 把……给……了 nó nhấn kết quả bị xử lý."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "136b98f8-5822-4e42-bda1-552bdb9777d0",
+      "order": 1,
+      "zh": "给我钱",
+      "pinyin": "",
+      "vi": "đưa tiền cho tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a20d941-9b8b-466e-9b96-1d9d4c4e1f23",
+      "order": 2,
+      "zh": "给我推荐",
+      "pinyin": "",
+      "vi": "giới thiệu cho tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "928ea969-f559-48ec-a38a-262afec4cb24",
+      "order": 3,
+      "zh": "给营养费",
+      "pinyin": "",
+      "vi": "trả tiền bồi dưỡng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "961b6ef6-d4a9-4e39-90d1-bb787c3c352f",
+      "order": 4,
+      "zh": "交给总编",
+      "pinyin": "",
+      "vi": "giao cho tổng biên tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c3c004a-51d8-4b2c-ad47-6926ac48f21a",
+      "order": 5,
+      "zh": "把心情给搅了",
+      "pinyin": "",
+      "vi": "làm hỏng mất tâm trạng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "eaf28c3c-b0c4-4b51-93d7-b8293d34658c",
+      "order": 1,
+      "zh": "请把钱给我。",
+      "pinyin": "",
+      "vi": "Làm ơn đưa tiền cho tôi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "给"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "266dcb49-a689-4728-bc02-402b977c846d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6af403d3-56d0-44f2-86a4-94cdca540570",
+      "order": 2,
+      "zh": "几个朋友把我的好心情给搅了。",
+      "pinyin": "",
+      "vi": "Mấy người bạn làm hỏng mất tâm trạng tốt của tôi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "给"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "266dcb49-a689-4728-bc02-402b977c846d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "Không dịch mọi 给 là “cho”; trong 把……给……了 nó nhấn kết quả bị xử lý.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5daebb31-2407-4b45-8224-fafd4507f51f",
+      "order": 1,
+      "rule_vi": "Không dịch mọi 给 là “cho”; trong 把……给……了 nó nhấn kết quả bị xử lý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他把杯子给打破了 = anh ấy cho cái cốc đánh vỡ。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "Không dịch mọi 给 là “cho”; trong 把……给……了 nó nhấn kết quả bị xử lý.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他把杯子给打破了 = anh ấy làm vỡ mất cái cốc。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dịch mọi 给 là “cho”; trong 把……给……了 nó nhấn kết quả bị xử lý.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "给",
+    "back": "cho, đưa cho; để cho; dấu nhấn trong câu xử lý",
+    "hint": "gěi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "266dcb49-a689-4728-bc02-402b977c846d",
+    "source_lesson_vocab_id": null
+  }
+}

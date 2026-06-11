@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_ccce8c2e71f0f728",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "听见",
+  "pinyin": "tīngjiàn",
+  "meaning_vi": "nghe thấy",
+  "pos": "Động từ + bổ ngữ kết quả",
+  "pos_detail": {
+    "vi": "Động từ + bổ ngữ kết quả",
+    "cn": "动词 + 结果补语",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "động từ 听 + bổ ngữ kết quả 见",
+    "usage_note_vi": "Không phải động từ li hợp; 见 biểu thị kết quả nghe thấy được.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "9bed65c3-2fb0-5246-adc9-2b6c9b244a71",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "9bed65c3-2fb0-5246-adc9-2b6c9b244a71",
+    "type": "vocabulary_item",
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "order": 30,
+    "hanzi": "听见",
+    "pinyin": "tīngjiàn",
+    "meaning_vi": "nghe thấy",
+    "meaning_en": "",
+    "pos": "Động từ + bổ ngữ kết quả",
+    "pos_detail": {
+      "vi": "Động từ + bổ ngữ kết quả",
+      "cn": "动词 + 结果补语",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "động từ 听 + bổ ngữ kết quả 见",
+      "usage_note_vi": "Không phải động từ li hợp; 见 biểu thị kết quả nghe thấy được.",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "pdf_checked"
+    ],
+    "flashcard": {
+      "front": "听见",
+      "back": "tīngjiàn — nghe thấy",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

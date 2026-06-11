@@ -1,0 +1,301 @@
+{
+  "id": "96ee171e-8786-40c5-819a-0312cce41275",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "操作",
+  "pinyin": "cāozuò",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thao tác",
+    "meaning_vi": "thao tác, vận hành, xử lý theo quy trình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thao tác",
+      "vận hành",
+      "xử lý theo quy trình"
+    ],
+    "short_definition_vi": "thao tác/vận hành theo quy trình",
+    "textbook_focus_vi": "thao tác/vận hành theo quy trình",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "操",
+        "lishu_vi": "thao",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "作",
+        "lishu_vi": "tác",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thao tác/vận hành theo quy trình",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 操作电脑.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "使用",
+        "pinyin": "shǐyòng",
+        "meaning_vi": "sử dụng",
+        "difference_vi": "rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "处理",
+        "pinyin": "chǔlǐ",
+        "meaning_vi": "xử lý",
+        "difference_vi": "không nhất thiết thao tác máy",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e4e3194d-8f58-4201-97b8-fd1d459731ac",
+      "order": 1,
+      "zh": "操作电脑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fb5f842-445e-4ae5-a2f3-da34d9a36f0f",
+      "order": 2,
+      "zh": "操作机器",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f98cef06-a6a9-4b70-b145-b8af824e9351",
+      "order": 3,
+      "zh": "操作程序",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4eb9ce74-da5d-4018-b36c-a60cd332d9d2",
+      "order": 4,
+      "zh": "操作系统",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b51dc35a-a54b-429e-a2ba-9b6793287893",
+      "order": 5,
+      "zh": "操作方法",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d00e78c2-4519-43ec-ac54-6f67161a3c73",
+      "order": 6,
+      "zh": "操作规程",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6c37ecbd-d8d4-4b1e-9d64-7a6ce432136f",
+      "order": 1,
+      "zh": "这台机器不难操作。",
+      "pinyin": "Zhè tái jīqì bù nán cāozuò.",
+      "vi": "Cái máy này không khó thao tác/vận hành.",
+      "analysis_vi": "操作 dùng cho máy móc, phần mềm, quy trình.",
+      "highlight": [
+        "操作"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "96ee171e-8786-40c5-819a-0312cce41275"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "操作 hay đi với 系统/流程/界面 trong công việc hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1efc3caf-6e52-4b48-8c01-c396a038625f",
+      "order": 1,
+      "rule_vi": "Không dùng 操作 cho mọi nghĩa “làm”; làm bài tập là 做作业.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "操作",
+    "back": "thao tác, vận hành, xử lý theo quy trình",
+    "hint": "cāozuò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "96ee171e-8786-40c5-819a-0312cce41275",
+    "source_lesson_vocab_id": null
+  }
+}

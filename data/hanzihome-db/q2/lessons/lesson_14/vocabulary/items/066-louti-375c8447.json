@@ -1,0 +1,365 @@
+{
+  "id": "5b4b5389-6161-4ae7-a5be-37a10fe31937",
+  "type": "deep_vocabulary_item",
+  "order": 66,
+  "hanzi": "楼梯",
+  "pinyin": "lóutī",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Lâu thê",
+    "meaning_vi": "cầu thang bộ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cầu thang bộ"
+    ],
+    "short_definition_vi": "cầu thang bộ",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "nhà ở, trường học, trung tâm thương mại, vận động.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "楼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "娄",
+            "hanviet": "lâu",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lầu, tầng, tòa nhà",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "楼 là lầu, tầng, tòa nhà. → 楼梯 = thang nối các tầng/lầu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "梯",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弟",
+            "hanviet": "đệ",
+            "meaning_vi": "em trai",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thang",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "梯 là thang. → 楼梯 = thang nối các tầng/lầu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 楼梯 = thang nối các tầng/lầu.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 走楼梯 nghĩa là đi cầu thang bộ, không phải “đi bộ trên thang” theo kiểu dịch cứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "楼梯 (lóutī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầu thang bộ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "电梯 (diàntī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thang máy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "扶梯 (fútī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thang cuốn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "梯子 (tīzi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cái thang rời, thang leo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: trong tòa nhà đi tầng bằng bậc là 楼梯; cái thang dựng lên leo là 梯子."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8d1e1726-0ca3-459f-9bc5-2a28fea4dccb",
+      "order": 1,
+      "zh": "走楼梯",
+      "pinyin": "",
+      "vi": "đi cầu thang bộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a658b3a3-c4fa-4f59-99c7-502e494b018f",
+      "order": 2,
+      "zh": "上楼梯",
+      "pinyin": "",
+      "vi": "lên cầu thang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "641f4036-e620-4837-922c-718c52798f7e",
+      "order": 3,
+      "zh": "下楼梯",
+      "pinyin": "",
+      "vi": "xuống cầu thang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ee6e8e3-4e1c-42cb-825d-e52aa4ad2476",
+      "order": 4,
+      "zh": "楼梯口",
+      "pinyin": "",
+      "vi": "cửa/khu vực cầu thang",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d1a478cc-32cc-417e-8900-eac91e822914",
+      "order": 1,
+      "zh": "电梯人太多，我们只好从楼梯走上去。",
+      "pinyin": "Diàntī rén tài duō, wǒmen zhǐhǎo cóng lóutī zǒu shàngqù.",
+      "vi": "Thang máy quá đông người, chúng tôi đành đi từ cầu thang bộ lên.",
+      "analysis_vi": "走上去 nói đi lên theo hướng rời điểm nói; 从楼梯 nêu đường đi.",
+      "highlight": [
+        "楼梯"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "5b4b5389-6161-4ae7-a5be-37a10fe31937"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d4ca207-ffc1-47f7-b51c-71b7d4e7148a",
+      "order": 2,
+      "zh": "孩子从楼梯上跳下来，很容易摔伤。",
+      "pinyin": "Háizi cóng lóutī shàng tiào xiàlai, hěn róngyì shuāi shāng.",
+      "vi": "Trẻ con nhảy từ cầu thang xuống rất dễ bị ngã bị thương.",
+      "analysis_vi": "跳下来 là nhảy xuống; câu có cảnh báo an toàn rõ.",
+      "highlight": [
+        "楼梯"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "5b4b5389-6161-4ae7-a5be-37a10fe31937"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "235bd66f-f253-4739-86ce-ea60dc40635e",
+      "order": 3,
+      "zh": "他提着纸箱爬楼梯，爬到三楼就累得走不动了。",
+      "pinyin": "Tā tízhe zhǐxiāng pá lóutī, pá dào sān lóu jiù lèi de zǒu bu dòng le.",
+      "vi": "Anh ấy xách thùng giấy leo cầu thang, leo đến tầng ba là mệt đến mức đi không nổi.",
+      "analysis_vi": "爬楼梯 là leo cầu thang; 走不动了 là mệt đến mức không đi tiếp được.",
+      "highlight": [
+        "楼梯"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "5b4b5389-6161-4ae7-a5be-37a10fe31937"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "dcd66252-2ae4-4d7d-913e-85e9e11cfab2",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 梯子 thay 楼梯 khi nói cầu thang trong nhà. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "楼梯",
+    "back": "cầu thang bộ",
+    "hint": "lóutī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong các tòa nhà ở Trung Quốc, biển chỉ dẫn thường có 楼梯, 电梯, 安全出口. Khi có hỏa hoạn hoặc mất điện, thường phải đi 楼梯 thay vì 电梯.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5b4b5389-6161-4ae7-a5be-37a10fe31937",
+    "source_lesson_vocab_id": null
+  }
+}

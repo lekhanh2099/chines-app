@@ -1,0 +1,684 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook_generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 6,
+    "actual_exercise_count_in_json": 6,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_unverified",
+    "final_verification_allowed": false
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调，朗读。",
+        "vi": "Phân biệt âm / thanh điệu, sau đó đọc to các cụm từ."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "kǎoshì — hǎoshì — gùshi — gùshì",
+            "dìfang — dìfāng — bànfǎ — fāngfǎ",
+            "zāogāo — cǎobāo — júzi — jùzi"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_group",
+          "title": "朗读",
+          "items": [
+            "回到了学校",
+            "回到了宿舍",
+            "回到了家",
+            "找到了人",
+            "关上门",
+            "关上电视",
+            "开开门",
+            "打开电视",
+            "洗完了",
+            "喝完了",
+            "读完了",
+            "看完了",
+            "买到了",
+            "听到了",
+            "看见了",
+            "听见了",
+            "看懂了",
+            "听懂了",
+            "做对了",
+            "说对了",
+            "做错了题",
+            "写错了字",
+            "看错了时间",
+            "打错了电话",
+            "看完了没有",
+            "做完了没有",
+            "做对了没有",
+            "写错了没有",
+            "没有看完",
+            "没有做完",
+            "没有做对",
+            "没有写错"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Dựa theo mẫu, thay thế phần gợi ý để luyện câu."
+      },
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "title": "看见 / 听见",
+          "model": {
+            "a": "你看见我的词典了吗？",
+            "b": "看见了。"
+          },
+          "items": [
+            [
+              "看见",
+              "我的书"
+            ],
+            [
+              "看见",
+              "我的钥匙"
+            ],
+            [
+              "看见",
+              "我的手机"
+            ],
+            [
+              "看见",
+              "王老师"
+            ],
+            [
+              "听见",
+              "我说的话"
+            ],
+            [
+              "听见",
+              "她叫你"
+            ]
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "title": "做对 / 翻译对 / 听懂 / 看懂 / 念熟",
+          "model": {
+            "a": "这道题你做对了没有？",
+            "b": "我做对了。"
+          },
+          "items": [
+            [
+              "这个字",
+              "写对"
+            ],
+            [
+              "这些句子",
+              "翻译对"
+            ],
+            [
+              "老师的话",
+              "听懂"
+            ],
+            [
+              "今天的语法",
+              "听懂"
+            ],
+            [
+              "这本书",
+              "看懂"
+            ],
+            [
+              "这课课文",
+              "念熟"
+            ]
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "title": "做完 / 听完 / 看完 / 写完 / 念熟 / 洗完 / 预习好",
+          "model": {
+            "a": "今天的作业你做完了没有？",
+            "b": "（我）还没做完呢。"
+          },
+          "items": [
+            [
+              "这一课的录音",
+              "听完"
+            ],
+            [
+              "这本书",
+              "看完"
+            ],
+            [
+              "今天的汉字",
+              "写完"
+            ],
+            [
+              "这课课文",
+              "念熟"
+            ],
+            [
+              "这些衣服",
+              "洗完"
+            ],
+            [
+              "明天的生词",
+              "预习好"
+            ]
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "title": "写错 / 写对 / 翻译对 / 回答错 / 看见 / 听懂 / 做完",
+          "model": {
+            "a": "他写错了吗？",
+            "b": "没写错。"
+          },
+          "items": [
+            "写对",
+            "翻译对",
+            "回答错",
+            "看见",
+            "听懂",
+            "做完"
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
+          "title": "打开 / 关上 / 合上",
+          "model": {
+            "a": "打开电脑，好吗？"
+          },
+          "items": [
+            "关上电脑",
+            "关上电视",
+            "合上书",
+            "打开灯",
+            "打开窗户",
+            "打开书"
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "parts": [
+        {
+          "id": "4b345bd3-635c-4818-9831-0a797e1af57e",
+          "title": "A组",
+          "word_bank": [
+            "懂",
+            "开",
+            "成",
+            "好",
+            "熟",
+            "错",
+            "关",
+            "道",
+            "上"
+          ],
+          "questions": [
+            {
+              "id": "3cb32654-aa16-4f52-bcc4-c3ac4f7e77d5",
+              "prompt": "这几____题比较难，我虽然做完了，但是不知道做对没做对。",
+              "answer": "道",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "e57488bd-4d2f-4fbd-b2fe-c37d1572b832",
+              "prompt": "外边风很大，____上窗户吧。",
+              "answer": "关",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "3fd63c3d-b831-4f12-81b6-097d4fe60ca7",
+              "prompt": "打____电脑，看看电视剧吧。",
+              "answer": "开",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "d2202365-b922-4b2c-89d4-8d960eea79ac",
+              "prompt": "对不起，我看____时间了，所以来晚了。",
+              "answer": "错",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "c7b35d9b-601e-4f30-81d5-cff1d6101a44",
+              "prompt": "这次我没考____，因为考试前我病了。",
+              "answer": "好",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "81a0f4e1-c1b0-4c7b-a708-6320de295985",
+              "prompt": "你说得太快，我没听____，请你再说一遍，好吗？",
+              "answer": "懂",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "58ad0b8d-cfed-48d0-8046-cfdaf8abce6e",
+              "prompt": "要是不预习，上课的时候，就很难听____老师讲的语法。",
+              "answer": "懂",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "d7922f89-1afb-43a0-a217-fac8529f8fbd",
+              "prompt": "请大家合____书，现在听写生词。",
+              "answer": "上",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "bbe6c96f-5a8f-4730-a244-368f2d1cdf5f",
+              "prompt": "糟糕，这个是“找”字，我写____“我”字了。",
+              "answer": "成",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "cd575efa-ab3b-4a4d-ad15-ff2530ddd99d",
+              "prompt": "“ān（安）”这个音，我总是发____“āng”。",
+              "answer": "成",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "828a0482-3630-495f-b3e7-1bb14e0d1c4f",
+              "prompt": "我作业已经做完了，课文还没有念____呢。",
+              "answer": "熟",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            }
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "c6245ec9-8ee5-42fb-92ba-f1c4462ab3b6",
+          "title": "B组",
+          "word_bank": [
+            "看",
+            "看见",
+            "听",
+            "听见"
+          ],
+          "dialogues": [
+            {
+              "id": "28dcaf6b-0338-4744-ba48-79ac0dad317c",
+              "lines": [
+                "A：你____田芳了没有？",
+                "B：____了，她在球场看比赛呢。",
+                "A：哪个球场？",
+                "B：篮球场。你____，她在那儿呢，____了吗？",
+                "A：____了。田芳！田芳！"
+              ],
+              "answers": [
+                "看见",
+                "看见",
+                "看",
+                "看见",
+                "看见"
+              ],
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            },
+            {
+              "id": "ffca1ca3-6265-4cee-9539-c15a6d43cac6",
+              "lines": [
+                "A：田芳！",
+                "B：哎！",
+                "A：我刚才叫你，你没____吗？",
+                "B：对不起，我没____，你____，我正在____音乐呢。",
+                "A：明天下午我想去____电影，你去不去？",
+                "B：我也想去。"
+              ],
+              "answers": [
+                "听见",
+                "听见",
+                "看",
+                "听",
+                "看"
+              ],
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "textbook"
+            }
+          ],
+          "check_needed": false,
+          "source_origin": "textbook"
+        }
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "fill_blank",
+      "variant": "free_fill_blank",
+      "order": 4,
+      "title": "四、用结果补语填空",
+      "title_vi": "Điền bổ ngữ kết quả",
+      "instruction": {
+        "zh": "用结果补语填空。",
+        "vi": "Điền bổ ngữ kết quả thích hợp vào chỗ trống."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "A：老师，这个字我写____了吗？\nB：没有写____，你写____了。",
+          "answer": [
+            "对",
+            "对",
+            "错"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "A：妈妈，晚饭做____了吗？\nB：已经做____了。你吃____晚饭有事儿吗？\nA：我要跟同学去看电影。\nB：今天的作业你做____了没有？\nA：做____了。\nB：做____了没有？\nA：不知道做____没做____。",
+          "answer": [
+            "好",
+            "好",
+            "完",
+            "完",
+            "完",
+            "对",
+            "对",
+            "对"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "A：现在，老师说的话你能听____吗？\nB：能听____。",
+          "answer": [
+            "懂",
+            "懂"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "A：喂，你找谁？\nB：我找玛丽。\nA：我们这儿没有叫玛丽的。\nB：你是 62324567 吗？\nA：不是。\nB：对不起，我打____了。",
+          "answer": [
+            "错"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "A：昨天晚上的比赛你看了吗？\nB：我看了，但是没看____。\nA：怎么没看____？\nB：我看____一半儿，肚子疼得很厉害，就去医院了。",
+          "answer": [
+            "完",
+            "完",
+            "到"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        }
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "answer_questions",
+      "variant": "custom_textbook_task",
+      "order": 5,
+      "title": "五、根据实际情况回答问题",
+      "title_vi": "Trả lời theo tình hình thực tế",
+      "instruction": {
+        "zh": "根据实际情况回答问题。",
+        "vi": "Trả lời câu hỏi theo tình hình thực tế của bạn."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "question": "第一本书（1A）你学了吗？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "question": "第一本书你学完了吗？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "question": "第二本书你学了吗？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "question": "第二本书你学完了吗？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "question": "你们学到第几课了？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "question": "今天的作业你做完了没有？课文念熟了没有？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+          "question": "什么时候能做完作业？什么时候能念熟课文？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+          "question": "你做完作业要干什么？",
+          "answer": "",
+          "grading": {
+            "mode": "manual",
+            "reason": "Câu hỏi theo tình hình thực tế của người học; không có đáp án cố định trong sách."
+          },
+          "answer_verified": false,
+          "check_needed": false,
+          "source_origin": "textbook"
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 6,
+      "title": "六、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "wrong": "我学这本书完了。",
+          "correct": "我学完这本书了。",
+          "explanation_vi": "补语 完 要紧跟在动词 学 后面；了 放在宾语后或句末。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "wrong": "我已经做了完今天的作业。",
+          "correct": "我已经做完今天的作业了。",
+          "explanation_vi": "动态助词 了 不能插在 做 和结果补语 完 中间。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "wrong": "这个问题我错了回答。",
+          "correct": "这个问题我回答错了。",
+          "explanation_vi": "错 作结果补语，要放在动词 回答 后面。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "wrong": "昨天在书店我看了我们班的同学玛丽。",
+          "correct": "昨天在书店我看见了我们班的同学玛丽。",
+          "explanation_vi": "看见 才表示“看到了/nhìn thấy”这个结果；单说 看 只表示看这个动作。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "wrong": "我现在能听老师的话懂了。",
+          "correct": "我现在能听懂老师的话了。",
+          "explanation_vi": "听懂 是“动词 + 结果补语”，要放在宾语 老师的话 前面。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "wrong": "明天我吃午饭就去买票。",
+          "correct": "明天我吃完午饭就去买票。",
+          "explanation_vi": "要表达“ăn xong rồi mới đi” cần补语 完。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        }
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

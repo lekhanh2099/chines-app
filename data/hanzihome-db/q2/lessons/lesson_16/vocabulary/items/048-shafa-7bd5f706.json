@@ -1,0 +1,265 @@
+{
+  "id": "6529f678-4e62-44f9-b27d-27889d0f6efc",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "沙发",
+  "pinyin": "shāfā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Sa phát",
+    "meaning_vi": "sofa, ghế sô pha",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sofa, ghế sô pha"
+    ],
+    "short_definition_vi": "sofa, ghế sô pha",
+    "textbook_focus_vi": "sofa, ghế sô pha",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "沙",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "少",
+            "hanviet": "thiểu",
+            "meaning_vi": "ít",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cát; trong 沙发 là âm phiên",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "发",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phát, gửi; trong 沙发 là âm phiên",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "沙发 là từ phiên âm từ sofa, không suy nghĩa từng chữ.",
+    "memory_tip_vi": "",
+    "warning_vi": "Bài chuẩn nên dùng 一张沙发, không dùng 一个沙发.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3236315a-159d-401e-a7e1-2e4eb6138c7a",
+      "order": 1,
+      "zh": "坐在沙发上",
+      "pinyin": "",
+      "vi": "ngồi trên sofa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec4d563d-e5a0-480d-a00a-857511b7b6cf",
+      "order": 2,
+      "zh": "躺在沙发上",
+      "pinyin": "",
+      "vi": "nằm trên sofa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "baec09fd-92ae-41c8-a458-19421bbb1bc0",
+      "order": 3,
+      "zh": "一张沙发",
+      "pinyin": "",
+      "vi": "một cái sofa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26b77763-f992-495f-bdf4-98abae7d47a6",
+      "order": 4,
+      "zh": "搬沙发",
+      "pinyin": "",
+      "vi": "bê/chuyển sofa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98924595-f90b-4d85-97bb-6aa4ea67e047",
+      "order": 5,
+      "zh": "客厅里的沙发",
+      "pinyin": "",
+      "vi": "sofa trong phòng khách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "70344ea9-5e31-4656-86bf-0abbd4b34d2e",
+      "order": 1,
+      "zh": "客厅里放着一张沙发。",
+      "pinyin": "Kètīng lǐ fàngzhe yì zhāng shāfā.",
+      "vi": "Trong phòng khách có đặt một cái sofa.",
+      "analysis_vi": "客厅里 + 放着 + 一张沙发 là câu tồn hiện.",
+      "highlight": [
+        "沙发"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "6529f678-4e62-44f9-b27d-27889d0f6efc"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "761ebb86-485f-4c7d-84ea-5f19f790bcb0",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：沙发。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: sofa, ghế sô pha.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "沙发"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "6529f678-4e62-44f9-b27d-27889d0f6efc"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 沙发 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "25dc3402-5291-4108-bfa3-347ecee089e7",
+      "order": 1,
+      "rule_vi": "Bài chuẩn nên dùng 一张沙发, không dùng 一个沙发.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Bài chuẩn nên dùng 一张沙发, không dùng 一个沙发.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "沙发",
+    "back": "sofa, ghế sô pha",
+    "hint": "shāfā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_048"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6529f678-4e62-44f9-b27d-27889d0f6efc",
+    "source_lesson_vocab_id": null
+  }
+}

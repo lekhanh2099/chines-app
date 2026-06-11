@@ -1,0 +1,358 @@
+{
+  "id": "46b0a3b4-7229-4f7f-a31e-38bef2cabf3a",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "良好",
+  "pinyin": "liánghǎo",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lương hảo",
+    "meaning_vi": "tốt, tốt đẹp, đạt trạng thái tốt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tốt",
+      "tốt đẹp",
+      "đạt trạng thái tốt"
+    ],
+    "short_definition_vi": "tốt, tốt đẹp, đạt trạng thái tốt",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "良",
+        "lishu_vi": "lương",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, lành",
+        "modern_logic_vi": "良 gợi nghĩa tốt đẹp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "hảo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ giới",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, đẹp, ổn",
+        "modern_logic_vi": "Nghĩa hiện đại là tốt/ổn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "良 + 好 đều chỉ tốt, tạo nghĩa trạng thái/điều kiện tốt.",
+    "memory_tip_vi": "Nhớ 良好的第一印象.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好",
+        "pinyin": "hǎo",
+        "meaning_vi": "tốt",
+        "difference_vi": "Khẩu ngữ và rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "优秀",
+        "pinyin": "yōuxiù",
+        "meaning_vi": "ưu tú",
+        "difference_vi": "Mức cao hơn 良好.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不良",
+        "pinyin": "bùliáng",
+        "meaning_vi": "không tốt",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "糟糕",
+        "pinyin": "zāogāo",
+        "meaning_vi": "tệ",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c6ded0e6-c596-4c72-8a87-9634fe240bee",
+      "order": 1,
+      "zh": "良好的印象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad86d5ca-f89e-4de8-a3c5-c2c64bd0e641",
+      "order": 2,
+      "zh": "良好的第一印象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41a422d4-c2bf-4981-8487-212f73178fec",
+      "order": 3,
+      "zh": "良好的习惯",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c664acfb-39cf-44c0-abd8-8c67c6de0773",
+      "order": 4,
+      "zh": "良好的关系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aec8c144-dd4a-4cdb-9b9d-ce52c51f6140",
+      "order": 5,
+      "zh": "良好的环境",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0d501c7-38b4-4e99-b1fa-2d0ae4e33096",
+      "order": 6,
+      "zh": "保持良好状态",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "55d7fa3a-a8af-4a96-8571-999d30b20035",
+      "order": 1,
+      "zh": "她给老师留下了良好的印象。",
+      "pinyin": "Tā gěi lǎoshī liúxià le liánghǎo de yìnxiàng.",
+      "vi": "Cô ấy để lại ấn tượng tốt với thầy/cô.",
+      "analysis_vi": "给……留下良好的印象 là cụm rất tự nhiên.",
+      "highlight": [
+        "良好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "46b0a3b4-7229-4f7f-a31e-38bef2cabf3a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1ed846c-934b-4afb-ba52-c35d5dddd1eb",
+      "order": 2,
+      "zh": "虽然她穿得很朴素，但是她的自信和坦白反而给教授留下了良好的印象。",
+      "pinyin": "Suīrán tā chuān de hěn pǔsù, dànshì tā de zìxìn hé tǎnbái fǎn’ér gěi jiàoshòu liúxià le liánghǎo de yìnxiàng.",
+      "vi": "Tuy ăn mặc giản dị, sự tự tin và thẳng thắn của cô ấy lại để lại ấn tượng tốt.",
+      "analysis_vi": "虽然……但是…… tạo đối lập.",
+      "highlight": [
+        "良好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "46b0a3b4-7229-4f7f-a31e-38bef2cabf3a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "良好 thường xuất hiện trong văn phong chính thức: 良好习惯, 良好关系, 良好环境.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "067822c6-ecf0-4d28-b068-594066f14567",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 良好 cho món ăn đời thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这个菜味道良好。",
+          "pinyin": "Zhège cài wèidao liánghǎo.",
+          "vi": "Món này vị tốt đẹp.",
+          "note_vi": "Cứng và không tự nhiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个菜味道很好。",
+          "pinyin": "Zhège cài wèidao hěn hǎo.",
+          "vi": "Món này vị rất ngon.",
+          "note_vi": "很好 tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "良好",
+    "back": "tốt, tốt đẹp, đạt trạng thái tốt",
+    "hint": "liánghǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "46b0a3b4-7229-4f7f-a31e-38bef2cabf3a",
+    "source_lesson_vocab_id": null
+  }
+}

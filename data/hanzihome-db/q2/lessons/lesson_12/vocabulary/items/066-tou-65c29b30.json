@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_d6595f9223980569",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "偷",
+  "pinyin": "tōu",
+  "meaning_vi": "trộm, ăn cắp",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "e6317463-2f70-47e1-94a3-4f609e48161a",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
+    "type": "vocabulary_item",
+    "order": 5,
+    "hanzi": "偷",
+    "pinyin": "tōu",
+    "meaning_vi": "trộm, ăn cắp",
+    "meaning_en": "to steal",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "reading_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "flashcard": {
+      "front": "偷",
+      "back": "tōu — trộm, ăn cắp",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

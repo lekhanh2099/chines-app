@@ -1,0 +1,328 @@
+{
+  "id": "8d442e36-a178-4dfb-b848-657d313eb30e",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "杯子",
+  "pinyin": "bēizi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Bôi tử",
+    "meaning_vi": "cái cốc, cái ly",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cái cốc, cái ly"
+    ],
+    "short_definition_vi": "cái cốc, cái ly",
+    "textbook_focus_vi": "cái cốc, cái ly",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "杯",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "不",
+            "hanviet": "bất",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cốc, ly; lượng từ một cốc",
+        "modern_logic_vi": "杯 = cốc/ly; 不 chỉ là thành phần cấu tạo/biểu âm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con; hậu tố danh từ",
+        "modern_logic_vi": "Trong 杯子, 子 là hậu tố danh từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "杯 là cốc/ly. 子 là hậu tố danh từ. → 杯子 = cái ly/cốc. Cảnh báo: 杯子 là vật chứa; 一杯茶 là một ly trà. Đừng nhầm vật với lượng đồ uống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "茶杯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tách trà/ly uống trà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一杯水",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một ly nước.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "瓶子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cái chai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "杯子: cái ly/cốc nói chung."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "480b370b-0b26-4574-bfad-58c9752eb0cd",
+      "order": 1,
+      "zh": "一个杯子",
+      "pinyin": "",
+      "vi": "một cái ly",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a3c336d-b9cf-4456-bd03-4b1e03642326",
+      "order": 2,
+      "zh": "一杯水",
+      "pinyin": "",
+      "vi": "một ly nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "233b76b2-f088-4abb-92d4-83eebc618ea8",
+      "order": 3,
+      "zh": "杯子里",
+      "pinyin": "",
+      "vi": "trong ly",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95641b74-0282-453c-9dcd-3f0d0d883a1c",
+      "order": 4,
+      "zh": "把杯子放在桌子上",
+      "pinyin": "",
+      "vi": "đặt ly lên bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3a0d240-85af-4d6d-9089-3ccaff8f0d39",
+      "order": 5,
+      "zh": "杯子倒了",
+      "pinyin": "",
+      "vi": "ly đổ rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3ebc49b2-3e53-4bcb-8781-2b6b0ec9e933",
+      "order": 1,
+      "zh": "请把杯子放在扶手旁边，别放在腿上。",
+      "pinyin": "Qǐng bǎ bēizi fàng zài fúshǒu pángbiān, bié fàng zài tuǐ shang.",
+      "vi": "Xin hãy đặt cái ly bên cạnh tay vịn, đừng đặt trên chân.",
+      "analysis_vi": "把杯子放在…… là câu 把 có vị trí rõ; 腿上 là trên chân.",
+      "highlight": [
+        "杯子"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "8d442e36-a178-4dfb-b848-657d313eb30e"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5dd0ccf3-c132-44cd-a65b-5bda361c7bac",
+      "order": 2,
+      "zh": "飞机起飞以前，最好把杯子里的水喝完。",
+      "pinyin": "Fēijī qǐfēi yǐqián, zuìhǎo bǎ bēizi lǐ de shuǐ hē wán.",
+      "vi": "Trước khi máy bay cất cánh, tốt nhất uống hết nước trong ly.",
+      "analysis_vi": "把水喝完 là câu 把 có kết quả 完, nước được uống hết.",
+      "highlight": [
+        "杯子"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "8d442e36-a178-4dfb-b848-657d313eb30e"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1ffb18c7-4cc1-4df4-abcf-d5fdf7b7d793",
+      "order": 3,
+      "zh": "杯子太满了，小心别把水洒出来。",
+      "pinyin": "Bēizi tài mǎn le, xiǎoxīn bié bǎ shuǐ sǎ chūlai.",
+      "vi": "Ly đầy quá, cẩn thận đừng làm nước đổ ra.",
+      "analysis_vi": "把水洒出来 là câu 把 có kết quả xấu: nước bị đổ/tràn ra ngoài.",
+      "highlight": [
+        "杯子"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "8d442e36-a178-4dfb-b848-657d313eb30e"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trên máy bay, đồ uống thường được rót vào cốc nhỏ dùng một lần. Trong tiếng Trung có thể nói 一次性杯子 – cốc dùng một lần. 一次性 là từ rất hay gặp: đồ dùng một lần.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "88ac36de-8c0a-44c1-a900-cdd4a0300bb7",
+      "order": 1,
+      "rule_vi": "Nhầm 杯子 với 一杯.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 杯子 theo cụm và ngữ cảnh bài 18; nghĩa chính là cái cốc, cái ly.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "杯子",
+    "back": "cái cốc, cái ly",
+    "hint": "bēizi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8d442e36-a178-4dfb-b848-657d313eb30e",
+    "source_lesson_vocab_id": null
+  }
+}

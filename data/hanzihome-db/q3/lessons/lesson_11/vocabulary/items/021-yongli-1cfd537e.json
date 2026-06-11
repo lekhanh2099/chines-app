@@ -1,0 +1,258 @@
+{
+  "id": "57950990-123a-4afb-a52d-ac7700def6b2",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "用力",
+  "pinyin": "yònglì",
+  "pos": {
+    "raw_vi": "Động từ / Cụm trạng ngữ",
+    "raw_cn": "动词 / 状语短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "dụng lực",
+    "meaning_vi": "dùng sức, ra sức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dùng sức",
+      "ra sức"
+    ],
+    "short_definition_vi": "dùng lực cơ thể để làm mạnh một hành động",
+    "textbook_focus_vi": "Hợp với các động tác gõ, kéo, đẩy, gọi to.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "用",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dùng",
+        "modern_logic_vi": "dùng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "力",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sức lực",
+        "modern_logic_vi": "sức lực",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "用力 được học trong bài theo nghĩa: dùng lực cơ thể để làm mạnh một hành động.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 用力敲门.",
+    "warning_vi": "用力 khác 努力; không nói 我用力学习 khi muốn nói cố gắng học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "努力",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cố gắng về tinh thần/quá trình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "使劲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Khẩu ngữ hơn 用力.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "用力 khác 努力; không nói 我用力学习 khi muốn nói cố gắng học."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b2f56b0f-9ae7-4b2e-a882-54f64e50e45d",
+      "order": 1,
+      "zh": "用力敲门",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a04184d7-1731-44ba-b09f-74d871e74199",
+      "order": 2,
+      "zh": "用力推",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de27d1f1-1a9b-4250-bd4e-dc501a2aa017",
+      "order": 3,
+      "zh": "用力拉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b31fc53-1deb-4767-a131-2c912faad053",
+      "order": 4,
+      "zh": "用力喊",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05d9fec0-bb8f-47fd-8352-8e5583d15056",
+      "order": 5,
+      "zh": "用力抓住",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a86d0b35-f219-4953-a129-407e18c34f6a",
+      "order": 6,
+      "zh": "再用点儿力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "39bb371f-f814-45fd-8944-773a3ca145a0",
+      "order": 1,
+      "zh": "门打不开，你再用点儿力。",
+      "pinyin": "",
+      "vi": "Cửa không mở được, bạn dùng thêm chút sức nữa đi.",
+      "analysis_vi": "打不开 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "用力"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "57950990-123a-4afb-a52d-ac7700def6b2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "803dfe02-871b-4877-8b16-94029066e4ba",
+      "order": 2,
+      "zh": "他用力敲门把我叫出来。",
+      "pinyin": "",
+      "vi": "Anh ấy gõ cửa mạnh để gọi tôi ra.",
+      "analysis_vi": "把我叫出来 là 把字句 + 出来.",
+      "highlight": [
+        "用力"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "57950990-123a-4afb-a52d-ac7700def6b2"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khẩu ngữ cũng hay dùng 使劲儿 với nghĩa dùng sức.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2bae3962-72c9-40e2-9ba2-8f4ae590ad7e",
+      "order": 1,
+      "rule_vi": "用力 khác 努力; không nói 我用力学习 khi muốn nói cố gắng học.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "用力 khác 努力; không nói 我用力学习 khi muốn nói cố gắng học.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "用力",
+    "back": "dùng sức, ra sức",
+    "hint": "yònglì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "57950990-123a-4afb-a52d-ac7700def6b2",
+    "source_lesson_vocab_id": null
+  }
+}

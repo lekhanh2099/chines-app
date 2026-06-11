@@ -1,0 +1,94 @@
+[
+  {
+    "id": "95607bcd-55c0-4bd7-a785-d67bd3066032",
+    "order": 1,
+    "title_vi": "Ảnh, thao tác xử lý ảnh & kích thước",
+    "words": [
+      "照",
+      "选",
+      "洗",
+      "放大",
+      "寸",
+      "油画"
+    ],
+    "notes": []
+  },
+  {
+    "id": "2373b2be-fbbb-4bb1-97de-3dc953fed5bb",
+    "order": 2,
+    "title_vi": "Động tác gây kết quả / trạng thái bị ảnh hưởng",
+    "words": [
+      "碰",
+      "掉",
+      "闭",
+      "删",
+      "虚"
+    ],
+    "notes": []
+  },
+  {
+    "id": "635e453f-e537-4973-a0ca-0c2c377e8fc2",
+    "order": 3,
+    "title_vi": "Sự cố, nguyên nhân & quy tắc",
+    "words": [
+      "事故",
+      "保证",
+      "遵守",
+      "规则",
+      "造成",
+      "原因",
+      "之一",
+      "引起"
+    ],
+    "notes": []
+  },
+  {
+    "id": "6a7df093-8bf7-484d-8914-ab24f0650e2a",
+    "order": 4,
+    "title_vi": "Thời gian, mức độ & độ rõ",
+    "words": [
+      "整整",
+      "清楚",
+      "赶快",
+      "主要"
+    ],
+    "notes": []
+  },
+  {
+    "id": "a6885596-5173-46fe-89d0-5476947dfb5d",
+    "order": 5,
+    "title_vi": "Đồ vật, vị trí & thân thể",
+    "words": [
+      "眼镜儿",
+      "地上"
+    ],
+    "notes": []
+  },
+  {
+    "id": "b97f6abb-6e97-40bf-beed-26559e9a7d8d",
+    "order": 6,
+    "title_vi": "Cảm xúc, đánh giá & khẩu ngữ",
+    "words": [
+      "别提了",
+      "倒霉",
+      "奇怪",
+      "怕",
+      "低",
+      "高"
+    ],
+    "notes": []
+  },
+  {
+    "id": "f4c2b154-a45e-42b4-8b1d-cbd69487d755",
+    "order": 7,
+    "title_vi": "Giao thông, đô thị & địa danh",
+    "words": [
+      "交通",
+      "拥挤",
+      "发展",
+      "首都",
+      "王府井"
+    ],
+    "notes": []
+  }
+]

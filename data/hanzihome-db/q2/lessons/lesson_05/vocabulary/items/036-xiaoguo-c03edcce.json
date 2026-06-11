@@ -1,0 +1,258 @@
+{
+  "id": "3f758f3d-e71c-4f0d-9d6a-6b51c12454dc",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "效果",
+  "pinyin": "xiàoguǒ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "hiệu quả",
+    "meaning_vi": "hiệu quả, kết quả tác động",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "hiệu quả, kết quả tác động",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "效",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động, hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động, hành động",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiệu, tác dụng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động, hành động",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "果",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quả, kết quả",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Kết quả/tác dụng do phương pháp hoặc nguyên nhân tạo ra.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "结果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kết quả cuối cùng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "作用",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tác dụng/vai trò",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "成效",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dcafa3f1-0560-4be5-a7e8-3d2cddc62a3a",
+      "order": 1,
+      "zh": "效果好",
+      "pinyin": "",
+      "vi": "hiệu quả tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b72eef4-8e17-4f11-9c3b-62b20f8f294b",
+      "order": 2,
+      "zh": "效果一般",
+      "pinyin": "",
+      "vi": "hiệu quả bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "123e0b96-d618-4cb6-b9c8-aad1975faefc",
+      "order": 3,
+      "zh": "学习效果",
+      "pinyin": "",
+      "vi": "hiệu quả học tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "523e1f7c-96cb-4b82-be08-af3fd7c8e7a5",
+      "order": 1,
+      "zh": "这个办法效果很好。",
+      "pinyin": "Zhège bànfǎ xiàoguǒ hěn hǎo.",
+      "vi": "Cách này hiệu quả rất tốt.",
+      "en": "",
+      "highlight": [
+        "效果"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3f758f3d-e71c-4f0d-9d6a-6b51c12454dc"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "效果 hay xuất hiện trong quảng cáo, cần đọc tỉnh táo.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e6d6e535-70b1-41a9-a9c4-0b81910c5b87",
+      "order": 1,
+      "title_vi": "Không nhầm với 结果",
+      "explanation_vi": "效果 là tác động của cách làm; 结果 là kết quả cuối cùng.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "学习效果很好。",
+        "考试结果出来了。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "效果",
+    "back": "hiệu quả, kết quả tác động",
+    "hint": "xiàoguǒ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "效果"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3f758f3d-e71c-4f0d-9d6a-6b51c12454dc",
+    "source_lesson_vocab_id": null
+  }
+}

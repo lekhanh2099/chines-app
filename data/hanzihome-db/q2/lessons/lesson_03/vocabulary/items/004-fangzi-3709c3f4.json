@@ -1,0 +1,399 @@
+{
+  "id": "a22befb6-c632-4aa3-9704-fcf703d93fba",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "房子",
+  "pinyin": "fángzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "housing"
+  ],
+  "meaning": {
+    "hanviet": "Phòng tử",
+    "meaning_vi": "nhà; căn nhà; căn hộ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà",
+      "căn nhà",
+      "căn hộ"
+    ],
+    "short_definition_vi": "nhà; căn nhà; căn hộ",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "housing",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "房",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "户",
+            "hanviet": "hộ",
+            "meaning_vi": "cửa/căn hộ/không gian có cửa",
+            "position_vi": "phần trái/trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "戶",
+              "radical_variant": "户",
+              "radical_name_vi": "bộ Hộ",
+              "radical_name_zh": "",
+              "hanviet": "hộ",
+              "meaning_vi": "cửa; hộ/căn",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng; vuông; phía",
+            "position_vi": "phần phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phòng, nhà, nơi ở",
+        "modern_logic_vi": "房 liên quan không gian có cửa/nơi ở.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "戶",
+          "radical_variant": "户",
+          "radical_name_vi": "bộ Hộ",
+          "radical_name_zh": "",
+          "hanviet": "hộ",
+          "meaning_vi": "cửa; hộ/căn",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con; hậu tố danh từ",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con; hậu tố danh từ",
+        "modern_logic_vi": "子 trong 房子 làm hậu tố danh từ khiến từ nghe đời sống hơn.",
+        "warning_vi": "Không dịch 子 là 'con' trong 房子.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "房子 là từ đời sống chỉ nhà/căn hộ/căn nhà để ở hoặc sử dụng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "房间",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Căn phòng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "屋子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phòng/nhà, khẩu ngữ, thiên về không gian bên trong.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "楼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tòa nhà/tầng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "家",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nhà theo nghĩa gia đình/nơi mình thuộc về.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "房子",
+        "right": "房间",
+        "meaning_vi": "Căn nhà/căn hộ đối lập với căn phòng.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0334edc4-868e-45a1-b370-cae70892ed20",
+      "order": 1,
+      "zh": "一套房子",
+      "pinyin": "",
+      "vi": "một căn nhà/căn hộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfc6d309-2305-4188-8052-a0e61141d1f2",
+      "order": 2,
+      "zh": "买房子",
+      "pinyin": "",
+      "vi": "mua nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47c61302-f100-4fc7-b2aa-d4c2c48e471a",
+      "order": 3,
+      "zh": "租房子",
+      "pinyin": "",
+      "vi": "thuê nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ed9b787c-27f2-40fe-80a5-626da416b9d9",
+      "order": 4,
+      "zh": "找房子",
+      "pinyin": "",
+      "vi": "tìm nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e883f9f-0804-4a0f-a319-6320d46a402c",
+      "order": 5,
+      "zh": "看房子",
+      "pinyin": "",
+      "vi": "đi xem nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1bf397c-e389-497a-b05b-3c4bbc297053",
+      "order": 6,
+      "zh": "房子很大",
+      "pinyin": "",
+      "vi": "nhà rất rộng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97696534-7b88-4cdf-b4fa-856649ad5b63",
+      "order": 7,
+      "zh": "房子很旧",
+      "pinyin": "",
+      "vi": "nhà rất cũ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "baf3f67f-2bd3-4f32-816c-bc5e162dafb2",
+      "order": 8,
+      "zh": "房子附近",
+      "pinyin": "",
+      "vi": "gần căn nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6bd8367f-9a90-415d-920d-cc4a43748599",
+      "order": 1,
+      "zh": "这套房子有两个卧室。",
+      "pinyin": "Zhè tào fángzi yǒu liǎng ge wòshì.",
+      "vi": "Căn nhà/căn hộ này có hai phòng ngủ.",
+      "analysis_vi": "有 chỉ cấu trúc bên trong; 两个卧室 dùng 个 đời sống chấp nhận được.",
+      "highlight": [
+        "房子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a22befb6-c632-4aa3-9704-fcf703d93fba"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "987f5dac-7caf-46d5-8603-e9d55718c0e9",
+      "order": 2,
+      "zh": "这套房子虽然有点儿旧，但是周围环境很好。",
+      "pinyin": "Zhè tào fángzi suīrán yǒudiǎnr jiù, dànshì zhōuwéi huánjìng hěn hǎo.",
+      "vi": "Căn nhà này tuy hơi cũ, nhưng môi trường xung quanh rất tốt.",
+      "analysis_vi": "虽然……但是……; nhà cũ nhưng vị trí/môi trường tốt.",
+      "highlight": [
+        "房子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a22befb6-c632-4aa3-9704-fcf703d93fba"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4a9ca51b-5b20-40fd-8fed-2425cabaa644",
+      "order": 3,
+      "zh": "我昨天看了三套房子，第一套面积太小，第二套交通不方便，第三套虽然房租贵一点儿，但是离地铁站很近。",
+      "pinyin": "Wǒ zuótiān kàn le sān tào fángzi, dì yī tào miànjī tài xiǎo, dì èr tào jiāotōng bù fāngbiàn, dì sān tào suīrán fángzū guì yìdiǎnr, dànshì lí dìtiězhàn hěn jìn.",
+      "vi": "Hôm qua tôi xem ba căn nhà/căn hộ, căn thứ nhất diện tích quá nhỏ, căn thứ hai giao thông không tiện, căn thứ ba tuy tiền thuê hơi đắt nhưng rất gần ga tàu điện ngầm.",
+      "analysis_vi": "看房子 là đi xem nhà; 第一套/第二套/第三套 dùng 套 thay cho từng căn.",
+      "highlight": [
+        "房子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a22befb6-c632-4aa3-9704-fcf703d93fba"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong tiếng Trung hiện đại, 房子 là từ rất thực dụng. 买房 là cột mốc lớn trong đời sống gia đình, hôn nhân và tài chính; ở bài này chỉ cần nắm 买房子 / 租房子 / 看房子.",
+    "tags": [
+      "housing"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ba749baf-0e92-41b7-9b72-b66a81d690c0",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 房子 và 房间.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我租了一个房间。",
+          "pinyin": "",
+          "vi": "Tôi thuê một phòng.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我租了一套房子。",
+          "pinyin": "",
+          "vi": "Tôi thuê một căn nhà/căn hộ.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "房子 là căn nhà/căn hộ; 房间 là phòng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "房子",
+    "back": "nhà; căn nhà; căn hộ",
+    "hint": "fángzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "housing"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a22befb6-c632-4aa3-9704-fcf703d93fba",
+    "source_lesson_vocab_id": null
+  }
+}

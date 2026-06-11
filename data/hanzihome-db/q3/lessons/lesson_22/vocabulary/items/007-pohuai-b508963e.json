@@ -1,0 +1,386 @@
+{
+  "id": "b6f37c20-bc92-412f-8a5a-f982e68f9697",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "破坏",
+  "pinyin": "pòhuài",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "verb"
+  ],
+  "meaning": {
+    "hanviet": "phá hoại",
+    "meaning_vi": "phá hủy, làm hỏng, gây tổn hại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phá hủy"
+    ],
+    "short_definition_vi": "phá hủy, làm hỏng, gây tổn hại",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "破",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "thạch",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "石 được dùng như bộ/thành phần chỉ trường nghĩa: đá.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "thạch",
+            "meaning_vi": "đá",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "thạch",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "石 được dùng như bộ/thành phần chỉ trường nghĩa: đá.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "石 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vỡ, phá",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "坏",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ/thành phần chỉ trường nghĩa: đất.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ/thành phần chỉ trường nghĩa: đất.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hỏng, xấu",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "破坏 được ghi nhớ theo nghĩa hiện đại: phá hủy, làm hỏng, gây tổn hại.",
+    "memory_tip_vi": "Nhớ qua cụm: 破坏环境.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "毁坏",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "损害",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打破",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "打坏 thường là làm hỏng đồ vật cụ thể; 破坏 rộng hơn, gồm trật tự, quan hệ, môi trường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a1a81922-e2b3-4117-9d6e-2cd147575a7a",
+      "order": 1,
+      "zh": "破坏环境",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "704668f4-cc77-4199-8d65-73e6775620ed",
+      "order": 2,
+      "zh": "破坏关系",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a647c15a-cb4c-4a0c-b50f-8bd31c0ebe2a",
+      "order": 3,
+      "zh": "破坏计划",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0494c0a-b101-446b-87b5-9ddc53fe88ae",
+      "order": 4,
+      "zh": "严重破坏",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e3acddfe-aa5c-4f67-b870-63ea626b2335",
+      "order": 5,
+      "zh": "遭到破坏",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db26dcd8-5913-4513-934b-ee1ee6f427d5",
+      "order": 6,
+      "zh": "保护……不受破坏",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd5631e6-7db3-438c-97d2-ca4df1f38e77",
+      "order": 1,
+      "zh": "大火破坏了很多房子。",
+      "pinyin": "Dàhuǒ pòhuài le hěn duō fángzi.",
+      "vi": "Đám cháy lớn đã phá hủy rất nhiều nhà cửa.",
+      "analysis_vi": "破坏 dùng với vật thể cụ thể.",
+      "highlight": [
+        "破坏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b6f37c20-bc92-412f-8a5a-f982e68f9697"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b0af3cf7-087b-4752-8f48-915f44b4ea67",
+      "order": 2,
+      "zh": "疾病破坏了孩子的听力，也改变了她的生活。",
+      "pinyin": "Jíbìng pòhuài le háizi de tīnglì, yě gǎibiàn le tā de shēnghuó.",
+      "vi": "Bệnh tật đã phá hỏng thính lực của đứa trẻ và thay đổi cuộc sống của em.",
+      "analysis_vi": "破坏听力 là tổn hại chức năng cơ thể.",
+      "highlight": [
+        "破坏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b6f37c20-bc92-412f-8a5a-f982e68f9697"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "破坏环境 là cụm rất thường gặp trong báo chí và bài thi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cf3e03e3-1c25-4146-9703-bd3fac0a4a68",
+      "order": 1,
+      "rule_vi": "打坏 thường là làm hỏng đồ vật cụ thể; 破坏 rộng hơn, gồm trật tự, quan hệ, môi trường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "打坏 thường là làm hỏng đồ vật cụ thể; 破坏 rộng hơn, gồm trật tự, quan hệ, môi trường.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "破坏",
+    "back": "phá hủy, làm hỏng, gây tổn hại",
+    "hint": "pòhuài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "verb"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b6f37c20-bc92-412f-8a5a-f982e68f9697",
+    "source_lesson_vocab_id": null
+  }
+}

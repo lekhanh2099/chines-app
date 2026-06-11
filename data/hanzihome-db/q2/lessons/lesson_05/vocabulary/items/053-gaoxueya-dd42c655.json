@@ -1,0 +1,49 @@
+{
+  "id": "synthetic_vocab_0b6d316b4a337577",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "高血压",
+  "pinyin": "gāoxuèyā",
+  "meaning_vi": "huyết áp cao",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+    "type": "vocabulary_item",
+    "order": 37,
+    "hanzi": "高血压",
+    "pinyin": "gāoxuèyā",
+    "meaning_vi": "huyết áp cao",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

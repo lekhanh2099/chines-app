@@ -1,0 +1,30 @@
+[
+  {
+    "id": "warning_61cc9a19aa6060ca42f0376c",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "春",
+      "夏",
+      "秋",
+      "冬",
+      "热",
+      "冷",
+      "凉",
+      "刮",
+      "风",
+      "雪",
+      "雨",
+      "份",
+      "分",
+      "得",
+      "老",
+      "改",
+      "转",
+      "等",
+      "夜",
+      "季",
+      "下"
+    ]
+  }
+]

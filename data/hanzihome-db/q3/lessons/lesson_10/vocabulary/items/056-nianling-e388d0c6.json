@@ -1,0 +1,71 @@
+{
+  "id": "synthetic_vocab_c422fd74602e992b",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "年龄",
+  "pinyin": "niánlíng",
+  "meaning_vi": "tuổi tác",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "080004d9-dd03-4a10-80f8-c0fa6a3604cf",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "080004d9-dd03-4a10-80f8-c0fa6a3604cf",
+    "type": "vocabulary_item",
+    "order": 5,
+    "hanzi": "年龄",
+    "pinyin": "niánlíng",
+    "meaning_vi": "tuổi tác",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "年龄",
+      "back": "niánlíng — tuổi tác",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ],
+      "tags": [
+        "supplementary_vocab",
+        "reading_vocab"
+      ],
+      "notes": []
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

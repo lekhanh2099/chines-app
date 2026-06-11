@@ -1,0 +1,138 @@
+{
+  "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
+  "type": "character_writing",
+  "order": 8,
+  "title": "写汉字",
+  "title_vi": "Viết chữ Hán",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "character_writing_01",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "扛",
+      "pinyin": "káng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_02",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "伙",
+      "pinyin": "huǒ",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_03",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "厅",
+      "pinyin": "tīng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_04",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "挂",
+      "pinyin": "guà",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_05",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "摆",
+      "pinyin": "bǎi",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_06",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "副",
+      "pinyin": "fù",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_07",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "摄",
+      "pinyin": "shè",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_08",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "穿",
+      "pinyin": "chuān",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_09",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "裙",
+      "pinyin": "qún",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_10",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "讲",
+      "pinyin": "jiǎng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_11",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "娘",
+      "pinyin": "niáng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_12",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "郎",
+      "pinyin": "láng",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_13",
+      "type": "character_writing_item",
+      "order": 13,
+      "hanzi": "帅",
+      "pinyin": "shuài",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "character_writing_14",
+      "type": "character_writing_item",
+      "order": 14,
+      "hanzi": "双",
+      "pinyin": "shuāng",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ],
+  "empty_reason_vi": "Đã bổ sung từ PDF mục 9 写汉字."
+}

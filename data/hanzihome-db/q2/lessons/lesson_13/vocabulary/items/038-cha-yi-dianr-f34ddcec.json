@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_d4511393b60871fb",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "差（一）点儿",
+  "pinyin": "chà (yì) diǎnr",
+  "meaning_vi": "suýt, gần như",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+    "type": "vocabulary_item",
+    "order": 10,
+    "hanzi": "差（一）点儿",
+    "pinyin": "chà (yì) diǎnr",
+    "meaning_vi": "suýt, gần như",
+    "meaning_en": "",
+    "pos": "Phó từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "差（一）点儿",
+      "back": "chà (yì) diǎnr — suýt, gần như",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

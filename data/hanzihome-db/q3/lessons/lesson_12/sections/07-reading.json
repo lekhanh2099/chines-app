@@ -1,0 +1,687 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "综合填空",
+  "title_vi": "Bài đọc điền khuyết",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 1,
+      "title": "春天的故事",
+      "title_vi": "Câu chuyện mùa xuân",
+      "supplementary_vocab": [
+        {
+          "id": "lesson12_supp_vocab_001",
+          "type": "vocabulary_item",
+          "order": 1,
+          "hanzi": "漫天",
+          "pinyin": "màntiān",
+          "meaning_vi": "đầy trời; ngập trời",
+          "meaning_en": "all over the sky",
+          "pos": "Tính từ / Trạng ngữ miêu tả",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "漫天",
+            "back": "màntiān — đầy trời; ngập trời",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Trạng ngữ miêu tả",
+            "cn": "形容词 / 状语",
+            "normalized": "adjective_adverbial",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_002",
+          "type": "vocabulary_item",
+          "order": 2,
+          "hanzi": "抱怨",
+          "pinyin": "bàoyuàn",
+          "meaning_vi": "than phiền; oán trách",
+          "meaning_en": "to complain",
+          "pos": "Động từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "抱怨",
+            "back": "bàoyuàn — than phiền; oán trách",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_003",
+          "type": "vocabulary_item",
+          "order": 3,
+          "hanzi": "甜蜜",
+          "pinyin": "tiánmì",
+          "meaning_vi": "ngọt ngào; hạnh phúc",
+          "meaning_en": "sweet; happy",
+          "pos": "Tính từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "甜蜜",
+            "back": "tiánmì — ngọt ngào; hạnh phúc",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_004",
+          "type": "vocabulary_item",
+          "order": 4,
+          "hanzi": "感伤",
+          "pinyin": "gǎnshāng",
+          "meaning_vi": "buồn thương; đa cảm; man mác buồn",
+          "meaning_en": "sad; sentimental",
+          "pos": "Tính từ / Động từ tâm lý",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "感伤",
+            "back": "gǎnshāng — buồn thương; đa cảm; man mác buồn",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Động từ tâm lý",
+            "cn": "形容词 / 心理动词",
+            "normalized": "adjective_psych_verb",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_005",
+          "type": "vocabulary_item",
+          "order": 5,
+          "hanzi": "欣喜",
+          "pinyin": "xīnxǐ",
+          "meaning_vi": "vui mừng; hân hoan",
+          "meaning_en": "glad; joyful",
+          "pos": "Tính từ / Động từ tâm lý",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "欣喜",
+            "back": "xīnxǐ — vui mừng; hân hoan",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Động từ tâm lý",
+            "cn": "形容词 / 心理动词",
+            "normalized": "adjective_psych_verb",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_006",
+          "type": "vocabulary_item",
+          "order": 6,
+          "hanzi": "沉默",
+          "pinyin": "chénmò",
+          "meaning_vi": "im lặng; trầm mặc",
+          "meaning_en": "silent; quiet",
+          "pos": "Động từ / Tính từ / Danh từ trạng thái",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "沉默",
+            "back": "chénmò — im lặng; trầm mặc",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ / Tính từ / Danh từ trạng thái",
+            "cn": "动词 / 形容词 / 名词",
+            "normalized": "verb_adjective_noun",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_007",
+          "type": "vocabulary_item",
+          "order": 7,
+          "hanzi": "魅力",
+          "pinyin": "mèilì",
+          "meaning_vi": "sức hấp dẫn; sức cuốn hút",
+          "meaning_en": "charm",
+          "pos": "Danh từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "魅力",
+            "back": "mèilì — sức hấp dẫn; sức cuốn hút",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_008",
+          "type": "vocabulary_item",
+          "order": 8,
+          "hanzi": "冒险",
+          "pinyin": "màoxiǎn",
+          "meaning_vi": "mạo hiểm; liều; sự mạo hiểm",
+          "meaning_en": "to risk; to take a chance",
+          "pos": "Động từ li hợp / Danh từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "冒险",
+            "back": "màoxiǎn — mạo hiểm; liều; sự mạo hiểm",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ li hợp / Danh từ",
+            "cn": "动宾式离合词 / 名词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 冒 + tân ngữ 险",
+            "usage_note_vi": "Có thể nói 冒了很大的险 / 冒这个险; khi dùng như danh từ nghĩa là sự mạo hiểm, rủi ro.",
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_009",
+          "type": "vocabulary_item",
+          "order": 9,
+          "hanzi": "冲动",
+          "pinyin": "chōngdòng",
+          "meaning_vi": "sự bốc đồng; thôi thúc nhất thời",
+          "meaning_en": "impulse",
+          "pos": "Tính từ / Danh từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "冲动",
+            "back": "chōngdòng — sự bốc đồng; thôi thúc nhất thời",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ",
+            "cn": "形容词 / 名词",
+            "normalized": "adjective_noun",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_010",
+          "type": "vocabulary_item",
+          "order": 10,
+          "hanzi": "镇静",
+          "pinyin": "zhènjìng",
+          "meaning_vi": "bình tĩnh",
+          "meaning_en": "to calm down; calm",
+          "pos": "Tính từ / Động từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "镇静",
+            "back": "zhènjìng — bình tĩnh",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Tính từ / Động từ",
+            "cn": "形容词 / 动词",
+            "normalized": "adjective_verb",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_011",
+          "type": "vocabulary_item",
+          "order": 11,
+          "hanzi": "胡思乱想",
+          "pinyin": "húsī luànxiǎng",
+          "meaning_vi": "nghĩ lung tung; suy nghĩ vẩn vơ",
+          "meaning_en": "random thought; to think wildly",
+          "pos": "Thành ngữ / Cụm động từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "胡思乱想",
+            "back": "húsī luànxiǎng — nghĩ lung tung; suy nghĩ vẩn vơ",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Thành ngữ / Cụm động từ",
+            "cn": "成语 / 动词短语",
+            "normalized": "idiom_verb_phrase",
+            "schema_compatible_pos": "idiom",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_012",
+          "type": "vocabulary_item",
+          "order": 12,
+          "hanzi": "戒心",
+          "pinyin": "jièxīn",
+          "meaning_vi": "lòng đề phòng; sự cảnh giác",
+          "meaning_en": "vigilance",
+          "pos": "Danh từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "戒心",
+            "back": "jièxīn — lòng đề phòng; sự cảnh giác",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_013",
+          "type": "vocabulary_item",
+          "order": 13,
+          "hanzi": "信任",
+          "pinyin": "xìnrèn",
+          "meaning_vi": "tin tưởng; sự tin tưởng",
+          "meaning_en": "to trust",
+          "pos": "Động từ / Danh từ",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "信任",
+            "back": "xìnrèn — tin tưởng; sự tin tưởng",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词 / 名词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        },
+        {
+          "id": "lesson12_supp_vocab_014",
+          "type": "vocabulary_item",
+          "order": 14,
+          "hanzi": "怀疑",
+          "pinyin": "huáiyí",
+          "meaning_vi": "nghi ngờ; hoài nghi",
+          "meaning_en": "to doubt",
+          "pos": "Động từ / Danh từ tâm lý",
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "怀疑",
+            "back": "huáiyí — nghi ngờ; hoài nghi",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ]
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pos_detail": {
+            "vi": "Động từ / Danh từ tâm lý",
+            "cn": "动词 / 心理名词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          }
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "听到门响，知道是丈夫回来①______。",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "“晚上车顺利吧？”",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "没有回答，想是有话要说，我便抬起头来。",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "“挺顺利的。”丈夫说。目光却望②______窗外。",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "order": 5,
+          "zh": "“车上有一个女孩儿，好像没来过这边，问方村还有几站，我告诉了她。一起下车后，见她犹犹豫豫地四处张望，我很想问她去哪儿，为她指路或送她一段，可是还是走开了，怕她把我③______坏人，觉得不愉快。”",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
+          "order": 6,
+          "zh": "说完了，丈夫那表情好像做错了什么事似的，没再说话。",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
+          "order": 7,
+          "zh": "窗外，雨还在轻轻地下着，风吹了进来。今年的春天有些特别，少了些漫天的黄风，多了几场不大不小的春雨。虽然人们有点儿抱怨，但那树枝却诚心诚意地绿了起来。不知不觉中，我的心里突然有了一种不是痛苦、不是甜蜜、不是感伤、不是欣喜的滋味。",
+          "vi": "Ngoài cửa sổ, mưa vẫn đang rơi nhẹ, gió thổi vào. Mùa xuân năm nay hơi đặc biệt: ít đi những trận gió cát vàng đầy trời, lại có thêm vài trận mưa xuân không lớn không nhỏ. Tuy người ta hơi than phiền, nhưng những cành cây lại thành tâm thành ý xanh lên. Bất giác, trong lòng tôi bỗng có một cảm giác không phải đau khổ, không phải ngọt ngào, không phải man mác buồn, cũng không phải vui mừng.",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Chuāngwài, yǔ hái zài qīngqīng de xiàzhe, fēng chuī le jìnlai. Jīnnián de chūntiān yǒuxiē tèbié, shǎo le xiē màntiān de huángfēng, duō le jǐ chǎng bù dà bù xiǎo de chūnyǔ. Suīrán rénmen yǒudiǎnr bàoyuàn, dàn nà shùzhī què chéngxīn-chéngyì de lǜ le qǐlai. Bùzhī-bùjué zhōng, wǒ de xīnli tūrán yǒu le yì zhǒng bú shì tòngkǔ, bú shì tiánmì, bú shì gǎnshāng, bú shì xīnxǐ de zīwèi."
+        },
+        {
+          "id": "e1c38cca-fcba-4622-8fb9-fbe48b4dab2c",
+          "order": 8,
+          "zh": "几天前，也是这样一个下雨的晚上，从朋友家出④______，到车站坐车回家。在风雨中，我拉紧了衣领，来回走着，着急地等着车，心想，车来之前一定会被淋成个落汤鸡。忽听身边一个很低却很清晰的男声说：“站到这个伞下来吧。”我忽然收住了脚，“哦，不！”我本能地回答那黑暗中的声音，却没再动。陌生男人转过脸对着马路，过了几秒钟又说：“站过来吧！雨下⑤______这么大！”不知是这声音里的命令意味，还是那高大的个子在沉默中显示的魅力，⑥______我产生了想冒险的冲动，于是迈了一步站到了他的伞下。听得到自己心里咚咚直跳，装作很镇静地抬头看着那把伞。那伞已经破了，雨水滴到陌生男人的肩上，那张脸仍镇静地面对马路。车很快就来了，我这才松了一口气，轻声地道了谢，⑦______头也不回地跳上车，感受到的仍是背后的目光。",
+          "vi": "Vài ngày trước, cũng là một buổi tối mưa như thế này, tôi từ nhà bạn đi ra, đến trạm xe bắt xe về nhà. Trong mưa gió, tôi kéo chặt cổ áo, đi qua đi lại, sốt ruột chờ xe, nghĩ bụng trước khi xe tới chắc chắn sẽ bị mưa làm ướt như chuột lột. Bỗng nghe bên cạnh có một giọng nam rất thấp nhưng rất rõ nói: “Đứng dưới ô này đi.” Tôi bỗng dừng bước: “Ồ, không!” Tôi trả lời theo bản năng với giọng nói trong bóng tối ấy, nhưng cũng không bước đi nữa. Người đàn ông lạ quay mặt ra đường, qua vài giây lại nói: “Đứng qua đây đi! Mưa lớn như vậy!” Không biết là sắc thái ra lệnh trong giọng nói ấy, hay vóc người cao lớn kia trong im lặng thể hiện sức hút, khiến tôi nảy sinh sự thôi thúc muốn mạo hiểm, thế là tôi bước một bước đứng dưới ô của anh ấy. Tôi nghe thấy tim mình đập thình thịch, giả vờ rất bình tĩnh ngẩng đầu nhìn chiếc ô ấy. Chiếc ô đã rách, nước mưa nhỏ lên vai người đàn ông lạ, khuôn mặt ấy vẫn bình tĩnh hướng ra đường. Xe rất nhanh đã tới, lúc đó tôi mới thở phào nhẹ nhõm, khẽ nói lời cảm ơn, rồi ngay cả đầu cũng không quay lại mà nhảy lên xe, nhưng vẫn cảm nhận được ánh mắt ở phía sau.",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Jǐ tiān qián, yě shì zhèyàng yí ge xià yǔ de wǎnshang, cóng péngyou jiā chū ④ ______, dào chēzhàn zuò chē huí jiā. Zài fēngyǔ zhōng, wǒ lājǐn le yīlǐng, láihuí zǒuzhe, zháojí de děngzhe chē, xīn xiǎng, chē lái zhīqián yídìng huì bèi lín chéng ge luòtāngjī. Hū tīng shēnbiān yí ge hěn dī què hěn qīngxī de nánshēng shuō: “Zhàn dào zhè ge sǎn xià lái ba.” Wǒ hūrán shōuzhù le jiǎo, “Ò, bù!” Wǒ běnnéng de huídá nà hēi'àn zhōng de shēngyīn, què méi zài dòng. Mòshēng nánrén zhuǎnguò liǎn duìzhe mǎlù, guò le jǐ miǎo zhōng yòu shuō: “Zhàn guòlai ba! Yǔ xià ⑤ ______ zhème dà!” Bùzhī shì zhè shēngyīn lǐ de mìnglìng yìwèi, háishi nà gāodà de gèzi zài chénmò zhōng xiǎnshì de mèilì, ⑥ ______ wǒ chǎnshēng le xiǎng màoxiǎn de chōngdòng, yúshì mài le yí bù zhàn dào le tā de sǎn xià. Tīngdedào zìjǐ xīnli dōngdōng zhí tiào, zhuāngzuò hěn zhènjìng de táitóu kànzhe nà bǎ sǎn. Nà sǎn yǐjīng pò le, yǔshuǐ dī dào mòshēng nánrén de jiān shang, nà zhāng liǎn réng zhènjìng de miànduì mǎlù. Chē hěn kuài jiù lái le, wǒ zhè cái sōng le yì kǒu qì, qīngshēng de dào le xiè, ⑦ ______ tóu yě bù huí de tiàoshàng chē, gǎnshòudào de réng shì bèihòu de mùguāng."
+        },
+        {
+          "id": "447970a7-ce34-4c69-94fe-bd434a89609f",
+          "order": 9,
+          "zh": "窗外仍然是细细的雨声。",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9881cdaa-42b0-431a-ad38-2d9e5e9b6053",
+          "order": 10,
+          "zh": "这时我也开始胡思乱想⑧______来，那小女孩儿是否被淋湿了？她是否顺利地找到了要去的地方？不知那低声男子是否还记得，那天在车站他的好意换来的是我的一脸警惕？不知他后来是否还肯在黑夜中与淋湿的路人共享一些温暖？真愿大家都能多一些爱心，少一些戒心，多一些信任，少一些怀疑。",
+          "vi": "Lúc này tôi cũng bắt đầu suy nghĩ lung tung: cô gái ấy có bị mưa làm ướt không? Cô ấy có thuận lợi tìm được nơi mình muốn đến không? Không biết người đàn ông nói khẽ kia có còn nhớ rằng hôm ấy ở trạm xe, thiện ý của anh ấy đổi lại là vẻ mặt cảnh giác của tôi không? Không biết sau đó anh ấy còn sẵn lòng chia sẻ chút ấm áp với người đi đường bị mưa làm ướt trong đêm tối nữa không? Thật mong mọi người đều có thêm một chút lòng yêu thương, bớt một chút đề phòng, thêm một chút tin tưởng, bớt một chút nghi ngờ.",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Zhè shí wǒ yě kāishǐ húsī-luànxiǎng ⑧ ______ lái, nà xiǎo nǚháir shìfǒu bèi lín shī le? Tā shìfǒu shùnlì de zhǎodào le yào qù de dìfang? Bùzhī nà dīshēng nánzǐ shìfǒu hái jìde, nà tiān zài chēzhàn tā de hǎoyì huàn lái de shì wǒ de yì liǎn jǐngtì? Bùzhī tā hòulái shìfǒu hái kěn zài hēiyè zhōng yǔ lín shī de lùrén gòngxiǎng yìxiē wēnnuǎn? Zhēn yuàn dàjiā dōu néng duō yìxiē àixīn, shǎo yìxiē jièxīn, duō yìxiē xìnrèn, shǎo yìxiē huáiyí."
+        },
+        {
+          "id": "f26b68e6-9107-428a-a7d2-6823aa2e153d",
+          "order": 11,
+          "zh": "有了这场春雨，今年的春天会更美，我想。",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
+          "type": "cloze_blank",
+          "blank_index": 1,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
+          "type": "cloze_blank",
+          "blank_index": 2,
+          "answer": "着",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
+          "type": "cloze_blank",
+          "blank_index": 3,
+          "answer": "当成",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "dàngchéng"
+        },
+        {
+          "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
+          "type": "cloze_blank",
+          "blank_index": 4,
+          "answer": "来",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
+          "type": "cloze_blank",
+          "blank_index": 5,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "de"
+        },
+        {
+          "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
+          "type": "cloze_blank",
+          "blank_index": 6,
+          "answer": "使",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
+          "type": "cloze_blank",
+          "blank_index": 7,
+          "answer": "连",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
+          "type": "cloze_blank",
+          "blank_index": 8,
+          "answer": "起来",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "qǐlai"
+        }
+      ],
+      "translation_vi": "Nghe thấy tiếng cửa, tôi biết là chồng đã về... Thật mong mọi người đều có nhiều lòng yêu thương hơn, ít đề phòng hơn, nhiều tin tưởng hơn, ít nghi ngờ hơn. Có cơn mưa xuân này, mùa xuân năm nay sẽ đẹp hơn, tôi nghĩ.",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "id": "b5fd4f8e-624d-40bf-a044-3aa9e1aea0b4",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "功课",
+  "pinyin": "gōngkè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "công khóa",
+    "meaning_vi": "bài vở, bài tập, việc học",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "bài vở, bài tập, việc học",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "功",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "工",
+            "hanviet": "công",
+            "meaning_vi": "công việc, kỹ năng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "工",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Công",
+              "radical_name_zh": "",
+              "hanviet": "công",
+              "meaning_vi": "công việc, kỹ năng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "工 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "công phu, thành quả",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "工",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Công",
+          "radical_name_zh": "",
+          "hanviet": "công",
+          "meaning_vi": "công việc, kỹ năng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "工 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "课",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "果",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiết học, bài học",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Phần việc học cần bỏ công sức hoàn thành.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "作业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bài tập cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "课程",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "môn/khóa học",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "课",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiết học/bài học",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b1ed7f1b-ced3-4e1e-8ca2-a13b7d76cc98",
+      "order": 1,
+      "zh": "做功课",
+      "pinyin": "",
+      "vi": "làm bài/học bài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c5f8c4e-ed88-49f6-be50-925eb48bb2c1",
+      "order": 2,
+      "zh": "复习功课",
+      "pinyin": "",
+      "vi": "ôn bài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6c89a9a-40b7-4aaa-84e8-1184728d0915",
+      "order": 3,
+      "zh": "功课很多",
+      "pinyin": "",
+      "vi": "bài vở nhiều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "762992f8-2491-452d-a873-3c66eab0aba0",
+      "order": 1,
+      "zh": "今天功课很多，我不能去游泳。",
+      "pinyin": "Jīntiān gōngkè hěn duō, wǒ bù néng qù yóuyǒng.",
+      "vi": "Hôm nay bài vở nhiều, tôi không thể đi bơi.",
+      "en": "",
+      "highlight": [
+        "功课"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b5fd4f8e-624d-40bf-a044-3aa9e1aea0b4"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "作业 thường dùng cho homework cụ thể; 功课 rộng hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dc6d71a6-c551-4afe-9c07-339eed508888",
+      "order": 1,
+      "title_vi": "Không dùng thay 课程",
+      "explanation_vi": "功课 là bài vở; 课程 là môn/khóa học.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "我今天功课很多。",
+        "这个课程很难。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "功课",
+    "back": "bài vở, bài tập, việc học",
+    "hint": "gōngkè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "功课"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b5fd4f8e-624d-40bf-a044-3aa9e1aea0b4",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "id": "403f4308-4c38-4032-81c7-ff7a895b95f8",
+  "type": "deep_vocabulary_item",
+  "order": 88,
+  "hanzi": "一轮",
+  "pinyin": "yì lún",
+  "pos": {
+    "raw_vi": "Lượng từ/cụm số lượng",
+    "raw_cn": "数量短语",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "nhất luân",
+    "meaning_vi": "một vầng, một vòng, một lượt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "một vầng",
+      "một vòng",
+      "một lượt"
+    ],
+    "short_definition_vi": "một vầng, một vòng, một lượt",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "Trong từ này, 一 góp phần vào nghĩa hiện đại: một.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "轮",
+        "lishu_vi": "luân",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe, chuyển động",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe, chuyển động",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe, chuyển động",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vòng, lượt",
+        "modern_logic_vi": "Trong từ này, 轮 góp phần vào nghĩa hiện đại: vòng, lượt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一轮 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 一轮满月.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho mọi vật tròn; táo vẫn là 一个苹果."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b30ead1b-c886-445b-98a1-af1e3088867e",
+      "order": 1,
+      "zh": "一轮满月",
+      "pinyin": "",
+      "vi": "một vầng trăng tròn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b17762e-7424-4bf9-9ce8-6ab6bc9873b9",
+      "order": 2,
+      "zh": "一轮明月",
+      "pinyin": "",
+      "vi": "một vầng trăng sáng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e4693db4-53c9-4ef9-a89b-b05a447185fa",
+      "order": 3,
+      "zh": "第一轮面试",
+      "pinyin": "",
+      "vi": "vòng phỏng vấn thứ nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8486638d-4c49-4cff-b09f-17ba1a1dc94d",
+      "order": 1,
+      "zh": "天空中挂着一轮明月。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 一轮 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 一轮; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "一轮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "403f4308-4c38-4032-81c7-ff7a895b95f8"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 一轮 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "88cf273d-e049-44d7-b9cf-cafb5dcb1588",
+      "order": 1,
+      "rule_vi": "Không dùng cho mọi vật tròn; táo vẫn là 一个苹果.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一轮",
+    "back": "một vầng, một vòng, một lượt",
+    "hint": "yì lún",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "403f4308-4c38-4032-81c7-ff7a895b95f8",
+    "source_lesson_vocab_id": null
+  }
+}

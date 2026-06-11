@@ -1,0 +1,214 @@
+{
+  "id": "d17d8e9d-f1c3-443c-9937-71ff36b885c1",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "由于",
+  "pinyin": "yóuyú",
+  "pos": {
+    "raw_vi": "Giới từ / liên từ",
+    "raw_cn": "介词/连词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "do vu",
+    "meaning_vi": "do; bởi vì; vì nguyên nhân là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "do",
+      "bởi vì",
+      "vì nguyên nhân là"
+    ],
+    "short_definition_vi": "do; bởi vì; vì nguyên nhân là",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "由",
+        "lishu_vi": "",
+        "structure_note_vi": "由: do; từ",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "do; từ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: do; từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "于",
+        "lishu_vi": "",
+        "structure_note_vi": "于: ở; đối với",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở; đối với",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: ở; đối với.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "由于 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 由于天气原因.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "96690b1b-8269-4d8e-84f1-63ad39b69aac",
+      "order": 1,
+      "zh": "由于天气原因",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "699b1ef0-cff0-4c17-b73c-43851e21c86c",
+      "order": 2,
+      "zh": "由于身体不好",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "971db7c2-7345-40fc-9ec4-20294d3de316",
+      "order": 3,
+      "zh": "由于……所以……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2817fbde-9d93-4dd9-8aba-c5cd448c2e86",
+      "order": 4,
+      "zh": "由于种种原因",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7652d939-86a8-43d9-81ee-39271e3c83f6",
+      "order": 1,
+      "zh": "由于老师再三劝说，我只好答应了。",
+      "pinyin": "",
+      "vi": "Vì cô giáo khuyên nhiều lần, tôi đành đồng ý。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "由于"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d17d8e9d-f1c3-443c-9937-71ff36b885c1"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fe917f30-8186-43c8-8ff8-31f39b392928",
+      "order": 2,
+      "zh": "由于腿刚打上石膏，我不能随便下床走路。",
+      "pinyin": "",
+      "vi": "Do chân vừa bó bột, tôi không thể tùy tiện xuống giường đi lại。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "由于"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d17d8e9d-f1c3-443c-9937-71ff36b885c1"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3ffb7e72-539b-4c5c-9b0a-5a4d525512dd",
+      "order": 1,
+      "rule_vi": "Không lẫn 由于 với 为了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không lẫn 由于 với 为了.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "由于",
+    "back": "do; bởi vì; vì nguyên nhân là",
+    "hint": "yóuyú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d17d8e9d-f1c3-443c-9937-71ff36b885c1",
+    "source_lesson_vocab_id": null
+  }
+}

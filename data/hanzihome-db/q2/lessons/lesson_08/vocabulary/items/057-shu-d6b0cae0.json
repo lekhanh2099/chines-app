@@ -1,0 +1,56 @@
+{
+  "id": "synthetic_vocab_b1616cb2416e43c1",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "树",
+  "pinyin": "shù",
+  "meaning_vi": "cây",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+    "type": "vocabulary_item",
+    "order": 18,
+    "hanzi": "树",
+    "pinyin": "shù",
+    "meaning_vi": "cây",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "pdf_textbook_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

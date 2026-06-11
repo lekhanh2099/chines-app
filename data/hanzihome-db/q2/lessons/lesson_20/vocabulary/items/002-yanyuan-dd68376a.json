@@ -1,0 +1,436 @@
+{
+  "id": "fa886e11-04bf-4204-ad7a-eec4f64f4c54",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "演员",
+  "pinyin": "yǎnyuán",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Diễn viên",
+    "meaning_vi": "diễn viên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "diễn viên"
+    ],
+    "short_definition_vi": "diễn viên",
+    "textbook_focus_vi": "diễn viên",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "演",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寅",
+            "hanviet": "",
+            "meaning_vi": "thành phần biểu âm/cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "员",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò, tiền của",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "演 là diễn, biểu diễn. 员 là người đảm nhiệm một vai trò/công việc. → 演员 = người làm công việc diễn xuất/biểu diễn vai.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 演员 là người; 人物 là nhân vật trong tác phẩm. Đừng nhầm diễn viên ngoài đời với nhân vật trong phim/kịch.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "演员",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "diễn viên ngoài đời.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "人物",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhân vật trong truyện/phim/kịch, cũng có thể là nhân vật xã hội.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "角色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vai diễn, vai trò trong tác phẩm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "明星",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngôi sao, người nổi tiếng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 演员扮演角色 = diễn viên đóng vai; 人物性格 = tính cách nhân vật."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3544ad2e-583c-4f1f-b110-dc66702e96fa",
+      "order": 1,
+      "zh": "一位演员",
+      "pinyin": "",
+      "vi": "một diễn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ae1ed6c8-db48-4f00-9f84-d0acf3263885",
+      "order": 2,
+      "zh": "电影演员",
+      "pinyin": "",
+      "vi": "diễn viên điện ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36897999-0656-4ee8-94ca-87a6879efad8",
+      "order": 3,
+      "zh": "话剧演员",
+      "pinyin": "",
+      "vi": "diễn viên kịch nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0570633b-6707-4782-a9f1-96c269d68d7b",
+      "order": 4,
+      "zh": "演员的动作",
+      "pinyin": "",
+      "vi": "động tác của diễn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80942b2c-d0ea-46c0-9a7d-32b580e410a0",
+      "order": 5,
+      "zh": "演员表现得很好",
+      "pinyin": "",
+      "vi": "diễn viên biểu hiện/diễn rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "372117f0-57da-47bd-b861-6d49066cea12",
+      "order": 1,
+      "zh": "这个演员说得太快了，我听不懂。",
+      "pinyin": "Zhège yǎnyuán shuō de tài kuài le, wǒ tīng bù dǒng.",
+      "vi": "Diễn viên này nói nhanh quá, tôi nghe không hiểu.",
+      "analysis_vi": "听不懂 là bổ ngữ khả năng phủ định: không nghe hiểu được.",
+      "highlight": [
+        "演员"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "fa886e11-04bf-4204-ad7a-eec4f64f4c54"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c27e70c6-0d0d-4e19-a040-9aae6ed27d3f",
+      "order": 2,
+      "zh": "虽然我听不懂台词，但是看得出这个演员演得很好。",
+      "pinyin": "Suīrán wǒ tīng bù dǒng táicí, dànshì kàn de chū zhège yǎnyuán yǎn de hěn hǎo.",
+      "vi": "Tuy tôi nghe không hiểu lời thoại, nhưng nhìn ra được diễn viên này diễn rất tốt.",
+      "analysis_vi": "看得出 = nhìn ra được; 演得很好 là bổ ngữ trình độ, nói diễn hay.",
+      "highlight": [
+        "演员"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "fa886e11-04bf-4204-ad7a-eec4f64f4c54"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "be2fd2fa-3247-470b-a202-b50d2794a76d",
+      "order": 3,
+      "zh": "这些演员的武打动作很精彩，观众都看得懂。",
+      "pinyin": "Zhèxiē yǎnyuán de wǔdǎ dòngzuò hěn jīngcǎi, guānzhòng dōu kàn de dǒng.",
+      "vi": "Các động tác võ thuật của những diễn viên này rất đặc sắc, khán giả đều xem hiểu được.",
+      "analysis_vi": "看得懂 ở đây là hiểu được nội dung qua động tác.",
+      "highlight": [
+        "演员"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "fa886e11-04bf-4204-ad7a-eec4f64f4c54"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "529b0d82-0251-43b5-afd2-6e1361440119",
+      "order": 1,
+      "rule_vi": "Nhầm 演员 với 人物. 演员 là người thật biểu diễn",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Nhầm 演员 với 人物. 演员 là người thật biểu diễn: 这位演员很有名。 Zhè wèi yǎnyuán hěn yǒumíng. Diễn viên này rất nổi tiếng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "演员",
+    "back": "diễn viên",
+    "hint": "yǎnyuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong nghệ thuật truyền thống Trung Quốc như 京剧, diễn viên không chỉ “diễn thoại”, mà còn phải luyện hát, động tác, võ thuật, dáng đi, ánh mắt. Vì vậy đánh giá 演员 trong sân khấu truyền thống thường nhìn cả 唱, 念, 做, 打.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fa886e11-04bf-4204-ad7a-eec4f64f4c54",
+    "source_lesson_vocab_id": null
+  }
+}

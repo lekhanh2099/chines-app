@@ -1,0 +1,373 @@
+{
+  "id": "4dbf221b-b73d-4997-81d7-e402206ea32d",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "向往",
+  "pinyin": "xiàngwǎng",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "feeling",
+    "travel"
+  ],
+  "meaning": {
+    "hanviet": "hướng vãng",
+    "meaning_vi": "khao khát, mong mỏi, hướng lòng về",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khao khát",
+      "mong mỏi",
+      "hướng lòng về"
+    ],
+    "short_definition_vi": "khao khát, mong mỏi, hướng lòng về",
+    "textbook_focus_vi": "khao khát, mong mỏi, hướng lòng về",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "feeling, travel",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "向",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "bên trong",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hướng về",
+        "modern_logic_vi": "Trong từ này, 向 góp phần vào lớp nghĩa hiện đại: hướng về",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "往",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "主",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi tới, hướng tới",
+        "modern_logic_vi": "Trong từ này, 往 góp phần vào lớp nghĩa hiện đại: đi tới, hướng tới",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "向 = hướng về; 往 = đi tới. 向往 = lòng hướng tới điều/nơi mình mong.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 向往 cho nhu cầu nhỏ tức thời như uống trà sữa; nói 想喝奶茶.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "想",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "希望",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "憧憬",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "神往",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "厌倦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b3b072a0-bc53-4d5c-a1b6-b953ae11f35e",
+      "order": 1,
+      "zh": "向往北京",
+      "pinyin": "",
+      "vi": "mong được đến Bắc Kinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e43bb55e-2547-40c9-b8ca-03926e78c7a0",
+      "order": 2,
+      "zh": "向往春天",
+      "pinyin": "",
+      "vi": "mong mùa xuân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91ad2050-9926-4b47-8453-147b92c1502b",
+      "order": 3,
+      "zh": "向往自由",
+      "pinyin": "",
+      "vi": "khao khát tự do",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "faec1c2c-a1f7-4d3b-8fa0-4c7c459ccd9e",
+      "order": 4,
+      "zh": "向往美好的生活",
+      "pinyin": "",
+      "vi": "khao khát cuộc sống tốt đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6647d32d-1a2a-4531-8c8a-0ae1509a38a6",
+      "order": 5,
+      "zh": "令人向往",
+      "pinyin": "",
+      "vi": "khiến người ta mong mỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8658c821-d262-425e-aff8-34a8a10b9f44",
+      "order": 6,
+      "zh": "向往已久",
+      "pinyin": "",
+      "vi": "khao khát đã lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1b7161ff-28dd-4490-84a7-d41df5a039e0",
+      "order": 1,
+      "zh": "我一直很向往北京的秋天。",
+      "pinyin": "",
+      "vi": "Tôi luôn rất mong được trải nghiệm mùa thu Bắc Kinh.",
+      "analysis_vi": "向往 + nơi/cảnh/cuộc sống.",
+      "highlight": [
+        "向往"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4dbf221b-b73d-4997-81d7-e402206ea32d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e3115690-fb51-4945-8d84-536f225137b0",
+      "order": 2,
+      "zh": "香山的红叶让很多外地游人向往。",
+      "pinyin": "",
+      "vi": "Lá đỏ Hương Sơn khiến nhiều du khách từ nơi khác mong được đến.",
+      "analysis_vi": "让……向往.",
+      "highlight": [
+        "向往"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4dbf221b-b73d-4997-81d7-e402206ea32d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8d1b60a1-edc1-4a57-91d3-3e0344184949",
+      "order": 3,
+      "zh": "北京的四季都让人十分向往。",
+      "pinyin": "",
+      "vi": "Bốn mùa Bắc Kinh đều khiến người ta rất mong được trải nghiệm.",
+      "analysis_vi": "让人十分向往 là văn viết tự nhiên.",
+      "highlight": [
+        "向往"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4dbf221b-b73d-4997-81d7-e402206ea32d"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "向往 trong Bài 3 北京的四季",
+    "content_vi": "令人向往 là cụm quen thuộc trong văn du lịch/quảng bá.",
+    "tags": [
+      "feeling",
+      "travel"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4b4d73d0-1b1d-493b-be33-a82cd36d4280",
+      "order": 1,
+      "rule_vi": "Không dùng 向往 cho nhu cầu nhỏ tức thời như uống trà sữa; nói 想喝奶茶.",
+      "natural_examples": [
+        {
+          "zh": "我一直很向往北京的秋天。",
+          "pinyin": "",
+          "vi": "Tôi luôn rất mong được trải nghiệm mùa thu Bắc Kinh.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 向往 cho nhu cầu nhỏ tức thời như uống trà sữa; nói 想喝奶茶.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "向往",
+    "back": "khao khát, mong mỏi, hướng lòng về",
+    "hint": "xiàngwǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "feeling",
+      "travel"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4dbf221b-b73d-4997-81d7-e402206ea32d",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "id": "4f834712-04b9-4ce7-88d3-a963adf22845",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "国外",
+  "pinyin": "guówài",
+  "pos": {
+    "raw_vi": "Danh từ nơi chốn",
+    "raw_cn": "处所名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "quốc ngoại",
+    "meaning_vi": "nước ngoài, bên ngoài đất nước mình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nước ngoài",
+      "bên ngoài đất nước mình"
+    ],
+    "short_definition_vi": "nước ngoài, bên ngoài đất nước mình",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: nước ngoài, bên ngoài đất nước mình.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "国",
+        "lishu_vi": "quốc",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao ngoài",
+            "position_vi": "ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "囗 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao ngoài",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "玉",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc; thành phần trong chữ giản thể",
+            "position_vi": "trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nước, quốc gia",
+        "modern_logic_vi": "Quốc gia/vùng lãnh thổ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao ngoài",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "外",
+        "lishu_vi": "ngoại",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "chiều/tối",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "夕 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "夕",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tịch",
+              "radical_name_zh": "",
+              "hanviet": "tịch",
+              "meaning_vi": "chiều/tối",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói; thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngoài, bên ngoài",
+        "modern_logic_vi": "Phía ngoài so với trung tâm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "夕",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tịch",
+          "radical_name_zh": "",
+          "hanviet": "tịch",
+          "meaning_vi": "chiều/tối",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "国外 trong bài dùng theo nghĩa: nước ngoài, bên ngoài đất nước mình. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 国外 qua văn cảnh 离家的时候: nước ngoài, bên ngoài đất nước mình.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "外国",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nước ngoài/nước khác; làm định ngữ nhiều",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "海外",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hải ngoại, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出国",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ra nước ngoài; động từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "国内",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trong nước",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "956e1d51-95d0-40d6-8f87-03a8ee7875fb",
+      "order": 1,
+      "zh": "去国外",
+      "pinyin": "",
+      "vi": "đi nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f5a2fd2-4b08-40dc-a73b-9c59bd620ccb",
+      "order": 2,
+      "zh": "在国外",
+      "pinyin": "",
+      "vi": "ở nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1da8be6d-60e2-4b3f-9a77-552abfabd610",
+      "order": 3,
+      "zh": "国外生活",
+      "pinyin": "",
+      "vi": "cuộc sống ở nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ff0c39d-ec2b-4f21-a84c-83878ebe65eb",
+      "order": 4,
+      "zh": "国外学习",
+      "pinyin": "",
+      "vi": "học ở nước ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a258945d-a5fc-46b5-b29c-565bd41bf259",
+      "order": 5,
+      "zh": "从国外回来",
+      "pinyin": "",
+      "vi": "từ nước ngoài về",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0e5c26ae-15ff-4817-b9a8-7a0ef47de33f",
+      "order": 1,
+      "zh": "她想去国外学习。",
+      "pinyin": "",
+      "vi": "Cô ấy muốn đi nước ngoài học.",
+      "analysis_vi": "去国外学习 là cách nói tự nhiên.",
+      "highlight": [
+        "国外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f834712-04b9-4ce7-88d3-a963adf22845"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b752edb-a498-4050-9b7b-0ee3924c812c",
+      "order": 2,
+      "zh": "到了国外以后，她每天都跟父母联系。",
+      "pinyin": "",
+      "vi": "Sau khi đến nước ngoài, cô ấy ngày nào cũng liên lạc với bố mẹ.",
+      "analysis_vi": "到了国外以后 đặt mốc thời gian.",
+      "highlight": [
+        "国外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f834712-04b9-4ce7-88d3-a963adf22845"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e8ff5870-402a-4706-b375-179ed2f9f30c",
+      "order": 3,
+      "zh": "她以为在国外生活会很自在，可是很多事情都要自己处理。",
+      "pinyin": "",
+      "vi": "Cô ấy tưởng sống ở nước ngoài sẽ thoải mái, nhưng nhiều việc phải tự xử lý.",
+      "analysis_vi": "可是 tạo đối lập thực tế.",
+      "highlight": [
+        "国外"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f834712-04b9-4ce7-88d3-a963adf22845"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "国外 trong bài là biểu tượng rời khỏi vùng bảo vệ của gia đình.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d916f8e0-f6d3-4862-80bb-5dabd163bdaf",
+      "order": 1,
+      "rule_vi": "Phân biệt 出国 là động từ, 国外 là nơi chốn, 外国 thường làm định ngữ như 外国朋友.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "国外",
+    "back": "nước ngoài, bên ngoài đất nước mình",
+    "hint": "guówài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_017"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f834712-04b9-4ce7-88d3-a963adf22845",
+    "source_lesson_vocab_id": null
+  }
+}

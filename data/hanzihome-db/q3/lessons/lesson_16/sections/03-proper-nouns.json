@@ -1,0 +1,44 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook_pdf_verified",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9dcce1b3-6806-47d5-961e-638546b7858e",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "天壶",
+      "pinyin": "Tiānhú",
+      "meaning_vi": "Thiên Hồ; tên một khu vực",
+      "meaning_en": "Tianhu; name of an area",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "b08663af-ff0c-4e40-94b6-3d466705e6f5",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "格林",
+      "pinyin": "Gélín",
+      "meaning_vi": "Green; họ/tên riêng trong bài",
+      "meaning_en": "Green; a surname/name",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "392aa5a7-f3ea-47db-8f4e-4983b2b625bc",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "《金星日报》",
+      "pinyin": "Jīnxīng Rìbào",
+      "meaning_vi": "《Nhật báo sao Kim》; tên tờ báo trong bài",
+      "meaning_en": "Venus Daily; title of a newspaper",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    }
+  ]
+}

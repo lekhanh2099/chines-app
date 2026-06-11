@@ -1,0 +1,254 @@
+{
+  "id": "ecf586d6-1a43-42cf-9408-022d034b5834",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "心爱",
+  "pinyin": "xīn’ài",
+  "pos": {
+    "raw_vi": "Tính từ / Định ngữ",
+    "raw_cn": "形容词 / 定语",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tâm ái",
+    "meaning_vi": "yêu quý, yêu thương sâu sắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "yêu quý",
+      "yêu thương sâu sắc"
+    ],
+    "short_definition_vi": "yêu quý, yêu thương sâu sắc",
+    "textbook_focus_vi": "心 = lòng, 爱 = yêu. 心爱 thường đứng trước danh từ, chỉ thứ/người được yêu quý từ trong lòng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tình cảm, vật quý",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "tâm",
+        "structure_note_vi": "Bộ Tâm, nghĩa trực tiếp.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lòng, tim, cảm xúc",
+        "modern_logic_vi": "Trong từ này, 心 góp phần tạo nghĩa 'lòng, tim, cảm xúc'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "爱",
+        "lishu_vi": "ái",
+        "structure_note_vi": "Chữ giản thể; không ép chiết tự theo phồn thể 愛.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yêu, thích, quý",
+        "modern_logic_vi": "Trong từ này, 爱 góp phần tạo nghĩa 'yêu, thích, quý'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "心 = lòng, 爱 = yêu. 心爱 thường đứng trước danh từ, chỉ thứ/người được yêu quý từ trong lòng.",
+    "memory_tip_vi": "Nhớ qua cụm: 心爱的人 = người mình yêu thương.",
+    "warning_vi": "心爱 thường làm định ngữ, không dùng như động từ trực tiếp.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "喜欢",
+        "pinyin": "xǐhuan",
+        "meaning_vi": "thích",
+        "difference_vi": "Nhẹ hơn 心爱.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲爱",
+        "pinyin": "qīn’ài",
+        "meaning_vi": "thân yêu",
+        "difference_vi": "Thường dùng trong xưng hô hoặc lời gọi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "心爱 thường làm định ngữ, không dùng như động từ trực tiếp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3fa8cd42-5aae-4408-8fae-12e9c3b7865d",
+      "order": 1,
+      "zh": "心爱的人",
+      "pinyin": "xīn’ài de rén",
+      "vi": "người mình yêu thương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "967b029e-c4be-4794-bf61-a5e6614a9c58",
+      "order": 2,
+      "zh": "心爱的女孩儿",
+      "pinyin": "xīn’ài de nǚháir",
+      "vi": "cô gái mình yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1b57988-d56f-4978-8782-ae995f44a28f",
+      "order": 3,
+      "zh": "心爱的礼物",
+      "pinyin": "xīn’ài de lǐwù",
+      "vi": "món quà yêu quý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "07b022dd-1316-478d-ada6-e28702b9b97b",
+      "order": 1,
+      "zh": "看着自己心爱的女孩儿跟别人有说有笑，他心里很不是滋味。",
+      "pinyin": "Kànzhe zìjǐ xīn’ài de nǚháir gēn biéren yǒu shuō yǒu xiào, tā xīnli hěn bú shì zīwèi.",
+      "vi": "Nhìn cô gái mình yêu nói cười với người khác, trong lòng anh ấy rất khó chịu.",
+      "analysis_vi": "心爱的女孩儿 là định ngữ; 不是滋味 là cảm giác khó chịu.",
+      "highlight": [
+        "心爱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ecf586d6-1a43-42cf-9408-022d034b5834"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "心爱的人 nghe văn và sâu hơn 喜欢的人.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "25cbf32e-704b-459a-8f64-d180157c90d4",
+      "order": 1,
+      "rule_vi": "心爱 thường làm định ngữ, không dùng như động từ trực tiếp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我心爱她。",
+          "pinyin": "Wǒ xīn’ài tā.",
+          "vi": "Sai: tôi tâm ái cô ấy.",
+          "note_vi": "心爱 không dùng như 爱 trong câu này.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "她是我心爱的人。",
+          "pinyin": "Tā shì wǒ xīn’ài de rén.",
+          "vi": "Cô ấy là người tôi yêu quý.",
+          "note_vi": "心爱的 + danh từ là cách dùng tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心爱",
+    "back": "yêu quý, yêu thương sâu sắc",
+    "hint": "xīn’ài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ecf586d6-1a43-42cf-9408-022d034b5834",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "id": "b7e0e195-a2ea-4028-8108-2a6a9d46fde0",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "遗憾",
+  "pinyin": "yíhàn",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ",
+    "raw_cn": "形 / 名",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Di hám",
+    "meaning_vi": "tiếc, đáng tiếc; điều tiếc nuối",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiếc, đáng tiếc",
+      "điều tiếc nuối"
+    ],
+    "short_definition_vi": "tiếc, đáng tiếc; điều tiếc nuối",
+    "textbook_focus_vi": "tiếc, đáng tiếc; điều tiếc nuối",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "遗",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "để lại, sót lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "憾",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm lý, cảm xúc",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "感",
+            "hanviet": "cảm",
+            "meaning_vi": "cảm xúc, cảm nhận",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiếc, không thỏa lòng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "遗憾 = cảm giác tiếc còn sót lại vì chuyện không trọn vẹn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bce61fbe-32f5-42ad-affd-d1ead302bd6c",
+      "order": 1,
+      "zh": "很遗憾",
+      "pinyin": "",
+      "vi": "rất tiếc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "890374d4-2eb6-40a9-a90b-451acf3ba9ed",
+      "order": 2,
+      "zh": "感到遗憾",
+      "pinyin": "",
+      "vi": "cảm thấy tiếc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b0a3c7e-5eab-48c9-aea8-fceeeba92f53",
+      "order": 3,
+      "zh": "令人遗憾",
+      "pinyin": "",
+      "vi": "khiến người ta tiếc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29824f12-0334-4ba9-9e92-85af3213745d",
+      "order": 4,
+      "zh": "留下遗憾",
+      "pinyin": "",
+      "vi": "để lại tiếc nuối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a33b41cb-803e-4170-ade4-60e5bdef8508",
+      "order": 5,
+      "zh": "没有遗憾",
+      "pinyin": "",
+      "vi": "không có gì tiếc nuối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cd470d78-55a2-42f8-9a10-4565be85e8c7",
+      "order": 1,
+      "zh": "老四合院被拆了，爷爷感到很遗憾。",
+      "pinyin": "Lǎo sìhéyuàn bèi chāi le, yéye gǎndào hěn yíhàn.",
+      "vi": "Tứ hợp viện cũ bị phá dỡ rồi, ông nội cảm thấy rất tiếc.",
+      "analysis_vi": "被拆了 ôn bị động; 感到遗憾 diễn tả cảm xúc.",
+      "highlight": [
+        "遗憾"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "b7e0e195-a2ea-4028-8108-2a6a9d46fde0"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "40429fa7-3d84-44a4-915a-0e4fa7748814",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：遗憾。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: tiếc, đáng tiếc; điều tiếc nuối.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "遗憾"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "b7e0e195-a2ea-4028-8108-2a6a9d46fde0"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 遗憾 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "024381bc-d48d-4117-96ad-8bd290cfbd68",
+      "order": 1,
+      "rule_vi": "遗憾 không hoàn toàn giống 后悔; 后悔 là hối hận vì quyết định/hành động của mình.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "遗憾 không hoàn toàn giống 后悔; 后悔 là hối hận vì quyết định/hành động của mình.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "遗憾",
+    "back": "tiếc, đáng tiếc; điều tiếc nuối",
+    "hint": "yíhàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_018"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7e0e195-a2ea-4028-8108-2a6a9d46fde0",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "id": "2974409c-02e5-4657-a759-cee846120616",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "头发",
+  "pinyin": "tóufa",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đầu phát",
+    "meaning_vi": "tóc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tóc"
+    ],
+    "short_definition_vi": "tóc",
+    "textbook_focus_vi": "tóc",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "头",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đầu, phần đầu",
+        "modern_logic_vi": "头 là giản thể của 頭; không tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "发",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tóc trong 头发",
+        "modern_logic_vi": "发 trong 头发 tương ứng 髮, khác 發 trong phát triển.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "头 = đầu, 发 = tóc. 头发 = tóc trên đầu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0897fc2b-6d4d-4c11-8ab1-5902e7c80ba5",
+      "order": 1,
+      "zh": "长头发",
+      "pinyin": "",
+      "vi": "tóc dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b71df89-0c1a-470e-9d11-86052d836efb",
+      "order": 2,
+      "zh": "短头发",
+      "pinyin": "",
+      "vi": "tóc ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e0f7931-eaa2-47d8-9ae6-f4529a6338a3",
+      "order": 3,
+      "zh": "黑头发",
+      "pinyin": "",
+      "vi": "tóc đen",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4f997c65-9bf5-452e-8df4-42180b11ad24",
+      "order": 4,
+      "zh": "白头发",
+      "pinyin": "",
+      "vi": "tóc bạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c644fbd6-6a77-428f-a5bf-5d645359d68f",
+      "order": 5,
+      "zh": "剪头发",
+      "pinyin": "",
+      "vi": "cắt tóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c19bbed6-fc36-4ac8-891e-a5b9038a16d1",
+      "order": 6,
+      "zh": "洗头发",
+      "pinyin": "",
+      "vi": "gội đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "49582a83-02b3-45c1-8441-6c61c0637bcf",
+      "order": 1,
+      "zh": "她的头发又黑又长。",
+      "pinyin": "Tā de tóufa yòu hēi yòu cháng.",
+      "vi": "Tóc cô ấy vừa đen vừa dài.",
+      "analysis_vi": "又……又…… nối hai tính chất.",
+      "highlight": [
+        "头发"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2974409c-02e5-4657-a759-cee846120616"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7ea0464b-7b9b-43a9-8d44-a54aa9860946",
+      "order": 2,
+      "zh": "她是昨天去剪头发的。",
+      "pinyin": "Tā shì zuótiān qù jiǎn tóufa de.",
+      "vi": "Cô ấy đi cắt tóc hôm qua.",
+      "analysis_vi": "是……的 nhấn thời gian.",
+      "highlight": [
+        "头发"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2974409c-02e5-4657-a759-cee846120616"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e85e60cc-4ecd-44f3-92c5-51e77549383b",
+      "order": 3,
+      "zh": "一看到照片里的自己头发那么乱，他就不好意思地笑了。",
+      "pinyin": "Yí kàn dào zhàopiàn lǐ de zìjǐ tóufa nàme luàn, tā jiù bù hǎoyìsi de xiào le.",
+      "vi": "Vừa thấy tóc mình trong ảnh rối như vậy, anh ấy cười ngại.",
+      "analysis_vi": "照片里的自己 là cụm định ngữ.",
+      "highlight": [
+        "头发"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2974409c-02e5-4657-a759-cee846120616"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "剪头发 là cách nói cắt tóc tự nhiên ở trình độ này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6fe72ff5-7741-43e0-8405-df49fcdae932",
+      "order": 1,
+      "rule_vi": "发 có nhiều nghĩa do giản thể gộp chữ; 头发 đọc fa nhẹ, 发展 đọc fā.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "头发",
+    "back": "tóc",
+    "hint": "tóufa",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2974409c-02e5-4657-a759-cee846120616",
+    "source_lesson_vocab_id": null
+  }
+}

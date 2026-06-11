@@ -1,0 +1,287 @@
+{
+  "id": "0fba1af4-50a7-4af0-a534-0c17c3b52c45",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "坦然",
+  "pinyin": "tǎnrán",
+  "pos": {
+    "raw_vi": "Tính từ / Trạng thái từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thản nhiên",
+    "meaning_vi": "bình thản, an tâm, không lo sợ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bình thản",
+      "an tâm",
+      "không lo sợ"
+    ],
+    "short_definition_vi": "bình thản, an tâm, không lo sợ",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "坦",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "旦",
+            "hanviet": "đán",
+            "meaning_vi": "sáng sớm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bằng phẳng, thẳng thắn",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy, trạng thái như vậy",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "坦然 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 坦然 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "平静",
+        "pinyin": "píngjìng",
+        "meaning_vi": "bình tĩnh/yên tĩnh",
+        "difference_vi": "Rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冷静",
+        "pinyin": "lěngjìng",
+        "meaning_vi": "bình tĩnh/lý trí",
+        "difference_vi": "Nhấn lý trí",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冷漠",
+        "pinyin": "lěngmò",
+        "meaning_vi": "lạnh nhạt",
+        "difference_vi": "Không cùng nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2feff3ae-58b2-48b3-ac98-d063823621be",
+      "order": 1,
+      "zh": "坦然面对",
+      "pinyin": "tǎnrán miànduì",
+      "vi": "bình thản đối mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab7bbb05-05c6-4065-b9be-7ae0a8955289",
+      "order": 2,
+      "zh": "坦然接受",
+      "pinyin": "tǎnrán jiēshòu",
+      "vi": "bình thản chấp nhận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d114079a-3984-41ce-ab90-43a523a865b3",
+      "order": 3,
+      "zh": "神情坦然",
+      "pinyin": "shénqíng tǎnrán",
+      "vi": "vẻ mặt bình thản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "80d11048-f544-4059-88fc-c4bd8c8eb327",
+      "order": 1,
+      "zh": "他坦然地承认了自己的错误。",
+      "pinyin": "Tā tǎnrán de chéngrèn le zìjǐ de cuòwù.",
+      "vi": "Anh ấy bình thản thừa nhận lỗi của mình.",
+      "analysis_vi": "坦然地 + V làm trạng ngữ.",
+      "highlight": [
+        "坦然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0fba1af4-50a7-4af0-a534-0c17c3b52c45"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a20d278b-fb97-4348-8ee3-612ecaa23667",
+      "order": 2,
+      "zh": "失败以后，她没有退缩，而是坦然地面对现实。",
+      "pinyin": "Shībài yǐhòu, tā méiyǒu tuìsuō, ér shì tǎnrán de miànduì xiànshí.",
+      "vi": "Sau thất bại, cô ấy không chùn bước mà bình thản đối mặt hiện thực.",
+      "analysis_vi": "没有……而是…….",
+      "highlight": [
+        "坦然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0fba1af4-50a7-4af0-a534-0c17c3b52c45"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "坦然面对失败/接受现实 rất hay trong văn khuyên nhủ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "acfe0bdc-bb48-4e62-a446-fbb20d46d80e",
+      "order": 1,
+      "rule_vi": "坦然 không phải thờ ơ; thờ ơ là 冷漠.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "坦然",
+    "back": "bình thản, an tâm, không lo sợ",
+    "hint": "tǎnrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0fba1af4-50a7-4af0-a534-0c17c3b52c45",
+    "source_lesson_vocab_id": null
+  }
+}

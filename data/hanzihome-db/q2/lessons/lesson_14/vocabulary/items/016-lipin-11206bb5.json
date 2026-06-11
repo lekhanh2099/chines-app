@@ -1,0 +1,376 @@
+{
+  "id": "2bc675c2-8dfa-4da0-89fe-aa963098357e",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "礼品",
+  "pinyin": "lǐpǐn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Lễ phẩm",
+    "meaning_vi": "quà tặng, lễ phẩm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quà tặng",
+      "lễ phẩm"
+    ],
+    "short_definition_vi": "quà tặng, lễ phẩm",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "mua sắm, tặng quà, giao tiếp xã hội.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "礼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "thị",
+            "meaning_vi": "lễ nghi/thờ cúng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "lễ nghi/thờ cúng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乚",
+            "hanviet": "",
+            "meaning_vi": "nét móc",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lễ, lễ nghi, quà tặng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "礼 là lễ, phép lịch sự, lễ nghi. → 礼品 = vật phẩm dùng trong quan hệ lễ nghi/tặng biếu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "品",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vật phẩm, phẩm chất, loại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "品 là vật phẩm, sản phẩm. → 礼品 = vật phẩm dùng trong quan hệ lễ nghi/tặng biếu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 礼品 = vật phẩm dùng trong quan hệ lễ nghi/tặng biếu.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 礼品 hơi thiên về vật phẩm/quà tặng trong bối cảnh mua bán, sự kiện; 礼物 đời thường hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "礼品 (lǐpǐn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quà tặng/lễ phẩm, hơi lịch sự hoặc thương mại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "礼物 (lǐwù)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "món quà, đời thường và rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赠品 (zèngpǐn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quà tặng kèm/đồ tặng miễn phí.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "纪念品 (jìniànpǐn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quà lưu niệm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: tặng bạn bè nói 礼物 rất tự nhiên; quầy hàng/sự kiện dùng 礼品 nhiều; hàng tặng kèm là 赠品."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aa7958b0-fb95-4d17-8fc0-1f90e1ca7cbc",
+      "order": 1,
+      "zh": "买礼品",
+      "pinyin": "",
+      "vi": "mua quà tặng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cdb3521b-f923-4d86-aa12-be4b970b0bdc",
+      "order": 2,
+      "zh": "挑礼品",
+      "pinyin": "",
+      "vi": "chọn quà tặng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb30a5de-9bb2-4e14-a295-74b09d778c47",
+      "order": 3,
+      "zh": "小礼品",
+      "pinyin": "",
+      "vi": "món quà nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56d88fd4-2f9a-4aa8-aad3-f2f1eb992af6",
+      "order": 4,
+      "zh": "礼品区",
+      "pinyin": "",
+      "vi": "khu quà tặng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "05bc12e6-0d78-4a8d-80aa-13612ae4bc6a",
+      "order": 1,
+      "zh": "他从商场里挑出一件小礼品来，准备送给老师。",
+      "pinyin": "Tā cóng shāngchǎng lǐ tiāo chū yí jiàn xiǎo lǐpǐn lái, zhǔnbèi sòng gěi lǎoshī.",
+      "vi": "Anh ấy chọn ra từ trong trung tâm thương mại một món quà nhỏ, chuẩn bị tặng thầy/cô.",
+      "analysis_vi": "挑出一件小礼品来 dùng tân ngữ sự vật chen giữa 出 và 来.",
+      "highlight": [
+        "礼品"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2bc675c2-8dfa-4da0-89fe-aa963098357e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8fda15c4-fe66-4196-b99d-3e1784fb4911",
+      "order": 2,
+      "zh": "这些礼品看起来都不错，但是送老师的时候要挑合适的。",
+      "pinyin": "Zhèxiē lǐpǐn kàn qǐlai dōu búcuò, dànshì sòng lǎoshī de shíhou yào tiāo héshì de.",
+      "vi": "Những món quà này nhìn đều không tệ, nhưng khi tặng thầy/cô phải chọn cái phù hợp.",
+      "analysis_vi": "看起来 nói cảm nhận khi nhìn; 挑合适的 nhấn chọn đúng ngữ cảnh xã hội.",
+      "highlight": [
+        "礼品"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2bc675c2-8dfa-4da0-89fe-aa963098357e"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "380c9c11-bb19-45cf-a9c7-3962afededeb",
+      "order": 3,
+      "zh": "买礼品不一定要买贵的，热情和心意有时候更重要。",
+      "pinyin": "Mǎi lǐpǐn bù yídìng yào mǎi guì de, rèqíng hé xīnyì yǒu shíhou gèng zhòngyào.",
+      "vi": "Mua quà không nhất định phải mua món đắt, sự nhiệt tình và tấm lòng đôi khi quan trọng hơn.",
+      "analysis_vi": "不一定要…… giúp câu mềm và thực tế, tránh hiểu tặng quà là cứ phải đắt.",
+      "highlight": [
+        "礼品"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2bc675c2-8dfa-4da0-89fe-aa963098357e"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "e1087ac1-6148-483d-bbdd-4c5864bb1eb8",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 礼品 và 赠品. Cách phân biệt:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "礼品",
+    "back": "quà tặng, lễ phẩm",
+    "hint": "lǐpǐn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Tặng quà trong văn hóa Trung Quốc cần chú ý quan hệ và dịp tặng. Quà quá đắt có thể gây áp lực, quà quá tùy tiện lại thiếu thành ý. Với thầy cô hoặc người lớn, 合适 quan trọng hơn 贵.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2bc675c2-8dfa-4da0-89fe-aa963098357e",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "id": "7c76d62b-4723-4856-a553-3fc08964e9b5",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "果然",
+  "pinyin": "guǒrán",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "quả nhiên",
+    "meaning_vi": "quả nhiên, đúng như dự đoán",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quả nhiên",
+      "đúng như dự đoán"
+    ],
+    "short_definition_vi": "quả nhiên, đúng như dự đoán",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: quả nhiên, đúng như dự đoán.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "果",
+        "lishu_vi": "quả",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng; phần trên",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quả, kết quả",
+        "modern_logic_vi": "Kết quả của sự việc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "trên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "犬",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó",
+            "position_vi": "trên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa/nhiệt",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa/nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy, đúng như thế",
+        "modern_logic_vi": "Trong phó từ như 果然 mang nghĩa đúng như vậy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa/nhiệt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "果然 trong bài dùng theo nghĩa: quả nhiên, đúng như dự đoán. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 果然 qua văn cảnh 离家的时候: quả nhiên, đúng như dự đoán.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "终于",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cuối cùng sau quá trình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "原来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hóa ra, phát hiện điều chưa biết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "果不其然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quả nhiên không ngoài dự đoán",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "没想到",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không ngờ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "815a9a1c-90a1-4c77-8507-1549b0289ceb",
+      "order": 1,
+      "zh": "果然来了",
+      "pinyin": "",
+      "vi": "quả nhiên đã đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "128e5d57-2b87-413b-9476-bf2f14d35727",
+      "order": 2,
+      "zh": "果然如此",
+      "pinyin": "",
+      "vi": "quả nhiên như vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "656ccdaa-984e-4306-9f4f-08430b3d6550",
+      "order": 3,
+      "zh": "果然没错",
+      "pinyin": "",
+      "vi": "quả nhiên không sai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9bde67e1-f3d3-4007-8fca-9f98a9deb135",
+      "order": 4,
+      "zh": "果然是真的",
+      "pinyin": "",
+      "vi": "quả nhiên là thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c0b11be-405a-41ef-ae3d-e9cbb8e15f7c",
+      "order": 5,
+      "zh": "果然不同意",
+      "pinyin": "",
+      "vi": "quả nhiên không đồng ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5b3940ae-0250-41ff-8697-c789756a5109",
+      "order": 1,
+      "zh": "我猜她会哭，她果然哭了。",
+      "pinyin": "",
+      "vi": "Tôi đoán cô ấy sẽ khóc, quả nhiên cô ấy khóc thật.",
+      "analysis_vi": "Có dự đoán trước rồi kết quả đúng như vậy.",
+      "highlight": [
+        "果然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c76d62b-4723-4856-a553-3fc08964e9b5"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "edbc19a3-d788-47df-8bc2-4313487821df",
+      "order": 2,
+      "zh": "父母听说她要出国，果然不同意。",
+      "pinyin": "",
+      "vi": "Bố mẹ nghe nói cô ấy muốn ra nước ngoài, quả nhiên không đồng ý.",
+      "analysis_vi": "果然 cho thấy người nói đã đoán trước phản ứng.",
+      "highlight": [
+        "果然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c76d62b-4723-4856-a553-3fc08964e9b5"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "37cb1199-bcfd-4fb1-b788-0a7ba2d4dc4d",
+      "order": 3,
+      "zh": "她本来以为自己很独立，可是离家的那一天，眼泪果然还是掉下来了。",
+      "pinyin": "",
+      "vi": "Cô ấy tưởng mình rất tự lập, nhưng ngày rời nhà nước mắt quả nhiên vẫn rơi.",
+      "analysis_vi": "果然还是 nhấn điều khó tránh.",
+      "highlight": [
+        "果然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7c76d62b-4723-4856-a553-3fc08964e9b5"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "果然 dùng tốt trong kể chuyện: cài dự đoán rồi xác nhận.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "245cb1bf-37be-428b-9099-d933ecda8e3b",
+      "order": 1,
+      "rule_vi": "Không dùng 果然 nếu trước đó không có dự đoán/dấu hiệu/kỳ vọng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "果然",
+    "back": "quả nhiên, đúng như dự đoán",
+    "hint": "guǒrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_009"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7c76d62b-4723-4856-a553-3fc08964e9b5",
+    "source_lesson_vocab_id": null
+  }
+}

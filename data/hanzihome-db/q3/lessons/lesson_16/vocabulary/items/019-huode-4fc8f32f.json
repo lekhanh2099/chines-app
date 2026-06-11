@@ -1,0 +1,163 @@
+{
+  "id": "9ec563ca-9090-422e-8c3c-4a3532b891c1",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "获得",
+  "pinyin": "huòdé",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Kết quả nghiên cứu"
+  ],
+  "meaning": {
+    "hanviet": "Hoạch đắc",
+    "meaning_vi": "đạt được, thu được",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đạt được",
+      "thu được"
+    ],
+    "short_definition_vi": "đạt được, thu được",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: đạt được, thu được.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Kết quả nghiên cứu",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "获",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "获得 trong bài được học theo nghĩa trọng tâm: đạt được, thu được.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: đạt được, thu được.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "27cd25e8-3e3f-493e-a43c-ec83bf89ad1c",
+      "order": 1,
+      "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: đạt được, thu được",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2d68c856-f531-414b-bb0f-87c6949b9833",
+      "order": 1,
+      "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “获得” = đạt được, thu được.",
+      "analysis_vi": "Câu này dùng “获得” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "获得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ec563ca-9090-422e-8c3c-4a3532b891c1"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “获得” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7033ae43-b57d-46c3-81dc-22c9a99ade52",
+      "order": 1,
+      "rule_vi": "Cần dùng “获得” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "获得",
+    "back": "đạt được, thu được",
+    "hint": "huòdé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Kết quả nghiên cứu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9ec563ca-9090-422e-8c3c-4a3532b891c1",
+    "source_lesson_vocab_id": null
+  }
+}

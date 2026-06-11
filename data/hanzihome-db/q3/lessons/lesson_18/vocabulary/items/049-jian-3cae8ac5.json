@@ -1,0 +1,257 @@
+{
+  "id": "bcaa3c79-8e50-4675-b5f7-350e7dbbb15c",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "肩",
+  "pinyin": "jiān",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kiên",
+    "meaning_vi": "vai",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vai"
+    ],
+    "short_definition_vi": "vai",
+    "textbook_focus_vi": "Vai; đời thường hay nói 肩膀.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "肩",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [
+          {
+            "text": "户",
+            "hanviet": "hộ",
+            "meaning_vi": "cửa/hộ",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "月",
+            "hanviet": "nhục/nguyệt",
+            "meaning_vi": "thân thể/trăng tùy chữ",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vai",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Vai; đời thường hay nói 肩膀.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 肩 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "肩膀",
+        "pinyin": "",
+        "meaning_vi": "vai",
+        "difference_vi": "Khẩu ngữ tự nhiên hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "背",
+        "pinyin": "",
+        "meaning_vi": "lưng",
+        "difference_vi": "Bộ phận khác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "胳膊",
+        "pinyin": "",
+        "meaning_vi": "cánh tay",
+        "difference_vi": "Không phải vai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b1df2f09-3c4e-4a42-b6fa-7eee6d1c8b92",
+      "order": 1,
+      "zh": "摇着我的肩",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f647448c-3548-413d-9c1e-b9147df1dd54",
+      "order": 2,
+      "zh": "拍肩膀",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9066b981-cb9e-41d7-aeff-c8d89a817863",
+      "order": 3,
+      "zh": "肩膀疼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "538d9f28-a126-4f03-981a-62605d5e24f8",
+      "order": 4,
+      "zh": "靠在肩上",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08e435eb-a047-4026-8191-f5ea21b867b8",
+      "order": 5,
+      "zh": "肩负责任",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3a4a7430-6dae-47e4-872e-6a879a894a9d",
+      "order": 1,
+      "zh": "西西摇着我的肩，让我快点儿说。",
+      "pinyin": "",
+      "vi": "Tây Tây lay vai tôi, bảo tôi nói nhanh lên.",
+      "analysis_vi": "摇着我的肩 dùng 着 cho động tác kéo dài.",
+      "highlight": [
+        "肩"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bcaa3c79-8e50-4675-b5f7-350e7dbbb15c"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5c977c0e-2fea-4a2e-9fe7-752afc7b2df8",
+      "order": 1,
+      "rule_vi": "Đời thường nói 肩膀疼 tự nhiên hơn 肩疼.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我的肩膀疼。",
+          "pinyin": "",
+          "vi": "Vai tôi đau.",
+          "note_vi": "Khẩu ngữ tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "肩",
+    "back": "vai",
+    "hint": "jiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bcaa3c79-8e50-4675-b5f7-350e7dbbb15c",
+    "source_lesson_vocab_id": null
+  }
+}

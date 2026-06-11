@@ -1,0 +1,322 @@
+{
+  "id": "8b07d237-c4f0-440e-9778-fc3bbfa5f66d",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "一向",
+  "pinyin": "yíxiàng",
+  "pos": {
+    "raw_vi": "Phó từ / Cụm phó từ",
+    "raw_cn": "副词/副词性短语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhất hướng",
+    "meaning_vi": "xưa nay, từ trước đến nay luôn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xưa nay",
+      "từ trước đến nay luôn"
+    ],
+    "short_definition_vi": "xưa nay, từ trước đến nay luôn",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "một",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "一 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "一",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhất",
+              "radical_name_zh": "",
+              "hanviet": "nhất",
+              "meaning_vi": "một",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một, duy nhất",
+        "modern_logic_vi": "một, duy nhất",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "一",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhất",
+          "radical_name_zh": "",
+          "hanviet": "nhất",
+          "meaning_vi": "một",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "向",
+        "lishu_vi": "hướng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hướng về, hướng",
+        "modern_logic_vi": "hướng về, hướng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Nêu đặc điểm hoặc thói quen ổn định trong thời gian dài.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 一向认真.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一直",
+        "pinyin": "yìzhí",
+        "meaning_vi": "luôn, suốt",
+        "difference_vi": "一直 nhấn kéo dài liên tục.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "总是",
+        "pinyin": "zǒngshì",
+        "meaning_vi": "lúc nào cũng",
+        "difference_vi": "总是 khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "570a5a89-a361-4b8a-80be-4f1fdc11478b",
+      "order": 1,
+      "zh": "一向认真",
+      "pinyin": "yíxiàng rènzhēn",
+      "vi": "xưa nay nghiêm túc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e1a6aba-df83-46c5-a211-c8e622e38985",
+      "order": 2,
+      "zh": "一向很自信",
+      "pinyin": "yíxiàng hěn zìxìn",
+      "vi": "xưa nay rất tự tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41a0ff9e-90eb-4f34-a398-cf0bbf086778",
+      "order": 3,
+      "zh": "一向不敢说话",
+      "pinyin": "yíxiàng bù gǎn shuōhuà",
+      "vi": "xưa nay không dám nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bf3a4c34-56f9-455f-8b6b-cb8b2c7c4d59",
+      "order": 1,
+      "zh": "他学习一向很认真。",
+      "pinyin": "Tā xuéxí yíxiàng hěn rènzhēn.",
+      "vi": "Anh ấy học hành xưa nay rất nghiêm túc.",
+      "analysis_vi": "一向 nhấn tính ổn định lâu dài.",
+      "highlight": [
+        "一向"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b07d237-c4f0-440e-9778-fc3bbfa5f66d"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7e34d115-d603-4a79-a82a-cfad56c6c7bb",
+      "order": 2,
+      "zh": "我一向不敢在很多人面前讲话，更何况这次是试讲。",
+      "pinyin": "Wǒ yíxiàng bù gǎn zài hěn duō rén miànqián jiǎnghuà, gèng hékuàng zhè cì shì shìjiǎng.",
+      "vi": "Tôi xưa nay không dám nói trước nhiều người, huống chi lần này là giảng thử.",
+      "analysis_vi": "一向 nêu nền tâm lý; 何况 tăng thêm lý do.",
+      "highlight": [
+        "一向"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b07d237-c4f0-440e-9778-fc3bbfa5f66d"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "一向 khiến nhận xét nghe có căn cứ vì hàm ý đã quan sát trong thời gian dài.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2199d4ea-9b7e-4efc-9215-dd1126ce8d05",
+      "order": 1,
+      "rule_vi": "Không dùng 一向 cho sự việc chỉ xảy ra hôm nay hoặc một lần.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他今天一向很紧张。",
+          "pinyin": "Tā jīntiān yíxiàng hěn jǐnzhāng.",
+          "vi": "Không tự nhiên: hôm nay anh ấy xưa nay căng thẳng.",
+          "note_vi": "今天 mâu thuẫn với 一向.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他一向容易紧张。",
+          "pinyin": "Tā yíxiàng róngyì jǐnzhāng.",
+          "vi": "Anh ấy xưa nay dễ căng thẳng.",
+          "note_vi": "Đặc điểm lâu dài.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一向",
+    "back": "xưa nay, từ trước đến nay luôn",
+    "hint": "yíxiàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8b07d237-c4f0-440e-9778-fc3bbfa5f66d",
+    "source_lesson_vocab_id": null
+  }
+}

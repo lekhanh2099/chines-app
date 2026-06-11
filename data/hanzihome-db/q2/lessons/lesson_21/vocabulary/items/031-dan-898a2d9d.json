@@ -1,0 +1,255 @@
+{
+  "id": "cb8089b4-ceb0-4518-87c5-d7465a1a04e9",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "单",
+  "pinyin": "dān",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ / Phó từ",
+    "raw_cn": "形/名/副",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đơn",
+    "meaning_vi": "đơn lẻ; tờ/danh sách; chỉ, riêng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đơn lẻ; tờ/danh sách; chỉ, riêng"
+    ],
+    "short_definition_vi": "đơn lẻ; tờ/danh sách; chỉ, riêng",
+    "textbook_focus_vi": "đơn lẻ; tờ/danh sách; chỉ, riêng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "单",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "丷",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng",
+            "position_vi": "giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "mười",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đơn/danh sách",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể để suy nghĩa chữ học.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "một phần riêng hoặc tờ ghi thông tin",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f3374688-418a-4499-af6a-d09244da86bd",
+      "order": 1,
+      "zh": "节目单",
+      "pinyin": "",
+      "vi": "tờ chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6ed5558-84ec-4cad-a755-e1ab0a9b3554",
+      "order": 2,
+      "zh": "菜单",
+      "pinyin": "",
+      "vi": "thực đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "61f26db7-9f45-45fc-8aa7-e0a936033520",
+      "order": 3,
+      "zh": "名单",
+      "pinyin": "",
+      "vi": "danh sách tên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01fcc3e8-aa0f-4802-8fd8-1093f0e60587",
+      "order": 4,
+      "zh": "订单",
+      "pinyin": "",
+      "vi": "đơn đặt hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb8c0b9d-bda7-4464-a944-1aadf1a2ffb9",
+      "order": 5,
+      "zh": "单独去",
+      "pinyin": "",
+      "vi": "đi một mình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e39fe150-e9ca-4ff9-b491-9df2fa80e28c",
+      "order": 1,
+      "zh": "节目单上写着今天的演出内容。",
+      "pinyin": "Jiémùdān shang xiězhe jīntiān de yǎnchū nèiróng.",
+      "vi": "Trên tờ chương trình có ghi nội dung biểu diễn hôm nay.",
+      "analysis_vi": "写着 chỉ trạng thái thông tin đang được ghi.",
+      "highlight": [
+        "单"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cb8089b4-ceb0-4518-87c5-d7465a1a04e9"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b8013464-6a75-4614-892c-75558ba959b4",
+      "order": 2,
+      "zh": "如果不了解单，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě dān, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 单, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "单"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cb8089b4-ceb0-4518-87c5-d7465a1a04e9"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bdf3019b-d6ec-41a2-9fa9-f76b9051be92",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解单在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě dān zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 单 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "单"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cb8089b4-ceb0-4518-87c5-d7465a1a04e9"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "单 xuất hiện nhiều trong app/dịch vụ hiện đại: 订单、账单、清单.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "13db8c01-ddc1-48bf-a8bf-36f918a9fa54",
+      "order": 1,
+      "rule_vi": "Trong 节目单, 单 là tờ/danh sách, không phải 'đơn giản'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "单",
+    "back": "đơn lẻ; tờ/danh sách; chỉ, riêng",
+    "hint": "dān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cb8089b4-ceb0-4518-87c5-d7465a1a04e9",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "id": "9455c0a9-1034-4bdb-8402-be4210e76dc5",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "电台",
+  "pinyin": "diàntái",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson22",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Điện đài",
+    "meaning_vi": "đài phát thanh; trạm phát sóng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đài phát thanh; trạm phát sóng"
+    ],
+    "short_definition_vi": "đài phát thanh; trạm phát sóng",
+    "textbook_focus_vi": "đài phát thanh; trạm phát sóng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "电",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem nghĩa trong word_logic_vi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "台",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem nghĩa trong word_logic_vi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "电 = điện/sóng điện; 台 = đài/trạm; 电台 = đài phát thanh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "电视台",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từ/cấu trúc dễ nhầm với 电台",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6ef32b76-47d0-4813-baa7-878447e8a3b6",
+      "order": 1,
+      "zh": "国际广播电台",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd7e8ade-79e1-4115-a660-eeb90591a4c4",
+      "order": 2,
+      "zh": "北京电台",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ed01110d-eea6-4b73-863c-17148089030c",
+      "order": 3,
+      "zh": "电台节目",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c552385b-19ec-4982-a18e-dee052ab0c74",
+      "order": 4,
+      "zh": "在电台工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc7ed47a-7b42-404f-844b-af1459dab7b8",
+      "order": 5,
+      "zh": "听电台",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0e2a3158-d64b-4d3c-badd-91baa50cab33",
+      "order": 1,
+      "zh": "她在一家电台工作。",
+      "pinyin": "Tā zài yì jiā diàntái gōngzuò.",
+      "vi": "Cô ấy làm việc ở một đài phát thanh.",
+      "analysis_vi": "一家电台 là đơn vị/cơ quan.",
+      "highlight": [
+        "电台"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9455c0a9-1034-4bdb-8402-be4210e76dc5"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4cdc5739-d42a-470a-b4b5-bec1a1beb29a",
+      "order": 2,
+      "zh": "他一打开手机里的电台节目，就听出来主持人的声音很熟。",
+      "pinyin": "Tā yì dǎkāi shǒujī lǐ de diàntái jiémù, jiù tīng chūlai zhǔchírén de shēngyīn hěn shú.",
+      "vi": "Anh ấy vừa mở chương trình phát thanh trong điện thoại là nhận ra giọng MC rất quen.",
+      "analysis_vi": "听出来 là nhận ra bằng nghe.",
+      "highlight": [
+        "电台"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9455c0a9-1034-4bdb-8402-be4210e76dc5"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / fact nhỏ",
+    "content_vi": "Truyền thông",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_current"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "23695252-c971-41d4-9b25-c356dd51f55e",
+      "order": 1,
+      "rule_vi": "电台 là radio station; 电视台 là đài truyền hình.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "电台",
+    "back": "đài phát thanh; trạm phát sóng",
+    "hint": "diàntái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson22"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9455c0a9-1034-4bdb-8402-be4210e76dc5",
+    "source_lesson_vocab_id": null
+  }
+}

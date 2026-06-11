@@ -1,0 +1,328 @@
+{
+  "id": "4060ba73-df4f-476e-b9fe-2e05b72d46fd",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "托福",
+  "pinyin": "Tuōfú",
+  "pos": {
+    "raw_vi": "Danh từ riêng / Từ phiên âm",
+    "raw_cn": "专名/音译词",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_01",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thác phúc",
+    "meaning_vi": "TOEFL",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "TOEFL"
+    ],
+    "short_definition_vi": "TOEFL",
+    "textbook_focus_vi": "Bài 1 Quyển 2: 田芳去哪儿了",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "托",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "福",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "托福 là từ phiên âm, không chiết tự theo nghĩa “nhờ phúc”. Nên học theo cụm: 考托福 = thi TOEFL. 托福成绩 = điểm TOEFL. 托福报名 = đăng ký TOEFL. 托福满分 = điểm tuyệt đối TOEFL. Cảnh báo: chữ 托 trong 托福 chủ yếu phục vụ âm đọc, không phải nghĩa “nhờ vả”.",
+    "memory_tip_vi": "",
+    "warning_vi": "chữ 托 trong 托福 chủ yếu phục vụ âm đọc, không phải nghĩa “nhờ vả”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "托福",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "TOEFL.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "雅思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "IELTS.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "考试",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỳ thi nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "英语考试",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỳ thi tiếng Anh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "成绩",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kết quả/điểm số.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "考托福 = thi TOEFL.",
+      "考雅思 = thi IELTS.",
+      "英语考试 = kỳ thi tiếng Anh nói chung."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1ba4dfab-58ea-4f7c-bc37-ec4c4a18aca0",
+      "order": 1,
+      "zh": "考托福",
+      "pinyin": "",
+      "vi": "thi TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28e56890-dd57-4544-abce-f2b93595722a",
+      "order": 2,
+      "zh": "托福考试",
+      "pinyin": "",
+      "vi": "kỳ thi TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ad8bf82-721b-43da-8ee6-14401f3da569",
+      "order": 3,
+      "zh": "托福成绩",
+      "pinyin": "",
+      "vi": "điểm TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15a3ea92-df23-4e76-8579-c19bee9b89e9",
+      "order": 4,
+      "zh": "报名托福",
+      "pinyin": "",
+      "vi": "đăng ký TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e469d901-8b63-4731-818d-ad357056d197",
+      "order": 5,
+      "zh": "准备托福",
+      "pinyin": "",
+      "vi": "chuẩn bị TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b32b01b-7dd8-442b-af5d-904344aec3ec",
+      "order": 6,
+      "zh": "托福满分",
+      "pinyin": "",
+      "vi": "điểm tuyệt đối TOEFL",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "74dc98ad-ccba-49e3-9a96-69026ade3149",
+      "order": 1,
+      "zh": "田芳准备考托福。",
+      "pinyin": "Tián Fāng zhǔnbèi kǎo Tuōfú.",
+      "vi": "Điền Phương chuẩn bị thi TOEFL.",
+      "analysis_vi": "考托福 là collocation tự nhiên: thi TOEFL.",
+      "highlight": [
+        "托福"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4060ba73-df4f-476e-b9fe-2e05b72d46fd"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6d83bea8-326b-426f-92ed-c91cbd74addf",
+      "order": 2,
+      "zh": "她不是报名汉语考试，是报名托福考试。",
+      "pinyin": "Tā bú shì bàomíng Hànyǔ kǎoshì, shì bàomíng Tuōfú kǎoshì.",
+      "vi": "Cô ấy không phải đăng ký thi tiếng Hán, mà là đăng ký thi TOEFL.",
+      "analysis_vi": "不是……是…… sửa hiểu lầm. 报名 + kỳ thi là đăng ký thi.",
+      "highlight": [
+        "托福"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4060ba73-df4f-476e-b9fe-2e05b72d46fd"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d225d8ef-ebc2-41fc-b15e-fa593678b1f9",
+      "order": 3,
+      "zh": "桌子上放着几本托福书和一张报名表，田芳把考试时间一项项填好以后，又给阿姨打电话说自己可能要出国了。",
+      "pinyin": "Zhuōzi shang fàngzhe jǐ běn Tuōfú shū hé yì zhāng bàomíngbiǎo, Tián Fāng bǎ kǎoshì shíjiān yí xiàng xiàng tián hǎo yǐhòu, yòu gěi āyí dǎ diànhuà shuō zìjǐ kěnéng yào chūguó le.",
+      "vi": "Trên bàn có vài quyển sách TOEFL và một tờ đơn đăng ký, sau khi Điền Phương điền xong từng mục thời gian thi, cô ấy lại gọi điện cho cô/dì nói rằng mình có thể sắp ra nước ngoài rồi.",
+      "analysis_vi": "桌子上放着…… là câu tồn hiện. 把考试时间一项项填好 là 把字句 + lượng từ lặp lại + kết quả 好. 要出国了 dùng 了 báo tình huống sắp thay đổi.",
+      "highlight": [
+        "托福"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4060ba73-df4f-476e-b9fe-2e05b72d46fd"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở Trung Quốc, khi nói du học, người ta thường nhắc 托福 và 雅思. 托福 thường gắn với hồ sơ du học Mỹ hoặc môi trường học thuật dùng tiếng Anh, còn yêu cầu cụ thể tùy trường.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b2535964-0499-47ea-83a2-835e74c75a87",
+      "order": 1,
+      "rule_vi": "Chiết tự 托福 thành “nhờ phúc”.",
+      "natural_examples": [
+        {
+          "zh": "Chiết tự 托福 thành “nhờ phúc”.",
+          "pinyin": "Không nên. Đây là từ phiên âm.",
+          "vi": "Tự nhiên:",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我准备考托福。",
+          "pinyin": "Wǒ zhǔnbèi kǎo Tuōfú.",
+          "vi": "Tôi chuẩn bị thi TOEFL.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Chiết tự 托福 thành “nhờ phúc”.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "托福",
+    "back": "TOEFL",
+    "hint": "Tuōfú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_01",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "hanyu2/bai01/vocab/032",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4060ba73-df4f-476e-b9fe-2e05b72d46fd",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "id": "33195215-3e34-4aa6-9634-48bfc7422627",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "喜",
+  "pinyin": "xǐ",
+  "pos": {
+    "raw_vi": "Tính từ / động từ / danh từ / hình vị",
+    "raw_cn": "形 / 动 / 名 / 语素",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Hỷ",
+    "meaning_vi": "vui, mừng; việc vui, hỷ sự",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui, mừng; việc vui, hỷ sự"
+    ],
+    "short_definition_vi": "vui, mừng; việc vui, hỷ sự",
+    "textbook_focus_vi": "vui, mừng; việc vui, hỷ sự",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "喜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui, mừng, hỷ sự",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "喜 = vui/mừng/hỷ sự. Trong bài cưới hỏi, gần với “hỷ” trong song hỷ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "高兴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vui, khẩu ngữ làm vị ngữ tự nhiên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开心",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vui/thoải mái, khẩu ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "快乐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vui vẻ, hay dùng trong lời chúc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喜欢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thích, không phải vui đơn thuần",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "悲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "buồn/bi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "悲",
+        "right": "喜",
+        "meaning_vi": "bi ↔ hỷ",
+        "note_vi": "Đối lập cảm xúc/văn hóa.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "82473ec9-308f-4809-9406-7b8ad89f43e4",
+      "order": 1,
+      "zh": "喜事",
+      "pinyin": "",
+      "vi": "việc vui, hỷ sự",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e784127-b48f-4879-8a80-3ed6ad4438d3",
+      "order": 2,
+      "zh": "喜酒",
+      "pinyin": "",
+      "vi": "tiệc cưới/rượu cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cdcd758b-88da-4bcf-b1f8-9c012e2c4c4c",
+      "order": 3,
+      "zh": "喜糖",
+      "pinyin": "",
+      "vi": "kẹo cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f953662-6010-41be-9631-dfa5c421ddb6",
+      "order": 4,
+      "zh": "喜字",
+      "pinyin": "",
+      "vi": "chữ hỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e0ec28ec-5f05-4566-a733-0dbff0efbe76",
+      "order": 5,
+      "zh": "双喜",
+      "pinyin": "",
+      "vi": "song hỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "51243835-a47f-4a0c-b138-0736c3a50db9",
+      "order": 1,
+      "zh": "结婚是大喜事。",
+      "pinyin": "Jiéhūn shì dà xǐshì.",
+      "vi": "Kết hôn là việc vui lớn.",
+      "analysis_vi": "喜事 là việc vui/hỷ sự.",
+      "highlight": [
+        "喜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33195215-3e34-4aa6-9634-48bfc7422627"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8507ce4c-709f-46fe-9b31-a47df0168ba0",
+      "order": 2,
+      "zh": "墙上贴着红喜字，门口挂着红灯笼。",
+      "pinyin": "Qiáng shàng tiēzhe hóng xǐ zì, ménkǒu guàzhe hóng dēnglong.",
+      "vi": "Trên tường dán chữ hỷ đỏ, ở cửa treo đèn lồng đỏ.",
+      "analysis_vi": "贴着 và 挂着 đều tả trạng thái trang trí.",
+      "highlight": [
+        "喜",
+        "贴着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33195215-3e34-4aa6-9634-48bfc7422627"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "47f3b981-ea20-45e6-992a-d2df6049f53b",
+      "order": 1,
+      "rule_vi": "Không nói 我很喜; khẩu ngữ nói 我很高兴 hoặc 我很开心.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "喜",
+    "back": "vui, mừng; việc vui, hỷ sự",
+    "hint": "xǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "喜 trong cưới hỏi gần với chữ “hỷ” trong tiếng Việt: 喜事、喜酒、喜糖、双喜.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "33195215-3e34-4aa6-9634-48bfc7422627",
+    "source_lesson_vocab_id": null
+  }
+}

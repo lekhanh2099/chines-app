@@ -1,0 +1,294 @@
+{
+  "id": "0d2b6c7a-fd1a-4326-81bd-bb659801fd25",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "成语",
+  "pinyin": "chéngyǔ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "thành ngữ",
+    "meaning_vi": "thành ngữ tiếng Hán",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành ngữ tiếng Hán"
+    ],
+    "short_definition_vi": "thành ngữ tiếng Hán",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "成",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoàn thành, trở thành",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "语",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 讠.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lời nói, ngôn ngữ",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "成语 là cụm lời nói đã thành hình, nghĩa toàn thể cố định.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 成语.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "俗语",
+        "pinyin": "súyǔ",
+        "meaning_vi": "tục ngữ/cách nói dân gian",
+        "difference_vi": "đời sống hơn 成语",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "谚语",
+        "pinyin": "yànyǔ",
+        "meaning_vi": "tục ngữ kinh nghiệm",
+        "difference_vi": "thiên về lời khuyên hoặc kinh nghiệm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "343f7401-c419-4472-b205-a1a8937ffc86",
+      "order": 1,
+      "zh": "学习成语",
+      "pinyin": "",
+      "vi": "học thành ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e51c86d-1850-4105-bf1b-781737c6725b",
+      "order": 2,
+      "zh": "解释成语",
+      "pinyin": "",
+      "vi": "giải thích thành ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc966f22-87dd-4bd2-9f4d-2598634ba274",
+      "order": 3,
+      "zh": "成语故事",
+      "pinyin": "",
+      "vi": "câu chuyện thành ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c9c1cd8-7043-4cde-a3c6-9319048f9eda",
+      "order": 4,
+      "zh": "四字成语",
+      "pinyin": "",
+      "vi": "thành ngữ bốn chữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6346874e-ad34-4672-a58d-a785601f52e8",
+      "order": 1,
+      "zh": "今天我们学习两个成语。",
+      "pinyin": "Jīntiān wǒmen xuéxí liǎng ge chéngyǔ.",
+      "vi": "Hôm nay chúng ta học hai thành ngữ.",
+      "analysis_vi": "两个成语 dùng lượng từ 个.",
+      "highlight": [
+        "成语"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d2b6c7a-fd1a-4326-81bd-bb659801fd25"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5d6cc42f-833e-4ae9-a379-7a971f7c4962",
+      "order": 2,
+      "zh": "不管这个成语多难，我们都要先弄懂它的故事。",
+      "pinyin": "Bùguǎn zhège chéngyǔ duō nán, wǒmen dōu yào xiān nòngdǒng tā de gùshi.",
+      "vi": "Dù thành ngữ này khó thế nào, chúng ta cũng phải hiểu câu chuyện của nó trước.",
+      "analysis_vi": "Gài 不管……都…… và 弄懂.",
+      "highlight": [
+        "成语"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d2b6c7a-fd1a-4326-81bd-bb659801fd25"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Thành ngữ tiếng Trung thường gắn với điển cố, nên phải học nghĩa toàn cụm và ngữ cảnh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7fe3800d-98c0-442f-9473-e1b21a008f3c",
+      "order": 1,
+      "rule_vi": "Không dịch 成语 thành từ vựng; từ vựng là 词语 / 生词 / 词汇.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "成语",
+    "back": "thành ngữ tiếng Hán",
+    "hint": "chéngyǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0d2b6c7a-fd1a-4326-81bd-bb659801fd25",
+    "source_lesson_vocab_id": null
+  }
+}

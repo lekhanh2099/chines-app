@@ -1,0 +1,351 @@
+{
+  "id": "0053706a-1c72-439c-982c-cf41b020bece",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "嗓子",
+  "pinyin": "sǎngzi",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Tang tử",
+    "meaning_vi": "cổ họng, giọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cổ họng, giọng"
+    ],
+    "short_definition_vi": "cổ họng, giọng",
+    "textbook_focus_vi": "cổ họng, giọng",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "嗓",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, nói, ăn uống",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, nói, ăn uống",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cổ họng, giọng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố, con",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 嗓子 hợp lại tạo nghĩa hiện đại trong bài: cổ họng, giọng.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "嗓子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "嗓子 / 喉咙 / 声音",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喉咙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "嗓子 / 喉咙 / 声音",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "声音",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "嗓子 / 喉咙 / 声音",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "嗓子疼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "嗓子疼 / 声音哑",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "声音哑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "嗓子疼 / 声音哑",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "嗓子 / 喉咙 / 声音",
+      "嗓子疼 / 声音哑"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "27988f89-c252-476a-b315-b63b98abe87c",
+      "order": 1,
+      "zh": "嗓子疼",
+      "pinyin": "",
+      "vi": "嗓子疼",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6c2ff7b5-acfe-47ae-919a-6033cf8a199a",
+      "order": 2,
+      "zh": "嗓子不舒服",
+      "pinyin": "",
+      "vi": "嗓子不舒服",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "4975f7e2-84ee-49d4-92de-8083e4cda7c1",
+      "order": 3,
+      "zh": "嗓子哑了",
+      "pinyin": "",
+      "vi": "嗓子哑了",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f8855abf-7af9-466d-8b37-99648d2f0377",
+      "order": 4,
+      "zh": "保护嗓子",
+      "pinyin": "",
+      "vi": "保护嗓子",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6687f382-748a-4d32-bb18-7b9efb2756b6",
+      "order": 5,
+      "zh": "嗓子干",
+      "pinyin": "",
+      "vi": "嗓子干",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dd7f0001-4864-4993-b3f6-0d1bd304e27e",
+      "order": 6,
+      "zh": "清清嗓子",
+      "pinyin": "",
+      "vi": "清清嗓子",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6a8b5346-d99f-41f2-bcb2-a5b4b557cd07",
+      "order": 1,
+      "zh": "这个词是“嗓子”。",
+      "pinyin": "",
+      "vi": "Từ này là “嗓子”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "嗓子"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "0053706a-1c72-439c-982c-cf41b020bece"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f34e87e6-cf8e-4958-a6f7-d5540a8fbac9",
+      "order": 2,
+      "zh": "你想怎么用“嗓子”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “嗓子” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "嗓子"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "0053706a-1c72-439c-982c-cf41b020bece"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "048c25b4-c476-4fea-bbec-15c28a0e5840",
+      "order": 3,
+      "zh": "我们一边复习嗓子，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “嗓子”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "嗓子"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "0053706a-1c72-439c-982c-cf41b020bece"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "嗓子 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9ef24843-45a1-4b40-ab90-701b3fa54837",
+      "order": 1,
+      "rule_vi": "Dùng 嗓子 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 嗓子 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "嗓子",
+    "back": "cổ họng, giọng",
+    "hint": "sǎngzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0053706a-1c72-439c-982c-cf41b020bece",
+    "source_lesson_vocab_id": null
+  }
+}

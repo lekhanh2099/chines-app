@@ -1,0 +1,319 @@
+{
+  "id": "c8c3d6d3-216b-4a0e-b0c1-21c934a942a4",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "原来",
+  "pinyin": "yuánlái",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "time_context"
+  ],
+  "meaning": {
+    "hanviet": "nguyên lai",
+    "meaning_vi": "hóa ra; vốn dĩ, ban đầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hóa ra; vốn dĩ, ban đầu"
+    ],
+    "short_definition_vi": "hóa ra; vốn dĩ, ban đầu",
+    "textbook_focus_vi": "hóa ra; vốn dĩ, ban đầu",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "原",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "hán",
+            "meaning_vi": "mái/bao ngoài",
+            "position_vi": "ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "trắng/sáng",
+            "position_vi": "trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "小",
+            "hanviet": "tiểu",
+            "meaning_vi": "nhỏ",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gốc, ban đầu, nguyên nhân",
+        "modern_logic_vi": "原 gợi cái gốc/ban đầu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến, tới",
+        "modern_logic_vi": "来 là chữ giản thể khó tách sâu theo hình hiện đại.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "原来 = sự thật vốn có/ban đầu; khi phát hiện ra thì dịch là hóa ra.",
+    "memory_tip_vi": "原来 = sự thật vốn có/ban đầu; khi phát hiện ra thì dịch là hóa ra.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "本来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vốn dĩ/lẽ ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "原先",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ban đầu/trước kia",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以前",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trước đây",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "结果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kết quả là",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "原来如此",
+        "right": "本来就这样",
+        "meaning_vi": "",
+        "note_vi": "hóa ra là vậy ↔ vốn dĩ đã như vậy",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "51cbf351-99a9-4118-aa79-4e51c993cba5",
+      "order": 1,
+      "zh": "原来如此",
+      "pinyin": "",
+      "vi": "hóa ra là vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7838f845-18cf-40c8-b3b5-5d38c34eff71",
+      "order": 2,
+      "zh": "原来是你",
+      "pinyin": "",
+      "vi": "hóa ra là bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c09582f0-a877-4f00-ab37-19e867899e58",
+      "order": 3,
+      "zh": "原来在这里",
+      "pinyin": "",
+      "vi": "hóa ra ở đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88875ee4-e673-41c8-ae83-bce97104c42d",
+      "order": 4,
+      "zh": "原来的样子",
+      "pinyin": "",
+      "vi": "dáng vẻ ban đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4472a9d3-5dd9-49d1-86c4-d599d3e2a5e0",
+      "order": 5,
+      "zh": "原来以为",
+      "pinyin": "",
+      "vi": "vốn tưởng rằng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ed41de26-da4e-4057-b2a8-435d044e085f",
+      "order": 1,
+      "zh": "原来护照在大衣口袋里。",
+      "pinyin": "",
+      "vi": "Hóa ra hộ chiếu ở trong túi áo khoác.",
+      "analysis_vi": "原来 biểu thị phát hiện sự thật trước đó chưa biết.",
+      "highlight": [
+        "原来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c8c3d6d3-216b-4a0e-b0c1-21c934a942a4"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "43ae131a-d4a5-47f9-8f68-802acaad79ea",
+      "order": 2,
+      "zh": "我的护照原来是你找到的。",
+      "pinyin": "",
+      "vi": "Hóa ra hộ chiếu của tôi là bạn tìm thấy.",
+      "analysis_vi": "是你找到的 nhấn người tìm thấy.",
+      "highlight": [
+        "原来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c8c3d6d3-216b-4a0e-b0c1-21c934a942a4"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "原来如此 là câu rất thường dùng: hóa ra là vậy.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "69686774-5386-454c-ba43-e5210b3741d3",
+      "order": 1,
+      "rule_vi": "Không nhầm 原来 với 以前; 原来 thường có sắc thái phát hiện sự thật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我以前学过英语。",
+          "pinyin": "",
+          "vi": "Trước đây tôi từng học tiếng Anh.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "原来你住在北京！",
+          "pinyin": "",
+          "vi": "Hóa ra bạn sống ở Bắc Kinh!",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "原来",
+    "back": "hóa ra; vốn dĩ, ban đầu",
+    "hint": "yuánlái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "time_context"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c8c3d6d3-216b-4a0e-b0c1-21c934a942a4",
+    "source_lesson_vocab_id": null
+  }
+}

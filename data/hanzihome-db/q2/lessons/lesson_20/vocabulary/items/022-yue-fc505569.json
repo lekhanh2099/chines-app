@@ -1,0 +1,354 @@
+{
+  "id": "e882953d-51b0-4168-9fcf-bff96acb74e2",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "约",
+  "pinyin": "yuē",
+  "pos": {
+    "raw_vi": "Động từ / Phó từ",
+    "raw_cn": "动/副",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ước",
+    "meaning_vi": "hẹn; mời; khoảng, chừng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hẹn; mời; khoảng, chừng"
+    ],
+    "short_definition_vi": "hẹn; mời; khoảng, chừng",
+    "textbook_focus_vi": "hẹn; mời; khoảng, chừng",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "约",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "勺",
+            "hanviet": "",
+            "meaning_vi": "cái muôi; thành phần bên phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "约 có lõi nghĩa là ràng buộc/thỏa thuận trước. Từ đó có hai nhánh: Hẹn trước: 约朋友, 约时间. Ước chừng: 约三点, 约一百人.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 约 không phải lúc nào cũng là “hẹn hò yêu đương”. Nó có thể là hẹn gặp bình thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "约",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hẹn, đặt lịch; khoảng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "预约",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặt hẹn trước, chính thức hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "约会",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cuộc hẹn, thường có thể mang nghĩa hẹn hò.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大约",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khoảng, ước chừng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 约朋友看演出 = hẹn bạn đi xem biểu diễn; 预约医生 = đặt lịch bác sĩ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "edb009cd-1650-4561-8520-bfe462ec926a",
+      "order": 1,
+      "zh": "约朋友",
+      "pinyin": "",
+      "vi": "hẹn bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ecc72f6-bf0c-4086-bb35-736d808ffd28",
+      "order": 2,
+      "zh": "约时间",
+      "pinyin": "",
+      "vi": "hẹn thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c54ee6f-6e74-42c7-98e0-33f6c520536e",
+      "order": 3,
+      "zh": "约好了",
+      "pinyin": "",
+      "vi": "hẹn xong rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83db343c-dc10-4618-adfc-2b13ec2d2c8b",
+      "order": 4,
+      "zh": "下次再约",
+      "pinyin": "",
+      "vi": "lần sau hẹn tiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d35aa20a-8487-48cc-b065-5bc1bd74cef1",
+      "order": 5,
+      "zh": "约三点",
+      "pinyin": "",
+      "vi": "khoảng ba giờ / hẹn ba giờ, tùy ngữ cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4d611a4c-5390-4e6b-9036-adee057e70f2",
+      "order": 1,
+      "zh": "我约了朋友一起去看演出。",
+      "pinyin": "Wǒ yuē le péngyou yìqǐ qù kàn yǎnchū.",
+      "vi": "Tôi đã hẹn bạn cùng đi xem biểu diễn.",
+      "analysis_vi": "约朋友去…… là hẹn ai đi làm gì.",
+      "highlight": [
+        "约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e882953d-51b0-4168-9fcf-bff96acb74e2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0379bc05-4467-41b5-8f16-407f4904f725",
+      "order": 2,
+      "zh": "如果你明天来不了的话，我们下次再约。",
+      "pinyin": "Rúguǒ nǐ míngtiān lái bù liǎo dehuà, wǒmen xià cì zài yuē.",
+      "vi": "Nếu ngày mai bạn không đến được, chúng ta hẹn lần sau.",
+      "analysis_vi": "来不了 là không đến được; 再约 là hẹn lại/hẹn tiếp.",
+      "highlight": [
+        "约"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "e882953d-51b0-4168-9fcf-bff96acb74e2"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4fb66a1b-6db7-4a86-89bd-4a65881c18fd",
+      "order": 3,
+      "zh": "演出约八点开演，你最好早点儿到。",
+      "pinyin": "Yǎnchū yuē bā diǎn kāiyǎn, nǐ zuìhǎo zǎodiǎnr dào.",
+      "vi": "Buổi diễn khoảng tám giờ bắt đầu, bạn tốt nhất đến sớm một chút.",
+      "analysis_vi": "约八点 ở đây là khoảng tám giờ; không phải hẹn ai.",
+      "highlight": [
+        "约"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e882953d-51b0-4168-9fcf-bff96acb74e2"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "ad4f6f83-86e8-406a-a851-675405bca743",
+      "order": 1,
+      "rule_vi": "Dùng 约会 cho mọi cuộc hẹn. Tự nhiên",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我约了朋友吃饭。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他们在约会。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Lỗi sai phổ biến: Dùng 约会 cho mọi cuộc hẹn. Tự nhiên: 我约了朋友吃饭。 Wǒ yuē le péngyou chīfàn. Tôi hẹn bạn ăn cơm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "约",
+    "back": "hẹn; mời; khoảng, chừng",
+    "hint": "yuē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong tiếng Trung hiện đại, 约饭 rất đời: hẹn nhau đi ăn. 约朋友看演出, 约人喝咖啡, 约时间见面 đều là cách nói tự nhiên. Nhưng 约会 dễ gợi nghĩa “date/hẹn hò”, nên dùng cẩn thận.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e882953d-51b0-4168-9fcf-bff96acb74e2",
+    "source_lesson_vocab_id": null
+  }
+}

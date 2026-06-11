@@ -1,0 +1,217 @@
+{
+  "id": "9750efe7-8526-47d3-99ac-52ec77cf3f50",
+  "type": "deep_vocabulary_item",
+  "order": 77,
+  "hanzi": "分手",
+  "pinyin": "fēnshǒu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "phân thủ",
+    "meaning_vi": "chia tay, chia lìa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chia tay",
+      "chia lìa"
+    ],
+    "short_definition_vi": "chia tay, chia lìa",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "分",
+        "lishu_vi": "phân",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia",
+        "modern_logic_vi": "Trong từ này, 分 góp phần vào nghĩa hiện đại: chia.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "thủ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "Trong từ này, 手 góp phần vào nghĩa hiện đại: tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "分手 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 跟他分手.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "分手 có thể chưa kết hôn; 离婚 là ly hôn pháp lý."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a801d966-0ed9-442b-95a7-05d524e3420f",
+      "order": 1,
+      "zh": "跟他分手",
+      "pinyin": "",
+      "vi": "chia tay với anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb73154e-7cbf-456a-9d3f-c831495ce7be",
+      "order": 2,
+      "zh": "分手以后",
+      "pinyin": "",
+      "vi": "sau khi chia tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "affd286c-279a-4255-b7ae-195dee91239b",
+      "order": 3,
+      "zh": "和平分手",
+      "pinyin": "",
+      "vi": "chia tay hòa bình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e55db299-e3b7-4e34-a6b7-1c6d61015f2b",
+      "order": 1,
+      "zh": "他们去年分手了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 分手 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 分手; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "分手"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9750efe7-8526-47d3-99ac-52ec77cf3f50"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 分手 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0372f013-9975-49c5-9e5e-af69dd92f040",
+      "order": 1,
+      "rule_vi": "分手 có thể chưa kết hôn; 离婚 là ly hôn pháp lý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "分手",
+    "back": "chia tay, chia lìa",
+    "hint": "fēnshǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9750efe7-8526-47d3-99ac-52ec77cf3f50",
+    "source_lesson_vocab_id": null
+  }
+}

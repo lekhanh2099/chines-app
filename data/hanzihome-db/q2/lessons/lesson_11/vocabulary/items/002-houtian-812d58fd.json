@@ -1,0 +1,358 @@
+{
+  "id": "94073b89-724d-4e95-b94e-9cfc150905ce",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "后天",
+  "pinyin": "hòutiān",
+  "pos": {
+    "raw_vi": "Danh từ thời gian",
+    "raw_cn": "时间名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hậu thiên",
+    "meaning_vi": "ngày kia",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngày kia"
+    ],
+    "short_definition_vi": "ngày kia",
+    "textbook_focus_vi": "ngày kia",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "后",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "hán",
+            "meaning_vi": "vách/triền trong cấu hình hiện đại",
+            "position_vi": "phía trên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sau, phía sau",
+        "modern_logic_vi": "Không nên tách sâu để giải nghĩa 'sau'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "天",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "một/nét ngang",
+            "position_vi": "phần trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời, ngày",
+        "modern_logic_vi": "天 = ngày.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "后 = sau, 天 = ngày. 后天 = ngày sau ngày mai, tức ngày kia.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "明天",
+        "pinyin": "",
+        "meaning_vi": "ngày mai",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "前天",
+        "pinyin": "",
+        "meaning_vi": "hôm kia",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "前天",
+        "right": "后天",
+        "meaning_vi": "hôm kia ↔ ngày kia",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c2ce93a0-3ae0-4e99-a8fd-32eb87ce773a",
+      "order": 1,
+      "zh": "后天上午",
+      "pinyin": "",
+      "vi": "sáng ngày kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6656d018-7763-4064-9c16-528b5ce1f3fa",
+      "order": 2,
+      "zh": "后天下午",
+      "pinyin": "",
+      "vi": "chiều ngày kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f742b4b-9c9e-4ad4-ab99-5a562d8f508f",
+      "order": 3,
+      "zh": "后天晚上",
+      "pinyin": "",
+      "vi": "tối ngày kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0fa69a5-219e-4c57-ab02-a7490e01da38",
+      "order": 4,
+      "zh": "后天出发",
+      "pinyin": "",
+      "vi": "ngày kia xuất phát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b45eb7f2-4288-476b-a224-083fb7dc0112",
+      "order": 5,
+      "zh": "后天回来",
+      "pinyin": "",
+      "vi": "ngày kia quay về",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "972be78c-9103-467c-b28e-e84b47da63de",
+      "order": 6,
+      "zh": "后天见",
+      "pinyin": "",
+      "vi": "ngày kia gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1514fb46-d039-4d72-9c06-5348ed8041a5",
+      "order": 1,
+      "zh": "后天我们去机场接一个朋友。",
+      "pinyin": "Hòutiān wǒmen qù jīchǎng jiē yí ge péngyou.",
+      "vi": "Ngày kia chúng tôi đi sân bay đón một người bạn.",
+      "analysis_vi": "后天 làm mốc thời gian tương lai.",
+      "highlight": [
+        "后天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "94073b89-724d-4e95-b94e-9cfc150905ce"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a69cc95c-d35d-48fe-9926-b357f2a1caab",
+      "order": 2,
+      "zh": "他不是今天来的，是后天才来的。",
+      "pinyin": "Tā bú shì jīntiān lái de, shì hòutiān cái lái de.",
+      "vi": "Anh ấy không phải đến hôm nay, mà ngày kia mới đến.",
+      "analysis_vi": "是……的 sửa thông tin thời gian; 才 nhấn 'mãi mới'.",
+      "highlight": [
+        "后天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "94073b89-724d-4e95-b94e-9cfc150905ce"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7b7f8d98-785f-4bf7-9606-1480387b74cc",
+      "order": 3,
+      "zh": "后天一到北京，导游就会带我们去饭店休息。",
+      "pinyin": "Hòutiān yí dào Běijīng, dǎoyóu jiù huì dài wǒmen qù fàndiàn xiūxi.",
+      "vi": "Ngày kia vừa đến Bắc Kinh, hướng dẫn viên sẽ đưa chúng tôi đến khách sạn nghỉ.",
+      "analysis_vi": "一到……就…… chỉ hai việc nối tiếp nhanh.",
+      "highlight": [
+        "后天"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "94073b89-724d-4e95-b94e-9cfc150905ce"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khi hẹn lịch, 后天 chính xác hơn 过两天 vì 过两天 có thể mơ hồ là vài hôm nữa.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "121e720d-1248-488c-9b58-e80c83a388a2",
+      "order": 1,
+      "rule_vi": "后天 không phải 'sau này' nói chung; 'sau này' thường là 以后 / 将来.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我后天去。",
+          "pinyin": "",
+          "vi": "Tôi ngày kia đi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我以后想当老师。",
+          "pinyin": "",
+          "vi": "Sau này tôi muốn làm giáo viên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "后天",
+    "back": "ngày kia",
+    "hint": "hòutiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "94073b89-724d-4e95-b94e-9cfc150905ce",
+    "source_lesson_vocab_id": null
+  }
+}

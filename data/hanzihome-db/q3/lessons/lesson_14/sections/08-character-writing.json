@@ -1,0 +1,11 @@
+{
+  "id": "04a6350e-fe30-40e5-95ab-a614ace5acae",
+  "type": "character_writing",
+  "order": 8,
+  "title": "写汉字",
+  "title_vi": "Viết chữ Hán",
+  "source_origin": "textbook_pdf_crosschecked",
+  "check_needed": false,
+  "items": [],
+  "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF."
+}

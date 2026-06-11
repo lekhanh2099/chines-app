@@ -1,0 +1,320 @@
+{
+  "id": "b3a60599-e755-4848-b308-159482a1f065",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "经不住",
+  "pinyin": "jīng bu zhù",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "kinh bất trú",
+    "meaning_vi": "không chịu nổi, không chống đỡ nổi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không chịu nổi",
+      "không chống đỡ nổi"
+    ],
+    "short_definition_vi": "không chịu nổi, không chống đỡ nổi",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "经",
+        "lishu_vi": "kinh",
+        "structure_note_vi": "Chữ có thành phần/bộ 纟; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 经 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "不 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "住",
+        "lishu_vi": "trú",
+        "structure_note_vi": "Chữ có thành phần/bộ 亻; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người, hành động của người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành động của người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành động của người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 住 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "经不住 trong bài được học theo nghĩa: không chịu nổi, không chống đỡ nổi.",
+    "memory_tip_vi": "Nhớ 经不住 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忍不住",
+        "pinyin": "rěn bu zhù",
+        "meaning_vi": "không nhịn được",
+        "difference_vi": "Thường là không kìm được tự mình làm gì; khác 经不住 tác động bên ngoài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nói 我经不住笑了; nên nói 我忍不住笑了."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9f2b1d81-be84-4cc6-95c9-ed8c5f6cc0cf",
+      "order": 1,
+      "zh": "经不住考验",
+      "pinyin": "",
+      "vi": "không chịu nổi thử thách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d3a1f85a-7e7a-4b76-ae9e-71b8c2028268",
+      "order": 2,
+      "zh": "经不住诱惑",
+      "pinyin": "",
+      "vi": "không cưỡng lại được cám dỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c546609b-5c2a-4d00-ae37-3ca6722be151",
+      "order": 3,
+      "zh": "经不住苦苦哀求",
+      "pinyin": "",
+      "vi": "không chịu nổi lời nài nỉ khổ sở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4e5d639-2ad7-4ced-8a57-f5058e170111",
+      "order": 4,
+      "zh": "经得住时间的考验",
+      "pinyin": "",
+      "vi": "chịu được thử thách thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d31364d3-95bc-4d4a-8a2f-1243974d9ca3",
+      "order": 1,
+      "zh": "他经不住朋友的劝说，最后答应了。",
+      "pinyin": "",
+      "vi": "Anh ấy không chống nổi lời khuyên của bạn bè, cuối cùng đồng ý.",
+      "analysis_vi": "经不住 + danh từ/cụm danh từ chỉ tác động.",
+      "highlight": [
+        "经不住"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b3a60599-e755-4848-b308-159482a1f065"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cb008db7-d638-4513-a792-8aeab44e129f",
+      "order": 2,
+      "zh": "父亲经不住祝英台的苦苦哀求，只好让她出去读书。",
+      "pinyin": "",
+      "vi": "Cha không chịu nổi lời nài nỉ khổ sở của Chúc Anh Đài, đành cho cô ra ngoài học.",
+      "analysis_vi": "经不住……只好…… diễn tả bị tác động nên đành làm.",
+      "highlight": [
+        "经不住"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b3a60599-e755-4848-b308-159482a1f065"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong truyện, cụm này tạo bước ngoặt khiến 祝英台 được đi học.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f52d8865-b863-48d6-8dd3-9aa058ff34e2",
+      "order": 1,
+      "rule_vi": "Không nói 我经不住笑了; nên nói 我忍不住笑了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "经不住",
+    "back": "không chịu nổi, không chống đỡ nổi",
+    "hint": "jīng bu zhù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b3a60599-e755-4848-b308-159482a1f065",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "id": "731e8f95-8298-4e9d-be14-411eaa6ece60",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "椅子",
+  "pinyin": "yǐzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Ỷ tử",
+    "meaning_vi": "cái ghế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cái ghế"
+    ],
+    "short_definition_vi": "cái ghế",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "đời sống, lớp học, hội trường, nhà ở.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "椅",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "奇",
+            "hanviet": "kỳ",
+            "meaning_vi": "kỳ; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ghế",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con/trẻ; hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "椅 có bộ 木, liên quan đến đồ gỗ/cây. 子 là hậu tố danh từ. → 椅子 = cái ghế, đồ vật thường làm bằng gỗ hoặc vật liệu cứng để ngồi. Cảnh báo: 椅子 dùng lượng từ 把, không dùng 张 trong cách học chuẩn. 张 dùng cho bàn, giường, giấy, ảnh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "椅子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ghế có thể ngồi, thường có lưng tựa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "凳子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ghế đẩu, thường không có lưng tựa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "沙发",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sofa, ghế mềm dài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "座位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chỗ ngồi, vị trí ngồi, không nhất thiết là cái ghế cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 一把椅子, 一张沙发, 一个座位."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "93835cbe-8fa9-4909-9e0e-9015c460438a",
+      "order": 1,
+      "zh": "一把椅子",
+      "pinyin": "",
+      "vi": "một cái ghế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a73dd690-6f5c-438d-81ef-3106a45a0d77",
+      "order": 2,
+      "zh": "搬椅子",
+      "pinyin": "",
+      "vi": "chuyển/bê ghế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "451a5b37-f059-4547-a8c8-af854a177e94",
+      "order": 3,
+      "zh": "摆椅子",
+      "pinyin": "",
+      "vi": "xếp ghế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "275068e2-b2d7-48d2-9a12-527a92f2c7a2",
+      "order": 4,
+      "zh": "把椅子搬到旁边",
+      "pinyin": "",
+      "vi": "chuyển ghế sang bên cạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27032570-1c1a-4cd7-bda0-1fca77a683bb",
+      "order": 5,
+      "zh": "坐在椅子上",
+      "pinyin": "",
+      "vi": "ngồi trên ghế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "94bbed77-6a1c-451d-bae9-d5b8ad81441e",
+      "order": 1,
+      "zh": "班长让我们把椅子搬到会场后边。",
+      "pinyin": "Bānzhǎng ràng wǒmen bǎ yǐzi bān dào huìchǎng hòubian.",
+      "vi": "Lớp trưởng bảo chúng tôi chuyển ghế ra phía sau hội trường.",
+      "analysis_vi": "把椅子搬到…… là câu chữ 把 có kết quả vị trí rõ.",
+      "highlight": [
+        "椅子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "731e8f95-8298-4e9d-be14-411eaa6ece60"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2d45cbfe-f5dc-445e-88b4-0d2c06c473e4",
+      "order": 2,
+      "zh": "会场前边摆着几把椅子，是给老师坐的。",
+      "pinyin": "Huìchǎng qiánbian bǎizhe jǐ bǎ yǐzi, shì gěi lǎoshī zuò de.",
+      "vi": "Phía trước hội trường đang xếp vài cái ghế, là để cho thầy/cô ngồi.",
+      "analysis_vi": "会场前边摆着…… là câu tồn hiện; 几把椅子 dùng đúng lượng từ 把.",
+      "highlight": [
+        "椅子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "731e8f95-8298-4e9d-be14-411eaa6ece60"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "47a1f2c6-649e-45ef-beec-7b7017b06748",
+      "order": 3,
+      "zh": "联欢会结束以后，大家要把椅子摆回原来的地方。",
+      "pinyin": "Liánhuānhuì jiéshù yǐhòu, dàjiā yào bǎ yǐzi bǎi huí yuánlái de dìfang.",
+      "vi": "Sau khi buổi liên hoan kết thúc, mọi người phải xếp ghế về chỗ ban đầu.",
+      "analysis_vi": "摆回 nhấn đưa đồ vật trở về vị trí cũ; rất hợp với câu chữ 把.",
+      "highlight": [
+        "椅子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "731e8f95-8298-4e9d-be14-411eaa6ece60"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 椅子",
+    "content_vi": "Trong lớp học Trung Quốc, trước hoạt động tập thể như 联欢会, học sinh thường tự 搬椅子, 摆桌子, 布置会场. Việc tự sắp xếp bàn ghế giúp hoạt động có màu tập thể, giống nhiều lớp học ở Việt Nam trước lễ hoặc sinh hoạt lớp.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b88f21be-40fb-4955-a554-403bc6fc4b8f",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên: 一把椅子 Yì bǎ yǐzi Một cái ghế. 一张桌子 Yì zhāng zhuōzi Một cái bàn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "椅子",
+    "back": "cái ghế",
+    "hint": "yǐzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "731e8f95-8298-4e9d-be14-411eaa6ece60",
+    "source_lesson_vocab_id": null
+  }
+}

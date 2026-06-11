@@ -1,0 +1,124 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền khuyết tổng hợp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "一把雨伞",
+      "title_vi": "Một chiếc ô",
+      "supplementary_vocab": [
+        {
+          "hanzi": "阵",
+          "pinyin": "zhèn",
+          "meaning_vi": "lượng từ chỉ một cơn/đợt ngắn; một lúc"
+        },
+        {
+          "hanzi": "抬",
+          "pinyin": "tái",
+          "meaning_vi": "ngẩng lên; nâng lên; nhấc lên"
+        },
+        {
+          "hanzi": "将近",
+          "pinyin": "jiāngjìn",
+          "meaning_vi": "gần; xấp xỉ; gần tới"
+        },
+        {
+          "hanzi": "经历",
+          "pinyin": "jīnglì",
+          "meaning_vi": "trải qua; trải nghiệm; kinh nghiệm từng trải"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "去年秋天的一个星期天，我和爱人带孩子去爬山。刚刚两岁①______儿子，玩儿得很高兴。这时，一阵风刮来，抬头一看，刚才还蓝蓝的天上，不知什么时候起②______乌云，很快就开始掉雨点了。我和爱人一下子着急了，从这儿往前，离车站还远，往回走，也要将近一个小时，我们又没带雨伞。③______越下越大，我抱④______儿子，不知怎么办好。正在这时，一对儿年轻人打着一⑤______雨伞向我们这边走来，看到我们的样子，两人一笑，马上⑥______伞送给我们，说：“孩子小，淋了雨会感冒的。”然后，⑦______俩说着笑着淋着雨跑远了。雨中的经历使我常想起这两个不知姓名的年轻人，只知道他们在北京工作，但是因为当时没有留下姓名和地址，⑧______这把雨伞现在还放在我们家里。",
+          "pinyin": "Qùnián qiūtiān de yí ge xīngqītiān, wǒ hé àiren dài háizi qù pá shān. Gānggāng liǎng suì ①______ érzi, wánr de hěn gāoxìng. Zhè shí, yí zhèn fēng guā lái, táitóu yí kàn, gāngcái hái lánlán de tiān shang, bù zhī shénme shíhou qǐ ②______ wūyún, hěn kuài jiù kāishǐ diào yǔdiǎn le. Wǒ hé àiren yíxiàzi zháojí le, cóng zhèr wǎng qián, lí chēzhàn hái yuǎn, wǎng huí zǒu, yě yào jiāngjìn yí ge xiǎoshí, wǒmen yòu méi dài yǔsǎn. ③______ yuè xià yuè dà, wǒ bào ④______ érzi, bù zhī zěnme bàn hǎo. Zhèngzài zhè shí, yí duìr niánqīngrén dǎzhe yì ⑤______ yǔsǎn xiàng wǒmen zhè biān zǒu lái, kàn dào wǒmen de yàngzi, liǎng rén yí xiào, mǎshàng ⑥______ sǎn sòng gěi wǒmen, shuō: “Háizi xiǎo, lín le yǔ huì gǎnmào de.” Ránhòu, ⑦______ liǎ shuōzhe xiàozhe línzhe yǔ pǎo yuǎn le. Yǔ zhōng de jīnglì shǐ wǒ cháng xiǎngqǐ zhè liǎng ge bù zhī xìngmíng de niánqīngrén, zhǐ zhīdào tāmen zài Běijīng gōngzuò, dànshì yīnwèi dāngshí méi yǒu liú xià xìngmíng hé dìzhǐ, ⑧______ zhè bǎ yǔsǎn xiànzài hái fàng zài wǒmen jiā lǐ.",
+          "vi": "Một ngày Chủ nhật mùa thu năm ngoái, tôi và vợ/chồng đưa con đi leo núi. Đứa con trai vừa tròn hai tuổi chơi rất vui. Lúc đó, một cơn gió thổi tới; ngẩng đầu nhìn lên thì bầu trời vừa nãy còn xanh biếc, không biết từ lúc nào đã kéo mây đen, rất nhanh bắt đầu rơi những hạt mưa. Tôi và vợ/chồng lập tức lo lắng. Đi tiếp về phía trước thì trạm xe còn xa, quay về cũng phải gần một tiếng, mà chúng tôi lại không mang ô. Mưa càng lúc càng lớn, tôi bế con trai, không biết phải làm thế nào. Đúng lúc ấy, một đôi bạn trẻ che một chiếc ô đi về phía chúng tôi. Nhìn thấy tình cảnh của chúng tôi, hai người mỉm cười, lập tức đưa ô cho chúng tôi và nói: “Trẻ còn nhỏ, dính mưa sẽ bị cảm đấy.” Sau đó, hai người họ vừa nói vừa cười, chịu mưa chạy ra xa. Trải nghiệm trong mưa ấy khiến tôi thường nhớ đến hai bạn trẻ không biết tên này. Chỉ biết họ làm việc ở Bắc Kinh, nhưng vì lúc đó không để lại họ tên và địa chỉ, nên chiếc ô này đến bây giờ vẫn còn để ở nhà chúng tôi.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
+          "type": "cloze_blank",
+          "blank": 1,
+          "answer": "的",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
+          "type": "cloze_blank",
+          "blank": 2,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
+          "type": "cloze_blank",
+          "blank": 3,
+          "answer": "雨",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
+          "type": "cloze_blank",
+          "blank": 4,
+          "answer": "着",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
+          "type": "cloze_blank",
+          "blank": 5,
+          "answer": "把",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
+          "type": "cloze_blank",
+          "blank": 6,
+          "answer": "把",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
+          "type": "cloze_blank",
+          "blank": 7,
+          "answer": "他们",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
+          "type": "cloze_blank",
+          "blank": 8,
+          "answer": "所以",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "full_text_answer_reference": "去年秋天的一个星期天，我和爱人带孩子去爬山。刚刚两岁的儿子，玩儿得很高兴。这时，一阵风刮来，抬头一看，刚才还蓝蓝的天上，不知什么时候起了乌云，很快就开始掉雨点了。我和爱人一下子着急了，从这儿往前，离车站还远，往回走，也要将近一个小时，我们又没带雨伞。雨越下越大，我抱着儿子，不知怎么办好。正在这时，一对儿年轻人打着一把雨伞向我们这边走来，看到我们的样子，两人一笑，马上把伞送给我们，说：“孩子小，淋了雨会感冒的。”然后，他们俩说着笑着淋着雨跑远了。雨中的经历使我常想起这两个不知姓名的年轻人，只知道他们在北京工作，但是因为当时没有留下姓名和地址，所以这把雨伞现在还放在我们家里。",
+      "translation_vi": "Một ngày Chủ nhật mùa thu năm ngoái, tôi và vợ/chồng đưa con đi leo núi. Đứa con trai vừa tròn hai tuổi chơi rất vui. Lúc đó, một cơn gió thổi tới; ngẩng đầu nhìn lên thì bầu trời vừa nãy còn xanh biếc, không biết từ lúc nào đã kéo mây đen, rất nhanh bắt đầu rơi những hạt mưa. Tôi và vợ/chồng lập tức lo lắng. Đi tiếp về phía trước thì trạm xe còn xa, quay về cũng phải gần một tiếng, mà chúng tôi lại không mang ô. Mưa càng lúc càng lớn, tôi bế con trai, không biết phải làm thế nào. Đúng lúc ấy, một đôi bạn trẻ che một chiếc ô đi về phía chúng tôi. Nhìn thấy tình cảnh của chúng tôi, hai người mỉm cười, lập tức đưa ô cho chúng tôi và nói: “Trẻ còn nhỏ, dính mưa sẽ bị cảm đấy.” Sau đó, hai người họ vừa nói vừa cười, chịu mưa chạy ra xa. Trải nghiệm trong mưa ấy khiến tôi thường nhớ đến hai bạn trẻ không biết tên này. Chỉ biết họ làm việc ở Bắc Kinh, nhưng vì lúc đó không để lại họ tên và địa chỉ, nên chiếc ô này đến bây giờ vẫn còn để ở nhà chúng tôi.",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "answers": [],
+      "answer_key": []
+    }
+  ],
+  "empty_reading_comprehension_note_vi": "Bài này không thấy 阅读理解 riêng; phần đọc thêm xuất hiện dưới dạng 综合填空 trong 练习."
+}

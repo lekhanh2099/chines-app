@@ -1,0 +1,45 @@
+{
+  "id": "synthetic_vocab_e50dbf2689321380",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "塞",
+  "pinyin": "sāi",
+  "meaning_vi": "nhét; đút vào",
+  "pos": "verb",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "71f9308f-7b38-435e-bfa8-c7c974599035",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
+    "type": "vocabulary_item",
+    "order": 47,
+    "hanzi": "塞",
+    "pinyin": "sāi",
+    "meaning_vi": "nhét; đút vào",
+    "meaning_en": "to stuff; to tuck in",
+    "pos": "verb",
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "塞",
+      "back": "sāi — nhét; đút vào",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

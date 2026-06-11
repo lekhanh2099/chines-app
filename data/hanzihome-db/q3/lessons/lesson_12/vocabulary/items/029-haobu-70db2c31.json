@@ -1,0 +1,280 @@
+{
+  "id": "4f6e27f6-86c3-43b8-ab4e-327a9ebbb8ef",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "好不",
+  "pinyin": "hǎobù",
+  "pos": {
+    "raw_vi": "Phó từ cảm thán",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "B+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hảo bất",
+    "meaning_vi": "rất, thật là; biết bao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rất, thật là; biết bao"
+    ],
+    "short_definition_vi": "Trong một số cụm cảm thán mang nghĩa khẳng định mức độ cao.",
+    "textbook_focus_vi": "Dùng trong 好不热闹, 好不得意; chú ý 好不容易.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "hảo",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ/phụ nữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ/phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ/phụ nữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt/rất",
+        "modern_logic_vi": "tốt/rất",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "không",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Từ chức năng, không dịch từng chữ 好 + 不.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很",
+        "pinyin": "hěn",
+        "meaning_vi": "rất",
+        "difference_vi": "很 trung tính; 好不 có sắc thái cảm thán/văn kể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f2e0ca65-feef-4238-81af-90db40a8690e",
+      "order": 1,
+      "zh": "好不热闹",
+      "pinyin": "",
+      "vi": "thật náo nhiệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d70c22c6-ce83-455b-8199-aeace079538d",
+      "order": 2,
+      "zh": "好不得意",
+      "pinyin": "",
+      "vi": "đắc ý lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "202149d2-6454-4e11-a326-5dfc52beeaa0",
+      "order": 3,
+      "zh": "好不高兴",
+      "pinyin": "",
+      "vi": "vui biết bao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "39a51092-1471-4cd5-b87f-7ae200281cc3",
+      "order": 4,
+      "zh": "好不容易",
+      "pinyin": "",
+      "vi": "khó khăn lắm mới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e1521e7c-156b-4665-8bd3-5859d2cd3a25",
+      "order": 1,
+      "zh": "青年们在林荫道上唱歌、聊天，好不热闹。",
+      "pinyin": "",
+      "vi": "Thanh niên hát hò trò chuyện trên đường cây, thật náo nhiệt.",
+      "analysis_vi": "好不热闹 là khẳng định mạnh.",
+      "highlight": [
+        "好不"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f6e27f6-86c3-43b8-ab4e-327a9ebbb8ef"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f30f8d1e-13da-438c-b0f5-0e6be5662405",
+      "order": 2,
+      "zh": "他好不容易才把拉链儿拉上。",
+      "pinyin": "",
+      "vi": "Anh ấy khó khăn lắm mới kéo được khóa lên.",
+      "analysis_vi": "好不容易 = khó khăn lắm mới.",
+      "highlight": [
+        "好不"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f6e27f6-86c3-43b8-ab4e-327a9ebbb8ef"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8bf20f04-519a-4839-9e19-cad327682437",
+      "order": 1,
+      "rule_vi": "Thấy 不 không được dịch phủ định máy móc; 好不容易 là bẫy riêng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Thấy 不 không được dịch phủ định máy móc; 好不容易 là bẫy riêng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "好不",
+    "back": "rất, thật là; biết bao",
+    "hint": "hǎobù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f6e27f6-86c3-43b8-ab4e-327a9ebbb8ef",
+    "source_lesson_vocab_id": null
+  }
+}

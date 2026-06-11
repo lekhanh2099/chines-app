@@ -1,0 +1,452 @@
+{
+  "id": "54b620cf-23a6-4208-8a4b-7ad32279e7a5",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "地铁",
+  "pinyin": "dìtiě",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "traffic",
+    "transport"
+  ],
+  "meaning": {
+    "hanviet": "Địa thiết",
+    "meaning_vi": "tàu điện ngầm, metro",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tàu điện ngầm",
+      "metro"
+    ],
+    "short_definition_vi": "tàu điện ngầm, metro",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "traffic, transport",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "地",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "也",
+            "hanviet": "dã",
+            "meaning_vi": "phần phải gợi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đất, mặt đất, địa điểm",
+        "modern_logic_vi": "地 là đất/địa điểm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "铁",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "失",
+            "hanviet": "thất",
+            "meaning_vi": "phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sắt, kim loại, đường sắt",
+        "modern_logic_vi": "铁 là sắt/đường sắt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "地 là dưới đất/đất; 铁 là đường sắt/tàu sắt. 地铁 là hệ metro/tàu điện ngầm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "地铁站",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ga metro.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "公共汽车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xe buýt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "火车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tàu hỏa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "高铁",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tàu cao tốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出租车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Taxi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "地铁",
+        "right": "地铁站",
+        "meaning_vi": "地铁 là phương tiện/hệ thống; 地铁站 là ga metro.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "79e56295-1299-4ce9-a0cf-eb06612b6023",
+      "order": 1,
+      "zh": "坐地铁",
+      "pinyin": "",
+      "vi": "đi metro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aee06c4d-a93f-44bc-bfce-14cd50800bb2",
+      "order": 2,
+      "zh": "地铁站",
+      "pinyin": "",
+      "vi": "ga metro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b507cbe-f347-4efa-9848-a4baa6e32c61",
+      "order": 3,
+      "zh": "地铁口",
+      "pinyin": "",
+      "vi": "cửa ga metro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e067af62-fcf3-4a0d-98b2-97966d61103b",
+      "order": 4,
+      "zh": "地铁线路",
+      "pinyin": "",
+      "vi": "tuyến metro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ffb8fe3-ca71-45c2-866c-748226c87021",
+      "order": 5,
+      "zh": "换地铁",
+      "pinyin": "",
+      "vi": "đổi tuyến metro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "461dc97c-06e4-4b14-861f-c246794f44e0",
+      "order": 6,
+      "zh": "离地铁站很近",
+      "pinyin": "",
+      "vi": "rất gần ga metro",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03c9a8ab-7a49-42d7-a1f9-0f3f08e847a6",
+      "order": 7,
+      "zh": "坐地铁上班",
+      "pinyin": "",
+      "vi": "đi metro đi làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71848796-1c59-4e40-a3a2-16226f602c87",
+      "order": 8,
+      "zh": "坐地铁去体育馆",
+      "pinyin": "",
+      "vi": "đi metro đến nhà thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "acad68a2-35f5-4a0d-8f36-30b34a78fa33",
+      "order": 1,
+      "zh": "我坐地铁去学校。",
+      "pinyin": "Wǒ zuò dìtiě qù xuéxiào.",
+      "vi": "Tôi đi metro đến trường.",
+      "analysis_vi": "坐 + phương tiện = đi bằng phương tiện đó.",
+      "highlight": [
+        "地铁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54b620cf-23a6-4208-8a4b-7ad32279e7a5"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0831d76f-6d00-410e-9dc4-e18dbd7bace8",
+      "order": 2,
+      "zh": "虽然坐地铁很方便，但是这套房子离地铁站有点儿远。",
+      "pinyin": "Suīrán zuò dìtiě hěn fāngbiàn, dànshì zhè tào fángzi lí dìtiězhàn yǒudiǎnr yuǎn.",
+      "vi": "Tuy đi metro rất tiện, nhưng căn nhà này hơi xa ga metro.",
+      "analysis_vi": "虽然……但是……; 离……远 = cách... xa.",
+      "highlight": [
+        "地铁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54b620cf-23a6-4208-8a4b-7ad32279e7a5"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b89c17e7-e9fa-4978-b7b1-ecde7279e366",
+      "order": 3,
+      "zh": "要是附近有地铁，我们上班就不用天天堵车，也不用赶公共汽车了。",
+      "pinyin": "Yàoshi fùjìn yǒu dìtiě, wǒmen shàngbān jiù bú yòng tiāntiān dǔchē, yě bú yòng gǎn gōnggòng qìchē le.",
+      "vi": "Nếu gần đó có metro, chúng tôi đi làm sẽ không phải ngày nào cũng kẹt xe, cũng không phải vội bắt xe buýt nữa.",
+      "analysis_vi": "要是……就……; 不用 = không cần/không phải.",
+      "highlight": [
+        "地铁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54b620cf-23a6-4208-8a4b-7ad32279e7a5"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở đô thị Trung Quốc, nhà gần 地铁站 thường được xem là lợi thế lớn vì đi làm/đi học ổn định hơn xe buýt giờ cao điểm.",
+    "tags": [
+      "traffic",
+      "transport"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7dceb270-a0ed-4827-8545-ee5b952d8913",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 地铁 và 地铁站.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我坐地铁站。",
+          "pinyin": "",
+          "vi": "Tôi ngồi ga metro.",
+          "note_vi": "Sai nếu muốn nói đi metro.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我坐地铁。",
+          "pinyin": "",
+          "vi": "Tôi đi metro.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我在地铁站等你。",
+          "pinyin": "",
+          "vi": "Tôi đợi bạn ở ga metro.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "地铁 là phương tiện/hệ thống; 地铁站 là ga metro.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "地铁",
+    "back": "tàu điện ngầm, metro",
+    "hint": "dìtiě",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "traffic",
+      "transport"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "54b620cf-23a6-4208-8a4b-7ad32279e7a5",
+    "source_lesson_vocab_id": null
+  }
+}

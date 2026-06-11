@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_0d0a2dbae840f929",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "打扮",
+  "pinyin": "dǎban",
+  "meaning_vi": "ăn mặc; trang điểm; chưng diện",
+  "pos": "verb",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "092a8c16-3739-4685-a4c0-39365071bd48",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+    "type": "vocabulary_item",
+    "order": 31,
+    "hanzi": "打扮",
+    "pinyin": "dǎban",
+    "meaning_vi": "ăn mặc; trang điểm; chưng diện",
+    "meaning_en": "to dress up",
+    "pos": "verb",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "打扮",
+      "back": "dǎban — ăn mặc; trang điểm; chưng diện",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

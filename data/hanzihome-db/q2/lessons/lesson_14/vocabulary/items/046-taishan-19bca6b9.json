@@ -1,0 +1,355 @@
+{
+  "id": "e3b6d5d6-18fc-4281-837c-1ca3e563d676",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "泰山",
+  "pinyin": "Tàishān",
+  "pos": {
+    "raw_vi": "Danh từ riêng / Địa danh",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Thái Sơn",
+    "meaning_vi": "núi Thái Sơn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "núi Thái Sơn"
+    ],
+    "short_definition_vi": "núi Thái Sơn",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "địa danh, du lịch, văn hóa Trung Hoa.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "泰",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "氺",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氺",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn, yên ổn; tên riêng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "泰 có nghĩa lớn, yên ổn, trang trọng trong nhiều từ. → 泰山 là tên riêng, không nên dịch từng chữ khi dùng trong câu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "山",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "núi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "山 là núi. → 泰山 là tên riêng, không nên dịch từng chữ khi dùng trong câu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 泰山 là tên riêng, không nên dịch từng chữ khi dùng trong câu.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 泰山 không phải “núi Thái” bất kỳ; đây là địa danh cụ thể.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "泰山 (Tàishān)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "núi Thái Sơn ở Sơn Đông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "黄山 (Huángshān)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "núi Hoàng Sơn ở An Huy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "华山 (Huàshān)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "núi Hoa Sơn ở Thiểm Tây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长城 (Chángchéng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trường Thành, không phải núi, nhưng cũng là điểm du lịch biểu tượng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 泰山 nổi bật về ý nghĩa văn hóa – lịch sử; 黄山 nổi tiếng với cảnh núi đẹp, mây, thông, đá."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8ebbf407-c8c6-45e4-94eb-677be603821e",
+      "order": 1,
+      "zh": "登泰山",
+      "pinyin": "",
+      "vi": "leo/đăng Thái Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ccf1589-aa7b-41f2-80b5-dec0d5512ffe",
+      "order": 2,
+      "zh": "爬泰山",
+      "pinyin": "",
+      "vi": "leo Thái Sơn, khẩu ngữ hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "074680ab-07e9-4c68-859d-fb41ecaa8927",
+      "order": 3,
+      "zh": "泰山日出",
+      "pinyin": "",
+      "vi": "mặt trời mọc ở Thái Sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "919d4faf-ebd3-464c-ba1f-0632f381ae18",
+      "order": 4,
+      "zh": "泰山很有名",
+      "pinyin": "",
+      "vi": "Thái Sơn rất nổi tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0a9d6aa2-e9cc-493e-bf76-73fb7e2c579c",
+      "order": 1,
+      "zh": "我们天还没亮就爬上泰山去，想看日出。",
+      "pinyin": "Wǒmen tiān hái méi liàng jiù pá shàng Tàishān qù, xiǎng kàn rìchū.",
+      "vi": "Trời còn chưa sáng chúng tôi đã leo lên Thái Sơn để ngắm mặt trời mọc.",
+      "analysis_vi": "爬上泰山去 là leo lên núi, hướng rời điểm xuất phát; tân ngữ địa điểm 泰山 đặt giữa 上 và 去.",
+      "highlight": [
+        "泰山"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e3b6d5d6-18fc-4281-837c-1ca3e563d676"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b7decda7-5651-48c8-a6cc-0ae68f334f6c",
+      "order": 2,
+      "zh": "登上泰山以后，很多人会想起“一览众山小”这句诗。",
+      "pinyin": "Dēng shàng Tàishān yǐhòu, hěn duō rén huì xiǎng qǐ “yì lǎn zhòng shān xiǎo” zhè jù shī.",
+      "vi": "Sau khi leo lên Thái Sơn, nhiều người sẽ nhớ đến câu thơ “nhìn một lượt thấy các núi đều nhỏ”.",
+      "analysis_vi": "登上泰山 nhấn đạt tới đỉnh/vị trí cao; câu nối địa danh với văn hóa thơ cổ.",
+      "highlight": [
+        "泰山"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e3b6d5d6-18fc-4281-837c-1ca3e563d676"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1a7421ec-f8c0-473b-a854-eecf7b354662",
+      "order": 3,
+      "zh": "泰山的路不一定轻松，所以登山以前最好准备好水和食物。",
+      "pinyin": "Tàishān de lù bù yídìng qīngsōng, suǒyǐ dēngshān yǐqián zuìhǎo zhǔnbèi hǎo shuǐ hé shíwù.",
+      "vi": "Đường ở Thái Sơn chưa chắc nhẹ nhàng, nên trước khi leo núi tốt nhất chuẩn bị sẵn nước và đồ ăn.",
+      "analysis_vi": "准备好 là chuẩn bị xong/sẵn sàng; câu thực tế khi đi leo núi.",
+      "highlight": [
+        "泰山"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e3b6d5d6-18fc-4281-837c-1ca3e563d676"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "17bbf490-101a-4b42-8515-ba4c85b0865c",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 去泰山 và 登泰山 như nhau hoàn toàn. 去泰山 = đi đến Thái Sơn, nhấn chuyến đi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "泰山",
+    "back": "núi Thái Sơn",
+    "hint": "Tàishān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "泰山 có vị trí rất cao trong văn hóa Trung Quốc, từng gắn với nghi lễ phong thiện của hoàng đế. Câu 有眼不识泰山 – yǒu yǎn bù shí Tàishān – nghĩa là “có mắt mà không nhận ra Thái Sơn”, dùng khi không nhận ra người tài/người quan trọng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e3b6d5d6-18fc-4281-837c-1ca3e563d676",
+    "source_lesson_vocab_id": null
+  }
+}

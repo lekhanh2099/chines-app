@@ -1,0 +1,363 @@
+{
+  "id": "6053545b-7fb6-43bc-ba68-785f2fe46b2b",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "家喻户晓",
+  "pinyin": "jiāyù-hùxiǎo",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "gia dụ hộ hiểu",
+    "meaning_vi": "nhà nhà đều biết, ai ai cũng biết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà nhà đều biết",
+      "ai ai cũng biết"
+    ],
+    "short_definition_vi": "nhà nhà đều biết, ai ai cũng biết",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "家",
+        "lishu_vi": "gia",
+        "structure_note_vi": "Chữ có thành phần/bộ 宀; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nhà cửa",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nhà cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nhà cửa",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 家 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "喻",
+        "lishu_vi": "dụ",
+        "structure_note_vi": "Chữ có thành phần/bộ 口; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 喻 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "户",
+        "lishu_vi": "hộ",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "户 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "晓",
+        "lishu_vi": "hiểu",
+        "structure_note_vi": "Chữ có thành phần/bộ 日; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 晓 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "家喻户晓 trong bài được học theo nghĩa: nhà nhà đều biết, ai ai cũng biết.",
+    "memory_tip_vi": "Nhớ 家喻户晓 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "众所周知",
+        "pinyin": "zhòngsuǒzhōuzhī",
+        "meaning_vi": "mọi người đều biết",
+        "difference_vi": "Văn viết/lập luận hơn 家喻户晓.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 家喻户晓 cho chuyện nhỏ chỉ vài người biết."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bd1e1e6d-ebbb-4508-af7e-a89ad71d5db2",
+      "order": 1,
+      "zh": "家喻户晓的故事",
+      "pinyin": "",
+      "vi": "câu chuyện ai cũng biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ea8e6db-1586-4b3d-ac0b-fe32eebb6da4",
+      "order": 2,
+      "zh": "家喻户晓的人物",
+      "pinyin": "",
+      "vi": "nhân vật ai cũng biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f57d336c-b3c3-40f3-892d-21d22238d11b",
+      "order": 3,
+      "zh": "在中国家喻户晓",
+      "pinyin": "",
+      "vi": "ở Trung Quốc nhà nhà đều biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c8fed1f8-c268-46e7-a78e-6266d0958940",
+      "order": 1,
+      "zh": "《梁山伯与祝英台》是一个家喻户晓的故事。",
+      "pinyin": "",
+      "vi": "“Lương Sơn Bá và Chúc Anh Đài” là một câu chuyện nhà nhà đều biết.",
+      "analysis_vi": "Thành ngữ làm định ngữ trước 故事.",
+      "highlight": [
+        "家喻户晓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6053545b-7fb6-43bc-ba68-785f2fe46b2b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b12f1128-2f30-4eed-a3ef-01d86f512b34",
+      "order": 2,
+      "zh": "这个传说流传了很多年，现在仍然家喻户晓。",
+      "pinyin": "",
+      "vi": "Truyền thuyết này lưu truyền nhiều năm, đến nay vẫn ai ai cũng biết.",
+      "analysis_vi": "流传 + thời lượng; 家喻户晓 nhấn mức độ phổ biến rộng.",
+      "highlight": [
+        "家喻户晓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6053545b-7fb6-43bc-ba68-785f2fe46b2b"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Dùng tốt cho truyền thuyết/tác phẩm nổi tiếng rộng rãi.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0a27002a-e8f0-405a-8049-728d8c45d857",
+      "order": 1,
+      "rule_vi": "Không dùng 家喻户晓 cho chuyện nhỏ chỉ vài người biết.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "家喻户晓",
+    "back": "nhà nhà đều biết, ai ai cũng biết",
+    "hint": "jiāyù-hùxiǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6053545b-7fb6-43bc-ba68-785f2fe46b2b",
+    "source_lesson_vocab_id": null
+  }
+}

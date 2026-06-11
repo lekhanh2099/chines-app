@@ -1,0 +1,217 @@
+{
+  "id": "d3cd56a7-6c85-4e23-971f-d5ec5ce1bd62",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "单位",
+  "pinyin": "dānwèi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "đơn vị",
+    "meaning_vi": "đơn vị; cơ quan, nơi làm việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đơn vị; cơ quan",
+      "nơi làm việc"
+    ],
+    "short_definition_vi": "đơn vị; cơ quan, nơi làm việc",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "单",
+        "lishu_vi": "đơn",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đơn, một",
+        "modern_logic_vi": "Trong từ này, 单 góp phần vào nghĩa hiện đại: đơn, một.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "位",
+        "lishu_vi": "vị",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vị trí",
+        "modern_logic_vi": "Trong từ này, 位 góp phần vào nghĩa hiện đại: vị trí.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "单位 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 工作单位.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không tự động dịch là công ty; có thể là cơ quan/viện/trường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "eaf6f5e2-0fde-4047-a794-33edc4a0860f",
+      "order": 1,
+      "zh": "工作单位",
+      "pinyin": "",
+      "vi": "đơn vị công tác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "630b6074-02c8-41da-890c-9f07b2507ee5",
+      "order": 2,
+      "zh": "所在单位",
+      "pinyin": "",
+      "vi": "đơn vị nơi công tác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e22d342d-69d0-4f3c-a1ed-d5f33f89c1ad",
+      "order": 3,
+      "zh": "单位领导",
+      "pinyin": "",
+      "vi": "lãnh đạo cơ quan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fa6184c5-769d-4a7a-a6c8-22ed628b90be",
+      "order": 1,
+      "zh": "你在哪个单位工作？",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 单位 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 单位; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "单位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d3cd56a7-6c85-4e23-971f-d5ec5ce1bd62"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 单位 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0392bce4-92b5-4de0-9c4d-fdbadcd4136f",
+      "order": 1,
+      "rule_vi": "Không tự động dịch là công ty; có thể là cơ quan/viện/trường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "单位",
+    "back": "đơn vị; cơ quan, nơi làm việc",
+    "hint": "dānwèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d3cd56a7-6c85-4e23-971f-d5ec5ce1bd62",
+    "source_lesson_vocab_id": null
+  }
+}

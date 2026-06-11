@@ -1,0 +1,295 @@
+{
+  "id": "fecd7865-6834-4d36-86b6-388cd9612b8d",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "示弱",
+  "pinyin": "shìruò",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thị nhược",
+    "meaning_vi": "tỏ ra yếu thế, tỏ ra mềm yếu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tỏ ra yếu thế",
+      "tỏ ra mềm yếu"
+    ],
+    "short_definition_vi": "tỏ ra yếu thế, tỏ ra mềm yếu",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "示",
+        "lishu_vi": "thị",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "示",
+            "hanviet": "thị",
+            "meaning_vi": "biểu thị",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chỉ ra, biểu thị",
+        "modern_logic_vi": "示弱 = biểu thị mình yếu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "弱",
+        "lishu_vi": "nhược",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "弓",
+            "hanviet": "cung",
+            "meaning_vi": "cung",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yếu, yếu thế",
+        "modern_logic_vi": "示弱 là tỏ ra yếu thế.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "示弱 được dùng trong Bài 20 với nghĩa: tỏ ra yếu thế, tỏ ra mềm yếu.",
+    "memory_tip_vi": "Nhớ qua cụm 不甘示弱.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "认输",
+        "pinyin": "rènshū",
+        "meaning_vi": "nhận thua",
+        "difference_vi": "Công nhận mình thua.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "让步",
+        "pinyin": "ràngbù",
+        "meaning_vi": "nhượng bộ",
+        "difference_vi": "Lùi một bước trong xung đột.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "逞强",
+        "pinyin": "chěngqiáng",
+        "meaning_vi": "cố tỏ ra mạnh",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b9b9f53f-a741-4572-8084-17392ff5aa74",
+      "order": 1,
+      "zh": "不甘示弱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a8e13832-22d6-4fbe-b35d-ba8491578b19",
+      "order": 2,
+      "zh": "主动示弱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0be124a3-e56c-4cd4-8ba7-2be4db03f6b9",
+      "order": 3,
+      "zh": "向对方示弱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "733d9fd7-a9a9-479a-8827-868d7ac94ed4",
+      "order": 4,
+      "zh": "不肯示弱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa1d6927-7dfb-4f74-a810-1e3393fe89be",
+      "order": 5,
+      "zh": "毫不示弱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7af91e8f-5a85-4e82-8c22-68341f8bedf9",
+      "order": 6,
+      "zh": "表面上示弱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aaa20242-ec19-42f9-b109-64701f7f2e33",
+      "order": 1,
+      "zh": "她虽然很紧张，但是没有示弱。",
+      "pinyin": "Tā suīrán hěn jǐnzhāng, dànshì méiyǒu shìruò.",
+      "vi": "Tuy rất căng thẳng, cô ấy không tỏ ra yếu thế.",
+      "analysis_vi": "虽然……但是…… tạo đối lập.",
+      "highlight": [
+        "示弱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fecd7865-6834-4d36-86b6-388cd9612b8d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "31c3328e-276c-4c12-8907-f385907a2c46",
+      "order": 2,
+      "zh": "她不甘示弱，不是因为骄傲，而是因为她觉得科学研究必须凭事实说话。",
+      "pinyin": "Tā bù gān shìruò, bú shì yīnwèi jiāo’ào, ér shì yīnwèi tā juéde kēxué yánjiū bìxū píng shìshí shuōhuà.",
+      "vi": "Cô ấy không chịu yếu thế không phải vì kiêu ngạo, mà vì nghiên cứu phải dựa vào sự thật.",
+      "analysis_vi": "不是因为……而是因为…… sửa hiểu lầm.",
+      "highlight": [
+        "示弱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fecd7865-6834-4d36-86b6-388cd9612b8d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "示弱 không phải lúc nào cũng xấu; đôi khi là chiến lược mềm trong giao tiếp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bd1c109d-fcc3-4cf5-a7ef-0d117f9e2118",
+      "order": 1,
+      "rule_vi": "示弱 là tỏ ra yếu, không phải nhất thiết yếu thật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他只是表面上示弱。",
+          "pinyin": "Tā zhǐ shì biǎomiàn shang shìruò.",
+          "vi": "Anh ấy chỉ bề ngoài tỏ ra yếu thế.",
+          "note_vi": "Có thể chỉ là biểu hiện bên ngoài.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "示弱",
+    "back": "tỏ ra yếu thế, tỏ ra mềm yếu",
+    "hint": "shìruò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fecd7865-6834-4d36-86b6-388cd9612b8d",
+    "source_lesson_vocab_id": null
+  }
+}

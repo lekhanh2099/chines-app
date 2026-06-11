@@ -1,0 +1,265 @@
+{
+  "id": "1b04645b-5813-4b9c-9ef9-0ae56753a315",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "陪读",
+  "pinyin": "péidú",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "education"
+  ],
+  "meaning": {
+    "hanviet": "bồi độc",
+    "meaning_vi": "đi kèm/chăm việc học; phụ huynh theo con học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi kèm",
+      "chăm việc học",
+      "phụ huynh theo con học"
+    ],
+    "short_definition_vi": "đi kèm/chăm việc học; phụ huynh theo con học",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "陪",
+        "lishu_vi": "bồi",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "阝",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Phụ",
+          "radical_name_zh": "",
+          "hanviet": "phụ",
+          "meaning_vi": "gò/đất hoặc thành phần bên trái/phải",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ",
+            "meaning_vi": "gò/đất hoặc thành phần bên trái/phải",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阝",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Phụ",
+              "radical_name_zh": "",
+              "hanviet": "phụ",
+              "meaning_vi": "gò/đất hoặc thành phần bên trái/phải",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi cùng/ở bên",
+        "modern_logic_vi": "Trong từ/cụm này, 陪 góp phần vào nghĩa hiện đại: đi cùng/ở bên.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "读",
+        "lishu_vi": "độc",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói/ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đọc/học",
+        "modern_logic_vi": "Trong từ/cụm này, 读 góp phần vào nghĩa hiện đại: đọc/học.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "陪读 cần học theo nghĩa hiện đại trong bài: đi kèm/chăm việc học; phụ huynh theo con học.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 陪孩子读书.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bcfbeb71-30d1-4606-828c-a334c390b6f5",
+      "order": 1,
+      "zh": "陪孩子读书",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c796558b-a080-40b4-8a5b-0c858bea9a8e",
+      "order": 2,
+      "zh": "妈妈陪读",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b17ce74-2f9a-4a4d-a780-7c385d217134",
+      "order": 3,
+      "zh": "出国陪读",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9ac99b1c-0e4e-4d32-951d-5b462ad3d2e0",
+      "order": 1,
+      "zh": "她为了孩子上学，去城里陪读。",
+      "pinyin": "Tā wèile háizi shàngxué, qù chéng lǐ péidú.",
+      "vi": "Vì việc học của con, cô ấy lên thành phố theo chăm con học.",
+      "analysis_vi": "陪读 là phụ huynh/người thân theo việc học.",
+      "highlight": [
+        "陪读"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1b04645b-5813-4b9c-9ef9-0ae56753a315"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cf41bf08-a16e-49a0-a8ff-cd08042074c1",
+      "order": 2,
+      "zh": "有些父母辞职陪读，本来是想帮助孩子，反而让孩子觉得压力更大。",
+      "pinyin": "Yǒuxiē fùmǔ cízhí péidú, běnlái shì xiǎng bāngzhù háizi, fǎn’ér ràng háizi juéde yālì gèng dà.",
+      "vi": "Một số cha mẹ nghỉ việc để陪读, vốn muốn giúp con, trái lại khiến con áp lực hơn.",
+      "analysis_vi": "本来……反而…… nêu kết quả ngược dự đoán.",
+      "highlight": [
+        "陪读"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1b04645b-5813-4b9c-9ef9-0ae56753a315"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "陪读 phản ánh áp lực giáo dục và sự hy sinh của phụ huynh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0e12335a-d1c9-4299-b2e2-73fd5532bdee",
+      "order": 1,
+      "rule_vi": "Dùng 陪读 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "陪读",
+    "back": "đi kèm/chăm việc học; phụ huynh theo con học",
+    "hint": "péidú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1b04645b-5813-4b9c-9ef9-0ae56753a315",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "id": "906f6959-4fa7-4e62-9294-26b7fee96bf9",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "责",
+  "pinyin": "zé",
+  "pos": {
+    "raw_vi": "Yếu tố cấu tạo từ",
+    "raw_cn": "语素 / 动词",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trách",
+    "meaning_vi": "trách nhiệm; trách cứ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trách nhiệm",
+      "trách cứ"
+    ],
+    "short_definition_vi": "trách nhiệm; trách cứ",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: trách nhiệm, khẩu hiệu.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "trách nhiệm, khẩu hiệu",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "责",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "vỏ sò, tiền của",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "贝 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò, tiền của",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "贝 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trách nhiệm, trách cứ",
+        "modern_logic_vi": "Trong từ 责, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "责 nên được học theo nghĩa hiện đại trong cụm/tình huống: trách nhiệm; trách cứ.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 人人有责.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bcfe398b-ae55-4e33-92a7-e0f2a2fdc675",
+      "order": 1,
+      "zh": "人人有责",
+      "pinyin": "",
+      "vi": "mọi người đều có trách nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7140fda1-2976-410f-a862-58b67eb1effd",
+      "order": 2,
+      "zh": "责任",
+      "pinyin": "",
+      "vi": "trách nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7395fc42-85a4-4a99-b2d9-8d59e251e990",
+      "order": 3,
+      "zh": "负责",
+      "pinyin": "",
+      "vi": "phụ trách/chịu trách nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8054dec4-7ebe-42a6-abb2-ee1fa8831275",
+      "order": 1,
+      "zh": "保护环境，人人有责。",
+      "pinyin": "",
+      "vi": "Bảo vệ môi trường, mọi người đều có trách nhiệm.",
+      "analysis_vi": "人人有责 là khẩu hiệu cố định.",
+      "highlight": [
+        "责"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "906f6959-4fa7-4e62-9294-26b7fee96bf9"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 责 được dùng trong ngữ cảnh trách nhiệm, khẩu hiệu; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "395969aa-10de-4479-90fd-9016277e542e",
+      "order": 1,
+      "rule_vi": "Trong khẩu ngữ hiện đại không dùng 责 một mình thay cho 责任.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Trong khẩu ngữ hiện đại không dùng 责 một mình thay cho 责任.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "责",
+    "back": "trách nhiệm; trách cứ",
+    "hint": "zé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "906f6959-4fa7-4e62-9294-26b7fee96bf9",
+    "source_lesson_vocab_id": null
+  }
+}

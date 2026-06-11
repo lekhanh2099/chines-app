@@ -1,0 +1,258 @@
+{
+  "id": "1fefa90e-29a3-4bd7-9a81-d8e4045d6aa9",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "下",
+  "pinyin": "xià",
+  "pos": {
+    "raw_vi": "Từ vị trí / Động từ / Bổ ngữ",
+    "raw_cn": "方位词 / 动 / 趋向补语",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hạ",
+    "meaning_vi": "dưới; xuống; đặt ra; bổ ngữ xu hướng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dưới",
+      "xuống",
+      "đặt ra",
+      "bổ ngữ xu hướng"
+    ],
+    "short_definition_vi": "dưới; xuống; đặt ra; bổ ngữ xu hướng",
+    "textbook_focus_vi": "Chữ đa nghĩa: dưới/xuống/rời phương tiện/tan học/đặt ra/quả kết lưu lại.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "下",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưới/xuống/đặt ra",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Chữ đa nghĩa: dưới/xuống/rời phương tiện/tan học/đặt ra/quả kết lưu lại.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 下 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "上",
+        "pinyin": "",
+        "meaning_vi": "lên/trên",
+        "difference_vi": "Trái nghĩa cơ bản.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "下来",
+        "pinyin": "",
+        "meaning_vi": "xuống lại/ổn định lại",
+        "difference_vi": "Bổ ngữ xu hướng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "下去",
+        "pinyin": "",
+        "meaning_vi": "xuống ra xa/tiếp tục",
+        "difference_vi": "Khác hướng/trạng thái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "49961d74-d6f7-434c-bb63-079fc4f4244b",
+      "order": 1,
+      "zh": "下楼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e1aa509-88ec-4eb5-9cba-9e7b4187263b",
+      "order": 2,
+      "zh": "下车",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8865dc5f-7c41-4877-8970-9d64e7a60ebe",
+      "order": 3,
+      "zh": "下课",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6174296f-210b-460c-9073-7b301f874638",
+      "order": 4,
+      "zh": "坐下",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a5a8df4-ff41-426b-83f3-628fcd319265",
+      "order": 5,
+      "zh": "写下来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2b3d6e6-65a7-4a00-b504-a7c22e17a5cc",
+      "order": 6,
+      "zh": "下决心",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1ba23552-0811-43c4-9959-2385067f8d3a",
+      "order": 1,
+      "zh": "我把她说的话都写下来了。",
+      "pinyin": "",
+      "vi": "Tôi đã ghi lại hết lời cô ấy nói.",
+      "analysis_vi": "写下来 nhấn lưu giữ lại bằng chữ viết.",
+      "highlight": [
+        "下"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1fefa90e-29a3-4bd7-9a81-d8e4045d6aa9"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1ed199dd-76f7-4758-8e3b-76df8e5dbeb0",
+      "order": 1,
+      "rule_vi": "Không dịch 下 là “xuống” trong mọi cụm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "下雨 = xuống mưa",
+          "pinyin": "",
+          "vi": "Dịch máy sai.",
+          "note_vi": "下雨 là “mưa”.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "下决心 = hạ quyết tâm",
+          "pinyin": "",
+          "vi": "Cụm cố định.",
+          "note_vi": "Không dịch “xuống quyết tâm”.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "下",
+    "back": "dưới; xuống; đặt ra; bổ ngữ xu hướng",
+    "hint": "xià",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1fefa90e-29a3-4bd7-9a81-d8e4045d6aa9",
+    "source_lesson_vocab_id": null
+  }
+}

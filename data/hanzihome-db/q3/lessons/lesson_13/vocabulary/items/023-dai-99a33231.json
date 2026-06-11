@@ -1,0 +1,189 @@
+{
+  "id": "94227106-692b-464f-a23f-8bc1ad3f4a06",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "带",
+  "pinyin": "dài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "family"
+  ],
+  "meaning": {
+    "hanviet": "đái",
+    "meaning_vi": "mang, dẫn, đưa theo; chăm/nuôi/dạy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mang",
+      "dẫn",
+      "đưa theo",
+      "chăm"
+    ],
+    "short_definition_vi": "mang, dẫn, đưa theo; chăm/nuôi/dạy",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "带",
+        "lishu_vi": "đái",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mang/dẫn/chăm",
+        "modern_logic_vi": "Trong từ/cụm này, 带 góp phần vào nghĩa hiện đại: mang/dẫn/chăm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "带 cần học theo nghĩa hiện đại trong bài: mang, dẫn, đưa theo; chăm/nuôi/dạy.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 带孩子.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c364d615-0f35-4706-91a2-c1d5c7553305",
+      "order": 1,
+      "zh": "带孩子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45a096f6-8b8f-46d5-b697-2effad0daf77",
+      "order": 2,
+      "zh": "带大孩子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "206a884c-cbcf-452c-90d8-0c03d07d206b",
+      "order": 3,
+      "zh": "带学生",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a81a28fd-77d4-4ab0-bde8-b384363fabd7",
+      "order": 1,
+      "zh": "她一个人带三个孩子。",
+      "pinyin": "Tā yí ge rén dài sān ge háizi.",
+      "vi": "Cô ấy một mình chăm/nuôi ba đứa con.",
+      "analysis_vi": "带孩子 trong ngữ cảnh này là chăm/nuôi.",
+      "highlight": [
+        "带"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "94227106-692b-464f-a23f-8bc1ad3f4a06"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "db2656f9-4270-48db-b0ee-8bfa5e06600e",
+      "order": 2,
+      "zh": "父亲去世以后，母亲一个人把孩子带大了。",
+      "pinyin": "Fùqīn qùshì yǐhòu, mǔqīn yí ge rén bǎ háizi dài dà le.",
+      "vi": "Sau khi cha qua đời, mẹ một mình nuôi con khôn lớn.",
+      "analysis_vi": "把孩子带大了 là nuôi đến kết quả trưởng thành.",
+      "highlight": [
+        "带"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "94227106-692b-464f-a23f-8bc1ad3f4a06"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "带娃 / 带孩子 là khẩu ngữ hiện đại phổ biến cho chăm/trông con.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "27898881-7f2d-4090-be6d-0a7199a6390c",
+      "order": 1,
+      "rule_vi": "Dùng 带 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "带",
+    "back": "mang, dẫn, đưa theo; chăm/nuôi/dạy",
+    "hint": "dài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "94227106-692b-464f-a23f-8bc1ad3f4a06",
+    "source_lesson_vocab_id": null
+  }
+}

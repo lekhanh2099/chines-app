@@ -1,0 +1,326 @@
+{
+  "id": "a6604e5d-0348-403c-ad7e-5365ce65d3ac",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "猜",
+  "pinyin": "cāi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": "khẩu ngữ/tự nhiên",
+  "meaning": {
+    "hanviet": "Sai",
+    "meaning_vi": "đoán",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đoán"
+    ],
+    "short_definition_vi": "đoán",
+    "textbook_focus_vi": "đoán",
+    "register_vi": "suy đoán",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "猜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó/thú",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "犭 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó/thú",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đoán",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Chưa biết chắc nên phải đoán từ dấu hiệu bên ngoài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "猜测",
+        "pinyin": "",
+        "meaning_vi": "phỏng đoán",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "估计",
+        "pinyin": "",
+        "meaning_vi": "ước tính/đoán chừng",
+        "difference_vi": "dựa vào tình hình hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "判断",
+        "pinyin": "",
+        "meaning_vi": "phán đoán",
+        "difference_vi": "có lý do rõ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "知道",
+        "pinyin": "",
+        "meaning_vi": "biết chắc",
+        "difference_vi": "trái với đoán",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "猜",
+        "right": "知道",
+        "meaning_vi": "đoán ↔ biết chắc",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "18bfa543-9a8a-408c-a486-80cbe411c610",
+      "order": 1,
+      "zh": "猜一猜",
+      "pinyin": "",
+      "vi": "đoán thử xem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e31c6b9b-77f1-4c35-a5da-b1a8b90b06eb",
+      "order": 2,
+      "zh": "猜出来",
+      "pinyin": "",
+      "vi": "đoán ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f11ef4ef-f475-420a-85d5-91fcd678a7bf",
+      "order": 3,
+      "zh": "猜不出来",
+      "pinyin": "",
+      "vi": "đoán không ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd1bc9bc-a7d6-411a-bf7e-e671b0c351d7",
+      "order": 4,
+      "zh": "猜对了",
+      "pinyin": "",
+      "vi": "đoán đúng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e7937282-65b4-4be6-84a7-db405cb610da",
+      "order": 5,
+      "zh": "猜错了",
+      "pinyin": "",
+      "vi": "đoán sai rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e402685-34fe-4fd8-9bac-1fac065d9d32",
+      "order": 6,
+      "zh": "猜谜语",
+      "pinyin": "",
+      "vi": "đoán câu đố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b0f0dc91-0521-4e72-a5be-aba57963dfc9",
+      "order": 1,
+      "zh": "你猜，这个人是谁？",
+      "pinyin": "Nǐ cāi, zhège rén shì shéi?",
+      "vi": "Bạn đoán xem, người này là ai?",
+      "analysis_vi": "你猜 là khẩu ngữ tự nhiên.",
+      "highlight": [
+        "猜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6604e5d-0348-403c-ad7e-5365ce65d3ac"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b09bbc3d-9a38-445c-b19c-1a45c90c7131",
+      "order": 2,
+      "zh": "演员的动作太快了，我猜不出来是什么意思。",
+      "pinyin": "Yǎnyuán de dòngzuò tài kuài le, wǒ cāi bù chūlai shì shénme yìsi.",
+      "vi": "Động tác của diễn viên nhanh quá, tôi đoán không ra là nghĩa gì.",
+      "analysis_vi": "猜不出来 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "猜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6604e5d-0348-403c-ad7e-5365ce65d3ac"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1c8bc55a-9968-47a6-b503-c20df2eaa364",
+      "order": 3,
+      "zh": "只要你先了解一点儿京剧，就能猜出这些武打动作的大概意思。",
+      "pinyin": "Zhǐyào nǐ xiān liǎojiě yìdiǎnr Jīngjù, jiù néng cāi chū zhèxiē wǔdǎ dòngzuò de dàgài yìsi.",
+      "vi": "Chỉ cần tìm hiểu trước một chút về Kinh kịch, bạn sẽ đoán ra đại khái ý nghĩa động tác.",
+      "analysis_vi": "只要……就……; 猜出 nhấn kết quả đoán ra.",
+      "highlight": [
+        "猜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6604e5d-0348-403c-ad7e-5365ce65d3ac"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khi xem hí khúc, người mới có thể nhìn động tác để đoán ý dù nghe không hiểu lời hát.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dd0d68e9-2e70-4a99-b643-19adffce5a5a",
+      "order": 1,
+      "rule_vi": "猜 là đoán chưa chắc; đừng dùng thay cho 觉得 trong mọi câu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "猜",
+    "back": "đoán",
+    "hint": "cāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a6604e5d-0348-403c-ad7e-5365ce65d3ac",
+    "source_lesson_vocab_id": null
+  }
+}

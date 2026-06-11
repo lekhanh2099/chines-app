@@ -1,0 +1,417 @@
+{
+  "id": "72c47572-1ef5-47f8-9278-8c831a4d4ec6",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "小伙子 / 小伙儿",
+  "pinyin": "xiǎohuǒzi / xiǎohuǒr",
+  "pos": {
+    "raw_vi": "Danh từ / cách gọi thân mật",
+    "raw_cn": "名 / 称呼",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Tiểu hỏa tử",
+    "meaning_vi": "chàng trai, thanh niên nam",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chàng trai, thanh niên nam"
+    ],
+    "short_definition_vi": "chàng trai, thanh niên nam",
+    "textbook_focus_vi": "chàng trai, thanh niên nam",
+    "register_vi": "khẩu ngữ, thân mật",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "小",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "小",
+            "hanviet": "tiểu",
+            "meaning_vi": "nhỏ, bé",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhỏ, trẻ, mức độ ít",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "伙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành vi người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt, ánh sáng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bạn đồng hành, người trong nhóm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người, hành vi người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ, hậu tố danh từ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, trẻ, hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ, hậu tố danh từ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "儿",
+            "hanviet": "nhi",
+            "meaning_vi": "trẻ nhỏ, hậu tố nhi hóa",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trẻ, con; hậu tố nhi hóa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "小 = nhỏ/trẻ; 伙 = người trong nhóm/bạn đồng hành; 子/儿 là hậu tố. Cả cụm chỉ nam thanh niên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "男生",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nam sinh/bạn nam trong môi trường học đường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "男人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đàn ông, trưởng thành hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "男孩子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "con trai/bé trai hoặc nam trẻ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "帅哥",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "anh đẹp trai, khẩu ngữ/xã giao",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "姑娘",
+        "right": "小伙子",
+        "meaning_vi": "cô gái ↔ chàng trai",
+        "note_vi": "Cặp đối chiếu giới tính trong khẩu ngữ.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "adaece22-c4ec-4385-a982-f6cdaec51e2f",
+      "order": 1,
+      "zh": "一个小伙子",
+      "pinyin": "",
+      "vi": "một chàng trai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f89f2918-053f-4d58-a11f-ab0e08e24ac2",
+      "order": 2,
+      "zh": "那个小伙儿",
+      "pinyin": "",
+      "vi": "cậu/chàng trai kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d71d144-f70f-4041-bfec-a96a06082d05",
+      "order": 3,
+      "zh": "年轻小伙子",
+      "pinyin": "",
+      "vi": "chàng trai trẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1a0a72e-5c35-4d46-b633-fb8b15a11670",
+      "order": 4,
+      "zh": "热情的小伙子",
+      "pinyin": "",
+      "vi": "chàng trai nhiệt tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "519cc3ed-ed9c-429a-9b7f-d1026abc0a2b",
+      "order": 5,
+      "zh": "帅气的小伙子",
+      "pinyin": "",
+      "vi": "chàng trai đẹp trai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "525c6ba6-0cd9-4dc4-81e0-d6ea247f99c8",
+      "order": 6,
+      "zh": "小伙儿不错",
+      "pinyin": "",
+      "vi": "cậu này được đấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "55a6ca34-2157-4229-946e-cac05f17dda2",
+      "order": 1,
+      "zh": "那个小伙子是新郎的朋友。",
+      "pinyin": "Nà ge xiǎohuǒzi shì xīnláng de péngyou.",
+      "vi": "Chàng trai kia là bạn của chú rể.",
+      "analysis_vi": "小伙子 chỉ nam thanh niên, hợp ngữ cảnh hôn lễ.",
+      "highlight": [
+        "小伙子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "72c47572-1ef5-47f8-9278-8c831a4d4ec6"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a81bc0c8-b452-4f9b-8cc9-185e3ad86e51",
+      "order": 2,
+      "zh": "门口站着一个小伙儿，手里拿着一台摄像机。",
+      "pinyin": "Ménkǒu zhànzhe yí ge xiǎohuǒr, shǒu lǐ názhe yì tái shèxiàngjī.",
+      "vi": "Ở cửa có một chàng trai đang đứng, trong tay cầm một máy quay.",
+      "analysis_vi": "站着 và 拿着 đều là V + 着 miêu tả trạng thái.",
+      "highlight": [
+        "小伙儿",
+        "站着",
+        "拿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "72c47572-1ef5-47f8-9278-8c831a4d4ec6"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "f9326afc-5e98-4627-a736-83a8ccd7b50b",
+      "order": 1,
+      "rule_vi": "小伙子 không phải từ trang trọng; văn bản chính thức nên dùng 青年男子 hoặc 男青年.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "小伙子 / 小伙儿",
+    "back": "chàng trai, thanh niên nam",
+    "hint": "xiǎohuǒzi / xiǎohuǒr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Người lớn tuổi gọi nam thanh niên là 小伙子 khá tự nhiên; người ngang tuổi dùng cần xem quan hệ vì có thể nghe như đứng ở vị thế người lớn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "72c47572-1ef5-47f8-9278-8c831a4d4ec6",
+    "source_lesson_vocab_id": null
+  }
+}

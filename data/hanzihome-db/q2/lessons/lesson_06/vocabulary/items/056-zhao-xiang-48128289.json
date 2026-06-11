@@ -1,0 +1,54 @@
+{
+  "id": "synthetic_vocab_2dc8982208c56b5c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "照相",
+  "pinyin": "zhào xiàng",
+  "meaning_vi": "chụp ảnh",
+  "pos": "Động từ li hợp",
+  "pos_detail": {
+    "vi": "Động từ li hợp",
+    "cn": "动宾式离合词",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": true,
+    "separable_type": "động-tân / 离合词",
+    "structure_vi": "động từ 照 + tân ngữ 相",
+    "usage_note_vi": "Có thể nói 照了很多相 / 照照相; nghĩa là chụp ảnh. Đây là động-tân li hợp: 照 + 相.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
+    "type": "vocabulary_item",
+    "order": 8,
+    "hanzi": "照相",
+    "pinyin": "zhào xiàng",
+    "meaning_vi": "chụp ảnh",
+    "meaning_en": "",
+    "pos": "Động từ li hợp",
+    "tags": [
+      "supplementary_vocab",
+      "reading"
+    ],
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ li hợp",
+      "cn": "动宾式离合词",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": true,
+      "separable_type": "động-tân / 离合词",
+      "structure_vi": "động từ 照 + tân ngữ 相",
+      "usage_note_vi": "Có thể nói 照了很多相 / 照照相; nghĩa là chụp ảnh. Đây là động-tân li hợp: 照 + 相.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

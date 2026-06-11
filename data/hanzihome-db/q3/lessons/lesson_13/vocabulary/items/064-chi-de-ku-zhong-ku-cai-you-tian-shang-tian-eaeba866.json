@@ -1,0 +1,419 @@
+{
+  "id": "24abd142-22fe-426c-923c-e4ad6848f27c",
+  "type": "deep_vocabulary_item",
+  "order": 64,
+  "hanzi": "吃得苦中苦，才有甜上甜",
+  "pinyin": "chī de kǔ zhōng kǔ, cái yǒu tián shàng tián",
+  "pos": {
+    "raw_vi": "Tục ngữ",
+    "raw_cn": "谚语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "B+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "proverb"
+  ],
+  "meaning": {
+    "hanviet": "ngật đắc khổ trung khổ, tài hữu điềm thượng điềm",
+    "meaning_vi": "chịu được cái khổ trong khổ mới có cái ngọt trên ngọt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chịu được cái khổ trong khổ mới có cái ngọt trên ngọt"
+    ],
+    "short_definition_vi": "chịu được cái khổ trong khổ mới có cái ngọt trên ngọt",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吃",
+        "lishu_vi": "ngật",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ăn/chịu",
+        "modern_logic_vi": "Trong từ/cụm này, 吃 góp phần vào nghĩa hiện đại: ăn/chịu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "đắc",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phải/được",
+        "modern_logic_vi": "Trong từ/cụm này, 得 góp phần vào nghĩa hiện đại: phải/được.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "苦",
+        "lishu_vi": "khổ",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "艹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ/cây cỏ",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ/cây cỏ",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ/cây cỏ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "古",
+            "hanviet": "cổ",
+            "meaning_vi": "xưa/cũ",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khổ/đắng",
+        "modern_logic_vi": "Trong từ/cụm này, 苦 góp phần vào nghĩa hiện đại: khổ/đắng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "中",
+        "lishu_vi": "trung",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giữa/trung",
+        "modern_logic_vi": "Trong từ/cụm này, 中 góp phần vào nghĩa hiện đại: giữa/trung.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "苦",
+        "lishu_vi": "khổ",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "艹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ/cây cỏ",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ/cây cỏ",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ/cây cỏ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "古",
+            "hanviet": "cổ",
+            "meaning_vi": "xưa/cũ",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khổ/đắng",
+        "modern_logic_vi": "Trong từ/cụm này, 苦 góp phần vào nghĩa hiện đại: khổ/đắng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "才",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 才 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "有",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 有 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "甜",
+        "lishu_vi": "điềm",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngọt",
+        "modern_logic_vi": "Trong từ/cụm này, 甜 góp phần vào nghĩa hiện đại: ngọt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "上",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 上 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "甜",
+        "lishu_vi": "điềm",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngọt",
+        "modern_logic_vi": "Trong từ/cụm này, 甜 góp phần vào nghĩa hiện đại: ngọt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "吃得苦中苦，才有甜上甜 cần học theo nghĩa hiện đại trong bài: chịu được cái khổ trong khổ mới có cái ngọt trên ngọt.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 吃苦.",
+    "warning_vi": "Không tách nghĩa từng chữ nếu là tên riêng, tục ngữ hoặc cấu trúc cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "38514ae2-6605-4711-8a21-920aa1f616d5",
+      "order": 1,
+      "zh": "吃苦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eddccec8-df5b-4e36-b776-1665f34beb83",
+      "order": 2,
+      "zh": "能吃苦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5fa1a361-24cc-4e3a-837c-c5685f572a29",
+      "order": 3,
+      "zh": "苦中苦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "782eae4d-ffc0-422d-95c8-61ca383737ef",
+      "order": 1,
+      "zh": "他妈妈常说：“吃得苦中苦，才有甜上甜。”",
+      "pinyin": "Tā māma cháng shuō: “Chī de kǔ zhōng kǔ, cái yǒu tián shàng tián.”",
+      "vi": "Mẹ anh ấy thường nói: chịu khổ lớn mới có thành quả lớn.",
+      "analysis_vi": "Câu tục ngữ thường đặt trong lời khuyên.",
+      "highlight": [
+        "吃得苦中苦，才有甜上甜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24abd142-22fe-426c-923c-e4ad6848f27c"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "68be33d3-a996-4169-8f65-123274a890fe",
+      "order": 2,
+      "zh": "徐霞客一路翻山涉水，吃了很多苦，后来才写出了《徐霞客游记》。",
+      "pinyin": "Xú Xiákè yílù fān shān shè shuǐ, chī le hěn duō kǔ, hòulái cái xiě chū le “Xú Xiákè Yóujì”.",
+      "vi": "Từ Hà Khách vượt núi lội nước, chịu nhiều khổ, sau này mới viết ra Từ Hà Khách du ký.",
+      "analysis_vi": "吃苦 là chịu khổ, không phải ăn đắng.",
+      "highlight": [
+        "吃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24abd142-22fe-426c-923c-e4ad6848f27c"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu này hợp để nói rèn luyện/học tập, nhưng không nên dùng để hợp lý hóa chịu đựng độc hại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "254e5980-ec4b-4973-a2be-06910284d0d4",
+      "order": 1,
+      "rule_vi": "Dùng 吃得苦中苦，才有甜上甜 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吃得苦中苦，才有甜上甜",
+    "back": "chịu được cái khổ trong khổ mới có cái ngọt trên ngọt",
+    "hint": "chī de kǔ zhōng kǔ, cái yǒu tián shàng tián",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "24abd142-22fe-426c-923c-e4ad6848f27c",
+    "source_lesson_vocab_id": null
+  }
+}

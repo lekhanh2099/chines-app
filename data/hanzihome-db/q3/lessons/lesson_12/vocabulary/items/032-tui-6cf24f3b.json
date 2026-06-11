@@ -1,0 +1,267 @@
+{
+  "id": "dec81982-89d8-428f-b69c-7bfe96946445",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "推",
+  "pinyin": "tuī",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thôi",
+    "meaning_vi": "đẩy; suy ra; đề cử trong từ ghép",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đẩy; suy ra; đề cử trong từ ghép"
+    ],
+    "short_definition_vi": "Dùng tay/lực đẩy vật đi; mở rộng trong 推迟, 推荐.",
+    "textbook_focus_vi": "Bài này ưu tiên 推自行车.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "推",
+        "lishu_vi": "thôi",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay/thao tác",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay/thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay/thao tác",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đẩy",
+        "modern_logic_vi": "đẩy",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 扌 nên liên quan thao tác tay.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拉",
+        "pinyin": "lā",
+        "meaning_vi": "kéo",
+        "difference_vi": "推 là đẩy; 拉 là kéo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d068b21e-2c46-4274-b68f-5015b4078c66",
+      "order": 1,
+      "zh": "推门",
+      "pinyin": "",
+      "vi": "đẩy cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f5445d2-5bad-4fe9-b80c-d043a079c392",
+      "order": 2,
+      "zh": "推车",
+      "pinyin": "",
+      "vi": "đẩy xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17d2b218-8b59-40cc-a1f3-bac28c302150",
+      "order": 3,
+      "zh": "推到旁边",
+      "pinyin": "",
+      "vi": "đẩy sang bên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9514a7b2-0b01-4b1c-ad1f-cb5c5deec6fe",
+      "order": 4,
+      "zh": "推荐一本书",
+      "pinyin": "",
+      "vi": "giới thiệu sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6d2ab966-49e6-491f-ae83-ca8d2ee2e696",
+      "order": 1,
+      "zh": "他推开门，走了进去。",
+      "pinyin": "",
+      "vi": "Anh ấy đẩy cửa ra rồi bước vào.",
+      "analysis_vi": "推开 là kết quả mở ra.",
+      "highlight": [
+        "推"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dec81982-89d8-428f-b69c-7bfe96946445"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4204d493-a88f-496e-9d9f-a5d80728a817",
+      "order": 2,
+      "zh": "他把横在路中间的自行车推到旁边去。",
+      "pinyin": "",
+      "vi": "Anh ấy đẩy chiếc xe chắn ngang đường sang bên cạnh.",
+      "analysis_vi": "把 + O + 推到 + địa điểm.",
+      "highlight": [
+        "推"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dec81982-89d8-428f-b69c-7bfe96946445"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2b17c30c-b251-477f-9ae5-fdcc8cef9878",
+      "order": 1,
+      "rule_vi": "推荐 mới là giới thiệu/đề cử; không dùng 推 tùy tiện trong văn chuẩn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "推荐 mới là giới thiệu/đề cử; không dùng 推 tùy tiện trong văn chuẩn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "推",
+    "back": "đẩy; suy ra; đề cử trong từ ghép",
+    "hint": "tuī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dec81982-89d8-428f-b69c-7bfe96946445",
+    "source_lesson_vocab_id": null
+  }
+}

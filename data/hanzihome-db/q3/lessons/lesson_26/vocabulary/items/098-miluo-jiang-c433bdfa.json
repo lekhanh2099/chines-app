@@ -1,0 +1,30 @@
+{
+  "id": "synthetic_vocab_a6faa1e58ac2db32",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "汨罗江",
+  "pinyin": "Mìluó Jiāng",
+  "meaning_vi": "sông Mịch La",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "113f1c69-d782-4d83-aeef-a34467e0dfb0",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "113f1c69-d782-4d83-aeef-a34467e0dfb0",
+    "type": "proper_noun",
+    "order": 12,
+    "hanzi": "汨罗江",
+    "pinyin": "Mìluó Jiāng",
+    "meaning_vi": "sông Mịch La",
+    "meaning_en": "Miluo River",
+    "source_origin": "textbook",
+    "page_start": 229,
+    "page_end": 229,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

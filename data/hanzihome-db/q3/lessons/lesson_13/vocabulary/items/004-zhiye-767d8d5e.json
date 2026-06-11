@@ -1,0 +1,239 @@
+{
+  "id": "53d24503-8f2a-492f-bbb4-eb36e5f47724",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "职业",
+  "pinyin": "zhíyè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "identity",
+    "work"
+  ],
+  "meaning": {
+    "hanviet": "chức nghiệp",
+    "meaning_vi": "nghề nghiệp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghề nghiệp"
+    ],
+    "short_definition_vi": "nghề nghiệp",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "职",
+        "lishu_vi": "chức",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chức trách/nghề",
+        "modern_logic_vi": "Trong từ/cụm này, 职 góp phần vào nghĩa hiện đại: chức trách/nghề.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "业",
+        "lishu_vi": "nghiệp",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghề/nghiệp",
+        "modern_logic_vi": "Trong từ/cụm này, 业 góp phần vào nghĩa hiện đại: nghề/nghiệp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "职业 cần học theo nghĩa hiện đại trong bài: nghề nghiệp.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 职业选择.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "工作",
+        "pinyin": "gōngzuò",
+        "meaning_vi": "công việc",
+        "difference_vi": "rộng và đời thường hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "专业",
+        "pinyin": "zhuānyè",
+        "meaning_vi": "chuyên ngành",
+        "difference_vi": "lĩnh vực học/chuyên môn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "447b50c4-7029-41c4-b599-59a772d81412",
+      "order": 1,
+      "zh": "职业选择",
+      "pinyin": "zhíyè xuǎnzé",
+      "vi": "lựa chọn nghề nghiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0cd039e-6764-40fe-839a-d597e8f3b08d",
+      "order": 2,
+      "zh": "职业发展",
+      "pinyin": "zhíyè fāzhǎn",
+      "vi": "phát triển nghề nghiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "614ca107-c640-4f11-b17f-b46933064ff6",
+      "order": 3,
+      "zh": "理想的职业",
+      "pinyin": "lǐxiǎng de zhíyè",
+      "vi": "nghề nghiệp lý tưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8c1df626-eb2a-43ca-aa8d-4156dda228fb",
+      "order": 1,
+      "zh": "你的职业是什么？",
+      "pinyin": "Nǐ de zhíyè shì shénme?",
+      "vi": "Nghề nghiệp của bạn là gì?",
+      "analysis_vi": "职业 hỏi nghề nghiệp.",
+      "highlight": [
+        "职业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53d24503-8f2a-492f-bbb4-eb36e5f47724"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3a9fadc1-308b-4fd9-841a-c7a3a6e1c568",
+      "order": 2,
+      "zh": "这个家庭以种地为主，职业比较单一。",
+      "pinyin": "Zhège jiātíng yǐ zhòngdì wéi zhǔ, zhíyè bǐjiào dānyī.",
+      "vi": "Gia đình này chủ yếu làm ruộng, nghề nghiệp khá đơn nhất.",
+      "analysis_vi": "以种地为主 nêu sinh kế chính.",
+      "highlight": [
+        "职业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53d24503-8f2a-492f-bbb4-eb36e5f47724"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong hồ sơ Trung Quốc, 职业 có thể ghi ngắn: 学生、老师、工人、农民、医生、编辑.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "25a76e11-3287-44d3-9737-2501dd2b8fc2",
+      "order": 1,
+      "rule_vi": "Không nhầm 职业 với 工作/专业.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的职业在学校。",
+          "pinyin": "",
+          "vi": "Sai logic: nghề không “ở trường”.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的职业是老师。",
+          "pinyin": "",
+          "vi": "Nghề của tôi là giáo viên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "职业",
+    "back": "nghề nghiệp",
+    "hint": "zhíyè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53d24503-8f2a-492f-bbb4-eb36e5f47724",
+    "source_lesson_vocab_id": null
+  }
+}

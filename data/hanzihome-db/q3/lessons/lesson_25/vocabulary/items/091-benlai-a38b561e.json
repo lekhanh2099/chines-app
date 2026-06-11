@@ -1,0 +1,186 @@
+{
+  "id": "b8727b1e-8be2-43f0-b0cd-ca6d3dd90278",
+  "type": "deep_vocabulary_item",
+  "order": 91,
+  "hanzi": "本来",
+  "pinyin": "běnlái",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "bản lai",
+    "meaning_vi": "vốn dĩ, ban đầu, lẽ ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vốn dĩ",
+      "ban đầu",
+      "lẽ ra"
+    ],
+    "short_definition_vi": "vốn dĩ, ban đầu, lẽ ra",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "本",
+        "lishu_vi": "bản",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gốc",
+        "modern_logic_vi": "Trong từ này, 本 góp phần vào nghĩa hiện đại: gốc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "lai",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến",
+        "modern_logic_vi": "Trong từ này, 来 góp phần vào nghĩa hiện đại: đến.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "本来 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 本来就是.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 原来 trong câu phát hiện: 原来你在这里！"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2e8d76ae-95a6-46cf-96ad-e639ae21081d",
+      "order": 1,
+      "zh": "本来就是",
+      "pinyin": "",
+      "vi": "vốn dĩ là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77627729-c028-4c6f-8c33-8ff03ccc897d",
+      "order": 2,
+      "zh": "本来以为",
+      "pinyin": "",
+      "vi": "ban đầu tưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3de3c791-d7a5-4829-a22e-ec2b9dd3e42f",
+      "order": 3,
+      "zh": "本来想……",
+      "pinyin": "",
+      "vi": "ban đầu định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fa71ace5-2d73-41c2-98e4-a49e065b03da",
+      "order": 1,
+      "zh": "我本来想告诉你，可是后来忘了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 本来 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 本来; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "本来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8727b1e-8be2-43f0-b0cd-ca6d3dd90278"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 本来 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "57cbd649-5e46-4711-a263-537e9184f22f",
+      "order": 1,
+      "rule_vi": "Không nhầm 原来 trong câu phát hiện: 原来你在这里！",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "本来",
+    "back": "vốn dĩ, ban đầu, lẽ ra",
+    "hint": "běnlái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b8727b1e-8be2-43f0-b0cd-ca6d3dd90278",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "id": "d7d9b4ee-0b9a-4057-96e8-6725f9d64520",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "兴旺",
+  "pinyin": "xīngwàng",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ trạng thái",
+    "raw_cn": "形/状态动词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Hưng vượng",
+    "meaning_vi": "hưng thịnh, phát đạt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hưng thịnh, phát đạt"
+    ],
+    "short_definition_vi": "hưng thịnh, phát đạt",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "khẩu ngữ, tin nhắn, đối thoại tự nhiên.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "兴",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hưng khởi, phát triển; vui trong 高兴",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "旺",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "王",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc/vật quý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vượng, thịnh",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "兴 là hưng khởi, phát triển lên. 旺 là vượng, thịnh, mạnh. → 兴旺 = phát triển mạnh và thịnh vượng. Cảnh báo: với cửa hàng/kinh doanh, cụm tự nhiên hơn là 生意兴旺. Không nên máy móc nói 行业兴旺 trong mọi ngữ cảnh, dù 行业兴旺发展 vẫn hiểu được ở văn viết. 哦 là thán từ/ngữ khí từ, không nên chiết tự. Nó biểu thị phản ứng của người nghe: hiểu ra, ngạc nhiên, tiếp nhận thông tin, hoặc làm câu mềm hơn. Cảnh báo: 哦 trong tin nhắn nếu dùng một mình “哦” đôi khi nghe lạnh nhạt, giống “ừ” cụt.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "兴旺",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hưng thịnh, phát đạt, màu lời chúc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发达",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phát triển, tiên tiến/giàu mạnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "繁荣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phồn vinh, thịnh vượng, thường nói kinh tế/xã hội.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "成功",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thành công.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ồ/à/ờ, phản ứng ngắn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "啊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "à/á, cảm thán rộng hơn, cũng làm câu mềm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "嗯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ừ/ừm, biểu thị đã nghe/đồng ý/suy nghĩ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哎呀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ôi trời/á, cảm xúc mạnh hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 生意兴旺 là chúc buôn bán phát đạt; 经济繁荣 là kinh tế phồn vinh.",
+      "→ Phân biệt nhanh: hiểu ra nói 哦，原来是这样; đồng ý nhẹ nói 嗯，好 tự nhiên hơn chỉ gửi 哦."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f865e33a-7b27-4ecb-ba1c-1c2956021963",
+      "order": 1,
+      "zh": "生意兴旺",
+      "pinyin": "",
+      "vi": "buôn bán phát đạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38da3485-f5b2-42bf-a12e-38cf83848d4e",
+      "order": 2,
+      "zh": "事业兴旺",
+      "pinyin": "",
+      "vi": "sự nghiệp hưng thịnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9fde38d-58df-499e-a1bd-2ab366cda9da",
+      "order": 3,
+      "zh": "家业兴旺",
+      "pinyin": "",
+      "vi": "gia nghiệp hưng vượng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "81fe5df7-eca8-4ebc-8278-2ef978622113",
+      "order": 4,
+      "zh": "国家兴旺",
+      "pinyin": "",
+      "vi": "đất nước hưng thịnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5eb677cd-acfe-4111-95ab-e325f8ed11b8",
+      "order": 5,
+      "zh": "兴旺发达",
+      "pinyin": "",
+      "vi": "hưng thịnh phát đạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8791645f-82d5-42c8-857b-859e79bd660c",
+      "order": 6,
+      "zh": "哦，原来是这样。",
+      "pinyin": "",
+      "vi": "À, hóa ra là vậy.",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00fbb0ff-4fc3-4c23-808b-e119ea93b3fb",
+      "order": 7,
+      "zh": "哦，我明白了。",
+      "pinyin": "",
+      "vi": "À, tôi hiểu rồi.",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "04850194-72da-4132-a030-0dc5d6da122d",
+      "order": 8,
+      "zh": "哦？真的吗？",
+      "pinyin": "",
+      "vi": "Ồ? Thật không?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "44e406c8-dcae-414c-b15b-86614b3e2b72",
+      "order": 1,
+      "zh": "这副对联儿上写着“生意兴旺”。",
+      "pinyin": "Zhè fù duìliánr shang xiězhe “Shēngyì xīngwàng”.",
+      "vi": "Trên bộ câu đối này viết “Buôn bán phát đạt”.",
+      "analysis_vi": "对联儿上写着…… là câu tồn hiện; 生意兴旺 là lời chúc rất quen.",
+      "highlight": [
+        "兴旺"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "d7d9b4ee-0b9a-4057-96e8-6725f9d64520"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "481b194a-5145-44ad-8164-bde8426d490e",
+      "order": 2,
+      "zh": "春节前，店主把“生意兴旺”贴在门上。",
+      "pinyin": "Chūnjié qián, diànzhǔ bǎ “Shēngyì xīngwàng” tiē zài mén shang.",
+      "vi": "Trước Tết, chủ tiệm dán “Buôn bán phát đạt” lên cửa.",
+      "analysis_vi": "把……贴在门上 là câu chữ 把 có vị trí rõ.",
+      "highlight": [
+        "兴旺"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "d7d9b4ee-0b9a-4057-96e8-6725f9d64520"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bf55e36b-5c93-4b53-bb98-3cbedc844ae7",
+      "order": 3,
+      "zh": "人们希望新的一年事业兴旺、生活幸福。",
+      "pinyin": "Rénmen xīwàng xīn de yì nián shìyè xīngwàng, shēnghuó xìngfú.",
+      "vi": "Mọi người hy vọng năm mới sự nghiệp hưng thịnh, cuộc sống hạnh phúc.",
+      "analysis_vi": "事业兴旺 / 生活幸福 là hai vế lời chúc cân đối.",
+      "highlight": [
+        "兴旺"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "d7d9b4ee-0b9a-4057-96e8-6725f9d64520"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 兴旺",
+    "content_vi": "Các cửa hàng người Hoa/Trung Quốc dịp Tết rất thích dán lời chúc như 生意兴隆, 生意兴旺, 财源广进. Trong đó 生意兴隆 cũng rất phổ biến, nghĩa là làm ăn phát đạt, buôn bán thịnh vượng. Trong nhắn tin tiếng Trung, chỉ trả lời 哦 đôi khi bị hiểu là lạnh nhạt hoặc không mặn mà, giống tiếng Việt trả lời “ờ” cụt. Nếu muốn lịch sự/thân thiện hơn, nên viết 哦哦，好的 hoặc 嗯嗯，明白了.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d736d428-5d38-42a6-9ac0-4c2bc8375db7",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 兴旺 cho cảm xúc cá nhân. Không tự nhiên: 我今天很兴旺。 Tự nhiên: 生意兴旺。 Shēngyì xīngwàng. Buôn bán phát đạt. 事业兴旺。 Shìyè xīngwàng. Sự nghiệp hưng thịnh. 哦 – ò / ó / o – ồ, à, ờ; ra là vậy Thán từ / Trợ từ ngữ khí 【叹词/语气词】 Lỗi sai phổ biến: Dùng…",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "兴旺",
+    "back": "hưng thịnh, phát đạt",
+    "hint": "xīngwàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d7d9b4ee-0b9a-4057-96e8-6725f9d64520",
+    "source_lesson_vocab_id": null
+  }
+}

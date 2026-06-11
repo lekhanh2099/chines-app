@@ -1,0 +1,163 @@
+{
+  "id": "e41bcc92-7c0d-4adf-b516-d347eaf1e3b4",
+  "type": "deep_vocabulary_item",
+  "order": 79,
+  "hanzi": "还得",
+  "pinyin": "hái děi",
+  "pos": {
+    "raw_vi": "Cụm cố định",
+    "raw_cn": "副词+助动词",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Nghĩa vụ và hệ quả"
+  ],
+  "meaning": {
+    "hanviet": "Hoàn đắc",
+    "meaning_vi": "còn phải, vẫn phải",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "còn phải",
+      "vẫn phải"
+    ],
+    "short_definition_vi": "còn phải, vẫn phải",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: còn phải, vẫn phải.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Nghĩa vụ và hệ quả",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "还",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "还得 trong bài được học theo nghĩa trọng tâm: còn phải, vẫn phải.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: còn phải, vẫn phải.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8295eaad-5921-4a1f-ac61-dcffef94179f",
+      "order": 1,
+      "zh": "这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: còn phải, vẫn phải",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3dfe6856-d1ad-4aed-9d99-a1b58c28ceff",
+      "order": 1,
+      "zh": "这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “还得” = còn phải, vẫn phải.",
+      "analysis_vi": "Câu này dùng “还得” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "还得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e41bcc92-7c0d-4adf-b516-d347eaf1e3b4"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “还得” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a00413fd-7172-41a4-9b9e-631b829586f6",
+      "order": 1,
+      "rule_vi": "Cần dùng “还得” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "还得",
+    "back": "còn phải, vẫn phải",
+    "hint": "hái děi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Nghĩa vụ và hệ quả"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e41bcc92-7c0d-4adf-b516-d347eaf1e3b4",
+    "source_lesson_vocab_id": null
+  }
+}

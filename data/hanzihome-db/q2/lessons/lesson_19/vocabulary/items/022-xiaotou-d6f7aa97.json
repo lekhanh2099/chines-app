@@ -1,0 +1,385 @@
+{
+  "id": "5ca4cf24-82d5-49a1-b813-a36b55a32e1e",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "小偷",
+  "pinyin": "xiǎotōu",
+  "pos": {
+    "raw_vi": "danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_19",
+    "theft",
+    "person"
+  ],
+  "meaning": {
+    "hanviet": "Tiểu thâu",
+    "meaning_vi": "tên trộm, kẻ trộm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tên trộm, kẻ trộm"
+    ],
+    "short_definition_vi": "tên trộm, kẻ trộm",
+    "textbook_focus_vi": "Tác nhân trong câu bị động 被小偷偷走了.",
+    "register_vi": "đời sống",
+    "usage_domain_vi": "trộm cắp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "小",
+        "lishu_vi": "tiểu",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhỏ",
+        "modern_logic_vi": "小 = nhỏ, ít.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "偷",
+        "lishu_vi": "thâu",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "俞",
+            "hanviet": "du",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trộm, lén",
+        "modern_logic_vi": "偷 = trộm/lấy lén.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "小偷 = người trộm đồ, thường là trộm nhỏ/trộm vặt, không phải cướp bạo lực.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "扒手",
+        "pinyin": "",
+        "meaning_vi": "kẻ móc túi",
+        "difference_vi": "Cụ thể hơn ở nơi đông người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小贼",
+        "pinyin": "",
+        "meaning_vi": "tên trộm nhỏ",
+        "difference_vi": "Khẩu ngữ, sắc thái khinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "强盗",
+        "pinyin": "",
+        "meaning_vi": "kẻ cướp",
+        "difference_vi": "Bạo lực/đe dọa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "骗子",
+        "pinyin": "",
+        "meaning_vi": "kẻ lừa đảo",
+        "difference_vi": "Dùng thủ đoạn/lời nói.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "偷",
+        "pinyin": "",
+        "meaning_vi": "trộm",
+        "difference_vi": "Động từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f306e6c5-bee9-4481-9554-2a8bf1281382",
+      "order": 1,
+      "zh": "一个小偷",
+      "pinyin": "",
+      "vi": "một tên trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48422167-3ce0-4f16-bc12-6e5b50aa23f8",
+      "order": 2,
+      "zh": "抓小偷",
+      "pinyin": "",
+      "vi": "bắt trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "571350fa-f075-4c83-b636-226056f3c62f",
+      "order": 3,
+      "zh": "小偷偷钱包儿",
+      "pinyin": "",
+      "vi": "tên trộm trộm ví",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "853e7ac7-77a1-4b80-8451-0ae32e2e66f8",
+      "order": 4,
+      "zh": "被小偷偷走了",
+      "pinyin": "",
+      "vi": "bị tên trộm lấy mất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a6d2445-7504-4e22-ba9d-c671bee92a2e",
+      "order": 5,
+      "zh": "小心小偷",
+      "pinyin": "",
+      "vi": "cẩn thận trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "21aa2559-0070-4f1f-ad3d-2d43021e840b",
+      "order": 6,
+      "zh": "小偷跑了",
+      "pinyin": "",
+      "vi": "tên trộm chạy mất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e7230f2-c048-46c6-9e27-6e8872fcbf4e",
+      "order": 7,
+      "zh": "小偷被抓住了",
+      "pinyin": "",
+      "vi": "tên trộm bị bắt được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c07eab93-7913-46dd-9ff0-31e7ac73fdb1",
+      "order": 8,
+      "zh": "遇到小偷",
+      "pinyin": "",
+      "vi": "gặp phải trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e80c36ab-6e19-4d3c-b540-a003204ecbf6",
+      "order": 1,
+      "zh": "街上有小偷，你要小心。",
+      "pinyin": "Jiē shang yǒu xiǎotōu, nǐ yào xiǎoxīn.",
+      "vi": "Trên phố có trộm, bạn phải cẩn thận.",
+      "analysis_vi": "有小偷 nói sự tồn tại của mối nguy ở địa điểm 街上.",
+      "highlight": [
+        "小偷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5ca4cf24-82d5-49a1-b813-a36b55a32e1e"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a8166339-5da4-4fda-a7ec-56eade157567",
+      "order": 2,
+      "zh": "我的钱包儿被小偷偷走了。",
+      "pinyin": "Wǒ de qiánbāor bèi xiǎotōu tōu zǒu le.",
+      "vi": "Ví của tôi bị tên trộm lấy mất.",
+      "analysis_vi": "小偷 là tác nhân sau 被.",
+      "highlight": [
+        "小偷",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "5ca4cf24-82d5-49a1-b813-a36b55a32e1e"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6862fcee-b1b9-4774-a458-81a1bfe4243b",
+      "order": 3,
+      "zh": "我一发现那个小偷跑了，就马上叫司机停车。",
+      "pinyin": "Wǒ yì fāxiàn nà ge xiǎotōu pǎo le, jiù mǎshàng jiào sījī tíng chē.",
+      "vi": "Tôi vừa phát hiện tên trộm đó chạy mất thì lập tức bảo tài xế dừng xe.",
+      "analysis_vi": "叫司机停车 là bảo tài xế dừng xe, không phải bị động.",
+      "highlight": [
+        "小偷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5ca4cf24-82d5-49a1-b813-a36b55a32e1e"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "小心扒手 cụ thể hơn 小心小偷 vì 扒手 là móc túi.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b7eec665-fc5e-40a8-b2e6-e81883ba69ec",
+      "order": 1,
+      "rule_vi": "小偷 là danh từ chỉ người; muốn nói hành động thì dùng 偷.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他小偷了我的钱包儿。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他偷了我的钱包儿。",
+          "pinyin": "Tā tōu le wǒ de qiánbāor.",
+          "vi": "Anh ta trộm ví của tôi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我的钱包儿被小偷偷走了。",
+          "pinyin": "Wǒ de qiánbāor bèi xiǎotōu tōu zǒu le.",
+          "vi": "Ví của tôi bị tên trộm lấy mất.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "小偷",
+    "back": "tên trộm, kẻ trộm",
+    "hint": "xiǎotōu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "theft",
+      "person"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5ca4cf24-82d5-49a1-b813-a36b55a32e1e",
+    "source_lesson_vocab_id": null
+  }
+}

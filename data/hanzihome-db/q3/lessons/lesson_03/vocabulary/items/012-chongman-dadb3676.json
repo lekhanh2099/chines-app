@@ -1,0 +1,405 @@
+{
+  "id": "53ca6c95-106c-4051-bfc6-b3470e21655b",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "充满",
+  "pinyin": "chōngmǎn",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "description",
+    "state"
+  ],
+  "meaning": {
+    "hanviet": "sung mãn",
+    "meaning_vi": "tràn đầy, đầy ắp, ngập tràn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tràn đầy",
+      "đầy ắp",
+      "ngập tràn"
+    ],
+    "short_definition_vi": "tràn đầy, đầy ắp, ngập tràn",
+    "textbook_focus_vi": "tràn đầy, đầy ắp, ngập tràn",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "description, state",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "充",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "亠",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "允",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "làm đầy, đủ",
+        "modern_logic_vi": "Trong từ này, 充 góp phần vào lớp nghĩa hiện đại: làm đầy, đủ",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "满",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây, thực vật",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây, thực vật",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đầy, tràn",
+        "modern_logic_vi": "Trong từ này, 满 góp phần vào lớp nghĩa hiện đại: đầy, tràn",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "充 = làm đầy; 满 = đầy/tràn. 充满 = đầy khắp về không gian, cảm xúc hoặc không khí.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không lạm dụng 充满 cho mọi câu “rất nhiều”; nó hợp khi muốn tả cảm giác đầy khắp/ngập tràn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "充实",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "充足",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "满",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "到处都是",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "缺少",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "空虚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2f5a1e63-c84b-44b2-ad16-8fab48ff32d6",
+      "order": 1,
+      "zh": "充满阳光",
+      "pinyin": "",
+      "vi": "tràn đầy ánh nắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d4df2c8a-427b-4d6d-aca9-759d204d09c2",
+      "order": 2,
+      "zh": "充满希望",
+      "pinyin": "",
+      "vi": "tràn đầy hy vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b5d01d7-8608-4a95-b76d-6e001d6876e9",
+      "order": 3,
+      "zh": "充满信心",
+      "pinyin": "",
+      "vi": "đầy tự tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f43c735-8c9e-4287-9175-e7c74b3b99ef",
+      "order": 4,
+      "zh": "充满活力",
+      "pinyin": "",
+      "vi": "tràn đầy sức sống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4faee115-c230-4994-8905-5445492356fe",
+      "order": 5,
+      "zh": "充满春天的气息",
+      "pinyin": "",
+      "vi": "tràn đầy hơi thở mùa xuân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77a1c19d-fdaa-4edc-94c3-f6811d8ba673",
+      "order": 6,
+      "zh": "房间里充满了花香",
+      "pinyin": "",
+      "vi": "trong phòng tràn ngập hương hoa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cbc31dc4-a151-41e7-993d-1888aa3142e6",
+      "order": 1,
+      "zh": "春天的北京充满了阳光。",
+      "pinyin": "",
+      "vi": "Bắc Kinh mùa xuân tràn đầy ánh nắng.",
+      "analysis_vi": "充满了 + danh từ.",
+      "highlight": [
+        "充满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53ca6c95-106c-4051-bfc6-b3470e21655b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0bd4fed1-ba1b-4abc-9fbc-dad12ef40c1d",
+      "order": 2,
+      "zh": "一到春天，公园里就充满了游人和鲜花。",
+      "pinyin": "",
+      "vi": "Cứ đến mùa xuân, công viên đầy du khách và hoa tươi.",
+      "analysis_vi": "一到……就…….",
+      "highlight": [
+        "充满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53ca6c95-106c-4051-bfc6-b3470e21655b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4f8575a7-684a-4965-8757-a80f51fb1b9c",
+      "order": 3,
+      "zh": "空气里好像充满了春天的气息。",
+      "pinyin": "",
+      "vi": "Trong không khí như tràn đầy hơi thở mùa xuân.",
+      "analysis_vi": "充满……的气息 là cụm văn tả cảnh.",
+      "highlight": [
+        "充满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53ca6c95-106c-4051-bfc6-b3470e21655b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "充满 trong Bài 3 北京的四季",
+    "content_vi": "充满……的气息 là cụm rất hay dùng trong văn miêu tả.",
+    "tags": [
+      "description",
+      "state"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "05f778b0-5ae3-49a7-8f20-f3c841e6bdfc",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 充满 cho mọi câu “rất nhiều”; nó hợp khi muốn tả cảm giác đầy khắp/ngập tràn.",
+      "natural_examples": [
+        {
+          "zh": "春天的北京充满了阳光。",
+          "pinyin": "",
+          "vi": "Bắc Kinh mùa xuân tràn đầy ánh nắng.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không lạm dụng 充满 cho mọi câu “rất nhiều”; nó hợp khi muốn tả cảm giác đầy khắp/ngập tràn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "充满",
+    "back": "tràn đầy, đầy ắp, ngập tràn",
+    "hint": "chōngmǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "description",
+      "state"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53ca6c95-106c-4051-bfc6-b3470e21655b",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "id": "d4b7b990-b93f-4bb1-95fd-2f9225ee621b",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "面",
+  "pinyin": "miàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名/量",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "diện",
+    "meaning_vi": "mặt, phía; lượng từ cho gương/cờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mặt",
+      "phía",
+      "lượng từ cho gương",
+      "cờ"
+    ],
+    "short_definition_vi": "mặt, phía; lượng từ cho gương/cờ",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: mặt, phía; lượng từ cho gương/cờ.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "面",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "面 trong bài được hiểu theo nghĩa: mặt, phía; lượng từ cho gương/cờ. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 面.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Gương dùng lượng từ 面."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d54dcc38-11c7-44c8-8f0f-fe8916f2c74c",
+      "order": 1,
+      "zh": "一面镜子",
+      "pinyin": "",
+      "vi": "một cái gương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0c0e8c19-022d-46c9-9b08-bf44f1f0ddad",
+      "order": 2,
+      "zh": "一面旗子",
+      "pinyin": "",
+      "vi": "một lá cờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06b9168e-b713-47a4-aa46-733cea6a0026",
+      "order": 3,
+      "zh": "前面",
+      "pinyin": "",
+      "vi": "phía trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a95c7db-1150-4aae-9edb-d4afcba78e33",
+      "order": 4,
+      "zh": "后面",
+      "pinyin": "",
+      "vi": "phía sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d034a121-0686-4a9c-9ef2-7a804103b79b",
+      "order": 5,
+      "zh": "方面",
+      "pinyin": "",
+      "vi": "phương diện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bc7eb7be-0a7f-4cc7-b30e-4774289b8993",
+      "order": 1,
+      "zh": "发廊里有一面大镜子。",
+      "pinyin": "",
+      "vi": "Trong salon có một cái gương lớn.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "面"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4b7b990-b93f-4bb1-95fd-2f9225ee621b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b2cefa77-0dad-4690-9022-72633b0b7205",
+      "order": 2,
+      "zh": "我从镜子里面看见理发师拿起了剪刀。",
+      "pinyin": "",
+      "vi": "Tôi nhìn qua gương thấy thợ cắt tóc cầm kéo lên.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "面"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4b7b990-b93f-4bb1-95fd-2f9225ee621b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "Gương dùng lượng từ 面.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7b1d7893-cef0-43bb-8c97-59ddbf8a79d0",
+      "order": 1,
+      "rule_vi": "Gương dùng lượng từ 面.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "一张镜子。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "Gương dùng lượng từ 面.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "一面镜子。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Gương dùng lượng từ 面.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "面",
+    "back": "mặt, phía; lượng từ cho gương/cờ",
+    "hint": "miàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d4b7b990-b93f-4bb1-95fd-2f9225ee621b",
+    "source_lesson_vocab_id": null
+  }
+}

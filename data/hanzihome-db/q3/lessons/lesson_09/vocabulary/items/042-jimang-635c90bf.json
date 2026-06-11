@@ -1,0 +1,314 @@
+{
+  "id": "7049b575-9549-406c-9dc6-ee6226245ed2",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "急忙",
+  "pinyin": "jímáng",
+  "pos": {
+    "raw_vi": "Phó từ / trạng thái",
+    "raw_cn": "副词/状态词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cấp mang",
+    "meaning_vi": "vội vàng, hấp tấp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vội vàng, hấp tấp"
+    ],
+    "short_definition_vi": "vội vàng, hấp tấp",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "急",
+        "lishu_vi": "cấp",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấp, vội",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "忙",
+        "lishu_vi": "mang",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bận, vội",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "急忙 là hành động vội vì gấp hoặc sốt ruột.",
+    "memory_tip_vi": "Nhớ 急忙跑出去.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "连忙",
+        "pinyin": "",
+        "meaning_vi": "连忙",
+        "difference_vi": "连忙 nhấn phản ứng ngay sau tình huống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "从容",
+        "pinyin": "",
+        "meaning_vi": "从容",
+        "difference_vi": "ung dung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "32ce94b5-0813-423d-9e97-c2daf604f45c",
+      "order": 1,
+      "zh": "急忙跑出去",
+      "pinyin": "jímáng pǎo chūqu",
+      "vi": "vội chạy ra ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1634de1-49d2-4ee8-9db5-41d6664a922c",
+      "order": 2,
+      "zh": "急忙解释",
+      "pinyin": "jímáng jiěshì",
+      "vi": "vội giải thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a8619a05-7fe1-4d16-8b93-b8ce6a9d67dc",
+      "order": 3,
+      "zh": "急忙回答",
+      "pinyin": "jímáng huídá",
+      "vi": "vội trả lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d117a03e-c985-4194-8bab-81542ab3ba5d",
+      "order": 4,
+      "zh": "急忙往上拔",
+      "pinyin": "jímáng wǎng shàng bá",
+      "vi": "vội nhổ lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bba80ab8-39a2-49b2-b871-742d9ec7d299",
+      "order": 1,
+      "zh": "他急忙跑了出去。",
+      "pinyin": "Tā jímáng pǎo le chūqu.",
+      "vi": "Anh ấy vội vàng chạy ra ngoài.",
+      "analysis_vi": "急忙 đứng trước động từ.",
+      "highlight": [
+        "急忙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7049b575-9549-406c-9dc6-ee6226245ed2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6f00d85d-cbae-434b-839c-6685c6c9375b",
+      "order": 2,
+      "zh": "他看到苗长得慢，就急忙把苗一棵一棵往上拔。",
+      "pinyin": "Tā kàn dào miáo zhǎng de màn, jiù jímáng bǎ miáo yì kē yì kē wǎng shàng bá.",
+      "vi": "Anh ta thấy mạ lớn chậm, liền vội nhổ từng cây lên.",
+      "analysis_vi": "Gắn với câu chuyện 拔苗助长.",
+      "highlight": [
+        "急忙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7049b575-9549-406c-9dc6-ee6226245ed2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "急忙 rất hợp văn kể chuyện vì tạo cảm giác hành động nhanh có nguyên nhân tâm lý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6d4e93f2-b6e5-456f-a511-3a405b60fb6f",
+      "order": 1,
+      "rule_vi": "Không dùng 急忙 để nói bận.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我今天很急忙。",
+          "pinyin": "Wǒ jīntiān hěn jímáng.",
+          "vi": "Sai/gượng nếu muốn nói hôm nay bận.",
+          "note_vi": "急忙 là vội vàng làm gì, không phải bận.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我今天很忙。",
+          "pinyin": "Wǒ jīntiān hěn máng.",
+          "vi": "Hôm nay tôi rất bận.",
+          "note_vi": "忙 đúng cho bận.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "急忙",
+    "back": "vội vàng, hấp tấp",
+    "hint": "jímáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7049b575-9549-406c-9dc6-ee6226245ed2",
+    "source_lesson_vocab_id": null
+  }
+}

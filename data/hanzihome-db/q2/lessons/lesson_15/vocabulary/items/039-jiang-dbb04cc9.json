@@ -1,0 +1,315 @@
+{
+  "id": "c2004465-2484-4325-8540-3771ae7c838d",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "讲",
+  "pinyin": "jiǎng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Giảng",
+    "meaning_vi": "nói, giảng, kể, bàn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nói, giảng, kể, bàn"
+    ],
+    "short_definition_vi": "nói, giảng, kể, bàn",
+    "textbook_focus_vi": "nói, giảng, kể, bàn",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "讲",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "井",
+            "hanviet": "tỉnh",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, giảng, kể, bàn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "讲 có 讠 nên liên quan lời nói; thường là nói có nội dung, giải thích hoặc kể lại.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "说",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói/bảo, rộng và khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "谈",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bàn/nói chuyện, thường hai bên trao đổi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "聊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trò chuyện thân mật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "告诉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói cho biết một thông tin",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "听",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghe",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "讲",
+        "right": "听",
+        "meaning_vi": "nói/giảng ↔ nghe",
+        "note_vi": "Cặp hành vi giao tiếp.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6cdbb2bc-701f-4765-844d-2e8c3ca79ea5",
+      "order": 1,
+      "zh": "讲课",
+      "pinyin": "",
+      "vi": "giảng bài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "930c4688-459d-4412-87da-6bbf2277f6c6",
+      "order": 2,
+      "zh": "讲故事",
+      "pinyin": "",
+      "vi": "kể chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54f100bc-bdc7-4b6e-8245-5f8ec3a406ff",
+      "order": 3,
+      "zh": "讲中文",
+      "pinyin": "",
+      "vi": "nói tiếng Trung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5e7085e-8060-4163-934e-5c485a0be6ff",
+      "order": 4,
+      "zh": "讲得很清楚",
+      "pinyin": "",
+      "vi": "nói/giảng rất rõ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "593ed222-d612-4202-8716-485f4ce9fe17",
+      "order": 5,
+      "zh": "讲笑话",
+      "pinyin": "",
+      "vi": "kể chuyện cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2c23beb7-df84-49ad-be20-d96a89875dc9",
+      "order": 1,
+      "zh": "老师讲得很清楚。",
+      "pinyin": "Lǎoshī jiǎng de hěn qīngchu.",
+      "vi": "Thầy/cô giảng rất rõ.",
+      "analysis_vi": "讲得很清楚 là bổ ngữ trình độ.",
+      "highlight": [
+        "讲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2004465-2484-4325-8540-3771ae7c838d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "42fa1f93-8127-4687-a9aa-625e35dfac14",
+      "order": 2,
+      "zh": "主持人拿着麦克风讲了几句话。",
+      "pinyin": "Zhǔchírén názhe màikèfēng jiǎng le jǐ jù huà.",
+      "vi": "Người dẫn chương trình cầm micro nói vài câu.",
+      "analysis_vi": "拿着麦克风 là trạng thái đi kèm.",
+      "highlight": [
+        "讲",
+        "拿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2004465-2484-4325-8540-3771ae7c838d"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "ced0b548-3f5e-4600-aebd-dd6efe05edd3",
+      "order": 1,
+      "rule_vi": "说课 là thuật ngữ sư phạm riêng; giảng bài thông thường nói 讲课.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "讲",
+    "back": "nói, giảng, kể, bàn",
+    "hint": "jiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Người học Việt hay dùng 说 cho mọi trường hợp; 讲 tự nhiên hơn với 讲课、讲故事、讲中文、讲道理.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c2004465-2484-4325-8540-3771ae7c838d",
+    "source_lesson_vocab_id": null
+  }
+}

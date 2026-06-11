@@ -1,0 +1,237 @@
+{
+  "id": "27abf742-68b1-42f3-be04-3b93c4b4f4ad",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "白",
+  "pinyin": "bái",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ / Yếu tố cấu tạo từ",
+    "raw_cn": "形/副/语素",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bạch",
+    "meaning_vi": "trắng; rõ; vô ích; miễn phí/không công",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trắng",
+      "rõ",
+      "vô ích",
+      "miễn phí/không công"
+    ],
+    "short_definition_vi": "trắng",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "白",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trắng; vô ích; không công",
+        "modern_logic_vi": "Trong từ 白, chữ 白 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "白 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 我说了半天，他还是不明白，真是白说了。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "免费",
+        "pinyin": "miǎnfèi",
+        "meaning_vi": "miễn phí",
+        "difference_vi": "免费 trung tính/chính thức hơn 白 trong nghĩa không mất tiền.",
+        "register_vi": "",
+        "example_zh": "这个活动免费。",
+        "example_vi": "Hoạt động này miễn phí.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c96ba446-1db8-41a4-a9ec-e53ebf834fc4",
+      "order": 1,
+      "zh": "白葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b624a7a-b937-4fc1-9afa-a1acdb2a3f79",
+      "order": 2,
+      "zh": "白色",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4eaf332-d8de-46ba-a015-cf8cab2a2341",
+      "order": 3,
+      "zh": "明白",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ceb8456-037e-4cb7-9674-4c73f2178867",
+      "order": 4,
+      "zh": "空白",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fcd32488-e32a-4258-a399-393e650c38f6",
+      "order": 5,
+      "zh": "白忙",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4f91d5e-b186-4bdc-b907-a23c6d50beb3",
+      "order": 6,
+      "zh": "白说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e42da50-3b6c-4a50-8bc8-60f7df7a4eed",
+      "order": 7,
+      "zh": "白吃白喝",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab501a60-53bc-42d3-9fe4-87a970312af6",
+      "order": 8,
+      "zh": "表白",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "80696863-c19c-4805-ab87-a7954b2c728e",
+      "order": 1,
+      "zh": "我说了半天，他还是不明白，真是白说了。",
+      "pinyin": "",
+      "vi": "Tôi nói cả buổi, anh ấy vẫn không hiểu, đúng là nói công cốc.",
+      "analysis_vi": "Ví dụ dùng 白 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "白"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "27abf742-68b1-42f3-be04-3b93c4b4f4ad"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "白 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "139fa60f-dc0f-498e-b104-5405b6ebc6c4",
+      "order": 1,
+      "rule_vi": "白 đa nghĩa; không lấy nghĩa “trắng” nhét vào mọi cụm như 白说, 白忙, 明白.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "白",
+    "back": "trắng; rõ; vô ích; miễn phí/không công",
+    "hint": "bái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "27abf742-68b1-42f3-be04-3b93c4b4f4ad",
+    "source_lesson_vocab_id": null
+  }
+}

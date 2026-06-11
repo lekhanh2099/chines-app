@@ -1,0 +1,374 @@
+{
+  "id": "9688ec8d-779c-4fd1-a5aa-cf0f1ea067f5",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "延误",
+  "pinyin": "yánwù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "diên ngộ",
+    "meaning_vi": "làm chậm trễ, bị trì hoãn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm chậm trễ",
+      "bị trì hoãn"
+    ],
+    "short_definition_vi": "làm chậm trễ, bị trì hoãn",
+    "textbook_focus_vi": "延误 nhấn việc đáng lẽ đúng lúc nhưng bị làm lỡ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "延",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "廴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dẫn",
+          "radical_name_zh": "",
+          "hanviet": "dẫn",
+          "meaning_vi": "kéo dài, bước dài",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "廴 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "廴",
+            "hanviet": "dẫn",
+            "meaning_vi": "kéo dài, bước dài",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "廴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dẫn",
+              "radical_name_zh": "",
+              "hanviet": "dẫn",
+              "meaning_vi": "kéo dài, bước dài",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "廴 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "廴 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kéo dài, trì hoãn",
+        "modern_logic_vi": "Trong từ “延误”, chữ “延” góp phần vào trường nghĩa: kéo dài, trì hoãn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "误",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn giản thể",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn giản thể",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "吴",
+            "hanviet": "ngô",
+            "meaning_vi": "thành phần cấu tạo, không nên ép nghĩa",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "吴 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sai, làm lỡ",
+        "modern_logic_vi": "Trong từ “延误”, chữ “误” góp phần vào trường nghĩa: sai, làm lỡ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "延误 nhấn việc đáng lẽ đúng lúc nhưng bị làm lỡ.",
+    "memory_tip_vi": "延误 nhấn việc đáng lẽ đúng lúc nhưng bị làm lỡ.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "耽误",
+        "pinyin": "",
+        "meaning_vi": "làm lỡ, khẩu ngữ hơn",
+        "difference_vi": "làm lỡ, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "推迟",
+        "pinyin": "",
+        "meaning_vi": "dời lại thời gian theo kế hoạch",
+        "difference_vi": "dời lại thời gian theo kế hoạch",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0180f013-c401-404a-8ed5-efeeffbcc5e6",
+      "order": 1,
+      "zh": "延误时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "92448093-2e39-4c02-bd98-06ada916634c",
+      "order": 2,
+      "zh": "延误工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "033a53e9-03f8-4608-ad74-0823ec2a2c96",
+      "order": 3,
+      "zh": "航班延误",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5df56ed2-23c5-4c33-a049-7dc8c3914ca8",
+      "order": 4,
+      "zh": "不能延误",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e00c0d59-f43a-488e-a15e-56ef64aba0ee",
+      "order": 1,
+      "zh": "这件事不能延误。",
+      "pinyin": "",
+      "vi": "Việc này không thể chậm trễ.",
+      "analysis_vi": "不能 + V.",
+      "highlight": [
+        "延误"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9688ec8d-779c-4fd1-a5aa-cf0f1ea067f5"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d4abec12-1346-4a6d-afcf-ccab64e10005",
+      "order": 2,
+      "zh": "因为信息处理得太慢，新闻被延误了。",
+      "pinyin": "",
+      "vi": "Vì xử lý thông tin quá chậm, tin tức bị chậm trễ.",
+      "analysis_vi": "被延误 là bị động.",
+      "highlight": [
+        "延误"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9688ec8d-779c-4fd1-a5aa-cf0f1ea067f5"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "延误 nhấn việc đáng lẽ đúng lúc nhưng bị làm lỡ.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "47293910-f28d-4732-a920-79473303957e",
+      "order": 1,
+      "rule_vi": "迟到 là người đến muộn; 延误 là việc/chuyến/tin bị chậm trễ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "迟到 là người đến muộn; 延误 là việc/chuyến/tin bị chậm trễ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "延误",
+    "back": "làm chậm trễ, bị trì hoãn",
+    "hint": "yánwù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9688ec8d-779c-4fd1-a5aa-cf0f1ea067f5",
+    "source_lesson_vocab_id": null
+  }
+}

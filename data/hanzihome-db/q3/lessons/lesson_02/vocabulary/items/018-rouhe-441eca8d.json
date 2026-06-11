@@ -1,0 +1,469 @@
+{
+  "id": "33516fc4-12d9-44e9-9c0d-bd334ffc5a04",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "柔和",
+  "pinyin": "róuhé",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "taiji",
+    "quality"
+  ],
+  "meaning": {
+    "hanviet": "Nhu hòa",
+    "meaning_vi": "mềm mại, dịu, ôn hòa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mềm mại, dịu, ôn hòa"
+    ],
+    "short_definition_vi": "mềm mại, dịu, ôn hòa",
+    "textbook_focus_vi": "mềm mại, dịu, ôn hòa",
+    "register_vi": "",
+    "usage_domain_vi": "taiji,quality",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "柔",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "矛",
+            "hanviet": "mâu",
+            "meaning_vi": "giáo",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mềm, dịu",
+        "modern_logic_vi": "Nhớ theo nghĩa hiện đại “mềm/dịu”.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "和",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "禾 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "禾 được dùng như bộ Hòa trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ Khẩu trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hòa, hài hòa, ôn hòa, và",
+        "modern_logic_vi": "和 trong 柔和 gợi hòa dịu/hài hòa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "禾 được dùng như bộ Hòa trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Nhớ theo nghĩa hiện đại “mềm/dịu”.; 和 trong 柔和 gợi hòa dịu/hài hòa.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "温柔",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "温和",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "轻柔",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "强烈",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "生硬",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e85b500c-1967-4e77-a0c2-05c74f62f6af",
+      "order": 1,
+      "zh": "动作柔和",
+      "pinyin": "",
+      "vi": "động tác mềm mại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfe0761f-bc6e-4bd2-9d55-e29c5d07bb97",
+      "order": 2,
+      "zh": "光线柔和",
+      "pinyin": "",
+      "vi": "ánh sáng dịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "793797bf-157c-44d4-ad78-16bab8e99ae8",
+      "order": 3,
+      "zh": "声音柔和",
+      "pinyin": "",
+      "vi": "âm thanh dịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37ca5e49-d686-4ab0-89f3-cb83d9c88e0c",
+      "order": 4,
+      "zh": "语气柔和",
+      "pinyin": "",
+      "vi": "giọng điệu mềm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d2fcf84-203a-4e51-9fae-1f44248c531f",
+      "order": 5,
+      "zh": "柔和缓慢",
+      "pinyin": "",
+      "vi": "mềm mại chậm rãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ebae3c6a-59dc-4edc-a7d8-b8a4aa0a72fa",
+      "order": 1,
+      "zh": "太极拳的动作很柔和。",
+      "pinyin": "Tàijíquán de dòngzuò hěn róuhé.",
+      "vi": "Động tác của Thái Cực Quyền rất mềm mại.",
+      "analysis_vi": "动作柔和 sát bài.",
+      "highlight": [
+        "柔和"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33516fc4-12d9-44e9-9c0d-bd334ffc5a04"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "52c8faa7-48f1-4553-894a-74466d77e5f7",
+      "order": 2,
+      "zh": "练太极拳的时候，动作不能太硬，应该柔和一点、缓慢一点。",
+      "pinyin": "Liàn tàijíquán de shíhou, dòngzuò bù néng tài yìng, yīnggāi róuhé yìdiǎn, huǎnmàn yìdiǎn.",
+      "vi": "Khi luyện Thái Cực Quyền, động tác không được quá cứng, nên mềm hơn và chậm hơn một chút.",
+      "analysis_vi": "柔和一点/缓慢一点 = mềm/chậm hơn một chút.",
+      "highlight": [
+        "柔和"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33516fc4-12d9-44e9-9c0d-bd334ffc5a04"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "柔和/缓慢/舒展 là cụm mô tả vận động dưỡng sinh, hơi sách vở nhưng chuẩn.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ed815da7-9f1a-423a-b29f-f80f1fb18ac2",
+      "order": 1,
+      "rule_vi": "Dịu dàng về người thường dùng 温柔; ánh sáng/động tác dùng 柔和.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "光线很柔和。",
+          "pinyin": "Guāngxiàn hěn róuhé.",
+          "vi": "Ánh sáng rất dịu.",
+          "note_vi": "柔和 hợp ánh sáng/động tác.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "柔和",
+    "back": "mềm mại, dịu, ôn hòa",
+    "hint": "róuhé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "taiji",
+      "quality"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "33516fc4-12d9-44e9-9c0d-bd334ffc5a04",
+    "source_lesson_vocab_id": null
+  }
+}

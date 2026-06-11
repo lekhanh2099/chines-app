@@ -1,0 +1,251 @@
+{
+  "id": "0f19504b-d154-4d66-bd20-89f841e8119f",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "主动",
+  "pinyin": "zhǔdòng",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ trạng thái",
+    "raw_cn": "形容词/副词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chủ động",
+    "meaning_vi": "chủ động, tự giác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chủ động",
+      "tự giác"
+    ],
+    "short_definition_vi": "chủ động, tự giác",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "主",
+        "lishu_vi": "chủ",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "动",
+        "lishu_vi": "động",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "主动 = mình làm chủ hành động, không chờ người khác thúc.",
+    "memory_tip_vi": "主动 + V: 主动帮忙, 主动打招呼.",
+    "warning_vi": "Không dùng 自动 cho hành vi xã giao của người.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "自动",
+        "zìdòng",
+        "tự động",
+        "máy móc/hệ thống"
+      ],
+      [
+        "积极",
+        "jījí",
+        "tích cực",
+        "thái độ năng nổ"
+      ],
+      [
+        "自觉",
+        "zìjué",
+        "tự giác",
+        "ý thức việc nên làm"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "主动 + V: 主动帮忙, 主动打招呼."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "15508d51-aa0f-496d-befd-fc106b616faa",
+      "order": 1,
+      "zh": "主动帮忙",
+      "pinyin": "",
+      "vi": "chủ động giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ab08c18-7490-46fa-bdd5-613d713dc13f",
+      "order": 2,
+      "zh": "主动联系",
+      "pinyin": "",
+      "vi": "chủ động liên hệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4613c2d3-12ce-499b-8fe5-88b23fb7a383",
+      "order": 3,
+      "zh": "主动打招呼",
+      "pinyin": "",
+      "vi": "chủ động chào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "959fcf51-52f8-48af-b247-ae13583346a7",
+      "order": 4,
+      "zh": "主动回答问题",
+      "pinyin": "",
+      "vi": "chủ động trả lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9530f145-24c8-4263-a313-c44704565047",
+      "order": 5,
+      "zh": "采取主动",
+      "pinyin": "",
+      "vi": "giành thế chủ động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f39e6e0d-2dee-416b-94d2-1cd528990078",
+      "order": 1,
+      "zh": "他很热情，每次见面都主动跟我打招呼。",
+      "pinyin": "Tā hěn rèqíng, měi cì jiànmiàn dōu zhǔdòng gēn wǒ dǎ zhāohu.",
+      "vi": "Anh ấy rất nhiệt tình, lần nào gặp cũng chủ động chào tôi.",
+      "analysis_vi": "主动 + 跟 + người + 打招呼.",
+      "highlight": [
+        "主动"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0f19504b-d154-4d66-bd20-89f841e8119f"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "92cea6b9-bcf8-46fb-b34c-da11cedc3352",
+      "order": 2,
+      "zh": "我刚到北京，对路不熟悉，是两个小伙子主动过来帮我。",
+      "pinyin": "Wǒ gāng dào Běijīng, duì lù bù shúxī, shì liǎng ge xiǎohuǒzi zhǔdòng guòlái bāng wǒ.",
+      "vi": "Tôi vừa đến Bắc Kinh, không quen đường; chính hai chàng trai chủ động đến giúp.",
+      "analysis_vi": "是……主动…… nhấn chủ thể.",
+      "highlight": [
+        "主动"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0f19504b-d154-4d66-bd20-89f841e8119f"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "主动 thường là phẩm chất tốt, nhưng chủ động quá mức với người lạ có thể khiến người khác cảnh giác.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "85b2093c-4559-4703-9cf3-44010ca2c707",
+      "order": 1,
+      "rule_vi": "他自动跟我打招呼。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他主动跟我打招呼。",
+          "pinyin": "Tā zhǔdòng gēn wǒ dǎ zhāohu.",
+          "vi": "Anh ấy chủ động chào tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 自动 cho hành vi xã giao của người.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "主动",
+    "back": "chủ động, tự giác",
+    "hint": "zhǔdòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0f19504b-d154-4d66-bd20-89f841e8119f",
+    "source_lesson_vocab_id": null
+  }
+}

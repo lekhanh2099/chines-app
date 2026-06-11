@@ -1,0 +1,378 @@
+{
+  "id": "336dbc03-594e-430f-9fb0-c7dcfd5d4b84",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "野营",
+  "pinyin": "yěyíng",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dã doanh",
+    "meaning_vi": "cắm trại ngoài trời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cắm trại ngoài trời"
+    ],
+    "short_definition_vi": "cắm trại ngoài trời",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về du lịch, hoạt động tập thể.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "du lịch, hoạt động tập thể",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "野",
+        "lishu_vi": "dã",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 野 trong từ 野营; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "里",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "予",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 野营, chữ 野 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "营",
+        "lishu_vi": "doanh",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 营 trong từ 野营; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ, cây cỏ",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ, cây cỏ",
+            "position_vi": "phần trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ, cây cỏ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 野营, chữ 营 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "野营 trong bài được nhớ theo nghĩa hiện đại: cắm trại.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 去野营 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "露营",
+        "pinyin": "lùyíng",
+        "meaning_vi": "camping; hiện đại/du lịch hơn",
+        "difference_vi": "camping; hiện đại/du lịch hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "夏令营",
+        "pinyin": "xiàlìngyíng",
+        "meaning_vi": "trại hè; chương trình tập thể",
+        "difference_vi": "trại hè; chương trình tập thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 野营 với 夏令营."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "22fbf63c-5558-4ea2-a6df-65cc03b54b32",
+      "order": 1,
+      "zh": "去野营",
+      "pinyin": "",
+      "vi": "đi cắm trại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2dced8c-ad46-440c-b247-105c4f437bba",
+      "order": 2,
+      "zh": "海边野营",
+      "pinyin": "",
+      "vi": "cắm trại bên biển",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05ab8718-1cfb-4929-a04f-b6df645a3a04",
+      "order": 3,
+      "zh": "野营活动",
+      "pinyin": "",
+      "vi": "hoạt động cắm trại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28677aac-dd88-4ee2-b678-c29bf2f7c0b3",
+      "order": 4,
+      "zh": "参加野营",
+      "pinyin": "",
+      "vi": "tham gia cắm trại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45ceac20-8f41-4c71-883a-ef687a4e6abf",
+      "order": 5,
+      "zh": "组织野营",
+      "pinyin": "",
+      "vi": "tổ chức cắm trại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "66e8fe78-00ae-48ab-a65a-fcca062627c6",
+      "order": 1,
+      "zh": "暑假我们去海边野营。",
+      "pinyin": "",
+      "vi": "cắm trại ngoài trời",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "野营"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "336dbc03-594e-430f-9fb0-c7dcfd5d4b84"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "56f0f9b7-a13a-409f-a5e3-5d417bdabcef",
+      "order": 2,
+      "zh": "这个词语“野营”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 野营 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "野营"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "336dbc03-594e-430f-9fb0-c7dcfd5d4b84"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c4c7a418-14a8-4164-b82d-fb66ba2acc76",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“野营”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 野营 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "野营"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "336dbc03-594e-430f-9fb0-c7dcfd5d4b84"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "露营 hiện phổ biến trong du lịch; 野营 nghe hơi hoạt động đoàn thể/giáo trình hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bba81ed8-fa10-4860-82c9-43f5d8a088c7",
+      "order": 1,
+      "rule_vi": "Không nhầm 野营 với 夏令营.",
+      "natural_examples": [
+        {
+          "zh": "我们去野营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我们参加野营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我们参加野营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我们去野营。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 野营 với 夏令营.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "野营",
+    "back": "cắm trại ngoài trời",
+    "hint": "yěyíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "336dbc03-594e-430f-9fb0-c7dcfd5d4b84",
+    "source_lesson_vocab_id": null
+  }
+}

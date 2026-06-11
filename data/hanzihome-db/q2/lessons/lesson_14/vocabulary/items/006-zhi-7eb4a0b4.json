@@ -1,0 +1,312 @@
+{
+  "id": "9dce8156-ab50-40be-b7a3-6053a7427ef9",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "纸",
+  "pinyin": "zhǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Chỉ",
+    "meaning_vi": "giấy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giấy"
+    ],
+    "short_definition_vi": "giấy",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, học tập, văn phòng, đóng gói.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "纸",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "氏",
+            "hanviet": "thị",
+            "meaning_vi": "họ/thị",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giấy",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "纸 có bộ 纟, liên quan đến sợi/tơ. → 纸箱 là thùng làm bằng giấy cứng; 一张纸 là một tờ giấy.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 纸箱 là thùng làm bằng giấy cứng; 一张纸 là một tờ giấy.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 纸 là chất liệu hoặc tờ giấy; còn “bài thi/đề thi” thường là 试卷.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "纸 (zhǐ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấy nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "纸张 (zhǐzhāng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấy/tờ giấy, hơi văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "报纸 (bàozhǐ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "báo giấy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "试卷 (shìjuàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bài thi/đề thi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 纸 là giấy; 报纸 là tờ báo; 试卷 là đề/bài thi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6a623c65-c1db-44a1-aeef-a12e701602ad",
+      "order": 1,
+      "zh": "一张纸",
+      "pinyin": "",
+      "vi": "một tờ giấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3072338e-e11b-429a-b23c-fc24bdf85d54",
+      "order": 2,
+      "zh": "白纸",
+      "pinyin": "",
+      "vi": "giấy trắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2516737b-efff-4290-b907-0ae441720a03",
+      "order": 3,
+      "zh": "纸箱",
+      "pinyin": "",
+      "vi": "thùng giấy/carton",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5406b23e-f233-4d89-b4e1-ce0c84eb2b19",
+      "order": 4,
+      "zh": "把答案写在纸上",
+      "pinyin": "",
+      "vi": "viết đáp án lên giấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ffe8816-c06e-485e-a090-f3d3cdf812d7",
+      "order": 1,
+      "zh": "你把那张纸拿出来，我想看看上面写了什么。",
+      "pinyin": "Nǐ bǎ nà zhāng zhǐ ná chūlai, wǒ xiǎng kànkan shàngmian xiě le shénme.",
+      "vi": "Bạn lấy tờ giấy đó ra đi, tôi muốn xem trên đó viết gì.",
+      "analysis_vi": "拿出来 nói lấy giấy từ trong túi/cặp/hộp ra ngoài.",
+      "highlight": [
+        "纸"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "9dce8156-ab50-40be-b7a3-6053a7427ef9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bab9908a-883a-4500-98f4-33a7326b8d1c",
+      "order": 2,
+      "zh": "纸箱打开以后，里面的书一本文本地拿出来比较好。",
+      "pinyin": "Zhǐxiāng dǎkāi yǐhòu, lǐmian de shū yì běn yì běn de ná chūlai bǐjiào hǎo.",
+      "vi": "Sau khi mở thùng giấy, sách bên trong nên lấy ra từng quyển một thì tốt hơn.",
+      "analysis_vi": "一本文本地 nên sửa thành 一本一本地; mẫu này nhấn từng quyển, từng quyển một.",
+      "highlight": [
+        "纸"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "9dce8156-ab50-40be-b7a3-6053a7427ef9"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "061427d7-0d38-4082-bac8-efbb953bb5ca",
+      "order": 3,
+      "zh": "写字的时候别太用力，不然纸很容易破。",
+      "pinyin": "Xiězì de shíhou bié tài yònglì, bùrán zhǐ hěn róngyì pò.",
+      "vi": "Khi viết chữ đừng dùng lực quá mạnh, nếu không giấy rất dễ rách.",
+      "analysis_vi": "Câu đời sống đơn giản, giúp nhớ 纸 như vật liệu thật.",
+      "highlight": [
+        "纸"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "9dce8156-ab50-40be-b7a3-6053a7427ef9"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "b95c3e4b-416d-4002-a442-65755fbb3c51",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "纸",
+    "back": "giấy",
+    "hint": "zhǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong tiếng Trung có câu 纸上谈兵 – zhǐ shàng tán bīng – “bàn binh trên giấy”, nghĩa là chỉ nói lý thuyết suông, không có thực chiến. Học ngôn ngữ cũng vậy: chỉ ghi giấy mà không nói ra thì rất dễ bị “纸上谈兵”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9dce8156-ab50-40be-b7a3-6053a7427ef9",
+    "source_lesson_vocab_id": null
+  }
+}

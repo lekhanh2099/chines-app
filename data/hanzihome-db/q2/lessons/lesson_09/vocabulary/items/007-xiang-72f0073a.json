@@ -1,0 +1,359 @@
+{
+  "id": "d1916ce4-b787-4444-b7b9-70ef79ea19a0",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "向",
+  "pinyin": "xiàng",
+  "pos": {
+    "raw_vi": "Giới từ / Động từ",
+    "raw_cn": "介/动",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hướng",
+    "meaning_vi": "hướng về, về phía; đối với",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hướng về",
+      "về phía",
+      "đối với"
+    ],
+    "short_definition_vi": "hướng về, về phía; đối với",
+    "textbook_focus_vi": "Âm Hán Việt: hướng. Nghĩa chính: Hướng về phía ai/cái gì. Nói/làm gì với ai: 向老师问好 = gửi lời chào thầy/cô. Học hỏi từ ai: 向他学习 = học tập từ anh ấy. Chỉ phương hướng: 向前走 = đi về phía trước.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "向",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "冂",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / lời nói / âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng / lời nói / âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hướng về, về phía",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "向 có lõi nghĩa hướng về, dùng cho hướng vật lý hoặc đối tượng giao tiếp.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 向 không phải lúc nào cũng dịch là “hướng”. Nhiều câu phải dịch là “với / về phía / từ”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "向",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hướng về, với, từ một đối tượng để làm hành động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "往",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi về phía, thường chỉ hướng di chuyển cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "对",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đối với, với; nhấn thái độ/đối tượng tác động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "给",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho, đưa cho, làm cho ai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "他向我走过来。",
+      "Anh ấy đi về phía tôi.",
+      "请往前走。",
+      "Xin đi về phía trước.",
+      "他对我很好。",
+      "Anh ấy đối xử với tôi rất tốt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a9b05c8c-7d77-4651-a16a-45ac325f5609",
+      "order": 1,
+      "zh": "向老师问好",
+      "pinyin": "",
+      "vi": "gửi lời hỏi thăm thầy/cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c7da962-0d74-4cf5-a0df-2c062d8bc9fd",
+      "order": 2,
+      "zh": "向前走",
+      "pinyin": "",
+      "vi": "đi về phía trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc059f39-2164-49ca-b58c-d16b29ec5daa",
+      "order": 3,
+      "zh": "向我走过来",
+      "pinyin": "",
+      "vi": "đi về phía tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5700ac02-7307-4eb2-bf43-edf5deaa3cfc",
+      "order": 4,
+      "zh": "向大家介绍",
+      "pinyin": "",
+      "vi": "giới thiệu với mọi người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9377b06-2d09-46be-a979-02b2c4a0d0d9",
+      "order": 5,
+      "zh": "向他学习",
+      "pinyin": "",
+      "vi": "học hỏi từ anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30287b46-826f-4d35-8079-25092b740287",
+      "order": 6,
+      "zh": "向大使馆走去",
+      "pinyin": "",
+      "vi": "đi về phía đại sứ quán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c6ad3814-9e20-463f-94be-def71ceb4a2d",
+      "order": 1,
+      "zh": "请向老师问好。",
+      "pinyin": "Qǐng xiàng lǎoshī wènhǎo.",
+      "vi": "Xin gửi lời hỏi thăm thầy/cô.",
+      "analysis_vi": "向 + người + 问好 = gửi lời chào/hỏi thăm đến ai.",
+      "highlight": [
+        "向"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "d1916ce4-b787-4444-b7b9-70ef79ea19a0"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a1223555-83c1-4a0b-8a85-8a121ff8e446",
+      "order": 2,
+      "zh": "赵老师向我走过来，问我研讨会开始了吗。",
+      "pinyin": "Zhào lǎoshī xiàng wǒ zǒu guòlai, wèn wǒ yántǎohuì kāishǐ le ma.",
+      "vi": "Thầy Triệu đi về phía tôi, hỏi tôi hội thảo đã bắt đầu chưa.",
+      "analysis_vi": "向我走过来 có hai lớp hướng: 向我 = về phía tôi, 过来 = đi qua đây, hướng về người nói.",
+      "highlight": [
+        "向"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "d1916ce4-b787-4444-b7b9-70ef79ea19a0"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8f424ef3-26cb-49d3-af2a-d6ee839d42af",
+      "order": 3,
+      "zh": "经过大使馆的时候，他看见老师正向会议室走去，就马上跑过去，认真地向老师问好。",
+      "pinyin": "Jīngguò dàshǐguǎn de shíhou, tā kànjiàn lǎoshī zhèng xiàng huìyìshì zǒu qù, jiù mǎshàng pǎo guòqù, rènzhēn de xiàng lǎoshī wènhǎo.",
+      "vi": "Khi đi qua đại sứ quán, anh ấy nhìn thấy thầy/cô đang đi về phía phòng họp, liền chạy qua đó ngay và nghiêm túc gửi lời chào thầy/cô.",
+      "analysis_vi": "向会议室走去 dùng 去 vì đi về phía xa người nói. 跑过去 = chạy qua đó. 向老师问好 = chào/hỏi thăm thầy/cô.",
+      "highlight": [
+        "向"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "d1916ce4-b787-4444-b7b9-70ef79ea19a0"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung lịch sự, 请代我向……问好 rất hay dùng, nghĩa là “xin thay tôi gửi lời hỏi thăm đến...”. Đây là mẫu xã giao đẹp, nhất là khi nhờ ai chuyển lời.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "231258a0-8d99-4912-b4e3-c0d1aba34ca6",
+      "order": 1,
+      "rule_vi": "Gửi lời hỏi thăm thầy/cô.",
+      "natural_examples": [
+        {
+          "zh": "Đừng nhầm 向 và 往.",
+          "pinyin": "向 có thể hướng về người để nói/làm gì:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "向 có thể hướng về người để nói/làm gì:",
+          "pinyin": "",
+          "vi": "Gửi lời hỏi thăm thầy/cô.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "向老师问好。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Gửi lời hỏi thăm thầy/cô.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "向",
+    "back": "hướng về, về phía; đối với",
+    "hint": "xiàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d1916ce4-b787-4444-b7b9-70ef79ea19a0",
+    "source_lesson_vocab_id": null
+  }
+}

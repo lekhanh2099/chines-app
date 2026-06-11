@@ -1,0 +1,249 @@
+{
+  "id": "c9860f1d-ba49-4488-9b86-dcf91a803b53",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "华人",
+  "pinyin": "Huárén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hoa nhân",
+    "meaning_vi": "người Hoa, người gốc Hoa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người Hoa",
+      "người gốc Hoa"
+    ],
+    "short_definition_vi": "người Hoa, người gốc Hoa",
+    "textbook_focus_vi": "Người thuộc cộng đồng/gốc văn hóa Trung Hoa, không nhất thiết quốc tịch Trung Quốc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "华",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Trung Hoa/tinh hoa",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Người thuộc cộng đồng/gốc văn hóa Trung Hoa, không nhất thiết quốc tịch Trung Quốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 华人 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "中国人",
+        "pinyin": "",
+        "meaning_vi": "người Trung Quốc",
+        "difference_vi": "Thường nhấn quốc tịch Trung Quốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "华侨",
+        "pinyin": "",
+        "meaning_vi": "Hoa kiều",
+        "difference_vi": "Cần xét quốc tịch/ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "华裔",
+        "pinyin": "",
+        "meaning_vi": "gốc Hoa/hậu duệ Hoa",
+        "difference_vi": "Nhấn dòng gốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6ccdbbf1-df3f-469e-be83-f775526ccd80",
+      "order": 1,
+      "zh": "美籍华人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3dd25aca-119f-41fa-b5b4-0f4e5431b254",
+      "order": 2,
+      "zh": "海外华人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8917959-a17a-4641-a4af-68efb7b89cee",
+      "order": 3,
+      "zh": "华人社区",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ef71e49-0266-4e11-94c6-e95f7d3f3aea",
+      "order": 4,
+      "zh": "华人家庭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a81a262c-a93c-4ba9-90a2-d0d58589fe70",
+      "order": 5,
+      "zh": "华人文化",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "af487134-afed-4592-a78b-7a76969a528f",
+      "order": 1,
+      "zh": "她的丈夫是一位美籍华人。",
+      "pinyin": "",
+      "vi": "Chồng cô ấy là một người Hoa quốc tịch Mỹ.",
+      "analysis_vi": "美籍华人 = quốc tịch Mỹ + gốc Hoa.",
+      "highlight": [
+        "华人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c9860f1d-ba49-4488-9b86-dcf91a803b53"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "296894f1-dd97-48fa-959a-43f238989535",
+      "order": 1,
+      "rule_vi": "Không tự động dịch 华人 thành 中国人.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他是美籍华人。",
+          "pinyin": "",
+          "vi": "Anh ấy là người Hoa quốc tịch Mỹ.",
+          "note_vi": "Quốc tịch Mỹ, gốc Hoa.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "华人",
+    "back": "người Hoa, người gốc Hoa",
+    "hint": "Huárén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c9860f1d-ba49-4488-9b86-dcf91a803b53",
+    "source_lesson_vocab_id": null
+  }
+}

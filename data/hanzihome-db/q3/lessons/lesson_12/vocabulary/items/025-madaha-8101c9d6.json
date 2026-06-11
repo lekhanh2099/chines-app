@@ -1,0 +1,352 @@
+{
+  "id": "171f432a-a11c-4a3e-9750-0dbea4263722",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "马大哈",
+  "pinyin": "mǎdàhā",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ khẩu ngữ",
+    "raw_cn": "名词 / 形容词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mã đại ha",
+    "meaning_vi": "người cẩu thả, hay sơ ý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người cẩu thả, hay sơ ý"
+    ],
+    "short_definition_vi": "Người làm việc sơ ý, hay quên, không cẩn thận.",
+    "textbook_focus_vi": "Từ khẩu ngữ, hơi chê nhẹ/thân mật.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "马",
+        "lishu_vi": "mã",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "馬",
+          "radical_variant": "马",
+          "radical_name_vi": "bộ Mã",
+          "radical_name_zh": "",
+          "hanviet": "mã",
+          "meaning_vi": "ngựa",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "马 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "mã",
+            "meaning_vi": "ngựa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "馬",
+              "radical_variant": "马",
+              "radical_name_vi": "bộ Mã",
+              "radical_name_zh": "",
+              "hanviet": "mã",
+              "meaning_vi": "ngựa",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "马 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "马 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngựa",
+        "modern_logic_vi": "ngựa",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "大",
+        "lishu_vi": "đại",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "lớn",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "哈",
+        "lishu_vi": "ha",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm cười/cảm thán",
+        "modern_logic_vi": "âm cười/cảm thán",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Từ khẩu ngữ cố định; không suy từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "粗心",
+        "pinyin": "cūxīn",
+        "meaning_vi": "sơ ý",
+        "difference_vi": "粗心 là tính từ; 马大哈 thường chỉ người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b794e587-f3ed-491b-891c-4b47abe43499",
+      "order": 1,
+      "zh": "一个马大哈",
+      "pinyin": "",
+      "vi": "một người sơ ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1cc58af3-b7b2-4aab-94f1-3e593a6ff7d9",
+      "order": 2,
+      "zh": "真是个马大哈",
+      "pinyin": "",
+      "vi": "đúng là đồ hậu đậu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95a78e0b-295a-426d-9c74-82b4586a4827",
+      "order": 3,
+      "zh": "做事马大哈",
+      "pinyin": "",
+      "vi": "làm việc cẩu thả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2e6061c-c8be-49b6-ba03-9449242d9d11",
+      "order": 4,
+      "zh": "别当马大哈",
+      "pinyin": "",
+      "vi": "đừng sơ ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4167ae6f-1c7f-4840-861e-0ec6d5e57145",
+      "order": 1,
+      "zh": "他是个马大哈，常常忘带钥匙。",
+      "pinyin": "",
+      "vi": "Anh ấy là người sơ ý, thường quên mang chìa khóa.",
+      "analysis_vi": "是个马大哈 đánh giá tính cách.",
+      "highlight": [
+        "马大哈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "171f432a-a11c-4a3e-9750-0dbea4263722"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b4f5d93-6fec-420e-b7c8-d734fc784296",
+      "order": 2,
+      "zh": "你别这么马大哈，出门前检查一遍。",
+      "pinyin": "",
+      "vi": "Đừng sơ ý vậy, trước khi ra ngoài kiểm tra một lượt.",
+      "analysis_vi": "检查一遍 = kiểm tra một lượt.",
+      "highlight": [
+        "马大哈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "171f432a-a11c-4a3e-9750-0dbea4263722"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "97da2a1a-8df7-4792-820f-3933ce83a32d",
+      "order": 1,
+      "rule_vi": "马大哈 là sơ ý, không phải lỗi đạo đức cố ý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "马大哈 là sơ ý, không phải lỗi đạo đức cố ý.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "马大哈",
+    "back": "người cẩu thả, hay sơ ý",
+    "hint": "mǎdàhā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "171f432a-a11c-4a3e-9750-0dbea4263722",
+    "source_lesson_vocab_id": null
+  }
+}

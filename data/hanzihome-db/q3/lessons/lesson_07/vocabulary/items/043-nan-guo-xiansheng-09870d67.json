@@ -1,0 +1,273 @@
+{
+  "id": "32f8ac58-7f99-48e3-979a-cb7a47ba7d9a",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "南郭先生",
+  "pinyin": "Nán Guō xiānsheng",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名/人名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "Nam Quách tiên sinh",
+    "meaning_vi": "ông Nam Quách",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ông Nam Quách"
+    ],
+    "short_definition_vi": "ông Nam Quách",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "南",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phương Nam",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "郭",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "họ Quách; thành ngoài",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "先",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trước",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "生",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sinh, sống; người",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Tên riêng gắn với điển cố 滥竽充数, không ép chiết tự.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 南郭先生.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "滥竽充数的人",
+        "pinyin": "",
+        "meaning_vi": "người trà trộn cho đủ số",
+        "difference_vi": "cách nói khái quát",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "外行",
+        "pinyin": "wàiháng",
+        "meaning_vi": "người ngoài nghề",
+        "difference_vi": "không nhất thiết cố ý lừa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "有真才实学的人",
+          "",
+          "người có thực tài",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "04842a78-5e6b-4a06-ab55-730829b6cf0e",
+      "order": 1,
+      "zh": "南郭先生不会吹竽",
+      "pinyin": "",
+      "vi": "Nam Quách không biết thổi竽",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c44c241d-5241-4c0d-a4e9-c97941b1f863",
+      "order": 2,
+      "zh": "南郭先生混在乐队里",
+      "pinyin": "",
+      "vi": "Nam Quách trà trộn trong ban nhạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ce9a93b-b03a-4567-ab44-aa1f3889837a",
+      "order": 3,
+      "zh": "不要做南郭先生",
+      "pinyin": "",
+      "vi": "đừng làm kiểu Nam Quách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82b2c919-79ac-4c86-b5fb-4e15b7c3092c",
+      "order": 4,
+      "zh": "像南郭先生一样",
+      "pinyin": "",
+      "vi": "giống ông Nam Quách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "522e4f6e-ed47-46b1-b3ac-02e670b73946",
+      "order": 1,
+      "zh": "南郭先生根本不会吹竽。",
+      "pinyin": "Nán Guō xiānsheng gēnběn bú huì chuī yú.",
+      "vi": "Ông Nam Quách hoàn toàn không biết thổi竽.",
+      "analysis_vi": "根本不会 phủ định mạnh.",
+      "highlight": [
+        "南郭先生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32f8ac58-7f99-48e3-979a-cb7a47ba7d9a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "460ab21e-02ff-4c58-9af1-7cc785004b9c",
+      "order": 2,
+      "zh": "一听说国王要一个人一个人地听，南郭先生就吓得溜走了。",
+      "pinyin": "Yì tīngshuō guówáng yào yí ge rén yí ge rén de tīng, Nán Guō xiānsheng jiù xià de liūzǒu le.",
+      "vi": "Vừa nghe vua muốn nghe từng người, Nam Quách sợ đến mức chuồn mất.",
+      "analysis_vi": "一听说……就…….",
+      "highlight": [
+        "南郭先生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32f8ac58-7f99-48e3-979a-cb7a47ba7d9a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "南郭先生 là biểu tượng cho người không có thực lực nhưng giả vờ có năng lực.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1ebefd2f-97d5-41eb-a82e-087c32df06c5",
+      "order": 1,
+      "rule_vi": "Không dịch 先生 ở đây là thầy; dịch là ông/tiên sinh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "南郭先生",
+    "back": "ông Nam Quách",
+    "hint": "Nán Guō xiānsheng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "32f8ac58-7f99-48e3-979a-cb7a47ba7d9a",
+    "source_lesson_vocab_id": null
+  }
+}

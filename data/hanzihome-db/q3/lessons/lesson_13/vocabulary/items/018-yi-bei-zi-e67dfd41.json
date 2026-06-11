@@ -1,0 +1,213 @@
+{
+  "id": "aac28f2d-71ff-4a33-99e5-c4baec1b7601",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "一辈子",
+  "pinyin": "yí bèi zi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "time"
+  ],
+  "meaning": {
+    "hanviet": "nhất bối tử",
+    "meaning_vi": "cả đời, suốt đời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cả đời",
+      "suốt đời"
+    ],
+    "short_definition_vi": "cả đời, suốt đời",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "Trong từ/cụm này, 一 góp phần vào nghĩa hiện đại: một.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "辈",
+        "lishu_vi": "bối",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đời/thế hệ",
+        "modern_logic_vi": "Trong từ/cụm này, 辈 góp phần vào nghĩa hiện đại: đời/thế hệ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "tử",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con/hậu tố danh từ",
+        "modern_logic_vi": "Trong từ/cụm này, 子 góp phần vào nghĩa hiện đại: con/hậu tố danh từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一辈子 cần học theo nghĩa hiện đại trong bài: cả đời, suốt đời.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 一辈子种地.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8ee78302-a5e1-4aca-b366-c3d6165dc4e9",
+      "order": 1,
+      "zh": "一辈子种地",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd1c68d3-072e-4c4d-912a-f450a13d898b",
+      "order": 2,
+      "zh": "一辈子辛苦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cad6b4f6-396e-4c03-b740-f88e23b22704",
+      "order": 3,
+      "zh": "过一辈子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7d578c4b-12b7-469e-ab62-0c9cd91990c6",
+      "order": 1,
+      "zh": "他父亲种了一辈子地。",
+      "pinyin": "Tā fùqin zhòng le yí bèi zi dì.",
+      "vi": "Cha anh ấy làm ruộng cả đời.",
+      "analysis_vi": "V + 了 + 一辈子 nêu thời gian kéo dài.",
+      "highlight": [
+        "一辈子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aac28f2d-71ff-4a33-99e5-c4baec1b7601"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "30247d4e-7ad5-40e9-89ed-d20523e20be8",
+      "order": 2,
+      "zh": "他不想一辈子以种地为主，所以高中毕业后去了城里工作。",
+      "pinyin": "Tā bù xiǎng yí bèi zi yǐ zhòngdì wéi zhǔ, suǒyǐ gāozhōng bìyè hòu qù le chéng lǐ gōngzuò.",
+      "vi": "Anh ấy không muốn cả đời chủ yếu làm ruộng nên lên thành phố làm việc.",
+      "analysis_vi": "一辈子以……为主 nêu trục đời người.",
+      "highlight": [
+        "一辈子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aac28f2d-71ff-4a33-99e5-c4baec1b7601"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "一辈子 hay dùng trong câu giàu cảm xúc: tình thân, hối tiếc, trách nhiệm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8ccce12b-31fa-458a-a210-0b5693dd66e0",
+      "order": 1,
+      "rule_vi": "Dùng 一辈子 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一辈子",
+    "back": "cả đời, suốt đời",
+    "hint": "yí bèi zi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "aac28f2d-71ff-4a33-99e5-c4baec1b7601",
+    "source_lesson_vocab_id": null
+  }
+}

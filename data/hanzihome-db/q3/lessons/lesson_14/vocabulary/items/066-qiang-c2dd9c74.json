@@ -1,0 +1,63 @@
+{
+  "id": "synthetic_vocab_2c17d109c3d3a4c6",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "强",
+  "pinyin": "qiáng",
+  "meaning_vi": "cố sức; gắng gượng; miễn cưỡng dùng sức",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "notes": [
+      "PDF bài 14 ghi 强 qiáng. Trong một số từ điển/biến thể khu vực có thể gặp 强忍 qiǎng rěn; file này ưu tiên theo giáo trình."
+    ]
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "c6f8683b-edaa-4e88-92b0-f61444f1386b",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "c6f8683b-edaa-4e88-92b0-f61444f1386b",
+    "type": "vocabulary_item",
+    "order": 39,
+    "hanzi": "强",
+    "pinyin": "qiáng",
+    "meaning_vi": "cố sức; gắng gượng; miễn cưỡng dùng sức",
+    "meaning_en": "",
+    "pos": "Phó từ",
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "notes": [
+        "PDF bài 14 ghi 强 qiáng. Trong một số từ điển/biến thể khu vực có thể gặp 强忍 qiǎng rěn; file này ưu tiên theo giáo trình."
+      ]
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "强",
+      "back": "qiáng — cố sức; gắng gượng; miễn cưỡng dùng sức",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_crosschecked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

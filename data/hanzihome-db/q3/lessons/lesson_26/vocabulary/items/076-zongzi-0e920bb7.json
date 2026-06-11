@@ -1,0 +1,69 @@
+{
+  "id": "synthetic_vocab_1d8e251d75e36131",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "粽子",
+  "pinyin": "zòngzi",
+  "meaning_vi": "bánh ú/bánh nếp gói lá dịp Đoan Ngọ",
+  "pos": "noun",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "b29ccb2e-0c64-4431-8cf1-56bea2ed6817",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "b29ccb2e-0c64-4431-8cf1-56bea2ed6817",
+    "type": "vocabulary_item",
+    "order": 71,
+    "hanzi": "粽子",
+    "pinyin": "zòngzi",
+    "meaning_vi": "bánh ú/bánh nếp gói lá dịp Đoan Ngọ",
+    "meaning_en": "glutinous rice dumpling",
+    "pos": "noun",
+    "pos_vi": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "粽子",
+      "back": "zòngzi — bánh ú/bánh nếp gói lá dịp Đoan Ngọ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_supplementary",
+    "page_start": 227,
+    "page_end": 227,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

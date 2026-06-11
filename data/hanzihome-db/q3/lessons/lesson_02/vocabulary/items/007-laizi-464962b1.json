@@ -1,0 +1,333 @@
+{
+  "id": "e4df5654-eedb-4525-9469-6f8be9416d21",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "来自",
+  "pinyin": "láizì",
+  "pos": {
+    "raw_vi": "Động từ / giới từ hóa",
+    "raw_cn": "动/准介词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "origin"
+  ],
+  "meaning": {
+    "hanviet": "Lai tự",
+    "meaning_vi": "đến từ, có nguồn gốc từ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đến từ, có nguồn gốc từ"
+    ],
+    "short_definition_vi": "đến từ, có nguồn gốc từ",
+    "textbook_focus_vi": "đến từ, có nguồn gốc từ",
+    "register_vi": "",
+    "usage_domain_vi": "origin",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến, lại, sắp",
+        "modern_logic_vi": "Chữ giản thể hiện đại không nên tách sâu; học theo nghĩa hiện đại.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "自",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "自",
+            "hanviet": "tự",
+            "meaning_vi": "chữ độc thể; bản thân/từ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "自 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "自",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tự",
+              "radical_name_zh": "",
+              "hanviet": "tự",
+              "meaning_vi": "bản thân; từ, do",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "自 được dùng như bộ Tự trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình; từ, do",
+        "modern_logic_vi": "Tự là điểm xuất phát hoặc bản thân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "自",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tự",
+          "radical_name_zh": "",
+          "hanviet": "tự",
+          "meaning_vi": "bản thân; từ, do",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "自 được dùng như bộ Tự trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Chữ giản thể hiện đại không nên tách sâu; học theo nghĩa hiện đại.; Tự là điểm xuất phát hoặc bản thân.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "从……来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "是……人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出身于",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fb16f949-003b-49e9-9522-dd5d372484f1",
+      "order": 1,
+      "zh": "来自越南",
+      "pinyin": "",
+      "vi": "đến từ Việt Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f362b9a8-28c9-4efa-8ddb-e9581315e256",
+      "order": 2,
+      "zh": "来自中国",
+      "pinyin": "",
+      "vi": "đến từ Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4df6f227-e205-4ae4-a747-1e0d71476a40",
+      "order": 3,
+      "zh": "来自不同国家",
+      "pinyin": "",
+      "vi": "đến từ các quốc gia khác nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cab662b7-8583-4b1a-9d68-d2bea7198d24",
+      "order": 4,
+      "zh": "来自亚洲",
+      "pinyin": "",
+      "vi": "đến từ châu Á",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "237dfc37-dac7-4dcc-b612-bedd5013f2e0",
+      "order": 5,
+      "zh": "来自朋友的信",
+      "pinyin": "",
+      "vi": "bức thư đến từ bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c02073ab-4dee-4cd5-8e48-e7c88331dc63",
+      "order": 1,
+      "zh": "我来自越南。",
+      "pinyin": "Wǒ láizì Yuènán.",
+      "vi": "Tôi đến từ Việt Nam.",
+      "analysis_vi": "人 + 来自 + nơi chốn.",
+      "highlight": [
+        "来自"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e4df5654-eedb-4525-9469-6f8be9416d21"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9c9a96e4-6737-4dbc-b771-0843ae82faf4",
+      "order": 2,
+      "zh": "班里的同学分别来自亚洲、非洲和美洲。",
+      "pinyin": "Bān lǐ de tóngxué fēnbié láizì Yàzhōu, Fēizhōu hé Měizhōu.",
+      "vi": "Các bạn trong lớp lần lượt đến từ châu Á, châu Phi và châu Mỹ.",
+      "analysis_vi": "分别来自 nối nhiều nguồn gốc.",
+      "highlight": [
+        "来自"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e4df5654-eedb-4525-9469-6f8be9416d21"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Tự giới thiệu trong lớp tiếng Trung dùng 我来自越南 rất chuẩn; trả lời 你是哪国人？ thì 我是越南人 tự nhiên hơn.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d997433a-a926-4b92-a831-a2d3532d8c7a",
+      "order": 1,
+      "rule_vi": "来自 là nguồn gốc, không phải điểm đến.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我来自中国。",
+          "pinyin": "Wǒ láizì Zhōngguó.",
+          "vi": "Tôi đến từ Trung Quốc.",
+          "note_vi": "Sai nếu ý muốn nói “tôi đi Trung Quốc”.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我去中国。",
+          "pinyin": "Wǒ qù Zhōngguó.",
+          "vi": "Tôi đi Trung Quốc.",
+          "note_vi": "Điểm đến dùng 去.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "来自",
+    "back": "đến từ, có nguồn gốc từ",
+    "hint": "láizì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "origin"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e4df5654-eedb-4525-9469-6f8be9416d21",
+    "source_lesson_vocab_id": null
+  }
+}

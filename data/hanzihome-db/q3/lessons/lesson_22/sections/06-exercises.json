@@ -1,0 +1,1036 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: preserve all exercise items in textbook order.",
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_verified"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读。",
+        "vi": "Phân biệt âm/thanh điệu; đọc thành tiếng."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "speaking"
+      ],
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "医疗 — yīliáo",
+              "right": "医药 — yīyào",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "补充 — bǔchōng",
+              "right": "普通 — pǔtōng",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "思维 — sīwéi",
+              "right": "示威 — shìwēi",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "消失 — xiāoshī",
+              "right": "小时 — xiǎoshí",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "赶紧 — gǎnjǐn",
+              "right": "干劲 — gànjìn",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "自学 — zìxué",
+              "right": "治学 — zhìxué",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "前事不忘，后事之师。",
+              "pinyin": "Qián shì bú wàng, hòu shì zhī shī.",
+              "vi": "Việc trước không quên, là bài học cho việc sau.",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "前人栽树，后人乘凉。",
+              "pinyin": "Qián rén zāi shù, hòu rén chéng liáng.",
+              "vi": "Người trước trồng cây, người sau hưởng bóng mát.",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "岁寒知松柏，日久见人心。",
+              "pinyin": "Suì hán zhī sōng bǎi, rì jiǔ jiàn rén xīn.",
+              "vi": "Trời lạnh mới biết tùng bách, lâu ngày mới rõ lòng người.",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": false
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ ngữ",
+      "instruction": {
+        "zh": "朗读下列词语。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "vocabulary"
+      ],
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "逐渐领悟",
+          "pinyin": "zhújiàn lǐngwù",
+          "vi": "dần dần lĩnh ngộ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "逐渐认识",
+          "pinyin": "zhújiàn rènshi",
+          "vi": "dần dần nhận thức/quen biết",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "逐渐了解",
+          "pinyin": "zhújiàn liǎojiě",
+          "vi": "dần dần hiểu rõ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "大胆的想法",
+          "pinyin": "dàdǎn de xiǎngfǎ",
+          "vi": "ý nghĩ táo bạo",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "大胆地说",
+          "pinyin": "dàdǎn de shuō",
+          "vi": "mạnh dạn nói",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "大胆地做",
+          "pinyin": "dàdǎn de zuò",
+          "vi": "mạnh dạn làm",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "突然哭起来",
+          "pinyin": "tūrán kū qǐlai",
+          "vi": "đột nhiên khóc lên",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "突然笑起来",
+          "pinyin": "tūrán xiào qǐlai",
+          "vi": "đột nhiên cười lên",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "突然站起来",
+          "pinyin": "tūrán zhàn qǐlai",
+          "vi": "đột nhiên đứng dậy",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "丧失语言能力",
+          "pinyin": "sàngshī yǔyán nénglì",
+          "vi": "mất năng lực ngôn ngữ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "丧失记忆能力",
+          "pinyin": "sàngshī jìyì nénglì",
+          "vi": "mất năng lực ghi nhớ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "丧失工作能力",
+          "pinyin": "sàngshī gōngzuò nénglì",
+          "vi": "mất năng lực lao động/làm việc",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "比她强得多",
+          "pinyin": "bǐ tā qiáng de duō",
+          "vi": "mạnh/giỏi hơn cô ấy nhiều",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "比他高得多",
+          "pinyin": "bǐ tā gāo de duō",
+          "vi": "cao hơn anh ấy nhiều",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "比这个贵得多",
+          "pinyin": "bǐ zhège guì de duō",
+          "vi": "đắt hơn cái này nhiều",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+          "text": "消失得一干二净",
+          "pinyin": "xiāoshī de yìgān-èrjìng",
+          "vi": "biến mất sạch không còn gì",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
+          "text": "打扫得一干二净",
+          "pinyin": "dǎsǎo de yìgān-èrjìng",
+          "vi": "quét dọn sạch bong",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
+          "text": "忘得一干二净",
+          "pinyin": "wàng de yìgān-èrjìng",
+          "vi": "quên sạch không còn gì",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
+          "text": "连问也不问",
+          "pinyin": "lián wèn yě bú wèn",
+          "vi": "ngay cả hỏi cũng không hỏi",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
+          "text": "连听也不听",
+          "pinyin": "lián tīng yě bù tīng",
+          "vi": "ngay cả nghe cũng không nghe",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
+          "text": "连看也不看",
+          "pinyin": "lián kàn yě bú kàn",
+          "vi": "ngay cả nhìn/xem cũng không xem",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
+          "text": "连动也没动",
+          "pinyin": "lián dòng yě méi dòng",
+          "vi": "ngay cả động cũng không động",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
+          "text": "连想也没想",
+          "pinyin": "lián xiǎng yě méi xiǎng",
+          "vi": "ngay cả nghĩ cũng không nghĩ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "71556026-f031-4d36-9a7e-7abd82202c42",
+          "text": "连尝也没尝",
+          "pinyin": "lián cháng yě méi cháng",
+          "vi": "ngay cả nếm cũng chưa nếm",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "965e382b-b48f-4509-8334-176e1557db63",
+          "text": "一天天成长起来",
+          "pinyin": "yì tiān tiān chéngzhǎng qǐlai",
+          "vi": "ngày một trưởng thành lên",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a27a4c14-22fa-4283-97bb-71ff4a0bd654",
+          "text": "一天天热起来",
+          "pinyin": "yì tiān tiān rè qǐlai",
+          "vi": "ngày một nóng lên",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7bc00e0d-b3d9-4033-a317-4c5513bee328",
+          "text": "一年年好起来",
+          "pinyin": "yì nián nián hǎo qǐlai",
+          "vi": "năm này qua năm khác tốt dần lên",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "vocabulary",
+        "grammar"
+      ],
+      "parts": [
+        {
+          "id": "90aa4fee-e79c-43aa-ba47-698c21d1b9c5",
+          "title": "A",
+          "word_bank": [
+            "严重",
+            "即使",
+            "不论",
+            "一五一十",
+            "头昏脑胀",
+            "接触",
+            "了不起",
+            "领悟",
+            "丧失",
+            "一干二净",
+            "耐力",
+            "思维"
+          ],
+          "questions": [
+            {
+              "id": "d9a9a0fa-52b8-4416-a83b-90723f14f5b2",
+              "prompt": "小时候的一场重病使我 ______ 了听力。",
+              "answer": "丧失",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "38d9ee94-15b5-463b-9116-b9d4c5b9d700",
+              "prompt": "城市里汽车的增加，______ 污染了城市的空气。",
+              "answer": "严重",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "80af13bc-72be-4894-b20e-3b0240046e7e",
+              "prompt": "这个道理我是逐渐才 ______ 的。",
+              "answer": "领悟",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "fb498798-133a-42b3-96ef-2b41d6fb3b33",
+              "prompt": "学会用汉语表达一定的意思还是比较容易的，但是要学会用汉语 ______ 就比较难了。",
+              "answer": "思维",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "550309ca-788b-4859-9f6d-650749a11c98",
+              "prompt": "昨天晚上我没睡好，今天一天都觉得 ______ 的。",
+              "answer": "头昏脑胀",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "f7a5c5c4-d85c-4641-b6d4-693ca7399d07",
+              "prompt": "他把这件事忘得 ______。",
+              "answer": "一干二净",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "e16a4aa8-ee9c-4ce6-9c9d-2ae0829cb1f0",
+              "prompt": "你应该把事情的经过 ______ 地告诉警察，让警察帮助你把丢的东西找回来。",
+              "answer": "一五一十",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
+              "prompt": "她真 ______！只学了一年就能用汉语自由地跟中国人谈话了。",
+              "answer": "了不起",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "3d2951e4-c09f-4887-80cd-9e2e46617f29",
+              "prompt": "跑三千米需要有一定的 ______。",
+              "answer": "耐力",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "b6f002b2-c530-48cc-8a45-6cb9fe96e211",
+              "prompt": "我跟她第一次 ______ 就喜欢上她了。",
+              "answer": "接触",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "743ae6c0-9a61-41c7-ba46-69ad8bd0be78",
+              "prompt": "刚开始学习汉语的时候，要多说，______ 说错了也没有关系。",
+              "answer": "即使",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "f1b52ea4-eee8-4648-b584-aa0305202a0b",
+              "prompt": "______ 遇到什么困难都不要怕。",
+              "answer": "不论",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "7382b7c5-024b-4aea-8161-626977f0b516",
+          "title": "B",
+          "questions": [
+            {
+              "id": "94ab3d83-50ac-4807-90f5-3ccc46be4ae1",
+              "prompt": "天 ______ 黑了下来。",
+              "choices": [
+                "渐渐",
+                "逐渐"
+              ],
+              "answer": "渐渐",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "07469e97-a1b0-46e0-8866-d361f064c457",
+              "prompt": "经过一段时间的接触，我才 ______ 了解了他。",
+              "choices": [
+                "渐渐",
+                "逐渐"
+              ],
+              "answer": "逐渐",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "b60a0be3-2dd2-4ce6-8f3d-71f8b8f293f9",
+              "prompt": "我不 ______ 你的意见。",
+              "choices": [
+                "同意",
+                "答应"
+              ],
+              "answer": "同意",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "1d405d7a-2484-4a21-bf6d-b5a49c5fa380",
+              "prompt": "公司领导 ______ 了工人们的要求。",
+              "choices": [
+                "同意",
+                "答应"
+              ],
+              "answer": "答应",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "dce87767-a467-497b-b4a9-5434e845aedf",
+              "prompt": "明年你有什么 ______？",
+              "choices": [
+                "打算",
+                "准备"
+              ],
+              "answer": "打算",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "d2a0d942-c444-4b73-bfc9-58a9dc9fd96d",
+              "prompt": "因为没有 ______，这次考得不太好。",
+              "choices": [
+                "打算",
+                "准备"
+              ],
+              "answer": "准备",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ trong ngoặc hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "这种病现在还是世界难题，________________。",
+          "given": "决心",
+          "answer": "医生们决心继续研究下去。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "______________________________，他从来没有失去信心。",
+          "given": "不论……还是……",
+          "answer": "不论遇到成功还是失败，他从来没有失去信心。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "一年来，______________________________，从来没有病过。",
+          "given": "不论……还是……",
+          "answer": "不论刮风还是下雨，他都坚持锻炼，从来没有病过。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "这本书我买回来以后，________________。",
+          "given": "连……也……",
+          "answer": "连看也没看。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "我怕用汉语说话，主要是怕说错了不好意思，这时 ______________________________。",
+          "given": "鼓励",
+          "answer": "老师鼓励我大胆地说，不要怕说错。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "__________________，我就想起小时候的情景。",
+          "given": "当……时",
+          "answer": "当我看到这张照片时，我就想起小时候的情景。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
+          "prompt": "______________________________，他都会坚持下去的。",
+          "given": "不论",
+          "answer": "不论遇到什么困难，他都会坚持下去的。",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
+          "prompt": "______________________________，我也要帮助她。",
+          "given": "即使",
+          "answer": "即使别人不理解，我也要帮助她。",
+          "answer_verified": false,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook/generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ trong ngoặc hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "dialogue": [
+            "A：你觉得这件事好办吗？",
+            "B：不好办，不过 ______________________________。"
+          ],
+          "given": "决心",
+          "answer": "我已经下决心把它办好",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "dialogue": [
+            "A：你怎么对中国的传统文化这么感兴趣？",
+            "B：我看了一些书，______________________________。"
+          ],
+          "given": "逐渐",
+          "answer": "逐渐对中国传统文化产生了兴趣",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "dialogue": [
+            "A：学习汉语快一年了，有什么体会？",
+            "B：______________________________。"
+          ],
+          "given": "体会",
+          "answer": "我体会到，学语言不能只背词，还要多听多说",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "dialogue": [
+            "A：这次汉语朗诵比赛玛丽得了第一名。",
+            "B：______________________________。"
+          ],
+          "given": "了不起",
+          "answer": "她真了不起，才学了一年就能朗诵得这么好",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "dialogue": [
+            "A：你每天都坚持锻炼吗？",
+            "B：是，______________________________。"
+          ],
+          "given": "即使……也……",
+          "answer": "即使天气不好，我也坚持锻炼",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "dialogue": [
+            "A：你回国后还能继续学汉语吗？",
+            "B：回国以后学习汉语的时间当然不多了，但是 ______________________________。"
+          ],
+          "given": "不论",
+          "answer": "不论多忙，我都不会放弃学汉语",
+          "answer_verified": false,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook/generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "items": [
+            {
+              "label": "A",
+              "text": "接到电话的第二天，我就回到了家。"
+            },
+            {
+              "label": "B",
+              "text": "晚上，躺在床上，我兴奋得怎么也睡不着。"
+            },
+            {
+              "label": "C",
+              "text": "前几天，父亲来电话说，家里的新楼修好了，母亲特意给我准备了一间，并希望我有空儿回家看看。"
+            },
+            {
+              "label": "D",
+              "text": "看到母亲把我的房间布置得又舒适又漂亮。"
+            }
+          ],
+          "answer": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "items": [
+            {
+              "label": "A",
+              "text": "失眠的原因各种各样，有生理上的、心理上的、精神上的，以及坐飞机长途旅行，时差造成的生物钟混乱等。"
+            },
+            {
+              "label": "B",
+              "text": "生命的质量不仅体现在人体的活动中，也体现在睡眠时。"
+            },
+            {
+              "label": "C",
+              "text": "不少人尽管白天享受各种快乐，可是夜里却常常失眠。"
+            },
+            {
+              "label": "D",
+              "text": "所以能不能睡好觉是人生的一个大问题，睡不好觉是一件非常痛苦的事。"
+            },
+            {
+              "label": "E",
+              "text": "因为人的生命差不多三分之一是在睡眠中度过的。"
+            }
+          ],
+          "answer": [
+            "B",
+            "E",
+            "D",
+            "C",
+            "A"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reorder_paragraph.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "prompt": "他决心地说：“我们一定要取得这场比赛的胜利。”",
+          "answer": "他下决心说：“我们一定要取得这场比赛的胜利。”",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "决心不能直接加 地 修饰 说；此处应用 下决心 / 决心要……。"
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "prompt": "我虽然取得了一点儿成绩，但没有了不起。",
+          "answer": "我虽然取得了一点儿成绩，但没什么了不起。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "没有了不起不自然；固定说法是 没什么了不起，表示“不算什么大不了”。"
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "prompt": "我已经把作业一干二净地做完了。",
+          "answer": "我已经把作业做完了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "一干二净通常修饰“忘/打扫/消失”等结果，不修饰“把作业做完”；作业完成直接说 做完了。"
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "prompt": "我们用车把她搬进了医院。",
+          "answer": "我们用车把她送进了医院。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "搬进医院不自然；人被送到医院就医，应说 送进医院。"
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "prompt": "我即使很努力，但是成绩也不好。",
+          "answer": "即使我很努力，成绩也不好。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "即使……也…… 本身成套，不再和 但是 同时搭配。"
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "prompt": "很多中国朋友都问了我为什么到中国来。",
+          "answer": "很多中国朋友都问我为什么到中国来。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "问 作谓语后直接带宾语从句，不需要 了；问了我 容易变成“问了我这个人”。"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "下列句子什么情景下说？下列情景怎么说？",
+        "vi": "Các câu sau dùng trong tình huống nào? Gặp tình huống sau thì nói thế nào?"
+      },
+      "parts": [
+        {
+          "id": "25b54876-62e8-4f94-b204-4c2ee708b2b3",
+          "title": "下列句子什么情景下说？",
+          "questions": [
+            {
+              "id": "c27289fb-5395-45bf-8c4f-dbfdc93a63a5",
+              "prompt": "这件事对我的打击太大了。",
+              "answer": "Khi người nói gặp cú sốc rất lớn, ví dụ người thân bị bệnh nặng hoặc bản thân gặp biến cố nghiêm trọng.",
+              "answer_verified": false,
+              "check_needed": false
+            },
+            {
+              "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
+              "prompt": "他真是一个了不起的人！",
+              "answer": "Khi muốn khen ai đó rất đáng nể, vượt qua khó khăn lớn hoặc làm được việc xuất sắc.",
+              "answer_verified": false,
+              "check_needed": false
+            },
+            {
+              "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
+              "prompt": "我感到很奇怪。",
+              "answer": "Khi sự việc xảy ra trái với dự đoán, khiến người nói thấy lạ hoặc khó hiểu.",
+              "answer_verified": false,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "f0e71485-f72f-4ecf-9357-426332e4da76",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "e1ef3a5f-4baa-422e-8e36-2eeab7b1384c",
+              "prompt": "一个朋友很激动，很生气，你劝他不要太激动。",
+              "given": "冷静",
+              "answer": "你先冷静一下，别太激动。",
+              "answer_verified": false,
+              "check_needed": false
+            },
+            {
+              "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
+              "prompt": "朋友这次没有考好，你要鼓励他。",
+              "given": "",
+              "answer": "别灰心，这次没考好没关系，下次继续努力。",
+              "answer_verified": false,
+              "check_needed": false
+            },
+            {
+              "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
+              "prompt": "看到自己的朋友取得了成功，你心里很高兴。",
+              "given": "说不出",
+              "answer": "看到你取得成功，我高兴得说不出话来。",
+              "answer_verified": false,
+              "check_needed": false
+            },
+            {
+              "id": "e9504884-3a9b-4c21-b8f9-6e923919b6e1",
+              "prompt": "有人问你现在的汉语水平怎么样，你要回答他。",
+              "given": "比……强多了",
+              "answer": "我的汉语比刚来中国时强多了。",
+              "answer_verified": false,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.situational_expression.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook/generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Bài đọc điền chỗ trống",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền vào chỗ trống trong bài đọc."
+      },
+      "reading_ref": "reading_01",
+      "rendering": {
+        "renderer": "reading.cloze.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp."
+      },
+      "communication_ref": "communication_01",
+      "rendering": {
+        "renderer": "communication.dialogue.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

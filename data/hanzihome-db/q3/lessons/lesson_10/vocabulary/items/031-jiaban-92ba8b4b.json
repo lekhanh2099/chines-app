@@ -1,0 +1,289 @@
+{
+  "id": "e0ef8e27-68ba-4ccb-9ba4-2b60d0866bd9",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "加班",
+  "pinyin": "jiābān",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "gia ban",
+    "meaning_vi": "làm thêm giờ, tăng ca",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm thêm giờ",
+      "tăng ca"
+    ],
+    "short_definition_vi": "tăng ca, làm thêm giờ",
+    "textbook_focus_vi": "tăng ca, làm thêm giờ",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "加",
+        "lishu_vi": "gia",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "班",
+        "lishu_vi": "ban",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "tăng ca, làm thêm giờ",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 今天加班.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "上班",
+        "pinyin": "shàngbān",
+        "meaning_vi": "đi làm/vào ca",
+        "difference_vi": "ca bình thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开夜车",
+        "pinyin": "kāi yèchē",
+        "meaning_vi": "thức khuya học/làm",
+        "difference_vi": "không nhất thiết là giờ làm công ty",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a9ae8e3a-f18c-4176-b2cc-65679137e690",
+      "order": 1,
+      "zh": "今天加班",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "094e0580-fe4e-472c-9cca-8c7f9b3b5dc6",
+      "order": 2,
+      "zh": "晚上加班",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a2db68e-298d-4ab5-b805-458dcae185b6",
+      "order": 3,
+      "zh": "周末加班",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c77a6f7-e1b7-496c-8d22-9c852f424857",
+      "order": 4,
+      "zh": "加班到十点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9554cb9-83de-489c-a9a6-e62909e2a108",
+      "order": 5,
+      "zh": "经常加班",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cc5dfc2-2790-4b60-9928-5c8029c73b9f",
+      "order": 6,
+      "zh": "加班费",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "693d64f3-0e27-41f8-96a4-021ff592846c",
+      "order": 1,
+      "zh": "我今天晚上要加班。",
+      "pinyin": "Wǒ jīntiān wǎnshang yào jiābān.",
+      "vi": "Tối nay tôi phải tăng ca.",
+      "analysis_vi": "要 ở đây là phải/sẽ làm do tình huống công việc.",
+      "highlight": [
+        "加班"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e0ef8e27-68ba-4ccb-9ba4-2b60d0866bd9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "加班 rất hay gặp trong văn hóa công sở Trung Quốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "525cc872-ca29-4636-959b-9798d13c4233",
+      "order": 1,
+      "rule_vi": "加班 là tăng ca; 打工 là đi làm thuê/đi làm kiếm tiền.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "加班",
+    "back": "làm thêm giờ, tăng ca",
+    "hint": "jiābān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e0ef8e27-68ba-4ccb-9ba4-2b60d0866bd9",
+    "source_lesson_vocab_id": null
+  }
+}

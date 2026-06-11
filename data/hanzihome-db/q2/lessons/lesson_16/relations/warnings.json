@@ -1,0 +1,28 @@
+[
+  {
+    "id": "warning_a02cf5578cc19b1dcc67c5b4",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "空",
+      "种",
+      "棵",
+      "枣",
+      "结",
+      "尝",
+      "甜",
+      "盖",
+      "建",
+      "搬",
+      "高",
+      "低",
+      "提",
+      "开",
+      "湖",
+      "窗",
+      "幅",
+      "包",
+      "端"
+    ]
+  }
+]

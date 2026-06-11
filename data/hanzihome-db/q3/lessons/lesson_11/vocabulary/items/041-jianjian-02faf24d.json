@@ -1,0 +1,398 @@
+{
+  "id": "3952f514-5c9f-4f43-b40e-010be21b5c01",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "渐渐",
+  "pinyin": "jiànjiàn",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "tiệm tiệm",
+    "meaning_vi": "dần dần, từ từ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dần dần",
+      "từ từ"
+    ],
+    "short_definition_vi": "diễn tả sự thay đổi xảy ra chậm theo thời gian",
+    "textbook_focus_vi": "Trong bài tả bầu trời dần phục hồi màu ban đầu.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "渐",
+        "lishu_vi": "",
+        "structure_note_vi": "氵 + 斩",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "",
+            "meaning_vi": "nước",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "nước",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "斩",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dần dần",
+        "modern_logic_vi": "dần dần",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "nước",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "渐",
+        "lishu_vi": "",
+        "structure_note_vi": "氵 + 斩",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "",
+            "meaning_vi": "nước",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "nước",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "斩",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dần dần",
+        "modern_logic_vi": "dần dần",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "nước",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "渐渐 được học trong bài theo nghĩa: diễn tả sự thay đổi xảy ra chậm theo thời gian.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 渐渐恢复.",
+    "warning_vi": "Không dùng 渐渐 cho sự việc đột ngột như 摔倒; dùng 突然.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "慢慢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Có thể nói tốc độ hành động hoặc biến hóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "逐渐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Văn viết hơn 渐渐.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 渐渐 cho sự việc đột ngột như 摔倒; dùng 突然."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1e0dfc3e-ed14-4dbd-9775-4bd5eab08480",
+      "order": 1,
+      "zh": "渐渐恢复",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76898717-3dc9-4a88-a4cc-f10b5d63a9ce",
+      "order": 2,
+      "zh": "渐渐变暗",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eeba0880-8c0e-4095-b2d1-1f2775d2e5a4",
+      "order": 3,
+      "zh": "渐渐变亮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c802671d-c5d3-4c22-9727-77bd48016cb5",
+      "order": 4,
+      "zh": "渐渐明白",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2137517d-d94b-4c13-83c2-fb50c406de9a",
+      "order": 5,
+      "zh": "渐渐习惯",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c89107d-f738-404b-bab6-762eac60d835",
+      "order": 6,
+      "zh": "渐渐安静下来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d0932a3e-80a0-44f7-89fd-842a662b7223",
+      "order": 1,
+      "zh": "天空渐渐恢复了原来的颜色。",
+      "pinyin": "",
+      "vi": "Bầu trời dần khôi phục lại màu sắc ban đầu.",
+      "analysis_vi": "渐渐 + V nhấn quá trình từ từ.",
+      "highlight": [
+        "渐渐"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3952f514-5c9f-4f43-b40e-010be21b5c01"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "00e734b4-5bfc-477f-9543-8f4e91cdf72e",
+      "order": 2,
+      "zh": "我后来渐渐习惯了老师的语速。",
+      "pinyin": "",
+      "vi": "Sau này tôi dần quen với tốc độ nói của thầy/cô.",
+      "analysis_vi": "渐渐习惯 nói quá trình thích nghi.",
+      "highlight": [
+        "渐渐"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3952f514-5c9f-4f43-b40e-010be21b5c01"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "渐渐 làm nhịp văn kể chậm lại: sáng/tối/cảm xúc thay đổi từ từ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cd621d67-308c-472b-85c6-0acef2ef357d",
+      "order": 1,
+      "rule_vi": "Không dùng 渐渐 cho sự việc đột ngột như 摔倒; dùng 突然.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 渐渐 cho sự việc đột ngột như 摔倒; dùng 突然.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "渐渐",
+    "back": "dần dần, từ từ",
+    "hint": "jiànjiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3952f514-5c9f-4f43-b40e-010be21b5c01",
+    "source_lesson_vocab_id": null
+  }
+}

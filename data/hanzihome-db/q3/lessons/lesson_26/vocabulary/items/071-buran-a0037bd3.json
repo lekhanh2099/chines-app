@@ -1,0 +1,213 @@
+{
+  "id": "c7681792-3318-47de-a2d8-e8a9f87b1dea",
+  "type": "deep_vocabulary_item",
+  "order": 71,
+  "hanzi": "不然",
+  "pinyin": "bùrán",
+  "pos": {
+    "raw_vi": "Liên từ / cụm nối câu",
+    "raw_cn": "连词 / 话语连接成分",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "bất nhiên",
+    "meaning_vi": "nếu không thì; không phải vậy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nếu không thì",
+      "không phải vậy"
+    ],
+    "short_definition_vi": "nếu không thì; không phải vậy",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "不 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "然 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "不然 trong bài được học theo nghĩa: nếu không thì; không phải vậy.",
+    "memory_tip_vi": "Nhớ 不然 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "否则",
+        "pinyin": "fǒuzé",
+        "meaning_vi": "nếu không thì",
+        "difference_vi": "Trang trọng hơn 不然.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch “không thì” thành 不就; phải dùng 不然/否则."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "929c924f-70c1-48f1-a32d-1bb166022e94",
+      "order": 1,
+      "zh": "不然的话",
+      "pinyin": "",
+      "vi": "nếu không thì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5560103d-30d7-45b9-bcb6-03d841d83a8b",
+      "order": 2,
+      "zh": "要不然",
+      "pinyin": "",
+      "vi": "nếu không thì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2aa97c1-4c3d-4266-8bc2-83660883bf6c",
+      "order": 3,
+      "zh": "不然就来不及了",
+      "pinyin": "",
+      "vi": "nếu không thì không kịp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d7fa996f-5a2e-4622-8e57-5dd2035ab216",
+      "order": 1,
+      "zh": "快点儿，不然我们就来不及了。",
+      "pinyin": "",
+      "vi": "Nhanh lên, nếu không chúng ta sẽ không kịp.",
+      "analysis_vi": "不然 nối với hậu quả nếu không làm vế trước.",
+      "highlight": [
+        "不然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7681792-3318-47de-a2d8-e8a9f87b1dea"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a11af65a-dc4e-4be3-b166-0c6238356ad4",
+      "order": 2,
+      "zh": "你得先了解人物关系，不然这个故事很难听懂。",
+      "pinyin": "",
+      "vi": "Bạn phải hiểu quan hệ nhân vật trước, nếu không câu chuyện này rất khó nghe hiểu.",
+      "analysis_vi": "不然 báo hậu quả học tập.",
+      "highlight": [
+        "不然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7681792-3318-47de-a2d8-e8a9f87b1dea"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不然 giúp giải thích vì sao nhân vật buộc phải ám thị/gửi tín vật/dừng kiệu.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c0c86cc0-dc5e-41c6-9dea-57ac2fc4d9da",
+      "order": 1,
+      "rule_vi": "Không dịch “không thì” thành 不就; phải dùng 不然/否则.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不然",
+    "back": "nếu không thì; không phải vậy",
+    "hint": "bùrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c7681792-3318-47de-a2d8-e8a9f87b1dea",
+    "source_lesson_vocab_id": null
+  }
+}

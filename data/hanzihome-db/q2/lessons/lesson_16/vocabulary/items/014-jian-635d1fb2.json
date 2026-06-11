@@ -1,0 +1,338 @@
+{
+  "id": "53fbdbcb-b7da-4d5e-9cb0-ce55fdb84f4d",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "建",
+  "pinyin": "jiàn",
+  "pos": {
+    "raw_vi": "Động từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动 / 语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kiến",
+    "meaning_vi": "xây, xây dựng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xây, xây dựng"
+    ],
+    "short_definition_vi": "xây, xây dựng",
+    "textbook_focus_vi": "xây, xây dựng",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "建",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "廴",
+            "hanviet": "dẫn",
+            "meaning_vi": "bước dài, kéo dài",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "廴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dẫn",
+              "radical_name_zh": "",
+              "hanviet": "dẫn",
+              "meaning_vi": "bước dài, kéo dài",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "廴 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "聿",
+            "hanviet": "duật",
+            "meaning_vi": "tay cầm bút; thành phần hình thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "聿",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Duật",
+              "radical_name_zh": "",
+              "hanviet": "duật",
+              "meaning_vi": "tay cầm bút; thành phần hình thể",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "聿 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xây, lập",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "建 = xây dựng/lập nên; rộng và hơi trang trọng hơn 盖.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "盖",
+        "pinyin": "",
+        "meaning_vi": "xây nhà/lầu",
+        "difference_vi": "Khẩu ngữ và cụ thể hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "建设",
+        "pinyin": "",
+        "meaning_vi": "xây dựng quy mô lớn",
+        "difference_vi": "Cho đất nước, thành phố, hệ thống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "建立",
+        "pinyin": "",
+        "meaning_vi": "thiết lập",
+        "difference_vi": "Dùng cho quan hệ, chế độ, tổ chức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "建",
+        "right": "拆",
+        "meaning_vi": "xây ↔ dỡ",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f43255ba-2307-49a8-8ff4-6d5c1438e03f",
+      "order": 1,
+      "zh": "建房子",
+      "pinyin": "",
+      "vi": "xây nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8dab0661-6262-4ba0-9f1b-18be963aeabc",
+      "order": 2,
+      "zh": "建住宅",
+      "pinyin": "",
+      "vi": "xây nhà ở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07d59809-6611-4dff-8e3c-384449266e05",
+      "order": 3,
+      "zh": "建小区",
+      "pinyin": "",
+      "vi": "xây khu dân cư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1596c48c-3a53-464a-9300-4b8af66664e3",
+      "order": 4,
+      "zh": "建学校",
+      "pinyin": "",
+      "vi": "xây trường học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ebac365-0c02-491d-a40d-3bc95f7ad3fa",
+      "order": 5,
+      "zh": "建立关系",
+      "pinyin": "",
+      "vi": "thiết lập quan hệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "88c08168-d1e9-4ae8-b4eb-6b965eb33d1c",
+      "order": 1,
+      "zh": "这里正在建一个新小区。",
+      "pinyin": "Zhèlǐ zhèngzài jiàn yí ge xīn xiǎoqū.",
+      "vi": "Ở đây đang xây một khu dân cư mới.",
+      "analysis_vi": "建小区 tự nhiên khi nói quy hoạch/khu dân cư.",
+      "highlight": [
+        "建"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "53fbdbcb-b7da-4d5e-9cb0-ce55fdb84f4d"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2094ecbb-17e4-478c-ac67-49812ba005f6",
+      "order": 2,
+      "zh": "四合院旁边建起了很多现代化住宅。",
+      "pinyin": "Sìhéyuàn pángbiān jiànqǐ le hěn duō xiàndàihuà zhùzhái.",
+      "vi": "Bên cạnh tứ hợp viện đã xây lên rất nhiều nhà ở hiện đại.",
+      "analysis_vi": "建起了 nhấn công trình được dựng lên.",
+      "highlight": [
+        "建"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "53fbdbcb-b7da-4d5e-9cb0-ce55fdb84f4d"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c2520dc1-5be7-4913-9f22-b78d249ac32f",
+      "order": 3,
+      "zh": "这个地方越建越现代化，可是老人们越来越舍不得老院子。",
+      "pinyin": "Zhège dìfang yuè jiàn yuè xiàndàihuà, kěshì lǎorénmen yuè lái yuè shěbude lǎo yuànzi.",
+      "vi": "Nơi này càng xây dựng càng hiện đại hóa, nhưng người già ngày càng không nỡ rời sân cũ.",
+      "analysis_vi": "Kết hợp 越……越…… và 越来越.",
+      "highlight": [
+        "建"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "53fbdbcb-b7da-4d5e-9cb0-ce55fdb84f4d"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "建 xuất hiện nhiều trong 建设, 建国, 建立, 建议 nên rộng hơn xây nhà.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4833cc39-c656-4e45-8b65-2fded365f4b7",
+      "order": 1,
+      "rule_vi": "Không nói 盖关系; nói 建立关系.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 盖关系; nói 建立关系.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "建",
+    "back": "xây, xây dựng",
+    "hint": "jiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_014"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53fbdbcb-b7da-4d5e-9cb0-ce55fdb84f4d",
+    "source_lesson_vocab_id": null
+  }
+}

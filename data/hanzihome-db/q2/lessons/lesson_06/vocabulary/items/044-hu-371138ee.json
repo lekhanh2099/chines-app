@@ -1,0 +1,310 @@
+{
+  "id": "21e3ca9f-a55f-46cf-b706-b5a1f5dbe139",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "湖",
+  "pinyin": "hú",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "travel_scenery"
+  ],
+  "meaning": {
+    "hanviet": "Hồ",
+    "meaning_vi": "hồ nước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hồ nước"
+    ],
+    "short_definition_vi": "hồ nước",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "travel scenery",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "湖",
+        "lishu_vi": "",
+        "structure_note_vi": "氵 liên quan nước; 胡 là phần phải.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "胡",
+            "hanviet": "hồ",
+            "meaning_vi": "râu/người Hồ",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hồ nước",
+        "modern_logic_vi": "氵 liên quan nước; 胡 là phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "氵 liên quan nước; 湖 là vùng nước lớn trên đất liền.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "湖泊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hồ/vùng hồ, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "河",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sông",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "江",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sông lớn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "海",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biển",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6789e3b2-76dd-4901-8e83-4a290b4c41cf",
+      "order": 1,
+      "zh": "一个湖",
+      "pinyin": "",
+      "vi": "một cái hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd140f3f-60d6-4f3b-ae71-f1c472e51ae4",
+      "order": 2,
+      "zh": "湖边",
+      "pinyin": "",
+      "vi": "bên hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c0aa4ae-a683-442e-9cbd-81db11ed3b2c",
+      "order": 3,
+      "zh": "湖上",
+      "pinyin": "",
+      "vi": "trên hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7bf87ba0-0f05-42f6-8f00-f7a85087e621",
+      "order": 4,
+      "zh": "湖水",
+      "pinyin": "",
+      "vi": "nước hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "63212bd9-b0d0-4e82-9c97-15306fe6fc27",
+      "order": 5,
+      "zh": "湖面",
+      "pinyin": "",
+      "vi": "mặt hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a6c87acd-6d36-4e77-bac4-76e658fd13d1",
+      "order": 1,
+      "zh": "我们在湖边散步。",
+      "pinyin": "Wǒmen zài húbiān sànbù.",
+      "vi": "Chúng tôi đi dạo bên hồ.",
+      "analysis_vi": "湖边 = bên hồ.",
+      "highlight": [
+        "湖"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "21e3ca9f-a55f-46cf-b706-b5a1f5dbe139"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c40df8aa-f196-4737-a063-74a1b6a29938",
+      "order": 2,
+      "zh": "这个湖比那个湖大得多。",
+      "pinyin": "Zhège hú bǐ nàge hú dà de duō.",
+      "vi": "Hồ này lớn hơn hồ kia nhiều.",
+      "analysis_vi": "比……大得多 là so sánh chênh lớn.",
+      "highlight": [
+        "湖"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "21e3ca9f-a55f-46cf-b706-b5a1f5dbe139"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "西湖 là tên hồ nổi tiếng ở Hàng Châu; 湖光山色 là cụm khen cảnh hồ núi.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "557ed44c-ebd8-4507-a5ab-d3eb9ded89ee",
+      "order": 1,
+      "rule_vi": "Không nhầm 湖 với 河 hoặc 海.",
+      "natural_examples": [
+        {
+          "zh": "湖上有几条船。",
+          "pinyin": "Hú shang yǒu jǐ tiáo chuán.",
+          "vi": "Trên hồ có mấy chiếc thuyền.",
+          "note_vi": "湖 = hồ.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "湖上有几条船。",
+          "pinyin": "Hú shang yǒu jǐ tiáo chuán.",
+          "vi": "Trên hồ có mấy chiếc thuyền.",
+          "note_vi": "湖 = hồ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "湖",
+    "back": "hồ nước",
+    "hint": "hú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "travel_scenery"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "21e3ca9f-a55f-46cf-b706-b5a1f5dbe139",
+    "source_lesson_vocab_id": null
+  }
+}

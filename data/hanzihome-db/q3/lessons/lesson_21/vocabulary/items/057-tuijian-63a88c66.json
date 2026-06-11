@@ -1,0 +1,329 @@
+{
+  "id": "3e39132d-b9d2-4df4-8347-6518acce9243",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "推荐",
+  "pinyin": "tuījiàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "thôi tiến",
+    "meaning_vi": "giới thiệu, đề cử, gợi ý nên chọn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giới thiệu",
+      "đề cử",
+      "gợi ý nên chọn"
+    ],
+    "short_definition_vi": "giới thiệu, đề cử, gợi ý nên chọn",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: giới thiệu, đề cử, gợi ý nên chọn.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "推",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 推.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "荐",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ/cây",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ/cây",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ/cây",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 荐.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "推荐 trong bài được hiểu theo nghĩa: giới thiệu, đề cử, gợi ý nên chọn. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 推荐.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "推荐 là giới thiệu/đề xuất tích cực; 推销 là chào bán."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9f4124ff-a936-4192-bbb8-0e0e83f555f5",
+      "order": 1,
+      "zh": "向我推荐",
+      "pinyin": "",
+      "vi": "giới thiệu với tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bfc5a8e4-a3a8-4051-aed0-92958893fc8d",
+      "order": 2,
+      "zh": "给你推荐",
+      "pinyin": "",
+      "vi": "giới thiệu cho bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30094573-bd03-4014-b985-b2a857b09bc1",
+      "order": 3,
+      "zh": "推荐一家发廊",
+      "pinyin": "",
+      "vi": "giới thiệu một salon",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f7b8c9d6-c4da-4510-8f09-ee47fcb90f35",
+      "order": 4,
+      "zh": "推荐一本书",
+      "pinyin": "",
+      "vi": "giới thiệu một quyển sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e4dd27e-cac0-4e43-a510-d4eb8af2dcdd",
+      "order": 5,
+      "zh": "值得推荐",
+      "pinyin": "",
+      "vi": "đáng giới thiệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c3c4d43c-919b-4659-9693-eba84bcd681c",
+      "order": 1,
+      "zh": "朋友给我推荐了一家发廊。",
+      "pinyin": "",
+      "vi": "Bạn giới thiệu cho tôi một salon tóc.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "推荐"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3e39132d-b9d2-4df4-8347-6518acce9243"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fa764e1a-22e7-47be-b61d-1e19c77102c8",
+      "order": 2,
+      "zh": "朋友们向我推荐，说要理发就去“美园”。",
+      "pinyin": "",
+      "vi": "Bạn bè giới thiệu rằng muốn cắt tóc thì đến “Mỹ Viên”.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "推荐"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3e39132d-b9d2-4df4-8347-6518acce9243"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "推荐 là giới thiệu/đề xuất tích cực; 推销 là chào bán.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dc9f85a2-a225-484d-b162-6b6d787c2225",
+      "order": 1,
+      "rule_vi": "推荐 là giới thiệu/đề xuất tích cực; 推销 là chào bán.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他一直推荐会员卡给我买。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "推荐 là giới thiệu/đề xuất tích cực; 推销 là chào bán.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他一直向我推销会员卡。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "推荐 là giới thiệu/đề xuất tích cực; 推销 là chào bán.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "推荐",
+    "back": "giới thiệu, đề cử, gợi ý nên chọn",
+    "hint": "tuījiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3e39132d-b9d2-4df4-8347-6518acce9243",
+    "source_lesson_vocab_id": null
+  }
+}

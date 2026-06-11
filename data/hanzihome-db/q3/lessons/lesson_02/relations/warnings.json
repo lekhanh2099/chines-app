@@ -1,0 +1,37 @@
+[
+  {
+    "id": "warning_07bb855aca9e99eb2677a570",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "封",
+      "上",
+      "交",
+      "自",
+      "等",
+      "洲",
+      "站",
+      "黄",
+      "拍",
+      "项",
+      "后",
+      "诗",
+      "唐",
+      "滑",
+      "堆",
+      "扶"
+    ]
+  },
+  {
+    "id": "warning_d91edeac4af7f24ad73e3648",
+    "type": "missing_group_word_target",
+    "owner": {
+      "id": "7789dfde-df40-4735-912a-8ca7fda83fe7",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "term": "课外活动",
+    "reason": "Group word did not match any materialized vocabulary item.",
+    "candidates": []
+  }
+]

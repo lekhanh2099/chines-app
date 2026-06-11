@@ -1,0 +1,292 @@
+{
+  "id": "ea26321b-dfd6-4d88-93ae-245a4e9cdec5",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "及",
+  "pinyin": "jí",
+  "pos": {
+    "raw_vi": "Động từ / Liên từ / Hình vị",
+    "raw_cn": "",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "function_words"
+  ],
+  "meaning": {
+    "hanviet": "cập",
+    "meaning_vi": "đến, kịp; và, cùng với",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đến, kịp; và, cùng với"
+    ],
+    "short_definition_vi": "đến, kịp; và, cùng với",
+    "textbook_focus_vi": "đến, kịp; và, cùng với",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "及",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kịp, đến, đạt đến, và/cùng",
+        "modern_logic_vi": "及 là chữ đơn, học qua cụm 来不及/以及/及格.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "及 học qua cụm 来不及, 及格, 以及; ít dùng độc lập trong khẩu ngữ.",
+    "memory_tip_vi": "及 học qua cụm 来不及, 及格, 以及; ít dùng độc lập trong khẩu ngữ.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "以及",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "và/cùng với, văn viết rõ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "和",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "và, khẩu ngữ phổ biến",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "跟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "với/cùng với, khẩu ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "来得及",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kịp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "来不及",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không kịp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "来得及",
+        "right": "来不及",
+        "meaning_vi": "",
+        "note_vi": "kịp ↔ không kịp",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9301d1b6-d310-4909-b83d-ffae2c6ca54f",
+      "order": 1,
+      "zh": "以及",
+      "pinyin": "",
+      "vi": "và, cùng với",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0b06b297-50c1-4da9-b5f6-2b950edb8154",
+      "order": 2,
+      "zh": "及时",
+      "pinyin": "",
+      "vi": "kịp thời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a7d023b-db67-49b9-96ce-83b95903c82f",
+      "order": 3,
+      "zh": "及格",
+      "pinyin": "",
+      "vi": "đạt chuẩn/qua môn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e1f45b8-5201-4da0-b39a-62ac8c7e4b7d",
+      "order": 4,
+      "zh": "涉及",
+      "pinyin": "",
+      "vi": "liên quan đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a13a9543-c31d-448b-80cd-933d945641c6",
+      "order": 5,
+      "zh": "来得及",
+      "pinyin": "",
+      "vi": "kịp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b554631c-56af-44b6-a933-8a04eca1cf53",
+      "order": 6,
+      "zh": "来不及",
+      "pinyin": "",
+      "vi": "không kịp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3ffeff3c-e692-4a80-b7cd-f6d4b5d910ad",
+      "order": 1,
+      "zh": "护照以及签证都要检查好。",
+      "pinyin": "",
+      "vi": "Hộ chiếu và visa đều phải kiểm tra cho xong/cẩn thận.",
+      "analysis_vi": "以及 nối hai danh từ, hơi văn viết.",
+      "highlight": [
+        "及"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea26321b-dfd6-4d88-93ae-245a4e9cdec5"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ef5b91c3-1c2e-4abf-ae16-4a851c12b152",
+      "order": 2,
+      "zh": "护照及签证你都准备好了吗？",
+      "pinyin": "",
+      "vi": "Hộ chiếu và visa bạn đều chuẩn bị xong chưa?",
+      "analysis_vi": "及 ở đây tương đương 和/以及, văn viết.",
+      "highlight": [
+        "及"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea26321b-dfd6-4d88-93ae-245a4e9cdec5"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "及 có Hán Việt “cập” trong đề cập/cập nhật/phổ cập.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "73250580-2273-45eb-877e-c53a93b001cf",
+      "order": 1,
+      "rule_vi": "Không dùng 及 quá nhiều trong khẩu ngữ; dùng 和 an toàn hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "护照和签证都带了吗？",
+          "pinyin": "",
+          "vi": "Hộ chiếu và visa đều mang chưa?",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "及",
+    "back": "đến, kịp; và, cùng với",
+    "hint": "jí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "function_words"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ea26321b-dfd6-4d88-93ae-245a4e9cdec5",
+    "source_lesson_vocab_id": null
+  }
+}

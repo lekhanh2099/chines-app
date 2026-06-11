@@ -1,0 +1,329 @@
+{
+  "id": "886c1007-ab55-4b95-bbe6-c32e5af450af",
+  "type": "deep_vocabulary_item",
+  "order": 69,
+  "hanzi": "转眼",
+  "pinyin": "zhuǎnyǎn",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副/时间短语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "chuyển nhãn",
+    "meaning_vi": "thoáng cái, chớp mắt; thời gian trôi nhanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thoáng cái",
+      "chớp mắt",
+      "thời gian trôi nhanh"
+    ],
+    "short_definition_vi": "thoáng cái, chớp mắt; thời gian trôi nhanh",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: thoáng cái, chớp mắt; thời gian trôi nhanh.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "转",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "车 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 转.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "眼",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "目 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 眼.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "转眼 trong bài được hiểu theo nghĩa: thoáng cái, chớp mắt; thời gian trôi nhanh. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 转眼.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "转眼 dùng cho thời gian trôi nhanh, không dùng cho tốc độ chạy vật lý."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "05c7b67f-9263-4675-a2b0-15f1fed4a638",
+      "order": 1,
+      "zh": "转眼间",
+      "pinyin": "",
+      "vi": "trong chớp mắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18e93ef7-9161-48fe-9d2f-f92f67cf17b0",
+      "order": 2,
+      "zh": "一转眼",
+      "pinyin": "",
+      "vi": "thoáng cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e839d5e-8091-49f0-bd85-b7c7ba45f637",
+      "order": 3,
+      "zh": "转眼几个月过去了",
+      "pinyin": "",
+      "vi": "thoáng cái mấy tháng trôi qua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd7f862d-d68c-4351-b257-5e4c51ef8edd",
+      "order": 4,
+      "zh": "转眼到了年底",
+      "pinyin": "",
+      "vi": "thoáng cái đã đến cuối năm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ab37328-e26e-4122-8592-84aef3044394",
+      "order": 5,
+      "zh": "转眼就忘了",
+      "pinyin": "",
+      "vi": "chớp mắt đã quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d88f59b2-73f3-4489-b5c9-fb173f33b1b0",
+      "order": 1,
+      "zh": "转眼一年过去了。",
+      "pinyin": "",
+      "vi": "Thoáng cái một năm đã trôi qua.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "转眼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "886c1007-ab55-4b95-bbe6-c32e5af450af"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "347964da-4627-47a8-8291-ed0a1aea4b88",
+      "order": 2,
+      "zh": "转眼几个月过去了，我的耳朵早就好了。",
+      "pinyin": "",
+      "vi": "Thoáng cái mấy tháng trôi qua, tai tôi đã khỏi từ lâu.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "转眼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "886c1007-ab55-4b95-bbe6-c32e5af450af"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "转眼 dùng cho thời gian trôi nhanh, không dùng cho tốc độ chạy vật lý.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "572f54cd-ec06-403a-b898-2c303af72147",
+      "order": 1,
+      "rule_vi": "转眼 dùng cho thời gian trôi nhanh, không dùng cho tốc độ chạy vật lý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他跑得转眼。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "转眼 dùng cho thời gian trôi nhanh, không dùng cho tốc độ chạy vật lý.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他跑得很快。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "转眼 dùng cho thời gian trôi nhanh, không dùng cho tốc độ chạy vật lý.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "转眼",
+    "back": "thoáng cái, chớp mắt; thời gian trôi nhanh",
+    "hint": "zhuǎnyǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "886c1007-ab55-4b95-bbe6-c32e5af450af",
+    "source_lesson_vocab_id": null
+  }
+}

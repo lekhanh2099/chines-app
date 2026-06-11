@@ -1,0 +1,318 @@
+{
+  "id": "53dda343-6b85-4e9a-bce9-62fb33d0ddd0",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "票",
+  "pinyin": "piào",
+  "pos": {
+    "raw_vi": "Danh từ / Lượng từ",
+    "raw_cn": "名 / 量",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "people_activity"
+  ],
+  "meaning": {
+    "hanviet": "Phiếu",
+    "meaning_vi": "vé; phiếu; tiền giấy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vé",
+      "phiếu",
+      "tiền giấy"
+    ],
+    "short_definition_vi": "vé; phiếu; tiền giấy",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "people activity",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "票",
+        "lishu_vi": "",
+        "structure_note_vi": "示 là phần dưới theo hệ bộ thủ; học nghĩa vé/phiếu.",
+        "components": [
+          {
+            "text": "示",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "biểu thị/cúng tế",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "示 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vé, phiếu",
+        "modern_logic_vi": "示 là phần dưới theo hệ bộ thủ; học nghĩa vé/phiếu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "票 là tờ giấy/phiếu chứng minh quyền đi vào, đi xe, bỏ phiếu hoặc giao dịch.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "车票",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vé xe/tàu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "门票",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vé vào cửa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "机票",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vé máy bay",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "选票",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phiếu bầu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bdb4cba3-34d6-4a98-81f5-c8b812c28966",
+      "order": 1,
+      "zh": "买票",
+      "pinyin": "",
+      "vi": "mua vé",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0334607-b46f-4ee9-a587-540f3fa32456",
+      "order": 2,
+      "zh": "卖票",
+      "pinyin": "",
+      "vi": "bán vé",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd5e3f67-b3cf-43eb-a019-fe7b895dbf2f",
+      "order": 3,
+      "zh": "排队买票",
+      "pinyin": "",
+      "vi": "xếp hàng mua vé",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00da2ec4-2914-4a5e-be86-860c17f6ff84",
+      "order": 4,
+      "zh": "一张票",
+      "pinyin": "",
+      "vi": "một tấm vé",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac7a6ab9-0df8-4fce-94c0-324b0eb9e5df",
+      "order": 5,
+      "zh": "票卖光了",
+      "pinyin": "",
+      "vi": "vé bán hết rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fe56a1c3-8e89-42b5-b9ef-8a55fdf264ff",
+      "order": 1,
+      "zh": "我买了两张票。",
+      "pinyin": "Wǒ mǎi le liǎng zhāng piào.",
+      "vi": "Tôi đã mua hai vé.",
+      "analysis_vi": "Vé thường dùng lượng từ 张.",
+      "highlight": [
+        "票"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53dda343-6b85-4e9a-bce9-62fb33d0ddd0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4f40d107-8cc8-44ac-b9de-cdcf8ef566d3",
+      "order": 2,
+      "zh": "今天的票比昨天贵一点儿。",
+      "pinyin": "Jīntiān de piào bǐ zuótiān guì yìdiǎnr.",
+      "vi": "Vé hôm nay đắt hơn hôm qua một chút.",
+      "analysis_vi": "比昨天贵一点儿 là chênh lệch nhỏ.",
+      "highlight": [
+        "票"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53dda343-6b85-4e9a-bce9-62fb33d0ddd0"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Nhiều loại vé hiện nay là vé điện tử, nhưng vẫn nói 买票/退票/查票.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7b604a55-50d4-4026-a84a-02a6f85b52a5",
+      "order": 1,
+      "rule_vi": "Nói 一张票 tự nhiên hơn 一个票.",
+      "natural_examples": [
+        {
+          "zh": "一张票",
+          "pinyin": "yì zhāng piào",
+          "vi": "một tấm vé",
+          "note_vi": "Lượng từ đúng.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "一个票",
+          "pinyin": "yí ge piào",
+          "vi": "",
+          "note_vi": "Kém chuẩn khi đếm vé.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "一个票",
+          "pinyin": "yí ge piào",
+          "vi": "",
+          "note_vi": "Kém chuẩn khi đếm vé.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "一张票",
+          "pinyin": "yì zhāng piào",
+          "vi": "một tấm vé",
+          "note_vi": "Lượng từ đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "票",
+    "back": "vé; phiếu; tiền giấy",
+    "hint": "piào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "people_activity"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53dda343-6b85-4e9a-bce9-62fb33d0ddd0",
+    "source_lesson_vocab_id": null
+  }
+}

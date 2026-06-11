@@ -1,0 +1,252 @@
+{
+  "id": "dda23983-772d-4fae-9a88-cb26909d0aee",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "至于",
+  "pinyin": "zhìyú",
+  "pos": {
+    "raw_vi": "Giới từ / Liên từ chuyển đề",
+    "raw_cn": "介词/连词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chí ư",
+    "meaning_vi": "còn về; nói đến; đến mức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "còn về",
+      "nói đến",
+      "đến mức"
+    ],
+    "short_definition_vi": "còn về",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "至",
+        "lishu_vi": "chí",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "于",
+        "lishu_vi": "ư",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "至于 dùng để chuyển sang một chủ đề/mục khác hoặc nói đến mức độ.",
+    "memory_tip_vi": "至于钱，回头再说.",
+    "warning_vi": "Không dùng như 对于 một cách bừa bãi.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "对于",
+        "duìyú",
+        "đối với",
+        "nêu đối tượng thái độ/ý kiến"
+      ],
+      [
+        "关于",
+        "guānyú",
+        "về vấn đề",
+        "nêu chủ đề bàn luận"
+      ],
+      [
+        "不至于",
+        "bú zhìyú",
+        "không đến mức",
+        "cấu trúc khác"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "至于钱，回头再说."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "035cca5c-5205-4260-82a6-fb56b1babd3d",
+      "order": 1,
+      "zh": "至于钱",
+      "pinyin": "",
+      "vi": "còn về tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "669dd1f7-fcba-4f3a-b4f4-9fa9b45fb75b",
+      "order": 2,
+      "zh": "至于这件事",
+      "pinyin": "",
+      "vi": "còn chuyện này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "659f7420-3c39-4de8-9e3d-00ef799e78a4",
+      "order": 3,
+      "zh": "至于以后",
+      "pinyin": "",
+      "vi": "còn về sau này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d5a6bfb4-6189-4a5f-8d82-6d4c3cfd5eec",
+      "order": 4,
+      "zh": "不至于吧",
+      "pinyin": "",
+      "vi": "không đến mức vậy chứ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c3438b94-f675-45c3-a796-7762192f6049",
+      "order": 5,
+      "zh": "至于这么着急吗",
+      "pinyin": "",
+      "vi": "có đến mức vội vậy không",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0049c5ee-a22c-4fdc-9a1b-6920b59b2d7e",
+      "order": 1,
+      "zh": "至于书的价钱，他只说：“回头再说吧。”",
+      "pinyin": "Zhìyú shū de jiàqián, tā zhǐ shuō: “Huítóu zài shuō ba.”",
+      "vi": "Còn về giá tiền sách, ông ấy chỉ nói để sau.",
+      "analysis_vi": "至于 + chủ đề.",
+      "highlight": [
+        "至于"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dda23983-772d-4fae-9a88-cb26909d0aee"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "375b8669-1be4-4920-a289-ca173108186b",
+      "order": 2,
+      "zh": "他只是忘了回答你，不至于这么生气吧？",
+      "pinyin": "Tā zhǐshì wàng le huídá nǐ, bú zhìyú zhème shēngqì ba?",
+      "vi": "Anh ấy chỉ quên trả lời bạn thôi, không đến mức tức vậy chứ?",
+      "analysis_vi": "不至于 = không đến mức.",
+      "highlight": [
+        "至于"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dda23983-772d-4fae-9a88-cb26909d0aee"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "至于 rất hữu ích khi nói có hệ thống: 至于时间, 至于地点, 至于价钱.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0d57c628-c559-4101-a59e-583565253553",
+      "order": 1,
+      "rule_vi": "至于我很喜欢汉语。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "至于汉语，我很喜欢，但是觉得声调很难。",
+          "pinyin": "Zhìyú Hànyǔ, wǒ hěn xǐhuān, dànshì juéde shēngdiào hěn nán.",
+          "vi": "Còn tiếng Hán thì tôi thích, nhưng thấy thanh điệu khó.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng như 对于 một cách bừa bãi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "至于",
+    "back": "còn về; nói đến; đến mức",
+    "hint": "zhìyú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dda23983-772d-4fae-9a88-cb26909d0aee",
+    "source_lesson_vocab_id": null
+  }
+}

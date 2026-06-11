@@ -1,0 +1,406 @@
+{
+  "id": "85d2c7fe-eb1f-455f-8015-3150e9965d4a",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "妻子",
+  "pinyin": "qīzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "family"
+  ],
+  "meaning": {
+    "hanviet": "Thê tử",
+    "meaning_vi": "vợ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vợ"
+    ],
+    "short_definition_vi": "vợ",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "family",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "妻",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "phần dưới/trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ; nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vợ",
+        "modern_logic_vi": "妻 là vợ.",
+        "warning_vi": "Không nên ép phân tích sâu phần trên.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ; nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con; hậu tố danh từ",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con; hậu tố danh từ",
+        "modern_logic_vi": "子 trong 妻子 là thành phần tạo danh từ.",
+        "warning_vi": "Không dịch 妻子 hiện đại là 'vợ con' nếu không phải văn cổ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "妻 là vợ; 子 làm hậu tố danh từ. 妻子 trong tiếng Trung hiện đại thường là vợ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "老婆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vợ, khẩu ngữ/thân mật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "太太",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bà xã/vợ, lịch sự trong một số ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "爱人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vợ/chồng/người yêu tùy thời và ngữ cảnh; hơi cũ với người trẻ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "丈夫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Chồng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "丈夫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Chồng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "妻子",
+        "right": "老婆",
+        "meaning_vi": "妻子 trung tính hơn; 老婆 khẩu ngữ/thân mật hơn.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b8119dae-c39b-42b2-8320-b48c3cc2e074",
+      "order": 1,
+      "zh": "我的妻子",
+      "pinyin": "",
+      "vi": "vợ tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2570e447-f93e-45d5-b61d-05aa396291b6",
+      "order": 2,
+      "zh": "他妻子",
+      "pinyin": "",
+      "vi": "vợ anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b362e761-dd7b-4267-8b5e-831f0c1dee43",
+      "order": 3,
+      "zh": "妻子和孩子",
+      "pinyin": "",
+      "vi": "vợ và con",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68fc8bf4-3634-4ae5-b8b2-0fbc86c1c120",
+      "order": 4,
+      "zh": "妻子的意见",
+      "pinyin": "",
+      "vi": "ý kiến của vợ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a1bcc58-fd15-441d-aa02-81d0de584f77",
+      "order": 5,
+      "zh": "和妻子商量",
+      "pinyin": "",
+      "vi": "bàn bạc với vợ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0cb95f91-0c49-46b9-9248-f7b1aa79eb39",
+      "order": 6,
+      "zh": "妻子觉得",
+      "pinyin": "",
+      "vi": "vợ cảm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "552d9386-b108-4a5f-93a6-a077fd2ea373",
+      "order": 7,
+      "zh": "妻子喜欢",
+      "pinyin": "",
+      "vi": "vợ thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d398046-c403-4c42-a8b2-db5f61a18b36",
+      "order": 8,
+      "zh": "妻子不同意",
+      "pinyin": "",
+      "vi": "vợ không đồng ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2196b0fb-4e10-4714-98fa-aa50003e15f2",
+      "order": 1,
+      "zh": "我妻子很喜欢这个客厅。",
+      "pinyin": "Wǒ qīzi hěn xǐhuan zhège kètīng.",
+      "vi": "Vợ tôi rất thích phòng khách này.",
+      "analysis_vi": "我妻子 = vợ tôi; 妻子 an toàn hơn 老婆 trong văn học/sách.",
+      "highlight": [
+        "妻子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85d2c7fe-eb1f-455f-8015-3150e9965d4a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "eee88c67-317e-4f25-a445-c7b22a77daa9",
+      "order": 2,
+      "zh": "虽然这套房子的面积不大，但是我妻子对它的印象很好。",
+      "pinyin": "Suīrán zhè tào fángzi de miànjī bú dà, dànshì wǒ qīzi duì tā de yìnxiàng hěn hǎo.",
+      "vi": "Tuy diện tích căn này không lớn, nhưng vợ tôi có ấn tượng rất tốt về nó.",
+      "analysis_vi": "虽然……但是……; 对……的印象很好 là cấu trúc tự nhiên.",
+      "highlight": [
+        "妻子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85d2c7fe-eb1f-455f-8015-3150e9965d4a"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d5bc63e-ee3d-42d5-ad8b-c154b0120e4d",
+      "order": 3,
+      "zh": "要是房租再便宜一点儿，妻子可能一下就决定租下来，可是现在她还是想再看看。",
+      "pinyin": "Yàoshi fángzū zài piányi yìdiǎnr, qīzi kěnéng yíxià jiù juédìng zū xiàlai, kěshì xiànzài tā háishi xiǎng zài kànkan.",
+      "vi": "Nếu tiền thuê rẻ hơn một chút, có thể vợ tôi sẽ quyết định thuê ngay, nhưng hiện tại cô ấy vẫn muốn xem thêm.",
+      "analysis_vi": "要是…… nêu giả thiết; 一下就决定 nhấn quyết định nhanh.",
+      "highlight": [
+        "妻子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85d2c7fe-eb1f-455f-8015-3150e9965d4a"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong đời sống, người Trung trẻ hay dùng 老婆 khi nói thân mật về vợ. 妻子 chuẩn, trung tính, hợp văn viết và giới thiệu nghiêm túc.",
+    "tags": [
+      "family"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "01310712-fa25-46e0-b9f2-ba623106dcc4",
+      "order": 1,
+      "rule_vi": "Chú ý sắc thái của 妻子, 老婆, 太太.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "妻子",
+          "pinyin": "",
+          "vi": "vợ, trung tính",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "老婆",
+          "pinyin": "",
+          "vi": "vợ, khẩu ngữ/thân mật",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "太太",
+          "pinyin": "",
+          "vi": "vợ/bà xã, lịch sự",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Khi làm bài thi hoặc viết câu trung tính, 妻子 an toàn hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "妻子",
+    "back": "vợ",
+    "hint": "qīzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "family"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "85d2c7fe-eb1f-455f-8015-3150e9965d4a",
+    "source_lesson_vocab_id": null
+  }
+}

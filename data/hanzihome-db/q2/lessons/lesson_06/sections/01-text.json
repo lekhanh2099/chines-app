@@ -1,0 +1,409 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "北京比上海大吧",
+      "title_vi": "Bắc Kinh lớn hơn Thượng Hải nhỉ?",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [],
+      "comprehension_questions": [],
+      "lines": [
+        {
+          "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+          "order": 1,
+          "speaker": "山本",
+          "zh": "田芳，上海怎么样？我想坐火车去上海旅行。",
+          "vi": "Điền Phương, Thượng Hải thế nào? Tôi muốn đi tàu hỏa đến Thượng Hải du lịch.",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "pinyin": "Tián Fāng, Shànghǎi zěnmeyàng? Wǒ xiǎng zuò huǒchē qù Shànghǎi lǚxíng.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+          "order": 2,
+          "speaker": "田芳",
+          "zh": "上海很好，这几年变化很大。今年暑假我还在那儿玩儿了一个多月呢。我一个同学家就在上海。",
+          "vi": "Thượng Hải rất tuyệt, mấy năm gần đây thay đổi rất nhiều. Nghỉ hè năm nay tôi còn chơi ở đó hơn một tháng. Nhà một người bạn học của tôi ở ngay Thượng Hải.",
+          "grammar_refs": [
+            "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+            "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+          ],
+          "pinyin": "Shànghǎi hěn hǎo, zhè jǐ nián biànhuà hěn dà. Jīnnián shǔjià wǒ hái zài nàr wánr le yí ge duō yuè ne. Wǒ yí ge tóngxué jiā jiù zài Shànghǎi.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+          "order": 3,
+          "speaker": "山本",
+          "zh": "上海比北京大吧？",
+          "vi": "Thượng Hải lớn hơn Bắc Kinh nhỉ?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "188412d4-4c23-4d60-b7b2-21f3490199e7"
+          ],
+          "pinyin": "Shànghǎi bǐ Běijīng dà ba?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+          "order": 4,
+          "speaker": "田芳",
+          "zh": "不，上海没有北京大，不过人口比北京多。上海是中国人口最多的城市。这几年，增加了不少新建筑，现在比过去变得更漂亮了。",
+          "vi": "Không, Thượng Hải không lớn bằng Bắc Kinh, nhưng dân số đông hơn Bắc Kinh. Thượng Hải là thành phố đông dân nhất Trung Quốc. Mấy năm gần đây, có thêm không ít công trình kiến trúc mới, bây giờ so với trước đã trở nên đẹp hơn rồi.",
+          "grammar_refs": [
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+            "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "5ea44727-d97c-467b-b1b8-babd195df50d",
+            "54613016-834a-4fc3-9912-2357a6d27058",
+            "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "54b36889-82be-485b-8342-fb8aab572065",
+            "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+          ],
+          "pinyin": "Bù, Shànghǎi méiyǒu Běijīng dà, búguò rénkǒu bǐ Běijīng duō. Shànghǎi shì Zhōngguó rénkǒu zuì duō de chéngshì. Zhè jǐ nián, zēngjiā le bù shǎo xīn jiànzhù, xiànzài bǐ guòqù biàn de gèng piàoliang le.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+          "order": 5,
+          "speaker": "山本",
+          "zh": "上海的公园有北京的多吗？",
+          "vi": "Công viên ở Thượng Hải có nhiều bằng Bắc Kinh không?",
+          "grammar_refs": [
+            "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+          ],
+          "vocab_refs": [],
+          "pinyin": "Shànghǎi de gōngyuán yǒu Běijīng de duō ma?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+          "order": 6,
+          "speaker": "田芳",
+          "zh": "上海的公园没有北京的多，也没有北京的公园这么大。",
+          "vi": "Công viên ở Thượng Hải không nhiều bằng Bắc Kinh, cũng không lớn như công viên ở Bắc Kinh.",
+          "grammar_refs": [
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+            "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+          ],
+          "vocab_refs": [],
+          "pinyin": "Shànghǎi de gōngyuán méiyǒu Běijīng de duō, yě méiyǒu Běijīng de gōngyuán zhème dà.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+          "order": 7,
+          "speaker": "山本",
+          "zh": "上海的冬天是不是比北京暖和一点儿？",
+          "vi": "Mùa đông ở Thượng Hải có phải ấm hơn Bắc Kinh một chút không?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "fa804fff-372b-4874-8571-f54e613d7e07"
+          ],
+          "vocab_refs": [
+            "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+            "d45d5488-9293-41ae-9deb-1e5b51cee446"
+          ],
+          "pinyin": "Shànghǎi de dōngtiān shì bú shì bǐ Běijīng nuǎnhuo yìdiǎnr?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+          "order": 8,
+          "speaker": "田芳",
+          "zh": "上海不一定比北京暖和。",
+          "vi": "Thượng Hải không nhất định ấm hơn Bắc Kinh.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "d45d5488-9293-41ae-9deb-1e5b51cee446"
+          ],
+          "pinyin": "Shànghǎi bù yídìng bǐ Běijīng nuǎnhuo.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+          "order": 9,
+          "speaker": "山本",
+          "zh": "可是，我看天气预报，上海的气温比北京高得多。",
+          "vi": "Nhưng tôi xem dự báo thời tiết, nhiệt độ ở Thượng Hải cao hơn Bắc Kinh nhiều.",
+          "grammar_refs": [
+            "fa804fff-372b-4874-8571-f54e613d7e07",
+            "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+          ],
+          "vocab_refs": [
+            "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+            "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+            "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
+          ],
+          "pinyin": "Kěshì, wǒ kàn tiānqì yùbào, Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+          "order": 10,
+          "speaker": "田芳",
+          "zh": "是，上海的气温比北京高好几度，不过因为屋子里没有暖气，所以感觉还没有北京暖和。",
+          "vi": "Đúng, nhiệt độ ở Thượng Hải cao hơn Bắc Kinh mấy độ, nhưng vì trong nhà không có hệ thống sưởi, nên cảm giác vẫn không ấm bằng Bắc Kinh.",
+          "grammar_refs": [
+            "fa804fff-372b-4874-8571-f54e613d7e07",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [
+            "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+            "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "689eb64b-5d4f-469f-9afa-74017d399614",
+            "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "c99a633b-27a2-429b-a139-44113a84c189"
+          ],
+          "pinyin": "Shì, Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù, búguò yīnwèi wūzi lǐ méiyǒu nuǎnqì, suǒyǐ gǎnjué hái méiyǒu Běijīng nuǎnhuo.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+          "order": 11,
+          "speaker": "山本",
+          "zh": "上海人家里没有暖气？",
+          "vi": "Nhà người Thượng Hải không có hệ thống sưởi à?",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "689eb64b-5d4f-469f-9afa-74017d399614"
+          ],
+          "pinyin": "Shànghǎi rén jiā lǐ méiyǒu nuǎnqì?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
+          "order": 12,
+          "speaker": "田芳",
+          "zh": "一般的家庭没有，不过旅馆和饭店里有。",
+          "vi": "Các gia đình bình thường thì không có, nhưng khách sạn và nhà hàng thì có.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "79358c6f-3427-4c28-98f3-7ef98c7033c3"
+          ],
+          "pinyin": "Yìbān de jiātíng méiyǒu, búguò lǚguǎn hé fàndiàn lǐ yǒu.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "我比你更喜欢音乐",
+      "title_vi": "Tôi thích âm nhạc hơn bạn",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [],
+      "comprehension_questions": [],
+      "lines": [
+        {
+          "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+          "order": 1,
+          "speaker": "林老师",
+          "zh": "王老师，你喜欢音乐吗？",
+          "vi": "Thầy Vương, thầy có thích âm nhạc không?",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "pinyin": "Wáng lǎoshī, nǐ xǐhuan yīnyuè ma?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+          "order": 2,
+          "speaker": "王老师",
+          "zh": "喜欢啊！我是个音乐迷，我电脑里，光交响乐就下载了好几百首呢。",
+          "vi": "Thích chứ! Tôi là một người mê âm nhạc, trong máy tính của tôi, chỉ riêng nhạc giao hưởng thôi đã tải mấy trăm bản rồi.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "c43cedbf-7024-4ec1-922f-e75119114baf",
+            "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "55cd807c-eec7-412d-99db-f4e6508b170f",
+            "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
+          ],
+          "pinyin": "Xǐhuan a! Wǒ shì ge yīnyuè mí, wǒ diànnǎo lǐ, guāng jiāoxiǎngyuè jiù xiàzài le hǎo jǐ bǎi shǒu ne.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+          "order": 3,
+          "speaker": "林老师",
+          "zh": "我也很喜欢音乐，也许比你更喜欢。你喜欢古典音乐还是喜欢现代音乐？",
+          "vi": "Tôi cũng rất thích âm nhạc, có lẽ còn thích hơn thầy. Thầy thích nhạc cổ điển hay nhạc hiện đại?",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+            "2185ee67-885d-4ffb-83e2-e97be4070796"
+          ],
+          "pinyin": "Wǒ yě hěn xǐhuan yīnyuè, yěxǔ bǐ nǐ gèng xǐhuan. Nǐ xǐhuan gǔdiǎn yīnyuè háishi xǐhuan xiàndài yīnyuè?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
+          "order": 4,
+          "speaker": "王老师",
+          "zh": "我喜欢古典音乐。喜欢听世界名曲，还喜欢听民歌。",
+          "vi": "Tôi thích nhạc cổ điển. Tôi thích nghe các danh khúc thế giới, còn thích nghe dân ca nữa.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+            "275b46f4-3166-48b7-9766-58384178d1be",
+            "1190511f-5970-4304-8f84-d7201b287aeb"
+          ],
+          "pinyin": "Wǒ xǐhuan gǔdiǎn yīnyuè. Xǐhuan tīng shìjiè míngqǔ, hái xǐhuan tīng míngē.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+          "order": 5,
+          "speaker": "林老师",
+          "zh": "我也喜欢古典音乐。你喜欢流行歌曲吗？",
+          "vi": "Tôi cũng thích nhạc cổ điển. Thầy có thích ca khúc thịnh hành không?",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "d42d3d90-443d-45da-bed7-987b50034e92",
+            "cfb712c9-c4ca-4314-b6b2-696b40ace25e"
+          ],
+          "pinyin": "Wǒ yě xǐhuan gǔdiǎn yīnyuè. Nǐ xǐhuan liúxíng gēqǔ ma?",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+          "order": 6,
+          "speaker": "王老师",
+          "zh": "怎么说呢？可能没有你们年轻人那么喜欢。我觉得流行歌曲的歌词没有民歌写得好。",
+          "vi": "Nói thế nào nhỉ? Có lẽ tôi không thích nhiều như các bạn trẻ. Tôi thấy lời ca của các bài hát thịnh hành không được viết hay bằng dân ca.",
+          "grammar_refs": [
+            "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+            "b7073860-473c-4cb7-82ba-943917998455",
+            "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+          ],
+          "vocab_refs": [
+            "6059829f-ae21-43cf-ac0c-05e19639ec43",
+            "fefd5441-7b6c-47e3-b823-9e149b947bf7"
+          ],
+          "pinyin": "Zěnme shuō ne? Kěnéng méiyǒu nǐmen niánqīng rén nàme xǐhuan. Wǒ juéde liúxíng gēqǔ de gēcí méiyǒu míngē xiě de hǎo.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cc8da348-3e89-4f64-a680-de239f505497",
+          "order": 7,
+          "speaker": "林老师",
+          "zh": "有些流行歌曲的歌词写得还是不错的。",
+          "vi": "Lời của một số ca khúc thịnh hành vẫn viết khá hay đấy.",
+          "grammar_refs": [
+            "b7073860-473c-4cb7-82ba-943917998455"
+          ],
+          "vocab_refs": [
+            "27761bd2-433a-44ef-b79a-9e6f0a34b9c9"
+          ],
+          "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de háishi búcuò de.",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
+          "order": 8,
+          "speaker": "王老师",
+          "zh": "可是，我还是觉得民歌的歌词好。你听咱们的民歌，“在那遥远的地方……”，写得多好！",
+          "vi": "Nhưng tôi vẫn thấy lời dân ca hay. Cô nghe bài dân ca của chúng ta “Ở nơi xa xôi ấy…” đi, viết hay biết bao!",
+          "grammar_refs": [
+            "3253aaee-3b06-4864-9b11-98c656764ed4"
+          ],
+          "vocab_refs": [
+            "861ed325-b320-4ae0-8eac-bb6bb8ebc215"
+          ],
+          "pinyin": "Kěshì, wǒ háishi juéde míngē de gēcí hǎo. Nǐ tīng zánmen de míngē, “zài nà yáoyuǎn de dìfang…”, xiě de duō hǎo!",
+          "en": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

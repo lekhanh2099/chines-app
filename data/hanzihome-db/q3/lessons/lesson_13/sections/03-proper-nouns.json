@@ -1,0 +1,44 @@
+{
+  "id": "l13_section_003",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "l13_proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "高明",
+      "pinyin": "Gāo Míng",
+      "meaning_vi": "Cao Minh; tên người",
+      "meaning_en": "",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "l13_proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "李文",
+      "pinyin": "Lǐ Wén",
+      "meaning_vi": "Lý Văn; tên người",
+      "meaning_en": "",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "l13_proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "克风",
+      "pinyin": "Kè Fēng",
+      "meaning_vi": "Khắc Phong; tên người",
+      "meaning_en": "",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

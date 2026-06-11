@@ -1,0 +1,354 @@
+{
+  "id": "fb818abf-8062-44e5-985b-4e4457df5487",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "正确",
+  "pinyin": "zhèngquè",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chính xác",
+    "meaning_vi": "đúng, chính xác, đúng đắn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đúng",
+      "chính xác",
+      "đúng đắn"
+    ],
+    "short_definition_vi": "đúng, chính xác, đúng đắn",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "正",
+        "lishu_vi": "chính",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng/chân",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đúng, chính, ngay thẳng",
+        "modern_logic_vi": "正确 = đúng và chắc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "确",
+        "lishu_vi": "xác",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "thạch",
+          "meaning_vi": "đá",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "石 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "thạch",
+            "meaning_vi": "đá",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "石 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "thạch",
+              "meaning_vi": "đá",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "石 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "角",
+            "hanviet": "giác",
+            "meaning_vi": "sừng/góc",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chắc chắn, xác thực, đúng",
+        "modern_logic_vi": "石 gợi sự chắc chắn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "正确 được dùng trong Bài 20 với nghĩa: đúng, chính xác, đúng đắn.",
+    "memory_tip_vi": "Nhớ qua cụm 正确答案.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "对",
+        "pinyin": "duì",
+        "meaning_vi": "đúng",
+        "difference_vi": "Khẩu ngữ/rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "准确",
+        "pinyin": "zhǔnquè",
+        "meaning_vi": "chính xác",
+        "difference_vi": "Dùng tốt với số liệu, phát âm, thông tin.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "错误",
+        "pinyin": "cuòwù",
+        "meaning_vi": "sai",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5ad9280b-415b-444a-a707-f2e0af97529f",
+      "order": 1,
+      "zh": "正确答案",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7da39444-4db5-446d-b7eb-dfb40097e2f0",
+      "order": 2,
+      "zh": "正确观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "efcb18a3-451a-40ab-9109-e78c4575e7c2",
+      "order": 3,
+      "zh": "正确方法",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dae8313c-3392-4e03-998a-61ace9228fc8",
+      "order": 4,
+      "zh": "正确选择",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d111e787-36ae-4e5d-bde6-ae875523b04e",
+      "order": 5,
+      "zh": "正确理解",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "182a52c0-eaad-46ef-b0e7-8a2131bdef9d",
+      "order": 6,
+      "zh": "证明是正确的",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "61c2a977-a27e-4163-9efa-b3656bc0768a",
+      "order": 1,
+      "zh": "你的答案是正确的。",
+      "pinyin": "Nǐ de dá’àn shì zhèngquè de.",
+      "vi": "Đáp án của bạn là đúng.",
+      "analysis_vi": "是正确的 xác nhận tính đúng.",
+      "highlight": [
+        "正确"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fb818abf-8062-44e5-985b-4e4457df5487"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "df089b6b-a81b-4ba9-9659-84b3bf4db504",
+      "order": 2,
+      "zh": "一个观点是不是正确，不能只看是谁说的，还要看有没有事实证明。",
+      "pinyin": "Yí ge guāndiǎn shì bú shì zhèngquè, bù néng zhǐ kàn shì shéi shuō de, hái yào kàn yǒu méiyǒu shìshí zhèngmíng.",
+      "vi": "Một quan điểm đúng hay không không thể chỉ xem ai nói mà phải xem có sự thật chứng minh không.",
+      "analysis_vi": "不能只……还要…… lập luận rõ.",
+      "highlight": [
+        "正确"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fb818abf-8062-44e5-985b-4e4457df5487"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不一定正确 mềm hơn nói thẳng 错了 khi phản biện.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "25fa5523-936c-41c9-a010-99d7ce44e592",
+      "order": 1,
+      "rule_vi": "Phân biệt 正确 và 准确.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你的发音很准确。",
+          "pinyin": "Nǐ de fāyīn hěn zhǔnquè.",
+          "vi": "Phát âm của bạn rất chính xác.",
+          "note_vi": "准确 tự nhiên hơn cho phát âm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "正确",
+    "back": "đúng, chính xác, đúng đắn",
+    "hint": "zhèngquè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fb818abf-8062-44e5-985b-4e4457df5487",
+    "source_lesson_vocab_id": null
+  }
+}

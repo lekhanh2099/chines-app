@@ -1,0 +1,326 @@
+{
+  "id": "4de0110a-7224-4db7-bd21-4ffcf478e060",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "领带",
+  "pinyin": "lǐngdài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Lĩnh đái",
+    "meaning_vi": "cà vạt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cà vạt"
+    ],
+    "short_definition_vi": "cà vạt",
+    "textbook_focus_vi": "cà vạt",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "领",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu/mặt/cổ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu, mặt, trang",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "令",
+            "hanviet": "lệnh",
+            "meaning_vi": "phần trái hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cổ áo, dẫn dắt, nhận lấy",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu, mặt, trang",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "带",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "带",
+            "hanviet": "đái",
+            "meaning_vi": "dải/dây; mang theo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dây/dải, mang theo, dẫn theo",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "领 = cổ áo; 带 = dải/dây. 领带 = dải thắt ở cổ áo, cà vạt.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "领结",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nơ cổ/bow tie",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "围巾",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khăn quàng cổ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "腰带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thắt lưng/dây nịt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安全带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dây an toàn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "系领带",
+        "right": "解领带",
+        "meaning_vi": "thắt cà vạt ↔ tháo cà vạt",
+        "note_vi": "Cặp thao tác.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9d88c739-8098-4fa9-b803-1d0ee6f78cf4",
+      "order": 1,
+      "zh": "一条领带",
+      "pinyin": "",
+      "vi": "một chiếc cà vạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ede6d2d-1048-454f-8d1d-f4459d362bcd",
+      "order": 2,
+      "zh": "系领带",
+      "pinyin": "",
+      "vi": "thắt cà vạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e4962b5-4d7b-47b1-803a-3e056ec86c87",
+      "order": 3,
+      "zh": "解领带",
+      "pinyin": "",
+      "vi": "tháo cà vạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fbae902-f52b-41e1-95f9-5aacbca993df",
+      "order": 4,
+      "zh": "红色领带",
+      "pinyin": "",
+      "vi": "cà vạt đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6e103cf-69c7-435d-af2a-b491b109a9b6",
+      "order": 5,
+      "zh": "西服配领带",
+      "pinyin": "",
+      "vi": "vest phối cà vạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8e1b3640-9869-4636-9bcd-5a09592b6338",
+      "order": 1,
+      "zh": "新郎今天系了一条红色领带。",
+      "pinyin": "Xīnláng jīntiān jì le yì tiáo hóngsè lǐngdài.",
+      "vi": "Hôm nay chú rể thắt một chiếc cà vạt đỏ.",
+      "analysis_vi": "系领带 là động từ đúng; 条 là lượng từ.",
+      "highlight": [
+        "领带"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4de0110a-7224-4db7-bd21-4ffcf478e060"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2be6506d-f14b-4b97-835b-541746fd1e31",
+      "order": 2,
+      "zh": "主持人穿着西服，系着领带，看起来很正式。",
+      "pinyin": "Zhǔchírén chuānzhe xīfú, jìzhe lǐngdài, kàn qǐlái hěn zhèngshì.",
+      "vi": "Người dẫn chương trình mặc vest, thắt cà vạt, trông rất trang trọng.",
+      "analysis_vi": "系着 dùng với cà vạt/dây.",
+      "highlight": [
+        "领带",
+        "系着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4de0110a-7224-4db7-bd21-4ffcf478e060"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "30042711-f7de-4160-8885-1a76f7fca421",
+      "order": 1,
+      "rule_vi": "Không nói 穿领带 hay 戴领带; chuẩn là 系领带.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "领带",
+    "back": "cà vạt",
+    "hint": "lǐngdài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong hội nghị, phỏng vấn, lễ cưới, nam giới mặc 西装 / 西服 có thể 系领带; công sở hiện đại không phải lúc nào cũng bắt buộc.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4de0110a-7224-4db7-bd21-4ffcf478e060",
+    "source_lesson_vocab_id": null
+  }
+}

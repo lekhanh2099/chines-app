@@ -1,0 +1,375 @@
+{
+  "id": "c961a6ee-2605-47fb-af37-f11943383d04",
+  "type": "deep_vocabulary_item",
+  "order": 60,
+  "hanzi": "安妮",
+  "pinyin": "Ānnī",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "proper_noun"
+  ],
+  "meaning": {
+    "hanviet": "Anne / Annie",
+    "meaning_vi": "Anne / Annie; trong bài chỉ cô giáo Anne",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Anne / Annie"
+    ],
+    "short_definition_vi": "Anne / Annie; trong bài chỉ cô giáo Anne",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "thuật ngữ/tên riêng",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "安",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ/thành phần chỉ trường nghĩa: mái nhà.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ/thành phần chỉ trường nghĩa: mái nhà.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bình an, âm dịch trong tên",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "妮",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/phiên âm hoặc thành phần chữ hiện đại; chỉ phân tích ở mức học từ.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, nữ giới",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được dùng như bộ/thành phần chỉ trường nghĩa: phụ nữ, nữ giới.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được dùng như bộ/thành phần chỉ trường nghĩa: phụ nữ, nữ giới.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thường dùng trong tên nữ",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "Tên phiên âm/tên riêng: không chiết tự để suy nghĩa tên.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "安妮 được ghi nhớ theo nghĩa hiện đại: Anne / Annie; trong bài chỉ cô giáo Anne.",
+    "memory_tip_vi": "Nhớ qua cụm: 安妮老师.",
+    "warning_vi": "Tên riêng/phiên âm: không dịch nghĩa từng chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "安妮·莎莉文",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "海伦·凯勒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老师",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "安妮 là tên phiên âm, không dịch nghĩa chữ 安 / 妮."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "59c670cc-c6a5-4530-9b88-1cf7a4c111a0",
+      "order": 1,
+      "zh": "安妮老师",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "04e613d7-e023-41e1-9f33-d08fe4842c7c",
+      "order": 2,
+      "zh": "安妮·莎莉文",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "071bd18a-5297-4660-b471-bcb523358815",
+      "order": 3,
+      "zh": "安妮帮助海伦·凯勒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8301a7af-bf2d-4fa5-935f-2b38c0842716",
+      "order": 4,
+      "zh": "安妮的耐心",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d000866c-772e-4cc4-8fff-068df6b66789",
+      "order": 5,
+      "zh": "安妮的教学方法",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8ad60d50-92e0-4517-8736-8264e501d051",
+      "order": 1,
+      "zh": "安妮是海伦·凯勒的老师。",
+      "pinyin": "Ānnī shì Hǎilún·Kǎilè de lǎoshī.",
+      "vi": "Anne là giáo viên của Helen Keller.",
+      "analysis_vi": "A 是 B 的老师 = A là giáo viên của B.",
+      "highlight": [
+        "安妮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c961a6ee-2605-47fb-af37-f11943383d04"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0cab8851-7fe4-438a-bc5d-960f769c4edd",
+      "order": 2,
+      "zh": "即使海伦一开始不理解，安妮也没有失去耐心。",
+      "pinyin": "Jíshǐ Hǎilún yì kāishǐ bù lǐjiě, Ānnī yě méiyǒu shīqù nàixīn.",
+      "vi": "Cho dù ban đầu Helen không hiểu, Anne cũng không mất kiên nhẫn.",
+      "analysis_vi": "即使……也…… nhấn sự kiên trì của người dạy.",
+      "highlight": [
+        "安妮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c961a6ee-2605-47fb-af37-f11943383d04"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong câu chuyện Helen Keller, 安妮 thường chỉ Anne Sullivan, hình tượng người thầy kiên nhẫn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dcd157c5-bd79-49d3-bc7b-353a763df0aa",
+      "order": 1,
+      "rule_vi": "安妮 là tên phiên âm, không dịch nghĩa chữ 安 / 妮.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "安妮 là tên phiên âm, không dịch nghĩa chữ 安 / 妮.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "安妮",
+    "back": "Anne / Annie; trong bài chỉ cô giáo Anne",
+    "hint": "Ānnī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "proper_noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c961a6ee-2605-47fb-af37-f11943383d04",
+    "source_lesson_vocab_id": null
+  }
+}

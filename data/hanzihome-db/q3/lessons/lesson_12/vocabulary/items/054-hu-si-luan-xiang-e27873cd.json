@@ -1,0 +1,365 @@
+{
+  "id": "04c62b45-76e6-4a4b-97bf-137b57a49295",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "胡思乱想",
+  "pinyin": "hú sī luàn xiǎng",
+  "pos": {
+    "raw_vi": "Thành ngữ / Cụm động từ",
+    "raw_cn": "成语 / 动词短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hồ tư loạn tưởng",
+    "meaning_vi": "suy nghĩ lung tung, nghĩ vớ vẩn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "suy nghĩ lung tung, nghĩ vớ vẩn"
+    ],
+    "short_definition_vi": "Nghĩ bừa, suy diễn không căn cứ.",
+    "textbook_focus_vi": "Dùng khi lo lắng/tưởng tượng quá mức.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "胡",
+        "lishu_vi": "hồ",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bừa/lung tung",
+        "modern_logic_vi": "bừa/lung tung",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "思",
+        "lishu_vi": "tư",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng/cảm xúc",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng/cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng/cảm xúc",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩ",
+        "modern_logic_vi": "nghĩ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "乱",
+        "lishu_vi": "loạn",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "loạn/rối",
+        "modern_logic_vi": "loạn/rối",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "想",
+        "lishu_vi": "tưởng",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng/cảm xúc",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng/cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng/cảm xúc",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩ",
+        "modern_logic_vi": "nghĩ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "胡 + 思 + 乱 + 想 = nghĩ bừa nghĩ loạn.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "想",
+        "pinyin": "xiǎng",
+        "meaning_vi": "nghĩ",
+        "difference_vi": "想 trung tính; 胡思乱想 là nghĩ lung tung thiếu căn cứ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a17ae9bb-a96a-4c59-b7a8-d91873401605",
+      "order": 1,
+      "zh": "别胡思乱想",
+      "pinyin": "",
+      "vi": "đừng nghĩ lung tung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "61fd806b-50ce-4535-b57f-181e0b065633",
+      "order": 2,
+      "zh": "整天胡思乱想",
+      "pinyin": "",
+      "vi": "cả ngày nghĩ lung tung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2ca340a-f4f6-47b0-8eb5-e5fd44d9fc92",
+      "order": 3,
+      "zh": "开始胡思乱想",
+      "pinyin": "",
+      "vi": "bắt đầu nghĩ lung tung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5959162f-7569-4f77-a160-a456492ade40",
+      "order": 4,
+      "zh": "免得胡思乱想",
+      "pinyin": "",
+      "vi": "để khỏi nghĩ lung tung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "76222c1f-894e-4a0c-9b21-7ff6bbf3bd15",
+      "order": 1,
+      "zh": "你别胡思乱想，事情没那么严重。",
+      "pinyin": "",
+      "vi": "Đừng nghĩ lung tung, sự việc không nghiêm trọng vậy đâu.",
+      "analysis_vi": "别 + V khuyên/ngăn.",
+      "highlight": [
+        "胡思乱想"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "04c62b45-76e6-4a4b-97bf-137b57a49295"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9be0913f-113b-482b-9d89-7a9a690ee4d6",
+      "order": 2,
+      "zh": "他一个人在家待着，越想越害怕，就开始胡思乱想。",
+      "pinyin": "",
+      "vi": "Anh ấy ở nhà một mình, càng nghĩ càng sợ rồi bắt đầu nghĩ lung tung.",
+      "analysis_vi": "越……越…….",
+      "highlight": [
+        "胡思乱想"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "04c62b45-76e6-4a4b-97bf-137b57a49295"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96a7d53b-5342-4777-920a-c6bddc94f681",
+      "order": 1,
+      "rule_vi": "Không dùng 胡思乱想 cho suy nghĩ nghiêm túc cách giải quyết vấn đề.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 胡思乱想 cho suy nghĩ nghiêm túc cách giải quyết vấn đề.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "胡思乱想",
+    "back": "suy nghĩ lung tung, nghĩ vớ vẩn",
+    "hint": "hú sī luàn xiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "04c62b45-76e6-4a4b-97bf-137b57a49295",
+    "source_lesson_vocab_id": null
+  }
+}

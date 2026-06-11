@@ -1,0 +1,300 @@
+{
+  "id": "17b2bbd8-6031-4746-898c-b71bf57fe81b",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "报仇",
+  "pinyin": "bàochóu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "báo cừu",
+    "meaning_vi": "báo thù, trả thù",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "báo thù",
+      "trả thù"
+    ],
+    "short_definition_vi": "báo thù, trả thù",
+    "textbook_focus_vi": "báo thù, trả thù",
+    "register_vi": "sách vở/văn hóa",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "报",
+        "lishu_vi": "báo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "仇",
+        "lishu_vi": "cừu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "báo thù, trả thù",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 报仇雪恨.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "报复",
+        "pinyin": "bàofù",
+        "meaning_vi": "trả đũa",
+        "difference_vi": "đời sống/xã hội hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出气",
+        "pinyin": "chūqì",
+        "meaning_vi": "trút giận",
+        "difference_vi": "xả cảm xúc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0eccec55-53a8-4158-a501-4f677784e58c",
+      "order": 1,
+      "zh": "报仇雪恨",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e28c7332-d77b-4211-b72e-a2f93770652f",
+      "order": 2,
+      "zh": "为某人报仇",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b75d3c36-aeff-433f-8db0-1deea6992dd1",
+      "order": 3,
+      "zh": "找机会报仇",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca4f8778-f610-43c7-aaef-735b112831c4",
+      "order": 4,
+      "zh": "君子报仇",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9afb0c5a-9dcc-450e-9387-0ba3f8ef67b9",
+      "order": 5,
+      "zh": "十年不晚",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af0335de-32ba-4e2f-92c2-02d554a7bdff",
+      "order": 6,
+      "zh": "报仇心理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ccaf7760-d172-48fc-9337-872782e4351b",
+      "order": 1,
+      "zh": "他想报仇，可是朋友劝他先冷静下来。",
+      "pinyin": "Tā xiǎng bàochóu, kěshì péngyou quàn tā xiān lěngjìng xiàlái.",
+      "vi": "Anh ấy muốn báo thù, nhưng bạn khuyên anh ấy bình tĩnh trước.",
+      "analysis_vi": "报仇 là cảm xúc/hành động nặng.",
+      "highlight": [
+        "报仇"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17b2bbd8-6031-4746-898c-b71bf57fe81b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài, câu này thiên về nhẫn nhịn và nâng năng lực, không cổ vũ trả thù.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "894dbbb7-b006-4e8c-a595-9c37b6db40c4",
+      "order": 1,
+      "rule_vi": "Không dùng 报仇 cho chuyện nhỏ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "报仇",
+    "back": "báo thù, trả thù",
+    "hint": "bàochóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "17b2bbd8-6031-4746-898c-b71bf57fe81b",
+    "source_lesson_vocab_id": null
+  }
+}

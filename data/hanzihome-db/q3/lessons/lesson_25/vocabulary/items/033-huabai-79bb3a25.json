@@ -1,0 +1,217 @@
+{
+  "id": "3c3fd395-e30c-4e88-b789-83818337e0fc",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "花白",
+  "pinyin": "huābái",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "hoa bạch",
+    "meaning_vi": "bạc lốm đốm, trắng xen đen",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bạc lốm đốm",
+      "trắng xen đen"
+    ],
+    "short_definition_vi": "bạc lốm đốm, trắng xen đen",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "花",
+        "lishu_vi": "hoa",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoa; lốm đốm",
+        "modern_logic_vi": "Trong từ này, 花 góp phần vào nghĩa hiện đại: hoa; lốm đốm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "白",
+        "lishu_vi": "bạch",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trắng",
+        "modern_logic_vi": "Trong từ này, 白 góp phần vào nghĩa hiện đại: trắng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "花白 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 花白的头发.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Thường nói tóc/râu; không dùng cho áo trắng bình thường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2390489b-8e03-4877-8594-019aa98d4658",
+      "order": 1,
+      "zh": "花白的头发",
+      "pinyin": "",
+      "vi": "tóc bạc lốm đốm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d7e16c44-bcf2-43f4-a0d3-fe3bf83d7633",
+      "order": 2,
+      "zh": "头发花白",
+      "pinyin": "",
+      "vi": "tóc bạc xen đen",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48416fba-7250-499d-94b2-bb4563b5a078",
+      "order": 3,
+      "zh": "两鬓花白",
+      "pinyin": "",
+      "vi": "hai bên mai bạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "00193b12-83e4-4dd5-a97c-44e02474fec5",
+      "order": 1,
+      "zh": "爸爸的头发已经花白了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 花白 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 花白; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "花白"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c3fd395-e30c-4e88-b789-83818337e0fc"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 花白 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4b757431-c877-439d-b574-a32de38adb89",
+      "order": 1,
+      "rule_vi": "Thường nói tóc/râu; không dùng cho áo trắng bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "花白",
+    "back": "bạc lốm đốm, trắng xen đen",
+    "hint": "huābái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3c3fd395-e30c-4e88-b789-83818337e0fc",
+    "source_lesson_vocab_id": null
+  }
+}

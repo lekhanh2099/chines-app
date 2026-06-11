@@ -1,0 +1,352 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "会议厅的门开着呢",
+      "title_vi": "Cửa phòng hội nghị đang mở",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "请问，刚才进去一位女士，你看见没有？",
+          "vi": "Xin hỏi, vừa rồi có một quý cô đi vào, anh/chị có thấy không?",
+          "id": "5bc5cead-21f5-4b69-8457-1830793084f6",
+          "order": 1,
+          "pinyin": "Qǐngwèn, gāngcái jìnqù yí wèi nǚshì, nǐ kànjiàn méiyǒu?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "什么女士？长得什么样？",
+          "vi": "Quý cô nào? Trông như thế nào?",
+          "id": "32240d19-9736-4970-a8ee-cc2ff820a4e2",
+          "order": 2,
+          "pinyin": "Shénme nǚshì? Zhǎng de shénme yàng?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "她个子高高的，大概有一米七左右，黄头发，大眼睛，戴着一副眼镜儿。上身穿着一件红色的西服，下边穿着一条黑色的裙子。",
+          "vi": "Cô ấy dáng cao cao, khoảng một mét bảy, tóc vàng, mắt to, đeo một cặp kính. Phần trên mặc một áo vest màu đỏ, bên dưới mặc một chiếc váy màu đen.",
+          "id": "e3404efe-2151-4299-93a0-6afe6e9f9bb0",
+          "order": 3,
+          "pinyin": "Tā gèzi gāogāo de, dàgài yǒu yì mǐ qī zuǒyòu, huáng tóufa, dà yǎnjing, dàizhe yì fù yǎnjìngr. Shàngshēn chuānzhe yí jiàn hóngsè de xīfú, xiàbian chuānzhe yì tiáo hēisè de qúnzi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "是干什么的？",
+          "vi": "Cô ấy làm nghề gì?",
+          "id": "3db2290a-3b04-44a5-bccf-cbe5fb8b7207",
+          "order": 4,
+          "pinyin": "Shì gàn shénme de?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "是电视台的主持人。",
+          "vi": "Là người dẫn chương trình của đài truyền hình.",
+          "id": "e0906c92-5b65-4ff5-85c8-e60165019eff",
+          "order": 5,
+          "pinyin": "Shì diànshìtái de zhǔchírén.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "后边是不是还跟着两个小伙子，扛着摄像机？",
+          "vi": "Phía sau có phải còn có hai chàng trai đi theo, vác máy quay không?",
+          "id": "697e8c17-de5e-4230-9758-e5103a9fcc48",
+          "order": 6,
+          "pinyin": "Hòubian shì bú shì hái gēnzhe liǎng ge xiǎohuǒzi, kángzhe shèxiàngjī?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "对。",
+          "vi": "Đúng rồi.",
+          "id": "85a6a6d4-4fe7-434d-865f-81501ecf7f4b",
+          "order": 7,
+          "pinyin": "Duì.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "会议厅的门开着呢，你们进去找吧。",
+          "vi": "Cửa phòng hội nghị đang mở đấy, các bạn vào tìm đi.",
+          "id": "fad45bf0-e51a-4400-8b0b-fc3c23e07e11",
+          "order": 8,
+          "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqu zhǎo ba.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "里边正开着会呢吗？",
+          "vi": "Bên trong đang họp à?",
+          "id": "895f5704-916e-4ec1-888f-a25e9f14643b",
+          "order": 9,
+          "pinyin": "Lǐbian zhèng kāizhe huì ne ma?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "没有。你们看，是不是手里拿着麦克风，对着摄像机讲话的那位？",
+          "vi": "Không. Các bạn nhìn xem, có phải là người đang cầm micro trong tay, nói trước máy quay không?",
+          "id": "ee57387d-1b7b-4282-80ba-5470ca982140",
+          "order": 10,
+          "pinyin": "Méiyǒu. Nǐmen kàn, shì bú shì shǒu lǐ názhe màikèfēng, duìzhe shèxiàngjī jiǎnghuà de nà wèi?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "对，就是她。他们正等着我们呢。",
+          "vi": "Đúng, chính là cô ấy. Họ đang đợi chúng tôi đấy.",
+          "id": "ce649381-34e2-42eb-8384-b70fe6d0ca45",
+          "order": 11,
+          "pinyin": "Duì, jiù shì tā. Tāmen zhèng děngzhe wǒmen ne.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "你们进去吧。",
+          "vi": "Các bạn vào đi.",
+          "id": "913797d7-07ef-462d-978d-f151a164d2dc",
+          "order": 12,
+          "pinyin": "Nǐmen jìnqu ba.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "谢谢啦！",
+          "vi": "Cảm ơn nhé!",
+          "id": "0a444ce3-3e40-40a0-aaea-fa6943fbbbb7",
+          "order": 13,
+          "pinyin": "Xièxie la!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "服务员",
+          "zh": "不客气。",
+          "vi": "Không có gì.",
+          "id": "9fef5c28-00b3-4eb9-8716-b9f33e606079",
+          "order": 14,
+          "pinyin": "Bú kèqi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "墙上贴着红双喜字",
+      "title_vi": "Trên tường dán chữ song hỷ đỏ",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "你昨天去哪儿了？",
+          "vi": "Hôm qua bạn đi đâu vậy?",
+          "id": "3c27c086-abbc-4087-b6e9-13d418c36c9d",
+          "order": 1,
+          "pinyin": "Nǐ zuótiān qù nǎr le?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "麦克",
+          "zh": "张东带我去参加了一个中国人的婚礼。",
+          "vi": "Trương Đông đưa tôi đi tham dự một đám cưới của người Trung Quốc.",
+          "id": "a2868604-5679-4808-917d-2d87fdd4f798",
+          "order": 2,
+          "pinyin": "Zhāng Dōng dài wǒ qù cānjiā le yí ge Zhōngguórén de hūnlǐ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "怎么样？听说中国人的婚礼很热闹。",
+          "vi": "Thế nào? Nghe nói đám cưới của người Trung Quốc rất náo nhiệt.",
+          "id": "87328fc8-0572-4efa-9beb-80daa037b578",
+          "order": 3,
+          "pinyin": "Zěnmeyàng? Tīngshuō Zhōngguórén de hūnlǐ hěn rènao.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "麦克",
+          "zh": "是！我是第一次参加这样的婚礼。屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。桌子上摆着很多酒和菜。新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。他们笑着对我们说：“欢迎！欢迎！”新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。孩子们不停地说着、笑着，热热闹闹的，气氛非常好。",
+          "vi": "Đúng vậy! Đây là lần đầu tiên tôi tham dự một đám cưới như thế. Trong phòng treo đèn lồng đỏ lớn, trên tường dán một chữ song hỷ đỏ rất to. Trên bàn bày rất nhiều rượu và món ăn. Cô dâu trông rất xinh, mặc một chiếc áo bông đỏ, trên đầu còn cài hoa đỏ. Chú rể là một chàng trai rất đẹp trai, mặc một bộ âu phục màu xanh đậm, thắt cà vạt đỏ. Họ cười nói với chúng tôi: “Hoan nghênh! Hoan nghênh!” Cô dâu nhiệt tình mời khách ăn kẹo, chú rể bận rót rượu mừng cho khách. Bọn trẻ không ngừng nói cười, rất náo nhiệt, bầu không khí rất tốt.",
+          "id": "9e143bd6-8273-4480-beea-b87921f0d67e",
+          "order": 4,
+          "pinyin": "Shì! Wǒ shì dì yī cì cānjiā zhèyàng de hūnlǐ. Wūzi lǐ guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí ge hěn dà de hóng shuāngxǐ zì. Zhuōzi shàng bǎizhe hěn duō jiǔ hé cài. Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián'ǎo, tóu shàng hái dàizhe hóng huā. Xīnláng shì yí ge shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài. Tāmen xiàozhe duì wǒmen shuō: “Huānyíng! Huānyíng!” Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ. Háizimen bùtíng de shuōzhe, xiàozhe, rè rè nào nào de, qìfēn fēicháng hǎo.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "“喜酒”是什么酒？",
+          "vi": "“Rượu hỷ” là rượu gì?",
+          "id": "f58c9b6a-b3fa-489c-8ef6-7980b04b87a8",
+          "order": 5,
+          "pinyin": "“Xǐjiǔ” shì shénme jiǔ?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "麦克",
+          "zh": "结婚时喝的酒中国人叫喜酒，吃的糖叫喜糖。所以，中国人要问“什么时候吃你的喜糖啊”，就是问你什么时候结婚。",
+          "vi": "Rượu uống khi kết hôn, người Trung Quốc gọi là rượu hỷ; kẹo ăn trong dịp đó gọi là kẹo hỷ. Vì vậy, nếu người Trung Quốc hỏi “khi nào được ăn kẹo hỷ của bạn?”, tức là đang hỏi khi nào bạn kết hôn.",
+          "id": "58e383aa-03fb-4168-b559-8bebcf38414c",
+          "order": 6,
+          "pinyin": "Jiéhūn shí hē de jiǔ Zhōngguórén jiào xǐjiǔ, chī de táng jiào xǐtáng. Suǒyǐ, Zhōngguórén yào wèn “shénme shíhou chī nǐ de xǐtáng a”, jiù shì wèn nǐ shénme shíhou jiéhūn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "是吗？",
+          "vi": "Thật vậy à?",
+          "id": "40414355-f8ce-4ba8-8778-08c6147e478c",
+          "order": 7,
+          "pinyin": "Shì ma?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    }
+  ]
+}

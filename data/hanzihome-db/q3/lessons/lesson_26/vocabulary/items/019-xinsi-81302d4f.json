@@ -1,0 +1,298 @@
+{
+  "id": "9cbf86e0-99dc-4a48-b7c6-aba88a0392bc",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "心思",
+  "pinyin": "xīnsi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "tâm tư",
+    "meaning_vi": "tâm tư, ý nghĩ trong lòng; tâm trí",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tâm tư",
+      "ý nghĩ trong lòng",
+      "tâm trí"
+    ],
+    "short_definition_vi": "tâm tư, ý nghĩ trong lòng; tâm trí",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "tâm",
+        "structure_note_vi": "Chữ có thành phần/bộ 心; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 心 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "思",
+        "lishu_vi": "tư",
+        "structure_note_vi": "Chữ có thành phần/bộ 心; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 思 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "心思 trong bài được học theo nghĩa: tâm tư, ý nghĩ trong lòng; tâm trí.",
+    "memory_tip_vi": "Nhớ 心思 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "心情",
+        "pinyin": "xīnqíng",
+        "meaning_vi": "tâm trạng",
+        "difference_vi": "Chỉ trạng thái cảm xúc, không phải tâm tư/ý nghĩ giấu trong lòng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nói 我今天心思不好; nói 我今天心情不好."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "137ddfaa-e824-4c17-bfc7-3741ce023881",
+      "order": 1,
+      "zh": "表达心思",
+      "pinyin": "",
+      "vi": "bày tỏ tâm tư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef9752a7-188f-4644-98a7-587527ada778",
+      "order": 2,
+      "zh": "猜不透心思",
+      "pinyin": "",
+      "vi": "đoán không thấu tâm tư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c79f68c0-7f67-426c-b8e3-b3592747fde0",
+      "order": 3,
+      "zh": "没有心思学习",
+      "pinyin": "",
+      "vi": "không có tâm trí học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1ccbdf9e-ec1b-42e2-bba4-20f23d768d7a",
+      "order": 1,
+      "zh": "我猜不透他的心思。",
+      "pinyin": "",
+      "vi": "Tôi đoán không thấu tâm tư của anh ấy.",
+      "analysis_vi": "猜不透 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "心思"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9cbf86e0-99dc-4a48-b7c6-aba88a0392bc"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "87554a44-60bb-4012-90cd-a97905f26c8c",
+      "order": 2,
+      "zh": "祝英台想表达自己的心思，可是又不能说得太直接。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài muốn bày tỏ tâm tư, nhưng lại không thể nói quá trực tiếp.",
+      "analysis_vi": "表达心思 là collocation tự nhiên.",
+      "highlight": [
+        "心思"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9cbf86e0-99dc-4a48-b7c6-aba88a0392bc"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "心思 trong truyện là tình ý giấu trong lời nói vòng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f4579fc-fef9-4542-bf12-f368058fbc6f",
+      "order": 1,
+      "rule_vi": "Không nói 我今天心思不好; nói 我今天心情不好.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心思",
+    "back": "tâm tư, ý nghĩ trong lòng; tâm trí",
+    "hint": "xīnsi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9cbf86e0-99dc-4a48-b7c6-aba88a0392bc",
+    "source_lesson_vocab_id": null
+  }
+}

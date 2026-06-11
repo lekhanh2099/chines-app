@@ -1,0 +1,354 @@
+{
+  "id": "f138a02d-e48a-42aa-bc38-00d7e8c2b11a",
+  "type": "deep_vocabulary_item",
+  "order": 61,
+  "hanzi": "心血",
+  "pinyin": "xīnxuè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "tâm huyết",
+    "meaning_vi": "tâm huyết, công sức dốc lòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tâm huyết",
+      "công sức dốc lòng"
+    ],
+    "short_definition_vi": "tâm huyết, công sức dốc lòng",
+    "textbook_focus_vi": "心 + 血 tạo hình ảnh dốc lòng dốc sức.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, tâm lý",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, tâm lý",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tim, lòng, tâm trí",
+        "modern_logic_vi": "Trong từ “心血”, chữ “心” góp phần vào trường nghĩa: tim, lòng, tâm trí",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "血",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "血",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyết",
+          "radical_name_zh": "",
+          "hanviet": "huyết",
+          "meaning_vi": "máu",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "血 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "血",
+            "hanviet": "huyết",
+            "meaning_vi": "máu",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "血",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyết",
+              "radical_name_zh": "",
+              "hanviet": "huyết",
+              "meaning_vi": "máu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "血 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "血 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "máu",
+        "modern_logic_vi": "Trong từ “心血”, chữ “血” góp phần vào trường nghĩa: máu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "心 + 血 tạo hình ảnh dốc lòng dốc sức.",
+    "memory_tip_vi": "心 + 血 tạo hình ảnh dốc lòng dốc sức.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "努力",
+        "pinyin": "",
+        "meaning_vi": "nỗ lực chung hơn",
+        "difference_vi": "nỗ lực chung hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "精力",
+        "pinyin": "",
+        "meaning_vi": "tinh lực/năng lượng",
+        "difference_vi": "tinh lực/năng lượng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "30cf57a3-96f7-4a91-9622-e759de5e4fbd",
+      "order": 1,
+      "zh": "付出心血",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0185353d-1589-4c8b-9c99-692968262fae",
+      "order": 2,
+      "zh": "花费心血",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "042a124b-3489-456e-b54c-91663fa26708",
+      "order": 3,
+      "zh": "多年的心血",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1b1750a-d0e1-4210-9490-013439c11ed8",
+      "order": 4,
+      "zh": "白费心血",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6c889310-b87b-426a-8273-01dcb66959b9",
+      "order": 1,
+      "zh": "这本书花了他很多心血。",
+      "pinyin": "",
+      "vi": "Quyển sách này tốn rất nhiều tâm huyết của anh ấy.",
+      "analysis_vi": "花 + người + 心血.",
+      "highlight": [
+        "心血"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f138a02d-e48a-42aa-bc38-00d7e8c2b11a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c1965b0a-0bed-42ab-8e24-6b0a9a8f111a",
+      "order": 2,
+      "zh": "同事们付出了很多心血。",
+      "pinyin": "",
+      "vi": "Đồng nghiệp đã bỏ ra rất nhiều tâm huyết.",
+      "analysis_vi": "付出心血.",
+      "highlight": [
+        "心血"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f138a02d-e48a-42aa-bc38-00d7e8c2b11a"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "心 + 血 tạo hình ảnh dốc lòng dốc sức.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5622a1bd-66a9-436a-8c11-8abcea5264b5",
+      "order": 1,
+      "rule_vi": "Không dùng 心血 cho việc quá nhỏ; dùng cho việc cần dốc lòng lâu dài.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 心血 cho việc quá nhỏ; dùng cho việc cần dốc lòng lâu dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心血",
+    "back": "tâm huyết, công sức dốc lòng",
+    "hint": "xīnxuè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f138a02d-e48a-42aa-bc38-00d7e8c2b11a",
+    "source_lesson_vocab_id": null
+  }
+}

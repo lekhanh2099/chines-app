@@ -1,0 +1,367 @@
+{
+  "id": "b88cc8b9-a3a2-4466-b10c-530c888df459",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "牌照",
+  "pinyin": "páizhào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bài chiếu",
+    "meaning_vi": "biển số; giấy phép, license",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biển số",
+      "giấy phép, license"
+    ],
+    "short_definition_vi": "biển số; giấy phép, license",
+    "textbook_focus_vi": "Âm Hán Việt: bài chiếu.",
+    "register_vi": "giao thông, hành chính, giấy phép, số đẹp.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "牌",
+        "lishu_vi": "bài",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "components": [
+          {
+            "text": "片",
+            "hanviet": "phiến",
+            "meaning_vi": "mảnh, tấm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "卑",
+            "hanviet": "ti",
+            "meaning_vi": "thành phần góp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biển, thẻ, nhãn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "照",
+        "lishu_vi": "chiếu",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt, ánh sáng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "昭",
+            "hanviet": "chiêu",
+            "meaning_vi": "sáng rõ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt, ánh sáng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt, ánh sáng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chiếu, soi, chụp ảnh, giấy chứng nhận",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 牌照 = biển/thẻ hoặc giấy được cấp để nhận diện/cho phép.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: Trong khẩu ngữ hiện đại, 车牌 rất phổ biến khi nói “biển số xe”. 牌照 có thể nghe hành chính hơn hoặc rộng hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "牌照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biển số/giấy phép, tùy ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "车牌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biển số xe, khẩu ngữ hiện đại rất phổ biến.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "车牌号",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "số biển xe.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "执照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấy phép hành nghề/kinh doanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "号码",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "số hiệu, dãy số.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 车牌照 / 车牌 = biển số xe.",
+      "→ 营业执照 = giấy phép kinh doanh."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ead0fa50-badb-45ca-a26b-cd801071fbb8",
+      "order": 1,
+      "zh": "车牌照",
+      "pinyin": "",
+      "vi": "biển số xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ce8c723-4d1a-45e9-8d6f-165eb8bb1cf1",
+      "order": 2,
+      "zh": "换牌照",
+      "pinyin": "",
+      "vi": "đổi biển số/giấy phép",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ffa4ea0-46f6-4d33-877a-58df2c059011",
+      "order": 3,
+      "zh": "申请牌照",
+      "pinyin": "",
+      "vi": "xin biển số/giấy phép",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89530216-abbb-4743-8d27-d376e27bd162",
+      "order": 4,
+      "zh": "牌照号码",
+      "pinyin": "",
+      "vi": "số biển số",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c525ccb8-d6e1-4ce3-9e81-9e87c4eb6f37",
+      "order": 5,
+      "zh": "拿到牌照",
+      "pinyin": "",
+      "vi": "lấy được biển số/giấy phép",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ac8a4665-fbda-4cae-9f8b-5ca61b8d6742",
+      "order": 1,
+      "zh": "这个牌照里有三个八。",
+      "pinyin": "Zhège páizhào lǐ yǒu sān ge bā.",
+      "vi": "Biển số này có ba số 8.",
+      "analysis_vi": "牌照里有…… dùng để nói dãy số/ký hiệu trên biển số.",
+      "highlight": [
+        "牌照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b88cc8b9-a3a2-4466-b10c-530c888df459"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e2def65-9ead-45be-b73a-809652806fc5",
+      "order": 2,
+      "zh": "连牌照里的数字都要选吉利的，难道这不是一种文化习惯吗？",
+      "pinyin": "Lián páizhào lǐ de shùzì dōu yào xuǎn jílì de, nándào zhè bú shì yì zhǒng wénhuà xíguàn ma?",
+      "vi": "Ngay cả số trong biển số xe cũng phải chọn số may mắn, lẽ nào đây không phải một thói quen văn hóa sao?",
+      "analysis_vi": "连……都…… nhấn đến cả biển số cũng được chú ý. 难道……不是……吗？ là câu hỏi tu từ, thực chất khẳng định đây là thói quen văn hóa.",
+      "highlight": [
+        "牌照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b88cc8b9-a3a2-4466-b10c-530c888df459"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ce8beef2-553a-4fcd-8c11-6137e271aee8",
+      "order": 3,
+      "zh": "车管所门口排着很多人，有的人想申请新牌照，有的人想把旧牌照换掉；大家都希望自己的号码听起来顺、看起来吉利。",
+      "pinyin": "Chēguǎnsuǒ ménkǒu páizhe hěn duō rén, yǒu de rén xiǎng shēnqǐng xīn páizhào, yǒu de rén xiǎng bǎ jiù páizhào huàn diào; dàjiā dōu xīwàng zìjǐ de hàomǎ tīng qǐlai shùn, kàn qǐlai jílì.",
+      "vi": "Trước cửa cơ quan quản lý xe có rất nhiều người đang xếp hàng, có người muốn xin biển số mới, có người muốn đổi bỏ biển số cũ; mọi người đều hy vọng số của mình nghe thuận tai, nhìn may mắn.",
+      "analysis_vi": "车管所门口排着很多人 là câu tồn hiện. 把旧牌照换掉 là 把字句 với 掉. 听起来 / 看起来 là đánh giá qua âm và hình thức.",
+      "highlight": [
+        "牌照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b88cc8b9-a3a2-4466-b10c-530c888df459"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở Trung Quốc, biển số xe có số đẹp như nhiều 8 có thể được xem là may mắn vì gắn với 发. Ở Việt Nam cũng có quan niệm số đẹp trong biển số, ví dụ số tiến, tứ quý, thần tài, nhưng cách diễn giải không hoàn toàn giống Trung Quốc.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8e154ea9-1fe5-4fe9-8672-7a0a4a8c855c",
+      "order": 1,
+      "rule_vi": "Nhầm 牌照 với 照片.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "牌照 Páizhào Biển số/giấy phép.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "牌照",
+    "back": "biển số; giấy phép, license",
+    "hint": "páizhào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b88cc8b9-a3a2-4466-b10c-530c888df459",
+    "source_lesson_vocab_id": null
+  }
+}

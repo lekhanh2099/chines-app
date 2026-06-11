@@ -1,0 +1,205 @@
+{
+  "id": "ba77c17c-169c-46a4-b9ad-302d2048eec9",
+  "type": "deep_vocabulary_item",
+  "order": 74,
+  "hanzi": "聚",
+  "pinyin": "jù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tụ",
+    "meaning_vi": "tụ họp, tập hợp, gom lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tụ họp",
+      "tập hợp",
+      "gom lại"
+    ],
+    "short_definition_vi": "tụ họp, tập hợp, gom lại",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "聚",
+        "lishu_vi": "tụ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "耳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhĩ",
+          "radical_name_zh": "",
+          "hanviet": "nhĩ",
+          "meaning_vi": "tai",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tụ lại",
+        "modern_logic_vi": "Trong từ này, 聚 góp phần vào nghĩa hiện đại: tụ lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "聚 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 聚一聚.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "聚一聚 tự nhiên hơn 我们聚吧 trong khẩu ngữ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "29b3e905-1c6a-46e3-b602-922aa9cf977e",
+      "order": 1,
+      "zh": "聚一聚",
+      "pinyin": "",
+      "vi": "tụ họp một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4f4a536-aac1-455a-a883-dc3f9f1e79f0",
+      "order": 2,
+      "zh": "聚在一起",
+      "pinyin": "",
+      "vi": "tụ lại với nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6281c5cb-949f-47a4-9203-35d8c9764361",
+      "order": 3,
+      "zh": "一家人团聚",
+      "pinyin": "",
+      "vi": "cả nhà đoàn tụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c9cd547d-4f1f-4cea-8257-aa39e2bd218a",
+      "order": 1,
+      "zh": "周末我们几个朋友聚一聚吧。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 聚 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 聚; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "聚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ba77c17c-169c-46a4-b9ad-302d2048eec9"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 聚 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "acc79fd9-dd7b-47ee-908f-62f257206bec",
+      "order": 1,
+      "rule_vi": "聚一聚 tự nhiên hơn 我们聚吧 trong khẩu ngữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "聚",
+    "back": "tụ họp, tập hợp, gom lại",
+    "hint": "jù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ba77c17c-169c-46a4-b9ad-302d2048eec9",
+    "source_lesson_vocab_id": null
+  }
+}

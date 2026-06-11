@@ -1,0 +1,274 @@
+{
+  "id": "dc3dde07-fade-4553-91c6-176c2af7aa05",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "耳",
+  "pinyin": "ěr",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名/语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "nhĩ",
+    "meaning_vi": "tai; yếu tố liên quan đến nghe",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tai",
+      "yếu tố liên quan đến nghe"
+    ],
+    "short_definition_vi": "tai; yếu tố liên quan đến nghe",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: tai; yếu tố liên quan đến nghe.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "耳",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "耳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhĩ",
+          "radical_name_zh": "",
+          "hanviet": "nhĩ",
+          "meaning_vi": "tai",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "耳 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 耳.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "耳 trong bài được hiểu theo nghĩa: tai; yếu tố liên quan đến nghe. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 耳.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "耳 là yếu tố Hán tự/từ ghép; giao tiếp cơ bản dùng 耳朵."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3deca234-9728-4181-9243-ac1f20f81875",
+      "order": 1,
+      "zh": "左耳",
+      "pinyin": "",
+      "vi": "tai trái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6153463f-514e-4608-b4fb-e03f5adb48a0",
+      "order": 2,
+      "zh": "右耳",
+      "pinyin": "",
+      "vi": "tai phải",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48cb81ae-810c-4158-a3a4-48c4f8cb6473",
+      "order": 3,
+      "zh": "耳朵",
+      "pinyin": "",
+      "vi": "tai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca783828-f49c-409d-bd41-5e9ac3b39d41",
+      "order": 4,
+      "zh": "耳机",
+      "pinyin": "",
+      "vi": "tai nghe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5495bde-f0cd-4768-8806-33b98021726f",
+      "order": 5,
+      "zh": "耳环",
+      "pinyin": "",
+      "vi": "khuyên tai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f5e0a38c-26e9-4ccd-be3d-a3eda613288c",
+      "order": 1,
+      "zh": "我的右耳有一个小伤口。",
+      "pinyin": "",
+      "vi": "Tai phải của tôi có một vết thương nhỏ.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "耳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dc3dde07-fade-4553-91c6-176c2af7aa05"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "df4ed904-6afe-457a-a9a5-38fd371d8f0b",
+      "order": 2,
+      "zh": "她看看我的耳朵，问：“没事儿了吧？”",
+      "pinyin": "",
+      "vi": "Cô ấy nhìn tai tôi rồi hỏi: “Không sao nữa rồi chứ?”",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "耳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dc3dde07-fade-4553-91c6-176c2af7aa05"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "耳 là yếu tố Hán tự/từ ghép; giao tiếp cơ bản dùng 耳朵.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "66293b50-c31d-4073-ab1c-34131c2bd260",
+      "order": 1,
+      "rule_vi": "耳 là yếu tố Hán tự/từ ghép; giao tiếp cơ bản dùng 耳朵.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我耳疼。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "耳 là yếu tố Hán tự/từ ghép; giao tiếp cơ bản dùng 耳朵.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我耳朵疼。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "耳 là yếu tố Hán tự/từ ghép; giao tiếp cơ bản dùng 耳朵.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "耳",
+    "back": "tai; yếu tố liên quan đến nghe",
+    "hint": "ěr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dc3dde07-fade-4553-91c6-176c2af7aa05",
+    "source_lesson_vocab_id": null
+  }
+}

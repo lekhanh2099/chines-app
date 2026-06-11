@@ -1,0 +1,212 @@
+{
+  "id": "1363a767-4bc4-4a96-8e49-7db2d0284a76",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "乌云",
+  "pinyin": "wūyún",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "ô vân",
+    "meaning_vi": "mây đen",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mây đen"
+    ],
+    "short_definition_vi": "mây đen",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "乌",
+        "lishu_vi": "ô",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "乌 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "云",
+        "lishu_vi": "vân",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "云 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "乌云 trong bài được học theo nghĩa: mây đen.",
+    "memory_tip_vi": "Nhớ 乌云 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "白云",
+        "pinyin": "báiyún",
+        "meaning_vi": "mây trắng",
+        "difference_vi": "Đối lập sắc thái với 乌云.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 乌云 với 乌鸦: 乌鸦 là con quạ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5d9df173-f2e0-4c82-92ec-0d852b4a9340",
+      "order": 1,
+      "zh": "乌云密布",
+      "pinyin": "",
+      "vi": "mây đen dày đặc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0ebb773-5c4d-42be-8a33-b430510a0e94",
+      "order": 2,
+      "zh": "乌云翻滚",
+      "pinyin": "",
+      "vi": "mây đen cuồn cuộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be5c6f28-95ea-4ce3-993b-3ee0ca059229",
+      "order": 3,
+      "zh": "乌云散去",
+      "pinyin": "",
+      "vi": "mây đen tan đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2ca379be-bb1b-4b6b-8630-7d67ef8c267e",
+      "order": 1,
+      "zh": "天空中布满了乌云，好像快要下雨了。",
+      "pinyin": "",
+      "vi": "Trên bầu trời phủ đầy mây đen, hình như sắp mưa rồi.",
+      "analysis_vi": "快要……了 = sắp… rồi.",
+      "highlight": [
+        "乌云"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1363a767-4bc4-4a96-8e49-7db2d0284a76"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "53acefdd-4087-40fb-82b0-b226aae3072a",
+      "order": 2,
+      "zh": "祝英台跪在墓前痛哭的时候，天空乌云翻滚。",
+      "pinyin": "",
+      "vi": "Khi Chúc Anh Đài quỳ trước mộ khóc đau đớn, bầu trời mây đen cuồn cuộn.",
+      "analysis_vi": "乌云翻滚 tạo không khí kịch tính.",
+      "highlight": [
+        "乌云"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1363a767-4bc4-4a96-8e49-7db2d0284a76"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "乌云 thường báo trước biến cố trong văn học.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2fca3197-cca5-41f8-9977-849726bbd78a",
+      "order": 1,
+      "rule_vi": "Không nhầm 乌云 với 乌鸦: 乌鸦 là con quạ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "乌云",
+    "back": "mây đen",
+    "hint": "wūyún",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1363a767-4bc4-4a96-8e49-7db2d0284a76",
+    "source_lesson_vocab_id": null
+  }
+}

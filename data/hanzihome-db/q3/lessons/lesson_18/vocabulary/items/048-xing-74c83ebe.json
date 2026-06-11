@@ -1,0 +1,297 @@
+{
+  "id": "c76f2b94-c113-4cb0-9f40-064b1faf577a",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "醒",
+  "pinyin": "xǐng",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动 / 形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tỉnh",
+    "meaning_vi": "tỉnh, tỉnh dậy, nhận ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tỉnh",
+      "tỉnh dậy",
+      "nhận ra"
+    ],
+    "short_definition_vi": "tỉnh, tỉnh dậy, nhận ra",
+    "textbook_focus_vi": "Từ ngủ/mê sang tỉnh; cũng làm bổ ngữ kết quả như 推醒.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "醒",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "酉",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dậu",
+          "radical_name_zh": "",
+          "hanviet": "dậu",
+          "meaning_vi": "rượu/vò rượu",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "酉 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "酉",
+            "hanviet": "dậu",
+            "meaning_vi": "rượu/vò rượu",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "酉",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dậu",
+              "radical_name_zh": "",
+              "hanviet": "dậu",
+              "meaning_vi": "rượu/vò rượu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "酉 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tỉnh",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Từ ngủ/mê sang tỉnh; cũng làm bổ ngữ kết quả như 推醒.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 醒 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "醒来",
+        "pinyin": "",
+        "meaning_vi": "tỉnh lại",
+        "difference_vi": "Nhấn chuyển sang tỉnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "叫醒",
+        "pinyin": "",
+        "meaning_vi": "gọi dậy",
+        "difference_vi": "Gọi ai tỉnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "清醒",
+        "pinyin": "",
+        "meaning_vi": "tỉnh táo",
+        "difference_vi": "Sáng suốt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2d8473eb-b816-4ae2-9d26-cc10420f20f7",
+      "order": 1,
+      "zh": "醒了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4f4a7351-486a-444d-9854-51fdc701ca10",
+      "order": 2,
+      "zh": "醒来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "135d41d3-6a1b-41f1-b47e-711e7a3aca19",
+      "order": 3,
+      "zh": "叫醒他",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "181d94b6-19e7-492c-9a99-c61993598b9b",
+      "order": 4,
+      "zh": "推醒我",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ed7f328d-27d0-4543-8991-07596b00a813",
+      "order": 5,
+      "zh": "睡醒了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5044e618-7ec6-4a28-b839-26ac43aeb66f",
+      "order": 1,
+      "zh": "半夜，西西推醒我。",
+      "pinyin": "",
+      "vi": "Nửa đêm, Tây Tây lay tôi dậy.",
+      "analysis_vi": "推醒 = lay đến kết quả tỉnh.",
+      "highlight": [
+        "醒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c76f2b94-c113-4cb0-9f40-064b1faf577a"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dddac9af-9b60-49ec-bd15-de00ae3d0a7f",
+      "order": 1,
+      "rule_vi": "推醒我 không nói 推我醒.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "推我醒。",
+          "pinyin": "",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Kết quả 醒 đứng sau động từ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "推醒我。",
+          "pinyin": "",
+          "vi": "Lay tôi dậy.",
+          "note_vi": "Động từ + kết quả + tân ngữ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "醒",
+    "back": "tỉnh, tỉnh dậy, nhận ra",
+    "hint": "xǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c76f2b94-c113-4cb0-9f40-064b1faf577a",
+    "source_lesson_vocab_id": null
+  }
+}

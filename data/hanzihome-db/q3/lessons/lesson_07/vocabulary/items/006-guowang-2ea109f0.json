@@ -1,0 +1,392 @@
+{
+  "id": "6f58de77-9321-4669-82e2-88d7b98508c9",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "国王",
+  "pinyin": "guówáng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "quốc vương",
+    "meaning_vi": "quốc vương, nhà vua",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quốc vương, nhà vua"
+    ],
+    "short_definition_vi": "quốc vương, nhà vua",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "国",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao quanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "囗 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao quanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao quanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "囗 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 囗.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "王",
+            "hanviet": "vương",
+            "meaning_vi": "vua, ngọc trong vai trò bộ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "王",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vương",
+              "radical_name_zh": "",
+              "hanviet": "vương",
+              "meaning_vi": "vua, ngọc trong vai trò bộ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 王.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nước, quốc gia",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "王",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "王",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vương",
+          "radical_name_zh": "",
+          "hanviet": "vương",
+          "meaning_vi": "vua, ngọc trong vai trò bộ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "vương",
+            "meaning_vi": "vua, ngọc trong vai trò bộ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "王",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vương",
+              "radical_name_zh": "",
+              "hanviet": "vương",
+              "meaning_vi": "vua, ngọc trong vai trò bộ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 王.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vua",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "国 + 王 = vua của một nước.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 国王.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "皇帝",
+        "pinyin": "huángdì",
+        "meaning_vi": "hoàng đế",
+        "difference_vi": "gắn với đế chế hoặc Trung Quốc cổ đại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "总统",
+        "pinyin": "zǒngtǒng",
+        "meaning_vi": "tổng thống",
+        "difference_vi": "không phải vua",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e5feb602-cc81-4065-aa4d-482a33c85f11",
+      "order": 1,
+      "zh": "一位国王",
+      "pinyin": "",
+      "vi": "một vị vua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a847fabf-f921-48f6-8be9-21fbe771d525",
+      "order": 2,
+      "zh": "国王的儿子",
+      "pinyin": "",
+      "vi": "con trai nhà vua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f550534-fe87-4345-af20-dfd6a2630064",
+      "order": 3,
+      "zh": "国王喜欢听音乐",
+      "pinyin": "",
+      "vi": "nhà vua thích nghe nhạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75adb4fe-1e2a-4c9b-bc8a-c6c7d536c71e",
+      "order": 4,
+      "zh": "国王发现了真相",
+      "pinyin": "",
+      "vi": "nhà vua phát hiện sự thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5c70cd24-abc3-4194-a256-b2eb5d34be0c",
+      "order": 1,
+      "zh": "从前，有一位国王很喜欢听音乐。",
+      "pinyin": "Cóngqián, yǒu yí wèi guówáng hěn xǐhuan tīng yīnyuè.",
+      "vi": "Ngày xưa có một vị vua rất thích nghe nhạc.",
+      "analysis_vi": "从前，有一位…… là mở đầu truyện.",
+      "highlight": [
+        "国王"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6f58de77-9321-4669-82e2-88d7b98508c9"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ce5deba7-7174-4500-9e1e-6157ca6a0664",
+      "order": 2,
+      "zh": "国王的儿子喜欢一个人一个人地听。",
+      "pinyin": "Guówáng de érzi xǐhuan yí ge rén yí ge rén de tīng.",
+      "vi": "Con trai nhà vua thích nghe từng người một.",
+      "analysis_vi": "一个人一个人地 = từng người một.",
+      "highlight": [
+        "国王"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6f58de77-9321-4669-82e2-88d7b98508c9"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong truyện cổ, 国王 dùng cho vua nói chung; với lịch sử Trung Quốc còn gặp 皇帝.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "31f90132-9005-4542-91b1-27e6b70dc962",
+      "order": 1,
+      "rule_vi": "Không dùng 国王 cho lãnh đạo nước cộng hòa; dùng 总统 / 主席 tùy ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "国王",
+    "back": "quốc vương, nhà vua",
+    "hint": "guówáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6f58de77-9321-4669-82e2-88d7b98508c9",
+    "source_lesson_vocab_id": null
+  }
+}

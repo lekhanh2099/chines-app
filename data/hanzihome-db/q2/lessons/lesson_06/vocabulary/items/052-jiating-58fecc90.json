@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ccd1ff1057d9b91b",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "家庭",
+  "pinyin": "jiātíng",
+  "meaning_vi": "gia đình; hộ gia đình",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "945f8c0c-ae6b-4f11-9a54-45e0f3fe9348",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "945f8c0c-ae6b-4f11-9a54-45e0f3fe9348",
+    "type": "vocabulary_item",
+    "order": 26,
+    "hanzi": "家庭",
+    "pinyin": "jiātíng",
+    "meaning_vi": "gia đình; hộ gia đình",
+    "meaning_en": "family",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "家庭",
+      "back": "jiātíng — gia đình; hộ gia đình",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

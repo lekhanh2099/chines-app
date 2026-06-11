@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_209db0e06dcef760",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "毫无",
+  "pinyin": "háowú",
+  "meaning_vi": "hoàn toàn không, không hề",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "9275ddc9-374e-400d-9887-255ef16383a4",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "9275ddc9-374e-400d-9887-255ef16383a4",
+    "type": "vocabulary_item",
+    "order": 55,
+    "hanzi": "毫无",
+    "pinyin": "háowú",
+    "meaning_vi": "hoàn toàn không, không hề",
+    "meaning_en": "not in the slightest",
+    "pos": "Phó từ",
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "毫无",
+      "back": "háowú — hoàn toàn không, không hề",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

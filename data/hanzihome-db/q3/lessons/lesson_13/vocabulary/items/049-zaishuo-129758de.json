@@ -1,0 +1,233 @@
+{
+  "id": "54615b1a-6e5c-4726-958b-25431a982574",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "再说",
+  "pinyin": "zàishuō",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "discourse"
+  ],
+  "meaning": {
+    "hanviet": "tái thuyết",
+    "meaning_vi": "nói sau; hơn nữa; lại nói thêm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nói sau",
+      "hơn nữa",
+      "lại nói thêm"
+    ],
+    "short_definition_vi": "nói sau; hơn nữa; lại nói thêm",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "再",
+        "lishu_vi": "tái",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lại/sau đó",
+        "modern_logic_vi": "Trong từ/cụm này, 再 góp phần vào nghĩa hiện đại: lại/sau đó.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "说",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói/ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 说 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "再说 cần học theo nghĩa hiện đại trong bài: nói sau; hơn nữa; lại nói thêm.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 以后再说.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4a1bfa5c-6290-487a-857b-5398de94cde2",
+      "order": 1,
+      "zh": "以后再说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d72af3e-8346-4b8b-a33a-feb863613601",
+      "order": 2,
+      "zh": "再说吧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc539ce4-83ae-4d55-840c-e48f18985f62",
+      "order": 3,
+      "zh": "再说一遍",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ba7b569c-6984-4fb3-9e05-4d2452d65894",
+      "order": 1,
+      "zh": "这件事以后再说。",
+      "pinyin": "Zhè jiàn shì yǐhòu zài shuō.",
+      "vi": "Chuyện này để sau nói/để sau tính.",
+      "analysis_vi": "以后再说 là trì hoãn xử lý.",
+      "highlight": [
+        "再说"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54615b1a-6e5c-4726-958b-25431a982574"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "22ad165c-0182-4bcb-9eb4-15f7730a9be5",
+      "order": 2,
+      "zh": "再说，他也没有时间。",
+      "pinyin": "Zàishuō, tā yě méiyǒu shíjiān.",
+      "vi": "Hơn nữa, anh ấy cũng không có thời gian.",
+      "analysis_vi": "再说 đứng đầu vế để thêm lý do.",
+      "highlight": [
+        "再说"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54615b1a-6e5c-4726-958b-25431a982574"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "再说吧 có thể là cách từ chối mềm hoặc trì hoãn trong hội thoại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5e885316-e41b-43d1-8358-4d96283cf1a1",
+      "order": 1,
+      "rule_vi": "Dùng 再说 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "再说",
+    "back": "nói sau; hơn nữa; lại nói thêm",
+    "hint": "zàishuō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "54615b1a-6e5c-4726-958b-25431a982574",
+    "source_lesson_vocab_id": null
+  }
+}

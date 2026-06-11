@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_d8486fdfd15356aa",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "于是",
+  "pinyin": "yúshì",
+  "meaning_vi": "thế là; vì vậy mà",
+  "pos": "Liên từ",
+  "pos_detail": {
+    "vi": "Liên từ",
+    "cn": "连词",
+    "normalized": "conjunction",
+    "schema_compatible_pos": "conjunction",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+    "type": "vocabulary_item",
+    "order": 17,
+    "hanzi": "于是",
+    "pinyin": "yúshì",
+    "meaning_vi": "thế là; vì vậy mà",
+    "meaning_en": "",
+    "pos": "Liên từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "于是",
+      "back": "yúshì — thế là; vì vậy mà",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Liên từ",
+      "cn": "连词",
+      "normalized": "conjunction",
+      "schema_compatible_pos": "conjunction",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

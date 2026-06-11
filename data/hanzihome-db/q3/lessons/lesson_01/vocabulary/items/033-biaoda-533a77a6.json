@@ -1,0 +1,358 @@
+{
+  "id": "4754dbcb-8ffd-4983-82fa-bc85efe7532a",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "表达",
+  "pinyin": "biǎodá",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "biểu đạt",
+    "meaning_vi": "bày tỏ, biểu đạt, diễn đạt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bày tỏ",
+      "biểu đạt",
+      "diễn đạt"
+    ],
+    "short_definition_vi": "bày tỏ, biểu đạt, diễn đạt",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: bày tỏ, biểu đạt, diễn đạt.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "biểu",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biểu hiện, bề ngoài, bảng",
+        "modern_logic_vi": "Đưa ra ngoài để thấy/biết.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "达",
+        "lishu_vi": "đạt",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/di chuyển",
+            "position_vi": "ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi/di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn; thành phần giản thể",
+            "position_vi": "trong",
+            "role": "simplified_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đạt đến, chuyển đến",
+        "modern_logic_vi": "Đưa tới nơi/người nhận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi/di chuyển",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "表达 trong bài dùng theo nghĩa: bày tỏ, biểu đạt, diễn đạt. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 表达 qua văn cảnh 离家的时候: bày tỏ, biểu đạt, diễn đạt.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "表示",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biểu thị/bày tỏ rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表现",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biểu hiện/thể hiện năng lực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表明",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói rõ/làm rõ lập trường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "说明",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giải thích rõ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "隐瞒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "che giấu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bac5d6e0-d561-40d3-b934-35256db9c4aa",
+      "order": 1,
+      "zh": "表达想法",
+      "pinyin": "",
+      "vi": "bày tỏ suy nghĩ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f054279b-cb83-4e20-a1e6-cc384011dbc0",
+      "order": 2,
+      "zh": "表达感情",
+      "pinyin": "",
+      "vi": "bày tỏ tình cảm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "221711a4-7c90-40aa-83f5-41edf46c316b",
+      "order": 3,
+      "zh": "表达感谢",
+      "pinyin": "",
+      "vi": "bày tỏ lời cảm ơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e58cf71-146b-4dda-9503-38e65e3e05f8",
+      "order": 4,
+      "zh": "表达爱",
+      "pinyin": "",
+      "vi": "bày tỏ tình yêu/thương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "affdcf96-8bfc-495c-a630-c5bda72e8e90",
+      "order": 5,
+      "zh": "清楚地表达",
+      "pinyin": "",
+      "vi": "diễn đạt rõ ràng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4acb7a3d-2c4a-4b78-aeaa-da250e9c7ab8",
+      "order": 1,
+      "zh": "她不知道怎么表达自己的感情。",
+      "pinyin": "",
+      "vi": "Cô ấy không biết bày tỏ tình cảm thế nào.",
+      "analysis_vi": "怎么表达 hỏi cách diễn đạt.",
+      "highlight": [
+        "表达"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4754dbcb-8ffd-4983-82fa-bc85efe7532a"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "20d02d02-d691-4f5d-97da-6a6548767e74",
+      "order": 2,
+      "zh": "她终于把自己的想法清楚地表达出来了。",
+      "pinyin": "",
+      "vi": "Cuối cùng cô ấy đã bày tỏ rõ suy nghĩ của mình.",
+      "analysis_vi": "表达出来 nhấn đưa suy nghĩ ra ngoài.",
+      "highlight": [
+        "表达"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4754dbcb-8ffd-4983-82fa-bc85efe7532a"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ca2ab5ed-7fc2-484b-ad39-9574db55337a",
+      "order": 3,
+      "zh": "离家的时候，她只是用一个拥抱表达了对父母的感谢和想念。",
+      "pinyin": "",
+      "vi": "Lúc rời nhà, cô ấy chỉ dùng một cái ôm để bày tỏ biết ơn và nỗi nhớ bố mẹ.",
+      "analysis_vi": "用……表达…… = dùng gì để bày tỏ gì.",
+      "highlight": [
+        "表达"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4754dbcb-8ffd-4983-82fa-bc85efe7532a"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "Tình cảm trong gia đình Á Đông nhiều khi được biểu đạt qua hành động hơn lời nói trực tiếp.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c263b5d3-7e96-4d1e-ab42-b9c10a512ff2",
+      "order": 1,
+      "rule_vi": "表达 không phải biểu diễn; biểu diễn tiết mục là 表演节目.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表达",
+    "back": "bày tỏ, biểu đạt, diễn đạt",
+    "hint": "biǎodá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_033"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4754dbcb-8ffd-4983-82fa-bc85efe7532a",
+    "source_lesson_vocab_id": null
+  }
+}

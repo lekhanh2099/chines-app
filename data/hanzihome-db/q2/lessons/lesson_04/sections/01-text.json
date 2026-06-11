@@ -1,0 +1,266 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "我都做对了",
+      "title_vi": "Tôi đều làm đúng rồi",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [],
+      "lines": [
+        {
+          "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+          "order": 1,
+          "speaker": "玛丽",
+          "zh": "你今天考得怎么样？",
+          "vi": "Hôm nay bạn thi thế nào?",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+          ]
+        },
+        {
+          "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+          "order": 2,
+          "speaker": "罗兰",
+          "zh": "这次没考好。题太多了，我没有做完。你做完了没有？",
+          "vi": "Lần này mình thi không tốt. Đề nhiều quá, mình chưa làm xong. Bạn làm xong chưa?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+            "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+          ]
+        },
+        {
+          "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+          "order": 3,
+          "speaker": "玛丽",
+          "zh": "我都做完了，但是没都做对，做错了两道题，所以成绩不会太好。",
+          "vi": "Mình làm xong hết rồi, nhưng không phải câu nào cũng làm đúng, mình làm sai hai câu, nên điểm chắc sẽ không tốt lắm.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+            "188412d4-4c23-4d60-b7b2-21f3490199e7"
+          ]
+        },
+        {
+          "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+          "order": 4,
+          "speaker": "罗兰",
+          "zh": "语法题不太难，我觉得都做对了。听力比较难，很多句子我没听懂。",
+          "vi": "Câu ngữ pháp không khó lắm, mình thấy mình đều làm đúng rồi. Nghe hiểu thì khá khó, nhiều câu mình không nghe hiểu.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [
+            "5ea44727-d97c-467b-b1b8-babd195df50d"
+          ]
+        },
+        {
+          "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+          "order": 5,
+          "speaker": "玛丽",
+          "zh": "我也不知道做对了没有。我的词典呢？",
+          "vi": "Mình cũng không biết có làm đúng không nữa. Từ điển của mình đâu rồi?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "f0684cb3-4577-4e6c-9f22-7d97c89692b3"
+          ]
+        },
+        {
+          "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+          "order": 6,
+          "speaker": "罗兰",
+          "zh": "我没看见你的词典。你找词典干什么？",
+          "vi": "Mình không nhìn thấy từ điển của bạn. Bạn tìm từ điển làm gì?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "54613016-834a-4fc3-9912-2357a6d27058"
+          ]
+        },
+        {
+          "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+          "order": 7,
+          "speaker": "玛丽",
+          "zh": "我查一个词，看看写对了没有。糟糕，写错了，是这个“得”，我写成这个“的”了。",
+          "vi": "Mình tra một từ, xem có viết đúng không. Thôi xong, viết sai rồi, là chữ “得” này, mình lại viết thành chữ “的” này rồi.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "vocab_refs": [
+            "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+          ]
+        },
+        {
+          "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+          "order": 8,
+          "speaker": "罗兰",
+          "zh": "别查了，休息休息吧。快打开电脑，看看电视剧吧。",
+          "vi": "Đừng tra nữa, nghỉ một chút đi. Mau mở máy tính ra, xem phim truyền hình đi.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "dc0f8e06-a359-4907-a8d8-fc9b02260590"
+          ]
+        },
+        {
+          "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+          "order": 9,
+          "speaker": "玛丽",
+          "zh": "我的衣服还没有洗完呢，还得给我妹妹回信。",
+          "vi": "Quần áo của mình vẫn chưa giặt xong, còn phải viết thư trả lời em gái mình nữa.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
+          ]
+        },
+        {
+          "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+          "order": 10,
+          "speaker": "罗兰",
+          "zh": "看完电视剧再洗吧。",
+          "vi": "Xem xong phim truyền hình rồi giặt sau đi.",
+          "grammar_refs": [
+            "fa804fff-372b-4874-8571-f54e613d7e07"
+          ],
+          "vocab_refs": []
+        }
+      ],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_narrative",
+      "order": 2,
+      "title": "看完电影再做作业",
+      "title_vi": "Xem phim xong rồi làm bài tập",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "99e63fca-bad7-4aff-8eba-621a119e5a19",
+          "order": 1,
+          "zh": "吃完晚饭，我和玛丽回到宿舍。玛丽说，田芳借给她一本书，书里都是小故事，很有意思。我问她：“你看完了没有？”",
+          "vi": "Ăn xong bữa tối, tôi và Mary về ký túc xá. Mary nói Điền Phương cho cô ấy mượn một quyển sách; trong sách toàn là truyện ngắn, rất thú vị. Tôi hỏi cô ấy: “Bạn đọc xong chưa?”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "fa804fff-372b-4874-8571-f54e613d7e07",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [
+            "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+          "order": 2,
+          "zh": "玛丽说：“还没有看完呢，才看了三十页。”我问：“都看懂了吗？”玛丽说：“有的看懂了，有的没看懂。”",
+          "vi": "Mary nói: “Vẫn chưa đọc xong đâu, mới đọc được ba mươi trang.” Tôi hỏi: “Đều đọc hiểu hết chưa?” Mary nói: “Có chỗ đọc hiểu rồi, có chỗ chưa đọc hiểu.”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [
+            "0125bdae-fe4e-48fb-8264-145e95c75933"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a95090b2-e303-4079-9c8c-04b8d52d756d",
+          "order": 3,
+          "zh": "我说：“可以让我看看吗？”玛丽说：“当然可以。”我看了两个故事，也觉得很有意思。看到有意思的地方，就想笑。",
+          "vi": "Tôi nói: “Có thể cho mình xem thử không?” Mary nói: “Tất nhiên là được.” Tôi đọc hai câu chuyện, cũng thấy rất thú vị. Đọc đến chỗ thú vị thì muốn cười.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "700d39f4-2b3a-4134-a5d1-78801541da6c",
+          "order": 4,
+          "zh": "我对玛丽说：“咱们可以用这些故事练习会话。”玛丽问：“怎么练习？”我说：“我念完一个故事，问你几个问题，看你能不能答对；你念完一个故事，也问我几个问题，看我能不能答对。”",
+          "vi": "Tôi nói với Mary: “Chúng ta có thể dùng những câu chuyện này để luyện hội thoại.” Mary hỏi: “Luyện thế nào?” Tôi nói: “Tôi đọc xong một câu chuyện rồi hỏi bạn vài câu, xem bạn có trả lời đúng được không; bạn đọc xong một câu chuyện rồi cũng hỏi tôi vài câu, xem tôi có trả lời đúng được không.”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "689eb64b-5d4f-469f-9afa-74017d399614",
+            "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "c99a633b-27a2-429b-a139-44113a84c189"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+          "order": 5,
+          "zh": "玛丽说：“这是个好办法。”我念了一个故事，玛丽听懂了。问了她五个问题，她都答对了。",
+          "vi": "Mary nói: “Đây là một cách hay.” Tôi đọc một câu chuyện, Mary nghe hiểu. Tôi hỏi cô ấy năm câu, cô ấy đều trả lời đúng.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [
+            "c99a633b-27a2-429b-a139-44113a84c189"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "3ba46ae7-dcb5-5640-8249-4de34bba66bc",
+          "order": 6,
+          "zh": "她念了一个故事，合上书，问我听懂了没有。我说，有的地方没听懂。她打开书，又念了一遍，我才听懂。她也问了五个问题，我答对了四个，答错了一个。",
+          "vi": "Cô ấy đọc một câu chuyện, gấp sách lại rồi hỏi tôi đã nghe hiểu chưa. Tôi nói có vài chỗ chưa nghe hiểu. Cô ấy mở sách ra, đọc lại một lượt nữa, lúc đó tôi mới nghe hiểu. Cô ấy cũng hỏi năm câu, tôi trả lời đúng bốn câu, sai một câu.",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "814c4701-71ba-52c2-8eac-e457f1141bc3",
+          "order": 7,
+          "zh": "我们还没有练习完，就听见安娜在门外叫我们。我开开门问她：“什么事？”“晚上礼堂有电影，你们看吗？”“什么电影？”“是个新电影，我不知道叫什么名字。田芳说，这个电影非常好。”“想看。但是我今天的作业还没有做完呢，课文也读得不太熟。”安娜说：“我也没做完呢，看完电影再做吧。”说完，我们三个就去礼堂看电影了。我们看到九点才看完。九点半我才开始做作业。做完作业已经十点半了。",
+          "vi": "Chúng tôi vẫn chưa luyện xong thì nghe thấy Anna gọi chúng tôi ở ngoài cửa. Tôi mở cửa hỏi cô ấy: “Có chuyện gì vậy?” “Tối nay ở hội trường có phim, các bạn xem không?” “Phim gì?” “Là một phim mới, mình không biết tên là gì. Điền Phương nói phim này rất hay.” “Muốn xem. Nhưng bài tập hôm nay của mình vẫn chưa làm xong, bài khóa cũng đọc chưa thuộc lắm.” Anna nói: “Mình cũng chưa làm xong, xem phim xong rồi làm tiếp đi.” Nói xong, ba chúng tôi liền đến hội trường xem phim. Chúng tôi xem đến chín giờ mới xong. Chín rưỡi tôi mới bắt đầu làm bài tập. Làm xong bài tập thì đã mười giờ rưỡi rồi.",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": []
+    }
+  ]
+}

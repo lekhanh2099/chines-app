@@ -1,0 +1,355 @@
+{
+  "id": "e3917851-9a1b-4d7d-80b5-6951e29f75fd",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "另外",
+  "pinyin": "lìngwài",
+  "pos": {
+    "raw_vi": "Liên từ / Đại từ / Trạng từ",
+    "raw_cn": "连/代/副",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Lệnh ngoại",
+    "meaning_vi": "ngoài ra; khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngoài ra",
+      "khác"
+    ],
+    "short_definition_vi": "ngoài ra; khác",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "rất thường dùng, tự nhiên hơn 另 khi đứng độc lập.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "另",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khác, riêng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "另 là khác, riêng. → 另外 = phần khác nằm ngoài điều vừa nói.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "外",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "chiều tối",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói/đoán",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngoài",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "外 là ngoài. → 另外 = phần khác nằm ngoài điều vừa nói.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 另外 = phần khác nằm ngoài điều vừa nói.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 另外 có thể dùng nối câu, nhưng không thay hoàn toàn cho 但是. Nó chủ yếu là bổ sung, không phải tương phản.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "另外 (lìngwài)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngoài ra, cái khác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "还有 (háiyǒu)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "còn có, thêm nữa; khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "此外 (cǐwài)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngoài ra, văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "别的 (bié de)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cái khác/người khác, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: nói thường dùng 还有 / 另外; viết trang trọng dùng 此外."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c9cb4434-06db-4595-8262-52d216b854bd",
+      "order": 1,
+      "zh": "另外一本书",
+      "pinyin": "",
+      "vi": "một quyển sách khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "253a536e-7562-4bd3-8ff5-2bddff5f2f27",
+      "order": 2,
+      "zh": "另外一个问题",
+      "pinyin": "",
+      "vi": "một vấn đề khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d938666-43c1-4158-b62c-5dc2f27454c4",
+      "order": 3,
+      "zh": "另外，我还想说……",
+      "pinyin": "",
+      "vi": "ngoài ra, tôi còn muốn nói...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "985301c1-f585-4c5f-bb66-24fc68cd878a",
+      "order": 4,
+      "zh": "还有别的吗？",
+      "pinyin": "",
+      "vi": "còn cái gì khác không?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "65730287-3761-4306-8656-4a539bcf0e50",
+      "order": 1,
+      "zh": "这本书我已经买了，另外一本可以下次再买。",
+      "pinyin": "Zhè běn shū wǒ yǐjīng mǎi le, lìngwài yì běn kěyǐ xià cì zài mǎi.",
+      "vi": "Quyển này tôi đã mua rồi, quyển khác có thể lần sau mua tiếp.",
+      "analysis_vi": "另外一本 chỉ một quyển khác ngoài quyển đang nói.",
+      "highlight": [
+        "另外"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e3917851-9a1b-4d7d-80b5-6951e29f75fd"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "72d1e6a4-c617-4dae-8432-d5ea93120be7",
+      "order": 2,
+      "zh": "他把中文书拿出来以后，又从包里拿出另外一本小说来。",
+      "pinyin": "Tā bǎ Zhōngwén shū ná chūlai yǐhòu, yòu cóng bāo lǐ ná chū lìngwài yì běn xiǎoshuō lái.",
+      "vi": "Sau khi lấy sách tiếng Trung ra, anh ấy lại lấy từ trong túi ra một quyển tiểu thuyết khác.",
+      "analysis_vi": "Câu cho thấy hai vị trí tân ngữ sự vật: 拿出来中文书 và 拿出另外一本小说来 đều hợp ngữ pháp.",
+      "highlight": [
+        "另外"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e3917851-9a1b-4d7d-80b5-6951e29f75fd"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ad4ce505-f36c-476b-ac8e-5836f8810da8",
+      "order": 3,
+      "zh": "学习词汇不只是看意思，另外还要看搭配和真实例句。",
+      "pinyin": "Xuéxí cíhuì bú zhǐ shì kàn yìsi, lìngwài hái yào kàn dāpèi hé zhēnshí lìjù.",
+      "vi": "Học từ vựng không chỉ là xem nghĩa, ngoài ra còn phải xem collocation và câu ví dụ thật.",
+      "analysis_vi": "另外还要…… dùng để bổ sung bước học tiếp theo.",
+      "highlight": [
+        "另外"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e3917851-9a1b-4d7d-80b5-6951e29f75fd"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "52ce38e7-0758-46ce-b74c-6b91cb31a94e",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 另外 để diễn tả đối lập mạnh như “nhưng”. Không chính xác:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "另外",
+    "back": "ngoài ra; khác",
+    "hint": "lìngwài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong thuyết trình hoặc viết đoạn văn tiếng Trung, 另外 là từ nối rất tiện để thêm ý. Nhưng nếu viết học thuật hơn, có thể dùng 此外.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e3917851-9a1b-4d7d-80b5-6951e29f75fd",
+    "source_lesson_vocab_id": null
+  }
+}

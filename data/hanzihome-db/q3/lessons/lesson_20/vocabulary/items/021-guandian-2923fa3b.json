@@ -1,0 +1,306 @@
+{
+  "id": "a8ec1816-1e1e-4064-a4de-61fe4931f659",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "观点",
+  "pinyin": "guāndiǎn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "quan điểm",
+    "meaning_vi": "quan điểm, cách nhìn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quan điểm",
+      "cách nhìn"
+    ],
+    "short_definition_vi": "quan điểm, cách nhìn",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "观",
+        "lishu_vi": "quan",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhìn, quan sát, quan niệm",
+        "modern_logic_vi": "观点 = điểm nhìn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "点",
+        "lishu_vi": "điểm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "bốn chấm dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điểm, chấm, mấu chốt",
+        "modern_logic_vi": "观点 = điểm nhìn/điểm lập trường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "观点 được dùng trong Bài 20 với nghĩa: quan điểm, cách nhìn.",
+    "memory_tip_vi": "Nhớ qua cụm 表达观点.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "看法",
+        "pinyin": "kànfǎ",
+        "meaning_vi": "cách nhìn",
+        "difference_vi": "Khẩu ngữ hơn 观点.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "立场",
+        "pinyin": "lìchǎng",
+        "meaning_vi": "lập trường",
+        "difference_vi": "Mạnh hơn, gắn vị trí nguyên tắc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d518feb9-fd61-41d4-bbf9-d4ebd2e9f814",
+      "order": 1,
+      "zh": "表达观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7aa57811-4925-44fe-acdf-43450ad07dcc",
+      "order": 2,
+      "zh": "提出观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5141fabe-87d7-4171-b4ec-9b23860f8271",
+      "order": 3,
+      "zh": "坚持观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c70c6d08-055a-41c4-927f-c5a51ae79199",
+      "order": 4,
+      "zh": "改变观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f97df79b-39b5-44e2-a545-2376351aa2a3",
+      "order": 5,
+      "zh": "同意观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b66e204-fa44-441d-abc5-365aa74cba56",
+      "order": 6,
+      "zh": "反对观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17264055-56df-4e81-b252-bf7f9cb63e35",
+      "order": 7,
+      "zh": "个人观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "238c807c-5843-4b27-91bf-689b9a2b65fa",
+      "order": 1,
+      "zh": "你的观点很清楚。",
+      "pinyin": "Nǐ de guāndiǎn hěn qīngchu.",
+      "vi": "Quan điểm của bạn rất rõ ràng.",
+      "analysis_vi": "观点清楚 nhận xét lập luận.",
+      "highlight": [
+        "观点"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8ec1816-1e1e-4064-a4de-61fe4931f659"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3f78a681-df2d-4ecb-ba86-f10eecb19a59",
+      "order": 2,
+      "zh": "导师试图说服她改变观点，可她认为没有事实证明那个理论是正确的。",
+      "pinyin": "Dǎoshī shìtú shuōfú tā gǎibiàn guāndiǎn, kě tā rènwéi méiyǒu shìshí zhèngmíng nà ge lǐlùn shì zhèngquè de.",
+      "vi": "Thầy cố thuyết phục cô ấy đổi quan điểm, nhưng cô ấy cho rằng không có sự thật chứng minh lý thuyết đó đúng.",
+      "analysis_vi": "说服她改变观点 = thuyết phục đổi quan điểm.",
+      "highlight": [
+        "观点"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8ec1816-1e1e-4064-a4de-61fe4931f659"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "我的观点是…… dùng nhiều trong viết/nói học thuật; khẩu ngữ có thể mềm bằng 我个人觉得……",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e3111914-96ba-497c-ab77-fb2f46cba156",
+      "order": 1,
+      "rule_vi": "观点 là danh từ, không tự làm động từ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我观点你。",
+          "pinyin": "Wǒ guāndiǎn nǐ.",
+          "vi": "Tôi quan điểm bạn.",
+          "note_vi": "Sai cấu trúc.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我同意你的观点。",
+          "pinyin": "Wǒ tóngyì nǐ de guāndiǎn.",
+          "vi": "Tôi đồng ý với quan điểm của bạn.",
+          "note_vi": "同意 + 观点.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "观点",
+    "back": "quan điểm, cách nhìn",
+    "hint": "guāndiǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a8ec1816-1e1e-4064-a4de-61fe4931f659",
+    "source_lesson_vocab_id": null
+  }
+}

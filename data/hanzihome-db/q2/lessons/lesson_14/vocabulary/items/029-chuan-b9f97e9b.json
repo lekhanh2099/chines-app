@@ -1,0 +1,303 @@
+{
+  "id": "b1e3592a-6cc7-4949-8865-8b8784c5f24a",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "串",
+  "pinyin": "chuàn",
+  "pos": {
+    "raw_vi": "Danh từ / Lượng từ / Động từ",
+    "raw_cn": "名/量/动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Xuyến",
+    "meaning_vi": "xâu, chuỗi; lượng từ cho chuỗi đồ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xâu",
+      "chuỗi",
+      "lượng từ cho chuỗi đồ"
+    ],
+    "short_definition_vi": "xâu, chuỗi; lượng từ cho chuỗi đồ",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, đồ vật nhỏ, món ăn, quà tặng.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "串",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丨",
+            "hanviet": "cổn",
+            "meaning_vi": "nét dọc",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xâu, chuỗi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "串 nhìn mặt chữ giống nhiều vật được xuyên qua thành một hàng. → 一串钥匙 = một chùm chìa khóa; 一串葡萄 = một chùm nho.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 一串钥匙 = một chùm chìa khóa; 一串葡萄 = một chùm nho.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 串 là lượng từ cho đồ thành chuỗi/chùm, không dùng cho mọi đồ vật.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "串 (chuàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xâu/chuỗi/chùm các vật nhỏ nối lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "把 (bǎ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lượng từ cho vật có tay cầm hoặc một nắm, như 一把钥匙.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "个 (ge)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lượng từ chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "条 (tiáo)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lượng từ cho vật dài/mảnh như dây, khăn, đường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 一把钥匙 là một chiếc chìa khóa; 一串钥匙 là một chùm chìa khóa."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c1d432dc-4a98-41f4-8b02-08e0b394818e",
+      "order": 1,
+      "zh": "一串钥匙",
+      "pinyin": "",
+      "vi": "một chùm chìa khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "316def71-c481-4da4-bf22-05b8d6cf3b9c",
+      "order": 2,
+      "zh": "一串钥匙链",
+      "pinyin": "",
+      "vi": "một chuỗi/một loạt móc khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2ce0f4c-da17-412d-bf9a-cdce203cbb17",
+      "order": 3,
+      "zh": "一串葡萄",
+      "pinyin": "",
+      "vi": "một chùm nho",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b48c52e-6c2f-4716-8b66-cca78c6fdccb",
+      "order": 4,
+      "zh": "串门",
+      "pinyin": "",
+      "vi": "ghé nhà chơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "85e44f63-5c52-48c5-92b0-a9553c4d4429",
+      "order": 1,
+      "zh": "他从包里拿出来一串钥匙，却找不到房间那把。",
+      "pinyin": "Tā cóng bāo lǐ ná chūlai yí chuàn yàoshi, què zhǎo bu dào fángjiān nà bǎ.",
+      "vi": "Anh ấy lấy từ trong túi ra một chùm chìa khóa, nhưng lại không tìm thấy chiếc của phòng.",
+      "analysis_vi": "拿出来一串钥匙 là lấy một chùm chìa khóa ra; 那把 thay cho 那把钥匙.",
+      "highlight": [
+        "串"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "b1e3592a-6cc7-4949-8865-8b8784c5f24a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bed03196-648b-4a8f-b3ca-b09adba49846",
+      "order": 2,
+      "zh": "这一串钥匙太重了，挂在钥匙链上很不方便。",
+      "pinyin": "Zhè yí chuàn yàoshi tài zhòng le, guà zài yàoshi liàn shàng hěn bù fāngbiàn.",
+      "vi": "Chùm chìa khóa này nặng quá, treo trên móc khóa rất bất tiện.",
+      "analysis_vi": "挂在……上 nói trạng thái treo ở vị trí cụ thể.",
+      "highlight": [
+        "串"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "b1e3592a-6cc7-4949-8865-8b8784c5f24a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a78f0b1e-cd42-40e9-9a65-982fcba10de7",
+      "order": 3,
+      "zh": "他把几个脸谱小饰物串起来，做成了一条钥匙链。",
+      "pinyin": "Tā bǎ jǐ ge liǎnpǔ xiǎo shìwù chuàn qǐlai, zuò chéng le yì tiáo yàoshi liàn.",
+      "vi": "Anh ấy xâu vài món trang trí mặt nạ nhỏ lại, làm thành một dây móc khóa.",
+      "analysis_vi": "串起来 là nối/xâu lại thành một chuỗi; 做成 nói kết quả sau khi làm.",
+      "highlight": [
+        "串"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "b1e3592a-6cc7-4949-8865-8b8784c5f24a"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "70672044-772a-434e-a195-fd6106a17998",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 一把钥匙 và 一串钥匙. 一把钥匙",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "串",
+    "back": "xâu, chuỗi; lượng từ cho chuỗi đồ",
+    "hint": "chuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong ẩm thực Trung Quốc, 串儿 rất phổ biến, đặc biệt là đồ xiên nướng. 羊肉串儿 – yángròu chuànr – là xiên thịt dê/cừu nướng, món đường phố rất nổi tiếng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b1e3592a-6cc7-4949-8865-8b8784c5f24a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "id": "1157cd28-3737-4036-b19b-911dd12b9650",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "激动",
+  "pinyin": "jīdòng",
+  "pos": {
+    "raw_vi": "Tính từ / động từ",
+    "raw_cn": "形 / 动",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Kích động",
+    "meaning_vi": "xúc động, kích động, phấn khích",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xúc động, kích động, phấn khích"
+    ],
+    "short_definition_vi": "xúc động, kích động, phấn khích",
+    "textbook_focus_vi": "xúc động, kích động, phấn khích",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "激",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/dòng chảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng, dòng chảy",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "敫",
+            "hanviet": "",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kích thích, dâng mạnh, mãnh liệt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng, dòng chảy",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "动",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "phần trái trong giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức, lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức, lực, hành động",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "động, chuyển động, tác động, cảm động",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức, lực, hành động",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "激 = kích lên/dâng mạnh; 动 = dao động/chuyển động. 激动 = cảm xúc bị kích lên, dao động mạnh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "感动",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm động vì bị chạm đến tình cảm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "兴奋",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hưng phấn/phấn khích",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "紧张",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "căng thẳng/hồi hộp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冲动",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bốc đồng theo cảm xúc nhất thời",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "冷静",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bình tĩnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "冷静",
+        "right": "激动",
+        "meaning_vi": "bình tĩnh ↔ kích động/xúc động",
+        "note_vi": "Cặp trạng thái cảm xúc.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "16cd61fe-04a1-4eab-9445-631fc6ccb62d",
+      "order": 1,
+      "zh": "很激动",
+      "pinyin": "",
+      "vi": "rất xúc động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47ffbedc-779b-457a-bdf5-fd2e4fbca48e",
+      "order": 2,
+      "zh": "非常激动",
+      "pinyin": "",
+      "vi": "vô cùng xúc động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca216da3-25b4-498f-9f47-609eab3036f8",
+      "order": 3,
+      "zh": "激动地说",
+      "pinyin": "",
+      "vi": "xúc động nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0112fd47-d790-46ad-9a75-ee38fe93e7d3",
+      "order": 4,
+      "zh": "激动得哭了",
+      "pinyin": "",
+      "vi": "xúc động đến khóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b5af254-5a25-4d35-958e-421cea50906f",
+      "order": 5,
+      "zh": "情绪激动",
+      "pinyin": "",
+      "vi": "cảm xúc kích động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fb0c478f-a590-4860-8f66-3caa6e262841",
+      "order": 1,
+      "zh": "新娘听了妈妈的话以后，很激动。",
+      "pinyin": "Xīnniáng tīng le māma de huà yǐhòu, hěn jīdòng.",
+      "vi": "Sau khi nghe lời mẹ nói, cô dâu rất xúc động.",
+      "analysis_vi": "听了……以后 nêu nguyên nhân/thời điểm trước cảm xúc.",
+      "highlight": [
+        "激动"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1157cd28-3737-4036-b19b-911dd12b9650"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "606961fb-82d3-447a-92e3-26b2f2436dff",
+      "order": 2,
+      "zh": "新娘拉着妈妈的手，激动得说不出话来。",
+      "pinyin": "Xīnniáng lāzhe māma de shǒu, jīdòng de shuō bu chū huà lái.",
+      "vi": "Cô dâu nắm tay mẹ, xúc động đến mức không nói nên lời.",
+      "analysis_vi": "拉着 là trạng thái đi kèm; 激动得 là bổ ngữ trình độ.",
+      "highlight": [
+        "激动",
+        "拉着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1157cd28-3737-4036-b19b-911dd12b9650"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4fb2cdd2-3df6-46bc-8a37-ac02b3148cb2",
+      "order": 1,
+      "rule_vi": "激动 không luôn tiêu cực như “kích động” tiếng Việt; tích cực có thể là xúc động/phấn khích.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "激动",
+    "back": "xúc động, kích động, phấn khích",
+    "hint": "jīdòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong lời phát biểu đám cưới, cảnh cha mẹ dặn dò cô dâu chú rể thường tạo cảm xúc mạnh.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1157cd28-3737-4036-b19b-911dd12b9650",
+    "source_lesson_vocab_id": null
+  }
+}

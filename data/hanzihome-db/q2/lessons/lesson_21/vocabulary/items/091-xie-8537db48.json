@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_09abb75350bb3a7d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "鞋",
+  "pinyin": "xié",
+  "meaning_vi": "giày",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ giày; lượng từ thường là 双.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "092a8c16-3739-4685-a4c0-39365071bd48",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+    "type": "vocabulary_item",
+    "order": 33,
+    "hanzi": "鞋",
+    "pinyin": "xié",
+    "meaning_vi": "giày",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "practice_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "鞋",
+      "back": "xié — giày",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "exercise_crosscheck",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ giày; lượng từ thường là 双.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

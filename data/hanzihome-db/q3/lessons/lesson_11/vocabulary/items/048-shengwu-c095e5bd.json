@@ -1,0 +1,328 @@
+{
+  "id": "b691fbe0-42a7-4825-95b6-481b6351a58b",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "生物",
+  "pinyin": "shēngwù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "sinh vật",
+    "meaning_vi": "sinh vật, vật sống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sinh vật",
+      "vật sống"
+    ],
+    "short_definition_vi": "vật có sự sống: người, động vật, thực vật, vi sinh vật",
+    "textbook_focus_vi": "Trong bài nói về sinh vật trí tuệ cao trong vũ trụ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "生",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sống, sinh",
+        "modern_logic_vi": "sống, sinh",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "物",
+        "lishu_vi": "",
+        "structure_note_vi": "牛 + 勿",
+        "components": [
+          {
+            "text": "牛",
+            "hanviet": "",
+            "meaning_vi": "bò",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "牛 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "牛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Ngưu",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "bò",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "牛 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "勿",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vật",
+        "modern_logic_vi": "vật",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "牛",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Ngưu",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "bò",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "牛 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "生物 được học trong bài theo nghĩa: vật có sự sống: người, động vật, thực vật, vi sinh vật.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 高智能生物.",
+    "warning_vi": "Không nhầm 生物 với 生词 hoặc 生活.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "动物",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Động vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "植物",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Thực vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 生物 với 生词 hoặc 生活."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0ce15b85-6dbb-40a8-afe2-1abaa477a1b1",
+      "order": 1,
+      "zh": "高智能生物",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0a0385c-4fc6-4739-a0f0-ecdfdfbf33b4",
+      "order": 2,
+      "zh": "地球上的生物",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8cd46ce-8f8f-439c-a906-37120af32e07",
+      "order": 3,
+      "zh": "宇宙中的生物",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cd8bd875-a3f7-4c51-96a4-0dffe6b46f7c",
+      "order": 4,
+      "zh": "生物学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d9a8ad1-f96c-417c-87ba-b8af0f7515dc",
+      "order": 5,
+      "zh": "微生物",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc4da1fb-18fb-4ff7-9c80-5efdd7ebdc0e",
+      "order": 6,
+      "zh": "保护生物多样性",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9ac5b0f2-b958-4238-a861-fb8d76824481",
+      "order": 1,
+      "zh": "地球上有很多种生物。",
+      "pinyin": "",
+      "vi": "Trên Trái Đất có rất nhiều loài sinh vật.",
+      "analysis_vi": "种 là đơn vị phân loại.",
+      "highlight": [
+        "生物"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b691fbe0-42a7-4825-95b6-481b6351a58b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "846225b9-f719-4d20-9996-0c0c2fb037b7",
+      "order": 2,
+      "zh": "宇宙中可能存在别的生物。",
+      "pinyin": "",
+      "vi": "Trong vũ trụ có thể tồn tại sinh vật khác.",
+      "analysis_vi": "可能存在 là cách nói thận trọng.",
+      "highlight": [
+        "生物"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b691fbe0-42a7-4825-95b6-481b6351a58b"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "生物 cũng là tên môn học/mảng khoa học: 生物课, 生物学.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4576946a-0d0f-4f77-b560-42790da4ca3e",
+      "order": 1,
+      "rule_vi": "Không nhầm 生物 với 生词 hoặc 生活.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 生物 với 生词 hoặc 生活.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "生物",
+    "back": "sinh vật, vật sống",
+    "hint": "shēngwù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b691fbe0-42a7-4825-95b6-481b6351a58b",
+    "source_lesson_vocab_id": null
+  }
+}

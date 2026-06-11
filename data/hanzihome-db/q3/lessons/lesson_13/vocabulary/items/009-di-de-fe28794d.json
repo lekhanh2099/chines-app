@@ -1,0 +1,229 @@
+{
+  "id": "e326f1c8-34a0-4bfe-a029-e1f34fa17861",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "地",
+  "pinyin": "dì / de",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "grammar"
+  ],
+  "meaning": {
+    "hanviet": "địa",
+    "meaning_vi": "đất; trợ từ trạng ngữ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đất",
+      "trợ từ trạng ngữ"
+    ],
+    "short_definition_vi": "đất; trợ từ trạng ngữ",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "地",
+        "lishu_vi": "địa",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "也",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đất/nơi chốn",
+        "modern_logic_vi": "Trong từ/cụm này, 地 góp phần vào nghĩa hiện đại: đất/nơi chốn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "地 cần học theo nghĩa hiện đại trong bài: đất; trợ từ trạng ngữ.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 种地.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6977b1b5-312e-4e06-851b-6eb768e3fde4",
+      "order": 1,
+      "zh": "种地",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9189c143-1e43-465c-9518-ebad6860771c",
+      "order": 2,
+      "zh": "地上",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8d4f396a-2d81-4b76-8fb7-bc5451b42017",
+      "order": 3,
+      "zh": "认真地学习",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "43e68997-c44d-4b01-9284-0f899b605dc1",
+      "order": 1,
+      "zh": "他父母在农村种地。",
+      "pinyin": "Tā fùmǔ zài nóngcūn zhòngdì.",
+      "vi": "Bố mẹ anh ấy làm ruộng ở nông thôn.",
+      "analysis_vi": "地 đọc dì trong 种地.",
+      "highlight": [
+        "地"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e326f1c8-34a0-4bfe-a029-e1f34fa17861"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7acab044-03a8-4e6d-8891-b6901261135d",
+      "order": 2,
+      "zh": "他认真地照顾弟弟妹妹。",
+      "pinyin": "Tā rènzhēn de zhàogù dìdi mèimei.",
+      "vi": "Anh ấy chăm sóc em trai em gái một cách nghiêm túc.",
+      "analysis_vi": "地 đọc nhẹ de trong trạng ngữ.",
+      "highlight": [
+        "地"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e326f1c8-34a0-4bfe-a029-e1f34fa17861"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Phân biệt 地 dì và 地 de là điểm đọc âm bắt buộc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f59937fa-9e50-4b51-9a52-cf135c837799",
+      "order": 1,
+      "rule_vi": "Dùng 地 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "地",
+    "back": "đất; trợ từ trạng ngữ",
+    "hint": "dì / de",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e326f1c8-34a0-4bfe-a029-e1f34fa17861",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "id": "707a5da1-829d-4873-a2a8-69229b1b488e",
+  "type": "deep_vocabulary_item",
+  "order": 64,
+  "hanzi": "菜",
+  "pinyin": "cài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Thái",
+    "meaning_vi": "món ăn, rau",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "món ăn",
+      "rau"
+    ],
+    "short_definition_vi": "món ăn, rau",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, ăn uống, nhà hàng, nấu ăn.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "菜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ/cây cỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ/cây cỏ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "采",
+            "hanviet": "thải",
+            "meaning_vi": "hái/lấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rau, món ăn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "菜 có bộ 艹, liên quan đến cỏ/cây, ban đầu dễ liên hệ với rau. → 一道菜 = một món ăn; 买菜 = đi chợ mua thực phẩm/rau đồ nấu ăn.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 一道菜 = một món ăn; 买菜 = đi chợ mua thực phẩm/rau đồ nấu ăn.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 菜 không phải lúc nào cũng là “rau”. Trong nhà hàng, 这个菜很好吃 là “món này ngon”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "菜 (cài)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "món ăn; rau; đồ nấu ăn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "饭 (fàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cơm/bữa ăn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "餐 (cān)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bữa ăn, suất ăn; hơi văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "食品 (shípǐn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thực phẩm, hàng ăn uống đóng gói hoặc nói chung, văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: gọi món dùng 点菜; ăn cơm dùng 吃饭; nói bữa sáng dùng 早餐."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a0f304bc-b02b-4031-8844-dfe2129b810d",
+      "order": 1,
+      "zh": "点菜",
+      "pinyin": "",
+      "vi": "gọi món",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ebc2552-fa33-4376-9b06-31f886bedad0",
+      "order": 2,
+      "zh": "上菜",
+      "pinyin": "",
+      "vi": "lên món, mang món ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5a05791-b4c6-4974-b487-ea5d3f9a0b97",
+      "order": 3,
+      "zh": "菜单",
+      "pinyin": "",
+      "vi": "thực đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "93ac3744-b8b8-4541-a073-2a18087169a3",
+      "order": 4,
+      "zh": "这个菜真香",
+      "pinyin": "",
+      "vi": "món này thơm/ngon thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2160fd9a-bf32-45dd-b14f-74403a2048ca",
+      "order": 1,
+      "zh": "服务员把菜端上来了，我们才发现点太多了。",
+      "pinyin": "Fúwùyuán bǎ cài duān shànglai le, wǒmen cái fāxiàn diǎn tài duō le.",
+      "vi": "Nhân viên phục vụ bưng món lên rồi, chúng tôi mới phát hiện đã gọi quá nhiều.",
+      "analysis_vi": "端上来 là bưng lên phía người ăn; rất hợp bối cảnh nhà hàng.",
+      "highlight": [
+        "菜"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "707a5da1-829d-4873-a2a8-69229b1b488e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cd43ea78-b9e4-4820-8028-595a3107e821",
+      "order": 2,
+      "zh": "这道菜闻起来很香，但是吃起来有点儿辣。",
+      "pinyin": "Zhè dào cài wén qǐlai hěn xiāng, dànshì chī qǐlai yǒudiǎnr là.",
+      "vi": "Món này ngửi thì rất thơm, nhưng ăn vào hơi cay.",
+      "analysis_vi": "闻起来 / 吃起来 nói cảm nhận qua mùi và vị; câu rất đời sống.",
+      "highlight": [
+        "菜"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "707a5da1-829d-4873-a2a8-69229b1b488e"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b7d48cc4-e7f9-4653-bfac-33e387db2006",
+      "order": 3,
+      "zh": "如果你不认识菜单上的字，可以请服务员介绍几个简单的菜。",
+      "pinyin": "Rúguǒ nǐ bú rènshi càidān shàng de zì, kěyǐ qǐng fúwùyuán jièshào jǐ ge jiǎndān de cài.",
+      "vi": "Nếu bạn không biết chữ trên thực đơn, có thể nhờ nhân viên giới thiệu vài món đơn giản.",
+      "analysis_vi": "菜单上的字 là chữ trên thực đơn; câu thực tế khi đi ăn ở Trung Quốc.",
+      "highlight": [
+        "菜"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "707a5da1-829d-4873-a2a8-69229b1b488e"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "a7af0185-c413-4eae-a1dc-17568f0fdeff",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dịch 买菜 thành “mua rau” trong mọi trường hợp. Thường đúng hơn:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "菜",
+    "back": "món ăn, rau",
+    "hint": "cài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Ở Trung Quốc, 点菜 là một kỹ năng giao tiếp rất thực tế. Khi chưa biết gọi gì, có thể hỏi 你们这儿有什么特色菜？ – nǐmen zhèr yǒu shénme tèsè cài? – ở đây có món đặc sản gì?",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "707a5da1-829d-4873-a2a8-69229b1b488e",
+    "source_lesson_vocab_id": null
+  }
+}

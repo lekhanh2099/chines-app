@@ -1,0 +1,352 @@
+{
+  "id": "9f507fb3-92df-4781-b9ff-2d7612e2daca",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "让",
+  "pinyin": "ràng",
+  "pos": {
+    "raw_vi": "động từ / giới từ",
+    "raw_cn": "动词 / 介词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "passive",
+    "spoken"
+  ],
+  "meaning": {
+    "hanviet": "Nhượng",
+    "meaning_vi": "để, cho phép; khiến; bị",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "để, cho phép; khiến; bị"
+    ],
+    "short_definition_vi": "để, cho phép; khiến; bị",
+    "textbook_focus_vi": "Phân biệt 让 sai khiến và 让 bị động khẩu ngữ.",
+    "register_vi": "khẩu ngữ, rất thông dụng",
+    "usage_domain_vi": "giao tiếp, bị động khẩu ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "让",
+        "lishu_vi": "nhượng",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "上",
+            "hanviet": "thượng",
+            "meaning_vi": "trên; thành phần giản thể nhìn thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "để cho, khiến, nhường, bị",
+        "modern_logic_vi": "让 thường liên quan việc để cho một tác động xảy ra; trong khẩu ngữ có thể làm dấu hiệu bị động.",
+        "warning_vi": "Không nên tách sâu hình giản thể để suy chữ học.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "让 có thể là “để/bảo/cho phép”, cũng có thể là bị động khẩu ngữ khi đứng trước tác nhân.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "被",
+        "pinyin": "",
+        "meaning_vi": "bị",
+        "difference_vi": "Chuẩn và rõ hơn trong câu bị động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "叫",
+        "pinyin": "",
+        "meaning_vi": "bảo/gọi/bị",
+        "difference_vi": "Gần 让 trong bị động khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "请",
+        "pinyin": "",
+        "meaning_vi": "mời, xin",
+        "difference_vi": "Lịch sự hơn khi nhờ ai làm gì.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "使",
+        "pinyin": "",
+        "meaning_vi": "khiến",
+        "difference_vi": "Văn viết hơn 让.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "让路",
+        "right": "挡路",
+        "meaning_vi": "nhường đường ↔ chắn đường",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8a56ea26-72b0-4d76-8872-9e91a248de39",
+      "order": 1,
+      "zh": "让他进来",
+      "pinyin": "",
+      "vi": "để/bảo anh ấy vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "527fb4d9-810c-4e12-9a6c-0948bf779091",
+      "order": 2,
+      "zh": "让我想想",
+      "pinyin": "",
+      "vi": "để tôi nghĩ đã",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1886a685-7a53-4861-80eb-9d5131e5bbc2",
+      "order": 3,
+      "zh": "让座",
+      "pinyin": "",
+      "vi": "nhường chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97769f10-7e4b-445c-b7f8-af66acbd8373",
+      "order": 4,
+      "zh": "让路",
+      "pinyin": "",
+      "vi": "nhường đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fba38691-183b-4030-b4d7-e02c47badead",
+      "order": 5,
+      "zh": "让雨淋了",
+      "pinyin": "",
+      "vi": "bị mưa làm ướt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0fbe1413-c693-4b03-af47-0c70e8ae4e9a",
+      "order": 6,
+      "zh": "让人骗了",
+      "pinyin": "",
+      "vi": "bị người ta lừa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd78f64e-7997-4fde-8612-3c1d7a9ff0f7",
+      "order": 7,
+      "zh": "让车撞了",
+      "pinyin": "",
+      "vi": "bị xe đâm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b11bdf01-be36-4c12-944f-6fadc957b10a",
+      "order": 1,
+      "zh": "老师让我明天再来。",
+      "pinyin": "Lǎoshī ràng wǒ míngtiān zài lái.",
+      "vi": "Thầy/cô bảo tôi ngày mai quay lại.",
+      "analysis_vi": "让 + người + động từ ở đây là “bảo/để cho”, không phải bị động.",
+      "highlight": [
+        "让"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9f507fb3-92df-4781-b9ff-2d7612e2daca"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "35e0d500-945a-4fc7-a65a-ddea2e0fbda9",
+      "order": 2,
+      "zh": "我的衣服让雨淋湿了。",
+      "pinyin": "Wǒ de yīfu ràng yǔ lín shī le.",
+      "vi": "Quần áo của tôi bị mưa làm ướt rồi.",
+      "analysis_vi": "让雨淋湿了 là bị động khẩu ngữ; viết chuẩn hơn có thể dùng 被雨淋湿了.",
+      "highlight": [
+        "让",
+        "淋湿"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "9f507fb3-92df-4781-b9ff-2d7612e2daca"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e3e9059f-6a5b-407a-a6ad-ee640d3e3610",
+      "order": 3,
+      "zh": "他刚买的钱包儿让小偷偷走了，他一发现，就马上回去找。",
+      "pinyin": "Tā gāng mǎi de qiánbāor ràng xiǎotōu tōu zǒu le, tā yí fāxiàn, jiù mǎshàng huíqù zhǎo.",
+      "vi": "Cái ví anh ấy vừa mua bị tên trộm lấy mất; vừa phát hiện ra, anh ấy lập tức quay lại tìm.",
+      "analysis_vi": "刚买的钱包儿 ôn định ngữ 的; 让小偷偷走了 là bị động khẩu ngữ có kết quả 走.",
+      "highlight": [
+        "让",
+        "偷走"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9f507fb3-92df-4781-b9ff-2d7612e2daca"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong khẩu ngữ miền Bắc Trung Quốc, 让人骗了 / 叫人骗了 nghe tự nhiên. Khi làm bài thi hoặc viết câu chuẩn, dùng 被 an toàn hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5e1d888b-0c88-4231-b6c5-50e444f8885c",
+      "order": 1,
+      "rule_vi": "让 không mặc định là “bị”; phải đọc theo cấu trúc sau nó.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他让我进去。",
+          "pinyin": "Tā ràng wǒ jìnqù.",
+          "vi": "Anh ấy cho/bảo tôi vào.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他让雨淋湿了。",
+          "pinyin": "Tā ràng yǔ lín shī le.",
+          "vi": "Anh ấy bị mưa làm ướt.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Cùng một chữ 让 nhưng có thể là sai khiến/cho phép hoặc bị động khẩu ngữ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "让",
+    "back": "để, cho phép; khiến; bị",
+    "hint": "ràng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "passive",
+      "spoken"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9f507fb3-92df-4781-b9ff-2d7612e2daca",
+    "source_lesson_vocab_id": null
+  }
+}

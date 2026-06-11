@@ -1,0 +1,257 @@
+{
+  "id": "d5cb0dc0-481d-443d-bdcc-78874c51b679",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "出丑",
+  "pinyin": "chūchǒu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "xuất xú",
+    "meaning_vi": "bẽ mặt, mất mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bẽ mặt",
+      "mất mặt"
+    ],
+    "short_definition_vi": "bẽ mặt, mất mặt",
+    "textbook_focus_vi": "Bị lộ điều xấu/hớ hênh trước người khác, gây mất mặt.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra ngoài",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "丑",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xấu",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Bị lộ điều xấu/hớ hênh trước người khác, gây mất mặt.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 出丑 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "丢脸",
+        "pinyin": "",
+        "meaning_vi": "mất mặt",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "尴尬",
+        "pinyin": "",
+        "meaning_vi": "ngượng/khó xử",
+        "difference_vi": "Chưa chắc mất mặt nặng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "难堪",
+        "pinyin": "",
+        "meaning_vi": "bẽ bàng",
+        "difference_vi": "Hơi văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d401c3be-3de4-419c-808f-73ba9161a093",
+      "order": 1,
+      "zh": "让人出丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "271a2843-9dc6-49d9-b3af-13ebbd4477ad",
+      "order": 2,
+      "zh": "当众出丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ed7c500-1fb5-4761-a474-69399619022e",
+      "order": 3,
+      "zh": "怕出丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "493ee575-f130-4496-9642-ee057a4e9c89",
+      "order": 4,
+      "zh": "不要让她出丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "25672c9d-98e5-4bcf-9936-457b94c277f7",
+      "order": 5,
+      "zh": "在大家面前出丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9ad51dec-bf2e-4339-a7c3-9a07417e3bf9",
+      "order": 1,
+      "zh": "我不忍让西西在大家面前出丑。",
+      "pinyin": "",
+      "vi": "Tôi không nỡ để Tây Tây bẽ mặt trước mọi người.",
+      "analysis_vi": "让 + người + 出丑.",
+      "highlight": [
+        "出丑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d5cb0dc0-481d-443d-bdcc-78874c51b679"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0dacf832-dfad-4200-b96e-7ca749cc79af",
+      "order": 1,
+      "rule_vi": "Không nói 她很出丑.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "她很出丑。",
+          "pinyin": "",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "出丑 là hành động/sự kiện.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "她出了丑。",
+          "pinyin": "",
+          "vi": "Cô ấy bị bẽ mặt rồi.",
+          "note_vi": "Cấu trúc đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "出丑",
+    "back": "bẽ mặt, mất mặt",
+    "hint": "chūchǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d5cb0dc0-481d-443d-bdcc-78874c51b679",
+    "source_lesson_vocab_id": null
+  }
+}

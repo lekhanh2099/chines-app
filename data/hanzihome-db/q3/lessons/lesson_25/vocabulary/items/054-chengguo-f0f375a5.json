@@ -1,0 +1,185 @@
+{
+  "id": "e7c027df-dc1b-4199-9666-865c45505300",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "成果",
+  "pinyin": "chéngguǒ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "thành quả",
+    "meaning_vi": "thành quả, kết quả đạt được",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành quả",
+      "kết quả đạt được"
+    ],
+    "short_definition_vi": "thành quả, kết quả đạt được",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "成",
+        "lishu_vi": "thành",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đạt thành",
+        "modern_logic_vi": "Trong từ này, 成 góp phần vào nghĩa hiện đại: đạt thành.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "果",
+        "lishu_vi": "quả",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quả, kết quả",
+        "modern_logic_vi": "Trong từ này, 果 góp phần vào nghĩa hiện đại: quả, kết quả.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "成果 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 科研成果.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho mọi kết quả trung tính; kết quả thi thường là 成绩/结果."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ffd20e63-ebe4-4c71-81a9-2d6a476466f2",
+      "order": 1,
+      "zh": "科研成果",
+      "pinyin": "",
+      "vi": "thành quả nghiên cứu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "872a4135-b204-45da-b6cf-4bc18a457ea6",
+      "order": 2,
+      "zh": "取得成果",
+      "pinyin": "",
+      "vi": "đạt thành quả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc2ce3d8-42ba-4113-9b27-defc7e2c6ede",
+      "order": 3,
+      "zh": "成果显著",
+      "pinyin": "",
+      "vi": "thành quả rõ rệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7441750a-2a41-4d90-8363-bef6e24e5dfb",
+      "order": 1,
+      "zh": "这项研究取得了重要成果。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 成果 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 成果; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "成果"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7c027df-dc1b-4199-9666-865c45505300"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 成果 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff092079-64cb-47f2-bef4-3bf2c345699d",
+      "order": 1,
+      "rule_vi": "Không dùng cho mọi kết quả trung tính; kết quả thi thường là 成绩/结果.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "成果",
+    "back": "thành quả, kết quả đạt được",
+    "hint": "chéngguǒ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e7c027df-dc1b-4199-9666-865c45505300",
+    "source_lesson_vocab_id": null
+  }
+}

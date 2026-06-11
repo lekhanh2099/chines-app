@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_fe1c8eb8198c3f64",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "安娜",
+  "pinyin": "Ānnà",
+  "meaning_vi": "Anna; tên người",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+    "type": "proper_noun",
+    "order": 2,
+    "hanzi": "安娜",
+    "pinyin": "Ānnà",
+    "meaning_vi": "Anna; tên người",
+    "meaning_en": "Anna",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

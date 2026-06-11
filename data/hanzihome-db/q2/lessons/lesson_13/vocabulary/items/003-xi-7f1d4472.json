@@ -1,0 +1,290 @@
+{
+  "id": "5930eab0-69e2-4367-bf38-70edae28efe2",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "洗",
+  "pinyin": "xǐ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tẩy",
+    "meaning_vi": "rửa, giặt; rửa/in ảnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rửa",
+      "giặt",
+      "rửa/in ảnh"
+    ],
+    "short_definition_vi": "rửa, giặt; rửa/in ảnh",
+    "textbook_focus_vi": "Âm Hán Việt: tẩy Nghĩa: Rửa bằng nước: 洗手, 洗脸. Giặt: 洗衣服.",
+    "register_vi": "đời sống, rất thường dùng.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "洗",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "先",
+            "hanviet": "tiên",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rửa, giặt, rửa ảnh",
+        "modern_logic_vi": "氵 giúp nhớ nghĩa liên quan đến nước/làm sạch; 洗照片 là rửa/in ảnh, không phải rửa tấm ảnh bằng nước.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "洗 có bộ 氵, liên quan đến nước. Lõi nghĩa hiện đại: dùng nước hoặc quy trình xử lý để làm sạch/xử lý thành phẩm. Với 洗照片, nghĩa là rửa/in ảnh ra, không phải rửa tấm ảnh bằng nước. Cảnh báo: 洗照片 là cách nói truyền thống; hiện đại cũng có thể nói 打印照片 nếu là in ảnh kỹ thuật số.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "洗 (xǐ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rửa, giặt, gội, rửa ảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打印 (dǎyìn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "in bằng máy in.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冲洗 (chōngxǐ)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tráng/rửa ảnh, xử lý bằng dung dịch; kỹ thuật hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "洗照片 (xǐ zhàopiàn): rửa/in ảnh.",
+      "→ Phân biệt nhanh: ảnh kỹ thuật số đem in ra có thể nói 打印照片; theo giáo trình/truyền thống nói 洗照片."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "95dccd3d-1604-4cc9-a59a-f3308a2ab276",
+      "order": 1,
+      "zh": "洗照片",
+      "pinyin": "",
+      "vi": "rửa/in ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d4553b0-b93f-4510-b947-c8c9fc68abaf",
+      "order": 2,
+      "zh": "洗衣服",
+      "pinyin": "",
+      "vi": "giặt quần áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32bf5a78-5a13-44c0-9ea6-9ec943263379",
+      "order": 3,
+      "zh": "洗手",
+      "pinyin": "",
+      "vi": "rửa tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27b748d0-96dd-462f-b65a-83c5ae2cf296",
+      "order": 4,
+      "zh": "[Đời sống] 照片洗出来了吗？",
+      "pinyin": "",
+      "vi": "ảnh rửa/in ra chưa?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b4cd9b0c-01a6-426e-959c-1b917ac89197",
+      "order": 1,
+      "zh": "照片已经洗出来了，但是有两张不太清楚。",
+      "pinyin": "Zhàopiàn yǐjīng xǐ chūlai le, dànshì yǒu liǎng zhāng bú tài qīngchu.",
+      "vi": "Ảnh đã rửa/in ra rồi, nhưng có hai tấm không rõ lắm.",
+      "analysis_vi": "洗出来 nhấn mạnh ảnh thành phẩm được làm ra; 两张 dùng lượng từ cho ảnh.",
+      "highlight": [
+        "洗"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5930eab0-69e2-4367-bf38-70edae28efe2"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8965743c-b515-41b8-ab3e-605ea708c982",
+      "order": 2,
+      "zh": "要洗的照片都选好了，明天可以拿去店里。",
+      "pinyin": "Yào xǐ de zhàopiàn dōu xuǎn hǎo le, míngtiān kěyǐ ná qù diàn lǐ.",
+      "vi": "Ảnh cần rửa đều đã chọn xong rồi, ngày mai có thể đem đến tiệm.",
+      "analysis_vi": "要洗的照片 tạo cụm danh từ; 选好了 là kết quả chọn xong.",
+      "highlight": [
+        "洗"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5930eab0-69e2-4367-bf38-70edae28efe2"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1fa947d7-0f55-4f5d-8443-b975374e9831",
+      "order": 3,
+      "zh": "现在很多人不洗照片了，只把照片存在手机里。",
+      "pinyin": "Xiànzài hěn duō rén bù xǐ zhàopiàn le, zhǐ bǎ zhàopiàn cún zài shǒujī lǐ.",
+      "vi": "Bây giờ nhiều người không rửa ảnh nữa, chỉ lưu ảnh trong điện thoại.",
+      "analysis_vi": "Câu này gắn từ giáo trình với đời sống hiện đại; 存在手机里 là lưu ở trong điện thoại.",
+      "highlight": [
+        "洗"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5930eab0-69e2-4367-bf38-70edae28efe2"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ngày trước 洗照片 rất phổ biến vì chụp bằng phim. Hiện nay ảnh số nhiều hơn, nên ngoài 洗照片, bạn sẽ gặp 打印照片 hoặc 冲印照片 trong dịch vụ in ảnh.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "91abbcb4-ef14-4471-90fc-1561c32de9cb",
+      "order": 1,
+      "rule_vi": "Hiểu 洗照片 là “rửa tấm ảnh cho sạch”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Hiểu 洗照片 là “rửa tấm ảnh cho sạch”. Cách hiểu đúng: 洗照片 Xǐ zhàopiàn Rửa/in ảnh ra thành ảnh giấy. 洗衣服 Xǐ yīfu Giặt quần áo.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "洗",
+    "back": "rửa, giặt; rửa/in ảnh",
+    "hint": "xǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "洗"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5930eab0-69e2-4367-bf38-70edae28efe2",
+    "source_lesson_vocab_id": null
+  }
+}

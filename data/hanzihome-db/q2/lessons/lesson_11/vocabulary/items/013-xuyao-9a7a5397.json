@@ -1,0 +1,403 @@
+{
+  "id": "c2c58c5f-9834-4d72-a21f-6348edea46ee",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "需要",
+  "pinyin": "xūyào",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Nhu yếu",
+    "meaning_vi": "cần, cần phải; nhu cầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cần, cần phải; nhu cầu"
+    ],
+    "short_definition_vi": "cần, cần phải; nhu cầu",
+    "textbook_focus_vi": "cần, cần phải; nhu cầu",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "需",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "而",
+            "hanviet": "nhi",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "而",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhi",
+              "radical_name_zh": "",
+              "hanviet": "nhi",
+              "meaning_vi": "mà/lại, râu trong gốc chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cần, nhu cầu",
+        "modern_logic_vi": "Không ép nghĩa cần từ bộ 雨.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "雨",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "mưa",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "要",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ/nữ giới",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ/nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "muốn, cần, quan trọng",
+        "modern_logic_vi": "要 có nhiều nghĩa: muốn/cần/quan trọng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ/nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "需 = cần, 要 = cần/muốn. 需要 = có nhu cầu, cần phải có.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "要",
+        "pinyin": "",
+        "meaning_vi": "muốn/cần/sẽ",
+        "difference_vi": "nghĩa rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "想",
+        "pinyin": "",
+        "meaning_vi": "muốn",
+        "difference_vi": "thiên về ý muốn cá nhân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "必须",
+        "pinyin": "",
+        "meaning_vi": "bắt buộc phải",
+        "difference_vi": "mạnh hơn 需要",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "应该",
+        "pinyin": "",
+        "meaning_vi": "nên",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不需要",
+        "pinyin": "",
+        "meaning_vi": "không cần",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "无需",
+        "pinyin": "",
+        "meaning_vi": "không cần",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ae2c5ff4-e90b-4e4f-b556-fa8195fb51ae",
+      "order": 1,
+      "zh": "需要帮助",
+      "pinyin": "",
+      "vi": "cần giúp đỡ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5dd8c7b1-df07-4ba9-8cda-95bfa999996c",
+      "order": 2,
+      "zh": "需要时间",
+      "pinyin": "",
+      "vi": "cần thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4ce4421b-1018-48ab-8a6f-55346eddd07a",
+      "order": 3,
+      "zh": "需要钱",
+      "pinyin": "",
+      "vi": "cần tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "648b1f23-af78-4fc7-aaa5-40d4c77b9939",
+      "order": 4,
+      "zh": "需要休息",
+      "pinyin": "",
+      "vi": "cần nghỉ ngơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0972fdd-f5a0-4bb0-be1d-d116e7cafb16",
+      "order": 5,
+      "zh": "需要安排",
+      "pinyin": "",
+      "vi": "cần sắp xếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0c633cbc-e93b-4a97-95f7-0286e9403eb6",
+      "order": 6,
+      "zh": "生活需要",
+      "pinyin": "",
+      "vi": "nhu cầu đời sống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2c27fe32-e48a-4ead-b920-895b40f9abb6",
+      "order": 1,
+      "zh": "我需要你的帮助。",
+      "pinyin": "Wǒ xūyào nǐ de bāngzhù.",
+      "vi": "Tôi cần sự giúp đỡ của bạn.",
+      "analysis_vi": "需要 + danh từ.",
+      "highlight": [
+        "需要"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2c58c5f-9834-4d72-a21f-6348edea46ee"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ecd26adf-40b4-430a-b264-fafcb1075d83",
+      "order": 2,
+      "zh": "这次旅行需要安排三天。",
+      "pinyin": "Zhè cì lǚxíng xūyào ānpái sān tiān.",
+      "vi": "Chuyến du lịch lần này cần sắp xếp ba ngày.",
+      "analysis_vi": "需要 + cụm động từ.",
+      "highlight": [
+        "需要"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2c58c5f-9834-4d72-a21f-6348edea46ee"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c98891b0-2bf3-42a6-a683-19eba95889fc",
+      "order": 3,
+      "zh": "他一发现护照不见了，就马上给导游打电话，因为出国旅行最需要护照。",
+      "pinyin": "Tā yì fāxiàn hùzhào bú jiàn le, jiù mǎshàng gěi dǎoyóu dǎ diànhuà, yīnwèi chūguó lǚxíng zuì xūyào hùzhào.",
+      "vi": "Anh ấy vừa phát hiện hộ chiếu không thấy đâu liền gọi hướng dẫn viên.",
+      "analysis_vi": "最需要 nhấn thứ cần nhất.",
+      "highlight": [
+        "需要"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2c58c5f-9834-4d72-a21f-6348edea46ee"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "需要 lịch sự/trung tính hơn 要 trong nhiều tình huống nghiêm túc, nhưng gọi món thường dùng 要 tự nhiên hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "20d49578-410a-4162-891c-f6564f6a389b",
+      "order": 1,
+      "rule_vi": "Không nhầm 需要 với 想; 需要 là nhu cầu thực tế, 想 là ý muốn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "需要",
+    "back": "cần, cần phải; nhu cầu",
+    "hint": "xūyào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c2c58c5f-9834-4d72-a21f-6348edea46ee",
+    "source_lesson_vocab_id": null
+  }
+}

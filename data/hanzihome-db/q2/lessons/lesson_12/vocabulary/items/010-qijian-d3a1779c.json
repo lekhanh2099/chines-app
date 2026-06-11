@@ -1,0 +1,355 @@
+{
+  "id": "3ef5179f-b066-41a0-af37-c80dd56209e0",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "期间",
+  "pinyin": "qījiān",
+  "pos": {
+    "raw_vi": "Danh từ / Từ chỉ khoảng thời gian",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "time_context"
+  ],
+  "meaning": {
+    "hanviet": "kỳ gian",
+    "meaning_vi": "trong thời gian, trong thời kỳ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trong thời gian, trong thời kỳ"
+    ],
+    "short_definition_vi": "trong thời gian, trong thời kỳ",
+    "textbook_focus_vi": "trong thời gian, trong thời kỳ",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "期",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thời gian/thành phần bên phải",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng, tháng; bộ phận cơ thể trong một số chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "其",
+            "hanviet": "",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kỳ hạn, giai đoạn, thời kỳ",
+        "modern_logic_vi": "期 gợi một giai đoạn/kỳ hạn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "间",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "bên ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "bên trong",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày, ánh sáng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giữa, khoảng, phòng",
+        "modern_logic_vi": "间 gợi khoảng nằm giữa không gian/thời gian.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "期间 = khoảng nằm bên trong một giai đoạn thời gian đã xác định.",
+    "memory_tip_vi": "期间 = khoảng nằm bên trong một giai đoạn thời gian đã xác định.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "时候",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lúc/khi, khẩu ngữ rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "时间",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thời gian nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "中间",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ở giữa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以内",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trong vòng/hạn mức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "af2008c2-6a49-467f-91f0-c222a773629b",
+      "order": 1,
+      "zh": "放假期间",
+      "pinyin": "",
+      "vi": "trong kỳ nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5dc95629-eef2-4f27-86f3-b1d9958e3361",
+      "order": 2,
+      "zh": "暑假期间",
+      "pinyin": "",
+      "vi": "trong kỳ nghỉ hè",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1aed3c4f-72b7-4a17-9c77-21f4a4e4e630",
+      "order": 3,
+      "zh": "学习期间",
+      "pinyin": "",
+      "vi": "trong thời gian học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8ec63bd-4613-4096-af32-5a22cacf1a03",
+      "order": 4,
+      "zh": "比赛期间",
+      "pinyin": "",
+      "vi": "trong thời gian thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b31d0cc8-bee7-4d6c-b1f3-5c60333e109c",
+      "order": 5,
+      "zh": "旅行期间",
+      "pinyin": "",
+      "vi": "trong thời gian du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e04a2189-0294-4518-8bb6-6ee43b4fb5ae",
+      "order": 1,
+      "zh": "放假期间，我想去欧洲旅行。",
+      "pinyin": "",
+      "vi": "Trong kỳ nghỉ, tôi muốn đi du lịch châu Âu.",
+      "analysis_vi": "放假期间 làm trạng ngữ thời gian.",
+      "highlight": [
+        "期间"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3ef5179f-b066-41a0-af37-c80dd56209e0"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0b60cec7-fb1a-4dcd-9393-21b8eb4a2ab1",
+      "order": 2,
+      "zh": "旅行期间，护照你一定要自己保管好。",
+      "pinyin": "",
+      "vi": "Trong thời gian du lịch, hộ chiếu bạn nhất định phải tự giữ cẩn thận.",
+      "analysis_vi": "护照 là chủ đề; 保管好 nhấn giữ ổn thỏa.",
+      "highlight": [
+        "期间"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3ef5179f-b066-41a0-af37-c80dd56209e0"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "期间 hay gặp trong thông báo: 春节期间, 考试期间, 营业期间.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d98bf40-3237-4b49-bf40-3bd41e5f2a3b",
+      "order": 1,
+      "rule_vi": "Không dùng 期间 cho mọi câu “khi” đời thường; 时候 tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我吃饭的时候，他给我打电话了。",
+          "pinyin": "",
+          "vi": "Khi tôi đang ăn cơm, anh ấy gọi điện cho tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "期间",
+    "back": "trong thời gian, trong thời kỳ",
+    "hint": "qījiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "time_context"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3ef5179f-b066-41a0-af37-c80dd56209e0",
+    "source_lesson_vocab_id": null
+  }
+}

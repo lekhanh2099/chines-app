@@ -1,0 +1,374 @@
+{
+  "id": "807cc9a4-9cce-415f-8961-381358072f45",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "宝贵",
+  "pinyin": "bǎoguì",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "bảo quý",
+    "meaning_vi": "quý báu, đáng quý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quý báu",
+      "đáng quý"
+    ],
+    "short_definition_vi": "quý báu, đáng quý",
+    "textbook_focus_vi": "宝贵 nhấn giá trị cao, không nên lãng phí.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "宝",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "玉",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "玉 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "báu, quý",
+        "modern_logic_vi": "Trong từ “宝贵”, chữ “宝” góp phần vào trường nghĩa: báu, quý",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "贵",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối giản thể",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "vỏ sò, tiền của, giá trị",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "贝 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò, tiền của, giá trị",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối giản thể",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của, giá trị",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "贝 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quý, đắt",
+        "modern_logic_vi": "Trong từ “宝贵”, chữ “贵” góp phần vào trường nghĩa: quý, đắt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "宝贵 nhấn giá trị cao, không nên lãng phí.",
+    "memory_tip_vi": "宝贵 nhấn giá trị cao, không nên lãng phí.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "贵",
+        "pinyin": "",
+        "meaning_vi": "đắt/quý, thường nói giá tiền",
+        "difference_vi": "đắt/quý, thường nói giá tiền",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "珍贵",
+        "pinyin": "",
+        "meaning_vi": "quý giá, thường cho vật/kỷ niệm hiếm",
+        "difference_vi": "quý giá, thường cho vật/kỷ niệm hiếm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cfe58a7f-4936-4200-b798-31e5c3b8d3b7",
+      "order": 1,
+      "zh": "宝贵的时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c7d7cab7-fc81-44ae-8454-c30a0f30aa12",
+      "order": 2,
+      "zh": "宝贵的经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d59cae4-3bcd-45d2-b759-97cf1ec4e15e",
+      "order": 3,
+      "zh": "宝贵的机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9b55a2e-c559-45bd-a406-630d911945c6",
+      "order": 4,
+      "zh": "宝贵的意见",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b0bc6e12-c242-4a0d-a0f3-c62b77eae8e3",
+      "order": 1,
+      "zh": "时间很宝贵。",
+      "pinyin": "",
+      "vi": "Thời gian rất quý báu.",
+      "analysis_vi": "宝贵 thường đi với 时间.",
+      "highlight": [
+        "宝贵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "807cc9a4-9cce-415f-8961-381358072f45"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b3392b3-159b-49f0-b8f1-c0e72bd8c885",
+      "order": 2,
+      "zh": "这次差错延误了宝贵的时间。",
+      "pinyin": "",
+      "vi": "Sai sót lần này làm chậm trễ thời gian quý báu.",
+      "analysis_vi": "延误 + 时间.",
+      "highlight": [
+        "宝贵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "807cc9a4-9cce-415f-8961-381358072f45"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "宝贵 nhấn giá trị cao, không nên lãng phí.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c27b170e-1203-454b-bef5-85c427e2a2fa",
+      "order": 1,
+      "rule_vi": "Không dùng 宝贵 để nói giá đắt thông thường của quần áo.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 宝贵 để nói giá đắt thông thường của quần áo.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "宝贵",
+    "back": "quý báu, đáng quý",
+    "hint": "bǎoguì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "807cc9a4-9cce-415f-8961-381358072f45",
+    "source_lesson_vocab_id": null
+  }
+}

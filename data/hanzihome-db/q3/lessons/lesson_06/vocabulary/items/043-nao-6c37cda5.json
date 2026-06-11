@@ -1,0 +1,291 @@
+{
+  "id": "1cdfd6e0-fdfe-4353-8c80-51aa20ccfea0",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "闹",
+  "pinyin": "nào",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动/形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "náo",
+    "meaning_vi": "ồn ào; quậy; gây chuyện; xảy ra chuyện không hay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ồn ào",
+      "quậy",
+      "gây chuyện",
+      "xảy ra chuyện không hay"
+    ],
+    "short_definition_vi": "ồn ào",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "闹",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "門",
+          "radical_variant": "门",
+          "radical_name_vi": "bộ Môn",
+          "radical_name_zh": "",
+          "hanviet": "môn",
+          "meaning_vi": "cửa, cổng",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "门 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa, cổng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa, cổng",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "门 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ồn ào/gây chuyện",
+        "modern_logic_vi": "Trong từ 闹, chữ 闹 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "闹 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 别闹了，老师快来了。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吵闹",
+        "pinyin": "chǎonào",
+        "meaning_vi": "ồn ào",
+        "difference_vi": "吵闹 thiên âm thanh khó chịu; 闹 rộng hơn.",
+        "register_vi": "",
+        "example_zh": "这里太吵闹了。",
+        "example_vi": "Ở đây ồn quá.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3a839f6c-6272-474d-9a5c-0fc9f88e5fb9",
+      "order": 1,
+      "zh": "别闹",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "689b22cb-476b-4ed3-8f08-d88b25c06d63",
+      "order": 2,
+      "zh": "闹笑话",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "144f3d08-a0d7-4021-9b25-9627515de031",
+      "order": 3,
+      "zh": "闹矛盾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44089711-6a55-4b31-ba6b-eeca32fcac77",
+      "order": 4,
+      "zh": "闹情绪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c05d566d-3532-4ee9-9f49-94bc7bff6532",
+      "order": 5,
+      "zh": "闹病",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74ebc78d-97ec-4711-ad27-68b90758d86f",
+      "order": 6,
+      "zh": "闹水灾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d825a2a-9d08-49dc-9106-b4cba481f7a9",
+      "order": 7,
+      "zh": "热闹",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa4513de-e726-4134-a236-49c3ec49c9b8",
+      "order": 8,
+      "zh": "吵闹",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8b7d4d9b-d0e8-4ded-9c90-94e7cd921708",
+      "order": 1,
+      "zh": "别闹了，老师快来了。",
+      "pinyin": "",
+      "vi": "Đừng quậy nữa, thầy/cô sắp đến rồi.",
+      "analysis_vi": "Ví dụ dùng 闹 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "闹"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1cdfd6e0-fdfe-4353-8c80-51aa20ccfea0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "闹 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "16f736ad-b719-405b-a873-c26dfaf31743",
+      "order": 1,
+      "rule_vi": "热闹 thường tích cực/náo nhiệt; 吵闹 có sắc thái ồn ào khó chịu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "闹",
+    "back": "ồn ào; quậy; gây chuyện; xảy ra chuyện không hay",
+    "hint": "nào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1cdfd6e0-fdfe-4353-8c80-51aa20ccfea0",
+    "source_lesson_vocab_id": null
+  }
+}

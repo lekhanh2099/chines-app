@@ -1,0 +1,369 @@
+{
+  "id": "57bcac20-adae-4d40-84b6-3b228af30696",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "热情",
+  "pinyin": "rèqíng",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ",
+    "raw_cn": "名词/形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhiệt tình",
+    "meaning_vi": "nhiệt tình, nồng hậu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiệt tình",
+      "nồng hậu"
+    ],
+    "short_definition_vi": "nhiệt tình, nồng hậu",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "热",
+        "lishu_vi": "nhiệt",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "灬 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "bên dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "灬 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "情",
+        "lishu_vi": "tình",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "热情 = cảm xúc ấm/nồng hướng ra ngoài, niềm nở và chủ động.",
+    "memory_tip_vi": "对人热情; 很有热情.",
+    "warning_vi": "Đối với học tập thường nói 对学习很有热情.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "热心",
+        "rèxīn",
+        "sốt sắng giúp đỡ",
+        "có lòng giúp người"
+      ],
+      [
+        "热烈",
+        "rèliè",
+        "nồng nhiệt/sôi nổi",
+        "không khí/vỗ tay"
+      ],
+      [
+        "亲切",
+        "qīnqiè",
+        "thân thiết/gần gũi",
+        "dịu và dễ gần"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "对人热情; 很有热情."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fc493425-438b-4645-973a-6382734cff3e",
+      "order": 1,
+      "zh": "很热情",
+      "pinyin": "",
+      "vi": "rất nhiệt tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b68d3cf-6b4b-4c14-ac82-681d7f09f1f2",
+      "order": 2,
+      "zh": "热情地接待",
+      "pinyin": "",
+      "vi": "tiếp đón nồng hậu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f97729d7-c3c4-47b0-9a43-d6b17b5d389e",
+      "order": 3,
+      "zh": "热情帮助",
+      "pinyin": "",
+      "vi": "nhiệt tình giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b6a0327-2adb-4691-bd24-2d8b4e49bb32",
+      "order": 4,
+      "zh": "对人热情",
+      "pinyin": "",
+      "vi": "nhiệt tình với người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc4e656d-65a2-4a5f-b9ae-d73cbb45aec9",
+      "order": 5,
+      "zh": "缺少热情",
+      "pinyin": "",
+      "vi": "thiếu nhiệt tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e6361db5-4342-4015-8a5d-d03468fe96f0",
+      "order": 1,
+      "zh": "那两个年轻人很热情，主动问我要去哪儿。",
+      "pinyin": "Nà liǎng ge niánqīngrén hěn rèqíng, zhǔdòng wèn wǒ yào qù nǎr.",
+      "vi": "Hai người trẻ rất nhiệt tình, chủ động hỏi tôi muốn đi đâu.",
+      "analysis_vi": "热情 + 主动 tự nhiên.",
+      "highlight": [
+        "热情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "57bcac20-adae-4d40-84b6-3b228af30696"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "83e97cea-fff9-4bce-baf6-4caf153b35c4",
+      "order": 2,
+      "zh": "她对新同学特别热情，所以大家很快就熟悉了。",
+      "pinyin": "Tā duì xīn tóngxué tèbié rèqíng, suǒyǐ dàjiā hěn kuài jiù shúxī le.",
+      "vi": "Cô ấy rất nhiệt tình với bạn mới nên mọi người nhanh quen.",
+      "analysis_vi": "对 + người + 热情.",
+      "highlight": [
+        "热情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "57bcac20-adae-4d40-84b6-3b228af30696"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Người lạ quá nhiệt tình cũng có thể làm người khác cảnh giác; bài này đúng tinh thần đó.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ba977013-6247-45a4-acb3-ba74929e3535",
+      "order": 1,
+      "rule_vi": "他对学习很热情。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他对学习很有热情。",
+          "pinyin": "Tā duì xuéxí hěn yǒu rèqíng.",
+          "vi": "Anh ấy rất có nhiệt tình với việc học.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Đối với học tập thường nói 对学习很有热情.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "热情",
+    "back": "nhiệt tình, nồng hậu",
+    "hint": "rèqíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "57bcac20-adae-4d40-84b6-3b228af30696",
+    "source_lesson_vocab_id": null
+  }
+}

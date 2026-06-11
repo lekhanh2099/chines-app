@@ -1,0 +1,295 @@
+{
+  "id": "4102cb2e-d369-4eb9-93d3-2593888dcd89",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "教案",
+  "pinyin": "jiào’àn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giáo án",
+    "meaning_vi": "giáo án, kế hoạch bài dạy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giáo án",
+      "kế hoạch bài dạy"
+    ],
+    "short_definition_vi": "giáo án, kế hoạch bài dạy",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "教",
+        "lishu_vi": "giáo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "孝",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dạy, giáo dục",
+        "modern_logic_vi": "dạy, giáo dục",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "案",
+        "lishu_vi": "án",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phương án, hồ sơ, bản kế hoạch",
+        "modern_logic_vi": "phương án, hồ sơ, bản kế hoạch",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "教 là dạy; 案 là phương án/bản kế hoạch; 教案 là bản thiết kế bài dạy.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 写教案.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "讲稿",
+        "pinyin": "jiǎnggǎo",
+        "meaning_vi": "bản thảo lời giảng",
+        "difference_vi": "讲稿 là script lời nói, không phải giáo án đầy đủ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "课件",
+        "pinyin": "kèjiàn",
+        "meaning_vi": "tài liệu trình chiếu",
+        "difference_vi": "课件 là slide/tài liệu dạy học.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "07175434-0604-45c5-b345-d69383297585",
+      "order": 1,
+      "zh": "写教案",
+      "pinyin": "xiě jiào’àn",
+      "vi": "viết giáo án",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "929fa292-580b-48f7-b950-7c29bbc49e28",
+      "order": 2,
+      "zh": "修改教案",
+      "pinyin": "xiūgǎi jiào’àn",
+      "vi": "sửa giáo án",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9fe1b16f-5062-4ad1-81fe-2cfa3dbe5479",
+      "order": 3,
+      "zh": "试讲教案",
+      "pinyin": "shìjiǎng jiào’àn",
+      "vi": "giáo án giảng thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dac1f950-0c4f-495a-b56e-ed41002e4dba",
+      "order": 1,
+      "zh": "他晚上一直在写教案。",
+      "pinyin": "Tā wǎnshang yìzhí zài xiě jiào’àn.",
+      "vi": "Buổi tối anh ấy vẫn luôn viết giáo án.",
+      "analysis_vi": "写教案 là cụm cơ bản.",
+      "highlight": [
+        "教案"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4102cb2e-d369-4eb9-93d3-2593888dcd89"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "58388925-ba0d-4824-a7bd-b6416c07201b",
+      "order": 2,
+      "zh": "他把教案改了三遍，才觉得比较满意。",
+      "pinyin": "Tā bǎ jiào’àn gǎi le sān biàn, cái juéde bǐjiào mǎnyì.",
+      "vi": "Anh ấy sửa giáo án ba lần rồi mới thấy khá hài lòng.",
+      "analysis_vi": "把教案改了三遍 nhấn số lượt xử lý.",
+      "highlight": [
+        "教案"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4102cb2e-d369-4eb9-93d3-2593888dcd89"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "教案 thường gồm mục tiêu, trọng điểm, tiến trình dạy và luyện tập.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7f3f8ce5-6d81-4576-b88a-b56c5602763e",
+      "order": 1,
+      "rule_vi": "Không nhầm 教案 với 讲稿; giáo án là kế hoạch dạy, không chỉ bài văn đọc trước lớp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "教案",
+    "back": "giáo án, kế hoạch bài dạy",
+    "hint": "jiào’àn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4102cb2e-d369-4eb9-93d3-2593888dcd89",
+    "source_lesson_vocab_id": null
+  }
+}

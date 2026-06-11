@@ -1,0 +1,273 @@
+{
+  "id": "0631b34e-d403-4fae-acd7-8d4a4cd5e0cf",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "伤势",
+  "pinyin": "shāngshì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thương thế",
+    "meaning_vi": "tình trạng vết thương; mức độ bị thương",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình trạng vết thương",
+      "mức độ bị thương"
+    ],
+    "short_definition_vi": "tình trạng vết thương; mức độ bị thương",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "伤",
+        "lishu_vi": "",
+        "structure_note_vi": "伤: bị thương",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân đứng",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bị thương",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: bị thương.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân đứng",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "势",
+        "lishu_vi": "",
+        "structure_note_vi": "势: mức độ/tình thế",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mức độ/tình thế",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: mức độ/tình thế.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "伤势 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 询问伤势.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c97bc3ad-f850-4390-a09a-e657fc18468e",
+      "order": 1,
+      "zh": "询问伤势",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8abe0e6a-204c-4184-92c1-05ade69c565d",
+      "order": 2,
+      "zh": "了解伤势",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a786adc4-c9c8-41ca-b482-e29ff2070087",
+      "order": 3,
+      "zh": "伤势严重",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4500d36-aefb-43c1-9097-abc9b0689815",
+      "order": 4,
+      "zh": "伤势稳定",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "10f22af9-2695-4450-953b-babd6d407af2",
+      "order": 1,
+      "zh": "医生说我的伤势不太重。",
+      "pinyin": "",
+      "vi": "Bác sĩ nói tình trạng thương tích của tôi không quá nặng。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "伤势"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0631b34e-d403-4fae-acd7-8d4a4cd5e0cf"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a073c976-9cbe-4b65-8ae7-f26542c1186e",
+      "order": 2,
+      "zh": "了解了我的伤势以后，林老师才稍微放心了一点儿。",
+      "pinyin": "",
+      "vi": "Sau khi hiểu tình trạng thương tích của tôi, cô Lâm mới hơi yên tâm một chút。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "伤势"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0631b34e-d403-4fae-acd7-8d4a4cd5e0cf"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6ab07f17-318f-4cf1-8dd2-f4b4512d9bfe",
+      "order": 1,
+      "rule_vi": "Không nhầm 伤势 với 伤口.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 伤势 với 伤口.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "伤势",
+    "back": "tình trạng vết thương; mức độ bị thương",
+    "hint": "shāngshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0631b34e-d403-4fae-acd7-8d4a4cd5e0cf",
+    "source_lesson_vocab_id": null
+  }
+}

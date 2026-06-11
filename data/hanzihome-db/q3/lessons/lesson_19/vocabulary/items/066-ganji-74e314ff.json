@@ -1,0 +1,354 @@
+{
+  "id": "5375b3ee-9d45-4378-a2f1-ec193e4d1321",
+  "type": "deep_vocabulary_item",
+  "order": 66,
+  "hanzi": "感激",
+  "pinyin": "gǎnjī",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ tâm lý",
+    "raw_cn": "动词 / 心理形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "cảm kích",
+    "meaning_vi": "cảm kích, biết ơn sâu sắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cảm kích",
+      "biết ơn sâu sắc"
+    ],
+    "short_definition_vi": "cảm kích, biết ơn sâu sắc",
+    "textbook_focus_vi": "感激 là cảm xúc biết ơn dâng lên mạnh.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "感",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, tâm lý",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, tâm lý",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảm thấy, cảm động",
+        "modern_logic_vi": "Trong từ “感激”, chữ “感” góp phần vào trường nghĩa: cảm thấy, cảm động",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "激",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy ba chấm",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy ba chấm",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kích động, khơi dậy",
+        "modern_logic_vi": "Trong từ “感激”, chữ “激” góp phần vào trường nghĩa: kích động, khơi dậy",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "感激 là cảm xúc biết ơn dâng lên mạnh.",
+    "memory_tip_vi": "感激 là cảm xúc biết ơn dâng lên mạnh.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "感谢",
+        "pinyin": "",
+        "meaning_vi": "cảm ơn, thiên hành động/lời nói",
+        "difference_vi": "cảm ơn, thiên hành động/lời nói",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "感动",
+        "pinyin": "",
+        "meaning_vi": "cảm động, chưa chắc biết ơn",
+        "difference_vi": "cảm động, chưa chắc biết ơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "027b42bd-5cfc-43e3-9b0b-dc70c1abcf08",
+      "order": 1,
+      "zh": "非常感激",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56bb3cff-77ff-4003-bb1e-e4f69fa00172",
+      "order": 2,
+      "zh": "感激的泪水",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9489dda7-cdfa-46ab-9b84-e2d6e8eaff34",
+      "order": 3,
+      "zh": "心里很感激",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a6bda23-86c3-4b7d-8d02-a38b69685997",
+      "order": 4,
+      "zh": "感激不尽",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "89647f0a-da8f-419f-8603-c289864a573c",
+      "order": 1,
+      "zh": "我非常感激你的帮助。",
+      "pinyin": "",
+      "vi": "Tôi vô cùng cảm kích sự giúp đỡ của bạn.",
+      "analysis_vi": "感激 + người/sự giúp đỡ.",
+      "highlight": [
+        "感激"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5375b3ee-9d45-4378-a2f1-ec193e4d1321"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5fe35694-34f1-467d-b2bf-5c61f755e733",
+      "order": 2,
+      "zh": "他流下了感激的泪水。",
+      "pinyin": "",
+      "vi": "Anh ấy rơi nước mắt vì biết ơn.",
+      "analysis_vi": "感激的泪水.",
+      "highlight": [
+        "感激"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5375b3ee-9d45-4378-a2f1-ec193e4d1321"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "感激 là cảm xúc biết ơn dâng lên mạnh.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9b89c193-967d-4e2f-8328-fc5f0f52689f",
+      "order": 1,
+      "rule_vi": "Cảm ơn chuyện nhỏ dùng 谢谢/感谢; 感激 dùng khi biết ơn sâu hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cảm ơn chuyện nhỏ dùng 谢谢/感谢; 感激 dùng khi biết ơn sâu hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "感激",
+    "back": "cảm kích, biết ơn sâu sắc",
+    "hint": "gǎnjī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5375b3ee-9d45-4378-a2f1-ec193e4d1321",
+    "source_lesson_vocab_id": null
+  }
+}

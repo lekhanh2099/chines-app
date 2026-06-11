@@ -1,0 +1,331 @@
+{
+  "id": "3d103ca7-9cee-45eb-8964-08c7750b8e1c",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "小心",
+  "pinyin": "xiǎoxīn",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ trạng thái / Phó từ",
+    "raw_cn": "形/状态动词/副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Tiểu tâm",
+    "meaning_vi": "cẩn thận, chú ý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cẩn thận, chú ý"
+    ],
+    "short_definition_vi": "cẩn thận, chú ý",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "rất thông dụng, dùng trong đời sống, lớp học, giao thông, thao tác đồ vật.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "小",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhỏ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "心",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim/lòng/tâm trí",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng/tâm trí",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tim, lòng, tâm trí",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "小 là nhỏ. 心 là tim/lòng/tâm trí. → Hiểu hiện đại: giữ tâm trí cẩn thận, chú ý đến điều nhỏ để tránh lỗi/nguy hiểm. Cảnh báo: 小心 thiên về tránh nguy hiểm/sai sót; 仔细 thiên về làm/xem/nghe kỹ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小心",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cẩn thận, coi chừng, tránh nguy hiểm/lỗi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "仔细",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỹ càng, tỉ mỉ, chú ý chi tiết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "认真",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghiêm túc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "注意",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chú ý, lưu ý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: leo ghế dán chữ thì nói 小心; kiểm tra chữ dán có thẳng không thì nói 仔细看."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f1fe5a77-b98e-4c02-9ac2-1806bd78e620",
+      "order": 1,
+      "zh": "小心一点儿",
+      "pinyin": "",
+      "vi": "cẩn thận một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1b7f6dc-1b66-4095-8553-27ba78976f38",
+      "order": 2,
+      "zh": "小心摔倒",
+      "pinyin": "",
+      "vi": "cẩn thận té",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7dabfc12-1065-4a6d-bdc3-568f4703bbf5",
+      "order": 3,
+      "zh": "小心别弄坏",
+      "pinyin": "",
+      "vi": "cẩn thận đừng làm hỏng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5b51741-afb0-4f4f-8a2d-6d6513bdb068",
+      "order": 4,
+      "zh": "小心地做",
+      "pinyin": "",
+      "vi": "làm một cách cẩn thận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50400764-9ee3-4c07-83bb-9201087d4b0c",
+      "order": 5,
+      "zh": "路上小心",
+      "pinyin": "",
+      "vi": "đi đường cẩn thận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "57f74d19-f6e6-4b92-8edd-45da05d59972",
+      "order": 1,
+      "zh": "贴对联儿的时候，小心别把纸撕坏了。",
+      "pinyin": "Tiē duìliánr de shíhou, xiǎoxīn bié bǎ zhǐ sī huài le.",
+      "vi": "Khi dán câu đối, cẩn thận đừng làm rách giấy.",
+      "analysis_vi": "把纸撕坏了 là câu 把 có kết quả xấu: giấy bị rách hỏng.",
+      "highlight": [
+        "小心"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "3d103ca7-9cee-45eb-8964-08c7750b8e1c"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "67ff05f4-97a5-4131-92a0-493f7f149f70",
+      "order": 2,
+      "zh": "这盆水仙是老师亲手养的，你搬的时候一定要小心。",
+      "pinyin": "Zhè pén shuǐxiān shì lǎoshī qīnshǒu yǎng de, nǐ bān de shíhou yídìng yào xiǎoxīn.",
+      "vi": "Chậu thủy tiên này là thầy/cô tự tay chăm, khi bạn chuyển thì nhất định phải cẩn thận.",
+      "analysis_vi": "亲手养的 nhấn giá trị tình cảm; 小心 nhắc tránh làm hỏng.",
+      "highlight": [
+        "小心"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "3d103ca7-9cee-45eb-8964-08c7750b8e1c"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9f2f0992-c533-422a-ada6-5fad259b9660",
+      "order": 3,
+      "zh": "管理员提醒我们，彩灯开着的时候要小心用电。",
+      "pinyin": "Guǎnlǐyuán tíxǐng wǒmen, cǎidēng kāizhe de shíhou yào xiǎoxīn yòng diàn.",
+      "vi": "Người quản lý nhắc chúng tôi, khi đèn màu đang bật thì phải cẩn thận khi dùng điện.",
+      "analysis_vi": "开着 là trạng thái đang bật; 小心用电 là cụm nhắc an toàn rất thường gặp.",
+      "highlight": [
+        "小心"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "3d103ca7-9cee-45eb-8964-08c7750b8e1c"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 小心",
+    "content_vi": "Ở nơi công cộng Trung Quốc, bạn hay thấy biển 小心地滑 – xiǎoxīn dì huá – cẩn thận sàn trơn. Đây là mẫu cảnh báo cực phổ biến ở trung tâm thương mại, ga tàu, trường học, khách sạn.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "87643818-0413-42e2-850a-c16f60c9d30a",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 小心 và 仔细. 小心！ Xiǎoxīn! Cẩn thận! Coi chừng! 仔细看。 Zǐxì kàn. Xem kỹ. 小心地搬。 Xiǎoxīn de bān. Chuyển/bê một cách cẩn thận.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "小心",
+    "back": "cẩn thận, chú ý",
+    "hint": "xiǎoxīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3d103ca7-9cee-45eb-8964-08c7750b8e1c",
+    "source_lesson_vocab_id": null
+  }
+}

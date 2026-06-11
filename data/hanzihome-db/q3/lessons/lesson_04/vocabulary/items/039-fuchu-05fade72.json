@@ -1,0 +1,276 @@
+{
+  "id": "00244b55-8c22-424d-8773-6901023cb15a",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "付出",
+  "pinyin": "fùchū",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phó xuất",
+    "meaning_vi": "bỏ ra, trả giá, dốc ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bỏ ra",
+      "trả giá",
+      "dốc ra"
+    ],
+    "short_definition_vi": "bỏ ra, trả giá, dốc ra",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "付",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giao, trả",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra, đưa ra",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "付出 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 付出 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "花费",
+        "pinyin": "huāfèi",
+        "meaning_vi": "tiêu tốn",
+        "difference_vi": "Thời gian/tiền/sức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "支付",
+        "pinyin": "zhīfù",
+        "meaning_vi": "thanh toán",
+        "difference_vi": "Thiên tiền",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "收获",
+        "pinyin": "shōuhuò",
+        "meaning_vi": "thu hoạch",
+        "difference_vi": "Trái hướng nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3046aa8c-0a67-49cb-b465-cdd9e288b9d4",
+      "order": 1,
+      "zh": "付出努力",
+      "pinyin": "fùchū nǔlì",
+      "vi": "bỏ công sức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa5ca256-69af-417e-b780-d7581a949fe9",
+      "order": 2,
+      "zh": "付出代价",
+      "pinyin": "fùchū dàijià",
+      "vi": "trả giá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba44a8a2-16e4-4ca4-9b34-324e6b3fda95",
+      "order": 3,
+      "zh": "付出时间",
+      "pinyin": "fùchū shíjiān",
+      "vi": "bỏ thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc6fd7f8-d0a4-48c6-b725-467af4368a43",
+      "order": 4,
+      "zh": "付出和收获",
+      "pinyin": "fùchū hé shōuhuò",
+      "vi": "bỏ ra và thu hoạch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "82c39c38-c9d5-461c-bf13-dfe8a416b704",
+      "order": 1,
+      "zh": "没有付出，就没有收获。",
+      "pinyin": "Méiyǒu fùchū, jiù méiyǒu shōuhuò.",
+      "vi": "Không bỏ ra thì không có thu hoạch.",
+      "analysis_vi": "付出/收获 là cặp quen.",
+      "highlight": [
+        "付出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "00244b55-8c22-424d-8773-6901023cb15a"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4b726463-14dd-4d80-a014-daa6f2eb494e",
+      "order": 2,
+      "zh": "为了实现梦想，他付出了很多努力。",
+      "pinyin": "Wèile shíxiàn mèngxiǎng, tā fùchū le hěn duō nǔlì.",
+      "vi": "Để thực hiện ước mơ, anh ấy bỏ ra nhiều nỗ lực.",
+      "analysis_vi": "为了…… nêu mục đích.",
+      "highlight": [
+        "付出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "00244b55-8c22-424d-8773-6901023cb15a"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "付出 thường đi với 收获, 成功, 努力, 代价.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d540da26-f0da-4b56-9c28-51c31f221952",
+      "order": 1,
+      "rule_vi": "Trả tiền đời thường nói 付钱/支付, không nói 付出一杯咖啡.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "付出",
+    "back": "bỏ ra, trả giá, dốc ra",
+    "hint": "fùchū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "00244b55-8c22-424d-8773-6901023cb15a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "id": "4e61974d-3805-4421-9f4f-366498f43c89",
+  "type": "deep_vocabulary_item",
+  "order": 63,
+  "hanzi": "推让",
+  "pinyin": "tuīràng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "thôi nhượng",
+    "meaning_vi": "nhường qua nhường lại, từ chối vì lịch sự",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhường qua nhường lại",
+      "từ chối vì lịch sự"
+    ],
+    "short_definition_vi": "nhường qua nhường lại, từ chối vì lịch sự",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: nhường qua nhường lại, từ chối vì lịch sự.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "推",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 推.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "让",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 让.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "推让 trong bài được hiểu theo nghĩa: nhường qua nhường lại, từ chối vì lịch sự. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 推让.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "推让 có sắc thái xã giao/lịch sự, không phải từ chối thẳng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7624aeb4-7393-4d5a-badb-fef5d6ef6524",
+      "order": 1,
+      "zh": "互相推让",
+      "pinyin": "",
+      "vi": "nhường qua nhường lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e7c5bc2-8db9-4cf6-b84d-0b095cadfbfa",
+      "order": 2,
+      "zh": "正推让着",
+      "pinyin": "",
+      "vi": "đang nhường qua nhường lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d741bd9c-4ca4-4b37-855e-969f05244d2d",
+      "order": 3,
+      "zh": "推让了半天",
+      "pinyin": "",
+      "vi": "nhường cả buổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe13f72e-5482-46ed-9c37-a2332c2fb46e",
+      "order": 4,
+      "zh": "别再推让了",
+      "pinyin": "",
+      "vi": "đừng nhường nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f728384c-2b39-4666-a92f-76f44e17a3f9",
+      "order": 5,
+      "zh": "客气地推让",
+      "pinyin": "",
+      "vi": "lịch sự từ chối/nhường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f64fe0e3-6770-4402-970e-026eb1dd3be1",
+      "order": 1,
+      "zh": "他们在门口推让了半天，谁也不先进。",
+      "pinyin": "",
+      "vi": "Họ nhường qua nhường lại ở cửa cả buổi, không ai chịu vào trước.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "推让"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4e61974d-3805-4421-9f4f-366498f43c89"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "46d2d890-0738-42b5-84aa-7cf855887005",
+      "order": 2,
+      "zh": "她硬是不收我的钱，我们正推让着，一个小伙子走了进来。",
+      "pinyin": "",
+      "vi": "Cô ấy nhất quyết không lấy tiền, chúng tôi đang nhường qua nhường lại thì một chàng trai bước vào.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "推让"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4e61974d-3805-4421-9f4f-366498f43c89"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "推让 có sắc thái xã giao/lịch sự, không phải từ chối thẳng.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "11b8ba4f-23e1-4c09-824a-5d44037a0895",
+      "order": 1,
+      "rule_vi": "推让 có sắc thái xã giao/lịch sự, không phải từ chối thẳng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我推让了他的要求。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "推让 có sắc thái xã giao/lịch sự, không phải từ chối thẳng.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我拒绝了他的要求。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "推让 có sắc thái xã giao/lịch sự, không phải từ chối thẳng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "推让",
+    "back": "nhường qua nhường lại, từ chối vì lịch sự",
+    "hint": "tuīràng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4e61974d-3805-4421-9f4f-366498f43c89",
+    "source_lesson_vocab_id": null
+  }
+}

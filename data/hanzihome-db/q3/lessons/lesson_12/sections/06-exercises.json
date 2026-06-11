@@ -1,0 +1,952 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: bảo toàn đủ 10 mục bài tập theo thứ tự PDF. Mục 9 được map thêm sang section reading để UI render cloze sạch hơn.",
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_unverified",
+    "final_verification_allowed": false
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "",
+        "vi": "辨音辨调；朗读。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "诚心 chéngxīn",
+              "right": "称心 chènxīn",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "难免 nánmiǎn",
+              "right": "南边 nánbian",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "吃力 chīlì",
+              "right": "视力 shìlì",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "单身 dānshēn",
+              "right": "担心 dānxīn",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "好不 hǎobù",
+              "right": "好处 hǎochu",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "安慰 ānwèi",
+              "right": "安危 ānwēi",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
+              "left": "得意 déyì",
+              "right": "特意 tèyì",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "有理走遍天下，无理寸步难行。",
+              "vi": "Có lý thì đi khắp thiên hạ cũng được; vô lý thì một bước cũng khó đi."
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "真金不怕火炼。",
+              "vi": "Vàng thật không sợ lửa thử."
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "有志者事竟成。",
+              "vi": "Người có chí thì việc ắt thành."
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2"
+      }
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ/cụm từ",
+      "instruction": {
+        "zh": "",
+        "vi": "朗读词语。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "别撑着",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "bié chēngzháo"
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "别碰着",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "bié pèngzháo"
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "别冻着",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "bié dòngzháo"
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "拉上拉链儿",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "拉开拉链儿",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "拉上窗帘儿",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "诚心诚意",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "chéngxīn-chéngyì"
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "真心真意",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "zhēnxīn-zhēnyì"
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "一心一意",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "yìxīn-yíyì"
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "去逛公园",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "qù guàng gōngyuán"
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "去逛商店",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "qù guàng shāngdiàn"
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "去逛书店",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "qù guàng shūdiàn"
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "好不羡慕",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "好不得意",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "好不高兴",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+          "text": "十分得意",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
+          "text": "十分满意",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "shífēn mǎnyì"
+        },
+        {
+          "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
+          "text": "十分难过",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "shífēn nánguò"
+        },
+        {
+          "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
+          "text": "打不进去气",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
+          "text": "踢不进去球",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
+          "text": "看不进去书",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      }
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "",
+        "vi": "选词填空。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "word_bank": [
+        "羡慕",
+        "免得",
+        "走运",
+        "难免",
+        "吃力",
+        "道歉",
+        "诚心诚意",
+        "安慰"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "type": "fill_blank",
+          "prompt": "她是 ______ 想帮助你，你不要辜负了她的好心。",
+          "answer": "诚心诚意",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "chéngxīn-chéngyì"
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "type": "fill_blank",
+          "prompt": "刚到一个新环境，______ 有点儿不习惯。过一段时间就好了。",
+          "answer": "难免",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "nánmiǎn"
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "type": "fill_blank",
+          "prompt": "她学习上有点儿 ______。",
+          "answer": "吃力",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "chīlì"
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "type": "fill_blank",
+          "prompt": "你要去不了就快给他打个电话，______ 他等你。",
+          "answer": "免得",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "miǎnde"
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "type": "fill_blank",
+          "prompt": "这件事是你的不对，你应该向他 ______。",
+          "answer": "道歉",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "dàoqiàn"
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "type": "fill_blank",
+          "prompt": "每当我感到难过的时候，她总来 ______ 我。",
+          "answer": "安慰",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "ānwèi"
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "type": "fill_blank",
+          "prompt": "我真 ______ 他，这么年轻就取得这么大的成绩。",
+          "answer": "羡慕",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "xiànmù"
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "type": "fill_blank",
+          "prompt": "这场球他们队不太 ______，有几个该进的球都没有踢进去。",
+          "answer": "走运",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer",
+          "answer_pinyin": "zǒuyùn"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.choose_words_fill_blank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Hoàn thành câu với từ cho sẵn",
+      "instruction": {
+        "zh": "",
+        "vi": "用括号里的词语完成句子。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "type": "complete_sentence",
+          "prompt": "学习汉语真不容易，尽管很努力，______。",
+          "given_word": "难免",
+          "answer": "难免还会说错、写错。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Nánmiǎn hái huì shuōcuò, xiěcuò."
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "type": "complete_sentence",
+          "prompt": "______，但是她仍然坚持了下来。",
+          "given_word": "尽管",
+          "answer": "尽管她遇到了很多困难",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Jǐnguǎn tā yùdào le hěn duō kùnnan"
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "type": "complete_sentence",
+          "prompt": "外边很冷，出门一定要多穿点儿，______。",
+          "given_word": "免得",
+          "answer": "免得冻着。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Miǎnde dòngzháo."
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "type": "complete_sentence",
+          "prompt": "你看天阴得多厉害，______。",
+          "given_word": "恐怕",
+          "answer": "恐怕要下雨了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Kǒngpà yào xià yǔ le.",
+          "pinyin": "Nǐ kàn tiān yīn de duō lìhai, ______."
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "type": "complete_sentence",
+          "prompt": "我正准备给他打电话，______。",
+          "given_word": "突然",
+          "answer": "电话突然响了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Diànhuà tūrán xiǎng le."
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "type": "complete_sentence",
+          "prompt": "这是朋友送给我的生日礼物，______。",
+          "given_word": "十分",
+          "answer": "我十分喜欢。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Wǒ shífēn xǐhuan."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "show_answer_after_submit": false,
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Hoàn thành hội thoại với từ cho sẵn",
+      "instruction": {
+        "zh": "",
+        "vi": "用括号里的词语完成会话。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "type": "complete_dialogue",
+          "prompt": "A：有的句子我听得懂，但是说不出来。\nB：______。",
+          "given_word": "难免",
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "type": "complete_dialogue",
+          "prompt": "A：你听天气预报了没有，今天有雨吗？\nB：有雨，你带上雨伞吧，______。",
+          "given_word": "免得",
+          "answer": "免得被雨淋着。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Miǎnde bèi yǔ línzháo."
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "type": "complete_dialogue",
+          "prompt": "A：听说他喜欢的女孩儿答应做他女朋友了。\nB：是啊，______。",
+          "given_word": "得意",
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "type": "complete_dialogue",
+          "prompt": "A：今天下午的会你能参加吗？\nB：______。",
+          "given_word": "恐怕",
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "type": "complete_dialogue",
+          "prompt": "A：他已经三十岁了，学习外语有点儿吃力。\nB：______。",
+          "given_word": "尽管",
+          "answer": "尽管有点儿吃力，但是他学得很认真。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Jǐnguǎn yǒudiǎnr chīlì, dànshì tā xué de hěn rènzhēn."
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "type": "complete_dialogue",
+          "prompt": "A：这个箱子太重了，我提不动。\nB：我 ______。",
+          "given_word": "来",
+          "answer": "来帮你提吧。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Lái bāng nǐ tí ba."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Nối câu thành đoạn",
+      "instruction": {
+        "zh": "",
+        "vi": "连句成段。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "type": "reorder_sentences",
+          "sentences": [
+            {
+              "label": "A",
+              "text": "雷锋能够成为中国人心中的英雄，主要是因为他总是助人为乐。"
+            },
+            {
+              "label": "B",
+              "text": "雷锋告诉了我们人生的真正意义：自己活着是为了让别人生活得更美好。",
+              "pinyin": "Léi Fēng gàosu le wǒmen rénshēng de zhēnzhèng yìyì: zìjǐ huózhe shì wèile ràng biérén shēnghuó de gèng měihǎo."
+            },
+            {
+              "label": "C",
+              "text": "你问我，我是一个外国老板，为什么我的桌子上会摆着一个雷锋的雕像。"
+            },
+            {
+              "label": "D",
+              "text": "我想，你如果知道雷锋是谁，你如果看过这本书，你就会明白，为什么雷锋能受到中国人的称赞，为什么我这个老外也要向雷锋学习。"
+            },
+            {
+              "label": "E",
+              "text": "你就会找到问题的答案，说不定你也会对书中写的雷锋这个人产生兴趣。"
+            }
+          ],
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "type": "reorder_sentences",
+          "sentences": [
+            {
+              "label": "A",
+              "text": "站在地上望它，它像一个大盖子。"
+            },
+            {
+              "label": "B",
+              "text": "很好地保护着我们的地球，使我们人类能够在这里生存。",
+              "pinyin": "Hěn hǎo de bǎohùzhe wǒmen de dìqiú, shǐ wǒmen rénlèi nénggòu zài zhèlǐ shēngcún."
+            },
+            {
+              "label": "C",
+              "text": "大气层是贴近地球表面的一层空气。"
+            },
+            {
+              "label": "D",
+              "text": "它不仅把地球装饰得如此美丽，而且还是一道天然的保护层。",
+              "pinyin": "Tā bùjǐn bǎ dìqiú zhuāngshì de rúcǐ měilì, érqiě hái shì yí dào tiānrán de bǎohùcéng."
+            },
+            {
+              "label": "E",
+              "text": "飞到别的星球上看它，它像盖住地球的一层轻纱。"
+            }
+          ],
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reorder_sentences.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "",
+        "vi": "改错句。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "type": "error_correction",
+          "prompt": "他得意他的汉语说得很好。",
+          "answer": "他的汉语说得很好，他很得意。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Tā de Hànyǔ shuō de hěn hǎo, tā hěn déyì.",
+          "pinyin": "Tā déyì tā de Hànyǔ shuō de hěn hǎo."
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "type": "error_correction",
+          "prompt": "我要走快交作业及时，免得老师批评。",
+          "answer": "我要快点儿走，及时交作业，免得老师批评。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Wǒ yào kuài diǎnr zǒu, jíshí jiāo zuòyè, miǎnde lǎoshī pīpíng."
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "type": "error_correction",
+          "prompt": "纪念碑前的鲜花表示人们对烈士人的羡慕。",
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "type": "error_correction",
+          "prompt": "我很吃力地考试，但是成绩不太好。",
+          "answer": "这次考试我考得很吃力，成绩也不太好。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Zhè cì kǎoshì wǒ kǎo de hěn chīlì, chéngjì yě bú tài hǎo.",
+          "pinyin": "Wǒ hěn chīlì de kǎoshì, dànshì chéngjì bú tài hǎo."
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "type": "error_correction",
+          "prompt": "你再告诉他，难免他忘了。",
+          "answer": "",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook"
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "type": "error_correction",
+          "prompt": "因为我碰了他，赶快道歉他说：“对不起。”",
+          "answer": "因为我碰了他，所以我赶快向他道歉说：“对不起。”",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook",
+          "answer_pinyin": "Yīnwèi wǒ pèng le tā, suǒyǐ wǒ gǎnkuài xiàng tā dàoqiàn shuō: “Duìbuqǐ.”"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.correct_sentence.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "",
+        "vi": "情景表达。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "下列句子什么情景下说？",
+          "questions": [
+            {
+              "id": "bd916783-9742-45e0-9aad-f85cc0b42bd1",
+              "prompt": "这真是吃力不讨好。"
+            },
+            {
+              "id": "5195b95d-7384-421d-96da-9d3f175a1e0a",
+              "prompt": "我连忙向她道歉。"
+            },
+            {
+              "id": "3241d0f7-b4b0-479e-afc1-7dfc284d0cc7",
+              "prompt": "你真是个“马大哈”。"
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "69167c09-c6fe-40e9-819f-688f5be90070",
+              "prompt": "丈夫要出门，妻子要他带上雨伞。",
+              "given_word": "免得",
+              "answer": "带上雨伞吧，免得被雨淋着。",
+              "answer_pinyin": "Dài shàng yǔsǎn ba, miǎnde bèi yǔ línzháo."
+            },
+            {
+              "id": "4c421b0e-5aa1-42e9-8f63-a0f262a87575",
+              "prompt": "有人问你，玛丽今天回来不回来，你认为她可能不回来。",
+              "given_word": "恐怕"
+            },
+            {
+              "id": "b21f7558-74d3-47d1-b8b8-8df1375779e9",
+              "prompt": "你的朋友考试得了全校第一名，你对他说很羡慕他。",
+              "given_word": "好不"
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.situation_expression.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Đọc điền khuyết",
+      "instruction": {
+        "zh": "",
+        "vi": "综合填空。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "reading_id": "reading_01",
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 2,
+          "answer": "着",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 3,
+          "answer": "当成",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_pinyin": "dàngchéng"
+        },
+        {
+          "blank": 4,
+          "answer": "来",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 5,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_pinyin": "de"
+        },
+        {
+          "blank": 6,
+          "answer": "使",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 7,
+          "answer": "连",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "blank": 8,
+          "answer": "起来",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_pinyin": "qǐlai"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reading_cloze.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "",
+        "vi": "下课后，A 和 B 在讨论课文中的问题。",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "topic": "评论（2）",
+      "lines": [
+        {
+          "id": "6dd6b3de-e869-45bd-9270-fca3ab2ca937",
+          "speaker": "A",
+          "zh": "没想到做好事还会遇到这么多想不到的麻烦。",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "14dc59df-8850-42b7-ab12-efe7ae33f6d6",
+          "speaker": "B",
+          "zh": "是啊！这个人好心帮邻居收被子，差点儿被人家当成小偷儿；好心帮人打气，又打爆了车胎……",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Shì a! Zhè ge rén hǎoxīn bāng línjū shōu bèizi, chàdiǎnr bèi rénjia dàngchéng xiǎotōur; hǎoxīn bāng rén dǎ qì, yòu dǎ bào le chētāi……"
+        },
+        {
+          "id": "baf69f77-5a66-41fa-bebf-6e570c4382cf",
+          "speaker": "A",
+          "zh": "所以，做好事只靠热心还不行，还要注意方法。",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cb1693f4-678f-4eb8-baee-90cf0ecbef7e",
+          "speaker": "B",
+          "zh": "不过，我还是觉得这个人很可爱，他助人为乐的精神叫人感动。",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Búguò, wǒ háishi juéde zhè ge rén hěn kě'ài, tā zhùrén-wéilè de jīngshén jiào rén gǎndòng."
+        },
+        {
+          "id": "d3488386-cd05-4715-9b86-e7c2652615ad",
+          "speaker": "A",
+          "zh": "对，我也喜欢他，甚至喜欢他那些美丽的错误。",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "09f20c80-d985-463f-a5b2-8863166124bf",
+          "speaker": "B",
+          "zh": "是啊！这些美丽的错误，给生活带来了不少欢乐。",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fac664b5-b2a9-46a3-894e-25428d8799c0",
+          "speaker": "A",
+          "zh": "我佩服他一次又一次地不被别人理解，还做好事。好人难当还要当，这才是真正的好人呢。",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Wǒ pèifu tā yí cì yòu yí cì de bù bèi biérén lǐjiě, hái zuò hǎoshì. Hǎorén nán dāng hái yào dāng, zhè cái shì zhēnzhèng de hǎorén ne."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.communication_dialogue.v2"
+      }
+    }
+  ]
+}

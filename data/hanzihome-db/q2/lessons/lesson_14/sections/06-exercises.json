@@ -1,0 +1,1153 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 9,
+    "actual_exercise_count_in_json": 9,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_pdf_checked",
+    "note_vi": "Đã đối chiếu 9 phần bài tập trong PDF; phần 看图说话 dùng đáp án mẫu theo tranh nên không phải đáp án duy nhất."
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调，朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "jìnqu / jìnqù",
+            "yàoshi / yàoshì",
+            "yìngxiǎng / yìnxiàng",
+            "shūjià / shǔjià",
+            "yúshì / yìshì",
+            "zhǐhǎo / chīhǎo"
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_group",
+          "title": "朗读",
+          "items": [
+            "放上去　放下来　走进去　走出来　带回去　带回来",
+            "拿过去　拿过来　爬上去　跑下来　挑出来　拔下来",
+            "爬上楼去了",
+            "走下楼来了",
+            "走进教室去了",
+            "走出学校去了",
+            "寄回国去了",
+            "骑回学校来了",
+            "跑过马路去了",
+            "飞回美国去了"
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Luyện thay thế theo mẫu câu."
+      },
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "prompt_a": "咱们走下去吧。",
+          "prompt_b": "好吧。",
+          "replacements": [
+            "跑上去",
+            "拿下去",
+            "拿出去",
+            "带回去",
+            "放进去",
+            "送上去"
+          ]
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "prompt_a": "他买回来了什么？",
+          "prompt_b": "他买回来了一些小饰物。",
+          "replacements": [
+            "带回来 — 一本杂志",
+            "发回来 — 几张照片",
+            "寄过来 — 一些丝织品",
+            "送上来 — 一些小玩具",
+            "买回来 — 一些钥匙链儿"
+          ]
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "prompt_a": "他从箱子里拿出来了什么？",
+          "prompt_b": "他从箱子里拿出来了一些京剧脸谱。",
+          "replacements": [
+            "飞机上 — 提下来 — 一个箱子",
+            "地上 — 捡起来 — 一把钥匙",
+            "书店 — 买回来 — 一本小说儿",
+            "汽车里 — 拿出来 — 一箱啤酒",
+            "商场 — 买回来 — 一些小饰物"
+          ]
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "prompt_a": "麦克去哪儿了？",
+          "prompt_b": "我看见他走出校门去了。",
+          "replacements": [
+            "走进食堂",
+            "跑上楼",
+            "跑下楼",
+            "走进商场",
+            "爬上山",
+            "走回宿舍"
+          ]
+        },
+        {
+          "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
+          "prompt_a": "你的钱取回来了没有？",
+          "prompt_b": "还没有呢。",
+          "replacements": [
+            "车钥匙 — 拔下来",
+            "杂志 — 取出来",
+            "电脑 — 买回来",
+            "书 — 拿上来",
+            "邮件 — 发过去",
+            "词典 — 寄出去"
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống."
+      },
+      "word_bank": [
+        "除了",
+        "于是",
+        "只好",
+        "各",
+        "兴奋",
+        "哭笑不得",
+        "回",
+        "另",
+        "寒假"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "prompt": "收到他给我发来的邮件，我非常__________。",
+          "answer": "兴奋",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "prompt": "我想买一些书带__________国去。",
+          "answer": "回",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "prompt": "__________买书，我还想买一些小礼品。",
+          "answer": "除了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "prompt": "他想让我跟他一起去书店，__________我就跟他去了。",
+          "answer": "于是",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "prompt": "我们从一个商场出来，又去了__________一个商场。",
+          "answer": "另",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "prompt": "很快就要放__________了。",
+          "answer": "寒假",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "prompt": "因为没得到奖学金，我__________回国。",
+          "answer": "只好",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "prompt": "语言大学的学生主要是从世界__________国来的留学生。",
+          "answer": "各",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "prompt": "这种事真让人__________。",
+          "answer": "哭笑不得",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 4,
+      "title": "四、选择下列词组填空",
+      "title_vi": "Chọn cụm từ điền chỗ trống",
+      "instruction": {
+        "zh": "选择下列词组填空。",
+        "vi": "Chọn cụm từ trong khung điền vào chỗ trống."
+      },
+      "parts": [
+        {
+          "id": "53d91418-6400-4c09-a947-ae3092204f6e",
+          "word_bank": [
+            "从楼下",
+            "从书架上",
+            "从书包里",
+            "从中国",
+            "从图书馆",
+            "从国外",
+            "从书店",
+            "从商场",
+            "从外边",
+            "从香港"
+          ],
+          "questions": [
+            {
+              "id": "beb246a6-566e-4793-9229-77920b631826",
+              "prompt": "__________买回一本词典来。",
+              "answer": "从书店",
+              "answer_verified": true
+            },
+            {
+              "id": "c08993b4-fed9-412e-b7f4-b11c70e7f407",
+              "prompt": "__________借回一些中文小说儿来。",
+              "answer": "从图书馆",
+              "answer_verified": true
+            },
+            {
+              "id": "4c9c0490-940b-4f06-a694-0a9fa9f40a4a",
+              "prompt": "__________拿出来一本中国历史书。",
+              "answer": "从书包里",
+              "answer_verified": true
+            },
+            {
+              "id": "6d68d16f-0bb6-49e8-a4b1-d4d16597f39c",
+              "prompt": "__________拿下来一本杂志。",
+              "answer": "从书架上",
+              "answer_verified": true
+            },
+            {
+              "id": "9224c3af-7af0-4b1f-9006-41a420717046",
+              "prompt": "__________买回一些玩具。",
+              "answer": "从商场",
+              "answer_verified": true
+            },
+            {
+              "id": "01d47409-0dae-48d8-8818-95a3b4c644a4",
+              "prompt": "__________给你带回一点儿礼物去。",
+              "answer": "从中国",
+              "answer_verified": true
+            },
+            {
+              "id": "966378d2-d667-4467-b5ff-abf0f0a1ffe7",
+              "prompt": "__________寄回一本词典来。",
+              "answer": "从香港",
+              "answer_verified": true
+            },
+            {
+              "id": "7a339036-9e1f-4f4a-8590-80d94997e37c",
+              "prompt": "__________提进来一个箱子。",
+              "answer": "从外边",
+              "answer_verified": true
+            },
+            {
+              "id": "ac0b8503-f009-4dec-9cb8-6df134e6cc0d",
+              "prompt": "__________提上来一箱子书。",
+              "answer": "从楼下",
+              "answer_verified": true
+            },
+            {
+              "id": "d6474c10-d8a9-4f73-a248-16496c39b0d0",
+              "prompt": "__________给我寄来一件生日礼物。",
+              "answer": "从国外",
+              "answer_verified": true
+            }
+          ]
+        },
+        {
+          "id": "852c835f-85d8-40ab-8633-fd42754e2cb8",
+          "word_bank": [
+            "拿起来",
+            "抽出来",
+            "拿下来",
+            "找出来",
+            "拿出来",
+            "取出来",
+            "捡起来",
+            "买回来",
+            "送上来",
+            "取回来"
+          ],
+          "questions": [
+            {
+              "id": "6ed960e4-62af-473b-94d7-12ebe9615f13",
+              "prompt": "他从手提包儿里__________一本护照。",
+              "answer": "拿出来",
+              "answer_verified": true
+            },
+            {
+              "id": "d2066f92-084b-4ee4-8e35-05063cb6cecb",
+              "prompt": "玛丽从银行__________五百美元。",
+              "answer": "取出来",
+              "answer_verified": true
+            },
+            {
+              "id": "3b7c6050-05e8-47aa-8ffa-d8a83062edd8",
+              "prompt": "妈妈寄的礼物你__________了吗？",
+              "answer": "取回来",
+              "answer_verified": true
+            },
+            {
+              "id": "6565957b-bda4-4bcb-a024-16fba1653368",
+              "prompt": "麦克从商场__________一辆自行车。",
+              "answer": "买回来",
+              "answer_verified": true
+            },
+            {
+              "id": "1a62abcd-f4d8-4a9b-8f42-0d00218aadd8",
+              "prompt": "服务员从楼下__________一束花儿。",
+              "answer": "送上来",
+              "answer_verified": true
+            },
+            {
+              "id": "04c467c4-4406-44f5-be71-7c64dd5bdcbe",
+              "prompt": "她从箱子里__________一件羽绒服。",
+              "answer": "找出来",
+              "answer_verified": true
+            },
+            {
+              "id": "b76ef368-a20d-4211-abee-6b019863fb57",
+              "prompt": "他从楼上__________一个纸箱子。",
+              "answer": "拿下来",
+              "answer_verified": true
+            },
+            {
+              "id": "248f154e-5a92-4290-a762-2c5d33d21160",
+              "prompt": "我从地上__________一个钱包儿。",
+              "answer": "捡起来",
+              "answer_verified": true
+            },
+            {
+              "id": "94eacc6b-47d9-44f2-bb2d-ac3a4d489514",
+              "prompt": "他从桌子上__________一副眼镜儿。",
+              "answer": "拿起来",
+              "answer_verified": true
+            },
+            {
+              "id": "ceb7b201-2299-4c7d-9084-ce0e8db57bcf",
+              "prompt": "张东从书架上__________一本书。",
+              "answer": "抽出来",
+              "answer_verified": true
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "fill_blank",
+      "variant": "free_fill_blank",
+      "order": 5,
+      "title": "五、在空格里填入适当的复合趋向补语",
+      "title_vi": "Điền bổ ngữ xu hướng kép thích hợp",
+      "instruction": {
+        "zh": "在空格里填入适当的复合趋向补语。",
+        "vi": "Điền bổ ngữ xu hướng kép thích hợp vào chỗ trống."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "我们爬了半个多小时，才爬__________，往山下一看，风景漂亮极了。",
+          "answer": "上去",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "上去"
+          ]
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "小心点儿，别掉__________。",
+          "answer": "下去",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "下去"
+          ]
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "她不小心，从楼梯上摔__________，腿摔坏了。",
+          "answer": "下来",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "下来"
+          ]
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "太累了，我们找个地方，坐__________休息一会儿吧。",
+          "answer": "下来",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "下来"
+          ]
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "我看见前边走__________一个人，就走__________问她去图书城怎么走。",
+          "answer": "过来；过去",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "过来",
+            "过去"
+          ]
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "你别下来了，我给你拿__________。",
+          "answer": "上去",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "上去"
+          ]
+        },
+        {
+          "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+          "prompt": "她从口袋里拿__________一个钱包儿，又从钱包儿里拿__________三千块钱，放在我手里，说：“快给你妈妈寄__________吧，看病要紧。”",
+          "answer": "出来；出来；回去",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "出来",
+            "出来",
+            "回去"
+          ]
+        },
+        {
+          "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+          "prompt": "“救命啊！有人掉__________水里__________了！”听见喊声，他很快脱下上衣，跑了__________。人们看见他跳__________水__________，向那个孩子游了__________。",
+          "answer": "进；去；过去；进；里；过去",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_parts": [
+            "进",
+            "去",
+            "过去",
+            "进",
+            "里",
+            "过去"
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "custom",
+      "variant": "location_inference",
+      "order": 6,
+      "title": "六、指出说话人在哪儿",
+      "title_vi": "Chỉ ra người nói đang ở đâu",
+      "instruction": {
+        "zh": "指出说话人在哪儿。",
+        "vi": "Chỉ ra người nói đang ở đâu."
+      },
+      "example": {
+        "prompt": "衣服从楼上掉下来了。",
+        "answer": "下边"
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "prompt": "你看，他跑过去了。",
+          "answer": "这边",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "prompt": "您的行李已经给您搬上来了。",
+          "answer": "上边 / 楼上",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "prompt": "他的车开进来了。",
+          "answer": "里边",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "prompt": "我们走上去吧。",
+          "answer": "下边 / 楼下",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "prompt": "书他已经提上去了。",
+          "answer": "下边 / 楼下",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "prompt": "你要的电脑我已经买回来了。",
+          "answer": "这儿 / 原来的地方",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "d2ee010f-bdf3-46bc-b758-1c9bbab1af4b",
+          "prompt": "她们爬上山去了。",
+          "answer": "山下",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        },
+        {
+          "id": "8cd8da84-508c-4d14-9ec6-23425cabd8b3",
+          "prompt": "钱我已经取回来了。",
+          "answer": "这儿 / 原来的地方",
+          "answer_verified": true,
+          "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "custom",
+      "variant": "image_prompt",
+      "order": 7,
+      "title": "七、看图说话",
+      "title_vi": "Nhìn tranh và nói câu",
+      "instruction": {
+        "zh": "看图说话。",
+        "vi": "Nhìn tranh và nói câu."
+      },
+      "questions": [
+        {
+          "id": "8d75de03-e551-4c2c-a572-199b5b2cc859",
+          "image_description_vi": "Một người đang leo lên núi / leo lên đá.",
+          "sample_answer": {
+            "zh": "他爬上山去了。",
+            "vi": "Anh ấy leo lên núi rồi.",
+            "pinyin": "Tā pá shàng shān qù le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "a0adf525-bb05-47eb-878c-a3ce23685773",
+          "image_description_vi": "Một người từ trên cao nhảy xuống nước, người nói đứng dưới nhìn.",
+          "sample_answer": {
+            "zh": "他跳下来了。",
+            "vi": "Anh ấy nhảy xuống đây rồi.",
+            "pinyin": "Tā tiào xiàlai le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "16a753d0-afcd-4d39-a3b6-21a3e5831d6b",
+          "image_description_vi": "Một cô gái đi vào ngân hàng.",
+          "sample_answer": {
+            "zh": "她走进银行去了。",
+            "vi": "Cô ấy đi vào ngân hàng rồi.",
+            "pinyin": "Tā zǒu jìn yínháng qù le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "4884a221-94eb-4527-8e90-440a156a5538",
+          "image_description_vi": "Một người chạy vào phòng.",
+          "sample_answer": {
+            "zh": "他跑进来了。",
+            "vi": "Anh ấy chạy vào đây rồi.",
+            "pinyin": "Tā pǎo jìnlai le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "dd55c4d9-5a27-44b4-9bdf-ed2208a533c7",
+          "image_description_vi": "Một người đi ra khỏi bưu điện / đi từ bưu điện ra.",
+          "sample_answer": {
+            "zh": "他从邮局走出来了。",
+            "vi": "Anh ấy từ bưu điện đi ra rồi.",
+            "pinyin": "Tā cóng yóujú zǒu chūlai le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "819e1af3-b3de-44ec-b62f-f20a5af7d6a9",
+          "image_description_vi": "Một cô gái nhặt đồ lên từ dưới đất.",
+          "sample_answer": {
+            "zh": "她把东西捡起来了。",
+            "vi": "Cô ấy nhặt đồ lên rồi.",
+            "pinyin": "Tā bǎ dōngxi jiǎn qǐlai le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "07496d7c-9640-4a61-8ba8-5754feab5ad5",
+          "image_description_vi": "Một người chạy qua cầu về phía người nói.",
+          "sample_answer": {
+            "zh": "他跑过来了。",
+            "vi": "Anh ấy chạy qua đây rồi.",
+            "pinyin": "Tā pǎo guòlai le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        },
+        {
+          "id": "51b15f46-d0fc-49ec-92f2-833ad313e191",
+          "image_description_vi": "Tàu chạy qua cầu, người nói đứng bên dưới/xa nhìn.",
+          "sample_answer": {
+            "zh": "火车开过去了。",
+            "vi": "Tàu chạy qua đó rồi.",
+            "pinyin": "Huǒchē kāi guòqu le."
+          },
+          "answer_verified": true,
+          "source_origin": "textbook_picture_pdf_checked_generated_answer",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_picture_pdf_checked_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 8,
+      "title": "八、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "prompt": "上课十分钟他才走进来教室。",
+          "answer": "上课十分钟他才走进教室来。",
+          "answer_verified": true,
+          "explanation_vi": "教室是处所宾语，要放在 进 和 来/去 之间。",
+          "check_needed": false
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "prompt": "我看见她走出去图书馆了。",
+          "answer": "我看见她走出图书馆去了。",
+          "answer_verified": true,
+          "explanation_vi": "图书馆是处所宾语，要放在 出 和 去 之间。",
+          "check_needed": false
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "prompt": "孩子看见我，就向我跑过去。",
+          "answer": "孩子看见我，就向我跑过来。",
+          "answer_verified": true,
+          "explanation_vi": "向我 表示朝说话人/我这边来，应使用 过来。",
+          "check_needed": false
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "prompt": "他从箱子里拿出去一件羽绒服。",
+          "answer": "他从箱子里拿出来一件羽绒服。",
+          "answer_verified": true,
+          "explanation_vi": "从箱子里取出东西，方向应为 出来，不是 出去。",
+          "check_needed": false
+        },
+        {
+          "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+          "prompt": "我们的飞机马上就飞上去天了。",
+          "answer": "我们的飞机马上就飞上天去了。",
+          "answer_verified": true,
+          "explanation_vi": "天是处所宾语，要放在 上 和 去 之间。",
+          "check_needed": false
+        },
+        {
+          "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+          "prompt": "妈妈病好了以后，我就送她回去老家了。",
+          "answer": "妈妈病好了以后，我就送她回老家去了。",
+          "answer_verified": true,
+          "explanation_vi": "老家是处所宾语，要放在 回 和 去 之间。",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền vào bài đọc tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Đọc đoạn văn và điền từ thích hợp."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "泰山",
+          "pinyin": "Tài Shān",
+          "meaning_vi": "núi Thái Sơn",
+          "meaning_en": "Mount Tai",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "proper_noun"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "缆车",
+          "pinyin": "lǎnchē",
+          "meaning_vi": "cáp treo",
+          "meaning_en": "cable car",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "登",
+          "pinyin": "dēng",
+          "meaning_vi": "leo lên, lên cao",
+          "meaning_en": "to ascend; to climb",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "一览众山小",
+          "pinyin": "yì lǎn zhòng shān xiǎo",
+          "meaning_vi": "nhìn bao quát thấy các núi đều nhỏ; câu thơ về tầm nhìn từ đỉnh cao",
+          "meaning_en": "to hold all the mountains in a single glance",
+          "pos": "Câu thơ / Cụm cố định",
+          "pos_detail": {
+            "vi": "Câu thơ / Cụm cố định",
+            "cn": "诗句/固定表达",
+            "normalized": "phrase",
+            "schema_compatible_pos": "phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "日出",
+          "pinyin": "rìchū",
+          "meaning_vi": "mặt trời mọc, bình minh",
+          "meaning_en": "sunrise",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "太阳",
+          "pinyin": "tàiyáng",
+          "meaning_vi": "mặt trời",
+          "meaning_en": "sun",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "一下子",
+          "pinyin": "yíxiàzi",
+          "meaning_vi": "trong chốc lát; đột nhiên; một cái là",
+          "meaning_en": "in a short while; all at once; all of a sudden",
+          "pos": "Phó từ",
+          "pos_detail": {
+            "vi": "Phó từ",
+            "cn": "副词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "跳",
+          "pinyin": "tiào",
+          "meaning_vi": "nhảy",
+          "meaning_en": "to jump",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "美",
+          "pinyin": "měi",
+          "meaning_vi": "đẹp",
+          "meaning_en": "beautiful",
+          "pos": "Tính từ",
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "曲阜",
+          "pinyin": "Qūfù",
+          "meaning_vi": "Khúc Phụ, quê hương của Khổng Tử",
+          "meaning_en": "Qufu, the hometown of Confucius",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "proper_noun"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "孔庙",
+          "pinyin": "Kǒng Miào",
+          "meaning_vi": "Khổng Miếu, miếu thờ Khổng Tử",
+          "meaning_en": "Temple of Confucius",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "proper_noun"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "孔林",
+          "pinyin": "Kǒng Lín",
+          "meaning_vi": "Khổng Lâm, nghĩa trang dòng họ Khổng",
+          "meaning_en": "Cemetery of Confucius",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "proper_noun"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "情况",
+          "pinyin": "qíngkuàng",
+          "meaning_vi": "tình hình, tình trạng, hoàn cảnh",
+          "meaning_en": "situation; condition",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "山东大学",
+          "pinyin": "Shāndōng Dàxué",
+          "meaning_vi": "Đại học Sơn Đông",
+          "meaning_en": "Shandong University",
+          "pos": "Tên riêng",
+          "pos_detail": {
+            "vi": "Tên riêng",
+            "cn": "专名",
+            "normalized": "proper_noun",
+            "schema_compatible_pos": "proper_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "proper_noun"
+          ],
+          "check_needed": false
+        },
+        {
+          "hanzi": "热情",
+          "pinyin": "rèqíng",
+          "meaning_vi": "nhiệt tình, nồng hậu",
+          "meaning_en": "warm-hearted; enthusiastic",
+          "pos": "Tính từ / Danh từ",
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ",
+            "cn": "形容词/名词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab"
+          ],
+          "check_needed": false
+        }
+      ],
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "zh": "罗兰：\n\n你好。我已经到了泰山，我是爬上①__________的，没有坐缆车。登上泰山，真有“一览众山小”的感觉。我还在山上住了一夜，等第二天早上看日出，能站在泰山上看日出，我很高兴。当我们看到太阳一下子跳②__________的时候，都兴奋地大声叫了起来，真是美③__________了。下午，我又从泰山上走④__________了。明天我要去曲阜参观孔庙和孔林。到那儿以后再给你介绍曲阜的情况。这次来旅行我很愉快，山东大学的朋友很热情，给了我很多帮助。\n\n这是我用手机照的泰山日出，发给你看看。\n\n祝好！\n\n丹尼斯\n7月28日",
+        "vi": "Roland:\n\nChào bạn. Tôi đã đến Thái Sơn rồi. Tôi tự leo lên, không đi cáp treo. Lên đến Thái Sơn, thật có cảm giác “đứng trên cao nhìn xuống thấy các núi đều nhỏ”. Tôi còn ở lại trên núi một đêm để sáng hôm sau xem mặt trời mọc. Có thể đứng trên Thái Sơn xem mặt trời mọc, tôi rất vui. Khi chúng tôi nhìn thấy mặt trời bỗng nhảy lên/ló ra, mọi người đều phấn khích kêu to lên, thật là đẹp vô cùng. Buổi chiều, tôi lại từ trên Thái Sơn đi xuống. Ngày mai tôi sẽ đi Khúc Phụ tham quan Khổng Miếu và Khổng Lâm. Đến đó rồi tôi sẽ giới thiệu với bạn tình hình Khúc Phụ. Chuyến du lịch lần này tôi rất vui, bạn bè ở Đại học Sơn Đông rất nhiệt tình, đã giúp tôi rất nhiều.\n\nĐây là ảnh bình minh Thái Sơn tôi chụp bằng điện thoại, gửi cho bạn xem.\n\nChúc bạn mọi điều tốt lành!\n\nDennis\n28 tháng 7"
+      },
+      "questions": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "prompt": "爬上①__________的",
+          "answer": "来",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "prompt": "跳②__________的时候",
+          "answer": "出来",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "prompt": "美③__________了",
+          "answer": "极",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "prompt": "走④__________了",
+          "answer": "下去",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

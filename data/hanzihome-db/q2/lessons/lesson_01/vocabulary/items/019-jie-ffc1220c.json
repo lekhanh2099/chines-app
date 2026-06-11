@@ -1,0 +1,374 @@
+{
+  "id": "f3cd4677-67c1-4345-81a6-a7d3becaf854",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "借",
+  "pinyin": "jiè",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_01",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tá",
+    "meaning_vi": "mượn; cho mượn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mượn",
+      "cho mượn"
+    ],
+    "short_definition_vi": "mượn; cho mượn",
+    "textbook_focus_vi": "Bài 1 Quyển 2: 田芳去哪儿了",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "借",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được nguồn phân tích như bộ thủ/thành phần bộ thủ của chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "借 có bộ 亻, liên quan đến hành vi giữa người với người. Lõi nghĩa: chuyển quyền dùng tạm thời, sau đó trả lại. Cấu trúc quan trọng: A 借 B = A mượn B, nếu không có người nhận/người cho rõ. A 借给 B + vật = A cho B mượn vật. A 向/跟/从 B 借 + vật = A mượn vật từ B.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "借",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mượn/cho mượn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "借给",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho ai mượn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "借来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mượn về.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "借出",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho mượn ra ngoài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "还",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trả lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "租",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thuê, có trả tiền thuê.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我借了他一本书。",
+      "Có thể mơ hồ nếu thiếu ngữ cảnh.",
+      "Rõ hơn:",
+      "我向他借了一本书。",
+      "Tôi mượn anh ấy một quyển sách.",
+      "我借给他一本书。",
+      "Tôi cho anh ấy mượn một quyển sách."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "99bba0b1-8205-44c8-99e7-c930487d2aa1",
+      "order": 1,
+      "zh": "借书",
+      "pinyin": "",
+      "vi": "mượn sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb9277a1-5658-4260-8ead-c9cb83b87627",
+      "order": 2,
+      "zh": "借给他",
+      "pinyin": "",
+      "vi": "cho anh ấy mượn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e428a24-8869-4646-9755-0abbf82106c8",
+      "order": 3,
+      "zh": "向老师借书",
+      "pinyin": "",
+      "vi": "mượn sách từ thầy/cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45dfde92-e2ea-4c47-9352-754773472fef",
+      "order": 4,
+      "zh": "借来一本书",
+      "pinyin": "",
+      "vi": "mượn về một quyển sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5bf00a82-a455-4b51-bf48-312ba25b7f2d",
+      "order": 5,
+      "zh": "借不到",
+      "pinyin": "",
+      "vi": "mượn không được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6df5ced2-d3c5-44f2-871b-85c85825b345",
+      "order": 6,
+      "zh": "借了还",
+      "pinyin": "",
+      "vi": "mượn rồi trả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "12a4b332-0a5f-436d-8ec7-f8928cef6e2a",
+      "order": 1,
+      "zh": "我向老师借了一本书。",
+      "pinyin": "Wǒ xiàng lǎoshī jiè le yì běn shū.",
+      "vi": "Tôi mượn thầy/cô một quyển sách.",
+      "analysis_vi": "向老师借 nói rõ nguồn mượn là thầy/cô, tránh mơ hồ.",
+      "highlight": [
+        "借"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f3cd4677-67c1-4345-81a6-a7d3becaf854"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ca7e1c42-ddd5-4480-a51a-afda8b809571",
+      "order": 2,
+      "zh": "这本书我借不到，你能不能借给我？",
+      "pinyin": "Zhè běn shū wǒ jiè bú dào, nǐ néng bù néng jiè gěi wǒ?",
+      "vi": "Quyển sách này tôi mượn không được, bạn có thể cho tôi mượn không?",
+      "analysis_vi": "借不到 là bổ ngữ khả năng phủ định, nghĩa là không mượn được. 借给我 = cho tôi mượn.",
+      "highlight": [
+        "借"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f3cd4677-67c1-4345-81a6-a7d3becaf854"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ac41e7e-fd6a-49f5-8056-e64063c019c5",
+      "order": 3,
+      "zh": "图书馆里放着几本托福书，田芳想借一本回去复习，可是管理员说这些书只能在里面看，不能借出去。",
+      "pinyin": "Túshūguǎn lǐ fàngzhe jǐ běn Tuōfú shū, Tián Fāng xiǎng jiè yì běn huíqù fùxí, kěshì guǎnlǐyuán shuō zhèxiē shū zhǐ néng zài lǐmiàn kàn, bù néng jiè chūqù.",
+      "vi": "Trong thư viện có đặt vài quyển sách TOEFL, Điền Phương muốn mượn một quyển về ôn tập, nhưng quản lý nói những sách này chỉ có thể xem bên trong, không được mượn ra ngoài.",
+      "analysis_vi": "图书馆里放着几本书 là câu tồn hiện. 借一本回去 = mượn một quyển về. 借出去 là cho/mượn ra ngoài, dùng 出去 theo hướng rời khỏi thư viện.",
+      "highlight": [
+        "借"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f3cd4677-67c1-4345-81a6-a7d3becaf854"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong thư viện Trung Quốc, có sách 可外借 nghĩa là được mượn về, và 不可外借 nghĩa là không được mượn ra ngoài, chỉ đọc tại chỗ.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "92d0b31e-1c00-4371-b446-dcdc707dab90",
+      "order": 1,
+      "rule_vi": "Không làm rõ “mượn” hay “cho mượn”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我向他借钱。",
+          "pinyin": "Wǒ xiàng tā jiè qián.",
+          "vi": "Tôi mượn tiền của anh ấy.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我借给他钱。",
+          "pinyin": "Wǒ jiè gěi tā qián.",
+          "vi": "Tôi cho anh ấy mượn tiền.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không làm rõ “mượn” hay “cho mượn”.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "借",
+    "back": "mượn; cho mượn",
+    "hint": "jiè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_01",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "hanyu2/bai01/vocab/019",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f3cd4677-67c1-4345-81a6-a7d3becaf854",
+    "source_lesson_vocab_id": null
+  }
+}

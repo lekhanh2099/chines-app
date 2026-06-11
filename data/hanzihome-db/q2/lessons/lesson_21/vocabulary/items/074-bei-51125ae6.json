@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_3812ae1a6150c975",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "背",
+  "pinyin": "bèi",
+  "meaning_vi": "học thuộc; đọc thuộc lòng",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Trong bài nghĩa là học thuộc/đọc thuộc: 背台词, 背课文.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+    "type": "vocabulary_item",
+    "order": 15,
+    "hanzi": "背",
+    "pinyin": "bèi",
+    "meaning_vi": "học thuộc; đọc thuộc lòng",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "背",
+      "back": "bèi — học thuộc; đọc thuộc lòng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Trong bài nghĩa là học thuộc/đọc thuộc: 背台词, 背课文.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,412 @@
+{
+  "id": "dc92b6b1-e989-4b55-949b-64e539d894dc",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "进去",
+  "pinyin": "jìnqù",
+  "pos": {
+    "raw_vi": "Động từ xu hướng / Bổ ngữ xu hướng",
+    "raw_cn": "趋向动词/趋向补语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tiến khứ",
+    "meaning_vi": "đi vào trong đó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi vào trong đó"
+    ],
+    "short_definition_vi": "đi vào trong đó",
+    "textbook_focus_vi": "Âm Hán Việt: tiến khứ. Nghĩa chính: Đi vào trong đó. Hành động đi vào một không gian, hướng ra xa người nói hoặc người nói không ở bên trong. Đối lập với 进来 = đi vào đây. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "进",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại / di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại / di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "井",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vào, tiến vào",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "去",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "厶",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi, rời đi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "进 = vào; 去 = đi xa khỏi điểm nói. 进去 = đi vào trong đó.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 进教室去 và 进教室来 khác nhau ở vị trí người nói.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "进去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi vào trong đó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "进来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi vào đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi ra đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi ra đó/ra ngoài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "进去一下",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vào trong một chút.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "Người nói ở ngoài phòng:",
+      "你进去吧。",
+      "Bạn vào trong đi.",
+      "Người nói ở trong phòng:",
+      "你进来吧。",
+      "Bạn vào đây đi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2058d657-e08d-4a32-811e-d0aa54570f7c",
+      "order": 1,
+      "zh": "进去吧",
+      "pinyin": "",
+      "vi": "vào trong đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8e05e3f-f788-4f91-8432-1e8887d403d1",
+      "order": 2,
+      "zh": "走进去",
+      "pinyin": "",
+      "vi": "đi bộ vào trong đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "539e3cc9-37aa-422b-9bfb-263161447de1",
+      "order": 3,
+      "zh": "跑进去",
+      "pinyin": "",
+      "vi": "chạy vào trong đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b452b43d-5890-4dfa-ac23-1fcf5524a1bb",
+      "order": 4,
+      "zh": "送进去",
+      "pinyin": "",
+      "vi": "đưa vào trong đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80298446-472e-4e4c-994c-a8532e429b72",
+      "order": 5,
+      "zh": "拿进去",
+      "pinyin": "",
+      "vi": "cầm vào trong đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe6fbeab-9dcd-4adc-a39a-ca2f0eb3b894",
+      "order": 6,
+      "zh": "进会议室去",
+      "pinyin": "",
+      "vi": "đi vào phòng họp đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "12b0b81d-85b0-4975-9c07-498f94fd9ac6",
+      "order": 1,
+      "zh": "你先进去吧。",
+      "pinyin": "Nǐ xiān jìnqù ba.",
+      "vi": "Bạn vào trong trước đi.",
+      "analysis_vi": "进去 dùng 去 vì người nói thường đang ở ngoài hoặc không lấy bản thân làm điểm đến bên trong.",
+      "highlight": [
+        "进去"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "dc92b6b1-e989-4b55-949b-64e539d894dc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9423830a-26f3-43f2-987a-e9e3fd5be2c3",
+      "order": 2,
+      "zh": "研讨会要开始了，请大家快进去。",
+      "pinyin": "Yántǎohuì yào kāishǐ le, qǐng dàjiā kuài jìnqù.",
+      "vi": "Hội thảo sắp bắt đầu rồi, mời mọi người nhanh vào trong.",
+      "analysis_vi": "要开始了 báo sắp xảy ra. 进去 hướng vào phòng/khu vực bên trong.",
+      "highlight": [
+        "进去"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "dc92b6b1-e989-4b55-949b-64e539d894dc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4e43f5c8-477a-4d90-bd06-eb35032dab91",
+      "order": 3,
+      "zh": "会议室里已经坐满了人，师傅把展览资料送进去以后，就马上出来了。",
+      "pinyin": "Huìyìshì lǐ yǐjīng zuò mǎn le rén, shīfu bǎ zhǎnlǎn zīliào sòng jìnqù yǐhòu, jiù mǎshàng chūlái le.",
+      "vi": "Trong phòng họp đã ngồi kín người, sau khi bác/tài xế/thợ đưa tài liệu triển lãm vào trong đó thì lập tức đi ra.",
+      "analysis_vi": "送进去 = đưa vào trong đó. 出来 = đi ra về phía người nói/ra ngoài. 马上 = ngay lập tức.",
+      "highlight": [
+        "进去"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "dc92b6b1-e989-4b55-949b-64e539d894dc"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong lớp học, giáo viên đang ở ngoài cửa có thể nói 进去吧. Nếu giáo viên đang ở trong lớp gọi học sinh ngoài cửa, sẽ nói 进来吧. Điểm nhìn của người nói quyết định 来 / 去.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "37ae051e-9ae7-4773-9c2e-dd15d47db852",
+      "order": 1,
+      "rule_vi": "进去 là vào đó; 进来 là vào đây. Sai 来/去 là sai điểm nhìn.",
+      "natural_examples": [
+        {
+          "zh": "进去 = vào trong đó.",
+          "pinyin": "进来 = vào đây.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "进来 = vào đây.",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "你进去。",
+          "pinyin": "Người nói ở trong phòng:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Chốt cặp:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "进去",
+    "back": "đi vào trong đó",
+    "hint": "jìnqù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dc92b6b1-e989-4b55-949b-64e539d894dc",
+    "source_lesson_vocab_id": null
+  }
+}

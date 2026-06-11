@@ -1,0 +1,175 @@
+{
+  "id": "b1425a76-52c7-4e9f-b629-136446949d38",
+  "type": "deep_vocabulary_item",
+  "order": 75,
+  "hanzi": "计划",
+  "pinyin": "jìhuà",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Kế hoạch và dự án"
+  ],
+  "meaning": {
+    "hanviet": "Kế hoạch",
+    "meaning_vi": "kế hoạch; lên kế hoạch",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kế hoạch",
+      "lên kế hoạch"
+    ],
+    "short_definition_vi": "kế hoạch; lên kế hoạch",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: kế hoạch; lên kế hoạch.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Kế hoạch và dự án",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "计",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "划",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "计划 trong bài được học theo nghĩa trọng tâm: kế hoạch; lên kế hoạch.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: kế hoạch; lên kế hoạch.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打算",
+        "pinyin": "dǎsuàn",
+        "meaning_vi": "dự định",
+        "difference_vi": "打算 khẩu ngữ và nhẹ hơn; 计划 có tính tổ chức hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "10752cc7-30a9-450d-a26d-553d31290c26",
+      "order": 1,
+      "zh": "教授，这些和我们金星人的空间计划有没有联系？",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: kế hoạch; lên kế hoạch",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "37c41f53-a758-4a5d-860d-ed074d7bc2e0",
+      "order": 1,
+      "zh": "教授，这些和我们金星人的空间计划有没有联系？",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “计划” = kế hoạch; lên kế hoạch.",
+      "analysis_vi": "Câu này dùng “计划” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "计划"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b1425a76-52c7-4e9f-b629-136446949d38"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “计划” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "69949936-5105-4be8-beb2-f8dc30a90d05",
+      "order": 1,
+      "rule_vi": "Cần dùng “计划” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "计划",
+    "back": "kế hoạch; lên kế hoạch",
+    "hint": "jìhuà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Kế hoạch và dự án"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b1425a76-52c7-4e9f-b629-136446949d38",
+    "source_lesson_vocab_id": null
+  }
+}

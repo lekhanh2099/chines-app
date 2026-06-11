@@ -1,0 +1,393 @@
+{
+  "id": "e5592d0a-f42a-4ed0-b13f-d41ad328acbf",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "打（电话）",
+  "pinyin": "dǎ diànhuà",
+  "pos": {
+    "raw_vi": "Động từ / Cụm động từ",
+    "raw_cn": "动",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_01",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đả điện thoại",
+    "meaning_vi": "gọi điện thoại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gọi điện thoại"
+    ],
+    "short_definition_vi": "gọi điện thoại",
+    "textbook_focus_vi": "Bài 1 Quyển 2: 田芳去哪儿了",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "打",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được nguồn phân tích như bộ thủ/thành phần bộ thủ của chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "电",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "话",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "打 có bộ 扌, gốc liên quan đến động tác bằng tay. Nhưng trong tiếng Trung hiện đại, 打 mở rộng rất mạnh: 打电话 = gọi điện. 打球 = chơi bóng. 打车 = bắt xe/taxi. 打字 = gõ chữ. Logic nhớ: 打 + một hoạt động quen thuộc thường nghĩa là “thực hiện hoạt động đó”.",
+    "memory_tip_vi": "打 + một hoạt động quen thuộc thường nghĩa là “thực hiện hoạt động đó”.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打电话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gọi điện thoại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "接电话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghe/nhận điện thoại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "来电话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "có điện thoại gọi đến.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "联系",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "liên hệ/liên lạc, rộng hơn gọi điện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发短信",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gửi tin nhắn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我给她打电话。",
+      "Tôi gọi điện cho cô ấy.",
+      "她接电话了。",
+      "Cô ấy nghe máy rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c87c1ebc-7d80-4841-9ebb-857718583b74",
+      "order": 1,
+      "zh": "给他打电话",
+      "pinyin": "",
+      "vi": "gọi điện cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c706758-d6f0-47fb-846c-f80364349187",
+      "order": 2,
+      "zh": "打一个电话",
+      "pinyin": "",
+      "vi": "gọi một cuộc điện thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f5b23e2-1b36-4761-b382-019ed857691a",
+      "order": 3,
+      "zh": "再打一次电话",
+      "pinyin": "",
+      "vi": "gọi lại một lần nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb219539-5b0b-43f1-b15c-9fedbace7b64",
+      "order": 4,
+      "zh": "打不通电话",
+      "pinyin": "",
+      "vi": "gọi không thông máy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f228644-9978-4d91-b116-dd320dd32397",
+      "order": 5,
+      "zh": "打错电话",
+      "pinyin": "",
+      "vi": "gọi nhầm số",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f974147-b458-4b76-a37e-76d3014feb12",
+      "order": 6,
+      "zh": "打电话报名",
+      "pinyin": "",
+      "vi": "gọi điện đăng ký",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a3f97f7d-6cfe-432f-a83b-3126352eb142",
+      "order": 1,
+      "zh": "我给田芳打了一个电话。",
+      "pinyin": "Wǒ gěi Tián Fāng dǎ le yí ge diànhuà.",
+      "vi": "Tôi đã gọi cho Điền Phương một cuộc điện thoại.",
+      "analysis_vi": "给 + người + 打电话 là cấu trúc tự nhiên: gọi điện cho ai. 一个电话 là một cuộc gọi.",
+      "highlight": [
+        "打电话",
+        "打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5592d0a-f42a-4ed0-b13f-d41ad328acbf"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f5e1abc8-52d5-4f27-a850-2ef0f6bda751",
+      "order": 2,
+      "zh": "我想再给她打一次电话，可是一直打不通。",
+      "pinyin": "Wǒ xiǎng zài gěi tā dǎ yí cì diànhuà, kěshì yìzhí dǎ bù tōng.",
+      "vi": "Tôi muốn gọi lại cho cô ấy một lần nữa, nhưng mãi không gọi thông được.",
+      "analysis_vi": "再 dùng cho hành động sẽ làm tiếp. 打不通 là bổ ngữ khả năng phủ định: gọi không thông.",
+      "highlight": [
+        "打电话",
+        "打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5592d0a-f42a-4ed0-b13f-d41ad328acbf"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d5b42c4b-5ace-4d68-9215-b9a2243ad1ea",
+      "order": 3,
+      "zh": "手机快没电了，我刚想把电话打出去，屏幕就黑了，怎么也开不了机。",
+      "pinyin": "Shǒujī kuài méi diàn le, wǒ gāng xiǎng bǎ diànhuà dǎ chūqù, píngmù jiù hēi le, zěnme yě kāi bù liǎo jī.",
+      "vi": "Điện thoại sắp hết pin rồi, tôi vừa định gọi cuộc điện thoại đi thì màn hình tối đen, thế nào cũng không mở máy lên được.",
+      "analysis_vi": "Chủ-vị chính là 我想打电话, sau đó tình huống đổi: 屏幕黑了. 把电话打出去 là 把字句. 怎么也开不了机 là đại từ nghi vấn mở rộng + bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "打电话",
+        "打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e5592d0a-f42a-4ed0-b13f-d41ad328acbf"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung, gọi điện cho ai thường nói 给某人打电话, không nói theo logic tiếng Việt từng chữ. Đây là cụm phải học nguyên khối.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "52eeac1d-913d-475b-bc86-34ba33d59f78",
+      "order": 1,
+      "rule_vi": "Nói thiếu 给 khi muốn nêu người nhận cuộc gọi.",
+      "natural_examples": [
+        {
+          "zh": "Nói thiếu 给 khi muốn nêu người nhận cuộc gọi.",
+          "pinyin": "Tự nhiên:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我给老师打电话。",
+          "pinyin": "Wǒ gěi lǎoshī dǎ diànhuà.",
+          "vi": "Tôi gọi điện cho thầy/cô.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我打电话给老师。",
+          "pinyin": "Wǒ dǎ diànhuà gěi lǎoshī.",
+          "vi": "Tôi gọi điện cho thầy/cô.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nói thiếu 给 khi muốn nêu người nhận cuộc gọi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "打（电话）",
+    "back": "gọi điện thoại",
+    "hint": "dǎ diànhuà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_01",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "hanyu2/bai01/vocab/009",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e5592d0a-f42a-4ed0-b13f-d41ad328acbf",
+    "source_lesson_vocab_id": null
+  }
+}

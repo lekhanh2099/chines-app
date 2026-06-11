@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_f7fb1c5dd9d49fc4",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "证",
+  "pinyin": "zhèng",
+  "meaning_vi": "giấy chứng nhận; thẻ; giấy tờ chứng minh",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+    "type": "vocabulary_item",
+    "order": 29,
+    "hanzi": "证",
+    "pinyin": "zhèng",
+    "meaning_vi": "giấy chứng nhận; thẻ; giấy tờ chứng minh",
+    "meaning_en": "certificate; card",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "证",
+      "back": "zhèng — giấy chứng nhận; thẻ; giấy tờ chứng minh",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

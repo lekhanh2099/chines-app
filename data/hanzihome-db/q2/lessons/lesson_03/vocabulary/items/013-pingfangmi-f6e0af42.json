@@ -1,0 +1,388 @@
+{
+  "id": "14871841-b750-4507-8c21-eef0c071ec8c",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "平方米",
+  "pinyin": "píngfāngmǐ",
+  "pos": {
+    "raw_vi": "Danh từ / Đơn vị đo lường",
+    "raw_cn": "名词/量度单位",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "measurement"
+  ],
+  "meaning": {
+    "hanviet": "Bình phương mễ",
+    "meaning_vi": "mét vuông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mét vuông"
+    ],
+    "short_definition_vi": "mét vuông",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "measurement",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "平",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "干",
+            "hanviet": "can",
+            "meaning_vi": "nét ngang/phần nhìn thấy",
+            "position_vi": "trong chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bằng phẳng, bình thường, ngang bằng",
+        "modern_logic_vi": "平 gợi bằng phẳng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "方",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng; hình vuông; cách",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phương; vuông; cách",
+        "modern_logic_vi": "方 trong 平方 liên quan bình phương/diện tích.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "米",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "米",
+            "hanviet": "mễ",
+            "meaning_vi": "gạo; mét trong đo lường hiện đại",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gạo; mét",
+        "modern_logic_vi": "米 trong đo lường hiện đại là mét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "平方 là bình phương/đơn vị diện tích; 米 là mét; 平方米 là mét vuông.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "米",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Mét, đo chiều dài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "平方公里",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Kilomet vuông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "公里",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Kilomet.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "面积",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Diện tích.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "米",
+        "right": "平方米",
+        "meaning_vi": "米 đo chiều dài; 平方米 đo diện tích.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1818506a-e2cf-4eb5-a701-e166f785b706",
+      "order": 1,
+      "zh": "八十平方米",
+      "pinyin": "",
+      "vi": "80 mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "14264ab9-055b-41c2-a6a4-4b224046f177",
+      "order": 2,
+      "zh": "一百多平方米",
+      "pinyin": "",
+      "vi": "hơn 100 mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28d1c020-2ed3-4347-ac27-a86d969e07d8",
+      "order": 3,
+      "zh": "每平方米",
+      "pinyin": "",
+      "vi": "mỗi mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "febda55a-90cd-4462-b7e6-60cb0bdc3b72",
+      "order": 4,
+      "zh": "房子有多少平方米",
+      "pinyin": "",
+      "vi": "nhà có bao nhiêu mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50f095fd-11ae-4fb0-bbd7-9ef2d426ef75",
+      "order": 5,
+      "zh": "面积是九十平方米",
+      "pinyin": "",
+      "vi": "diện tích là 90 mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a2dabc9-990d-4989-847b-c6b14695acbb",
+      "order": 6,
+      "zh": "三十平方米的客厅",
+      "pinyin": "",
+      "vi": "phòng khách 30 mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ec253c3-8568-4b9e-8449-71d0dea5ea1b",
+      "order": 7,
+      "zh": "十平方米的卧室",
+      "pinyin": "",
+      "vi": "phòng ngủ 10 mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2fb21e7-0c99-4823-ba69-0544873318b4",
+      "order": 8,
+      "zh": "一百二十平方米的房子",
+      "pinyin": "",
+      "vi": "căn nhà 120 mét vuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f1d4f8da-e4c3-4b34-8f1a-b34967dde580",
+      "order": 1,
+      "zh": "这套房子有九十平方米。",
+      "pinyin": "Zhè tào fángzi yǒu jiǔshí píngfāngmǐ.",
+      "vi": "Căn nhà này có 90 mét vuông.",
+      "analysis_vi": "有 + số lượng + 平方米 dùng để nói diện tích nhà.",
+      "highlight": [
+        "平方米"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "14871841-b750-4507-8c21-eef0c071ec8c"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "80ab977a-b264-4b23-98ab-1f160f767891",
+      "order": 2,
+      "zh": "这间卧室才十平方米，太小了。",
+      "pinyin": "Zhè jiān wòshì cái shí píngfāngmǐ, tài xiǎo le.",
+      "vi": "Phòng ngủ này mới có 10 mét vuông, nhỏ quá.",
+      "analysis_vi": "才 + số lượng nhấn số lượng ít hơn kỳ vọng.",
+      "highlight": [
+        "平方米"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "14871841-b750-4507-8c21-eef0c071ec8c"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e0cc515-ba70-403d-b426-d437ef9ff06f",
+      "order": 3,
+      "zh": "客厅只有十五平方米，但是阳光很好，所以看起来不小。",
+      "pinyin": "Kètīng zhǐ yǒu shíwǔ píngfāngmǐ, dànshì yángguāng hěn hǎo, suǒyǐ kàn qǐlai bù xiǎo.",
+      "vi": "Phòng khách chỉ có 15 mét vuông, nhưng ánh nắng rất tốt, nên nhìn có vẻ không nhỏ.",
+      "analysis_vi": "只有 nhấn số lượng ít; 看起来 là nhìn có vẻ.",
+      "highlight": [
+        "平方米"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "14871841-b750-4507-8c21-eef0c071ec8c"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Cùng 80m², nhà có bố cục tốt, ánh sáng tốt, ít góc chết thì cảm giác rộng hơn.",
+    "tags": [
+      "measurement"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "13f021a3-9e6e-4d3a-b1b5-812a103cff29",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 米 và 平方米.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这条路有一百米。",
+          "pinyin": "Zhè tiáo lù yǒu yì bǎi mǐ.",
+          "vi": "Con đường này dài 100 mét.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这套房子有一百平方米。",
+          "pinyin": "Zhè tào fángzi yǒu yì bǎi píngfāngmǐ.",
+          "vi": "Căn nhà này có 100 mét vuông.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "米 đo chiều dài; 平方米 đo diện tích.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "平方米",
+    "back": "mét vuông",
+    "hint": "píngfāngmǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "measurement"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "14871841-b750-4507-8c21-eef0c071ec8c",
+    "source_lesson_vocab_id": null
+  }
+}

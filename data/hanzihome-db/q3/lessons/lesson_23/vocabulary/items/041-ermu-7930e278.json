@@ -1,0 +1,370 @@
+{
+  "id": "8c454703-d1fc-4c26-bddf-fe0eb29d422b",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "耳目",
+  "pinyin": "ěrmù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhĩ mục",
+    "meaning_vi": "tai mắt; điều nghe thấy nhìn thấy; cảm nhận nghe nhìn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tai mắt",
+      "điều nghe thấy nhìn thấy",
+      "cảm nhận nghe nhìn"
+    ],
+    "short_definition_vi": "tai mắt; điều nghe thấy nhìn thấy; cảm nhận nghe nhìn",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về thành ngữ, cảm nhận.",
+    "register_vi": "hơi sách vở / chuyên môn",
+    "usage_domain_vi": "thành ngữ, cảm nhận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "耳",
+        "lishu_vi": "nhĩ",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 耳 trong từ 耳目; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 耳目, chữ 耳 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "目",
+        "lishu_vi": "mục",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 目 trong từ 耳目; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt, nhìn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "目 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt, nhìn",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "目 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 耳目, chữ 目 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "耳目 trong bài được nhớ theo nghĩa hiện đại: tai mắt; cảm nhận nghe nhìn.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 耳目一新 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "视听",
+        "pinyin": "shìtīng",
+        "meaning_vi": "nghe nhìn",
+        "difference_vi": "nghe nhìn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "见闻",
+        "pinyin": "jiànwén",
+        "meaning_vi": "những điều thấy nghe, trải nghiệm",
+        "difference_vi": "những điều thấy nghe, trải nghiệm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nói cơ quan cơ thể đời thường dùng 耳朵和眼睛, không dùng 耳目."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f2b641b7-d50b-42e6-80cd-39253e3eea71",
+      "order": 1,
+      "zh": "耳目一新",
+      "pinyin": "",
+      "vi": "cảm thấy mới mẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "370d3ecc-a79c-4d82-b60b-a40164381d1a",
+      "order": 2,
+      "zh": "使人耳目一新",
+      "pinyin": "",
+      "vi": "khiến người ta thấy mới mẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99a697fc-d5c5-4965-8b12-bc7f499cd449",
+      "order": 3,
+      "zh": "令人耳目一新",
+      "pinyin": "",
+      "vi": "làm người ta thấy mới lạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "722f70ee-640f-4d07-a075-e9d041f8b28a",
+      "order": 4,
+      "zh": "开阔耳目",
+      "pinyin": "",
+      "vi": "mở rộng tai mắt/tầm nhìn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7fef5ac1-0ff1-4266-a574-c23847a828df",
+      "order": 5,
+      "zh": "耳目所及",
+      "pinyin": "",
+      "vi": "trong phạm vi nghe nhìn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3c690fd0-b94d-4c29-b671-9d32ae48f2d3",
+      "order": 1,
+      "zh": "这个网站的设计让人耳目一新。",
+      "pinyin": "",
+      "vi": "tai mắt; điều nghe thấy nhìn thấy; cảm nhận nghe nhìn",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "耳目"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8c454703-d1fc-4c26-bddf-fe0eb29d422b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bfce6e5b-1203-40de-b8fd-4ad4f751a40b",
+      "order": 2,
+      "zh": "这个词语“耳目”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 耳目 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "耳目"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8c454703-d1fc-4c26-bddf-fe0eb29d422b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a53c852f-2a95-4d15-b0fa-a50ef0b529a4",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“耳目”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 耳目 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "耳目"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8c454703-d1fc-4c26-bddf-fe0eb29d422b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "耳目一新 nên học nguyên khối, nghĩa là thấy rất mới mẻ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2e8fca69-0815-494a-b779-0172a4c6e627",
+      "order": 1,
+      "rule_vi": "Nói cơ quan cơ thể đời thường dùng 耳朵和眼睛, không dùng 耳目.",
+      "natural_examples": [
+        {
+          "zh": "我的耳朵和眼睛不舒服。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我的耳目疼。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我的耳目疼。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的耳朵和眼睛不舒服。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Nói cơ quan cơ thể đời thường dùng 耳朵和眼睛, không dùng 耳目.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "耳目",
+    "back": "tai mắt; điều nghe thấy nhìn thấy; cảm nhận nghe nhìn",
+    "hint": "ěrmù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8c454703-d1fc-4c26-bddf-fe0eb29d422b",
+    "source_lesson_vocab_id": null
+  }
+}

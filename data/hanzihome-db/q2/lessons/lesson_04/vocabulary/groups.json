@@ -1,0 +1,79 @@
+[
+  {
+    "id": "0f0f06cd-d3be-4e03-9cc8-0106a54fa79d",
+    "order": 1,
+    "title_vi": "Thi cử / bài làm / kết quả",
+    "words": [
+      "考试",
+      "题",
+      "道",
+      "完",
+      "成绩",
+      "答",
+      "作业"
+    ],
+    "notes": []
+  },
+  {
+    "id": "a192e9ed-6b06-4f19-a69c-7b74a73f2957",
+    "order": 2,
+    "title_vi": "Ngôn ngữ / câu chữ / đọc viết",
+    "words": [
+      "句子",
+      "词",
+      "念",
+      "页",
+      "回信",
+      "故事"
+    ],
+    "notes": []
+  },
+  {
+    "id": "2a4902ec-1d51-46cb-a268-69159f8c3628",
+    "order": 3,
+    "title_vi": "Đánh giá đúng sai / kết quả hành động",
+    "words": [
+      "成",
+      "合上",
+      "打开"
+    ],
+    "notes": []
+  },
+  {
+    "id": "9abfd0a1-e764-4396-a11e-c310dd0874c4",
+    "order": 4,
+    "title_vi": "Khẩu ngữ / phản ứng cảm xúc",
+    "words": [
+      "干什么",
+      "啥",
+      "笨蛋",
+      "笨",
+      "糟糕",
+      "有意思"
+    ],
+    "notes": []
+  },
+  {
+    "id": "3e6cdf5e-666f-449e-aef9-e8ad04c37d9c",
+    "order": 5,
+    "title_vi": "Thời gian / tình huống / xử lý việc",
+    "words": [
+      "夜",
+      "叶",
+      "页",
+      "于是",
+      "必须",
+      "办法"
+    ],
+    "notes": []
+  },
+  {
+    "id": "53d97d6a-7f7d-4aee-b9bf-650356ab9b3a",
+    "order": 6,
+    "title_vi": "Tên riêng",
+    "words": [
+      "安娜"
+    ],
+    "notes": []
+  }
+]

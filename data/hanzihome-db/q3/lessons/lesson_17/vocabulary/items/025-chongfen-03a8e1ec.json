@@ -1,0 +1,253 @@
+{
+  "id": "fdae06c5-5b01-458f-815d-8bf1d2308b49",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "充分",
+  "pinyin": "chōngfèn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "sung phân",
+    "meaning_vi": "đầy đủ, sung túc; triệt để",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đầy đủ",
+      "sung túc",
+      "triệt để"
+    ],
+    "short_definition_vi": "đầy đủ, sung túc",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "充",
+        "lishu_vi": "sung",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đầy, đủ, lấp đầy",
+        "modern_logic_vi": "đầy, đủ, lấp đầy",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "分",
+        "lishu_vi": "phân",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "八",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刀",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia, phần, mức độ",
+        "modern_logic_vi": "chia, phần, mức độ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "充 là đầy; 分 là phần/mức độ; 充分 là đủ mức/đủ phần.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 充分准备.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "足够",
+        "pinyin": "zúgòu",
+        "meaning_vi": "đủ",
+        "difference_vi": "足够 khẩu ngữ và rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "充足",
+        "pinyin": "chōngzú",
+        "meaning_vi": "dồi dào/đủ nhiều",
+        "difference_vi": "充足 thường dùng với thời gian, tiền bạc, ánh sáng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不足",
+        "pinyin": "bùzú",
+        "meaning_vi": "không đủ",
+        "difference_vi": "trái nghĩa",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "988e5300-515c-488e-a2f2-ed7bf24c1ac3",
+      "order": 1,
+      "zh": "充分准备",
+      "pinyin": "chōngfèn zhǔnbèi",
+      "vi": "chuẩn bị đầy đủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09ef4cd8-49c4-445a-85ad-411f088db0ac",
+      "order": 2,
+      "zh": "充分利用时间",
+      "pinyin": "chōngfèn lìyòng shíjiān",
+      "vi": "tận dụng thời gian đầy đủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "379daf96-b854-4bf5-946b-4d4ded9015f3",
+      "order": 3,
+      "zh": "理由充分",
+      "pinyin": "lǐyóu chōngfèn",
+      "vi": "lý do đầy đủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0ccc7504-5e21-4154-8c98-4a37f47bf306",
+      "order": 1,
+      "zh": "他做了充分的准备。",
+      "pinyin": "Tā zuò le chōngfèn de zhǔnbèi.",
+      "vi": "Anh ấy đã chuẩn bị đầy đủ.",
+      "analysis_vi": "充分的准备 là cụm danh từ tự nhiên.",
+      "highlight": [
+        "充分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fdae06c5-5b01-458f-815d-8bf1d2308b49"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8cf88978-3f40-4a55-9590-b0224cee4465",
+      "order": 2,
+      "zh": "他把教案改了三遍，觉得准备得很充分。",
+      "pinyin": "Tā bǎ jiào’àn gǎi le sān biàn, juéde zhǔnbèi de hěn chōngfèn.",
+      "vi": "Anh ấy sửa giáo án ba lần và thấy chuẩn bị rất đầy đủ.",
+      "analysis_vi": "准备得很充分 là bổ ngữ trình độ.",
+      "highlight": [
+        "充分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fdae06c5-5b01-458f-815d-8bf1d2308b49"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "充分准备 là cụm rất hay trong thi cử, phỏng vấn, thuyết trình.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "90e8ff1b-7e32-42cd-a684-c792290e133f",
+      "order": 1,
+      "rule_vi": "Với 'chuẩn bị', ưu tiên 充分准备, không nói 充足准备 như lựa chọn chính.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "充分",
+    "back": "đầy đủ, sung túc; triệt để",
+    "hint": "chōngfèn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fdae06c5-5b01-458f-815d-8bf1d2308b49",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "id": "75cbe9c2-8be6-48dd-8808-a63c073f0f29",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "广播",
+  "pinyin": "guǎngbō",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Quảng bá",
+    "meaning_vi": "phát thanh; phát sóng; chương trình phát thanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phát thanh; phát sóng; chương trình phát thanh"
+    ],
+    "short_definition_vi": "phát thanh; phát sóng; chương trình phát thanh",
+    "textbook_focus_vi": "phát thanh; phát sóng; chương trình phát thanh",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "广",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm/quảng",
+            "meaning_vi": "mái/rộng",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "广 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm/quảng",
+              "meaning_vi": "mái/rộng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "rộng/quảng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "播",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "番",
+            "hanviet": "phiên",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "gieo/phát/truyền phát",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "truyền phát rộng rãi âm thanh/thông tin",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d65f26ed-59e4-4c5a-993f-b1f006a2fdae",
+      "order": 1,
+      "zh": "听广播",
+      "pinyin": "",
+      "vi": "nghe phát thanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "21e66a9d-98bf-46b1-b104-51cb128cb7f2",
+      "order": 2,
+      "zh": "广播节目",
+      "pinyin": "",
+      "vi": "chương trình phát thanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "92aa0e9c-7464-4cb5-b17f-8846005ebbb1",
+      "order": 3,
+      "zh": "学校广播",
+      "pinyin": "",
+      "vi": "loa trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1900cbc9-8c78-478a-911f-14b11858016c",
+      "order": 4,
+      "zh": "广播通知",
+      "pinyin": "",
+      "vi": "thông báo qua loa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fde24d05-0ba6-42df-afa7-cd3f0dc00bbb",
+      "order": 5,
+      "zh": "广播电台",
+      "pinyin": "",
+      "vi": "đài phát thanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "23aa1629-2f40-404e-89b7-00a2e7a5fda3",
+      "order": 1,
+      "zh": "我每天早上听广播。",
+      "pinyin": "Wǒ měitiān zǎoshang tīng guǎngbō.",
+      "vi": "Tôi nghe phát thanh mỗi sáng.",
+      "analysis_vi": "听广播 là collocation cơ bản.",
+      "highlight": [
+        "广播"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "75cbe9c2-8be6-48dd-8808-a63c073f0f29"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "129cea5d-5512-4d25-aea8-5a10519025ec",
+      "order": 2,
+      "zh": "如果不了解广播，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě guǎngbō, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 广播, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "广播"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "75cbe9c2-8be6-48dd-8808-a63c073f0f29"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d82306a-0b9b-43bc-a032-ffca8528f0fa",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解广播在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě guǎngbō zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 广播 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "广播"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "75cbe9c2-8be6-48dd-8808-a63c073f0f29"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "广播 có thể là radio hoặc hệ thống loa công cộng ở trường, ga tàu, nhà hát.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2d8b8cd6-5a39-4bba-8717-c31896981283",
+      "order": 1,
+      "rule_vi": "Không nhầm 广播 với 播客; podcast là 播客。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "广播",
+    "back": "phát thanh; phát sóng; chương trình phát thanh",
+    "hint": "guǎngbō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "75cbe9c2-8be6-48dd-8808-a63c073f0f29",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "id": "0fd80f01-c916-4b5b-8791-039a9b1d730b",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "锦标赛",
+  "pinyin": "jǐnbiāosài",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "event_level"
+  ],
+  "meaning": {
+    "hanviet": "cẩm tiêu tái",
+    "meaning_vi": "giải vô địch, giải tranh cúp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giải vô địch, giải tranh cúp"
+    ],
+    "short_definition_vi": "giải vô địch, giải tranh cúp",
+    "textbook_focus_vi": "giải vô địch, giải tranh cúp",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "锦",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "钅 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "帛",
+            "hanviet": "bạch",
+            "meaning_vi": "lụa/vải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấm, đẹp/lộng lẫy",
+        "modern_logic_vi": "锦 trong 锦标赛 gắn với danh hiệu/giải thưởng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "标",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "示",
+            "hanviet": "thị",
+            "meaning_vi": "dấu hiệu/thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dấu hiệu, tiêu chuẩn, mục tiêu",
+        "modern_logic_vi": "标 gợi tiêu chuẩn/dấu mốc/danh hiệu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "赛",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tài vật/giải thưởng",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền, tài vật",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thi đấu, cạnh tranh",
+        "modern_logic_vi": "赛 là thi đấu/cạnh tranh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "锦标赛 = cuộc thi tranh danh hiệu/giải thưởng cao, thường là thể thao.",
+    "memory_tip_vi": "锦标赛 = cuộc thi tranh danh hiệu/giải thưởng cao, thường là thể thao.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "比赛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trận đấu/cuộc thi nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "联赛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giải đấu nhiều vòng/league",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "决赛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trận chung kết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冠军赛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giải/trận tranh chức vô địch",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "139809f3-756f-4f0b-8274-d481669e3b51",
+      "order": 1,
+      "zh": "世界锦标赛",
+      "pinyin": "",
+      "vi": "giải vô địch thế giới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "caa43b2a-797b-45b1-a6f5-47331ed34ec5",
+      "order": 2,
+      "zh": "欧洲锦标赛",
+      "pinyin": "",
+      "vi": "giải vô địch châu Âu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7b5a64a-73ee-488d-a644-a7742cc824c9",
+      "order": 3,
+      "zh": "足球锦标赛",
+      "pinyin": "",
+      "vi": "giải vô địch bóng đá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a8fbd037-788f-4be9-8449-badfd9ecc5b4",
+      "order": 4,
+      "zh": "参加锦标赛",
+      "pinyin": "",
+      "vi": "tham gia giải vô địch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70ef5510-3b1c-470f-b245-56e16af04861",
+      "order": 5,
+      "zh": "赢得锦标赛",
+      "pinyin": "",
+      "vi": "giành chức vô địch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ff7b7b58-a9d2-497d-a35c-5ec07ab2a318",
+      "order": 1,
+      "zh": "他参加了欧洲锦标赛。",
+      "pinyin": "",
+      "vi": "Anh ấy đã tham gia giải vô địch châu Âu.",
+      "analysis_vi": "参加锦标赛 là cụm tự nhiên.",
+      "highlight": [
+        "锦标赛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0fd80f01-c916-4b5b-8791-039a9b1d730b"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2f3b36e5-d291-4335-b9e7-4af96441f382",
+      "order": 2,
+      "zh": "这次锦标赛的水平很高。",
+      "pinyin": "",
+      "vi": "Trình độ của giải vô địch lần này rất cao.",
+      "analysis_vi": "水平 đánh giá chất lượng chuyên môn.",
+      "highlight": [
+        "锦标赛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0fd80f01-c916-4b5b-8791-039a9b1d730b"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "锦标赛 thường dùng trong ngôn ngữ thể thao/báo chí.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3f2ac39b-e5b0-485f-9025-25e1c29a1e2b",
+      "order": 1,
+      "rule_vi": "Không dịch mọi “cuộc thi” thành 锦标赛; thi hát thường là 歌唱比赛.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "歌唱比赛",
+          "pinyin": "",
+          "vi": "cuộc thi hát",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "锦标赛",
+    "back": "giải vô địch, giải tranh cúp",
+    "hint": "jǐnbiāosài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "event_level"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0fd80f01-c916-4b5b-8791-039a9b1d730b",
+    "source_lesson_vocab_id": null
+  }
+}

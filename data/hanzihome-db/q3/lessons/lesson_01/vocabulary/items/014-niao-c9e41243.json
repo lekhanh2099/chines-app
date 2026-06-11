@@ -1,0 +1,311 @@
+{
+  "id": "89cb8854-a25d-4f1d-8254-e46120f11d1c",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "鸟",
+  "pinyin": "niǎo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "điểu",
+    "meaning_vi": "chim",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chim"
+    ],
+    "short_definition_vi": "chim",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: chim.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鸟",
+        "lishu_vi": "điểu",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "鸟",
+            "hanviet": "điểu",
+            "meaning_vi": "chim",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "鸟 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "鳥",
+              "radical_variant": "鸟",
+              "radical_name_vi": "bộ Điểu",
+              "radical_name_zh": "",
+              "hanviet": "điểu",
+              "meaning_vi": "chim",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chim",
+        "modern_logic_vi": "Chữ/bộ chỉ loài chim.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "鳥",
+          "radical_variant": "鸟",
+          "radical_name_vi": "bộ Điểu",
+          "radical_name_zh": "",
+          "hanviet": "điểu",
+          "meaning_vi": "chim",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "鸟 trong bài dùng theo nghĩa: chim.",
+    "memory_tip_vi": "Nhớ 鸟 qua văn cảnh 离家的时候: chim.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小鸟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chim nhỏ, gợi con non",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸟儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sắc thái mềm/văn học hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "飞鸟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chim bay, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f5d025ff-c033-4948-a247-5c97998f556b",
+      "order": 1,
+      "zh": "一只鸟",
+      "pinyin": "",
+      "vi": "một con chim",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "663caedd-c8f7-4d3c-ae13-fbcdcc5e83c8",
+      "order": 2,
+      "zh": "小鸟",
+      "pinyin": "",
+      "vi": "chim nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b4e9c19-a060-43ae-b41b-a8854fe778c4",
+      "order": 3,
+      "zh": "鸟儿",
+      "pinyin": "",
+      "vi": "chim nhỏ/chim chóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e73c0215-ebd8-4bec-ae34-d4d00de72027",
+      "order": 4,
+      "zh": "鸟叫",
+      "pinyin": "",
+      "vi": "chim hót/kêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "366b1e47-a3f1-4d87-9c71-92d54af05945",
+      "order": 5,
+      "zh": "像小鸟一样",
+      "pinyin": "",
+      "vi": "giống như chim nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "24b885ea-81e8-43fe-b0e1-392b7b5eab73",
+      "order": 1,
+      "zh": "树上有一只小鸟。",
+      "pinyin": "",
+      "vi": "Trên cây có một con chim nhỏ.",
+      "analysis_vi": "Câu tồn hiện: địa điểm + 有 + sự vật.",
+      "highlight": [
+        "鸟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89cb8854-a25d-4f1d-8254-e46120f11d1c"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0484ffa0-a8e8-415e-ba57-9bef51bd7173",
+      "order": 2,
+      "zh": "我已经长大了，就像小鸟一样，该自己飞了。",
+      "pinyin": "",
+      "vi": "Con đã lớn rồi, giống như chim nhỏ, đã đến lúc tự bay.",
+      "analysis_vi": "像……一样 so sánh hình ảnh.",
+      "highlight": [
+        "鸟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89cb8854-a25d-4f1d-8254-e46120f11d1c"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6979062a-c335-4dd2-bb1d-7282b725663f",
+      "order": 3,
+      "zh": "父母总想把孩子留在身边，可是孩子长大以后早晚都要像鸟儿一样飞出去。",
+      "pinyin": "",
+      "vi": "Bố mẹ luôn muốn giữ con bên cạnh nhưng con lớn rồi sớm muộn cũng phải bay ra ngoài như chim.",
+      "analysis_vi": "飞出去 là bổ ngữ xu hướng kép.",
+      "highlight": [
+        "鸟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89cb8854-a25d-4f1d-8254-e46120f11d1c"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "Chim non rời tổ là ẩn dụ quen thuộc cho con cái trưởng thành, rời gia đình.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e25bc244-35d0-46a9-8374-0d2c84914c68",
+      "order": 1,
+      "rule_vi": "鸟 là chim nói chung; gà/vịt/ngỗng thì dùng 鸡/鸭/鹅 khi nói cụ thể.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "鸟",
+    "back": "chim",
+    "hint": "niǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_014"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "89cb8854-a25d-4f1d-8254-e46120f11d1c",
+    "source_lesson_vocab_id": null
+  }
+}

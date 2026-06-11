@@ -1,0 +1,374 @@
+{
+  "id": "2dc41ddd-915e-4249-95e3-956fb347136b",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "人性",
+  "pinyin": "rénxìng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "nhân tính",
+    "meaning_vi": "bản tính con người, nhân tính",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bản tính con người",
+      "nhân tính"
+    ],
+    "short_definition_vi": "bản tính con người, nhân tính",
+    "textbook_focus_vi": "人性 là tầng bản chất/giá trị con người, không phải tính cách riêng lẻ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "人 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "人 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Trong từ “人性”, chữ “人” góp phần vào trường nghĩa: người",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "性",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm đứng",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, tâm lý, cảm xúc",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm đứng",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, tâm lý, cảm xúc",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "生",
+            "hanviet": "sinh",
+            "meaning_vi": "sinh, sống",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "生 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bản tính, tính chất",
+        "modern_logic_vi": "Trong từ “人性”, chữ “性” góp phần vào trường nghĩa: bản tính, tính chất",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "人性 là tầng bản chất/giá trị con người, không phải tính cách riêng lẻ.",
+    "memory_tip_vi": "人性 là tầng bản chất/giá trị con người, không phải tính cách riêng lẻ.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "性格",
+        "pinyin": "",
+        "meaning_vi": "tính cách cá nhân",
+        "difference_vi": "tính cách cá nhân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "人品",
+        "pinyin": "",
+        "meaning_vi": "phẩm chất của một người cụ thể",
+        "difference_vi": "phẩm chất của một người cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e5c9ffd0-d066-4a7f-b3cf-8f15c93234f9",
+      "order": 1,
+      "zh": "人性的美好",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46c9a9d2-c84b-4a4b-aaa1-01eae6d59946",
+      "order": 2,
+      "zh": "人性的弱点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aec7e5c4-da62-4855-b841-093289a26e20",
+      "order": 3,
+      "zh": "相信人性",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ad91fd1-bb61-4766-b079-3fc0150fdcf2",
+      "order": 4,
+      "zh": "对人性失望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5f2ebab5-59bb-40fb-b5f9-2ad1b366ccab",
+      "order": 1,
+      "zh": "这件事让他重新相信人性的美好。",
+      "pinyin": "",
+      "vi": "Chuyện này khiến anh ấy tin lại vào vẻ đẹp của nhân tính.",
+      "analysis_vi": "重新相信 nhấn phục hồi niềm tin.",
+      "highlight": [
+        "人性"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2dc41ddd-915e-4249-95e3-956fb347136b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b69505b-e09c-420a-84f3-476b8de9ca99",
+      "order": 2,
+      "zh": "他对人性有些失望。",
+      "pinyin": "",
+      "vi": "Anh ấy hơi thất vọng về nhân tính.",
+      "analysis_vi": "对……失望 là thất vọng với...",
+      "highlight": [
+        "人性"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2dc41ddd-915e-4249-95e3-956fb347136b"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "人性 là tầng bản chất/giá trị con người, không phải tính cách riêng lẻ.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "07801f4f-9c63-42ea-b4bd-7f95602175bd",
+      "order": 1,
+      "rule_vi": "Không nói 他的人性很开朗; phải nói 他的性格很开朗.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 他的人性很开朗; phải nói 他的性格很开朗.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "人性",
+    "back": "bản tính con người, nhân tính",
+    "hint": "rénxìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2dc41ddd-915e-4249-95e3-956fb347136b",
+    "source_lesson_vocab_id": null
+  }
+}

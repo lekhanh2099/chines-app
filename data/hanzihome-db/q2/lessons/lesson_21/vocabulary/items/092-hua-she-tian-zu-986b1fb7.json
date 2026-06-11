@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_94fbd8bb5e79ead3",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "画蛇添足",
+  "pinyin": "huà shé tiān zú",
+  "meaning_vi": "vẽ rắn thêm chân; làm thừa khiến hỏng việc",
+  "pos": "Thành ngữ",
+  "pos_detail": {
+    "vi": "Thành ngữ",
+    "cn": "成语",
+    "normalized": "idiom",
+    "schema_compatible_pos": "phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Nghĩa là làm thêm việc thừa khiến hỏng việc; dùng như vị ngữ/định ngữ trong câu.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+    "type": "vocabulary_item",
+    "order": 34,
+    "hanzi": "画蛇添足",
+    "pinyin": "huà shé tiān zú",
+    "meaning_vi": "vẽ rắn thêm chân; làm thừa khiến hỏng việc",
+    "meaning_en": "",
+    "pos": "Thành ngữ",
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "画蛇添足",
+      "back": "huà shé tiān zú — vẽ rắn thêm chân; làm thừa khiến hỏng việc",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_reading",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Thành ngữ",
+      "cn": "成语",
+      "normalized": "idiom",
+      "schema_compatible_pos": "phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Nghĩa là làm thêm việc thừa khiến hỏng việc; dùng như vị ngữ/định ngữ trong câu.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,345 @@
+{
+  "id": "c7981e0b-b1ad-4479-99d2-65651f4471f1",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "下次",
+  "pinyin": "xià cì",
+  "pos": {
+    "raw_vi": "Danh từ thời gian",
+    "raw_cn": "时间名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hạ thứ",
+    "meaning_vi": "lần sau",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lần sau"
+    ],
+    "short_definition_vi": "lần sau",
+    "textbook_focus_vi": "Âm Hán Việt: hạ thứ.",
+    "register_vi": "đời sống, giao tiếp, kế hoạch, nhắc nhở.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "下",
+        "lishu_vi": "hạ",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưới, sau trong chuỗi",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "次",
+        "lishu_vi": "thứ",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "lạnh, băng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "lạnh, băng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "lạnh, băng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "thiếu; há miệng/ngáp",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lần, lượt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 下次 = lần tiếp theo/lần sau.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 下次 khác 下个星期. 下次 là lần tới của sự kiện; 下个星期 là tuần sau.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "下次",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lần sau.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "下回",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lần sau, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "下一次",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lần tiếp theo, rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以后",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sau này.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "下个星期",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tuần sau.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 下次见 = lần sau gặp.",
+      "→ 以后再说 = sau này nói tiếp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "221e0e53-8a25-405e-b6f4-e7750390f217",
+      "order": 1,
+      "zh": "下次见",
+      "pinyin": "",
+      "vi": "lần sau gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8a6507c-92ef-46af-963c-84ac6afa8439",
+      "order": 2,
+      "zh": "下次再来",
+      "pinyin": "",
+      "vi": "lần sau lại đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c9e930a-38f1-489b-ba40-40088fbdf164",
+      "order": 3,
+      "zh": "下次注意",
+      "pinyin": "",
+      "vi": "lần sau chú ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1a09ac6-206a-43e3-903a-86596020ff52",
+      "order": 4,
+      "zh": "下次别忘了",
+      "pinyin": "",
+      "vi": "lần sau đừng quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75bdf77a-6fe6-4ffa-8b98-3771b110f145",
+      "order": 5,
+      "zh": "下次有机会",
+      "pinyin": "",
+      "vi": "lần sau nếu có cơ hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0ea63859-0c92-4a51-96dc-e41b8aadd63e",
+      "order": 1,
+      "zh": "下次见！",
+      "pinyin": "Xià cì jiàn!",
+      "vi": "Lần sau gặp nhé!",
+      "analysis_vi": "Câu chào tạm biệt rất gọn, tự nhiên.",
+      "highlight": [
+        "下次"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7981e0b-b1ad-4479-99d2-65651f4471f1"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a67835e6-bc97-4042-a2b0-fba17794e830",
+      "order": 2,
+      "zh": "你下次可别忘了带申请材料。",
+      "pinyin": "Nǐ xià cì kě bié wàng le dài shēnqǐng cáiliào.",
+      "vi": "Lần sau bạn nhất định đừng quên mang tài liệu đăng ký đó.",
+      "analysis_vi": "可别…… nhấn mạnh lời dặn. 下次 đặt trước hành động để chỉ lần sau.",
+      "highlight": [
+        "下次"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7981e0b-b1ad-4479-99d2-65651f4471f1"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f9256fb6-2e05-44dd-827b-5d5305742da1",
+      "order": 3,
+      "zh": "如果下次再参加这种正式宴会，你最好先问清楚谁应该坐上座，谁应该先敬酒，别又把顺序弄错了。",
+      "pinyin": "Rúguǒ xià cì zài cānjiā zhè zhǒng zhèngshì yànhuì, nǐ zuìhǎo xiān wèn qīngchu shéi yīnggāi zuò shàngzuò, shéi yīnggāi xiān jìng jiǔ, bié yòu bǎ shùnxù nòng cuò le.",
+      "vi": "Nếu lần sau lại tham gia loại yến tiệc chính thức này, tốt nhất bạn nên hỏi rõ trước ai nên ngồi chỗ danh dự, ai nên mời rượu trước, đừng lại làm sai thứ tự.",
+      "analysis_vi": "如果下次…… nêu điều kiện thời gian. 谁应该…… là câu hỏi gián tiếp trong 问清楚. 把顺序弄错了 là 把字句 với kết quả sai.",
+      "highlight": [
+        "下次"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7981e0b-b1ad-4479-99d2-65651f4471f1"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "下次注意 là câu rất hay dùng khi nhắc lỗi nhẹ: “lần sau chú ý nhé”. Nó mềm hơn trách trực tiếp, hợp với văn hóa giữ thể diện.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ff4c8716-7401-4f82-9ec4-b65e8d7b575a",
+      "order": 1,
+      "rule_vi": "Nhầm 下次 với 以后.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "下次我请你吃饭。 Xià cì wǒ qǐng nǐ chīfàn. Lần sau tôi mời bạn ăn cơm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "下次",
+    "back": "lần sau",
+    "hint": "xià cì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c7981e0b-b1ad-4479-99d2-65651f4471f1",
+    "source_lesson_vocab_id": null
+  }
+}

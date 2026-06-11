@@ -1,0 +1,205 @@
+{
+  "id": "1b7e7ef9-bec9-4239-96ed-086e42964b5b",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "钳子",
+  "pinyin": "qiánzi",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kiềm tử",
+    "meaning_vi": "cái kìm; kẹp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cái kìm",
+      "kẹp"
+    ],
+    "short_definition_vi": "cái kìm; kẹp",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "钳",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "甘",
+            "hanviet": "cam",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kìm; kẹp",
+        "modern_logic_vi": "Có 钅 nên liên quan dụng cụ kim loại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố danh từ",
+        "modern_logic_vi": "Trong 钳子, 子 là hậu tố danh từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "钳子 = cái kìm; kẹp.",
+    "memory_tip_vi": "",
+    "warning_vi": "Lượng từ tự nhiên là 一把钳子, không phải 一个钳子.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0cfdc5dd-8173-4d98-b96c-17285d09a160",
+      "order": 1,
+      "zh": "钳子",
+      "pinyin": "",
+      "vi": "cái kìm; kẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5c753b1f-bef4-4dfa-8485-58318d95bfdf",
+      "order": 1,
+      "zh": "工具箱里有一把钳子。",
+      "pinyin": "Gōngjùxiāng lǐ yǒu yì bǎ qiánzi.",
+      "vi": "Trong hộp dụng cụ có một cái kìm.",
+      "analysis_vi": "Lượng từ tự nhiên là 一把钳子, không phải 一个钳子.",
+      "level": "basic",
+      "highlight": [
+        "钳子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1b7e7ef9-bec9-4239-96ed-086e42964b5b"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ba840b73-3ea9-4855-ba02-d7b075986b12",
+      "kind": "usage",
+      "text_vi": "Lượng từ tự nhiên là 一把钳子, không phải 一个钳子.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "钳子",
+    "back": "cái kìm; kẹp",
+    "hint": "qiánzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1b7e7ef9-bec9-4239-96ed-086e42964b5b",
+    "source_lesson_vocab_id": null
+  }
+}

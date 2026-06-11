@@ -1,0 +1,311 @@
+{
+  "id": "1b061a38-9ee6-4e8d-aa7f-c5d7f0a2c799",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "负责",
+  "pinyin": "fùzé",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词 / 形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phụ trách",
+    "meaning_vi": "phụ trách; chịu trách nhiệm; có trách nhiệm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phụ trách",
+      "chịu trách nhiệm",
+      "có trách nhiệm"
+    ],
+    "short_definition_vi": "phụ trách; chịu trách nhiệm; có trách nhiệm",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: trách nhiệm, công việc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "trách nhiệm, công việc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "负",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "vỏ sò, tiền của",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "贝 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò, tiền của",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "贝 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gánh, chịu",
+        "modern_logic_vi": "Trong từ 负责, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "责",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "vỏ sò, tiền của",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "贝 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò, tiền của",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "贝 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trách nhiệm, trách cứ",
+        "modern_logic_vi": "Trong từ 负责, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "负责 nên được học theo nghĩa hiện đại trong cụm/tình huống: phụ trách; chịu trách nhiệm; có trách nhiệm.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 由我负责.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "管理",
+        "pinyin": "guǎnlǐ",
+        "meaning_vi": "quản lý",
+        "difference_vi": "负责 nhấn trách nhiệm; 管理 nhấn điều hành/quản lý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d37f0afe-6138-4551-bf9f-a20009e2100e",
+      "order": 1,
+      "zh": "由我负责",
+      "pinyin": "",
+      "vi": "do tôi phụ trách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7dc23dbc-9718-421b-8721-c32f9e64498e",
+      "order": 2,
+      "zh": "负责修理",
+      "pinyin": "",
+      "vi": "phụ trách sửa chữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b213e8c9-cc7c-4333-8944-df2ece0aea1d",
+      "order": 3,
+      "zh": "不负责任",
+      "pinyin": "",
+      "vi": "vô trách nhiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d6d4f1a9-19b2-4573-a971-5f4f57ec7ecb",
+      "order": 1,
+      "zh": "这件事由我负责。",
+      "pinyin": "",
+      "vi": "Việc này do tôi phụ trách.",
+      "analysis_vi": "由 + người + 负责 là mẫu xương sống.",
+      "highlight": [
+        "负责"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1b061a38-9ee6-4e8d-aa7f-c5d7f0a2c799"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 负责 được dùng trong ngữ cảnh trách nhiệm, công việc; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3eeb2ebc-6551-4400-b0a8-5cbfcb0b721a",
+      "order": 1,
+      "rule_vi": "Không nói 我责任这个工作; nói 我负责这项工作.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 我责任这个工作; nói 我负责这项工作.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "负责",
+    "back": "phụ trách; chịu trách nhiệm; có trách nhiệm",
+    "hint": "fùzé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1b061a38-9ee6-4e8d-aa7f-c5d7f0a2c799",
+    "source_lesson_vocab_id": null
+  }
+}

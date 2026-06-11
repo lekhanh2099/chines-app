@@ -1,0 +1,325 @@
+{
+  "id": "d319454a-637e-414f-8c04-c1cead76905b",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "趁早",
+  "pinyin": "chènzǎo",
+  "pos": {
+    "raw_vi": "Phó từ / Cụm phó từ",
+    "raw_cn": "副词/副词性短语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "sấn tảo",
+    "meaning_vi": "nhân lúc còn sớm, càng sớm càng tốt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhân lúc còn sớm",
+      "càng sớm càng tốt"
+    ],
+    "short_definition_vi": "nhân lúc còn sớm, càng sớm càng tốt",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "趁",
+        "lishu_vi": "sấn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "走 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhân lúc, tranh thủ thời cơ",
+        "modern_logic_vi": "nhân lúc, tranh thủ thời cơ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi, chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "早",
+        "lishu_vi": "tảo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "十",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sớm, buổi sáng",
+        "modern_logic_vi": "sớm, buổi sáng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "趁 là nhân lúc; 早 là còn sớm; 趁早 là làm sớm trước khi muộn.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 趁早准备.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "早点儿",
+        "pinyin": "zǎodiǎnr",
+        "meaning_vi": "sớm một chút",
+        "difference_vi": "早点儿 mềm và khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "尽早",
+        "pinyin": "jǐnzǎo",
+        "meaning_vi": "càng sớm càng tốt",
+        "difference_vi": "尽早 trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "拖延",
+        "pinyin": "tuōyán",
+        "meaning_vi": "trì hoãn",
+        "difference_vi": "trái nghĩa",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "730dd614-3bc2-4c76-9e81-99fc5f8b3ada",
+      "order": 1,
+      "zh": "趁早准备",
+      "pinyin": "chènzǎo zhǔnbèi",
+      "vi": "chuẩn bị sớm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "42b24bba-32a3-445e-b0a1-325d4179ae46",
+      "order": 2,
+      "zh": "趁早报名",
+      "pinyin": "chènzǎo bàomíng",
+      "vi": "đăng ký sớm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "069235fe-233d-4f7a-9354-39f4f3dd9978",
+      "order": 3,
+      "zh": "趁早找个台阶儿下",
+      "pinyin": "chènzǎo zhǎo ge táijiēr xià",
+      "vi": "sớm tìm lối thoát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1fc4a59e-6747-4f44-955e-b867a79d4780",
+      "order": 1,
+      "zh": "你应该趁早准备试讲。",
+      "pinyin": "Nǐ yīnggāi chènzǎo zhǔnbèi shìjiǎng.",
+      "vi": "Bạn nên chuẩn bị giảng thử càng sớm càng tốt.",
+      "analysis_vi": "趁早 có sắc thái khuyên/cảnh báo.",
+      "highlight": [
+        "趁早"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d319454a-637e-414f-8c04-c1cead76905b"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d36a43d-cce9-430d-8b4f-9cc3fb621b3a",
+      "order": 2,
+      "zh": "与其明天慌忙找资料，不如今天趁早把教案写好。",
+      "pinyin": "Yǔqí míngtiān huāngmáng zhǎo zīliào, bùrú jīntiān chènzǎo bǎ jiào’àn xiě hǎo.",
+      "vi": "Thà hôm nay tranh thủ viết xong giáo án còn hơn mai cuống tìm tài liệu.",
+      "analysis_vi": "把教案写好 là 把 + kết quả.",
+      "highlight": [
+        "趁早"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d319454a-637e-414f-8c04-c1cead76905b"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "趁早 có giọng lo trước đi, đừng để hỏng việc.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "03416b16-5525-418f-8a8d-2b3004f9979b",
+      "order": 1,
+      "rule_vi": "趁早 không phải 早上; 我早上七点起床 chứ không nói 我趁早七点起床.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "趁早",
+    "back": "nhân lúc còn sớm, càng sớm càng tốt",
+    "hint": "chènzǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d319454a-637e-414f-8c04-c1cead76905b",
+    "source_lesson_vocab_id": null
+  }
+}

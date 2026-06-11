@@ -1,0 +1,243 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền tổng hợp",
+  "source_origin": "pdf_textbook_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_comprehension",
+      "order": 1,
+      "title": "阅读理解",
+      "title_vi": "Đọc hiểu",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "supplementary_vocab": [
+        {
+          "hanzi": "互相",
+          "pinyin": "hùxiāng",
+          "meaning_vi": "lẫn nhau; với nhau",
+          "pos": "Phó từ",
+          "pos_detail": {
+            "vi": "Phó từ",
+            "cn": "副词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "谈恋爱",
+          "pinyin": "tán liàn’ài",
+          "meaning_vi": "yêu đương; hẹn hò",
+          "pos": "Động từ li hợp",
+          "pos_detail": {
+            "vi": "Động từ li hợp",
+            "cn": "动宾式离合词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 谈 + tân ngữ 恋爱",
+            "usage_note_vi": "Có thể nói 谈过恋爱 / 谈了两年恋爱; nghĩa là yêu đương, hẹn hò.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "恋爱",
+          "pinyin": "liàn’ài",
+          "meaning_vi": "tình yêu; yêu đương",
+          "pos": "Động từ / Danh từ",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词/名词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb_noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "说谎",
+          "pinyin": "shuō huǎng",
+          "meaning_vi": "nói dối",
+          "pos": "Động từ li hợp",
+          "pos_detail": {
+            "vi": "Động từ li hợp",
+            "cn": "动宾式离合词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 说 + tân ngữ 谎",
+            "usage_note_vi": "Có thể nói 说过谎 / 说了一个谎; nghĩa là nói dối.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "老实",
+          "pinyin": "lǎoshi",
+          "meaning_vi": "thật thà; trung thực",
+          "pos": "Tính từ",
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "分手",
+          "pinyin": "fēn shǒu",
+          "meaning_vi": "chia tay",
+          "pos": "Động từ li hợp",
+          "pos_detail": {
+            "vi": "Động từ li hợp",
+            "cn": "动宾式离合词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 分 + tân ngữ 手",
+            "usage_note_vi": "Có thể nói 分了手 / 已经分手了; nghĩa là chia tay.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "大声",
+          "pinyin": "dà shēng",
+          "meaning_vi": "lớn tiếng; to tiếng",
+          "pos": "Phó từ",
+          "pos_detail": {
+            "vi": "Phó từ",
+            "cn": "副词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "今天上课，我们学习的语法是“动词 + 过”，老师要大家用这个语法互相问答。同学们问了很多问题，“你以前来过中国没有？”“吃过中国菜没有？”“看过中国电影没有？”等等。我问山本：“你谈过恋爱没有？”山本脸一红，说当然谈过。山本问我的问题是：“你说过谎没有？”我回答，当然说过。记得小时候，有一天我不想去上学了，就给老师打电话，说：“老师，我的小杰克病了，今天不能去上课了。”老师一听是我的声音，就问：“你是谁呀？”我说：“我是我爸爸。”",
+          "vi": "Hôm nay lên lớp, ngữ pháp chúng tôi học là “động từ + 过”, thầy/cô yêu cầu mọi người dùng ngữ pháp này hỏi đáp lẫn nhau. Các bạn hỏi rất nhiều câu như: “Trước đây bạn đã từng đến Trung Quốc chưa?”, “Đã từng ăn món Trung chưa?”, “Đã từng xem phim Trung Quốc chưa?” v.v. Tôi hỏi Yamamoto: “Bạn đã từng yêu chưa?” Yamamoto đỏ mặt, nói tất nhiên là từng rồi. Yamamoto hỏi tôi: “Bạn đã từng nói dối chưa?” Tôi trả lời, tất nhiên là từng. Nhớ hồi nhỏ, có một hôm tôi không muốn đi học, bèn gọi điện cho thầy/cô và nói: “Thưa thầy/cô, Jack bé nhỏ của em bị bệnh rồi, hôm nay không thể đi học.” Thầy/cô vừa nghe là giọng tôi liền hỏi: “Em là ai vậy?” Tôi nói: “Em là bố của em.”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "pinyin": "Jīntiān shàngkè, wǒmen xuéxí de yǔfǎ shì “dòngcí jiā guo”, lǎoshī yào dàjiā yòng zhège yǔfǎ hùxiāng wèndá. Tóngxuémen wèn le hěn duō wèntí, “Nǐ yǐqián lái guo Zhōngguó méiyǒu?” “Chī guo Zhōngguó cài méiyǒu?” “Kàn guo Zhōngguó diànyǐng méiyǒu?” děngděng. Wǒ wèn Shānběn: “Nǐ tán guo liàn’ài méiyǒu?” Shānběn liǎn yì hóng, shuō dāngrán tán guo. Shānběn wèn wǒ de wèntí shì: “Nǐ shuō guo huǎng méiyǒu?” Wǒ huídá, dāngrán shuō guo. Jìde xiǎo shíhou, yǒu yì tiān wǒ bù xiǎng qù shàngxué le, jiù gěi lǎoshī dǎ diànhuà, shuō: “Lǎoshī, wǒ de Xiǎo Jiékè bìng le, jīntiān bù néng qù shàngkè le.” Lǎoshī yì tīng shì wǒ de shēngyīn, jiù wèn: “Nǐ shì shéi ya?” Wǒ shuō: “Wǒ shì wǒ bàba.”",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "山本又问马丁说过谎没有。马丁说：“没有。山本，我是世界上最老实的人，从来不说谎。也没有谈过恋爱，要是你的男朋友跟你分手了，你就做我的女朋友吧。”",
+          "vi": "Yamamoto lại hỏi Martin đã từng nói dối chưa. Martin nói: “Chưa. Yamamoto, tôi là người thật thà nhất thế giới, chưa bao giờ nói dối. Cũng chưa từng yêu. Nếu bạn trai của bạn chia tay bạn, thì bạn làm bạn gái của tôi nhé.”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "pinyin": "Shānběn yòu wèn Mǎdīng shuō guo huǎng méiyǒu. Mǎdīng shuō: “Méiyǒu. Shānběn, wǒ shì shìjiè shàng zuì lǎoshi de rén, cónglái bù shuōhuǎng. Yě méiyǒu tán guo liàn’ài, yàoshi nǐ de nánpéngyou gēn nǐ fēn shǒu le, nǐ jiù zuò wǒ de nǚpéngyou ba.”",
+          "check_needed": false
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "麦克听了大声地对山本说：“山本，你别听他的，马丁正在说谎，他谈过三次恋爱！”",
+          "vi": "Mike nghe xong liền lớn tiếng nói với Yamamoto: “Yamamoto, bạn đừng nghe anh ta, Martin đang nói dối, anh ta đã từng yêu ba lần rồi!”",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+          ],
+          "pinyin": "Màikè tīng le dàshēng de duì Shānběn shuō: “Shānběn, nǐ bié tīng tā de, Mǎdīng zhèngzài shuōhuǎng, tā tán guo sān cì liàn’ài!”",
+          "check_needed": false
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "听了麦克的话，大家都笑了。马丁说：“听了麦克的话，你们就知道什么叫‘说谎’了。”",
+          "vi": "Nghe lời Mike nói, mọi người đều cười. Martin nói: “Nghe lời Mike nói xong, các bạn biết thế nào gọi là ‘nói dối’ rồi đó.”",
+          "grammar_refs": [],
+          "pinyin": "Tīng le Màikè de huà, dàjiā dōu xiào le. Mǎdīng shuō: “Tīng le Màikè de huà, nǐmen jiù zhīdào shénme jiào ‘shuōhuǎng’ le.”",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+          "question": "山本谈过恋爱没有？",
+          "answer": "谈过。",
+          "answer_vi": "Từng rồi.",
+          "evidence": [
+            {
+              "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+              "quote": "山本脸一红，说当然谈过。"
+            }
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "82b334af-11c3-4606-980f-154617982627",
+          "question": "“我”是谁？为什么说“我”说过谎？",
+          "answer": "“我”是讲这个故事的人。因为小时候有一次“我”不想上学，就给老师打电话，说自己的“小杰克”病了，还假装自己是爸爸。",
+          "answer_vi": "“Tôi” là người kể câu chuyện. Vì hồi nhỏ có lần “tôi” không muốn đi học nên gọi điện cho thầy/cô, nói “Tiểu Jack” của mình bị ốm, còn giả làm bố mình.",
+          "evidence": [
+            {
+              "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+              "quote": "我说：“我是我爸爸。”"
+            }
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
+          "question": "马丁说过谎吗？为什么？",
+          "answer": "说过。因为他刚说自己从来不说谎，也没有谈过恋爱，可是麦克说他正在说谎，他谈过三次恋爱。",
+          "answer_vi": "Từng rồi. Vì anh ấy vừa nói mình chưa từng nói dối và chưa từng yêu, nhưng Mike nói anh ấy đang nói dối, anh ấy đã từng yêu ba lần.",
+          "evidence": [
+            {
+              "paragraph_id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+              "quote": "马丁正在说谎，他谈过三次恋爱！"
+            }
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
+          "question": "你说过谎吗？什么时候？",
+          "answer": "说过。小时候有一次我没有做作业，就对老师说我把作业忘在家里了。",
+          "answer_vi": "Từng. Hồi nhỏ có một lần tôi không làm bài tập, bèn nói với thầy/cô là tôi để quên bài ở nhà.",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "reading.comprehension.v2",
+        "show_answer_after_submit": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "fe88ae19-e817-412d-ae7b-e95441c647e8",
+  "type": "deep_vocabulary_item",
+  "order": 61,
+  "hanzi": "抱",
+  "pinyin": "bào",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "bão",
+    "meaning_vi": "ôm, bế, giữ trong lòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ôm",
+      "bế",
+      "giữ trong lòng"
+    ],
+    "short_definition_vi": "ôm, bế, giữ trong lòng",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "抱",
+        "lishu_vi": "bão",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ôm",
+        "modern_logic_vi": "Trong từ này, 抱 góp phần vào nghĩa hiện đại: ôm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "抱 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 抱孩子.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khác 拿: 拿 là cầm, 抱 là ôm sát/ngang tay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c07b0e4d-1684-471e-a6ba-92537ca4376e",
+      "order": 1,
+      "zh": "抱孩子",
+      "pinyin": "",
+      "vi": "bế trẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4f7df8a-b455-4803-8918-b8720a620b05",
+      "order": 2,
+      "zh": "抱着日记",
+      "pinyin": "",
+      "vi": "ôm nhật ký",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1cdf65a4-6165-45c3-8630-d7f1952baaba",
+      "order": 3,
+      "zh": "抱住妈妈",
+      "pinyin": "",
+      "vi": "ôm chặt mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "abd05326-d47c-42f3-9c52-cbf3a95069db",
+      "order": 1,
+      "zh": "她抱着孩子坐在门口。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 抱 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 抱; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "抱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fe88ae19-e817-412d-ae7b-e95441c647e8"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 抱 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e0f07d8c-40ef-44f3-87ff-51d7ce7cfebc",
+      "order": 1,
+      "rule_vi": "Khác 拿: 拿 là cầm, 抱 là ôm sát/ngang tay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "抱",
+    "back": "ôm, bế, giữ trong lòng",
+    "hint": "bào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fe88ae19-e817-412d-ae7b-e95441c647e8",
+    "source_lesson_vocab_id": null
+  }
+}

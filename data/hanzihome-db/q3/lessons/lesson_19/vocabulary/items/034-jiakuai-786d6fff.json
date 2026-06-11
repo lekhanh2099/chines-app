@@ -1,0 +1,374 @@
+{
+  "id": "5780a730-b3a8-4a1a-aaf4-3d70b0b793ac",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "加快",
+  "pinyin": "jiākuài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "gia khoái",
+    "meaning_vi": "tăng nhanh, đẩy nhanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tăng nhanh",
+      "đẩy nhanh"
+    ],
+    "short_definition_vi": "tăng nhanh, đẩy nhanh",
+    "textbook_focus_vi": "加快 là làm cho nhanh hơn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "加",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "口 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thêm, tăng",
+        "modern_logic_vi": "Trong từ “加快”, chữ “加” góp phần vào trường nghĩa: thêm, tăng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "快",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm đứng",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, tâm lý, cảm xúc",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm đứng",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, tâm lý, cảm xúc",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhanh, vui",
+        "modern_logic_vi": "Trong từ “加快”, chữ “快” góp phần vào trường nghĩa: nhanh, vui",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "加快 là làm cho nhanh hơn.",
+    "memory_tip_vi": "加快 là làm cho nhanh hơn.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "加速",
+        "pinyin": "",
+        "meaning_vi": "tăng tốc, hơi kỹ thuật hơn",
+        "difference_vi": "tăng tốc, hơi kỹ thuật hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "快点儿",
+        "pinyin": "",
+        "meaning_vi": "nhanh lên, khẩu ngữ mệnh lệnh",
+        "difference_vi": "nhanh lên, khẩu ngữ mệnh lệnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7505ccd7-acc0-4759-aa58-605a7c271e40",
+      "order": 1,
+      "zh": "加快速度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b16d2c7-a9cf-489b-ae9a-439427fc06c2",
+      "order": 2,
+      "zh": "加快进度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08961f92-0613-41b8-a61f-61f8587105a0",
+      "order": 3,
+      "zh": "加快处理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6277486a-fdd6-4ebe-8d34-688eb95b1a37",
+      "order": 4,
+      "zh": "加快学习速度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7e58c658-c762-4c38-a1ed-e7862a8017c3",
+      "order": 1,
+      "zh": "我们要加快速度。",
+      "pinyin": "",
+      "vi": "Chúng ta phải tăng tốc độ.",
+      "analysis_vi": "加快速度 là cụm cố định.",
+      "highlight": [
+        "加快"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5780a730-b3a8-4a1a-aaf4-3d70b0b793ac"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f9654a11-9998-450c-b380-29d1d788c9ec",
+      "order": 2,
+      "zh": "他保证以后会加快信息处理的速度。",
+      "pinyin": "",
+      "vi": "Anh ấy bảo đảm sau này sẽ tăng tốc độ xử lý thông tin.",
+      "analysis_vi": "信息处理的速度 là cụm danh từ.",
+      "highlight": [
+        "加快"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5780a730-b3a8-4a1a-aaf4-3d70b0b793ac"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "加快 là làm cho nhanh hơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5f059b01-880b-464a-88f6-8364dbaa1523",
+      "order": 1,
+      "rule_vi": "Không nói 这个速度很加快; nói 速度很快 hoặc 加快速度.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 这个速度很加快; nói 速度很快 hoặc 加快速度.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "加快",
+    "back": "tăng nhanh, đẩy nhanh",
+    "hint": "jiākuài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5780a730-b3a8-4a1a-aaf4-3d70b0b793ac",
+    "source_lesson_vocab_id": null
+  }
+}

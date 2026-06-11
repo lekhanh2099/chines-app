@@ -1,0 +1,163 @@
+{
+  "id": "f1af36a2-0b85-4ea7-9200-66e8bf6b8e5a",
+  "type": "deep_vocabulary_item",
+  "order": 126,
+  "hanzi": "疑问",
+  "pinyin": "yíwèn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Lập luận và kết luận"
+  ],
+  "meaning": {
+    "hanviet": "Nghi vấn",
+    "meaning_vi": "nghi vấn, điều nghi ngờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghi vấn",
+      "điều nghi ngờ"
+    ],
+    "short_definition_vi": "nghi vấn, điều nghi ngờ",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: nghi vấn, điều nghi ngờ.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Lập luận và kết luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "疑",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "问",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "疑问 trong bài được học theo nghĩa trọng tâm: nghi vấn, điều nghi ngờ.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: nghi vấn, điều nghi ngờ.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5959cb13-f523-4b94-9138-d9d6e960c75f",
+      "order": 1,
+      "zh": "它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: nghi vấn, điều nghi ngờ",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "70758f1a-f8e6-4172-a1d0-74cba69a3c4a",
+      "order": 1,
+      "zh": "它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “疑问” = nghi vấn, điều nghi ngờ.",
+      "analysis_vi": "Câu này dùng “疑问” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "疑问"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f1af36a2-0b85-4ea7-9200-66e8bf6b8e5a"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “疑问” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "15cb4bf7-cc04-464d-912d-91b2da9622b0",
+      "order": 1,
+      "rule_vi": "Cần dùng “疑问” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "疑问",
+    "back": "nghi vấn, điều nghi ngờ",
+    "hint": "yíwèn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Lập luận và kết luận"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f1af36a2-0b85-4ea7-9200-66e8bf6b8e5a",
+    "source_lesson_vocab_id": null
+  }
+}

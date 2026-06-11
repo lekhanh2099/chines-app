@@ -1,0 +1,345 @@
+{
+  "id": "6c7a4416-201f-48f3-8b6c-1d0953c4af5d",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "上座",
+  "pinyin": "shàngzuò",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "unknown",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thượng tọa",
+    "meaning_vi": "chỗ ngồi danh dự, ghế trên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chỗ ngồi danh dự, ghế trên"
+    ],
+    "short_definition_vi": "chỗ ngồi danh dự, ghế trên",
+    "textbook_focus_vi": "Âm Hán Việt: thượng tọa.",
+    "register_vi": "lễ nghi, tiệc, thứ bậc, văn hóa truyền thống.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "上",
+        "lishu_vi": "thượng",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên, lên",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "座",
+        "lishu_vi": "tọa",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái nhà, không gian có mái che",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái nhà, không gian có mái che",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái nhà, không gian có mái che",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "坐",
+            "hanviet": "tọa",
+            "meaning_vi": "ngồi",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chỗ ngồi, tòa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 上座 = vị trí ngồi cao/quý hơn.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 上座 không phải “ngồi lên” theo nghĩa động tác. Nó là danh từ chỉ chỗ ngồi danh dự.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "上座",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chỗ danh dự, ghế trên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "座位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chỗ ngồi nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "位子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chỗ, chỗ ngồi, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "主位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vị trí chủ/chính, dùng trong một số bối cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "客位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vị trí khách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 请您坐上座。 = Mời ngài/anh/chị ngồi chỗ danh dự.",
+      "→ 这里还有座位吗？ = Ở đây còn chỗ ngồi không?"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5d867cbb-75a8-4093-93f2-0d5e1433782e",
+      "order": 1,
+      "zh": "坐上座",
+      "pinyin": "",
+      "vi": "ngồi chỗ danh dự",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "254918c1-7ed5-4e7a-ba50-0b4dec288bea",
+      "order": 2,
+      "zh": "请长辈坐上座",
+      "pinyin": "",
+      "vi": "mời trưởng bối ngồi chỗ danh dự",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c457b24f-066e-485f-9f05-505a53aa2df4",
+      "order": 3,
+      "zh": "上座在哪里？",
+      "pinyin": "",
+      "vi": "chỗ danh dự ở đâu?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e20c8a40-8343-41c7-835b-8bd3b6511d5f",
+      "order": 4,
+      "zh": "安排上座",
+      "pinyin": "",
+      "vi": "sắp xếp chỗ danh dự",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f2b480e-9a30-4262-b836-db6bbc7e3731",
+      "order": 5,
+      "zh": "不能乱坐上座",
+      "pinyin": "",
+      "vi": "không được ngồi bừa vào ghế danh dự",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1258d6f4-ad5a-46cc-a9e1-457897d3df5c",
+      "order": 1,
+      "zh": "请您坐上座。",
+      "pinyin": "Qǐng nín zuò shàngzuò.",
+      "vi": "Mời ngài/anh/chị ngồi chỗ danh dự.",
+      "analysis_vi": "上座 là danh từ chỉ vị trí ngồi quan trọng.",
+      "highlight": [
+        "上座"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7a4416-201f-48f3-8b6c-1d0953c4af5d"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "43b66f2d-2364-4ece-b8b4-b7843d69341c",
+      "order": 2,
+      "zh": "这不是长辈的上座吗？你怎么坐这儿了？",
+      "pinyin": "Zhè bú shì zhǎngbèi de shàngzuò ma? Nǐ zěnme zuò zhèr le?",
+      "vi": "Đây chẳng phải là chỗ danh dự của bậc trưởng bối sao? Sao bạn lại ngồi đây rồi?",
+      "analysis_vi": "不是……吗？ là câu hỏi tu từ, dùng để nhắc người nghe đã ngồi sai vị trí. 怎么……了？ thể hiện ngạc nhiên/trách nhẹ.",
+      "highlight": [
+        "上座"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7a4416-201f-48f3-8b6c-1d0953c4af5d"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dd7cde8e-591c-4a46-b6c0-5f95465fd381",
+      "order": 3,
+      "zh": "圆桌旁边摆着十把椅子，服务员先把领导和长辈的名字放在上座前面，再请其他客人按牌子入座。",
+      "pinyin": "Yuánzhuō pángbiān bǎizhe shí bǎ yǐzi, fúwùyuán xiān bǎ lǐngdǎo hé zhǎngbèi de míngzi fàng zài shàngzuò qiánmiàn, zài qǐng qítā kèrén àn páizi rùzuò.",
+      "vi": "Bên cạnh bàn tròn có bày mười chiếc ghế, phục vụ trước tiên đặt tên của lãnh đạo và trưởng bối trước chỗ danh dự, rồi mời các khách khác vào chỗ theo bảng tên.",
+      "analysis_vi": "圆桌旁边摆着十把椅子 là câu tồn hiện. 把名字放在上座前面 là 把字句 chỉ đặt vật vào vị trí. 按牌子入座 = vào chỗ theo bảng tên.",
+      "highlight": [
+        "上座"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7a4416-201f-48f3-8b6c-1d0953c4af5d"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong bàn tiệc Trung Quốc, 上座 thường liên quan đến hướng cửa, vị trí trung tâm và người có vai vế cao. Quy tắc cụ thể có thể khác theo vùng và bối cảnh, nhưng ý chung là: người quan trọng không ngồi tùy tiện.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4e44f717-11df-4e91-95eb-45da77546044",
+      "order": 1,
+      "rule_vi": "Hiểu 上座 thành động từ “ngồi lên”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "上座 là danh từ: 这是上座。 Zhè shì shàngzuò.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "上座",
+    "back": "chỗ ngồi danh dự, ghế trên",
+    "hint": "shàngzuò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6c7a4416-201f-48f3-8b6c-1d0953c4af5d",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "id": "11623e24-f69f-4876-ab49-b3c21b1d5874",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "合上",
+  "pinyin": "hé shàng",
+  "pos": {
+    "raw_vi": "Động từ / Cụm kết quả",
+    "raw_cn": "动 / 结果补语结构",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "bai_04",
+    "dong_tac"
+  ],
+  "meaning": {
+    "hanviet": "Hợp thượng",
+    "meaning_vi": "khép lại; gấp lại; đóng lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khép lại",
+      "gấp lại",
+      "đóng lại"
+    ],
+    "short_definition_vi": "khép lại; gấp lại; đóng lại",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "合",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người / phần trên",
+            "position_vi": "bên trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / phần dưới",
+            "position_vi": "bên dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hợp lại, khép lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "上",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "",
+            "meaning_vi": "nét ngang",
+            "position_vi": "thành phần",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丨",
+            "hanviet": "",
+            "meaning_vi": "nét dọc",
+            "position_vi": "thành phần",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên; kết quả khép lại trong 合上",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "合上 = khép/gập lại đến trạng thái đóng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "关上",
+        "pinyin": "",
+        "meaning_vi": "đóng lại",
+        "difference_vi": "dùng với cửa/máy",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "闭上",
+        "pinyin": "",
+        "meaning_vi": "nhắm/khép lại",
+        "difference_vi": "dùng với mắt/miệng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "打开",
+        "pinyin": "",
+        "meaning_vi": "mở ra",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "合上",
+        "right": "打开",
+        "meaning_vi": "gấp lại ↔ mở ra",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1b2e64ba-478c-43d9-8e58-3d02eaf3df25",
+      "order": 1,
+      "zh": "合上书",
+      "pinyin": "",
+      "vi": "gấp sách lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c59980fd-8333-4ee4-8f70-5389104afdb8",
+      "order": 2,
+      "zh": "合上本子",
+      "pinyin": "",
+      "vi": "gấp vở lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "442f22cd-fae0-438c-b5e7-60f6140dc50f",
+      "order": 3,
+      "zh": "合上眼睛",
+      "pinyin": "",
+      "vi": "nhắm mắt lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "63c30223-5e0f-4efb-b4d1-7a69d4685be9",
+      "order": 1,
+      "zh": "请合上书。",
+      "pinyin": "Qǐng hé shàng shū.",
+      "vi": "Hãy gấp sách lại.",
+      "analysis_vi": "Câu lớp học cơ bản.",
+      "highlight": [
+        "合上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11623e24-f69f-4876-ab49-b3c21b1d5874"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2f715f14-4dcd-4a10-8ac3-f6f594bf4588",
+      "order": 2,
+      "zh": "安娜把书合上了。",
+      "pinyin": "Ānnà bǎ shū hé shàng le.",
+      "vi": "Anna đã gấp sách lại rồi.",
+      "analysis_vi": "把书合上了 nhấn kết quả.",
+      "highlight": [
+        "合上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11623e24-f69f-4876-ab49-b3c21b1d5874"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "请合上书 thường dùng khi giáo viên muốn kiểm tra trí nhớ/luyện nói.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6a8a8661-fc80-45d3-8364-58fe163ab5c9",
+      "order": 1,
+      "rule_vi": "Không dùng 合上 cho mọi loại “đóng”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "关上门。",
+          "pinyin": "Guān shàng mén.",
+          "vi": "Đóng cửa lại.",
+          "note_vi": "Đóng cửa thường dùng 关上.",
+          "notes": []
+        },
+        {
+          "zh": "合上书。",
+          "pinyin": "Hé shàng shū.",
+          "vi": "Gấp sách lại.",
+          "note_vi": "Gấp sách dùng 合上.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "合上",
+    "back": "khép lại; gấp lại; đóng lại",
+    "hint": "hé shàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "dong_tac"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "11623e24-f69f-4876-ab49-b3c21b1d5874",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_f25e1d66e9446cf9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "卡子",
+  "pinyin": "qiǎzi",
+  "meaning_vi": "khóa gài; chốt gài; cái kẹp",
+  "pos": "noun",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "c99a633b-27a2-429b-a139-44113a84c189",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "c99a633b-27a2-429b-a139-44113a84c189",
+    "type": "vocabulary_item",
+    "order": 22,
+    "hanzi": "卡子",
+    "pinyin": "qiǎzi",
+    "meaning_vi": "khóa gài; chốt gài; cái kẹp",
+    "meaning_en": "clip; buckle",
+    "pos": "noun",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "卡子",
+      "back": "qiǎzi — khóa gài; chốt gài; cái kẹp",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

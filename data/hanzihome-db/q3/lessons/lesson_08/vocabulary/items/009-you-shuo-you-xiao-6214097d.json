@@ -1,0 +1,312 @@
+{
+  "id": "8dded826-1cb1-4c05-b686-77a53b1a8a76",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "有说有笑",
+  "pinyin": "yǒu shuō yǒu xiào",
+  "pos": {
+    "raw_vi": "Cụm cố định",
+    "raw_cn": "固定短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hữu thuyết hữu tiếu",
+    "meaning_vi": "vừa nói vừa cười, nói cười vui vẻ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vừa nói vừa cười",
+      "nói cười vui vẻ"
+    ],
+    "short_definition_vi": "vừa nói vừa cười, nói cười vui vẻ",
+    "textbook_focus_vi": "有说有笑 = có nói, có cười; chỉ không khí trò chuyện thân mật, vui vẻ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, quan hệ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "有",
+        "lishu_vi": "hữu",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có",
+        "modern_logic_vi": "Trong từ này, 有 góp phần tạo nghĩa 'có'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "说",
+        "lishu_vi": "thuyết",
+        "structure_note_vi": "讠 liên quan lời nói.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói",
+        "modern_logic_vi": "Trong từ này, 说 góp phần tạo nghĩa 'nói'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "有",
+        "lishu_vi": "hữu",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có",
+        "modern_logic_vi": "Trong từ này, 有 góp phần tạo nghĩa 'có'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "笑",
+        "lishu_vi": "tiếu",
+        "structure_note_vi": "竹 + 夭; học theo nghĩa hiện đại là cười.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cười",
+        "modern_logic_vi": "Trong từ này, 笑 góp phần tạo nghĩa 'cười'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "有说有笑 = có nói, có cười; chỉ không khí trò chuyện thân mật, vui vẻ.",
+    "memory_tip_vi": "Nhớ qua cụm: 有说有笑地走着 = vừa đi vừa nói cười.",
+    "warning_vi": "Cụm này dùng nguyên khối, không tách thành 有说和有笑.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "说说笑笑",
+        "pinyin": "shuōshuō-xiàoxiào",
+        "meaning_vi": "nói nói cười cười",
+        "difference_vi": "Rất gần nghĩa, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "聊天",
+        "pinyin": "liáotiān",
+        "meaning_vi": "trò chuyện",
+        "difference_vi": "Không nhất thiết có cười.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Cụm này dùng nguyên khối, không tách thành 有说和有笑."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4b006dac-5ea2-41e1-b811-6b456fcb16c6",
+      "order": 1,
+      "zh": "有说有笑地走着",
+      "pinyin": "yǒu shuō yǒu xiào de zǒuzhe",
+      "vi": "vừa đi vừa nói cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f98c2733-f1e8-4f6d-8ae6-d7c455f7085d",
+      "order": 2,
+      "zh": "跟朋友有说有笑",
+      "pinyin": "gēn péngyou yǒu shuō yǒu xiào",
+      "vi": "nói cười vui vẻ với bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "39486c16-8465-4e6c-8db4-827ac1298dd6",
+      "order": 3,
+      "zh": "一路上有说有笑",
+      "pinyin": "yílù shang yǒu shuō yǒu xiào",
+      "vi": "suốt đường nói cười vui vẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e499d01b-1f57-426b-b4d2-16e617616af1",
+      "order": 1,
+      "zh": "赵霞和余辉有说有笑地走进教室，我看见以后心里很不是滋味。",
+      "pinyin": "Zhào Xiá hé Yú Huī yǒu shuō yǒu xiào de zǒu jìn jiàoshì, wǒ kànjiàn yǐhòu xīnli hěn bú shì zīwèi.",
+      "vi": "Triệu Hà và Dư Huy vừa nói vừa cười bước vào lớp, sau khi tôi nhìn thấy thì trong lòng rất khó chịu.",
+      "analysis_vi": "有说有笑地 làm trạng ngữ chỉ cách thức.",
+      "highlight": [
+        "有说有笑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8dded826-1cb1-4c05-b686-77a53b1a8a76"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong ngữ cảnh tình cảm, 有说有笑 dễ tạo cảm giác hai người khá thân.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "60f575f7-c73b-401c-86ff-bb050e26303b",
+      "order": 1,
+      "rule_vi": "Cụm này dùng nguyên khối, không tách thành 有说和有笑.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他们有说和有笑。",
+          "pinyin": "Tāmen yǒu shuō hé yǒu xiào.",
+          "vi": "Sai/kém tự nhiên.",
+          "note_vi": "Không dùng 和 trong cụm cố định này.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他们有说有笑。",
+          "pinyin": "Tāmen yǒu shuō yǒu xiào.",
+          "vi": "Họ vừa nói vừa cười.",
+          "note_vi": "Dùng nguyên cụm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "有说有笑",
+    "back": "vừa nói vừa cười, nói cười vui vẻ",
+    "hint": "yǒu shuō yǒu xiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8dded826-1cb1-4c05-b686-77a53b1a8a76",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "id": "363b2784-599e-40f3-a211-4f0d4f18ce4e",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "连忙",
+  "pinyin": "liánmáng",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson22",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Liên mang",
+    "meaning_vi": "vội vàng; lập tức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vội vàng; lập tức"
+    ],
+    "short_definition_vi": "vội vàng; lập tức",
+    "textbook_focus_vi": "vội vàng; lập tức",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "连",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại/chuyển động",
+            "position_vi": "bên trái/dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại/chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem nghĩa trong word_logic_vi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "忙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý/cảm xúc",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm lý/cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem nghĩa trong word_logic_vi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "连 = liền/ngay; 忙 = bận/vội; 连忙 = vội làm ngay.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "赶快",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từ/cấu trúc dễ nhầm với 连忙",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9cb528d7-e75f-4c35-912f-670efa1e201c",
+      "order": 1,
+      "zh": "连忙说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0baba90-527c-44d5-b348-5fdbed2a18df",
+      "order": 2,
+      "zh": "连忙问",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ca80724-145c-490b-8db7-bc2372c7e604",
+      "order": 3,
+      "zh": "连忙跑过去",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "21c38e5e-9c82-4d03-8ff9-0804c024ca9b",
+      "order": 4,
+      "zh": "连忙拿起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a7647cda-0ce1-408b-997d-ccfeb0f52519",
+      "order": 5,
+      "zh": "连忙解释",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fabae193-1a78-4d48-857a-80d4caf90be5",
+      "order": 1,
+      "zh": "我今天学习“连忙”这个词。",
+      "pinyin": "Wǒ jīntiān xuéxí “liánmáng” zhège cí.",
+      "vi": "Hôm nay tôi học từ “连忙”.",
+      "analysis_vi": "Câu cơ bản dùng đúng từ 连忙.",
+      "highlight": [
+        "连忙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "363b2784-599e-40f3-a211-4f0d4f18ce4e"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "76d7c1a8-a84b-457b-afb4-545dd4bb16d9",
+      "order": 2,
+      "zh": "只有把“连忙”的用法记下来，才不容易用错。",
+      "pinyin": "Zhǐyǒu bǎ “liánmáng” de yòngfǎ jì xiàlai, cái bù róngyì yòng cuò.",
+      "vi": "Chỉ khi ghi lại cách dùng của “连忙” thì mới không dễ dùng sai.",
+      "analysis_vi": "Gài 只有……才…… và 记下来 theo trọng tâm Bài 22.",
+      "highlight": [
+        "连忙",
+        "只有",
+        "才"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "363b2784-599e-40f3-a211-4f0d4f18ce4e"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / fact nhỏ",
+    "content_vi": "Phản ứng nhanh",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_current"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ddb312ac-060a-4a97-89cb-6945f27c4562",
+      "order": 1,
+      "rule_vi": "连忙 là phó từ trước động từ; “tôi rất bận” là 我很忙, không nói 我很连忙.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "连忙",
+    "back": "vội vàng; lập tức",
+    "hint": "liánmáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson22"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "363b2784-599e-40f3-a211-4f0d4f18ce4e",
+    "source_lesson_vocab_id": null
+  }
+}

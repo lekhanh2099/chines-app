@@ -1,0 +1,374 @@
+{
+  "id": "d4654c74-3403-41bc-b73b-cd859878a72e",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "转",
+  "pinyin": "zhuǎn / zhuàn / zhuǎi",
+  "pos": {
+    "raw_vi": "Động từ / Lượng từ 【动词 / 量词】",
+    "raw_cn": "",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "degree_motion",
+    "polyphone",
+    "motion"
+  ],
+  "meaning": {
+    "hanviet": "Chuyển",
+    "meaning_vi": "chuyển, đổi hướng; quay; nói văn vẻ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuyển, đổi hướng",
+      "quay",
+      "nói văn vẻ"
+    ],
+    "short_definition_vi": "chuyển, đổi hướng",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "转",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe/chuyển động",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "专",
+            "hanviet": "chuyên",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuyển, quay, đổi hướng, chuyển biến",
+        "modern_logic_vi": "Có 车 nên dễ nhớ chuyển động/di chuyển; phải phân biệt âm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe/chuyển động",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "转 được phân tích theo các thành phần đã chắc trong phần soạn; phần không chắc không ép chiết tự.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "变",
+        "pinyin": "",
+        "meaning_vi": "thay đổi",
+        "difference_vi": "Rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改变",
+        "pinyin": "",
+        "meaning_vi": "thay đổi",
+        "difference_vi": "Nhấn tác động/biến đổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "转变",
+        "pinyin": "",
+        "meaning_vi": "chuyển biến",
+        "difference_vi": "Từ trạng thái này sang trạng thái khác.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "停",
+        "pinyin": "",
+        "meaning_vi": "dừng",
+        "difference_vi": "Đối lập quay/chuyển động trong một số ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7ea3f927-b518-4ca9-8758-9762fc6807a0",
+      "order": 1,
+      "zh": "转弯",
+      "pinyin": "",
+      "vi": "rẽ/quẹo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ded4eb95-228e-4136-b6a1-735e4a8a584f",
+      "order": 2,
+      "zh": "向左转",
+      "pinyin": "",
+      "vi": "rẽ/quay sang trái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28213ba6-dec2-4352-ad49-5c2f4758abfb",
+      "order": 3,
+      "zh": "向右转",
+      "pinyin": "",
+      "vi": "rẽ/quay sang phải",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "594168be-81b6-496e-a51a-3434d6250bb6",
+      "order": 4,
+      "zh": "转学",
+      "pinyin": "",
+      "vi": "chuyển trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca70ee52-e664-4cef-b8d1-37b35d4a57ab",
+      "order": 5,
+      "zh": "转专业",
+      "pinyin": "",
+      "vi": "chuyển ngành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6fe8259-4993-4aa0-9261-8f387f213826",
+      "order": 6,
+      "zh": "转变",
+      "pinyin": "",
+      "vi": "chuyển biến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8df7acd8-fbc7-458a-9d36-4456194746ed",
+      "order": 7,
+      "zh": "转到……",
+      "pinyin": "",
+      "vi": "chuyển đến...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d292c2bf-6089-46e8-95c5-bfbcb9191b1a",
+      "order": 8,
+      "zh": "转一圈",
+      "pinyin": "",
+      "vi": "quay/đi một vòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "55db21b5-d760-4742-afe3-6d218a306775",
+      "order": 1,
+      "zh": "前边向右转。",
+      "pinyin": "Qiánbian xiàng yòu zhuǎn.",
+      "vi": "Phía trước rẽ phải.",
+      "analysis_vi": "转 đọc zhuǎn, nghĩa đổi hướng.",
+      "highlight": [
+        "转"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4654c74-3403-41bc-b73b-cd859878a72e"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "86eaa940-bbda-4ffb-af27-fe9eb3bbaf22",
+      "order": 2,
+      "zh": "他原来学历史，后来转到中文专业了。",
+      "pinyin": "Tā yuánlái xué lìshǐ, hòulái zhuǎn dào Zhōngwén zhuānyè le.",
+      "vi": "Trước đây anh ấy học lịch sử, sau này chuyển sang ngành tiếng Trung.",
+      "analysis_vi": "转到……专业 = chuyển sang ngành.",
+      "highlight": [
+        "转到",
+        "专业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4654c74-3403-41bc-b73b-cd859878a72e"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7b928e83-3d19-417a-a51e-13a67787a2fd",
+      "order": 3,
+      "zh": "改革开放以后，很多人的想法慢慢转变了，生活速度也跟以前不一样了。",
+      "pinyin": "Gǎigé kāifàng yǐhòu, hěn duō rén de xiǎngfa mànmàn zhuǎnbiàn le, shēnghuó sùdù yě gēn yǐqián bù yíyàng le.",
+      "vi": "Sau cải cách mở cửa, suy nghĩ nhiều người dần chuyển biến, nhịp sống cũng khác trước.",
+      "analysis_vi": "转变了 = đã chuyển biến.",
+      "highlight": [
+        "转变",
+        "不一样"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "d4654c74-3403-41bc-b73b-cd859878a72e"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "转专业 = chuyển ngành; khác 换工作 = đổi việc và 转学 = chuyển trường.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e396de6c-fef8-45a1-b988-2b3b1d6a8a06",
+      "order": 1,
+      "rule_vi": "Đọc âm là bẫy lớn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他想转专业。",
+          "pinyin": "Tā xiǎng zhuǎn zhuānyè.",
+          "vi": "Anh ấy muốn chuyển ngành.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "车轮在转。",
+          "pinyin": "Chēlún zài zhuàn.",
+          "vi": "Bánh xe đang quay.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "转",
+    "back": "chuyển, đổi hướng; quay; nói văn vẻ",
+    "hint": "zhuǎn / zhuàn / zhuǎi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "polyphone",
+      "motion"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d4654c74-3403-41bc-b73b-cd859878a72e",
+    "source_lesson_vocab_id": null
+  }
+}

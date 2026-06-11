@@ -1,0 +1,419 @@
+{
+  "id": "e10f6aa9-1689-4345-99de-eb454f2df1ad",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "忽然觉得",
+  "pinyin": "hūrán juéde",
+  "pos": {
+    "raw_vi": "Cụm động từ cố định theo ngữ cảnh",
+    "raw_cn": "固定表达",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Hốt nhiên giác đắc",
+    "meaning_vi": "bỗng cảm thấy / bỗng thấy rằng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bỗng cảm thấy / bỗng thấy rằng"
+    ],
+    "short_definition_vi": "bỗng cảm thấy / bỗng thấy rằng",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, kể chuyện, độc thoại nội tâm, viết đoạn văn.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "忽",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "勿",
+            "hanviet": "vật",
+            "meaning_vi": "chớ/đừng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim/lòng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thoáng qua, lơ là",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "忽然 là bỗng nhiên. → 忽然觉得 = một cảm giác/nhận định bỗng xuất hiện trong đầu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy, trạng thái",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "忽然 là bỗng nhiên. → 忽然觉得 = một cảm giác/nhận định bỗng xuất hiện trong đầu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "觉",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy/nhìn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảm thấy, nhận ra",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "觉得 là cảm thấy, cho rằng. → 忽然觉得 = một cảm giác/nhận định bỗng xuất hiện trong đầu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "được, phải, bổ ngữ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "觉得 là cảm thấy, cho rằng. → 忽然觉得 = một cảm giác/nhận định bỗng xuất hiện trong đầu.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 忽然觉得 = một cảm giác/nhận định bỗng xuất hiện trong đầu.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: sau 忽然觉得 thường là một mệnh đề: 忽然觉得很累, 忽然觉得这件事不简单.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忽然觉得 (hūrán juéde)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bỗng cảm thấy / bỗng thấy rằng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "突然觉得 (tūrán juéde)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đột nhiên cảm thấy; khẩu ngữ rất tự nhiên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "觉得 (juéde)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm thấy, cho rằng, không có sắc thái bất ngờ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发现 (fāxiàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phát hiện ra, thường có bằng chứng/điều nhận thấy rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 觉得 là cảm giác/ý kiến; 忽然觉得 là cảm giác xuất hiện bất ngờ; 发现 là phát hiện điều gì."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c167e87c-3f12-47ae-866b-51e7a8ecb323",
+      "order": 1,
+      "zh": "忽然觉得很累",
+      "pinyin": "",
+      "vi": "bỗng cảm thấy rất mệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71a98cbd-e28d-4300-ac6f-3db654403bb9",
+      "order": 2,
+      "zh": "忽然觉得不对",
+      "pinyin": "",
+      "vi": "bỗng thấy không đúng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2df043cd-bdf4-4763-81c0-be5ae226cc3e",
+      "order": 3,
+      "zh": "忽然觉得很安静",
+      "pinyin": "",
+      "vi": "bỗng thấy rất yên tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a0e4618-c0b2-4123-85b7-ece44c8129b4",
+      "order": 4,
+      "zh": "我忽然觉得自己想多了",
+      "pinyin": "",
+      "vi": "tôi bỗng thấy mình nghĩ nhiều quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "72fa2c22-d8a5-47a7-9ae8-8c2e1310ae8c",
+      "order": 1,
+      "zh": "走出图书城以后，他忽然觉得自己买太多书了。",
+      "pinyin": "Zǒu chū túshūchéng yǐhòu, tā hūrán juéde zìjǐ mǎi tài duō shū le.",
+      "vi": "Sau khi đi ra khỏi trung tâm sách, anh ấy bỗng thấy mình đã mua quá nhiều sách.",
+      "analysis_vi": "走出图书城 là đi từ trong ra ngoài; 忽然觉得 là nhận xét xuất hiện sau hành động.",
+      "highlight": [
+        "忽然觉得"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e10f6aa9-1689-4345-99de-eb454f2df1ad"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ca207beb-1d69-45ed-afaa-7110902e9be5",
+      "order": 2,
+      "zh": "爬到半山腰的时候，我忽然觉得腿很累，只好停下来休息。",
+      "pinyin": "Pá dào bànshānyāo de shíhou, wǒ hūrán juéde tuǐ hěn lèi, zhǐhǎo tíng xiàlai xiūxi.",
+      "vi": "Khi leo đến lưng chừng núi, tôi bỗng thấy chân rất mệt, đành dừng lại nghỉ.",
+      "analysis_vi": "停下来 là dừng lại, trạng thái vận động hạ xuống; 只好 nói không còn lựa chọn tốt hơn.",
+      "highlight": [
+        "忽然觉得"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e10f6aa9-1689-4345-99de-eb454f2df1ad"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2e0b7965-f2ff-47d9-b769-a61f11a07ce0",
+      "order": 3,
+      "zh": "整理到这个词的时候，我忽然觉得以前只背意思是不够的。",
+      "pinyin": "Zhěnglǐ dào zhège cí de shíhou, wǒ hūrán juéde yǐqián zhǐ bèi yìsi shì bú gòu de.",
+      "vi": "Khi整理 đến từ này, tôi bỗng thấy trước đây chỉ học thuộc nghĩa là chưa đủ.",
+      "analysis_vi": "忽然觉得 đưa ra nhận thức mới; câu đúng với kiểu học sâu từ vựng.",
+      "highlight": [
+        "忽然觉得"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "e10f6aa9-1689-4345-99de-eb454f2df1ad"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "c317c3bc-5a4e-4f7a-9da8-ce28da91dac7",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 忽然觉得 cho sự kiện khách quan không phải cảm giác/nhận định. Không tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "忽然觉得",
+    "back": "bỗng cảm thấy / bỗng thấy rằng",
+    "hint": "hūrán juéde",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong viết nhật ký hoặc nói cảm nhận, 忽然觉得…… rất hữu ích vì nó diễn tả khoảnh khắc tự nhận ra điều gì đó, gần tiếng Việt “tự nhiên thấy...”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e10f6aa9-1689-4345-99de-eb454f2df1ad",
+    "source_lesson_vocab_id": null
+  }
+}

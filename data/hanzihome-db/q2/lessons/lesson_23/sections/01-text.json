@@ -1,0 +1,534 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "吃什么都可以",
+      "title_vi": "Ăn gì cũng được",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [],
+      "lines": [
+        {
+          "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+          "order": 1,
+          "speaker": "麦克",
+          "zh": "我有点儿饿了，想吃点儿什么。你呢？",
+          "vi": "Tôi hơi đói rồi, muốn ăn chút gì đó. Còn bạn?",
+          "pinyin": "Wǒ yǒudiǎnr è le, xiǎng chī diǎnr shénme. Nǐ ne?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+          "order": 2,
+          "speaker": "玛丽",
+          "zh": "我也又饿又渴。咱们去饭馆儿吧。",
+          "vi": "Tôi cũng vừa đói vừa khát. Chúng ta đi nhà hàng nhé.",
+          "pinyin": "Wǒ yě yòu è yòu kě. Zánmen qù fànguǎnr ba.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+          "order": 3,
+          "speaker": "麦克",
+          "zh": "你想吃点儿什么？",
+          "vi": "Bạn muốn ăn chút gì?",
+          "pinyin": "Nǐ xiǎng chī diǎnr shénme?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+          "order": 4,
+          "speaker": "玛丽",
+          "zh": "你点吧，什么都可以。",
+          "vi": "Bạn gọi đi, món gì cũng được.",
+          "pinyin": "Nǐ diǎn ba, shénme dōu kěyǐ.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+          "order": 5,
+          "speaker": "麦克",
+          "zh": "那就什么好吃吃什么。",
+          "vi": "Vậy món nào ngon thì ăn món đó.",
+          "pinyin": "Nà jiù shénme hǎochī chī shénme.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+          "order": 6,
+          "speaker": "服务员",
+          "zh": "你们两位要点儿什么？",
+          "vi": "Hai vị muốn gọi chút gì?",
+          "pinyin": "Nǐmen liǎng wèi yào diǎnr shénme?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+          "order": 7,
+          "speaker": "麦克",
+          "zh": "服务员，你们这儿有什么好吃的菜？",
+          "vi": "Phục vụ ơi, ở đây có món gì ngon?",
+          "pinyin": "Fúwùyuán, nǐmen zhèr yǒu shénme hǎochī de cài?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+          "order": 8,
+          "speaker": "服务员",
+          "zh": "我们这儿什么菜都好吃啊。",
+          "vi": "Ở chỗ chúng tôi món nào cũng ngon cả.",
+          "pinyin": "Wǒmen zhèr shénme cài dōu hǎochī a.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+          "order": 9,
+          "speaker": "麦克",
+          "zh": "是吗？那把你们这儿最好吃的菜给我们来两个。",
+          "vi": "Thế à? Vậy lấy cho chúng tôi hai món ngon nhất ở đây.",
+          "pinyin": "Shì ma? Nà bǎ nǐmen zhèr zuì hǎochī de cài gěi wǒmen lái liǎng ge.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+          "order": 10,
+          "speaker": "服务员",
+          "zh": "这儿的辣子鸡丁和糖醋鱼都不错。",
+          "vi": "Món gà cay thái hạt lựu và cá chua ngọt ở đây đều khá ngon.",
+          "pinyin": "Zhèr de làzi jīdīng hé tángcùyú dōu búcuò.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+            "188412d4-4c23-4d60-b7b2-21f3490199e7"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+          "order": 11,
+          "speaker": "麦克",
+          "zh": "那就一样来一个吧。我们喝点儿什么呢？",
+          "vi": "Vậy mỗi món lấy một phần đi. Chúng ta uống chút gì nhỉ?",
+          "pinyin": "Nà jiù yíyàng lái yí ge ba. Wǒmen hē diǎnr shénme ne?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
+          "order": 12,
+          "speaker": "玛丽",
+          "zh": "随便。你说喝什么就喝什么吧。",
+          "vi": "Tùy bạn. Bạn nói uống gì thì uống cái đó đi.",
+          "pinyin": "Suíbiàn. Nǐ shuō hē shénme jiù hē shénme ba.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": []
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "你是哪儿冷去哪儿啊",
+      "title_vi": "Chỗ nào lạnh thì bạn đi chỗ đó à?",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [],
+      "lines": [
+        {
+          "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+          "order": 1,
+          "speaker": "田中",
+          "zh": "时间过得真快，下周考完试就要放寒假了。",
+          "vi": "Thời gian trôi nhanh thật, tuần sau thi xong là sắp nghỉ đông rồi.",
+          "pinyin": "Shíjiān guò de zhēn kuài, xià zhōu kǎo wán shì jiù yào fàng hánjià le.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "5ea44727-d97c-467b-b1b8-babd195df50d"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+          "order": 2,
+          "speaker": "麦克",
+          "zh": "是啊。寒假你有什么打算吗？",
+          "vi": "Ừ nhỉ. Kỳ nghỉ đông bạn có dự định gì không?",
+          "pinyin": "Shì a. Hánjià nǐ yǒu shénme dǎsuàn ma?",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+          "order": 3,
+          "speaker": "田中",
+          "zh": "学校要组织留学生去外地旅行，谁都可以报名，你报名吗？",
+          "vi": "Trường sẽ tổ chức cho lưu học sinh đi du lịch nơi khác, ai cũng có thể đăng ký, bạn có đăng ký không?",
+          "pinyin": "Xuéxiào yào zǔzhī liúxuéshēng qù wàidì lǚxíng, shéi dōu kěyǐ bàomíng, nǐ bàomíng ma?",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "54613016-834a-4fc3-9912-2357a6d27058"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
+          "order": 4,
+          "speaker": "麦克",
+          "zh": "我听谁说过这件事儿。不过我想自己去旅行。",
+          "vi": "Tôi có nghe ai đó nói chuyện này rồi. Nhưng tôi muốn tự mình đi du lịch.",
+          "pinyin": "Wǒ tīng shéi shuō guo zhè jiàn shìr. Búguò wǒ xiǎng zìjǐ qù lǚxíng.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+          "order": 5,
+          "speaker": "田中",
+          "zh": "去哪儿？",
+          "vi": "Đi đâu?",
+          "pinyin": "Qù nǎr?",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+          "order": 6,
+          "speaker": "麦克",
+          "zh": "哪儿好玩儿就去哪儿。我想去哈尔滨。",
+          "vi": "Chỗ nào vui thì đi chỗ đó. Tôi muốn đi Cáp Nhĩ Tân.",
+          "pinyin": "Nǎr hǎowánr jiù qù nǎr. Wǒ xiǎng qù Hā'ěrbīn.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "5ec05b3a-2b29-4f33-961a-cbc764fc73de"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cc8da348-3e89-4f64-a680-de239f505497",
+          "order": 7,
+          "speaker": "田中",
+          "zh": "哈尔滨？你是哪儿冷去哪儿啊。现在那儿白天已经零下二十多度了。",
+          "vi": "Cáp Nhĩ Tân á? Bạn chỗ nào lạnh thì đi chỗ đó hả? Bây giờ ban ngày ở đó đã âm hơn hai mươi độ rồi.",
+          "pinyin": "Hā'ěrbīn? Nǐ shì nǎr lěng qù nǎr a. Xiànzài nàr báitiān yǐjīng língxià èrshí duō dù le.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [
+            "54b36889-82be-485b-8342-fb8aab572065",
+            "5ec05b3a-2b29-4f33-961a-cbc764fc73de"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
+          "order": 8,
+          "speaker": "麦克",
+          "zh": "听说哈尔滨的冰灯冰雕很好看，我想去看看。",
+          "vi": "Nghe nói đèn băng và tượng băng ở Cáp Nhĩ Tân rất đẹp, tôi muốn đi xem thử.",
+          "pinyin": "Tīngshuō Hā'ěrbīn de bīngdēng bīngdiāo hěn hǎokàn, wǒ xiǎng qù kànkan.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+            "5ec05b3a-2b29-4f33-961a-cbc764fc73de"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
+          "order": 9,
+          "speaker": "田中",
+          "zh": "你想怎么去？",
+          "vi": "Bạn định đi thế nào?",
+          "pinyin": "Nǐ xiǎng zěnme qù?",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7419a05-c714-4cff-ae26-210852d56303",
+          "order": 10,
+          "speaker": "麦克",
+          "zh": "除了骑自行车以外，怎么去都行。",
+          "vi": "Ngoài đi xe đạp ra, đi bằng cách nào cũng được.",
+          "pinyin": "Chúle qí zìxíngchē yǐwài, zěnme qù dōu xíng.",
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+          ],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
+          "order": 11,
+          "speaker": "田中",
+          "zh": "你又开玩笑。",
+          "vi": "Bạn lại đùa rồi.",
+          "pinyin": "Nǐ yòu kāi wánxiào.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
+          "order": 12,
+          "speaker": "麦克",
+          "zh": "要是买不到火车票就坐飞机去。你的计划呢？",
+          "vi": "Nếu không mua được vé tàu hỏa thì đi máy bay. Còn kế hoạch của bạn thì sao?",
+          "pinyin": "Yàoshi mǎi bu dào huǒchēpiào jiù zuò fēijī qù. Nǐ de jìhuà ne?",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "491f58c7-7ead-4d8c-876d-7e3113dcff35",
+          "order": 13,
+          "speaker": "田中",
+          "zh": "我打算先去西安看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
+          "vi": "Tôi định trước tiên đi Tây An xem Rừng Bia và Binh Mã Dũng, sau đó đến Trùng Khánh, từ Trùng Khánh ngồi thuyền tham quan Tam Hiệp Trường Giang, rồi đi Vân Nam, Quế Lâm, cuối cùng đi Tô Châu và Hàng Châu.",
+          "pinyin": "Wǒ dǎsuàn xiān qù Xī'ān kàn Bēilín hé Bīngmǎyǒng, zài dào Chóngqìng, cóng Chóngqìng zuò chuán yóulǎn Chángjiāng Sānxiá, ránhòu qù Yúnnán, Guìlín, zuìhòu qù Sūzhōu hé Hángzhōu.",
+          "grammar_refs": [
+            "fa804fff-372b-4874-8571-f54e613d7e07"
+          ],
+          "vocab_refs": [
+            "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+            "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+            "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+            "d9dbd495-04ca-4812-8d30-6a5da05b79e7",
+            "1ed335bd-381a-44af-b3ee-f4fc918f7f57",
+            "a217b6bc-7139-4243-929e-4fe36d3fea53",
+            "134cbc81-d7f7-472f-8066-712e3fee85b8",
+            "fa65b188-b538-4e32-aecb-7c68f4a13220",
+            "ebebc588-f85e-4ac3-b97f-7aad7df7fbd9",
+            "95291278-779f-45c9-9708-e51e7a2241f2",
+            "b3d3cdb5-27aa-4b35-8422-6d12786a0f5f"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b4e15ca3-0527-433b-9b2f-a6027ebfe8e3",
+          "order": 14,
+          "speaker": "麦克",
+          "zh": "田芳说，苏州、杭州很美。",
+          "vi": "Điền Phương nói Tô Châu, Hàng Châu rất đẹp.",
+          "pinyin": "Tián Fāng shuō, Sūzhōu, Hángzhōu hěn měi.",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "ebebc588-f85e-4ac3-b97f-7aad7df7fbd9",
+            "95291278-779f-45c9-9708-e51e7a2241f2"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ded8d12b-4a00-4a64-b5b2-66cab3f2d1c6",
+          "order": 15,
+          "speaker": "田中",
+          "zh": "“上有天堂，下有苏杭”嘛。另外，桂林也不错，“桂林山水甲天下”，风景像画儿一样，美极了。你去过桂林吗？",
+          "vi": "Chẳng phải có câu “Trên có thiên đường, dưới có Tô Hàng” đó sao. Ngoài ra, Quế Lâm cũng rất đẹp, “sơn thủy Quế Lâm đứng đầu thiên hạ”, phong cảnh như tranh vậy, đẹp cực kỳ. Bạn từng đi Quế Lâm chưa?",
+          "pinyin": "“Shàng yǒu tiāntáng, xià yǒu Sū-Háng” ma. Lìngwài, Guìlín yě búcuò, “Guìlín shānshuǐ jiǎ tiānxià”, fēngjǐng xiàng huàr yíyàng, měi jí le. Nǐ qù guo Guìlín ma?",
+          "grammar_refs": [],
+          "vocab_refs": [
+            "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "689eb64b-5d4f-469f-9afa-74017d399614",
+            "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "c99a633b-27a2-429b-a139-44113a84c189",
+            "fa65b188-b538-4e32-aecb-7c68f4a13220"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e3695c3e-b28b-4953-b424-71dcf1fad1b2",
+          "order": 16,
+          "speaker": "麦克",
+          "zh": "没有。我对云南少数民族的风俗很感兴趣。要是有机会一定去看看。你的旅行路线很好，不过要花多少钱啊？",
+          "vi": "Chưa. Tôi rất hứng thú với phong tục của các dân tộc thiểu số ở Vân Nam. Nếu có cơ hội nhất định sẽ đi xem. Lộ trình du lịch của bạn rất hay, nhưng phải tốn bao nhiêu tiền?",
+          "pinyin": "Méiyǒu. Wǒ duì Yúnnán shǎoshù mínzú de fēngsú hěn gǎn xìngqù. Yàoshi yǒu jīhuì yídìng qù kànkan. Nǐ de lǚxíng lùxiàn hěn hǎo, búguò yào huā duōshǎo qián a?",
+          "grammar_refs": [
+            "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+          ],
+          "vocab_refs": [
+            "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+            "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "c43cedbf-7024-4ec1-922f-e75119114baf",
+            "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "134cbc81-d7f7-472f-8066-712e3fee85b8"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "94807735-96c4-4f7b-a7a3-0b2830d4e7c1",
+          "order": 17,
+          "speaker": "田中",
+          "zh": "我喜欢旅行，只要玩儿得开心，多花点儿钱也值得。另外最重要的是还可以一边旅行一边练习说汉语，多有意义啊！",
+          "vi": "Tôi thích du lịch, chỉ cần chơi vui thì tốn thêm chút tiền cũng đáng. Ngoài ra, quan trọng nhất là còn có thể vừa du lịch vừa luyện nói tiếng Hán, ý nghĩa biết bao!",
+          "pinyin": "Wǒ xǐhuan lǚxíng, zhǐyào wánr de kāixīn, duō huā diǎnr qián yě zhíde. Lìngwài zuì zhòngyào de shì hái kěyǐ yìbiān lǚxíng yìbiān liànxí shuō Hànyǔ, duō yǒu yìyì a!",
+          "grammar_refs": [
+            "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+            "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+          ],
+          "vocab_refs": [
+            "55cd807c-eec7-412d-99db-f4e6508b170f",
+            "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+            "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
+          ],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d562e0f1-cf06-4951-bc59-0df0b5f6b59d",
+          "order": 18,
+          "speaker": "麦克",
+          "zh": "你说得对。",
+          "vi": "Bạn nói đúng.",
+          "pinyin": "Nǐ shuō de duì.",
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": []
+    }
+  ]
+}

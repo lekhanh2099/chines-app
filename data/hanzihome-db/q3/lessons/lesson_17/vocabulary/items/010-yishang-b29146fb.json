@@ -1,0 +1,223 @@
+{
+  "id": "24170f23-6a0f-4b52-a68b-342e0fb43902",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "以上",
+  "pinyin": "yǐshàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dĩ thượng",
+    "meaning_vi": "trở lên; phía trên; trên đây",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trở lên",
+      "phía trên",
+      "trên đây"
+    ],
+    "short_definition_vi": "trở lên",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "以",
+        "lishu_vi": "dĩ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lấy, dùng, từ, theo",
+        "modern_logic_vi": "lấy, dùng, từ, theo",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "上",
+        "lishu_vi": "thượng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên, lên, trở lên",
+        "modern_logic_vi": "trên, lên, trở lên",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Lấy mốc đã nêu rồi tính lên trên hoặc sau đó trong văn bản.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 本科以上学历.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "以下",
+        "pinyin": "yǐxià",
+        "meaning_vi": "trở xuống",
+        "difference_vi": "以下 là từ mốc đó trở xuống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "以前",
+        "pinyin": "yǐqián",
+        "meaning_vi": "trước đây/trước mốc",
+        "difference_vi": "以前 dùng cho thời gian, không phải mức độ trở lên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4c1ca288-92aa-48f0-a603-57b331632b66",
+      "order": 1,
+      "zh": "本科以上学历",
+      "pinyin": "běnkē yǐshàng xuélì",
+      "vi": "trình độ đại học trở lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c487c6cd-5ed0-4db8-a54a-8a1478f069e8",
+      "order": 2,
+      "zh": "三年以上经验",
+      "pinyin": "sān nián yǐshàng jīngyàn",
+      "vi": "từ ba năm kinh nghiệm trở lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b22ff8dc-eaea-41e5-9287-ab2051ef6503",
+      "order": 3,
+      "zh": "以上内容",
+      "pinyin": "yǐshàng nèiróng",
+      "vi": "nội dung trên đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "621df94b-d61b-4e8a-87cd-05f1d06ac844",
+      "order": 1,
+      "zh": "这个工作要求本科以上学历。",
+      "pinyin": "Zhège gōngzuò yāoqiú běnkē yǐshàng xuélì.",
+      "vi": "Công việc này yêu cầu trình độ đại học trở lên.",
+      "analysis_vi": "以上 thường bao gồm mốc.",
+      "highlight": [
+        "以上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24170f23-6a0f-4b52-a68b-342e0fb43902"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b4504ab4-1444-4645-810f-e3e621bd16c8",
+      "order": 2,
+      "zh": "以上是我这次试讲的主要内容。",
+      "pinyin": "Yǐshàng shì wǒ zhè cì shìjiǎng de zhǔyào nèiróng.",
+      "vi": "Trên đây là nội dung chính của phần giảng thử lần này.",
+      "analysis_vi": "以上 có thể dùng để tổng kết nội dung vừa trình bày.",
+      "highlight": [
+        "以上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24170f23-6a0f-4b52-a68b-342e0fb43902"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "以上 rất hay xuất hiện trong điều kiện tuyển dụng về học vấn, tuổi, kinh nghiệm.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a500af9a-43f1-477d-a253-056c3e3d4eb7",
+      "order": 1,
+      "rule_vi": "本科以上 thường bao gồm本科, không phải chỉ thạc sĩ trở lên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "以上",
+    "back": "trở lên; phía trên; trên đây",
+    "hint": "yǐshàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "24170f23-6a0f-4b52-a68b-342e0fb43902",
+    "source_lesson_vocab_id": null
+  }
+}

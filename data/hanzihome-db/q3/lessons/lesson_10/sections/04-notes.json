@@ -1,0 +1,95 @@
+{
+  "id": "b021d83b-a2e3-4baa-93dc-c7c45411024d",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "44afe497-ac00-4594-ace8-61db85a8d2ee",
+      "type": "note",
+      "order": 1,
+      "title": "我们头儿一点儿也不把我放在眼里",
+      "structure": "一点儿 + 也/都 + 不/没 + V/Adj; 不把某人放在眼里",
+      "meaning_vi": "Nhấn mạnh phủ định hoàn toàn; 不把某人放在眼里 nghĩa là không coi ai ra gì, không xem trọng ai.",
+      "examples": [
+        {
+          "id": "f5e3f55a-66bd-4465-9294-b41542c538ec",
+          "zh": "我们头儿一点儿也不把我放在眼里。",
+          "pinyin": "wǒmen tóur yìdiǎnr yě bù bǎ wǒ fàng zài yǎn lǐ。",
+          "vi": "",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "24725f42-36cd-4492-9618-5060dbb3657b",
+      "type": "note",
+      "order": 2,
+      "title": "君子报仇，十年不晚",
+      "structure": "固定说法 / 成语式表达",
+      "meaning_vi": "Quân tử báo thù, mười năm chưa muộn; trong bài dùng để khuyên đừng nóng vội, hãy đợi đến khi đủ năng lực/lợi thế.",
+      "examples": [
+        {
+          "id": "4aec2694-3f15-4c7e-9d39-f19da9b35645",
+          "zh": "君子报仇，十年不晚。",
+          "pinyin": "jūnzǐ bàochóu，shí nián bù wǎn。",
+          "vi": "",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "eb9a4019-dbd0-4ff9-b45d-d455f6b82f7e",
+      "type": "note",
+      "order": 3,
+      "title": "红人",
+      "structure": "成 + 名词 / 成公司的红人",
+      "meaning_vi": "Người được ưu ái, được trọng dụng; không dịch là “người đỏ”.",
+      "examples": [
+        {
+          "id": "7afa57ad-8c40-469c-aa33-df43b694d068",
+          "zh": "我已经成公司的红人了！",
+          "pinyin": "wǒ yǐjīng chéng gōngsī de hóngrén le！",
+          "vi": "",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

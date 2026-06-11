@@ -1,0 +1,112 @@
+[
+  {
+    "id": "fdd24a11-5573-4fee-a198-f4ad08b67656",
+    "order": 1,
+    "title_vi": "Thời gian & lịch trình",
+    "words": [
+      "前天",
+      "后天",
+      "假期",
+      "暑假",
+      "经常",
+      "常常",
+      "平常",
+      "平时",
+      "一般"
+    ],
+    "notes": []
+  },
+  {
+    "id": "8f23e185-f16d-4bab-9e7a-b9f85d274b17",
+    "order": 2,
+    "title_vi": "Du lịch & tổ chức hoạt động",
+    "words": [
+      "导游",
+      "旅行社",
+      "组织",
+      "安排",
+      "活动",
+      "高铁",
+      "风光",
+      "风景",
+      "自由"
+    ],
+    "notes": []
+  },
+  {
+    "id": "a3bf3771-b451-4011-b2ca-507932701c49",
+    "order": 3,
+    "title_vi": "Học tập & công việc",
+    "words": [
+      "研究",
+      "研究生",
+      "打工",
+      "老板",
+      "需要",
+      "利用"
+    ],
+    "notes": []
+  },
+  {
+    "id": "9e36e100-acf4-406b-ad22-f5017df2f978",
+    "order": 4,
+    "title_vi": "Quan hệ & hỗ trợ",
+    "words": [
+      "帮助",
+      "帮",
+      "互相",
+      "商量",
+      "自己"
+    ],
+    "notes": []
+  },
+  {
+    "id": "d557e716-a529-4829-a595-f43bdb54db61",
+    "order": 5,
+    "title_vi": "Vật chất, kim loại & vị trí",
+    "words": [
+      "铁",
+      "金",
+      "银",
+      "外",
+      "内"
+    ],
+    "notes": []
+  },
+  {
+    "id": "e8aa6604-e34c-469c-9bbe-201f7a11e59f",
+    "order": 6,
+    "title_vi": "Cơ thể, âm thanh & cảm nhận",
+    "words": [
+      "鼻子",
+      "头发",
+      "眼睛",
+      "声调",
+      "声"
+    ],
+    "notes": []
+  },
+  {
+    "id": "e1786268-95dd-464e-ab01-36c57ac56a0b",
+    "order": 7,
+    "title_vi": "Tâm lý & đánh giá",
+    "words": [
+      "希望",
+      "失望",
+      "马马虎虎",
+      "平实",
+      "实"
+    ],
+    "notes": []
+  },
+  {
+    "id": "869fd7cb-ce34-4b93-996c-8edd693fce03",
+    "order": 8,
+    "title_vi": "Thu thập & sắp xếp",
+    "words": [
+      "收集",
+      "排"
+    ],
+    "notes": []
+  }
+]

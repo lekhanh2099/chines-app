@@ -1,0 +1,350 @@
+{
+  "id": "7aeb72cc-d206-47f7-b41d-d5141caa3bd4",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "面试",
+  "pinyin": "miànshì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "diện thí",
+    "meaning_vi": "phỏng vấn; buổi phỏng vấn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phỏng vấn",
+      "buổi phỏng vấn"
+    ],
+    "short_definition_vi": "phỏng vấn; buổi phỏng vấn",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "面",
+        "lishu_vi": "diện",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặt, bề mặt, gặp trực tiếp",
+        "modern_logic_vi": "Gợi ý học 面试: gặp trực tiếp để kiểm tra.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "试",
+        "lishu_vi": "thí",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "式",
+            "hanviet": "thức",
+            "meaning_vi": "hình thức",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thử, kiểm tra, thi",
+        "modern_logic_vi": "讠 gợi liên hệ lời nói/kiểm tra bằng hỏi đáp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "面试 = gặp trực tiếp để kiểm tra/đánh giá năng lực.",
+    "memory_tip_vi": "Nhớ qua 去……面试 và 参加面试.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "笔试",
+        "pinyin": "bǐshì",
+        "meaning_vi": "thi viết",
+        "difference_vi": "Đối lập với phỏng vấn trực tiếp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "采访",
+        "pinyin": "cǎifǎng",
+        "meaning_vi": "phỏng vấn báo chí",
+        "difference_vi": "Dùng cho phóng viên/truyền thông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "笔试",
+        "pinyin": "bǐshì",
+        "meaning_vi": "thi viết",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "feb17a2c-759a-4606-a36e-fbbff12c8014",
+      "order": 1,
+      "zh": "参加面试",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10eb5c32-905d-4a02-925f-8c9a362c421e",
+      "order": 2,
+      "zh": "去面试",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c3071039-1154-4bf3-8601-fdfe1b7a94ea",
+      "order": 3,
+      "zh": "面试机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "42f3326d-1b81-4ae2-bcd0-b0c9808c363e",
+      "order": 4,
+      "zh": "面试结果",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6151a2fe-3894-465a-92e3-c3e8e4c8a977",
+      "order": 5,
+      "zh": "通过面试",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d107e908-b9ad-4082-8b94-28ddc1771ef2",
+      "order": 6,
+      "zh": "面试官",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ad41715-98a3-449b-a761-d1630c65eaf1",
+      "order": 1,
+      "zh": "我下午三点有一个面试。",
+      "pinyin": "Wǒ xiàwǔ sān diǎn yǒu yí ge miànshì.",
+      "vi": "Ba giờ chiều tôi có một buổi phỏng vấn.",
+      "analysis_vi": "有一个面试 coi 面试 như danh từ.",
+      "highlight": [
+        "面试"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7aeb72cc-d206-47f7-b41d-d5141caa3bd4"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1642a6c6-0703-4608-8d36-2d454b18520a",
+      "order": 2,
+      "zh": "她去牛津大学面试的时候，穿得很朴素。",
+      "pinyin": "Tā qù Niújīn Dàxué miànshì de shíhou, chuān de hěn pǔsù.",
+      "vi": "Khi cô ấy đi phỏng vấn ở Đại học Oxford, cô ấy ăn mặc rất giản dị.",
+      "analysis_vi": "去……面试 = đi đến đâu để phỏng vấn.",
+      "highlight": [
+        "面试"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7aeb72cc-d206-47f7-b41d-d5141caa3bd4"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Phỏng vấn học thuật không chỉ kiểm tra kiến thức mà còn kiểm tra tư duy phản biện và cách lập luận.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5feb399a-a1d6-47a4-854d-627092089d11",
+      "order": 1,
+      "rule_vi": "Không nhầm 面试 với 采访.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "记者面试了他。",
+          "pinyin": "Jìzhě miànshì le tā.",
+          "vi": "Phóng viên phỏng vấn anh ấy.",
+          "note_vi": "Không tự nhiên nếu là phỏng vấn báo chí.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "记者采访了他。",
+          "pinyin": "Jìzhě cǎifǎng le tā.",
+          "vi": "Phóng viên đã phỏng vấn anh ấy.",
+          "note_vi": "采访 hợp ngữ cảnh truyền thông.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "面试",
+    "back": "phỏng vấn; buổi phỏng vấn",
+    "hint": "miànshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7aeb72cc-d206-47f7-b41d-d5141caa3bd4",
+    "source_lesson_vocab_id": null
+  }
+}

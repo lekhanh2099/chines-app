@@ -1,0 +1,192 @@
+{
+  "id": "d45f28c7-a3c7-4a19-aab6-27ab15c6703e",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "脚",
+  "pinyin": "jiǎo",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cước",
+    "meaning_vi": "chân; bàn chân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chân",
+      "bàn chân"
+    ],
+    "short_definition_vi": "chân; bàn chân",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "脚",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhục/Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nhục/nguyệt",
+          "meaning_vi": "bộ phận cơ thể trong nhiều chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục/nguyệt",
+            "meaning_vi": "bộ phận cơ thể trong nhiều chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhục/Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nhục/nguyệt",
+              "meaning_vi": "bộ phận cơ thể trong nhiều chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "却",
+            "hanviet": "khước",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chân; bàn chân",
+        "modern_logic_vi": "Có 月 dạng thân thể; 脚 thiên về bàn chân/phần tiếp xúc đất.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "脚 = chân; bàn chân.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 个 cho chân/bàn chân; dùng 只.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1c8bb3be-031c-4b23-a563-a8347881eb95",
+      "order": 1,
+      "zh": "脚",
+      "pinyin": "",
+      "vi": "chân; bàn chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "712d0b9f-8c63-4722-8640-0dc1bc694e0f",
+      "order": 1,
+      "zh": "我的脚有点儿疼，走不了太远。",
+      "pinyin": "Wǒ de jiǎo yǒudiǎnr téng, zǒu bù liǎo tài yuǎn.",
+      "vi": "Chân tôi hơi đau, không đi xa được.",
+      "analysis_vi": "Không dùng 个 cho chân/bàn chân; dùng 只.",
+      "level": "basic",
+      "highlight": [
+        "脚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d45f28c7-a3c7-4a19-aab6-27ab15c6703e"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "416cbb1d-b221-43d3-8f59-d03a32575ee3",
+      "kind": "usage",
+      "text_vi": "Không dùng 个 cho chân/bàn chân; dùng 只.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "脚",
+    "back": "chân; bàn chân",
+    "hint": "jiǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d45f28c7-a3c7-4a19-aab6-27ab15c6703e",
+    "source_lesson_vocab_id": null
+  }
+}

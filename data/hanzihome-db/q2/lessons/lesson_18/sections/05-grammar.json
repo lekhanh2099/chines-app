@@ -1,0 +1,464 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / cách dùng từ",
+  "source_origin": "textbook_generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "26d807af-9599-4242-96db-253eb2d2e572",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "把字句（2）",
+      "title_vi": "Câu chữ 把 mở rộng",
+      "level": "HSK3+",
+      "tags": [
+        "把字句",
+        "ba_sentence",
+        "result",
+        "disposal"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Câu chữ 把 đưa tân ngữ xác định lên trước động từ để nhấn mạnh việc chủ thể xử lý/tác động lên tân ngữ và tạo ra kết quả, thay đổi vị trí/trạng thái hoặc chuyển giao cho ai đó.",
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "请把护照和机票给我。",
+              "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi.",
+              "highlight": [
+                "把护照和机票给我"
+              ],
+              "grammar_refs": [
+                "26d807af-9599-4242-96db-253eb2d2e572"
+              ],
+              "vocab_refs": [
+                "5ea44727-d97c-467b-b1b8-babd195df50d",
+                "54613016-834a-4fc3-9912-2357a6d27058"
+              ],
+              "source_ref": "b77b6ed5-bf0f-49aa-bf47-abf46d11fce7",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ."
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "7672989f-ed7c-49da-b36e-660002ad0067",
+          "type": "grammar_usage_notes",
+          "order": 2,
+          "title": "Điều kiện 1 — Chủ ngữ là người/vật thực hiện hành động",
+          "notes_vi": [
+            "Chủ ngữ đứng trước 把 phải là bên phát ra hành động.",
+            "Ai đứng trước 把 thì người đó là người xử lý tân ngữ."
+          ],
+          "examples": [
+            {
+              "id": "ad1f75ec-b269-4d5e-95c3-eb69b89426ba",
+              "zh": "我把相机给姐姐了。",
+              "vi": "Tôi đưa máy ảnh cho chị rồi.",
+              "highlight": [
+                "我",
+                "把相机给姐姐"
+              ],
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false,
+              "pinyin": "Wǒ bǎ xiàngjī gěi jiějie le."
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "696b3e8e-6a19-4822-ba38-3af47f67edff",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Điều kiện 2 — Tân ngữ sau 把 phải xác định",
+          "notes_vi": [
+            "Tân ngữ sau 把 là đối tượng bị động từ tác động đến và thường phải là đối tượng xác định.",
+            "请把那本书给我 tự nhiên hơn 请把一本书给我 nếu 一本书 chỉ là một quyển bất kỳ."
+          ],
+          "examples": [
+            {
+              "id": "6dd220c0-2cd2-4b77-9db1-ce7175552087",
+              "zh": "你把昨天的作业做完了吗？",
+              "vi": "Bạn làm xong bài tập hôm qua chưa?",
+              "highlight": [
+                "昨天的作业"
+              ],
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false,
+              "pinyin": "Nǐ bǎ zuótiān de zuòyè zuò wán le ma?"
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "261ae95d-3d00-44bf-b8b9-a29a64bbfdf2",
+          "type": "grammar_usage_notes",
+          "order": 4,
+          "title": "Điều kiện 3 — Sau động từ phải có thành phần khác",
+          "notes_vi": [
+            "Động từ trong câu 把 thường không đứng trơ trọi, mà cần 了, bổ ngữ kết quả/xu hướng, động từ lặp, 给 + người nhận, 在/到 + nơi chốn...",
+            "Thành phần sau động từ nói rõ kết quả hoặc ảnh hưởng của hành động."
+          ],
+          "examples": [
+            {
+              "id": "35118954-0c04-426b-96c6-b66fd4be199a",
+              "zh": "把药喝了吧。",
+              "vi": "Uống thuốc đi nhé.",
+              "highlight": [
+                "喝了"
+              ],
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false,
+              "pinyin": "Bǎ yào hē le ba."
+            },
+            {
+              "id": "32a094de-9ecb-4d6c-a64b-0c988abb983a",
+              "zh": "快把桌子擦擦。",
+              "vi": "Mau lau bàn đi.",
+              "highlight": [
+                "擦擦"
+              ],
+              "source_ref": "1c90c614-758e-4e8d-88e5-cb7013155423",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Kuài bǎ zhuōzi cāca."
+            },
+            {
+              "id": "21c36338-d652-4378-834a-879eea95bd83",
+              "zh": "把要托运的行李放上去吧。",
+              "vi": "Đặt hành lý cần ký gửi lên đi.",
+              "highlight": [
+                "放上去"
+              ],
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Bǎ yào tuōyùn de xíngli fàng shàngqù ba."
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "68978782-77a4-4bfa-ad00-84aaa62caf91",
+          "type": "grammar_usage_notes",
+          "order": 5,
+          "title": "Dạng phủ định / động từ năng nguyện đặt trước 把",
+          "notes_vi": [
+            "不, 没有, 别 hoặc động từ năng nguyện như 要, 想, 能, 可以 phải đặt trước 把, không đặt trước động từ chính."
+          ],
+          "examples": [
+            {
+              "id": "4c916f9e-1a98-4e0f-8424-c3e0f8dc69a6",
+              "zh": "你为什么不把你的想法告诉她呢？",
+              "vi": "Tại sao bạn không nói suy nghĩ của bạn cho cô ấy?",
+              "highlight": [
+                "不把"
+              ],
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false,
+              "pinyin": "Nǐ wèishénme bù bǎ nǐ de xiǎngfǎ gàosu tā ne?"
+            },
+            {
+              "id": "6520d7e5-4799-4112-b0ad-f687dc346a6d",
+              "zh": "你没把口袋里的东西都掏出来。",
+              "vi": "Bạn chưa lấy hết đồ trong túi ra.",
+              "highlight": [
+                "没把"
+              ],
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false,
+              "pinyin": "Nǐ méi bǎ kǒudài lǐ de dōngxi dōu tāo chūlai."
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "47dcc6de-8c32-455c-8dfd-549c996958db",
+          "type": "grammar_usage_notes",
+          "order": 6,
+          "title": "Điều kiện 5 — Động từ chính phải có khả năng tác động lên tân ngữ",
+          "notes_vi": [
+            "Động từ vị ngữ trong câu 把 phải có thể làm tân ngữ thay đổi hoặc sinh ra kết quả.",
+            "Không dùng 把 với các động từ như 有, 是, 在, 来, 去, 觉得, 毕业 khi chúng không xử lý/tác động lên tân ngữ."
+          ],
+          "examples": [
+            {
+              "id": "c06efda5-b482-4346-861d-35a9d3309345",
+              "zh": "我把词典有了。",
+              "vi": "Sai. Nên nói: 我有词典了。",
+              "highlight": [
+                "把词典有"
+              ],
+              "source_origin": "textbook_generated_mixed",
+              "check_needed": false,
+              "pinyin": "Wǒ bǎ cídiǎn yǒu le."
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4281ebdc-804e-421d-8257-a18eb910f8dd",
+          "type": "grammar_structure",
+          "order": 7,
+          "title": "Các mẫu 把 mở rộng",
+          "pattern": "S + 把 + O + V + result / direction / place / recipient",
+          "meaning_vi": "Các pattern thường gặp trong bài 18: 给 người nhận, 放在/放到 nơi chốn, V + 上/出来/倒/好, V 一下儿.",
+          "formulas": [
+            {
+              "label": "Chuyển giao",
+              "pattern": "S + 把 + O + 给 + người nhận"
+            },
+            {
+              "label": "Đặt vào vị trí",
+              "pattern": "S + 把 + O + 放在/放到 + nơi chốn"
+            },
+            {
+              "label": "Kết quả/xu hướng",
+              "pattern": "S + 把 + O + V + 上/出来/倒/好"
+            },
+            {
+              "label": "Làm một chút",
+              "pattern": "S + 把 + O + V + 一下儿"
+            }
+          ],
+          "examples": [
+            {
+              "id": "1ae7f2b2-a1a3-47a9-9253-b96914319431",
+              "zh": "我先把电池装上。",
+              "vi": "Anh lắp pin vào trước.",
+              "highlight": [
+                "把电池装上"
+              ],
+              "source_ref": "0e86620b-0718-428a-ae5f-29458ce15a71",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Wǒ xiān bǎ diànchí zhuāng shàng."
+            },
+            {
+              "id": "4c595c68-87d9-4079-a281-0e664218ef9b",
+              "zh": "请把口袋里的东西都掏出来。",
+              "vi": "Xin lấy hết đồ trong túi ra.",
+              "highlight": [
+                "把口袋里的东西都掏出来"
+              ],
+              "source_ref": "2009c011-892b-4fda-9210-89340de1aaa7",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Qǐng bǎ kǒudài lǐ de dōngxi dōu tāo chūlai."
+            },
+            {
+              "id": "ed6e94b2-7e84-413d-be38-644fddffd94c",
+              "zh": "你把杯子碰倒了。",
+              "vi": "Anh làm đổ cốc rồi.",
+              "highlight": [
+                "把杯子碰倒了"
+              ],
+              "source_ref": "386d045d-ca0e-4489-906e-99dd9a95870c",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Nǐ bǎ bēizi pèng dǎo le."
+            }
+          ],
+          "notes_vi": [
+            "Đây là grammar chính của bài 18, nên mọi exercise dùng 把 cần map về grammar ref này."
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "grammar_l18_kuai_le",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "快……了",
+      "title_vi": "快……了: sắp... rồi",
+      "level": "HSK3+",
+      "tags": [
+        "快……了",
+        "near_future",
+        "aspect",
+        "lesson_18"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_l18_kuai_le_overview",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để nói sự việc/trạng thái sắp xảy ra hoặc sắp chuyển sang trạng thái mới.",
+          "examples": [
+            {
+              "id": "grammar_l18_kuai_le_ex_001",
+              "zh": "天都快黑了。",
+              "pinyin": "Tiān dōu kuài hēi le.",
+              "vi": "Trời đã sắp tối rồi.",
+              "highlight": [
+                "快黑了"
+              ],
+              "grammar_refs": [
+                "grammar_l18_kuai_le"
+              ],
+              "vocab_refs": [],
+              "source_ref": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "result_complement_cheng",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "V + 成",
+      "title_vi": "Bổ ngữ kết quả 成: biến/dịch thành kết quả",
+      "level": "HSK3+",
+      "tags": [
+        "成",
+        "result_complement",
+        "lesson_18"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "result_complement_cheng_overview",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng sau động từ để nói kết quả chuyển thành dạng/ngôn ngữ/trạng thái khác.",
+          "examples": [
+            {
+              "id": "result_complement_cheng_ex_001",
+              "zh": "翻译成英文的吗？",
+              "pinyin": "Fānyì chéng Yīngwén de ma?",
+              "vi": "Dịch sang tiếng Anh phải không ạ?",
+              "highlight": [
+                "翻译成英文"
+              ],
+              "grammar_refs": [
+                "result_complement_cheng"
+              ],
+              "vocab_refs": [],
+              "source_ref": "ab5ff6c5-e148-476f-b214-78d6d236b940",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "result_complement_wan",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "V + 完",
+      "title_vi": "Bổ ngữ kết quả 完: làm xong",
+      "level": "HSK3+",
+      "tags": [
+        "完",
+        "result_complement",
+        "lesson_18"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "result_complement_wan_overview",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng sau động từ để nói hành động hoàn thành xong.",
+          "examples": [
+            {
+              "id": "result_complement_wan_ex_001",
+              "zh": "下午能翻译完吗？",
+              "pinyin": "Xiàwǔ néng fānyì wán ma?",
+              "vi": "Chiều có thể dịch xong không?",
+              "highlight": [
+                "翻译完"
+              ],
+              "grammar_refs": [
+                "result_complement_wan"
+              ],
+              "vocab_refs": [],
+              "source_ref": "bbe94aa4-4664-4aae-bb1f-58726d1ab505",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "verb_gei_recipient",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "V + 给 + người nhận",
+      "title_vi": "V + 给 + người nhận: giao/chuyển cho ai",
+      "level": "HSK3+",
+      "tags": [
+        "给",
+        "recipient",
+        "lesson_18"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "verb_gei_recipient_overview",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng sau động từ để chỉ người nhận của hành động chuyển giao.",
+          "examples": [
+            {
+              "id": "verb_gei_recipient_ex_001",
+              "zh": "下午交给我吧。",
+              "pinyin": "Xiàwǔ jiāo gěi wǒ ba.",
+              "vi": "Chiều nộp/đưa cho tôi nhé.",
+              "highlight": [
+                "交给我"
+              ],
+              "grammar_refs": [
+                "verb_gei_recipient"
+              ],
+              "vocab_refs": [],
+              "source_ref": "ac132aae-10a0-4c37-89fc-2bd40e855cef",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

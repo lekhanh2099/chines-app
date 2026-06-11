@@ -1,0 +1,269 @@
+{
+  "id": "06222f18-fff7-4706-bda8-4fe4f7959acf",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "高",
+  "pinyin": "gāo",
+  "pos": {
+    "raw_vi": "Tính từ / Hình vị",
+    "raw_cn": "形 / 语素",
+    "normalized": "unknown",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "comparison_degree"
+  ],
+  "meaning": {
+    "hanviet": "Cao",
+    "meaning_vi": "cao; mức cao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cao",
+      "mức cao"
+    ],
+    "short_definition_vi": "cao; mức cao",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "comparison degree",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "高",
+        "lishu_vi": "",
+        "structure_note_vi": "高 là chữ/bộ độc lập, học theo nghĩa hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao, mức cao",
+        "modern_logic_vi": "高 là chữ/bộ độc lập, học theo nghĩa hiện đại.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "高 dùng cho chiều cao vật lý và mức độ trừu tượng như nhiệt độ, trình độ, giá.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "高大",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cao lớn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "高温",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhiệt độ cao",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "低",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thấp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "低",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thấp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "afac0938-17f3-4281-968a-dacec672577c",
+      "order": 1,
+      "zh": "很高",
+      "pinyin": "",
+      "vi": "rất cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f096df27-d6fb-45d3-876f-bd809d612117",
+      "order": 2,
+      "zh": "比……高",
+      "pinyin": "",
+      "vi": "cao hơn...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e0ed018-964c-42ef-b79e-b487d455a39f",
+      "order": 3,
+      "zh": "最高",
+      "pinyin": "",
+      "vi": "cao nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17895394-bd8f-43ac-b2c1-e96c74c5a890",
+      "order": 4,
+      "zh": "气温高",
+      "pinyin": "",
+      "vi": "nhiệt độ không khí cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea118219-7489-4531-b479-254dc9cccf25",
+      "order": 5,
+      "zh": "水平高",
+      "pinyin": "",
+      "vi": "trình độ cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "752aa8a4-986b-4d02-9902-2af6811a27b4",
+      "order": 1,
+      "zh": "他比我高。",
+      "pinyin": "Tā bǐ wǒ gāo.",
+      "vi": "Anh ấy cao hơn tôi.",
+      "analysis_vi": "A 比 B 高 là mẫu so sánh cơ bản.",
+      "highlight": [
+        "高"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "06222f18-fff7-4706-bda8-4fe4f7959acf"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "36869e93-2d9e-4234-9141-cc7579ddb4c1",
+      "order": 2,
+      "zh": "今天最高温度是三十度。",
+      "pinyin": "Jīntiān zuìgāo wēndù shì sānshí dù.",
+      "vi": "Nhiệt độ cao nhất hôm nay là 30 độ.",
+      "analysis_vi": "最高温度 = nhiệt độ cao nhất.",
+      "highlight": [
+        "高"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "06222f18-fff7-4706-bda8-4fe4f7959acf"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "841245d7-a386-4581-8e10-43b7db8aa63e",
+      "order": 1,
+      "rule_vi": "声音高 là âm/giọng cao; 声音大 là âm lượng lớn.",
+      "natural_examples": [
+        {
+          "zh": "你的声音太小了。",
+          "pinyin": "Nǐ de shēngyīn tài xiǎo le.",
+          "vi": "Tiếng bạn nhỏ quá.",
+          "note_vi": "Âm lượng dùng 大/小.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你的声音太小了。",
+          "pinyin": "Nǐ de shēngyīn tài xiǎo le.",
+          "vi": "Tiếng bạn nhỏ quá.",
+          "note_vi": "Âm lượng dùng 大/小.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "高",
+    "back": "cao; mức cao",
+    "hint": "gāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "comparison_degree"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "06222f18-fff7-4706-bda8-4fe4f7959acf",
+    "source_lesson_vocab_id": null
+  }
+}

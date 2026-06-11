@@ -1,0 +1,339 @@
+{
+  "id": "0395107b-ba38-4d5c-943d-465ca65a3f17",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "甜蜜",
+  "pinyin": "tiánmì",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "điềm mật",
+    "meaning_vi": "ngọt ngào, hạnh phúc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngọt ngào, hạnh phúc"
+    ],
+    "short_definition_vi": "Ngọt về vị hoặc cảm xúc/quan hệ/ký ức.",
+    "textbook_focus_vi": "Dùng với 回忆, 爱情, 生活.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "甜",
+        "lishu_vi": "điềm",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "舌",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thiệt",
+          "radical_name_zh": "",
+          "hanviet": "thiệt",
+          "meaning_vi": "lưỡi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "舌 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "舌",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thiệt",
+              "radical_name_zh": "",
+              "hanviet": "thiệt",
+              "meaning_vi": "lưỡi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "舌 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "舌 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngọt",
+        "modern_logic_vi": "ngọt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "蜜",
+        "lishu_vi": "mật",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "虫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trùng",
+          "radical_name_zh": "",
+          "hanviet": "trùng",
+          "meaning_vi": "côn trùng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "虫 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "虫 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "虫 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mật",
+        "modern_logic_vi": "mật",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "甜 + 蜜 = ngọt như mật.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "幸福",
+        "pinyin": "xìngfú",
+        "meaning_vi": "hạnh phúc",
+        "difference_vi": "幸福 rộng hơn; 甜蜜 có sắc thái ngọt ngào.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d5ebba94-82dd-4f8a-a7e9-6b27287d7006",
+      "order": 1,
+      "zh": "甜蜜的回忆",
+      "pinyin": "",
+      "vi": "ký ức ngọt ngào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f4d60fc4-c9a7-4ed9-a58d-6ab4354cfcfb",
+      "order": 2,
+      "zh": "甜蜜的生活",
+      "pinyin": "",
+      "vi": "cuộc sống hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "443c7621-15a1-4adf-9f18-e249382586a0",
+      "order": 3,
+      "zh": "甜蜜的爱情",
+      "pinyin": "",
+      "vi": "tình yêu ngọt ngào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7215064e-e69a-4d1f-bdf8-791df12b5fbc",
+      "order": 4,
+      "zh": "甜蜜地笑",
+      "pinyin": "",
+      "vi": "cười ngọt ngào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d7fd5973-25ff-4418-9f43-9c8aebb74935",
+      "order": 1,
+      "zh": "这是一段甜蜜的回忆。",
+      "pinyin": "",
+      "vi": "Đây là một đoạn ký ức ngọt ngào.",
+      "analysis_vi": "甜蜜的 làm định ngữ.",
+      "highlight": [
+        "甜蜜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0395107b-ba38-4d5c-943d-465ca65a3f17"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2e3c3f97-b4b8-43e0-a1f9-d2cfcecb4d51",
+      "order": 2,
+      "zh": "尽管那时候生活很苦，他们还是留下了很多甜蜜的回忆。",
+      "pinyin": "",
+      "vi": "Dù khi đó cuộc sống rất khổ, họ vẫn để lại nhiều ký ức ngọt ngào.",
+      "analysis_vi": "尽管……还是…….",
+      "highlight": [
+        "甜蜜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0395107b-ba38-4d5c-943d-465ca65a3f17"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "256c99b7-69ab-4fc7-8fe3-0139e5a60d35",
+      "order": 1,
+      "rule_vi": "Tả vị ngọt bình thường dùng 甜; 甜蜜 thiên cảm xúc hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Tả vị ngọt bình thường dùng 甜; 甜蜜 thiên cảm xúc hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "甜蜜",
+    "back": "ngọt ngào, hạnh phúc",
+    "hint": "tiánmì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0395107b-ba38-4d5c-943d-465ca65a3f17",
+    "source_lesson_vocab_id": null
+  }
+}

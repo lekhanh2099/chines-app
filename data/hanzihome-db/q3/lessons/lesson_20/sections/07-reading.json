@@ -1,0 +1,192 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền khuyết tổng hợp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "面试",
+      "title_vi": "Phỏng vấn",
+      "supplementary_vocabulary": [
+        {
+          "id": "63c784d8-7387-47d3-a5cf-7ff63eddb0a2",
+          "hanzi": "技术",
+          "pinyin": "jìshù",
+          "meaning_vi": "kỹ thuật; công nghệ",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "id": "5db73633-eb2c-496c-bc9a-5e3e3eee85f6",
+          "hanzi": "抑制",
+          "pinyin": "yìzhì",
+          "meaning_vi": "kiềm chế; kìm nén",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "id": "28d32eb9-2915-434a-9022-408d85b25906",
+          "hanzi": "痣",
+          "pinyin": "zhì",
+          "meaning_vi": "nốt ruồi",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "id": "54581a7a-0e28-4e3f-800e-2b96ea7aec3d",
+          "hanzi": "蒙",
+          "pinyin": "mēng",
+          "meaning_vi": "lừa; lừa gạt",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "6267e546-4f7d-4e15-8dd8-1c19b8c2f1d3",
+          "order": 1,
+          "zh": "考试是单独面试。我一走①________小会客厅，坐在正中沙发上的一个老外便站了起来，我认②________了，他就是贝克先生，公司招聘广告上有他的照片。\n\n“是你？！你就是……”贝克先生用流利的中文说出了我的名字，并且快步走到我的面前，紧紧握③________我的手。\n\n“原来是你！我找你找④________很长时间了。”贝克先生一脸的惊喜，激动地转过身对在座的另几位考官说道：“先生们，我给你们介绍一下儿，这位就是救我女儿的那位年轻人。”\n\n我的心狂跳起来，还没等我说话，贝克先生就把我拉到他旁边的沙发上坐下，说道：“我划船的技术太差了，不小心⑤________女儿掉进了昆明湖里，要不是你就麻烦了。真抱歉，当时我只顾看女儿了，也没来得及向你道谢。”我努力抑制住心跳，认真地说：“贝克先生，您是不是搞错了？⑥________以前从未见过您，更没救过您的女儿。”\n\n贝克先生又拉住我说：“你忘记了？四月二日，颐和园昆明湖上……肯定是你！我记得你脸上这颗痣。年轻人，你骗不⑦________我的。”贝克先生一脸的得意。\n\n我站起来：“贝克先生，我想您肯定认错人了，我真的没救过您女儿。”\n\n我说得很坚决，贝克先生一时愣住了。忽然，他又笑了：“年轻人，我欣赏你的诚实，好，你被录取了。”\n\n这时，我站⑧________说：“谢谢您的赏识。不过，对不起，我不欣赏您这样的面试，因为，这显然是在蒙人。所以，我不想到贵公司工作了。”\n\n说完，我走出了会客厅。",
+          "pinyin": "Kǎoshì shì dāndú miànshì. Wǒ yì zǒu ①________ xiǎo huìkètīng, zuò zài zhèngzhōng shāfā shang de yí ge lǎowài biàn zhàn le qǐlai, wǒ rèn ②________ le, tā jiù shì Bèikè xiānsheng, gōngsī zhāopìn guǎnggào shang yǒu tā de zhàopiàn.\n\n“Shì nǐ?! Nǐ jiù shì……” Bèikè xiānsheng yòng liúlì de Zhōngwén shuō chū le wǒ de míngzi, bìngqiě kuàibù zǒu dào wǒ de miànqián, jǐnjǐn wò ③________ wǒ de shǒu.\n\n“Yuánlái shì nǐ! Wǒ zhǎo nǐ zhǎo ④________ hěn cháng shíjiān le.” Bèikè xiānsheng yì liǎn de jīngxǐ, jīdòng de zhuǎn guò shēn duì zàizuò de lìng jǐ wèi kǎoguān shuōdào: “Xiānshengmen, wǒ gěi nǐmen jièshào yíxiàr, zhè wèi jiù shì jiù wǒ nǚ'ér de nà wèi niánqīngrén.”\n\nWǒ de xīn kuáng tiào qǐlai, hái méi děng wǒ shuōhuà, Bèikè xiānsheng jiù bǎ wǒ lā dào tā pángbiān de shāfā shang zuòxià, shuōdào: “Wǒ huáchuán de jìshù tài chà le, bù xiǎoxīn ⑤________ nǚ'ér diào jìn le Kūnmíng Hú lǐ, yàobúshì nǐ jiù máfan le. Zhēn bàoqiàn, dāngshí wǒ zhǐ gù kàn nǚ'ér le, yě méi láidejí xiàng nǐ dàoxiè.” Wǒ nǔlì yìzhì zhù xīntiào, rènzhēn de shuō: “Bèikè xiānsheng, nín shì bu shì gǎo cuò le? ⑥________ yǐqián cóngwèi jiàn guo nín, gèng méi jiù guo nín de nǚ'ér.”\n\nBèikè xiānsheng yòu lā zhù wǒ shuō: “Nǐ wàngjì le? Sì yuè èr rì, Yíhéyuán Kūnmíng Hú shang…… kěndìng shì nǐ! Wǒ jìde nǐ liǎn shang zhè kē zhì. Niánqīngrén, nǐ piàn bù ⑦________ wǒ de.” Bèikè xiānsheng yì liǎn de déyì.\n\nWǒ zhàn qǐlai: “Bèikè xiānsheng, wǒ xiǎng nín kěndìng rèn cuò rén le, wǒ zhēn de méi jiù guo nín nǚ'ér.”\n\nWǒ shuō de hěn jiānjué, Bèikè xiānsheng yìshí lèng zhù le. Hūrán, tā yòu xiào le: “Niánqīngrén, wǒ xīnshǎng nǐ de chéngshí, hǎo, nǐ bèi lùqǔ le.”\n\nZhè shí, wǒ zhàn ⑧________ shuō: “Xièxie nín de shǎngshí. Búguò, duìbuqǐ, wǒ bù xīnshǎng nín zhèyàng de miànshì, yīnwèi, zhè xiǎnrán shì zài mēng rén. Suǒyǐ, wǒ bù xiǎng dào guì gōngsī gōngzuò le.”\n\nShuō wán, wǒ zǒu chū le huìkètīng.",
+          "vi": "Bài đọc kể một ứng viên đi phỏng vấn. Người phỏng vấn cố tình dựng tình huống nhận nhầm anh là người đã cứu con gái mình để thử sự trung thực. Ứng viên kiên quyết nói thật rằng mình chưa từng cứu cô bé. Sau khi được nhận vì tính trung thực, anh lại từ chối công ty vì cho rằng kiểu phỏng vấn ấy là lừa người.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "questions": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "blank_index": 1,
+          "answer": "进",
+          "acceptable_answers": [
+            "进"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "blank_index": 2,
+          "answer": "出来",
+          "acceptable_answers": [
+            "出来"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "blank_index": 3,
+          "answer": "住",
+          "acceptable_answers": [
+            "住"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "blank_index": 4,
+          "answer": "了",
+          "acceptable_answers": [
+            "了"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
+          "blank_index": 5,
+          "answer": "让",
+          "acceptable_answers": [
+            "让"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
+          "blank_index": 6,
+          "answer": "我",
+          "acceptable_answers": [
+            "我"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
+          "blank_index": 7,
+          "answer": "了",
+          "acceptable_answers": [
+            "了"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
+          "blank_index": 8,
+          "answer": "起来",
+          "acceptable_answers": [
+            "起来"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "note_vi": "Bài này không thấy 阅读理解 riêng; phần đọc thêm nằm trong mục 九、综合填空.",
+      "answers": [],
+      "answer_key": []
+    }
+  ]
+}

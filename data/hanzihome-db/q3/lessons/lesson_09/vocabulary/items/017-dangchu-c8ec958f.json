@@ -1,0 +1,304 @@
+{
+  "id": "20709d3b-f21f-4725-9bff-8ec20a77a3b2",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "当初",
+  "pinyin": "dāngchū",
+  "pos": {
+    "raw_vi": "Danh từ thời gian / phó từ thời gian",
+    "raw_cn": "时间名词/时间副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đương sơ",
+    "meaning_vi": "lúc đầu; ban đầu; hồi đó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lúc đầu",
+      "ban đầu",
+      "hồi đó"
+    ],
+    "short_definition_vi": "lúc đầu",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "当",
+        "lishu_vi": "đương",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lúc, đảm nhiệm",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "初",
+        "lishu_vi": "sơ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "衤",
+            "hanviet": "y",
+            "meaning_vi": "áo quần, vải vóc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "衤",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo quần, vải vóc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ban đầu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "衤",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "áo quần, vải vóc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "当初 là thời điểm ban đầu trong quá khứ, thường có sắc thái nhìn lại.",
+    "memory_tip_vi": "Nhớ 当初我以为…… = hồi đó tôi tưởng...",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "起初",
+        "pinyin": "",
+        "meaning_vi": "起初",
+        "difference_vi": "起初 trung tính hơn; 当初 thường có sắc thái nhìn lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "后来",
+        "pinyin": "",
+        "meaning_vi": "后来",
+        "difference_vi": "về sau",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fab1cdb1-796d-4810-8af0-3aeeb312b4eb",
+      "order": 1,
+      "zh": "当初的决定",
+      "pinyin": "dāngchū de juédìng",
+      "vi": "quyết định lúc đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5197118b-87e9-48e2-8861-e8b596d35aa0",
+      "order": 2,
+      "zh": "当初的想法",
+      "pinyin": "dāngchū de xiǎngfǎ",
+      "vi": "suy nghĩ ban đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c530f9c1-3110-4801-86c4-f7dc98a17bf2",
+      "order": 3,
+      "zh": "如果当初",
+      "pinyin": "rúguǒ dāngchū",
+      "vi": "nếu lúc đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e2263b1-4079-4e63-81a0-87065b83ce3b",
+      "order": 4,
+      "zh": "回想当初",
+      "pinyin": "huíxiǎng dāngchū",
+      "vi": "nhớ lại hồi đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ee3e4775-470c-4183-8368-e2b3b5762748",
+      "order": 1,
+      "zh": "当初我没有想到事情会变成这样。",
+      "pinyin": "Dāngchū wǒ méiyǒu xiǎngdào shìqing huì biàn chéng zhèyàng.",
+      "vi": "Lúc đầu tôi không ngờ sự việc sẽ thành thế này.",
+      "analysis_vi": "当初 đặt mốc quá khứ.",
+      "highlight": [
+        "当初"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "20709d3b-f21f-4725-9bff-8ec20a77a3b2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0f7b8a0f-da7e-4cad-b9fe-ee7ba40a7875",
+      "order": 2,
+      "zh": "对他来说，当初最难的不是贫穷，而是没有人理解他。",
+      "pinyin": "Duì tā lái shuō, dāngchū zuì nán de bú shì pínqióng, ér shì méiyǒu rén lǐjiě tā.",
+      "vi": "Đối với anh ấy, khó nhất hồi đó không phải nghèo mà là không ai hiểu.",
+      "analysis_vi": "不是……而是…… nêu đối lập.",
+      "highlight": [
+        "当初"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "20709d3b-f21f-4725-9bff-8ec20a77a3b2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "当初 hay dùng khi hồi tưởng, hối tiếc hoặc đánh giá lại quyết định cũ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "29e6d04f-4ea5-43e1-a8fb-70a09f3d5b3e",
+      "order": 1,
+      "rule_vi": "Không trộn 当初 với 现在 nếu không tạo đối chiếu rõ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "当初我现在很忙。",
+          "pinyin": "Dāngchū wǒ xiànzài hěn máng.",
+          "vi": "Sai logic: 当初 quá khứ, 现在 hiện tại.",
+          "note_vi": "Không thể đặt cùng một trạng thái thời gian như vậy.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "当初我很穷，现在生活好多了。",
+          "pinyin": "Dāngchū wǒ hěn qióng, xiànzài shēnghuó hǎo duō le.",
+          "vi": "Hồi đó tôi nghèo, giờ cuộc sống khá hơn nhiều.",
+          "note_vi": "Đối chiếu quá khứ/hiện tại rõ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "当初",
+    "back": "lúc đầu; ban đầu; hồi đó",
+    "hint": "dāngchū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "20709d3b-f21f-4725-9bff-8ec20a77a3b2",
+    "source_lesson_vocab_id": null
+  }
+}

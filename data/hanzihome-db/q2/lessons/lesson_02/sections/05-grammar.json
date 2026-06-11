@@ -1,0 +1,271 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "动作的完成：动词 + 了",
+      "title_vi": "Động tác hoàn thành: Động từ + 了",
+      "level": "HSK2/HSK3",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "了 đặt ngay sau động từ để nói hành động đã xảy ra và hoàn thành. Trọng tâm không phải quá khứ đơn thuần, mà là hành động đã có kết quả / đã hoàn tất.",
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "在家吃了两片药。",
+              "vi": "Ở nhà đã uống hai viên thuốc.",
+              "highlight": [
+                "吃了"
+              ],
+              "source_origin": "textbook"
+            },
+            {
+              "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
+              "zh": "喝了一瓶啤酒。",
+              "vi": "Đã uống một chai bia.",
+              "highlight": [
+                "喝了"
+              ],
+              "source_origin": "textbook"
+            },
+            {
+              "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+              "zh": "我看了化验结果。",
+              "vi": "Tôi đã xem kết quả xét nghiệm rồi.",
+              "highlight": [
+                "看了"
+              ],
+              "source_origin": "textbook"
+            }
+          ]
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc khẳng định",
+          "pattern": "主语 + 动词 + 了 + 宾语",
+          "meaning_vi": "Ai đó đã làm xong một việc gì.",
+          "formulas": [
+            {
+              "label": "Khẳng định",
+              "pattern": "S + V + 了 + O"
+            }
+          ]
+        },
+        {
+          "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+          "type": "grammar_negative_form",
+          "order": 3,
+          "title": "Dạng phủ định",
+          "pattern": "没/没有 + 动词 + 宾语",
+          "wrong_pattern": "没 + V + 了",
+          "meaning_vi": "Chưa làm / đã không làm việc đó. Khi phủ định hành động hoàn thành thì bỏ 了.",
+          "correct_examples": [
+            {
+              "id": "4c916f9e-1a98-4e0f-8424-c3e0f8dc69a6",
+              "zh": "我没吃药。",
+              "vi": "Tôi chưa uống thuốc."
+            },
+            {
+              "id": "6520d7e5-4799-4112-b0ad-f687dc346a6d",
+              "zh": "他没喝啤酒。",
+              "vi": "Anh ấy không uống bia."
+            }
+          ],
+          "wrong_examples": [
+            {
+              "id": "1a4abdcd-8810-4792-9b70-e68677751bef",
+              "zh": "我没吃了药。",
+              "vi": "Sai: không dùng 没 + V + 了 trong mẫu này.",
+              "explanation_vi": "Phủ định hành động hoàn thành dùng 没/没有 + V, không thêm 了."
+            }
+          ]
+        },
+        {
+          "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
+          "type": "grammar_question_form",
+          "order": 4,
+          "title": "Dạng nghi vấn",
+          "pattern": "V + 了 + O + 吗？ / V + 了 + 没有？",
+          "meaning_vi": "Hỏi hành động đã xảy ra/chưa.",
+          "examples": [
+            {
+              "id": "27028544-385d-40f6-bd95-24429bbdceb6",
+              "zh": "你吃了药吗？",
+              "vi": "Bạn uống thuốc chưa?"
+            },
+            {
+              "id": "127b58f2-0e0f-4828-9690-578993e443b7",
+              "zh": "化验结果出来了没有？",
+              "vi": "Kết quả xét nghiệm đã có chưa?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "因为……所以……",
+      "title_vi": "Vì... nên...",
+      "level": "HSK2/HSK3",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "因为 đưa ra nguyên nhân, 所以 đưa ra kết quả. Cấu trúc này làm rõ logic “vì sao → nên thế nào”.",
+          "examples": [
+            {
+              "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+              "zh": "因为感到寂寞，所以心情不好，很难过。",
+              "vi": "Vì cảm thấy cô đơn nên tâm trạng không tốt, rất buồn.",
+              "highlight": [
+                "因为",
+                "所以"
+              ],
+              "source_origin": "textbook"
+            }
+          ]
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "因为 + 原因，所以 + 结果",
+          "meaning_vi": "Vì... nên...",
+          "formulas": [
+            {
+              "label": "Nguyên nhân - kết quả",
+              "pattern": "因为 A，所以 B"
+            }
+          ]
+        },
+        {
+          "id": "21fbb1a3-0847-4c15-9ca8-be559cee0dd7",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Có thể lược bỏ 因为 hoặc 所以",
+          "notes_vi": [
+            "Dạng đầy đủ nên luyện trước: 因为他病了，所以没来上课。",
+            "Khẩu ngữ có thể lược 因为 hoặc 所以 tùy ngữ cảnh."
+          ],
+          "examples": [
+            {
+              "id": "abaebd39-a149-46e0-b3ca-2feb0c0a9cc6",
+              "zh": "他病了，所以没来上课。",
+              "vi": "Anh ấy bị ốm, nên không đến lớp."
+            },
+            {
+              "id": "6bd5af24-6777-4062-bc59-104744d1f764",
+              "zh": "因为他病了，没来上课。",
+              "vi": "Vì anh ấy bị ốm, nên không đến lớp."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "Mẫu câu phụ trợ trong bài",
+      "title_vi": "Các mẫu phụ trợ đáng gom",
+      "level": "HSK2/HSK3",
+      "tags": [
+        "句型",
+        "补充"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "5c6d8f8c-e237-49a9-90ed-774267549aa6",
+          "type": "grammar_structure",
+          "order": 1,
+          "title": "先……然后……再……",
+          "pattern": "先 + V1，然后 + V2，再 + V3",
+          "meaning_vi": "Trước tiên..., sau đó..., rồi...",
+          "examples": [
+            {
+              "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+              "zh": "你先去化验一下儿大便，然后我再给你检查检查。",
+              "vi": "Anh/chị đi xét nghiệm đại tiện trước, sau đó tôi kiểm tra lại cho anh/chị."
+            }
+          ]
+        },
+        {
+          "id": "00283e6f-e5c3-4028-a2c6-6296e5ecb407",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "V + 一下儿",
+          "pattern": "动词 + 一下儿",
+          "meaning_vi": "Làm một chút / làm thử / làm nhẹ hành động.",
+          "examples": [
+            {
+              "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+              "zh": "我看一下儿。",
+              "vi": "Tôi xem một chút."
+            }
+          ]
+        },
+        {
+          "id": "32221e32-5abd-40ef-abc1-2fa1076bc342",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "V + V",
+          "pattern": "动词重叠",
+          "meaning_vi": "Lặp động từ để làm nhẹ giọng, thường dùng trong đề nghị/rủ rê.",
+          "examples": [
+            {
+              "id": "d3ca42bf-fbbd-4347-98a8-7a697fe218c2",
+              "zh": "我们一起去跳跳舞吧。",
+              "vi": "Chúng ta cùng đi nhảy một chút nhé."
+            }
+          ]
+        },
+        {
+          "id": "d3a1ecc2-8c1f-4b77-8f62-a76d0b71b893",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "别 + V/Adj + 了",
+          "pattern": "别 + 动词/形容词 + 了",
+          "meaning_vi": "Đừng tiếp tục làm / ở trạng thái đó nữa.",
+          "examples": [
+            {
+              "id": "8a5a1327-5977-406d-b2eb-0873fdcdff0b",
+              "zh": "别难过了。",
+              "vi": "Đừng buồn nữa."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

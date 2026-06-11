@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_f52f98239654ef7f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "蛇",
+  "pinyin": "shé",
+  "meaning_vi": "rắn",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ con rắn.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "275b46f4-3166-48b7-9766-58384178d1be",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "275b46f4-3166-48b7-9766-58384178d1be",
+    "type": "vocabulary_item",
+    "order": 35,
+    "hanzi": "蛇",
+    "pinyin": "shé",
+    "meaning_vi": "rắn",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "蛇",
+      "back": "shé — rắn",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_reading",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ con rắn.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

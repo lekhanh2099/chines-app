@@ -1,0 +1,247 @@
+{
+  "id": "d3c4f465-fc20-4946-9024-9b1c8a52d318",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "无聊",
+  "pinyin": "wúliáo",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vô liêu",
+    "meaning_vi": "buồn chán; nhạt nhẽo, vô nghĩa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "buồn chán",
+      "nhạt nhẽo",
+      "vô nghĩa"
+    ],
+    "short_definition_vi": "buồn chán; nhạt nhẽo, vô nghĩa",
+    "textbook_focus_vi": "无 = không có; 聊 trong từ này liên quan chỗ gửi gắm/trò chuyện. 无聊 = buồn chán/vô vị.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "cảm xúc, đánh giá",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "无",
+        "lishu_vi": "vô",
+        "structure_note_vi": "Chữ cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không có",
+        "modern_logic_vi": "Trong từ này, 无 góp phần tạo nghĩa 'không có'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "聊",
+        "lishu_vi": "liêu",
+        "structure_note_vi": "耳 + 卯; học theo từ ghép.",
+        "main_radical": {
+          "radical": "耳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhĩ",
+          "radical_name_zh": "",
+          "hanviet": "nhĩ",
+          "meaning_vi": "tai",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trò chuyện; trong 无聊 là buồn chán",
+        "modern_logic_vi": "Trong từ này, 聊 góp phần tạo nghĩa 'trò chuyện; trong 无聊 là buồn chán'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "无 = không có; 聊 trong từ này liên quan chỗ gửi gắm/trò chuyện. 无聊 = buồn chán/vô vị.",
+    "memory_tip_vi": "Nhớ qua cụm: 很无聊 = rất chán.",
+    "warning_vi": "无聊 khác 寂寞: chán không nhất thiết cô đơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "没意思",
+        "pinyin": "méi yìsi",
+        "meaning_vi": "không thú vị",
+        "difference_vi": "Khẩu ngữ rất thường dùng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寂寞",
+        "pinyin": "jìmò",
+        "meaning_vi": "cô đơn",
+        "difference_vi": "Thiên về thiếu kết nối con người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "无聊 khác 寂寞: chán không nhất thiết cô đơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b5eb2ffb-07a7-4c88-84b9-63947c12293b",
+      "order": 1,
+      "zh": "很无聊",
+      "pinyin": "hěn wúliáo",
+      "vi": "rất chán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58dad664-1679-4f1a-ac55-b11b89641fc1",
+      "order": 2,
+      "zh": "觉得无聊",
+      "pinyin": "juéde wúliáo",
+      "vi": "cảm thấy chán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a818ee0-d877-424c-8764-8193a3ec233e",
+      "order": 3,
+      "zh": "无聊的话",
+      "pinyin": "wúliáo de huà",
+      "vi": "lời nhảm/vô vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0ce333df-c5f6-4f11-80d4-ce9712babfc6",
+      "order": 1,
+      "zh": "今天没课，我一个人在宿舍待着，觉得很无聊。",
+      "pinyin": "Jīntiān méi kè, wǒ yí ge rén zài sùshè dāizhe, juéde hěn wúliáo.",
+      "vi": "Hôm nay không có tiết, tôi ở ký túc xá một mình, cảm thấy rất chán.",
+      "analysis_vi": "觉得无聊 là cụm tự nhiên.",
+      "highlight": [
+        "无聊"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d3c4f465-fc20-4946-9024-9b1c8a52d318"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nói 你很无聊 với người khác có thể khá nặng, nghĩa là 'bạn nhạt/vô duyên'.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "35a839b1-df6b-4ad5-9eba-8b5c41b46a1c",
+      "order": 1,
+      "rule_vi": "无聊 khác 寂寞: chán không nhất thiết cô đơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我有点儿无聊。",
+          "pinyin": "Wǒ yǒudiǎnr wúliáo.",
+          "vi": "Tôi hơi chán.",
+          "note_vi": "Dùng cho trạng thái không có gì thú vị.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "无聊",
+    "back": "buồn chán; nhạt nhẽo, vô nghĩa",
+    "hint": "wúliáo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d3c4f465-fc20-4946-9024-9b1c8a52d318",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "id": "8990021b-89bf-47a3-8e9c-18934a6ed67d",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "现代",
+  "pinyin": "xiàndài",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ",
+    "raw_cn": "名 / 形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "modern_music"
+  ],
+  "meaning": {
+    "hanviet": "Hiện đại",
+    "meaning_vi": "hiện đại; thời hiện đại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiện đại",
+      "thời hiện đại"
+    ],
+    "short_definition_vi": "hiện đại; thời hiện đại",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "modern music",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "现",
+        "lishu_vi": "",
+        "structure_note_vi": "王/玉 ở bên trái; 见 ở bên phải.",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc/Vương",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc/vua; thành phần bên trái của nhiều chữ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "见",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "見",
+              "radical_variant": "见",
+              "radical_name_vi": "bộ Kiến",
+              "radical_name_zh": "",
+              "hanviet": "kiến",
+              "meaning_vi": "thấy/nhìn",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "见 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiện ra, hiện tại",
+        "modern_logic_vi": "王/玉 ở bên trái; 见 ở bên phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "代",
+        "lishu_vi": "",
+        "structure_note_vi": "亻 liên quan người; 弋 là phần phải.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弋",
+            "hanviet": "dặc",
+            "meaning_vi": "cọc/bắn",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đời, thời đại, thay thế",
+        "modern_logic_vi": "亻 liên quan người; 弋 là phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "现 là hiện nay/hiện ra, 代 là thời đại; 现代 là thời hiện đại/mang tính hiện đại.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "现在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bây giờ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "当代",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đương đại, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "现代化",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hiện đại hóa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "62d4713b-0b22-4d6f-8b1c-2b827c508184",
+      "order": 1,
+      "zh": "现代城市",
+      "pinyin": "",
+      "vi": "thành phố hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "700b081c-ca3a-44f4-a637-4b3aa0a946e0",
+      "order": 2,
+      "zh": "现代生活",
+      "pinyin": "",
+      "vi": "đời sống hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "327b6440-7c0e-4990-8a02-e37852706793",
+      "order": 3,
+      "zh": "现代音乐",
+      "pinyin": "",
+      "vi": "âm nhạc hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "570c47ec-fff0-46c7-afc6-5bd0b6802a0c",
+      "order": 4,
+      "zh": "现代科技",
+      "pinyin": "",
+      "vi": "khoa học kỹ thuật hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57c008f8-2be3-4210-85c3-f6cd5089658c",
+      "order": 5,
+      "zh": "现代汉语",
+      "pinyin": "",
+      "vi": "Hán ngữ hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e0a129bd-4615-4c51-913b-f6a7746b3456",
+      "order": 1,
+      "zh": "北京是一个现代城市。",
+      "pinyin": "Běijīng shì yí ge xiàndài chéngshì.",
+      "vi": "Bắc Kinh là một thành phố hiện đại.",
+      "analysis_vi": "现代 làm định ngữ trước 城市.",
+      "highlight": [
+        "现代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8990021b-89bf-47a3-8e9c-18934a6ed67d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "94ab8432-0fbe-4d93-931f-2af150b95fa9",
+      "order": 2,
+      "zh": "现在的城市比过去更现代。",
+      "pinyin": "Xiànzài de chéngshì bǐ guòqù gèng xiàndài.",
+      "vi": "Thành phố hiện nay hiện đại hơn trước.",
+      "analysis_vi": "比过去更现代 là mẫu so sánh.",
+      "highlight": [
+        "现代"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8990021b-89bf-47a3-8e9c-18934a6ed67d"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "现代汉语 là thuật ngữ quan trọng khi học tiếng Hán hiện đại/普通话.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3388a8b4-1e64-4479-bc61-b9fd97a768c7",
+      "order": 1,
+      "rule_vi": "Không nhầm 现在 = bây giờ với 现代 = hiện đại/thời hiện đại.",
+      "natural_examples": [
+        {
+          "zh": "我现在很忙。",
+          "pinyin": "Wǒ xiànzài hěn máng.",
+          "vi": "Bây giờ tôi rất bận.",
+          "note_vi": "现在.",
+          "notes": []
+        },
+        {
+          "zh": "现代生活很方便。",
+          "pinyin": "Xiàndài shēnghuó hěn fāngbiàn.",
+          "vi": "Đời sống hiện đại rất tiện lợi.",
+          "note_vi": "现代.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我现在很忙。",
+          "pinyin": "Wǒ xiànzài hěn máng.",
+          "vi": "Bây giờ tôi rất bận.",
+          "note_vi": "现在.",
+          "notes": []
+        },
+        {
+          "zh": "现代生活很方便。",
+          "pinyin": "Xiàndài shēnghuó hěn fāngbiàn.",
+          "vi": "Đời sống hiện đại rất tiện lợi.",
+          "note_vi": "现代.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "现代",
+    "back": "hiện đại; thời hiện đại",
+    "hint": "xiàndài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "modern_music"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8990021b-89bf-47a3-8e9c-18934a6ed67d",
+    "source_lesson_vocab_id": null
+  }
+}

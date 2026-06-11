@@ -1,0 +1,386 @@
+{
+  "id": "3c8a663a-f7bb-48b6-a3e5-729692632152",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "厕所",
+  "pinyin": "cèsuǒ",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Xí sở",
+    "meaning_vi": "nhà vệ sinh, toilet",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà vệ sinh, toilet"
+    ],
+    "short_definition_vi": "nhà vệ sinh, toilet",
+    "textbook_focus_vi": "nhà vệ sinh, toilet",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "厕",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "hán",
+            "meaning_vi": "vách đá, mái che",
+            "position_vi": "bên ngoài chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "厂",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hán",
+              "radical_name_zh": "",
+              "hanviet": "hán",
+              "meaning_vi": "vách đá, mái che",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "toilet",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "所",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "户",
+            "hanviet": "hộ",
+            "meaning_vi": "cửa, hộ gia đình",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "戶",
+              "radical_variant": "户",
+              "radical_name_vi": "bộ Hộ",
+              "radical_name_zh": "",
+              "hanviet": "hộ",
+              "meaning_vi": "cửa, hộ gia đình",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nơi, chỗ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 厕所 hợp lại tạo nghĩa hiện đại trong bài: nhà vệ sinh, toilet.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "厕所",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "厕所 / 洗手间 / 卫生间",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "洗手间",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "厕所 / 洗手间 / 卫生间",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "卫生间",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "厕所 / 洗手间 / 卫生间",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "厕所",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "厕所 / 浴室",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "浴室",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "厕所 / 浴室",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "厕所 / 洗手间 / 卫生间",
+      "厕所 / 浴室"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ebb8b004-9b2a-48e3-88df-c04834312628",
+      "order": 1,
+      "zh": "去厕所",
+      "pinyin": "",
+      "vi": "去厕所",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ea31eacc-247a-42fb-b1d9-7f673f487f67",
+      "order": 2,
+      "zh": "上厕所",
+      "pinyin": "",
+      "vi": "上厕所",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cc9815c5-6d7a-4fd9-acea-b10c4ee0a017",
+      "order": 3,
+      "zh": "找厕所",
+      "pinyin": "",
+      "vi": "找厕所",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "fc75c260-50ba-4833-9ba6-70e01f0044aa",
+      "order": 4,
+      "zh": "公共厕所",
+      "pinyin": "",
+      "vi": "公共厕所",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "894f6079-0f0e-4ee3-9fdd-c48c8a01eef9",
+      "order": 5,
+      "zh": "男厕所",
+      "pinyin": "",
+      "vi": "男厕所",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2c6cd2fe-9e1f-47da-99d6-a50d5a64dc2c",
+      "order": 6,
+      "zh": "女厕所",
+      "pinyin": "",
+      "vi": "女厕所",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5f2ca3b7-f1f1-4ed1-9b73-df853bfd80fb",
+      "order": 7,
+      "zh": "厕所在哪儿",
+      "pinyin": "",
+      "vi": "厕所在哪儿",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "90ef0ca2-f6b3-45e0-a373-7d36f29940ec",
+      "order": 1,
+      "zh": "这个词是“厕所”。",
+      "pinyin": "",
+      "vi": "Từ này là “厕所”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "厕所"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "3c8a663a-f7bb-48b6-a3e5-729692632152"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0397ad7-bbed-4777-88fd-fc1574dbb250",
+      "order": 2,
+      "zh": "你想怎么用“厕所”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “厕所” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "厕所"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "3c8a663a-f7bb-48b6-a3e5-729692632152"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "21e1a603-c87e-4633-a608-c265622e2ba4",
+      "order": 3,
+      "zh": "我们一边复习厕所，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “厕所”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "厕所"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "3c8a663a-f7bb-48b6-a3e5-729692632152"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "厕所 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6db61252-ca4b-4e3c-80e8-f5203cd69a8e",
+      "order": 1,
+      "rule_vi": "Ở nơi công cộng, 洗手间 / 卫生间 lịch sự hơn 厕所.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Ở nơi công cộng, 洗手间 / 卫生间 lịch sự hơn 厕所.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "厕所",
+    "back": "nhà vệ sinh, toilet",
+    "hint": "cèsuǒ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3c8a663a-f7bb-48b6-a3e5-729692632152",
+    "source_lesson_vocab_id": null
+  }
+}

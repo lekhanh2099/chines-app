@@ -1,0 +1,295 @@
+{
+  "id": "be107486-6a81-4f32-a52e-54ca49dc8847",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "变",
+  "pinyin": "biàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "change_time"
+  ],
+  "meaning": {
+    "hanviet": "Biến",
+    "meaning_vi": "thay đổi; trở nên; biến thành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thay đổi",
+      "trở nên",
+      "biến thành"
+    ],
+    "short_definition_vi": "thay đổi; trở nên; biến thành",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "change time",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "变",
+        "lishu_vi": "",
+        "structure_note_vi": "亦 / 又 là thành phần nhìn thấy trong giản thể; không ép chiết tự cổ.",
+        "components": [
+          {
+            "text": "亦",
+            "hanviet": "diệc",
+            "meaning_vi": "cũng",
+            "position_vi": "phần trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "lại/tay phải cổ",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biến đổi, thay đổi",
+        "modern_logic_vi": "亦 / 又 là thành phần nhìn thấy trong giản thể; không ép chiết tự cổ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "变 chỉ chuyển từ trạng thái A sang trạng thái B; hay đi với tính từ như 变冷, 变漂亮.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "变化",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sự thay đổi, danh từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改变",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thay đổi cái gì đó chủ động",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "变成",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biến thành, kết quả rõ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "beb7b1cc-4a86-4a0f-8edd-f651cb292398",
+      "order": 1,
+      "zh": "变大",
+      "pinyin": "",
+      "vi": "trở nên lớn hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c85acf9-169a-4d86-bd87-ded410ab3ed0",
+      "order": 2,
+      "zh": "变冷",
+      "pinyin": "",
+      "vi": "trở lạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f295b9e-e605-4db2-ab3c-5cec6b166c8a",
+      "order": 3,
+      "zh": "变漂亮",
+      "pinyin": "",
+      "vi": "trở nên đẹp hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "14764722-6fc9-4c11-b362-19a083aa4a91",
+      "order": 4,
+      "zh": "变得更好",
+      "pinyin": "",
+      "vi": "trở nên tốt hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a0ea82f-b809-4e36-a413-e0f3d3cf0d11",
+      "order": 5,
+      "zh": "变成……",
+      "pinyin": "",
+      "vi": "biến thành...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e41cea6b-93b0-45e8-9991-4f9065390587",
+      "order": 1,
+      "zh": "天气变冷了。",
+      "pinyin": "Tiānqì biàn lěng le.",
+      "vi": "Trời trở lạnh rồi.",
+      "analysis_vi": "变 + tính từ + 了 báo trạng thái mới.",
+      "highlight": [
+        "变"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "be107486-6a81-4f32-a52e-54ca49dc8847"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "90244147-0ce5-4b6d-8957-e4d27737c6f6",
+      "order": 2,
+      "zh": "这个城市比过去变得更漂亮了。",
+      "pinyin": "Zhège chéngshì bǐ guòqù biàn de gèng piàoliang le.",
+      "vi": "Thành phố này trở nên đẹp hơn trước rồi.",
+      "analysis_vi": "比过去 + 变得更漂亮 là so sánh với quá khứ.",
+      "highlight": [
+        "变"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "be107486-6a81-4f32-a52e-54ca49dc8847"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2ac4abb9-b7f4-4320-b505-1208e1a79cec",
+      "order": 1,
+      "rule_vi": "Không dùng 变化 thay cho 变 trong cấu trúc trở nên + tính từ.",
+      "natural_examples": [
+        {
+          "zh": "天气变冷了。",
+          "pinyin": "Tiānqì biàn lěng le.",
+          "vi": "Trời trở lạnh rồi.",
+          "note_vi": "变 + tính từ là cấu trúc đúng.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "天气变化冷了。",
+          "pinyin": "Tiānqì biànhuà lěng le.",
+          "vi": "",
+          "note_vi": "Sai/kém tự nhiên vì 变化 không đứng trước tính từ như vậy.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "天气变化冷了。",
+          "pinyin": "Tiānqì biànhuà lěng le.",
+          "vi": "",
+          "note_vi": "Sai/kém tự nhiên vì 变化 không đứng trước tính từ như vậy.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "天气变冷了。",
+          "pinyin": "Tiānqì biàn lěng le.",
+          "vi": "Trời trở lạnh rồi.",
+          "note_vi": "变 + tính từ là cấu trúc đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "变",
+    "back": "thay đổi; trở nên; biến thành",
+    "hint": "biàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "change_time"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "be107486-6a81-4f32-a52e-54ca49dc8847",
+    "source_lesson_vocab_id": null
+  }
+}

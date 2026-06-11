@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q3",
+  "lessonIndex": 4,
+  "id": "2984023f-8f2a-44c5-9eed-e239d7ee15c5",
+  "title": {
+    "zh": "理想",
+    "pinyin": "Lǐxiǎng",
+    "vi": "Lý tưởng",
+    "en": "Ideal"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q3/lessons/hanyu_3_1_lesson_04.json",
+    "vocabFile": "data/hanzihome/q3/vocab/hanyu_3_1_lesson_04_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 10,
+    "lessonVocabItems": 61,
+    "sourceDeepVocabItems": 61,
+    "materializedVocabItems": 63,
+    "syntheticVocabItems": 2,
+    "hanziOnlyVocabMatches": 0,
+    "relations": 246,
+    "checkNeededRelations": 2,
+    "checkNeededVocabItems": 12,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

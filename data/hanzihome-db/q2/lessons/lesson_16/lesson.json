@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q2",
+  "lessonIndex": 16,
+  "id": "b004b30b-ced9-4f86-b02d-58b23be6234d",
+  "title": {
+    "zh": "前边开过来一辆空车",
+    "pinyin": "Qiánbian kāi guòlai yí liàng kōng chē",
+    "vi": "Phía trước có một chiếc xe trống đang chạy tới",
+    "en": "An empty taxi is coming towards us"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_16.json",
+    "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_16_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 9,
+    "lessonVocabItems": 41,
+    "sourceDeepVocabItems": 54,
+    "materializedVocabItems": 61,
+    "syntheticVocabItems": 7,
+    "hanziOnlyVocabMatches": 3,
+    "relations": 214,
+    "checkNeededRelations": 10,
+    "checkNeededVocabItems": 7,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

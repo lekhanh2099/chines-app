@@ -1,0 +1,27 @@
+[
+  {
+    "id": "warning_1e0e49adc350c98048d61425",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "理",
+      "布",
+      "剪",
+      "破",
+      "滴",
+      "罩",
+      "咬",
+      "搅",
+      "抬",
+      "轮",
+      "耳",
+      "免",
+      "面",
+      "头",
+      "给",
+      "硬",
+      "特",
+      "挨"
+    ]
+  }
+]

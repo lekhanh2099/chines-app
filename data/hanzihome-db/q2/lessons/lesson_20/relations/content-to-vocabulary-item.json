@@ -1,0 +1,1740 @@
+[
+  {
+    "id": "rel_73dd99cd88e0d024bb46445f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9c95fea0612189b76eac427f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.3"
+    },
+    "to": {
+      "id": "619c0d0e-fa12-43f5-9f73-b3fc28a61e87",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/001-yanchu-306d42db.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "演出",
+      "text_offset": 12,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.3.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2a76a8173cff4d7b27b50cac",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.4"
+    },
+    "to": {
+      "id": "fa886e11-04bf-4204-ad7a-eec4f64f4c54",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/002-yanyuan-dd68376a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "演员",
+      "text_offset": 11,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0c682a6b54a6a387ca36080e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 25,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_14606694ff1a3ce19c5d2256",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "88b340b4-68fa-476e-90e7-2a141f805c8b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/005-jingcai-8ef3a8ad.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "精彩",
+      "text_offset": 18,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_42fb990051d644d2bb26b84d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "6c262d99-5a32-4f55-8b7b-c0ee1f2927a8",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/013-youqu-d4b76750.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "有趣",
+      "text_offset": 54,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_57b5a3e04629a156db2a771e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "c2df0c0c-e5e3-4656-a43e-f2218ddeeb39",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-xingge-65315f67.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "性格",
+      "text_offset": 49,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5933322437f5c3929dff49a9",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "a67bb916-7531-41ab-bdd4-07aff789c2d2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/006-biaoxian-243b3d4b.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "表现",
+      "text_offset": 39,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5a3c491bb44e7b2f537b20c9",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "456b2113-3517-479e-bf14-164a703a8f4b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-shifen-1e425a08.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "十分",
+      "text_offset": 52,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_76f2f2d40431aa954ae02d8d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "6d2b2950-a475-4559-941b-c2cc35faa4ca",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/004-dongzuo-41a6883f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "动作",
+      "text_offset": 14,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8fc4d57cdb6cc63797e57c26",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 31,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_aa9d3e2bd5c76f36423ce387",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "89052aba-5ba8-4505-bcfb-601924cc92ff",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/007-renwu-31996d2e.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "人物",
+      "text_offset": 41,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b2e4fa628da9250d86a54b65",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b9cad7d769376741290221a3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "0e8c6eda-12e1-40ea-9e26-5fca08e48897",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/003-wuda-224d923a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "武打",
+      "text_offset": 12,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d07d5ee86ab8790bb9b66b2f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "1818670c-90df-4ccb-8d64-8e3a0f6a9df4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/010-diwei-d161f5fa.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "地位",
+      "text_offset": 46,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d8b3c4391e1975bffe2880e9",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "4683897d-7607-4b15-9c7d-922f0dd83105",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/009-shehui-be0e1c36.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "社会",
+      "text_offset": 44,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_151c417a50ecb22f070b21ae",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.6"
+    },
+    "to": {
+      "id": "11cb24f6-93e8-4faa-b1e0-d4f4b838dc28",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/014-fuzhuang-2fcc9d09.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "服装",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.6.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_68537c454d223ad9221e037d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.6"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 0,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.6.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_350e6227db28a0f6a86b497e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.7"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.7.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3ec8a80bbe5edc5afb02edac",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "b4d57fd5-a41e-461e-afdd-196d96c904cc",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/018-yishu-51260d6e.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "艺术",
+      "text_offset": 31,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5eba660d80049060b9315474",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "1433a247-75f1-48cd-a50d-07a72c71145e",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/019-liaojie-0af92867.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "了解",
+      "text_offset": 45,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_64b124e20e79ced4c7aabac2",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 23,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_bfef07daade93861e5f3bd3a",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "9793077a-6858-49f6-bf16-0d370527605b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/016-chuantong-977abe59.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "传统",
+      "text_offset": 29,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d3e21befc6236282b581b372",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "d38777ce-fa72-4d7c-a906-5f3d65da8a4a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-yingxiang-d1c4fe0d.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "影响",
+      "text_offset": 8,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ed0152ae94972611dadbaa74",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 16,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_59addaf5d9a9dce469f57cb7",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.9"
+    },
+    "to": {
+      "id": "d7e7827c-6520-484f-81d0-76cf4eaf89d2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/021-de-hua-71791578.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "的话",
+      "text_offset": 5,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.9.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0d42d5264a925fd8bfb5eba9",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "99e63fca-bad7-4aff-8eba-621a119e5a19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 18,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d58f62f3a714b0202c0a8b9b",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.1"
+    },
+    "to": {
+      "id": "484beda8-83e8-4e6d-bc98-f3e09353d521",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-danxin-b4ef5f02.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "担心",
+      "text_offset": 43,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0de9a65391cee6e138027e9a",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "700d39f4-2b3a-4134-a5d1-78801541da6c",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.3"
+    },
+    "to": {
+      "id": "8d216042-ad24-47e6-8689-87248118589a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/028-kaiyan-64e158d3.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "开演",
+      "text_offset": 17,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.3.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d5082d9ae3efa9d0b0a36ba4",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "700d39f4-2b3a-4134-a5d1-78801541da6c",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.3"
+    },
+    "to": {
+      "id": "6a8181a2-1ead-493e-b752-f3e64b025635",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/026-guji-a968f4fd.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "估计",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.3.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2d731d8efe6e9527e25b7734",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "598c871b-b657-4713-9918-3410c4712759",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/032-gudai-c5c55b3f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "古代",
+      "text_offset": 38,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_38c900165967b1da50691c20",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "3006a4ad-4b95-41bd-b777-85c5cebfcc7f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-jiemudan-391344bf.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "节目单",
+      "text_offset": 105,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_4d6b4a11d7b95e0435bbe92e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "e6610a53-0ab4-4365-addb-5ee7bf2a7b9b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/033-shenhua-98a1cabc.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "神话",
+      "text_offset": 40,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5473508a31fdd4f6b7b1bb57",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "484beda8-83e8-4e6d-bc98-f3e09353d521",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-danxin-b4ef5f02.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "担心",
+      "text_offset": 99,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5c922cd7fe5570a8695b0007",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "d24e36ee-e7b2-4035-b4a0-cc3126c010b4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/038-neirong-c10274d4.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "内容",
+      "text_offset": 86,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8f9d91d0ddeae7001024a843",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "synthetic_vocab_895fcb0be63e6bbd",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/060-xiannu-09efeaa9.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "仙女",
+      "text_offset": 52,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9896d5677118bfb231a3d37c",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "171f10dc-a995-4fbd-863c-4031059e6795",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/035-xianmu-99743026.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "羡慕",
+      "text_offset": 56,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b12b4eb47b18373a1268e161",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "aab08923-409b-4832-9add-08c95cd69cca",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/036-renjian-800129bd.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "人间",
+      "text_offset": 70,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ce586bddf59684a5ae721d28",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "f69608be-94c1-4048-ad37-444036a06e62",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/034-tianshang-a6d5c2f7.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "天上",
+      "text_offset": 48,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_dfe1e6a2dfc1594b0f69f90f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "e5cf1167-9433-4034-b144-90a27e2cd862",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/037-toutour-70d40ba4.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "偷偷儿",
+      "text_offset": 65,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f6f07b79da82f262baa000de",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "aab08923-409b-4832-9add-08c95cd69cca",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/036-renjian-800129bd.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "人间",
+      "text_offset": 58,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_fec7dfac889825bed0f2f74e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.4"
+    },
+    "to": {
+      "id": "3006a4ad-4b95-41bd-b777-85c5cebfcc7f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-jiemudan-391344bf.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "节目单",
+      "text_offset": 5,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8fe30931e48c52be4f93f8e7",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "e40c0ed2-7f61-43b0-b358-f09a4ff0d099",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.paragraphs.5"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 34,
+      "json_path": "$.lesson.sections.0.blocks.1.paragraphs.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0097736cae4f955643275549",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.0.examples.0"
+    },
+    "to": {
+      "id": "e6610a53-0ab4-4365-addb-5ee7bf2a7b9b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/033-shenhua-98a1cabc.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "神话",
+      "text_offset": 6,
+      "json_path": "$.lesson.sections.3.items.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_31ee47cf82c54158e31625f7",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.0.examples.0"
+    },
+    "to": {
+      "id": "598c871b-b657-4713-9918-3410c4712759",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/032-gudai-c5c55b3f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "古代",
+      "text_offset": 4,
+      "json_path": "$.lesson.sections.3.items.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c081389751ed763d28ca672d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "08ef5e15-4b23-4ced-8657-3328becab052",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.0.examples.1"
+    },
+    "to": {
+      "id": "598c871b-b657-4713-9918-3410c4712759",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/032-gudai-c5c55b3f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "古代",
+      "text_offset": 2,
+      "json_path": "$.lesson.sections.3.items.0.examples.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ccc96fa53189b45637af3e85",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "08ef5e15-4b23-4ced-8657-3328becab052",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.0.examples.1"
+    },
+    "to": {
+      "id": "e6610a53-0ab4-4365-addb-5ee7bf2a7b9b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/033-shenhua-98a1cabc.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "神话",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.3.items.0.examples.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_719ccc709381cfb3d15e3c5e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.1.examples.1"
+    },
+    "to": {
+      "id": "484beda8-83e8-4e6d-bc98-f3e09353d521",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-danxin-b4ef5f02.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "担心",
+      "text_offset": 1,
+      "json_path": "$.lesson.sections.4.items.0.blocks.1.examples.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2b076b440957f135eccd62ec",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "3006a4ad-4b95-41bd-b777-85c5cebfcc7f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-jiemudan-391344bf.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "节目单",
+      "text_offset": 0,
+      "json_path": "$.lesson.sections.4.items.1.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3f965c229c1d5f72cfb95a64",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.3.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "6a8181a2-1ead-493e-b752-f3e64b025635",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/026-guji-a968f4fd.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "估计",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.4.items.3.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_658c414e2209830abb147253",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "8c35ce4f-427e-48c9-b6d1-8ce1d9e4cf87",
+      "kind": "unknown",
+      "path": "$.lesson.sections.5.items.8.dialogues.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 9,
+      "json_path": "$.lesson.sections.5.items.8.dialogues.0.lines.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_74d3e5ff41608e57ddbaf27d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "8c35ce4f-427e-48c9-b6d1-8ce1d9e4cf87",
+      "kind": "unknown",
+      "path": "$.lesson.sections.5.items.8.dialogues.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 0,
+      "json_path": "$.lesson.sections.5.items.8.dialogues.0.lines.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5e41e3025446fbafb578c6a3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "be03e24a-ec79-4457-9578-c49dcf323e88",
+      "kind": "unknown",
+      "path": "$.lesson.sections.5.items.8.dialogues.1"
+    },
+    "to": {
+      "id": "f69608be-94c1-4048-ad37-444036a06e62",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/034-tianshang-a6d5c2f7.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "天上",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.5.items.8.dialogues.1.lines.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0874ed63c3975dd036681843",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 154,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_09cc5ea92f1c1ff96fe9bb0b",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "9b464083-6f29-445d-9423-6a11610fecb7",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/057-jianzhi-81f45f1e.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "简直",
+      "text_offset": 406,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_1af7652ac2bbc7719d0768cb",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "344f32b0-c5fc-4a13-a213-cac4c1141d13",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/056-jishu-e0252359.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "技术",
+      "text_offset": 388,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2b023b74c06042c2effdb2a5",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 361,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3497a3c3020c4ecc7da457e3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "598c871b-b657-4713-9918-3410c4712759",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/032-gudai-c5c55b3f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "古代",
+      "text_offset": 4,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3d1f6c145099cace29defed3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_682a2e56dd6f4265",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/063-chuguo-71d12f34.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "楚国",
+      "text_offset": 199,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_44b08dd2f6a942b85cc0baf9",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "096c44d4-e863-4b19-a051-c68c5e3566cd",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/055-shen-qiang-li-zhuang-5ddae361.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "身强力壮",
+      "text_offset": 380,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_4f920a450c5694a55ea93c08",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 302,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_52d99a3eff94155236c81039",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "4d5dbcab-bd8c-4df2-a80a-abf5c3c7c2b3",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/058-daoli-a0f17011.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "道理",
+      "text_offset": 410,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6c4e54de459bcd560e5cae83",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "8dd75628-fc6c-4c90-a6b9-defe1863405a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/054-chefu-398c7ead.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "车夫",
+      "text_offset": 425,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6d785a1a4a5ad8fa155f8e08",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 470,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_766b6f876eef9e1613b8e3a3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 37,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_806bbe3ae574918654270289",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "d794cfca-4594-49d7-a4e5-9975556d94b6",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/059-jixu-7349a7ef.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "继续",
+      "text_offset": 525,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8b50374376122c35b3498c1b",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 221,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9c42127c4583f027cefb3055",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_682a2e56dd6f4265",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/063-chuguo-71d12f34.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "楚国",
+      "text_offset": 462,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9da0ad45d3cbbe1426adc7bf",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_682a2e56dd6f4265",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/063-chuguo-71d12f34.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "楚国",
+      "text_offset": 275,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a07115918a48b258abf8ee19",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "d7e7827c-6520-484f-81d0-76cf4eaf89d2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/021-de-hua-71791578.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "的话",
+      "text_offset": 476,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b66ac7ff4dad5c6f04854f94",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_682a2e56dd6f4265",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/063-chuguo-71d12f34.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "楚国",
+      "text_offset": 287,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b74e7454b75500883d73301a",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 105,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ca1c7eaa159705cb2b5073ea",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_682a2e56dd6f4265",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/063-chuguo-71d12f34.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "楚国",
+      "text_offset": 434,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e0b66f870a48d67d199bc3f9",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_300540f755eddbe5",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/061-fuweng-7421e4af.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "富翁",
+      "text_offset": 188,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e8056ccf7794934e83315485",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_682a2e56dd6f4265",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/063-chuguo-71d12f34.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "楚国",
+      "text_offset": 353,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f295bfc3a825bc773c2b4b8a",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.paragraphs.0"
+    },
+    "to": {
+      "id": "8dd75628-fc6c-4c90-a6b9-defe1863405a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/054-chefu-398c7ead.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "车夫",
+      "text_offset": 377,
+      "json_path": "$.lesson.sections.6.items.0.paragraphs.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_4ba198b1f2afd67ce42ad993",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "8c35ce4f-427e-48c9-b6d1-8ce1d9e4cf87",
+      "kind": "unknown",
+      "path": "$.lesson.sections.7.items.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 0,
+      "json_path": "$.lesson.sections.7.items.0.lines.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e9e26d236536d8b57dcc7368",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "8c35ce4f-427e-48c9-b6d1-8ce1d9e4cf87",
+      "kind": "unknown",
+      "path": "$.lesson.sections.7.items.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_9a161a297c68085e",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/062-jingju-cb819ac2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "京剧",
+      "text_offset": 9,
+      "json_path": "$.lesson.sections.7.items.0.lines.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_571363161e452bc567c7f206",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "be03e24a-ec79-4457-9578-c49dcf323e88",
+      "kind": "unknown",
+      "path": "$.lesson.sections.7.items.1"
+    },
+    "to": {
+      "id": "f69608be-94c1-4048-ad37-444036a06e62",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/034-tianshang-a6d5c2f7.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "天上",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.7.items.1.lines.4.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  }
+]

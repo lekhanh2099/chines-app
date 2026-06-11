@@ -1,0 +1,237 @@
+{
+  "id": "e6dea932-45cf-4120-84cc-0faa773acd55",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "邻居",
+  "pinyin": "línjū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lân cư",
+    "meaning_vi": "hàng xóm; người sống gần nhà",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hàng xóm",
+      "người sống gần nhà"
+    ],
+    "short_definition_vi": "hàng xóm",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "邻",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lân cận",
+        "modern_logic_vi": "Trong từ 邻居, chữ 邻 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "居",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở, cư trú",
+        "modern_logic_vi": "Trong từ 邻居, chữ 居 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "邻居 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 我的邻居很热情。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "隔壁",
+        "pinyin": "gébì",
+        "meaning_vi": "sát vách",
+        "difference_vi": "隔壁 là vị trí/nhà bên; 邻居 là người.",
+        "register_vi": "",
+        "example_zh": "他住在隔壁。",
+        "example_vi": "Anh ấy sống sát vách.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "06cc4f2f-ffb2-40d5-a38c-f92aa6f2c3c2",
+      "order": 1,
+      "zh": "我的邻居",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58715e5f-4191-4031-8e01-8a61e06842b7",
+      "order": 2,
+      "zh": "隔壁邻居",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f7aede82-9a31-4867-9488-2fab4e036ef7",
+      "order": 3,
+      "zh": "老邻居",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6fa8b8d-8064-439c-ba16-a1de4d5df194",
+      "order": 4,
+      "zh": "新邻居",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c858a016-81a9-431c-b10d-4c00b18c59ad",
+      "order": 5,
+      "zh": "邻居家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3c968c71-0130-4918-a683-9960c57cfb15",
+      "order": 6,
+      "zh": "跟邻居打招呼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41e0ad2f-ea73-4a99-9e61-77dda854992b",
+      "order": 7,
+      "zh": "邻居之间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "60f7f261-4781-4869-a63e-36700f5b7a74",
+      "order": 1,
+      "zh": "我的邻居很热情。",
+      "pinyin": "",
+      "vi": "Hàng xóm của tôi rất nhiệt tình.",
+      "analysis_vi": "Ví dụ dùng 邻居 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "邻居"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6dea932-45cf-4120-84cc-0faa773acd55"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "邻居 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "23260cd0-95bc-491b-a2b6-8b69f8d2f12e",
+      "order": 1,
+      "rule_vi": "邻居 là người; 隔壁 là vị trí/nhà sát vách.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "邻居",
+    "back": "hàng xóm; người sống gần nhà",
+    "hint": "línjū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e6dea932-45cf-4120-84cc-0faa773acd55",
+    "source_lesson_vocab_id": null
+  }
+}

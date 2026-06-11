@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_92e71730b1a9704c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "汗",
+  "pinyin": "hàn",
+  "meaning_vi": "mồ hôi",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ mồ hôi; trong 出汗 là tân ngữ của 出.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+    "type": "vocabulary_item",
+    "order": 8,
+    "hanzi": "汗",
+    "pinyin": "hàn",
+    "meaning_vi": "mồ hôi",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "汗",
+      "back": "hàn — mồ hôi",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ mồ hôi; trong 出汗 là tân ngữ của 出.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

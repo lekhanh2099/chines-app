@@ -1,0 +1,259 @@
+{
+  "id": "fe733c33-b810-4d9a-b679-e4bfbde06c93",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "装",
+  "pinyin": "zhuāng",
+  "pos": {
+    "raw_vi": "Động từ / danh từ / yếu tố cấu tạo từ",
+    "raw_cn": "动词/名词/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trang",
+    "meaning_vi": "mặc; trang bị; lắp đặt; giả vờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mặc",
+      "trang bị",
+      "lắp đặt"
+    ],
+    "short_definition_vi": "mặc",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "装",
+        "lishu_vi": "trang",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo quần, trang phục",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo quần, trang phục",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặc, lắp, giả vờ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "áo quần, trang phục",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "装 có nhiều nghĩa: mặc/trang bị/lắp/giả vờ; trong bài nhấn giả vờ.",
+    "memory_tip_vi": "Nhớ 装出笑容, 装懂.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "假装",
+        "pinyin": "",
+        "meaning_vi": "假装",
+        "difference_vi": "假装 rõ nghĩa giả vờ hơn; 装 khẩu ngữ gọn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1c907e81-21e2-4a50-a74c-bdf57e6683bc",
+      "order": 1,
+      "zh": "装病",
+      "pinyin": "zhuāng bìng",
+      "vi": "giả bệnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e400214c-109f-474b-8014-b72a91aae5f8",
+      "order": 2,
+      "zh": "装懂",
+      "pinyin": "zhuāng dǒng",
+      "vi": "giả vờ hiểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "acf8c205-69ca-42fa-beed-29b400f3c4f1",
+      "order": 3,
+      "zh": "装出笑容",
+      "pinyin": "zhuāng chū xiàoróng",
+      "vi": "gượng tạo nụ cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2bcbf8bc-0209-4cd2-bf8d-bdca35be087c",
+      "order": 4,
+      "zh": "安装软件",
+      "pinyin": "ānzhuāng ruǎnjiàn",
+      "vi": "cài phần mềm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ab60a1bf-9847-4bec-a40d-9f9f47cead2d",
+      "order": 1,
+      "zh": "别装了，我知道你不高兴。",
+      "pinyin": "Bié zhuāng le, wǒ zhīdào nǐ bù gāoxìng.",
+      "vi": "Đừng giả vờ nữa, tôi biết bạn không vui.",
+      "analysis_vi": "装 ở đây là giả vờ.",
+      "highlight": [
+        "装"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fe733c33-b810-4d9a-b679-e4bfbde06c93"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "efc824b7-021d-4836-a8d5-73e134d03eba",
+      "order": 2,
+      "zh": "他收入不高，可是从来不装富翁。",
+      "pinyin": "Tā shōurù bù gāo, kěshì cónglái bù zhuāng fùwēng.",
+      "vi": "Thu nhập anh ấy không cao nhưng chưa bao giờ giả làm người giàu.",
+      "analysis_vi": "装富翁 = giả làm người giàu.",
+      "highlight": [
+        "装"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fe733c33-b810-4d9a-b679-e4bfbde06c93"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khẩu ngữ 装 gần “diễn/làm màu”; dùng với người không thân dễ nặng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "319486db-1ef1-4cc4-8b6b-de6d7f8564e5",
+      "order": 1,
+      "rule_vi": "Không dùng 装 thay 穿 khi nói mặc quần áo hằng ngày.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我装衣服。",
+          "pinyin": "Wǒ zhuāng yīfu.",
+          "vi": "Sai/gượng nếu muốn nói mặc quần áo.",
+          "note_vi": "装 không thay 穿 ở đây.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我穿衣服。",
+          "pinyin": "Wǒ chuān yīfu.",
+          "vi": "Tôi mặc quần áo.",
+          "note_vi": "穿 đúng cho mặc.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "装",
+    "back": "mặc; trang bị; lắp đặt; giả vờ",
+    "hint": "zhuāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fe733c33-b810-4d9a-b679-e4bfbde06c93",
+    "source_lesson_vocab_id": null
+  }
+}

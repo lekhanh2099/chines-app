@@ -1,0 +1,415 @@
+{
+  "id": "51c37434-f495-4a46-9bb0-152d1ea79cc9",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "浪费",
+  "pinyin": "làngfèi",
+  "pos": {
+    "raw_vi": "động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "waste"
+  ],
+  "meaning": {
+    "hanviet": "Lãng phí",
+    "meaning_vi": "lãng phí",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lãng phí"
+    ],
+    "short_definition_vi": "lãng phí",
+    "textbook_focus_vi": "Đánh giá hút thuốc/tốn tiền là lãng phí.",
+    "register_vi": "đời sống và văn viết",
+    "usage_domain_vi": "tiền bạc, thời gian, tài nguyên",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "浪",
+        "lishu_vi": "lãng",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "良",
+            "hanviet": "lương",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sóng, lang bạt, tùy tiện",
+        "modern_logic_vi": "浪 có sắc thái không ổn định/tùy tiện.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "费",
+        "lishu_vi": "phí",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tiền của",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "弗",
+            "hanviet": "phất",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phí, tiêu hao, chi phí",
+        "modern_logic_vi": "费 = hao phí/chi phí.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "浪 có sắc thái tùy tiện; 费 là hao phí. 浪费 = tiêu hao không đáng, không cần thiết.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "花",
+        "pinyin": "",
+        "meaning_vi": "tiêu, dùng tiền/thời gian",
+        "difference_vi": "Trung tính.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "花费",
+        "pinyin": "",
+        "meaning_vi": "tiêu tốn",
+        "difference_vi": "Trung tính hơn 浪费.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "消费",
+        "pinyin": "",
+        "meaning_vi": "tiêu dùng",
+        "difference_vi": "Không nhất thiết tiêu cực.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "耗费",
+        "pinyin": "",
+        "meaning_vi": "tiêu hao",
+        "difference_vi": "Văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "节约",
+        "pinyin": "",
+        "meaning_vi": "tiết kiệm",
+        "difference_vi": "Trái nghĩa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "浪费",
+        "right": "节约",
+        "meaning_vi": "lãng phí ↔ tiết kiệm",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1b3f3750-1d89-4b7d-a858-892c405bdafb",
+      "order": 1,
+      "zh": "浪费时间",
+      "pinyin": "",
+      "vi": "lãng phí thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b94973f-2d90-457d-88c2-c5aba523226f",
+      "order": 2,
+      "zh": "浪费钱",
+      "pinyin": "",
+      "vi": "lãng phí tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2a17770-1a65-4d2b-bfb0-71c0d1894d2c",
+      "order": 3,
+      "zh": "浪费水",
+      "pinyin": "",
+      "vi": "lãng phí nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db921bc2-4177-4e1e-9872-568924eb0d4a",
+      "order": 4,
+      "zh": "浪费精力",
+      "pinyin": "",
+      "vi": "lãng phí sức lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "463e63ec-1fe9-4dc3-8e70-804d79a8a601",
+      "order": 5,
+      "zh": "不要浪费",
+      "pinyin": "",
+      "vi": "đừng lãng phí",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b4d90f2-9f02-423c-a9ce-0c247df86e7f",
+      "order": 6,
+      "zh": "太浪费了",
+      "pinyin": "",
+      "vi": "lãng phí quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "96b7613e-cc74-4c56-969e-55ceddec3cb0",
+      "order": 7,
+      "zh": "浪费资源",
+      "pinyin": "",
+      "vi": "lãng phí tài nguyên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48c85211-c283-4f32-854a-6c8659edcbdb",
+      "order": 8,
+      "zh": "抽烟浪费钱",
+      "pinyin": "",
+      "vi": "hút thuốc lãng phí tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3ba5d6de-4d8d-43cf-8e2c-16850a688ecd",
+      "order": 1,
+      "zh": "不要浪费时间。",
+      "pinyin": "Bú yào làngfèi shíjiān.",
+      "vi": "Đừng lãng phí thời gian.",
+      "analysis_vi": "不要 + V là mệnh lệnh phủ định.",
+      "highlight": [
+        "浪费"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "51c37434-f495-4a46-9bb0-152d1ea79cc9"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ed6058a7-9ac9-4a74-92bd-16a8a960883f",
+      "order": 2,
+      "zh": "抽烟不但浪费钱，而且对身体不好。",
+      "pinyin": "Chōu yān búdàn làngfèi qián, érqiě duì shēntǐ bù hǎo.",
+      "vi": "Hút thuốc không những lãng phí tiền mà còn không tốt cho sức khỏe.",
+      "analysis_vi": "Ôn 不但……而且……; 浪费钱 là tiêu tiền vào việc không đáng.",
+      "highlight": [
+        "浪费"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "51c37434-f495-4a46-9bb0-152d1ea79cc9"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5b11d920-4521-410e-a38e-ced706c6a950",
+      "order": 3,
+      "zh": "他因为抽烟被罚了二百块钱，才觉得自己以前浪费了太多钱。",
+      "pinyin": "Tā yīnwèi chōu yān bèi fá le èr bǎi kuài qián, cái juéde zìjǐ yǐqián làngfèi le tài duō qián.",
+      "vi": "Anh ấy vì hút thuốc bị phạt 200 tệ, lúc đó mới thấy trước đây mình đã lãng phí quá nhiều tiền.",
+      "analysis_vi": "Ôn 因为 và 被罚了; 才觉得 nhấn nhận ra muộn.",
+      "highlight": [
+        "浪费",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "51c37434-f495-4a46-9bb0-152d1ea79cc9"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khẩu hiệu thường dùng 节约 đối lập 浪费, ví dụ 节约用水，反对浪费.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "04b3dec9-1f46-4b45-87fd-418369f80b36",
+      "order": 1,
+      "rule_vi": "浪费 mang đánh giá tiêu cực; nếu chỉ nói tiêu tiền trung tính, dùng 花钱.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我花了很多钱。",
+          "pinyin": "Wǒ huā le hěn duō qián.",
+          "vi": "Tôi tiêu rất nhiều tiền.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我浪费了很多钱。",
+          "pinyin": "Wǒ làngfèi le hěn duō qián.",
+          "vi": "Tôi lãng phí rất nhiều tiền.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "浪费",
+    "back": "lãng phí",
+    "hint": "làngfèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "waste"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "51c37434-f495-4a46-9bb0-152d1ea79cc9",
+    "source_lesson_vocab_id": null
+  }
+}

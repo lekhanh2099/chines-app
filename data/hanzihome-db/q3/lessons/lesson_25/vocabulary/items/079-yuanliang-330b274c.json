@@ -1,0 +1,217 @@
+{
+  "id": "28201de2-e157-4f3d-a66e-3e2f51f386fb",
+  "type": "deep_vocabulary_item",
+  "order": 79,
+  "hanzi": "原谅",
+  "pinyin": "yuánliàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "nguyên lượng",
+    "meaning_vi": "tha thứ, thông cảm bỏ qua",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tha thứ",
+      "thông cảm bỏ qua"
+    ],
+    "short_definition_vi": "tha thứ, thông cảm bỏ qua",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "原",
+        "lishu_vi": "nguyên",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gốc; tha thứ",
+        "modern_logic_vi": "Trong từ này, 原 góp phần vào nghĩa hiện đại: gốc; tha thứ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "谅",
+        "lishu_vi": "lượng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thông cảm",
+        "modern_logic_vi": "Trong từ này, 谅 góp phần vào nghĩa hiện đại: thông cảm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "原谅 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 原谅我.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Hiểu không đồng nghĩa đã tha thứ; 理解 và 原谅 khác nhau."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "30386301-f6d5-4aeb-b057-26416a55ec0f",
+      "order": 1,
+      "zh": "原谅我",
+      "pinyin": "",
+      "vi": "tha thứ cho tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1184ae8-9066-4f55-ad85-4795be0336e8",
+      "order": 2,
+      "zh": "请你原谅我",
+      "pinyin": "",
+      "vi": "xin bạn tha thứ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16f2f411-63da-4487-a934-2f85a047ef66",
+      "order": 3,
+      "zh": "互相原谅",
+      "pinyin": "",
+      "vi": "tha thứ cho nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "536407a8-9f2f-4138-9275-674a3fe2e271",
+      "order": 1,
+      "zh": "请你原谅我这一次。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 原谅 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 原谅; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "原谅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "28201de2-e157-4f3d-a66e-3e2f51f386fb"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 原谅 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "403b3422-e77e-4ae3-812f-badd767dc38d",
+      "order": 1,
+      "rule_vi": "Hiểu không đồng nghĩa đã tha thứ; 理解 và 原谅 khác nhau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "原谅",
+    "back": "tha thứ, thông cảm bỏ qua",
+    "hint": "yuánliàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "28201de2-e157-4f3d-a66e-3e2f51f386fb",
+    "source_lesson_vocab_id": null
+  }
+}

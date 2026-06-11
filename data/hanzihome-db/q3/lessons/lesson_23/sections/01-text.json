@@ -1,0 +1,217 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "网络学校",
+      "title_vi": "Trường học trực tuyến",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "我是新时代网络学校的教师。每天早晨，当人们都坐汽车、挤地铁去上班、上学时，我只需在家里打开电脑就开始工作了。",
+          "pinyin": "Wǒ shì Xīn Shídài Wǎngluò Xuéxiào de jiàoshī. Měitiān zǎochen, dāng rénmen dōu zuò qìchē, jǐ dìtiě qù shàngbān, shàngxué shí, wǒ zhǐxū zài jiālǐ dǎkāi diànnǎo jiù kāishǐ gōngzuò le.",
+          "vi": "Tôi là giáo viên của trường học trực tuyến Thời Đại Mới. Mỗi sáng, khi mọi người đều đi xe ô tô, chen tàu điện ngầm để đi làm, đi học, tôi chỉ cần ở nhà mở máy tính là bắt đầu làm việc.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "我把电脑接到“新时代教学网站”，从屏幕上查到新一天的教学安排，还收到许多电子邮件，其中有教务主任发来的教学要求，有国内外同行发来的最新教学信息和要与我讨论的有关问题，还有学生交来的作业……",
+          "pinyin": "Wǒ bǎ diànnǎo jiē dào “Xīn Shídài Jiàoxué Wǎngzhàn”, cóng píngmù shang chá dào xīn yì tiān de jiàoxué ānpái, hái shōu dào xǔduō diànzǐ yóujiàn, qízhōng yǒu jiàowù zhǔrèn fā lái de jiàoxué yāoqiú, yǒu guónèi-wài tóngháng fā lái de zuìxīn jiàoxué xìnxī hé yào yǔ wǒ tǎolùn de yǒuguān wèntí, hái yǒu xuéshēng jiāo lái de zuòyè...",
+          "vi": "Tôi kết nối máy tính với “Trang web dạy học Thời Đại Mới”, tra được lịch dạy học của ngày mới từ màn hình, còn nhận được nhiều email: trong đó có yêu cầu giảng dạy do chủ nhiệm giáo vụ gửi đến, thông tin dạy học mới nhất do đồng nghiệp trong và ngoài nước gửi đến và các vấn đề liên quan cần thảo luận với tôi, còn có bài tập học sinh nộp lên...",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "新时代网校不是只学电脑，而是通过电脑，在多媒体的环境下，学习各种现代科学文化知识。比如，学生学化学，可以看到原子间的相互碰撞；学物理，可以看到和听到宇宙的各种声像；学外语，可以一边看有趣的动画片，一边听标准的发音。",
+          "pinyin": "Xīn Shídài Wǎngxiào bú shì zhǐ xué diànnǎo, ér shì tōngguò diànnǎo, zài duōméitǐ de huánjìng xià, xuéxí gè zhǒng xiàndài kēxué wénhuà zhīshi. Bǐrú, xuéshēng xué huàxué, kěyǐ kàn dào yuánzǐ jiān de xiānghù pèngzhuàng; xué wùlǐ, kěyǐ kàn dào hé tīng dào yǔzhòu de gè zhǒng shēngxiàng; xué wàiyǔ, kěyǐ yìbiān kàn yǒuqù de dònghuàpiàn, yìbiān tīng biāozhǔn de fāyīn.",
+          "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học về máy tính, mà là thông qua máy tính, học các loại kiến thức khoa học văn hóa hiện đại trong môi trường đa phương tiện. Ví dụ, học sinh học hóa học có thể thấy sự va chạm lẫn nhau giữa các nguyên tử; học vật lý có thể nhìn thấy và nghe được các loại âm thanh-hình ảnh của vũ trụ; học ngoại ngữ có thể vừa xem phim hoạt hình thú vị vừa nghe phát âm chuẩn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "当他们跟读时，读书声从我的电脑中传出，我可以通过电脑分辨出每一个学生的声音，纠正他们的语音错误。",
+          "pinyin": "Dāng tāmen gēn dú shí, dúshū shēng cóng wǒ de diànnǎo zhōng chuán chū, wǒ kěyǐ tōngguò diànnǎo fēnbiàn chū měi yí ge xuéshēng de shēngyīn, jiūzhèng tāmen de yǔyīn cuòwù.",
+          "vi": "Khi các em đọc theo, tiếng đọc truyền ra từ máy tính của tôi; tôi có thể thông qua máy tính phân biệt giọng của từng học sinh và sửa lỗi ngữ âm cho các em.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "我们的汉语远程教育课堂面向全世界，各国学生都可以申请入学。程度分初、中、高，技能训练包括听、说、读、写。",
+          "pinyin": "Wǒmen de Hànyǔ yuǎnchéng jiàoyù kètáng miànxiàng quán shìjiè, gè guó xuéshēng dōu kěyǐ shēnqǐng rùxué. Chéngdù fēn chū, zhōng, gāo, jìnéng xùnliàn bāokuò tīng, shuō, dú, xiě.",
+          "vi": "Lớp học giáo dục tiếng Hán từ xa của chúng tôi hướng tới toàn thế giới, học sinh các nước đều có thể đăng ký nhập học. Trình độ chia thành sơ cấp, trung cấp, cao cấp; phần luyện kỹ năng bao gồm nghe, nói, đọc, viết.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "我们为学生制作了各种教学软件，语音、汉字、语法、词语、短文以及相关的文化知识，应有尽有。",
+          "pinyin": "Wǒmen wèi xuéshēng zhìzuò le gè zhǒng jiàoxué ruǎnjiàn, yǔyīn, Hànzì, yǔfǎ, cíyǔ, duǎnwén yǐjí xiāngguān de wénhuà zhīshi, yīngyǒu-jìnyǒu.",
+          "vi": "Chúng tôi làm đủ loại phần mềm dạy học cho học sinh: ngữ âm, chữ Hán, ngữ pháp, từ ngữ, bài văn ngắn cũng như kiến thức văn hóa liên quan; cái gì cần có đều có.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "学生可以按照自己的意愿，随心所欲地安排自己的学习时间，随心所欲地选择适合自己程度的教材和自己喜欢的教师。想学时，只需用鼠标轻轻一点，就可以进入汉语课堂。",
+          "pinyin": "Xuéshēng kěyǐ ànzhào zìjǐ de yìyuàn, suíxīn-suǒyù de ānpái zìjǐ de xuéxí shíjiān, suíxīn-suǒyù de xuǎnzé shìhé zìjǐ chéngdù de jiàocái hé zìjǐ xǐhuan de jiàoshī. Xiǎng xué shí, zhǐxū yòng shǔbiāo qīngqīng yì diǎn, jiù kěyǐ jìnrù Hànyǔ kètáng.",
+          "vi": "Học sinh có thể theo ý muốn của mình mà tự do sắp xếp thời gian học, tự do chọn tài liệu phù hợp với trình độ của mình và giáo viên mình thích. Khi muốn học, chỉ cần dùng chuột nhấp nhẹ một cái là có thể vào lớp học tiếng Hán.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
+          "order": 8,
+          "zh": "新时代的教学网站是个非常受欢迎的教学网站，因此，我们每天都从网上接到不少注册申请。教师们为新注册的学生制订学习计划，同时也为学习结束的同学颁发毕业证书。",
+          "pinyin": "Xīn Shídài de jiàoxué wǎngzhàn shì ge fēicháng shòu huānyíng de jiàoxué wǎngzhàn, yīncǐ, wǒmen měitiān dōu cóng wǎngshàng jiē dào bù shǎo zhùcè shēnqǐng. Jiàoshīmen wèi xīn zhùcè de xuéshēng zhìdìng xuéxí jìhuà, tóngshí yě wèi xuéxí jiéshù de tóngxué bānfā bìyè zhèngshū.",
+          "vi": "Trang web dạy học Thời Đại Mới là một website dạy học rất được yêu thích; vì vậy mỗi ngày chúng tôi đều nhận được không ít đơn đăng ký từ trên mạng. Các giáo viên lập kế hoạch học tập cho học sinh mới đăng ký, đồng thời cũng cấp giấy chứng nhận tốt nghiệp cho những bạn học đã hoàn thành việc học.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
+          "order": 9,
+          "zh": "作为一个从事远程教育的教师，我为自己培养了无数学生而感到自豪。但也有一个遗憾，这就是，我既没有见过我的校长，也没有跟我的学生见过面。一台电脑成了我的耳目。",
+          "pinyin": "Zuòwéi yí ge cóngshì yuǎnchéng jiàoyù de jiàoshī, wǒ wèi zìjǐ péiyǎng le wúshù xuéshēng ér gǎndào zìháo. Dàn yě yǒu yí ge yíhàn, zhè jiù shì, wǒ jì méiyǒu jiàn guo wǒ de xiàozhǎng, yě méiyǒu gēn wǒ de xuéshēng jiàn guo miàn. Yì tái diànnǎo chéng le wǒ de ěrmù.",
+          "vi": "Với tư cách là một giáo viên làm giáo dục từ xa, tôi cảm thấy tự hào vì mình đã đào tạo được vô số học sinh. Nhưng cũng có một điều tiếc nuối, đó là tôi chưa từng gặp hiệu trưởng của mình, cũng chưa từng gặp mặt học sinh của mình. Một chiếc máy tính đã trở thành tai mắt của tôi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
+          "order": 10,
+          "zh": "因此，学校决定在今年暑假开办一个“新时代夏令营”，让学生们和老师一起过一个愉快的暑假。大家一起交流经验，一起玩儿游戏，一起去海边游泳，一起去爬山野营。用这样的方式增进师生之间的了解和友谊。我们已经用电子邮件发出了通知，我想，今年的暑假一定非常有意思。",
+          "pinyin": "Yīncǐ, xuéxiào juédìng zài jīnnián shǔjià kāibàn yí ge “Xīn Shídài Xiàlìngyíng”, ràng xuéshēngmen hé lǎoshī yìqǐ guò yí ge yúkuài de shǔjià. Dàjiā yìqǐ jiāoliú jīngyàn, yìqǐ wánr yóuxì, yìqǐ qù hǎibiān yóuyǒng, yìqǐ qù páshān yěyíng. Yòng zhèyàng de fāngshì zēngjìn shīshēng zhījiān de liǎojiě hé yǒuyì. Wǒmen yǐjīng yòng diànzǐ yóujiàn fā chū le tōngzhī, wǒ xiǎng, jīnnián de shǔjià yídìng fēicháng yǒuyìsi.",
+          "vi": "Vì vậy, nhà trường quyết định mở một “Trại hè Thời Đại Mới” vào kỳ nghỉ hè năm nay, để học sinh và giáo viên cùng trải qua một kỳ nghỉ hè vui vẻ. Mọi người cùng trao đổi kinh nghiệm, cùng chơi trò chơi, cùng đi bơi ở biển, cùng leo núi và cắm trại. Dùng cách này để tăng thêm sự hiểu biết và tình bạn giữa thầy trò. Chúng tôi đã gửi thông báo bằng email; tôi nghĩ kỳ nghỉ hè năm nay nhất định sẽ rất thú vị.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
+          "question": "作者是从事什么工作的？",
+          "answer": "作者是新时代网络学校的教师。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "question_pinyin": "Zuòzhě shì cóngshì shénme gōngzuò de?",
+          "question_vi": "Tác giả làm công việc gì?",
+          "answer_pinyin": "Zuòzhě shì Xīn Shídài Wǎngluò Xuéxiào de jiàoshī.",
+          "answer_vi": "Tác giả là giáo viên của trường học trực tuyến Thời Đại Mới."
+        },
+        {
+          "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
+          "question": "他每天怎么工作？",
+          "answer": "他每天只需在家里打开电脑，把电脑接到“新时代教学网站”，就可以开始工作。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "question_pinyin": "Tā měitiān zěnme gōngzuò?",
+          "question_vi": "Mỗi ngày anh ấy làm việc như thế nào?",
+          "answer_pinyin": "Tā měitiān zhǐxū zài jiālǐ dǎkāi diànnǎo, bǎ diànnǎo jiē dào “Xīn Shídài Jiàoxué Wǎngzhàn”, jiù kěyǐ kāishǐ gōngzuò.",
+          "answer_vi": "Mỗi ngày anh ấy chỉ cần ở nhà mở máy tính, kết nối máy tính với “Trang web dạy học Thời Đại Mới” là có thể bắt đầu làm việc."
+        },
+        {
+          "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
+          "question": "网络学校是怎么进行教学的？",
+          "answer": "网络学校通过电脑，在多媒体的环境下进行教学。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "question_pinyin": "Wǎngluò xuéxiào shì zěnme jìnxíng jiàoxué de?",
+          "question_vi": "Trường học trực tuyến tiến hành dạy học như thế nào?",
+          "answer_pinyin": "Wǎngluò xuéxiào tōngguò diànnǎo, zài duōméitǐ de huánjìng xià jìnxíng jiàoxué.",
+          "answer_vi": "Trường học trực tuyến tiến hành dạy học thông qua máy tính, trong môi trường đa phương tiện."
+        },
+        {
+          "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
+          "question": "他们的汉语远程教育怎么样？",
+          "answer": "他们的汉语远程教育课堂面向全世界，各国学生都可以申请入学；程度分初、中、高，技能训练包括听、说、读、写。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "question_pinyin": "Tāmen de Hànyǔ yuǎnchéng jiàoyù zěnmeyàng?",
+          "question_vi": "Giáo dục tiếng Hán từ xa của họ như thế nào?",
+          "answer_pinyin": "Tāmen de Hànyǔ yuǎnchéng jiàoyù kètáng miànxiàng quán shìjiè, gè guó xuéshēng dōu kěyǐ shēnqǐng rùxué; chéngdù fēn chū, zhōng, gāo, jìnéng xùnliàn bāokuò tīng, shuō, dú, xiě.",
+          "answer_vi": "Lớp giáo dục tiếng Hán từ xa của họ hướng tới toàn thế giới; học sinh các nước đều có thể đăng ký nhập học. Trình độ chia thành sơ cấp, trung cấp, cao cấp; phần luyện kỹ năng gồm nghe, nói, đọc, viết."
+        },
+        {
+          "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
+          "question": "他们为什么要开办“新时代夏令营”活动？",
+          "answer": "为了增进师生之间的了解和友谊。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "question_pinyin": "Tāmen wèishénme yào kāibàn “Xīn Shídài Xiàlìngyíng” huódòng?",
+          "question_vi": "Vì sao họ muốn mở hoạt động “Trại hè Thời Đại Mới”?",
+          "answer_pinyin": "Wèile zēngjìn shīshēng zhījiān de liǎojiě hé yǒuyì.",
+          "answer_vi": "Để tăng thêm sự hiểu biết và tình bạn giữa thầy trò."
+        },
+        {
+          "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
+          "question": "“新时代夏令营”可能开展哪些活动？",
+          "answer": "可能交流经验、玩儿游戏、去海边游泳、爬山野营。",
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "question_pinyin": "“Xīn Shídài Xiàlìngyíng” kěnéng kāizhǎn nǎxiē huódòng?",
+          "question_vi": "“Trại hè Thời Đại Mới” có thể triển khai những hoạt động nào?",
+          "answer_pinyin": "Kěnéng jiāoliú jīngyàn, wánr yóuxì, qù hǎibiān yóuyǒng, páshān yěyíng.",
+          "answer_vi": "Có thể trao đổi kinh nghiệm, chơi trò chơi, đi bơi ở biển, leo núi và cắm trại."
+        }
+      ]
+    }
+  ]
+}

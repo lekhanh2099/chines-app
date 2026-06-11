@@ -1,0 +1,175 @@
+{
+  "id": "a0104699-30b5-4639-bb47-305ff39711e0",
+  "type": "deep_vocabulary_item",
+  "order": 100,
+  "hanzi": "饮用",
+  "pinyin": "yǐnyòng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Nước và sông ngòi"
+  ],
+  "meaning": {
+    "hanviet": "Ẩm dụng",
+    "meaning_vi": "uống, dùng để uống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "uống",
+      "dùng để uống"
+    ],
+    "short_definition_vi": "uống, dùng để uống",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: uống, dùng để uống.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Nước và sông ngòi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "饮",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "用",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "饮用 trong bài được học theo nghĩa trọng tâm: uống, dùng để uống.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: uống, dùng để uống.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "喝",
+        "pinyin": "hē",
+        "meaning_vi": "uống",
+        "difference_vi": "喝 khẩu ngữ; 饮用 văn bản/an toàn nước uống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1ec7a7bf-845b-49c8-a0e2-324aa0a52ced",
+      "order": 1,
+      "zh": "饮用",
+      "pinyin": "",
+      "vi": "uống, dùng để uống",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5cc18b86-240f-4af6-83c3-766eafbaf890",
+      "order": 1,
+      "zh": "你看到的这些线，实际上是地球上的一条条河流，但卫星已发现，这些河水里充满了有害物质，根本不能饮用。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “饮用” = uống, dùng để uống.",
+      "analysis_vi": "Câu này dùng “饮用” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "饮用"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a0104699-30b5-4639-bb47-305ff39711e0"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “饮用” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a46b7e98-3e3f-464c-8101-0f451b3b9d8d",
+      "order": 1,
+      "rule_vi": "Cần dùng “饮用” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "饮用",
+    "back": "uống, dùng để uống",
+    "hint": "yǐnyòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Nước và sông ngòi"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a0104699-30b5-4639-bb47-305ff39711e0",
+    "source_lesson_vocab_id": null
+  }
+}

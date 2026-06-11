@@ -1,0 +1,362 @@
+{
+  "id": "27d3d6d3-e80f-4170-83f0-c271d00e7626",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "最好",
+  "pinyin": "zuìhǎo",
+  "pos": {
+    "raw_vi": "Tính từ / Phó từ khuyên nhủ",
+    "raw_cn": "形/副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Tối hảo",
+    "meaning_vi": "tốt nhất; tốt nhất là nên...",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tốt nhất; tốt nhất là nên..."
+    ],
+    "short_definition_vi": "tốt nhất; tốt nhất là nên...",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "mềm hơn mệnh lệnh trực tiếp, rất hữu ích trong giao tiếp.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "最",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "曰",
+            "hanviet": "viết",
+            "meaning_vi": "nói; mặt trời dạng khác",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "取",
+            "hanviet": "thủ",
+            "meaning_vi": "lấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhất, mức cao nhất",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con/trẻ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, đẹp, thích",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "最 là nhất. 好 là tốt. → 最好 = tốt nhất. Khi dùng trước động từ, nghĩa mở rộng thành “tốt nhất nên làm gì”. Cảnh báo: 最好 không phải lúc nào cũng là so sánh “tốt nhất trong tất cả”. Nhiều khi chỉ là lời khuyên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "最好",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tốt nhất là nên..., lời khuyên mạnh nhưng vẫn mềm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "应该",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nên, phải nên, tính nghĩa vụ rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "最好不要",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tốt nhất đừng...",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一定要",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhất định phải, mạnh hơn nhiều.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 最好先问问 mềm; 一定要先问 mạnh."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "be80d0e6-5b30-4607-bb03-3b8366f6cb53",
+      "order": 1,
+      "zh": "最好先……",
+      "pinyin": "",
+      "vi": "tốt nhất trước tiên hãy...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75d90653-c4eb-49d6-9d71-fe0965196d82",
+      "order": 2,
+      "zh": "最好不要……",
+      "pinyin": "",
+      "vi": "tốt nhất đừng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f0acfe4-c7da-4184-baf5-92ffc3c61f84",
+      "order": 3,
+      "zh": "最好别……",
+      "pinyin": "",
+      "vi": "tốt nhất đừng..., khẩu ngữ hơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28ce89fd-56af-42fb-9fcc-454adf8b4087",
+      "order": 4,
+      "zh": "这样最好",
+      "pinyin": "",
+      "vi": "như vậy là tốt nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e8ad4a31-9ff4-478b-bcc6-fd562a9d1af6",
+      "order": 1,
+      "zh": "贴对联儿以前，最好先把门擦干净。",
+      "pinyin": "Tiē duìliánr yǐqián, zuìhǎo xiān bǎ mén cā gānjìng.",
+      "vi": "Trước khi dán câu đối, tốt nhất lau cửa cho sạch trước.",
+      "analysis_vi": "把门擦干净 là câu chữ 把 chuẩn: cửa được xử lý đến trạng thái sạch.",
+      "highlight": [
+        "最好"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "27d3d6d3-e80f-4170-83f0-c271d00e7626"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "83d1a5bd-4bc3-4e70-aaf9-70bd6231cfe3",
+      "order": 2,
+      "zh": "如果不知道“福”字该怎么贴，最好先问问管理员。",
+      "pinyin": "Rúguǒ bù zhīdào “Fú” zì gāi zěnme tiē, zuìhǎo xiān wènwen guǎnlǐyuán.",
+      "vi": "Nếu không biết chữ “Phúc” nên dán thế nào, tốt nhất hỏi người quản lý trước.",
+      "analysis_vi": "最好先问问 là lời khuyên mềm; 问问 cũng làm giọng nhẹ hơn 问.",
+      "highlight": [
+        "最好"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "27d3d6d3-e80f-4170-83f0-c271d00e7626"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "98362b48-7254-4eae-a285-90f3c641e888",
+      "order": 3,
+      "zh": "音响最好不要调得太大，旁边的教室还在上课。",
+      "pinyin": "Yīnxiǎng zuìhǎo bú yào tiáo de tài dà, pángbiān de jiàoshì hái zài shàngkè.",
+      "vi": "Âm thanh tốt nhất đừng chỉnh quá lớn, lớp bên cạnh vẫn đang học.",
+      "analysis_vi": "调得太大 dùng 得 để đánh giá mức âm lượng sau khi chỉnh.",
+      "highlight": [
+        "最好"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "27d3d6d3-e80f-4170-83f0-c271d00e7626"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 最好",
+    "content_vi": "最好 là cách góp ý rất thực dụng trong tiếng Trung. Thay vì ra lệnh 你不要……, nói 最好不要…… nghe mềm hơn nhưng vẫn đủ rõ.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "97b4bab0-5d0c-4dc4-a8bf-83fa1dddba2f",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 最好 như 很好的 trong mọi câu. Khác nhau: 这是最好的办法。 Zhè shì zuì hǎo de bànfǎ. Đây là cách tốt nhất. 你最好先问问老师。 Nǐ zuìhǎo xiān wènwen lǎoshī. Tốt nhất bạn hỏi thầy/cô trước.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "最好",
+    "back": "tốt nhất; tốt nhất là nên...",
+    "hint": "zuìhǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "27d3d6d3-e80f-4170-83f0-c271d00e7626",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích / Ghi chú văn hóa",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "红双喜字",
+      "structure": "红 + 双喜 + 字",
+      "meaning_vi": "Chữ song hỷ đỏ, thường dùng trong đám cưới Trung Quốc; nên giữ như một cụm văn hóa.",
+      "examples": [
+        {
+          "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+          "zh": "墙上贴着一个很大的红双喜字。",
+          "pinyin": "Qiáng shàng tiēzhe yí ge hěn dà de hóng shuāngxǐ zì.",
+          "vi": "Trên tường đang dán một chữ song hỷ đỏ rất lớn.",
+          "en": "",
+          "highlight": [
+            "红双喜字"
+          ],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "vocab_refs": [],
+          "source_ref": "9e143bd6-8273-4480-beea-b87921f0d67e",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "9e143bd6-8273-4480-beea-b87921f0d67e"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "喜酒 / 喜糖",
+      "structure": "喜 + 酒 / 喜 + 糖",
+      "meaning_vi": "喜酒 là rượu mừng trong đám cưới; 喜糖 là kẹo cưới. Câu hỏi “什么时候吃你的喜糖啊？” thường ngụ ý hỏi khi nào bạn kết hôn.",
+      "examples": [
+        {
+          "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+          "zh": "结婚时喝的酒中国人叫喜酒，吃的糖叫喜糖。",
+          "pinyin": "Jiéhūn shí hē de jiǔ Zhōngguórén jiào xǐjiǔ, chī de táng jiào xǐtáng.",
+          "vi": "Rượu uống khi kết hôn, người Trung Quốc gọi là rượu hỷ; kẹo ăn trong dịp đó gọi là kẹo hỷ.",
+          "en": "",
+          "highlight": [
+            "喜酒",
+            "喜糖"
+          ],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "58e383aa-03fb-4168-b559-8bebcf38414c",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "58e383aa-03fb-4168-b559-8bebcf38414c"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ],
+  "note_vi": "PDF scan không thấy phần 注释 riêng biệt; 2 ghi chú này được rút ra từ bài khóa để phục vụ app."
+}

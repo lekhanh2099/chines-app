@@ -1,0 +1,225 @@
+{
+  "id": "a0152252-8d11-4a09-b0ff-059a976db1fa",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "串",
+  "pinyin": "chuàn",
+  "pos": {
+    "raw_vi": "Lượng từ / Danh từ / Động từ",
+    "raw_cn": "量词/名/动",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "xuyến / quán",
+    "meaning_vi": "chùm, chuỗi; lượng từ cho vật nối thành dãy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chùm",
+      "chuỗi",
+      "lượng từ cho vật nối thành dãy"
+    ],
+    "short_definition_vi": "chùm, chuỗi",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "串",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuỗi, chùm, xâu",
+        "modern_logic_vi": "Trong từ 串, chữ 串 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "串 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他摘下了一串葡萄。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "颗",
+        "pinyin": "kē",
+        "meaning_vi": "quả/viên nhỏ",
+        "difference_vi": "串 là chùm/chuỗi; 颗 là từng quả nhỏ tròn.",
+        "register_vi": "",
+        "example_zh": "一颗葡萄。",
+        "example_vi": "Một quả nho.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f83d743f-9cd4-41fa-98be-0fe214555cc4",
+      "order": 1,
+      "zh": "一串葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d47aaf8-d689-4dba-8e38-bdff3627eb3f",
+      "order": 2,
+      "zh": "一串钥匙",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23680613-bc7e-464c-90ec-01c2ebed3958",
+      "order": 3,
+      "zh": "一串珠子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8b928ea-7039-417f-8e01-122f0cb712f4",
+      "order": 4,
+      "zh": "一串数字",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1401dbc-e988-4c3a-9987-404fa8f4c936",
+      "order": 5,
+      "zh": "串起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9345aa28-7eca-4df9-831b-eb2b35dcfa12",
+      "order": 6,
+      "zh": "串门儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af739585-b056-41e5-b7ca-aa41701f90fd",
+      "order": 7,
+      "zh": "客串",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6d9f6d01-dd2c-41eb-98b9-9c779be6b00f",
+      "order": 1,
+      "zh": "他摘下了一串葡萄。",
+      "pinyin": "",
+      "vi": "Anh ấy hái xuống một chùm nho.",
+      "analysis_vi": "Ví dụ dùng 串 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "串"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a0152252-8d11-4a09-b0ff-059a976db1fa"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "串 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a8d84701-a22e-4c6c-ab3f-035924e10fe3",
+      "order": 1,
+      "rule_vi": "一串葡萄 là một chùm nho; một quả riêng lẻ là 一颗葡萄.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "串",
+    "back": "chùm, chuỗi; lượng từ cho vật nối thành dãy",
+    "hint": "chuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a0152252-8d11-4a09-b0ff-059a976db1fa",
+    "source_lesson_vocab_id": null
+  }
+}

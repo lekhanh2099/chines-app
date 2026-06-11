@@ -1,0 +1,264 @@
+{
+  "id": "692bd182-2c4f-4f4e-82bd-937a4a583449",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "何况",
+  "pinyin": "hékuàng",
+  "pos": {
+    "raw_vi": "Từ nối / Kết cấu ngữ pháp",
+    "raw_cn": "连词/语法结构",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hà huống",
+    "meaning_vi": "huống chi, huống hồ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "huống chi",
+      "huống hồ"
+    ],
+    "short_definition_vi": "huống chi, huống hồ",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "cố định / thiên văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "何",
+        "lishu_vi": "hà",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "可",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gì, nào, vì sao trong văn viết/từ ghép",
+        "modern_logic_vi": "gì, nào, vì sao trong văn viết/từ ghép",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "况",
+        "lishu_vi": "huống",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "兄",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình huống, huống hồ",
+        "modern_logic_vi": "tình huống, huống hồ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Dùng để đẩy lập luận lên tầng mạnh hơn: A đã vậy, huống chi B.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 更何况.",
+    "warning_vi": "Không dịch máy từng chữ nếu đây là cụm cố định hoặc thành ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "况且",
+        "pinyin": "kuàngqiě",
+        "meaning_vi": "hơn nữa/vả lại",
+        "difference_vi": "况且 bổ sung lý do, không nhất thiết có tầng mạnh hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "而且",
+        "pinyin": "érqiě",
+        "meaning_vi": "hơn nữa",
+        "difference_vi": "而且 chỉ thêm thông tin, trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e94fe003-5e04-49a7-9b7a-4daa5c5b11f8",
+      "order": 1,
+      "zh": "更何况",
+      "pinyin": "gèng hékuàng",
+      "vi": "huống chi lại còn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3594dec4-2594-400c-9759-98832d9f5a4c",
+      "order": 2,
+      "zh": "何况是",
+      "pinyin": "hékuàng shì",
+      "vi": "huống chi là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e17c411-6e84-4af6-b190-025020c67bcf",
+      "order": 3,
+      "zh": "连……都……，何况……",
+      "pinyin": "lián...dōu..., hékuàng...",
+      "vi": "ngay cả... còn..., huống chi...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7bbf4f69-7b10-4b4c-b037-1217b74893ae",
+      "order": 1,
+      "zh": "平时我都不敢上台，何况今天有这么多老师。",
+      "pinyin": "Píngshí wǒ dōu bù gǎn shàngtái, hékuàng jīntiān yǒu zhème duō lǎoshī.",
+      "vi": "Bình thường tôi còn không dám lên bục, huống chi hôm nay có nhiều thầy cô như vậy.",
+      "analysis_vi": "Vế sau nặng hơn vế trước.",
+      "highlight": [
+        "何况"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "692bd182-2c4f-4f4e-82bd-937a4a583449"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bd04996a-e5a3-46ff-a8cd-c361ccf741de",
+      "order": 2,
+      "zh": "连一向自信的班长都觉得这次招聘不容易，何况他刚受到打击。",
+      "pinyin": "Lián yíxiàng zìxìn de bānzhǎng dōu juéde zhè cì zhāopìn bù róngyì, hékuàng tā gāng shòu dào dǎjī.",
+      "vi": "Ngay cả lớp trưởng xưa nay tự tin còn thấy khó, huống chi anh ấy vừa chịu đả kích.",
+      "analysis_vi": "连……都……，何况…… là khung lập luận mạnh.",
+      "highlight": [
+        "何况"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "692bd182-2c4f-4f4e-82bd-937a4a583449"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "何况 rất gần tiếng Việt 'huống chi', nhưng tiếng Trung cần hai vế logic rõ.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8a0fd800-ec94-4a6e-88a2-acd18937bd1d",
+      "order": 1,
+      "rule_vi": "Không dùng 何况 như 而且 nếu không có tầng lập luận A đã vậy huống chi B.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "何况",
+    "back": "huống chi, huống hồ",
+    "hint": "hékuàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "692bd182-2c4f-4f4e-82bd-937a4a583449",
+    "source_lesson_vocab_id": null
+  }
+}

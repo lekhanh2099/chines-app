@@ -1,0 +1,431 @@
+{
+  "id": "d35024da-55c0-43a1-b560-b539a36a07bb",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "嘛",
+  "pinyin": "ma / má",
+  "pos": {
+    "raw_vi": "Trợ từ ngữ khí / Thành phần khẩu ngữ",
+    "raw_cn": "语气助词",
+    "normalized": "particle",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ma",
+    "meaning_vi": "trợ từ ngữ khí; trong 干嘛 = làm gì",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trợ từ ngữ khí",
+      "trong 干嘛 = làm gì"
+    ],
+    "short_definition_vi": "trợ từ ngữ khí; trong 干嘛 = làm gì",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "嘛",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ Khẩu trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng như bộ Khẩu trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "嘛 có bộ 口, liên quan miệng, nói, âm thanh. 麻 là thành phần bên phải, chủ yếu gợi âm. 嘛 chủ yếu chỉnh thái độ câu nói; trong 干嘛 nghĩa là làm gì.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "嘛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngữ khí “rõ ràng là vậy mà”, giải thích/nhắc nhẹ; khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trợ từ hỏi yes/no.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "呢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hỏi tiếp, nhấn trạng thái đang diễn ra hoặc chủ đề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吧",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đề nghị, phỏng đoán, làm mềm câu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fc15d26c-13d3-40a5-8d0c-5960c854bec6",
+      "order": 1,
+      "zh": "干嘛",
+      "pinyin": "",
+      "vi": "làm gì / sao vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "51935ebd-c64e-4e0c-b335-d76543c45bba",
+      "order": 2,
+      "zh": "没关系嘛",
+      "pinyin": "",
+      "vi": "không sao mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "98a79c01-6785-4414-ab94-5794bdcfabc5",
+      "order": 3,
+      "zh": "这是第一次嘛",
+      "pinyin": "",
+      "vi": "đây là lần đầu mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "88e81e24-57ed-4ee1-8899-895589d19d5b",
+      "order": 4,
+      "zh": "慢慢来嘛",
+      "pinyin": "",
+      "vi": "từ từ thôi mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "7f4042cc-db5b-497b-8520-f24285e525f2",
+      "order": 5,
+      "zh": "不会就学嘛",
+      "pinyin": "",
+      "vi": "không biết thì học mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "0fe85aa4-9895-404f-8341-50748bef8f8f",
+      "order": 6,
+      "zh": "有问题就问嘛",
+      "pinyin": "",
+      "vi": "có vấn đề thì hỏi mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "77dbac8e-e748-42e3-a7fd-be3e3c0c5aba",
+      "order": 7,
+      "zh": "别紧张嘛",
+      "pinyin": "",
+      "vi": "đừng căng thẳng mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "579cf929-f5c6-4050-b125-39b8c1fa1731",
+      "order": 8,
+      "zh": "当然可以嘛",
+      "pinyin": "",
+      "vi": "đương nhiên là được mà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5b4d169f-c1ed-4af8-bc2d-ce3122cc4885",
+      "order": 1,
+      "zh": "你干嘛？",
+      "pinyin": "Nǐ gànmá?",
+      "vi": "Bạn làm gì vậy? / Sao vậy?",
+      "analysis_vi": "干嘛 là khẩu ngữ, gần với 干什么, nhưng thân mật và đời hơn.",
+      "highlight": [
+        "嘛"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "d35024da-55c0-43a1-b560-b539a36a07bb"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "598eab78-910b-440b-abb5-92362ced119e",
+      "order": 2,
+      "zh": "第一次听不懂很正常嘛。",
+      "pinyin": "Dì yī cì tīng bù dǒng hěn zhèngcháng ma.",
+      "vi": "Lần đầu nghe không hiểu là bình thường mà.",
+      "analysis_vi": "嘛 làm câu có sắc thái giải thích/nhắc nhẹ.",
+      "highlight": [
+        "嘛"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "d35024da-55c0-43a1-b560-b539a36a07bb"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8d788bd6-46ba-4cae-9d22-8e583a838e0b",
+      "order": 3,
+      "zh": "你还没听过《黄河》也没关系嘛，下次我们一起听，听完以后再讨论。",
+      "pinyin": "Nǐ hái méi tīng guo “Huáng Hé” yě méi guānxi ma, xià cì wǒmen yìqǐ tīng, tīng wán yǐhòu zài tǎolùn.",
+      "vi": "Bạn vẫn chưa từng nghe “Hoàng Hà” cũng không sao mà, lần sau chúng ta cùng nghe, nghe xong rồi bàn tiếp.",
+      "analysis_vi": "还没听过 = vẫn chưa từng nghe. 也没关系嘛 dùng 嘛 để an ủi/giải thích nhẹ. 听完以后再…… ôn trình tự hành động.",
+      "highlight": [
+        "嘛"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "d35024da-55c0-43a1-b560-b539a36a07bb"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "e9453366-d044-4954-a579-be742a36414e",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 吗 và 嘛.",
+      "natural_examples": [
+        {
+          "zh": "Đừng nhầm 吗 và 嘛.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "吗 hỏi yes/no: 你去吗？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "嘛 giải thích/nhấn điều hiển nhiên: 你第一次来，不知道也正常嘛。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đừng nhầm 吗 và 嘛. 吗 hỏi yes/no: 你去吗？ 嘛 giải thích/nhấn điều hiển nhiên: 你第一次来，不知道也正常嘛。 Trong bài viết trang trọng, hạn chế dùng 嘛 vì nó rất khẩu ngữ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "嘛",
+    "back": "trợ từ ngữ khí; trong 干嘛 = làm gì",
+    "hint": "ma / má",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "嘛 là hạt ngữ khí khẩu ngữ. Dịch sang tiếng Việt tùy câu có thể là “mà”, “thôi mà”, “chứ”, hoặc chỉ làm mềm sắc thái.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d35024da-55c0-43a1-b560-b539a36a07bb",
+    "source_lesson_vocab_id": null
+  }
+}

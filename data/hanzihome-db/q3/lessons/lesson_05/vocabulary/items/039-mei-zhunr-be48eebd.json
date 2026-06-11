@@ -1,0 +1,324 @@
+{
+  "id": "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "没准儿",
+  "pinyin": "méi zhǔnr",
+  "pos": {
+    "raw_vi": "Phó từ khẩu ngữ / Cụm phỏng đoán",
+    "raw_cn": "副词/口语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "một chuẩn nhi",
+    "meaning_vi": "không chắc, biết đâu, có khi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không chắc",
+      "biết đâu",
+      "có khi"
+    ],
+    "short_definition_vi": "không chắc, biết đâu, có khi",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "没",
+        "lishu_vi": "một",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "准",
+        "lishu_vi": "chuẩn",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "没准儿 = không có sự chắc chắn, phỏng đoán khả năng.",
+    "memory_tip_vi": "没准儿不来 = có khi không đến.",
+    "warning_vi": "Khẩu ngữ miền Bắc, văn viết dùng 可能/也许/不一定 an toàn hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "也许",
+        "yěxǔ",
+        "có lẽ",
+        "trung tính"
+      ],
+      [
+        "可能",
+        "kěnéng",
+        "có thể",
+        "phổ biến"
+      ],
+      [
+        "说不定",
+        "shuōbudìng",
+        "biết đâu",
+        "gần 没准儿"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "没准儿不来 = có khi không đến."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a3958627-00b2-4a8d-a754-d6838f333d25",
+      "order": 1,
+      "zh": "没准儿不来",
+      "pinyin": "",
+      "vi": "có khi không đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a61d580b-71fa-4468-874e-c2e41d0d5e95",
+      "order": 2,
+      "zh": "没准儿会下雨",
+      "pinyin": "",
+      "vi": "biết đâu trời mưa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d517c3d5-82b9-4da2-ac29-af5f3428ca9d",
+      "order": 3,
+      "zh": "没准儿他知道",
+      "pinyin": "",
+      "vi": "có khi anh ấy biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cca3d563-4a3d-4cdd-a745-a2ab5df1eb7f",
+      "order": 4,
+      "zh": "这事儿没准儿",
+      "pinyin": "",
+      "vi": "chuyện này chưa chắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d46a70b8-5835-4e8e-b59a-dac91458cb62",
+      "order": 5,
+      "zh": "没准儿能成功",
+      "pinyin": "",
+      "vi": "biết đâu thành công",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dae08cd0-5cac-447f-b1c4-2d379cc7f1f6",
+      "order": 1,
+      "zh": "他今天没准儿不来，你别一直等。",
+      "pinyin": "Tā jīntiān méi zhǔnr bù lái, nǐ bié yìzhí děng.",
+      "vi": "Hôm nay có khi anh ấy không đến, bạn đừng chờ mãi.",
+      "analysis_vi": "没准儿不来 = phỏng đoán không đến.",
+      "highlight": [
+        "没准儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a51e0a54-9747-44b7-9382-41ee94a40ba4",
+      "order": 2,
+      "zh": "他说“回头再说”，没准儿是真的忙，也没准儿是在推辞。",
+      "pinyin": "Tā shuō “huítóu zài shuō”, méi zhǔnr shì zhēn de máng, yě méi zhǔnr shì zài tuīcí.",
+      "vi": "Anh ấy nói để sau, có khi bận thật, cũng có khi đang từ chối khéo.",
+      "analysis_vi": "Không vội kết luận nghĩa xã giao.",
+      "highlight": [
+        "没准儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "没准儿 có màu Bắc Kinh/miền Bắc rõ; 可能 trung tính hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "28472513-147a-4d37-a439-0b480897d2db",
+      "order": 1,
+      "rule_vi": "他没准儿。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他来不来还没准儿。",
+          "pinyin": "Tā lái bu lái hái méi zhǔnr.",
+          "vi": "Anh ấy có đến hay không vẫn chưa chắc.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Khẩu ngữ miền Bắc, văn viết dùng 可能/也许/不一定 an toàn hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "没准儿",
+    "back": "không chắc, biết đâu, có khi",
+    "hint": "méi zhǔnr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b",
+    "source_lesson_vocab_id": null
+  }
+}

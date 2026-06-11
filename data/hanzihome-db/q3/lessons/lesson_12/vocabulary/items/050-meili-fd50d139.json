@@ -1,0 +1,339 @@
+{
+  "id": "50395615-38dd-49b2-a0bb-e0685132fbe1",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "魅力",
+  "pinyin": "mèilì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mị lực",
+    "meaning_vi": "sức hấp dẫn, sức cuốn hút",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sức hấp dẫn, sức cuốn hút"
+    ],
+    "short_definition_vi": "Sức hút khiến người khác chú ý/yêu thích.",
+    "textbook_focus_vi": "Dùng trong 有魅力.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "魅",
+        "lishu_vi": "mị",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "鬼",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Quỷ",
+          "radical_name_zh": "",
+          "hanviet": "quỷ",
+          "meaning_vi": "ma/quỷ/bí ẩn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "鬼 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "鬼",
+            "hanviet": "quỷ",
+            "meaning_vi": "ma/quỷ/bí ẩn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "鬼",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Quỷ",
+              "radical_name_zh": "",
+              "hanviet": "quỷ",
+              "meaning_vi": "ma/quỷ/bí ẩn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "鬼 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "鬼 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cuốn hút",
+        "modern_logic_vi": "cuốn hút",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "力",
+        "lishu_vi": "lực",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức/lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức/lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức/lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sức",
+        "modern_logic_vi": "sức",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "魅 + 力 = sức mạnh cuốn hút.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吸引力",
+        "pinyin": "xīyǐnlì",
+        "meaning_vi": "sức hút",
+        "difference_vi": "吸引力 rộng hơn; 魅力 cảm tính/thẩm mỹ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bac08348-b82e-4ee4-9f3b-5102289232d3",
+      "order": 1,
+      "zh": "有魅力",
+      "pinyin": "",
+      "vi": "có sức hút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d3924140-df45-46b1-8bce-e1cc93c99791",
+      "order": 2,
+      "zh": "个人魅力",
+      "pinyin": "",
+      "vi": "sức hút cá nhân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8394b5a-bea8-4178-887d-4611034c47d5",
+      "order": 3,
+      "zh": "独特的魅力",
+      "pinyin": "",
+      "vi": "sức hút độc đáo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af81baea-96fa-4699-9867-de435d3931d2",
+      "order": 4,
+      "zh": "语言的魅力",
+      "pinyin": "",
+      "vi": "sức hấp dẫn của ngôn ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bd35572b-0e14-4ebe-b818-bd90d4d74a18",
+      "order": 1,
+      "zh": "这个城市很有魅力。",
+      "pinyin": "",
+      "vi": "Thành phố này rất có sức hút.",
+      "analysis_vi": "有魅力 là cụm tự nhiên.",
+      "highlight": [
+        "魅力"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "50395615-38dd-49b2-a0bb-e0685132fbe1"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9de53e06-c87c-46d1-9bae-73add5cecf94",
+      "order": 2,
+      "zh": "他很真诚，所以很有魅力。",
+      "pinyin": "",
+      "vi": "Anh ấy rất chân thành nên có sức hút.",
+      "analysis_vi": "魅力 không chỉ là ngoại hình.",
+      "highlight": [
+        "魅力"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "50395615-38dd-49b2-a0bb-e0685132fbe1"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e572d8d4-8cb5-4e5e-94f0-b7ebd5294ad7",
+      "order": 1,
+      "rule_vi": "Không nói 他很魅力; nói 他很有魅力.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 他很魅力; nói 他很有魅力.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "魅力",
+    "back": "sức hấp dẫn, sức cuốn hút",
+    "hint": "mèilì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "50395615-38dd-49b2-a0bb-e0685132fbe1",
+    "source_lesson_vocab_id": null
+  }
+}

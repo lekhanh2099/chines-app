@@ -1,0 +1,174 @@
+{
+  "id": "88c1a034-060f-48e8-825f-766af099fd0c",
+  "type": "deep_vocabulary_item",
+  "order": 143,
+  "hanzi": "只要",
+  "pinyin": "zhǐyào",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ nối lập luận"
+  ],
+  "meaning": {
+    "hanviet": "Chỉ yếu",
+    "meaning_vi": "chỉ cần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chỉ cần"
+    ],
+    "short_definition_vi": "chỉ cần",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: chỉ cần.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ nối lập luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "只",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "要",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "只要 trong bài được học theo nghĩa trọng tâm: chỉ cần.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: chỉ cần.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "只有",
+        "pinyin": "zhǐyǒu",
+        "meaning_vi": "chỉ có",
+        "difference_vi": "只要 nêu điều kiện đủ; 只有 nêu điều kiện cần, thường đi với 才.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "09ae7777-f71b-4b97-8a70-9c9c97f238de",
+      "order": 1,
+      "zh": "不过，只要能拿到补充资金，我们会马上继续开展工作的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: chỉ cần",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1fcfba7a-00c1-4cf4-a5af-64759e51d2d8",
+      "order": 1,
+      "zh": "不过，只要能拿到补充资金，我们会马上继续开展工作的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “只要” = chỉ cần.",
+      "analysis_vi": "Câu này dùng “只要” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "只要"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "88c1a034-060f-48e8-825f-766af099fd0c"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “只要” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f27d0940-7d70-47f0-88f5-324f5c5a6ea3",
+      "order": 1,
+      "rule_vi": "Cần dùng “只要” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "只要",
+    "back": "chỉ cần",
+    "hint": "zhǐyào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ nối lập luận"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "88c1a034-060f-48e8-825f-766af099fd0c",
+    "source_lesson_vocab_id": null
+  }
+}

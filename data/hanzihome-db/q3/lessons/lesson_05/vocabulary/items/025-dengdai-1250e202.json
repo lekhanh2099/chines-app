@@ -1,0 +1,368 @@
+{
+  "id": "24d070b1-87bf-49e1-b020-36ff773b36f3",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "等待",
+  "pinyin": "děngdài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đẳng đãi",
+    "meaning_vi": "chờ đợi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chờ đợi"
+    ],
+    "short_definition_vi": "chờ đợi",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "等",
+        "lishu_vi": "đẳng",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre, vật dụng/ghi chép xưa",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "竹 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre, vật dụng/ghi chép xưa",
+            "position_vi": "bên trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre, vật dụng/ghi chép xưa",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "竹 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "竹 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "待",
+        "lishu_vi": "đãi",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "彳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Xích",
+          "radical_name_zh": "",
+          "hanviet": "xích",
+          "meaning_vi": "bước đi chậm, hành động/đường đi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彳 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi chậm, hành động/đường đi",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi chậm, hành động/đường đi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彳 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "等待 là chờ đến khi người/sự việc/tình huống mong đợi xuất hiện.",
+    "memory_tip_vi": "等 người cụ thể, 等待 cơ hội/kết quả.",
+    "warning_vi": "Khẩu ngữ thường dùng 等 hơn 等待 khi chờ người cụ thể.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "等",
+        "děng",
+        "chờ",
+        "khẩu ngữ thông dụng hơn"
+      ],
+      [
+        "等候",
+        "děnghòu",
+        "chờ",
+        "lịch sự/trang trọng"
+      ],
+      [
+        "期待",
+        "qīdài",
+        "mong đợi",
+        "có kỳ vọng cảm xúc"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "等 người cụ thể, 等待 cơ hội/kết quả."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6f3d9975-67ca-4b04-983a-a015eadfea63",
+      "order": 1,
+      "zh": "等待机会",
+      "pinyin": "",
+      "vi": "chờ cơ hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9792048-9c44-4f03-bacd-f5168a1a7bc0",
+      "order": 2,
+      "zh": "等待消息",
+      "pinyin": "",
+      "vi": "chờ tin tức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1469dfb8-c1b0-4bf5-ac4f-1984df6ddf88",
+      "order": 3,
+      "zh": "等待回答",
+      "pinyin": "",
+      "vi": "chờ câu trả lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "357d7ea2-0230-4a12-938a-e8e38c266fe6",
+      "order": 4,
+      "zh": "耐心等待",
+      "pinyin": "",
+      "vi": "kiên nhẫn chờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a02a949-7950-4413-93eb-48941880b1f1",
+      "order": 5,
+      "zh": "等待结果",
+      "pinyin": "",
+      "vi": "chờ kết quả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5120bc0d-24f6-4de2-844f-7b78b6f88dd9",
+      "order": 1,
+      "zh": "我们只能耐心等待他的回答。",
+      "pinyin": "Wǒmen zhǐ néng nàixīn děngdài tā de huídá.",
+      "vi": "Chúng tôi chỉ có thể kiên nhẫn chờ câu trả lời của anh ấy.",
+      "analysis_vi": "等待回答 hợp văn phong nghiêm túc.",
+      "highlight": [
+        "等待"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24d070b1-87bf-49e1-b020-36ff773b36f3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cadbb801-f1df-412f-bcea-f0fa61c5136d",
+      "order": 2,
+      "zh": "他总说“回头再说”，我只好一直等待。",
+      "pinyin": "Tā zǒng shuō “huítóu zài shuō”, wǒ zhǐhǎo yìzhí děngdài.",
+      "vi": "Anh ấy cứ nói để sau, tôi đành chờ mãi.",
+      "analysis_vi": "只好 = đành phải.",
+      "highlight": [
+        "等待"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24d070b1-87bf-49e1-b020-36ff773b36f3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "回头再说 không đồng nghĩa chắc chắn sẽ quay lại xử lý; phải xét ngữ cảnh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96fe0fb2-8e18-474b-be49-c38bfd01dac7",
+      "order": 1,
+      "rule_vi": "我等待你一下。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "你等我一下。",
+          "pinyin": "Nǐ děng wǒ yíxià.",
+          "vi": "Bạn chờ tôi một chút.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Khẩu ngữ thường dùng 等 hơn 等待 khi chờ người cụ thể.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "等待",
+    "back": "chờ đợi",
+    "hint": "děngdài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "24d070b1-87bf-49e1-b020-36ff773b36f3",
+    "source_lesson_vocab_id": null
+  }
+}

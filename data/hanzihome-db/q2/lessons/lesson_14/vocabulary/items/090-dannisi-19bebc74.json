@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_d3e61ff1aa4e07ca",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "丹尼斯",
+  "pinyin": "Dānnísi",
+  "meaning_vi": "Dennis",
+  "pos": "Tên riêng",
+  "pos_detail": {
+    "vi": "Tên riêng",
+    "cn": "专名",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "9f60feb3-4b46-42f2-a837-5e2ca1480f2c",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "9f60feb3-4b46-42f2-a837-5e2ca1480f2c",
+    "type": "vocabulary_item",
+    "order": 7,
+    "hanzi": "丹尼斯",
+    "pinyin": "Dānnísi",
+    "meaning_vi": "Dennis",
+    "meaning_en": "Dennis",
+    "pos": "Tên riêng",
+    "pos_detail": {
+      "vi": "Tên riêng",
+      "cn": "专名",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "proper_noun",
+      "lesson_14"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "丹尼斯",
+      "back": "Dānnísi — Dennis",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

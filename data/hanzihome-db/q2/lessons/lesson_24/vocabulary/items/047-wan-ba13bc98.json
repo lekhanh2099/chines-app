@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_4fe7caad570b6965",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "弯",
+  "pinyin": "wān",
+  "meaning_vi": "cong, cúi, khom",
+  "pos": "Động từ / Tính từ",
+  "pos_detail": {
+    "vi": "Động từ / Tính từ",
+    "cn": "动词 / 形容词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Là động từ trong 弯腰, là tính từ trong 路很弯.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "type": "vocabulary_item",
+    "order": 27,
+    "hanzi": "弯",
+    "pinyin": "wān",
+    "meaning_vi": "cong, cúi, khom",
+    "meaning_en": "",
+    "pos": "Động từ / Tính từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "弯",
+      "back": "wān — cong, cúi, khom",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ / Tính từ",
+      "cn": "动词 / 形容词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Là động từ trong 弯腰, là tính từ trong 路很弯.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

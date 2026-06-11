@@ -1,0 +1,506 @@
+{
+  "id": "74625688-7f26-4723-b9ad-4db36e3e630c",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "海南岛",
+  "pinyin": "Hǎinán Dǎo",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名/地名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab",
+    "proper-name"
+  ],
+  "meaning": {
+    "hanviet": "Hải Nam đảo",
+    "meaning_vi": "đảo Hải Nam",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đảo Hải Nam"
+    ],
+    "short_definition_vi": "đảo Hải Nam",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "海",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được dùng như bộ Thủy trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được dùng như bộ Thủy trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "南",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "岛",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "山 được dùng như bộ Sơn trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "山 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đảo.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "山",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sơn",
+          "radical_name_zh": "",
+          "hanviet": "sơn",
+          "meaning_vi": "núi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "山 được dùng như bộ Sơn trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "海南 = phía Nam biển / Hải Nam, tên địa danh. 岛 = đảo. → 海南岛 = đảo Hải Nam. Cảnh báo: Đây là tên riêng địa danh, không nên phân tích sâu từng chữ để suy văn hóa quá đà.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "海南岛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đảo Hải Nam, khí hậu nóng/ấm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哈尔滨",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cáp Nhĩ Tân, nổi tiếng lạnh và tuyết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "泰山",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "núi Thái Sơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "颐和园",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Di Hòa Viên ở Bắc Kinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "哈尔滨的冬天很冷，海南岛的冬天比较暖和。",
+      "Mùa đông Cáp Nhĩ Tân rất lạnh, mùa đông đảo Hải Nam tương đối ấm."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f14ed65c-aa39-4e8e-b71e-ffd79a55c15d",
+      "order": 1,
+      "zh": "去海南岛",
+      "pinyin": "",
+      "vi": "đi đảo Hải Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "4c8dc240-d773-4acb-ac67-78196e43df0c",
+      "order": 2,
+      "zh": "海南岛旅游",
+      "pinyin": "",
+      "vi": "du lịch đảo Hải Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "07a5079e-91f7-4f8b-aad1-3787ead26532",
+      "order": 3,
+      "zh": "海南岛的风景",
+      "pinyin": "",
+      "vi": "phong cảnh đảo Hải Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "88c39200-cfd6-4b06-b035-b96b0431dc2b",
+      "order": 4,
+      "zh": "海南岛的冬天",
+      "pinyin": "",
+      "vi": "mùa đông đảo Hải Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c413d4bf-8ea5-4665-aac4-6dab4a1aa065",
+      "order": 5,
+      "zh": "第一次去海南岛",
+      "pinyin": "",
+      "vi": "lần đầu đi đảo Hải Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "264f7010-562a-4f8a-b56e-a7dc5b199dec",
+      "order": 6,
+      "zh": "没去过海南岛",
+      "pinyin": "",
+      "vi": "chưa từng đi đảo Hải Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "92a728ae-282e-407c-b10a-2a0f4c04cf0c",
+      "order": 1,
+      "zh": "我没去过海南岛。",
+      "pinyin": "Wǒ méi qù guo Hǎinán Dǎo.",
+      "vi": "Tôi chưa từng đi đảo Hải Nam.",
+      "analysis_vi": "没去过 = chưa từng đi.",
+      "highlight": [
+        "海南岛"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "74625688-7f26-4723-b9ad-4db36e3e630c"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9fb27da7-5723-4f6d-b7b6-f56f4b43585f",
+      "order": 2,
+      "zh": "这是我第一次去海南岛，觉得那儿的天气舒服极了。",
+      "pinyin": "Zhè shì wǒ dì yī cì qù Hǎinán Dǎo, juéde nàr de tiānqì shūfu jí le.",
+      "vi": "Đây là lần đầu tôi đi đảo Hải Nam, tôi thấy thời tiết ở đó dễ chịu cực kỳ.",
+      "analysis_vi": "第一次去 = lần đầu đi. 舒服极了 nhấn mức độ rất dễ chịu.",
+      "highlight": [
+        "海南岛"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "74625688-7f26-4723-b9ad-4db36e3e630c"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "49da0f7f-b0aa-4390-a112-b74b6f04e859",
+      "order": 3,
+      "zh": "我以前去过哈尔滨，也去过海南岛；一个地方冷极了，一个地方暖和极了，所以两次旅行的印象完全不一样。",
+      "pinyin": "Wǒ yǐqián qù guo Hā’ěrbīn, yě qù guo Hǎinán Dǎo; yí ge dìfang lěng jí le, yí ge dìfang nuǎnhuo jí le, suǒyǐ liǎng cì lǚxíng de yìnxiàng wánquán bù yíyàng.",
+      "vi": "Trước đây tôi từng đi Cáp Nhĩ Tân, cũng từng đi đảo Hải Nam; một nơi lạnh cực kỳ, một nơi ấm cực kỳ, nên ấn tượng của hai chuyến đi hoàn toàn khác nhau.",
+      "analysis_vi": "去过……也去过…… liệt kê kinh nghiệm. 两次旅行 = hai chuyến du lịch. 完全不一样 = hoàn toàn khác nhau.",
+      "highlight": [
+        "海南岛"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "74625688-7f26-4723-b9ad-4db36e3e630c"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "5f24cac0-4abf-434a-b8d1-c2247a22cefd",
+      "order": 1,
+      "rule_vi": "岛 = đảo.",
+      "natural_examples": [
+        {
+          "zh": "岛 = đảo.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "海南岛 là đảo Hải Nam.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "你去过海南岛吗？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "岛 = đảo. 海南岛 là đảo Hải Nam. Hỏi kinh nghiệm: 你去过海南岛吗？ Bạn từng đi đảo Hải Nam chưa?",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "海南岛",
+    "back": "đảo Hải Nam",
+    "hint": "Hǎinán Dǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab",
+      "proper-name"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Với người Trung Quốc, 海南岛 thường gợi cảm giác nghỉ dưỡng, biển, nắng, khí hậu ấm. Nó đối lập rất rõ với hình ảnh mùa đông băng tuyết của 哈尔滨.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "74625688-7f26-4723-b9ad-4db36e3e630c",
+    "source_lesson_vocab_id": null
+  }
+}

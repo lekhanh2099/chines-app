@@ -1,0 +1,452 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 7,
+    "actual_exercise_count_in_json": 7,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_verified"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调，朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc.",
+        "pinyin": "Biàn yīn biàn diào, lǎngdú."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "hùzhào — fǔdǎo — tōngzhī — tóngzhì",
+            "zàntíng — zhàntíng — qījiān — qīxiàn",
+            "zuìhòu — suíhòu — zhèngcháng — zhēn cháng"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_group",
+          "title": "朗读",
+          "items": [
+            "看了半天",
+            "等了半天",
+            "找了半天",
+            "写了半天",
+            "放在手提包儿里",
+            "放在桌子上",
+            "写在本子上",
+            "挂在墙上",
+            "交给老师",
+            "借给同学",
+            "寄给妈妈",
+            "送给朋友",
+            "去成了",
+            "做成了",
+            "写成了",
+            "变成了",
+            "译成汉语",
+            "写成小说",
+            "改成会话",
+            "换成人民币"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Thay thế thành phần cho sẵn để luyện mẫu câu.",
+        "pinyin": "Tìhuàn liànxí."
+      },
+      "drills": [
+        {
+          "id": "3f6ee485-6ddd-452a-bf50-6a5066e8e791",
+          "pattern": "A：我的护照你放在哪儿了？ B：放在大衣口袋里了。",
+          "items": [
+            [
+              "今天的报纸",
+              "放",
+              "那个房间里"
+            ],
+            [
+              "我的手机",
+              "放",
+              "手提包儿里"
+            ],
+            [
+              "我的优盘",
+              "放",
+              "桌子上"
+            ],
+            [
+              "汽车",
+              "停",
+              "楼下"
+            ],
+            [
+              "照相机",
+              "放",
+              "车里"
+            ]
+          ]
+        },
+        {
+          "id": "f4b267cd-8216-40b4-acc4-4c2437ca4056",
+          "pattern": "A：我的护照你找着了没有？ B：找着了。",
+          "items": [
+            [
+              "手机",
+              "找"
+            ],
+            [
+              "她的手提包儿",
+              "找"
+            ],
+            [
+              "我要的书",
+              "买"
+            ],
+            [
+              "照片",
+              "拿"
+            ],
+            [
+              "房子",
+              "租"
+            ],
+            [
+              "飞机票",
+              "买"
+            ]
+          ]
+        },
+        {
+          "id": "63ed29e3-34b2-4b30-ba38-ab6d22641500",
+          "pattern": "A：作业你交给老师了没有？ B：交给老师了。",
+          "items": [
+            [
+              "那本书",
+              "还",
+              "图书馆"
+            ],
+            [
+              "那些钱",
+              "还",
+              "张东"
+            ],
+            [
+              "生日礼物",
+              "送",
+              "玛丽"
+            ],
+            [
+              "那些照片",
+              "发",
+              "她"
+            ],
+            [
+              "那把雨伞",
+              "带",
+              "麦克"
+            ]
+          ]
+        },
+        {
+          "id": "3bab4c4c-b47b-4f67-aaa4-fd56f6e8edc3",
+          "pattern": "A：你什么时候交给我的？ B：我一回到家就交给你了。",
+          "items": [
+            [
+              "还给图书馆",
+              "看完"
+            ],
+            [
+              "还给张东",
+              "用完"
+            ],
+            [
+              "送给玛丽",
+              "到教室"
+            ],
+            [
+              "发给她",
+              "上网"
+            ],
+            [
+              "借给麦克",
+              "买回来"
+            ]
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.substitution_drill.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống.",
+        "pinyin": "Xuǎn cí tiánkòng."
+      },
+      "groups": [
+        {
+          "id": "3c6abc78-c535-4b35-ad12-2de93d45f291",
+          "title": "A",
+          "word_bank": [
+            "丢",
+            "半天",
+            "为了",
+            "放",
+            "给",
+            "京剧迷",
+            "好",
+            "着"
+          ],
+          "questions": [
+            "我的护照你 ______ 在什么地方了？",
+            "你的签证办 ______ 了没有？",
+            "那本书我一看完就还 ______ 你了，你怎么忘了？",
+            "电影票你买 ______ 了吗？",
+            "我找了 ______ 才找到。",
+            "听说我们老师中有不少 ______。",
+            "______ 给朋友帮忙，他饭都没吃就走了。",
+            "你怎么了？最近总是 ______ 三落四的。"
+          ],
+          "answers": [
+            "放",
+            "好",
+            "给",
+            "着",
+            "半天",
+            "京剧迷",
+            "为了",
+            "丢"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "3e471981-44cf-443c-ab5b-a2e8901bc776",
+          "title": "B",
+          "word_bank": [
+            "过",
+            "了"
+          ],
+          "questions": [
+            "昨天我看 ______ 一个文物展览。",
+            "你买票 ______ 没有？",
+            "我去 ______ 那儿，我带你去吧。",
+            "我没有看 ______ 这本书，不知道好不好。",
+            "来中国以后，我没有得 ______ 病。"
+          ],
+          "answers": [
+            "了",
+            "了",
+            "过",
+            "过",
+            "过"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "c62559da-aa7d-4c52-bfe1-8f575a5e78fc",
+          "title": "C",
+          "word_bank": [
+            "次",
+            "遍"
+          ],
+          "questions": [
+            "请大家再听一 ______。",
+            "这个公园我一 ______ 也没去过。",
+            "这种药一天吃三 ______，一 ______ 吃两片。",
+            "香港我已经去过两 ______ 了。",
+            "每课课文我都要读七八 ______。"
+          ],
+          "answers": [
+            "遍",
+            "次",
+            "次;次",
+            "次",
+            "遍"
+          ],
+          "answer_verified": true
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.word_bank_fill_blank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "fill_blank",
+      "variant": "result_complement_fill_blank",
+      "order": 4,
+      "title": "四、用适当的结果补语填空",
+      "title_vi": "Điền bổ ngữ kết quả thích hợp",
+      "instruction": {
+        "zh": "用适当的结果补语填空。",
+        "vi": "Điền bổ ngữ kết quả thích hợp.",
+        "pinyin": "Yòng shìdàng de jiéguǒ bǔyǔ tiánkòng."
+      },
+      "questions": [
+        "请大家准备 ______ 笔和本子，现在听写句子。",
+        "我发 ______ 你的邮件，你收到了没有？",
+        "那本书你找 ______ 了没有？",
+        "A：吃 ______ 晚饭我们一起去跳舞吧。B：不行，今天的作业还没做 ______ 呢。吃 ______ 晚饭我要做作业。",
+        "A：这瓶花儿我们放 ______ 什么地方呢？B：放 ______ 桌子上吧。",
+        "A：这件礼物是谁送 ______ 你的？B：一个同学送 ______ 我的。"
+      ],
+      "answers": [
+        "好",
+        "给",
+        "着",
+        "完;完;完",
+        "在;在",
+        "给;给"
+      ],
+      "answer_verified": true,
+      "rendering": {
+        "renderer": "exercise.fill_blank.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "fill_blank",
+      "variant": "verb_complement_fill_blank",
+      "order": 5,
+      "title": "五、用动词和补语填空",
+      "title_vi": "Điền động từ và bổ ngữ thích hợp",
+      "instruction": {
+        "zh": "用动词和补语填空。",
+        "vi": "Điền động từ và bổ ngữ thích hợp.",
+        "pinyin": "Yòng dòngcí hé bǔyǔ tiánkòng."
+      },
+      "questions": [
+        "昨天买来的那本新书你 ______ 哪儿了？",
+        "这张画儿咱们 ______ 什么地方呢？",
+        "那本书我已经 ______ 她了。",
+        "这张照片我 ______ 墙上，怎么样？",
+        "你要的词典我给你 ______ 了。",
+        "山本过生日，我们 ______ 她一件什么礼物呢？",
+        "今天的生词我还没 ______ 呢。",
+        "那几张照片我已经 ______ 她了。"
+      ],
+      "answers": [
+        "放在",
+        "挂在",
+        "还给",
+        "贴在",
+        "买着/买到",
+        "送给",
+        "记住/学会",
+        "发给/寄给"
+      ],
+      "answer_verified": true,
+      "rendering": {
+        "renderer": "exercise.fill_blank.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 6,
+      "title": "六、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai.",
+        "pinyin": "Gǎi cuòjù."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "wrong": "昨天晚上，我到十点工作。",
+          "suggested_answer": "昨天晚上，我工作到十点。",
+          "answer_verified": true
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "wrong": "这本书我一看完就来给你还。",
+          "suggested_answer": "这本书我一看完就还给你。",
+          "answer_verified": true
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "wrong": "老师的电话号码我忘了，因为我没记住在本子上。",
+          "suggested_answer": "老师的电话号码我忘了，因为我没记在本子上。",
+          "answer_verified": true
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "wrong": "我下了飞机就看了爸爸。",
+          "suggested_answer": "我下了飞机就看见了爸爸。",
+          "answer_verified": true
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "wrong": "我打算在这儿到明年七月学习。",
+          "suggested_answer": "我打算在这儿学习到明年七月。",
+          "answer_verified": true
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "wrong": "她进步很大，现在已经能听见老师的话了。",
+          "suggested_answer": "她进步很大，现在已经能听懂老师的话了。",
+          "answer_verified": true
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.correct_sentence.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
+  "type": "communication",
+  "order": 8,
+  "title": "交际会话",
+  "title_vi": "Hội thoại giao tiếp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 1,
+      "title": "请教（2）",
+      "title_vi": "Xin chỉ giáo / hỏi lời khuyên",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Đọc hội thoại giao tiếp; chủ đề xin lời khuyên về cách nâng cao trình độ tiếng Hán."
+      },
+      "lines": [
+        {
+          "id": "e09fae7e-a0f4-49b9-b84a-b0e8ffd24338",
+          "order": 1,
+          "speaker": "A",
+          "zh": "老师，我想请教一下儿，怎样才能更快地提高汉语水平呢？",
+          "pinyin": "Lǎoshī, wǒ xiǎng qǐngjiào yíxiàr, zěnyàng cái néng gèng kuài de tígāo Hànyǔ shuǐpíng ne?",
+          "vi": "Thưa cô/thầy, em muốn hỏi một chút, làm thế nào mới có thể nâng cao trình độ tiếng Hán nhanh hơn ạ?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "022c712a-960d-4bad-b53a-cba85f07124e",
+          "order": 2,
+          "speaker": "B",
+          "zh": "你将来打算做什么工作？",
+          "pinyin": "Nǐ jiānglái dǎsuàn zuò shénme gōngzuò?",
+          "vi": "Sau này em định làm công việc gì?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "43b2d1f3-fbbb-4e68-af9a-a1ef8724de1d",
+          "order": 3,
+          "speaker": "A",
+          "zh": "我想当翻译。",
+          "pinyin": "Wǒ xiǎng dāng fānyì.",
+          "vi": "Em muốn làm phiên dịch.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "61f3736b-f488-4150-8c2b-d0b8366e7cf3",
+          "order": 4,
+          "speaker": "B",
+          "zh": "好啊。不过要当翻译，除了汉语能力，还需要掌握很多文化知识。",
+          "pinyin": "Hǎo a. Búguò yào dāng fānyì, chúle Hànyǔ nénglì, hái xūyào zhǎngwò hěn duō wénhuà zhīshi.",
+          "vi": "Tốt đấy. Nhưng muốn làm phiên dịch, ngoài năng lực tiếng Hán, còn cần nắm vững rất nhiều kiến thức văn hóa.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "6f08174f-fab2-4cb9-a55a-ca95b6cb494f",
+          "order": 5,
+          "speaker": "A",
+          "zh": "我知道，当翻译很不容易。我感到最缺的也是文化知识。我的汉语也还不行，特别是读写，困难很大。您让我写日记或周记，我也想写，可是，坐在电脑前，想半天也不知道该写什么。",
+          "pinyin": "Wǒ zhīdào, dāng fānyì hěn bù róngyì. Wǒ gǎndào zuì quē de yě shì wénhuà zhīshi. Wǒ de Hànyǔ yě hái bù xíng, tèbié shì dúxiě, kùnnan hěn dà. Nín ràng wǒ xiě rìjì huò zhōujì, wǒ yě xiǎng xiě, kěshì, zuò zài diànnǎo qián, xiǎng bàn tiān yě bù zhīdào gāi xiě shénme.",
+          "vi": "Em biết, làm phiên dịch không dễ. Em cảm thấy thứ mình thiếu nhất cũng là kiến thức văn hóa. Tiếng Hán của em cũng vẫn chưa ổn, đặc biệt là đọc viết, khó khăn rất lớn. Cô/thầy bảo em viết nhật ký hoặc nhật ký tuần, em cũng muốn viết, nhưng ngồi trước máy tính, nghĩ cả buổi cũng không biết nên viết gì.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "445c9147-56fa-4d05-b2e6-15232d8e8184",
+          "order": 6,
+          "speaker": "B",
+          "zh": "我想主要是读的书少，脑子里没有多少词。",
+          "pinyin": "Wǒ xiǎng zhǔyào shì dú de shū shǎo, nǎozi lǐ méiyǒu duōshao cí.",
+          "vi": "Tôi nghĩ chủ yếu là do em đọc ít sách, trong đầu không có nhiều từ.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "528af3ac-612a-4097-87d0-25cc082fb8ee",
+          "order": 7,
+          "speaker": "A",
+          "zh": "是！那我应该读些什么书呢？",
+          "pinyin": "Shì! Nà wǒ yīnggāi dú xiē shénme shū ne?",
+          "vi": "Đúng ạ! Vậy em nên đọc những sách gì ạ?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9b302343-572d-46de-8785-6d206cd3e16e",
+          "order": 8,
+          "speaker": "B",
+          "zh": "真想当翻译的话，我建议你给自己做一个读书计划，并下决心去完成它。多读书，不但可以提高读和写的能力，还能掌握很多文化知识，对将来当翻译肯定有用。",
+          "pinyin": "Zhēn xiǎng dāng fānyì de huà, wǒ jiànyì nǐ gěi zìjǐ zuò yí ge dúshū jìhuà, bìng xià juéxīn qù wánchéng tā. Duō dú shū, búdàn kěyǐ tígāo dú hé xiě de nénglì, hái néng zhǎngwò hěn duō wénhuà zhīshi, duì jiānglái dāng fānyì kěndìng yǒu yòng.",
+          "vi": "Nếu em thật sự muốn làm phiên dịch, tôi khuyên em hãy lập cho mình một kế hoạch đọc sách, rồi quyết tâm hoàn thành nó. Đọc nhiều sách không những có thể nâng cao năng lực đọc và viết, mà còn có thể nắm được nhiều kiến thức văn hóa, chắc chắn có ích cho việc làm phiên dịch sau này.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b7c83e90-e212-4c98-a6d0-663e88550ffa",
+          "order": 9,
+          "speaker": "A",
+          "zh": "我试试吧。谢谢老师！",
+          "pinyin": "Wǒ shìshi ba. Xièxie lǎoshī!",
+          "vi": "Em thử xem ạ. Cảm ơn cô/thầy!",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "vocabulary_notes": [
+        {
+          "hanzi": "掌握",
+          "pinyin": "zhǎngwò",
+          "meaning_vi": "nắm vững; làm chủ"
+        },
+        {
+          "hanzi": "缺",
+          "pinyin": "quē",
+          "meaning_vi": "thiếu"
+        },
+        {
+          "hanzi": "日记",
+          "pinyin": "rìjì",
+          "meaning_vi": "nhật ký"
+        },
+        {
+          "hanzi": "周记",
+          "pinyin": "zhōujì",
+          "meaning_vi": "nhật ký tuần"
+        },
+        {
+          "hanzi": "脑子",
+          "pinyin": "nǎozi",
+          "meaning_vi": "đầu óc; trí óc"
+        }
+      ],
+      "patterns": [
+        {
+          "zh": "我想请教一下儿，怎样才能……？",
+          "vi": "Em muốn hỏi một chút, làm thế nào mới có thể…?",
+          "pinyin": "Wǒ xiǎng qǐngjiào yíxiàr, zěnyàng cái néng……?"
+        },
+        {
+          "zh": "你将来打算做什么工作？",
+          "vi": "Sau này bạn định làm công việc gì?",
+          "pinyin": "Nǐ jiānglái dǎsuàn zuò shénme gōngzuò?"
+        },
+        {
+          "zh": "我想当……",
+          "vi": "Tôi muốn làm…",
+          "pinyin": "Wǒ xiǎng dāng……"
+        },
+        {
+          "zh": "除了……，还需要……",
+          "vi": "Ngoài…, còn cần…",
+          "pinyin": "Chúle……, hái xūyào……"
+        },
+        {
+          "zh": "我建议你……",
+          "vi": "Tôi khuyên bạn / đề nghị bạn…",
+          "pinyin": "Wǒ jiànyì nǐ……"
+        },
+        {
+          "zh": "不但可以……，还能……",
+          "vi": "Không những có thể…, mà còn có thể…",
+          "pinyin": "Búdàn kěyǐ……, hái néng……"
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

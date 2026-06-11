@@ -1,0 +1,212 @@
+{
+  "id": "5438c532-426f-4860-864e-f00e60f158f2",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "手术",
+  "pinyin": "shǒushù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thủ thuật",
+    "meaning_vi": "phẫu thuật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phẫu thuật"
+    ],
+    "short_definition_vi": "phẫu thuật",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "手: tay",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "术",
+        "lishu_vi": "",
+        "structure_note_vi": "术: phương pháp/kỹ thuật",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phương pháp/kỹ thuật",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: phương pháp/kỹ thuật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手术 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 做手术.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de301a0f-acf5-425f-b69d-8a6cea0cd60b",
+      "order": 1,
+      "zh": "做手术",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e30a50d7-4e02-4ba0-8337-e05837a5bb5e",
+      "order": 2,
+      "zh": "动手术",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "854d0392-1b9e-40f1-b457-afb12a25de05",
+      "order": 3,
+      "zh": "手术室",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecc7fd2d-62e0-42e7-84d0-14626e6f0ad5",
+      "order": 4,
+      "zh": "手术很成功",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "20320bec-075a-4616-9b9d-08801c3593b1",
+      "order": 1,
+      "zh": "这个手术很成功。",
+      "pinyin": "",
+      "vi": "Ca phẫu thuật này rất thành công。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "手术"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5438c532-426f-4860-864e-f00e60f158f2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8201dd72-5a65-4156-b408-444fd15fa2e6",
+      "order": 2,
+      "zh": "手术以前，医生要家属签字。",
+      "pinyin": "",
+      "vi": "Trước khi phẫu thuật, bác sĩ cần người nhà ký tên。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "手术"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5438c532-426f-4860-864e-f00e60f158f2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2cb40e6d-4f50-4f9f-9e62-f07686f0cf45",
+      "order": 1,
+      "rule_vi": "手术 thường dịch là phẫu thuật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "手术 thường dịch là phẫu thuật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手术",
+    "back": "phẫu thuật",
+    "hint": "shǒushù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5438c532-426f-4860-864e-f00e60f158f2",
+    "source_lesson_vocab_id": null
+  }
+}

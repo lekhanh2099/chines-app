@@ -1,0 +1,264 @@
+{
+  "id": "051242ab-27cc-4bf1-800b-057bc532e33b",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "股",
+  "pinyin": "gǔ",
+  "pos": {
+    "raw_vi": "Lượng từ",
+    "raw_cn": "量词",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cổ",
+    "meaning_vi": "luồng, làn, dòng; đùi; cổ phần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "luồng",
+      "làn",
+      "dòng",
+      "đùi"
+    ],
+    "short_definition_vi": "luồng, làn, dòng",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "股",
+        "lishu_vi": "cổ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thịt, cơ thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thịt, cơ thể",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "殳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đùi, cổ phần; luồng/làn khi làm lượng từ",
+        "modern_logic_vi": "đùi, cổ phần; luồng/làn khi làm lượng từ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "肉",
+          "radical_variant": "月",
+          "radical_name_vi": "bộ Nhục",
+          "radical_name_zh": "",
+          "hanviet": "nhục",
+          "meaning_vi": "thịt, cơ thể",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Nghĩa gốc liên quan đùi/cổ phần; khi làm lượng từ đo luồng/dòng/lực/cảm giác.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 一股暖流.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一阵",
+        "pinyin": "yí zhèn",
+        "meaning_vi": "một trận/đợt",
+        "difference_vi": "一阵 dùng cho gió, mưa, tiếng cười, tiếng vỗ tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一道",
+        "pinyin": "yí dào",
+        "meaning_vi": "một vệt/luồng rõ",
+        "difference_vi": "一道 dùng cho ánh sáng, vết, cửa, đề bài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "70b19fae-0d05-4d06-991c-65d9d0cdf20f",
+      "order": 1,
+      "zh": "一股暖流",
+      "pinyin": "yì gǔ nuǎnliú",
+      "vi": "một luồng ấm áp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "daeaa646-33c6-4731-a192-e7bf590642c1",
+      "order": 2,
+      "zh": "一股力量",
+      "pinyin": "yì gǔ lìliàng",
+      "vi": "một luồng sức mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e74d587-2fe1-452d-b684-cbd56f82f4e0",
+      "order": 3,
+      "zh": "一股香味",
+      "pinyin": "yì gǔ xiāngwèi",
+      "vi": "một mùi thơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e77d0846-b613-4b21-8550-3e9f57106ef9",
+      "order": 1,
+      "zh": "一股暖流涌上心头。",
+      "pinyin": "Yì gǔ nuǎnliú yǒng shàng xīntóu.",
+      "vi": "Một luồng ấm áp dâng lên trong lòng.",
+      "analysis_vi": "股 làm lượng từ cho cảm giác như dòng/luồng.",
+      "highlight": [
+        "股"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "051242ab-27cc-4bf1-800b-057bc532e33b"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3e818908-1c2a-4a11-b3d1-95a319ff9280",
+      "order": 2,
+      "zh": "听到学生们的掌声，他心里突然有了一股勇气。",
+      "pinyin": "Tīng dào xuéshengmen de zhǎngshēng, tā xīnli tūrán yǒu le yì gǔ yǒngqì.",
+      "vi": "Nghe tiếng vỗ tay, trong lòng anh ấy bỗng có một luồng dũng khí.",
+      "analysis_vi": "一股勇气 biến cảm xúc thành luồng lực cụ thể.",
+      "highlight": [
+        "股"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "051242ab-27cc-4bf1-800b-057bc532e33b"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "股 là lượng từ rất hình ảnh cho cảm xúc: 一股暖流, 一股勇气.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d5994139-d083-4d04-8dd8-9741c5a4a68c",
+      "order": 1,
+      "rule_vi": "Không nói 一个暖流; với 暖流 dùng 一股暖流.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "股",
+    "back": "luồng, làn, dòng; đùi; cổ phần",
+    "hint": "gǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "051242ab-27cc-4bf1-800b-057bc532e33b",
+    "source_lesson_vocab_id": null
+  }
+}

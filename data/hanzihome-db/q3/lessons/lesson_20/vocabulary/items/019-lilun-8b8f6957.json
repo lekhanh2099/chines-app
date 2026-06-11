@@ -1,0 +1,429 @@
+{
+  "id": "e7af9b4f-e16d-4330-9422-1f0f78321eca",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "理论",
+  "pinyin": "lǐlùn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lý luận",
+    "meaning_vi": "lý thuyết, lý luận",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lý thuyết",
+      "lý luận"
+    ],
+    "short_definition_vi": "lý thuyết, lý luận",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "理",
+        "lishu_vi": "lý",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, vật quý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, vật quý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, vật quý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "lí",
+            "meaning_vi": "bên trong",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lý lẽ, nguyên lý, xử lý",
+        "modern_logic_vi": "心理/理论 đều liên quan logic/nguyên lý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "论",
+        "lishu_vi": "luận",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "仑",
+            "hanviet": "luân",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bàn luận, lý luận, quan điểm",
+        "modern_logic_vi": "讠 gợi lời nói/lập luận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "理论 được dùng trong Bài 20 với nghĩa: lý thuyết, lý luận.",
+    "memory_tip_vi": "Nhớ qua cụm 心理学理论.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "观点",
+        "pinyin": "guāndiǎn",
+        "meaning_vi": "quan điểm",
+        "difference_vi": "Quan điểm cá nhân/nhóm, chưa thành hệ thống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "道理",
+        "pinyin": "dàoli",
+        "meaning_vi": "lẽ phải",
+        "difference_vi": "Lý lẽ/hợp lý, không phải hệ thống lý thuyết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "实践",
+        "pinyin": "shíjiàn",
+        "meaning_vi": "thực tiễn",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "事实",
+        "pinyin": "shìshí",
+        "meaning_vi": "sự thật",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b1b5ff2e-7a86-4607-af89-45dd7b6e4720",
+      "order": 1,
+      "zh": "心理学理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3295e7e-5d14-4805-84f0-06460cf1aa36",
+      "order": 2,
+      "zh": "科学理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d3f257f-1811-445a-80f6-ef3a0c530d8a",
+      "order": 3,
+      "zh": "接受理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a361d01e-7208-4f38-8291-820fb9e6edfc",
+      "order": 4,
+      "zh": "反对理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65715b23-f5ca-4540-8fb3-3c012b8f8814",
+      "order": 5,
+      "zh": "证明理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a13aeb67-f572-469d-93be-e46774afa956",
+      "order": 6,
+      "zh": "提出理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "34ffa000-7361-41a9-b5bf-db723c8c2de2",
+      "order": 7,
+      "zh": "理论基础",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e33ffa10-dc1f-479e-9903-dd79299d8685",
+      "order": 1,
+      "zh": "这个理论听起来很有道理。",
+      "pinyin": "Zhège lǐlùn tīng qǐlai hěn yǒu dàoli.",
+      "vi": "Lý thuyết này nghe có vẻ rất có lý.",
+      "analysis_vi": "听起来 = nghe có vẻ.",
+      "highlight": [
+        "理论"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7af9b4f-e16d-4330-9422-1f0f78321eca"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0189895a-ce27-4914-88e0-5143624164d5",
+      "order": 2,
+      "zh": "一个理论如果连实验结果都解释不了，就很难说服别人。",
+      "pinyin": "Yí ge lǐlùn rúguǒ lián shíyàn jiéguǒ dōu jiěshì bù liǎo, jiù hěn nán shuōfú biéren.",
+      "vi": "Nếu một lý thuyết đến cả kết quả thí nghiệm cũng không giải thích nổi thì rất khó thuyết phục người khác.",
+      "analysis_vi": "连……都…… nhấn mức tối thiểu.",
+      "highlight": [
+        "理论"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e7af9b4f-e16d-4330-9422-1f0f78321eca"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "理论 trong học thuật thường đi với 实践、证明、基础、体系.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0c8e0a65-6ea6-4f12-bc2b-77d411c0aa9f",
+      "order": 1,
+      "rule_vi": "Không dùng 理论 cho mọi ý kiến đời thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我不同意你的看法。",
+          "pinyin": "Wǒ bù tóngyì nǐ de kànfǎ.",
+          "vi": "Tôi không đồng ý với cách nhìn của bạn.",
+          "note_vi": "看法 tự nhiên hơn cho ý kiến đời thường.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "理论",
+    "back": "lý thuyết, lý luận",
+    "hint": "lǐlùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e7af9b4f-e16d-4330-9422-1f0f78321eca",
+    "source_lesson_vocab_id": null
+  }
+}

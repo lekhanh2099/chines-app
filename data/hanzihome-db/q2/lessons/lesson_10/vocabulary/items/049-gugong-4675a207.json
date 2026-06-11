@@ -1,0 +1,490 @@
+{
+  "id": "664cc28a-12a2-4e0d-b950-113773854c3b",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "故宫",
+  "pinyin": "Gùgōng",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名/地名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab",
+    "proper-name"
+  ],
+  "meaning": {
+    "hanviet": "Cố Cung",
+    "meaning_vi": "Cố Cung / Tử Cấm Thành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Cố Cung",
+      "Tử Cấm Thành"
+    ],
+    "short_definition_vi": "Cố Cung / Tử Cấm Thành",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "故",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "động tác đánh/tác động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "động tác đánh/tác động",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ Phộc trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cũ, xưa.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "động tác đánh/tác động",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ Phộc trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "宫",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được dùng như bộ Miên trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cung điện.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được dùng như bộ Miên trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "故 = cũ, xưa. 宫 = cung điện. → 故宫 = cung điện cũ. Logic nhớ nghĩa hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "故宫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cố Cung / Tử Cấm Thành ở Bắc Kinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "颐和园",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Di Hòa Viên, vườn hoàng gia.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长城",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vạn Lý Trường Thành.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "博物馆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bảo tàng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我去过故宫，也去过颐和园。",
+      "Tôi từng đi Cố Cung, cũng từng đi Di Hòa Viên.",
+      "故宫里有很多文物。",
+      "Trong Cố Cung có rất nhiều văn vật."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "72f57b37-bd9e-4fee-93c3-81eed8549862",
+      "order": 1,
+      "zh": "去故宫",
+      "pinyin": "",
+      "vi": "đi Cố Cung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "575871ea-bd89-4ce4-b38b-86c67964a2eb",
+      "order": 2,
+      "zh": "参观故宫",
+      "pinyin": "",
+      "vi": "tham quan Cố Cung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "0ec7ab4e-f8b1-4860-a72e-8a8aa6f6d446",
+      "order": 3,
+      "zh": "故宫博物院",
+      "pinyin": "",
+      "vi": "Bảo tàng Cố Cung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c4ae77c9-d247-46c1-a44f-426cb7f2dc4b",
+      "order": 4,
+      "zh": "故宫的文物",
+      "pinyin": "",
+      "vi": "văn vật của Cố Cung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "da2c296e-7205-40d6-aa1a-38a95c897eba",
+      "order": 5,
+      "zh": "第一次去故宫",
+      "pinyin": "",
+      "vi": "lần đầu đi Cố Cung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "9757db24-b910-4d1b-8551-4a3428dfe0df",
+      "order": 6,
+      "zh": "去过故宫",
+      "pinyin": "",
+      "vi": "từng đi Cố Cung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aec5ff69-0816-4990-a544-f855de482b0b",
+      "order": 1,
+      "zh": "我去过故宫。",
+      "pinyin": "Wǒ qù guo Gùgōng.",
+      "vi": "Tôi từng đi Cố Cung.",
+      "analysis_vi": "去过 nhấn kinh nghiệm từng đến.",
+      "highlight": [
+        "故宫"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "664cc28a-12a2-4e0d-b950-113773854c3b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8bc704c0-8efa-4a81-b647-4ebb2684b06c",
+      "order": 2,
+      "zh": "我第一次去故宫的时候，照了很多相。",
+      "pinyin": "Wǒ dì yī cì qù Gùgōng de shíhou, zhào le hěn duō xiàng.",
+      "vi": "Lần đầu đi Cố Cung, tôi đã chụp rất nhiều ảnh.",
+      "analysis_vi": "第一次去 = lần đầu đi. 照相 là ly hợp, nên nói 照了很多相.",
+      "highlight": [
+        "故宫"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "664cc28a-12a2-4e0d-b950-113773854c3b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "01e6b660-d8c1-4e1a-8660-c3e6922a74d9",
+      "order": 3,
+      "zh": "我以前只在书上看过故宫的照片，第一次亲眼看到那些宫殿的时候，才觉得中国历史真的有意思极了。",
+      "pinyin": "Wǒ yǐqián zhǐ zài shū shang kàn guo Gùgōng de zhàopiàn, dì yī cì qīnyǎn kàn dào nàxiē gōngdiàn de shíhou, cái juéde Zhōngguó lìshǐ zhēn de yǒu yìsi jí le.",
+      "vi": "Trước đây tôi chỉ từng xem ảnh Cố Cung trong sách, lần đầu tận mắt nhìn thấy những cung điện đó, tôi mới thấy lịch sử Trung Quốc thật sự thú vị cực kỳ.",
+      "analysis_vi": "看过 nhấn từng xem. 第一次亲眼看到 = lần đầu tận mắt thấy. 才觉得 nhấn đến lúc đó mới cảm thấy.",
+      "highlight": [
+        "故宫"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "664cc28a-12a2-4e0d-b950-113773854c3b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "a472ac3b-35a8-4514-b6a9-9a358b987be0",
+      "order": 1,
+      "rule_vi": "Hỏi kinh nghiệm:",
+      "natural_examples": [
+        {
+          "zh": "你去过故宫吗？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "参观故宫",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Hỏi kinh nghiệm: 你去过故宫吗？ Bạn từng đi Cố Cung chưa? Nói “tham quan Cố Cung”: 参观故宫",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "故宫",
+    "back": "Cố Cung / Tử Cấm Thành",
+    "hint": "Gùgōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab",
+      "proper-name"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "故宫 là biểu tượng quyền lực hoàng gia trong văn hóa Trung Quốc. Nếu 颐和园 cho cảm giác vườn hoàng gia thư thái, thì 故宫 cho cảm giác cung điện, triều đình, nghi lễ và lịch sử chính trị.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "664cc28a-12a2-4e0d-b950-113773854c3b",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "id": "963091d4-5761-446d-be97-b806f4f7eecd",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "健康",
+  "pinyin": "jiànkāng",
+  "pos": {
+    "raw_vi": "Danh từ / tính từ",
+    "raw_cn": "名/形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "health"
+  ],
+  "meaning": {
+    "hanviet": "Kiện khang",
+    "meaning_vi": "sức khỏe; khỏe mạnh; lành mạnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sức khỏe; khỏe mạnh; lành mạnh"
+    ],
+    "short_definition_vi": "sức khỏe; khỏe mạnh; lành mạnh",
+    "textbook_focus_vi": "sức khỏe; khỏe mạnh; lành mạnh",
+    "register_vi": "",
+    "usage_domain_vi": "health",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "健",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ Nhân trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "建",
+            "hanviet": "kiến",
+            "meaning_vi": "gợi âm/nghĩa phụ",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khỏe, mạnh, kiện toàn",
+        "modern_logic_vi": "健 gợi người khỏe/mạnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ Nhân trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "康",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái nhà",
+            "position_vi": "ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "广 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái nhà, phần che",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "广 được dùng như bộ Nghiễm trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khỏe mạnh, an khang",
+        "modern_logic_vi": "康 = khỏe/an khang; phần trong không tách sâu.",
+        "warning_vi": "Không nên tách sâu nếu chưa đối chiếu thêm nguồn chữ học.",
+        "notes": [],
+        "check_needed": true,
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái nhà, phần che",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "广 được dùng như bộ Nghiễm trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "健 gợi người khỏe/mạnh.; 康 = khỏe/an khang; phần trong không tách sâu.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "身体",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "体质",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "健身",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不健康",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "生病",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5b836fef-eff1-4d81-872e-e2c43871431c",
+      "order": 1,
+      "zh": "身体健康",
+      "pinyin": "",
+      "vi": "cơ thể khỏe mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15a1efbe-3660-47cd-85df-72697819b910",
+      "order": 2,
+      "zh": "保持健康",
+      "pinyin": "",
+      "vi": "giữ sức khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d2edeff-afef-4a1e-a6ce-e5e9db658512",
+      "order": 3,
+      "zh": "健康生活",
+      "pinyin": "",
+      "vi": "lối sống lành mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0a45547-104a-493c-a3dd-ffb33d507484",
+      "order": 4,
+      "zh": "健康饮食",
+      "pinyin": "",
+      "vi": "ăn uống lành mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1f942be-f7b2-4e12-a19a-f03a638ca366",
+      "order": 5,
+      "zh": "心理健康",
+      "pinyin": "",
+      "vi": "sức khỏe tâm lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4053d616-caef-4d75-8cac-04fd1b6bf43f",
+      "order": 6,
+      "zh": "祝你健康",
+      "pinyin": "",
+      "vi": "chúc bạn khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2ffcc6f6-3860-40a7-96fc-fc5ebfa423c1",
+      "order": 1,
+      "zh": "祝你身体健康。",
+      "pinyin": "Zhù nǐ shēntǐ jiànkāng.",
+      "vi": "Chúc bạn thân thể khỏe mạnh.",
+      "analysis_vi": "身体健康 là cụm chúc rất thông dụng.",
+      "highlight": [
+        "健康"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "963091d4-5761-446d-be97-b806f4f7eecd"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e297ba03-eb4a-47f4-9eb0-6900110dc975",
+      "order": 2,
+      "zh": "练太极拳不但有助于增强体质，而且对保持健康也有一定的作用。",
+      "pinyin": "Liàn tàijíquán búdàn yǒu zhù yú zēngqiáng tǐzhì, érqiě duì bǎochí jiànkāng yě yǒu yídìng de zuòyòng.",
+      "vi": "Luyện Thái Cực Quyền không những giúp tăng thể chất mà còn có tác dụng nhất định trong giữ sức khỏe.",
+      "analysis_vi": "不但……而且……; 对……有作用.",
+      "highlight": [
+        "健康"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "963091d4-5761-446d-be97-b806f4f7eecd"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "身体健康 là lời chúc an toàn với người lớn, thầy cô, bạn bè.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a36d500f-c0c2-4266-85f6-44d6b6580e67",
+      "order": 1,
+      "rule_vi": "健身 là tập luyện/gym; 健康 là sức khỏe/khỏe mạnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我去健身。",
+          "pinyin": "Wǒ qù jiànshēn.",
+          "vi": "Tôi đi tập gym/tập luyện.",
+          "note_vi": "健身 = tập luyện.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "健康",
+    "back": "sức khỏe; khỏe mạnh; lành mạnh",
+    "hint": "jiànkāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "health"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "963091d4-5761-446d-be97-b806f4f7eecd",
+    "source_lesson_vocab_id": null
+  }
+}

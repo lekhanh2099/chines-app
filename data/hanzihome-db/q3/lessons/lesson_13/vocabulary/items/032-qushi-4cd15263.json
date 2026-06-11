@@ -1,0 +1,200 @@
+{
+  "id": "7a3479c9-b173-4039-8c86-f0a1182a37d4",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "去世",
+  "pinyin": "qùshì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "event"
+  ],
+  "meaning": {
+    "hanviet": "khứ thế",
+    "meaning_vi": "qua đời, mất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "qua đời",
+      "mất"
+    ],
+    "short_definition_vi": "qua đời, mất",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "去",
+        "lishu_vi": "khứ",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi/rời khỏi",
+        "modern_logic_vi": "Trong từ/cụm này, 去 góp phần vào nghĩa hiện đại: đi/rời khỏi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "世",
+        "lishu_vi": "thế",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đời/thế gian",
+        "modern_logic_vi": "Trong từ/cụm này, 世 góp phần vào nghĩa hiện đại: đời/thế gian.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "去世 cần học theo nghĩa hiện đại trong bài: qua đời, mất.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 父亲去世.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "24d1b20c-1f91-4848-8fd4-6d5e1e25a930",
+      "order": 1,
+      "zh": "父亲去世",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6f2cfb2c-aff0-4df7-bcc1-2ff80d1bff56",
+      "order": 2,
+      "zh": "因病去世",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07e5aa11-2fac-4abd-b7c9-b3e88e3a3c0c",
+      "order": 3,
+      "zh": "去世以后",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6e09f4b7-f1a2-48aa-8fa6-0817444ac35a",
+      "order": 1,
+      "zh": "他父亲去年去世了。",
+      "pinyin": "Tā fùqīn qùnián qùshì le.",
+      "vi": "Cha anh ấy qua đời năm ngoái.",
+      "analysis_vi": "去世 lịch sự hơn 死.",
+      "highlight": [
+        "去世"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7a3479c9-b173-4039-8c86-f0a1182a37d4"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "663a8708-46d6-4bd9-85b0-b2a52912b321",
+      "order": 2,
+      "zh": "父亲去世以后，他开始照顾母亲和弟弟妹妹。",
+      "pinyin": "Fùqīn qùshì yǐhòu, tā kāishǐ zhàogù mǔqīn hé dìdi mèimei.",
+      "vi": "Sau khi cha qua đời, anh ấy bắt đầu chăm sóc mẹ và các em.",
+      "analysis_vi": "去世以后 làm mốc thời gian.",
+      "highlight": [
+        "去世"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7a3479c9-b173-4039-8c86-f0a1182a37d4"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nói về người mất nên dùng 去世 thay vì 死 trong ngữ cảnh lịch sự/cảm thông.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "025ba36c-e618-423a-8f90-aac9c9e3f36f",
+      "order": 1,
+      "rule_vi": "Dùng 去世 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "去世",
+    "back": "qua đời, mất",
+    "hint": "qùshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7a3479c9-b173-4039-8c86-f0a1182a37d4",
+    "source_lesson_vocab_id": null
+  }
+}

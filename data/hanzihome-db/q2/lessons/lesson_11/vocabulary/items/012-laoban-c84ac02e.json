@@ -1,0 +1,355 @@
+{
+  "id": "a2a4d886-905a-45b9-8814-936580d1b4b3",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "老板",
+  "pinyin": "lǎobǎn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lão bản",
+    "meaning_vi": "ông chủ, bà chủ, sếp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ông chủ, bà chủ, sếp"
+    ],
+    "short_definition_vi": "ông chủ, bà chủ, sếp",
+    "textbook_focus_vi": "ông chủ, bà chủ, sếp",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "老",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "già, lâu năm; tiền tố thân mật",
+        "modern_logic_vi": "老 có thể là tiền tố trong cách gọi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "板",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "反",
+            "hanviet": "phản",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tấm ván; thành tố trong 老板",
+        "modern_logic_vi": "Trong 老板 không suy nghĩa 'ván'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "老板 là từ cố định chỉ chủ/sếp; không hiểu từng chữ thành 'ông già + tấm ván'.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "经理",
+        "pinyin": "",
+        "meaning_vi": "giám đốc/quản lý",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老板娘",
+        "pinyin": "",
+        "meaning_vi": "bà chủ",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "领导",
+        "pinyin": "",
+        "meaning_vi": "lãnh đạo/cấp trên",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上司",
+        "pinyin": "",
+        "meaning_vi": "cấp trên",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "员工",
+        "pinyin": "",
+        "meaning_vi": "nhân viên",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "老板",
+        "right": "员工",
+        "meaning_vi": "chủ/sếp ↔ nhân viên",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "37bdd161-32bd-4873-8954-8e3bc798bc7f",
+      "order": 1,
+      "zh": "饭店老板",
+      "pinyin": "",
+      "vi": "chủ nhà hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62a2f140-0873-4417-b00a-25a724fbca26",
+      "order": 2,
+      "zh": "公司老板",
+      "pinyin": "",
+      "vi": "chủ công ty",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8afab829-88d1-489f-aa3b-1a5c7088471c",
+      "order": 3,
+      "zh": "老板娘",
+      "pinyin": "",
+      "vi": "bà chủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58d12f67-139d-470d-b6bd-c6335f59142c",
+      "order": 4,
+      "zh": "老板很忙",
+      "pinyin": "",
+      "vi": "sếp/chủ rất bận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0befe64-9556-494d-bb70-daa422768e6f",
+      "order": 5,
+      "zh": "给老板打工",
+      "pinyin": "",
+      "vi": "làm thuê cho ông chủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eff60399-d4ff-4ffe-9e35-11d18e43c521",
+      "order": 6,
+      "zh": "老板安排工作",
+      "pinyin": "",
+      "vi": "sếp sắp xếp công việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b7b2cda7-bd81-49d0-9cff-1a11c30dbbad",
+      "order": 1,
+      "zh": "这个饭店的老板很热情。",
+      "pinyin": "Zhège fàndiàn de lǎobǎn hěn rèqíng.",
+      "vi": "Chủ nhà hàng này rất nhiệt tình.",
+      "analysis_vi": "老板 là chủ cơ sở kinh doanh.",
+      "highlight": [
+        "老板"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2a4d886-905a-45b9-8814-936580d1b4b3"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d67059b3-223e-4ccf-9689-715ae61f0017",
+      "order": 2,
+      "zh": "他是给一个中国老板打工的。",
+      "pinyin": "Tā shì gěi yí ge Zhōngguó lǎobǎn dǎgōng de.",
+      "vi": "Anh ấy làm thuê cho một ông chủ người Trung Quốc.",
+      "analysis_vi": "是……的 nhấn mạnh người mà anh ấy làm cho.",
+      "highlight": [
+        "老板"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2a4d886-905a-45b9-8814-936580d1b4b3"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bfc419be-c584-4716-ad50-01e14c92d8a5",
+      "order": 3,
+      "zh": "一听说他想利用暑假打工，老板就给他安排了一个简单的工作。",
+      "pinyin": "Yì tīngshuō tā xiǎng lìyòng shǔjià dǎgōng, lǎobǎn jiù gěi tā ānpái le yí ge jiǎndān de gōngzuò.",
+      "vi": "Vừa nghe anh ấy muốn làm thêm kỳ nghỉ hè, ông chủ liền sắp xếp cho một công việc đơn giản.",
+      "analysis_vi": "给他安排工作 = sắp xếp công việc cho anh ấy.",
+      "highlight": [
+        "老板"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2a4d886-905a-45b9-8814-936580d1b4b3"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở quán nhỏ, gọi 老板 khá tự nhiên; trong công ty lớn, 经理 / 领导 / 王总 có thể phù hợp hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d9508f0f-b587-46b5-a467-31f59269dd61",
+      "order": 1,
+      "rule_vi": "Không gọi giáo viên là 老板; gặp giáo viên dùng 老师.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "老板",
+    "back": "ông chủ, bà chủ, sếp",
+    "hint": "lǎobǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a2a4d886-905a-45b9-8814-936580d1b4b3",
+    "source_lesson_vocab_id": null
+  }
+}

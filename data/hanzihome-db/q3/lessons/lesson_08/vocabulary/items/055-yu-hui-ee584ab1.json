@@ -1,0 +1,245 @@
+{
+  "id": "c31b4cc0-4240-46ad-adbc-d7bfa7ed5b32",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "余辉",
+  "pinyin": "Yú Huī",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名 / 人名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Dư Huy",
+    "meaning_vi": "tên riêng nhân vật nam",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tên riêng nhân vật nam"
+    ],
+    "short_definition_vi": "tên riêng nhân vật nam",
+    "textbook_focus_vi": "余 là họ Dư; 辉 có 光, gợi ánh sáng/rực rỡ. Trong tên người, không dịch nghĩa từng chữ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tên riêng, nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "余",
+        "lishu_vi": "dư",
+        "structure_note_vi": "Trong tên riêng là họ.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dư, còn lại; họ Dư",
+        "modern_logic_vi": "Trong từ này, 余 góp phần tạo nghĩa 'dư, còn lại; họ Dư'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "辉",
+        "lishu_vi": "huy",
+        "structure_note_vi": "光 + 军; nghĩa ánh sáng/rực rỡ.",
+        "main_radical": {
+          "radical": "光",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Quang",
+          "radical_name_zh": "",
+          "hanviet": "quang",
+          "meaning_vi": "ánh sáng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "光",
+            "hanviet": "quang",
+            "meaning_vi": "ánh sáng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "光",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Quang",
+              "radical_name_zh": "",
+              "hanviet": "quang",
+              "meaning_vi": "ánh sáng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng rực, ánh sáng",
+        "modern_logic_vi": "Trong từ này, 辉 góp phần tạo nghĩa 'sáng rực, ánh sáng'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "余 là họ Dư; 辉 có 光, gợi ánh sáng/rực rỡ. Trong tên người, không dịch nghĩa từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 余辉同学 = bạn Dư Huy.",
+    "warning_vi": "Không nhầm 余辉 tên người với 余晖 ánh chiều tà.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小余",
+        "pinyin": "Xiǎo Yú",
+        "meaning_vi": "Tiểu Dư",
+        "difference_vi": "Cách gọi thân mật theo họ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "余晖",
+        "pinyin": "yúhuī",
+        "meaning_vi": "ánh chiều tà",
+        "difference_vi": "Từ thường khác chữ 晖.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 余辉 tên người với 余晖 ánh chiều tà."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c69b35f6-843b-48dc-a3ea-1c196e53b172",
+      "order": 1,
+      "zh": "余辉同学",
+      "pinyin": "Yú Huī tóngxué",
+      "vi": "bạn Dư Huy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "274097ee-c244-4389-bb7f-6a92b53f70be",
+      "order": 2,
+      "zh": "赵霞和余辉",
+      "pinyin": "Zhào Xiá hé Yú Huī",
+      "vi": "Triệu Hà và Dư Huy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c784654-0769-4cd0-b9f6-4f3ab485f45f",
+      "order": 3,
+      "zh": "误会余辉",
+      "pinyin": "wùhuì Yú Huī",
+      "vi": "hiểu lầm Dư Huy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c9f05b05-1a2f-46cf-b4e3-21df456953c8",
+      "order": 1,
+      "zh": "他看见赵霞和余辉有说有笑，就以为他们在谈恋爱。",
+      "pinyin": "Tā kànjiàn Zhào Xiá hé Yú Huī yǒu shuō yǒu xiào, jiù yǐwéi tāmen zài tán liàn’ài.",
+      "vi": "Anh ấy thấy Triệu Hà và Dư Huy nói cười vui vẻ, liền tưởng họ đang yêu nhau.",
+      "analysis_vi": "余辉 là tên riêng nhân vật gây hiểu lầm trong bài.",
+      "highlight": [
+        "余辉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c31b4cc0-4240-46ad-adbc-d7bfa7ed5b32"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "辉 là chữ tên nam gợi ánh sáng/rực rỡ, nhưng không dịch nghĩa trong câu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "54b2907e-e855-4d73-9a0f-a44b2d188fcc",
+      "order": 1,
+      "rule_vi": "Không nhầm 余辉 tên người với 余晖 ánh chiều tà.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "余辉是赵霞的普通朋友。",
+          "pinyin": "Yú Huī shì Zhào Xiá de pǔtōng péngyou.",
+          "vi": "Dư Huy là bạn bình thường của Triệu Hà.",
+          "note_vi": "Viết đúng là 辉 trong tên người này.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "余辉",
+    "back": "tên riêng nhân vật nam",
+    "hint": "Yú Huī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c31b4cc0-4240-46ad-adbc-d7bfa7ed5b32",
+    "source_lesson_vocab_id": null
+  }
+}

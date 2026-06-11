@@ -1,0 +1,333 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "被动意义的表达：被动句",
+      "title_vi": "Câu bị động ý nghĩa",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "cc6c565e-7bef-45c2-b8d7-0f1b69f3f16f",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Khi chủ ngữ là vật/người chịu tác động, phía sau là động từ + bổ ngữ kết quả, câu có thể mang nghĩa bị động dù không dùng 被.",
+          "examples": [
+            {
+              "id": "500747f8-a71e-4a03-8522-73dae177b1aa",
+              "zh": "我的眼镜儿摔坏了。",
+              "pinyin": "Wǒ de yǎnjìngr shuāihuài le.",
+              "vi": "Kính mắt của tôi bị rơi vỡ rồi.",
+              "highlight": [
+                "眼镜儿",
+                "摔坏了"
+              ],
+              "grammar_refs": [
+                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "034c6a7c-aec5-4ba1-ab14-f7e86c8162e0",
+              "zh": "照片选好了。",
+              "pinyin": "Zhàopiàn xuǎn hǎo le.",
+              "vi": "Ảnh đã được chọn xong rồi.",
+              "highlight": [
+                "照片",
+                "选好了"
+              ],
+              "grammar_refs": [
+                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "390a4475-90da-4707-93e9-d919d1849df5",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Chủ ngữ chịu tác động + V + bổ ngữ kết quả + 了",
+          "meaning_vi": "Nhấn mạnh kết quả xảy ra với chủ ngữ, không cần nói rõ ai gây ra.",
+          "examples": [
+            {
+              "id": "a8acec9a-6bab-4efc-b4c8-1564291794de",
+              "zh": "我的眼镜儿也摔在地上摔坏了。",
+              "pinyin": "Wǒ de yǎnjìngr yě shuāi zài dìshang shuāihuài le.",
+              "vi": "Kính của tôi cũng rơi xuống đất rồi vỡ mất.",
+              "highlight": [
+                "眼镜儿",
+                "摔坏了"
+              ],
+              "grammar_refs": [
+                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5b6c765c-bc40-496d-99c7-ded919695171",
+              "zh": "门关上了。",
+              "pinyin": "Mén guān shàng le.",
+              "vi": "Cửa đã được đóng lại rồi.",
+              "highlight": [
+                "门",
+                "关上了"
+              ],
+              "grammar_refs": [
+                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Nếu muốn nêu rõ tác nhân, có thể dùng 被, nhưng trong ngữ cảnh thường chỉ cần câu kết quả."
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "7e4881b0-cdee-4c47-9ec6-421a63afa39f",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Dạng phủ định / nghi vấn",
+          "notes_vi": [
+            "Phủ định thường dùng 没 + V + kết quả: 我的眼镜儿没摔坏。",
+            "Nghi vấn: 你的眼镜儿摔坏了吗？ / 照片选好了吗？"
+          ],
+          "examples": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "5e0db92f-f3b4-4746-a9a7-7761bcd985ee",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "量词重叠",
+      "title_vi": "Lượng từ lặp lại",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "1e58fff6-1296-471f-b416-59fd3d00c6f3",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Lặp lại lượng từ để nói từng cái / cái nào cũng / tất cả đều, thường đi với 都.",
+          "examples": [
+            {
+              "id": "bb310889-520e-49f6-9028-0f850b2addb8",
+              "zh": "这些照得都非常好，张张都很漂亮。",
+              "pinyin": "Zhèxiē zhào de dōu fēicháng hǎo, zhāngzhāng dōu hěn piàoliang.",
+              "vi": "Mấy tấm này chụp đều rất đẹp, tấm nào cũng đẹp.",
+              "highlight": [
+                "张张",
+                "都"
+              ],
+              "grammar_refs": [
+                "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "d2a6f27c-af14-45b4-b3dd-bf883c087aed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "MW + MW + 都 + Adj/V",
+          "meaning_vi": "Nhấn mạnh không bỏ sót cá thể nào trong nhóm.",
+          "examples": [
+            {
+              "id": "898b788e-1f37-4c4f-be5d-4310180c0f05",
+              "zh": "他们个个都很努力。",
+              "pinyin": "Tāmen gè gè dōu hěn nǔlì.",
+              "vi": "Ai trong số họ cũng rất cố gắng.",
+              "highlight": [
+                "个个",
+                "都"
+              ],
+              "grammar_refs": [
+                "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "20e632bb-ddb9-49a4-81a5-c6330d2d4848",
+              "zh": "我们天天练习汉语。",
+              "pinyin": "Wǒmen tiāntiān liànxí Hànyǔ.",
+              "vi": "Chúng tôi ngày nào cũng luyện tiếng Hán.",
+              "highlight": [
+                "天天"
+              ],
+              "grammar_refs": [
+                "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "张张, 个个, 件件, 天天, 年年 là các dạng thường gặp."
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "874e376a-a113-46ba-b49b-c492f5f33124",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "一年比一年",
+      "title_vi": "Năm sau hơn năm trước / càng ngày càng...",
+      "level": "HSK3+",
+      "tags": [
+        "语法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "5feb4851-8248-4910-b327-1d3422a3e7ad",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng để nói một trạng thái thay đổi dần theo từng mốc thời gian/lần lặp.",
+          "examples": [
+            {
+              "id": "0d469841-e676-4c25-b511-f94d18e3173a",
+              "zh": "有汽车的人也一年比一年多。",
+              "pinyin": "Yǒu qìchē de rén yě yì nián bǐ yì nián duō.",
+              "vi": "Số người có ô tô cũng năm sau nhiều hơn năm trước.",
+              "highlight": [
+                "一年比一年多"
+              ],
+              "grammar_refs": [
+                "874e376a-a113-46ba-b49b-c492f5f33124"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "f5003ea8-5e31-431e-bb02-1c82acc5b76f",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Thời gian/lần + 比 + thời gian/lần + Adj",
+          "meaning_vi": "Càng ngày càng..., theo từng mốc thời gian/lần lặp.",
+          "examples": [
+            {
+              "id": "8688d28f-525b-405e-80a1-bc786264b834",
+              "zh": "天气一天比一天冷。",
+              "pinyin": "Tiānqì yì tiān bǐ yì tiān lěng.",
+              "vi": "Thời tiết ngày càng lạnh.",
+              "highlight": [
+                "一天比一天冷"
+              ],
+              "grammar_refs": [
+                "874e376a-a113-46ba-b49b-c492f5f33124"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "59ee696b-e055-42e4-ae1d-3dfd3217f449",
+              "zh": "汉语课一次比一次难。",
+              "pinyin": "Hànyǔ kè yí cì bǐ yí cì nán.",
+              "vi": "Tiết tiếng Hán lần sau khó hơn lần trước.",
+              "highlight": [
+                "一次比一次难"
+              ],
+              "grammar_refs": [
+                "874e376a-a113-46ba-b49b-c492f5f33124"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "一年比一年多 nhấn từng mốc năm; 越来越多 nhấn xu hướng chung."
+          ],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

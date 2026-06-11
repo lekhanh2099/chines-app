@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q2",
+  "lessonIndex": 6,
+  "id": "e3fa4618-6a01-41d7-9c47-1fe900a40c1b",
+  "title": {
+    "zh": "我比你更喜欢音乐",
+    "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè",
+    "vi": "Tôi thích âm nhạc hơn bạn",
+    "en": "I like music more than you do"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_1_lesson_06.json",
+    "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_1_lesson_06_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 9,
+    "lessonVocabItems": 55,
+    "sourceDeepVocabItems": 46,
+    "materializedVocabItems": 56,
+    "syntheticVocabItems": 10,
+    "hanziOnlyVocabMatches": 1,
+    "relations": 245,
+    "checkNeededRelations": 11,
+    "checkNeededVocabItems": 10,
+    "unresolved": 0,
+    "warnings": 1
+  }
+}

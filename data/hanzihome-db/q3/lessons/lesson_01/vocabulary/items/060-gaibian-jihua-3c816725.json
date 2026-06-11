@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_50c0f3686f0b6af0",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "改变计划",
+  "pinyin": "gǎibiàn jìhuà",
+  "meaning_vi": "thay đổi kế hoạch",
+  "pos": "Cụm động-tân",
+  "pos_detail": {
+    "vi": "Cụm động-tân",
+    "cn": "动宾短语",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": false,
+    "separable_type": "cụm động-tân / 动宾短语",
+    "structure_vi": "động từ 改变 + tân ngữ 计划",
+    "usage_note_vi": "Có thể nói 改变了计划; đây là cụm V-O tự do, không phải động từ li hợp cố định.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
+    "type": "vocabulary_item",
+    "order": 48,
+    "hanzi": "改变计划",
+    "pinyin": "gǎibiàn jìhuà",
+    "meaning_vi": "thay đổi kế hoạch",
+    "meaning_en": "",
+    "pos": "Cụm động-tân",
+    "tags": [
+      "exercise_phrase"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "改变计划",
+      "back": "gǎibiàn jìhuà — thay đổi kế hoạch",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Cụm động-tân",
+      "cn": "动宾短语",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": false,
+      "separable_type": "cụm động-tân / 动宾短语",
+      "structure_vi": "động từ 改变 + tân ngữ 计划",
+      "usage_note_vi": "Có thể nói 改变了计划; đây là cụm V-O tự do, không phải động từ li hợp cố định.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

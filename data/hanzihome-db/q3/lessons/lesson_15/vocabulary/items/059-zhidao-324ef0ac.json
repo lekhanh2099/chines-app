@@ -1,0 +1,273 @@
+{
+  "id": "f61bf860-6255-40ec-9f40-67eda9878a8b",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "直到",
+  "pinyin": "zhídào",
+  "pos": {
+    "raw_vi": "Giới từ / liên từ thời gian",
+    "raw_cn": "介词/连词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trực đáo",
+    "meaning_vi": "mãi cho đến; cho đến khi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mãi cho đến",
+      "cho đến khi"
+    ],
+    "short_definition_vi": "mãi cho đến; cho đến khi",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "直",
+        "lishu_vi": "",
+        "structure_note_vi": "直: thẳng",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thẳng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: thẳng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "到",
+        "lishu_vi": "",
+        "structure_note_vi": "到: ",
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao; cắt",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao đứng",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao; cắt",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刂 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刂 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: .",
+        "warning_vi": "Chưa chắc cấu tạo; không tự đoán component.",
+        "notes": [],
+        "check_needed": true,
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao đứng",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao; cắt",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "刂 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "直到 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 直到现在.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c9c900dd-c818-45b9-a97d-8d6b22625777",
+      "order": 1,
+      "zh": "直到现在",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a2f792a-cf40-499f-9cec-7f2b0ee2d0be",
+      "order": 2,
+      "zh": "直到今天",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab0d971d-b84a-488e-9138-b7817fad94e5",
+      "order": 3,
+      "zh": "直到最后",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89c79476-ebc4-4766-b2e1-76fa72b9faa0",
+      "order": 4,
+      "zh": "直到……才……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "52a8f6e1-c59b-4c9f-8866-0d42876e1336",
+      "order": 1,
+      "zh": "直到现在，我还记得那件事。",
+      "pinyin": "",
+      "vi": "Cho đến bây giờ, tôi vẫn còn nhớ chuyện đó。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "直到"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f61bf860-6255-40ec-9f40-67eda9878a8b"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5d0cb0b2-2a55-495b-9c41-c87f8f9bacc3",
+      "order": 2,
+      "zh": "直到我的腿不疼了，老师才放心。",
+      "pinyin": "",
+      "vi": "Mãi đến khi chân tôi không đau nữa, cô giáo mới yên tâm。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "直到"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f61bf860-6255-40ec-9f40-67eda9878a8b"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "13d60ab3-ee40-4312-9988-48cda424e590",
+      "order": 1,
+      "rule_vi": "Muốn nhấn “mãi đến... mới...” thường cần 才.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Muốn nhấn “mãi đến... mới...” thường cần 才.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "直到",
+    "back": "mãi cho đến; cho đến khi",
+    "hint": "zhídào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f61bf860-6255-40ec-9f40-67eda9878a8b",
+    "source_lesson_vocab_id": null
+  }
+}

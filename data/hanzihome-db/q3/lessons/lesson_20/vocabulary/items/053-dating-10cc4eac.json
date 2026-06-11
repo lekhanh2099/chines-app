@@ -1,0 +1,356 @@
+{
+  "id": "fe357a88-647d-470f-95fd-e95be868d701",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "大厅",
+  "pinyin": "dàtīng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đại sảnh",
+    "meaning_vi": "đại sảnh, sảnh lớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đại sảnh",
+      "sảnh lớn"
+    ],
+    "short_definition_vi": "đại sảnh, sảnh lớn",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "大",
+        "lishu_vi": "đại",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "to, lớn, quan trọng",
+        "modern_logic_vi": "大厅 = sảnh lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "厅",
+        "lishu_vi": "sảnh",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "hán",
+            "meaning_vi": "mái xưởng/vách đá",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丁",
+            "hanviet": "đinh",
+            "meaning_vi": "thành phần trong chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sảnh, phòng lớn",
+        "modern_logic_vi": "大厅 = đại sảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "大厅 được dùng trong Bài 20 với nghĩa: đại sảnh, sảnh lớn.",
+    "memory_tip_vi": "Nhớ qua cụm 大厅里.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "客厅",
+        "pinyin": "kètīng",
+        "meaning_vi": "phòng khách",
+        "difference_vi": "Phòng khách gia đình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "礼堂",
+        "pinyin": "lǐtáng",
+        "meaning_vi": "hội trường",
+        "difference_vi": "Dùng cho sự kiện/lễ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "146e2356-c330-42ab-b4d3-715fc276ba32",
+      "order": 1,
+      "zh": "大厅里",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e52141da-d46c-442b-8b51-c2ef50e32abd",
+      "order": 2,
+      "zh": "大厅门口",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30dfdcbe-844e-44c7-828c-6fcf7bde7772",
+      "order": 3,
+      "zh": "酒店大厅",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8e5a088-12b3-48e0-b2a0-a458429ba44e",
+      "order": 4,
+      "zh": "学校大厅",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ae95e534-0dba-4238-98af-7b73ed1fa2d8",
+      "order": 5,
+      "zh": "候车大厅",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18c8f155-c9cb-41aa-9468-335eae5b0c9e",
+      "order": 6,
+      "zh": "机场大厅",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98a1522f-42c7-47ce-9868-87b2c6e10397",
+      "order": 7,
+      "zh": "走进大厅",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "47fc4848-af64-4dbc-b579-149d0aef8cbf",
+      "order": 1,
+      "zh": "大厅里坐着很多学生。",
+      "pinyin": "Dàtīng lǐ zuòzhe hěn duō xuésheng.",
+      "vi": "Trong đại sảnh có rất nhiều sinh viên đang ngồi.",
+      "analysis_vi": "Câu tồn hiện: địa điểm + V着 + người/vật.",
+      "highlight": [
+        "大厅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fe357a88-647d-470f-95fd-e95be868d701"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7770cf3c-54df-4ddf-a2c1-01660f6b89be",
+      "order": 2,
+      "zh": "当学校宣布奖学金名单的时候，大厅里成千上万的人都安静下来了。",
+      "pinyin": "Dāng xuéxiào xuānbù jiǎngxuéjīn míngdān de shíhou, dàtīng lǐ chéng qiān shàng wàn de rén dōu ānjìng xiàlai le.",
+      "vi": "Khi trường công bố danh sách học bổng, hàng nghìn hàng vạn người trong sảnh đều yên lặng lại.",
+      "analysis_vi": "安静下来 là trở nên yên lặng.",
+      "highlight": [
+        "大厅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fe357a88-647d-470f-95fd-e95be868d701"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "大厅 hay đi với 酒店大厅, 机场大厅, 候车大厅.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "90842716-0193-4106-9faa-265cc148167f",
+      "order": 1,
+      "rule_vi": "Không nhầm 大厅 với 客厅.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我们在酒店大厅等他。",
+          "pinyin": "Wǒmen zài jiǔdiàn dàtīng děng tā.",
+          "vi": "Chúng tôi đợi anh ấy ở sảnh khách sạn.",
+          "note_vi": "大厅 là sảnh lớn, không phải phòng khách gia đình.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "大厅",
+    "back": "đại sảnh, sảnh lớn",
+    "hint": "dàtīng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fe357a88-647d-470f-95fd-e95be868d701",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "id": "eb1b56bb-493b-4209-b55c-634dc72d11f7",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "永远",
+  "pinyin": "yǒngyuǎn",
+  "pos": {
+    "raw_vi": "Phó từ / danh từ thời gian",
+    "raw_cn": "副词/时间名词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vĩnh viễn",
+    "meaning_vi": "mãi mãi; vĩnh viễn; luôn luôn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mãi mãi",
+      "vĩnh viễn",
+      "luôn luôn"
+    ],
+    "short_definition_vi": "mãi mãi",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "永",
+        "lishu_vi": "vĩnh",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vĩnh viễn",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "远",
+        "lishu_vi": "viễn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, chuyển động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, chuyển động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "永远 = xa dài về thời gian, nhấn không kết thúc.",
+    "memory_tip_vi": "Nhớ 永远不会忘记.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一直",
+        "pinyin": "",
+        "meaning_vi": "一直",
+        "difference_vi": "一直 trung tính hơn; 永远 mạnh hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "暂时",
+        "pinyin": "",
+        "meaning_vi": "暂时",
+        "difference_vi": "tạm thời trái với vĩnh viễn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7b57e0c8-49f8-4c37-b7da-25b2b64e0068",
+      "order": 1,
+      "zh": "永远记得",
+      "pinyin": "yǒngyuǎn jìde",
+      "vi": "mãi mãi nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ec75f8e-c2ba-4ba6-a128-96cf875d40e2",
+      "order": 2,
+      "zh": "永远不会忘记",
+      "pinyin": "yǒngyuǎn bú huì wàngjì",
+      "vi": "mãi không quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bff70d66-a6a7-42e0-b22b-dcf378239b17",
+      "order": 3,
+      "zh": "永远幸福",
+      "pinyin": "yǒngyuǎn xìngfú",
+      "vi": "mãi hạnh phúc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b5c7a9d-76b1-494b-956e-edd8cfc584e3",
+      "order": 4,
+      "zh": "永远支持你",
+      "pinyin": "yǒngyuǎn zhīchí nǐ",
+      "vi": "mãi ủng hộ bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5901f915-d3c5-413a-8686-b6ec0af5b555",
+      "order": 1,
+      "zh": "我永远不会忘记这一天。",
+      "pinyin": "Wǒ yǒngyuǎn bú huì wàngjì zhè yì tiān.",
+      "vi": "Tôi sẽ mãi mãi không quên ngày này.",
+      "analysis_vi": "永远不会…… là mẫu ký ức khó quên.",
+      "highlight": [
+        "永远"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb1b56bb-493b-4209-b55c-634dc72d11f7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1c74924-f31e-4ac4-af70-f4332bf8c48d",
+      "order": 2,
+      "zh": "对她来说，父母的爱永远是最重要的。",
+      "pinyin": "Duì tā lái shuō, fùmǔ de ài yǒngyuǎn shì zuì zhòngyào de.",
+      "vi": "Đối với cô ấy, tình yêu của cha mẹ mãi mãi là quan trọng nhất.",
+      "analysis_vi": "永远 đứng trước 是.",
+      "highlight": [
+        "永远"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb1b56bb-493b-4209-b55c-634dc72d11f7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "永远 thường xuất hiện trong lời chúc, lời hứa, tình yêu, gia đình.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9c63b20c-5aad-4ad1-ab23-5757f11d6f75",
+      "order": 1,
+      "rule_vi": "Không dùng 永远 cho thời gian ngắn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我永远在图书馆等了两个小时。",
+          "pinyin": "Wǒ yǒngyuǎn zài túshūguǎn děng le liǎng ge xiǎoshí.",
+          "vi": "Sai vì chỉ hai tiếng.",
+          "note_vi": "永远 không dùng cho quãng ngắn.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我一直在图书馆等了两个小时。",
+          "pinyin": "Wǒ yìzhí zài túshūguǎn děng le liǎng ge xiǎoshí.",
+          "vi": "Tôi đã đợi ở thư viện suốt hai tiếng.",
+          "note_vi": "一直 hợp với khoảng hữu hạn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "永远",
+    "back": "mãi mãi; vĩnh viễn; luôn luôn",
+    "hint": "yǒngyuǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eb1b56bb-493b-4209-b55c-634dc72d11f7",
+    "source_lesson_vocab_id": null
+  }
+}

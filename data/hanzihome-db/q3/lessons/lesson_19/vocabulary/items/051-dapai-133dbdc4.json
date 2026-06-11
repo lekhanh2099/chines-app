@@ -1,0 +1,374 @@
+{
+  "id": "9e4f9f17-27a9-4697-bee1-87771c5935d6",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "打牌",
+  "pinyin": "dǎpái",
+  "pos": {
+    "raw_vi": "Động từ ly hợp",
+    "raw_cn": "离合动词",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "đả bài",
+    "meaning_vi": "đánh bài, chơi bài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đánh bài",
+      "chơi bài"
+    ],
+    "short_definition_vi": "đánh bài, chơi bài",
+    "textbook_focus_vi": "Dùng tay chơi quân bài.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "打",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ đứng",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, hành động bằng tay",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, hành động bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ đứng",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, hành động bằng tay",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "丁",
+            "hanviet": "đinh",
+            "meaning_vi": "thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "丁 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đánh, gọi, chơi một số hoạt động",
+        "modern_logic_vi": "Trong từ “打牌”, chữ “打” góp phần vào trường nghĩa: đánh, gọi, chơi một số hoạt động",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "牌",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "片",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Phiến",
+          "radical_name_zh": "",
+          "hanviet": "phiến",
+          "meaning_vi": "mảnh, tấm",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "片 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "片",
+            "hanviet": "phiến",
+            "meaning_vi": "mảnh, tấm",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "片",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Phiến",
+              "radical_name_zh": "",
+              "hanviet": "phiến",
+              "meaning_vi": "mảnh, tấm",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "片 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "片 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thẻ, bài",
+        "modern_logic_vi": "Trong từ “打牌”, chữ “牌” góp phần vào trường nghĩa: thẻ, bài",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Dùng tay chơi quân bài.",
+    "memory_tip_vi": "Dùng tay chơi quân bài.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "玩牌",
+        "pinyin": "",
+        "meaning_vi": "chơi bài, khẩu ngữ hơn",
+        "difference_vi": "chơi bài, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赌博",
+        "pinyin": "",
+        "meaning_vi": "đánh bạc, tiêu cực/pháp lý hơn",
+        "difference_vi": "đánh bạc, tiêu cực/pháp lý hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "44b56a93-2b8b-4143-9ae2-a0b1f4b37a98",
+      "order": 1,
+      "zh": "在打牌",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c1e928a-6a3d-47d1-8721-bcf675e5e9b5",
+      "order": 2,
+      "zh": "一起打牌",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "487ae826-288b-480d-96c4-44fe0b0e290c",
+      "order": 3,
+      "zh": "打扑克牌",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f63e7f85-a3c6-4dc3-83dc-05ef36c596fe",
+      "order": 4,
+      "zh": "打麻将",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "357e44d3-f451-404e-b382-93064542dab8",
+      "order": 1,
+      "zh": "他们正在打牌。",
+      "pinyin": "",
+      "vi": "Họ đang đánh bài.",
+      "analysis_vi": "正在 + V.",
+      "highlight": [
+        "打牌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9e4f9f17-27a9-4697-bee1-87771c5935d6"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "53c78e9a-2797-44f9-b3c0-d400a9645186",
+      "order": 2,
+      "zh": "他以为同事们在活动室里打牌。",
+      "pinyin": "",
+      "vi": "Anh ấy tưởng đồng nghiệp đang đánh bài trong phòng hoạt động.",
+      "analysis_vi": "以为 đánh dấu suy nghĩ chủ quan.",
+      "highlight": [
+        "打牌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9e4f9f17-27a9-4697-bee1-87771c5935d6"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Dùng tay chơi quân bài.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c8c6db20-1c39-434a-a058-8dc570d9f15d",
+      "order": 1,
+      "rule_vi": "打牌 là động từ ly hợp: 打了一会儿牌 tự nhiên hơn 打牌了一会儿.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "打牌 là động từ ly hợp: 打了一会儿牌 tự nhiên hơn 打牌了一会儿.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "打牌",
+    "back": "đánh bài, chơi bài",
+    "hint": "dǎpái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9e4f9f17-27a9-4697-bee1-87771c5935d6",
+    "source_lesson_vocab_id": null
+  }
+}

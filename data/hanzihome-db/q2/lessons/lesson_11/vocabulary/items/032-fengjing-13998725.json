@@ -1,0 +1,291 @@
+{
+  "id": "b8218d16-540a-4b15-b9bc-630be5322da0",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "风景",
+  "pinyin": "fēngjǐng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Phong cảnh",
+    "meaning_vi": "phong cảnh, cảnh quan",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phong cảnh, cảnh quan"
+    ],
+    "short_definition_vi": "phong cảnh, cảnh quan",
+    "textbook_focus_vi": "phong cảnh, cảnh quan",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "风",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gió, phong cách, cảnh sắc",
+        "modern_logic_vi": "风 là giản thể; không tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "景",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "京",
+            "hanviet": "kinh",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảnh, cảnh vật, ánh sáng",
+        "modern_logic_vi": "景 = cảnh vật/ánh sáng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "风 = khí cảnh/gió, 景 = cảnh vật. 风景 = cảnh vật nhìn thấy trong tự nhiên/nơi chốn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9ceacf86-8110-4c0f-93fd-24116d52d0bf",
+      "order": 1,
+      "zh": "看风景",
+      "pinyin": "",
+      "vi": "ngắm phong cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e062649-72cf-40b2-8f64-9d783a65a428",
+      "order": 2,
+      "zh": "风景很美",
+      "pinyin": "",
+      "vi": "phong cảnh rất đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a8ec06f6-1a94-46cc-a82f-0cccb1ecad83",
+      "order": 3,
+      "zh": "美丽的风景",
+      "pinyin": "",
+      "vi": "phong cảnh đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8f8c0d7-b5e6-42fe-8a01-6f8952991e08",
+      "order": 4,
+      "zh": "自然风景",
+      "pinyin": "",
+      "vi": "phong cảnh tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26960ff7-60c4-4f1e-b0a5-235ed8b46a6e",
+      "order": 5,
+      "zh": "风景区",
+      "pinyin": "",
+      "vi": "khu thắng cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32c3c3ee-ebf7-4a0a-b683-29baf09ed958",
+      "order": 6,
+      "zh": "沿路的风景",
+      "pinyin": "",
+      "vi": "phong cảnh dọc đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f627bc0f-fafd-4acc-9afd-9cac7aca389c",
+      "order": 1,
+      "zh": "这里的风景真美。",
+      "pinyin": "Zhèlǐ de fēngjǐng zhēn měi.",
+      "vi": "Phong cảnh ở đây thật đẹp.",
+      "analysis_vi": "真 + tính từ nhấn cảm xúc.",
+      "highlight": [
+        "风景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8218d16-540a-4b15-b9bc-630be5322da0"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "eef07204-0d2b-42fa-a349-93880b98ea9b",
+      "order": 2,
+      "zh": "我们是坐高铁来看中国风景的。",
+      "pinyin": "Wǒmen shì zuò gāotiě lái kàn Zhōngguó fēngjǐng de.",
+      "vi": "Chúng tôi đi tàu cao tốc để ngắm phong cảnh Trung Quốc.",
+      "analysis_vi": "是……的 nhấn phương tiện và mục đích.",
+      "highlight": [
+        "风景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8218d16-540a-4b15-b9bc-630be5322da0"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6ae667ff-9cd1-42cf-9fb3-0c2097a70aa7",
+      "order": 3,
+      "zh": "一看到窗外的风景，大家就把手机拿出来拍照。",
+      "pinyin": "Yí kàn dào chuāngwài de fēngjǐng, dàjiā jiù bǎ shǒujī ná chūlai pāizhào.",
+      "vi": "Vừa thấy phong cảnh ngoài cửa sổ, mọi người lấy điện thoại ra chụp.",
+      "analysis_vi": "把手机拿出来 là 把字句 + 出来.",
+      "highlight": [
+        "风景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b8218d16-540a-4b15-b9bc-630be5322da0"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "风景区 là khu thắng cảnh/khu phong cảnh được quy hoạch hoặc nổi tiếng.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "768a0a65-73fa-4744-a8cb-37add84241b2",
+      "order": 1,
+      "rule_vi": "风景 an toàn hơn khi nói phong cảnh cụ thể; 风光 còn có nghĩa vẻ vang/oai.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "风景",
+    "back": "phong cảnh, cảnh quan",
+    "hint": "fēngjǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b8218d16-540a-4b15-b9bc-630be5322da0",
+    "source_lesson_vocab_id": null
+  }
+}

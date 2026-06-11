@@ -1,0 +1,151 @@
+{
+  "id": "5ac03078-9f82-4a43-8121-f08f1749814b",
+  "type": "deep_vocabulary_item",
+  "order": 129,
+  "hanzi": "被",
+  "pinyin": "bèi",
+  "pos": {
+    "raw_vi": "Giới từ",
+    "raw_cn": "介词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ chức năng ngữ pháp"
+  ],
+  "meaning": {
+    "hanviet": "Bị",
+    "meaning_vi": "bị, dấu hiệu bị động",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bị",
+      "dấu hiệu bị động"
+    ],
+    "short_definition_vi": "bị, dấu hiệu bị động",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: bị, dấu hiệu bị động.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ chức năng ngữ pháp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "被",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "被 trong bài được học theo nghĩa trọng tâm: bị, dấu hiệu bị động.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: bị, dấu hiệu bị động.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "76b76cea-6a18-4bed-afc1-80667c903888",
+      "order": 1,
+      "zh": "它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: bị, dấu hiệu bị động",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dd04bdf7-587f-4249-b5ee-53b1594f5e93",
+      "order": 1,
+      "zh": "它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “被” = bị, dấu hiệu bị động.",
+      "analysis_vi": "Câu này dùng “被” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "被"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5ac03078-9f82-4a43-8121-f08f1749814b"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “被” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "49bd13bc-9761-4610-914d-e7210bd9f55b",
+      "order": 1,
+      "rule_vi": "Câu 被 trong tiếng Trung thường cần hành động và kết quả rõ, không chỉ đổi từ tiếng Việt có chữ “bị”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "被",
+    "back": "bị, dấu hiệu bị động",
+    "hint": "bèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ chức năng ngữ pháp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5ac03078-9f82-4a43-8121-f08f1749814b",
+    "source_lesson_vocab_id": null
+  }
+}

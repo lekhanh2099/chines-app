@@ -1,0 +1,217 @@
+{
+  "id": "eee0a491-a439-4682-902f-7dc8e8e28872",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "仍然",
+  "pinyin": "réngrán",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "nhưng nhiên",
+    "meaning_vi": "vẫn, vẫn còn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vẫn",
+      "vẫn còn"
+    ],
+    "short_definition_vi": "vẫn, vẫn còn",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "仍",
+        "lishu_vi": "nhưng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vẫn",
+        "modern_logic_vi": "Trong từ này, 仍 góp phần vào nghĩa hiện đại: vẫn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy",
+        "modern_logic_vi": "Trong từ này, 然 góp phần vào nghĩa hiện đại: như vậy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "仍然 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 仍然爱着.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 仍然 với 虽然."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "399706fd-0100-4bb9-a1e0-6c80c914876e",
+      "order": 1,
+      "zh": "仍然爱着",
+      "pinyin": "",
+      "vi": "vẫn còn yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "beb4209b-c654-45aa-815a-d605c9125e5a",
+      "order": 2,
+      "zh": "仍然记得",
+      "pinyin": "",
+      "vi": "vẫn nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1379009c-cbf8-481b-a2dc-e1a85e09ada0",
+      "order": 3,
+      "zh": "仍然坚持",
+      "pinyin": "",
+      "vi": "vẫn kiên trì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ae5f1f89-a9e6-49b4-9d0c-7a5f2051eddb",
+      "order": 1,
+      "zh": "过了这么多年，他仍然记得那一天。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 仍然 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 仍然; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "仍然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eee0a491-a439-4682-902f-7dc8e8e28872"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 仍然 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1db7b99c-66d8-4052-96a4-63b718f2318e",
+      "order": 1,
+      "rule_vi": "Không nhầm 仍然 với 虽然.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "仍然",
+    "back": "vẫn, vẫn còn",
+    "hint": "réngrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eee0a491-a439-4682-902f-7dc8e8e28872",
+    "source_lesson_vocab_id": null
+  }
+}

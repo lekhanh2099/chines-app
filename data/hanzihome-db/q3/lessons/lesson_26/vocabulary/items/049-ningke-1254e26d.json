@@ -1,0 +1,255 @@
+{
+  "id": "d31d3732-8d13-4fb7-8ea8-330cdd751ceb",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "宁可",
+  "pinyin": "nìngkě",
+  "pos": {
+    "raw_vi": "Phó từ / cấu trúc",
+    "raw_cn": "副词 / 关联成分",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "ninh khả",
+    "meaning_vi": "thà rằng, thà… còn hơn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thà rằng",
+      "thà… còn hơn"
+    ],
+    "short_definition_vi": "thà rằng, thà… còn hơn",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "宁",
+        "lishu_vi": "ninh",
+        "structure_note_vi": "Chữ có thành phần/bộ 宀; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nhà cửa",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nhà cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nhà cửa",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 宁 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "可",
+        "lishu_vi": "khả",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "可 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "宁可 trong bài được học theo nghĩa: thà rằng, thà… còn hơn.",
+    "memory_tip_vi": "Nhớ 宁可 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "宁愿",
+        "pinyin": "nìngyuàn",
+        "meaning_vi": "thà/tình nguyện hơn",
+        "difference_vi": "Gần nghĩa với 宁可, khẩu ngữ cũng tự nhiên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 宁可 cho sở thích nhẹ như chọn trà sữa hay cà phê."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "92bb3c8b-7aac-47e4-ba58-d37ef274a1c1",
+      "order": 1,
+      "zh": "宁可……也不……",
+      "pinyin": "",
+      "vi": "thà… cũng không…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24a1e4c3-628c-4fcc-96fa-5bd7aedfb817",
+      "order": 2,
+      "zh": "宁可……也要……",
+      "pinyin": "",
+      "vi": "thà… cũng vẫn muốn…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f829bd63-eb70-41c7-9be5-d74d344f65e5",
+      "order": 3,
+      "zh": "宁可下轿告别",
+      "pinyin": "",
+      "vi": "thà xuống kiệu từ biệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f2a13372-bbaf-4c7b-9ebe-747f73e6c9ce",
+      "order": 1,
+      "zh": "我宁可慢一点儿，也不要把句子翻译错。",
+      "pinyin": "",
+      "vi": "Tôi thà chậm một chút cũng không muốn dịch sai câu.",
+      "analysis_vi": "宁可 A，也不要 B.",
+      "highlight": [
+        "宁可"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d31d3732-8d13-4fb7-8ea8-330cdd751ceb"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2f73fede-99c3-4933-9122-4ba2c442809c",
+      "order": 2,
+      "zh": "祝英台宁可下花轿去告别，也不愿意就这样离开。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài thà xuống kiệu hoa để từ biệt, cũng không muốn cứ thế rời đi.",
+      "analysis_vi": "宁可……也不愿意…… nhấn lựa chọn cảm xúc mạnh.",
+      "highlight": [
+        "宁可"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d31d3732-8d13-4fb7-8ea8-330cdd751ceb"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "宁可 thường biểu thị lựa chọn cực đoan trong bi kịch tình yêu.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "058c4b83-3d96-4103-bfc1-e63f2d5faa99",
+      "order": 1,
+      "rule_vi": "Không dùng 宁可 cho sở thích nhẹ như chọn trà sữa hay cà phê.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "宁可",
+    "back": "thà rằng, thà… còn hơn",
+    "hint": "nìngkě",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d31d3732-8d13-4fb7-8ea8-330cdd751ceb",
+    "source_lesson_vocab_id": null
+  }
+}

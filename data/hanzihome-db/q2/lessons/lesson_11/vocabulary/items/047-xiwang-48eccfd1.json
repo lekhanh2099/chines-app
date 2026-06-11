@@ -1,0 +1,291 @@
+{
+  "id": "2aa0c59c-7a0e-4246-89a9-60baf1dfd3ba",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "希望",
+  "pinyin": "xīwàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动 / 名",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Hy vọng",
+    "meaning_vi": "hy vọng; mong muốn; niềm hy vọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hy vọng; mong muốn; niềm hy vọng"
+    ],
+    "short_definition_vi": "hy vọng; mong muốn; niềm hy vọng",
+    "textbook_focus_vi": "hy vọng; mong muốn; niềm hy vọng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "希",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiếm, mong, hy vọng",
+        "modern_logic_vi": "希 không nên tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "望",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thành phần trái",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng/thịt/thời gian tùy chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "王",
+            "hanviet": "vương",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhìn xa, mong, hy vọng",
+        "modern_logic_vi": "望 = mong/nhìn xa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng/thịt/thời gian tùy chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "希 = mong, 望 = nhìn về phía xa/mong. 希望 = mong điều gì thành hiện thực.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b7eae13b-58f2-4c8f-ac01-b11efc9fb067",
+      "order": 1,
+      "zh": "希望你来",
+      "pinyin": "",
+      "vi": "hy vọng bạn đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10bf235d-a862-4f0f-a2a5-e561defbd235",
+      "order": 2,
+      "zh": "希望能成功",
+      "pinyin": "",
+      "vi": "hy vọng có thể thành công",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2c2d853-7bf3-4ff7-931d-b3f33425a11a",
+      "order": 3,
+      "zh": "充满希望",
+      "pinyin": "",
+      "vi": "tràn đầy hy vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fec6dfd7-eaf1-4beb-b8d2-49c07ff2eb23",
+      "order": 4,
+      "zh": "没有希望",
+      "pinyin": "",
+      "vi": "không có hy vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "324b5cb6-b1b4-411b-9491-d8359f43b100",
+      "order": 5,
+      "zh": "给人希望",
+      "pinyin": "",
+      "vi": "cho người ta hy vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "371a8aae-3f18-41a9-9e5e-ccb241b77dcf",
+      "order": 6,
+      "zh": "唯一的希望",
+      "pinyin": "",
+      "vi": "hy vọng duy nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8572356b-1264-469a-9a5e-fe170e6d6aa9",
+      "order": 1,
+      "zh": "我希望你明天能来。",
+      "pinyin": "Wǒ xīwàng nǐ míngtiān néng lái.",
+      "vi": "Tôi hy vọng ngày mai bạn có thể đến.",
+      "analysis_vi": "希望 + mệnh đề nhỏ.",
+      "highlight": [
+        "希望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2aa0c59c-7a0e-4246-89a9-60baf1dfd3ba"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d0592aaf-703c-4707-9ad7-5dc55fe7e959",
+      "order": 2,
+      "zh": "我是希望利用假期多练习汉语的。",
+      "pinyin": "Wǒ shì xīwàng lìyòng jiàqī duō liànxí Hànyǔ de.",
+      "vi": "Tôi hy vọng tận dụng kỳ nghỉ để luyện tiếng Hán nhiều hơn.",
+      "analysis_vi": "是……的 nhấn ý định/mục đích.",
+      "highlight": [
+        "希望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2aa0c59c-7a0e-4246-89a9-60baf1dfd3ba"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ec2a2660-270c-4f7b-9b9e-65a3e152df9c",
+      "order": 3,
+      "zh": "一听说老师愿意帮助我们复习，大家就觉得这次考试还有希望。",
+      "pinyin": "Yì tīngshuō lǎoshī yuànyì bāngzhù wǒmen fùxí, dàjiā jiù juéde zhè cì kǎoshì hái yǒu xīwàng.",
+      "vi": "Vừa nghe thầy/cô sẵn lòng giúp ôn tập, mọi người thấy kỳ thi vẫn còn hy vọng.",
+      "analysis_vi": "有希望 = có hy vọng.",
+      "highlight": [
+        "希望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2aa0c59c-7a0e-4246-89a9-60baf1dfd3ba"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "希望你理解 / 希望大家准时到 là cách nói mong muốn mềm hơn ra lệnh trực tiếp.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1977f41f-f59e-4804-9925-d206a57746bc",
+      "order": 1,
+      "rule_vi": "希望 khác 想; 希望 thường đi với một mệnh đề, không nói 希望你吗.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "希望",
+    "back": "hy vọng; mong muốn; niềm hy vọng",
+    "hint": "xīwàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2aa0c59c-7a0e-4246-89a9-60baf1dfd3ba",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "id": "66cb64cc-5742-4c27-9061-c674c1ce183f",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "反而",
+  "pinyin": "fǎn’ér",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "discourse"
+  ],
+  "meaning": {
+    "hanviet": "phản nhi",
+    "meaning_vi": "trái lại, ngược lại, không ngờ lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trái lại",
+      "ngược lại",
+      "không ngờ lại"
+    ],
+    "short_definition_vi": "trái lại, ngược lại, không ngờ lại",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "反",
+        "lishu_vi": "phản",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngược/trái lại",
+        "modern_logic_vi": "Trong từ/cụm này, 反 góp phần vào nghĩa hiện đại: ngược/trái lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "而",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mà/và nối ý",
+        "modern_logic_vi": "Trong từ/cụm này, 而 góp phần vào nghĩa hiện đại: mà/và nối ý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "反而 cần học theo nghĩa hiện đại trong bài: trái lại, ngược lại, không ngờ lại.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 反而更好.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a4f4fcac-abdf-48db-97b9-0ff6e2f3846c",
+      "order": 1,
+      "zh": "反而更好",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf71646e-7c10-4865-80f8-f79eee3f452e",
+      "order": 2,
+      "zh": "不但没有……反而……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "011fec4c-71a5-493e-81af-7f8e72e6e74a",
+      "order": 3,
+      "zh": "本来想……反而……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cc960c04-2933-4d55-a905-ce4a2e37739f",
+      "order": 1,
+      "zh": "我解释了半天，他反而更生气了。",
+      "pinyin": "Wǒ jiěshì le bàntiān, tā fǎn’ér gèng shēngqì le.",
+      "vi": "Tôi giải thích cả buổi, anh ấy trái lại càng giận hơn.",
+      "analysis_vi": "Kết quả ngược dự đoán nên dùng 反而.",
+      "highlight": [
+        "反而"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "66cb64cc-5742-4c27-9061-c674c1ce183f"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a4e51c60-bc49-47bf-9a31-00557194ada3",
+      "order": 2,
+      "zh": "困难的生活没有打倒他，反而让他更早学会了自立。",
+      "pinyin": "Kùnnan de shēnghuó méiyǒu dǎdǎo tā, fǎn’ér ràng tā gèng zǎo xuéhuì le zìlì.",
+      "vi": "Cuộc sống khó khăn không đánh gục mà trái lại khiến anh ấy tự lập sớm hơn.",
+      "analysis_vi": "没有……反而…… là khung mạnh.",
+      "highlight": [
+        "反而"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "66cb64cc-5742-4c27-9061-c674c1ce183f"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "反而 tạo chiều sâu khi kể chuyện đời người: nghịch cảnh có thể tạo kết quả ngược dự đoán.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "38d427b9-ad04-461d-a956-0a7674c98234",
+      "order": 1,
+      "rule_vi": "Dùng 反而 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "反而",
+    "back": "trái lại, ngược lại, không ngờ lại",
+    "hint": "fǎn’ér",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "66cb64cc-5742-4c27-9061-c674c1ce183f",
+    "source_lesson_vocab_id": null
+  }
+}

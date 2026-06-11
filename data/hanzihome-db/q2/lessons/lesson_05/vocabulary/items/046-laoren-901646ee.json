@@ -1,0 +1,259 @@
+{
+  "id": "32c1e995-e494-423b-ab12-b636fd17f06f",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "老人",
+  "pinyin": "lǎorén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "lão nhân",
+    "meaning_vi": "người già, người cao tuổi",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "người già, người cao tuổi",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "老",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "già",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "人 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "人 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Danh từ mô tả người già, trung tính.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "老年人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老人家",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kính trọng/thân mật hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "老头儿/老太太",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dùng sai dễ bất lịch sự",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "82d8388e-96cd-449e-8cd9-25eee83c145a",
+      "order": 1,
+      "zh": "一位老人",
+      "pinyin": "",
+      "vi": "một người già",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e918548c-17e7-4564-bd86-e4391cbecb0f",
+      "order": 2,
+      "zh": "照顾老人",
+      "pinyin": "",
+      "vi": "chăm sóc người già",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6dfd39e4-5dd9-4d0a-8dec-eaece1bdc273",
+      "order": 3,
+      "zh": "老人晒太阳",
+      "pinyin": "",
+      "vi": "người già phơi nắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5820a2ea-ffbd-4ad1-8dbf-1d5d831240ff",
+      "order": 1,
+      "zh": "那位老人每天散步。",
+      "pinyin": "Nà wèi lǎorén měitiān sànbù.",
+      "vi": "Người già đó mỗi ngày đều đi dạo.",
+      "en": "",
+      "highlight": [
+        "老人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32c1e995-e494-423b-ab12-b636fd17f06f"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Khi không chắc tuổi/xưng hô, dùng 您好，请问一下 an toàn hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "de38e3b9-2346-4f1f-b5b2-292d5672297b",
+      "order": 1,
+      "title_vi": "Không dùng làm cách gọi trực tiếp thô",
+      "explanation_vi": "老人 là danh từ mô tả, không phải cách gọi trực tiếp an toàn.",
+      "wrong_examples": [
+        "老人，你过来。"
+      ],
+      "correct_examples": [
+        "您好，请问一下。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "老人",
+    "back": "người già, người cao tuổi",
+    "hint": "lǎorén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "老人"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "32c1e995-e494-423b-ab12-b636fd17f06f",
+    "source_lesson_vocab_id": null
+  }
+}

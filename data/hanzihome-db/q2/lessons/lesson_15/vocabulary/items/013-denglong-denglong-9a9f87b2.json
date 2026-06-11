@@ -1,0 +1,347 @@
+{
+  "id": "1e78f9bc-8b03-4072-8463-0d19a822bafd",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "灯笼",
+  "pinyin": "dēnglong / dēnglóng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Đăng lung",
+    "meaning_vi": "đèn lồng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đèn lồng"
+    ],
+    "short_definition_vi": "đèn lồng",
+    "textbook_focus_vi": "đèn lồng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "灯",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, ánh sáng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt, ánh sáng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丁",
+            "hanviet": "đinh",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đèn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt, ánh sáng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "笼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre, vật liệu tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "龙",
+            "hanviet": "long",
+            "meaning_vi": "phần dưới trong giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lồng, chụp/khung bao ngoài",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre, vật liệu tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "灯 = đèn; 笼 = khung/chụp/lồng bao ngoài. 灯笼 = đèn có khung/chụp bên ngoài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "灯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đèn nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "电灯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đèn điện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "台灯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đèn bàn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "开灯",
+        "right": "关灯",
+        "meaning_vi": "bật đèn ↔ tắt đèn",
+        "note_vi": "Cặp động tác.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2bbaf69e-284c-4ba7-aacb-d51ea6087f91",
+      "order": 1,
+      "zh": "红灯笼",
+      "pinyin": "",
+      "vi": "đèn lồng đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2197fc1-c3d3-4de6-9004-2d8acd5c4c99",
+      "order": 2,
+      "zh": "挂灯笼",
+      "pinyin": "",
+      "vi": "treo đèn lồng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3cb183c7-62ef-46e7-a074-58404757f4d1",
+      "order": 3,
+      "zh": "门口挂着灯笼",
+      "pinyin": "",
+      "vi": "ở cửa treo đèn lồng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe06afc7-1850-468b-8c6b-1ce34709da53",
+      "order": 4,
+      "zh": "灯笼亮着",
+      "pinyin": "",
+      "vi": "đèn lồng đang sáng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d97719a-3bea-4dcd-a2c5-58c6aeaa01fc",
+      "order": 5,
+      "zh": "春节灯笼",
+      "pinyin": "",
+      "vi": "đèn lồng Tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4351c523-521b-4668-8870-e44bde731168",
+      "order": 1,
+      "zh": "门口有两个红灯笼。",
+      "pinyin": "Ménkǒu yǒu liǎng ge hóng dēnglong.",
+      "vi": "Ở cửa có hai chiếc đèn lồng đỏ.",
+      "analysis_vi": "门口有 là câu tồn tại.",
+      "highlight": [
+        "灯笼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1e78f9bc-8b03-4072-8463-0d19a822bafd"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fceae926-9c16-40fd-8d38-021eb109366c",
+      "order": 2,
+      "zh": "墙上挂着红灯笼，会议厅里很热闹。",
+      "pinyin": "Qiáng shàng guàzhe hóng dēnglong, huìyìtīng lǐ hěn rènao.",
+      "vi": "Trên tường treo đèn lồng đỏ, trong phòng hội nghị rất náo nhiệt.",
+      "analysis_vi": "挂着 tả trạng thái trang trí.",
+      "highlight": [
+        "灯笼",
+        "挂着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1e78f9bc-8b03-4072-8463-0d19a822bafd"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "1c7ee649-f365-471c-9a75-f008db7e9c7c",
+      "order": 1,
+      "rule_vi": "灯笼 có thể dịch “đèn lồng” hoặc “lồng đèn”; trong bài dùng “đèn lồng” an toàn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "灯笼",
+    "back": "đèn lồng",
+    "hint": "dēnglong / dēnglóng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "红灯笼 gắn với lễ Tết, khai trương, hỷ sự, không khí may mắn và náo nhiệt.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1e78f9bc-8b03-4072-8463-0d19a822bafd",
+    "source_lesson_vocab_id": null
+  }
+}

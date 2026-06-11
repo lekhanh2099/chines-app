@@ -1,0 +1,71 @@
+{
+  "id": "4b3f514b-98a2-4e74-84c5-c83ff12ee313",
+  "type": "communication",
+  "order": 7,
+  "title": "交际会话",
+  "title_vi": "Luyện giao tiếp",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
+      "type": "communication_dialogue",
+      "order": 1,
+      "title": "找东西",
+      "title_vi": "Tìm đồ",
+      "instruction": {
+        "zh": "找东西。",
+        "vi": "Luyện hội thoại theo tình huống tìm đồ."
+      },
+      "lines": [
+        {
+          "id": "14d03f78-43df-40be-a598-3bebc0f33c34",
+          "speaker": "A",
+          "zh": "你看见我的车钥匙了没有？",
+          "vi": "Bạn có thấy chìa khóa xe của tôi không?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2b4731fc-0a8b-4d41-861b-6cccce0676c3",
+          "speaker": "B",
+          "zh": "你的车钥匙放什么地方了？",
+          "vi": "Bạn để chìa khóa xe ở đâu?",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a4685bea-243d-459c-a695-7bb913c09214",
+          "speaker": "A",
+          "zh": "我放在桌子上了。",
+          "vi": "Tôi để trên bàn rồi.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0536515-f369-430c-bed0-ae2e634c9b68",
+          "speaker": "B",
+          "zh": "你看看是不是掉到桌子下边了。",
+          "vi": "Bạn xem thử có phải nó rơi xuống dưới bàn rồi không.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "dbe477b1-a934-4624-81eb-1bdecaa6d91b",
+          "speaker": "A",
+          "zh": "啊，找到了。",
+          "vi": "À, tìm thấy rồi.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "notes_vi": [
+        "看见……了没有？ = Có nhìn thấy… không?",
+        "放什么地方了？ = Để ở chỗ nào rồi?",
+        "找到了。 = Tìm thấy rồi."
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

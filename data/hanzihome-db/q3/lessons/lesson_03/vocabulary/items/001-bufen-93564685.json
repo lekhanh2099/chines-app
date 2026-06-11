@@ -1,0 +1,383 @@
+{
+  "id": "b937f1e7-36d7-4de8-9763-ad401495d822",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "部分",
+  "pinyin": "bùfen",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "scope",
+    "textbook"
+  ],
+  "meaning": {
+    "hanviet": "bộ phận",
+    "meaning_vi": "một phần; bộ phận; một số trong tổng thể",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "một phần",
+      "bộ phận",
+      "một số trong tổng thể"
+    ],
+    "short_definition_vi": "một phần; bộ phận; một số trong tổng thể",
+    "textbook_focus_vi": "một phần; bộ phận; một số trong tổng thể",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "scope, textbook",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "部",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "咅",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bộ phận, phần trong chỉnh thể",
+        "modern_logic_vi": "Trong từ này, 部 góp phần vào lớp nghĩa hiện đại: bộ phận, phần trong chỉnh thể",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "分",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "八",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刀",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia, phần",
+        "modern_logic_vi": "Trong từ này, 分 góp phần vào lớp nghĩa hiện đại: chia, phần",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "部 = phần/bộ phận; 分 = chia/phần. 部分 chỉ phần được tách ra từ một chỉnh thể.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 部分 như lượng từ sau số: không nói 三个部分学生; nói 部分学生 hoặc 一部分学生.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一部分",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有些",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一些",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "全部",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "全部",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "47007556-8e95-447a-b0a7-857a83bb7b54",
+      "order": 1,
+      "zh": "部分地区",
+      "pinyin": "",
+      "vi": "một số khu vực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b070d37-1766-46d2-84c4-c3210171f4a9",
+      "order": 2,
+      "zh": "部分学生",
+      "pinyin": "",
+      "vi": "một số học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c7c508d6-bc49-4cfa-84ca-56844e8011b4",
+      "order": 3,
+      "zh": "部分原因",
+      "pinyin": "",
+      "vi": "một phần nguyên nhân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d0a9345-7a84-4052-94b4-79cc1ebb2f13",
+      "order": 4,
+      "zh": "一部分",
+      "pinyin": "",
+      "vi": "một phần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "974ba196-2a09-4d74-ae37-772c52d756f0",
+      "order": 5,
+      "zh": "大部分",
+      "pinyin": "",
+      "vi": "phần lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4d68ec4-58d4-49bc-ab9d-c873ba97ecc2",
+      "order": 6,
+      "zh": "全部内容",
+      "pinyin": "",
+      "vi": "toàn bộ nội dung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "01cf554d-1d5b-41d8-8493-a8fbdc42ee04",
+      "order": 1,
+      "zh": "北京的部分地区春天风比较大。",
+      "pinyin": "",
+      "vi": "Một số khu vực ở Bắc Kinh mùa xuân gió khá lớn.",
+      "analysis_vi": "部分地区 giới hạn phạm vi, không nói toàn bộ Bắc Kinh.",
+      "highlight": [
+        "部分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b937f1e7-36d7-4de8-9763-ad401495d822"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "920056f4-ec99-41b4-900c-566dee73efb3",
+      "order": 2,
+      "zh": "拿北京来说，部分地方一到春天就能看到很多鲜花。",
+      "pinyin": "",
+      "vi": "Lấy Bắc Kinh mà nói, một số nơi cứ đến mùa xuân là thấy nhiều hoa tươi.",
+      "analysis_vi": "Gài 拿……来说 và 一到……就…….",
+      "highlight": [
+        "部分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b937f1e7-36d7-4de8-9763-ad401495d822"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1886dc15-cceb-4d2a-b0c7-4ad00b26cd16",
+      "order": 3,
+      "zh": "只有部分地区风特别大。",
+      "pinyin": "",
+      "vi": "Chỉ một số khu vực gió đặc biệt lớn.",
+      "analysis_vi": "只有 làm phạm vi hẹp hơn.",
+      "highlight": [
+        "部分"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b937f1e7-36d7-4de8-9763-ad401495d822"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "部分 trong Bài 3 北京的四季",
+    "content_vi": "部分 giúp nói chính xác, tránh tuyệt đối hóa khi tả khí hậu/vùng miền.",
+    "tags": [
+      "scope",
+      "textbook"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "db4eb52d-06a3-4f2f-ae1f-5b8c8562b2f5",
+      "order": 1,
+      "rule_vi": "Không dùng 部分 như lượng từ sau số: không nói 三个部分学生; nói 部分学生 hoặc 一部分学生.",
+      "natural_examples": [
+        {
+          "zh": "北京的部分地区春天风比较大。",
+          "pinyin": "",
+          "vi": "Một số khu vực ở Bắc Kinh mùa xuân gió khá lớn.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 部分 như lượng từ sau số: không nói 三个部分学生; nói 部分学生 hoặc 一部分学生.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "部分",
+    "back": "một phần; bộ phận; một số trong tổng thể",
+    "hint": "bùfen",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "scope",
+      "textbook"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b937f1e7-36d7-4de8-9763-ad401495d822",
+    "source_lesson_vocab_id": null
+  }
+}

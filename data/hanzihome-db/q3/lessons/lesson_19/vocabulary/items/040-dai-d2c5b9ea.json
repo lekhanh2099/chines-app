@@ -1,0 +1,265 @@
+{
+  "id": "21e60406-877e-4c75-a1e6-cd1eacc27ce2",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "待",
+  "pinyin": "dāi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "đãi/đãi",
+    "meaning_vi": "ở lại, lưu lại; đối đãi khi đọc dài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ở lại",
+      "lưu lại",
+      "đối đãi khi đọc dài"
+    ],
+    "short_definition_vi": "ở lại, lưu lại",
+    "textbook_focus_vi": "待 trong 待在 là ở lại một nơi.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "待",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          },
+          {
+            "text": "寺",
+            "hanviet": "tự",
+            "meaning_vi": "chùa; thành phần cấu tạo, không ép nghĩa",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "寺 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở lại hoặc đối đãi tùy âm",
+        "modern_logic_vi": "Trong từ “待”, chữ “待” góp phần vào trường nghĩa: ở lại hoặc đối đãi tùy âm",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "待 trong 待在 là ở lại một nơi.",
+    "memory_tip_vi": "待 trong 待在 là ở lại một nơi.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "留",
+        "pinyin": "",
+        "meaning_vi": "lưu lại/giữ lại, rộng hơn",
+        "difference_vi": "lưu lại/giữ lại, rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "住",
+        "pinyin": "",
+        "meaning_vi": "ở, cư trú",
+        "difference_vi": "ở, cư trú",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "feaeea57-81fe-421b-a7d5-fda258fbf0f7",
+      "order": 1,
+      "zh": "待在这儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfc5d203-f9ee-4661-9163-08ad894b5bbf",
+      "order": 2,
+      "zh": "待在家里",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a7ca0e1e-2370-453c-93e2-b1482046e6d4",
+      "order": 3,
+      "zh": "再待几天",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b42d158-c87a-40c3-88ab-d9bc06893763",
+      "order": 4,
+      "zh": "对待别人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a6d5b7fe-9096-4c9f-b3d1-c188dfd9f9bc",
+      "order": 1,
+      "zh": "我想再待一会儿。",
+      "pinyin": "",
+      "vi": "Tôi muốn ở lại thêm một lát.",
+      "analysis_vi": "再 + V.",
+      "highlight": [
+        "待"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "21e60406-877e-4c75-a1e6-cd1eacc27ce2"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "21e9212e-a16c-41fa-b08b-62bd517a5452",
+      "order": 2,
+      "zh": "他以为领导不可能让他再待在报社了。",
+      "pinyin": "",
+      "vi": "Anh ấy tưởng lãnh đạo không thể để anh ấy ở lại tòa soạn nữa.",
+      "analysis_vi": "让他待在报社.",
+      "highlight": [
+        "待"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "21e60406-877e-4c75-a1e6-cd1eacc27ce2"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "待 trong 待在 là ở lại một nơi.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b184dcaf-b761-44d7-9baf-decc0c103027",
+      "order": 1,
+      "rule_vi": "待在这儿 đọc dāi; 对待/等待 đọc dài.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "待在这儿 đọc dāi; 对待/等待 đọc dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "待",
+    "back": "ở lại, lưu lại; đối đãi khi đọc dài",
+    "hint": "dāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "21e60406-877e-4c75-a1e6-cd1eacc27ce2",
+    "source_lesson_vocab_id": null
+  }
+}

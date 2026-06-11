@@ -1,0 +1,1105 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_verified"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调。",
+        "vi": "Phân biệt âm và thanh điệu.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "镜子 jìngzi",
+              "right": "金子 jīnzi"
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "伤口 shāngkǒu",
+              "right": "上口 shàngkǒu"
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "差错 chācuò",
+              "right": "茶座 cházuò"
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "理发 lǐ fà",
+              "right": "立法 lì fǎ"
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "多亏 duōkuī",
+              "right": "夺魁 duókuí"
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "阳光 yángguāng",
+              "right": "眼光 yǎnguāng"
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "海纳百川，有容乃大。",
+              "pinyin": "Hǎi nà bǎi chuān, yǒu róng nǎi dà.",
+              "vi": "Biển nhận trăm sông nên trở nên rộng lớn; có lòng bao dung mới thành lớn."
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "壁立千仞，无欲则刚。",
+              "pinyin": "Bì lì qiān rèn, wú yù zé gāng.",
+              "vi": "Vách đá cao ngàn trượng; không ham muốn thì sẽ cứng cỏi."
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "先天下之忧而忧，后天下之乐而乐。",
+              "pinyin": "Xiān tiānxià zhī yōu ér yōu, hòu tiānxià zhī lè ér lè.",
+              "vi": "Lo trước cái lo của thiên hạ, vui sau cái vui của thiên hạ."
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": false
+      }
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ ngữ",
+      "instruction": {
+        "zh": "朗读下列词语。",
+        "vi": "Đọc to các cụm từ sau.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "头一次",
+          "pinyin": "tóu yí cì",
+          "vi": "lần đầu tiên",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "头一回",
+          "pinyin": "tóu yì huí",
+          "vi": "lần đầu tiên",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "头一天",
+          "pinyin": "tóu yì tiān",
+          "vi": "ngày đầu tiên",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "不由自主",
+          "pinyin": "bùyóuzìzhǔ",
+          "vi": "không tự chủ được",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "恍然大悟",
+          "pinyin": "huǎngrán dàwù",
+          "vi": "chợt hiểu ra",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "十全十美",
+          "pinyin": "shíquán-shíměi",
+          "vi": "hoàn hảo mọi mặt",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "吓了一跳",
+          "pinyin": "xià le yí tiào",
+          "vi": "giật mình",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "吓得一愣",
+          "pinyin": "xià de yí lèng",
+          "vi": "sợ đến sững lại",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "吃了一惊",
+          "pinyin": "chī le yì jīng",
+          "vi": "giật mình/kinh ngạc",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "美好的感觉",
+          "pinyin": "měihǎo de gǎnjué",
+          "vi": "cảm giác tốt đẹp",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "美好的感情",
+          "pinyin": "měihǎo de gǎnqíng",
+          "vi": "tình cảm tốt đẹp",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "美好的事物",
+          "pinyin": "měihǎo de shìwù",
+          "vi": "sự vật tốt đẹp",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "免不了出差错",
+          "pinyin": "miǎnbuliǎo chū chācuò",
+          "vi": "khó tránh khỏi xảy ra sai sót",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "免不了紧张",
+          "pinyin": "miǎnbuliǎo jǐnzhāng",
+          "vi": "khó tránh khỏi căng thẳng",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "免不了头疼脑热",
+          "pinyin": "miǎnbuliǎo tóuténg-nǎorè",
+          "vi": "khó tránh khỏi đau ốm vặt",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      }
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "word_bank": [
+        "十全十美",
+        "恍然大悟",
+        "难得",
+        "暖洋洋",
+        "明星",
+        "准",
+        "红火",
+        "整顿",
+        "的确",
+        "多亏",
+        "营业",
+        "免不了"
+      ],
+      "questions": [
+        {
+          "id": "d5584c38-c49a-4a02-93e5-1edf3a523e2a",
+          "type": "fill_blank",
+          "prompt": "他现在是中国最有名的电影________。",
+          "answer": "明星",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "696265f9-09dd-497a-9b64-f04b659d5ec5",
+          "type": "fill_blank",
+          "prompt": "这家药店二十四小时________。",
+          "answer": "营业",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "40a95160-1a19-4d94-a00f-e539610cd9c0",
+          "type": "fill_blank",
+          "prompt": "刚做这个工作，谁也________会出差错。",
+          "answer": "免不了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8713e894-c003-4512-a355-ae4e66217828",
+          "type": "fill_blank",
+          "prompt": "什么事都不可能做到________。",
+          "answer": "十全十美",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "dafa3bb1-528f-4b84-99b8-0c9d450c4ad5",
+          "type": "fill_blank",
+          "prompt": "阳光照进我的宿舍，屋子里________的。",
+          "answer": "暖洋洋",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "95b87316-a8b5-49e8-b4c1-a4bd131c8c01",
+          "type": "fill_blank",
+          "prompt": "这家公司非法经营，被停业________了。",
+          "answer": "整顿",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "225488c9-ad70-442b-ab4a-2862fde52b73",
+          "type": "fill_blank",
+          "prompt": "他这时候________在办公室呢，你到办公室去找他吧。",
+          "answer": "准",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b4aceabb-4279-45d2-b6d2-6b5bf466eda0",
+          "type": "fill_blank",
+          "prompt": "因为服务热情，饭菜好吃，这家饭馆儿的生意越来越________。",
+          "answer": "红火",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "846cef0c-5fa7-49f6-87f9-4ef7088efebf",
+          "type": "fill_blank",
+          "prompt": "________我们早出来半个小时，要不就赶不上飞机了。",
+          "answer": "多亏",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "fcba8866-c643-48f2-b22d-44f93e21e667",
+          "type": "fill_blank",
+          "prompt": "听了他的话我才________，原来他就是在我受伤时把我送到医院去的那位好心人。",
+          "answer": "恍然大悟",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "1933dafc-60ff-4fb5-907b-619c3634fec5",
+          "type": "fill_blank",
+          "prompt": "对不起，我这个星期日________有事，不能跟你一起去。",
+          "answer": "的确",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b32fd7f5-5a1d-41de-b523-df71dddb268e",
+          "type": "fill_blank",
+          "prompt": "出国留学的机会很________，你千万不要放过。",
+          "answer": "难得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "be526b38-57fe-418e-9e6a-1208f510e794",
+          "type": "choice_fill_blank",
+          "prompt": "他们现在正________着接待来参观的客人呢。",
+          "choices": [
+            "忙",
+            "忙碌"
+          ],
+          "answer": "忙",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "eba629e6-2242-43b8-85f5-c737fcc92926",
+          "type": "choice_fill_blank",
+          "prompt": "他回国后自己________了一个高科技公司。",
+          "choices": [
+            "营业",
+            "经营"
+          ],
+          "answer": "经营",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "bd47ffbb-df15-49b7-bb72-18827b8d8b6b",
+          "type": "choice_fill_blank",
+          "prompt": "我们公司刚开始________，还没有经验。",
+          "choices": [
+            "营业",
+            "经营"
+          ],
+          "answer": "营业",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "84e41c1a-d0cb-407f-afbe-b591aa36c638",
+          "type": "choice_fill_blank",
+          "prompt": "要是不认真，就免不了出________。",
+          "choices": [
+            "差错",
+            "错误"
+          ],
+          "answer": "差错",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "d2f24459-eb79-4044-b559-587ed7b46a53",
+          "type": "choice_fill_blank",
+          "prompt": "谁来都可以，你们两个不要互相________了。",
+          "choices": [
+            "推让",
+            "推辞"
+          ],
+          "answer": "推让",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "d9013416-9343-4402-ad04-bc05f1ca1e01",
+          "type": "choice_fill_blank",
+          "prompt": "他邀请我参加他们的讨论会，因为忙，我________了。",
+          "choices": [
+            "推让",
+            "推辞"
+          ],
+          "answer": "推辞",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e317be92-d281-4fbb-a3c8-dcbbfc9d454e",
+          "type": "choice_fill_blank",
+          "prompt": "我来________一下儿，这位是张律师。",
+          "choices": [
+            "推荐",
+            "介绍"
+          ],
+          "answer": "介绍",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "528049d3-0296-4adf-8d86-f5809feffc8f",
+          "type": "choice_fill_blank",
+          "prompt": "________这位同学的帮助，我才找到这儿。",
+          "choices": [
+            "多亏",
+            "幸亏"
+          ],
+          "answer": "多亏",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ trong ngoặc để hoàn thành câu.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "他临走之前说今天回来，________________________。",
+          "given_word": "果然",
+          "answer": "他临走之前说今天回来，果然晚上就回来了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "谁遇到这种情况________________________。",
+          "given_word": "免不了",
+          "answer": "谁遇到这种情况都免不了会紧张。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "这件事我不想让他知道，你________________________。",
+          "given_word": "千万",
+          "answer": "这件事我不想让他知道，你千万不要告诉他。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "我看见老师正站在教室前面讲课，就________________________。",
+          "given_word": "悄悄",
+          "answer": "我看见老师正站在教室前面讲课，就悄悄地走进教室坐下了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "既然你没有姐姐，我又比你大，________________________。",
+          "given_word": "当作",
+          "answer": "既然你没有姐姐，我又比你大，你就把我当作姐姐吧。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "这个公园平时游人就不少，________________________？",
+          "given_word": "何况",
+          "answer": "这个公园平时游人就不少，何况今天是星期天呢？",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
+          "prompt": "________________________，应该好好儿聊聊。",
+          "given_word": "难得",
+          "answer": "难得我们今天都有时间，应该好好儿聊聊。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
+          "prompt": "________________________，我很喜欢她。",
+          "given_word": "的确",
+          "answer": "她说的话的确有道理，我很喜欢她。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ trong ngoặc để hoàn thành đoạn hội thoại.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "A：你不抽烟不行吗？\nB：________________________。",
+          "given_word": "不由自主",
+          "answer": "我知道抽烟不好，可是一紧张就不由自主地想抽。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "A：怎么这么晚才回来？也不打个电话。\nB：________________________。",
+          "given_word": "给",
+          "answer": "我给你打电话了，可是没人接。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "对不起，我把打电话这件事给忘了。",
+            "我有给你打电话。"
+          ],
+          "explanation_vi": "Dùng 给 trong 给你打电话 là tự nhiên; nếu muốn dùng 给 làm trợ từ nhấn mạnh thì có thể nói 把打电话这件事给忘了."
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "A：他明天能来吗？\nB：你放心吧，________________________。",
+          "given_word": "准",
+          "answer": "你放心吧，他准能来。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "你放心吧，他准来。",
+            "你放心吧，他一定准时来。"
+          ]
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "A：这个菜有点儿辣，你能吃吗？\nB：________________________。",
+          "given_word": "敢",
+          "answer": "我不敢吃，太辣了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "我敢吃，没问题。"
+          ],
+          "explanation_vi": "Câu hỏi mở; bản tham khảo thường dùng 不敢吃 để luyện 敢. Nếu ngữ cảnh người nói ăn cay được thì 我敢吃 cũng đúng."
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "A：你的手怎么了？\nB：________________________。",
+          "given_word": "弄",
+          "answer": "我不小心把手弄破了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "A：我真应该听你的话，把昨天我们看到的那张画儿买回来。\nB：________________________。",
+          "given_word": "后悔",
+          "answer": "现在后悔也来不及了。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+          "prompt": "A：你的腿没事儿吧？\nB：没事儿，________________________。",
+          "given_word": "多亏",
+          "answer": "没事儿，多亏你及时把我送到医院。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+          "prompt": "A：不知为什么，老师一叫我回答问题，我就紧张。\nB：我也是，________________________。",
+          "given_word": "免不了",
+          "answer": "我也是，第一次回答问题免不了紧张。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "cfb2b0c6-4cf1-4035-9cd3-c7a2ac90411f",
+          "type": "reorder_paragraph",
+          "segments": [
+            {
+              "label": "A",
+              "text": "孩子出生了，她是那样美丽，那样可爱，爸爸妈妈是那么爱她。然而，不到一个月就发现孩子得了不治之症，原因就是夏子在病中照了 X 光。"
+            },
+            {
+              "label": "B",
+              "text": "那是一个冬天的早上，画家李平和怀孕六个月的妻子夏子正躺在床上聊天儿。电话铃响了，是一个陌生的女孩子打来的。"
+            },
+            {
+              "label": "C",
+              "text": "为这件事夫妻两个吵了起来。丈夫觉得委屈，因为自己并没有对妻子不忠，因为他根本不认识这个女孩子。但妻子不能原谅，当天晚上，她生气地睡在沙发上。"
+            },
+            {
+              "label": "D",
+              "text": "孩子活到一岁半就死了。夏子也离开了这个家，一个快乐的家庭就这样散了。"
+            },
+            {
+              "label": "E",
+              "text": "夏子马上表现出不高兴的样子。这个早上当那个女孩子又一次打来电话时，妻子夏子生气地出门去了。"
+            },
+            {
+              "label": "F",
+              "text": "当丈夫想到妻子怀着孩子，不能着凉，去安慰她的时候，已经晚了。夏子第二天发烧住进了医院。"
+            }
+          ],
+          "answer_order": [
+            "B",
+            "E",
+            "C",
+            "F",
+            "A",
+            "D"
+          ],
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7d279108-0ee7-4658-9277-ccf490799d11",
+          "type": "reorder_paragraph",
+          "segments": [
+            {
+              "label": "A",
+              "text": "这本书与其说是一本父亲的日记，不如说是一个父亲的痛悔录。"
+            },
+            {
+              "label": "B",
+              "text": "我读了画家李平的日记后，更加认识到这一点。"
+            },
+            {
+              "label": "C",
+              "text": "其实，不幸的家庭往往也是相似的，那原因大概是夫妻之间不懂得宽容（kuānróng, to be tolerant）。"
+            },
+            {
+              "label": "D",
+              "text": "一个作家说过：幸福的家庭都是相似的，不幸的家庭则各有各的不幸。"
+            }
+          ],
+          "answer_order": [],
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reorder_paragraph.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "prompt": "他像一个大哥哥一样，我们班的同学都免不了他。",
+          "answer": "他像大哥哥一样，我们班的同学都喜欢他。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "免不了表示“khó tránh khỏi”, không thể mang tân ngữ người. Câu này cần nói mọi người đều thích anh ấy.",
+          "acceptable_answers": [
+            "他像一个大哥哥一样，我们班的同学都喜欢他。"
+          ]
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "prompt": "我很后悔了没有听你的话。",
+          "answer": "我很后悔没有听你的话。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "后悔后面直接接没有/没 + V，不加了。"
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "prompt": "上午天气不好，下午阳光才照来屋子。",
+          "answer": "上午天气不好，下午阳光才照进屋子里来。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "阳光进入室内要说照进屋子里来。"
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "prompt": "中国人非常友好我们。",
+          "answer": "中国人对我们非常友好。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "友好作形容词时常用 对 + 人 + 友好。"
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "prompt": "我推让了他给我的邀请，不去了。",
+          "answer": "他的邀请，我推辞了，不去了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "拒绝邀请 dùng 推辞; 推让 là nhường qua nhường lại vì lịch sự, không trực tiếp dùng với 邀请 như vậy.",
+          "acceptable_answers": [
+            "他的邀请，我推辞了。",
+            "我推辞了他的邀请，不去了。"
+          ]
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "prompt": "女理发师一边给我理发，一边跟我谈谈话。",
+          "answer": "女理发师一边给我理发，一边跟我谈话。",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "一边……一边……中第二个动作应为持续动作，谈话比谈谈话自然。"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "根据情景表达。",
+        "vi": "Diễn đạt theo tình huống.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "下列句子什么情况下说？",
+          "questions": [
+            {
+              "id": "e153a336-0c80-4c03-bc8c-a42b5cb4e3f8",
+              "prompt": "哎呀，不好了！"
+            },
+            {
+              "id": "844b39af-7051-4014-8901-a7f34aed7c1b",
+              "prompt": "没事儿，你别太紧张。"
+            },
+            {
+              "id": "24ff3215-cc4c-4ac5-b0c3-4877d86a4067",
+              "prompt": "这件事我越想越后悔。"
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "bead905c-4803-4752-9c21-19a5b716136f",
+              "prompt": "你本来不想去商店，但是在街上闲逛时看到一家新开张的商店，非常漂亮，就走了进去。（不由自主）"
+            },
+            {
+              "id": "c457575b-1dbe-452c-ae9d-473bf34d5b28",
+              "prompt": "你是公司老板，新来的秘书把一份文件打错了，她很难过也很紧张，你来安慰、鼓励她。"
+            },
+            {
+              "id": "10c973f8-5226-4293-bcc6-9ea29e33d145",
+              "prompt": "你几次邀请公司里一位漂亮姑娘一起去吃饭，但是都被拒绝了。一次你在一家饭馆儿吃饭时，正好遇到这个姑娘和一个小伙子很亲密地在一起边吃边谈，而这个小伙子正是你的大学同学。他给你介绍说，这是他的女朋友。这种情况，你在心里会对自己说什么？会对你的同学说什么？这个姑娘又会怎么对她男朋友说？"
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.situational_expression.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền từ tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ tổng hợp vào chỗ trống.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "supplemental_vocab": [
+        {
+          "hanzi": "皱眉",
+          "pinyin": "zhòuméi",
+          "meaning_vi": "cau mày"
+        },
+        {
+          "hanzi": "搓",
+          "pinyin": "cuō",
+          "meaning_vi": "xoa, chà bằng tay"
+        },
+        {
+          "hanzi": "无意",
+          "pinyin": "wúyì",
+          "meaning_vi": "vô ý, không cố ý"
+        },
+        {
+          "hanzi": "启示",
+          "pinyin": "qǐshì",
+          "meaning_vi": "sự gợi mở; bài học gợi mở"
+        }
+      ],
+      "passage": {
+        "id": "68d85699-b764-4eb9-88d9-bc10ffb0e05a",
+        "title": "童年小事",
+        "text": "这是我童年时发生的一件小事。\n\n爸爸也许早已把它忘记了，我却牢牢记在心里。可以说，这件小事对我的一生都有影响。\n\n九岁那年。一天，我坐在家门口的桌子前写作业。门铃响了，爸爸去开门，是邻居。两人见了面就站在门外聊了①________。那天风很大，把我的作业本吹得哗哗响。我拿着笔去关门，用力把门一推，然而，大门好像碰到了什么又立刻弹了回来，接着就是父亲“啊——”地喊②________一声，我连忙把头伸到外边看。\n\n只见门外的父亲痛得直皱眉，一看到我，父亲立刻生气地举起了手，③________狠狠地打我一下儿，但是，不知为什么，他的手没有打在我的脸上，便放④________了。邻居以责怪的口气对我说：“你太不小心了，你爸爸的手刚才放在门缝那儿，你看也不看，就用那么大的劲儿关门……”\n\n啊！原来我差一点儿⑤________爸爸的手指夹断！\n\n偷看一眼父亲，只见他搓着手指，没有再看我。\n\n父亲那时的疼痛我当然不知道，当时的我，毕竟只是一个九岁的孩子，我所关心所害怕的，只是父亲到底会不会再打我。\n\n父亲没有。\n\n当天晚上，父亲的手指肿了，母亲在外屋为他上药，无意间我听到父亲对母亲说：“我实在疼得厉害，原想打她一顿，但是又一想，孩子有什么错呢？是我自己⑥________手放在那儿的，错在我，凭什么要打她呢？”\n\n父亲这些话，给了我一生受用无穷⑦________启示：任何人都可能会犯错误，⑧________别人犯的错误，要懂得去谅解，学会宽容。",
+        "theme": "宽容",
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      "blanks": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "index": 1,
+          "answer": "起来",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "起来"
+          ],
+          "explanation_vi": "聊了起来 = bắt đầu trò chuyện. 一会儿 có thể tạo nghĩa “nói chuyện một lúc”, nhưng đáp án mục này là 起来."
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "index": 2,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "index": 3,
+          "answer": "要 / 想",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "要",
+            "想"
+          ],
+          "explanation_vi": "原想/原要 打她一顿 đều diễn tả ý định ban đầu; đáp án tham khảo chấp nhận 要/想."
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "index": 4,
+          "answer": "下",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
+          "index": 5,
+          "answer": "把",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
+          "index": 6,
+          "answer": "把",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
+          "index": 7,
+          "answer": "的",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
+          "index": 8,
+          "answer": "对于 / 对",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reading_cloze.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "谈论宽容。",
+        "vi": "Nói chuyện về sự khoan dung.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "topic": {
+        "zh": "谈论宽容",
+        "vi": "Nói chuyện về sự khoan dung",
+        "pinyin": "Tánlùn kuānróng"
+      },
+      "lines": [
+        {
+          "speaker": "儿子",
+          "zh": "这是怎么了？",
+          "vi": "Chuyện gì vậy?",
+          "pinyin": "Zhè shì zěnme le?"
+        },
+        {
+          "speaker": "妈妈",
+          "zh": "几个孩子在院子里踢足球，不小心把这个花盆碰破了。",
+          "vi": "Mấy đứa trẻ đá bóng trong sân, không cẩn thận làm vỡ cái chậu hoa này.",
+          "pinyin": "Jǐ ge háizi zài yuànzi lǐ tī zúqiú, bù xiǎoxīn bǎ zhè ge huāpén pèng pò le."
+        },
+        {
+          "speaker": "儿子",
+          "zh": "应该让他们赔！",
+          "vi": "Nên bắt chúng bồi thường!",
+          "pinyin": "Yīnggāi ràng tāmen péi!"
+        },
+        {
+          "speaker": "妈妈",
+          "zh": "赔什么呀，都是孩子，再说又不是故意的。",
+          "vi": "Bồi thường gì chứ, đều là trẻ con, hơn nữa cũng không phải cố ý.",
+          "pinyin": "Péi shénme ya, dōu shì háizi, zàishuō yòu bú shì gùyì de."
+        },
+        {
+          "speaker": "儿子",
+          "zh": "要是我在家，我一定抓住他们，让他们赔我的花盆。",
+          "vi": "Nếu con ở nhà, nhất định con sẽ bắt chúng bồi thường chậu hoa của con.",
+          "pinyin": "Yàoshi wǒ zài jiā, wǒ yídìng zhuāzhù tāmen, ràng tāmen péi wǒ de huāpén."
+        },
+        {
+          "speaker": "妈妈",
+          "zh": "你在家也不能让他们赔。",
+          "vi": "Con ở nhà cũng không thể bắt chúng bồi thường.",
+          "pinyin": "Nǐ zài jiā yě bù néng ràng tāmen péi."
+        },
+        {
+          "speaker": "儿子",
+          "zh": "为什么？",
+          "vi": "Vì sao?",
+          "pinyin": "Wèishénme?"
+        },
+        {
+          "speaker": "妈妈",
+          "zh": "小孩子玩儿球不小心碰破的，怎么能让人家赔呢？你小的时候，把足球踢进王老师家的窗户里，把窗户玻璃都打碎了，吓得直哭。你王伯伯还给你糖吃呢，你都忘了？",
+          "vi": "Trẻ con chơi bóng không cẩn thận làm vỡ thôi, sao có thể bắt người ta bồi thường? Hồi con nhỏ, con đá bóng vào cửa sổ nhà thầy Vương, làm vỡ kính cửa sổ, sợ đến phát khóc. Bác Vương còn cho con kẹo ăn, con quên rồi à?",
+          "pinyin": "Xiǎo háizi wánr qiú bù xiǎoxīn pèng pò de, zěnme néng ràng rénjia péi ne? Nǐ xiǎo de shíhou, bǎ zúqiú tī jìn Wáng lǎoshī jiā de chuānghu lǐ, bǎ chuānghu bōli dōu dǎ suì le, xià de zhí kū. Nǐ Wáng bóbo hái gěi nǐ táng chī ne, nǐ dōu wàng le?"
+        },
+        {
+          "speaker": "儿子",
+          "zh": "是吗？我早忘了。",
+          "vi": "Vậy sao? Con quên lâu rồi.",
+          "pinyin": "Shì ma? Wǒ zǎo wàng le."
+        },
+        {
+          "speaker": "妈妈",
+          "zh": "做人要学会宽容，不能太小心眼儿。谁都免不了出差错。",
+          "vi": "Làm người phải học cách khoan dung, không được quá nhỏ nhen. Ai cũng khó tránh khỏi sai sót.",
+          "pinyin": "Zuò rén yào xuéhuì kuānróng, bù néng tài xiǎoxīnyǎnr. Shéi dōu miǎnbuliǎo chū chācuò."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.communication_dialogue.v2"
+      }
+    }
+  ]
+}

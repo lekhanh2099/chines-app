@@ -1,0 +1,1622 @@
+{
+  "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "熟",
+      "pinyin": "shú",
+      "meaning_vi": "quen thuộc; quen",
+      "meaning_en": "familiar",
+      "pos": "Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "熟",
+        "back": "shú — quen thuộc; quen",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "一下子",
+      "pinyin": "yíxiàzi",
+      "meaning_vi": "trong chốc lát; đột nhiên; ngay lập tức",
+      "meaning_en": "all of a sudden; in a short while",
+      "pos": "Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "一下子",
+        "back": "yíxiàzi — trong chốc lát; đột nhiên; ngay lập tức",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "应",
+      "pinyin": "yìng",
+      "meaning_vi": "nhận lời; đáp ứng; được mời",
+      "meaning_en": "to accept; to respond to",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "应",
+        "back": "yìng — nhận lời; đáp ứng; được mời",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "国际",
+      "pinyin": "guójì",
+      "meaning_vi": "quốc tế",
+      "meaning_en": "international",
+      "pos": "Tính từ định ngữ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "国际",
+        "back": "guójì — quốc tế",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ định ngữ",
+        "cn": "形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài dùng làm định ngữ: 国际广播电台.",
+        "notes": []
+      }
+    },
+    {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "广播",
+      "pinyin": "guǎngbō",
+      "meaning_vi": "phát thanh; truyền thanh",
+      "meaning_en": "broadcast",
+      "pos": "Danh từ / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "广播",
+        "back": "guǎngbō — phát thanh; truyền thanh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词/动词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "电台",
+      "pinyin": "diàntái",
+      "meaning_vi": "đài phát thanh",
+      "meaning_en": "radio station",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "电台",
+        "back": "diàntái — đài phát thanh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "邀请",
+      "pinyin": "yāoqǐng",
+      "meaning_vi": "mời",
+      "meaning_en": "to invite",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "邀请",
+        "back": "yāoqǐng — mời",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词/名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "待",
+      "pinyin": "dāi",
+      "meaning_vi": "ở lại; lưu lại",
+      "meaning_en": "to stay",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "待",
+        "back": "dāi — ở lại; lưu lại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "签",
+      "pinyin": "qiān",
+      "meaning_vi": "ký",
+      "meaning_en": "to sign",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "签",
+        "back": "qiān — ký",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "合同",
+      "pinyin": "hétong",
+      "meaning_vi": "hợp đồng",
+      "meaning_en": "contract",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "合同",
+        "back": "hétong — hợp đồng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "中外",
+      "pinyin": "zhōngwài",
+      "meaning_vi": "Trung Quốc và nước ngoài",
+      "meaning_en": "Chinese and foreign",
+      "pos": "Danh từ định ngữ / Yếu tố cấu tạo từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "中外",
+        "back": "zhōngwài — Trung Quốc và nước ngoài",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ định ngữ / Yếu tố cấu tạo từ",
+        "cn": "名词性定语/语素",
+        "normalized": "noun_phrase",
+        "schema_compatible_pos": "noun_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "合资",
+      "pinyin": "hézī",
+      "meaning_vi": "liên doanh; góp vốn chung",
+      "meaning_en": "joint venture",
+      "pos": "Động từ / Tính từ định ngữ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "合资",
+        "back": "hézī — liên doanh; góp vốn chung",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ định ngữ",
+        "cn": "动词/区别词性定语",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "做客",
+      "pinyin": "zuòkè",
+      "meaning_vi": "làm khách; đến chơi nhà ai",
+      "meaning_en": "to be a guest",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "做客",
+        "back": "zuòkè — làm khách; đến chơi nhà ai",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 做 + tân ngữ 客",
+        "usage_note_vi": "Có thể nói 到朋友家做客, 做了一次客; không thêm tân ngữ khác ngay sau 做客.",
+        "notes": []
+      }
+    },
+    {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "空儿",
+      "pinyin": "kòngr",
+      "meaning_vi": "thời gian rảnh",
+      "meaning_en": "free time",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "空儿",
+        "back": "kòngr — thời gian rảnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "搬家",
+      "pinyin": "bānjiā",
+      "meaning_vi": "chuyển nhà",
+      "meaning_en": "to move house",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab",
+        "separable_verb"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "搬家",
+        "back": "bānjiā — chuyển nhà",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 搬 + tân ngữ 家",
+        "usage_note_vi": "Có thể nói 搬了三次家; muốn nói chuyển đến đâu dùng 搬到北京 / 搬到新家, không nói *搬家北京.",
+        "notes": []
+      }
+    },
+    {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "地址",
+      "pinyin": "dìzhǐ",
+      "meaning_vi": "địa chỉ",
+      "meaning_en": "address",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "地址",
+        "back": "dìzhǐ — địa chỉ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "业务",
+      "pinyin": "yèwù",
+      "meaning_vi": "nghiệp vụ; công việc kinh doanh",
+      "meaning_en": "business; operation",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "业务",
+        "back": "yèwù — nghiệp vụ; công việc kinh doanh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "搞",
+      "pinyin": "gǎo",
+      "meaning_vi": "làm; tiến hành; xử lý",
+      "meaning_en": "to do; to engage in",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "搞",
+        "back": "gǎo — làm; tiến hành; xử lý",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "交流",
+      "pinyin": "jiāoliú",
+      "meaning_vi": "giao lưu; trao đổi",
+      "meaning_en": "exchange",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "交流",
+        "back": "jiāoliú — giao lưu; trao đổi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词/名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "成立",
+      "pinyin": "chénglì",
+      "meaning_vi": "thành lập",
+      "meaning_en": "to establish",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "成立",
+        "back": "chénglì — thành lập",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "不久",
+      "pinyin": "bùjiǔ",
+      "meaning_vi": "không lâu; chẳng bao lâu",
+      "meaning_en": "not long",
+      "pos": "Tính từ / Phó từ thời gian",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "不久",
+        "back": "bùjiǔ — không lâu; chẳng bao lâu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Phó từ thời gian",
+        "cn": "形容词/副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài có 成立不久; cũng dùng trong 不久以后 / 不久前.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "开展",
+      "pinyin": "kāizhǎn",
+      "meaning_vi": "triển khai; bắt đầu mở rộng",
+      "meaning_en": "to develop; to launch",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "开展",
+        "back": "kāizhǎn — triển khai; bắt đầu mở rộng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "继续",
+      "pinyin": "jìxù",
+      "meaning_vi": "tiếp tục",
+      "meaning_en": "to continue",
+      "pos": "Động từ / Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "继续",
+        "back": "jìxù — tiếp tục",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Phó từ",
+        "cn": "动词/副词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "一定",
+      "pinyin": "yídìng",
+      "meaning_vi": "nhất định; mức độ nhất định; đáng kể",
+      "meaning_en": "certain; definite",
+      "pos": "Tính từ / Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "一定",
+        "back": "yídìng — nhất định; mức độ nhất định; đáng kể",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Phó từ",
+        "cn": "形容词/副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong 有一定的基础 là tính từ; trong 一定能学好 là phó từ nhấn chắc chắn.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "基础",
+      "pinyin": "jīchǔ",
+      "meaning_vi": "nền tảng; cơ sở",
+      "meaning_en": "foundation",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "基础",
+        "back": "jīchǔ — nền tảng; cơ sở",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "光",
+      "pinyin": "guāng",
+      "meaning_vi": "hết sạch; trống không",
+      "meaning_en": "completely; all gone",
+      "pos": "Tính từ / Bổ ngữ kết quả",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "光",
+        "back": "guāng — hết sạch; trống không",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Bổ ngữ kết quả",
+        "cn": "形容词/结果补语",
+        "normalized": "grammar_word",
+        "schema_compatible_pos": "grammar_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong 忘光了 / 吃光 là bổ ngữ kết quả, nghĩa là hết sạch.",
+        "notes": []
+      }
+    },
+    {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "只有……才……",
+      "pinyin": "zhǐyǒu……cái……",
+      "meaning_vi": "chỉ có... thì mới...",
+      "meaning_en": "only if... then...",
+      "pos": "Cấu trúc liên từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "只有……才……",
+        "back": "zhǐyǒu……cái…… — chỉ có... thì mới...",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Cấu trúc liên từ",
+        "cn": "固定结构/关联词",
+        "normalized": "grammar_word",
+        "schema_compatible_pos": "grammar_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "抽",
+      "pinyin": "chōu",
+      "meaning_vi": "rút ra; sắp xếp ra/dành ra thời gian",
+      "meaning_en": "to take out; to spare",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "抽",
+        "back": "chōu — rút ra; sắp xếp ra/dành ra thời gian",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "同意",
+      "pinyin": "tóngyì",
+      "meaning_vi": "đồng ý",
+      "meaning_en": "to agree",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "同意",
+        "back": "tóngyì — đồng ý",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "7b7bf002-5d77-4d02-be87-644d89005cc7",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "肉",
+      "pinyin": "ròu",
+      "meaning_vi": "thịt",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_exercise_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "肉",
+        "back": "ròu — thịt",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_exercise_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "e440983e-5801-4741-9526-4b2e4f2fcc26",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "图",
+      "pinyin": "tú",
+      "meaning_vi": "hình; tranh; sơ đồ",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_exercise_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "图",
+        "back": "tú — hình; tranh; sơ đồ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_exercise_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "09da42b3-ace6-4888-9137-095768f4ec6d",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "拍",
+      "pinyin": "pāi",
+      "meaning_vi": "chụp; vỗ; quay/chụp ảnh",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_exercise_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "拍",
+        "back": "pāi — chụp; vỗ; quay/chụp ảnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_exercise_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "0b68d9fa-278e-4878-9058-3a8421d2dd73",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "录",
+      "pinyin": "lù",
+      "meaning_vi": "ghi âm; ghi hình; ghi lại",
+      "meaning_en": "",
+      "pos": "Động từ / Yếu tố cấu tạo từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_exercise_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "录",
+        "back": "lù — ghi âm; ghi hình; ghi lại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_exercise_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Yếu tố cấu tạo từ",
+        "cn": "动词/语素",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "20e8e32d-2165-4872-a2e5-077bcef08d53",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "成功",
+      "pinyin": "chénggōng",
+      "meaning_vi": "thành công",
+      "meaning_en": "",
+      "pos": "Động từ / Tính từ / Danh từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_exercise_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "成功",
+        "back": "chénggōng — thành công",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_exercise_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ / Danh từ",
+        "cn": "动词/形容词/名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "bbc44ac7-00b5-488c-b153-7ac50dd4a124",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "司马光",
+      "pinyin": "Sīmǎ Guāng",
+      "meaning_vi": "Tư Mã Quang",
+      "meaning_en": "",
+      "pos": "Tên riêng / Nhân danh",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "司马光",
+        "back": "Sīmǎ Guāng — Tư Mã Quang",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tên riêng / Nhân danh",
+        "cn": "专名/人名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "1b941f89-5c07-43ce-9730-da06d362e7fe",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "砸",
+      "pinyin": "zá",
+      "meaning_vi": "đập; nện; đập vỡ",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "砸",
+        "back": "zá — đập; nện; đập vỡ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "269a8c22-fe7f-40fc-b1e9-817fdf8f5861",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "缸",
+      "pinyin": "gāng",
+      "meaning_vi": "chum; vại",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "缸",
+        "back": "gāng — chum; vại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "503ac3db-eb45-4bf3-8130-aa18f74aacf5",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "喊",
+      "pinyin": "hǎn",
+      "meaning_vi": "hét; hô; gọi lớn",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "喊",
+        "back": "hǎn — hét; hô; gọi lớn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "d9cfb2fa-a072-48d3-8d07-e21fb213cb48",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "救",
+      "pinyin": "jiù",
+      "meaning_vi": "cứu",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "救",
+        "back": "jiù — cứu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "e3698fd8-d01e-45d7-8b6a-af4158584587",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "吓",
+      "pinyin": "xià",
+      "meaning_vi": "làm sợ; dọa; bị sợ",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "吓",
+        "back": "xià — làm sợ; dọa; bị sợ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "8482ce7e-d45e-46ba-8e17-ce7060b6413c",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "连忙",
+      "pinyin": "liánmáng",
+      "meaning_vi": "vội vàng; lập tức",
+      "meaning_en": "",
+      "pos": "Phó từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "连忙",
+        "back": "liánmáng — vội vàng; lập tức",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    },
+    {
+      "id": "af1c729e-d6b7-4203-8c61-94b45aa1bebb",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "石头",
+      "pinyin": "shítou",
+      "meaning_vi": "đá; hòn đá",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "supplementary_vocab",
+        "textbook_reading_supplementary"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "石头",
+        "back": "shítou — đá; hòn đá",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      }
+    }
+  ]
+}

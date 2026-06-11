@@ -1,0 +1,306 @@
+{
+  "id": "fca1d9a2-7de5-4304-9039-2cafb2fb07b5",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "邻",
+  "pinyin": "lín",
+  "pos": {
+    "raw_vi": "Hình vị / Yếu tố cấu tạo từ",
+    "raw_cn": "语素",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lân",
+    "meaning_vi": "bên cạnh; láng giềng; gần kề",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bên cạnh",
+      "láng giềng",
+      "gần kề"
+    ],
+    "short_definition_vi": "bên cạnh",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "邻",
+        "lishu_vi": "lân",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Ấp",
+          "radical_name_zh": "",
+          "hanviet": "ấp",
+          "meaning_vi": "vùng đất, địa danh; dạng 阝 bên phải",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "阝 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "ấp",
+            "meaning_vi": "vùng đất, địa danh; dạng 阝 bên phải",
+            "position_vi": "bên phải chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Ấp",
+              "radical_name_zh": "",
+              "hanviet": "ấp",
+              "meaning_vi": "vùng đất, địa danh; dạng 阝 bên phải",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "阝 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "阝 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "邻 liên quan quan hệ sát bên/gần bên, thường đi trong từ ghép.",
+    "memory_tip_vi": "Học qua 邻居, 邻座, 邻国.",
+    "warning_vi": "Ít đứng một mình trong khẩu ngữ hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "邻居",
+        "línjū",
+        "hàng xóm",
+        "từ hoàn chỉnh thường dùng"
+      ],
+      [
+        "旁边",
+        "pángbiān",
+        "bên cạnh",
+        "chỉ vị trí nói chung"
+      ],
+      [
+        "隔壁",
+        "gébì",
+        "sát vách",
+        "phòng/nhà bên cạnh"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Học qua 邻居, 邻座, 邻国."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "86f54866-a9d1-4351-a3fb-fc0cab0eaaf4",
+      "order": 1,
+      "zh": "邻座",
+      "pinyin": "",
+      "vi": "ghế/người ngồi bên cạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1b2ed14-88bb-4084-a822-be00d4a7add0",
+      "order": 2,
+      "zh": "邻居",
+      "pinyin": "",
+      "vi": "hàng xóm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68522a60-dbe9-4e21-9e0d-7f65ebc28938",
+      "order": 3,
+      "zh": "邻国",
+      "pinyin": "",
+      "vi": "nước láng giềng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b55ab08e-7852-446f-a426-37486b61f2eb",
+      "order": 4,
+      "zh": "邻近地区",
+      "pinyin": "",
+      "vi": "khu vực lân cận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9d4e4d4e-c8c3-4541-af68-722fab6376d5",
+      "order": 5,
+      "zh": "左邻右舍",
+      "pinyin": "",
+      "vi": "hàng xóm láng giềng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1d1cde53-2624-4a61-ac40-203ea7afa5dd",
+      "order": 1,
+      "zh": "邻座的一个人用地道的英语问我。",
+      "pinyin": "Línzuò de yí ge rén yòng dìdao de Yīngyǔ wèn wǒ.",
+      "vi": "Một người ngồi bên cạnh hỏi tôi bằng tiếng Anh rất chuẩn.",
+      "analysis_vi": "邻座的一个人 = người ghế bên cạnh.",
+      "highlight": [
+        "邻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fca1d9a2-7de5-4304-9039-2cafb2fb07b5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "20015b8c-5a3c-48d6-a86c-9f87f1222202",
+      "order": 2,
+      "zh": "我的邻居很热情，经常主动跟我打招呼。",
+      "pinyin": "Wǒ de línjū hěn rèqíng, jīngcháng zhǔdòng gēn wǒ dǎ zhāohu.",
+      "vi": "Hàng xóm của tôi rất nhiệt tình, thường chủ động chào tôi.",
+      "analysis_vi": "邻居 là từ hoàn chỉnh thông dụng.",
+      "highlight": [
+        "邻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fca1d9a2-7de5-4304-9039-2cafb2fb07b5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Có câu 远亲不如近邻: bà con xa không bằng láng giềng gần.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "caedbedb-adef-4e70-aac2-e4ba97c24064",
+      "order": 1,
+      "rule_vi": "Không dùng 邻 một mình thay cho 邻居.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他是我的邻。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他是我的邻居。",
+          "pinyin": "Tā shì wǒ de línjū.",
+          "vi": "Anh ấy là hàng xóm của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Ít đứng một mình trong khẩu ngữ hiện đại.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "邻",
+    "back": "bên cạnh; láng giềng; gần kề",
+    "hint": "lín",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fca1d9a2-7de5-4304-9039-2cafb2fb07b5",
+    "source_lesson_vocab_id": null
+  }
+}

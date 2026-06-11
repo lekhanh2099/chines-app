@@ -1,0 +1,200 @@
+{
+  "id": "8eb9349c-e88b-4b34-b91d-3e089aeef8ab",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "克风",
+  "pinyin": "Kè Fēng",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "proper_name"
+  ],
+  "meaning": {
+    "hanviet": "khắc phong",
+    "meaning_vi": "Khắc Phong, tên riêng theo bài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Khắc Phong",
+      "tên riêng theo bài"
+    ],
+    "short_definition_vi": "Khắc Phong, tên riêng theo bài",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "克",
+        "lishu_vi": "khắc",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khắc phục/thắng",
+        "modern_logic_vi": "Trong từ/cụm này, 克 góp phần vào nghĩa hiện đại: khắc phục/thắng.",
+        "warning_vi": "Không dịch máy từng chữ nếu đây là tên riêng/cấu trúc cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "风",
+        "lishu_vi": "phong",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gió/phong cách",
+        "modern_logic_vi": "Trong từ/cụm này, 风 góp phần vào nghĩa hiện đại: gió/phong cách.",
+        "warning_vi": "Không dịch máy từng chữ nếu đây là tên riêng/cấu trúc cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "克风 cần học theo nghĩa hiện đại trong bài: Khắc Phong, tên riêng theo bài.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 克风来了.",
+    "warning_vi": "Không tách nghĩa từng chữ nếu là tên riêng, tục ngữ hoặc cấu trúc cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "afaa196e-d033-499c-bbf0-5ea7c4eb0779",
+      "order": 1,
+      "zh": "克风来了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "773405a7-e8e3-4073-ae93-8db66864a371",
+      "order": 2,
+      "zh": "克风说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "220bc781-3c69-461a-9cd1-8d8276ee9b36",
+      "order": 3,
+      "zh": "克风和李文",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "71b5695f-83fc-44f0-b5d5-0f706b5e66ed",
+      "order": 1,
+      "zh": "克风是李文的朋友。",
+      "pinyin": "Kè Fēng shì Lǐ Wén de péngyou.",
+      "vi": "Khắc Phong là bạn của Lý Văn.",
+      "analysis_vi": "克风 xử lý như tên riêng.",
+      "highlight": [
+        "克风"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8eb9349c-e88b-4b34-b91d-3e089aeef8ab"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e3573ecf-9849-48dc-baf8-cbdc0a3fe783",
+      "order": 2,
+      "zh": "克风从小就很懂事，常常帮家里做家务。",
+      "pinyin": "Kè Fēng cóng xiǎo jiù hěn dǒngshì, chángcháng bāng jiālǐ zuò jiāwù.",
+      "vi": "Khắc Phong từ nhỏ đã hiểu chuyện, thường giúp nhà làm việc nhà.",
+      "analysis_vi": "从小就…… nêu thói quen từ nhỏ.",
+      "highlight": [
+        "克风"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8eb9349c-e88b-4b34-b91d-3e089aeef8ab"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tên lạ như 克风 không nên tự gắn hàm nghĩa nếu bản bài chỉ liệt kê là tên riêng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "49ca3bf3-2b3c-41e1-8e84-c61260fb1870",
+      "order": 1,
+      "rule_vi": "Dùng 克风 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "克风",
+    "back": "Khắc Phong, tên riêng theo bài",
+    "hint": "Kè Fēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8eb9349c-e88b-4b34-b91d-3e089aeef8ab",
+    "source_lesson_vocab_id": null
+  }
+}

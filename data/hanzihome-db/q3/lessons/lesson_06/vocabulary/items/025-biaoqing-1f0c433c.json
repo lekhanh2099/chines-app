@@ -1,0 +1,291 @@
+{
+  "id": "aaf22b67-3643-4565-9b00-b6cd4046bcd5",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "表情",
+  "pinyin": "biǎoqíng",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "biểu tình",
+    "meaning_vi": "biểu cảm; vẻ mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biểu cảm",
+      "vẻ mặt"
+    ],
+    "short_definition_vi": "biểu cảm",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biểu hiện/bên ngoài",
+        "modern_logic_vi": "Trong từ 表情, chữ 表 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "情",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm",
+        "modern_logic_vi": "Trong từ 表情, chữ 情 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "表情 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 她露出了尴尬的表情。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "神情",
+        "pinyin": "shénqíng",
+        "meaning_vi": "thần sắc/vẻ mặt",
+        "difference_vi": "神情 văn hơn 表情.",
+        "register_vi": "",
+        "example_zh": "他的神情很严肃。",
+        "example_vi": "Vẻ mặt anh ấy rất nghiêm túc.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5b6b17be-f4b8-4aaa-a08b-0bc6cd34aa98",
+      "order": 1,
+      "zh": "脸上的表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb4c747a-286f-40ee-bc12-6d8c118e71d6",
+      "order": 2,
+      "zh": "尴尬的表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1916ccc-d4d5-48de-8813-0555e16428b9",
+      "order": 3,
+      "zh": "警惕的表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0f01ea6-3882-4c8a-8225-05de7e09a93e",
+      "order": 4,
+      "zh": "露出表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "427a8e96-00ad-44b1-941b-f90fa8a18eff",
+      "order": 5,
+      "zh": "表情自然",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9192fd1-331e-46fe-a1ab-0a7336115cf4",
+      "order": 6,
+      "zh": "表情严肃",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2aca22f8-4f34-43fd-a839-e34c8ac14c9b",
+      "order": 7,
+      "zh": "表情包",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6eb86269-5cc8-4033-996d-23bdb71c95d9",
+      "order": 1,
+      "zh": "她露出了尴尬的表情。",
+      "pinyin": "",
+      "vi": "Cô ấy lộ ra vẻ mặt lúng túng.",
+      "analysis_vi": "Ví dụ dùng 表情 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "表情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aaf22b67-3643-4565-9b00-b6cd4046bcd5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "表情 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "45fb4a1e-a9a9-4b58-8b98-2e7688b0ea1b",
+      "order": 1,
+      "rule_vi": "表情 trong tiếng Trung là biểu cảm, không phải biểu tình chính trị.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表情",
+    "back": "biểu cảm; vẻ mặt",
+    "hint": "biǎoqíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "aaf22b67-3643-4565-9b00-b6cd4046bcd5",
+    "source_lesson_vocab_id": null
+  }
+}

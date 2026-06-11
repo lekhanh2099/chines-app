@@ -1,0 +1,345 @@
+{
+  "id": "df1abb92-49a0-4d70-ae26-792ff446e9e4",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "现场",
+  "pinyin": "xiànchǎng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "event_level"
+  ],
+  "meaning": {
+    "hanviet": "hiện trường",
+    "meaning_vi": "hiện trường; tại chỗ; nơi diễn ra sự việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiện trường; tại chỗ; nơi diễn ra sự việc"
+    ],
+    "short_definition_vi": "hiện trường; tại chỗ; nơi diễn ra sự việc",
+    "textbook_focus_vi": "hiện trường; tại chỗ; nơi diễn ra sự việc",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "现",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "vương/ngọc",
+            "meaning_vi": "thành phần bên trái",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc/Vương",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc; thành phần hình thể 王",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiện, xuất hiện, hiện tại",
+        "modern_logic_vi": "现 gợi cái xuất hiện ra cho thấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "场",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất/địa điểm",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, địa điểm",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sân, bãi, nơi, trận",
+        "modern_logic_vi": "场 là nơi/sân/bối cảnh diễn ra sự việc; phần phải giản thể không nên tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "现场 = nơi sự việc đang/đã hiện ra trước mắt, nơi diễn ra sự kiện/công việc.",
+    "memory_tip_vi": "现场 = nơi sự việc đang/đã hiện ra trước mắt, nơi diễn ra sự kiện/công việc.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "地方",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nơi/chỗ nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "场地",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sân bãi/địa điểm hoạt động",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "会场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nơi họp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "当场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngay tại chỗ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ba2bc8d1-5d01-4f61-97cd-c3628669bbfe",
+      "order": 1,
+      "zh": "在现场",
+      "pinyin": "",
+      "vi": "ở hiện trường/tại chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d716a04c-8427-418f-b0ab-50e85d8a53bc",
+      "order": 2,
+      "zh": "比赛现场",
+      "pinyin": "",
+      "vi": "nơi diễn ra trận đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aae5539a-6e05-482c-a9c8-bdb2620c4479",
+      "order": 3,
+      "zh": "事故现场",
+      "pinyin": "",
+      "vi": "hiện trường tai nạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03264d45-7ca6-4009-9192-6a18c20368b7",
+      "order": 4,
+      "zh": "现场观众",
+      "pinyin": "",
+      "vi": "khán giả tại hiện trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "695ef67c-0213-43cd-85bb-4706cbe654f9",
+      "order": 5,
+      "zh": "赶到现场",
+      "pinyin": "",
+      "vi": "đến hiện trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0f19d28f-ae09-4b94-862c-e70ad24020a9",
+      "order": 1,
+      "zh": "警察已经到了现场。",
+      "pinyin": "",
+      "vi": "Cảnh sát đã đến hiện trường.",
+      "analysis_vi": "到了现场 nói kết quả đã đến nơi.",
+      "highlight": [
+        "现场"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df1abb92-49a0-4d70-ae26-792ff446e9e4"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "07c2ccdd-091c-4851-a26e-1e1de54fb186",
+      "order": 2,
+      "zh": "比赛现场坐着很多观众。",
+      "pinyin": "",
+      "vi": "Tại hiện trường trận đấu có nhiều khán giả đang ngồi.",
+      "analysis_vi": "Câu tồn hiện: địa điểm + V着 + người/vật.",
+      "highlight": [
+        "现场"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df1abb92-49a0-4d70-ae26-792ff446e9e4"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "现场 còn dùng trong 现场直播/现场表演, không chỉ tai nạn.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fd46b65f-944b-4395-9bfc-5539b3aefe73",
+      "order": 1,
+      "rule_vi": "Không dịch mọi “ở đó” thành 现场; phải có sự kiện/công việc đang diễn ra.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我在那里吃饭。",
+          "pinyin": "",
+          "vi": "Tôi ăn cơm ở đó.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "现场",
+    "back": "hiện trường; tại chỗ; nơi diễn ra sự việc",
+    "hint": "xiànchǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "event_level"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "df1abb92-49a0-4d70-ae26-792ff446e9e4",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "综合填空",
+  "title_vi": "Đọc điền khuyết tổng hợp",
+  "source_origin": "textbook_pdf_verified",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "178f9166-d7f1-4eca-92ac-04a323549c69",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "综合填空",
+      "title_vi": "Ô nhiễm môi trường Trái Đất",
+      "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
+      "paragraphs": [
+        {
+          "id": "49018f95-9850-48fe-ba72-0f7ad4730332",
+          "order": 1,
+          "zh": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。",
+          "vi": "Trong mấy chục năm qua, để phát triển kinh tế, con người đã phá hoại môi trường Trái Đất. Nước trên Trái Đất ngày càng ít, nhiều con sông khô cạn quanh năm, có nơi thậm chí ngay cả nước uống của người và động vật cũng không còn. Dù vậy, rất nhiều nhà máy vẫn xả nước thải ra sông và biển. Nhiều con sông bị ô nhiễm, nước sạch biến thành nước đen.",
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false,
+          "pinyin": "Guòqù jǐshí nián, rénlèi ①____ fāzhǎn jīngjì, pòhuài le Dìqiú de huánjìng. Dìqiú shang ②____ shuǐ yuè lái yuè shǎo, hěn duō hé chángnián duànliú, yǒu de dìfang shènzhì ③____ rén hé dòngwù hē de shuǐ yě méiyǒu le. Jíshǐ zhèyàng, dà pī gōngchǎng hái ④____ wūshuǐ páifàng dào hélǐ hé hǎilǐ. Hěn duō héshuǐ shòu ⑤____ wūrǎn, qīngshuǐ biàn ⑥____ le hēishuǐ."
+        },
+        {
+          "id": "2f8ab3a4-9e41-46df-aa66-14ebf168f130",
+          "order": 2,
+          "zh": "地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。",
+          "vi": "Dân số trên Trái Đất ngày càng nhiều. Để sinh tồn, con người chỉ quan tâm lợi ích trước mắt, bất chấp môi trường bị phá hoại, ra sức chặt phá rừng, gây ra lượng lớn xói mòn đất và nước, khiến nhiều mảng đất xanh biến thành sa mạc vàng.",
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false,
+          "pinyin": "Dìqiú shang de rénkǒu yuè lái yuè ⑦____. Wèile shēngcún, rénlèi zhǐ gù yǎnqián lìyì, bù gù huánjìng shòudào pòhuài, pīnmìng de kǎnfá sēnlín, zàochéng dàliàng shuǐtǔ liúshī, ⑧____ dàpiàn lǜsè de tǔdì biànchéng le huángsè de shāmò."
+        },
+        {
+          "id": "7833e9ed-2521-4c8c-ad39-c182e041a103",
+          "order": 3,
+          "zh": "更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。",
+          "vi": "Tệ hơn nữa là ô nhiễm không khí ngày càng nghiêm trọng. Nhà máy thải ra lượng lớn khí carbon monoxide, ô tô thải ra lượng lớn khí độc hại, bầu trời xanh cũng trở nên rất hiếm thấy. Nhiệt độ bề mặt Trái Đất dần tăng lên, khí hậu không ngừng ấm lên. Nếu không thay đổi tình trạng này, cứ tiếp tục như vậy, Trái Đất thật sự sẽ trở thành nơi con người khó cư trú.",
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false,
+          "pinyin": "Gèng zāogāo de shì yuè lái yuè yánzhòng de kōngqì wūrǎn. Gōngchǎng páifàng dàliàng de yīyǎnghuàtàn, qìchē fàng ⑨____ dàliàng yǒuhài qìtǐ, lán sè de tiānkōng yě biàn de hěn shǎo jiàn ⑩____. Dìqiú biǎomiàn de qìwēn zhújiàn shēnggāo, qìhòu bùduàn biàn nuǎn. Rúguǒ bù gǎibiàn zhè zhǒng qíngkuàng, zhèyàng xià ⑪____, Dìqiú zhēn de huì chéngwéi rénlèi nányǐ jūzhù de dìfang ⑫____."
+        },
+        {
+          "id": "476e89fc-9699-4c2e-98de-c5f2812d508b",
+          "order": 4,
+          "zh": "好在目前，人类已经开始关注并注意保护环境了。",
+          "vi": "May là hiện nay, loài người đã bắt đầu quan tâm và chú ý bảo vệ môi trường.",
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false,
+          "pinyin": "Hǎo zài mùqián, rénlèi yǐjīng kāishǐ guānzhù bìng zhùyì bǎohù huánjìng le."
+        }
+      ],
+      "supplementary_words": [
+        {
+          "id": "285c9aa9-62d6-4248-a0b5-86ead7a1bc8c",
+          "hanzi": "破坏",
+          "pinyin": "pòhuài",
+          "meaning_vi": "phá hoại; làm hư hại",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "1580dd6e-ddb5-4be4-bc3c-d8128b34e7de",
+          "hanzi": "污染",
+          "pinyin": "wūrǎn",
+          "meaning_vi": "ô nhiễm; làm ô nhiễm",
+          "pos": "Động từ / Danh từ",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词 / 名词",
+            "normalized": "verb_noun",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "896ce15e-891b-4a70-94ff-9fb3e45cb4ab",
+          "hanzi": "砍伐",
+          "pinyin": "kǎnfá",
+          "meaning_vi": "chặt phá cây rừng",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f37668f5-64b9-473d-a29e-21018087e387",
+          "hanzi": "沙漠",
+          "pinyin": "shāmò",
+          "meaning_vi": "sa mạc",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "notes": []
+          },
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "vi": "Đoạn đọc nói về môi trường Trái Đất bị phá hoại do phát triển kinh tế, thiếu nước, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu; cuối đoạn chuyển sang ý con người đã bắt đầu chú ý bảo vệ môi trường.",
+      "questions": [
+        {
+          "id": "630c8795-8705-422e-8a5b-5f87f1564df5",
+          "prompt": "Blank 1",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "为了"
+        },
+        {
+          "id": "845d058b-8260-4fa1-8a11-38c789804311",
+          "prompt": "Blank 2",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "的"
+        },
+        {
+          "id": "92bc4ebe-c23a-4a82-b619-2e6bc9469909",
+          "prompt": "Blank 3",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "连"
+        },
+        {
+          "id": "4cf45327-18a9-49ba-94f1-44ea169287ce",
+          "prompt": "Blank 4",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "把"
+        },
+        {
+          "id": "0e613be6-a9a9-4b06-a6eb-8e0c9bdcc72d",
+          "prompt": "Blank 5",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "到"
+        },
+        {
+          "id": "cdb9ea83-4907-44ef-b847-bb2032594091",
+          "prompt": "Blank 6",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "成"
+        },
+        {
+          "id": "36402c00-6f78-4e55-9b5a-c6d7489d7a1b",
+          "prompt": "Blank 7",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "多"
+        },
+        {
+          "id": "39a608a6-ac62-4b07-b8f7-f21cfa637df3",
+          "prompt": "Blank 8",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "使"
+        },
+        {
+          "id": "8024a5ef-aa03-4898-824d-6979f304d598",
+          "prompt": "Blank 9",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "出"
+        },
+        {
+          "id": "a199c53f-1625-4a82-99f9-e9ddfe402e95",
+          "prompt": "Blank 10",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "了"
+        },
+        {
+          "id": "e12c0ef4-6eda-4e2a-98e2-face42a0b285",
+          "prompt": "Blank 11",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "去"
+        },
+        {
+          "id": "887e074b-dee4-4d35-a268-627e6296a945",
+          "prompt": "Blank 12",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "了"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "630c8795-8705-422e-8a5b-5f87f1564df5",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "为了"
+        },
+        {
+          "question_id": "845d058b-8260-4fa1-8a11-38c789804311",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "的"
+        },
+        {
+          "question_id": "92bc4ebe-c23a-4a82-b619-2e6bc9469909",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "连"
+        },
+        {
+          "question_id": "4cf45327-18a9-49ba-94f1-44ea169287ce",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "把"
+        },
+        {
+          "question_id": "0e613be6-a9a9-4b06-a6eb-8e0c9bdcc72d",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "到"
+        },
+        {
+          "question_id": "cdb9ea83-4907-44ef-b847-bb2032594091",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "成"
+        },
+        {
+          "question_id": "36402c00-6f78-4e55-9b5a-c6d7489d7a1b",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "多"
+        },
+        {
+          "question_id": "39a608a6-ac62-4b07-b8f7-f21cfa637df3",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "使"
+        },
+        {
+          "question_id": "8024a5ef-aa03-4898-824d-6979f304d598",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "出"
+        },
+        {
+          "question_id": "a199c53f-1625-4a82-99f9-e9ddfe402e95",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "了"
+        },
+        {
+          "question_id": "e12c0ef4-6eda-4e2a-98e2-face42a0b285",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "去"
+        },
+        {
+          "question_id": "887e074b-dee4-4d35-a268-627e6296a945",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "了"
+        }
+      ],
+      "answers": [
+        {
+          "question_id": "630c8795-8705-422e-8a5b-5f87f1564df5",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "为了"
+        },
+        {
+          "question_id": "845d058b-8260-4fa1-8a11-38c789804311",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "的"
+        },
+        {
+          "question_id": "92bc4ebe-c23a-4a82-b619-2e6bc9469909",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "连"
+        },
+        {
+          "question_id": "4cf45327-18a9-49ba-94f1-44ea169287ce",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "把"
+        },
+        {
+          "question_id": "0e613be6-a9a9-4b06-a6eb-8e0c9bdcc72d",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "到"
+        },
+        {
+          "question_id": "cdb9ea83-4907-44ef-b847-bb2032594091",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "成"
+        },
+        {
+          "question_id": "36402c00-6f78-4e55-9b5a-c6d7489d7a1b",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "多"
+        },
+        {
+          "question_id": "39a608a6-ac62-4b07-b8f7-f21cfa637df3",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "使"
+        },
+        {
+          "question_id": "8024a5ef-aa03-4898-824d-6979f304d598",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "出"
+        },
+        {
+          "question_id": "a199c53f-1625-4a82-99f9-e9ddfe402e95",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "了"
+        },
+        {
+          "question_id": "e12c0ef4-6eda-4e2a-98e2-face42a0b285",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "去"
+        },
+        {
+          "question_id": "887e074b-dee4-4d35-a268-627e6296a945",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "了"
+        }
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "id": "9c17331e-768a-4fcf-93c8-e4bcd2305a4a",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "理",
+  "pinyin": "lǐ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "lý",
+    "meaning_vi": "sắp xếp, chỉnh lý, xử lý; để ý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sắp xếp",
+      "chỉnh lý",
+      "xử lý",
+      "để ý"
+    ],
+    "short_definition_vi": "sắp xếp, chỉnh lý, xử lý; để ý",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: sắp xếp, chỉnh lý, xử lý; để ý.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "理",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "王",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vương/Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "vương/ngọc",
+          "meaning_vi": "ngọc; phần trái thường gặp trong nhóm chữ cổ liên quan ngọc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "vương/ngọc",
+            "meaning_vi": "ngọc; phần trái thường gặp trong nhóm chữ cổ liên quan ngọc",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "王",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vương/Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "vương/ngọc",
+              "meaning_vi": "ngọc; phần trái thường gặp trong nhóm chữ cổ liên quan ngọc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 理.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "理 trong bài được hiểu theo nghĩa: sắp xếp, chỉnh lý, xử lý; để ý. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 理.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "理 có lõi nghĩa làm cho có trật tự hoặc để ý đến."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5e3eb353-1476-4dc4-b909-ba0fbd7bf49e",
+      "order": 1,
+      "zh": "理发",
+      "pinyin": "",
+      "vi": "cắt tóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ac3b190-77ad-40f4-a1de-5f683afa1eea",
+      "order": 2,
+      "zh": "整理房间",
+      "pinyin": "",
+      "vi": "dọn phòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "51bf21da-7468-40a2-9eae-79363b77267e",
+      "order": 3,
+      "zh": "处理问题",
+      "pinyin": "",
+      "vi": "xử lý vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "51ea54d3-58c5-4e6c-a1ad-b0868dc4b8c2",
+      "order": 4,
+      "zh": "有道理",
+      "pinyin": "",
+      "vi": "có lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8806c3c8-3583-48a4-8e90-71df5c8ad4a1",
+      "order": 5,
+      "zh": "不理他",
+      "pinyin": "",
+      "vi": "không để ý đến anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "607d6441-ad7a-4a9b-9038-1f5765abd544",
+      "order": 1,
+      "zh": "你先理一理头发，再去面试。",
+      "pinyin": "",
+      "vi": "Bạn chỉnh lại tóc trước rồi hãy đi phỏng vấn.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9c17331e-768a-4fcf-93c8-e4bcd2305a4a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "80365f83-9529-4b06-a0a0-f0871e2c9412",
+      "order": 2,
+      "zh": "这件事他不想理。",
+      "pinyin": "",
+      "vi": "Việc này anh ấy không muốn để ý/xử lý.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9c17331e-768a-4fcf-93c8-e4bcd2305a4a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "理 có lõi nghĩa làm cho có trật tự hoặc để ý đến.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7ef700cb-1bd1-400a-86ac-cec20365d836",
+      "order": 1,
+      "rule_vi": "理 có lõi nghĩa làm cho có trật tự hoặc để ý đến.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我理原因。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "理 có lõi nghĩa làm cho có trật tự hoặc để ý đến.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我处理原因。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "理 có lõi nghĩa làm cho có trật tự hoặc để ý đến.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "理",
+    "back": "sắp xếp, chỉnh lý, xử lý; để ý",
+    "hint": "lǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9c17331e-768a-4fcf-93c8-e4bcd2305a4a",
+    "source_lesson_vocab_id": null
+  }
+}

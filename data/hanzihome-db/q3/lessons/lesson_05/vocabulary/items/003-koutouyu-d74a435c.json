@@ -1,0 +1,346 @@
+{
+  "id": "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "口头语",
+  "pinyin": "kǒutóuyǔ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khẩu đầu ngữ",
+    "meaning_vi": "câu cửa miệng; lời nói quen miệng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "câu cửa miệng",
+      "lời nói quen miệng"
+    ],
+    "short_definition_vi": "câu cửa miệng",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "口",
+        "lishu_vi": "khẩu",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "头",
+        "lishu_vi": "đầu",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "语",
+        "lishu_vi": "ngữ",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "口头语 = lời thường ở trên miệng, cụm/câu nói quen dùng.",
+    "memory_tip_vi": "Nhớ: 口头语 khác 口语; 口头语 là câu cửa miệng.",
+    "warning_vi": "Không đồng nhất với 口语.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "口语",
+        "pinyin": "kǒuyǔ",
+        "meaning_vi": "khẩu ngữ",
+        "difference_vi": "ngôn ngữ nói nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "书面语",
+        "pinyin": "shūmiànyǔ",
+        "meaning_vi": "văn viết",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "口头禅",
+        "pinyin": "kǒutóuchán",
+        "meaning_vi": "câu cửa miệng",
+        "difference_vi": "sắc thái nói hoài thành thói quen",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nhớ: 口头语 khác 口语; 口头语 là câu cửa miệng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "89869bfb-1625-46b0-9b64-b1ba880980c9",
+      "order": 1,
+      "zh": "北京人的口头语",
+      "pinyin": "",
+      "vi": "câu cửa miệng của người Bắc Kinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1a3d11b-0e9a-4d85-bbb6-3c3fab14be41",
+      "order": 2,
+      "zh": "常用的口头语",
+      "pinyin": "",
+      "vi": "câu cửa miệng thường dùng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "168ee764-4e03-46c0-a294-2138b8397f9c",
+      "order": 3,
+      "zh": "成了他的口头语",
+      "pinyin": "",
+      "vi": "trở thành câu cửa miệng của anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69aebff0-f171-4f7c-90e2-c5416655da88",
+      "order": 4,
+      "zh": "一句口头语",
+      "pinyin": "",
+      "vi": "một câu cửa miệng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fce899e9-c9ed-48e4-bef9-690c1f984d6b",
+      "order": 5,
+      "zh": "网络口头语",
+      "pinyin": "",
+      "vi": "câu cửa miệng trên mạng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "498e9b0c-42af-46a6-a31c-867e90e313da",
+      "order": 1,
+      "zh": "“回头再说”好像成了他的口头语。",
+      "pinyin": "“Huítóu zài shuō” hǎoxiàng chéng le tā de kǒutóuyǔ.",
+      "vi": "“Để sau rồi nói” hình như đã thành câu cửa miệng của anh ấy.",
+      "analysis_vi": "成了 = trở thành.",
+      "highlight": [
+        "口头语"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8d8d5b58-afa1-40e5-90fc-af43f94bdabc",
+      "order": 2,
+      "zh": "有些口头语听起来很普通，其实背后有文化习惯。",
+      "pinyin": "Yǒuxiē kǒutóuyǔ tīng qǐlai hěn pǔtōng, qíshí bèihòu yǒu wénhuà xíguàn.",
+      "vi": "Có vài câu cửa miệng nghe rất bình thường, thực ra phía sau có thói quen văn hóa.",
+      "analysis_vi": "听起来 + tính từ; 其实 chuyển sang sự thật phía sau.",
+      "highlight": [
+        "口头语"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "吃了吗 từng là cách chào thân mật trong một số ngữ cảnh, không nhất thiết là lời mời ăn thật.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f12eea15-e256-4b20-ac69-d4f11c2b2840",
+      "order": 1,
+      "rule_vi": "Không dùng 口语 để nói câu cửa miệng của một người.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的口语是“回头再说”。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "“回头再说”是我的口头语。",
+          "pinyin": "“Huítóu zài shuō” shì wǒ de kǒutóuyǔ.",
+          "vi": "“回头再说” là câu cửa miệng của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không đồng nhất với 口语.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "口头语",
+    "back": "câu cửa miệng; lời nói quen miệng",
+    "hint": "kǒutóuyǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "id": "ec344a6d-a4fa-44f0-93c0-80cbbe2cde71",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "心理学",
+  "pinyin": "xīnlǐxué",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tâm lý học",
+    "meaning_vi": "tâm lý học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tâm lý học"
+    ],
+    "short_definition_vi": "tâm lý học",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "tâm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, tâm trí",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, tâm trí",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, tâm trí",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tim, lòng, tâm trí",
+        "modern_logic_vi": "Gợi tâm lý/cảm xúc/ý nghĩ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "理",
+        "lishu_vi": "lý",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, vật quý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, vật quý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, vật quý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "lí",
+            "meaning_vi": "bên trong",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lý lẽ, nguyên lý, xử lý",
+        "modern_logic_vi": "心理/理论 đều liên quan logic/nguyên lý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, trường học",
+        "modern_logic_vi": "Dùng trong 学费/奖学金/心理学.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "心理学 được dùng trong Bài 20 với nghĩa: tâm lý học.",
+    "memory_tip_vi": "Nhớ qua cụm 学习心理学.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "心理",
+        "pinyin": "xīnlǐ",
+        "meaning_vi": "tâm lý",
+        "difference_vi": "Không phải ngành học.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "精神病学",
+        "pinyin": "jīngshénbìngxué",
+        "meaning_vi": "tâm thần học",
+        "difference_vi": "Thuộc y học, khác 心理学.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c4de534c-22e8-42b0-ac88-0c8be7dca9a5",
+      "order": 1,
+      "zh": "学习心理学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71ef3d5a-eda0-407f-bf71-519f65d62985",
+      "order": 2,
+      "zh": "研究心理学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1ee1ec1-a9da-47d2-8036-be86d2874d77",
+      "order": 3,
+      "zh": "心理学实验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c983f016-c864-44ad-b34b-4ba4b6577ae4",
+      "order": 4,
+      "zh": "心理学理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8611708e-5c45-4a7e-a375-2b3540d60073",
+      "order": 5,
+      "zh": "心理学家",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c67fd850-ffb8-428e-aa15-4053ec41f569",
+      "order": 6,
+      "zh": "实验心理学",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7526af90-847f-4574-ba7d-e12e13c502dd",
+      "order": 1,
+      "zh": "她大学学的是心理学。",
+      "pinyin": "Tā dàxué xué de shì xīnlǐxué.",
+      "vi": "Ở đại học cô ấy học ngành tâm lý học.",
+      "analysis_vi": "学的是…… nhấn nội dung học.",
+      "highlight": [
+        "心理学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ec344a6d-a4fa-44f0-93c0-80cbbe2cde71"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3e59de65-65a9-4d3d-93a3-0450f5a0c6d1",
+      "order": 2,
+      "zh": "她认为，心理学不能只靠理论，还要通过实验来证明。",
+      "pinyin": "Tā rènwéi, xīnlǐxué bù néng zhǐ kào lǐlùn, hái yào tōngguò shíyàn lái zhèngmíng.",
+      "vi": "Cô ấy cho rằng tâm lý học không thể chỉ dựa vào lý thuyết mà còn phải qua thí nghiệm để chứng minh.",
+      "analysis_vi": "不能只……还要…… lập luận rõ.",
+      "highlight": [
+        "心理学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ec344a6d-a4fa-44f0-93c0-80cbbe2cde71"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "心理学 là ngành học thuật; 心理咨询 là tư vấn tâm lý; 精神科 là khoa tâm thần.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ec6ca6c1-9619-44db-8a7b-37695f7d17ca",
+      "order": 1,
+      "rule_vi": "Không dùng 心理学 để nói tâm trạng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我今天心理学不好。",
+          "pinyin": "Wǒ jīntiān xīnlǐxué bù hǎo.",
+          "vi": "Hôm nay tâm lý học của tôi không tốt.",
+          "note_vi": "Sai nếu muốn nói tâm trạng.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我今天心情不好。",
+          "pinyin": "Wǒ jīntiān xīnqíng bù hǎo.",
+          "vi": "Hôm nay tâm trạng tôi không tốt.",
+          "note_vi": "心情 là tâm trạng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心理学",
+    "back": "tâm lý học",
+    "hint": "xīnlǐxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ec344a6d-a4fa-44f0-93c0-80cbbe2cde71",
+    "source_lesson_vocab_id": null
+  }
+}

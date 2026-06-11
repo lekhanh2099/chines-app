@@ -1,0 +1,239 @@
+{
+  "id": "b4a88f37-cbfd-499f-89dd-0cba53ba35b2",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "多",
+  "pinyin": "duō",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词 / 副词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đa",
+    "meaning_vi": "nhiều; hơn; biết bao/thật là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiều",
+      "hơn",
+      "biết bao/thật là"
+    ],
+    "short_definition_vi": "nhiều; hơn; biết bao/thật là",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: số lượng, cảm thán.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "số lượng, cảm thán",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "多",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "夕",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tịch",
+          "radical_name_zh": "",
+          "hanviet": "tịch",
+          "meaning_vi": "chiều tối",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "夕 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "chiều tối",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "夕",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tịch",
+              "radical_name_zh": "",
+              "hanviet": "tịch",
+              "meaning_vi": "chiều tối",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "夕 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "夕 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhiều, mức độ cao",
+        "modern_logic_vi": "Trong từ 多, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "多 nên được học theo nghĩa hiện đại trong cụm/tình huống: nhiều; hơn; biết bao/thật là.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 很多.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很多",
+        "pinyin": "hěn duō",
+        "meaning_vi": "rất nhiều",
+        "difference_vi": "很多 chỉ số lượng nhiều; 多 còn dùng cảm thán và hỏi mức độ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "45ffe289-7870-44e1-b898-d46cb4a8bbcc",
+      "order": 1,
+      "zh": "很多",
+      "pinyin": "",
+      "vi": "rất nhiều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6fc1aadd-1d31-4437-89a8-a9217bb9994b",
+      "order": 2,
+      "zh": "多一点儿",
+      "pinyin": "",
+      "vi": "nhiều hơn một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5e136a1-b99f-4f25-9199-2a11f4587759",
+      "order": 3,
+      "zh": "多形象",
+      "pinyin": "",
+      "vi": "sinh động biết bao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b2b94ae1-59d6-48f3-ab38-69de3627c70b",
+      "order": 1,
+      "zh": "这里人很多。",
+      "pinyin": "",
+      "vi": "Ở đây rất đông người.",
+      "analysis_vi": "多 làm tính từ vị ngữ chỉ nhiều.",
+      "highlight": [
+        "多"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b4a88f37-cbfd-499f-89dd-0cba53ba35b2"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 多 được dùng trong ngữ cảnh số lượng, cảm thán; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "13aef868-1af2-433c-9989-f0738aa52c93",
+      "order": 1,
+      "rule_vi": "多形象 không phải “nhiều hình tượng”; là cảm thán “sinh động biết bao”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "多形象 không phải “nhiều hình tượng”; là cảm thán “sinh động biết bao”.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "多",
+    "back": "nhiều; hơn; biết bao/thật là",
+    "hint": "duō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b4a88f37-cbfd-499f-89dd-0cba53ba35b2",
+    "source_lesson_vocab_id": null
+  }
+}

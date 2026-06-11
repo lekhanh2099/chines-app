@@ -1,0 +1,316 @@
+{
+  "id": "6694e0e7-4a29-4f1d-83f8-3adc6e1200d7",
+  "type": "deep_vocabulary_item",
+  "order": 60,
+  "hanzi": "付出",
+  "pinyin": "fùchū",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "phó xuất",
+    "meaning_vi": "bỏ ra, trả giá, dốc ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bỏ ra",
+      "trả giá",
+      "dốc ra"
+    ],
+    "short_definition_vi": "bỏ ra, trả giá, dốc ra",
+    "textbook_focus_vi": "付出 là đưa/trả ra ngoài thứ mình có như thời gian, công sức.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "付",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân đứng",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân đứng",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "寸 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trả, giao",
+        "modern_logic_vi": "Trong từ “付出”, chữ “付” góp phần vào trường nghĩa: trả, giao",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra, xuất ra",
+        "modern_logic_vi": "Trong từ “付出”, chữ “出” góp phần vào trường nghĩa: ra, xuất ra",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "付出 là đưa/trả ra ngoài thứ mình có như thời gian, công sức.",
+    "memory_tip_vi": "付出 là đưa/trả ra ngoài thứ mình có như thời gian, công sức.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "花",
+        "pinyin": "",
+        "meaning_vi": "tiêu/tốn, dùng với tiền/thời gian",
+        "difference_vi": "tiêu/tốn, dùng với tiền/thời gian",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "投入",
+        "pinyin": "",
+        "meaning_vi": "đầu tư/dồn vào",
+        "difference_vi": "đầu tư/dồn vào",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "09b57091-8b0c-4749-8f2a-a6d0bc7706b5",
+      "order": 1,
+      "zh": "付出努力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba187ea2-c92f-45b7-bb05-8cf9ad8420fa",
+      "order": 2,
+      "zh": "付出时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a50eb497-55d5-4626-bfe8-0363c31057a1",
+      "order": 3,
+      "zh": "付出心血",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "66233cc2-aed0-44da-aa9d-eeae41f005a1",
+      "order": 4,
+      "zh": "付出代价",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a9e022fd-3505-4b45-bcb4-4bc71ed03563",
+      "order": 1,
+      "zh": "成功需要付出努力。",
+      "pinyin": "",
+      "vi": "Thành công cần bỏ ra nỗ lực.",
+      "analysis_vi": "付出努力.",
+      "highlight": [
+        "付出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6694e0e7-4a29-4f1d-83f8-3adc6e1200d7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8fa0c2fc-df60-41fe-8e93-73d938334641",
+      "order": 2,
+      "zh": "为了帮助他，同事们付出了很多心血。",
+      "pinyin": "",
+      "vi": "Để giúp anh ấy, đồng nghiệp bỏ ra rất nhiều tâm huyết.",
+      "analysis_vi": "为了 nêu mục đích.",
+      "highlight": [
+        "付出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6694e0e7-4a29-4f1d-83f8-3adc6e1200d7"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "付出 là đưa/trả ra ngoài thứ mình có như thời gian, công sức.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5ffb56b6-b96f-472c-b5b9-ac16b17ddfae",
+      "order": 1,
+      "rule_vi": "付出心血 tự nhiên; 支付心血 không tự nhiên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "付出心血 tự nhiên; 支付心血 không tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "付出",
+    "back": "bỏ ra, trả giá, dốc ra",
+    "hint": "fùchū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6694e0e7-4a29-4f1d-83f8-3adc6e1200d7",
+    "source_lesson_vocab_id": null
+  }
+}

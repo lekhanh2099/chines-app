@@ -1,0 +1,295 @@
+{
+  "id": "6c7aff6e-a770-4545-9965-25d2a14c63d3",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "事件",
+  "pinyin": "shìjiàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "sự kiện",
+    "meaning_vi": "sự kiện, vụ việc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sự kiện",
+      "vụ việc"
+    ],
+    "short_definition_vi": "sự kiện, vụ việc",
+    "textbook_focus_vi": "事件 là một vụ việc cụ thể có tính đáng chú ý.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "事",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc, sự việc",
+        "modern_logic_vi": "Trong từ “事件”, chữ “事” góp phần vào trường nghĩa: việc, sự việc",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "件",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân đứng",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân đứng",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiện, món, vụ",
+        "modern_logic_vi": "Trong từ “事件”, chữ “件” góp phần vào trường nghĩa: kiện, món, vụ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "事件 là một vụ việc cụ thể có tính đáng chú ý.",
+    "memory_tip_vi": "事件 là một vụ việc cụ thể có tính đáng chú ý.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "事情",
+        "pinyin": "",
+        "meaning_vi": "chuyện/việc rộng hơn",
+        "difference_vi": "chuyện/việc rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "事故",
+        "pinyin": "",
+        "meaning_vi": "sự cố/tai nạn, thường tiêu cực",
+        "difference_vi": "sự cố/tai nạn, thường tiêu cực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8479b0e8-3dea-4072-b8df-8dcbb03d3f24",
+      "order": 1,
+      "zh": "重大事件",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "83cb8f5d-116c-4cc6-9aaa-69bdcf97009d",
+      "order": 2,
+      "zh": "突发事件",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a36ead1-68b2-4a9d-b29b-81f8ff5d8e12",
+      "order": 3,
+      "zh": "新闻事件",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f255d5d-7f87-47e2-b3e9-70d037ea3a04",
+      "order": 4,
+      "zh": "处理事件",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dce9d020-c4a0-4c10-a069-0ce2cde1c8f9",
+      "order": 1,
+      "zh": "发生了一个重大事件。",
+      "pinyin": "",
+      "vi": "Đã xảy ra một sự kiện lớn.",
+      "analysis_vi": "发生 + 事件.",
+      "highlight": [
+        "事件"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7aff6e-a770-4545-9965-25d2a14c63d3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0f5539f1-9aad-4538-8d85-8dca01ab5667",
+      "order": 2,
+      "zh": "报社每天都要处理很多突发事件的信息。",
+      "pinyin": "",
+      "vi": "Tòa soạn mỗi ngày phải xử lý thông tin của nhiều vụ việc bất ngờ.",
+      "analysis_vi": "突发事件的信息 là cụm định ngữ.",
+      "highlight": [
+        "事件"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c7aff6e-a770-4545-9965-25d2a14c63d3"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "事件 là một vụ việc cụ thể có tính đáng chú ý.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4213453f-3b85-47e7-970b-a4ed9609376f",
+      "order": 1,
+      "rule_vi": "活动 là hoạt động được tổ chức; 事件 là vụ việc/sự kiện xảy ra.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "活动 là hoạt động được tổ chức; 事件 là vụ việc/sự kiện xảy ra.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "事件",
+    "back": "sự kiện, vụ việc",
+    "hint": "shìjiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6c7aff6e-a770-4545-9965-25d2a14c63d3",
+    "source_lesson_vocab_id": null
+  }
+}

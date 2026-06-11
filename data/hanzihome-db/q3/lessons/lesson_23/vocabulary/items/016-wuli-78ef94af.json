@@ -1,0 +1,438 @@
+{
+  "id": "fdff4ddf-a755-4a8f-bb45-3f3922245d65",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "物理",
+  "pinyin": "wùlǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vật lý",
+    "meaning_vi": "vật lý; môn vật lý",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vật lý",
+      "môn vật lý"
+    ],
+    "short_definition_vi": "vật lý; môn vật lý",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về khoa học tự nhiên.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "khoa học tự nhiên",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "物",
+        "lishu_vi": "vật",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 物 trong từ 物理; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "牛",
+          "radical_variant": "牜",
+          "radical_name_vi": "bộ Ngưu dạng bên",
+          "radical_name_zh": "",
+          "hanviet": "ngưu",
+          "meaning_vi": "trâu/bò",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "牜 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "牜",
+            "hanviet": "ngưu",
+            "meaning_vi": "trâu/bò",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "牜 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "牛",
+              "radical_variant": "牜",
+              "radical_name_vi": "bộ Ngưu dạng bên",
+              "radical_name_zh": "",
+              "hanviet": "ngưu",
+              "meaning_vi": "trâu/bò",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "牜 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "勿",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 物理, chữ 物 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "理",
+        "lishu_vi": "lý",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 理 trong từ 物理; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "玉",
+          "radical_variant": "王",
+          "radical_name_vi": "bộ Ngọc dạng bên",
+          "radical_name_zh": "",
+          "hanviet": "ngọc",
+          "meaning_vi": "ngọc, vật quý; dạng 王 ở bên trái",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "王 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc",
+            "meaning_vi": "ngọc, vật quý; dạng 王 ở bên trái",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc dạng bên",
+              "radical_name_zh": "",
+              "hanviet": "ngọc",
+              "meaning_vi": "ngọc, vật quý; dạng 王 ở bên trái",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 物理, chữ 理 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "物理 trong bài được nhớ theo nghĩa hiện đại: môn vật lý.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 学物理 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "化学",
+        "pinyin": "huàxué",
+        "meaning_vi": "hóa học",
+        "difference_vi": "hóa học",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "理科",
+        "pinyin": "lǐkē",
+        "meaning_vi": "khối khoa học tự nhiên",
+        "difference_vi": "khối khoa học tự nhiên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 物理 để nói 'lý do'."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7fc06296-e885-483a-822c-54dcf12d40a4",
+      "order": 1,
+      "zh": "学物理",
+      "pinyin": "",
+      "vi": "học vật lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c55c26fc-1072-42fc-8b50-2911c51d8d74",
+      "order": 2,
+      "zh": "物理课",
+      "pinyin": "",
+      "vi": "môn vật lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0055e6a5-9dd4-4827-b2ff-dc5a16c89cf2",
+      "order": 3,
+      "zh": "物理实验",
+      "pinyin": "",
+      "vi": "thí nghiệm vật lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "570beaea-9aef-413a-ae98-00c697df5e76",
+      "order": 4,
+      "zh": "物理现象",
+      "pinyin": "",
+      "vi": "hiện tượng vật lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7849979c-232c-445c-9e4f-804366dc4071",
+      "order": 5,
+      "zh": "物理问题",
+      "pinyin": "",
+      "vi": "vấn đề vật lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ff3f96b4-a6a5-4acb-8f09-5727c9c86ebb",
+      "order": 1,
+      "zh": "我觉得物理比化学难。",
+      "pinyin": "",
+      "vi": "vật lý; môn vật lý",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "物理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fdff4ddf-a755-4a8f-bb45-3f3922245d65"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "448d7ecd-5326-431b-a403-d024ef573ca3",
+      "order": 2,
+      "zh": "这个词语“物理”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 物理 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "物理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fdff4ddf-a755-4a8f-bb45-3f3922245d65"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "047bec9d-d601-478b-a707-0349d13f3cbe",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“物理”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 物理 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "物理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fdff4ddf-a755-4a8f-bb45-3f3922245d65"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "理科 thường đối lập với 文科 trong bối cảnh học đường.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c432b095-915c-458c-bbb6-168e46a4bf83",
+      "order": 1,
+      "rule_vi": "Không dùng 物理 để nói 'lý do'.",
+      "natural_examples": [
+        {
+          "zh": "原因是什么？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "这个物理是什么？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "这个物理是什么？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "原因是什么？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dùng 物理 để nói 'lý do'.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "物理",
+    "back": "vật lý; môn vật lý",
+    "hint": "wùlǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fdff4ddf-a755-4a8f-bb45-3f3922245d65",
+    "source_lesson_vocab_id": null
+  }
+}

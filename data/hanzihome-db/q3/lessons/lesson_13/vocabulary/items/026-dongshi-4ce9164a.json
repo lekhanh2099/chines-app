@@ -1,0 +1,233 @@
+{
+  "id": "995e900d-0015-4599-9f28-26af1c4439d9",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "懂事",
+  "pinyin": "dǒngshì",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "growth"
+  ],
+  "meaning": {
+    "hanviet": "đổng sự",
+    "meaning_vi": "hiểu chuyện, biết điều, chín chắn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiểu chuyện",
+      "biết điều",
+      "chín chắn"
+    ],
+    "short_definition_vi": "hiểu chuyện, biết điều, chín chắn",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "懂",
+        "lishu_vi": "đổng",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm/lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm/lòng, cảm xúc",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm/lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiểu",
+        "modern_logic_vi": "Trong từ/cụm này, 懂 góp phần vào nghĩa hiện đại: hiểu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "事",
+        "lishu_vi": "sự",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc/chuyện",
+        "modern_logic_vi": "Trong từ/cụm này, 事 góp phần vào nghĩa hiện đại: việc/chuyện.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "懂事 cần học theo nghĩa hiện đại trong bài: hiểu chuyện, biết điều, chín chắn.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 很懂事.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "234f368d-867a-4a4d-91d0-bbee69ece970",
+      "order": 1,
+      "zh": "很懂事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5da34428-4a6d-43b9-93b1-ba8a400e1f12",
+      "order": 2,
+      "zh": "越来越懂事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f11be05d-7775-4fc1-aa33-39c88e1bba7c",
+      "order": 3,
+      "zh": "懂事的孩子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "427c1378-0047-4f73-beaf-cf8c9ea11a61",
+      "order": 1,
+      "zh": "这个孩子很懂事，从来不让父母担心。",
+      "pinyin": "Zhège háizi hěn dǒngshì, cónglái bú ràng fùmǔ dānxīn.",
+      "vi": "Đứa trẻ này rất hiểu chuyện, không để cha mẹ lo.",
+      "analysis_vi": "懂事 là phẩm chất ứng xử.",
+      "highlight": [
+        "懂事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "995e900d-0015-4599-9f28-26af1c4439d9"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e13eeee1-5789-4efe-b631-16d8766d9ada",
+      "order": 2,
+      "zh": "他是家里的老大，所以比别的孩子懂事得早。",
+      "pinyin": "Tā shì jiālǐ de lǎodà, suǒyǐ bǐ bié de háizi dǒngshì de zǎo.",
+      "vi": "Anh ấy là con cả nên hiểu chuyện sớm hơn trẻ khác.",
+      "analysis_vi": "比……懂事得早 so sánh thời điểm trưởng thành.",
+      "highlight": [
+        "懂事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "995e900d-0015-4599-9f28-26af1c4439d9"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "懂事 thường là lời khen nặng cảm xúc, nhưng cũng có thể phản ánh trẻ bị hoàn cảnh ép trưởng thành sớm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9249ca9d-e96d-4ad6-abf2-8a1b6a72d05e",
+      "order": 1,
+      "rule_vi": "Dùng 懂事 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "懂事",
+    "back": "hiểu chuyện, biết điều, chín chắn",
+    "hint": "dǒngshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "995e900d-0015-4599-9f28-26af1c4439d9",
+    "source_lesson_vocab_id": null
+  }
+}

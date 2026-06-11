@@ -1,0 +1,185 @@
+{
+  "id": "03a426fd-446e-41ed-bc25-7896f4a5a7e5",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "依然",
+  "pinyin": "yīrán",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "y nhiên",
+    "meaning_vi": "vẫn, vẫn như cũ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vẫn",
+      "vẫn như cũ"
+    ],
+    "short_definition_vi": "vẫn, vẫn như cũ",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "依",
+        "lishu_vi": "y",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dựa vào; vẫn",
+        "modern_logic_vi": "Trong từ này, 依 góp phần vào nghĩa hiện đại: dựa vào; vẫn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy",
+        "modern_logic_vi": "Trong từ này, 然 góp phần vào nghĩa hiện đại: như vậy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "依然 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 依然记得.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 依然 với 当然."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d238cdf9-af66-45cb-b515-b452074dc76e",
+      "order": 1,
+      "zh": "依然记得",
+      "pinyin": "",
+      "vi": "vẫn nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5897f26-55d6-4bc5-baf3-2b6aa4fae332",
+      "order": 2,
+      "zh": "依然爱着",
+      "pinyin": "",
+      "vi": "vẫn yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "baee13a0-72bf-4bbf-8a41-2338cc872159",
+      "order": 3,
+      "zh": "依然没有改变",
+      "pinyin": "",
+      "vi": "vẫn chưa thay đổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ec1a60e7-9335-47e1-8513-41a997cca95f",
+      "order": 1,
+      "zh": "过了很多年，我依然记得那个月夜。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 依然 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 依然; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "依然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "03a426fd-446e-41ed-bc25-7896f4a5a7e5"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 依然 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8fc38082-47a8-42a4-9c2d-b2d4ece1dd15",
+      "order": 1,
+      "rule_vi": "Không nhầm 依然 với 当然.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "依然",
+    "back": "vẫn, vẫn như cũ",
+    "hint": "yīrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "03a426fd-446e-41ed-bc25-7896f4a5a7e5",
+    "source_lesson_vocab_id": null
+  }
+}

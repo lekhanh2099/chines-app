@@ -1,0 +1,317 @@
+{
+  "id": "ecdcf8f3-0a27-4f84-aafd-49c2df88908c",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "道理",
+  "pinyin": "dàolǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đạo lý",
+    "meaning_vi": "đạo lý, lẽ phải, lý do/nguyên tắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đạo lý, lẽ phải, lý do/nguyên tắc"
+    ],
+    "short_definition_vi": "đạo lý, lẽ phải, lý do/nguyên tắc",
+    "textbook_focus_vi": "đạo lý, lẽ phải, lý do/nguyên tắc",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "道",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, di chuyển",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "首",
+            "hanviet": "thủ",
+            "meaning_vi": "đầu",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đường/đạo/lý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "理",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc/vương",
+            "meaning_vi": "ngọc/vua tùy chữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "王 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc dạng 王",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc/vua tùy chữ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "里",
+            "hanviet": "lý",
+            "meaning_vi": "bên trong/dặm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "lý/lý lẽ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "con đường/lý lẽ đúng để hiểu sự việc",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a46eda3b-e859-4117-9db7-84aa2f7cbc78",
+      "order": 1,
+      "zh": "有道理",
+      "pinyin": "",
+      "vi": "có lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe0f7b99-a491-40e1-91a5-32ac05b3c0b4",
+      "order": 2,
+      "zh": "没道理",
+      "pinyin": "",
+      "vi": "vô lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d2c493c-dd6d-477e-aaa5-06feb1051d23",
+      "order": 3,
+      "zh": "讲道理",
+      "pinyin": "",
+      "vi": "nói lý/biết điều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fe14520-c7d6-4fff-979c-9d47efdabbf3",
+      "order": 4,
+      "zh": "明白道理",
+      "pinyin": "",
+      "vi": "hiểu đạo lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17b5bda9-9bbf-4f9e-98f5-cfd2a779b2f6",
+      "order": 5,
+      "zh": "故事的道理",
+      "pinyin": "",
+      "vi": "đạo lý câu chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "22d57e35-a2e1-4662-9091-75d516cea065",
+      "order": 1,
+      "zh": "这个故事很有道理。",
+      "pinyin": "Zhège gùshi hěn yǒu dàolǐ.",
+      "vi": "Câu chuyện này rất có lý/đạo lý.",
+      "analysis_vi": "有道理 là cụm cố định.",
+      "highlight": [
+        "道理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ecdcf8f3-0a27-4f84-aafd-49c2df88908c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "17f8305c-f1cb-4db4-a801-b2142947f3fe",
+      "order": 2,
+      "zh": "如果不了解道理，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě dàolǐ, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 道理, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "道理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ecdcf8f3-0a27-4f84-aafd-49c2df88908c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6c33228f-19ef-4c5b-a223-17c3a5071bbf",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解道理在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě dàolǐ zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 道理 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "道理"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ecdcf8f3-0a27-4f84-aafd-49c2df88908c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Truyện ngụ ngôn Trung Quốc thường kết thúc bằng 道理, nhưng không nên áp dụng đạo lý máy móc.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5dd41d07-f4d9-4975-ab1e-b201516396ff",
+      "order": 1,
+      "rule_vi": "Không nhầm 道理 với 理由/原因; 原因 là nguyên nhân, 理由 là lý do。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "道理",
+    "back": "đạo lý, lẽ phải, lý do/nguyên tắc",
+    "hint": "dàolǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ecdcf8f3-0a27-4f84-aafd-49c2df88908c",
+    "source_lesson_vocab_id": null
+  }
+}

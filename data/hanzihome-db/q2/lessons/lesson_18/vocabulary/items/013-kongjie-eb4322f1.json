@@ -1,0 +1,371 @@
+{
+  "id": "9d3b6eda-7709-42e6-8fb8-0a635d8b60df",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "空姐",
+  "pinyin": "kōngjiě",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Không tả / Không thư",
+    "meaning_vi": "tiếp viên hàng không nữ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiếp viên hàng không nữ"
+    ],
+    "short_definition_vi": "tiếp viên hàng không nữ",
+    "textbook_focus_vi": "tiếp viên hàng không nữ",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "空",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "huyệt",
+            "meaning_vi": "hang/lỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "huyệt",
+              "meaning_vi": "hang, lỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "工",
+            "hanviet": "công",
+            "meaning_vi": "phần dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trống, không gian, bầu trời",
+        "modern_logic_vi": "空 trong 空姐 gắn với trên không/máy bay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "huyệt",
+          "meaning_vi": "hang, lỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "姐",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "且",
+            "hanviet": "",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chị gái; phụ nữ lớn tuổi hơn",
+        "modern_logic_vi": "姐 = chị/phụ nữ lớn hơn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "空 ở đây liên quan đến hàng không/bầu trời. 姐 là chị. → 空姐 = “chị hàng không”, tức tiếp viên hàng không nữ. Cảnh báo: nếu không biết giới tính hoặc muốn nói chuyên nghiệp hơn, dùng 空乘 hoặc 乘务员.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "空少",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiếp viên hàng không nam, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "空乘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiếp viên hàng không nói chung, trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "乘务员",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhân viên phục vụ trên phương tiện, có thể dùng cho máy bay/tàu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "空姐: tiếp viên hàng không nữ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "90f5a11b-041f-404b-86b9-862bc97dad0d",
+      "order": 1,
+      "zh": "问空姐",
+      "pinyin": "",
+      "vi": "hỏi tiếp viên hàng không nữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c9b8e5f5-8d49-4bdd-a682-69a9c75c961a",
+      "order": 2,
+      "zh": "空姐提醒大家",
+      "pinyin": "",
+      "vi": "tiếp viên nhắc mọi người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "64ce853a-34cb-4357-bf89-d104ccebd14d",
+      "order": 3,
+      "zh": "空姐帮我",
+      "pinyin": "",
+      "vi": "tiếp viên giúp tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d478a93-2c51-404e-80ed-a11a65085179",
+      "order": 4,
+      "zh": "空姐送水",
+      "pinyin": "",
+      "vi": "tiếp viên đưa nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8dcc752-0a87-48c0-84f2-02bde46ae88c",
+      "order": 5,
+      "zh": "空乘人员",
+      "pinyin": "",
+      "vi": "nhân viên tiếp viên hàng không",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "76c3c3fe-97da-4953-a3f4-7b70f249d322",
+      "order": 1,
+      "zh": "空姐提醒大家把安全带系好。",
+      "pinyin": "Kōngjiě tíxǐng dàjiā bǎ ānquándài jì hǎo.",
+      "vi": "Tiếp viên hàng không nhắc mọi người thắt dây an toàn cho chắc.",
+      "analysis_vi": "把安全带系好 là câu 把 có kết quả 好, nghĩa là thắt xong/đúng.",
+      "highlight": [
+        "空姐"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "9d3b6eda-7709-42e6-8fb8-0a635d8b60df"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c3e7ff6f-e994-46b5-9bc5-67fcd1718885",
+      "order": 2,
+      "zh": "如果不知道开关在哪儿，可以问空姐。",
+      "pinyin": "Rúguǒ bù zhīdào kāiguān zài nǎr, kěyǐ wèn kōngjiě.",
+      "vi": "Nếu không biết công tắc ở đâu, có thể hỏi tiếp viên.",
+      "analysis_vi": "开关在哪儿 là hỏi vị trí; câu rất thực tế trên máy bay.",
+      "highlight": [
+        "空姐"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "9d3b6eda-7709-42e6-8fb8-0a635d8b60df"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "06b3795c-b7a0-4f0d-addc-7f86cb59e2c6",
+      "order": 3,
+      "zh": "茶洒了以后，空姐马上拿来纸巾，帮他擦干净。",
+      "pinyin": "Chá sǎ le yǐhòu, kōngjiě mǎshàng ná lái zhǐjīn, bāng tā cā gānjìng.",
+      "vi": "Sau khi trà bị đổ, tiếp viên lập tức mang khăn giấy tới, giúp anh ấy lau sạch.",
+      "analysis_vi": "洒了 là bị đổ ra; 擦干净 là lau sạch, có kết quả rõ.",
+      "highlight": [
+        "空姐"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "9d3b6eda-7709-42e6-8fb8-0a635d8b60df"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Hiện nay trong môi trường chuyên nghiệp, cách gọi bao quát 空乘 hoặc 乘务员 được dùng nhiều vì không giới hạn giới tính. 空姐 vẫn rất phổ biến trong khẩu ngữ, nhưng nó chỉ nữ tiếp viên.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "29e661b5-f684-4745-9301-a0cbc32283a9",
+      "order": 1,
+      "rule_vi": "Dùng 空姐 cho mọi tiếp viên hàng không.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 空姐 theo cụm và ngữ cảnh bài 18; nghĩa chính là tiếp viên hàng không nữ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "空姐",
+    "back": "tiếp viên hàng không nữ",
+    "hint": "kōngjiě",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9d3b6eda-7709-42e6-8fb8-0a635d8b60df",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "id": "1408f59e-dca9-466a-a7cf-a5e9a6862742",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "耀眼",
+  "pinyin": "yàoyǎn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "diệu nhãn",
+    "meaning_vi": "chói mắt, lóa mắt; nổi bật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chói mắt",
+      "lóa mắt",
+      "nổi bật"
+    ],
+    "short_definition_vi": "sáng/rực đến mức gây chói mắt hoặc rất nổi bật",
+    "textbook_focus_vi": "Trong bài tả ánh sáng của đĩa bay.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "耀",
+        "lishu_vi": "",
+        "structure_note_vi": "光 + 翟",
+        "components": [
+          {
+            "text": "光",
+            "hanviet": "",
+            "meaning_vi": "ánh sáng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "翟",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng rực",
+        "modern_logic_vi": "sáng rực",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "眼",
+        "lishu_vi": "",
+        "structure_note_vi": "目 + 艮",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "",
+            "meaning_vi": "mắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "目 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "艮",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mắt",
+        "modern_logic_vi": "mắt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "目 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "耀眼 được học trong bài theo nghĩa: sáng/rực đến mức gây chói mắt hoặc rất nổi bật.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 十分耀眼.",
+    "warning_vi": "耀眼 không phải 'đẹp' nói chung; dùng cho chói sáng hoặc rất nổi bật.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "刺眼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Chói/xốn mắt, khó chịu hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "显眼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nổi bật/dễ thấy, không nhất thiết sáng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "耀眼 không phải 'đẹp' nói chung; dùng cho chói sáng hoặc rất nổi bật."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "22a269f0-dc69-41f6-8aa0-0e2c7021bd50",
+      "order": 1,
+      "zh": "十分耀眼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5da2b716-dd84-4fc6-bf61-e72cf88f37c8",
+      "order": 2,
+      "zh": "光亮耀眼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6635233-de3b-4437-a4d5-c549573db9d7",
+      "order": 3,
+      "zh": "耀眼的光",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "78755424-58f6-4aa0-9bcb-f2c222cc0552",
+      "order": 4,
+      "zh": "耀眼的颜色",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d888fdb-ef49-4cb1-ad8d-add6446635ef",
+      "order": 5,
+      "zh": "耀眼的成绩",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b7ca871b-f3a9-4986-a92a-9695fa79f1a1",
+      "order": 1,
+      "zh": "那橙红色的光亮十分耀眼。",
+      "pinyin": "",
+      "vi": "Ánh sáng đỏ cam ấy vô cùng chói mắt.",
+      "analysis_vi": "十分 tăng mức độ trong văn miêu tả.",
+      "highlight": [
+        "耀眼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1408f59e-dca9-466a-a7cf-a5e9a6862742"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2905be91-e7c4-4bea-b2d1-d7bd50d2fd19",
+      "order": 2,
+      "zh": "我一抬头，就被一道耀眼的光照得睁不开眼睛。",
+      "pinyin": "",
+      "vi": "Tôi vừa ngẩng đầu thì bị một luồng sáng chói chiếu đến mức không mở mắt ra được.",
+      "analysis_vi": "被……照得…… nhấn tác động.",
+      "highlight": [
+        "耀眼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1408f59e-dca9-466a-a7cf-a5e9a6862742"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "耀眼 còn dùng ẩn dụ như 耀眼的成绩.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a7ede44f-fd9f-4db9-95e9-a6660727dc6d",
+      "order": 1,
+      "rule_vi": "耀眼 không phải 'đẹp' nói chung; dùng cho chói sáng hoặc rất nổi bật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "耀眼 không phải 'đẹp' nói chung; dùng cho chói sáng hoặc rất nổi bật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "耀眼",
+    "back": "chói mắt, lóa mắt; nổi bật",
+    "hint": "yàoyǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1408f59e-dca9-466a-a7cf-a5e9a6862742",
+    "source_lesson_vocab_id": null
+  }
+}

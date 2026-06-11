@@ -1,0 +1,397 @@
+{
+  "id": "dcbc7c21-0fc0-4b9c-94f9-ada85028108a",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "手提包儿",
+  "pinyin": "shǒutíbāor",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "documents_objects"
+  ],
+  "meaning": {
+    "hanviet": "thủ đề bao nhi",
+    "meaning_vi": "túi xách tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "túi xách tay"
+    ],
+    "short_definition_vi": "túi xách tay",
+    "textbook_focus_vi": "túi xách tay",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "手 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "手 là tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "提",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "是",
+            "hanviet": "",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xách, nhấc, nêu ra",
+        "modern_logic_vi": "提 trong 手提包儿 là xách bằng tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "包",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "勹",
+            "hanviet": "",
+            "meaning_vi": "bao bọc",
+            "position_vi": "bên ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "巳",
+            "hanviet": "",
+            "meaning_vi": "thành phần trong",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bao, túi, gói",
+        "modern_logic_vi": "包 là vật bao/gói/đựng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố nhi hóa; trẻ/con",
+        "modern_logic_vi": "儿 trong 好好儿/慢慢儿 là âm nhi hóa khẩu ngữ.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手 + 提 + 包 = cái túi được xách bằng tay; 儿 là khẩu ngữ Bắc phương.",
+    "memory_tip_vi": "手 + 提 + 包 = cái túi được xách bằng tay; 儿 là khẩu ngữ Bắc phương.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "包",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "túi nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "书包",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cặp sách/ba lô học sinh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "背包",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ba lô",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挎包",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "túi đeo vai/đeo chéo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2098f58f-cb30-4d8c-880f-62e7f7203428",
+      "order": 1,
+      "zh": "一个手提包儿",
+      "pinyin": "",
+      "vi": "một cái túi xách tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ae365b8-8df9-4f2b-85cf-9e75bb6779a9",
+      "order": 2,
+      "zh": "拿着手提包儿",
+      "pinyin": "",
+      "vi": "cầm túi xách tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "93e07a1b-aa74-46c0-af0b-9c713562db45",
+      "order": 3,
+      "zh": "把护照放在手提包儿里",
+      "pinyin": "",
+      "vi": "để hộ chiếu trong túi xách tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc6538be-127d-48eb-8316-4591d05da2dd",
+      "order": 4,
+      "zh": "手提包儿不见了",
+      "pinyin": "",
+      "vi": "túi xách tay biến mất rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b6918a4-0ac4-45f6-95ef-e95275717f4b",
+      "order": 5,
+      "zh": "翻手提包儿",
+      "pinyin": "",
+      "vi": "lục túi xách tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4e01693e-c95c-45e5-af88-65aa0ab40d05",
+      "order": 1,
+      "zh": "她的手提包儿放在桌子上。",
+      "pinyin": "",
+      "vi": "Túi xách tay của cô ấy để trên bàn.",
+      "analysis_vi": "放在桌子上 nói vị trí sau hành động đặt.",
+      "highlight": [
+        "手提包儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dcbc7c21-0fc0-4b9c-94f9-ada85028108a"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "570a1787-4c66-4f1c-b4e7-7c1fb902185d",
+      "order": 2,
+      "zh": "护照是在手提包儿里找到的吗？",
+      "pinyin": "",
+      "vi": "Hộ chiếu là tìm thấy trong túi xách tay à?",
+      "analysis_vi": "是……的 nhấn nơi tìm thấy.",
+      "highlight": [
+        "手提包儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dcbc7c21-0fc0-4b9c-94f9-ada85028108a"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Đời sống hiện đại hay nói gọn 包; 手提包儿 cụ thể và có sắc thái Bắc phương.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3a8d6872-b88f-4295-8be0-19fda5d82352",
+      "order": 1,
+      "rule_vi": "Không dịch 手提包儿 thành “bao tay”; 手套 mới là găng tay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "手提包儿是 túi xách tay.",
+          "pinyin": "",
+          "vi": "手提包儿 = túi xách tay.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "手套是 găng tay.",
+          "pinyin": "",
+          "vi": "手套 = găng tay.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手提包儿",
+    "back": "túi xách tay",
+    "hint": "shǒutíbāor",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "documents_objects"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dcbc7c21-0fc0-4b9c-94f9-ada85028108a",
+    "source_lesson_vocab_id": null
+  }
+}

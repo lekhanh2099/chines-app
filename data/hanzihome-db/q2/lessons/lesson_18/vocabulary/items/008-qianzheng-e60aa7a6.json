@@ -1,0 +1,390 @@
+{
+  "id": "fe77da42-bdda-4481-89a0-1af31f1838de",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "签证",
+  "pinyin": "qiānzhèng",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Thiêm chứng",
+    "meaning_vi": "visa, thị thực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "visa, thị thực"
+    ],
+    "short_definition_vi": "visa, thị thực",
+    "textbook_focus_vi": "visa, thị thực",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "签",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "⺮",
+            "hanviet": "trúc",
+            "meaning_vi": "tre/thẻ tre",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "⺮",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre, thẻ tre",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "佥",
+            "hanviet": "",
+            "meaning_vi": "phần dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ký tên, thẻ, phiếu, dấu xác nhận",
+        "modern_logic_vi": "签 gợi ký/xác nhận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "⺮",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre, thẻ tre",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "证",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/văn bản",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, văn bản",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "đúng/chính",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chứng minh, giấy chứng nhận",
+        "modern_logic_vi": "证 = chứng nhận/chứng minh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, văn bản",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "签 là ký, ký tên, ký duyệt. 证 là chứng nhận, giấy chứng minh. → 签证 = giấy/việc chứng nhận được ký duyệt cho phép nhập cảnh/lưu trú. Cảnh báo: 签证 không phải hộ chiếu. Visa thường gắn với hộ chiếu hoặc hồ sơ điện tử, tùy nước.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "护照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hộ chiếu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "居留许可",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấy phép cư trú.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "入境",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhập cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出境",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xuất cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "护照",
+        "right": "签证",
+        "meaning_vi": "hộ chiếu ↔ visa",
+        "note_vi": "hộ chiếu ↔ visa",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "签证: visa/thị thực."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0fecad17-35cb-4f86-95ce-eecfe756d6d8",
+      "order": 1,
+      "zh": "办理签证",
+      "pinyin": "",
+      "vi": "làm visa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa7f500d-464d-416d-ab4f-545aaa5829c6",
+      "order": 2,
+      "zh": "申请签证",
+      "pinyin": "",
+      "vi": "xin visa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22f1440c-1f0a-4810-a7b9-7807a0ec48b5",
+      "order": 3,
+      "zh": "旅游签证",
+      "pinyin": "",
+      "vi": "visa du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "842e1187-d87a-4c36-8bf3-9d617785dfd9",
+      "order": 4,
+      "zh": "学生签证",
+      "pinyin": "",
+      "vi": "visa du học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "58c887f0-81e0-44c9-9479-674ef211a714",
+      "order": 5,
+      "zh": "签证过期",
+      "pinyin": "",
+      "vi": "visa hết hạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a960433e-7813-4be2-a15a-e8066f52e541",
+      "order": 1,
+      "zh": "去中国以前，他先办理了签证。",
+      "pinyin": "Qù Zhōngguó yǐqián, tā xiān bànlǐ le qiānzhèng.",
+      "vi": "Trước khi đi Trung Quốc, anh ấy làm visa trước.",
+      "analysis_vi": "办理签证 là cụm chính thức; dùng 办理, không dùng 做.",
+      "highlight": [
+        "签证"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "fe77da42-bdda-4481-89a0-1af31f1838de"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ca53213e-928a-4c8b-8897-a16bf78cc7fa",
+      "order": 2,
+      "zh": "请把护照和签证都拿出来，工作人员要检查。",
+      "pinyin": "Qǐng bǎ hùzhào hé qiānzhèng dōu ná chūlai, gōngzuò rényuán yào jiǎnchá.",
+      "vi": "Xin hãy lấy cả hộ chiếu và visa ra, nhân viên cần kiểm tra.",
+      "analysis_vi": "把……拿出来 là câu 把 có hướng ra ngoài, dùng khi xuất trình giấy tờ.",
+      "highlight": [
+        "签证"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "fe77da42-bdda-4481-89a0-1af31f1838de"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3afbe3ad-b7c0-4e57-88de-e91c6bb6700c",
+      "order": 3,
+      "zh": "如果签证过期了，很多手续都办不了。",
+      "pinyin": "Rúguǒ qiānzhèng guòqī le, hěn duō shǒuxù dōu bàn bù liǎo.",
+      "vi": "Nếu visa hết hạn, rất nhiều thủ tục đều không làm được.",
+      "analysis_vi": "过期 là hết hạn; 办不了 là không làm được do điều kiện không hợp lệ.",
+      "highlight": [
+        "签证"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "fe77da42-bdda-4481-89a0-1af31f1838de"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Không có fact văn hóa riêng cần tách sâu; dùng theo ngữ cảnh đời sống/sân bay trong bài.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "03037254-94f3-4072-9286-5d2d5312dd5a",
+      "order": 1,
+      "rule_vi": "Dùng đúng ngữ cảnh của từ; tránh dịch máy theo tiếng Việt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 签证 theo cụm và ngữ cảnh bài 18; nghĩa chính là visa, thị thực.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "签证",
+    "back": "visa, thị thực",
+    "hint": "qiānzhèng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fe77da42-bdda-4481-89a0-1af31f1838de",
+    "source_lesson_vocab_id": null
+  }
+}

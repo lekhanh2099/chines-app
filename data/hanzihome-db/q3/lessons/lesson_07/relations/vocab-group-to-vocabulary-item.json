@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "rel_0d0071385c27288cb576ccc3",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "7cfcb083-fddb-49f6-af24-c197e5d82a2d",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/044-ke-zhou-qiu-jian-1d42299b.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "刻舟求剑"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0dc0cee7fccbaa0a1ace4c4c",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "bbc63eae-e97f-4f89-b6f6-4e0fc53f0488",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/054-ren-pa-chuming-zhu-pa-zhuang-30777ac7.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "人怕出名猪怕壮"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2bfeaeeafa444100ab937a31",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "66b749ef-8cc8-414b-a2cf-37220be5ae8a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-zi-xiang-mao-dun-8f319b4a.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "自相矛盾"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_33f5cebd5de658ad8e9d8a93",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "0d2b6c7a-fd1a-4326-81bd-bb659801fd25",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/001-chengyu-20fac207.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "成语"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_45176fccaee0689d0033748d",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "a5629450-5acc-4ed7-bdd2-b3b01b29644b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/002-lanyu-chongshu-809a5db3.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "滥竽充数"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_852930d144b610f0a36528c8",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "91a0136e-7afd-45b4-947c-8993fd407004",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/052-bai-wen-bu-ru-yi-jian-21c10a63.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "百闻不如一见"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b75e7b20e42350afe57a14dc",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "d8572f7b-b93b-46f0-a0cb-e90ddc690d42",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/055-qingren-yan-li-chu-xishi-b5b3e44f.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "情人眼里出西施"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c4a73ea75bdd497d446e5cfe",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "837ca392-ae98-4e57-955b-e7add2b33b69",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.0"
+    },
+    "to": {
+      "id": "46785362-042f-4b41-b0c4-336eb246c0bc",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/053-chusheng-niudu-bu-pa-hu-7498eca0.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "初生牛犊不怕虎"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_075702062f33e084221ac701",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "a2d36aae-63fd-4a7c-aef9-c92562c5be5f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/007-yuedui-1720f1f6.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "乐队"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2af8b6b8b362fbc5c53e7cb2",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "780d4104-2a10-45a6-ab6f-29146b1520fc",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/008-hezou-577460ba.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "合奏"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2c9ce5e42422c1a7514ea3d0",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "3fd4b68e-c595-4a55-bae3-eb5894c95cea",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/004-yueqi-3f7695cb.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "乐器"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7b840e82cd1ae2aec9316d4f",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "2020a541-8bb8-419e-9834-2b4428167cde",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/003-yu-59b51b56.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "竽"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a615d9395fb0ba6e90c90f9f",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "864224fe-3028-4643-82f2-95dbe016c660",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/021-duzou-16e5b679.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "独奏"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d4494edfb30b3e9410faf486",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "e21dd81c-cd64-43b6-a275-4d9ebd404524",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/009-yiqi-04d4ec16.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "一齐"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f92e236b9a3cd3a5332470b7",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "12b34ea4-0f79-46f0-96c1-25b09fbb42d8",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.1"
+    },
+    "to": {
+      "id": "dc4b07e8-5c2f-4a6a-b9cf-84819b6b2d14",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/005-chui-62a845dc.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "吹"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0a28c78a59646dc5a4ce5ede",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c4eba148-ea6d-4a8c-b05e-91914754d999",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "to": {
+      "id": "32f8ac58-7f99-48e3-979a-cb7a47ba7d9a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/043-nan-guo-xiansheng-09870d67.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "南郭先生"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_96092088b2d391c44bd0f198",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c4eba148-ea6d-4a8c-b05e-91914754d999",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "to": {
+      "id": "6f58de77-9321-4669-82e2-88d7b98508c9",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/006-guowang-2ea109f0.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "国王"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9ab7853286337f9393fc17e8",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c4eba148-ea6d-4a8c-b05e-91914754d999",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "to": {
+      "id": "a6633375-fda3-4086-9ad9-8d8413e11b45",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-guke-0395f99f.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "顾客"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ae1ea2b8afbece92b999f664",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c4eba148-ea6d-4a8c-b05e-91914754d999",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "to": {
+      "id": "ec0b6bd8-45a0-4863-b06b-4bb4b7ae4cda",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/028-congqian-a5680bc2.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "从前"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_fc8234f5db1e6192f035340d",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c4eba148-ea6d-4a8c-b05e-91914754d999",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.2"
+    },
+    "to": {
+      "id": "07609940-737f-4cd9-850c-65fcec67c5b2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/020-erzi-fd81fc36.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "儿子"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_39dc1d62695440f82b1fc828",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "f336a04a-22af-4caf-af72-7f373c9cd794",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/022-xia-67dfb6c6.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "吓"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_64dcca0a22f1d7f779e77aca",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "0c2c9c05-6ff2-484a-b588-4bb2acb546a8",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/031-jiaomai-06f87b29.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "叫卖"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6aef9a1c13409093f1afba01",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "d7ac228b-9d00-4293-9cc6-e51dd667bd27",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-liu-8093a298.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "溜"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6b388b45b53f5a0c45f6e432",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "8d966cbf-5762-4e4f-a924-b47d75824ff7",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/029-xiyin-a18ab9e6.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "吸引"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6f509645c41682bd83bb8d7c",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "4014205c-2f5f-4bd7-93df-6c59218d9624",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-chuiniu-106e75ff.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "吹牛"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_88d2b51a5e33518e3c007ead",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "b65582b3-9e50-42da-be14-b0f61b0866d9",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/038-han-d52c2024.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "喊"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a446e398622a03d840b43a32",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "8404b781-4945-4d0e-9597-c6046c5417df",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-diu-496e8d22.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "丢"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_aba51983ad2a5fd2327e1cc3",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "21800caf-1cf3-43d4-ace8-da3663db3eab",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/019-si-6a00ad9b.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "死"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ae7e76c6ef6c7223d9a412aa",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "8694d88e-c248-4489-a90e-bf997f2cd1f6",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/033-ju-0ca4f913.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "举"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_bc8b9f9619bf6dfcf48247c3",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "dddd2f66-06a7-496a-b98e-b1c6f87ebf7f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/018-hun-5105ab95.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "混"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e3aca14d7c7137c3d1bee86e",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "25309b8f-0467-4ee1-8e21-e2810cbe14fc",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/032-qiao-ad798e2d.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "瞧"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f8c6e7ad04ae531227da0cba",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "0bb532df-3e71-4071-a05d-5a310a7f098e",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/037-tou-8a29f949.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "透"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f9822edbfe4eb65f26b7687f",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "a1507208-c276-41d9-89c8-730d4fda3ef6",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/010-rumi-36eb58c8.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "入迷"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_fedb230671c636fee086fbff",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "ff9bd6db-a990-4094-8ac5-dcd49123ae2e",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.3"
+    },
+    "to": {
+      "id": "79cd1bc3-af47-490b-9924-55c4a4947259",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/036-ci-7575bf37.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "刺"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0133ba0f629fff9ae98febc8",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "6584f5ec-8766-4455-80b2-cd662783c91a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/041-qizhong-2604bec7.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "其中"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0a31e90586900ea92891f83a",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "d1ba61c5-2be9-4b85-ba65-3960d1078aed",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/016-genben-5e4266b2.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "根本"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_17354de6c2d77e9497e001e2",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "0f500d92-748e-476a-bb78-758efd4bdb41",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/034-jiangu-48ba251a.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "坚固"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3d0f52579d296df44ff54ab3",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "f109b9c5-ef36-4d57-8f54-8167823640e2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/040-buguan-f78fede6.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "不管"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8750ef51337f9f7c15547a10",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "42cd98c1-5984-4693-bb39-432b873c176a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/013-cha-f5fe7fff.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "差"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c01a501fcbfd073122cf469b",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "4e8cfd5b-89fe-4451-8d3f-956cc29f6f63",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/039-wubi-cd883bac.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "无比"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_de0d06e812b2aeb4eb1fa0e3",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "8859c554-71f7-4910-9ff8-c3ff1c8d0703",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-renhe-d3795615.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "任何"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f086bb318b3e96ee21f6414a",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "a7ff258a-a414-4cde-87a4-c70bf13a2922",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/035-fengli-397f6789.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "锋利"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f0aa4fc7d63c78a916000b3e",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "ad44ac92-cc18-486e-a3aa-8f57f09b0b90",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/042-jiran-e8fe1f08.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "既然"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f3498a9840e420d06536ceec",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "2c0861fe-f3c7-440b-a76e-97424a7615e5",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/027-maodun-099c42bd.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "矛盾"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f8b96edffdc21903d0eac071",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "a32f2f5a-e362-45dd-8a7e-c96b78d1e465",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/014-zhuan-6332baba.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "专"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_fb4c51b08aff645bfc55cdfd",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "c03496a6-4b17-42d2-b289-0c13b6818604",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.4"
+    },
+    "to": {
+      "id": "882dc4dc-b5ac-46bd-b1f4-0e05af3b1e84",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/017-fu-d94cbcc1.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "副"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0468a3a94d981b1c811b745d",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "80c6c1ea-a8c8-4641-a704-6f1a3992652e",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/049-pocai-922e980a.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "破财"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_1fdfdd9b38d43bb7b163ad82",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "981deec8-14af-4206-95cf-c65ca8935640",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/050-mianchu-366a5ba1.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "免除"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_24d96fa3a05685dc0d76f481",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "e27f41c9-1409-440f-bb1e-c2943f20d61c",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/047-jihao-3c3ad500.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "记号"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_436280e8e7cddad72cab232c",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "7bd5eed7-9296-4da8-970e-1d50e09026dc",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/051-zaihai-89cad61b.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "灾害"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_677cf2451e4c7c6a54a35842",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "4e018c05-3211-49a4-9c5f-b04c45797d2c",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/026-dun-6e52a66c.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "盾"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6df7e096852eae629c3e9193",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "a72dd3fc-d414-4dcb-854d-b5cb47b363aa",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/046-jian-fed10877.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "剑"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_72f8589e89d2b2c7d0965d4a",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "da86baa7-c53a-47c4-8dc4-34b7113ebf39",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-mao-18b26068.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "矛"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a310f8a8f51eada60fb41a93",
+    "type": "vocab_group_to_vocabulary_item",
+    "from": {
+      "id": "d8b5f2a4-924d-4bcf-a94c-84db45fe99f6",
+      "kind": "vocab_group",
+      "path": "$.overview.groups.5"
+    },
+    "to": {
+      "id": "ceb6e16f-7af1-4a65-a9cc-dade994acd21",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/048-an-05903be8.json"
+    },
+    "evidence": {
+      "source": "group_words",
+      "matched_text": "岸"
+    },
+    "confidence": "high",
+    "check_needed": false
+  }
+]

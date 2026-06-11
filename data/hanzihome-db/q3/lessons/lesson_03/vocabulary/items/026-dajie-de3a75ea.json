@@ -1,0 +1,382 @@
+{
+  "id": "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "大街",
+  "pinyin": "dàjiē",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "city",
+    "place"
+  ],
+  "meaning": {
+    "hanviet": "đại nhai",
+    "meaning_vi": "đường lớn, phố lớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đường lớn",
+      "phố lớn"
+    ],
+    "short_definition_vi": "đường lớn, phố lớn",
+    "textbook_focus_vi": "đường lớn, phố lớn",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "city, place",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "大",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "Trong từ này, 大 góp phần vào lớp nghĩa hiện đại: lớn",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "街",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "圭",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "行",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn khung",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phố, đường phố",
+        "modern_logic_vi": "Trong từ này, 街 góp phần vào lớp nghĩa hiện đại: phố, đường phố",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "大 = lớn; 街 = đường phố. 大街 là con phố/đường lớn, nhộn nhịp.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "街",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "街道",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "马路",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "路",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "小巷",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a140993a-31ee-43ff-bd7f-4d85b72b8e7b",
+      "order": 1,
+      "zh": "大街上",
+      "pinyin": "",
+      "vi": "trên phố lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9cd4c357-c5e8-4aa9-8888-c671d9949a78",
+      "order": 2,
+      "zh": "走在大街上",
+      "pinyin": "",
+      "vi": "đi trên phố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2afb39a-6cff-451f-a8da-6a7df103b0a7",
+      "order": 3,
+      "zh": "大街小巷",
+      "pinyin": "",
+      "vi": "phố lớn ngõ nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5de3cbeb-bc35-44d0-84e9-866dab5906b1",
+      "order": 4,
+      "zh": "热闹的大街",
+      "pinyin": "",
+      "vi": "phố nhộn nhịp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0aac3b5-4d92-42e8-b594-0ff5c9b552fc",
+      "order": 5,
+      "zh": "大街两旁",
+      "pinyin": "",
+      "vi": "hai bên phố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d89a793c-de83-4b2e-8e2f-27d14fdd8e38",
+      "order": 6,
+      "zh": "北京的大街",
+      "pinyin": "",
+      "vi": "phố lớn ở Bắc Kinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6b216c35-eed1-4fb3-af25-f80eaf42a608",
+      "order": 1,
+      "zh": "春天的大街上有很多鲜花。",
+      "pinyin": "",
+      "vi": "Trên phố mùa xuân có nhiều hoa tươi.",
+      "analysis_vi": "大街上有…… là câu tồn hiện.",
+      "highlight": [
+        "大街"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b213b1cb-3d06-47b3-84e3-a1d9d4dcba0b",
+      "order": 2,
+      "zh": "一到国庆节，大街上就挂满了红旗。",
+      "pinyin": "",
+      "vi": "Cứ đến Quốc khánh, phố lớn treo đầy cờ đỏ.",
+      "analysis_vi": "一到……就…….",
+      "highlight": [
+        "大街"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d49d90a5-0b97-4e2e-a7ca-554cd3ea4385",
+      "order": 3,
+      "zh": "北京春天的大街上有鲜花，也有游人。",
+      "pinyin": "",
+      "vi": "Trên phố Bắc Kinh mùa xuân có hoa và du khách.",
+      "analysis_vi": "有……也有…… tả cảnh.",
+      "highlight": [
+        "大街"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "大街 trong Bài 3 北京的四季",
+    "content_vi": "大街小巷 nghĩa là khắp phố lớn ngõ nhỏ.",
+    "tags": [
+      "city",
+      "place"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "aa597fa1-147d-4a60-880d-6945adbfb2a2",
+      "order": 1,
+      "rule_vi": "大街 là phố lớn; 街道 có thể là đường phố hoặc đơn vị quản lý đô thị.",
+      "natural_examples": [
+        {
+          "zh": "春天的大街上有很多鲜花。",
+          "pinyin": "",
+          "vi": "Trên phố mùa xuân có nhiều hoa tươi.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "大街 là phố lớn; 街道 có thể là đường phố hoặc đơn vị quản lý đô thị.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "大街",
+    "back": "đường lớn, phố lớn",
+    "hint": "dàjiē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "city",
+      "place"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12",
+    "source_lesson_vocab_id": null
+  }
+}

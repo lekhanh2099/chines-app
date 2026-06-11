@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_9549efeef0b469c4",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "热情",
+  "pinyin": "rèqíng",
+  "meaning_vi": "nhiệt tình; nồng hậu",
+  "pos": "Tính từ - danh từ",
+  "pos_detail": {
+    "vi": "Tính từ - danh từ",
+    "cn": "形容词 / 名词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Có thể là tính từ 'nhiệt tình/nồng hậu' hoặc danh từ 'sự nhiệt tình'; trong bài ưu tiên tính từ.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+    "type": "vocabulary_item",
+    "order": 37,
+    "hanzi": "热情",
+    "pinyin": "rèqíng",
+    "meaning_vi": "nhiệt tình; nồng hậu",
+    "meaning_en": "",
+    "pos": "Tính từ - danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "热情",
+      "back": "rèqíng — nhiệt tình; nồng hậu",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ - danh từ",
+      "cn": "形容词 / 名词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Có thể là tính từ 'nhiệt tình/nồng hậu' hoặc danh từ 'sự nhiệt tình'; trong bài ưu tiên tính từ.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,334 @@
+{
+  "id": "88c2e612-7ce7-422f-936e-921f3d87e113",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "拍",
+  "pinyin": "pāi",
+  "pos": {
+    "raw_vi": "Động từ / danh từ / lượng từ",
+    "raw_cn": "动/名/量",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "action"
+  ],
+  "meaning": {
+    "hanviet": "Phách",
+    "meaning_vi": "vỗ; chụp/quay; nhịp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vỗ; chụp/quay; nhịp"
+    ],
+    "short_definition_vi": "vỗ; chụp/quay; nhịp",
+    "textbook_focus_vi": "vỗ; chụp/quay; nhịp",
+    "register_vi": "",
+    "usage_domain_vi": "action",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拍",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ Thủ trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "gợi âm",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vỗ, chụp/quay, nhịp",
+        "modern_logic_vi": "扌 gợi thao tác bằng tay; 拍 mở rộng sang chụp/quay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ Thủ trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "扌 gợi thao tác bằng tay; 拍 mở rộng sang chụp/quay.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "录",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ccf48715-3f02-4ee3-81bc-6e97ee5ac124",
+      "order": 1,
+      "zh": "拍手",
+      "pinyin": "",
+      "vi": "vỗ tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d7fa6248-ea57-4887-81e8-34de78b020b2",
+      "order": 2,
+      "zh": "拍照",
+      "pinyin": "",
+      "vi": "chụp ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ddcce582-6265-4184-b1be-67755c58687d",
+      "order": 3,
+      "zh": "拍视频",
+      "pinyin": "",
+      "vi": "quay video",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e24fdb38-7547-4bc3-a291-de71e5a74a0b",
+      "order": 4,
+      "zh": "拍电影",
+      "pinyin": "",
+      "vi": "quay phim",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82b10131-5881-4d35-a9c1-568ba14a27d3",
+      "order": 5,
+      "zh": "拍肩膀",
+      "pinyin": "",
+      "vi": "vỗ vai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c713f34b-d566-4221-a570-9a435fb27b56",
+      "order": 6,
+      "zh": "节拍",
+      "pinyin": "",
+      "vi": "nhịp điệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4419a5d3-d8a3-420a-8749-5a2fba27e0d7",
+      "order": 1,
+      "zh": "同学们听完以后，都拍手了。",
+      "pinyin": "Tóngxuémen tīng wán yǐhòu, dōu pāi shǒu le.",
+      "vi": "Sau khi nghe xong, các bạn đều vỗ tay.",
+      "analysis_vi": "拍手 = vỗ tay.",
+      "highlight": [
+        "拍"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "88c2e612-7ce7-422f-936e-921f3d87e113"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f48f58e6-dc1f-427e-b155-32fb6813ab4c",
+      "order": 2,
+      "zh": "课外活动结束以后，我们把同学们练太极拳的样子拍了下来。",
+      "pinyin": "Kèwài huódòng jiéshù yǐhòu, wǒmen bǎ tóngxuémen liàn tàijíquán de yàngzi pāi le xiàlái.",
+      "vi": "Sau khi hoạt động ngoại khóa kết thúc, chúng tôi chụp/quay lại dáng các bạn luyện Thái Cực Quyền.",
+      "analysis_vi": "把……拍下来 = chụp/quay lại để lưu.",
+      "highlight": [
+        "拍"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "88c2e612-7ce7-422f-936e-921f3d87e113"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "拍照/拍视频 rất thông dụng trong tiếng Trung hiện đại.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1721ee0a-5f4e-4fdb-8b04-bfff00ccc371",
+      "order": 1,
+      "rule_vi": "拍照 không phải “vỗ ảnh”; đó là chụp ảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我想拍照。",
+          "pinyin": "Wǒ xiǎng pāizhào.",
+          "vi": "Tôi muốn chụp ảnh.",
+          "note_vi": "Cụm cố định.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拍",
+    "back": "vỗ; chụp/quay; nhịp",
+    "hint": "pāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "action"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "88c2e612-7ce7-422f-936e-921f3d87e113",
+    "source_lesson_vocab_id": null
+  }
+}

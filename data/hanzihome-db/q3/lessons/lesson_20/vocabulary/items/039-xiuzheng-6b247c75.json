@@ -1,0 +1,363 @@
+{
+  "id": "a1fb7b9d-20fa-4d93-80e3-b2f4a922953c",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "修正",
+  "pinyin": "xiūzhèng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tu chính",
+    "meaning_vi": "sửa đúng, chỉnh sửa cho đúng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sửa đúng",
+      "chỉnh sửa cho đúng"
+    ],
+    "short_definition_vi": "sửa đúng, chỉnh sửa cho đúng",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "修",
+        "lishu_vi": "tu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "彡",
+            "hanviet": "sam",
+            "meaning_vi": "nét trang trí",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sửa, tu sửa, tu dưỡng",
+        "modern_logic_vi": "修正 = sửa cho đúng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "正",
+        "lishu_vi": "chính",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng/chân",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đúng, chính, ngay thẳng",
+        "modern_logic_vi": "正确 = đúng và chắc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "修正 được dùng trong Bài 20 với nghĩa: sửa đúng, chỉnh sửa cho đúng.",
+    "memory_tip_vi": "Nhớ qua cụm 修正错误.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "修改",
+        "pinyin": "xiūgǎi",
+        "meaning_vi": "chỉnh sửa",
+        "difference_vi": "Văn bản, kế hoạch, phương án.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改正",
+        "pinyin": "gǎizhèng",
+        "meaning_vi": "sửa cho đúng",
+        "difference_vi": "Dùng với lỗi cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bb7d7dc6-2f27-4c6d-a251-1b9b165b932e",
+      "order": 1,
+      "zh": "修正错误",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1ab071c-6de0-417b-af16-34f35d5f9c14",
+      "order": 2,
+      "zh": "修正观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "64ab5508-9956-4fc1-ac3e-b8475fc4fd23",
+      "order": 3,
+      "zh": "修正理论",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1af2bae-8796-4855-b8c8-94f5f602d929",
+      "order": 4,
+      "zh": "修正方案",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ad4d6c6-aea3-41e6-830f-e8d722dfc80e",
+      "order": 5,
+      "zh": "及时修正",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bed5e033-1398-41f8-b4cb-e8ac23f851a6",
+      "order": 6,
+      "zh": "不断修正",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9de8a90f-e085-4f9d-970b-8a4e47626f9f",
+      "order": 1,
+      "zh": "发现错误以后，我们应该及时修正。",
+      "pinyin": "Fāxiàn cuòwù yǐhòu, wǒmen yīnggāi jíshí xiūzhèng.",
+      "vi": "Sau khi phát hiện lỗi, chúng ta nên sửa kịp thời.",
+      "analysis_vi": "及时修正 = sửa kịp lúc.",
+      "highlight": [
+        "修正"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a1fb7b9d-20fa-4d93-80e3-b2f4a922953c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d6371dba-0ffa-45ab-a35b-5879a81b08f9",
+      "order": 2,
+      "zh": "一个好的研究者不应该害怕批评，而应该在批评中不断修正自己的理论。",
+      "pinyin": "Yí ge hǎo de yánjiūzhě bù yīnggāi hàipà pīpíng, ér yīnggāi zài pīpíng zhōng búduàn xiūzhèng zìjǐ de lǐlùn.",
+      "vi": "Một nhà nghiên cứu tốt không nên sợ phê bình mà nên không ngừng sửa lý thuyết trong phê bình.",
+      "analysis_vi": "不应该……而应该…… đối lập rõ.",
+      "highlight": [
+        "修正"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a1fb7b9d-20fa-4d93-80e3-b2f4a922953c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "修正理论/修正观点 là tích cực trong học thuật: tri thức tiến bộ nhờ kiểm chứng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9a1eb5c5-c7e2-468d-8388-acaba41e86af",
+      "order": 1,
+      "rule_vi": "Không dùng 修正 cho đồ vật hỏng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "修正车",
+          "pinyin": "xiūzhèng chē",
+          "vi": "sửa đúng xe.",
+          "note_vi": "Không tự nhiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "修车",
+          "pinyin": "xiū chē",
+          "vi": "sửa xe.",
+          "note_vi": "修 dùng cho đồ hỏng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "修正",
+    "back": "sửa đúng, chỉnh sửa cho đúng",
+    "hint": "xiūzhèng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a1fb7b9d-20fa-4d93-80e3-b2f4a922953c",
+    "source_lesson_vocab_id": null
+  }
+}

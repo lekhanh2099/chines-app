@@ -1,0 +1,239 @@
+{
+  "id": "bea2ac49-de2d-49d1-aebb-f67e52a34e10",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "由",
+  "pinyin": "yóu",
+  "pos": {
+    "raw_vi": "Giới từ",
+    "raw_cn": "介词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "do",
+    "meaning_vi": "do, bởi; do ai phụ trách/thực hiện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "do",
+      "bởi",
+      "do ai phụ trách/thực hiện"
+    ],
+    "short_definition_vi": "do, bởi; do ai phụ trách/thực hiện",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: ngữ pháp trọng tâm.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "ngữ pháp trọng tâm",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "由",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "田",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Điền",
+          "radical_name_zh": "",
+          "hanviet": "điền",
+          "meaning_vi": "ruộng, ô chia",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "田 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng, ô chia",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "田",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Điền",
+              "radical_name_zh": "",
+              "hanviet": "điền",
+              "meaning_vi": "ruộng, ô chia",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "田 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "田 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "do, bởi, từ",
+        "modern_logic_vi": "Trong từ 由, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "由 nên được học theo nghĩa hiện đại trong cụm/tình huống: do, bởi; do ai phụ trách/thực hiện.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 由我负责.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "被",
+        "pinyin": "bèi",
+        "meaning_vi": "bị/được",
+        "difference_vi": "由 nêu chủ thể thực hiện/phụ trách; 被 nêu đối tượng chịu tác động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9232bc07-59fd-4627-b784-ea455c402c62",
+      "order": 1,
+      "zh": "由我负责",
+      "pinyin": "",
+      "vi": "do tôi phụ trách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c9fad21-799e-4381-b2f7-cffa4ceb241a",
+      "order": 2,
+      "zh": "由他决定",
+      "pinyin": "",
+      "vi": "do anh ấy quyết định",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2964296f-42b2-4077-96a6-14bafdfb3d87",
+      "order": 3,
+      "zh": "由老师安排",
+      "pinyin": "",
+      "vi": "do giáo viên sắp xếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "94bf500b-4b08-4138-b061-23fd519f064b",
+      "order": 1,
+      "zh": "这件事由我负责。",
+      "pinyin": "",
+      "vi": "Việc này do tôi phụ trách.",
+      "analysis_vi": "由 + người/tổ chức + V nêu chủ thể chịu trách nhiệm.",
+      "highlight": [
+        "由"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bea2ac49-de2d-49d1-aebb-f67e52a34e10"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 由 được dùng trong ngữ cảnh ngữ pháp trọng tâm; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "12d777df-f30f-4a21-b939-9156c62fe3a7",
+      "order": 1,
+      "rule_vi": "由 không đứng một mình làm vị ngữ; sau 由 + người thường cần động từ như 负责/决定/安排.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "由 không đứng một mình làm vị ngữ; sau 由 + người thường cần động từ như 负责/决定/安排.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "由",
+    "back": "do, bởi; do ai phụ trách/thực hiện",
+    "hint": "yóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bea2ac49-de2d-49d1-aebb-f67e52a34e10",
+    "source_lesson_vocab_id": null
+  }
+}

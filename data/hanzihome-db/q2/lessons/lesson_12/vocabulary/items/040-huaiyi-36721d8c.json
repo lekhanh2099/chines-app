@@ -1,0 +1,363 @@
+{
+  "id": "05081787-f8ef-4a0f-8c29-23ed28768aa0",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "怀疑",
+  "pinyin": "huáiyí",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ tâm lý",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "hoài nghi",
+    "meaning_vi": "nghi ngờ, hoài nghi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghi ngờ, hoài nghi"
+    ],
+    "short_definition_vi": "nghi ngờ, hoài nghi",
+    "textbook_focus_vi": "nghi ngờ, hoài nghi",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "怀",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý/suy nghĩ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "不",
+            "hanviet": "bất",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mang trong lòng, nhớ, có tâm trạng",
+        "modern_logic_vi": "怀 gợi điều nằm trong lòng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "疑",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghi, nghi ngờ, không chắc",
+        "modern_logic_vi": "疑 phức tạp, không tách sâu theo hình hiện đại.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "怀疑 = trong lòng mang nghi vấn, chưa tin chắc.",
+    "memory_tip_vi": "怀疑 = trong lòng mang nghi vấn, chưa tin chắc.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "疑心",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lòng nghi ngờ, đa nghi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "猜疑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghi do suy đoán, tiêu cực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不相信",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không tin",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "质疑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chất vấn/nghi vấn công khai",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "相信",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tin",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "信任",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tin tưởng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "确信",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tin chắc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "怀疑",
+        "right": "相信",
+        "meaning_vi": "",
+        "note_vi": "nghi ngờ ↔ tin",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "761ed25a-d17f-4c2c-8e3b-3ab32813066d",
+      "order": 1,
+      "zh": "怀疑他",
+      "pinyin": "",
+      "vi": "nghi ngờ anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01b47afd-3164-4969-becf-a845fbbd41cf",
+      "order": 2,
+      "zh": "怀疑这件事",
+      "pinyin": "",
+      "vi": "nghi ngờ chuyện này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9996e4dd-a8b3-4225-8dd2-502cfd8c415b",
+      "order": 3,
+      "zh": "怀疑自己",
+      "pinyin": "",
+      "vi": "nghi ngờ chính mình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28d031e5-a8f3-437c-9b7a-ab9f2e920e80",
+      "order": 4,
+      "zh": "产生怀疑",
+      "pinyin": "",
+      "vi": "nảy sinh nghi ngờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a31a5a7-77b4-4611-8b56-ccde34ba3493",
+      "order": 5,
+      "zh": "值得怀疑",
+      "pinyin": "",
+      "vi": "đáng nghi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b2eabed6-ac75-49d0-a8ba-56fcbf88b1f9",
+      "order": 1,
+      "zh": "我怀疑他没有说实话。",
+      "pinyin": "",
+      "vi": "Tôi nghi anh ấy không nói thật.",
+      "analysis_vi": "怀疑 + câu nhỏ: nghi ngờ một sự việc.",
+      "highlight": [
+        "怀疑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "05081787-f8ef-4a0f-8c29-23ed28768aa0"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d6d804dd-d3f2-4bac-a8a6-cd054513263b",
+      "order": 2,
+      "zh": "这件事你怀疑谁？",
+      "pinyin": "",
+      "vi": "Chuyện này bạn nghi ngờ ai?",
+      "analysis_vi": "这件事 là chủ đề lớn.",
+      "highlight": [
+        "怀疑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "05081787-f8ef-4a0f-8c29-23ed28768aa0"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "我怀疑你…… khá nặng, dễ nghe như buộc tội.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5406af81-49f0-43bc-8fad-0b7c89aee904",
+      "order": 1,
+      "rule_vi": "Không dùng 怀疑 khi chỉ muốn nói “không hiểu”; dùng 不明白.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我不明白。",
+          "pinyin": "",
+          "vi": "Tôi không hiểu.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我怀疑他说的话。",
+          "pinyin": "",
+          "vi": "Tôi nghi ngờ lời anh ấy nói.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "怀疑",
+    "back": "nghi ngờ, hoài nghi",
+    "hint": "huáiyí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "05081787-f8ef-4a0f-8c29-23ed28768aa0",
+    "source_lesson_vocab_id": null
+  }
+}

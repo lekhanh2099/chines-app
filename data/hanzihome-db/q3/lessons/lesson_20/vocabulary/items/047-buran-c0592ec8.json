@@ -1,0 +1,265 @@
+{
+  "id": "37170694-b79e-4cbe-bd4b-228bbaef1323",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "不然",
+  "pinyin": "bùrán",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bất nhiên",
+    "meaning_vi": "nếu không thì, không thì",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nếu không thì",
+      "không thì"
+    ],
+    "short_definition_vi": "nếu không thì, không thì",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "不然 = nếu không như vậy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "然",
+        "lishu_vi": "nhiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "bốn chấm dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "như vậy; yếu tố trong từ nối",
+        "modern_logic_vi": "然而/不然 dùng như từ nối.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不然 được dùng trong Bài 20 với nghĩa: nếu không thì, không thì.",
+    "memory_tip_vi": "Nhớ qua cụm 快点儿，不然…….",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "否则",
+        "pinyin": "fǒuzé",
+        "meaning_vi": "nếu không thì",
+        "difference_vi": "Trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "要不然",
+        "pinyin": "yàobùrán",
+        "meaning_vi": "nếu không thì",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "69e4338f-0b53-4efb-905e-b98ac6bddb3a",
+      "order": 1,
+      "zh": "快点儿，不然……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c94e0e7-8077-4cb5-83d1-0f6421869331",
+      "order": 2,
+      "zh": "认真听，不然……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc0b96f6-9263-4281-b8a4-5f88a9902f24",
+      "order": 3,
+      "zh": "别说假话，不然……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1b5cf24-d97e-40dd-b00d-2c72d2f140ad",
+      "order": 4,
+      "zh": "要凭事实说话，不然……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "314e3673-27e7-4f53-ba40-045a4ff18fd3",
+      "order": 5,
+      "zh": "不然怎么办",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f8a077b9-7c65-4822-acb8-5235b09e2369",
+      "order": 1,
+      "zh": "快点儿，不然我们要迟到了。",
+      "pinyin": "Kuài diǎnr, bùrán wǒmen yào chídào le.",
+      "vi": "Nhanh lên, nếu không chúng ta sắp muộn.",
+      "analysis_vi": "不然 nối hậu quả nếu không làm điều trước.",
+      "highlight": [
+        "不然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37170694-b79e-4cbe-bd4b-228bbaef1323"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4cf1abfe-e4ce-4db6-8320-7396eff03a5b",
+      "order": 2,
+      "zh": "她不能违心地说自己同意，不然就算被录取了，也会受到良心的谴责。",
+      "pinyin": "Tā bù néng wéixīn de shuō zìjǐ tóngyì, bùrán jiùsuàn bèi lùqǔ le, yě huì shòudào liángxīn de qiǎnzé.",
+      "vi": "Cô ấy không thể trái lòng nói đồng ý, nếu không dù được nhận cũng bị lương tâm khiển trách.",
+      "analysis_vi": "不然 + 就算……也…… nêu hậu quả đạo đức.",
+      "highlight": [
+        "不然"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "37170694-b79e-4cbe-bd4b-228bbaef1323"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "不然呢？ trong khẩu ngữ có thể sắc, gần “không thì sao?”.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "42baeeef-a6d2-4429-8319-eba57fab2026",
+      "order": 1,
+      "rule_vi": "Không nhầm 不然 với 当然.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "当然，我同意。",
+          "pinyin": "Dāngrán, wǒ tóngyì.",
+          "vi": "Đương nhiên, tôi đồng ý.",
+          "note_vi": "当然 = đương nhiên, khác 不然.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不然",
+    "back": "nếu không thì, không thì",
+    "hint": "bùrán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "37170694-b79e-4cbe-bd4b-228bbaef1323",
+    "source_lesson_vocab_id": null
+  }
+}

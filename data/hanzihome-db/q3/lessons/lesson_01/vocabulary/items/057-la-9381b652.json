@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_c11199b87fd34d55",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "落",
+  "pinyin": "là",
+  "meaning_vi": "bị tụt lại; bỏ sót; rớt lại phía sau",
+  "pos": "Động từ / Hình vị đa âm",
+  "pos_detail": {
+    "vi": "Động từ / Hình vị đa âm",
+    "cn": "动词 / 多音语素",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "505dae11-836a-475d-b811-339f25caaf42",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "505dae11-836a-475d-b811-339f25caaf42",
+    "type": "vocabulary_item",
+    "order": 45,
+    "hanzi": "落",
+    "pinyin": "là",
+    "meaning_vi": "bị tụt lại; bỏ sót; rớt lại phía sau",
+    "meaning_en": "to fall behind; to leave behind",
+    "pos": "Động từ / Hình vị đa âm",
+    "tags": [
+      "supplementary_vocab",
+      "pdf_corrected"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "落",
+      "back": "là — bị tụt lại; bỏ sót; rớt lại phía sau",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ / Hình vị đa âm",
+      "cn": "动词 / 多音语素",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

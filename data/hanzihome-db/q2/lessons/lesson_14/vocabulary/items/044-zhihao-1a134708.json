@@ -1,0 +1,355 @@
+{
+  "id": "2e66a057-0b05-41fc-b572-85cdcd7c3ad3",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "只好",
+  "pinyin": "zhǐhǎo",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Chỉ hảo",
+    "meaning_vi": "đành phải, chỉ còn cách",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đành phải",
+      "chỉ còn cách"
+    ],
+    "short_definition_vi": "đành phải, chỉ còn cách",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, kể chuyện, than nhẹ, giải thích tình huống.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "只",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "八",
+            "hanviet": "bát",
+            "meaning_vi": "tám",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chỉ, chỉ có",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "只 là chỉ, chỉ có. 好 ở đây không phải “tốt”, mà nằm trong cụm cố định 只好.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, được",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "好 ở đây không phải “tốt”, mà nằm trong cụm cố định 只好. → 只好 = chỉ còn cách đó, đành làm như vậy.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 只好 = chỉ còn cách đó, đành làm như vậy.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 只好 không phải “chỉ tốt”. Nó là cụm cố định chỉ sự bất đắc dĩ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "只好 (zhǐhǎo)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đành phải, do không có lựa chọn tốt hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不得不 (bùdébù)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không thể không, buộc phải; mạnh và trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "只能 (zhǐ néng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chỉ có thể, thiên về khả năng/giới hạn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "只得 (zhǐdé)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đành phải, văn hơn 只好.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 只好 tự nhiên trong kể chuyện; 不得不 mạnh hơn; 只能 nhấn chỉ có khả năng làm vậy."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a50d8111-d9ca-4e4c-ac91-55d46256a9dc",
+      "order": 1,
+      "zh": "只好回去",
+      "pinyin": "",
+      "vi": "đành quay về",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "629d04af-9a38-4be4-a577-7d597f3634b1",
+      "order": 2,
+      "zh": "只好等一等",
+      "pinyin": "",
+      "vi": "đành đợi một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07d60c9a-d691-4b17-9ccb-c44239fb5093",
+      "order": 3,
+      "zh": "只好走楼梯",
+      "pinyin": "",
+      "vi": "đành đi cầu thang bộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b5d4a08-ab73-43cc-854e-ddf0538e28da",
+      "order": 4,
+      "zh": "没办法，只好这样",
+      "pinyin": "",
+      "vi": "không còn cách nào, đành vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "77852ce5-aeea-42db-aafe-64dee4570d71",
+      "order": 1,
+      "zh": "电梯坏了，我们只好走楼梯上去。",
+      "pinyin": "Diàntī huài le, wǒmen zhǐhǎo zǒu lóutī shàngqù.",
+      "vi": "Thang máy hỏng rồi, chúng tôi đành đi cầu thang bộ lên.",
+      "analysis_vi": "走楼梯上去 là đi cầu thang lên trên; 只好 nói lựa chọn bất đắc dĩ.",
+      "highlight": [
+        "只好"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2e66a057-0b05-41fc-b572-85cdcd7c3ad3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "456bb441-ef67-4f50-8b69-6c10638f16f6",
+      "order": 2,
+      "zh": "钥匙拔不下来，他只好叫房管过来。",
+      "pinyin": "Yàoshi bá bu xiàlai, tā zhǐhǎo jiào fángguǎn guòlai.",
+      "vi": "Chìa khóa rút không ra, anh ấy đành gọi quản lý nhà qua.",
+      "analysis_vi": "拔不下来 là không rút ra được; 叫……过来 là gọi người đến phía mình.",
+      "highlight": [
+        "只好"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2e66a057-0b05-41fc-b572-85cdcd7c3ad3"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5a8d1b9f-ce14-4d6f-b448-edb97d58b9bc",
+      "order": 3,
+      "zh": "书太多，包提不起来，我只好把几本书放回书架上去。",
+      "pinyin": "Shū tài duō, bāo tí bù qǐlai, wǒ zhǐhǎo bǎ jǐ běn shū fàng huí shūjià shàng qù.",
+      "vi": "Sách nhiều quá, túi nhấc không nổi, tôi đành đặt vài quyển lại lên kệ sách.",
+      "analysis_vi": "提不起来 nói không nhấc lên nổi; 放回书架上去 là đặt trở lại vị trí cũ.",
+      "highlight": [
+        "只好"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "2e66a057-0b05-41fc-b572-85cdcd7c3ad3"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "54ccdfd2-432c-4f80-8903-67e29f27d85c",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 只好 cho lựa chọn mình thích. Không hợp:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "只好",
+    "back": "đành phải, chỉ còn cách",
+    "hint": "zhǐhǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "只好 rất hay khi kể chuyện xui hoặc kế hoạch bị đổi: 没票了，只好明天再去 – hết vé rồi, đành mai đi tiếp. Nó tự nhiên hơn việc lúc nào cũng nói 必须.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2e66a057-0b05-41fc-b572-85cdcd7c3ad3",
+    "source_lesson_vocab_id": null
+  }
+}

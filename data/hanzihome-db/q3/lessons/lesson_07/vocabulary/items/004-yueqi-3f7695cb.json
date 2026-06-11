@@ -1,0 +1,294 @@
+{
+  "id": "3fd4b68e-c595-4a55-bae3-eb5894c95cea",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "乐器",
+  "pinyin": "yuèqì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "nhạc khí",
+    "meaning_vi": "nhạc cụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhạc cụ"
+    ],
+    "short_definition_vi": "nhạc cụ",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "乐",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm nhạc khi đọc yuè; vui khi đọc lè",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "器",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 口.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dụng cụ",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "乐器 = dụng cụ âm nhạc.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 乐器.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "工具",
+        "pinyin": "gōngjù",
+        "meaning_vi": "công cụ",
+        "difference_vi": "rộng hơn, không chuyên âm nhạc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "乐队",
+        "pinyin": "yuèduì",
+        "meaning_vi": "ban nhạc",
+        "difference_vi": "là tập thể người, không phải đồ vật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0fd198c3-dcd5-460e-b258-4937bf124c0b",
+      "order": 1,
+      "zh": "一种乐器",
+      "pinyin": "",
+      "vi": "một loại nhạc cụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "597d744f-cdad-409c-8376-07f23b3470fd",
+      "order": 2,
+      "zh": "演奏乐器",
+      "pinyin": "",
+      "vi": "biểu diễn nhạc cụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c013905e-df97-44c5-83eb-6b15914de8e4",
+      "order": 3,
+      "zh": "民族乐器",
+      "pinyin": "",
+      "vi": "nhạc cụ dân tộc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45632751-c534-4e1a-9274-29371c23e963",
+      "order": 4,
+      "zh": "管乐器",
+      "pinyin": "",
+      "vi": "nhạc cụ hơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5d1d637b-7204-4d29-a82b-3ec536275dfa",
+      "order": 1,
+      "zh": "竽是一种古代乐器。",
+      "pinyin": "Yú shì yì zhǒng gǔdài yuèqì.",
+      "vi": "竽 là một loại nhạc cụ cổ.",
+      "analysis_vi": "Câu định nghĩa A 是一种 B.",
+      "highlight": [
+        "乐器"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3fd4b68e-c595-4a55-bae3-eb5894c95cea"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "badc146a-abf8-4aad-afe3-ed9e205a36c8",
+      "order": 2,
+      "zh": "不管你学哪种乐器，都要每天练习。",
+      "pinyin": "Bùguǎn nǐ xué nǎ zhǒng yuèqì, dōu yào měitiān liànxí.",
+      "vi": "Bất kể học loại nhạc cụ nào cũng phải luyện mỗi ngày.",
+      "analysis_vi": "Gài 不管……都…….",
+      "highlight": [
+        "乐器"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3fd4b68e-c595-4a55-bae3-eb5894c95cea"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "乐 trong 乐器 đọc yuè, cùng nhóm với 音乐, 乐队.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2723b9ae-28ae-4663-9dd9-be790ac669e4",
+      "order": 1,
+      "rule_vi": "Không đọc 乐器 là lèqì; đúng là yuèqì.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "乐器",
+    "back": "nhạc cụ",
+    "hint": "yuèqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3fd4b68e-c595-4a55-bae3-eb5894c95cea",
+    "source_lesson_vocab_id": null
+  }
+}

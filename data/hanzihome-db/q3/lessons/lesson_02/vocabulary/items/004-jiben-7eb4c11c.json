@@ -1,0 +1,429 @@
+{
+  "id": "a8fe66f7-0eae-4044-bdca-0dc4bcb53a7c",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "基本",
+  "pinyin": "jīběn",
+  "pos": {
+    "raw_vi": "Tính từ / danh từ / phó từ",
+    "raw_cn": "形/名/副",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "basic",
+    "study"
+  ],
+  "meaning": {
+    "hanviet": "Cơ bản",
+    "meaning_vi": "cơ bản, căn bản; nền tảng/chính yếu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cơ bản, căn bản; nền tảng/chính yếu"
+    ],
+    "short_definition_vi": "cơ bản, căn bản; nền tảng/chính yếu",
+    "textbook_focus_vi": "cơ bản, căn bản; nền tảng/chính yếu",
+    "register_vi": "",
+    "usage_domain_vi": "basic,study",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "基",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "其",
+            "hanviet": "kỳ",
+            "meaning_vi": "thành phần cấu tạo",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, nền",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, nền",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ Thổ trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nền móng, cơ sở",
+        "modern_logic_vi": "基 gợi phần nền/cơ sở.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, nền",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ Thổ trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "本",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "nét đánh dấu gốc",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gốc, căn bản, vốn",
+        "modern_logic_vi": "本 là gốc của cây, mở rộng thành nền tảng/căn bản.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "基 gợi phần nền/cơ sở.; 本 là gốc của cây, mở rộng thành nền tảng/căn bản.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "基础",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "根本",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "基本",
+        "right": "高级",
+        "meaning_vi": "cơ bản ↔ nâng cao",
+        "note_vi": "Đối lập trình độ",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "685daf65-8059-4861-8901-3b4c2d2842e0",
+      "order": 1,
+      "zh": "基本情况",
+      "pinyin": "",
+      "vi": "tình hình cơ bản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "569bae4a-dff7-4858-a7af-84ac72d91300",
+      "order": 2,
+      "zh": "基本问题",
+      "pinyin": "",
+      "vi": "vấn đề cơ bản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53c92e42-7491-4e85-879f-d51de8dffe47",
+      "order": 3,
+      "zh": "基本知识",
+      "pinyin": "",
+      "vi": "kiến thức cơ bản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "66f3db15-c2c1-4d29-a4bd-d2c3397df8ff",
+      "order": 4,
+      "zh": "基本要求",
+      "pinyin": "",
+      "vi": "yêu cầu cơ bản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5cde371a-f6c3-44c4-9de5-7e05fb15ff4c",
+      "order": 5,
+      "zh": "基本条件",
+      "pinyin": "",
+      "vi": "điều kiện cơ bản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97e7566c-b451-4917-a8c3-51b52da06e4d",
+      "order": 6,
+      "zh": "基本完成",
+      "pinyin": "",
+      "vi": "cơ bản hoàn thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "980fca97-9d73-47a9-ba3c-f8df1f572bc1",
+      "order": 1,
+      "zh": "请你介绍一下自己的基本情况。",
+      "pinyin": "Qǐng nǐ jièshào yíxià zìjǐ de jīběn qíngkuàng.",
+      "vi": "Bạn hãy giới thiệu một chút tình hình cơ bản của bản thân.",
+      "analysis_vi": "基本情况 là cụm hay dùng trong giới thiệu.",
+      "highlight": [
+        "基本"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8fe66f7-0eae-4044-bdca-0dc4bcb53a7c"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "aa0e6225-9299-461f-b7e8-f67edd420354",
+      "order": 2,
+      "zh": "每个同学都要了解太极拳的基本动作。",
+      "pinyin": "Měi ge tóngxué dōu yào liǎojiě tàijíquán de jīběn dòngzuò.",
+      "vi": "Mỗi bạn học đều cần hiểu các động tác cơ bản của Thái Cực Quyền.",
+      "analysis_vi": "基本动作 = động tác cơ bản.",
+      "highlight": [
+        "基本"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a8fe66f7-0eae-4044-bdca-0dc4bcb53a7c"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "基本功 là “công phu nền tảng”, hay dùng khi nói học võ, nghệ thuật, ngôn ngữ.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f0979154-e84f-4271-8497-bd5e37471904",
+      "order": 1,
+      "rule_vi": "Đừng dùng 基本 thay cho 基础 khi nói nền tảng yếu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的中文基本不好。",
+          "pinyin": "Wǒ de Zhōngwén jīběn bù hǎo.",
+          "vi": "Câu kém tự nhiên.",
+          "note_vi": "Muốn nói nền tảng không tốt thì dùng 基础.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的中文基础不太好。",
+          "pinyin": "Wǒ de Zhōngwén jīchǔ bú tài hǎo.",
+          "vi": "Nền tảng tiếng Trung của tôi không tốt lắm.",
+          "note_vi": "Câu tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "基本",
+    "back": "cơ bản, căn bản; nền tảng/chính yếu",
+    "hint": "jīběn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "basic",
+      "study"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a8fe66f7-0eae-4044-bdca-0dc4bcb53a7c",
+    "source_lesson_vocab_id": null
+  }
+}

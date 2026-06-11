@@ -1,0 +1,429 @@
+{
+  "id": "d17e991f-1bc9-4f21-bbf3-56e647944997",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "教育",
+  "pinyin": "jiàoyù",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giáo dục",
+    "meaning_vi": "giáo dục; dạy dỗ, đào tạo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giáo dục",
+      "dạy dỗ",
+      "đào tạo"
+    ],
+    "short_definition_vi": "giáo dục; dạy dỗ, đào tạo",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về giáo dục, xã hội.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo dục, xã hội",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "教",
+        "lishu_vi": "giáo",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 教 trong từ 教育; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "đánh khẽ, tác động",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh khẽ, tác động",
+            "position_vi": "bên phải chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh khẽ, tác động",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "孝",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 教育, chữ 教 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "育",
+        "lishu_vi": "dục",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 育 trong từ 教育; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "mặt trăng; tháng; hình thể liên quan thân thể trong nhiều chữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "月 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "mặt trăng; tháng; hình thể liên quan thân thể trong nhiều chữ",
+            "position_vi": "phần dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "mặt trăng; tháng; hình thể liên quan thân thể trong nhiều chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 教育, chữ 育 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "教育 trong bài được nhớ theo nghĩa hiện đại: giáo dục.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 远程教育 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "教学",
+        "pinyin": "jiàoxué",
+        "meaning_vi": "hoạt động dạy-học cụ thể",
+        "difference_vi": "hoạt động dạy-học cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "培训",
+        "pinyin": "péixùn",
+        "meaning_vi": "đào tạo kỹ năng/nghề nghiệp",
+        "difference_vi": "đào tạo kỹ năng/nghề nghiệp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "教育 rộng hơn 教学; không dùng lẫn khi nói hoạt động giảng dạy cụ thể."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "126b5e40-a59a-4a45-9f5e-fa43c7d935f1",
+      "order": 1,
+      "zh": "远程教育",
+      "pinyin": "",
+      "vi": "giáo dục từ xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1aa475d-8a40-4288-9b07-f535de1e36f8",
+      "order": 2,
+      "zh": "网络教育",
+      "pinyin": "",
+      "vi": "giáo dục qua mạng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bdeaca4e-1318-409a-b3b8-b6f0335fa584",
+      "order": 3,
+      "zh": "在线教育",
+      "pinyin": "",
+      "vi": "giáo dục online",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c3e0c926-1bc2-470f-873b-c7e6c6d3ee33",
+      "order": 4,
+      "zh": "学校教育",
+      "pinyin": "",
+      "vi": "giáo dục nhà trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a6f7e98-a99c-4601-98f5-a34e5ff0c0f1",
+      "order": 5,
+      "zh": "教育资源",
+      "pinyin": "",
+      "vi": "tài nguyên giáo dục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "00c3661d-e5df-4409-8cd4-52304f1ab4f9",
+      "order": 1,
+      "zh": "网络学校是一种新的教育方式。",
+      "pinyin": "",
+      "vi": "giáo dục; dạy dỗ, đào tạo",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "教育"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d17e991f-1bc9-4f21-bbf3-56e647944997"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1675c2e-0f54-4162-8240-493b12d0795b",
+      "order": 2,
+      "zh": "这个词语“教育”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 教育 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "教育"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d17e991f-1bc9-4f21-bbf3-56e647944997"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d5d72b10-6ec5-47df-8fcf-b227c76eed8c",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“教育”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 教育 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "教育"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d17e991f-1bc9-4f21-bbf3-56e647944997"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "在线教育 là cách nói hiện đại phổ biến khi nhấn học online.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "20e7932c-cf53-44dc-9293-83e1021ae049",
+      "order": 1,
+      "rule_vi": "教育 rộng hơn 教学; không dùng lẫn khi nói hoạt động giảng dạy cụ thể.",
+      "natural_examples": [
+        {
+          "zh": "这节课的教学很有意思。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "这节教育很有意思。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "这节教育很有意思。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这节课的教学很有意思。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "教育 rộng hơn 教学; không dùng lẫn khi nói hoạt động giảng dạy cụ thể.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "教育",
+    "back": "giáo dục; dạy dỗ, đào tạo",
+    "hint": "jiàoyù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d17e991f-1bc9-4f21-bbf3-56e647944997",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "id": "ec5fba69-bf90-4480-91ca-76411f005d62",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "贫穷",
+  "pinyin": "pínqióng",
+  "pos": {
+    "raw_vi": "Tính từ / danh từ trừu tượng",
+    "raw_cn": "形容词/名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bần cùng",
+    "meaning_vi": "nghèo đói, nghèo khổ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghèo đói, nghèo khổ"
+    ],
+    "short_definition_vi": "nghèo đói, nghèo khổ",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "贫",
+        "lishu_vi": "bần",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tiền của, tài sản",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "tiền của, tài sản",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghèo",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "貝",
+          "radical_variant": "贝",
+          "radical_name_vi": "bộ Bối",
+          "radical_name_zh": "",
+          "hanviet": "bối",
+          "meaning_vi": "tiền của, tài sản",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "穷",
+        "lishu_vi": "cùng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "huyệt",
+            "meaning_vi": "hang, nơi hẹp",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "huyệt",
+              "meaning_vi": "hang, nơi hẹp",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức mạnh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức mạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghèo, cùng tận",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "huyệt",
+          "meaning_vi": "hang, nơi hẹp",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "贫 nhấn thiếu tài sản, 穷 nhấn cùng quẫn; 贫穷 là tình trạng nghèo khó rõ.",
+    "memory_tip_vi": "Nhớ 贫穷不是他的错.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "穷",
+        "pinyin": "",
+        "meaning_vi": "穷",
+        "difference_vi": "Khẩu ngữ hơn; 贫穷 trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "富裕",
+        "pinyin": "",
+        "meaning_vi": "富裕",
+        "difference_vi": "giàu có, dư dả",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a8bfc4a9-b509-4042-9b5b-ef90b66834ad",
+      "order": 1,
+      "zh": "摆脱贫穷",
+      "pinyin": "bǎituō pínqióng",
+      "vi": "thoát khỏi nghèo đói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ed9dc204-21f9-4c1d-85c8-3fd678f0788c",
+      "order": 2,
+      "zh": "消除贫穷",
+      "pinyin": "xiāochú pínqióng",
+      "vi": "xóa bỏ nghèo đói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "92a51794-b9af-41a8-bfad-e419af00d6a2",
+      "order": 3,
+      "zh": "贫穷的家庭",
+      "pinyin": "pínqióng de jiātíng",
+      "vi": "gia đình nghèo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36850605-4446-4406-a3bf-93a2647333d7",
+      "order": 4,
+      "zh": "因为贫穷",
+      "pinyin": "yīnwèi pínqióng",
+      "vi": "vì nghèo đói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "07f9447b-426e-4265-8774-5c336dc655e7",
+      "order": 1,
+      "zh": "贫穷不是他的错。",
+      "pinyin": "Pínqióng bú shì tā de cuò.",
+      "vi": "Nghèo đói không phải lỗi của anh ấy.",
+      "analysis_vi": "贫穷 làm chủ ngữ danh từ hóa.",
+      "highlight": [
+        "贫穷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ec5fba69-bf90-4480-91ca-76411f005d62"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "59e4f61e-89e6-4ff0-8e77-ca3177d0a359",
+      "order": 2,
+      "zh": "他当初生活在一个贫穷的家庭里，可是从来没有放弃过希望。",
+      "pinyin": "Tā dāngchū shēnghuó zài yí ge pínqióng de jiātíng lǐ, kěshì cónglái méiyǒu fàngqì guò xīwàng.",
+      "vi": "Hồi đó anh ấy sống trong gia đình nghèo nhưng chưa từng từ bỏ hy vọng.",
+      "analysis_vi": "当初 đặt bối cảnh quá khứ.",
+      "highlight": [
+        "贫穷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ec5fba69-bf90-4480-91ca-76411f005d62"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "贫困 / 脱贫 / 扶贫 thường gặp trong diễn ngôn chính sách.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f4e5d44d-363f-4120-8b73-cd6d4d5d1d7e",
+      "order": 1,
+      "rule_vi": "Khẩu ngữ đời thường thường dùng 穷 hơn 贫穷.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我今天贫穷。",
+          "pinyin": "Wǒ jīntiān pínqióng.",
+          "vi": "Sai/gượng; hôm nay không có tiền không nói vậy.",
+          "note_vi": "贫穷 không dùng cho thiếu tiền tạm thời.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我今天没钱。",
+          "pinyin": "Wǒ jīntiān méi qián.",
+          "vi": "Hôm nay tôi không có tiền.",
+          "note_vi": "没钱 hợp tình huống tạm thời.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "贫穷",
+    "back": "nghèo đói, nghèo khổ",
+    "hint": "pínqióng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ec5fba69-bf90-4480-91ca-76411f005d62",
+    "source_lesson_vocab_id": null
+  }
+}

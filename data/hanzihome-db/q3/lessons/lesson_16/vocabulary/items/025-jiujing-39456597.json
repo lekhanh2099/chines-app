@@ -1,0 +1,175 @@
+{
+  "id": "9bde8365-034f-4547-a7b1-667ece1011f4",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "究竟",
+  "pinyin": "jiùjìng",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Suy đoán và khả năng"
+  ],
+  "meaning": {
+    "hanviet": "Cứu cánh",
+    "meaning_vi": "rốt cuộc, cuối cùng thì",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rốt cuộc",
+      "cuối cùng thì"
+    ],
+    "short_definition_vi": "rốt cuộc, cuối cùng thì",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: rốt cuộc, cuối cùng thì.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Suy đoán và khả năng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "究",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "竟",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "究竟 trong bài được học theo nghĩa trọng tâm: rốt cuộc, cuối cùng thì.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: rốt cuộc, cuối cùng thì.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "到底",
+        "pinyin": "dàodǐ",
+        "meaning_vi": "rốt cuộc",
+        "difference_vi": "到底 khẩu ngữ hơn; 究竟 trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "89acc31e-05ca-4b95-adb3-f6e6f50e3e70",
+      "order": 1,
+      "zh": "载人飞船登上地球究竟能否实现？",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: rốt cuộc, cuối cùng thì",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28da10bc-7b91-42ce-b14d-91e8b76eb4fc",
+      "order": 1,
+      "zh": "载人飞船登上地球究竟能否实现？",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “究竟” = rốt cuộc, cuối cùng thì.",
+      "analysis_vi": "Câu này dùng “究竟” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "究竟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9bde8365-034f-4547-a7b1-667ece1011f4"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “究竟” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1d0df360-6b01-493f-9f27-ee0c3565bcf3",
+      "order": 1,
+      "rule_vi": "Cần dùng “究竟” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "究竟",
+    "back": "rốt cuộc, cuối cùng thì",
+    "hint": "jiùjìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Suy đoán và khả năng"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9bde8365-034f-4547-a7b1-667ece1011f4",
+    "source_lesson_vocab_id": null
+  }
+}

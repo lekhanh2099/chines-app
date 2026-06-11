@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_2983af1bcfcba644",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "从中",
+  "pinyin": "cóngzhōng",
+  "meaning_vi": "từ trong đó; qua đó",
+  "pos": "Phó từ",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+    "type": "vocabulary_item",
+    "order": 13,
+    "hanzi": "从中",
+    "pinyin": "cóngzhōng",
+    "meaning_vi": "từ trong đó; qua đó",
+    "meaning_en": "",
+    "pos": "Phó từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "从中",
+      "back": "cóngzhōng — từ trong đó; qua đó",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

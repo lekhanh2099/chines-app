@@ -1,0 +1,304 @@
+{
+  "id": "e97218a5-236f-47db-af30-bde7839a7303",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "不知不觉",
+  "pinyin": "bù zhī bù jué",
+  "pos": {
+    "raw_vi": "Thành ngữ / Trạng ngữ",
+    "raw_cn": "成语 / 状语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bất tri bất giác",
+    "meaning_vi": "không hay không biết, lúc nào không hay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không hay không biết",
+      "lúc nào không hay"
+    ],
+    "short_definition_vi": "không hay không biết, lúc nào không hay",
+    "textbook_focus_vi": "不知 = không biết, 不觉 = không nhận ra. Cụm chỉ sự việc diễn ra dần mà mình không để ý.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thời gian, thay đổi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Chữ phủ định cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ này, 不 góp phần tạo nghĩa 'không'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "知",
+        "lishu_vi": "tri",
+        "structure_note_vi": "矢 + 口; học theo nghĩa biết.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết, hiểu",
+        "modern_logic_vi": "Trong từ này, 知 góp phần tạo nghĩa 'biết, hiểu'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Chữ phủ định cơ bản.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ này, 不 góp phần tạo nghĩa 'không'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "觉",
+        "lishu_vi": "giác",
+        "structure_note_vi": "Có 见 trong giản thể, liên quan nhận thấy.",
+        "main_radical": {
+          "radical": "見",
+          "radical_variant": "见",
+          "radical_name_vi": "bộ Kiến",
+          "radical_name_zh": "",
+          "hanviet": "kiến",
+          "meaning_vi": "thấy",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "見",
+              "radical_variant": "见",
+              "radical_name_vi": "bộ Kiến",
+              "radical_name_zh": "",
+              "hanviet": "kiến",
+              "meaning_vi": "thấy",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảm thấy, nhận ra",
+        "modern_logic_vi": "Trong từ này, 觉 góp phần tạo nghĩa 'cảm thấy, nhận ra'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不知 = không biết, 不觉 = không nhận ra. Cụm chỉ sự việc diễn ra dần mà mình không để ý.",
+    "memory_tip_vi": "Nhớ qua cụm: 不知不觉过了一个小时 = một tiếng trôi qua lúc nào không hay.",
+    "warning_vi": "Không dùng cho hành động cố ý.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "无意中",
+        "pinyin": "wúyì zhōng",
+        "meaning_vi": "vô tình",
+        "difference_vi": "Nhấn không cố ý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "突然",
+        "pinyin": "tūrán",
+        "meaning_vi": "đột nhiên",
+        "difference_vi": "Nhấn xảy ra bất ngờ, nhanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho hành động cố ý."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9ec9f94a-006a-426c-b035-d8160b130a78",
+      "order": 1,
+      "zh": "不知不觉过了一个小时",
+      "pinyin": "bù zhī bù jué guò le yí ge xiǎoshí",
+      "vi": "một tiếng trôi qua lúc nào không hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07727111-4a9b-4fc9-8247-e2e2dffafd24",
+      "order": 2,
+      "zh": "不知不觉喜欢上她",
+      "pinyin": "bù zhī bù jué xǐhuan shàng tā",
+      "vi": "thích cô ấy lúc nào không hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fdf3b277-42f5-4b21-bcc3-e4374044687f",
+      "order": 3,
+      "zh": "不知不觉到了冬天",
+      "pinyin": "bù zhī bù jué dào le dōngtiān",
+      "vi": "mùa đông đến lúc nào không hay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3664ac7b-5e5f-47e1-ba39-8dc68eea8cd4",
+      "order": 1,
+      "zh": "他每天都想见赵霞，不知不觉就喜欢上她了。",
+      "pinyin": "Tā měi tiān dōu xiǎng jiàn Zhào Xiá, bù zhī bù jué jiù xǐhuan shàng tā le.",
+      "vi": "Ngày nào anh ấy cũng muốn gặp Triệu Hà, không hay không biết đã thích cô ấy mất rồi.",
+      "analysis_vi": "喜欢上 = bắt đầu thích/đem lòng thích.",
+      "highlight": [
+        "不知不觉"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e97218a5-236f-47db-af30-bde7839a7303"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Cụm này rất hay trong văn kể chuyện tình cảm và thời gian.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1ec79529-4d4b-4d03-8f76-1514efe9edaa",
+      "order": 1,
+      "rule_vi": "Không dùng cho hành động cố ý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "不知不觉，天已经黑了。",
+          "pinyin": "Bù zhī bù jué, tiān yǐjīng hēi le.",
+          "vi": "Không hay không biết, trời đã tối rồi.",
+          "note_vi": "Dùng cho quá trình diễn ra không nhận ra.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不知不觉",
+    "back": "không hay không biết, lúc nào không hay",
+    "hint": "bù zhī bù jué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e97218a5-236f-47db-af30-bde7839a7303",
+    "source_lesson_vocab_id": null
+  }
+}

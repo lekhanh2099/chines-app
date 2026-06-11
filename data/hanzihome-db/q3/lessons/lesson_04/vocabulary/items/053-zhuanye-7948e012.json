@@ -1,0 +1,275 @@
+{
+  "id": "0ca3dbe0-32c7-49bb-9764-8d78f5305395",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "转业",
+  "pinyin": "zhuǎnyè",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chuyển nghiệp",
+    "meaning_vi": "chuyển nghề; chuyển từ quân đội sang dân sự",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuyển nghề",
+      "chuyển từ quân đội sang dân sự"
+    ],
+    "short_definition_vi": "chuyển nghề",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "hơi văn / chuyên biệt theo ngữ cảnh",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "转",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "专",
+            "hanviet": "chuyên",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuyển, quay",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "业",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghề nghiệp, sự nghiệp, ngành",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "转业 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 转业 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "转行",
+        "pinyin": "zhuǎnháng",
+        "meaning_vi": "chuyển ngành nghề",
+        "difference_vi": "Hiện đại/đời thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改行",
+        "pinyin": "gǎiháng",
+        "meaning_vi": "đổi nghề",
+        "difference_vi": "Khẩu ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "换专业",
+        "pinyin": "huàn zhuānyè",
+        "meaning_vi": "đổi chuyên ngành học",
+        "difference_vi": "Dùng cho sinh viên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "453e5c18-13e4-4d1b-a6e0-d1ec3b4addcc",
+      "order": 1,
+      "zh": "转业干部",
+      "pinyin": "zhuǎnyè gànbù",
+      "vi": "cán bộ chuyển ngành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6876862b-2317-4c33-b720-59e3c60b4d56",
+      "order": 2,
+      "zh": "转业以后",
+      "pinyin": "zhuǎnyè yǐhòu",
+      "vi": "sau khi chuyển nghề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f66b7425-eba6-4033-82c5-97e9f89facc3",
+      "order": 3,
+      "zh": "决定转业",
+      "pinyin": "juédìng zhuǎnyè",
+      "vi": "quyết định chuyển nghề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05946341-71b4-4989-87e3-4feead6d0848",
+      "order": 4,
+      "zh": "转业做老师",
+      "pinyin": "zhuǎnyè zuò lǎoshī",
+      "vi": "chuyển nghề sang làm giáo viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "63abeb6c-a2e2-4fc1-9de2-87e5319b5c2c",
+      "order": 1,
+      "zh": "他转业以后，成了一名中学老师。",
+      "pinyin": "Tā zhuǎnyè yǐhòu, chéng le yì míng zhōngxué lǎoshī.",
+      "vi": "Sau khi chuyển nghề/chuyển ngành, anh ấy thành giáo viên trung học.",
+      "analysis_vi": "转业以后 làm trạng ngữ thời gian.",
+      "highlight": [
+        "转业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0ca3dbe0-32c7-49bb-9764-8d78f5305395"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7e3a5b6e-14f6-4cf8-9635-bace1589675a",
+      "order": 2,
+      "zh": "他当时想转业，可是家里人一点儿也不赞成。",
+      "pinyin": "Tā dāngshí xiǎng zhuǎnyè, kěshì jiālǐ rén yìdiǎnr yě bú zànchéng.",
+      "vi": "Lúc đó anh ấy muốn chuyển nghề nhưng người nhà không tán thành chút nào.",
+      "analysis_vi": "Gài 当时, 一点儿也不, 赞成.",
+      "highlight": [
+        "转业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0ca3dbe0-32c7-49bb-9764-8d78f5305395"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở Mainland, 转业 rất dễ gợi quân nhân chuyển sang công việc dân sự.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9c43e844-ed10-4101-b51f-085746e3d2ad",
+      "order": 1,
+      "rule_vi": "Đổi chuyên ngành học nói 换专业, không nói 转业到中文系.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "转业",
+    "back": "chuyển nghề; chuyển từ quân đội sang dân sự",
+    "hint": "zhuǎnyè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0ca3dbe0-32c7-49bb-9764-8d78f5305395",
+    "source_lesson_vocab_id": null
+  }
+}

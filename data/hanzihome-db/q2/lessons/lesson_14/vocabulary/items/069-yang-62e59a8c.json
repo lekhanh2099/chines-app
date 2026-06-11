@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ba2dbff564667ea4",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "样",
+  "pinyin": "yàng",
+  "meaning_vi": "loại, kiểu, dạng",
+  "pos": "Lượng từ",
+  "pos_detail": {
+    "vi": "Lượng từ",
+    "cn": "量词",
+    "normalized": "measure_word",
+    "schema_compatible_pos": "measure_word",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "27077a7e-0e1b-4a67-937c-94be99522077",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "27077a7e-0e1b-4a67-937c-94be99522077",
+    "type": "vocabulary_item",
+    "order": 8,
+    "hanzi": "样",
+    "pinyin": "yàng",
+    "meaning_vi": "loại, kiểu, dạng",
+    "meaning_en": "kind; type",
+    "pos": "Lượng từ",
+    "tags": [
+      "sub_entry"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "样",
+      "back": "yàng — loại, kiểu, dạng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified_added",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Lượng từ",
+      "cn": "量词",
+      "normalized": "measure_word",
+      "schema_compatible_pos": "measure_word",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

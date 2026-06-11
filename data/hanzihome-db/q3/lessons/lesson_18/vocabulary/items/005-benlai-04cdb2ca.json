@@ -1,0 +1,339 @@
+{
+  "id": "c7d0fb57-63c3-4956-8acd-c88da06795d2",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "本来",
+  "pinyin": "běnlái",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "副 / 形",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bản lai",
+    "meaning_vi": "vốn dĩ, ban đầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vốn dĩ",
+      "ban đầu"
+    ],
+    "short_definition_vi": "vốn dĩ, ban đầu",
+    "textbook_focus_vi": "Nêu tình hình/kế hoạch ban đầu, thường đối lập với diễn biến sau.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "本",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "thân chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gốc/vốn",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến/tới",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Nêu tình hình/kế hoạch ban đầu, thường đối lập với diễn biến sau.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 本来 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "原来",
+        "pinyin": "",
+        "meaning_vi": "hóa ra/ban đầu",
+        "difference_vi": "原来 ở đầu câu thường là “hóa ra”.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "原本",
+        "pinyin": "",
+        "meaning_vi": "vốn dĩ",
+        "difference_vi": "Hơi viết hơn 本来.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "本身",
+        "pinyin": "",
+        "meaning_vi": "bản thân",
+        "difference_vi": "Không phải “ban đầu”.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b42fd954-b4b5-481d-b2d3-4ca73927984a",
+      "order": 1,
+      "zh": "本来想",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cdd72054-f037-480e-aaa9-161a8f5edad1",
+      "order": 2,
+      "zh": "本来以为",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d238677a-e430-41a9-8696-240923ccfad0",
+      "order": 3,
+      "zh": "本来就",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8b83723-554a-420a-8b2c-49fd0563d8d5",
+      "order": 4,
+      "zh": "本来不是",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97781f73-527f-49f3-81a6-60bd61dff2a6",
+      "order": 5,
+      "zh": "本来可以",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fea40272-e9ae-42da-bacf-9e1231b72365",
+      "order": 6,
+      "zh": "本来打算",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c1d0284a-5f06-47b1-87f3-6a560140f393",
+      "order": 1,
+      "zh": "姐姐本来想给我搞个生日晚会。",
+      "pinyin": "",
+      "vi": "Chị vốn định tổ chức sinh nhật cho tôi.",
+      "analysis_vi": "本来想 nói kế hoạch ban đầu.",
+      "highlight": [
+        "本来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7d0fb57-63c3-4956-8acd-c88da06795d2"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2ef09372-f1c6-4ed6-a632-92ca8e2a17da",
+      "order": 2,
+      "zh": "这盒蛋糕本来是姐姐送给我的。",
+      "pinyin": "",
+      "vi": "Hộp bánh này vốn là chị tặng cho tôi.",
+      "analysis_vi": "本来 làm rõ sự thật ban đầu.",
+      "highlight": [
+        "本来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7d0fb57-63c3-4956-8acd-c88da06795d2"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8234b35a-150a-4951-ad0e-9178eb0c74bb",
+      "order": 1,
+      "rule_vi": "Không dùng 本来 để nói “hóa ra”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "本来是你！",
+          "pinyin": "",
+          "vi": "Sai nếu muốn nói “hóa ra là bạn”.",
+          "note_vi": "本来 không diễn đạt phát hiện bất ngờ này.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "原来是你！",
+          "pinyin": "",
+          "vi": "Hóa ra là bạn!",
+          "note_vi": "原来 hợp nghĩa phát hiện ra sự thật.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "本来",
+    "back": "vốn dĩ, ban đầu",
+    "hint": "běnlái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c7d0fb57-63c3-4956-8acd-c88da06795d2",
+    "source_lesson_vocab_id": null
+  }
+}

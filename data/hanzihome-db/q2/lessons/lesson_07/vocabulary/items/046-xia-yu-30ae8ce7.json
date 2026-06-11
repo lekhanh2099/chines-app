@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_c283e7f74775ce8c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "下雨",
+  "pinyin": "xià yǔ",
+  "meaning_vi": "mưa, trời mưa",
+  "pos": "Động từ li hợp",
+  "pos_detail": {
+    "vi": "Động từ li hợp",
+    "cn": "动宾式离合词",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": true,
+    "separable_type": "động-tân / 离合词",
+    "structure_vi": "động từ 下 + tân ngữ 雨",
+    "usage_note_vi": "Có thể nói 下了一天雨; đây là cụm thời tiết dạng động-tân, nghĩa là mưa/trời mưa.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_045",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_045",
+    "type": "vocabulary_item",
+    "order": 45,
+    "hanzi": "下雨",
+    "pinyin": "xià yǔ",
+    "meaning_vi": "mưa, trời mưa",
+    "meaning_en": "",
+    "pos": "Động từ li hợp",
+    "tags": [
+      "supplementary_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "下雨",
+      "back": "xià yǔ — mưa, trời mưa",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ li hợp",
+      "cn": "动宾式离合词",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": true,
+      "separable_type": "động-tân / 离合词",
+      "structure_vi": "động từ 下 + tân ngữ 雨",
+      "usage_note_vi": "Có thể nói 下了一天雨; đây là cụm thời tiết dạng động-tân, nghĩa là mưa/trời mưa.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

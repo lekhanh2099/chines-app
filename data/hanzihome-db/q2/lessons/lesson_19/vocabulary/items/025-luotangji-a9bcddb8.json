@@ -1,0 +1,403 @@
+{
+  "id": "162a2dc1-299b-4a84-9307-9fdf87d60e16",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "落汤鸡",
+  "pinyin": "luòtāngjī",
+  "pos": {
+    "raw_vi": "danh từ / thành ngữ khẩu ngữ",
+    "raw_cn": "名词 / 惯用语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "lesson_19",
+    "idiom",
+    "rain"
+  ],
+  "meaning": {
+    "hanviet": "Lạc thang kê",
+    "meaning_vi": "người ướt như chuột lột",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người ướt như chuột lột"
+    ],
+    "short_definition_vi": "người ướt như chuột lột",
+    "textbook_focus_vi": "Thành ngữ tả bị mưa làm ướt sũng.",
+    "register_vi": "khẩu ngữ, hình ảnh",
+    "usage_domain_vi": "mưa, trạng thái nhếch nhác",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "落",
+        "lishu_vi": "lạc",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ, thực vật",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "洛",
+            "hanviet": "",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rơi, xuống",
+        "modern_logic_vi": "落 = rơi/xuống trong cụm này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "汤",
+        "lishu_vi": "thang",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "canh, nước nóng",
+        "modern_logic_vi": "汤 = canh/nước nóng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "鸡",
+        "lishu_vi": "kê",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "鸟",
+            "hanviet": "điểu",
+            "meaning_vi": "chim",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "鳥",
+              "radical_variant": "鸟",
+              "radical_name_vi": "bộ Điểu",
+              "radical_name_zh": "",
+              "hanviet": "điểu",
+              "meaning_vi": "chim",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gà",
+        "modern_logic_vi": "鸡 = gà.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "落汤鸡 nghĩa đen là gà rơi vào nước/canh, nghĩa bóng là người ướt nhẹp như chuột lột.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "全身湿透了",
+        "pinyin": "",
+        "meaning_vi": "cả người ướt sũng",
+        "difference_vi": "Trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "淋湿了",
+        "pinyin": "",
+        "meaning_vi": "bị ướt",
+        "difference_vi": "Mức độ nhẹ/trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "狼狈",
+        "pinyin": "",
+        "meaning_vi": "nhếch nhác, thảm hại",
+        "difference_vi": "Không nhất thiết do bị ướt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "湿漉漉",
+        "pinyin": "",
+        "meaning_vi": "ướt sũng",
+        "difference_vi": "Miêu tả trạng thái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9b4cf6e9-8674-482b-8869-09f67e6bde60",
+      "order": 1,
+      "zh": "像落汤鸡一样",
+      "pinyin": "",
+      "vi": "như chuột lột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8d7dea3-2356-4dda-8e42-f41c9f631117",
+      "order": 2,
+      "zh": "变成落汤鸡",
+      "pinyin": "",
+      "vi": "biến thành chuột lột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56c02704-9ef3-4771-bfa1-b0834657c290",
+      "order": 3,
+      "zh": "被淋成落汤鸡",
+      "pinyin": "",
+      "vi": "bị mưa làm ướt như chuột lột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4929ac24-eb38-4d99-83b8-64cf0759f29e",
+      "order": 4,
+      "zh": "全身湿得像落汤鸡",
+      "pinyin": "",
+      "vi": "cả người ướt như chuột lột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85833472-8df6-467a-911b-200498b330d3",
+      "order": 5,
+      "zh": "成了落汤鸡",
+      "pinyin": "",
+      "vi": "thành chuột lột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c95a8ab-2404-47a0-bec0-dc9d1ac1b0a9",
+      "order": 6,
+      "zh": "淋得像落汤鸡一样",
+      "pinyin": "",
+      "vi": "bị dầm mưa ướt như chuột lột",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7c1e333f-2b18-4ed0-adfc-c5cb77d596da",
+      "order": 1,
+      "zh": "他被雨淋成了落汤鸡。",
+      "pinyin": "Tā bèi yǔ lín chéng le luòtāngjī.",
+      "vi": "Anh ấy bị mưa làm ướt như chuột lột.",
+      "analysis_vi": "被雨淋成了…… dùng 成 nói kết quả biến thành trạng thái.",
+      "highlight": [
+        "落汤鸡",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "162a2dc1-299b-4a84-9307-9fdf87d60e16"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9a0dcbdc-8131-4fec-8d82-4be3b222b6a1",
+      "order": 2,
+      "zh": "我一上街就下大雨，回来时已经像落汤鸡一样了。",
+      "pinyin": "Wǒ yí shàngjiē jiù xià dàyǔ, huílái shí yǐjīng xiàng luòtāngjī yíyàng le.",
+      "vi": "Tôi vừa ra phố thì mưa to, lúc về đã ướt như chuột lột rồi.",
+      "analysis_vi": "Ôn 一……就…… và 像……一样.",
+      "highlight": [
+        "落汤鸡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "162a2dc1-299b-4a84-9307-9fdf87d60e16"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fddd909e-b56b-475d-bba7-ff062667a84a",
+      "order": 3,
+      "zh": "他没带伞，衣服被雨淋湿了，整个人看起来像落汤鸡一样。",
+      "pinyin": "Tā méi dài sǎn, yīfu bèi yǔ lín shī le, zhěng ge rén kàn qǐlái xiàng luòtāngjī yíyàng.",
+      "vi": "Anh ấy không mang ô, quần áo bị mưa làm ướt, cả người nhìn như chuột lột.",
+      "analysis_vi": "看起来 là bổ ngữ xu hướng mở rộng nghĩa: nhìn có vẻ.",
+      "highlight": [
+        "落汤鸡",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "162a2dc1-299b-4a84-9307-9fdf87d60e16"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tiếng Việt nói “ướt như chuột lột”; tiếng Trung nói 像落汤鸡一样. Hình ảnh khác nhau nhưng chức năng biểu đạt giống nhau.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b081d586-60c7-45e4-991d-0ad0b3d19a0a",
+      "order": 1,
+      "rule_vi": "落汤鸡 chỉ hợp khi ướt nhẹp hoặc rất nhếch nhác, không dùng cho hơi ướt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "衣服有点儿湿。",
+          "pinyin": "Yīfu yǒu diǎnr shī.",
+          "vi": "Quần áo hơi ướt.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他被淋成了落汤鸡。",
+          "pinyin": "Tā bèi lín chéng le luòtāngjī.",
+          "vi": "Anh ấy bị mưa làm ướt như chuột lột.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "落汤鸡",
+    "back": "người ướt như chuột lột",
+    "hint": "luòtāngjī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "idiom",
+      "rain"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "162a2dc1-299b-4a84-9307-9fdf87d60e16",
+    "source_lesson_vocab_id": null
+  }
+}

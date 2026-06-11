@@ -1,0 +1,283 @@
+{
+  "id": "4e91e28b-7466-4195-84b8-060477630437",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "集中",
+  "pinyin": "jízhōng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tập trung",
+    "meaning_vi": "tập trung, gom vào một điểm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tập trung",
+      "gom vào một điểm"
+    ],
+    "short_definition_vi": "tập trung, gom vào một điểm",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "集",
+        "lishu_vi": "tập",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "隹",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tập hợp, gom lại",
+        "modern_logic_vi": "tập hợp, gom lại",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "中",
+        "lishu_vi": "trung",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giữa, trung tâm, trong",
+        "modern_logic_vi": "giữa, trung tâm, trong",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "集 là gom lại; 中 là trung tâm; 集中 là dồn/gom về một điểm.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 集中注意力.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "专心",
+        "pinyin": "zhuānxīn",
+        "meaning_vi": "chuyên tâm",
+        "difference_vi": "专心 nhấn tinh thần không phân tâm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "聚集",
+        "pinyin": "jùjí",
+        "meaning_vi": "tụ tập",
+        "difference_vi": "聚集 thường nói người/vật tụ ở một chỗ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "分散",
+        "pinyin": "fēnsàn",
+        "meaning_vi": "phân tán",
+        "difference_vi": "trái nghĩa trực tiếp",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "719df7cd-423f-4d6f-92a3-cd2dcf20d536",
+      "order": 1,
+      "zh": "集中注意力",
+      "pinyin": "jízhōng zhùyìlì",
+      "vi": "tập trung chú ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac8db71c-e7d7-47cb-934d-c80b44ff83cc",
+      "order": 2,
+      "zh": "集中精力",
+      "pinyin": "jízhōng jīnglì",
+      "vi": "tập trung tinh lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "927cbb6f-5114-4102-a36a-9063503014a0",
+      "order": 3,
+      "zh": "把目光集中到某人身上",
+      "pinyin": "bǎ mùguāng jízhōng dào mǒurén shēnshang",
+      "vi": "dồn ánh mắt vào ai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7efc6ecc-284f-455f-9d09-6b5c1fe99717",
+      "order": 1,
+      "zh": "上课的时候要集中注意力。",
+      "pinyin": "Shàngkè de shíhou yào jízhōng zhùyìlì.",
+      "vi": "Khi học phải tập trung chú ý.",
+      "analysis_vi": "集中注意力 là collocation phổ biến.",
+      "highlight": [
+        "集中"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4e91e28b-7466-4195-84b8-060477630437"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "deaae0cb-b793-45a2-beeb-b563175a1a16",
+      "order": 2,
+      "zh": "学生们一下子把目光集中到他身上。",
+      "pinyin": "Xuéshengmen yíxiàzi bǎ mùguāng jízhōng dào tā shēnshang.",
+      "vi": "Học sinh lập tức dồn ánh mắt vào người anh ấy.",
+      "analysis_vi": "把目光集中到……身上 là 把 + V + 到.",
+      "highlight": [
+        "集中"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4e91e28b-7466-4195-84b8-060477630437"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "注意力不集中 là cách nói đời thường cho mất tập trung.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8ccfc840-23eb-47c6-89d9-c1e91be5c863",
+      "order": 1,
+      "rule_vi": "Không đồng nhất 集中 với 专心; 集中 chú ý/lực/ánh mắt vào một điểm, 专心 là chuyên tâm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "集中",
+    "back": "tập trung, gom vào một điểm",
+    "hint": "jízhōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4e91e28b-7466-4195-84b8-060477630437",
+    "source_lesson_vocab_id": null
+  }
+}

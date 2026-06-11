@@ -1,0 +1,217 @@
+{
+  "id": "832de1ec-5f45-4ed3-abdc-ad1e75297242",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "仍旧",
+  "pinyin": "réngjiù",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "nhưng cựu",
+    "meaning_vi": "vẫn như cũ, vẫn cứ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vẫn như cũ",
+      "vẫn cứ"
+    ],
+    "short_definition_vi": "vẫn như cũ, vẫn cứ",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "仍",
+        "lishu_vi": "nhưng",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vẫn",
+        "modern_logic_vi": "Trong từ này, 仍 góp phần vào nghĩa hiện đại: vẫn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "旧",
+        "lishu_vi": "cựu",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cũ",
+        "modern_logic_vi": "Trong từ này, 旧 góp phần vào nghĩa hiện đại: cũ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "仍旧 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 仍旧很乱.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Hơi văn hơn 还是; nhấn trạng thái không đổi so với trước."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5bd84343-613b-4259-80a6-ad13db270ef5",
+      "order": 1,
+      "zh": "仍旧很乱",
+      "pinyin": "",
+      "vi": "vẫn rất bừa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2076901f-5dae-4c19-aa8c-3bb72d73399b",
+      "order": 2,
+      "zh": "仍旧没有改变",
+      "pinyin": "",
+      "vi": "vẫn chưa thay đổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f53668b-d27c-4303-bb96-7ecdb85735c8",
+      "order": 3,
+      "zh": "仍旧记得",
+      "pinyin": "",
+      "vi": "vẫn nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9834b00d-03b7-4bc1-84d9-c5041d07f72a",
+      "order": 1,
+      "zh": "过了这么多年，他仍旧住在这儿。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 仍旧 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 仍旧; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "仍旧"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "832de1ec-5f45-4ed3-abdc-ad1e75297242"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 仍旧 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9d392c15-b955-460b-aabc-2fd62b05f73c",
+      "order": 1,
+      "rule_vi": "Hơi văn hơn 还是; nhấn trạng thái không đổi so với trước.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "仍旧",
+    "back": "vẫn như cũ, vẫn cứ",
+    "hint": "réngjiù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "832de1ec-5f45-4ed3-abdc-ad1e75297242",
+    "source_lesson_vocab_id": null
+  }
+}

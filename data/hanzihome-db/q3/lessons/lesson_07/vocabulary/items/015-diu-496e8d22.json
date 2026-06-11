@@ -1,0 +1,234 @@
+{
+  "id": "8404b781-4945-4d0e-9597-c6046c5417df",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "丢",
+  "pinyin": "diū",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "đâu/điêu",
+    "meaning_vi": "mất, đánh mất; ném, vứt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mất, đánh mất; ném, vứt"
+    ],
+    "short_definition_vi": "mất, đánh mất; ném, vứt",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "丢",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất, đánh mất, vứt",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "丢 = thứ gì rời khỏi tay/sự kiểm soát.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 丢.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "丢失",
+        "pinyin": "diūshī",
+        "meaning_vi": "thất lạc",
+        "difference_vi": "trang trọng hơn 丢",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "扔",
+        "pinyin": "rēng",
+        "meaning_vi": "ném, vứt",
+        "difference_vi": "không có nghĩa đánh mất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "找到",
+          "",
+          "tìm thấy",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5b472ba1-74d4-4390-b23d-fd9b83cb7ea3",
+      "order": 1,
+      "zh": "丢东西",
+      "pinyin": "",
+      "vi": "làm mất đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c6dd1c7-d774-4c07-99f6-72b12f5d1de5",
+      "order": 2,
+      "zh": "丢钱包",
+      "pinyin": "",
+      "vi": "mất ví",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d750d56-4861-4826-99b3-de06f9a19912",
+      "order": 3,
+      "zh": "丢垃圾",
+      "pinyin": "",
+      "vi": "vứt rác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "defa1ebc-a052-4368-9bcd-f966fc9a2821",
+      "order": 4,
+      "zh": "丢脸",
+      "pinyin": "",
+      "vi": "mất mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b380f848-1b4d-47ab-8dba-76d9db9235e6",
+      "order": 1,
+      "zh": "我的钥匙丢了。",
+      "pinyin": "Wǒ de yàoshi diū le.",
+      "vi": "Chìa khóa của tôi mất rồi.",
+      "analysis_vi": "丢了 báo tình huống mới.",
+      "highlight": [
+        "丢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8404b781-4945-4d0e-9597-c6046c5417df"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a9339ec7-2d51-4439-ac7c-8dca36c65602",
+      "order": 2,
+      "zh": "我昨天把老师发的材料丢在教室里了。",
+      "pinyin": "Wǒ zuótiān bǎ lǎoshī fā de cáiliào diū zài jiàoshì lǐ le.",
+      "vi": "Hôm qua tôi bỏ quên tài liệu thầy phát ở lớp.",
+      "analysis_vi": "把材料丢在教室里 = bỏ quên ở lớp.",
+      "highlight": [
+        "丢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8404b781-4945-4d0e-9597-c6046c5417df"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "丢脸 là nghĩa mở rộng rất hay: mất mặt.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4c0796ed-6a09-41b0-806d-cd4b35c589c5",
+      "order": 1,
+      "rule_vi": "丢 là mất/vứt; 扔 chỉ ném/vứt, không phải đánh mất.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "丢",
+    "back": "mất, đánh mất; ném, vứt",
+    "hint": "diū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8404b781-4945-4d0e-9597-c6046c5417df",
+    "source_lesson_vocab_id": null
+  }
+}

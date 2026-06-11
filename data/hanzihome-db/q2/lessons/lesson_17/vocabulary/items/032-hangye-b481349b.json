@@ -1,0 +1,299 @@
+{
+  "id": "c9acbed6-2424-4217-a813-6dc0bd9cdc6f",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "行业",
+  "pinyin": "hángyè",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Hành nghiệp",
+    "meaning_vi": "ngành nghề, ngành kinh doanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngành nghề, ngành kinh doanh"
+    ],
+    "short_definition_vi": "ngành nghề, ngành kinh doanh",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "công việc, xã hội, kinh tế, nghề nghiệp.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "行",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi; được; hàng/ngành tùy âm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "业",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghề nghiệp, sự nghiệp, ngành",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "行 ở đây đọc háng, nghĩa là ngành, nghề, lĩnh vực. 业 là nghề nghiệp, sự nghiệp, nghiệp vụ. → 行业 = lĩnh vực nghề nghiệp/ngành hoạt động. Cảnh báo: 行 trong 行业 đọc háng, không đọc xíng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "行业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngành nghề/lĩnh vực hoạt động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "职业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghề nghiệp của một người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "专业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyên ngành học hoặc chuyên môn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "事业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sự nghiệp, công việc lớn dài hạn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 教育行业 là ngành giáo dục; 我的职业是老师 là nghề của tôi là giáo viên; 我的专业是中文 là chuyên ngành của tôi là tiếng Trung."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "324d5c9b-0701-463c-bb0f-c33b764e8f3a",
+      "order": 1,
+      "zh": "教育行业",
+      "pinyin": "",
+      "vi": "ngành giáo dục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c1c96b2-5f07-4c68-80c6-6a3ec1e13a3c",
+      "order": 2,
+      "zh": "旅游行业",
+      "pinyin": "",
+      "vi": "ngành du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2779f9c-28ee-44c9-9fec-f8c97b30fdac",
+      "order": 3,
+      "zh": "服务行业",
+      "pinyin": "",
+      "vi": "ngành dịch vụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0242d41e-9fd6-4a72-936c-ba1b5ff5f3f7",
+      "order": 4,
+      "zh": "互联网行业",
+      "pinyin": "",
+      "vi": "ngành Internet/công nghệ mạng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03ac8e96-dda6-41db-b84a-4f590543942f",
+      "order": 5,
+      "zh": "各行各业",
+      "pinyin": "",
+      "vi": "mọi ngành nghề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9f93ff74-96f7-4826-b2d2-d1d02e84a9ad",
+      "order": 1,
+      "zh": "新春对联儿里常常有祝各行各业兴旺的话。",
+      "pinyin": "Xīnchūn duìliánr lǐ chángcháng yǒu zhù gè háng gè yè xīngwàng de huà.",
+      "vi": "Trong câu đối xuân thường có lời chúc mọi ngành nghề hưng vượng.",
+      "analysis_vi": "各行各业 là mọi ngành nghề; 兴旺 là thịnh vượng, phát đạt.",
+      "highlight": [
+        "行"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "c9acbed6-2424-4217-a813-6dc0bd9cdc6f"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4a9c8fe8-48f9-4978-810a-fd79eef23686",
+      "order": 2,
+      "zh": "现在互联网行业发展很快，年轻人越来越关注这个行业。",
+      "pinyin": "Xiànzài hùliánwǎng hángyè fāzhǎn hěn kuài, niánqīng rén yuè lái yuè guānzhù zhège hángyè.",
+      "vi": "Hiện nay ngành Internet phát triển rất nhanh, người trẻ ngày càng quan tâm ngành này.",
+      "analysis_vi": "这个行业 là ngành đã xác định; 越来越关注 nói mức độ quan tâm tăng dần.",
+      "highlight": [
+        "行业"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "c9acbed6-2424-4217-a813-6dc0bd9cdc6f"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bcfc5646-1c55-458b-be14-776b0b007027",
+      "order": 3,
+      "zh": "如果你想了解一个行业，最好先听听行业里的人怎么说。",
+      "pinyin": "Rúguǒ nǐ xiǎng liǎojiě yí ge hángyè, zuìhǎo xiān tīngting hángyè lǐ de rén zěnme shuō.",
+      "vi": "Nếu bạn muốn hiểu một ngành, tốt nhất nghe thử người trong ngành nói thế nào trước.",
+      "analysis_vi": "行业里的人 là người trong ngành; 最好先…… là lời khuyên mềm.",
+      "highlight": [
+        "行业"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "c9acbed6-2424-4217-a813-6dc0bd9cdc6f"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 行业",
+    "content_vi": "Cụm 各行各业 rất hay dùng trong văn chúc Tết, tin tức và diễn văn, nghĩa là “mọi ngành mọi nghề”. Ví dụ 祝各行各业兴旺发展 – chúc mọi ngành nghề phát triển hưng thịnh.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2535ede9-07ef-402e-859d-038b8125fb58",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Đọc sai 行. 行业 Hángyè Ngành nghề. 行不行？ Xíng bu xíng? Được không? 银行 Yínháng Ngân hàng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "行业",
+    "back": "ngành nghề, ngành kinh doanh",
+    "hint": "hángyè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c9acbed6-2424-4217-a813-6dc0bd9cdc6f",
+    "source_lesson_vocab_id": null
+  }
+}

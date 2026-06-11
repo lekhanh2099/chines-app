@@ -1,0 +1,392 @@
+{
+  "id": "c077e067-83a6-47a5-a5e9-9ae9a34cc534",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "好玩儿",
+  "pinyin": "hǎowánr",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Hảo ngoạn",
+    "meaning_vi": "vui, thú vị, đáng chơi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vui, thú vị, đáng chơi"
+    ],
+    "short_definition_vi": "vui, thú vị, đáng chơi",
+    "textbook_focus_vi": "vui, thú vị, đáng chơi",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, hay",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "玩",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "ngọc/vương",
+            "meaning_vi": "ngọc; dạng bên trái của 玉 trong nhiều chữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc/Vương",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc; dạng bên trái của 玉 trong nhiều chữ",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chơi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố âm r",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 好玩儿 hợp lại tạo nghĩa hiện đại trong bài: vui, thú vị, đáng chơi.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好玩儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "好玩儿 / 有意思 / 有趣",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有意思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "好玩儿 / 有意思 / 有趣",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有趣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "好玩儿 / 有意思 / 有趣",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "好玩儿",
+        "right": "没意思",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "好玩儿 ↔ 没意思",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "好玩儿 / 有意思 / 有趣",
+      "好玩儿 ↔ 没意思"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "15b825a5-05c1-475e-9dfd-4d6dcb2519d8",
+      "order": 1,
+      "zh": "很好玩儿",
+      "pinyin": "",
+      "vi": "很好玩儿",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5a245322-3922-40d0-a1a3-80061c4816e3",
+      "order": 2,
+      "zh": "太好玩儿了",
+      "pinyin": "",
+      "vi": "太好玩儿了",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2eb94a40-045f-44c9-9eff-38671f6d58d3",
+      "order": 3,
+      "zh": "一点儿也不好玩儿",
+      "pinyin": "",
+      "vi": "一点儿也不好玩儿",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "127d9879-43ec-4050-acc5-313c2045843b",
+      "order": 4,
+      "zh": "哪儿好玩儿",
+      "pinyin": "",
+      "vi": "哪儿好玩儿",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ce8721ef-023a-4d8a-bd09-54fa68e5edbd",
+      "order": 5,
+      "zh": "出去玩儿",
+      "pinyin": "",
+      "vi": "出去玩儿",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c60f4379-935f-4aec-8bf0-fbab3136ebbf",
+      "order": 6,
+      "zh": "玩儿得很开心",
+      "pinyin": "",
+      "vi": "玩儿得很开心",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "862bea55-451e-4a3d-ab1e-cf58888d5340",
+      "order": 1,
+      "zh": "这个词是“好玩儿”。",
+      "pinyin": "",
+      "vi": "Từ này là “好玩儿”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "好玩儿"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "c077e067-83a6-47a5-a5e9-9ae9a34cc534"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e725203c-7956-40e6-95ff-0a7030ab7f7f",
+      "order": 2,
+      "zh": "你想怎么用“好玩儿”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “好玩儿” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "好玩儿"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "c077e067-83a6-47a5-a5e9-9ae9a34cc534"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3a78f30c-5d39-4054-a845-8aea6043ce75",
+      "order": 3,
+      "zh": "我们一边复习好玩儿，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “好玩儿”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "好玩儿"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "c077e067-83a6-47a5-a5e9-9ae9a34cc534"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "好玩儿 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "942a2cf8-d53d-4067-857a-1a843a7f9dc9",
+      "order": 1,
+      "rule_vi": "Dùng 好玩儿 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 好玩儿 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "好玩儿",
+    "back": "vui, thú vị, đáng chơi",
+    "hint": "hǎowánr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c077e067-83a6-47a5-a5e9-9ae9a34cc534",
+    "source_lesson_vocab_id": null
+  }
+}

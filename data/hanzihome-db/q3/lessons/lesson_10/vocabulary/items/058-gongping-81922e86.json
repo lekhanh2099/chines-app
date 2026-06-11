@@ -1,0 +1,71 @@
+{
+  "id": "synthetic_vocab_543c13ae07fe631c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "公平",
+  "pinyin": "gōngpíng",
+  "meaning_vi": "công bằng",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ. Không xử lý như động từ li hợp.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "cb78e64f-56f6-420f-b7ba-937921ddd98f",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "cb78e64f-56f6-420f-b7ba-937921ddd98f",
+    "type": "vocabulary_item",
+    "order": 7,
+    "hanzi": "公平",
+    "pinyin": "gōngpíng",
+    "meaning_vi": "công bằng",
+    "meaning_en": "",
+    "pos": "Tính từ",
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ. Không xử lý như động từ li hợp.",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "公平",
+      "back": "gōngpíng — công bằng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ],
+      "tags": [
+        "supplementary_vocab",
+        "reading_vocab"
+      ],
+      "notes": []
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

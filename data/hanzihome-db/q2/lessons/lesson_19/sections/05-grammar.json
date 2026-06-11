@@ -1,0 +1,454 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "被动意义的表达：“被”字句",
+      "title_vi": "Câu bị động với 被 / 让 / 叫",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "被 dùng khi chủ ngữ là người/vật chịu tác động, không phải người chủ động làm hành động. Bài này dùng nhiều cho các chuyện không may như bị xe đâm, bị trộm ví, bị mưa làm ướt, bị phạt.",
+          "examples": [
+            {
+              "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+              "zh": "我的腿被自行车撞伤了。",
+              "pinyin": "Wǒ de tuǐ bèi zìxíngchē zhuàng shāng le.",
+              "vi": "Chân tôi bị xe đạp đâm bị thương.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                "54613016-834a-4fc3-9912-2357a6d27058",
+                "54b36889-82be-485b-8342-fb8aab572065"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "9d83e784-897b-4a04-a96a-5150b897141f",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Chủ ngữ chịu tác động + 被 + tác nhân + động từ + thành phần kết quả",
+          "meaning_vi": "Dùng để nói người/vật bị một tác nhân nào đó làm cho thay đổi trạng thái.",
+          "formulas": [
+            {
+              "label": "被",
+              "pattern": "S chịu tác động + 被 + tác nhân + V + kết quả"
+            }
+          ],
+          "examples": [
+            {
+              "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+              "zh": "我的钱包儿被小偷儿偷走了。",
+              "pinyin": "Wǒ de qiánbāor bèi xiǎotōur tōu zǒu le.",
+              "vi": "Ví của tôi bị kẻ trộm lấy mất.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "689eb64b-5d4f-469f-9afa-74017d399614",
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                "c99a633b-27a2-429b-a139-44113a84c189",
+                "d45d5488-9293-41ae-9deb-1e5b51cee446"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "b7a3d982-8f73-4ed4-b3d6-828fba6e2949",
+              "zh": "衣服被雨淋湿了。",
+              "pinyin": "Yīfu bèi yǔ lín shī le.",
+              "vi": "Quần áo bị mưa làm ướt.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+                "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e4403505-1b22-4bcc-bdee-8415aada1f78",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Có thể bỏ tác nhân sau 被",
+          "pattern": "Chủ ngữ + 被 + V + kết quả",
+          "meaning_vi": "Khi không biết hoặc không cần nói rõ ai gây ra hành động, có thể bỏ tác nhân sau 被.",
+          "examples": [
+            {
+              "id": "7aa9ef46-6f3d-4ea1-b0f6-1ba89dd9b81b",
+              "zh": "我的钱包儿被偷走了。",
+              "pinyin": "Wǒ de qiánbāor bèi tōu zǒu le.",
+              "vi": "Ví của tôi bị trộm lấy mất.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "689eb64b-5d4f-469f-9afa-74017d399614",
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                "d45d5488-9293-41ae-9deb-1e5b51cee446"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "58943086-638c-4919-b0ca-007b22e954eb",
+              "zh": "他的腿被撞伤了。",
+              "pinyin": "Tā de tuǐ bèi zhuàng shāng le.",
+              "vi": "Chân anh ấy bị đâm bị thương.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                "54613016-834a-4fc3-9912-2357a6d27058",
+                "54b36889-82be-485b-8342-fb8aab572065"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "55b547cf-b153-49fc-8c42-34d076ca43e1",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "让 / 叫 biểu thị bị động",
+          "pattern": "Chủ ngữ chịu tác động + 让 / 叫 + tác nhân + V + kết quả",
+          "meaning_vi": "Trong khẩu ngữ, 让 và 叫 có thể dùng gần giống 被, nhưng thường phải có tác nhân phía sau.",
+          "examples": [
+            {
+              "id": "f695da48-2229-4bfe-bba6-da73b6f01a56",
+              "zh": "我的钱包儿让小偷儿偷走了。",
+              "pinyin": "Wǒ de qiánbāor ràng xiǎotōur tōu zǒu le.",
+              "vi": "Ví của tôi bị kẻ trộm lấy mất rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "689eb64b-5d4f-469f-9afa-74017d399614",
+                "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+                "c99a633b-27a2-429b-a139-44113a84c189",
+                "d45d5488-9293-41ae-9deb-1e5b51cee446"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "ea19f0da-a2ab-4e04-93a4-ec516d98065a",
+              "zh": "我的自行车叫人骑走了。",
+              "pinyin": "Wǒ de zìxíngchē jiào rén qí zǒu le.",
+              "vi": "Xe đạp của tôi bị người ta đạp đi mất rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+          "type": "grammar_usage_notes",
+          "order": 5,
+          "title": "Dạng phủ định",
+          "notes_vi": [
+            "没 / 没有 phải đứng trước 被 / 让 / 叫.",
+            "Câu phủ định thường không thêm 了 ở cuối."
+          ],
+          "examples": [
+            {
+              "id": "d9c133d6-39c2-42ce-8446-dcf3785d672f",
+              "zh": "骨头没有被撞伤。",
+              "pinyin": "Gǔtou méiyǒu bèi zhuàng shāng.",
+              "vi": "Xương không bị đâm bị thương.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                "54613016-834a-4fc3-9912-2357a6d27058",
+                "54b36889-82be-485b-8342-fb8aab572065"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "1209ed44-4a94-4e01-8c6e-ba95cb8c59a0",
+              "zh": "我的车没有叫他借走。",
+              "pinyin": "Wǒ de chē méiyǒu jiào tā jiè zǒu.",
+              "vi": "Xe của tôi không bị anh ấy mượn đi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "636a7f74-5858-4824-8a64-ed11d645facb",
+          "type": "grammar_compare",
+          "order": 6,
+          "title": "So với 把字句",
+          "items": [
+            {
+              "aspect": "Trọng tâm",
+              "left": {
+                "label": "把",
+                "value": "Nhấn vào người làm hành động xử lý tân ngữ."
+              },
+              "right": {
+                "label": "被",
+                "value": "Nhấn vào người/vật chịu tác động."
+              }
+            },
+            {
+              "aspect": "Ví dụ",
+              "left": {
+                "label": "把",
+                "value": "小伙子把玛丽撞倒了。"
+              },
+              "right": {
+                "label": "被",
+                "value": "玛丽被小伙子撞倒了。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "又",
+      "title_vi": "Phó từ 又",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "又 cơ bản là “lại”, nhưng trong bài này còn có sắc thái bổ sung thêm một chuyện nữa: “đã vậy còn…”, “lại còn…”. Trong câu phủ định, 又 thường mang nghĩa phản bác nhẹ: “đâu có…”.",
+          "examples": [
+            {
+              "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+              "zh": "雨下得特别大，我们又没带雨伞。",
+              "pinyin": "Yǔ xià de tèbié dà, wǒmen yòu méi dài yǔsǎn.",
+              "vi": "Mưa rất to, chúng tôi lại không mang ô.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "69bb8e0e-de4f-4f3e-822e-31a68aa6d0c7",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "又 biểu thị sự việc lặp lại hoặc thêm vào",
+          "pattern": "又 + động từ / cụm động từ",
+          "meaning_vi": "Dùng để thêm một sự việc đã xảy ra hoặc nhấn mạnh chuyện xui/chuyện bất ngờ tiếp tục xảy ra.",
+          "examples": [
+            {
+              "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+              "zh": "因为在山上抽烟，又被公园管理员罚了五十块钱。",
+              "pinyin": "Yīnwèi zài shān shang chōu yān, yòu bèi gōngyuán guǎnlǐyuán fá le wǔshí kuài qián.",
+              "vi": "Vì hút thuốc trên núi, lại bị nhân viên quản lý công viên phạt 50 tệ.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [
+                "863bbf3f-83e7-4021-b98e-be632043d94c",
+                "b14487b6-5579-4f1c-9ad7-16fd40991577",
+                "505dae11-836a-475d-b811-339f25caaf42"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "7ef0fe1b-7a15-4bc5-a252-97371e9335a3",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "又 trong câu phủ định",
+          "pattern": "又不是 + N / 又没 + V",
+          "meaning_vi": "Dùng để phản bác nhẹ, nghĩa gần như “đâu có…”, “cũng có phải… đâu”.",
+          "examples": [
+            {
+              "id": "e32b9b44-0167-4608-818f-ad358140a4ff",
+              "zh": "没什么，你又不是故意的。",
+              "pinyin": "Méi shénme, nǐ yòu bú shì gùyì de.",
+              "vi": "Không sao đâu, bạn đâu có cố ý.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [
+                "7a89dc80-d79d-4c2f-988c-d0f54e240d19"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "3d218f68-a9a9-46a3-8ff6-83866693abad",
+              "zh": "我又没说你错了。",
+              "pinyin": "Wǒ yòu méi shuō nǐ cuò le.",
+              "vi": "Tôi đâu có nói bạn sai.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "839da07a-9f85-4976-8777-6a7f5dbe09f5",
+          "type": "grammar_compare",
+          "order": 4,
+          "title": "Phân biệt 又 và 再",
+          "items": [
+            {
+              "aspect": "Thời gian",
+              "left": {
+                "label": "又",
+                "value": "Việc đã xảy ra / lại thêm một việc đã xảy ra."
+              },
+              "right": {
+                "label": "再",
+                "value": "Việc chưa xảy ra / sẽ làm lại trong tương lai."
+              }
+            },
+            {
+              "aspect": "Ví dụ",
+              "left": {
+                "label": "又",
+                "value": "他又被罚了五十块钱。"
+              },
+              "right": {
+                "label": "再",
+                "value": "明天再去医院检查一下儿。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_0946e8d2c85e538f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "伸",
+  "pinyin": "shēn",
+  "meaning_vi": "duỗi, đưa ra",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ duỗi/đưa ra: 伸手 / 伸出脚.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+    "type": "vocabulary_item",
+    "order": 25,
+    "hanzi": "伸",
+    "pinyin": "shēn",
+    "meaning_vi": "duỗi, đưa ra",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "伸",
+      "back": "shēn — duỗi, đưa ra",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ duỗi/đưa ra: 伸手 / 伸出脚.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,282 @@
+{
+  "id": "e29aab31-9fbb-4796-b291-d3203e82117a",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "失学",
+  "pinyin": "shīxué",
+  "pos": {
+    "raw_vi": "Động từ / trạng thái",
+    "raw_cn": "动词/状态词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thất học",
+    "meaning_vi": "mất cơ hội đi học; phải bỏ học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mất cơ hội đi học",
+      "phải bỏ học"
+    ],
+    "short_definition_vi": "mất cơ hội đi học",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "失",
+        "lishu_vi": "thất",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ nhỏ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "失学 là mất việc học/cơ hội học.",
+    "memory_tip_vi": "Nhớ 失学儿童.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "辍学",
+        "pinyin": "",
+        "meaning_vi": "辍学",
+        "difference_vi": "辍学 là bỏ học giữa chừng; 失学 rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "复学",
+        "pinyin": "",
+        "meaning_vi": "复学",
+        "difference_vi": "quay lại học",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fdb1ab4a-0712-4c5e-a433-d12908ed0bcf",
+      "order": 1,
+      "zh": "失学儿童",
+      "pinyin": "shīxué értóng",
+      "vi": "trẻ em thất học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc7a78d5-efea-4b8e-be75-0492fae28515",
+      "order": 2,
+      "zh": "因贫失学",
+      "pinyin": "yīn pín shīxué",
+      "vi": "vì nghèo mà thất học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1b350d7-8994-48b8-af3e-f9f59ca34b62",
+      "order": 3,
+      "zh": "帮助失学儿童",
+      "pinyin": "bāngzhù shīxué értóng",
+      "vi": "giúp trẻ thất học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a07c6f4e-9b67-4d10-9d85-819e6602cbd6",
+      "order": 4,
+      "zh": "重返校园",
+      "pinyin": "chóngfǎn xiàoyuán",
+      "vi": "trở lại trường học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "925f92f8-4a94-48a5-9e18-f9af5d02b49d",
+      "order": 1,
+      "zh": "他因为家里穷而失学。",
+      "pinyin": "Tā yīnwèi jiā lǐ qióng ér shīxué.",
+      "vi": "Anh ấy vì nhà nghèo mà thất học.",
+      "analysis_vi": "因为……而…… hơi văn viết.",
+      "highlight": [
+        "失学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e29aab31-9fbb-4796-b291-d3203e82117a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "408a4dfb-6a43-4565-a9e5-af1889f345e5",
+      "order": 2,
+      "zh": "对失学儿童来说，一个书包可能就是重新上学的希望。",
+      "pinyin": "Duì shīxué értóng lái shuō, yí ge shūbāo kěnéng jiù shì chóngxīn shàngxué de xīwàng.",
+      "vi": "Đối với trẻ thất học, một chiếc cặp có thể là hy vọng đi học lại.",
+      "analysis_vi": "Sát mạch 希望工程.",
+      "highlight": [
+        "失学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e29aab31-9fbb-4796-b291-d3203e82117a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "失学儿童 là trẻ bị mất cơ hội học tập, không phải vắng học hôm nay.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d92d4c4-677b-4912-bdf9-ef650e489065",
+      "order": 1,
+      "rule_vi": "Không dùng 失学 cho nghỉ học một ngày.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我今天生病，所以失学了。",
+          "pinyin": "Wǒ jīntiān shēngbìng, suǒyǐ shīxué le.",
+          "vi": "Sai nếu chỉ nghỉ một ngày.",
+          "note_vi": "失学 là vấn đề mất cơ hội học.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我今天生病，所以没去上学。",
+          "pinyin": "Wǒ jīntiān shēngbìng, suǒyǐ méi qù shàngxué.",
+          "vi": "Hôm nay tôi bệnh nên không đi học.",
+          "note_vi": "没去上学 đúng cho vắng học tạm thời.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "失学",
+    "back": "mất cơ hội đi học; phải bỏ học",
+    "hint": "shīxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e29aab31-9fbb-4796-b291-d3203e82117a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "id": "168d79bf-24ce-46a9-bcc3-839777704189",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "重新",
+  "pinyin": "chóngxīn",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "trọng tân",
+    "meaning_vi": "lại, làm lại từ đầu/làm lại theo cách mới",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lại",
+      "làm lại từ đầu/làm lại theo cách mới"
+    ],
+    "short_definition_vi": "lại, làm lại từ đầu/làm lại theo cách mới",
+    "textbook_focus_vi": "重新 nhấn làm lại hoặc xét lại, không chỉ lặp đơn thuần.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "重",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lặp lại khi đọc chóng; nặng khi đọc zhòng",
+        "modern_logic_vi": "Trong từ “重新”, chữ “重” góp phần vào trường nghĩa: lặp lại khi đọc chóng; nặng khi đọc zhòng",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "新",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "斤",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cân",
+          "radical_name_zh": "",
+          "hanviet": "cân",
+          "meaning_vi": "rìu/cân lượng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "斤 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "斤",
+            "hanviet": "cân",
+            "meaning_vi": "rìu/cân lượng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "斤",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "rìu/cân lượng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "斤 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "斤 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mới",
+        "modern_logic_vi": "Trong từ “重新”, chữ “新” góp phần vào trường nghĩa: mới",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "重新 nhấn làm lại hoặc xét lại, không chỉ lặp đơn thuần.",
+    "memory_tip_vi": "重新 nhấn làm lại hoặc xét lại, không chỉ lặp đơn thuần.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "又",
+        "pinyin": "",
+        "meaning_vi": "lại xảy ra, thường đã lặp",
+        "difference_vi": "lại xảy ra, thường đã lặp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "再",
+        "pinyin": "",
+        "meaning_vi": "lại/thêm lần nữa, thường cho việc chưa xảy ra",
+        "difference_vi": "lại/thêm lần nữa, thường cho việc chưa xảy ra",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "49f4f112-b865-4a5a-a1a9-bcdeaba3d032",
+      "order": 1,
+      "zh": "重新考虑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f038b141-e86d-4ce0-b681-5a5e264a2cb7",
+      "order": 2,
+      "zh": "重新开始",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87c09752-082c-4912-b300-34416fea8774",
+      "order": 3,
+      "zh": "重新安排",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c71b200-2144-462a-b072-2e56d1477169",
+      "order": 4,
+      "zh": "重新整理",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "91d6323a-66fd-4ae0-bc70-79c17e3534a4",
+      "order": 1,
+      "zh": "我想重新开始。",
+      "pinyin": "",
+      "vi": "Tôi muốn bắt đầu lại.",
+      "analysis_vi": "重新 + V.",
+      "highlight": [
+        "重新"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "168d79bf-24ce-46a9-bcc3-839777704189"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7ba3d979-948e-4f5a-8efe-44ac9092a9d0",
+      "order": 2,
+      "zh": "领导不得不重新考虑他的工作安排。",
+      "pinyin": "",
+      "vi": "Lãnh đạo buộc phải xem xét lại sắp xếp công việc.",
+      "analysis_vi": "重新考虑 là xem xét lại.",
+      "highlight": [
+        "重新"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "168d79bf-24ce-46a9-bcc3-839777704189"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "重新 nhấn làm lại hoặc xét lại, không chỉ lặp đơn thuần.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8190ce78-0b4a-4500-b447-f81369d288ad",
+      "order": 1,
+      "rule_vi": "重 trong 重新 đọc chóng, không đọc zhòng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "重 trong 重新 đọc chóng, không đọc zhòng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "重新",
+    "back": "lại, làm lại từ đầu/làm lại theo cách mới",
+    "hint": "chóngxīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "168d79bf-24ce-46a9-bcc3-839777704189",
+    "source_lesson_vocab_id": null
+  }
+}

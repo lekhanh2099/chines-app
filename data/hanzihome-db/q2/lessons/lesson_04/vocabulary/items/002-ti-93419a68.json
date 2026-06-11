@@ -1,0 +1,278 @@
+{
+  "id": "a614d48f-d3ad-4568-8321-0352ca06ce69",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "题",
+  "pinyin": "tí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "thi_cu"
+  ],
+  "meaning": {
+    "hanviet": "Đề",
+    "meaning_vi": "đề bài; câu hỏi; vấn đề",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đề bài",
+      "câu hỏi",
+      "vấn đề"
+    ],
+    "short_definition_vi": "đề bài; câu hỏi; vấn đề",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "题",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "是",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "bên trái / trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "trang / bộ Hiệt",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu / trang trong chữ hiện đại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đề, câu hỏi, vấn đề",
+        "modern_logic_vi": "",
+        "warning_vi": "Không suy nghĩa gốc từ hình giản thể.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu / trang trong chữ hiện đại",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "题 trong bài là câu hỏi/bài cần làm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "问题",
+        "pinyin": "",
+        "meaning_vi": "vấn đề / câu hỏi",
+        "difference_vi": "rộng hơn 题",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "题目",
+        "pinyin": "",
+        "meaning_vi": "đề mục / đầu bài",
+        "difference_vi": "cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "题",
+        "right": "句子",
+        "meaning_vi": "câu hỏi bài tập ↔ câu văn",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "083e125a-c0b6-43e3-9112-476ed125faca",
+      "order": 1,
+      "zh": "一道题",
+      "pinyin": "",
+      "vi": "một câu hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77a588f6-3fd8-49ad-9006-699cb4a32e70",
+      "order": 2,
+      "zh": "做题",
+      "pinyin": "",
+      "vi": "làm bài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a5cb144-56db-46cf-aa61-8acb5fa19e83",
+      "order": 3,
+      "zh": "答题",
+      "pinyin": "",
+      "vi": "trả lời câu hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cb32d51c-4ec8-4d2a-a99b-e27606d86c90",
+      "order": 1,
+      "zh": "这道题我不会做。",
+      "pinyin": "Zhè dào tí wǒ bú huì zuò.",
+      "vi": "Câu này tôi không biết làm.",
+      "analysis_vi": "这道题 là chủ đề câu.",
+      "highlight": [
+        "题"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a614d48f-d3ad-4568-8321-0352ca06ce69"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a296502a-d4cb-4be8-b1d9-66878e74a0c9",
+      "order": 2,
+      "zh": "安娜把那道题做对了。",
+      "pinyin": "Ānnà bǎ nà dào tí zuò duì le.",
+      "vi": "Anna đã làm đúng câu đó rồi.",
+      "analysis_vi": "做对了 nhấn kết quả đúng.",
+      "highlight": [
+        "题"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a614d48f-d3ad-4568-8321-0352ca06ce69"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài tập, “câu” thường là 题; câu văn mới là 句子.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c2413530-de29-4cec-b7e2-6359797a17f7",
+      "order": 1,
+      "rule_vi": "Nếu là câu hỏi trong bài tập, dùng 题.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这个句子我不会做。",
+          "pinyin": "Zhège jùzi wǒ bú huì zuò.",
+          "vi": "Câu này tôi không biết làm.",
+          "note_vi": "Lệch nếu đang nói câu hỏi bài tập.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这道题我不会做。",
+          "pinyin": "Zhè dào tí wǒ bú huì zuò.",
+          "vi": "Câu này tôi không biết làm.",
+          "note_vi": "道 là lượng từ tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "题",
+    "back": "đề bài; câu hỏi; vấn đề",
+    "hint": "tí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "thi_cu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a614d48f-d3ad-4568-8321-0352ca06ce69",
+    "source_lesson_vocab_id": null
+  }
+}

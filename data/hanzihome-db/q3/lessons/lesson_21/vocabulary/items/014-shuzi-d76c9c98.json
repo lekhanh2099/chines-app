@@ -1,0 +1,285 @@
+{
+  "id": "d81cc09f-1daa-411b-89d6-3c293a1a7737",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "梳子",
+  "pinyin": "shūzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "sơ tử",
+    "meaning_vi": "cái lược",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cái lược"
+    ],
+    "short_definition_vi": "cái lược",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: cái lược.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "梳",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 梳.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "梳子 trong bài được hiểu theo nghĩa: cái lược. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 梳子.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "梳 là động từ chải; 梳子 là cái lược."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "218999bb-8690-49fa-8b23-065293acf669",
+      "order": 1,
+      "zh": "一把梳子",
+      "pinyin": "",
+      "vi": "một cái lược",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4edeb3cd-15ca-47e4-8012-131662bcfbc9",
+      "order": 2,
+      "zh": "用梳子",
+      "pinyin": "",
+      "vi": "dùng lược",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "262ade8f-d46b-4828-8fc1-0399ce6f67b3",
+      "order": 3,
+      "zh": "拿起梳子",
+      "pinyin": "",
+      "vi": "cầm lược lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27c99d2d-670a-455d-acb1-2b07d4612e64",
+      "order": 4,
+      "zh": "梳头发",
+      "pinyin": "",
+      "vi": "chải tóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65dac906-7841-492a-986c-9bb0d6fe0b6d",
+      "order": 5,
+      "zh": "木梳子",
+      "pinyin": "",
+      "vi": "lược gỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9a50bd68-c3c5-4289-8d69-ea7d27eb2d36",
+      "order": 1,
+      "zh": "桌子上有一把梳子。",
+      "pinyin": "",
+      "vi": "Trên bàn có một cái lược.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "梳子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d81cc09f-1daa-411b-89d6-3c293a1a7737"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "834f8a0b-05ba-4834-975f-c3580f131b9b",
+      "order": 2,
+      "zh": "理发师拿起梳子，轻柔地给我梳头发。",
+      "pinyin": "",
+      "vi": "Thợ cắt tóc cầm lược lên, nhẹ nhàng chải tóc cho tôi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "梳子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d81cc09f-1daa-411b-89d6-3c293a1a7737"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "梳 là động từ chải; 梳子 là cái lược.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c5d8cfce-71e0-412b-b6a2-9cc1a2e0ec2c",
+      "order": 1,
+      "rule_vi": "梳 là động từ chải; 梳子 là cái lược.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我梳子头发。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "梳 là động từ chải; 梳子 là cái lược.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我用梳子梳头发。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "梳 là động từ chải; 梳子 là cái lược.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "梳子",
+    "back": "cái lược",
+    "hint": "shūzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d81cc09f-1daa-411b-89d6-3c293a1a7737",
+    "source_lesson_vocab_id": null
+  }
+}

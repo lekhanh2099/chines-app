@@ -1,0 +1,381 @@
+{
+  "id": "6ab57b21-a2d0-44be-b478-ce2c701d8bf0",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "暖洋洋",
+  "pinyin": "nuǎnyángyáng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "状态形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "noãn dương dương",
+    "meaning_vi": "ấm áp dễ chịu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ấm áp dễ chịu"
+    ],
+    "short_definition_vi": "ấm áp dễ chịu",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: ấm áp dễ chịu.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "暖",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 暖.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "洋",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 洋.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "洋",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 洋.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "暖洋洋 trong bài được hiểu theo nghĩa: ấm áp dễ chịu. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 暖洋洋.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Từ ABB này thường đi với 的 khi miêu tả trạng thái."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6d2dc6bd-e560-4d7b-8ce5-d8c14dfd2e0d",
+      "order": 1,
+      "zh": "暖洋洋的阳光",
+      "pinyin": "",
+      "vi": "ánh nắng ấm dễ chịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea3df364-bd05-4efa-be22-3e9676c17992",
+      "order": 2,
+      "zh": "身上暖洋洋的",
+      "pinyin": "",
+      "vi": "người thấy ấm áp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc6383c8-f7b7-4b41-91c4-8866d8d897cc",
+      "order": 3,
+      "zh": "心里暖洋洋的",
+      "pinyin": "",
+      "vi": "trong lòng ấm áp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53de3aad-fba4-4594-9168-c105a7e65f0b",
+      "order": 4,
+      "zh": "房间里暖洋洋的",
+      "pinyin": "",
+      "vi": "trong phòng ấm áp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d43ad2d3-3645-4e2f-9baa-44682f693de2",
+      "order": 5,
+      "zh": "暖洋洋的感觉",
+      "pinyin": "",
+      "vi": "cảm giác ấm áp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "30ef56d3-6466-4f1a-953d-7f90ec4951a3",
+      "order": 1,
+      "zh": "今天阳光很好，身上暖洋洋的。",
+      "pinyin": "",
+      "vi": "Hôm nay nắng đẹp, người thấy ấm áp dễ chịu.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "暖洋洋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6ab57b21-a2d0-44be-b478-ce2c701d8bf0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c59d4358-6e7b-4751-9c60-f1f10bee99e7",
+      "order": 2,
+      "zh": "发廊里的气氛一下子变得暖洋洋的。",
+      "pinyin": "",
+      "vi": "Không khí trong salon lập tức trở nên ấm áp dễ chịu.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "暖洋洋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6ab57b21-a2d0-44be-b478-ce2c701d8bf0"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "Từ ABB này thường đi với 的 khi miêu tả trạng thái.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d6505f53-4712-4736-8c8e-6113e3d21fd1",
+      "order": 1,
+      "rule_vi": "Từ ABB này thường đi với 的 khi miêu tả trạng thái.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "身上很暖洋洋。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "Từ ABB này thường đi với 的 khi miêu tả trạng thái.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "身上暖洋洋的。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Từ ABB này thường đi với 的 khi miêu tả trạng thái.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "暖洋洋",
+    "back": "ấm áp dễ chịu",
+    "hint": "nuǎnyángyáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6ab57b21-a2d0-44be-b478-ce2c701d8bf0",
+    "source_lesson_vocab_id": null
+  }
+}

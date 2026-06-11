@@ -1,0 +1,307 @@
+{
+  "id": "f7eecb43-7166-4905-a25e-71200ce4b53a",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "有些",
+  "pinyin": "yǒuxiē",
+  "pos": {
+    "raw_vi": "Đại từ / Phó từ mức độ",
+    "raw_cn": "代 / 副",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "people_activity"
+  ],
+  "meaning": {
+    "hanviet": "Hữu ta",
+    "meaning_vi": "một số; hơi, có phần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "một số",
+      "hơi",
+      "có phần"
+    ],
+    "short_definition_vi": "một số; hơi, có phần",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "people activity",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "有",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ cơ bản chỉ sở hữu/tồn tại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có",
+        "modern_logic_vi": "Chữ cơ bản chỉ sở hữu/tồn tại.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "些",
+        "lishu_vi": "",
+        "structure_note_vi": "此 + 二 là thành phần nhìn thấy.",
+        "components": [
+          {
+            "text": "此",
+            "hanviet": "thử",
+            "meaning_vi": "này",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "二",
+            "hanviet": "nhị",
+            "meaning_vi": "hai",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một ít, một số",
+        "modern_logic_vi": "此 + 二 là thành phần nhìn thấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "有 là có, 些 là một ít/một số; 有些 = một số hoặc hơi.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一些",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một ít/một số",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有点儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hơi, thường thiên về cảm giác không tốt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有的",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "có người/có cái",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "aaea1494-5536-4db8-a4e0-0f3335fbfab1",
+      "order": 1,
+      "zh": "有些人",
+      "pinyin": "",
+      "vi": "một số người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0bd6beb0-182c-42b8-a898-1e9f22af1437",
+      "order": 2,
+      "zh": "有些地方",
+      "pinyin": "",
+      "vi": "một số nơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6c08bb4-edbd-4c7b-8aab-3414c22cdddc",
+      "order": 3,
+      "zh": "有些歌词",
+      "pinyin": "",
+      "vi": "một số lời bài hát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f3364e4c-f0e9-4639-b84c-fae0edefb79a",
+      "order": 4,
+      "zh": "有些远",
+      "pinyin": "",
+      "vi": "hơi xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "631ee557-54a6-41fe-afe3-17b3b0cdf0ca",
+      "order": 5,
+      "zh": "有些累",
+      "pinyin": "",
+      "vi": "hơi mệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e4fe02f8-2710-4bda-8b30-605be3ad739b",
+      "order": 1,
+      "zh": "有些年轻人喜欢听民歌。",
+      "pinyin": "Yǒuxiē niánqīng rén xǐhuan tīng míngē.",
+      "vi": "Một số người trẻ thích nghe dân ca.",
+      "analysis_vi": "有些 + danh từ = một số.",
+      "highlight": [
+        "有些"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7eecb43-7166-4905-a25e-71200ce4b53a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "69ab57c2-1713-4a5f-a172-5d24c832a45b",
+      "order": 2,
+      "zh": "这个旅馆离学校有些远。",
+      "pinyin": "Zhège lǚguǎn lí xuéxiào yǒuxiē yuǎn.",
+      "vi": "Khách sạn này cách trường hơi xa.",
+      "analysis_vi": "有些 + tính từ = hơi/có phần.",
+      "highlight": [
+        "有些"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7eecb43-7166-4905-a25e-71200ce4b53a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "有些 + tính từ có thể làm lời chê mềm hơn, như 有些贵.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "af074abe-d05f-41df-8dd6-fb23b6724cc8",
+      "order": 1,
+      "rule_vi": "Không nói 有些的学生; 有些 đứng trực tiếp trước danh từ.",
+      "natural_examples": [
+        {
+          "zh": "有些学生",
+          "pinyin": "yǒuxiē xuésheng",
+          "vi": "một số học sinh",
+          "note_vi": "Đúng.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "有些的学生",
+          "pinyin": "yǒuxiē de xuésheng",
+          "vi": "",
+          "note_vi": "Sai cấu trúc.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "有些的学生",
+          "pinyin": "yǒuxiē de xuésheng",
+          "vi": "",
+          "note_vi": "Sai cấu trúc.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "有些学生",
+          "pinyin": "yǒuxiē xuésheng",
+          "vi": "một số học sinh",
+          "note_vi": "Đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "有些",
+    "back": "một số; hơi, có phần",
+    "hint": "yǒuxiē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "people_activity"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f7eecb43-7166-4905-a25e-71200ce4b53a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法 / 语法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "拿",
+      "title_vi": "拿...来说: lấy... mà nói",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "拿 nghĩa gốc là cầm/lấy. Trong cấu trúc 拿...来说, nó dùng để mở chủ đề bằng cách lấy một trường hợp cụ thể ra làm ví dụ.",
+          "examples": [
+            {
+              "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+              "zh": "拿北京来说，秋天是最美的季节。",
+              "pinyin": "Ná Běijīng lái shuō, qiūtiān shì zuì měi de jìjié.",
+              "vi": "Lấy Bắc Kinh mà nói, mùa thu là mùa đẹp nhất.",
+              "en": "",
+              "highlight": [
+                "拿北京来说"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "拿 + N + 来说 / 来讲 / 来看",
+          "meaning_vi": "Lấy N làm ví dụ / xét từ N mà nói.",
+          "examples": [
+            {
+              "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+              "zh": "拿学习汉语来说，每天复习比一次学很多更有用。",
+              "pinyin": "Ná xuéxí Hànyǔ lái shuō, měitiān fùxí bǐ yícì xué hěn duō gèng yǒuyòng.",
+              "vi": "Lấy việc học tiếng Trung mà nói, mỗi ngày ôn một chút hữu ích hơn là một lần học quá nhiều.",
+              "en": "",
+              "highlight": [
+                "拿学习汉语来说"
+              ],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "f9d96f02-6b23-4c56-a739-db75b628cdcf",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Lưu ý",
+          "notes_vi": [
+            "拿...来说 = lấy... làm ví dụ để bàn.",
+            "对于...来说 = đối với... mà nói, nghiêng về góc nhìn/đối tượng đánh giá.",
+            "关于... = về/chủ đề liên quan đến..."
+          ],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "动词 + 下",
+      "title_vi": "Động từ + 下",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法",
+        "result_complement"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "V + 下 thường biểu thị hành động có kết quả rời ra, hạ xuống, dừng lại hoặc giữ lại.",
+          "examples": [
+            {
+              "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+              "zh": "人们脱下冬衣，换上春装。",
+              "pinyin": "Rénmen tuō xià dōngyī, huàn shàng chūnzhuāng.",
+              "vi": "Mọi người cởi áo mùa đông ra, thay sang quần áo mùa xuân.",
+              "en": "",
+              "highlight": [
+                "脱下"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "V + 下 + O",
+          "meaning_vi": "Làm cho vật rời khỏi vị trí cũ / lưu lại kết quả / dừng lại.",
+          "examples": [
+            {
+              "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+              "zh": "请你把这个地址记下来。",
+              "pinyin": "Qǐng nǐ bǎ zhè ge dìzhǐ jì xiàlai.",
+              "vi": "Bạn hãy ghi địa chỉ này lại.",
+              "en": "",
+              "highlight": [
+                "记下来"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "e32b9b44-0167-4608-818f-ad358140a4ff",
+              "zh": "他停下来，看了看四周。",
+              "pinyin": "Tā tíng xiàlai, kàn le kan sìzhōu.",
+              "vi": "Anh ấy dừng lại, nhìn xung quanh.",
+              "en": "",
+              "highlight": [
+                "停下来"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "7ef0fe1b-7a15-4bc5-a252-97371e9335a3",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Dạng khả năng",
+          "notes_vi": [
+            "V + 得 + 下: làm/ chứa được.",
+            "V + 不 + 下: không làm/không chứa nổi.",
+            "Không phải mọi 下 đều dịch là xuống."
+          ],
+          "examples": [
+            {
+              "id": "3d218f68-a9a9-46a3-8ff6-83866693abad",
+              "zh": "这间房子住得下五个人。",
+              "pinyin": "Zhè jiān fángzi zhù de xià wǔ ge rén.",
+              "vi": "Căn phòng này ở được năm người.",
+              "en": "",
+              "highlight": [
+                "住得下"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "e66913ba-defd-4199-8a9f-6f8d46fa8a4a",
+              "zh": "这间房子住不下十个人。",
+              "pinyin": "Zhè jiān fángzi zhù bu xià shí ge rén.",
+              "vi": "Căn phòng này không ở nổi mười người.",
+              "en": "",
+              "highlight": [
+                "住不下"
+              ],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "动词 + 上",
+      "title_vi": "Động từ + 上",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法",
+        "result_complement"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "V + 上 thường biểu thị gắn vào, khép lại, đạt được hoặc bắt đầu một trạng thái.",
+          "examples": [
+            {
+              "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+              "zh": "人们脱下冬衣，换上春装。",
+              "pinyin": "Rénmen tuō xià dōngyī, huàn shàng chūnzhuāng.",
+              "vi": "Mọi người cởi áo mùa đông ra, thay sang quần áo mùa xuân.",
+              "en": "",
+              "highlight": [
+                "换上"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "V + 上 + O",
+          "meaning_vi": "Làm cho vật được đặt/gắn/mặc vào; hoặc hành động đạt được kết quả.",
+          "examples": [
+            {
+              "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+              "zh": "请你关上门。",
+              "pinyin": "Qǐng nǐ guān shàng mén.",
+              "vi": "Bạn đóng cửa lại giúp tôi.",
+              "en": "",
+              "highlight": [
+                "关上"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "d3ca42bf-fbbd-4347-98a8-7a697fe218c2",
+              "zh": "他终于考上大学了。",
+              "pinyin": "Tā zhōngyú kǎo shàng dàxué le.",
+              "vi": "Cuối cùng anh ấy đã thi đỗ đại học.",
+              "en": "",
+              "highlight": [
+                "考上"
+              ],
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "76d5cfd6-e9cb-43ca-af11-8a1fdf1ac8df",
+          "type": "grammar_compare",
+          "order": 3,
+          "title": "So sánh 下 và 上",
+          "items": [
+            {
+              "aspect": "Bài khóa",
+              "left": {
+                "label": "脱下冬衣",
+                "value": "cởi áo mùa đông ra khỏi người"
+              },
+              "right": {
+                "label": "换上春装",
+                "value": "mặc/thay trang phục mùa xuân lên người"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "多么",
+      "title_vi": "Câu cảm thán với 多么",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法",
+        "exclamation"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "多么 dùng trong câu cảm thán để nhấn mạnh mức độ cao: biết bao, thật là.",
+          "examples": [
+            {
+              "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+              "zh": "这个古老的国家如今显得多么年轻。",
+              "pinyin": "Zhè ge gǔlǎo de guójiā rújīn xiǎnde duōme niánqīng.",
+              "vi": "Đất nước cổ xưa này ngày nay trông trẻ trung biết bao.",
+              "en": "",
+              "highlight": [
+                "多么年轻"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "多么 + Adj / VP",
+          "meaning_vi": "Nhấn mạnh cảm xúc hoặc đánh giá mạnh của người nói.",
+          "examples": [
+            {
+              "id": "857c43af-3f3e-491c-988c-f6e69807c407",
+              "zh": "北京的秋天多么美丽啊！",
+              "pinyin": "Běijīng de qiūtiān duōme měilì a!",
+              "vi": "Mùa thu Bắc Kinh đẹp biết bao!",
+              "en": "",
+              "highlight": [
+                "多么美丽"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "7a188f50-c617-4e96-9c47-0d97fdf96624",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Dạng rút gọn / khẩu ngữ",
+          "notes_vi": [
+            "多么好啊 có thể rút thành 多好啊.",
+            "Khẩu ngữ đời thường cũng hay dùng 真、太、好 để cảm thán."
+          ],
+          "examples": [
+            {
+              "id": "38e52309-29d4-419f-b95a-6dad25f96eb9",
+              "zh": "北京的秋天真美。",
+              "pinyin": "Běijīng de qiūtiān zhēn měi.",
+              "vi": "Mùa thu Bắc Kinh đẹp thật.",
+              "en": "",
+              "highlight": [
+                "真美"
+              ],
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "也许",
+      "title_vi": "Phó từ 也许: có lẽ",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法",
+        "adverb"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "也许 biểu thị phỏng đoán không chắc chắn: có lẽ, biết đâu.",
+          "examples": [
+            {
+              "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
+              "zh": "也许你会爱上这个美丽的城市。",
+              "pinyin": "Yěxǔ nǐ huì ài shàng zhè ge měilì de chéngshì.",
+              "vi": "Có lẽ bạn sẽ yêu thành phố xinh đẹp này.",
+              "en": "",
+              "highlight": [
+                "也许"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "也许 + S + VP / S + 也许 + VP",
+          "meaning_vi": "Có lẽ / biết đâu sự việc sẽ xảy ra.",
+          "examples": [
+            {
+              "id": "b50bbea9-e176-4f1d-a9da-57239b4a25e0",
+              "zh": "他也许不来了。",
+              "pinyin": "Tā yěxǔ bù lái le.",
+              "vi": "Có lẽ anh ấy không đến nữa.",
+              "en": "",
+              "highlight": [
+                "也许"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "6afe794f-bd28-4d3b-9e91-419edfb74f42",
+              "zh": "也许明天会下雨。",
+              "pinyin": "Yěxǔ míngtiān huì xià yǔ.",
+              "vi": "Có lẽ ngày mai sẽ mưa.",
+              "en": "",
+              "highlight": [
+                "也许"
+              ],
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "b9b9dc3a-5654-4108-b979-b2b241620dbd",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "So sánh nhanh",
+          "notes_vi": [
+            "也许 = có lẽ, khả năng trung tính.",
+            "可能 = có thể, dùng rộng hơn, khẩu ngữ hơn.",
+            "大概 = có lẽ/chắc khoảng, mức đoán có vẻ cao hơn một chút."
+          ],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

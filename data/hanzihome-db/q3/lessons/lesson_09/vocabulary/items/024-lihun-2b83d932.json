@@ -1,0 +1,281 @@
+{
+  "id": "9b7a84cb-db06-48e0-9b0d-a6923db31c89",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "离婚",
+  "pinyin": "líhūn",
+  "pos": {
+    "raw_vi": "Động từ / danh từ sự kiện",
+    "raw_cn": "动词/事件名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ly hôn",
+    "meaning_vi": "ly hôn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ly hôn"
+    ],
+    "short_definition_vi": "ly hôn",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "离",
+        "lishu_vi": "ly",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rời khỏi",
+        "modern_logic_vi": "",
+        "warning_vi": "Chưa gán component chắc chắn; tránh suy diễn hình thể hiện đại.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "婚",
+        "lishu_vi": "hôn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hôn nhân",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "离婚 là rời khỏi/chấm dứt quan hệ hôn nhân.",
+    "memory_tip_vi": "Nhớ chỉ dùng cho vợ chồng đã kết hôn.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分手",
+        "pinyin": "",
+        "meaning_vi": "分手",
+        "difference_vi": "分手 dùng cho người yêu; 离婚 chỉ hôn nhân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "结婚",
+        "pinyin": "",
+        "meaning_vi": "结婚",
+        "difference_vi": "kết hôn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e056be6c-ea9a-4bd2-b07a-43114d627825",
+      "order": 1,
+      "zh": "离婚了",
+      "pinyin": "líhūn le",
+      "vi": "đã ly hôn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "338b6c96-61c5-4a9c-828a-7e97f5b68b23",
+      "order": 2,
+      "zh": "办离婚手续",
+      "pinyin": "bàn líhūn shǒuxù",
+      "vi": "làm thủ tục ly hôn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45908b51-f02b-4c91-aade-7827c350db93",
+      "order": 3,
+      "zh": "父母离婚",
+      "pinyin": "fùmǔ líhūn",
+      "vi": "cha mẹ ly hôn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a7acabcf-53b5-4d73-8b9e-dd82126f9323",
+      "order": 4,
+      "zh": "离婚以后",
+      "pinyin": "líhūn yǐhòu",
+      "vi": "sau khi ly hôn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "afc2ead0-7829-4740-a865-67b27d218559",
+      "order": 1,
+      "zh": "他们已经离婚了。",
+      "pinyin": "Tāmen yǐjīng líhūn le.",
+      "vi": "Họ đã ly hôn rồi.",
+      "analysis_vi": "已经……了 nhấn sự việc đã thành hiện thực.",
+      "highlight": [
+        "离婚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9b7a84cb-db06-48e0-9b0d-a6923db31c89"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e5e8b567-944f-4456-96ba-d03e11cd589c",
+      "order": 2,
+      "zh": "父母离婚以后，孩子由母亲抚养。",
+      "pinyin": "Fùmǔ líhūn yǐhòu, háizi yóu mǔqīn fǔyǎng.",
+      "vi": "Sau khi cha mẹ ly hôn, đứa trẻ do mẹ nuôi dưỡng.",
+      "analysis_vi": "由母亲抚养 chuẩn ngữ cảnh quyền nuôi con.",
+      "highlight": [
+        "离婚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9b7a84cb-db06-48e0-9b0d-a6923db31c89"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "离婚 là chủ đề nhạy cảm; không nên hỏi thẳng người không thân.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c160d160-be33-4c0f-bcd7-8713baeb575c",
+      "order": 1,
+      "rule_vi": "Không dùng 离婚 cho người yêu chia tay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我和女朋友离婚了。",
+          "pinyin": "Wǒ hé nǚpéngyou líhūn le.",
+          "vi": "Sai nếu chưa kết hôn.",
+          "note_vi": "Bạn gái/bạn trai chia tay dùng 分手.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我和女朋友分手了。",
+          "pinyin": "Wǒ hé nǚpéngyou fēnshǒu le.",
+          "vi": "Tôi và bạn gái chia tay rồi.",
+          "note_vi": "分手 đúng cho người yêu.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "离婚",
+    "back": "ly hôn",
+    "hint": "líhūn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9b7a84cb-db06-48e0-9b0d-a6923db31c89",
+    "source_lesson_vocab_id": null
+  }
+}

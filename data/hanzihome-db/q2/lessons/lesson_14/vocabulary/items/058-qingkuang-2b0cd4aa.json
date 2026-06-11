@@ -1,0 +1,357 @@
+{
+  "id": "75847a78-5aa4-44d4-816f-0d91bcaa48be",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "情况",
+  "pinyin": "qíngkuàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Tình huống",
+    "meaning_vi": "tình hình, tình trạng, hoàn cảnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình hình",
+      "tình trạng",
+      "hoàn cảnh"
+    ],
+    "short_definition_vi": "tình hình, tình trạng, hoàn cảnh",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "trung tính, rất thông dụng; dùng được trong nói và viết.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "情",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim/lòng/cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng/cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "xanh",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm, tình hình",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "情 là tình, tình hình, trạng thái liên quan đến sự việc/người. → 情况 = tình hình cụ thể của một việc tại một thời điểm.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "况",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "băng/lạnh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "băng/lạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兄",
+            "hanviet": "huynh",
+            "meaning_vi": "anh trai",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình trạng, hoàn cảnh",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "况 là tình trạng, dáng vẻ, hoàn cảnh. → 情况 = tình hình cụ thể của một việc tại một thời điểm.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 情况 = tình hình cụ thể của một việc tại một thời điểm.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 情况 không chỉ là “tình huống” theo nghĩa sự cố; nó rộng hơn, gần “tình hình/tình trạng”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "情况 (qíngkuàng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình hình, tình trạng, hoàn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "情形 (qíngxíng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình hình/cảnh huống, hơi văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "状况 (zhuàngkuàng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tình trạng, thường nói sức khỏe, vận hành, hệ thống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "情况怎么样 (qíngkuàng zěnmeyàng): tình hình thế nào.",
+      "→ Phân biệt nhanh: 情况 rộng và thông dụng nhất; 状况 hay dùng khi đánh giá trạng thái vận hành/sức khỏe."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1c059849-e25d-4d8b-b4d7-cfc9d3ac8ee2",
+      "order": 1,
+      "zh": "了解情况",
+      "pinyin": "",
+      "vi": "tìm hiểu tình hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "793389fd-ecc9-47bc-928a-aa030361677e",
+      "order": 2,
+      "zh": "这种情况",
+      "pinyin": "",
+      "vi": "tình huống/tình trạng này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50c21f9a-fec8-40e2-9ee6-1fe484ac0636",
+      "order": 3,
+      "zh": "实际情况",
+      "pinyin": "",
+      "vi": "tình hình thực tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "074a021e-fe0c-4315-b458-4930165a6216",
+      "order": 4,
+      "zh": "情况怎么样？",
+      "pinyin": "",
+      "vi": "tình hình thế nào?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "803286c0-00aa-4502-aaf9-6ff3d8e8e02d",
+      "order": 1,
+      "zh": "钥匙拔不下来，你先别急，把情况说清楚。",
+      "pinyin": "Yàoshi bá bu xiàlai, nǐ xiān bié jí, bǎ qíngkuàng shuō qīngchu.",
+      "vi": "Chìa khóa rút không ra, bạn đừng vội, nói rõ tình hình trước.",
+      "analysis_vi": "拔不下来 là không rút ra được; 说清楚 là nói đến mức người nghe hiểu rõ.",
+      "highlight": [
+        "情况"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "75847a78-5aa4-44d4-816f-0d91bcaa48be"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "629f31ee-8269-405b-b97a-4e3784258e66",
+      "order": 2,
+      "zh": "房管过来以后，先看了看门口的情况。",
+      "pinyin": "Fángguǎn guòlai yǐhòu, xiān kàn le kan ménkǒu de qíngkuàng.",
+      "vi": "Sau khi quản lý nhà qua, trước tiên xem thử tình hình ở cửa.",
+      "analysis_vi": "过来 là đến phía người nói/người cần giúp; 看了看 là xem thử một chút.",
+      "highlight": [
+        "情况"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "75847a78-5aa4-44d4-816f-0d91bcaa48be"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "00c6ffd0-141f-45b5-810d-e6c51e3d81b2",
+      "order": 3,
+      "zh": "学语法时，不同情况要分开整理，不要全都混在一起。",
+      "pinyin": "Xué yǔfǎ shí, bù tóng qíngkuàng yào fēnkāi zhěnglǐ, bú yào quán dōu hùn zài yìqǐ.",
+      "vi": "Khi học ngữ pháp, các tình huống khác nhau phải整理 riêng ra, đừng trộn hết vào nhau.",
+      "analysis_vi": "不同情况 rất hợp khi phân loại cấu trúc; câu này sát cách học database.",
+      "highlight": [
+        "情况"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "75847a78-5aa4-44d4-816f-0d91bcaa48be"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4e7dc15e-dab4-43a1-851f-11d9be26e5b1",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dịch cứng 情况 thành “tình huống” trong mọi câu. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "情况",
+    "back": "tình hình, tình trạng, hoàn cảnh",
+    "hint": "qíngkuàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Khi hỏi thăm công việc hoặc sự cố, người Trung hay nói 现在情况怎么样？. Câu này tự nhiên hơn việc hỏi quá trực tiếp “đã xong chưa” khi mình chưa nắm bối cảnh.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "75847a78-5aa4-44d4-816f-0d91bcaa48be",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,948 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_pdf_checked"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调。朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc thành tiếng."
+      },
+      "parts": [
+        {
+          "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "印象 yìnxiàng",
+              "right": "影响 yǐngxiǎng"
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "任何 rènhé",
+              "right": "认可 rènkě"
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "经历 jīnglì",
+              "right": "敬礼 jìnglǐ"
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "意识 yìshi",
+              "right": "意思 yìsi"
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "痛苦 tòngkǔ",
+              "right": "痛哭 tòngkū"
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "往事 wǎngshì",
+              "right": "忘事 wàng shì"
+            }
+          ]
+        },
+        {
+          "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "天有不测风云，人有旦夕祸福。",
+              "vi": "Trời có mưa gió bất ngờ, người có họa phúc sớm chiều."
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "酒逢知己千杯少，话不投机半句多。",
+              "vi": "Rượu gặp tri kỷ nghìn chén vẫn ít, lời không hợp ý nửa câu đã nhiều."
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ ngữ",
+      "instruction": {
+        "zh": "朗读下列词语。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "印象如何",
+          "pinyin": "yìnxiàng rúhé",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "印象不错",
+          "pinyin": "yìnxiàng búcuò",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "印象很好",
+          "pinyin": "yìnxiàng hěn hǎo",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "印象深刻",
+          "pinyin": "yìnxiàng shēnkè",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "好坏之分",
+          "pinyin": "hǎo huài zhī fēn",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "大小之分",
+          "pinyin": "dà xiǎo zhī fēn",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "高低之分",
+          "pinyin": "gāo dī zhī fēn",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "远近之分",
+          "pinyin": "yuǎn jìn zhī fēn",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "照顾老人",
+          "pinyin": "zhàogù lǎorén",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "照顾病人",
+          "pinyin": "zhàogù bìngrén",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "精心照顾",
+          "pinyin": "jīngxīn zhàogù",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "得到照顾",
+          "pinyin": "dédào zhàogù",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "亲身经历",
+          "pinyin": "qīnshēn jīnglì",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "亲耳听到",
+          "pinyin": "qīn’ěr tīngdào",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "亲眼看见",
+          "pinyin": "qīnyǎn kànjiàn",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+          "text": "亲口说出",
+          "pinyin": "qīnkǒu shuōchū",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
+          "text": "毫不犹豫",
+          "pinyin": "háobù yóuyù",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
+          "text": "乐于助人",
+          "pinyin": "lèyú zhùrén",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
+          "text": "提心吊胆",
+          "pinyin": "tíxīn-diàodǎn",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
+          "text": "小心翼翼",
+          "pinyin": "xiǎoxīn-yìyì",
+          "vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ/cụm từ thích hợp điền vào chỗ trống."
+      },
+      "parts": [
+        {
+          "id": "ccf86240-e385-44ac-b1a7-ad4acf961525",
+          "title": "A",
+          "word_bank": [
+            "千万",
+            "可能",
+            "提心吊胆",
+            "再三",
+            "当然",
+            "毫不犹豫",
+            "添",
+            "不时",
+            "经历",
+            "向来"
+          ],
+          "questions": [
+            {
+              "id": "d9a9a0fa-52b8-4416-a83b-90723f14f5b2",
+              "prompt": "这件事很____是小王干的。",
+              "answer": "可能",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "38d9ee94-15b5-463b-9116-b9d4c5b9d700",
+              "prompt": "最近天气不太好，不是刮风就是下雨，____，偶尔也会看见太阳。",
+              "answer": "当然",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "80af13bc-72be-4894-b20e-3b0240046e7e",
+              "prompt": "这是我亲身____的一件事，讲给你听听。",
+              "answer": "经历",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "fb498798-133a-42b3-96ef-2b41d6fb3b33",
+              "prompt": "他是个靠得住的朋友，要是你请他帮忙，他会____地帮助你。",
+              "answer": "毫不犹豫",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "550309ca-788b-4859-9f6d-650749a11c98",
+              "prompt": "他____不善于跟别人打交道。",
+              "answer": "向来",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "f7a5c5c4-d85c-4641-b6d4-693ca7399d07",
+              "prompt": "她从来不愿意给人家____麻烦。",
+              "answer": "添",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "e16a4aa8-ee9c-4ce6-9c9d-2ae0829cb1f0",
+              "prompt": "我住院的时候，朋友们____来看我。",
+              "answer": "不时",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
+              "prompt": "我们____邀请他参加我们的联欢会，他还是没有来。",
+              "answer": "再三",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "3d2951e4-c09f-4887-80cd-9e2e46617f29",
+              "prompt": "刚学会开车，每次开车上路，我都____的。",
+              "answer": "提心吊胆",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "b6f002b2-c530-48cc-8a45-6cb9fe96e211",
+              "prompt": "你____不要相信她的话。",
+              "answer": "千万",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "d572c0f1-3eca-40f1-8fc3-c139ee89544b",
+          "title": "B",
+          "questions": [
+            {
+              "id": "94ab3d83-50ac-4807-90f5-3ccc46be4ae1",
+              "prompt": "你对桂林的____怎么样？",
+              "choices": [
+                "印象",
+                "记忆",
+                "回忆"
+              ],
+              "answer": "印象",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "07469e97-a1b0-46e0-8866-d361f064c457",
+              "prompt": "每当____起这段留学生活，我都感到非常兴奋。",
+              "choices": [
+                "印象",
+                "记忆",
+                "回忆"
+              ],
+              "answer": "回忆",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "b60a0be3-2dd2-4ce6-8f3d-71f8b8f293f9",
+              "prompt": "我和他在一起的时间很短，对他的____不深。",
+              "choices": [
+                "印象",
+                "记忆",
+                "回忆"
+              ],
+              "answer": "印象",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "1d405d7a-2484-4a21-bf6d-b5a49c5fa380",
+              "prompt": "我只____他的名字，但是不____他，更不____他。",
+              "choices": [
+                "了解",
+                "知道",
+                "认识"
+              ],
+              "answer": "知道；认识；了解",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "dce87767-a467-497b-b4a9-5434e845aedf",
+              "prompt": "我____要把这个问题搞清楚。",
+              "choices": [
+                "千万",
+                "一定"
+              ],
+              "answer": "一定",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "d2a0d942-c444-4b73-bfc9-58a9dc9fd96d",
+              "prompt": "你____别把那件事忘了。",
+              "choices": [
+                "千万",
+                "一定"
+              ],
+              "answer": "千万",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ/cụm từ trong ngoặc để hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "要是有人问我对她的印象怎么样，____。",
+          "given": "毫不犹豫",
+          "answer": "我会毫不犹豫地帮她说好话。",
+          "answer_verified": true
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "____，他这次考得非常好。",
+          "given": "从……来看",
+          "answer": "从成绩来看",
+          "answer_verified": true
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "经过老师再三地讲解，____。",
+          "given": "终于",
+          "answer": "我终于明白了。",
+          "answer_verified": true
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "每当我想起她，____。",
+          "given": "都",
+          "answer": "我都会去找她。",
+          "answer_verified": true
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "A：你认识玛丽吗？ B：____。",
+          "given": "当然",
+          "answer": "当然认识。",
+          "answer_verified": true
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "A：这件事千万不要告诉他。 B：为什么？ A：他要是知道了，____。",
+          "given": "非……不可",
+          "answer": "非要阻止我不可。",
+          "answer_verified": true
+        }
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ/cụm từ trong ngoặc hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "A：他这个人怎么样？ B：不错，我和他接触的时间不长，但是我觉得____。",
+          "given": "心地善良",
+          "answer": "他这个人心地善良。"
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "A：我们一起骑车去，好吗？ B：我不敢骑车上街，____。",
+          "given": "提心吊胆",
+          "answer": "每次都提心吊胆的。"
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "A：那天是谁送你去医院的？ B：是一个男的，好像是中国同学，不过____。",
+          "given": "叫不出",
+          "answer": "叫不出名字。"
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "A：麻烦你把这封信带给王老师，____。 B：你放心吧，忘不了。",
+          "given": "千万",
+          "answer": "千万不要忘了。"
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "A：大夫，她的腿怎么样？ B：是骨折，____。",
+          "given": "打石膏",
+          "answer": "我会给她打石膏。"
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "A：她是怎么摔伤的？ B：骑车摔伤的，____。",
+          "given": "非……不可",
+          "answer": "非出事不可。"
+        }
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "items": [
+            {
+              "key": "A",
+              "text": "我两眼看着窗外，心里感到很不安。"
+            },
+            {
+              "key": "B",
+              "text": "北京正下着大雪，坐在从机场到城里的车上。"
+            },
+            {
+              "key": "C",
+              "text": "三年前，我第一次来到中国的那天晚上。"
+            },
+            {
+              "key": "D",
+              "text": "就要开始在一个新的环境里生活了，今后的情况会怎么样呢？"
+            }
+          ],
+          "answer_order": [
+            "C",
+            "B",
+            "A",
+            "D"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "items": [
+            {
+              "key": "A",
+              "text": "生活方面的困难就更不用说了，好在没过多久就习惯了。"
+            },
+            {
+              "key": "B",
+              "text": "两个月后，我就自己去外地旅行了一次。"
+            },
+            {
+              "key": "C",
+              "text": "从来没有学过汉语的我学起汉语来还真是困难，发音和汉字都遇到不少麻烦。"
+            },
+            {
+              "key": "D",
+              "text": "这次旅行，不但提高了我的汉语水平，还让我有了学好汉语的信心。"
+            }
+          ],
+          "answer_order": [
+            "C",
+            "A",
+            "B",
+            "D"
+          ],
+          "answer_verified": true
+        }
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "wrong": "过马路时你要特别提心吊胆，千万别出事故。",
+          "correct": "过马路时你要特别小心，千万别出事故。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "wrong": "我的朋友丢了钱包，我还没有亲身经历过丢。",
+          "correct": "我的朋友丢了钱包，我还没有丢过。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "wrong": "我来中国留学的目的是亲眼看中国的情况。",
+          "correct": "我来中国留学的目的是亲眼看看中国的情况。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "wrong": "哈尔滨是中国东北里一个大城市，你应该去。",
+          "correct": "哈尔滨是中国东北的一个大城市，你应该去看看。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "wrong": "要是我受伤，非痛苦不可。",
+          "correct": "要是我受伤，非哭不可。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "wrong": "她的记性很好，不管什么地方，只要去过一次，她就能背下来。",
+          "correct": "她的记性很好，不管什么地方，只要去过一次，她就能记住。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "situational_expression",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "下列句子什么情景下说？下列情景怎么说？",
+        "vi": "Các câu sau nói trong tình huống nào? Trong tình huống sau nói thế nào?"
+      },
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "下列句子什么情景下说？",
+          "questions": [
+            {
+              "id": "c27289fb-5395-45bf-8c4f-dbfdc93a63a5",
+              "prompt": "她可是个热心人。",
+              "answer": "Dùng khi muốn khen một người rất nhiệt tình, tốt bụng, thường chủ động giúp người khác.",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
+              "prompt": "这件事让我一生难忘。",
+              "answer": "Dùng khi một sự việc để lại ấn tượng rất sâu, khiến người nói khó quên suốt đời.",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
+              "prompt": "他出事了。",
+              "answer": "Dùng khi nói ai đó đã gặp chuyện không may, tai nạn hoặc sự cố bất ngờ.",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "e1ef3a5f-4baa-422e-8e36-2eeab7b1384c",
+              "prompt": "朋友需要你帮忙，你想都没想就答应了。",
+              "given": "毫不犹豫",
+              "answer": "我毫不犹豫地答应了。",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
+              "prompt": "晚上一个人在没有人的地方走，心里总有些害怕。",
+              "given": "提心吊胆",
+              "answer": "我提心吊胆地往前走。",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
+              "prompt": "朋友要你谈谈对这个地方的印象怎么样。",
+              "given": "都有好坏之分",
+              "answer": "每个地方都有好坏之分。",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook_answer_checked/generated",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền từ tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào bài đọc tổng hợp."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "冰雕",
+          "pinyin": "bīngdiāo",
+          "meaning_vi": "tượng băng"
+        },
+        {
+          "hanzi": "雪橇",
+          "pinyin": "xuěqiāo",
+          "meaning_vi": "xe trượt tuyết"
+        },
+        {
+          "hanzi": "冰灯",
+          "pinyin": "bīngdēng",
+          "meaning_vi": "đèn băng"
+        },
+        {
+          "hanzi": "童话",
+          "pinyin": "tónghuà",
+          "meaning_vi": "truyện cổ tích"
+        }
+      ],
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "title": "游冰城",
+        "paragraphs": [
+          {
+            "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+            "order": 1,
+            "zh": "元旦那天，我跟几个同学一起①____火车去哈尔滨看冰灯。刚到车站门口，②____看见很多接站的人，一出车站迎面就是几座大冰雕，像巨石一样立在广场③____。从来没有见过冰雪的我，一下子激动和兴奋起来。忽然想④____了一句诗：“北国风光，千里冰封，万里雪飘。”眼前的情景跟这句诗说的完全一样。\n\n第二天，我们来到了松花江上。⑤____江面上结着厚厚的冰，天很冷，但是冰上却有那么多快乐的游人。我们看到一些艺术家正在江上做冰雕，不少年轻人在自由自在地滑冰，有的人坐⑥____狗拉的大雪橇上飞跑，有意思极了。我和几个朋友⑦____这一场面所吸引，也坐上大雪橇，在松花江上跑了起来。\n\n当然，最漂亮的还数冰灯。各种各样的颜色，各种各样的造型。走进冰灯展览厅，⑧____好像走进了一个童话世界。我无法形容它的美丽，要是你感兴趣，最好亲自去看看。",
+            "vi": "",
+            "pinyin": "Yuándàn nà tiān, wǒ gēn jǐ ge tóngxué yìqǐ ①____ huǒchē qù Hā’ěrbīn kàn bīngdēng. Gāng dào chēzhàn ménkǒu, ②____ kànjiàn hěn duō jiēzhàn de rén, yì chū chēzhàn yíngmiàn jiù shì jǐ zuò dà bīngdiāo, xiàng jùshí yíyàng lì zài guǎngchǎng ③____. Cónglái méiyǒu jiàn guo bīngxuě de wǒ, yíxiàzi jīdòng hé xīngfèn qǐlai. Hūrán xiǎng ④____ le yí jù shī: “Běiguó fēngguāng, qiān lǐ bīng fēng, wàn lǐ xuě piāo.” Yǎnqián de qíngjǐng gēn zhè jù shī shuō de wánquán yíyàng.\n\nDì èr tiān, wǒmen lái dào le Sōnghuājiāng shang. ⑤____ jiāngmiàn shang jiézhe hòu hòu de bīng, tiān hěn lěng, dànshì bīng shang què yǒu nàme duō kuàilè de yóurén. Wǒmen kàn dào yìxiē yìshùjiā zhèngzài jiāng shang zuò bīngdiāo, bù shǎo niánqīngrén zài zìyóu zìzài de huábīng, yǒu de rén zuò ⑥____ gǒu lā de dà xuěqiāo shang fēipǎo, yǒu yìsi jí le. Wǒ hé jǐ ge péngyǒu ⑦____ zhè yī chǎngmiàn suǒ xīyǐn, yě zuò shàng dà xuěqiāo, zài Sōnghuājiāng shang pǎo le qǐlai.\n\nDāngrán, zuì piàoliang de hái shǔ bīngdēng. Gè zhǒng gè yàng de yánsè, gè zhǒng gè yàng de zàoxíng. Zǒu jìn bīngdēng zhǎnlǎntīng, ⑧____ hǎoxiàng zǒu jìn le yí ge tónghuà shìjiè. Wǒ wúfǎ xíngróng tā de měilì, yàoshi nǐ gǎn xìngqù, zuì hǎo qīnzì qù kànkan.",
+            "check_needed": false
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "3af137aa-d01d-4333-a9bd-7492eb9068a5",
+          "blank_index": 1,
+          "answer": "坐",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "86fd6e42-435a-453b-bf75-59e679636c7e",
+          "blank_index": 2,
+          "answer": "就",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7b48ca7a-5f83-4ba8-bd18-a44a11401230",
+          "blank_index": 3,
+          "answer": "上",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "137bcdc2-ab88-4f32-9239-8b2f18b60622",
+          "blank_index": 4,
+          "answer": "起",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "8c3f44a6-fd92-4cb7-a722-9fedda1e2e67",
+          "blank_index": 5,
+          "answer": "只见",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ca796db0-fba0-4e92-9374-2ed1fd8b0695",
+          "blank_index": 6,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "94476fe6-d46a-4742-97c9-c27af6658206",
+          "blank_index": 7,
+          "answer": "被",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3779c62f-2b68-446a-9597-156d4fc75b60",
+          "blank_index": 8,
+          "answer": "就",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "谈论意外。",
+        "vi": "Nói về sự cố ngoài ý muốn."
+      },
+      "dialogue": {
+        "title": "谈论意外",
+        "lines": [
+          {
+            "speaker": "A",
+            "zh": "你的腿全好了吗？",
+            "vi": "Chân bạn khỏi hẳn chưa?"
+          },
+          {
+            "speaker": "B",
+            "zh": "谢谢你的关心，全好了。",
+            "vi": "Cảm ơn bạn quan tâm, khỏi hẳn rồi."
+          },
+          {
+            "speaker": "A",
+            "zh": "虽然是意外，但出门在外，还是要小心。安全最重要。",
+            "vi": "Dù là sự cố ngoài ý muốn, nhưng ra ngoài vẫn phải cẩn thận. An toàn là quan trọng nhất."
+          },
+          {
+            "speaker": "B",
+            "zh": "可有时候自己根本没有办法。",
+            "vi": "Nhưng có lúc bản thân thật sự chẳng có cách nào."
+          },
+          {
+            "speaker": "A",
+            "zh": "也是。上星期我跟朋友去公园玩儿，回来的路上，我们又热又累，就买了两个冰激凌，吃得挺好。没想到，当天晚上我就觉得不舒服。肚子疼得厉害，拉了好几次。",
+            "vi": "Cũng đúng. Tuần trước tôi đi công viên chơi với bạn, trên đường về vừa nóng vừa mệt nên mua hai cây kem, ăn rất ngon. Không ngờ tối hôm đó tôi thấy khó chịu, đau bụng dữ dội và đi ngoài mấy lần."
+          },
+          {
+            "speaker": "B",
+            "zh": "你朋友呢？",
+            "vi": "Bạn của bạn thì sao?"
+          },
+          {
+            "speaker": "A",
+            "zh": "她一点儿事儿也没有。你说奇怪不奇怪？",
+            "vi": "Cô ấy chẳng bị sao cả. Bạn nói có lạ không?"
+          },
+          {
+            "speaker": "B",
+            "zh": "天有不测风云，人有旦夕祸福。",
+            "vi": "Trời có mưa gió bất ngờ, người có họa phúc sớm chiều."
+          },
+          {
+            "speaker": "A",
+            "zh": "是，我也常这么想。",
+            "vi": "Ừ, tôi cũng thường nghĩ như vậy."
+          }
+        ]
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "id": "a2b497db-8a63-4a8e-8ef1-97379e05336f",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "独生女",
+  "pinyin": "dúshēngnǚ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "độc sinh nữ",
+    "meaning_vi": "con gái một",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "con gái một"
+    ],
+    "short_definition_vi": "con gái một",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: con gái một.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "独",
+        "lishu_vi": "độc",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó; thú",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "犭 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó; thú",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "虫 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một mình, riêng, duy nhất",
+        "modern_logic_vi": "Học nghĩa hiện đại là một mình/không phụ thuộc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "犬",
+          "radical_variant": "犭",
+          "radical_name_vi": "bộ Khuyển",
+          "radical_name_zh": "",
+          "hanviet": "khuyển",
+          "meaning_vi": "chó; thú",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "生",
+        "lishu_vi": "sinh",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sinh, sống, học sinh",
+        "modern_logic_vi": "Chữ độc lập chỉ sinh/sống.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "女",
+        "lishu_vi": "nữ",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, con gái",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, con gái",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nữ, con gái, phụ nữ",
+        "modern_logic_vi": "Chỉ giới nữ/con gái.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, con gái",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "独生女 trong bài dùng theo nghĩa: con gái một. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 独生女 qua văn cảnh 离家的时候: con gái một.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "独生子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "con trai một",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "独生子女",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "con một nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "女儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "con gái, không nói rõ có phải con một",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "有兄弟姐妹",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "có anh chị em",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "91a7dcd2-45f5-4f75-8260-112db4eb88a5",
+      "order": 1,
+      "zh": "一个独生女",
+      "pinyin": "",
+      "vi": "một cô con gái một",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "716d09db-72d3-4b50-bec8-0c87375dfea7",
+      "order": 2,
+      "zh": "家里的独生女",
+      "pinyin": "",
+      "vi": "con gái một trong nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "747fd960-87f1-40bf-8b71-1a79952145de",
+      "order": 3,
+      "zh": "她是独生女",
+      "pinyin": "",
+      "vi": "cô ấy là con gái một",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e1e710b-df6f-4887-b4e1-fccd7072a06e",
+      "order": 4,
+      "zh": "独生子女家庭",
+      "pinyin": "",
+      "vi": "gia đình con một",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f265434-61cb-4fff-8369-c248b63334dc",
+      "order": 5,
+      "zh": "作为独生女",
+      "pinyin": "",
+      "vi": "với tư cách là con gái một",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "98a44412-050b-4776-93a8-96cf8f11248b",
+      "order": 1,
+      "zh": "她是家里的独生女，父母当然舍不得她走。",
+      "pinyin": "",
+      "vi": "Cô ấy là con gái một, bố mẹ đương nhiên không nỡ để cô ấy đi.",
+      "analysis_vi": "独生女 giải thích tâm lý bố mẹ.",
+      "highlight": [
+        "独生女"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2b497db-8a63-4a8e-8ef1-97379e05336f"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d51242d1-392b-4141-98c8-a04a4a641c0f",
+      "order": 2,
+      "zh": "作为独生女，她也想学会独立生活。",
+      "pinyin": "",
+      "vi": "Là con gái một, cô ấy cũng muốn học cách sống tự lập.",
+      "analysis_vi": "作为…… nêu thân phận/góc nhìn.",
+      "highlight": [
+        "独生女"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2b497db-8a63-4a8e-8ef1-97379e05336f"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a4b93e9b-58fc-4c63-99d5-244127070043",
+      "order": 3,
+      "zh": "对于一个独生女来说，第一次离开父母去国外生活既兴奋也害怕。",
+      "pinyin": "",
+      "vi": "Đối với con gái một, lần đầu rời bố mẹ ra nước ngoài vừa hào hứng vừa sợ.",
+      "analysis_vi": "对于……来说 nêu góc nhìn.",
+      "highlight": [
+        "独生女"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a2b497db-8a63-4a8e-8ef1-97379e05336f"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "独生女 gắn với bối cảnh gia đình con một và áp lực tình cảm khi con đi xa.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2cf658a6-cfb0-43e6-b189-9454c016e5ee",
+      "order": 1,
+      "rule_vi": "独生女 không phải phụ nữ độc thân; phụ nữ độc thân là 单身女性.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "独生女",
+    "back": "con gái một",
+    "hint": "dúshēngnǚ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_006"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a2b497db-8a63-4a8e-8ef1-97379e05336f",
+    "source_lesson_vocab_id": null
+  }
+}

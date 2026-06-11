@@ -1,0 +1,444 @@
+{
+  "id": "393f29c0-c2b6-4b9b-b987-f4dde728b5b7",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "孤独",
+  "pinyin": "gūdú",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ trạng thái",
+    "raw_cn": "形容词/状态名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cô độc",
+    "meaning_vi": "cô độc, cô đơn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cô độc",
+      "cô đơn"
+    ],
+    "short_definition_vi": "cô độc, cô đơn",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: cô độc, cô đơn.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "孤",
+        "lishu_vi": "cô",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con/đứa trẻ",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con/đứa trẻ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "瓜",
+            "hanviet": "qua",
+            "meaning_vi": "dưa; thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cô đơn, lẻ loi",
+        "modern_logic_vi": "Một mình/không nơi nương tựa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con/đứa trẻ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "独",
+        "lishu_vi": "độc",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "chó; thú",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "犭 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó; thú",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "虫 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một mình, riêng, duy nhất",
+        "modern_logic_vi": "Học nghĩa hiện đại là một mình/không phụ thuộc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "犬",
+          "radical_variant": "犭",
+          "radical_name_vi": "bộ Khuyển",
+          "radical_name_zh": "",
+          "hanviet": "khuyển",
+          "meaning_vi": "chó; thú",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "孤独 trong bài dùng theo nghĩa: cô độc, cô đơn. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 孤独 qua văn cảnh 离家的时候: cô độc, cô đơn.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "孤单",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cô đơn, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寂寞",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "buồn vì thiếu người gần gũi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "单独",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một mình, trung tính",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "独自",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tự mình/một mình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "热闹",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "náo nhiệt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "陪伴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bầu bạn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "daad38b1-0346-477e-8283-c2a8a4a8c118",
+      "order": 1,
+      "zh": "感到孤独",
+      "pinyin": "",
+      "vi": "cảm thấy cô đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4fe86ca7-d41a-47b2-89a4-6572e3044589",
+      "order": 2,
+      "zh": "觉得孤独",
+      "pinyin": "",
+      "vi": "thấy cô đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1f08ede-2f22-4530-babf-743156e15965",
+      "order": 3,
+      "zh": "孤独的生活",
+      "pinyin": "",
+      "vi": "cuộc sống cô độc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0e655ae-7547-4dc3-87ef-18375e540d17",
+      "order": 4,
+      "zh": "孤独感",
+      "pinyin": "",
+      "vi": "cảm giác cô đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0842faf9-99dd-4f04-bbd8-18860ec6bcb2",
+      "order": 5,
+      "zh": "不再孤独",
+      "pinyin": "",
+      "vi": "không còn cô đơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5ccc822c-98e5-45ca-8c5a-b524cc5bddbc",
+      "order": 1,
+      "zh": "她一个人在国外，常常感到孤独。",
+      "pinyin": "",
+      "vi": "Cô ấy một mình ở nước ngoài, thường cảm thấy cô đơn.",
+      "analysis_vi": "感到孤独 là cụm tự nhiên.",
+      "highlight": [
+        "孤独"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "393f29c0-c2b6-4b9b-b987-f4dde728b5b7"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e4028905-37e8-4ea9-b478-e42a08fc85f1",
+      "order": 2,
+      "zh": "到了异国他乡以后，她才知道什么是真正的孤独。",
+      "pinyin": "",
+      "vi": "Đến đất khách rồi cô ấy mới biết thế nào là cô đơn thật sự.",
+      "analysis_vi": "才知道 nhấn sau trải nghiệm mới hiểu.",
+      "highlight": [
+        "孤独"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "393f29c0-c2b6-4b9b-b987-f4dde728b5b7"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "edfc4874-595b-479e-968c-dc6e9ddb3560",
+      "order": 3,
+      "zh": "她本来以为独立生活会很自在，可是一个人吃饭的时候，孤独感一下子就来了。",
+      "pinyin": "",
+      "vi": "Cô ấy tưởng tự lập sẽ thoải mái, nhưng khi ăn một mình thì cảm giác cô đơn ùa đến.",
+      "analysis_vi": "孤独感 = cảm giác cô đơn.",
+      "highlight": [
+        "孤独"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "393f29c0-c2b6-4b9b-b987-f4dde728b5b7"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "孤独 là mặt trái của 独立: tự lập phải chịu được cảm giác không có gia đình bên cạnh.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "eb02b1f3-68c0-44fa-96ef-182bd6ea6ed9",
+      "order": 1,
+      "rule_vi": "孤独 khác 单独: 单独 trung tính, 孤独 có cảm xúc buồn/cô độc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "孤独",
+    "back": "cô độc, cô đơn",
+    "hint": "gūdú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_043"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "393f29c0-c2b6-4b9b-b987-f4dde728b5b7",
+    "source_lesson_vocab_id": null
+  }
+}

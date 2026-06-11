@@ -1,0 +1,383 @@
+{
+  "id": "57d008b9-dccb-4651-96da-bed4064c85c4",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "悄悄",
+  "pinyin": "qiāoqiāo",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Tiễu tiễu",
+    "meaning_vi": "lặng lẽ, âm thầm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lặng lẽ, âm thầm"
+    ],
+    "short_definition_vi": "lặng lẽ, âm thầm",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "khẩu ngữ/văn nhẹ, có màu tình cảm hoặc bí mật.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "悄",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim/lòng/cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng/cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "肖",
+            "hanviet": "tiếu",
+            "meaning_vi": "tiếu; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lặng lẽ, yên ắng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "悄",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim/lòng/cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng/cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "肖",
+            "hanviet": "tiếu",
+            "meaning_vi": "tiếu; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lặng lẽ, yên ắng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "悄 liên quan đến trạng thái yên lặng, không ồn. 悄悄 là dạng lặp, làm nghĩa “lặng lẽ/âm thầm” rõ hơn. → 悄悄走进来 = lặng lẽ đi vào. → 悄悄告诉我 = nói nhỏ/âm thầm nói cho tôi biết. Cảnh báo: 悄悄 không nhất thiết là xấu. Có thể là làm bí mật để tạo 惊喜.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "悄悄",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lặng lẽ, âm thầm, không cho người khác biết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "偷偷",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lén lút, thường có sắc thái không nên/không được phép.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安静地",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một cách yên lặng, trung tính.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小声地",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhỏ tiếng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: chuẩn bị quà bí mật dùng 悄悄; làm việc sai lén lút có thể dùng 偷偷."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "20eca433-ca9b-4441-a7d6-e6a49f88e478",
+      "order": 1,
+      "zh": "悄悄走进来",
+      "pinyin": "",
+      "vi": "lặng lẽ đi vào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46ff17fe-5415-4036-9173-b62ac1f62b75",
+      "order": 2,
+      "zh": "悄悄告诉我",
+      "pinyin": "",
+      "vi": "nói nhỏ/âm thầm nói cho tôi biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5476d986-e6cd-4970-9549-fb55fefd4112",
+      "order": 3,
+      "zh": "悄悄准备惊喜",
+      "pinyin": "",
+      "vi": "âm thầm chuẩn bị bất ngờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "63c2dc53-da90-44a2-b613-3b28a80f7dc4",
+      "order": 4,
+      "zh": "悄悄放在桌子上",
+      "pinyin": "",
+      "vi": "lặng lẽ đặt lên bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d51e475-e987-4448-a9b9-41ba2864da2e",
+      "order": 5,
+      "zh": "悄悄地离开",
+      "pinyin": "",
+      "vi": "lặng lẽ rời đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "939fa706-e96a-46c8-a01f-da163a52784b",
+      "order": 1,
+      "zh": "同学们悄悄把会场布置好，想给老师一个惊喜。",
+      "pinyin": "Tóngxuémen qiāoqiāo bǎ huìchǎng bùzhì hǎo, xiǎng gěi lǎoshī yí ge jīngxǐ.",
+      "vi": "Các bạn học âm thầm bố trí xong hội trường, muốn cho thầy/cô một bất ngờ.",
+      "analysis_vi": "悄悄 hợp với chuẩn bị bí mật; 把会场布置好 là câu 把 có kết quả hoàn thành.",
+      "highlight": [
+        "悄悄"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "57d008b9-dccb-4651-96da-bed4064c85c4"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "76cfa52d-d1ca-4ff0-843d-025d9bddda63",
+      "order": 2,
+      "zh": "她把那份礼物悄悄放在老师的桌子上。",
+      "pinyin": "Tā bǎ nà fèn lǐwù qiāoqiāo fàng zài lǎoshī de zhuōzi shang.",
+      "vi": "Cô ấy lặng lẽ đặt món quà đó lên bàn giáo viên.",
+      "analysis_vi": "那份礼物 là tân ngữ xác định; 放在桌子上 là kết quả vị trí.",
+      "highlight": [
+        "悄悄"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "57d008b9-dccb-4651-96da-bed4064c85c4"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "39b50492-3f5e-4042-b815-80dde130db9e",
+      "order": 3,
+      "zh": "老师走进来以前，班长悄悄把音响打开了。",
+      "pinyin": "Lǎoshī zǒu jìnlai yǐqián, bānzhǎng qiāoqiāo bǎ yīnxiǎng dǎkāi le.",
+      "vi": "Trước khi thầy/cô đi vào, lớp trưởng lặng lẽ bật dàn âm thanh lên.",
+      "analysis_vi": "把音响打开了 là câu 把 có kết quả bật/mở thiết bị.",
+      "highlight": [
+        "悄悄"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "57d008b9-dccb-4651-96da-bed4064c85c4"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 悄悄",
+    "content_vi": "Trong tiếng Trung hiện đại, khi làm một điều nhỏ nhưng ấm áp cho người khác, người ta có thể nói 悄悄准备一个惊喜. Cách nói này rất hay gặp trong bối cảnh sinh nhật, lễ tốt nghiệp, ngày nhà giáo, Tết hoặc kỷ niệm.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6fa8ee14-73e7-47f8-90fd-e61755291a59",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 悄悄 với 偷偷. 悄悄 có thể tích cực: 悄悄准备惊喜。 Qiāoqiāo zhǔnbèi jīngxǐ. Âm thầm chuẩn bị bất ngờ. 偷偷 dễ có sắc thái lén làm điều không nên: 偷偷玩手机。 Tōutōu wán shǒujī. Lén chơi điện thoại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "悄悄",
+    "back": "lặng lẽ, âm thầm",
+    "hint": "qiāoqiāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "57d008b9-dccb-4651-96da-bed4064c85c4",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "id": "c9e12dc1-f608-4337-84ae-eb314d8469ac",
+  "type": "deep_vocabulary_item",
+  "order": 60,
+  "hanzi": "头",
+  "pinyin": "tóu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名/语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "đầu",
+    "meaning_vi": "đầu; phần đầu; đầu tiên trong một số cụm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đầu",
+      "phần đầu",
+      "đầu tiên trong một số cụm"
+    ],
+    "short_definition_vi": "đầu; phần đầu; đầu tiên trong một số cụm",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: đầu; phần đầu; đầu tiên trong một số cụm.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "头",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "头 trong bài được hiểu theo nghĩa: đầu; phần đầu; đầu tiên trong một số cụm. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 头.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "头发 là tóc; 头一天 là ngày đầu tiên."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a7b386a8-5be6-4369-86e6-0825bd0562dd",
+      "order": 1,
+      "zh": "头发",
+      "pinyin": "",
+      "vi": "tóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e55d67f-7e11-4144-9da4-fa0fd975c36a",
+      "order": 2,
+      "zh": "头一天",
+      "pinyin": "",
+      "vi": "ngày đầu tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50ae822e-60a9-4d82-9f4b-aadbc9607d3d",
+      "order": 3,
+      "zh": "头一次",
+      "pinyin": "",
+      "vi": "lần đầu tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e39d2a4-6a0e-4e92-86e7-c8bd95cb711c",
+      "order": 4,
+      "zh": "抬头",
+      "pinyin": "",
+      "vi": "ngẩng đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d69905f7-868c-4524-aaeb-62a53b96282d",
+      "order": 5,
+      "zh": "从头开始",
+      "pinyin": "",
+      "vi": "bắt đầu lại từ đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e771528a-dc5c-4870-b17e-283d29745ab6",
+      "order": 1,
+      "zh": "我头发太长了，该理发了。",
+      "pinyin": "",
+      "vi": "Tóc tôi dài quá, nên đi cắt tóc rồi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "头"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c9e12dc1-f608-4337-84ae-eb314d8469ac"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b2ff383d-0327-400c-b048-667b4863e598",
+      "order": 2,
+      "zh": "今天是她开门营业的头一天。",
+      "pinyin": "",
+      "vi": "Hôm nay là ngày đầu tiên cô ấy mở cửa kinh doanh.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "头"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c9e12dc1-f608-4337-84ae-eb314d8469ac"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "头发 là tóc; 头一天 là ngày đầu tiên.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "578ac1ad-caae-4f47-b620-8ebe78df14d5",
+      "order": 1,
+      "rule_vi": "头发 là tóc; 头一天 là ngày đầu tiên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的头发疼。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "头发 là tóc; 头一天 là ngày đầu tiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我头疼。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "头发 là tóc; 头一天 là ngày đầu tiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "头",
+    "back": "đầu; phần đầu; đầu tiên trong một số cụm",
+    "hint": "tóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c9e12dc1-f608-4337-84ae-eb314d8469ac",
+    "source_lesson_vocab_id": null
+  }
+}

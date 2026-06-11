@@ -1,0 +1,407 @@
+{
+  "id": "e684578e-3164-49cd-b9b9-90e9f63857d8",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "有的",
+  "pinyin": "yǒude",
+  "pos": {
+    "raw_vi": "Đại từ / Cấu trúc phân loại",
+    "raw_cn": "代词/固定结构",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "grammar_word"
+  ],
+  "meaning": {
+    "hanviet": "Hữu đích",
+    "meaning_vi": "có cái; có người; một số",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "có cái",
+      "có người",
+      "một số"
+    ],
+    "short_definition_vi": "có cái; có người; một số",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "grammar_word",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "有",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "phần dưới nhìn thấy",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng; tháng; phần thân thể trong nhiều chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có, tồn tại, sở hữu",
+        "modern_logic_vi": "有 tạo nghĩa có/tồn tại trong 有的.",
+        "warning_vi": "Không nên ép toàn bộ hình chữ hiện đại vào nghĩa.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng; tháng; phần thân thể trong nhiều chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "的",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "白",
+            "hanviet": "bạch",
+            "meaning_vi": "trắng",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "勺",
+            "hanviet": "chước",
+            "meaning_vi": "cái muỗng; phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trợ từ kết cấu; thành phần danh từ hóa",
+        "modern_logic_vi": "的 trong 有的 tạo cụm 'những cái/người...'.",
+        "warning_vi": "Không dịch 有的 thành 'có của'.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "有的 dùng để chia một nhóm thành nhiều phần: 有的……，有的…….",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一些",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Một vài, một số, chỉ số lượng không xác định.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有些",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Một số; thường đứng trước danh từ hoặc làm trạng ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "每个",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Mỗi cái/mỗi người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "都",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đều, tất cả.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "有的",
+        "right": "每个",
+        "meaning_vi": "Một số trong nhóm đối lập với mỗi cá thể trong toàn nhóm.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "448fda4e-baa6-45d3-8602-4246f98ca7c2",
+      "order": 1,
+      "zh": "有的人",
+      "pinyin": "",
+      "vi": "có người / một số người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2c08e56-630c-480e-a698-8377e1b735e7",
+      "order": 2,
+      "zh": "有的时候",
+      "pinyin": "",
+      "vi": "có lúc / đôi khi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff18f51d-1b1f-4133-8598-61b71a0b9fee",
+      "order": 3,
+      "zh": "有的房子",
+      "pinyin": "",
+      "vi": "có căn nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98cee4b2-021b-48e3-be96-62d16d68c30a",
+      "order": 4,
+      "zh": "有的地方",
+      "pinyin": "",
+      "vi": "có nơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e35403f-d80a-4fb1-be20-f7af441fc614",
+      "order": 5,
+      "zh": "有的学生",
+      "pinyin": "",
+      "vi": "một số học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71aa0e75-6cda-41e6-a4df-e5ed71e3f036",
+      "order": 6,
+      "zh": "有的……有的……",
+      "pinyin": "",
+      "vi": "có cái thì… có cái thì…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a2ee0e8-32d1-4a35-99ac-ca91560d2eaa",
+      "order": 7,
+      "zh": "有的贵，有的便宜",
+      "pinyin": "",
+      "vi": "có cái đắt, có cái rẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "075ed5ef-3143-4aae-ade4-63beccd4409a",
+      "order": 8,
+      "zh": "有的大，有的小",
+      "pinyin": "",
+      "vi": "có cái lớn, có cái nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "23fd09aa-85db-4690-a29b-6f905b9ade40",
+      "order": 1,
+      "zh": "有的房子很大，有的房子很小。",
+      "pinyin": "Yǒude fángzi hěn dà, yǒude fángzi hěn xiǎo.",
+      "vi": "Có căn nhà thì rất rộng, có căn thì rất nhỏ.",
+      "analysis_vi": "有的……有的…… chia cùng nhóm 房子 thành hai loại.",
+      "highlight": [
+        "有的"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e684578e-3164-49cd-b9b9-90e9f63857d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "063bd534-5ba9-4a30-8e38-ffa3a4ff392d",
+      "order": 2,
+      "zh": "虽然这些房子都在附近，但是有的交通方便，有的交通不方便。",
+      "pinyin": "Suīrán zhèxiē fángzi dōu zài fùjìn, dànshì yǒude jiāotōng fāngbiàn, yǒude jiāotōng bù fāngbiàn.",
+      "vi": "Tuy những căn nhà này đều ở gần đây, nhưng có căn giao thông tiện, có căn giao thông không tiện.",
+      "analysis_vi": "虽然……但是…… + 有的……有的…….",
+      "highlight": [
+        "有的"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e684578e-3164-49cd-b9b9-90e9f63857d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ade381c4-1044-4bf4-a557-e5a595cc2e23",
+      "order": 3,
+      "zh": "我们昨天看了很多房子，有的面积大但是房租贵，有的房租便宜但是周围环境太乱，所以还没决定租哪一套。",
+      "pinyin": "Wǒmen zuótiān kàn le hěn duō fángzi, yǒude miànjī dà dànshì fángzū guì, yǒude fángzū piányi dànshì zhōuwéi huánjìng tài luàn, suǒyǐ hái méi juédìng zū nǎ yí tào.",
+      "vi": "Hôm qua chúng tôi xem nhiều căn nhà, có căn diện tích lớn nhưng tiền thuê đắt, có căn tiền thuê rẻ nhưng môi trường xung quanh quá lộn xộn, nên vẫn chưa quyết định thuê căn nào.",
+      "analysis_vi": "Câu mô phỏng tình huống thật khi xem nhà; 哪一套 dùng 套 thay cho căn nhà/căn hộ.",
+      "highlight": [
+        "有的"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e684578e-3164-49cd-b9b9-90e9f63857d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "有的……有的…… rất hay dùng trong miêu tả, kể chuyện, viết đoạn văn; giúp câu có cấu trúc hơn thay vì lặp nhiều câu rời.",
+    "tags": [
+      "grammar_word"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "aee5de0a-e98e-49a4-bc79-80e37f4c4e05",
+      "order": 1,
+      "rule_vi": "Không dùng 有的 như 有 bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我有的房子。",
+          "pinyin": "",
+          "vi": "Tôi có của nhà.",
+          "note_vi": "Sai nếu muốn nói có nhà.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我有房子。",
+          "pinyin": "Wǒ yǒu fángzi.",
+          "vi": "Tôi có nhà.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "有的房子很贵，有的房子很便宜。",
+          "pinyin": "",
+          "vi": "Có căn nhà rất đắt, có căn rất rẻ.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Muốn nói 'tôi có nhà' dùng 我有房子, không dùng 我有的房子.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "有的",
+    "back": "có cái; có người; một số",
+    "hint": "yǒude",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "grammar_word"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e684578e-3164-49cd-b9b9-90e9f63857d8",
+    "source_lesson_vocab_id": null
+  }
+}

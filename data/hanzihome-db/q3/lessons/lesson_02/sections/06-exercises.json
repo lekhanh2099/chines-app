@@ -1,0 +1,1219 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_unverified"
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读。",
+        "vi": "Phân biệt âm/thanh điệu; đọc thành tiếng."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "个子 gèzi",
+              "right": "各自 gèzì",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "放心 fàngxīn",
+              "right": "烦心 fánxīn",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "柔和 róuhé",
+              "right": "如何 rúhé",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "体质 tǐzhì",
+              "right": "抵制 dǐzhì",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "预防 yùfáng",
+              "right": "乙方 yǐfāng",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "竹子 zhúzi",
+              "right": "出自 chūzì",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "诗中有画，画中有诗。",
+              "pinyin": "Shī zhōng yǒu huà, huà zhōng yǒu shī.",
+              "vi": "Trong thơ có tranh, trong tranh có thơ."
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "儿行千里母担忧。",
+              "pinyin": "Ér xíng qiānlǐ mǔ dānyōu.",
+              "vi": "Con đi xa ngàn dặm, mẹ lo lắng."
+            }
+          ]
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ ngữ",
+      "instruction": {
+        "zh": "朗读下列词语。",
+        "vi": "Đọc các từ/cụm từ sau."
+      },
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "上星期",
+          "pinyin": "Shàng xīngqī",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "上月",
+          "pinyin": "Shàng yuè",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "上周",
+          "pinyin": "Shàng zhōu",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "上学期",
+          "pinyin": "Shàng xuéqī",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "学习上",
+          "pinyin": "Xuéxí shang",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "工作上",
+          "pinyin": "Gōngzuò shang",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "生活上",
+          "pinyin": "Shēnghuó shang",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "班上",
+          "pinyin": "Bān shang",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "发微信",
+          "pinyin": "Fā Wēixìn",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "发照片",
+          "pinyin": "Fā zhàopiàn",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "发邮件",
+          "pinyin": "Fā yóujiàn",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "发短信",
+          "pinyin": "Fā duǎnxìn",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "起床后",
+          "pinyin": "Qǐchuáng hòu",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "下课后",
+          "pinyin": "Xiàkè hòu",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "吃饭后",
+          "pinyin": "Chīfàn hòu",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+          "text": "回学校后",
+          "pinyin": "Huí xuéxiào hòu",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
+          "text": "来自美国",
+          "pinyin": "Láizì Měiguó",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
+          "text": "来自亚洲",
+          "pinyin": "Láizì Yàzhōu",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
+          "text": "来自各国",
+          "pinyin": "Láizì gèguó",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
+          "text": "来自上海",
+          "pinyin": "Láizì Shànghǎi",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
+          "text": "动作柔和",
+          "pinyin": "Dòngzuò róuhé",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
+          "text": "动作缓慢",
+          "pinyin": "Dòngzuò huǎnmàn",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
+          "text": "动作优美",
+          "pinyin": "Dòngzuò yōuměi",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "71556026-f031-4d36-9a7e-7abd82202c42",
+          "text": "动作舒展",
+          "pinyin": "Dòngzuò shūzhǎn",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "965e382b-b48f-4509-8334-176e1557db63",
+          "text": "预防疾病",
+          "pinyin": "Yùfáng jíbìng",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a27a4c14-22fa-4283-97bb-71ff4a0bd654",
+          "text": "预防感冒",
+          "pinyin": "Yùfáng gǎnmào",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7bc00e0d-b3d9-4033-a317-4c5513bee328",
+          "text": "有作用",
+          "pinyin": "Yǒu zuòyòng",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "86c957fe-e4e2-4542-b48f-e9331f30ff82",
+          "text": "没有作用",
+          "pinyin": "Méiyǒu zuòyòng",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f14081ee-14f0-4cc8-8da4-b8aae17138b5",
+          "text": "表示感谢",
+          "pinyin": "Biǎoshì gǎnxiè",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2cc03948-7d65-4b1b-affd-6d8065e879ea",
+          "text": "表示满意",
+          "pinyin": "Biǎoshì mǎnyì",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7cc7ef90-1d4c-440e-a5f4-e613aafea114",
+          "text": "没有表示",
+          "pinyin": "Méiyǒu biǎoshì",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "78eef1b5-c1f9-44e0-ae63-2ba2b01b8661",
+          "text": "爱的表示",
+          "pinyin": "Ài de biǎoshì",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "02bf1efd-f2d4-491e-88fc-e567a02c9624",
+          "text": "很好玩儿",
+          "pinyin": "Hěn hǎowánr",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "3f902b6b-f41a-4dcb-a607-86fd510228bc",
+          "text": "不好玩儿",
+          "pinyin": "Bù hǎowánr",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "438cd3ac-6cc1-4f81-9dda-88b93408924f",
+          "text": "不太适应",
+          "pinyin": "Bù tài shìyìng",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9ff93f62-c0da-4c7a-89e5-9c64e5d880c1",
+          "text": "很难适应",
+          "pinyin": "Hěn nán shìyìng",
+          "vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống."
+      },
+      "word_bank": [
+        "课外",
+        "发",
+        "优美",
+        "表示",
+        "柔和",
+        "放心",
+        "适应",
+        "首",
+        "作用",
+        "预防",
+        "分别",
+        "好玩儿"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "type": "fill_blank",
+          "prompt": "我在这里一切都很好，请爸爸妈妈______。",
+          "answer": "放心",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "type": "fill_blank",
+          "prompt": "我给你们______过去了几张照片，是我在长城、颐和园照的。",
+          "answer": "发",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "type": "fill_blank",
+          "prompt": "我们班的学生，______来自七个国家。",
+          "answer": "分别",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "type": "fill_blank",
+          "prompt": "她不太喜欢参加这些______活动。",
+          "answer": "课外",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "type": "fill_blank",
+          "prompt": "她说话的声音很______，很好听。",
+          "answer": "柔和",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "type": "fill_blank",
+          "prompt": "我们学校就在风景______的西山下。",
+          "answer": "优美",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "type": "fill_blank",
+          "prompt": "打太极拳可以锻炼身体，增强体质，______疾病。",
+          "answer": "预防",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "type": "fill_blank",
+          "prompt": "针灸和按摩对于这些慢性病有很好的治疗______。",
+          "answer": "作用",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "type": "fill_blank",
+          "prompt": "这是一______非常有名的唐诗。",
+          "answer": "首",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "type": "fill_blank",
+          "prompt": "他一次又一次向我______他喜欢我，可是我已经有男朋友了。",
+          "answer": "表示",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
+          "type": "fill_blank",
+          "prompt": "那是一个非常______的地方，这个星期我们去那儿玩儿玩儿吧。",
+          "answer": "好玩儿",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        },
+        {
+          "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
+          "type": "fill_blank",
+          "prompt": "我还不______这里的气候，冬天太冷，夏天太热。",
+          "answer": "适应",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_answer"
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ trong ngoặc hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "type": "complete_sentence",
+          "prompt": "我刚来中国时，觉得________________________。（一切）",
+          "answer": "我刚来中国时，觉得对一切都不习惯。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我刚来中国时，觉得一切都很新鲜。"
+          ],
+          "answer_note_vi": "Đáp án mẫu đã chỉnh cho tự nhiên hơn: 对一切都不习惯. Đây là dạng mở, không phải đáp án duy nhất.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "type": "complete_sentence",
+          "prompt": "我们________________________，也许能找到。（分别）",
+          "answer": "我们分别去找，也许能找到。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我们分别找找，也许能找到。"
+          ],
+          "answer_note_vi": "Đáp án mẫu; dùng 分别 để chia nhau đi tìm.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "type": "complete_sentence",
+          "prompt": "________________________，我才找到这个地方。（靠）",
+          "answer": "靠朋友的帮助，我才找到这个地方。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "靠朋友帮忙，我才找到这个地方。"
+          ],
+          "answer_note_vi": "Đáp án mẫu; 靠 + danh từ/cụm danh từ.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "type": "complete_sentence",
+          "prompt": "这个暑假我一定________________________。（各）",
+          "answer": "这个暑假我一定去各地旅行。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "这个暑假我一定去各地看看。"
+          ],
+          "answer_note_vi": "Đáp án mẫu; 各地 tự nhiên hơn 各个地方 trong câu ngắn.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "type": "complete_sentence",
+          "prompt": "________________________打太极拳。（每）",
+          "answer": "我每天都打太极拳。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我每天都练太极拳。"
+          ],
+          "answer_note_vi": "Đáp án mẫu; 打太极拳 / 练太极拳 đều tự nhiên.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "type": "complete_sentence",
+          "prompt": "他对我的帮助很大，我真应该________________________。（表示）",
+          "answer": "他对我的帮助很大，我真应该向他表示感谢。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "他对我的帮助很大，我真应该表示感谢。"
+          ],
+          "answer_note_vi": "Đáp án mẫu đã thêm 向他 để câu đầy đủ và tự nhiên hơn.",
+          "source_origin": "sample_answer_verified_not_unique"
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ trong ngoặc hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "keyword": "一切",
+          "type": "complete_dialogue",
+          "prompt": "A：我只对新的东西感兴趣。你呢？\nB：我对这里的________________________。",
+          "answer": "我对这里的一切都感兴趣。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Đáp án mẫu; bám đúng 一切.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "keyword": "分别",
+          "type": "complete_dialogue",
+          "prompt": "A：你们班的学生来自多少个国家？\nB：我们班的同学________________________。",
+          "answer": "我们班的同学分别来自十一个国家。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我们班的同学分别来自不同的国家。"
+          ],
+          "answer_note_vi": "Đáp án mẫu; số 十一个 bám bài khóa.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "keyword": "讲课",
+          "type": "complete_dialogue",
+          "prompt": "A：你觉得________________________？\nB：很好。他讲得又清楚又有意思。",
+          "answer": "你觉得他讲课怎么样？",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "你觉得他讲课讲得怎么样？"
+          ],
+          "answer_note_vi": "Đáp án mẫu; 讲课怎么样 tự nhiên.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "keyword": "作用",
+          "type": "complete_dialogue",
+          "prompt": "A：中药________________________？\nB：当然有作用。我的病就是喝中药以后才好的。",
+          "answer": "中药有作用吗？",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "中药有没有作用？"
+          ],
+          "answer_note_vi": "Đáp án mẫu; hai dạng nghi vấn đều được.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "keyword": "靠",
+          "type": "complete_dialogue",
+          "prompt": "A：出国以后才知道，还是在家好。\nB：可是，一个人不能________________________。",
+          "answer": "可是，一个人不能总靠父母。",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "可是，一个人不能只靠父母。"
+          ],
+          "answer_note_vi": "Đáp án mẫu; 总靠/只靠 đều tự nhiên tùy sắc thái.",
+          "source_origin": "sample_answer_verified_not_unique"
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "keyword": "表示",
+          "type": "complete_dialogue",
+          "prompt": "A：你把礼物送给她以后，________________________？\nB：她很高兴，向我表示了感谢。",
+          "answer": "她有什么表示？",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "她有没有什么表示？"
+          ],
+          "answer_note_vi": "Đáp án mẫu; 有什么表示 khớp câu trả lời phía sau.",
+          "source_origin": "sample_answer_verified_not_unique"
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "type": "reorder_paragraph",
+          "items": [
+            "我们每个人的照片都记录了自己人生历程的一段时光，留下了生活的欢乐。",
+            "一边看，一边回想照片上的那些人和事，回忆那过去的美好时光。",
+            "因此，翻相册、看照片成了我生活中的一大乐趣。",
+            "一拿起相册就要翻来翻去看半天。"
+          ],
+          "answer_order": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_logical_order"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "type": "reorder_paragraph",
+          "items": [
+            "所以说语言是社会交际的工具。",
+            "没有社会生活就不会有语言。",
+            "语言是在社会生活中产生的。",
+            "人在社会生活中跟别人交往需要语言。",
+            "你要想把一种语言学好，就要勇敢地去用语言跟别人交际。"
+          ],
+          "answer_order": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "pdf_crosschecked_logical_order"
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "type": "error_correction",
+          "wrong": "一切的困难我都不怕。",
+          "answer": "一切困难我都不怕。",
+          "explanation_vi": "一切 làm định ngữ tổng quát thường trực tiếp đứng trước danh từ: 一切困难、一切问题、一切办法. Không cần 的 trong mẫu này.",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "grammar_usage_crosschecked"
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "type": "error_correction",
+          "wrong": "我昨天表示她别去，可是今天她还是去了。",
+          "answer": "我昨天劝她别去，可是今天她还是去了。",
+          "explanation_vi": "表示 nghĩa là bày tỏ/thể hiện thái độ, ý kiến, tình cảm; không trực tiếp mang nghĩa “khuyên ai đừng làm gì”. Với 她别去, động từ tự nhiên là 劝/告诉. Nếu vẫn dùng 表示 thì phải đổi cấu trúc: 我昨天表示不希望她去.",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我昨天告诉她别去，可是今天她还是去了。",
+            "我昨天表示不希望她去，可是今天她还是去了。"
+          ],
+          "source_origin": "grammar_usage_crosschecked"
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "type": "error_correction",
+          "wrong": "他每天早上在公园里打太极拳和气功。",
+          "answer": "他每天早上在公园里打太极拳、练气功。",
+          "explanation_vi": "太极拳 có thể nói 打太极拳 hoặc 练太极拳; 气功 thường nói 练气功. Không nói 打气功.",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "他每天早上在公园里练太极拳和气功。"
+          ],
+          "source_origin": "grammar_usage_crosschecked"
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "type": "error_correction",
+          "wrong": "各个国都有不同的习惯和想法。",
+          "answer": "各国都有不同的习惯和想法。",
+          "explanation_vi": "各国 là cách nói gọn và tự nhiên. Nếu dùng 各个 thì danh từ phía sau nên là 国家: 各个国家. Không nói 各个国 trong 普通话 tự nhiên.",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "各个国家都有不同的习惯和想法。"
+          ],
+          "source_origin": "grammar_usage_crosschecked"
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "type": "error_correction",
+          "wrong": "我躺在床上翻来倒去不睡着。",
+          "answer": "我躺在床上翻来覆去睡不着。",
+          "explanation_vi": "固定搭配 là 翻来覆去, không phải 翻来倒去. “Không ngủ được” dùng bổ ngữ khả năng phủ định 睡不着, không nói 不睡着.",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我躺在床上翻来覆去，睡不着。"
+          ],
+          "source_origin": "grammar_usage_crosschecked"
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "type": "error_correction",
+          "wrong": "我把这里的美景拍照了下来。",
+          "answer": "我把这里的美景拍了下来。",
+          "explanation_vi": "拍照 là “chụp ảnh” nói chung, không tách thành 拍照了下来. Với 把 + cảnh/vật + V下来, cách nói tự nhiên là 把美景拍下来 hoặc 把美景照下来.",
+          "answer_verified": true,
+          "check_needed": false,
+          "alternative_answers": [
+            "我把这里的美景照了下来。"
+          ],
+          "source_origin": "grammar_usage_crosschecked"
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "custom_textbook_task",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "情景表达。",
+        "vi": "Diễn đạt theo tình huống."
+      },
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "type": "situation_use",
+          "prompt": "这就是我要告诉你的一切。",
+          "answer": "Dùng khi đã kể xong toàn bộ sự việc, muốn nói: đây là tất cả những gì tôi muốn nói với bạn.",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Đáp án tình huống là đáp án mẫu; có thể có cách diễn đạt khác đúng.",
+          "answer_zh": "说完所有要说的内容时可以用这句话。"
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "type": "situation_use",
+          "prompt": "我还不太适应。",
+          "answer": "Dùng khi mới đến một nơi/môi trường/khí hậu/cách sống mới và vẫn chưa quen hoàn toàn.",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Đáp án tình huống là đáp án mẫu; có thể có cách diễn đạt khác đúng.",
+          "answer_zh": "刚到一个新地方，还没有完全习惯时可以用这句话。"
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "type": "situation_expression",
+          "prompt": "说一下儿太极拳的动作。",
+          "answer": "太极拳的动作柔和缓慢，优美舒展。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Đáp án mẫu: 太极拳的动作柔和缓慢，优美舒展."
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "type": "situation_expression",
+          "prompt": "说明打太极拳的作用。",
+          "answer": "打太极拳可以增强体质、预防疾病。",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer_note_vi": "Đáp án mẫu: 打太极拳可以增强体质、预防疾病."
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào chỗ trống."
+      },
+      "passage": {
+        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+        "title": "雪后爬长城",
+        "title_vi": "Sau khi tuyết rơi leo Trường Thành",
+        "zh": "星期六夜里，下了一场大雪。第二天早上起床一看，外边的雪景很美。这时我突然想带女朋友去长城看雪景。我给她打了个电话，问她愿意不愿意去长城。她说她也正要给我打电话，问我想不想去呢。\n\n太阳①______了，是个好天气。吃了早饭我们就坐车出发了。\n\n只用了两个多小时，我们②______到了长城。女朋友说：“不到长城非好汉”，今天我们到了长城，也算是好汉了。长城上没有人，很静。几个工作人员看见我们都笑③______，我不知道他们为什么笑。大概他们觉得下这么大的雪还来爬长城很奇怪④______。买了票我们就往上爬，因为有雪，爬不上⑤______。我们刚爬上去几步又滑下来，滑下来再爬上去，很有意思。长城上只有我和女朋友。爬了快一个小时了，我女朋友累⑥______有点儿爬不动了。我要拉她，她不让，一定要自己爬上去。我们爬了差不多两个小时，终于爬到了长城最⑦______的地方。站在上边往下看，眼前是一片白色的世界，真美啊！我们在长城上照了很多相，⑧______在长城上边堆了一个大雪人。\n\n下来的时候，我们一会儿扶着墙走，一会儿坐在地上往下滑，很好玩儿。\n\n今天，虽然很累，但是我们玩儿得非常高兴。\n\n你要是去长城，最好也在下雪以后去。",
+        "vi": "Bài đọc kể việc người kể chuyện và bạn gái đi Trường Thành sau một trận tuyết lớn. Hai người vừa leo vừa trượt vì tuyết, cuối cùng lên đến nơi cao nhất, chụp ảnh và đắp người tuyết.",
+        "pinyin": "Xīngqīliù yèlǐ, xià le yì cháng dà xuě. Dì-èr tiān zǎoshang qǐchuáng yí kàn, wàibian de xuějǐng hěn měi. Zhè shí wǒ tūrán xiǎng dài nǚpéngyou qù Chángchéng kàn xuějǐng. Wǒ gěi tā dǎ le ge diànhuà, wèn tā yuànyì bu yuànyì qù Chángchéng. Tā shuō tā yě zhèng yào gěi wǒ dǎ diànhuà, wèn wǒ xiǎng bu xiǎng qù ne.\n\nTàiyáng ①______ le, shì ge hǎo tiānqì. Chī le zǎofàn wǒmen jiù zuò chē chūfā le.\n\nZhǐ yòng le liǎng ge duō xiǎoshí, wǒmen ②______ dào le Chángchéng. Nǚpéngyou shuō: “Bú dào Chángchéng fēi hǎohàn”, jīntiān wǒmen dào le Chángchéng, yě suàn shì hǎohàn le. Chángchéng shang méiyǒu rén, hěn jìng. Jǐ ge gōngzuò rényuán kànjiàn wǒmen dōu xiào ③______, wǒ bù zhīdào tāmen wèishénme xiào. Dàgài tāmen juéde xià zhème dà de xuě hái lái pá Chángchéng hěn qíguài ④______. Mǎi le piào wǒmen jiù wǎng shàng pá, yīnwèi yǒu xuě, pá bù shàng ⑤______. Wǒmen gāng pá shàngqu jǐ bù yòu huá xiàlai, huá xiàlai zài pá shàngqu, hěn yǒuyìsi. Chángchéng shang zhǐ yǒu wǒ hé nǚpéngyou. Pá le kuài yí ge xiǎoshí le, wǒ nǚpéngyou lèi ⑥______ yǒudiǎnr pá bu dòng le. Wǒ yào lā tā, tā bú ràng, yídìng yào zìjǐ pá shàngqu. Wǒmen pá le chàbuduō liǎng ge xiǎoshí, zhōngyú pá dào le Chángchéng zuì ⑦______ de dìfang. Zhàn zài shàngbian wǎng xià kàn, yǎnqián shì yí piàn báisè de shìjiè, zhēn měi a! Wǒmen zài Chángchéng shang zhào le hěn duō xiàng, ⑧______ zài Chángchéng shàngbian duī le yí ge dà xuěrén.\n\nXiàlai de shíhou, wǒmen yíhuìr fúzhe qiáng zǒu, yíhuìr zuò zài dì shang wǎng xià huá, hěn hǎowánr.\n\nJīntiān, suīrán hěn lèi, dànshì wǒmen wánr de fēicháng gāoxìng.\n\nNǐ yàoshi qù Chángchéng, zuìhǎo yě zài xià xuě yǐhòu qù."
+      },
+      "blanks": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "blank_number": 1,
+          "answer": "出来",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "blank_number": 2,
+          "answer": "就",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "blank_number": 3,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "blank_number": 4,
+          "answer": "吧",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
+          "blank_number": 5,
+          "answer": "去",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
+          "blank_number": 6,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
+          "blank_number": 7,
+          "answer": "高",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
+          "blank_number": 8,
+          "answer": "还",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "supplement_vocab": [
+        {
+          "hanzi": "突然",
+          "pinyin": "tūrán",
+          "meaning_vi": "đột nhiên",
+          "pos": "Phó từ / tính từ",
+          "pos_detail": {
+            "vi": "Phó từ / tính từ",
+            "cn": "副词 / 形容词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Đột nhiên, bất ngờ.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "不到长城非好汉",
+          "pinyin": "bú dào Chángchéng fēi hǎohàn",
+          "meaning_vi": "chưa đến Vạn Lý Trường Thành thì chưa phải hảo hán",
+          "pos": "Tục ngữ / câu cố định",
+          "pos_detail": {
+            "vi": "Tục ngữ / câu cố định",
+            "cn": "俗语 / 固定句",
+            "normalized": "phrase",
+            "schema_compatible_pos": "phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Câu cố định; không phải động từ li hợp.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "奇怪",
+          "pinyin": "qíguài",
+          "meaning_vi": "kỳ lạ",
+          "pos": "Tính từ / động từ tâm lý",
+          "pos_detail": {
+            "vi": "Tính từ / động từ tâm lý",
+            "cn": "形容词 / 心理动词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Kỳ lạ; thấy lạ.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "滑",
+          "pinyin": "huá",
+          "meaning_vi": "trơn; trượt",
+          "pos": "Tính từ / động từ",
+          "pos_detail": {
+            "vi": "Tính từ / động từ",
+            "cn": "形容词 / 动词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Trơn; trượt.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "堆",
+          "pinyin": "duī",
+          "meaning_vi": "đắp; chất đống",
+          "pos": "Động từ / danh từ / lượng từ",
+          "pos_detail": {
+            "vi": "Động từ / danh từ / lượng từ",
+            "cn": "动词 / 名词 / 量词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Chất đống, đắp; một đống.",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "扶",
+          "pinyin": "fú",
+          "meaning_vi": "đỡ; dìu; vịn",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Đỡ, dìu, vịn bằng tay.",
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "source_origin": "pdf_crosschecked_answer",
+      "check_needed": false
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话：商量",
+      "title_vi": "Hội thoại giao tiếp: bàn bạc",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp theo chủ đề bàn bạc."
+      },
+      "topic": "商量",
+      "key_sentence": "我跟你商量一件事儿。",
+      "dialogue_lines": [
+        {
+          "speaker": "A",
+          "zh": "妈妈，我跟你商量一件事儿。",
+          "vi": "Mẹ ơi, con bàn với mẹ một chuyện.",
+          "pinyin": "Māma, wǒ gēn nǐ shāngliang yí jiàn shìr."
+        },
+        {
+          "speaker": "B",
+          "zh": "什么事儿？",
+          "vi": "Chuyện gì?",
+          "pinyin": "Shénme shìr?"
+        },
+        {
+          "speaker": "A",
+          "zh": "我想去中国留学。",
+          "vi": "Con muốn đi Trung Quốc du học.",
+          "pinyin": "Wǒ xiǎng qù Zhōngguó liúxué."
+        },
+        {
+          "speaker": "B",
+          "zh": "你怎么有这样的想法？你不打算结婚了？",
+          "vi": "Sao con lại có suy nghĩ như vậy? Con không định kết hôn nữa à?",
+          "pinyin": "Nǐ zěnme yǒu zhèyàng de xiǎngfǎ? Nǐ bù dǎsuàn jiéhūn le?"
+        },
+        {
+          "speaker": "A",
+          "zh": "我就去一年，结婚的事儿回来以后再说。",
+          "vi": "Con chỉ đi một năm thôi, chuyện kết hôn sau khi về rồi nói tiếp.",
+          "pinyin": "Wǒ jiù qù yì nián, jiéhūn de shìr huílái yǐhòu zài shuō."
+        },
+        {
+          "speaker": "B",
+          "zh": "你现在的工作不是挺好吗？回来以后找不到工作怎么办？",
+          "vi": "Công việc hiện tại của con không phải khá tốt sao? Sau khi về không tìm được việc thì làm sao?",
+          "pinyin": "Nǐ xiànzài de gōngzuò bú shì tǐng hǎo ma? Huílái yǐhòu zhǎo bú dào gōngzuò zěnme bàn?"
+        },
+        {
+          "speaker": "A",
+          "zh": "不会的。我已经学了一年汉语了，可是，说得还不太好，我想去中国学一年，回来后能找到更好的工作。",
+          "vi": "Không đâu ạ. Con đã học tiếng Hán một năm rồi, nhưng nói vẫn chưa tốt lắm. Con muốn đi Trung Quốc học một năm, sau khi về có thể tìm được công việc tốt hơn.",
+          "pinyin": "Bú huì de. Wǒ yǐjīng xué le yì nián Hànyǔ le, kěshì, shuō de hái bù tài hǎo, wǒ xiǎng qù Zhōngguó xué yì nián, huílái hòu néng zhǎo dào gèng hǎo de gōngzuò."
+        },
+        {
+          "speaker": "B",
+          "zh": "你跟你爸爸说了吗？",
+          "vi": "Con nói với bố con chưa?",
+          "pinyin": "Nǐ gēn nǐ bàba shuō le ma?"
+        },
+        {
+          "speaker": "A",
+          "zh": "爸爸没问题，主要是你。",
+          "vi": "Bố không có vấn đề gì, chủ yếu là mẹ thôi.",
+          "pinyin": "Bàba méi wèntí, zhǔyào shì nǐ."
+        },
+        {
+          "speaker": "B",
+          "zh": "我不同意你就不去了吗？我还不知道你的性格，决定了的事情，谁说也不行。",
+          "vi": "Nếu mẹ không đồng ý thì con không đi nữa à? Mẹ còn lạ gì tính con, chuyện đã quyết định rồi thì ai nói cũng không được.",
+          "pinyin": "Wǒ bù tóngyì nǐ jiù bú qù le ma? Wǒ hái bù zhīdào nǐ de xìnggé, juédìng le de shìqing, shéi shuō yě bù xíng."
+        },
+        {
+          "speaker": "A",
+          "zh": "妈妈，一年时间很快就会过去的。",
+          "vi": "Mẹ à, thời gian một năm sẽ trôi qua rất nhanh thôi.",
+          "pinyin": "Māma, yì nián shíjiān hěn kuài jiù huì guòqu de."
+        },
+        {
+          "speaker": "B",
+          "zh": "小鸟长大了，翅膀硬了，该飞了。",
+          "vi": "Chim nhỏ lớn rồi, cánh cứng rồi, đến lúc phải bay rồi.",
+          "pinyin": "Xiǎo niǎo zhǎng dà le, chìbang yìng le, gāi fēi le."
+        }
+      ],
+      "notes_vi": [
+        "我跟你商量一件事儿: câu mở đầu tự nhiên khi muốn bàn một chuyện quan trọng.",
+        "回来以后再说: sau khi về rồi nói tiếp, dùng để tạm gác một chuyện.",
+        "翅膀硬了，该飞了: cách nói hình ảnh chỉ con cái đã trưởng thành, đến lúc tự lập."
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "id": "1ce5da22-9b6b-4667-8182-1baa0f97227b",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "不紧不慢",
+  "pinyin": "bù jǐn bú màn",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bất khẩn bất mạn",
+    "meaning_vi": "không vội không chậm, từ tốn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không vội không chậm",
+      "từ tốn"
+    ],
+    "short_definition_vi": "không vội không chậm, từ tốn",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: cách thức, thái độ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "cách thức, thái độ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ 不紧不慢, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "紧",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gấp, căng, chặt",
+        "modern_logic_vi": "Trong từ 不紧不慢, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ 不紧不慢, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "慢",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, tâm lý, cảm xúc",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, tâm lý, cảm xúc",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chậm",
+        "modern_logic_vi": "Trong từ 不紧不慢, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不紧不慢 nên được học theo nghĩa hiện đại trong cụm/tình huống: không vội không chậm, từ tốn.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 不紧不慢地说.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "慢慢儿",
+        "pinyin": "mànmānr",
+        "meaning_vi": "từ từ",
+        "difference_vi": "不紧不慢 nhấn bình tĩnh; 慢慢儿 nhấn tốc độ chậm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "04e990f8-3c66-4058-b236-bbf1eb12f309",
+      "order": 1,
+      "zh": "不紧不慢地说",
+      "pinyin": "",
+      "vi": "nói từ tốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5b8351b-1279-4212-9eb0-d5a39810ccb7",
+      "order": 2,
+      "zh": "不紧不慢地问",
+      "pinyin": "",
+      "vi": "hỏi từ tốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "081fb6f7-525d-464c-ac62-99eeecfee8fe",
+      "order": 3,
+      "zh": "做事不紧不慢",
+      "pinyin": "",
+      "vi": "làm việc từ tốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "16667b47-09f0-4d55-b37b-b8a6498f61d5",
+      "order": 1,
+      "zh": "医生不紧不慢地问他。",
+      "pinyin": "",
+      "vi": "Bác sĩ hỏi anh ấy một cách từ tốn.",
+      "analysis_vi": "不紧不慢地 + V làm trạng ngữ cách thức.",
+      "highlight": [
+        "不紧不慢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1ce5da22-9b6b-4667-8182-1baa0f97227b"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 不紧不慢 được dùng trong ngữ cảnh cách thức, thái độ; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "456958fe-0b90-4dbc-9c81-6b075b02a440",
+      "order": 1,
+      "rule_vi": "紧 ở đây là gấp/căng/vội, không phải “chặt” theo nghĩa vật lý.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "紧 ở đây là gấp/căng/vội, không phải “chặt” theo nghĩa vật lý.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不紧不慢",
+    "back": "không vội không chậm, từ tốn",
+    "hint": "bù jǐn bú màn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1ce5da22-9b6b-4667-8182-1baa0f97227b",
+    "source_lesson_vocab_id": null
+  }
+}

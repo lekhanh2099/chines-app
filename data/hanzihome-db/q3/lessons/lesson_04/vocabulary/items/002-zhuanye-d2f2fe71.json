@@ -1,0 +1,260 @@
+{
+  "id": "fd8f79c2-1389-42c3-ac58-0efd75f82c91",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "专业",
+  "pinyin": "zhuānyè",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ",
+    "raw_cn": "名 / 形",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chuyên nghiệp / chuyên ngành",
+    "meaning_vi": "chuyên ngành; chuyên môn; chuyên nghiệp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuyên ngành",
+      "chuyên môn",
+      "chuyên nghiệp"
+    ],
+    "short_definition_vi": "chuyên ngành",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "专",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuyên, chuyên môn",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "业",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghề nghiệp, sự nghiệp, ngành",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "专业 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 专业 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "职业",
+        "pinyin": "zhíyè",
+        "meaning_vi": "nghề nghiệp",
+        "difference_vi": "Nói về công việc xã hội.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "行业",
+        "pinyin": "hángyè",
+        "meaning_vi": "ngành nghề / industry",
+        "difference_vi": "Phạm vi rộng hơn chuyên ngành học.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "学科",
+        "pinyin": "xuékē",
+        "meaning_vi": "môn/ngành học thuật",
+        "difference_vi": "Nghiêng hệ thống học thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f1d954ce-2b53-42a9-8709-e051861a7ac2",
+      "order": 1,
+      "zh": "选择专业",
+      "pinyin": "xuǎnzé zhuānyè",
+      "vi": "chọn chuyên ngành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e769a367-4956-45f0-9eaa-10825d2816e2",
+      "order": 2,
+      "zh": "换专业",
+      "pinyin": "huàn zhuānyè",
+      "vi": "đổi ngành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2c6449b-76f2-4775-9fd1-ac86d6e27485",
+      "order": 3,
+      "zh": "专业知识",
+      "pinyin": "zhuānyè zhīshi",
+      "vi": "kiến thức chuyên môn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2aef731-5748-42f8-ae59-11ed157875ae",
+      "order": 4,
+      "zh": "很专业",
+      "pinyin": "hěn zhuānyè",
+      "vi": "rất chuyên nghiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a21144a9-53e0-43d1-9cdc-cfbb8c22d95b",
+      "order": 1,
+      "zh": "你的专业是什么？",
+      "pinyin": "Nǐ de zhuānyè shì shénme?",
+      "vi": "Chuyên ngành của bạn là gì?",
+      "analysis_vi": "专业 dùng như danh từ.",
+      "highlight": [
+        "专业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd8f79c2-1389-42c3-ac58-0efd75f82c91"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a7b7d601-484d-49c6-820a-b161bf551693",
+      "order": 2,
+      "zh": "当时我不赞成他换专业，因为他已经学了两年了。",
+      "pinyin": "Dāngshí wǒ bú zànchéng tā huàn zhuānyè, yīnwèi tā yǐjīng xué le liǎng nián le.",
+      "vi": "Lúc đó tôi không tán thành việc anh ấy đổi ngành, vì anh ấy đã học hai năm rồi.",
+      "analysis_vi": "赞成 + sự việc; 换专业 là cụm tự nhiên.",
+      "highlight": [
+        "专业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd8f79c2-1389-42c3-ac58-0efd75f82c91"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hỏi sinh viên thường nói 你学什么专业？; môi trường công việc nên hỏi 你做什么工作？",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "74c76216-2926-409e-9cf9-6335995a8ad3",
+      "order": 1,
+      "rule_vi": "Không nói cứng 我是汉语专业 nếu muốn nói tôi học ngành tiếng Hán.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我是汉语专业。",
+          "pinyin": "Wǒ shì Hànyǔ zhuānyè.",
+          "vi": "Kém tự nhiên nếu đứng một mình.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的专业是汉语。",
+          "pinyin": "Wǒ de zhuānyè shì Hànyǔ.",
+          "vi": "Chuyên ngành của tôi là tiếng Hán.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "专业",
+    "back": "chuyên ngành; chuyên môn; chuyên nghiệp",
+    "hint": "zhuānyè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fd8f79c2-1389-42c3-ac58-0efd75f82c91",
+    "source_lesson_vocab_id": null
+  }
+}

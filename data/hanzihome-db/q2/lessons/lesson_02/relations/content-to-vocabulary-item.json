@@ -1,0 +1,1419 @@
+[
+  {
+    "id": "rel_100ad43ee5b82e3b1361bad3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.1"
+    },
+    "to": {
+      "id": "d4c4339b-fd20-44bd-a285-0790cfa943a9",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/004-lihai-32ee5069.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.1.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3105b3ff8ab43bc4b1e2288d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.1"
+    },
+    "to": {
+      "id": "576d8ff8-34e3-4dec-b909-04970f42a4b8",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/003-duzi-92ff400b.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.1.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e85d4ec715f765d4d960cf32",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.1"
+    },
+    "to": {
+      "id": "9a87455f-0573-4705-9602-1e7cf4614b10",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/006-pian-ccc1a4c9.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.1.vocab_refs.2"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_23db45a11b7c7b99573186b0",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.10"
+    },
+    "to": {
+      "id": "10994bef-ee59-4126-a40b-1b34f2ce0ac2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-jiancha-8371c943.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.10.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8745e0a4f2e27aebd1707a3a",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.10"
+    },
+    "to": {
+      "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-huayan-9c633b5a.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.10.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8fc0a40ebe40f0d6979a17b4",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.10"
+    },
+    "to": {
+      "id": "36b76337-b9bf-4557-8179-4dd8d18f7d44",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/013-dabian-1aafac56.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.10.vocab_refs.2"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_457825caabbc8ac24b580509",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a568d979-0ebe-412d-9200-f663609af6c5",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.12"
+    },
+    "to": {
+      "id": "8d15e795-20d5-445f-83af-c8adec70a90d",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/016-chulai-ed514872.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.12.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_67b5f530c38fde4bcb4d8c34",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a568d979-0ebe-412d-9200-f663609af6c5",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.12"
+    },
+    "to": {
+      "id": "11024859-09fd-4cc5-b63d-68715112e18f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-jieguo-08020d2f.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.12.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e338db352a71de9a91c70f6b",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a568d979-0ebe-412d-9200-f663609af6c5",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.12"
+    },
+    "to": {
+      "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-huayan-9c633b5a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "化验",
+      "text_offset": 0,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.12.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_92866d9a0af01613efcbda5e",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "352eb6a5-7ba0-4d98-80b5-4781602b9aea",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.13"
+    },
+    "to": {
+      "id": "8d15e795-20d5-445f-83af-c8adec70a90d",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/016-chulai-ed514872.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.13.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_09389966f50e6644d6111d02",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "fba2b141-cab4-4f5e-8224-ecf84e4848a5",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.14"
+    },
+    "to": {
+      "id": "97973e74-efb3-4d07-94a3-b035a74f0472",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/017-de-de-dei-cc714eaa.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.14.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ffa3caa43fe5f62f326fda22",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "fba2b141-cab4-4f5e-8224-ecf84e4848a5",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.14"
+    },
+    "to": {
+      "id": "9cc18fdf-7e9b-4f92-b664-5f51c340a550",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/018-changyan-396ae0e4.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.14.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_1d17603f1bf99fa56be83af6",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.15"
+    },
+    "to": {
+      "id": "11024859-09fd-4cc5-b63d-68715112e18f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-jieguo-08020d2f.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.15.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_4924b343e6042ec3ed8c1752",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.15"
+    },
+    "to": {
+      "id": "baaca154-d5f4-4f72-a01e-3ad339780aff",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/019-xiaohua-38593570.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.15.vocab_refs.2"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5f6f3c36570fbf9a3a9f3189",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.15"
+    },
+    "to": {
+      "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-huayan-9c633b5a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "化验",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.0.blocks.0.lines.15.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7c21ff8c708b6ddfcf0db006",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.15"
+    },
+    "to": {
+      "id": "9cc18fdf-7e9b-4f92-b664-5f51c340a550",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/018-changyan-396ae0e4.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.15.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_dd9b4fa2c3660f903c527122",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.15"
+    },
+    "to": {
+      "id": "synthetic_vocab_f8bd082608905976",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/034-kai-yao-a4c4bde2.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.15.vocab_refs.3"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_fff18808ca8647fcd50ef6d8",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.15"
+    },
+    "to": {
+      "id": "66405a9f-3415-42f9-8b61-e9dec9fee415",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/021-da-zhen-c4084c02.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.15.vocab_refs.4"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7d2281cc923fef3318244f26",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d09c0385-2b8e-40b2-98c0-968d24dd2d58",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.17"
+    },
+    "to": {
+      "id": "1f1d0ae2-f1a6-40d3-b773-3023c4ec102b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/022-hou-f2831bd7.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.17.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9dc4160fbfa573567135df22",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d09c0385-2b8e-40b2-98c0-968d24dd2d58",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.17"
+    },
+    "to": {
+      "id": "9a87455f-0573-4705-9602-1e7cf4614b10",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/006-pian-ccc1a4c9.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.17.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e3f40fd8a3bad4db13ba14f5",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.2"
+    },
+    "to": {
+      "id": "1b2e1b43-6bd1-4b91-a5d8-67fa6dda4038",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/007-la-duzi-21176f6f.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.2.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_561e0d1a4388ad4cd42a7970",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.3"
+    },
+    "to": {
+      "id": "b9a08ba0-dee5-4bce-a392-3d7e9d03cbf0",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/008-la-1792714a.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.3.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_68c1db55828bfba208095f9f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "2286f0ec-4185-445b-bf83-975d37c549ce",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/010-niurou-1f860a0b.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_93d71f3f7585116d1e3027ed",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.5"
+    },
+    "to": {
+      "id": "15c899c5-c1f2-44e2-99c0-7eaeb3f5c3b0",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/009-yu-7ca522b9.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "54b36889-82be-485b-8342-fb8aab572065",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.5.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e75a94f6a3952b4369b51420",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.8"
+    },
+    "to": {
+      "id": "59708ae5-928a-4764-92a5-a8154c655278",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-fashao-7a17c102.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.8.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ec30ee6c0bc10f5c84711c6d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.0.lines.9"
+    },
+    "to": {
+      "id": "59708ae5-928a-4764-92a5-a8154c655278",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-fashao-7a17c102.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "json_path": "$.lesson.sections.0.blocks.0.lines.9.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0c664e47757c8872a0c190b7",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.0"
+    },
+    "to": {
+      "id": "28b3022e-d043-419c-adbd-ac3c0fb837d8",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/001-bing-3e33de7e.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.0.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5a34db12bb50d0e70133ccfe",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.0"
+    },
+    "to": {
+      "id": "synthetic_vocab_892a44dde2ac6675",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/035-ku-f3d02705.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "173409e7-a2ad-4e05-a409-6d8b3dc2203d",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.0.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0aa95712ada24f50f275663d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.1"
+    },
+    "to": {
+      "id": "6972f5c8-af91-4d44-b3c7-f0a099942017",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-nanguo-dca9db46.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.1.vocab_refs.2"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_509d22e721b42ecbf88f1b42",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.1"
+    },
+    "to": {
+      "id": "3fe55162-a944-439f-9060-7f0e0e699ef4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-jimo-ed7c9576.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.1.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5abbdf9a1c5710e93e011d52",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.1"
+    },
+    "to": {
+      "id": "c950b6bd-f841-4a02-bc7a-0c59513f2e11",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-suoyi-b93091e9.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.1.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a3f2bcfc78a4bd3fc8f37bbc",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.2"
+    },
+    "to": {
+      "id": "6972f5c8-af91-4d44-b3c7-f0a099942017",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-nanguo-dca9db46.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "难过",
+      "text_offset": 1,
+      "json_path": "$.lesson.sections.0.blocks.1.lines.2.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ac8138788d61d263106adbea",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.2"
+    },
+    "to": {
+      "id": "3113c837-87b3-4bbb-bd97-306dca635ab7",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/026-bie-d49f05a3.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.2.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_4efc279ef97701f439e58a99",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.4"
+    },
+    "to": {
+      "id": "3fe55162-a944-439f-9060-7f0e0e699ef4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-jimo-ed7c9576.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.4.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3c7d2484623cdd371e262a2d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.5"
+    },
+    "to": {
+      "id": "c950b6bd-f841-4a02-bc7a-0c59513f2e11",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-suoyi-b93091e9.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.5.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8f1eecd4478a58e24662ee92",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.5"
+    },
+    "to": {
+      "id": "3fe55162-a944-439f-9060-7f0e0e699ef4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-jimo-ed7c9576.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "寂寞",
+      "text_offset": 27,
+      "json_path": "$.lesson.sections.0.blocks.1.lines.5.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_1a20eee899f59d8534ad9b2d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "cc8da348-3e89-4f64-a680-de239f505497",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.6"
+    },
+    "to": {
+      "id": "f3a6aa5c-bc88-4d4e-b2d1-414fd9ec9909",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/027-litang-8f11a947.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.6.vocab_refs.0"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6d8cef13f80de92251cc60a3",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "cc8da348-3e89-4f64-a680-de239f505497",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.6"
+    },
+    "to": {
+      "id": "3a50042e-2aa4-47bb-9ac2-84c5badd8505",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/029-tiaowu-526d8439.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.6.vocab_refs.2"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_bea6b9f083d44678b913af19",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "cc8da348-3e89-4f64-a680-de239f505497",
+      "kind": "unknown",
+      "path": "$.lesson.sections.0.blocks.1.lines.6"
+    },
+    "to": {
+      "id": "75f098b7-ae9d-458f-ae2c-bff695a4c425",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/028-wuhui-b8ece3d4.json"
+    },
+    "evidence": {
+      "source": "explicit_ref",
+      "ref_id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "json_path": "$.lesson.sections.0.blocks.1.lines.6.vocab_refs.1"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c7d9336b5fb1ee99b3221c85",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.1.examples.0"
+    },
+    "to": {
+      "id": "2286f0ec-4185-445b-bf83-975d37c549ce",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/010-niurou-1f860a0b.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "牛肉",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.3.items.1.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_06fb627ec2713d5633bd1141",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.2.examples.0"
+    },
+    "to": {
+      "id": "6972f5c8-af91-4d44-b3c7-f0a099942017",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-nanguo-dca9db46.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "难过",
+      "text_offset": 1,
+      "json_path": "$.lesson.sections.3.items.2.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_daafb239797bf99f179e6a18",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "ba6f33e1-5a6f-47fc-896e-13e6e19ed2d0",
+      "kind": "unknown",
+      "path": "$.lesson.sections.3.items.3.examples.0"
+    },
+    "to": {
+      "id": "3a50042e-2aa4-47bb-9ac2-84c5badd8505",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/029-tiaowu-526d8439.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "跳舞",
+      "text_offset": 6,
+      "json_path": "$.lesson.sections.3.items.3.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0975c1685d426a5289836a61",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.0.examples.2"
+    },
+    "to": {
+      "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-huayan-9c633b5a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "化验",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.4.items.0.blocks.0.examples.2.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f4183ae2d718d0f47327fedf",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.0.examples.2"
+    },
+    "to": {
+      "id": "11024859-09fd-4cc5-b63d-68715112e18f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-jieguo-08020d2f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "结果",
+      "text_offset": 5,
+      "json_path": "$.lesson.sections.4.items.0.blocks.0.examples.2.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_50f1229a6b46f360d579f626",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "127b58f2-0e0f-4828-9690-578993e443b7",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.3.examples.1"
+    },
+    "to": {
+      "id": "11024859-09fd-4cc5-b63d-68715112e18f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-jieguo-08020d2f.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "结果",
+      "text_offset": 2,
+      "json_path": "$.lesson.sections.4.items.0.blocks.3.examples.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5a00d63402159fa0d7e295b7",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "127b58f2-0e0f-4828-9690-578993e443b7",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.3.examples.1"
+    },
+    "to": {
+      "id": "8d15e795-20d5-445f-83af-c8adec70a90d",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/016-chulai-ed514872.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "出来",
+      "text_offset": 4,
+      "json_path": "$.lesson.sections.4.items.0.blocks.3.examples.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a024fdc4fd70889918ad3fba",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "127b58f2-0e0f-4828-9690-578993e443b7",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.0.blocks.3.examples.1"
+    },
+    "to": {
+      "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-huayan-9c633b5a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "化验",
+      "text_offset": 0,
+      "json_path": "$.lesson.sections.4.items.0.blocks.3.examples.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_72d6b236ecfd685eb490b832",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "3fe55162-a944-439f-9060-7f0e0e699ef4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-jimo-ed7c9576.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "寂寞",
+      "text_offset": 4,
+      "json_path": "$.lesson.sections.4.items.1.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_aa6e02f77696073dcad0446a",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "c950b6bd-f841-4a02-bc7a-0c59513f2e11",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-suoyi-b93091e9.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "所以",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.4.items.1.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b3063f9c66a8a2d66e66b10b",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "6972f5c8-af91-4d44-b3c7-f0a099942017",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-nanguo-dca9db46.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "难过",
+      "text_offset": 15,
+      "json_path": "$.lesson.sections.4.items.1.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_15b401269f42db6af930dab8",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "abaebd39-a149-46e0-b3ca-2feb0c0a9cc6",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.1.blocks.2.examples.0"
+    },
+    "to": {
+      "id": "c950b6bd-f841-4a02-bc7a-0c59513f2e11",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-suoyi-b93091e9.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "所以",
+      "text_offset": 4,
+      "json_path": "$.lesson.sections.4.items.1.blocks.2.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_49aeea9237252882f05d7e0c",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-huayan-9c633b5a.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "化验",
+      "text_offset": 3,
+      "json_path": "$.lesson.sections.4.items.2.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_6f569dcb644df002ba7db01f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "10994bef-ee59-4126-a40b-1b34f2ce0ac2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-jiancha-8371c943.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "检查",
+      "text_offset": 19,
+      "json_path": "$.lesson.sections.4.items.2.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7f3d610caeace52b2a3a801d",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "36b76337-b9bf-4557-8179-4dd8d18f7d44",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/013-dabian-1aafac56.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "大便",
+      "text_offset": 8,
+      "json_path": "$.lesson.sections.4.items.2.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_8a14cfb8a050bd5962f087ad",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.0.examples.0"
+    },
+    "to": {
+      "id": "10994bef-ee59-4126-a40b-1b34f2ce0ac2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-jiancha-8371c943.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "检查",
+      "text_offset": 17,
+      "json_path": "$.lesson.sections.4.items.2.blocks.0.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_abf29c9cfa1591e5bf978f61",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d3ca42bf-fbbd-4347-98a8-7a697fe218c2",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.2.examples.0"
+    },
+    "to": {
+      "id": "3a50042e-2aa4-47bb-9ac2-84c5badd8505",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/029-tiaowu-526d8439.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "跳舞",
+      "text_offset": 6,
+      "json_path": "$.lesson.sections.4.items.2.blocks.2.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_617004aedec3e683ca9f3175",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "8a5a1327-5977-406d-b2eb-0873fdcdff0b",
+      "kind": "unknown",
+      "path": "$.lesson.sections.4.items.2.blocks.3.examples.0"
+    },
+    "to": {
+      "id": "6972f5c8-af91-4d44-b3c7-f0a099942017",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-nanguo-dca9db46.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "难过",
+      "text_offset": 1,
+      "json_path": "$.lesson.sections.4.items.2.blocks.3.examples.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_0b57aa8417debdddb89faedf",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.0"
+    },
+    "to": {
+      "id": "d4c4339b-fd20-44bd-a285-0790cfa943a9",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/004-lihai-32ee5069.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "厉害",
+      "text_offset": 27,
+      "json_path": "$.lesson.sections.6.items.0.passages.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_29b0e985f7efb950cad5b202",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.0"
+    },
+    "to": {
+      "id": "3fe55162-a944-439f-9060-7f0e0e699ef4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-jimo-ed7c9576.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "寂寞",
+      "text_offset": 108,
+      "json_path": "$.lesson.sections.6.items.0.passages.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_4cb33d5daf5dcf0f468a253f",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.0"
+    },
+    "to": {
+      "id": "7a4a136f-90ef-42ef-87ae-a01a59be2fde",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/031-sangzi-a8a398d2.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "嗓子",
+      "text_offset": 10,
+      "json_path": "$.lesson.sections.6.items.0.passages.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_71ea6350a7d8d32eef0ab64c",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.0"
+    },
+    "to": {
+      "id": "59708ae5-928a-4764-92a5-a8154c655278",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-fashao-7a17c102.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "发烧",
+      "text_offset": 7,
+      "json_path": "$.lesson.sections.6.items.0.passages.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_bff1f238a1a59785971458f7",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.0"
+    },
+    "to": {
+      "id": "3fe55162-a944-439f-9060-7f0e0e699ef4",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-jimo-ed7c9576.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "寂寞",
+      "text_offset": 53,
+      "json_path": "$.lesson.sections.6.items.0.passages.0.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_09e8106f3856376d0b732578",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.1"
+    },
+    "to": {
+      "id": "c950b6bd-f841-4a02-bc7a-0c59513f2e11",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-suoyi-b93091e9.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "所以",
+      "text_offset": 6,
+      "json_path": "$.lesson.sections.6.items.0.passages.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_51357848282479cb47e350f6",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.1"
+    },
+    "to": {
+      "id": "10994bef-ee59-4126-a40b-1b34f2ce0ac2",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-jiancha-8371c943.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "检查",
+      "text_offset": 29,
+      "json_path": "$.lesson.sections.6.items.0.passages.1.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3b31469ffdc0ea391715561b",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.2"
+    },
+    "to": {
+      "id": "59708ae5-928a-4764-92a5-a8154c655278",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-fashao-7a17c102.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "发烧",
+      "text_offset": 66,
+      "json_path": "$.lesson.sections.6.items.0.passages.2.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  },
+  {
+    "id": "rel_092f6dda07f43f55c98f1877",
+    "type": "content_to_vocabulary_item",
+    "from": {
+      "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+      "kind": "unknown",
+      "path": "$.lesson.sections.6.items.0.passages.3"
+    },
+    "to": {
+      "id": "59708ae5-928a-4764-92a5-a8154c655278",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-fashao-7a17c102.json"
+    },
+    "evidence": {
+      "source": "lexical_scan",
+      "matched_text": "发烧",
+      "text_offset": 5,
+      "json_path": "$.lesson.sections.6.items.0.passages.3.zh"
+    },
+    "confidence": "high",
+    "check_needed": false
+  }
+]

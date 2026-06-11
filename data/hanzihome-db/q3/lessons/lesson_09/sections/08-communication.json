@@ -1,0 +1,178 @@
+{
+  "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
+  "type": "communication",
+  "order": 8,
+  "title": "交际会话",
+  "title_vi": "Hội thoại giao tiếp",
+  "source_origin": "textbook_verified_pdf",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "communication_001",
+      "type": "communication_dialogue",
+      "variant": "commenting_1",
+      "order": 1,
+      "title": "评论（一）",
+      "title_vi": "Bình luận (1)",
+      "source_origin": "textbook_verified_pdf",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "communication_001_line_001",
+          "order": 1,
+          "speaker": "A",
+          "zh": "你觉得世界上什么事情最让人难过？",
+          "pinyin": "nǐ juéde shìjiè shàng shénme shìqing zuì ràng rén nánguò？",
+          "vi": "Bạn thấy việc gì trên đời khiến người ta buồn nhất?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_002",
+          "order": 2,
+          "speaker": "B",
+          "zh": "我想这可没有统一的标准。",
+          "pinyin": "wǒ xiǎng zhè kě méi yǒu tǒngyī de biāozhǔn。",
+          "vi": "Tôi nghĩ chuyện này không có tiêu chuẩn thống nhất đâu.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_003",
+          "order": 3,
+          "speaker": "A",
+          "zh": "你的意思是说难过是一种个人行为？",
+          "pinyin": "nǐ de yìsi shì shuō nánguò shì yì zhǒng gèrén xíngwéi？",
+          "vi": "Ý bạn là nỗi buồn là một chuyện thuộc về cá nhân à?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_004",
+          "order": 4,
+          "speaker": "B",
+          "zh": "可以这么说吧。比如说，有一件事情你没做到，你觉得难过，可是有的人却觉得没关系，这次不行，下次再努力。",
+          "pinyin": "kě yǐ zhè me shuō ba。bǐ rú shuō，yǒu yī jiàn shìqing nǐ méi zuò dào，nǐ juéde nánguò，kěshì yǒu de rén què juéde méi guān xì，zhè cì bù xíng，xià cì zài nǔlì。",
+          "vi": "Có thể nói như vậy. Ví dụ, có một việc bạn chưa làm được, bạn thấy buồn, nhưng có người lại thấy không sao; lần này không được thì lần sau cố gắng tiếp.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_005",
+          "order": 5,
+          "speaker": "A",
+          "zh": "那么，对于你来说，什么是最让你难过的事情？",
+          "pinyin": "nà me，duì yú nǐ lái shuō，shénme shì zuì ràng nǐ nánguò de shìqing？",
+          "vi": "Vậy đối với bạn, chuyện gì khiến bạn buồn nhất?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_006",
+          "order": 6,
+          "speaker": "B",
+          "zh": "可能……可能……我觉得失恋最让人难过吧。",
+          "pinyin": "kě néng…… kě néng…… wǒ juéde shīliàn zuì ràng rén nánguò ba。",
+          "vi": "Có lẽ... có lẽ... tôi thấy thất tình là chuyện khiến người ta buồn nhất.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_007",
+          "order": 7,
+          "speaker": "A",
+          "zh": "你失恋过吗？",
+          "pinyin": "nǐ shīliàn guò ma？",
+          "vi": "Bạn từng thất tình chưa?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_008",
+          "order": 8,
+          "speaker": "B",
+          "zh": "没有，我连恋爱还没有谈过呢。",
+          "pinyin": "méi yǒu，wǒ lián liàn’ài hái méi yǒu tán guò ne。",
+          "vi": "Chưa, tôi còn chưa từng yêu nữa.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_009",
+          "order": 9,
+          "speaker": "A",
+          "zh": "那你不觉得难过？",
+          "pinyin": "nà nǐ bù juéde nánguò？",
+          "vi": "Vậy bạn không thấy buồn à?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_010",
+          "order": 10,
+          "speaker": "B",
+          "zh": "怎么说呢？要是谈了恋爱，后来又失恋了，那才难过呢。你觉得什么最难过？",
+          "pinyin": "zěn me shuō ne？yào shì tán le liàn’ài，hòulái yòu shīliàn le，nà cái nánguò ne。nǐ juéde shénme zuì nánguò？",
+          "vi": "Nói sao nhỉ? Nếu đã yêu rồi sau đó lại thất tình thì lúc đó mới buồn chứ. Bạn thấy điều gì buồn nhất?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_011",
+          "order": 11,
+          "speaker": "A",
+          "zh": "对于我来说，我想得到的却得不到，这最让我难过。",
+          "pinyin": "duìyú wǒ lái shuō，wǒ xiǎng dédào de què dé bu dào，zhè zuì ràng wǒ nánguò。",
+          "vi": "Đối với tôi, điều mình muốn có mà lại không có được, đó là điều khiến tôi buồn nhất.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_012",
+          "order": 12,
+          "speaker": "B",
+          "zh": "我想你一定常常难过！",
+          "pinyin": "wǒ xiǎng nǐ yí dìng cháng cháng nánguò！",
+          "vi": "Tôi nghĩ chắc bạn thường xuyên buồn lắm!",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_013",
+          "order": 13,
+          "speaker": "A",
+          "zh": "为什么？",
+          "pinyin": "wèi shénme？",
+          "vi": "Tại sao?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        },
+        {
+          "id": "communication_001_line_014",
+          "order": 14,
+          "speaker": "B",
+          "zh": "你想得到的东西太多，你得不到的东西更多。",
+          "pinyin": "nǐ xiǎng dédào de dōngxi tài duō，nǐ dé bu dào de dōngxi gèng duō。",
+          "vi": "Thứ bạn muốn có quá nhiều, còn thứ bạn không có được thì càng nhiều hơn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": []
+        }
+      ]
+    }
+  ],
+  "empty_reason_vi": ""
+}

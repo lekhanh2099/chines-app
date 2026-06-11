@@ -1,0 +1,163 @@
+{
+  "id": "section_reading",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Đọc hiểu / Điền khuyết tổng hợp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "exercise_009",
+      "type": "reading_cloze",
+      "variant": "comprehensive_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền khuyết tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ thích hợp vào bài đọc."
+      },
+      "difficulty": "hard",
+      "skill_focus": [
+        "reading",
+        "cloze"
+      ],
+      "supplementary_words": [
+        {
+          "id": "supp_001",
+          "hanzi": "化疗",
+          "pinyin": "huàliáo",
+          "meaning_vi": "hóa trị",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "supp_002",
+          "hanzi": "新奇",
+          "pinyin": "xīnqí",
+          "meaning_vi": "mới lạ",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "passage": {
+        "id": "reading_001_passage",
+        "title": "帽子",
+        "zh": "小丽是个可爱的小女孩儿，可是，当她念三年级的时候，得了一种病，必须住院接受三个月的化疗。出院后，她显得更瘦小了，也不像以前那样活泼了。更可怕的是，因为化疗，她一头美丽的头发掉光了。虽然她聪明好学，完全能补上落下的功课，然而，每天光着头到学校去上课，对于她这样一个七八岁的小女孩儿来说，是一件非常痛苦的事，所以她不得不戴上帽子。老师知道小丽的痛苦。就在她回学校上课前，对班上的孩子们说：“从下星期一开始，我们要学习认识各种各样的帽子。所有的同学都要戴上自己最喜欢的帽子到学校来，越新奇越好。”星期一到了，离开学校三个月的小丽第一次回到了她熟悉的教室。但是，她站在教室门口迟迟不敢进去，担心同学会笑她，因为她戴了一顶帽子。可是，让她感到意外的是，班上的每一个同学都戴着帽子，结果她的帽子显得太普通了，几乎没有引起任何人的注意。一下子，她觉得自己跟别人没有什么不一样，没有什么东西可以影响她与同学们自由自在地交往了。她轻松地笑了，笑得那样甜。日子就这样一天天过去了。现在，小丽渐渐忘了自己还戴着一顶帽子，同学们好像也忘了。",
+        "vi": "Bài đọc về cô bé Tiểu Lệ phải hóa trị, rụng tóc và được cả lớp âm thầm giúp để em không cảm thấy khác biệt.",
+        "source_origin": "textbook_pdf_checked",
+        "check_needed": false
+      },
+      "questions": [
+        {
+          "id": "exercise_009_q_001",
+          "order": 1,
+          "answer": "掉",
+          "acceptable_answers": [
+            "掉"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "exercise_009_q_002",
+          "order": 2,
+          "answer": "对于",
+          "acceptable_answers": [
+            "对于"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "exercise_009_q_003",
+          "order": 3,
+          "answer": "从",
+          "acceptable_answers": [
+            "从"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "exercise_009_q_004",
+          "order": 4,
+          "answer": "上",
+          "acceptable_answers": [
+            "上"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "exercise_009_q_005",
+          "order": 5,
+          "answer": "着",
+          "acceptable_answers": [
+            "着"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "exercise_009_q_006",
+          "order": 6,
+          "answer": "跟",
+          "acceptable_answers": [
+            "跟"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "exercise_009_q_007",
+          "order": 7,
+          "answer": "渐渐",
+          "acceptable_answers": [
+            "渐渐"
+          ],
+          "explanation_vi": "Đáp án điền khuyết theo văn cảnh bài đọc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "textbook_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

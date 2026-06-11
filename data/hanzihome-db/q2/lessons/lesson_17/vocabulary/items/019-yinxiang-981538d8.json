@@ -1,0 +1,352 @@
+{
+  "id": "00700602-f335-4f99-a1c6-f25df120c005",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "音响",
+  "pinyin": "yīnxiǎng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Âm hưởng",
+    "meaning_vi": "âm thanh; dàn âm thanh, thiết bị âm thanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "âm thanh; dàn âm thanh, thiết bị âm thanh"
+    ],
+    "short_definition_vi": "âm thanh; dàn âm thanh, thiết bị âm thanh",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "sự kiện, hội trường, biểu diễn, thiết bị.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "音",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "音",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm, tiếng, âm nhạc",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "响",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "向",
+            "hanviet": "hướng",
+            "meaning_vi": "hướng; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vang, kêu, phát tiếng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "音 là âm thanh. 响 là vang, phát ra tiếng. → 音响 = hệ thống/thiết bị tạo và khuếch đại âm thanh. Cảnh báo: 音响 không phải lúc nào cũng là “âm hưởng” trừu tượng như tiếng Việt. Trong đời sống, nó rất hay là “loa/dàn âm thanh”.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "音响",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dàn âm thanh/thiết bị âm thanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "声音",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "âm thanh, tiếng nói, giọng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喇叭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "loa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麦克风 / 话筒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "micro.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 调音响 là chỉnh dàn âm thanh/loa; 声音太大 là tiếng quá to."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "69d3ef04-8341-4aab-9d97-9699bad49896",
+      "order": 1,
+      "zh": "调音响",
+      "pinyin": "",
+      "vi": "chỉnh âm thanh/dàn âm thanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71c49218-eda1-4d52-b921-3227814efa30",
+      "order": 2,
+      "zh": "音响太大",
+      "pinyin": "",
+      "vi": "âm thanh quá to",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "018601ee-bfdc-468d-bb3b-044156924801",
+      "order": 3,
+      "zh": "音响效果",
+      "pinyin": "",
+      "vi": "hiệu ứng/chất lượng âm thanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e9572827-9fef-4dfc-9027-b884315a4f09",
+      "order": 4,
+      "zh": "打开音响",
+      "pinyin": "",
+      "vi": "bật dàn âm thanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26f9b088-75b2-4652-95d1-bd6be8b1a20b",
+      "order": 5,
+      "zh": "把音响调小一点儿",
+      "pinyin": "",
+      "vi": "chỉnh âm thanh nhỏ xuống một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ba041cee-01b7-49b8-8228-c73dd490df59",
+      "order": 1,
+      "zh": "管理员告诉我们，别把音响调得太大。",
+      "pinyin": "Guǎnlǐyuán gàosu wǒmen, bié bǎ yīnxiǎng tiáo de tài dà.",
+      "vi": "Người quản lý nói với chúng tôi, đừng chỉnh âm thanh quá lớn.",
+      "analysis_vi": "把音响调得太大 là câu 把 với kết quả mức độ sau khi chỉnh.",
+      "highlight": [
+        "音响"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "00700602-f335-4f99-a1c6-f25df120c005"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "17883c06-1ebd-4230-9321-7ccb48e72f09",
+      "order": 2,
+      "zh": "会场后边放着一套音响，旁边还有两个麦克风。",
+      "pinyin": "Huìchǎng hòubian fàngzhe yí tào yīnxiǎng, pángbiān hái yǒu liǎng ge màikèfēng.",
+      "vi": "Phía sau hội trường đặt một bộ dàn âm thanh, bên cạnh còn có hai cái micro.",
+      "analysis_vi": "会场后边放着…… là câu tồn hiện; 一套音响 dùng 套 vì là một bộ thiết bị.",
+      "highlight": [
+        "音响"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "00700602-f335-4f99-a1c6-f25df120c005"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9a233746-252e-4d2b-b03c-2e89bf9fbdeb",
+      "order": 3,
+      "zh": "联欢会开始以前，班长先检查音响有没有问题。",
+      "pinyin": "Liánhuānhuì kāishǐ yǐqián, bānzhǎng xiān jiǎnchá yīnxiǎng yǒu méiyǒu wèntí.",
+      "vi": "Trước khi buổi liên hoan bắt đầu, lớp trưởng kiểm tra dàn âm thanh có vấn đề không.",
+      "analysis_vi": "检查……有没有问题 là mẫu thực tế khi chuẩn bị sự kiện.",
+      "highlight": [
+        "音响"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "00700602-f335-4f99-a1c6-f25df120c005"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 音响",
+    "content_vi": "Trong các buổi 联欢会 ở trường Trung Quốc, thiết bị âm thanh rất quan trọng vì thường có hát, đọc thơ, trò chơi, phát biểu. Một lỗi rất đời là 音响太大 / 麦克风有杂音 – âm thanh quá to / micro có tạp âm.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d04f74b6-9223-40a2-9443-12ae19338b3b",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 音响 với 声音. 音响 là thiết bị/hệ thống âm thanh: 把音响调小一点儿。 Bǎ yīnxiǎng tiáo xiǎo yìdiǎnr. Chỉnh âm thanh nhỏ xuống một chút. 声音 là tiếng/âm thanh: 你的声音太小了。 Nǐ de shēngyīn tài xiǎo le. Giọng bạn nhỏ quá.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "音响",
+    "back": "âm thanh; dàn âm thanh, thiết bị âm thanh",
+    "hint": "yīnxiǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "00700602-f335-4f99-a1c6-f25df120c005",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "id": "378dde6a-9fb1-456f-92b7-700d4b27215e",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "无奈",
+  "pinyin": "wúnài",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ trạng thái",
+    "raw_cn": "形容词 / 名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "vô nại",
+    "meaning_vi": "bất lực, không còn cách nào khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bất lực",
+      "không còn cách nào khác"
+    ],
+    "short_definition_vi": "cảm giác đành chịu vì không có cách xử lý",
+    "textbook_focus_vi": "Dùng cho tâm trạng khi không thể giải thích hoặc giữ lại cảnh tượng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "无",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không có",
+        "modern_logic_vi": "không có",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "奈",
+        "lishu_vi": "",
+        "structure_note_vi": "大 + 示",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "示",
+            "hanviet": "",
+            "meaning_vi": "chỉ thị, lễ nghi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "示 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "chỉ thị, lễ nghi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "示 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "làm sao, xử trí",
+        "modern_logic_vi": "làm sao, xử trí",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "无奈 được học trong bài theo nghĩa: cảm giác đành chịu vì không có cách xử lý.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 感到无奈.",
+    "warning_vi": "Không dùng 无奈 trực tiếp như động từ: nói 对这个问题感到无奈.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "没办法",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "只好",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đành phải làm gì đó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 无奈 trực tiếp như động từ: nói 对这个问题感到无奈."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dd522ed2-1076-484a-a511-869a7f9a0a1c",
+      "order": 1,
+      "zh": "感到无奈",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2471fa36-1dae-4296-b1f1-65b43a42e320",
+      "order": 2,
+      "zh": "很无奈",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "79e8c6ee-b160-41c8-9fd3-5c4165af74f3",
+      "order": 3,
+      "zh": "无奈地笑了笑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dec3d878-fa1f-4578-a06e-6335b4a192b3",
+      "order": 4,
+      "zh": "无奈地说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ddf6f81-e083-416f-ac9d-b54348fb125a",
+      "order": 5,
+      "zh": "出于无奈",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bdac1e11-0bf2-4f50-ac33-f6e8909daacc",
+      "order": 6,
+      "zh": "无奈之下",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8f3914cc-bdc8-424b-b82f-199687b83ba9",
+      "order": 1,
+      "zh": "飞碟一下子不见了，大家都感到很无奈。",
+      "pinyin": "",
+      "vi": "Đĩa bay bỗng biến mất, mọi người đều cảm thấy bất lực.",
+      "analysis_vi": "一下子 nói đột ngột.",
+      "highlight": [
+        "无奈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "378dde6a-9fb1-456f-92b7-700d4b27215e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6f44861a-7d65-486c-943e-6591da0bf34a",
+      "order": 2,
+      "zh": "他发现手机没电了，就无奈地把手机放回口袋里。",
+      "pinyin": "",
+      "vi": "Anh ấy thấy điện thoại hết pin thì bất lực bỏ điện thoại lại vào túi.",
+      "analysis_vi": "把手机放回口袋里 là 把字句.",
+      "highlight": [
+        "无奈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "378dde6a-9fb1-456f-92b7-700d4b27215e"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khẩu ngữ tương đương gần là 没办法.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9077610e-baae-4bfa-bb28-168b1635dc00",
+      "order": 1,
+      "rule_vi": "Không dùng 无奈 trực tiếp như động từ: nói 对这个问题感到无奈.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 无奈 trực tiếp như động từ: nói 对这个问题感到无奈.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "无奈",
+    "back": "bất lực, không còn cách nào khác",
+    "hint": "wúnài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "378dde6a-9fb1-456f-92b7-700d4b27215e",
+    "source_lesson_vocab_id": null
+  }
+}

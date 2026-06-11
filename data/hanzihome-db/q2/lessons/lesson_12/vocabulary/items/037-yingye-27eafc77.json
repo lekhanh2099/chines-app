@@ -1,0 +1,342 @@
+{
+  "id": "93079086-932a-4f24-888a-c2b226dd60d9",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "营业",
+  "pinyin": "yíngyè",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "doanh nghiệp / doanh nghiệp hoạt động",
+    "meaning_vi": "kinh doanh, mở cửa buôn bán",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kinh doanh, mở cửa buôn bán"
+    ],
+    "short_definition_vi": "kinh doanh, mở cửa buôn bán",
+    "textbook_focus_vi": "kinh doanh, mở cửa buôn bán",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "营",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "thành phần trên",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kinh doanh, quản lý, doanh trại",
+        "modern_logic_vi": "营 học theo cụm 营业, không tách sâu phần giản thể.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "业",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghề, nghiệp, ngành, việc kinh doanh",
+        "modern_logic_vi": "业 là nghề/ngành/sự nghiệp; không nên tách sâu theo giản thể.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "营业 = tiến hành hoạt động kinh doanh/buôn bán.",
+    "memory_tip_vi": "营业 = tiến hành hoạt động kinh doanh/buôn bán.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "开门",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mở cửa, nghĩa rộng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khai trương/bắt đầu kinh doanh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "做生意",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "làm ăn/buôn bán",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "停业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngừng kinh doanh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "停业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngừng kinh doanh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "正常营业",
+        "right": "暂停营业",
+        "meaning_vi": "",
+        "note_vi": "mở bình thường ↔ tạm ngừng kinh doanh",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c5a6378f-3a41-4ea7-8cc5-1d097afffc8b",
+      "order": 1,
+      "zh": "暂停营业",
+      "pinyin": "",
+      "vi": "tạm ngừng kinh doanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d75f47b4-e3c8-4586-88f9-3775d6cf043e",
+      "order": 2,
+      "zh": "正常营业",
+      "pinyin": "",
+      "vi": "kinh doanh bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "66bee200-9297-4ad9-a8b7-c54a2b2bff26",
+      "order": 3,
+      "zh": "营业时间",
+      "pinyin": "",
+      "vi": "giờ mở cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5dfe22f-0f88-4464-a631-dde800d9ef8c",
+      "order": 4,
+      "zh": "营业员",
+      "pinyin": "",
+      "vi": "nhân viên bán hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91a2739a-14f4-40f9-b323-c515e33cb852",
+      "order": 5,
+      "zh": "停止营业",
+      "pinyin": "",
+      "vi": "ngừng kinh doanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27be486a-f35f-4d22-ac69-8d227460404b",
+      "order": 6,
+      "zh": "照常营业",
+      "pinyin": "",
+      "vi": "vẫn kinh doanh như thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1cc8262f-4685-4966-83b8-de597d7145cd",
+      "order": 1,
+      "zh": "这家店晚上十点停止营业。",
+      "pinyin": "",
+      "vi": "Cửa hàng này 10 giờ tối ngừng kinh doanh/đóng cửa.",
+      "analysis_vi": "停止营业 là ngừng hoạt động kinh doanh.",
+      "highlight": [
+        "营业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93079086-932a-4f24-888a-c2b226dd60d9"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9d2f7170-600c-45d2-ab11-cb672970e48e",
+      "order": 2,
+      "zh": "这家店的营业时间你知道吗？",
+      "pinyin": "",
+      "vi": "Giờ mở cửa của cửa hàng này bạn biết không?",
+      "analysis_vi": "营业时间 là chủ đề lớn.",
+      "highlight": [
+        "营业"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93079086-932a-4f24-888a-c2b226dd60d9"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "24小时营业 nghĩa là mở cửa 24 giờ.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0965bda8-dcef-4778-9319-533b4bb82b41",
+      "order": 1,
+      "rule_vi": "Không nhầm 营业 với 企业.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这家公司是大型企业。",
+          "pinyin": "",
+          "vi": "Công ty này là doanh nghiệp lớn.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这家商店正在营业。",
+          "pinyin": "",
+          "vi": "Cửa hàng này đang mở cửa kinh doanh.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "营业",
+    "back": "kinh doanh, mở cửa buôn bán",
+    "hint": "yíngyè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "93079086-932a-4f24-888a-c2b226dd60d9",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "id": "7e818607-1fdb-4e60-ba93-9ffcf7cbe218",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "增加",
+  "pinyin": "zēngjiā",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "comparison_degree"
+  ],
+  "meaning": {
+    "hanviet": "Tăng gia",
+    "meaning_vi": "tăng, tăng thêm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tăng",
+      "tăng thêm"
+    ],
+    "short_definition_vi": "tăng, tăng thêm",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "comparison degree",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "增",
+        "lishu_vi": "",
+        "structure_note_vi": "土 liên quan đất; 曾 là thành phần phải.",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "曾",
+            "hanviet": "tăng/tằng",
+            "meaning_vi": "đã từng",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tăng, thêm",
+        "modern_logic_vi": "土 liên quan đất; 曾 là thành phần phải.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "加",
+        "lishu_vi": "",
+        "structure_note_vi": "力 + 口 là thành phần nhìn thấy.",
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh/lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thêm, cộng thêm",
+        "modern_logic_vi": "力 + 口 là thành phần nhìn thấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "增 là tăng, 加 là thêm; 增加 là tăng thêm trên nền sẵn có.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "增长",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tăng trưởng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "提高",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nâng cao chất lượng/trình độ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "减少",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giảm bớt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "减少",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giảm bớt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "973a8741-fe93-4061-9184-deb1a05de88b",
+      "order": 1,
+      "zh": "人口增加",
+      "pinyin": "",
+      "vi": "dân số tăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f541a576-0879-4267-ac73-43208969847a",
+      "order": 2,
+      "zh": "增加收入",
+      "pinyin": "",
+      "vi": "tăng thu nhập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a4020779-c899-4984-bfb9-cb21af4fff6f",
+      "order": 3,
+      "zh": "增加机会",
+      "pinyin": "",
+      "vi": "tăng cơ hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd6795e4-76d2-456e-a432-8adcf547f1b1",
+      "order": 4,
+      "zh": "增加内容",
+      "pinyin": "",
+      "vi": "thêm nội dung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "96e4af11-f75e-4dd9-b401-704a17882939",
+      "order": 5,
+      "zh": "不断增加",
+      "pinyin": "",
+      "vi": "không ngừng tăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "acecfa48-bbd2-44a0-ab66-f23e75c65aac",
+      "order": 1,
+      "zh": "这个城市的人口增加了。",
+      "pinyin": "Zhège chéngshì de rénkǒu zēngjiā le.",
+      "vi": "Dân số của thành phố này đã tăng lên.",
+      "analysis_vi": "增加了 báo kết quả thay đổi.",
+      "highlight": [
+        "增加"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7e818607-1fdb-4e60-ba93-9ffcf7cbe218"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a08fddbc-7c6a-40d1-8881-653d312be5a4",
+      "order": 2,
+      "zh": "今年来这儿旅游的人比去年增加了不少。",
+      "pinyin": "Jīnnián lái zhèr lǚyóu de rén bǐ qùnián zēngjiā le bù shǎo.",
+      "vi": "Số người đến đây du lịch năm nay tăng khá nhiều so với năm ngoái.",
+      "analysis_vi": "比去年增加了不少 là cụm so sánh tự nhiên.",
+      "highlight": [
+        "增加"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7e818607-1fdb-4e60-ba93-9ffcf7cbe218"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b9318980-bc16-4e1f-8cb1-ce6291d1442a",
+      "order": 1,
+      "rule_vi": "Không dùng 增加 cho mọi loại 'tăng'; trình độ thường dùng 提高.",
+      "natural_examples": [
+        {
+          "zh": "我的汉语水平提高了。",
+          "pinyin": "Wǒ de Hànyǔ shuǐpíng tígāo le.",
+          "vi": "Trình độ tiếng Trung của tôi đã nâng cao.",
+          "note_vi": "提高 tự nhiên hơn với trình độ.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我的汉语水平提高了。",
+          "pinyin": "Wǒ de Hànyǔ shuǐpíng tígāo le.",
+          "vi": "Trình độ tiếng Trung của tôi đã nâng cao.",
+          "note_vi": "提高 tự nhiên hơn với trình độ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "增加",
+    "back": "tăng, tăng thêm",
+    "hint": "zēngjiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "comparison_degree"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7e818607-1fdb-4e60-ba93-9ffcf7cbe218",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "id": "d0b75254-eefa-4207-803b-16d3d6efe01c",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "歧视",
+  "pinyin": "qíshì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "kỳ thị",
+    "meaning_vi": "kỳ thị, phân biệt đối xử",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỳ thị",
+      "phân biệt đối xử"
+    ],
+    "short_definition_vi": "kỳ thị, phân biệt đối xử",
+    "textbook_focus_vi": "歧视 là nhìn/đối xử lệch vì đặc điểm của một người/nhóm.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "歧",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "止",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chỉ",
+          "radical_name_zh": "",
+          "hanviet": "chỉ",
+          "meaning_vi": "dừng, bước chân",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "止 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng, bước chân",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "止",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chỉ",
+              "radical_name_zh": "",
+              "hanviet": "chỉ",
+              "meaning_vi": "dừng, bước chân",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "止 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "止 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lệch, phân nhánh",
+        "modern_logic_vi": "Trong từ “歧视”, chữ “歧” góp phần vào trường nghĩa: lệch, phân nhánh",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "视",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "示",
+          "radical_variant": "礻",
+          "radical_name_vi": "bộ Thị giản thể",
+          "radical_name_zh": "",
+          "hanviet": "thị",
+          "meaning_vi": "thần linh, lễ nghi",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "礻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "thị",
+            "meaning_vi": "thần linh, lễ nghi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị giản thể",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "thần linh, lễ nghi",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "礻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "礻 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy, nhìn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "见 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhìn, xem",
+        "modern_logic_vi": "Trong từ “歧视”, chữ “视” góp phần vào trường nghĩa: nhìn, xem",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "歧视 là nhìn/đối xử lệch vì đặc điểm của một người/nhóm.",
+    "memory_tip_vi": "歧视 là nhìn/đối xử lệch vì đặc điểm của một người/nhóm.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "偏见",
+        "pinyin": "",
+        "meaning_vi": "định kiến trong suy nghĩ",
+        "difference_vi": "định kiến trong suy nghĩ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "看不起",
+        "pinyin": "",
+        "meaning_vi": "coi thường, khẩu ngữ hơn",
+        "difference_vi": "coi thường, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "21f044bd-34a2-4e35-9461-df1f58eb2c2b",
+      "order": 1,
+      "zh": "受到歧视",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "79c4c50f-9223-4244-86dc-0908e239eeab",
+      "order": 2,
+      "zh": "就业歧视",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e57323a-5792-446b-afc3-93f223a83035",
+      "order": 3,
+      "zh": "歧视残疾人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf1f482e-12a8-4213-88d4-19a0f18828a8",
+      "order": 4,
+      "zh": "消除歧视",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9ef59473-51c5-403c-816d-a4c4c13351c0",
+      "order": 1,
+      "zh": "他在求职时受到了歧视。",
+      "pinyin": "",
+      "vi": "Anh ấy bị kỳ thị khi tìm việc.",
+      "analysis_vi": "受到 + danh từ trừu tượng.",
+      "highlight": [
+        "歧视"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d0b75254-eefa-4207-803b-16d3d6efe01c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5fc6a5af-e1a0-4d72-aa46-20400d4aa228",
+      "order": 2,
+      "zh": "我们不应该因为身体情况而歧视别人。",
+      "pinyin": "",
+      "vi": "Chúng ta không nên kỳ thị người khác vì tình trạng cơ thể.",
+      "analysis_vi": "因为……而…… là cách nói trang trọng.",
+      "highlight": [
+        "歧视"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d0b75254-eefa-4207-803b-16d3d6efe01c"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "歧视 là nhìn/đối xử lệch vì đặc điểm của một người/nhóm.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "93aacc43-5a3b-4abe-aa0e-5e72e3ecbe01",
+      "order": 1,
+      "rule_vi": "歧视 nặng hơn 讨厌; nó liên quan đối xử không bình đẳng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "歧视 nặng hơn 讨厌; nó liên quan đối xử không bình đẳng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "歧视",
+    "back": "kỳ thị, phân biệt đối xử",
+    "hint": "qíshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d0b75254-eefa-4207-803b-16d3d6efe01c",
+    "source_lesson_vocab_id": null
+  }
+}

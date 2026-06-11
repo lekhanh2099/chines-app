@@ -1,0 +1,262 @@
+{
+  "id": "ade45b51-9665-48ac-ad1e-8ff670d274ae",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "副",
+  "pinyin": "fù",
+  "pos": {
+    "raw_vi": "Lượng từ / danh từ",
+    "raw_cn": "量 / 名",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Phó",
+    "meaning_vi": "lượng từ cho vật thành bộ/cặp; dáng vẻ, biểu cảm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lượng từ cho vật thành bộ/cặp; dáng vẻ, biểu cảm"
+    ],
+    "short_definition_vi": "lượng từ cho vật thành bộ/cặp; dáng vẻ, biểu cảm",
+    "textbook_focus_vi": "lượng từ cho vật thành bộ/cặp; dáng vẻ, biểu cảm",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "副",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao đứng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "畐",
+            "hanviet": "",
+            "meaning_vi": "phần trái",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phụ, phó; lượng từ cho bộ/cặp; dáng vẻ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Với nghĩa lượng từ, không suy từ bộ thủ; học theo cụm 一副眼镜、一副手套、一副样子.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "双",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lượng từ cho đôi đối xứng tự nhiên: 一双鞋",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "对",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cặp ghép đôi: 一对夫妻",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "幅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tranh/ảnh/bản đồ: 一幅画",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "07a97243-8dfb-45bd-b705-567364e341bf",
+      "order": 1,
+      "zh": "一副眼镜",
+      "pinyin": "",
+      "vi": "một cặp kính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "431d5cc7-a416-405b-93dc-99ef28f11ea5",
+      "order": 2,
+      "zh": "一副手套",
+      "pinyin": "",
+      "vi": "một đôi găng tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2735e84-8110-400d-8e0a-353725dd9132",
+      "order": 3,
+      "zh": "一副笑脸",
+      "pinyin": "",
+      "vi": "một gương mặt tươi cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2f9b2d5-5ff9-4be6-8802-58da84f968d6",
+      "order": 4,
+      "zh": "一副样子",
+      "pinyin": "",
+      "vi": "một vẻ/dáng vẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1893f722-60b5-40a6-9804-ba90079e024b",
+      "order": 5,
+      "zh": "一副很高兴的样子",
+      "pinyin": "",
+      "vi": "vẻ rất vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "49f6a9c6-9169-4b65-b28d-4756e6d24cf9",
+      "order": 1,
+      "zh": "他戴着一副眼镜。",
+      "pinyin": "Tā dàizhe yí fù yǎnjìng.",
+      "vi": "Anh ấy đang đeo một cặp kính.",
+      "analysis_vi": "一副眼镜 là collocation chuẩn.",
+      "highlight": [
+        "副"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ade45b51-9665-48ac-ad1e-8ff670d274ae"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8a08a9e7-86fb-4384-9c36-5a0dd20ce84b",
+      "order": 2,
+      "zh": "新娘听了父母的话，露出一副很激动的样子。",
+      "pinyin": "Xīnniáng tīng le fùmǔ de huà, lùchū yí fù hěn jīdòng de yàngzi.",
+      "vi": "Cô dâu nghe lời bố mẹ thì lộ ra vẻ rất xúc động.",
+      "analysis_vi": "一副……样子 là cách nói biểu cảm/dáng vẻ.",
+      "highlight": [
+        "副",
+        "样子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ade45b51-9665-48ac-ad1e-8ff670d274ae"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "cb825efa-3d91-4b2a-9126-ee247a358aad",
+      "order": 1,
+      "rule_vi": "Không dùng 双 cho 眼镜 trong chuẩn thông thường; học chết cụm 一副眼镜.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "副",
+    "back": "lượng từ cho vật thành bộ/cặp; dáng vẻ, biểu cảm",
+    "hint": "fù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Người Việt hay nói “một cái kính”, nhưng tiếng Trung chuẩn là 一副眼镜.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ade45b51-9665-48ac-ad1e-8ff670d274ae",
+    "source_lesson_vocab_id": null
+  }
+}

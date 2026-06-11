@@ -1,0 +1,298 @@
+{
+  "id": "69e8ee1b-831c-430e-bf95-97ad6f6248df",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "愣",
+  "pinyin": "lèng",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ / Phó từ khẩu ngữ",
+    "raw_cn": "动词/形容词/副词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lăng",
+    "meaning_vi": "đờ ra, ngẩn ra; liều/hấp tấp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đờ ra",
+      "ngẩn ra",
+      "liều/hấp tấp"
+    ],
+    "short_definition_vi": "đờ ra, ngẩn ra",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "愣",
+        "lishu_vi": "lăng",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "愣 chỉ trạng thái đứng hình/ngẩn ra vì bất ngờ; cũng có nghĩa lỗ mãng.",
+    "memory_tip_vi": "愣了一下, 愣住了.",
+    "warning_vi": "Khác 冷 lěng = lạnh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "发呆",
+        "fādāi",
+        "thẫn thờ",
+        "có thể lâu hơn"
+      ],
+      [
+        "愣住",
+        "lèngzhù",
+        "sững lại",
+        "mạnh hơn 愣一下"
+      ],
+      [
+        "犹豫",
+        "yóuyù",
+        "do dự",
+        "không nhất thiết ngẩn ra"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "愣了一下, 愣住了."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ef6795d7-78c0-46e5-8294-a897342bcaef",
+      "order": 1,
+      "zh": "愣了一下",
+      "pinyin": "",
+      "vi": "ngẩn ra một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c328a914-ed57-4651-98b6-8fe01597c89f",
+      "order": 2,
+      "zh": "愣住了",
+      "pinyin": "",
+      "vi": "đứng hình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54c2f0a7-6873-4da6-9732-9e428e5ea2aa",
+      "order": 3,
+      "zh": "发愣",
+      "pinyin": "",
+      "vi": "đờ ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4616512-2f4a-4a91-84f0-50d29617d265",
+      "order": 4,
+      "zh": "愣在那儿",
+      "pinyin": "",
+      "vi": "đờ ra ở đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "efc4a820-391c-419b-afda-d06e82ea1acd",
+      "order": 5,
+      "zh": "愣是要去",
+      "pinyin": "",
+      "vi": "cứ nhất quyết muốn đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "27b32dfd-0fc4-4950-aed3-202b5ea5f596",
+      "order": 1,
+      "zh": "听到他说“回头再说”，我愣了一下。",
+      "pinyin": "Tīngdào tā shuō “huítóu zài shuō”, wǒ lèng le yíxià.",
+      "vi": "Nghe anh ấy nói để sau, tôi ngẩn ra một chút.",
+      "analysis_vi": "愣了一下 = phản ứng bất ngờ ngắn.",
+      "highlight": [
+        "愣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "69e8ee1b-831c-430e-bf95-97ad6f6248df"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dc51986e-1f67-47fe-80ba-6fd9e529fc7b",
+      "order": 2,
+      "zh": "那两个小伙子突然跟我打招呼，我一下子愣住了。",
+      "pinyin": "Nà liǎng ge xiǎohuǒzi tūrán gēn wǒ dǎ zhāohu, wǒ yíxiàzi lèngzhù le.",
+      "vi": "Hai chàng trai đột nhiên chào tôi, tôi lập tức đứng hình.",
+      "analysis_vi": "愣住了 mạnh hơn.",
+      "highlight": [
+        "愣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "69e8ee1b-831c-430e-bf95-97ad6f6248df"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "我当时都愣住了 rất đời thường để nói tôi đứng hình luôn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f6e52698-3aa6-494f-a146-59a985e1d6c5",
+      "order": 1,
+      "rule_vi": "我很愣。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我愣了一下。",
+          "pinyin": "Wǒ lèng le yíxià.",
+          "vi": "Tôi ngẩn ra một chút.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Khác 冷 lěng = lạnh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "愣",
+    "back": "đờ ra, ngẩn ra; liều/hấp tấp",
+    "hint": "lèng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "69e8ee1b-831c-430e-bf95-97ad6f6248df",
+    "source_lesson_vocab_id": null
+  }
+}

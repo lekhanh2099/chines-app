@@ -1,0 +1,393 @@
+{
+  "id": "ace1f510-f05f-486f-8daf-981439a07bfe",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "通知",
+  "pinyin": "tōngzhī",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "thông tri",
+    "meaning_vi": "thông báo; báo cho biết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thông báo; báo cho biết"
+    ],
+    "short_definition_vi": "thông báo; báo cho biết",
+    "textbook_focus_vi": "thông báo; báo cho biết",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "通",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "chuyển động/thông qua",
+            "position_vi": "ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, chuyển động",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "甬",
+            "hanviet": "dũng",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thông, truyền đạt, qua lại",
+        "modern_logic_vi": "通 là truyền/qua/thông suốt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "知",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "矢",
+            "hanviet": "thỉ",
+            "meaning_vi": "mũi tên/thành phần trái",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/lời nói",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, cửa/lỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết, hiểu",
+        "modern_logic_vi": "知 là biết/nhận biết.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "通知 = truyền thông tin để người khác biết; cũng là văn bản/lời nhắn thông báo.",
+    "memory_tip_vi": "通知 = truyền thông tin để người khác biết; cũng là văn bản/lời nhắn thông báo.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "告诉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói cho biết, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "通告",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thông cáo chính thức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "公告",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thông báo công khai",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "消息",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tin tức/thông tin",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "隐瞒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "che giấu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "通知",
+        "right": "消息",
+        "meaning_vi": "",
+        "note_vi": "thông báo có mục đích ↔ tin tức/thông tin",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "82a69196-53e0-44ff-ab3d-3fc790cd4ff8",
+      "order": 1,
+      "zh": "通知大家",
+      "pinyin": "",
+      "vi": "thông báo cho mọi người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56d6ce8b-4df0-4559-8b70-3d5eaf37b399",
+      "order": 2,
+      "zh": "发通知",
+      "pinyin": "",
+      "vi": "gửi/phát thông báo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1012c0c-5cfd-48a7-a501-c05d33c46937",
+      "order": 3,
+      "zh": "接到通知",
+      "pinyin": "",
+      "vi": "nhận thông báo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1cba7f9f-7c00-44f7-ad3e-44162122f913",
+      "order": 4,
+      "zh": "开会通知",
+      "pinyin": "",
+      "vi": "thông báo họp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9bd39a7-206d-47af-a484-231d2b08fe05",
+      "order": 5,
+      "zh": "贴通知",
+      "pinyin": "",
+      "vi": "dán thông báo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65c39542-2b99-4df4-905b-828cc3272edc",
+      "order": 6,
+      "zh": "另行通知",
+      "pinyin": "",
+      "vi": "thông báo sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "db4d8c8e-31a1-494e-a452-7d4c311520ea",
+      "order": 1,
+      "zh": "老师通知我们下午开会。",
+      "pinyin": "",
+      "vi": "Thầy/cô thông báo cho chúng tôi chiều họp.",
+      "analysis_vi": "通知 + người + việc.",
+      "highlight": [
+        "通知"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ace1f510-f05f-486f-8daf-981439a07bfe"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fa35dcdd-9f7b-4e95-a01f-2c8f2c74cc92",
+      "order": 2,
+      "zh": "下午开会的通知你看见了吗？",
+      "pinyin": "",
+      "vi": "Thông báo họp chiều bạn nhìn thấy chưa?",
+      "analysis_vi": "下午开会的通知 là chủ đề lớn.",
+      "highlight": [
+        "通知"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ace1f510-f05f-486f-8daf-981439a07bfe"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "温馨提示 là kiểu thông báo/nhắc nhở mềm thường thấy ở Trung Quốc.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "16ba6682-18c7-4846-a729-5d5c12aefccc",
+      "order": 1,
+      "rule_vi": "Không nhầm 通知 và 消息.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我接到通知了。",
+          "pinyin": "",
+          "vi": "Tôi nhận được thông báo rồi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我听到一个消息。",
+          "pinyin": "",
+          "vi": "Tôi nghe được một tin.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "通知",
+    "back": "thông báo; báo cho biết",
+    "hint": "tōngzhī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ace1f510-f05f-486f-8daf-981439a07bfe",
+    "source_lesson_vocab_id": null
+  }
+}

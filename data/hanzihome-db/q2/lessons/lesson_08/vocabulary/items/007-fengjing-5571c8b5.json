@@ -1,0 +1,368 @@
+{
+  "id": "e6704b39-a58a-4490-860c-513d0b73aeeb",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "风景",
+  "pinyin": "fēngjǐng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Phong cảnh",
+    "meaning_vi": "phong cảnh, cảnh sắc",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "phong cảnh, cảnh sắc",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "风",
+        "lishu_vi": "phong",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gió, phong thái",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      },
+      {
+        "hanzi": "景",
+        "lishu_vi": "cảnh",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía trên chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "日",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "京",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảnh, cảnh tượng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "日",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "风景 học theo logic nghĩa hiện đại và các cụm dùng trong bài; không ép khảo cổ chữ nếu không chắc.",
+    "memory_tip_vi": "",
+    "warning_vi": "Chỉ dùng component nhìn thấy chắc chắn; phần chưa chắc được để trống ở cấp chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "风景",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phong cảnh, cảnh vật đáng xem.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "景色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảnh sắc, gần nghĩa với 风景.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "风光",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phong quang, hơi văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "景点",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "điểm tham quan cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "风景区",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khu phong cảnh/khu thắng cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1e616101-7338-40b8-81bb-8a69c8c76e2d",
+      "order": 1,
+      "zh": "风景很美",
+      "pinyin": "",
+      "vi": "phong cảnh rất đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5593f1e1-74f5-4b71-be4d-39f77bd12f95",
+      "order": 2,
+      "zh": "美丽的风景",
+      "pinyin": "",
+      "vi": "phong cảnh đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0cecdc5d-6186-4b40-a280-cc240bfd046d",
+      "order": 3,
+      "zh": "看风景",
+      "pinyin": "",
+      "vi": "ngắm cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f1e29b9-aec0-4569-999a-d880873a70f2",
+      "order": 4,
+      "zh": "家乡的风景",
+      "pinyin": "",
+      "vi": "phong cảnh quê hương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aff73456-ec44-42ba-bd8d-0b58d94450b1",
+      "order": 5,
+      "zh": "自然风景",
+      "pinyin": "",
+      "vi": "phong cảnh tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7125563b-20c6-44a0-af4b-b67c458cb87c",
+      "order": 6,
+      "zh": "风景区",
+      "pinyin": "",
+      "vi": "khu thắng cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ffc1878-14a6-44fa-b0fe-096fb8d881ae",
+      "order": 7,
+      "zh": "一路上的风景",
+      "pinyin": "",
+      "vi": "phong cảnh dọc đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9aff44bf-b4d5-4da3-9cda-9e34f23d024e",
+      "order": 1,
+      "zh": "这里的风景很美。",
+      "pinyin": "Zhèlǐ de fēngjǐng hěn měi.",
+      "vi": "Phong cảnh ở đây rất đẹp.",
+      "analysis_vi": "这里的风景 là cụm định ngữ; 很美 làm vị ngữ miêu tả.",
+      "highlight": [
+        "风景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6704b39-a58a-4490-860c-513d0b73aeeb"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0e710136-2e62-4b91-bc4d-313ebdb1f9ab",
+      "order": 2,
+      "zh": "天慢慢地亮了，山上的风景也显得更美了。",
+      "pinyin": "Tiān mànmān de liàng le, shān shang de fēngjǐng yě xiǎnde gèng měi le.",
+      "vi": "Trời từ từ sáng lên, phong cảnh trên núi cũng trông càng đẹp hơn.",
+      "analysis_vi": "慢慢地 dùng 地 làm trạng ngữ; 显得更美了 nói ấn tượng thị giác.",
+      "highlight": [
+        "风景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6704b39-a58a-4490-860c-513d0b73aeeb"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "61f4dc23-4ed5-42fe-9df5-68b61453fc3a",
+      "order": 3,
+      "zh": "我们一到这个风景区，就看见很多人在湖边照相。",
+      "pinyin": "Wǒmen yí dào zhège fēngjǐngqū, jiù kànjiàn hěn duō rén zài hú biān zhàoxiàng.",
+      "vi": "Chúng tôi vừa đến khu phong cảnh này liền thấy rất nhiều người chụp ảnh bên hồ.",
+      "analysis_vi": "一……就…… diễn tả vừa đến đã thấy; 在湖边照相 là trạng ngữ địa điểm.",
+      "highlight": [
+        "风景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6704b39-a58a-4490-860c-513d0b73aeeb"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung du lịch, 风景区 thường chỉ khu tham quan đã được quy hoạch hoặc đặt tên, không chỉ là “cảnh đẹp” chung chung.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "788ceab3-397a-4376-94fe-8cf769f6d7bb",
+      "order": 1,
+      "rule_vi": "Không nói “这个地方很风景”. Nói tự nhiên: 这个地方风景很好 hoặc 这个地方很美.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "风景",
+    "back": "phong cảnh, cảnh sắc",
+    "hint": "fēngjǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e6704b39-a58a-4490-860c-513d0b73aeeb",
+    "source_lesson_vocab_id": null
+  }
+}

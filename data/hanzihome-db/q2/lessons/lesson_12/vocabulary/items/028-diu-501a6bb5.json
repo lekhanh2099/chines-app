@@ -1,0 +1,280 @@
+{
+  "id": "d187ea02-1314-4d4b-817d-29a3d022377e",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "丢",
+  "pinyin": "diū",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "actions_results"
+  ],
+  "meaning": {
+    "hanviet": "đâu",
+    "meaning_vi": "mất; vứt; bỏ quên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mất; vứt; bỏ quên"
+    ],
+    "short_definition_vi": "mất; vứt; bỏ quên",
+    "textbook_focus_vi": "mất; vứt; bỏ quên",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "丢",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất, làm mất, vứt",
+        "modern_logic_vi": "丢 là chữ giản thể khó tách sâu; học theo cụm 丢了/丢东西.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "丢 học theo cụm 丢了 = mất rồi, 丢东西 = làm mất đồ, 丢垃圾 = vứt rác.",
+    "memory_tip_vi": "丢 học theo cụm 丢了 = mất rồi, 丢东西 = làm mất đồ, 丢垃圾 = vứt rác.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "丢失",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thất lạc, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "遗失",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thất lạc trong thông báo/giấy tờ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "落",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "để quên ở đâu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "扔",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vứt/ném",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "丢了",
+        "right": "找到了",
+        "meaning_vi": "",
+        "note_vi": "mất rồi ↔ tìm thấy rồi",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c92b3cd6-e567-47d9-8b25-b79fd8d5aa23",
+      "order": 1,
+      "zh": "丢了护照",
+      "pinyin": "",
+      "vi": "làm mất hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4972f1a4-cb84-4638-aa98-14b862526245",
+      "order": 2,
+      "zh": "东西丢了",
+      "pinyin": "",
+      "vi": "đồ bị mất rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1465426-1262-4ae4-b267-fbe28644ad67",
+      "order": 3,
+      "zh": "丢钱包",
+      "pinyin": "",
+      "vi": "mất ví",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1716e56-56c7-4800-9837-99d1a8459f51",
+      "order": 4,
+      "zh": "丢三落四",
+      "pinyin": "",
+      "vi": "hay quên này quên kia",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3b2e6696-183e-4915-be58-3e45a13fbfea",
+      "order": 5,
+      "zh": "别乱丢垃圾",
+      "pinyin": "",
+      "vi": "đừng vứt rác bừa bãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28671e7c-4ffd-4c79-8b12-0c7eeda3733e",
+      "order": 6,
+      "zh": "丢脸",
+      "pinyin": "",
+      "vi": "mất mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "579ae09d-2dda-40e8-bbf6-ed6b4b748a13",
+      "order": 1,
+      "zh": "我的护照丢了。",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi mất rồi.",
+      "analysis_vi": "丢了 báo đồ không còn trong tay.",
+      "highlight": [
+        "丢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d187ea02-1314-4d4b-817d-29a3d022377e"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "44d9cf89-cc2a-4e43-81e3-b49b80973ead",
+      "order": 2,
+      "zh": "我的护照你是不是弄丢了？",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi có phải bạn làm mất rồi không?",
+      "analysis_vi": "弄丢 = làm cho mất.",
+      "highlight": [
+        "丢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d187ea02-1314-4d4b-817d-29a3d022377e"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "丢脸 = mất mặt, từ văn hóa xã hội rất hay dùng.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4d6c2d9c-1be5-4e67-8061-e9d2c075e10b",
+      "order": 1,
+      "rule_vi": "丢了 là mất chưa rõ ở đâu; 落在家里 là để quên ở nhà.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我的护照落在家里了。",
+          "pinyin": "",
+          "vi": "Hộ chiếu của tôi để quên ở nhà rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "丢",
+    "back": "mất; vứt; bỏ quên",
+    "hint": "diū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "actions_results"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d187ea02-1314-4d4b-817d-29a3d022377e",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "id": "fc80a9ce-70aa-4315-80ad-975ff06000ca",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "出事",
+  "pinyin": "chūshì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "event"
+  ],
+  "meaning": {
+    "hanviet": "xuất sự",
+    "meaning_vi": "xảy ra chuyện, gặp sự cố",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xảy ra chuyện",
+      "gặp sự cố"
+    ],
+    "short_definition_vi": "xảy ra chuyện, gặp sự cố",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "出",
+        "lishu_vi": "xuất",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra/phát sinh",
+        "modern_logic_vi": "Trong từ/cụm này, 出 góp phần vào nghĩa hiện đại: ra/phát sinh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "事",
+        "lishu_vi": "sự",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc/chuyện",
+        "modern_logic_vi": "Trong từ/cụm này, 事 góp phần vào nghĩa hiện đại: việc/chuyện.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "出事 cần học theo nghĩa hiện đại trong bài: xảy ra chuyện, gặp sự cố.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 出事了.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "db080a6e-1adc-4d6e-b051-8d2606a22a9d",
+      "order": 1,
+      "zh": "出事了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b491e524-d2fc-405b-8951-d35d5e2dc114",
+      "order": 2,
+      "zh": "家里出事了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f96bf16b-f142-4e92-8ff8-6fe05e20113e",
+      "order": 3,
+      "zh": "出什么事了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c1778559-3c8c-4391-9e98-27c61eb867cc",
+      "order": 1,
+      "zh": "家里出事了，他马上回去了。",
+      "pinyin": "Jiālǐ chū shì le, tā mǎshàng huíqù le.",
+      "vi": "Trong nhà xảy ra chuyện, anh ấy lập tức về.",
+      "analysis_vi": "出事了 báo biến cố xấu.",
+      "highlight": [
+        "出事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fc80a9ce-70aa-4315-80ad-975ff06000ca"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "de1d2dac-907c-4b5e-a6f0-33fe81d59fb9",
+      "order": 2,
+      "zh": "父亲出事以后，他不得不照顾整个家。",
+      "pinyin": "Fùqīn chū shì yǐhòu, tā bùdébù zhàogù zhěng ge jiā.",
+      "vi": "Sau khi cha gặp chuyện, anh ấy buộc phải chăm lo cả nhà.",
+      "analysis_vi": "出事以后 làm mốc biến cố.",
+      "highlight": [
+        "出事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fc80a9ce-70aa-4315-80ad-975ff06000ca"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "出事 thường khiến người nghe hiểu có chuyện không ổn: tai nạn, biến cố, rắc rối lớn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b404f308-5775-4244-bf14-247f2c18bef7",
+      "order": 1,
+      "rule_vi": "Dùng 出事 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "出事",
+    "back": "xảy ra chuyện, gặp sự cố",
+    "hint": "chūshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fc80a9ce-70aa-4315-80ad-975ff06000ca",
+    "source_lesson_vocab_id": null
+  }
+}

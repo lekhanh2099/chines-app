@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_c937a9632d3417e4",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "厅",
+  "pinyin": "tīng",
+  "meaning_vi": "sảnh; phòng lớn; hội trường",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ sảnh/phòng lớn/hội trường, là yếu tố trong 会议厅.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "689eb64b-5d4f-469f-9afa-74017d399614",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+    "type": "vocabulary_item",
+    "order": 20,
+    "hanzi": "厅",
+    "pinyin": "tīng",
+    "meaning_vi": "sảnh; phòng lớn; hội trường",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "厅",
+      "back": "tīng — sảnh; phòng lớn; hội trường",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ sảnh/phòng lớn/hội trường, là yếu tố trong 会议厅.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,416 @@
+{
+  "id": "b08a0657-45d8-4180-bc1d-d9892b50b016",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "身份证",
+  "pinyin": "shēnfènzhèng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Thân phận chứng",
+    "meaning_vi": "căn cước công dân, chứng minh thư",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "căn cước công dân, chứng minh thư"
+    ],
+    "short_definition_vi": "căn cước công dân, chứng minh thư",
+    "textbook_focus_vi": "căn cước công dân, chứng minh thư",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "身",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "身",
+            "hanviet": "thân",
+            "meaning_vi": "thân thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "身",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thân",
+              "radical_name_zh": "",
+              "hanviet": "thân",
+              "meaning_vi": "thân thể",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân thể, bản thân, thân phận",
+        "modern_logic_vi": "身 gợi bản thân/thân phận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "身",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thân",
+          "radical_name_zh": "",
+          "hanviet": "thân",
+          "meaning_vi": "thân thể",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "份",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "分",
+            "hanviet": "phân",
+            "meaning_vi": "phân chia/phần",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phần, suất; thân phận trong 身份",
+        "modern_logic_vi": "份 trong 身份 gắn với phần/địa vị của người.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "证",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/văn bản",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, văn bản",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "đúng/chính",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chứng minh, giấy chứng nhận",
+        "modern_logic_vi": "证 = chứng nhận/chứng minh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, văn bản",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "身份 là thân phận, danh tính. 证 là giấy chứng nhận, chứng cứ. → 身份证 = giấy/thẻ chứng minh danh tính. Cảnh báo: Không đồng nhất máy móc với “ID card” mọi nước. Trong Trung Quốc, 身份证 có vai trò rất rộng trong đời sống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "护照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hộ chiếu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "证件",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấy tờ chứng minh nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "学生证",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thẻ sinh viên/học sinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "身份证: căn cước/giấy tờ tùy thân trong nước."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "062f18e5-76d1-4820-8f98-311fa75d4251",
+      "order": 1,
+      "zh": "出示身份证",
+      "pinyin": "",
+      "vi": "xuất trình căn cước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b731d63-81f5-4c2f-8387-52c90b03716e",
+      "order": 2,
+      "zh": "身份证号码",
+      "pinyin": "",
+      "vi": "số căn cước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e31db19-763d-485f-881a-c5a881638073",
+      "order": 3,
+      "zh": "带身份证",
+      "pinyin": "",
+      "vi": "mang căn cước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a18be20f-81b8-4c27-9742-0d46ecc188cd",
+      "order": 4,
+      "zh": "把身份证拿出来",
+      "pinyin": "",
+      "vi": "lấy căn cước ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "efa87ccb-3ec7-4a67-a2ec-cf0b6577b2a9",
+      "order": 5,
+      "zh": "身份证丢了",
+      "pinyin": "",
+      "vi": "mất căn cước rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bda9d295-0eb2-4d06-a67a-4a6227edc7ab",
+      "order": 1,
+      "zh": "办理登机手续的时候，请把身份证拿出来。",
+      "pinyin": "Bànlǐ dēngjī shǒuxù de shíhou, qǐng bǎ shēnfènzhèng ná chūlai.",
+      "vi": "Khi làm thủ tục check-in, xin hãy lấy căn cước ra.",
+      "analysis_vi": "把身份证拿出来 là câu 把 có hướng 出来, xuất trình giấy tờ từ túi/ví ra.",
+      "highlight": [
+        "身份证"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "b08a0657-45d8-4180-bc1d-d9892b50b016"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b3da4608-ad22-4e69-a258-132c781926a6",
+      "order": 2,
+      "zh": "他把身份证放在包里，结果排队的时候找了半天。",
+      "pinyin": "Tā bǎ shēnfènzhèng fàng zài bāo lǐ, jiéguǒ páiduì de shíhou zhǎo le bàntiān.",
+      "vi": "Anh ấy để căn cước trong túi, kết quả lúc xếp hàng tìm mãi.",
+      "analysis_vi": "把身份证放在包里 là câu 把 với vị trí; 找了半天 là tìm rất lâu.",
+      "highlight": [
+        "身份证"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "b08a0657-45d8-4180-bc1d-d9892b50b016"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a1e1894b-ccea-479e-ba04-3ca39d2f41e8",
+      "order": 3,
+      "zh": "没有身份证的话，很多手续都不容易办。",
+      "pinyin": "Méiyǒu shēnfènzhèng de huà, hěn duō shǒuxù dōu bù róngyì bàn.",
+      "vi": "Nếu không có căn cước, rất nhiều thủ tục đều không dễ làm.",
+      "analysis_vi": "手续不容易办 là thủ tục khó xử lý; 身份证 là giấy tờ nền tảng.",
+      "highlight": [
+        "身份证"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "b08a0657-45d8-4180-bc1d-d9892b50b016"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở Trung Quốc, 身份证 được dùng rất rộng: mua vé tàu cao tốc, nhận phòng khách sạn, làm tài khoản ngân hàng, xác thực app, vào một số địa điểm. Vì vậy câu 带身份证了吗？ – có mang căn cước chưa? – rất đời sống.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d0baee5f-8bbe-46cd-bb03-bf391e062ae0",
+      "order": 1,
+      "rule_vi": "Nhầm 身份证 với 护照.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 身份证 theo cụm và ngữ cảnh bài 18; nghĩa chính là căn cước công dân, chứng minh thư.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "身份证",
+    "back": "căn cước công dân, chứng minh thư",
+    "hint": "shēnfènzhèng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b08a0657-45d8-4180-bc1d-d9892b50b016",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "id": "f336a04a-22af-4caf-af72-7f373c9cd794",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "吓",
+  "pinyin": "xià",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "hách",
+    "meaning_vi": "làm sợ, dọa; bị sợ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm sợ, dọa; bị sợ"
+    ],
+    "short_definition_vi": "làm sợ, dọa; bị sợ",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吓",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 口.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dọa, làm sợ",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 口, liên hệ tiếng động/lời nói làm người khác sợ.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 吓.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "害怕",
+        "pinyin": "hàipà",
+        "meaning_vi": "sợ",
+        "difference_vi": "trạng thái tâm lý",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吓唬",
+        "pinyin": "xiàhu",
+        "meaning_vi": "hù dọa",
+        "difference_vi": "thường có chủ ý",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "放心",
+          "",
+          "yên tâm",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7ef43a13-cb03-4e4f-8601-a3052ea5a1d1",
+      "order": 1,
+      "zh": "吓了一跳",
+      "pinyin": "",
+      "vi": "giật mình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "61908833-9831-4235-9205-a3028f8da8ae",
+      "order": 2,
+      "zh": "吓死了",
+      "pinyin": "",
+      "vi": "sợ chết khiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95b1a171-4682-4563-ab44-a34d2d34da28",
+      "order": 3,
+      "zh": "别吓我",
+      "pinyin": "",
+      "vi": "đừng dọa tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07b3a8da-679b-4722-bc3e-0545ea79f0a9",
+      "order": 4,
+      "zh": "被吓坏了",
+      "pinyin": "",
+      "vi": "bị dọa đến hoảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5de0e846-a3b0-446f-83e2-cec432e49464",
+      "order": 1,
+      "zh": "他吓了一跳。",
+      "pinyin": "Tā xià le yí tiào.",
+      "vi": "Anh ấy giật mình một cái.",
+      "analysis_vi": "吓了一跳 là cụm cố định.",
+      "highlight": [
+        "吓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f336a04a-22af-4caf-af72-7f373c9cd794"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "87125580-5a9d-48c2-b162-e3bcc958557e",
+      "order": 2,
+      "zh": "南郭先生一听说要独奏，就吓得溜走了。",
+      "pinyin": "Nán Guō xiānsheng yì tīngshuō yào dúzòu, jiù xià de liūzǒu le.",
+      "vi": "Nam Quách vừa nghe phải độc tấu thì sợ đến mức chuồn mất.",
+      "analysis_vi": "吓得溜走了 là 得 chỉ kết quả do sợ.",
+      "highlight": [
+        "吓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f336a04a-22af-4caf-af72-7f373c9cd794"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "吓死了 là khẩu ngữ phóng đại như 'sợ chết khiếp'.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8a7ddd39-0f78-4520-90fd-7ca2722b30b4",
+      "order": 1,
+      "rule_vi": "Không nói 我很吓; nói 我很害怕 hoặc 我被吓到了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吓",
+    "back": "làm sợ, dọa; bị sợ",
+    "hint": "xià",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f336a04a-22af-4caf-af72-7f373c9cd794",
+    "source_lesson_vocab_id": null
+  }
+}

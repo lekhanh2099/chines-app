@@ -1,0 +1,462 @@
+{
+  "id": "34784e50-6821-46bc-901b-a9ca6a9085d1",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "极了",
+  "pinyin": "jí le",
+  "pos": {
+    "raw_vi": "Bổ ngữ mức độ / Cụm biểu thị mức độ cao",
+    "raw_cn": "程度补语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cực liễu",
+    "meaning_vi": "cực kỳ, vô cùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cực kỳ, vô cùng"
+    ],
+    "short_definition_vi": "cực kỳ, vô cùng",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "极",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ Mộc trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cực điểm, rất, hết sức.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ Mộc trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "了",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trợ từ; trong 极了 tạo sắc thái mức độ đã đạt đến cực điểm.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "极 = cực điểm, rất, hết sức. 了 = trợ từ; trong 极了 tạo sắc thái mức độ đã đạt đến cực điểm. 极了 đứng sau tính từ: 好极了, không nói 极了好.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "极了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cực kỳ; đứng sau tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "很",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rất; đứng trước tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "非常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vô cùng/rất; đứng trước tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "太……了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quá, rất; có sắc thái cảm thán.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "死了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cực kỳ, khẩu ngữ mạnh; dùng hạn chế.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "757dadd5-e7d5-4780-bf1d-d18e9bbdacdf",
+      "order": 1,
+      "zh": "好极了",
+      "pinyin": "",
+      "vi": "tốt cực kỳ / hay cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2b36470a-131f-42e8-bbd5-877deee6b96c",
+      "order": 2,
+      "zh": "漂亮极了",
+      "pinyin": "",
+      "vi": "đẹp cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "aa900d2d-71b8-413c-a1ab-fe68226b6a29",
+      "order": 3,
+      "zh": "高兴极了",
+      "pinyin": "",
+      "vi": "vui cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d3befb6a-fc7b-4cac-9b3f-05f6f3958587",
+      "order": 4,
+      "zh": "难过极了",
+      "pinyin": "",
+      "vi": "buồn cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "403c8422-82ce-4674-8f92-9743ffc8233e",
+      "order": 5,
+      "zh": "累极了",
+      "pinyin": "",
+      "vi": "mệt cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c71b7e92-3c25-4b29-bd53-725ff652ca10",
+      "order": 6,
+      "zh": "好听极了",
+      "pinyin": "",
+      "vi": "nghe hay cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cbb31306-69a6-4297-880f-da359195b833",
+      "order": 7,
+      "zh": "有意思极了",
+      "pinyin": "",
+      "vi": "thú vị cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "63b19512-0b98-4ba7-952f-0e36b42ac81f",
+      "order": 8,
+      "zh": "舒服极了",
+      "pinyin": "",
+      "vi": "dễ chịu cực kỳ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "82d9aefd-d224-499f-ad80-67669c44b26d",
+      "order": 1,
+      "zh": "这首曲子好听极了。",
+      "pinyin": "Zhè shǒu qǔzi hǎotīng jí le.",
+      "vi": "Bản nhạc này hay cực kỳ.",
+      "analysis_vi": "好听 + 极了 biểu thị mức độ rất cao.",
+      "highlight": [
+        "极了"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "34784e50-6821-46bc-901b-a9ca6a9085d1"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "89843050-6a97-4650-8d78-8d2c5100c569",
+      "order": 2,
+      "zh": "我亲耳听过他的演奏，真是好极了。",
+      "pinyin": "Wǒ qīn’ěr tīng guo tā de yǎnzòu, zhēn shì hǎo jí le.",
+      "vi": "Tôi từng tận tai nghe màn biểu diễn của anh ấy, thật sự hay cực kỳ.",
+      "analysis_vi": "亲耳听过 nhấn kinh nghiệm trực tiếp. 真是好极了 là lời đánh giá cảm thán.",
+      "highlight": [
+        "极了"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "34784e50-6821-46bc-901b-a9ca6a9085d1"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "61549c80-6811-4e40-95e4-e6ea48207639",
+      "order": 3,
+      "zh": "第一次听钢琴协奏曲《黄河》的时候，我觉得现场的声音震撼极了，听完以后很久都忘不了。",
+      "pinyin": "Dì yī cì tīng gāngqín xiézòuqǔ “Huáng Hé” de shíhou, wǒ juéde xiànchǎng de shēngyīn zhènhàn jí le, tīng wán yǐhòu hěn jiǔ dōu wàng bù liǎo.",
+      "vi": "Lần đầu nghe bản concerto piano “Hoàng Hà”, tôi thấy âm thanh trực tiếp gây chấn động cực kỳ, nghe xong rất lâu vẫn không quên được.",
+      "analysis_vi": "震撼极了 dùng 极了 chỉ mức độ cao. 听完以后 ôn bổ ngữ kết quả 完. 忘不了 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "极了"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "34784e50-6821-46bc-901b-a9ca6a9085d1"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "5d625789-a825-4a1b-a99f-6515c00d79b3",
+      "order": 1,
+      "rule_vi": "Vị trí đúng: Adj + 极了.",
+      "natural_examples": [
+        {
+          "zh": "Vị trí đúng: Adj + 极了.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "Nếu muốn đặt trước tính từ, dùng 非常 / 很 / 特别.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "Đúng: 好听极了。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "Sai: 极了好听。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Vị trí đúng: Adj + 极了. Đúng: 好听极了。 Sai: 极了好听。 Nếu muốn đặt trước tính từ, dùng 非常 / 很 / 特别.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "极了",
+    "back": "cực kỳ, vô cùng",
+    "hint": "jí le",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Tiếng Việt có “cực kỳ / vô cùng / hết sức”. Khi dịch 极了, nên chọn theo văn cảnh: 好极了 có thể là “tuyệt quá”, “hay cực kỳ”, “tốt vô cùng”.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "34784e50-6821-46bc-901b-a9ca6a9085d1",
+    "source_lesson_vocab_id": null
+  }
+}

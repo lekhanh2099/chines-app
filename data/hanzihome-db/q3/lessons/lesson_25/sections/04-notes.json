@@ -1,0 +1,74 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "中秋节",
+      "structure": "",
+      "meaning_vi": "农历八月十五，中国传统节日。习俗包括赏月、吃月饼。",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "中秋节是中国的传统节日。",
+          "vi": "Trung thu là ngày lễ truyền thống của Trung Quốc.",
+          "pinyin": "Zhōngqiū Jié shì Zhōngguó de chuántǒng jiérì.",
+          "source_origin": "generated_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "下海",
+      "structure": "",
+      "meaning_vi": "Nghĩa gốc là xuống biển; nghĩa mở rộng trong bài là bỏ công việc ổn định để chuyển sang kinh doanh.",
+      "examples": [
+        {
+          "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+          "zh": "他以前是老师，后来下海经商了。",
+          "vi": "Trước đây anh ấy là giáo viên, sau này chuyển sang kinh doanh.",
+          "pinyin": "Tā yǐqián shì lǎoshī, hòulái xià hǎi jīng shāng le.",
+          "source_origin": "generated_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "人各有志",
+      "structure": "",
+      "meaning_vi": "Mỗi người có chí hướng, lý tưởng hoặc lựa chọn riêng.",
+      "examples": [
+        {
+          "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
+          "zh": "人各有志，我们应该尊重别人的选择。",
+          "vi": "Mỗi người có chí hướng riêng, chúng ta nên tôn trọng lựa chọn của người khác.",
+          "pinyin": "Rén gè yǒu zhì, wǒmen yīnggāi zūnzhòng biérén de xuǎnzé.",
+          "source_origin": "generated_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

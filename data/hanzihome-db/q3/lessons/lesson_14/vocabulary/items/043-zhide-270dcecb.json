@@ -1,0 +1,311 @@
+{
+  "id": "92211656-b845-47a3-9351-315546cd6ca9",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "值得",
+  "pinyin": "zhídé",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trị đắc",
+    "meaning_vi": "đáng, xứng đáng, đáng để làm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đáng",
+      "xứng đáng",
+      "đáng để làm"
+    ],
+    "short_definition_vi": "đáng, xứng đáng, đáng để làm",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: đánh giá, giá trị.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đánh giá, giá trị",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "值",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giá trị, đáng",
+        "modern_logic_vi": "Trong từ 值得, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "彳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Xích",
+          "radical_name_zh": "",
+          "hanviet": "xích",
+          "meaning_vi": "bước đi, hành động",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彳 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi, hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi, hành động",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彳 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 值得, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "值得 nên được học theo nghĩa hiện đại trong cụm/tình huống: đáng, xứng đáng, đáng để làm.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 值得看.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "应该",
+        "pinyin": "yīnggāi",
+        "meaning_vi": "nên",
+        "difference_vi": "值得 nói đáng/giá trị; 应该 nói nên/theo lý phải làm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1ce0b314-03ec-4c04-8183-deec68a412ff",
+      "order": 1,
+      "zh": "值得看",
+      "pinyin": "",
+      "vi": "đáng xem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb2a9ad5-881e-44da-8d10-a35aaa5e1cdd",
+      "order": 2,
+      "zh": "值得学习",
+      "pinyin": "",
+      "vi": "đáng học hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe2eb114-c558-49a6-9900-aa6d1a703fbc",
+      "order": 3,
+      "zh": "不值得生气",
+      "pinyin": "",
+      "vi": "không đáng giận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e1503f0b-ebc3-4ad0-b52c-2c434d0801b7",
+      "order": 1,
+      "zh": "这本书值得一看。",
+      "pinyin": "",
+      "vi": "Quyển sách này đáng đọc/xem thử.",
+      "analysis_vi": "值得 + V = đáng để làm gì.",
+      "highlight": [
+        "值得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "92211656-b845-47a3-9351-315546cd6ca9"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 值得 được dùng trong ngữ cảnh đánh giá, giá trị; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d265df9-66a7-4661-9bc0-12f77a57023b",
+      "order": 1,
+      "rule_vi": "Câu 这个书值得 thiếu phần đáng làm gì; nên nói 值得看/值得买.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Câu 这个书值得 thiếu phần đáng làm gì; nên nói 值得看/值得买.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "值得",
+    "back": "đáng, xứng đáng, đáng để làm",
+    "hint": "zhídé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "92211656-b845-47a3-9351-315546cd6ca9",
+    "source_lesson_vocab_id": null
+  }
+}

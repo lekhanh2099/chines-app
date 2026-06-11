@@ -1,0 +1,372 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "主谓谓语句（二）",
+      "title_vi": "Câu chủ-vị làm vị ngữ",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "topic_comment"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Dùng một cụm chủ-vị nhỏ để thuyết minh hoặc miêu tả chủ ngữ lớn. Trong mẫu này, danh từ 1 thường là tân ngữ của động từ trong cụm vị ngữ 2.",
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我的护照你找到了没有？",
+              "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu?",
+              "vi": "Hộ chiếu của anh, em tìm thấy chưa?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [
+                "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "主语₁（名词₁）+ 谓语₁（主语₂（名词₂）+ 谓语₂）",
+          "meaning_vi": "Đưa đối tượng/chủ đề lên trước rồi dùng một cụm chủ-vị phía sau để nói rõ về đối tượng đó.",
+          "formulas": [
+            {
+              "label": "affirmative",
+              "pattern": "A + B + V/O"
+            },
+            {
+              "label": "question",
+              "pattern": "A + B + V + 了 + 没有？"
+            }
+          ],
+          "examples": [
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "这本书我看完了。",
+              "pinyin": "Zhè běn shū wǒ kàn wán le.",
+              "vi": "Quyển sách này tôi đọc xong rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+              "zh": "这件事我不知道。",
+              "pinyin": "Zhè jiàn shì wǒ bù zhīdào.",
+              "vi": "Việc này tôi không biết.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Không phải câu nào cũng cần 把.",
+            "Trọng tâm nằm ở chủ đề được đưa lên đầu câu."
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "结果补语（二）：在、着、好、成",
+      "title_vi": "Bổ ngữ kết quả: 在、着、好、成",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "result_complement"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Bổ ngữ kết quả đứng sau động từ để nói rõ hành động đã tạo ra kết quả gì. Bài này tập trung vào 在, 着(zháo), 好, 成.",
+          "examples": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7f3eb87b-6c32-4dd3-b61f-06408b3b67ac",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "V + 在 + địa điểm",
+          "pattern": "动词 + 在 + 地点",
+          "meaning_vi": "Hành động tạo ra kết quả là vật/người nằm ở vị trí nào đó.",
+          "formulas": [
+            {
+              "label": "place result",
+              "pattern": "V + 在 + place"
+            }
+          ],
+          "examples": [
+            {
+              "id": "0eb87d8f-9ff5-4c05-adb7-c659e7b7407c",
+              "zh": "放在我的手提包儿里了。",
+              "pinyin": "Fàng zài wǒ de shǒutíbāor lǐ le.",
+              "vi": "Đã để trong túi xách tay của tôi rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [
+                "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+                "d9991c79-3454-4247-bf18-f14f43b4a24a"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "db35c6e3-1064-4e7f-9cef-f53c6ab2984f",
+              "zh": "我把书放在桌子上。",
+              "pinyin": "Wǒ bǎ shū fàng zài zhuōzi shang.",
+              "vi": "Tôi để sách trên bàn.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Sau 在 thường cần địa điểm rõ."
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fade584e-74db-422d-8e99-8507ee93b7cc",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "V + 着 zháo",
+          "pattern": "动词 + 着（zháo）",
+          "meaning_vi": "Hành động đạt được mục đích / có kết quả. 找着 gần nghĩa 找到.",
+          "formulas": [
+            {
+              "label": "achievement result",
+              "pattern": "V + 着"
+            }
+          ],
+          "examples": [
+            {
+              "id": "17dda0ef-8888-44d9-a4a5-da1e07b28abd",
+              "zh": "我找了半天也没找着。",
+              "pinyin": "Wǒ zhǎo le bàntiān yě méi zhǎozháo.",
+              "vi": "Tôi tìm cả buổi mà vẫn không tìm thấy.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "451f0258-f724-45e2-a0a5-855d1b157a06",
+              "zh": "孩子睡着了。",
+              "pinyin": "Háizi shuìzháo le.",
+              "vi": "Đứa bé ngủ thiếp đi rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "着 ở đây đọc zháo, không phải zhe.",
+            "找着 = tìm thấy; 睡着 = ngủ được / ngủ thiếp đi."
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0179d67-90f7-4538-a3a2-ebc58f8a9ec9",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "V + 好",
+          "pattern": "动词 + 好",
+          "meaning_vi": "Làm xong, chuẩn bị xong, xử lý ổn rồi; kết quả thường là đã hoàn tất và sẵn sàng.",
+          "formulas": [
+            {
+              "label": "completed well/ready",
+              "pattern": "V + 好"
+            }
+          ],
+          "examples": [
+            {
+              "id": "2eaa12c0-d675-4f62-a02b-7bb88e5e9bf2",
+              "zh": "饭做好了。",
+              "pinyin": "Fàn zuò hǎo le.",
+              "vi": "Cơm làm xong rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "edb6fffc-0210-4941-8013-3e97f3f09ee4",
+              "zh": "票订好了。",
+              "pinyin": "Piào dìng hǎo le.",
+              "vi": "Vé đặt xong rồi.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "做完 nhấn kết thúc hành động; 做好 nhấn kết quả ổn/sẵn sàng."
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ea572de8-285c-45eb-ba30-0f21fff255d5",
+          "type": "grammar_structure",
+          "order": 5,
+          "title": "V + 成",
+          "pattern": "动词 + 成 + 结果",
+          "meaning_vi": "Hành động hoàn thành, làm được, đạt mục đích hoặc biến thành kết quả nào đó.",
+          "formulas": [
+            {
+              "label": "result/success",
+              "pattern": "V + 成"
+            }
+          ],
+          "examples": [
+            {
+              "id": "41db2cdc-7c5f-479c-b485-f9d970c89c24",
+              "zh": "最后去成了吗？",
+              "pinyin": "Zuìhòu qù chéng le ma?",
+              "vi": "Cuối cùng có đi được không?",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [
+                "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
+                "71f9308f-7b38-435e-bfa8-c7c974599035"
+              ],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "f15adbb7-83c4-4336-8765-630eaeeccb81",
+              "zh": "把中文翻译成越南语。",
+              "pinyin": "Bǎ Zhōngwén fānyì chéng Yuènányǔ.",
+              "vi": "Dịch tiếng Trung thành tiếng Việt.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "去成了 = đi được rồi; không dịch là “trở thành đi”.",
+            "办成了 = làm thành công rồi."
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

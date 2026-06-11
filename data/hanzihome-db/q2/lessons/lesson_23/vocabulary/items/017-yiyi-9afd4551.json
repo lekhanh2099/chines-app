@@ -1,0 +1,373 @@
+{
+  "id": "8ff07059-0426-44ae-a663-a01fe780cfbf",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "意义",
+  "pinyin": "yìyì",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Ý nghĩa",
+    "meaning_vi": "ý nghĩa, giá trị tinh thần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ý nghĩa, giá trị tinh thần"
+    ],
+    "short_definition_vi": "ý nghĩa, giá trị tinh thần",
+    "textbook_focus_vi": "ý nghĩa, giá trị tinh thần",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "意",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ý, tâm ý",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "义",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩa, giá trị",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 意义 hợp lại tạo nghĩa hiện đại trong bài: ý nghĩa, giá trị tinh thần.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "意义",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "意义 / 意思 / 有意思",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "意思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "意义 / 意思 / 有意思",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有意思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "意义 / 意思 / 有意思",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有意义",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "有意义 / 有意思",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "有意思",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "有意义 / 有意思",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "有意义",
+        "right": "没有意义",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "有意义 ↔ 没有意义",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "意义 / 意思 / 有意思",
+      "有意义 / 有意思",
+      "有意义 ↔ 没有意义"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "830e586c-6357-4fa3-927c-b01c6ef09338",
+      "order": 1,
+      "zh": "有意义",
+      "pinyin": "",
+      "vi": "有意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "7527201d-8a57-4368-b9df-5b1ea9a6adbd",
+      "order": 2,
+      "zh": "没有意义",
+      "pinyin": "",
+      "vi": "没有意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "86a12681-7d52-454f-8e2b-5fa5b887f5a7",
+      "order": 3,
+      "zh": "很有意义",
+      "pinyin": "",
+      "vi": "很有意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "5ff62ef8-e458-475f-81d6-3556160c85bf",
+      "order": 4,
+      "zh": "重要意义",
+      "pinyin": "",
+      "vi": "重要意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "e334f86d-bc71-49af-a2f2-ce93ace9e706",
+      "order": 5,
+      "zh": "历史意义",
+      "pinyin": "",
+      "vi": "历史意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ea10d54e-77ff-40bc-b26c-f0f043a80d5e",
+      "order": 6,
+      "zh": "现实意义",
+      "pinyin": "",
+      "vi": "现实意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "8efaffe0-28d5-45a4-9a07-6f2f91eaa195",
+      "order": 7,
+      "zh": "旅行的意义",
+      "pinyin": "",
+      "vi": "旅行的意义",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2bb7b1a2-20ac-4819-a1be-308aa8dc2286",
+      "order": 1,
+      "zh": "这个词是“意义”。",
+      "pinyin": "",
+      "vi": "Từ này là “意义”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "意义"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "8ff07059-0426-44ae-a663-a01fe780cfbf"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6ecaf44d-46b6-460a-a680-77b82c365d9f",
+      "order": 2,
+      "zh": "你想怎么用“意义”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “意义” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "意义"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "8ff07059-0426-44ae-a663-a01fe780cfbf"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "faac006d-391c-48e1-8e25-485fba17e533",
+      "order": 3,
+      "zh": "我们一边复习意义，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “意义”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "意义"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "8ff07059-0426-44ae-a663-a01fe780cfbf"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "意义 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5e990b59-24ca-4be6-9851-0e9106852717",
+      "order": 1,
+      "rule_vi": "Dùng 意义 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 意义 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "意义",
+    "back": "ý nghĩa, giá trị tinh thần",
+    "hint": "yìyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8ff07059-0426-44ae-a663-a01fe780cfbf",
+    "source_lesson_vocab_id": null
+  }
+}

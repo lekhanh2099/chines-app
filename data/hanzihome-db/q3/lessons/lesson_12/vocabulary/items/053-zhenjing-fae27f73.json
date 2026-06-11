@@ -1,0 +1,280 @@
+{
+  "id": "64b924f6-3f17-4961-bebd-d1c91ad19693",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "镇静",
+  "pinyin": "zhènjìng",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ",
+    "raw_cn": "形容词 / 动词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trấn tĩnh",
+    "meaning_vi": "bình tĩnh, điềm tĩnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bình tĩnh, điềm tĩnh"
+    ],
+    "short_definition_vi": "Tâm trạng ổn định, không hoảng loạn.",
+    "textbook_focus_vi": "Dùng trong 保持镇静, 镇静下来.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "镇",
+        "lishu_vi": "trấn",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "钅 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "钅 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "钅 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trấn/làm yên",
+        "modern_logic_vi": "trấn/làm yên",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "静",
+        "lishu_vi": "tĩnh",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tĩnh/yên",
+        "modern_logic_vi": "tĩnh/yên",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "镇 + 静 = trấn lại để yên.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "冷静",
+        "pinyin": "lěngjìng",
+        "meaning_vi": "tỉnh táo, lý trí",
+        "difference_vi": "冷静 nhấn lý trí; 镇静 nhấn không hoảng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "060e0a8f-5e05-416f-8dfa-1d29917cf6e6",
+      "order": 1,
+      "zh": "保持镇静",
+      "pinyin": "",
+      "vi": "giữ bình tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "edfd3249-05a3-4686-87bc-7bc5a0b1cfb5",
+      "order": 2,
+      "zh": "镇静下来",
+      "pinyin": "",
+      "vi": "bình tĩnh lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d70b4ae-2fcd-4143-8bf7-ae3497ab97f7",
+      "order": 3,
+      "zh": "镇静地处理",
+      "pinyin": "",
+      "vi": "xử lý bình tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38d25a1c-6e89-442e-81bf-f2cb3b86e6aa",
+      "order": 4,
+      "zh": "强作镇静",
+      "pinyin": "",
+      "vi": "cố tỏ ra bình tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1c3bca00-5122-40db-b2ad-ab919b33458a",
+      "order": 1,
+      "zh": "请大家保持镇静。",
+      "pinyin": "",
+      "vi": "Xin mọi người giữ bình tĩnh.",
+      "analysis_vi": "保持 + trạng thái.",
+      "highlight": [
+        "镇静"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "64b924f6-3f17-4961-bebd-d1c91ad19693"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0cf46689-7810-4121-a556-c317f8a744db",
+      "order": 2,
+      "zh": "车胎突然爆了，可是他还很镇静。",
+      "pinyin": "",
+      "vi": "Lốp đột nhiên nổ, nhưng anh ấy vẫn bình tĩnh.",
+      "analysis_vi": "可是 tạo đối lập.",
+      "highlight": [
+        "镇静"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "64b924f6-3f17-4961-bebd-d1c91ad19693"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e3df3190-d4c3-4902-9d70-03f108a0d2bb",
+      "order": 1,
+      "rule_vi": "Không nhầm 镇静 với 安静.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 镇静 với 安静.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "镇静",
+    "back": "bình tĩnh, điềm tĩnh",
+    "hint": "zhènjìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "64b924f6-3f17-4961-bebd-d1c91ad19693",
+    "source_lesson_vocab_id": null
+  }
+}

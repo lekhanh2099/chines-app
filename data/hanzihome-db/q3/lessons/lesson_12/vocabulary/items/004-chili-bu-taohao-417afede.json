@@ -1,0 +1,378 @@
+{
+  "id": "59ba5791-b27d-42ec-a159-c04b5082a6c3",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "吃力不讨好",
+  "pinyin": "chīlì bù tǎohǎo",
+  "pos": {
+    "raw_vi": "Thành ngữ / Cụm đánh giá",
+    "raw_cn": "成语 / 状态短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cật lực bất thảo hảo",
+    "meaning_vi": "tốn công mà không được lòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tốn công mà không được lòng"
+    ],
+    "short_definition_vi": "Bỏ nhiều sức nhưng không được cảm ơn hoặc kết quả không tốt.",
+    "textbook_focus_vi": "Lõi chủ đề 好人难当.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吃",
+        "lishu_vi": "cật",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ăn; chịu/tốn trong cụm",
+        "modern_logic_vi": "ăn; chịu/tốn trong cụm",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "力",
+        "lishu_vi": "lực",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức/lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức/lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức/lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sức",
+        "modern_logic_vi": "sức",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "không",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "讨",
+        "lishu_vi": "thảo",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầu lấy",
+        "modern_logic_vi": "cầu lấy",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "hảo",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ/phụ nữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ/phụ nữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ/phụ nữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "女 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt/rất",
+        "modern_logic_vi": "tốt/rất",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "吃力 = tốn sức; 不讨好 = không được lòng.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "费力不讨好",
+        "pinyin": "fèilì bù tǎohǎo",
+        "meaning_vi": "tốn sức mà không được gì",
+        "difference_vi": "Gần nghĩa; 费力 nhấn mất sức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0852f345-f62d-4d17-b76b-cde811857220",
+      "order": 1,
+      "zh": "吃力不讨好的事",
+      "pinyin": "",
+      "vi": "việc tốn công mà không được lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f038224-7d7c-4bf0-a91a-eef44a1ba480",
+      "order": 2,
+      "zh": "真是吃力不讨好",
+      "pinyin": "",
+      "vi": "đúng là tốn công vô ích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0821b674-9445-48b8-bb48-404a31a377e1",
+      "order": 3,
+      "zh": "费力不讨好",
+      "pinyin": "",
+      "vi": "tốn sức mà không được gì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97172bf1-1f5d-4902-80d7-457cd5ba2caa",
+      "order": 4,
+      "zh": "难免吃力不讨好",
+      "pinyin": "",
+      "vi": "khó tránh tốn công không được lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cf1274d4-6d77-4900-bbf2-60ced24f25ce",
+      "order": 1,
+      "zh": "这件事很吃力不讨好。",
+      "pinyin": "",
+      "vi": "Việc này rất tốn công mà chẳng được lòng ai.",
+      "analysis_vi": "Cả cụm làm vị ngữ đánh giá sự việc.",
+      "highlight": [
+        "吃力不讨好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "59ba5791-b27d-42ec-a159-c04b5082a6c3"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "37f422b7-8bbd-4622-8257-cd9b6eeb0870",
+      "order": 2,
+      "zh": "他本来想帮忙，结果被人吼了一顿，真是吃力不讨好。",
+      "pinyin": "",
+      "vi": "Anh ấy vốn muốn giúp, kết quả bị quát một trận, đúng là tốn công mà không được lòng.",
+      "analysis_vi": "Sát chủ đề bài học.",
+      "highlight": [
+        "吃力不讨好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "59ba5791-b27d-42ec-a159-c04b5082a6c3"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1ecd1690-36ab-400a-aa3a-e6c402e220e5",
+      "order": 1,
+      "rule_vi": "Không dùng chỉ để nói “mệt”; phải có yếu tố bỏ công nhưng không được ghi nhận.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng chỉ để nói “mệt”; phải có yếu tố bỏ công nhưng không được ghi nhận.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吃力不讨好",
+    "back": "tốn công mà không được lòng",
+    "hint": "chīlì bù tǎohǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "59ba5791-b27d-42ec-a159-c04b5082a6c3",
+    "source_lesson_vocab_id": null
+  }
+}

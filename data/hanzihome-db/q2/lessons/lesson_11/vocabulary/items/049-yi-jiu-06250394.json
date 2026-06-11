@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_d5120ba0ce77e6d1",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "一……就……",
+  "pinyin": "yī……jiù……",
+  "meaning_vi": "hễ/vừa… thì/liền…",
+  "pos": "Cấu trúc cố định / Liên từ tương quan",
+  "pos_detail": {
+    "vi": "Cấu trúc cố định / Liên từ tương quan",
+    "cn": "固定结构 / 关联词",
+    "normalized": "phrase",
+    "schema_compatible_pos": "phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+    "type": "vocabulary_item",
+    "order": 14,
+    "hanzi": "一……就……",
+    "pinyin": "yī……jiù……",
+    "meaning_vi": "hễ/vừa… thì/liền…",
+    "meaning_en": "as soon as; once...then",
+    "pos": "Cấu trúc cố định / Liên từ tương quan",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "一……就……",
+      "back": "yī……jiù…… — hễ/vừa… thì/liền…",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Cấu trúc cố định / Liên từ tương quan",
+      "cn": "固定结构 / 关联词",
+      "normalized": "phrase",
+      "schema_compatible_pos": "phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

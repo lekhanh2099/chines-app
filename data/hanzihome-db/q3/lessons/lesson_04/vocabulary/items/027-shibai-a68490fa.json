@@ -1,0 +1,244 @@
+{
+  "id": "63c0a647-8089-4310-b91d-34fb494d5e0a",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "失败",
+  "pinyin": "shībài",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Tính từ",
+    "raw_cn": "动 / 名 / 形",
+    "normalized": "verb_noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thất bại",
+    "meaning_vi": "thất bại; không đạt mục đích; thua",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thất bại",
+      "không đạt mục đích",
+      "thua"
+    ],
+    "short_definition_vi": "thất bại",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "失",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất, lỡ, sai",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "败",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "失败 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 失败 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "输",
+        "pinyin": "shū",
+        "meaning_vi": "thua",
+        "difference_vi": "Trong thi đấu/chơi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挫折",
+        "pinyin": "cuòzhé",
+        "meaning_vi": "trắc trở",
+        "difference_vi": "Không nhất thiết thất bại hoàn toàn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "成功",
+        "pinyin": "chénggōng",
+        "meaning_vi": "thành công",
+        "difference_vi": "Trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4059683e-f881-44d7-b208-5f3acd66b8f8",
+      "order": 1,
+      "zh": "一次失败",
+      "pinyin": "yí cì shībài",
+      "vi": "một lần thất bại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ac85c18-7efa-4a9f-9121-b0939a031bbd",
+      "order": 2,
+      "zh": "经历失败",
+      "pinyin": "jīnglì shībài",
+      "vi": "trải qua thất bại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4f051512-cdd1-4594-93a8-58b0efcd4119",
+      "order": 3,
+      "zh": "害怕失败",
+      "pinyin": "hàipà shībài",
+      "vi": "sợ thất bại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d22775e-f16d-4e5b-a71c-ccad1b3b6e28",
+      "order": 4,
+      "zh": "从失败中学习",
+      "pinyin": "cóng shībài zhōng xuéxí",
+      "vi": "học từ thất bại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a2e93f34-02c8-41db-af4d-76ef2d660978",
+      "order": 1,
+      "zh": "失败并不可怕。",
+      "pinyin": "Shībài bìng bù kěpà.",
+      "vi": "Thất bại không đáng sợ.",
+      "analysis_vi": "并不 nhấn phủ định nhẹ nhưng chắc.",
+      "highlight": [
+        "失败"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "63c0a647-8089-4310-b91d-34fb494d5e0a"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "62c16ebc-0c59-4b60-9125-2a5c64e4944e",
+      "order": 2,
+      "zh": "失败以后，他一点儿也没有失去信心。",
+      "pinyin": "Shībài yǐhòu, tā yìdiǎnr yě méiyǒu shīqù xìnxīn.",
+      "vi": "Sau khi thất bại, anh ấy không hề mất niềm tin.",
+      "analysis_vi": "Gài 一点儿也没有 và 失去信心.",
+      "highlight": [
+        "失败"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "63c0a647-8089-4310-b91d-34fb494d5e0a"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Văn truyền cảm hứng thường nói thất bại không đáng sợ, đáng sợ là mất niềm tin.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f8ebe0e4-2bc3-477c-bbb7-a921e15fc0a6",
+      "order": 1,
+      "rule_vi": "Thi không tốt thường nói 考试没考好; không phải lúc nào cũng dùng 考试失败.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "失败",
+    "back": "thất bại; không đạt mục đích; thua",
+    "hint": "shībài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "63c0a647-8089-4310-b91d-34fb494d5e0a",
+    "source_lesson_vocab_id": null
+  }
+}

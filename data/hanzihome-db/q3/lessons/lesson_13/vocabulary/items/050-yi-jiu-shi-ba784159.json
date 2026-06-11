@@ -1,0 +1,214 @@
+{
+  "id": "2309da31-707f-46e7-ae4f-f8960179b60a",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "一……就是……",
+  "pinyin": "yì……jiù shì……",
+  "pos": {
+    "raw_vi": "Cấu trúc cố định",
+    "raw_cn": "固定结构",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "grammar"
+  ],
+  "meaning": {
+    "hanviet": "nhất……tựu thị",
+    "meaning_vi": "hễ……là……; một lần là kéo dài/tới mức……",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hễ……là……",
+      "một lần là kéo dài",
+      "tới mức……"
+    ],
+    "short_definition_vi": "hễ……là……; một lần là kéo dài/tới mức……",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "Trong từ/cụm này, 一 góp phần vào nghĩa hiện đại: một.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "就",
+        "lishu_vi": "tựu",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đạt tới/thành",
+        "modern_logic_vi": "Trong từ/cụm này, 就 góp phần vào nghĩa hiện đại: đạt tới/thành.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 是 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一……就是…… cần học theo nghĩa hiện đại trong bài: hễ……là……; một lần là kéo dài/tới mức…….",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 一坐就是半天.",
+    "warning_vi": "Không tách nghĩa từng chữ nếu là tên riêng, tục ngữ hoặc cấu trúc cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b616dc71-d015-4351-a4fa-a43856ddf095",
+      "order": 1,
+      "zh": "一坐就是半天",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ce3d54e-8865-44fa-9ab7-96448a17b6ee",
+      "order": 2,
+      "zh": "一学就是三个小时",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2ddf19d0-2fcb-4ca3-8390-b0aaf335bba5",
+      "order": 3,
+      "zh": "一干就是一天",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2f31eafb-c14d-454e-b8c5-e7c49203c8b9",
+      "order": 1,
+      "zh": "他一学就是三个小时。",
+      "pinyin": "Tā yì xué jiù shì sān ge xiǎoshí.",
+      "vi": "Anh ấy hễ học là học liền ba tiếng.",
+      "analysis_vi": "一 + V + 就是 + thời lượng nhấn kéo dài.",
+      "highlight": [
+        "一"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2309da31-707f-46e7-ae4f-f8960179b60a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dcd7a0dc-1435-4ea5-97e2-ad6d74987686",
+      "order": 2,
+      "zh": "他帮家里干农活儿，一干就是一整天。",
+      "pinyin": "Tā bāng jiālǐ gàn nónghuór, yì gàn jiù shì yì zhěng tiān.",
+      "vi": "Anh ấy giúp nhà làm đồng, hễ làm là cả ngày.",
+      "analysis_vi": "一干就是一整天 nhấn thời lượng dài.",
+      "highlight": [
+        "一"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2309da31-707f-46e7-ae4f-f8960179b60a"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Mẫu này rất hợp để kể đời sống vất vả: làm một cái là cả ngày, đợi một cái là nửa tiếng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9646059f-8c11-4d07-8910-3ba73254cda6",
+      "order": 1,
+      "rule_vi": "Dùng 一……就是…… đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一……就是……",
+    "back": "hễ……là……; một lần là kéo dài/tới mức……",
+    "hint": "yì……jiù shì……",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2309da31-707f-46e7-ae4f-f8960179b60a",
+    "source_lesson_vocab_id": null
+  }
+}

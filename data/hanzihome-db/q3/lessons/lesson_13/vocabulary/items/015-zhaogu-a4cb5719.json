@@ -1,0 +1,233 @@
+{
+  "id": "66999a29-eeb5-4c8f-b60c-0260f577f7a5",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "照顾",
+  "pinyin": "zhàogù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "family"
+  ],
+  "meaning": {
+    "hanviet": "chiếu cố",
+    "meaning_vi": "chăm sóc, trông nom, quan tâm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chăm sóc",
+      "trông nom",
+      "quan tâm"
+    ],
+    "short_definition_vi": "chăm sóc, trông nom, quan tâm",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "照",
+        "lishu_vi": "chiếu",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "soi/chăm theo",
+        "modern_logic_vi": "Trong từ/cụm này, 照 góp phần vào nghĩa hiện đại: soi/chăm theo.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "顾",
+        "lishu_vi": "cố",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "页",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu/trang",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu/trang",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "页",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu/trang",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quan tâm/chăm nom",
+        "modern_logic_vi": "Trong từ/cụm này, 顾 góp phần vào nghĩa hiện đại: quan tâm/chăm nom.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "照顾 cần học theo nghĩa hiện đại trong bài: chăm sóc, trông nom, quan tâm.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 照顾孩子.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2a1bdcf9-503f-4fec-8c95-d708b647c583",
+      "order": 1,
+      "zh": "照顾孩子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "782b81b9-684c-49f7-b41e-34008e415bbf",
+      "order": 2,
+      "zh": "照顾父母",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a25ac33a-75df-4932-86fa-cd7daf9053ff",
+      "order": 3,
+      "zh": "互相照顾",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d5988fb6-ca22-4193-8ca7-35b32bd67038",
+      "order": 1,
+      "zh": "她每天照顾两个孩子。",
+      "pinyin": "Tā měitiān zhàogù liǎng ge háizi.",
+      "vi": "Cô ấy mỗi ngày chăm sóc hai đứa trẻ.",
+      "analysis_vi": "照顾 + người.",
+      "highlight": [
+        "照顾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "66999a29-eeb5-4c8f-b60c-0260f577f7a5"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2c58a05b-5533-4316-9317-f71494dd6cf9",
+      "order": 2,
+      "zh": "父母去世以后，他不得不照顾弟弟妹妹。",
+      "pinyin": "Fùmǔ qùshì yǐhòu, tā bùdébù zhàogù dìdi mèimei.",
+      "vi": "Sau khi bố mẹ qua đời, anh ấy buộc phải chăm sóc các em.",
+      "analysis_vi": "不得不 nêu hoàn cảnh bắt buộc.",
+      "highlight": [
+        "照顾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "66999a29-eeb5-4c8f-b60c-0260f577f7a5"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "请多照顾 có thể là lời nhờ giúp/chiếu cố trong giao tiếp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a4596816-2409-46ab-b71e-19198f8172b5",
+      "order": 1,
+      "rule_vi": "Dùng 照顾 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "照顾",
+    "back": "chăm sóc, trông nom, quan tâm",
+    "hint": "zhàogù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "66999a29-eeb5-4c8f-b60c-0260f577f7a5",
+    "source_lesson_vocab_id": null
+  }
+}

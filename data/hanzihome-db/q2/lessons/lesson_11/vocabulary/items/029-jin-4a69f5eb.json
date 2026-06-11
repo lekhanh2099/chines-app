@@ -1,0 +1,236 @@
+{
+  "id": "1d8bd37e-6fc0-40b6-ace1-51dcf8329050",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "金",
+  "pinyin": "jīn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kim",
+    "meaning_vi": "vàng; kim loại; tiền",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vàng; kim loại; tiền"
+    ],
+    "short_definition_vi": "vàng; kim loại; tiền",
+    "textbook_focus_vi": "vàng; kim loại; tiền",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "金",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vàng, kim loại, tiền, quý giá",
+        "modern_logic_vi": "金 là chữ/bộ liên quan kim loại và vàng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "金 = vàng/kim loại quý; mở rộng thành tiền bạc, giá trị.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c0c59d18-8461-44a8-a313-d0ebeb9897e5",
+      "order": 1,
+      "zh": "黄金",
+      "pinyin": "",
+      "vi": "vàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb87b92b-dfcc-493c-a0be-f84f44744588",
+      "order": 2,
+      "zh": "金子",
+      "pinyin": "",
+      "vi": "vàng vật chất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d034ff03-62fe-4fde-b46f-83175b3f2989",
+      "order": 3,
+      "zh": "金牌",
+      "pinyin": "",
+      "vi": "huy chương vàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b7c3e8d-443a-4bdc-ad1a-f41acbcd79ba",
+      "order": 4,
+      "zh": "金属",
+      "pinyin": "",
+      "vi": "kim loại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94a4e0ef-2fa4-46c6-8d28-90b5cf958322",
+      "order": 5,
+      "zh": "现金",
+      "pinyin": "",
+      "vi": "tiền mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "81e2ba12-f48f-4d04-ae0a-4ebe3905a217",
+      "order": 6,
+      "zh": "奖学金",
+      "pinyin": "",
+      "vi": "học bổng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4a6ed369-c594-4c5e-9439-3a36a33ee9ce",
+      "order": 1,
+      "zh": "她得了一块金牌。",
+      "pinyin": "Tā dé le yí kuài jīnpái.",
+      "vi": "Cô ấy giành được một huy chương vàng.",
+      "analysis_vi": "金牌 = huy chương vàng.",
+      "highlight": [
+        "金"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1d8bd37e-6fc0-40b6-ace1-51dcf8329050"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6bdc8922-ccd4-4f7d-94b7-43f6e4ce492d",
+      "order": 2,
+      "zh": "这个奖学金是他去年得到的。",
+      "pinyin": "Zhège jiǎngxuéjīn shì tā qùnián dédào de.",
+      "vi": "Học bổng này là anh ấy nhận được năm ngoái.",
+      "analysis_vi": "是……的 nhấn thời gian.",
+      "highlight": [
+        "金"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1d8bd37e-6fc0-40b6-ace1-51dcf8329050"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a140381a-24aa-4dcb-9701-b31faabc020a",
+      "order": 3,
+      "zh": "一听说他拿到了奖学金，大家就高兴地祝贺他。",
+      "pinyin": "Yì tīngshuō tā ná dào le jiǎngxuéjīn, dàjiā jiù gāoxìng de zhùhè tā.",
+      "vi": "Vừa nghe anh ấy nhận được học bổng, mọi người liền chúc mừng.",
+      "analysis_vi": "拿到 = nhận được, có kết quả.",
+      "highlight": [
+        "金"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1d8bd37e-6fc0-40b6-ace1-51dcf8329050"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "金 tạo nhiều từ về tiền và giá trị như 奖学金, 奖金, 现金, 基金.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "334a249d-94f7-48c2-ac16-ee66cdf95d6b",
+      "order": 1,
+      "rule_vi": "金 không phải lúc nào cũng dịch là vàng; 奖学金 = học bổng, 现金 = tiền mặt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "金",
+    "back": "vàng; kim loại; tiền",
+    "hint": "jīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1d8bd37e-6fc0-40b6-ace1-51dcf8329050",
+    "source_lesson_vocab_id": null
+  }
+}

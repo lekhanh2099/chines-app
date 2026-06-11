@@ -1,0 +1,27 @@
+[
+  {
+    "id": "warning_864025e8db20592af73d1e26",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "程",
+      "找",
+      "放",
+      "丢",
+      "落",
+      "贴",
+      "算",
+      "像",
+      "愿",
+      "及",
+      "成",
+      "准",
+      "可",
+      "棒",
+      "狂",
+      "着",
+      "交",
+      "偷"
+    ]
+  }
+]

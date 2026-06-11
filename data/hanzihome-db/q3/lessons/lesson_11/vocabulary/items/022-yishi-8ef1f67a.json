@@ -1,0 +1,398 @@
+{
+  "id": "243a4317-4e09-46e4-9e7a-8a8cadf96c06",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "意识",
+  "pinyin": "yìshí",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名词 / 动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "ý thức",
+    "meaning_vi": "ý thức; nhận ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ý thức",
+      "nhận ra"
+    ],
+    "short_definition_vi": "nhận thức trong đầu; nhận ra điều gì đó",
+    "textbook_focus_vi": "Cần học cấu trúc 意识到 + nội dung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "意",
+        "lishu_vi": "",
+        "structure_note_vi": "音 + 心",
+        "components": [
+          {
+            "text": "音",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "",
+            "meaning_vi": "tim, lòng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "tim, lòng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ý nghĩ",
+        "modern_logic_vi": "ý nghĩ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "tim, lòng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "识",
+        "lishu_vi": "",
+        "structure_note_vi": "讠 + 只",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "只",
+            "hanviet": "",
+            "meaning_vi": "chỉ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết, nhận thức",
+        "modern_logic_vi": "biết, nhận thức",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "意识 được học trong bài theo nghĩa: nhận thức trong đầu; nhận ra điều gì đó.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 意识到问题.",
+    "warning_vi": "Muốn nói nhận ra rằng..., dùng 意识到; không nói 我意识这个问题很严重.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "发现",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phát hiện bằng quan sát/nhận biết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "明白",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Hiểu rõ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Muốn nói nhận ra rằng..., dùng 意识到; không nói 我意识这个问题很严重."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e68e59a7-2fdf-47f2-8945-2a32728edb39",
+      "order": 1,
+      "zh": "意识到问题",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b277d577-0a29-4e46-8db5-b8f916db0790",
+      "order": 2,
+      "zh": "意识到危险",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88ab1c8c-5d6f-475b-8496-b760582cdcc2",
+      "order": 3,
+      "zh": "意识到错误",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a694df9b-f816-4588-abc4-43bb1d8e863f",
+      "order": 4,
+      "zh": "有安全意识",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6182bcb8-6405-4e17-9cbc-1f145dbc553a",
+      "order": 5,
+      "zh": "环保意识",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1fdeddf9-4e4e-43d4-98c1-bb6c4a9ceb3c",
+      "order": 6,
+      "zh": "没有意识到",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f0ae41f1-c624-47f7-9098-2ced10d4a872",
+      "order": 1,
+      "zh": "我突然意识到自己错了。",
+      "pinyin": "",
+      "vi": "Tôi đột nhiên nhận ra mình sai rồi.",
+      "analysis_vi": "意识到 + mệnh đề.",
+      "highlight": [
+        "意识"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "243a4317-4e09-46e4-9e7a-8a8cadf96c06"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "baaa6faf-4f5c-40a1-a629-a7355ee5179c",
+      "order": 2,
+      "zh": "听见外边的人不停地叫，我才意识到可能发生了不寻常的事情。",
+      "pinyin": "",
+      "vi": "Nghe người ngoài gọi không ngừng, tôi mới nhận ra có thể đã xảy ra chuyện khác thường.",
+      "analysis_vi": "才意识到 nhấn nhận ra muộn.",
+      "highlight": [
+        "意识"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "243a4317-4e09-46e4-9e7a-8a8cadf96c06"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tiếng Trung dùng 意识到 như động từ rất thường, không chỉ là danh từ ý thức.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8da46170-98fe-4526-8218-255cce79d2d0",
+      "order": 1,
+      "rule_vi": "Muốn nói nhận ra rằng..., dùng 意识到; không nói 我意识这个问题很严重.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Muốn nói nhận ra rằng..., dùng 意识到; không nói 我意识这个问题很严重.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "意识",
+    "back": "ý thức; nhận ra",
+    "hint": "yìshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "243a4317-4e09-46e4-9e7a-8a8cadf96c06",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "理想",
+      "title_vi": "Lý tưởng",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "中学毕业那年，要考什么大学，要学什么专业，我自己也不清楚。一次我和朋友看了一个电影，这个电影是介绍中国文化的，很有意思。我当时就想，学习中文，将来当翻译怎么样？妈妈知道了我的想法，十分赞成。就这样，我考上了大学中文系。",
+          "pinyin": "Zhōngxué bìyè nà nián, yào kǎo shénme dàxué, yào xué shénme zhuānyè, wǒ zìjǐ yě bù qīngchu. Yí cì wǒ hé péngyou kàn le yí ge diànyǐng, zhè ge diànyǐng shì jièshào Zhōngguó wénhuà de, hěn yǒu yìsi. Wǒ dāngshí jiù xiǎng, xuéxí Zhōngwén, jiānglái dāng fānyì zěnmeyàng? Māma zhīdào le wǒ de xiǎngfǎ, shífēn zànchéng. Jiù zhèyàng, wǒ kǎoshàng le dàxué Zhōngwén xì.",
+          "vi": "Năm tốt nghiệp trung học, tôi cũng không rõ mình nên thi vào trường đại học nào, học chuyên ngành gì. Một lần, tôi và bạn xem một bộ phim giới thiệu văn hóa Trung Quốc, rất thú vị. Khi đó tôi nghĩ: học tiếng Trung, sau này làm phiên dịch thì thế nào nhỉ? Mẹ biết suy nghĩ của tôi thì rất tán thành. Cứ như vậy, tôi thi đỗ vào khoa tiếng Trung của trường đại học.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "大学三年级暑假，我第一次来到中国，在北京语言大学学习了四个星期。学完以后，又到中国一些著名的风景区旅游了一个月。这时才知道，自己对中国的了解太少了。",
+          "pinyin": "Dàxué sān niánjí shǔjià, wǒ dì yí cì láidào Zhōngguó, zài Běijīng Yǔyán Dàxué xuéxí le sì ge xīngqī. Xué wán yǐhòu, yòu dào Zhōngguó yìxiē zhùmíng de fēngjǐngqū lǚyóu le yí ge yuè. Zhè shí cái zhīdào, zìjǐ duì Zhōngguó de liǎojiě tài shǎo le.",
+          "vi": "Kỳ nghỉ hè năm ba đại học, lần đầu tiên tôi đến Trung Quốc, học bốn tuần ở Đại học Ngôn ngữ Bắc Kinh. Học xong, tôi lại đi du lịch một tháng ở một số khu thắng cảnh nổi tiếng của Trung Quốc. Lúc này tôi mới biết, hiểu biết của mình về Trung Quốc còn quá ít.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "因为汉语说得不好，旅途中遇到了很多困难。但是，每次遇到困难时，都会得到好心人的帮助。一次，我坐火车去南京。我对南京一点儿也不了解，火车到南京的时间又是晚上，怎么去找宾馆，怎么买去上海的火车票，我都不知道。我看着地图，心里真有点儿着急。",
+          "pinyin": "Yīnwèi Hànyǔ shuō de bù hǎo, lǚtú zhōng yùdào le hěn duō kùnnan. Dànshì, měi cì yùdào kùnnan shí, dōu huì dédào hǎoxīnrén de bāngzhù. Yí cì, wǒ zuò huǒchē qù Nánjīng. Wǒ duì Nánjīng yìdiǎnr yě bù liǎojiě, huǒchē dào Nánjīng de shíjiān yòu shì wǎnshang, zěnme qù zhǎo bīnguǎn, zěnme mǎi qù Shànghǎi de huǒchēpiào, wǒ dōu bù zhīdào. Wǒ kànzhe dìtú, xīnli zhēn yǒudiǎnr zhāojí.",
+          "vi": "Vì nói tiếng Hán chưa tốt, trên đường đi tôi gặp rất nhiều khó khăn. Nhưng mỗi lần gặp khó khăn, tôi đều nhận được sự giúp đỡ của người tốt bụng. Có một lần, tôi ngồi tàu hỏa đi Nam Kinh. Tôi hoàn toàn không hiểu gì về Nam Kinh, thời gian tàu đến Nam Kinh lại là buổi tối; đi tìm khách sạn thế nào, mua vé tàu đi Thượng Hải ra sao, tôi đều không biết. Tôi nhìn bản đồ, trong lòng thật sự có chút sốt ruột.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "坐在我对面的一个姑娘，好像看出了我的心事，就用英语问我是不是留学生，需要不需要她帮助。她的英语说得很好。我就对她说了自己遇到的困难。她说：“别担心，我也是在南京下车，下车以后，你就跟我走吧。”",
+          "pinyin": "Zuò zài wǒ duìmiàn de yí ge gūniang, hǎoxiàng kànchū le wǒ de xīnshì, jiù yòng Yīngyǔ wèn wǒ shì bú shì liúxuéshēng, xūyào bù xūyào tā bāngzhù. Tā de Yīngyǔ shuō de hěn hǎo. Wǒ jiù duì tā shuō le zìjǐ yùdào de kùnnan. Tā shuō: “Bié dānxīn, wǒ yě shì zài Nánjīng xià chē, xià chē yǐhòu, nǐ jiù gēn wǒ zǒu ba.”",
+          "vi": "Một cô gái ngồi đối diện tôi dường như nhìn ra tâm sự của tôi, liền dùng tiếng Anh hỏi tôi có phải là lưu học sinh không, có cần cô ấy giúp không. Tiếng Anh của cô ấy rất tốt. Tôi liền nói với cô ấy những khó khăn mình gặp phải. Cô ấy nói: “Đừng lo, tôi cũng xuống xe ở Nam Kinh. Sau khi xuống xe, bạn cứ đi theo tôi nhé.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "就这样，我们开始了交谈。她是南京一所大学的学生。她说：“要是你愿意，我可以带你到南京的一些风景区去看看。”我说：“这样当然好，不过，会不会太麻烦你了？”她说：“现在正好是假期，我有空儿。我们可以互相学习，我帮你练汉语，你也帮我练练英语。”",
+          "pinyin": "Jiù zhèyàng, wǒmen kāishǐ le jiāotán. Tā shì Nánjīng yì suǒ dàxué de xuésheng. Tā shuō: “Yàoshi nǐ yuànyì, wǒ kěyǐ dài nǐ dào Nánjīng de yìxiē fēngjǐngqū qù kànkan.” Wǒ shuō: “Zhèyàng dāngrán hǎo, búguò, huì bu huì tài máfan nǐ le?” Tā shuō: “Xiànzài zhènghǎo shì jiàqī, wǒ yǒu kòngr. Wǒmen kěyǐ hùxiāng xuéxí, wǒ bāng nǐ liàn Hànyǔ, nǐ yě bāng wǒ liànlian Yīngyǔ.”",
+          "vi": "Cứ như vậy, chúng tôi bắt đầu trò chuyện. Cô ấy là sinh viên của một trường đại học ở Nam Kinh. Cô ấy nói: “Nếu bạn muốn, tôi có thể đưa bạn đi xem một số khu thắng cảnh ở Nam Kinh.” Tôi nói: “Như vậy tất nhiên là tốt rồi, nhưng có làm phiền bạn quá không?” Cô ấy nói: “Bây giờ đúng lúc đang là kỳ nghỉ, tôi rảnh. Chúng ta có thể học lẫn nhau, tôi giúp bạn luyện tiếng Hán, bạn cũng giúp tôi luyện tiếng Anh.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_002",
+            "grammar_003"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "就这样，我交了第一个中国朋友。",
+          "pinyin": "Jiù zhèyàng, wǒ jiāo le dì yí ge Zhōngguó péngyou.",
+          "vi": "Cứ như vậy, tôi kết giao được người bạn Trung Quốc đầu tiên.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "在南京玩儿了三天。这三天里，她简直成了我的导游，带我去了南京很多有名的地方，又帮我买了去上海的火车票。分别的时候，她说，欢迎你再来。我说，肯定会再来的。我一定要把汉语学好，实现自己当翻译的理想。",
+          "pinyin": "Zài Nánjīng wánr le sān tiān. Zhè sān tiān lǐ, tā jiǎnzhí chéng le wǒ de dǎoyóu, dài wǒ qù le Nánjīng hěn duō yǒumíng de dìfang, yòu bāng wǒ mǎi le qù Shànghǎi de huǒchēpiào. Fēnbié de shíhou, tā shuō, huānyíng nǐ zài lái. Wǒ shuō, kěndìng huì zài lái de. Wǒ yídìng yào bǎ Hànyǔ xué hǎo, shíxiàn zìjǐ dāng fānyì de lǐxiǎng.",
+          "vi": "Tôi chơi ở Nam Kinh ba ngày. Trong ba ngày này, cô ấy gần như trở thành hướng dẫn viên du lịch của tôi, đưa tôi đến rất nhiều địa điểm nổi tiếng ở Nam Kinh, lại còn giúp tôi mua vé tàu đi Thượng Hải. Lúc chia tay, cô ấy nói: “Hoan nghênh bạn lại đến.” Tôi nói: “Nhất định tôi sẽ quay lại. Tôi nhất định phải học tiếng Hán thật tốt, thực hiện lý tưởng làm phiên dịch của mình.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_004"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "cq_001",
+          "type": "comprehension_question",
+          "order": 1,
+          "zh": "“我”为什么要学习中文？你呢？",
+          "pinyin": "“Wǒ” wèishénme yào xuéxí Zhōngwén? Nǐ ne?",
+          "vi": "“Tôi” vì sao muốn học tiếng Trung? Còn bạn thì sao?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cq_002",
+          "type": "comprehension_question",
+          "order": 2,
+          "zh": "“我”第一次来中国是什么时候？来做什么？",
+          "pinyin": "“Wǒ” dì yí cì lái Zhōngguó shì shénme shíhou? Lái zuò shénme?",
+          "vi": "“Tôi” lần đầu đến Trung Quốc khi nào? Đến để làm gì?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cq_003",
+          "type": "comprehension_question",
+          "order": 3,
+          "zh": "“我”在旅途中遇到了什么困难？是谁帮助了“我”？",
+          "pinyin": "“Wǒ” zài lǚtú zhōng yùdào le shénme kùnnan? Shì shéi bāngzhù le “wǒ”?",
+          "vi": "“Tôi” gặp khó khăn gì trên hành trình? Ai đã giúp “tôi”?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cq_004",
+          "type": "comprehension_question",
+          "order": 4,
+          "zh": "“我”为什么还要来中国？“我”的理想是什么？你呢？",
+          "pinyin": "“Wǒ” wèishénme hái yào lái Zhōngguó? “Wǒ” de lǐxiǎng shì shénme? Nǐ ne?",
+          "vi": "Vì sao “tôi” còn muốn đến Trung Quốc nữa? Lý tưởng của “tôi” là gì? Còn bạn thì sao?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+      "type": "text_narrative",
+      "order": 2,
+      "title": "要见彩虹",
+      "title_vi": "Muốn thấy cầu vồng",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [],
+      "paragraphs": [
+        {
+          "id": "99e63fca-bad7-4aff-8eba-621a119e5a19",
+          "order": 1,
+          "zh": "最近，我学会了一首中文歌，很好听，也很有意义。里边有一句歌词，让我想了很多很多。这句歌词是：不经历风雨，怎么见彩虹？没有人能随随便便成功。",
+          "pinyin": "Zuìjìn, wǒ xuéhuì le yì shǒu Zhōngwén gē, hěn hǎotīng, yě hěn yǒu yìyì. Lǐbian yǒu yí jù gēcí, ràng wǒ xiǎng le hěn duō hěn duō. Zhè jù gēcí shì: Bù jīnglì fēngyǔ, zěnme jiàn cǎihóng? Méiyǒu rén néng suí suí biàn biàn chénggōng.",
+          "vi": "Gần đây, tôi học được một bài hát tiếng Trung, rất hay và cũng rất có ý nghĩa. Trong đó có một câu lời bài hát khiến tôi suy nghĩ rất nhiều. Câu lời bài hát ấy là: Không trải qua mưa gió, làm sao thấy được cầu vồng? Không ai có thể thành công một cách tùy tiện, dễ dàng.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+          "order": 2,
+          "zh": "我来中国已经半年了，半年的留学生活让我尝到了以前从没有尝过的酸甜苦辣。有一段时间我常常一个人偷偷儿地哭，有时哭着哭着就睡着了。在梦中，我梦见了家乡，梦见了家乡的亲人。在梦中我对父母说：“你们的女儿输了，失败了，对学习、对自己都失去了信心。”",
+          "pinyin": "Wǒ lái Zhōngguó yǐjīng bàn nián le, bàn nián de liúxué shēnghuó ràng wǒ cháng dào le yǐqián cóng méiyǒu chángguo de suān tián kǔ là. Yǒu yí duàn shíjiān wǒ chángcháng yí ge rén tōutōur de kū, yǒushí kūzhe kūzhe jiù shuìzháo le. Zài mèng zhōng, wǒ mèngjiàn le jiāxiāng, mèngjiàn le jiāxiāng de qīnrén. Zài mèng zhōng wǒ duì fùmǔ shuō: “Nǐmen de nǚ'ér shū le, shībài le, duì xuéxí, duì zìjǐ dōu shīqù le xìnxīn.”",
+          "vi": "Tôi đến Trung Quốc đã được nửa năm rồi. Nửa năm cuộc sống du học đã khiến tôi nếm trải đủ những vui buồn cay đắng mà trước đây chưa từng trải qua. Có một thời gian, tôi thường một mình lén khóc; có lúc khóc mãi rồi ngủ thiếp đi. Trong mơ, tôi mơ thấy quê nhà, mơ thấy người thân ở quê. Trong mơ, tôi nói với bố mẹ: “Con gái của bố mẹ thua rồi, thất bại rồi, đối với việc học, đối với bản thân đều mất hết niềm tin rồi.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_006",
+            "grammar_007"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a95090b2-e303-4079-9c8c-04b8d52d756d",
+          "order": 3,
+          "zh": "父母打电话叫我回国，但是，我想我不能回国。来中国留学，学习汉语，这是我自己选择的道路。人生的道路上肯定会遇到各种各样的困难，要是一遇到困难就退缩，怎么可能取得成功呢？我决定坚持下去。老师也常鼓励我说：坚持就是胜利。",
+          "pinyin": "Fùmǔ dǎ diànhuà jiào wǒ huíguó, dànshì, wǒ xiǎng wǒ bù néng huíguó. Lái Zhōngguó liúxué, xuéxí Hànyǔ, zhè shì wǒ zìjǐ xuǎnzé de dàolù. Rénshēng de dàolù shang kěndìng huì yùdào gè zhǒng gè yàng de kùnnan, yàoshi yí yùdào kùnnan jiù tuìsuō, zěnme kěnéng qǔdé chénggōng ne? Wǒ juédìng jiānchí xiàqu. Lǎoshī yě cháng gǔlì wǒ shuō: Jiānchí jiù shì shènglì.",
+          "vi": "Bố mẹ gọi điện bảo tôi về nước, nhưng tôi nghĩ mình không thể về nước. Đến Trung Quốc du học, học tiếng Hán, đây là con đường do chính tôi lựa chọn. Trên con đường đời chắc chắn sẽ gặp đủ loại khó khăn. Nếu cứ gặp khó khăn là lùi bước, thì làm sao có thể đạt được thành công? Tôi quyết định kiên trì tiếp tục. Thầy cô cũng thường động viên tôi rằng: Kiên trì chính là thắng lợi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "700d39f4-2b3a-4134-a5d1-78801541da6c",
+          "order": 4,
+          "zh": "我的梦想是当一个汉语老师，不学好汉语怎么能当汉语老师呢？",
+          "pinyin": "Wǒ de mèngxiǎng shì dāng yí ge Hànyǔ lǎoshī, bù xué hǎo Hànyǔ zěnme néng dāng Hànyǔ lǎoshī ne?",
+          "vi": "Ước mơ của tôi là trở thành một giáo viên tiếng Hán. Không học tốt tiếng Hán thì làm sao có thể làm giáo viên tiếng Hán được?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+          "order": 5,
+          "zh": "想到这儿，就觉得自己很可笑，都十八岁了，已经不是小孩子了，为什么一遇到困难就哭呢？为什么不能坚强一些呢？",
+          "pinyin": "Xiǎngdào zhèr, jiù juéde zìjǐ hěn kěxiào, dōu shíbā suì le, yǐjīng bú shì xiǎoháizi le, wèishénme yí yùdào kùnnan jiù kū ne? Wèishénme bù néng jiānqiáng yìxiē ne?",
+          "vi": "Nghĩ đến đây, tôi cảm thấy bản thân thật buồn cười. Đã mười tám tuổi rồi, đã không còn là trẻ con nữa, tại sao cứ gặp khó khăn là khóc? Tại sao không thể mạnh mẽ hơn một chút?",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e40c0ed2-7f61-43b0-b358-f09a4ff0d099",
+          "order": 6,
+          "zh": "我心中又唱起了这首歌：不经历风雨，怎么见彩虹？没有人能随随便便成功。是啊，要成功，就必须付出艰苦的努力。",
+          "pinyin": "Wǒ xīn zhōng yòu chàngqǐ le zhè shǒu gē: Bù jīnglì fēngyǔ, zěnme jiàn cǎihóng? Méiyǒu rén néng suí suí biàn biàn chénggōng. Shì a, yào chénggōng, jiù bìxū fùchū jiānkǔ de nǔlì.",
+          "vi": "Trong lòng tôi lại hát vang bài hát ấy: Không trải qua mưa gió, làm sao thấy được cầu vồng? Không ai có thể thành công một cách tùy tiện, dễ dàng. Đúng vậy, muốn thành công thì nhất định phải bỏ ra nỗ lực gian khổ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "cq_005",
+          "type": "comprehension_question",
+          "order": 1,
+          "zh": "“我”学会了一首什么歌？你听过这首歌吗？",
+          "pinyin": "“Wǒ” xuéhuì le yì shǒu shénme gē? Nǐ tīngguo zhè shǒu gē ma?",
+          "vi": "“Tôi” học được bài hát gì? Bạn đã nghe bài hát này chưa?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cq_006",
+          "type": "comprehension_question",
+          "order": 2,
+          "zh": "“我”来中国多长时间了？“我”为什么常常一个人偷偷儿地哭？你来中国以后哭过吗？为什么？",
+          "pinyin": "“Wǒ” lái Zhōngguó duō cháng shíjiān le? “Wǒ” wèishénme chángcháng yí ge rén tōutōur de kū? Nǐ lái Zhōngguó yǐhòu kūguo ma? Wèishénme?",
+          "vi": "“Tôi” đến Trung Quốc được bao lâu rồi? Vì sao “tôi” thường một mình lén khóc? Sau khi đến Trung Quốc bạn từng khóc chưa? Vì sao?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cq_007",
+          "type": "comprehension_question",
+          "order": 3,
+          "zh": "“我”为什么要坚持下去？为什么觉得自己很可笑？",
+          "pinyin": "“Wǒ” wèishénme yào jiānchí xiàqu? Wèishénme juéde zìjǐ hěn kěxiào?",
+          "vi": "Vì sao “tôi” muốn kiên trì tiếp tục? Vì sao cảm thấy bản thân rất buồn cười?",
+          "answer_zh": "",
+          "answer_vi": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

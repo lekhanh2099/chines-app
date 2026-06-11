@@ -1,0 +1,489 @@
+{
+  "id": "b82bd18b-37e5-4fa2-8bca-e3a2c5344a55",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "体育馆",
+  "pinyin": "tǐyùguǎn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "place",
+    "sports"
+  ],
+  "meaning": {
+    "hanviet": "Thể dục quán",
+    "meaning_vi": "nhà thi đấu, nhà thể thao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhà thi đấu",
+      "nhà thể thao"
+    ],
+    "short_definition_vi": "nhà thi đấu, nhà thể thao",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "place, sports",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "体",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "本",
+            "hanviet": "bản",
+            "meaning_vi": "gốc/thân",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân thể, thể chất, hệ thống",
+        "modern_logic_vi": "体 liên quan thân thể/thể chất.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "育",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "phần dưới nhìn thấy",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng; tháng; phần thân thể trong nhiều chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nuôi dưỡng, giáo dục",
+        "modern_logic_vi": "育 trong 体育 gợi giáo dục/rèn luyện thể chất.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng; tháng; phần thân thể trong nhiều chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "馆",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "饣",
+            "hanviet": "thực",
+            "meaning_vi": "ăn uống",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "食",
+              "radical_variant": "饣",
+              "radical_name_vi": "bộ Thực",
+              "radical_name_zh": "",
+              "hanviet": "thực",
+              "meaning_vi": "ăn uống",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "官",
+            "hanviet": "quan",
+            "meaning_vi": "phần phải gợi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quán, nhà, cơ sở công cộng",
+        "modern_logic_vi": "馆 là cơ sở/nhà chuyên dùng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "食",
+          "radical_variant": "饣",
+          "radical_name_vi": "bộ Thực",
+          "radical_name_zh": "",
+          "hanviet": "thực",
+          "meaning_vi": "ăn uống",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "体育 là thể dục/thể thao; 馆 là cơ sở/nhà chuyên dùng. 体育馆 là nhà/cơ sở dùng cho hoạt động thể thao.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "体育场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Sân vận động, thường ngoài trời/quy mô lớn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "健身房",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phòng gym.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "运动场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Sân thể thao/sân vận động nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "图书馆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Thư viện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "饭馆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Quán ăn/nhà hàng nhỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "体育馆",
+        "right": "体育场",
+        "meaning_vi": "体育馆 thường là trong nhà; 体育场 thường là sân vận động ngoài trời/quy mô lớn.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d162a898-39c2-47e6-b214-9d25eac27af7",
+      "order": 1,
+      "zh": "去体育馆",
+      "pinyin": "",
+      "vi": "đi đến nhà thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "adad54a7-ced5-4a00-9067-3c3ba7085d6a",
+      "order": 2,
+      "zh": "在体育馆打球",
+      "pinyin": "",
+      "vi": "chơi bóng ở nhà thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e110daba-14c1-4f2c-b8fa-2fe0f0bfe3d3",
+      "order": 3,
+      "zh": "学校体育馆",
+      "pinyin": "",
+      "vi": "nhà thi đấu của trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac9cd97b-81d4-45f1-a602-82aaaf6dff13",
+      "order": 4,
+      "zh": "体育馆旁边",
+      "pinyin": "",
+      "vi": "bên cạnh nhà thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eda3558c-7caf-42af-8536-2a7aadeec4b6",
+      "order": 5,
+      "zh": "附近有体育馆",
+      "pinyin": "",
+      "vi": "gần đó có nhà thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "59f363d5-10e4-4d9d-b4ab-5973c427e675",
+      "order": 6,
+      "zh": "体育馆很大",
+      "pinyin": "",
+      "vi": "nhà thi đấu rất lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da2be7de-5ebb-44da-86a3-1edcb6a74680",
+      "order": 7,
+      "zh": "体育馆门口",
+      "pinyin": "",
+      "vi": "cửa nhà thi đấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07fe2327-5f51-4e14-b6e1-5448a50b698c",
+      "order": 8,
+      "zh": "体育馆里坐着很多人",
+      "pinyin": "",
+      "vi": "trong nhà thi đấu có nhiều người đang ngồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d60ea467-0401-4c06-82ec-60f369b6dba8",
+      "order": 1,
+      "zh": "体育馆在学校旁边。",
+      "pinyin": "Tǐyùguǎn zài xuéxiào pángbiān.",
+      "vi": "Nhà thi đấu ở bên cạnh trường.",
+      "analysis_vi": "A 在 B 旁边 là mẫu vị trí cơ bản.",
+      "highlight": [
+        "体育馆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b82bd18b-37e5-4fa2-8bca-e3a2c5344a55"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3a5234a1-6ae8-4f98-9d5d-7086f26ed4b9",
+      "order": 2,
+      "zh": "虽然体育馆离这儿不远，但是坐公共汽车不太方便。",
+      "pinyin": "Suīrán tǐyùguǎn lí zhèr bù yuǎn, dànshì zuò gōnggòng qìchē bú tài fāngbiàn.",
+      "vi": "Tuy nhà thi đấu cách đây không xa, nhưng đi xe buýt không tiện lắm.",
+      "analysis_vi": "虽然……但是……; 离这儿不远 = cách đây không xa.",
+      "highlight": [
+        "体育馆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b82bd18b-37e5-4fa2-8bca-e3a2c5344a55"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dde35636-a293-46fa-bda6-321955767add",
+      "order": 3,
+      "zh": "要是附近有体育馆，我下班以后就可以顺便去打球，不用再坐地铁去很远的地方。",
+      "pinyin": "Yàoshi fùjìn yǒu tǐyùguǎn, wǒ xiàbān yǐhòu jiù kěyǐ shùnbiàn qù dǎ qiú, bú yòng zài zuò dìtiě qù hěn yuǎn de dìfang.",
+      "vi": "Nếu gần đó có nhà thi đấu, sau khi tan làm tôi có thể tiện thể đi chơi bóng, không cần đi metro đến nơi rất xa nữa.",
+      "analysis_vi": "要是……就……; 顺便去打球 = tiện thể đi chơi bóng.",
+      "highlight": [
+        "体育馆"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b82bd18b-37e5-4fa2-8bca-e3a2c5344a55"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "体育馆 thường là không gian thể thao trong nhà. Sân vận động ngoài trời nên cân nhắc 体育场 hoặc 运动场.",
+    "tags": [
+      "place",
+      "sports"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9cd41263-62e3-4c5b-b7ef-e44c9a9636d3",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 体育馆, 体育场, 健身房.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我去体育馆打篮球。",
+          "pinyin": "",
+          "vi": "Tôi đến nhà thi đấu chơi bóng rổ.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我去健身房锻炼。",
+          "pinyin": "",
+          "vi": "Tôi đến phòng gym tập luyện.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "体育馆 là nhà thi đấu trong nhà; 体育场 là sân vận động; 健身房 là phòng gym.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "体育馆",
+    "back": "nhà thi đấu, nhà thể thao",
+    "hint": "tǐyùguǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "place",
+      "sports"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b82bd18b-37e5-4fa2-8bca-e3a2c5344a55",
+    "source_lesson_vocab_id": null
+  }
+}

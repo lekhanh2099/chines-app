@@ -1,0 +1,425 @@
+{
+  "id": "b356a1f7-ea16-4550-a5b6-f626517f8aa9",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "过来",
+  "pinyin": "guòlai",
+  "pos": {
+    "raw_vi": "Động từ xu hướng / Bổ ngữ xu hướng",
+    "raw_cn": "趋向动词/趋向补语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Quá lai",
+    "meaning_vi": "qua đây, đi/đến về phía người nói",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "qua đây",
+      "đi/đến về phía người nói"
+    ],
+    "short_definition_vi": "qua đây, đi/đến về phía người nói",
+    "textbook_focus_vi": "Âm Hán Việt: quá lai. Nghĩa chính: Qua đây, đi/đến về phía người nói. Di chuyển từ chỗ khác qua phía người nói. Đứng sau động từ để chỉ hướng về phía người nói. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "过",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại / di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại / di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "tấc / đơn vị đo ngắn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "寸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thốn",
+              "radical_name_zh": "",
+              "hanviet": "thốn",
+              "meaning_vi": "tấc / đơn vị đo ngắn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "qua, vượt qua, trải qua",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây / gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây / gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến, tới, lại đây",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "过 = qua; 来 = đến đây. 过来 = qua đây / chuyển về phía người nói.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: Nếu đi ra xa người nói, dùng 过去, không dùng 过来.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "过来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "qua đây, về phía người nói.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "过去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "qua đó, xa người nói.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đến đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "走过来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi bộ qua đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "跑过来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chạy qua đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拿过来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầm qua đây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "你过来一下。",
+      "Bạn qua đây một chút.",
+      "你过去一下。",
+      "Bạn qua đó một chút.",
+      "他向我走过来。",
+      "Anh ấy đi về phía tôi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4b609623-8c1f-48aa-93c2-a6c9720a99a7",
+      "order": 1,
+      "zh": "过来一下",
+      "pinyin": "",
+      "vi": "qua đây một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa907fff-6399-4c53-9ee4-061768cedea9",
+      "order": 2,
+      "zh": "走过来",
+      "pinyin": "",
+      "vi": "đi bộ qua đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29bca62b-7068-4776-8417-287ddbe5280c",
+      "order": 3,
+      "zh": "跑过来",
+      "pinyin": "",
+      "vi": "chạy qua đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26d9bdc6-e874-4dca-9867-ccd18d683b1b",
+      "order": 4,
+      "zh": "拿过来",
+      "pinyin": "",
+      "vi": "cầm qua đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc96bc5c-a11c-495f-b4b9-e63fd30bd5b7",
+      "order": 5,
+      "zh": "送过来",
+      "pinyin": "",
+      "vi": "đưa qua đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75840ace-ce99-492d-aae4-a1f2af734661",
+      "order": 6,
+      "zh": "把书拿过来",
+      "pinyin": "",
+      "vi": "cầm sách qua đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4f0ed315-fbee-4879-bf10-5b39b24c15f0",
+      "order": 1,
+      "zh": "你过来一下。",
+      "pinyin": "Nǐ guòlai yíxià.",
+      "vi": "Bạn qua đây một chút.",
+      "analysis_vi": "过来 dùng khi người nói gọi người kia về phía mình. 一下 làm lời gọi nhẹ hơn.",
+      "highlight": [
+        "过来"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "b356a1f7-ea16-4550-a5b6-f626517f8aa9"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1cbee15-8202-4366-828e-31e40479b4dd",
+      "order": 2,
+      "zh": "快上来吧，要开车了，别再站在那儿了，马上过来！",
+      "pinyin": "Kuài shànglai ba, yào kāichē le, bié zài zhàn zài nàr le, mǎshàng guòlai!",
+      "vi": "Mau lên đây đi, xe sắp chạy rồi, đừng đứng ở đó nữa, qua đây ngay!",
+      "analysis_vi": "上来 vì người nói ở trên xe. 要开车了 báo sắp chạy. 过来 gọi người nghe về phía người nói.",
+      "highlight": [
+        "过来"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "b356a1f7-ea16-4550-a5b6-f626517f8aa9"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8690558d-7742-44bf-b1ec-b1c4d0ab2621",
+      "order": 3,
+      "zh": "讨论开始以后，赵老师让我走过来，把香港研讨会上的要求清楚地读给大家听。",
+      "pinyin": "Tǎolùn kāishǐ yǐhòu, Zhào lǎoshī ràng wǒ zǒu guòlai, bǎ Xiānggǎng yántǎohuì shang de yāoqiú qīngchu de dú gěi dàjiā tīng.",
+      "vi": "Sau khi buổi thảo luận bắt đầu, thầy Triệu bảo tôi đi qua đây, đọc rõ yêu cầu trong hội thảo Hồng Kông cho mọi người nghe.",
+      "analysis_vi": "走过来 hướng về phía thầy/nhóm người nói. 把要求读给大家听 là 把字句 + 给 ai nghe. 清楚地读 dùng 地.",
+      "highlight": [
+        "过来"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "b356a1f7-ea16-4550-a5b6-f626517f8aa9"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong khẩu ngữ, 过来一下 rất hay dùng khi gọi ai đó lại gần mình. Nó mềm hơn gọi trống không 过来！, vì 一下 làm câu bớt ra lệnh.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0a6326cd-f0d3-46a9-b091-86ff2a348873",
+      "order": 1,
+      "rule_vi": "过来 là qua đây, hướng về người nói hoặc điểm nhìn; đừng dùng cho mọi “qua”.",
+      "natural_examples": [
+        {
+          "zh": "过来 = qua đây.",
+          "pinyin": "过去 = qua đó.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "过去 = qua đó.",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "快上来吧！",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Mau lên đây đi!",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "过来",
+    "back": "qua đây, đi/đến về phía người nói",
+    "hint": "guòlai",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b356a1f7-ea16-4550-a5b6-f626517f8aa9",
+    "source_lesson_vocab_id": null
+  }
+}

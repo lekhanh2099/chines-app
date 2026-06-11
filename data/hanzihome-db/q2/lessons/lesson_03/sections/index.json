@@ -1,0 +1,58 @@
+[
+  {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "file": "01-text.json"
+  },
+  {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng chính và bổ sung",
+    "file": "02-vocabulary.json"
+  },
+  {
+    "id": "section_03_notes",
+    "type": "notes",
+    "order": 3,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "file": "03-notes.json"
+  },
+  {
+    "id": "section_04_grammar",
+    "type": "grammar",
+    "order": 4,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "file": "04-grammar.json"
+  },
+  {
+    "id": "section_05_exercises",
+    "type": "exercises",
+    "order": 5,
+    "title": "练习",
+    "title_vi": "Bài tập trong sách",
+    "file": "05-exercises.json"
+  },
+  {
+    "id": "section_06_reading",
+    "type": "reading",
+    "order": 6,
+    "title": "阅读理解",
+    "title_vi": "Đọc hiểu",
+    "file": "06-reading.json"
+  },
+  {
+    "id": "section_07_character_writing",
+    "type": "character_writing",
+    "order": 7,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "file": "07-character-writing.json"
+  }
+]

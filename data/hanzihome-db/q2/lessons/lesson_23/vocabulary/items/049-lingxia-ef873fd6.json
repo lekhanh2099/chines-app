@@ -1,0 +1,60 @@
+{
+  "id": "synthetic_vocab_beddafcf2e3973ae",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "零下",
+  "pinyin": "língxià",
+  "meaning_vi": "dưới 0 độ, âm độ",
+  "pos": "Danh từ chỉ nhiệt độ / Yếu tố định lượng",
+  "pos_detail": {
+    "raw_vi": "Danh từ chỉ nhiệt độ / Yếu tố định lượng",
+    "raw_cn": "名词/温度表达",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "54b36889-82be-485b-8342-fb8aab572065",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "54b36889-82be-485b-8342-fb8aab572065",
+    "type": "vocabulary_item",
+    "order": 9,
+    "hanzi": "零下",
+    "pinyin": "língxià",
+    "meaning_vi": "dưới 0 độ, âm độ",
+    "meaning_en": "",
+    "pos": "Danh từ chỉ nhiệt độ / Yếu tố định lượng",
+    "tags": [
+      "pos_checked",
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "零下",
+      "back": "língxià — dưới 0 độ, âm độ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": false,
+    "pos_detail": {
+      "raw_vi": "Danh từ chỉ nhiệt độ / Yếu tố định lượng",
+      "raw_cn": "名词/温度表达",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

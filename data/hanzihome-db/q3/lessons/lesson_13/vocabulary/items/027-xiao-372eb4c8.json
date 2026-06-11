@@ -1,0 +1,187 @@
+{
+  "id": "1fc1a668-ae66-42a8-a2c6-81b98aa215e4",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "孝",
+  "pinyin": "xiào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "culture"
+  ],
+  "meaning": {
+    "hanviet": "hiếu",
+    "meaning_vi": "hiếu thảo, đạo hiếu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiếu thảo",
+      "đạo hiếu"
+    ],
+    "short_definition_vi": "hiếu thảo, đạo hiếu",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "孝",
+        "lishu_vi": "hiếu",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiếu thảo",
+        "modern_logic_vi": "Trong từ/cụm này, 孝 góp phần vào nghĩa hiện đại: hiếu thảo.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "孝 cần học theo nghĩa hiện đại trong bài: hiếu thảo, đạo hiếu.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 孝顺父母.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "089d7dff-126d-4c25-8baf-2693b09e0b72",
+      "order": 1,
+      "zh": "孝顺父母",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09bb1610-161d-46df-a1d0-e9e8a35160a3",
+      "order": 2,
+      "zh": "孝敬父母",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01e136a9-6b49-4267-86ec-e524d7fe7a36",
+      "order": 3,
+      "zh": "尽孝",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8affa488-73e6-4626-b97d-9dc676cb47fd",
+      "order": 1,
+      "zh": "他很孝顺，常常照顾母亲。",
+      "pinyin": "Tā hěn xiàoshùn, chángcháng zhàogù mǔqīn.",
+      "vi": "Anh ấy rất hiếu thảo, thường chăm sóc mẹ.",
+      "analysis_vi": "孝顺 dễ dùng hơn chữ đơn 孝.",
+      "highlight": [
+        "孝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1fc1a668-ae66-42a8-a2c6-81b98aa215e4"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b50f49b9-e23a-4097-9d15-11e4371384ea",
+      "order": 2,
+      "zh": "在很多家庭里，照顾父母被看作是尽孝的一种方式。",
+      "pinyin": "Zài hěn duō jiātíng lǐ, zhàogù fùmǔ bèi kànzuò shì jìn xiào de yì zhǒng fāngshì.",
+      "vi": "Trong nhiều gia đình, chăm sóc cha mẹ được xem là cách làm tròn chữ hiếu.",
+      "analysis_vi": "尽孝 là cụm văn hóa trọng tâm.",
+      "highlight": [
+        "孝"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1fc1a668-ae66-42a8-a2c6-81b98aa215e4"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "孝 là trục đạo đức lớn trong văn hóa gia đình Trung–Việt, nhưng hiện đại nên hiểu là chăm sóc/tôn trọng/có trách nhiệm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3adfda60-0069-4cc0-9e3d-00af059a793b",
+      "order": 1,
+      "rule_vi": "Dùng 孝 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "孝",
+    "back": "hiếu thảo, đạo hiếu",
+    "hint": "xiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1fc1a668-ae66-42a8-a2c6-81b98aa215e4",
+    "source_lesson_vocab_id": null
+  }
+}

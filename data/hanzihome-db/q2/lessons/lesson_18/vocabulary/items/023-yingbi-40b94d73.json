@@ -1,0 +1,369 @@
+{
+  "id": "e18dab8b-05f0-4c6b-b635-d6049af495d3",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "硬币",
+  "pinyin": "yìngbì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Ngạnh tệ",
+    "meaning_vi": "tiền xu, đồng xu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiền xu, đồng xu"
+    ],
+    "short_definition_vi": "tiền xu, đồng xu",
+    "textbook_focus_vi": "tiền xu, đồng xu",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "硬",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "石",
+            "hanviet": "thạch",
+            "meaning_vi": "đá/vật cứng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "石",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thạch",
+              "radical_name_zh": "",
+              "hanviet": "thạch",
+              "meaning_vi": "đá, vật cứng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "更",
+            "hanviet": "canh",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cứng, rắn",
+        "modern_logic_vi": "硬 gợi vật cứng/rắn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "石",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thạch",
+          "radical_name_zh": "",
+          "hanviet": "thạch",
+          "meaning_vi": "đá, vật cứng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "币",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn, vải",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiền tệ",
+        "modern_logic_vi": "币 = tiền tệ.",
+        "warning_vi": "Không ép nghĩa khăn/vải vào nghĩa hiện đại.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "巾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cân",
+          "radical_name_zh": "",
+          "hanviet": "cân",
+          "meaning_vi": "khăn, vải",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "硬 là cứng. 币 là tiền tệ. → 硬币 = tiền cứng, tức tiền xu kim loại. Cảnh báo: 硬币 không phải “tiền cứng” theo nghĩa tài chính phức tạp; trong đời sống là đồng xu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "纸币",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiền giấy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "零钱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiền lẻ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "现金",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiền mặt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "硬币",
+        "right": "纸币",
+        "meaning_vi": "tiền xu ↔ tiền giấy",
+        "note_vi": "tiền xu ↔ tiền giấy",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "硬币: tiền xu."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fa27b0ac-fd2f-4260-a79d-51ff2102cf70",
+      "order": 1,
+      "zh": "一个硬币",
+      "pinyin": "",
+      "vi": "một đồng xu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2147b49-2cd0-42ad-aaee-b426e8918ab0",
+      "order": 2,
+      "zh": "几个硬币",
+      "pinyin": "",
+      "vi": "vài đồng xu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ad551ba-4ac5-46d1-a430-2619edb84a48",
+      "order": 3,
+      "zh": "掏出硬币",
+      "pinyin": "",
+      "vi": "móc tiền xu ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2d9c444-f887-4eb1-90b8-5bca26719f95",
+      "order": 4,
+      "zh": "硬币掉了",
+      "pinyin": "",
+      "vi": "đồng xu rơi rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb72239e-a477-4522-ac68-6d28b961c634",
+      "order": 5,
+      "zh": "没有硬币",
+      "pinyin": "",
+      "vi": "không có tiền xu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b0bedc94-362a-40a1-96a0-239a6f2e031c",
+      "order": 1,
+      "zh": "他从口袋里掏出几个硬币，放在摊儿上。",
+      "pinyin": "Tā cóng kǒudài lǐ tāo chū jǐ ge yìngbì, fàng zài tānr shang.",
+      "vi": "Anh ấy móc từ trong túi ra vài đồng xu, đặt lên quầy hàng nhỏ.",
+      "analysis_vi": "掏出硬币 rất tự nhiên vì tiền xu thường nằm trong túi; 放在摊儿上 có vị trí rõ.",
+      "highlight": [
+        "硬币"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "e18dab8b-05f0-4c6b-b635-d6049af495d3"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f09be30a-3d4d-4400-9ce6-da3c56c3251b",
+      "order": 2,
+      "zh": "请把这些硬币装进小包里，别弄丢了。",
+      "pinyin": "Qǐng bǎ zhèxiē yìngbì zhuāng jìn xiǎo bāo lǐ, bié nòng diū le.",
+      "vi": "Hãy bỏ mấy đồng xu này vào túi nhỏ, đừng làm mất.",
+      "analysis_vi": "把硬币装进……里 là câu 把 có hướng vào trong.",
+      "highlight": [
+        "硬币"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "e18dab8b-05f0-4c6b-b635-d6049af495d3"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4aefaa50-ba77-4e76-859c-ed35c76cd751",
+      "order": 3,
+      "zh": "硬币掉到椅子下面了，他找了半天才找到。",
+      "pinyin": "Yìngbì diào dào yǐzi xiàmian le, tā zhǎo le bàntiān cái zhǎodào.",
+      "vi": "Đồng xu rơi xuống dưới ghế rồi, anh ấy tìm mãi mới thấy.",
+      "analysis_vi": "掉到椅子下面 nói kết quả rơi đến vị trí dưới ghế.",
+      "highlight": [
+        "硬币"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "e18dab8b-05f0-4c6b-b635-d6049af495d3"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở Trung Quốc hiện nay, thanh toán di động rất phổ biến nên nhiều người ít mang 硬币 hơn trước. Nhưng tiền xu vẫn có thể gặp khi đi chợ nhỏ, máy bán hàng, hoặc nhận tiền thối.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9159bb16-1c72-4136-819d-56ee4944c03f",
+      "order": 1,
+      "rule_vi": "Nhầm 硬币 với 零钱.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 硬币 theo cụm và ngữ cảnh bài 18; nghĩa chính là tiền xu, đồng xu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "硬币",
+    "back": "tiền xu, đồng xu",
+    "hint": "yìngbì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e18dab8b-05f0-4c6b-b635-d6049af495d3",
+    "source_lesson_vocab_id": null
+  }
+}

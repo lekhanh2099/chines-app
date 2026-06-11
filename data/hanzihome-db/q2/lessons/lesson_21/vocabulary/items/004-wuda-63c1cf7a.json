@@ -1,0 +1,320 @@
+{
+  "id": "8d3efbdb-cf62-49b0-8f77-1154c2a04e79",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "武打",
+  "pinyin": "wǔdǎ",
+  "pos": {
+    "raw_vi": "Danh từ / Thành phần bổ nghĩa",
+    "raw_cn": "名/定语",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Võ đả",
+    "meaning_vi": "võ thuật đánh đấu; cảnh đánh võ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "võ thuật đánh đấu; cảnh đánh võ"
+    ],
+    "short_definition_vi": "võ thuật đánh đấu; cảnh đánh võ",
+    "textbook_focus_vi": "võ thuật đánh đấu; cảnh đánh võ",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "武",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí cổ",
+            "position_vi": "trong chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng/chân",
+            "position_vi": "trong chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "võ/quân sự",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "打",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丁",
+            "hanviet": "đinh",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đánh/làm/gọi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "cảnh/động tác đánh võ trong biểu diễn",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "武术",
+        "pinyin": "",
+        "meaning_vi": "võ thuật",
+        "difference_vi": "môn võ/hệ kỹ thuật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打架",
+        "pinyin": "",
+        "meaning_vi": "đánh nhau",
+        "difference_vi": "ngoài đời, tiêu cực",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "50e16cae-4d25-448d-96b4-1c916efb6a92",
+      "order": 1,
+      "zh": "武打动作",
+      "pinyin": "",
+      "vi": "động tác võ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb926efd-5c7d-4c90-a8e1-f886a75dd1c9",
+      "order": 2,
+      "zh": "武打演员",
+      "pinyin": "",
+      "vi": "diễn viên võ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a23bb470-4417-48cb-bd06-3632caca9154",
+      "order": 3,
+      "zh": "武打片",
+      "pinyin": "",
+      "vi": "phim võ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3138a7c9-ab08-426f-be57-d7add6259e73",
+      "order": 4,
+      "zh": "武打场面",
+      "pinyin": "",
+      "vi": "cảnh đánh võ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0add32a4-5419-4b23-975d-e112c2f11f96",
+      "order": 5,
+      "zh": "精彩的武打",
+      "pinyin": "",
+      "vi": "màn võ thuật đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f103b851-cf8c-42c7-9edf-50cc6b46f826",
+      "order": 1,
+      "zh": "京剧里有很多武打动作。",
+      "pinyin": "Jīngjù lǐ yǒu hěn duō wǔdǎ dòngzuò.",
+      "vi": "Trong Kinh kịch có rất nhiều động tác võ thuật.",
+      "analysis_vi": "武打 bổ nghĩa cho 动作.",
+      "highlight": [
+        "武打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8d3efbdb-cf62-49b0-8f77-1154c2a04e79"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "78b3b785-dbce-4f22-ae17-965ce6b64ff0",
+      "order": 2,
+      "zh": "这些武打动作太快了，我看不清楚。",
+      "pinyin": "Zhèxiē wǔdǎ dòngzuò tài kuài le, wǒ kàn bù qīngchu.",
+      "vi": "Những động tác võ thuật này nhanh quá, tôi nhìn không rõ.",
+      "analysis_vi": "看不清楚 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "武打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8d3efbdb-cf62-49b0-8f77-1154c2a04e79"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "22b0a20e-2438-4dcf-a277-f4668f2e6fe4",
+      "order": 3,
+      "zh": "只要多看几次，你就能猜出这些武打动作表示什么。",
+      "pinyin": "Zhǐyào duō kàn jǐ cì, nǐ jiù néng cāi chū zhèxiē wǔdǎ dòngzuò biǎoshì shénme.",
+      "vi": "Chỉ cần xem thêm vài lần, bạn sẽ đoán ra động tác võ thuật biểu thị điều gì.",
+      "analysis_vi": "只要……就……; 猜出 là đoán ra.",
+      "highlight": [
+        "武打"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8d3efbdb-cf62-49b0-8f77-1154c2a04e79"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong hí khúc Trung Quốc, 武打 là ký hiệu sân khấu cách điệu, không chỉ đánh cho đẹp.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f935b95-efb5-4231-952a-2aabb50e45d7",
+      "order": 1,
+      "rule_vi": "Không dùng 武打 để nói đánh nhau ngoài đời; đánh nhau là 打架。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "武打",
+    "back": "võ thuật đánh đấu; cảnh đánh võ",
+    "hint": "wǔdǎ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8d3efbdb-cf62-49b0-8f77-1154c2a04e79",
+    "source_lesson_vocab_id": null
+  }
+}

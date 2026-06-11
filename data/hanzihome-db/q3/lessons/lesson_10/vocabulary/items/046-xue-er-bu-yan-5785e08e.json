@@ -1,0 +1,240 @@
+{
+  "id": "579ffd53-1d19-4350-87e5-36f80898a774",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "学而不厌",
+  "pinyin": "xué ér bú yàn",
+  "pos": {
+    "raw_vi": "Thành ngữ / Văn ngôn",
+    "raw_cn": "成语 / 文言",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "học nhi bất yếm",
+    "meaning_vi": "học mãi không chán, ham học không biết đủ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "học mãi không chán",
+      "ham học không biết đủ"
+    ],
+    "short_definition_vi": "học không biết chán, không tự mãn",
+    "textbook_focus_vi": "học không biết chán, không tự mãn",
+    "register_vi": "sách vở/văn hóa",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "而",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "厌",
+        "lishu_vi": "yếm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "học không biết chán, không tự mãn",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 学而不厌，诲人不倦.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "刻苦学习",
+        "pinyin": "kèkǔ xuéxí",
+        "meaning_vi": "học chăm chỉ chịu khó",
+        "difference_vi": "hiện đại hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "勤奋好学",
+        "pinyin": "qínfèn hàoxué",
+        "meaning_vi": "chăm chỉ ham học",
+        "difference_vi": "văn viết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c888f18c-34e5-4aae-a5d3-20b45a90c976",
+      "order": 1,
+      "zh": "学而不厌，诲人不倦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd7c7e57-e582-4a20-bcfe-5ccaae1552ea",
+      "order": 2,
+      "zh": "做到学而不厌",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "79e0df75-968d-45ce-8d23-45adaa81127d",
+      "order": 3,
+      "zh": "保持学而不厌的态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a33c7a2c-dd09-4711-9c3f-756b40ac0e56",
+      "order": 4,
+      "zh": "学而不厌的精神",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8996ae7b-4ff8-4d7d-aa5b-726f152b45d7",
+      "order": 1,
+      "zh": "如果想提高自己，就要有学而不厌的精神。",
+      "pinyin": "Rúguǒ xiǎng tígāo zìjǐ, jiù yào yǒu xué ér bú yàn de jīngshén.",
+      "vi": "Nếu muốn nâng cao bản thân, phải có tinh thần học không biết chán.",
+      "analysis_vi": "有……的精神 giúp đưa thành ngữ vào câu hiện đại.",
+      "highlight": [
+        "学而不厌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "579ffd53-1d19-4350-87e5-36f80898a774"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu này thuộc truyền thống Luận Ngữ, hợp văn viết/giáo dục.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f127a117-22d0-4449-9036-f81faa063806",
+      "order": 1,
+      "rule_vi": "厌 ở đây là chán/thỏa mãn; không dịch thô là ghét.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "学而不厌",
+    "back": "học mãi không chán, ham học không biết đủ",
+    "hint": "xué ér bú yàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "579ffd53-1d19-4350-87e5-36f80898a774",
+    "source_lesson_vocab_id": null
+  }
+}

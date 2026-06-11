@@ -1,0 +1,369 @@
+{
+  "id": "bfc531cb-bbf8-4495-abba-10e0422a4398",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "作为",
+  "pinyin": "zuòwéi",
+  "pos": {
+    "raw_vi": "Giới từ / Động từ / Danh từ",
+    "raw_cn": "介词/动词/名词",
+    "normalized": "preposition",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tác vi",
+    "meaning_vi": "với tư cách là; coi như; hành vi/thành tựu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "với tư cách là",
+      "coi như",
+      "hành vi/thành tựu"
+    ],
+    "short_definition_vi": "với tư cách là; coi như; hành vi/thành tựu",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về vai trò, lập luận.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "vai trò, lập luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "作",
+        "lishu_vi": "tác",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 作 trong từ 作为; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân đứng",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân đứng",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乍",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 作为, chữ 作 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "为",
+        "lishu_vi": "vi",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 为 trong từ 作为; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 作为, chữ 为 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "作为 trong bài được nhớ theo nghĩa hiện đại: với tư cách là.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 作为一名教师 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "当",
+        "pinyin": "dāng",
+        "meaning_vi": "làm, đảm nhiệm; khẩu ngữ hơn",
+        "difference_vi": "làm, đảm nhiệm; khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "身为",
+        "pinyin": "shēnwéi",
+        "meaning_vi": "thân là; trang trọng",
+        "difference_vi": "thân là; trang trọng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 作为 thay cho mọi chữ 'là'."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6c86f908-7ed2-4e05-86df-7f7649655b4a",
+      "order": 1,
+      "zh": "作为一名教师",
+      "pinyin": "",
+      "vi": "với tư cách giáo viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e06f47b-16ed-435d-96bc-763d806fa12f",
+      "order": 2,
+      "zh": "作为学生",
+      "pinyin": "",
+      "vi": "với tư cách học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ff78bdc-fef4-42d2-81f1-c0a780f6506c",
+      "order": 3,
+      "zh": "作为例子",
+      "pinyin": "",
+      "vi": "lấy làm ví dụ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fca19661-1607-48c8-af4d-b9e6da50f6c7",
+      "order": 4,
+      "zh": "作为参考",
+      "pinyin": "",
+      "vi": "dùng làm tham khảo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d0b4a89-0d61-4eec-9834-d512baa517b6",
+      "order": 5,
+      "zh": "作为一种方式",
+      "pinyin": "",
+      "vi": "với tư cách một phương thức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f2210242-b2fc-4c31-b034-76adbf998e7a",
+      "order": 1,
+      "zh": "作为一名教师，他很关心学生的学习情况。",
+      "pinyin": "",
+      "vi": "với tư cách là; coi như; hành vi/thành tựu",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "作为"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bfc531cb-bbf8-4495-abba-10e0422a4398"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "05bc8486-b4b3-473e-827d-6b1b0302ac7e",
+      "order": 2,
+      "zh": "这个词语“作为”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 作为 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "作为"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bfc531cb-bbf8-4495-abba-10e0422a4398"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "84f9001b-094c-4e2a-ae5c-6cb6e90f721e",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“作为”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 作为 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "作为"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bfc531cb-bbf8-4495-abba-10e0422a4398"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "作为…… rất hay xuất hiện trong bài luận và phát biểu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cf347793-4655-48d4-99be-e7ef2b462609",
+      "order": 1,
+      "rule_vi": "Không dùng 作为 thay cho mọi chữ 'là'.",
+      "natural_examples": [
+        {
+          "zh": "我是学生。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我是作为学生。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我是作为学生。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我是学生。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dùng 作为 thay cho mọi chữ 'là'.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "作为",
+    "back": "với tư cách là; coi như; hành vi/thành tựu",
+    "hint": "zuòwéi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bfc531cb-bbf8-4495-abba-10e0422a4398",
+    "source_lesson_vocab_id": null
+  }
+}

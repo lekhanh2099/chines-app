@@ -1,0 +1,373 @@
+{
+  "id": "11cb24f6-93e8-4faa-b1e0-d4f4b838dc28",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "服装",
+  "pinyin": "fúzhuāng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Phục trang",
+    "meaning_vi": "trang phục, quần áo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trang phục, quần áo"
+    ],
+    "short_definition_vi": "trang phục, quần áo",
+    "textbook_focus_vi": "trang phục, quần áo",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "服",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "",
+            "meaning_vi": "thịt/thân thể hoặc hình thể; thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "",
+            "meaning_vi": "lại; tay phải trong nguồn gốc chữ học",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "装",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "áo, y phục",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "衣 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo, y phục",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, y phục",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "衣 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "壮",
+            "hanviet": "",
+            "meaning_vi": "khỏe mạnh; thành phần trên trong 装",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "服 là áo/quần áo trong một số từ như 衣服, 服饰. 装 là trang phục/trang bị trong từ này. → 服装 = trang phục/quần áo theo hệ thống, kiểu dáng hoặc mục đích.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: đời thường nói “áo quần của tôi ướt” thường dùng 衣服; phân tích biểu diễn nói 服装 tự nhiên hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "服装",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang phục, hơi trang trọng, dùng trong biểu diễn/thời trang/văn hóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "衣服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần áo, đời thường nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "服饰",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang phục và phụ kiện, văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "戏服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phục trang sân khấu/kịch.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 我的衣服湿了; 演员的服装很漂亮."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f5083ddc-5d24-4135-b068-e60cbe35463b",
+      "order": 1,
+      "zh": "传统服装",
+      "pinyin": "",
+      "vi": "trang phục truyền thống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16cd8b06-ce9d-4878-acf0-24035f241d5d",
+      "order": 2,
+      "zh": "演员的服装",
+      "pinyin": "",
+      "vi": "trang phục của diễn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "02f25e8a-bf43-4732-a86a-48d36a1a3ccb",
+      "order": 3,
+      "zh": "服装设计",
+      "pinyin": "",
+      "vi": "thiết kế trang phục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9e5e915-4f24-458a-9c27-4b0195e42195",
+      "order": 4,
+      "zh": "通过服装表现地位",
+      "pinyin": "",
+      "vi": "thông qua trang phục thể hiện địa vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3c716a68-46fa-433e-9330-8afc59470f8e",
+      "order": 5,
+      "zh": "服装颜色",
+      "pinyin": "",
+      "vi": "màu sắc trang phục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c901edd5-9cc6-4407-a1f6-c25d8b19dfbe",
+      "order": 1,
+      "zh": "从服装上看得出，这个人物的社会地位很高。",
+      "pinyin": "Cóng fúzhuāng shang kàn de chū, zhège rénwù de shèhuì dìwèi hěn gāo.",
+      "vi": "Từ trang phục có thể nhìn ra địa vị xã hội của nhân vật này rất cao.",
+      "analysis_vi": "看得出 là nhìn ra được; 从服装上 là dựa vào trang phục.",
+      "highlight": [
+        "服装"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11cb24f6-93e8-4faa-b1e0-d4f4b838dc28"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "49095ef2-7f04-4f52-ab07-2b78546cfeb2",
+      "order": 2,
+      "zh": "京剧演员的服装很特别，第一次看的人不一定看得懂。",
+      "pinyin": "Jīngjù yǎnyuán de fúzhuāng hěn tèbié, dì yī cì kàn de rén bù yídìng kàn de dǒng.",
+      "vi": "Trang phục của diễn viên Kinh kịch rất đặc biệt, người xem lần đầu chưa chắc xem hiểu được.",
+      "analysis_vi": "不一定看得懂 = không chắc hiểu được qua việc xem.",
+      "highlight": [
+        "服装"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "11cb24f6-93e8-4faa-b1e0-d4f4b838dc28"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a345a12b-d785-4bb6-af67-ba8e11a8a022",
+      "order": 3,
+      "zh": "这些服装不仅好看，还能表现人物的性格。",
+      "pinyin": "Zhèxiē fúzhuāng bùjǐn hǎokàn, hái néng biǎoxiàn rénwù de xìnggé.",
+      "vi": "Những trang phục này không chỉ đẹp, mà còn có thể thể hiện tính cách nhân vật.",
+      "analysis_vi": "不仅……还…… nối hai giá trị: thẩm mỹ và biểu nghĩa.",
+      "highlight": [
+        "服装"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11cb24f6-93e8-4faa-b1e0-d4f4b838dc28"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "7e074595-7896-455f-82c8-d37f4864f997",
+      "order": 1,
+      "rule_vi": "Dùng 服装 thay 衣服 trong câu đời thường làm câu hơi cứng. Đời thường",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Dùng 服装 thay 衣服 trong câu đời thường làm câu hơi cứng. Đời thường: 我的衣服湿了。 Wǒ de yīfu shī le. Quần áo tôi ướt rồi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "服装",
+    "back": "trang phục, quần áo",
+    "hint": "fúzhuāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong Kinh kịch, 服装 không chỉ để đẹp. Màu sắc, hoa văn, kiểu áo có thể gợi địa vị, tính cách, tuổi tác hoặc thân phận nhân vật. Vì vậy người quen xem kịch có thể “đọc” trang phục như một loại ngôn ngữ sân khấu.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "11cb24f6-93e8-4faa-b1e0-d4f4b838dc28",
+    "source_lesson_vocab_id": null
+  }
+}

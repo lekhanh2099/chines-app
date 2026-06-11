@@ -1,0 +1,415 @@
+{
+  "id": "db4d03ba-f160-4bb9-aad9-476dcc8a879a",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "抽烟",
+  "pinyin": "chōu yān",
+  "pos": {
+    "raw_vi": "động từ / cụm động từ",
+    "raw_cn": "动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_19",
+    "smoking"
+  ],
+  "meaning": {
+    "hanviet": "Trừu yên",
+    "meaning_vi": "hút thuốc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hút thuốc"
+    ],
+    "short_definition_vi": "hút thuốc",
+    "textbook_focus_vi": "Hành vi vi phạm dẫn đến bị phạt.",
+    "register_vi": "khẩu ngữ",
+    "usage_domain_vi": "thói quen, quy định",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "抽",
+        "lishu_vi": "trừu",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "由",
+            "hanviet": "do",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rút ra, hút, chọn ra",
+        "modern_logic_vi": "抽 có nghĩa rút/hút.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "烟",
+        "lishu_vi": "yên",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "因",
+            "hanviet": "nhân",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khói, thuốc lá",
+        "modern_logic_vi": "烟 = khói/thuốc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "抽 = rút/hút; 烟 = khói/thuốc. 抽烟 = hút thuốc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吸烟",
+        "pinyin": "",
+        "meaning_vi": "hút thuốc",
+        "difference_vi": "Trang trọng hơn, hay gặp trên biển cấm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抽支烟",
+        "pinyin": "",
+        "meaning_vi": "hút một điếu thuốc",
+        "difference_vi": "Khẩu ngữ cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "戒烟",
+        "pinyin": "",
+        "meaning_vi": "bỏ thuốc",
+        "difference_vi": "Trái nghĩa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烟民",
+        "pinyin": "",
+        "meaning_vi": "người hút thuốc",
+        "difference_vi": "Danh từ chỉ nhóm người.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "抽烟",
+        "right": "戒烟",
+        "meaning_vi": "hút thuốc ↔ bỏ thuốc",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b9e2bd44-b27a-41ec-98db-48b712258062",
+      "order": 1,
+      "zh": "抽烟",
+      "pinyin": "",
+      "vi": "hút thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "19a1b035-c99b-49b0-9055-504c812fce58",
+      "order": 2,
+      "zh": "抽一支烟",
+      "pinyin": "",
+      "vi": "hút một điếu thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27de9ead-b8cd-42e7-99a6-64df95b25e96",
+      "order": 3,
+      "zh": "不许抽烟",
+      "pinyin": "",
+      "vi": "không được hút thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c27b6ea5-a4c7-4b0a-aca5-c73b1c035cc1",
+      "order": 4,
+      "zh": "禁止吸烟",
+      "pinyin": "",
+      "vi": "cấm hút thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c34f923f-2f58-4f50-b462-7091b3473471",
+      "order": 5,
+      "zh": "抽烟有害健康",
+      "pinyin": "",
+      "vi": "hút thuốc có hại cho sức khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c94db9f-db10-46f7-a957-006c611a3b1b",
+      "order": 6,
+      "zh": "抽烟的人",
+      "pinyin": "",
+      "vi": "người hút thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b92645cb-3278-41ea-8009-200d315be277",
+      "order": 7,
+      "zh": "在公共场所抽烟",
+      "pinyin": "",
+      "vi": "hút thuốc nơi công cộng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8db30cc-8ffd-4089-a59e-26a424bfb328",
+      "order": 8,
+      "zh": "因为抽烟被罚",
+      "pinyin": "",
+      "vi": "bị phạt vì hút thuốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1b47acc0-2d8f-4541-ade2-a84f71c019ac",
+      "order": 1,
+      "zh": "你抽烟吗？",
+      "pinyin": "Nǐ chōu yān ma?",
+      "vi": "Bạn có hút thuốc không?",
+      "analysis_vi": "Câu hỏi đơn giản, khẩu ngữ tự nhiên.",
+      "highlight": [
+        "抽烟"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "db4d03ba-f160-4bb9-aad9-476dcc8a879a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8bccc9ea-19a9-4c32-86a9-55869d7e2246",
+      "order": 2,
+      "zh": "他在会议厅里抽烟，被老师批评了。",
+      "pinyin": "Tā zài huìyìtīng lǐ chōu yān, bèi lǎoshī pīpíng le.",
+      "vi": "Anh ấy hút thuốc trong phòng họp, bị thầy/cô phê bình.",
+      "analysis_vi": "Ôn 被字句: 被老师批评了.",
+      "highlight": [
+        "抽烟",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "db4d03ba-f160-4bb9-aad9-476dcc8a879a"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6950b265-8f1b-46b7-b5b1-563b502640e6",
+      "order": 3,
+      "zh": "他明明知道这里不许抽烟，还故意抽了一支烟，结果被罚了。",
+      "pinyin": "Tā míngmíng zhīdào zhèlǐ bù xǔ chōu yān, hái gùyì chōu le yì zhī yān, jiéguǒ bèi fá le.",
+      "vi": "Anh ấy rõ ràng biết ở đây không được hút thuốc mà vẫn cố ý hút một điếu, kết quả bị phạt.",
+      "analysis_vi": "Ôn 明明……还…… và 被罚了.",
+      "highlight": [
+        "抽烟",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "db4d03ba-f160-4bb9-aad9-476dcc8a879a"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Biển báo thường dùng 禁止吸烟 vì 吸烟 trang trọng hơn; nói chuyện đời thường 抽烟 tự nhiên hơn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "991cd174-f16c-4bca-88b7-34647c47ad01",
+      "order": 1,
+      "rule_vi": "Không nói 我抽烟草 khi muốn nói hút thuốc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我抽烟草。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我抽烟。",
+          "pinyin": "Wǒ chōu yān.",
+          "vi": "Tôi hút thuốc.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我抽了一支烟。",
+          "pinyin": "Wǒ chōu le yì zhī yān.",
+          "vi": "Tôi hút một điếu thuốc.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "抽烟",
+    "back": "hút thuốc",
+    "hint": "chōu yān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "smoking"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "db4d03ba-f160-4bb9-aad9-476dcc8a879a",
+    "source_lesson_vocab_id": null
+  }
+}

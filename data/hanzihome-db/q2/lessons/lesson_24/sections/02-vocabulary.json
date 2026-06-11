@@ -1,0 +1,1837 @@
+{
+  "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+  "type": "vocabulary",
+  "order": 2,
+  "title": "生词",
+  "title_vi": "Từ vựng chính",
+  "source_origin": "textbook/uploaded_crosscheck",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "到处",
+      "pinyin": "dàochù",
+      "meaning_vi": "khắp nơi, đâu đâu cũng",
+      "meaning_en": "",
+      "pos": "Phó từ chỉ nơi chốn",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "到处",
+        "back": "dàochù — khắp nơi, đâu đâu cũng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ chỉ nơi chốn",
+        "cn": "处所副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Đứng trước động từ hoặc trong mẫu 到处都是..., chỉ phạm vi khắp nơi.",
+        "notes": []
+      }
+    },
+    {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "困难",
+      "pinyin": "kùnnan",
+      "meaning_vi": "khó khăn",
+      "meaning_en": "",
+      "pos": "Danh từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "困难",
+        "back": "kùnnan — khó khăn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Tính từ",
+        "cn": "名词 / 形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Có thể làm danh từ trong 有困难 / 遇到困难, hoặc tính từ trong 这个问题很困难.",
+        "notes": []
+      }
+    },
+    {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "警察",
+      "pinyin": "jǐngchá",
+      "meaning_vi": "cảnh sát",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "警察",
+        "back": "jǐngchá — cảnh sát",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ người/lực lượng cảnh sát; không dùng như động từ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "十字路口儿",
+      "pinyin": "shízì lùkǒur",
+      "meaning_vi": "ngã tư đường; giao lộ",
+      "meaning_en": "",
+      "pos": "Danh từ chỉ nơi chốn",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "十字路口儿",
+        "back": "shízì lùkǒur — ngã tư đường",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ chỉ nơi chốn",
+        "cn": "处所名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ địa điểm, nghĩa là ngã tư/giao lộ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "对",
+      "pinyin": "duì",
+      "meaning_vi": "đôi, cặp; lượng từ cho cặp đôi",
+      "meaning_en": "",
+      "pos": "Lượng từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "对",
+        "back": "duì — đôi, cặp",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Lượng từ",
+        "cn": "量词",
+        "normalized": "measure_word",
+        "schema_compatible_pos": "measure_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Dùng cho vật/người thành cặp: 一对夫妻.",
+        "notes": []
+      }
+    },
+    {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "夫妻",
+      "pinyin": "fūqī",
+      "meaning_vi": "vợ chồng",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "夫妻",
+        "back": "fūqī — vợ chồng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ quan hệ vợ chồng đã kết hôn; thường đi với 一对/这对.",
+        "notes": []
+      }
+    },
+    {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "看样子",
+      "pinyin": "kàn yàngzi",
+      "meaning_vi": "xem ra, nhìn có vẻ, nhìn bộ dạng thì",
+      "meaning_en": "",
+      "pos": "Cụm cố định / Cụm tình thái",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "看样子",
+        "back": "kàn yàngzi — xem ra, nhìn bộ dạng thì",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Cụm cố định / Cụm tình thái",
+        "cn": "固定短语 / 语气短语",
+        "normalized": "phrase",
+        "schema_compatible_pos": "phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Dùng ở đầu câu hoặc trước mệnh đề để nêu phán đoán: 看样子，他很着急.",
+        "notes": []
+      }
+    },
+    {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "腿脚",
+      "pinyin": "tuǐjiǎo",
+      "meaning_vi": "chân cẳng, khả năng đi lại",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "腿脚",
+        "back": "tuǐjiǎo — chân cẳng, khả năng đi lại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ chân cẳng/khả năng đi lại, thường dùng trong 腿脚不方便.",
+        "notes": []
+      }
+    },
+    {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "来往",
+      "pinyin": "láiwǎng",
+      "meaning_vi": "qua lại, đi lại",
+      "meaning_en": "",
+      "pos": "Động từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "来往",
+        "back": "láiwǎng — qua lại, đi lại",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Danh từ",
+        "cn": "动词 / 名词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Là động từ trong 车来往很多; có thể danh từ hóa trong 有来往.",
+        "notes": []
+      }
+    },
+    {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "敢",
+      "pinyin": "gǎn",
+      "meaning_vi": "dám",
+      "meaning_en": "",
+      "pos": "Động từ năng nguyện",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "敢",
+        "back": "gǎn — dám",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ năng nguyện",
+        "cn": "能愿动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Đứng trước động từ chính: 敢说 / 不敢过马路.",
+        "notes": []
+      }
+    },
+    {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "立即",
+      "pinyin": "lìjí",
+      "meaning_vi": "lập tức, ngay lập tức",
+      "meaning_en": "",
+      "pos": "Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "立即",
+        "back": "lìjí — lập tức, ngay lập tức",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Đứng trước động từ, nhấn phản ứng ngay: 立即跑过去.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "扶",
+      "pinyin": "fú",
+      "meaning_vi": "đỡ, dìu",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "扶",
+        "back": "fú — đỡ, dìu",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động tác dùng tay đỡ/dìu: 扶老人 / 扶他起来.",
+        "notes": []
+      }
+    },
+    {
+      "id": "faa60f28-ca2b-4ddc-af6b-3bace98d2691",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "老人",
+      "pinyin": "lǎorén",
+      "meaning_vi": "người già, cụ già",
+      "meaning_en": "old person; elderly person",
+      "pos": "Danh từ",
+      "tags": [
+        "textbook_main",
+        "pdf_checked"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "老人",
+        "back": "người già, cụ già",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ người già/cụ già; có thể làm tân ngữ của 扶/照顾.",
+        "notes": []
+      }
+    },
+    {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "情景",
+      "pinyin": "qíngjǐng",
+      "meaning_vi": "cảnh tượng, tình cảnh",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "情景",
+        "back": "qíngjǐng — cảnh tượng, tình cảnh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ cảnh tượng/tình cảnh cụ thể: 看到这种情景.",
+        "notes": []
+      }
+    },
+    {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "感动",
+      "pinyin": "gǎndòng",
+      "meaning_vi": "cảm động",
+      "meaning_en": "",
+      "pos": "Động từ / Tính từ tâm lý",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "感动",
+        "back": "gǎndòng — cảm động",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ tâm lý",
+        "cn": "动词 / 形容词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Có thể là trạng thái cảm xúc 我很感动 hoặc gây tác động 这件事感动了我.",
+        "notes": []
+      }
+    },
+    {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "可",
+      "pinyin": "kě",
+      "meaning_vi": "đáng, đáng để; cần/phải; có thể trong một số ngữ cảnh",
+      "meaning_en": "",
+      "pos": "Trợ động từ / Từ ngữ pháp",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "可",
+        "back": "kě — nhưng mà; khá; thật là",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Trợ động từ / Từ ngữ pháp",
+        "cn": "助动词 / 语法词",
+        "normalized": "grammar_word",
+        "schema_compatible_pos": "grammar_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong bài này trọng tâm là 可 + V/Adj trong 有什么可感动的, nghĩa là 'đáng/có gì mà...'.",
+        "notes": []
+      }
+    },
+    {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "发生",
+      "pinyin": "fāshēng",
+      "meaning_vi": "xảy ra, phát sinh",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "发生",
+        "back": "fāshēng — xảy ra, phát sinh",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Nội động từ chỉ sự việc xảy ra; chủ ngữ thường là 事情/事故/变化.",
+        "notes": []
+      }
+    },
+    {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "句",
+      "pinyin": "jù",
+      "meaning_vi": "câu; lượng từ cho câu nói",
+      "meaning_en": "",
+      "pos": "Lượng từ / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "句",
+        "back": "jù — câu; lượng từ cho câu nói",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Lượng từ / Danh từ",
+        "cn": "量词 / 名词",
+        "normalized": "measure_word",
+        "schema_compatible_pos": "measure_word",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Là lượng từ cho câu nói/câu văn: 一句话 / 一句句.",
+        "notes": []
+      }
+    },
+    {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "滚",
+      "pinyin": "gǔn",
+      "meaning_vi": "lăn, lăn đi",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "滚",
+        "back": "gǔn — lăn, lăn đi",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ lăn/cuộn; dùng một mình để mắng người là rất thô.",
+        "notes": []
+      }
+    },
+    {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "抱",
+      "pinyin": "bào",
+      "meaning_vi": "ôm, bế",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "抱",
+        "back": "bào — ôm, bế",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ ôm/bế bằng tay: 抱孩子 / 抱起来.",
+        "notes": []
+      }
+    },
+    {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "叔叔",
+      "pinyin": "shūshu",
+      "meaning_vi": "chú, bác trai",
+      "meaning_en": "",
+      "pos": "Danh từ / Cách xưng hô",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "叔叔",
+        "back": "shūshu — chú, bác trai",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Cách xưng hô",
+        "cn": "名词 / 称呼语",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ chú/bác trai hoặc cách trẻ em gọi đàn ông thế hệ cha.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "鞋",
+      "pinyin": "xié",
+      "meaning_vi": "giày",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "鞋",
+        "back": "xié — giày",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ giày; lượng từ thường là 双/只.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "鞋带",
+      "pinyin": "xiédài",
+      "meaning_vi": "dây giày",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "鞋带",
+        "back": "xiédài — dây giày",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ dây giày; thường đi với 系/解/开.",
+        "notes": []
+      }
+    },
+    {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "脚",
+      "pinyin": "jiǎo",
+      "meaning_vi": "chân",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "脚",
+        "back": "jiǎo — chân",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ chân/bàn chân; lượng từ 一只脚.",
+        "notes": []
+      }
+    },
+    {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "伸",
+      "pinyin": "shēn",
+      "meaning_vi": "duỗi, đưa ra",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "伸",
+        "back": "shēn — duỗi, đưa ra",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ duỗi/đưa ra: 伸手 / 伸出脚.",
+        "notes": []
+      }
+    },
+    {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "面前",
+      "pinyin": "miànqián",
+      "meaning_vi": "trước mặt",
+      "meaning_en": "",
+      "pos": "Danh từ chỉ nơi chốn / Cụm phương vị",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "面前",
+        "back": "miànqián — trước mặt",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ chỉ nơi chốn / Cụm phương vị",
+        "cn": "处所名词 / 方位短语",
+        "normalized": "noun_phrase",
+        "schema_compatible_pos": "noun_phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ vị trí trước mặt ai/cái gì: 在他面前.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "弯",
+      "pinyin": "wān",
+      "meaning_vi": "cong, cúi, khom",
+      "meaning_en": "",
+      "pos": "Động từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "弯",
+        "back": "wān — cong, cúi, khom",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ / Tính từ",
+        "cn": "动词 / 形容词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Là động từ trong 弯腰, là tính từ trong 路很弯.",
+        "notes": []
+      }
+    },
+    {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "腰",
+      "pinyin": "yāo",
+      "meaning_vi": "eo, lưng",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "腰",
+        "back": "yāo — eo, lưng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ eo/thắt lưng; thường gặp 腰疼 / 弯腰.",
+        "notes": []
+      }
+    },
+    {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "照顾",
+      "pinyin": "zhàogù",
+      "meaning_vi": "chăm sóc, quan tâm chăm nom",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "照顾",
+        "back": "zhàogu — chăm sóc, quan tâm chăm nom",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ song âm tiết không đánh dấu li hợp ở bài này; dùng trực tiếp với tân ngữ: 照顾老人.",
+        "notes": []
+      }
+    },
+    {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "梅",
+      "pinyin": "méi",
+      "meaning_vi": "hoa mai",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "梅",
+        "back": "méi — hoa mai",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ mai/hoa mai; trong bài thuộc nhóm 松、竹、梅.",
+        "notes": []
+      }
+    },
+    {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "图",
+      "pinyin": "tú",
+      "meaning_vi": "tranh, hình, bản vẽ",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "图",
+        "back": "tú — tranh, hình, bản vẽ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ hình/tranh/bản vẽ/bản đồ tùy từ ghép.",
+        "notes": []
+      }
+    },
+    {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "画家",
+      "pinyin": "huàjiā",
+      "meaning_vi": "họa sĩ",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "画家",
+        "back": "huàjiā — họa sĩ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Chỉ họa sĩ; 家 là hậu tố chỉ người chuyên môn.",
+        "notes": []
+      }
+    },
+    {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "松",
+      "pinyin": "sōng",
+      "meaning_vi": "cây tùng",
+      "meaning_en": "",
+      "pos": "Danh từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "松",
+        "back": "sōng — cây tùng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Tính từ",
+        "cn": "名词 / 形容词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Trong 松竹梅 là danh từ 'tùng'; trong 鞋带松了 là tính từ 'lỏng'.",
+        "notes": []
+      }
+    },
+    {
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "放松",
+      "pinyin": "fàngsōng",
+      "meaning_vi": "thả lỏng, thư giãn",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "放松",
+        "back": "fàngsōng — thả lỏng, thư giãn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "generated_from_松_collocation_not_pdf_main_vocab",
+      "check_needed": false,
+      "notes": [],
+      "note_vi": "Không nằm trong bảng 生词 chính của PDF Lesson 24; được giữ lại vì file nguồn đã có và là từ phái sinh/collocation của 松.",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ chỉ thả lỏng/thư giãn; không phải động từ li hợp.",
+        "notes": []
+      }
+    },
+    {
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "竹",
+      "pinyin": "zhú",
+      "meaning_vi": "tre, trúc",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "竹",
+        "back": "zhú — tre, trúc",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ tre/trúc; trong bài thuộc nhóm 松、竹、梅.",
+        "notes": []
+      }
+    },
+    {
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "叫作",
+      "pinyin": "jiàozuò",
+      "meaning_vi": "gọi là, được gọi là",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "叫作",
+        "back": "jiàozuò — gọi là, được gọi là",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ nêu tên gọi: A 叫作 B.",
+        "notes": []
+      }
+    },
+    {
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "岁寒三友",
+      "pinyin": "suìhán sānyǒu",
+      "meaning_vi": "“ba người bạn mùa đông”: tùng, trúc, mai",
+      "meaning_en": "",
+      "pos": "Thành ngữ / Danh ngữ văn hóa",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "岁寒三友",
+        "back": "suìhán sānyǒu — “ba người bạn mùa đông”: tùng, trúc, mai",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Thành ngữ / Danh ngữ văn hóa",
+        "cn": "成语 / 文化名词",
+        "normalized": "idiom",
+        "schema_compatible_pos": "idiom",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh ngữ văn hóa chỉ 松、竹、梅.",
+        "notes": []
+      }
+    },
+    {
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "字画",
+      "pinyin": "zìhuà",
+      "meaning_vi": "thư họa, chữ viết và tranh vẽ",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "字画",
+        "back": "zìhuà — thư họa, chữ viết và tranh vẽ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ thư họa, chữ viết thư pháp và tranh.",
+        "notes": []
+      }
+    },
+    {
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "过奖",
+      "pinyin": "guòjiǎng",
+      "meaning_vi": "quá khen",
+      "meaning_en": "",
+      "pos": "Cụm đáp lời lịch sự / Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "过奖",
+        "back": "guòjiǎng — quá khen",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Cụm đáp lời lịch sự / Động từ",
+        "cn": "应答语 / 动词",
+        "normalized": "phrase",
+        "schema_compatible_pos": "phrase",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Dùng để đáp lời khen: 您过奖了; không dùng như động từ chủ động khen người khác.",
+        "notes": []
+      }
+    },
+    {
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "急忙",
+      "pinyin": "jímáng",
+      "meaning_vi": "vội vàng",
+      "meaning_en": "",
+      "pos": "Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "急忙",
+        "back": "jímáng — vội vàng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Phó từ",
+        "cn": "副词",
+        "normalized": "adverb",
+        "schema_compatible_pos": "adverb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Đứng trước động từ, nhấn hành động vội vàng: 急忙跑过去.",
+        "notes": []
+      }
+    },
+    {
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "紧",
+      "pinyin": "jǐn",
+      "meaning_vi": "chặt, sát, căng",
+      "meaning_en": "",
+      "pos": "Tính từ / Phó từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "紧",
+        "back": "jǐn — chặt, sát, căng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Tính từ / Phó từ",
+        "cn": "形容词 / 副词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Là tính từ trong 鞋带很紧; làm trạng thái/mức độ trong 紧紧地握着.",
+        "notes": []
+      }
+    },
+    {
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "握",
+      "pinyin": "wò",
+      "meaning_vi": "nắm, cầm chặt",
+      "meaning_en": "",
+      "pos": "Động từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "握",
+        "back": "wò — nắm, cầm chặt",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Động từ chỉ nắm/cầm chặt trong tay: 握手 / 握着手.",
+        "notes": []
+      }
+    },
+    {
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "车闸",
+      "pinyin": "chēzhá",
+      "meaning_vi": "phanh xe",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "车闸",
+        "back": "chēzhá — phanh xe",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ phanh/thắng xe, thiên về bộ phận.",
+        "notes": []
+      }
+    },
+    {
+      "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "敬礼",
+      "pinyin": "jìnglǐ",
+      "meaning_vi": "chào theo nghi thức, chào kiểu quân/cảnh sát",
+      "meaning_en": "",
+      "pos": "Động từ li hợp",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "敬礼",
+        "back": "jìnglǐ — chào theo nghi thức, chào kiểu quân/cảnh sát",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 敬 + tân ngữ 礼",
+        "usage_note_vi": "Có thể nói 敬礼, 向老师敬礼, cũng có thể tách như 敬了个礼; trong bài dùng như cụm động từ nghi thức.",
+        "notes": []
+      }
+    },
+    {
+      "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
+      "type": "vocabulary_item",
+      "order": 45,
+      "hanzi": "罚款",
+      "pinyin": "fákuǎn",
+      "meaning_vi": "phạt tiền",
+      "meaning_en": "",
+      "pos": "Động từ li hợp / Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "罚款",
+        "back": "fákuǎn — phạt tiền",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Động từ li hợp / Danh từ",
+        "cn": "动宾式离合词 / 名词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 罚 + tân ngữ 款",
+        "usage_note_vi": "Có thể dùng như động từ 'phạt tiền' hoặc danh từ 'tiền phạt'; có dạng tách như 罚过一次款 / 交罚款. Trong bài cần phân biệt 被罚款 và 交罚款.",
+        "notes": []
+      }
+    },
+    {
+      "id": "505dae11-836a-475d-b811-339f25caaf42",
+      "type": "vocabulary_item",
+      "order": 46,
+      "hanzi": "礼貌",
+      "pinyin": "lǐmào",
+      "meaning_vi": "lễ phép, lịch sự",
+      "meaning_en": "",
+      "pos": "Danh từ / Tính từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "礼貌",
+        "back": "lǐmào — lễ phép, lịch sự",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ / Tính từ",
+        "cn": "名词 / 形容词",
+        "normalized": "adjective",
+        "schema_compatible_pos": "adjective",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ trong 有礼貌; tính từ miêu tả cách nói/hành vi trong 他说话很礼貌.",
+        "notes": []
+      }
+    },
+    {
+      "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
+      "type": "vocabulary_item",
+      "order": 47,
+      "hanzi": "工具箱",
+      "pinyin": "gōngjùxiāng",
+      "meaning_vi": "hộp dụng cụ",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "工具箱",
+        "back": "gōngjùxiāng — hộp dụng cụ",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ hộp/thùng đựng dụng cụ.",
+        "notes": []
+      }
+    },
+    {
+      "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
+      "type": "vocabulary_item",
+      "order": 48,
+      "hanzi": "钳子",
+      "pinyin": "qiánzi",
+      "meaning_vi": "cái kìm",
+      "meaning_en": "",
+      "pos": "Danh từ",
+      "tags": [
+        "main_vocab"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "钳子",
+        "back": "qiánzi — cái kìm",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_reading_supplementary",
+      "check_needed": false,
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Danh từ chỉ cái kìm/cái kẹp; lượng từ thường là 一把.",
+        "notes": []
+      }
+    }
+  ]
+}

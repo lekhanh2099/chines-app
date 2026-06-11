@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_da1585a0b3c99cc8",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "危险",
+  "pinyin": "wēixiǎn",
+  "meaning_vi": "nguy hiểm; sự nguy hiểm",
+  "pos": "Tính từ / Danh từ",
+  "pos_detail": {
+    "vi": "Tính từ / Danh từ",
+    "cn": "形容词 / 名词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Có thể nói 太危险了; cũng có thể làm danh từ ‘sự nguy hiểm’ trong 注意危险.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+    "type": "vocabulary_item",
+    "order": 11,
+    "hanzi": "危险",
+    "pinyin": "wēixiǎn",
+    "meaning_vi": "nguy hiểm; sự nguy hiểm",
+    "meaning_en": "",
+    "pos": "Tính từ / Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "危险",
+      "back": "wēixiǎn — nguy hiểm; sự nguy hiểm",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tính từ / Danh từ",
+      "cn": "形容词 / 名词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Có thể nói 太危险了; cũng có thể làm danh từ ‘sự nguy hiểm’ trong 注意危险.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,193 @@
+{
+  "id": "c7f00d01-7d00-4b6d-9505-9732e66dca47",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "卫生",
+  "pinyin": "wèishēng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词 / 形容词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vệ sinh",
+    "meaning_vi": "vệ sinh, sạch sẽ, có lợi cho sức khỏe",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vệ sinh",
+      "sạch sẽ",
+      "có lợi cho sức khỏe"
+    ],
+    "short_definition_vi": "vệ sinh, sạch sẽ, có lợi cho sức khỏe",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: vệ sinh, sức khỏe.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "vệ sinh, sức khỏe",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "卫",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bảo vệ, phòng vệ",
+        "modern_logic_vi": "Trong từ 卫生, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "生",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sống, sinh ra",
+        "modern_logic_vi": "Trong từ 卫生, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "卫生 nên được học theo nghĩa hiện đại trong cụm/tình huống: vệ sinh, sạch sẽ, có lợi cho sức khỏe.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 讲究卫生.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "干净",
+        "pinyin": "gānjìng",
+        "meaning_vi": "sạch",
+        "difference_vi": "卫生 gắn với sức khỏe/phòng bệnh; 干净 là sạch nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "21a12012-319a-45a9-bf12-ab87c9ddb3ef",
+      "order": 1,
+      "zh": "讲究卫生",
+      "pinyin": "",
+      "vi": "chú trọng vệ sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eaa93287-3a0f-4e2e-b3c3-c728ae65cd7c",
+      "order": 2,
+      "zh": "打扫卫生",
+      "pinyin": "",
+      "vi": "dọn vệ sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b51da45-c31c-4f3e-81f2-f47c1e83df68",
+      "order": 3,
+      "zh": "环境卫生",
+      "pinyin": "",
+      "vi": "vệ sinh môi trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "25580155-89df-493e-a5de-faeaebc9e8e2",
+      "order": 1,
+      "zh": "教室的卫生由今天值日的同学负责。",
+      "pinyin": "",
+      "vi": "Vệ sinh lớp học do các bạn trực nhật hôm nay phụ trách.",
+      "analysis_vi": "卫生 có thể làm danh từ chỉ việc/tình trạng vệ sinh.",
+      "highlight": [
+        "卫生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7f00d01-7d00-4b6d-9505-9732e66dca47"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 卫生 được dùng trong ngữ cảnh vệ sinh, sức khỏe; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ce04e131-2e2b-4ba4-9d6a-ef5bbfd4ff9a",
+      "order": 1,
+      "rule_vi": "卫生间 là nhà vệ sinh; không tách từng chữ để dịch “phòng vệ sinh” máy móc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "卫生间 là nhà vệ sinh; không tách từng chữ để dịch “phòng vệ sinh” máy móc.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "卫生",
+    "back": "vệ sinh, sạch sẽ, có lợi cho sức khỏe",
+    "hint": "wèishēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c7f00d01-7d00-4b6d-9505-9732e66dca47",
+    "source_lesson_vocab_id": null
+  }
+}

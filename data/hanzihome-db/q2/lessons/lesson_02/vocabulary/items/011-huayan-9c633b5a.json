@@ -1,0 +1,435 @@
+{
+  "id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "化验",
+  "pinyin": "huàyàn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "bai-02",
+    "hanyu2",
+    "deep-vocab",
+    "group_002"
+  ],
+  "meaning": {
+    "hanviet": "Hóa nghiệm",
+    "meaning_vi": "xét nghiệm, kiểm nghiệm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xét nghiệm",
+      "kiểm nghiệm"
+    ],
+    "short_definition_vi": "xét nghiệm, kiểm nghiệm",
+    "textbook_focus_vi": "Nghĩa ưu tiên theo Bài 2: 玛丽哭了.",
+    "register_vi": "y tế, phòng thí nghiệm, kiểm tra bằng mẫu.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 2; y tế, cơ thể, cảm xúc, hoạt động xã hội.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "化",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "匕",
+            "hanviet": "chủy",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biến hóa, chuyển hóa; hóa học",
+        "modern_logic_vi": "Trong 化验/消化, 化 liên quan chuyển hóa hoặc xử lý bằng phương pháp kiểm nghiệm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "验",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "mã",
+            "meaning_vi": "ngựa; bộ Mã giản thể",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "马",
+              "radical_variant": "",
+              "radical_name_vi": "",
+              "radical_name_zh": "",
+              "hanviet": "mã",
+              "meaning_vi": "ngựa; bộ Mã giản thể",
+              "form": "unknown",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "佥",
+            "hanviet": "thiêm",
+            "meaning_vi": "phần cấu tạo/âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểm nghiệm, xác nhận, thử nghiệm",
+        "modern_logic_vi": "验 trong 化验 là kiểm nghiệm/xét nghiệm để xác định tình trạng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "马",
+          "radical_variant": "",
+          "radical_name_vi": "",
+          "radical_name_zh": "",
+          "hanviet": "mã",
+          "meaning_vi": "ngựa; bộ Mã giản thể",
+          "form": "unknown",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "化 = biến hóa, hóa học. 验 = kiểm nghiệm, nghiệm chứng. → 化验 = kiểm nghiệm bằng phương pháp hóa nghiệm/xét nghiệm.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 化验 thường cần mẫu để xét nghiệm, như máu, nước tiểu, đại tiện, thức ăn. Không dùng cho kiểm tra thân thể nói chung.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "化验",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xét nghiệm mẫu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "检查",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kiểm tra, khám, phạm vi rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "体检",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khám sức khỏe tổng quát.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "检验",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kiểm nghiệm, rộng/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "验血",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xét nghiệm máu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "化验大便 = xét nghiệm phân.",
+      "检查身体 = kiểm tra cơ thể.",
+      "体检 = khám sức khỏe tổng quát."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "69656a00-366b-4243-b229-5ec905f95505",
+      "order": 1,
+      "zh": "化验大便",
+      "pinyin": "",
+      "vi": "xét nghiệm phân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0461afe0-28a1-4fa9-9eff-e8881ab4e12b",
+      "order": 2,
+      "zh": "化验小便",
+      "pinyin": "",
+      "vi": "xét nghiệm nước tiểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4097b37b-bb65-4421-9be5-60e794ddf509",
+      "order": 3,
+      "zh": "化验血",
+      "pinyin": "",
+      "vi": "xét nghiệm máu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "934a586e-7e19-4f09-9cc2-457312b53788",
+      "order": 4,
+      "zh": "化验结果",
+      "pinyin": "",
+      "vi": "kết quả xét nghiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "baa3ced7-08e1-4434-8875-0732d972a00e",
+      "order": 5,
+      "zh": "拿去化验",
+      "pinyin": "",
+      "vi": "mang đi xét nghiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75769c5d-ff21-4462-ba7e-1dd01b1cc88f",
+      "order": 6,
+      "zh": "做化验",
+      "pinyin": "",
+      "vi": "làm xét nghiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ba587113-7535-4943-84fc-406d5673bdc0",
+      "order": 1,
+      "zh": "医生让她化验大便。",
+      "pinyin": "Yīshēng ràng tā huàyàn dàbiàn.",
+      "vi": "Bác sĩ bảo cô ấy xét nghiệm phân.",
+      "analysis_vi": "让 + người + V = bảo/để ai làm gì. 化验大便 là xét nghiệm mẫu đại tiện.",
+      "highlight": [
+        "化验"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "5f32bc69-430c-4cb9-9834-794f4a965d91"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6c22ec1f-2af1-4201-89f5-7b69e13616ed",
+      "order": 2,
+      "zh": "因为结果还没出来，所以医生不能马上开药。",
+      "pinyin": "Yīnwèi jiéguǒ hái méi chūlai, suǒyǐ yīshēng bù néng mǎshàng kāi yào.",
+      "vi": "Vì kết quả vẫn chưa có nên bác sĩ không thể kê thuốc ngay.",
+      "analysis_vi": "结果出来 = kết quả có rồi/xuất hiện rồi. Phủ định dùng 还没出来. 因为……所以…… nêu nguyên nhân – kết quả.",
+      "highlight": [
+        "化验"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "5f32bc69-430c-4cb9-9834-794f4a965d91"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0ff7eae-52f8-4073-a788-eac9b8ce94be",
+      "order": 3,
+      "zh": "护士把病人的大便和小便都拿去化验了，医生说只有化验结果出来以后，才能看出是不是肠炎。",
+      "pinyin": "Hùshi bǎ bìngrén de dàbiàn hé xiǎobiàn dōu ná qù huàyàn le, yīshēng shuō zhǐyǒu huàyàn jiéguǒ chūlai yǐhòu, cái néng kàn chū shì bú shì chángyán.",
+      "vi": "Y tá đã mang cả mẫu đại tiện và tiểu tiện của bệnh nhân đi xét nghiệm, bác sĩ nói chỉ sau khi kết quả xét nghiệm có rồi thì mới có thể nhìn ra có phải viêm ruột hay không.",
+      "analysis_vi": "把大便和小便拿去化验了 là 把字句 + 去 chỉ đem đi xử lý. 只有……才…… là điều kiện cần. 看出 = nhìn/kiểm tra ra.",
+      "highlight": [
+        "化验"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "5f32bc69-430c-4cb9-9834-794f4a965d91"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "flashcard": {
+    "front": "化验",
+    "back": "xét nghiệm, kiểm nghiệm",
+    "hint": "huàyàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai-02",
+      "hanyu2",
+      "deep-vocab",
+      "group_002"
+    ],
+    "notes": []
+  },
+  "warnings": [
+    {
+      "id": "f85dae25-bc0b-4b41-95d7-aa4d3f142f4c",
+      "order": 1,
+      "rule_vi": "Nhầm 化验 và 检查.",
+      "natural_examples": [
+        {
+          "zh": "Nhầm 化验 và 检查.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "检查 rộng hơn:",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "医生检查了我的肚子。",
+          "pinyin": "",
+          "vi": "Bác sĩ kiểm tra bụng tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Bác sĩ kiểm tra bụng tôi. Bác sĩ bảo tôi xét nghiệm nước tiểu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ghi chú sử dụng",
+    "content_vi": "Khi đi khám ở Trung Quốc, bác sĩ có thể nói 先去做个化验 – đi làm xét nghiệm trước đã. 做个 làm câu nhẹ hơn, rất khẩu ngữ trong bệnh viện.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_and_BAI_1-10_docx"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5f32bc69-430c-4cb9-9834-794f4a965d91",
+    "source_lesson_vocab_id": null
+  }
+}

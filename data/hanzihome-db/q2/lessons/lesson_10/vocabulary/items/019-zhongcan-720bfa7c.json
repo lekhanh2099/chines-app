@@ -1,0 +1,443 @@
+{
+  "id": "02f201ca-cd51-4645-8206-1730b6158daa",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "中餐",
+  "pinyin": "zhōngcān",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Trung xan",
+    "meaning_vi": "món Trung; cơm Trung; bữa trưa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "món Trung",
+      "cơm Trung",
+      "bữa trưa"
+    ],
+    "short_definition_vi": "món Trung; cơm Trung; bữa trưa",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "中",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Trung Quốc / Trung Hoa.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "餐",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "食",
+            "hanviet": "thực",
+            "meaning_vi": "ăn uống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "食",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thực",
+              "radical_name_zh": "",
+              "hanviet": "thực",
+              "meaning_vi": "ăn uống",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "食 được dùng như bộ Thực trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "食 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bữa ăn, món ăn.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "食",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thực",
+          "radical_name_zh": "",
+          "hanviet": "thực",
+          "meaning_vi": "ăn uống",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "食 được dùng như bộ Thực trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "中 = Trung Quốc / Trung Hoa. 餐 = bữa ăn, món ăn. → 中餐 = món ăn/bữa ăn kiểu Trung Quốc. Logic nhớ nghĩa hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "中餐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "món Trung Quốc/bữa ăn Trung Quốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "西餐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "món Tây/bữa Tây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "中国菜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "món Trung Quốc, khẩu ngữ rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "午餐",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bữa trưa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "饭菜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cơm và món ăn nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我喜欢中国菜。",
+      "Tôi thích món Trung Quốc.",
+      "今天中午我吃午餐。",
+      "Trưa nay tôi ăn bữa trưa.",
+      "我没吃过这么好吃的中餐。",
+      "Tôi chưa từng ăn món Trung Quốc ngon như vậy."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "99513e29-4c46-4283-b820-6f6bb736bf56",
+      "order": 1,
+      "zh": "吃中餐",
+      "pinyin": "",
+      "vi": "ăn món Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3592c032-e3ba-4fee-b0eb-b09615cb920f",
+      "order": 2,
+      "zh": "喜欢中餐",
+      "pinyin": "",
+      "vi": "thích món Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a4170213-0a93-4e36-9243-77068d2ff232",
+      "order": 3,
+      "zh": "中餐馆",
+      "pinyin": "",
+      "vi": "nhà hàng Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "67698c5c-4c52-4fb0-a531-b808177ff080",
+      "order": 4,
+      "zh": "中餐和西餐",
+      "pinyin": "",
+      "vi": "món Trung Quốc và món Tây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "e03a5ede-97e2-4414-9df1-07146eaa250f",
+      "order": 5,
+      "zh": "做中餐",
+      "pinyin": "",
+      "vi": "nấu món Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6d9c8a0e-cf39-4e1b-9308-08687026f3e3",
+      "order": 6,
+      "zh": "第一次吃中餐",
+      "pinyin": "",
+      "vi": "lần đầu ăn món Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "39fd4c92-74a6-4c67-a7bc-c3eecb65b189",
+      "order": 1,
+      "zh": "我吃过中餐。",
+      "pinyin": "Wǒ chī guo zhōngcān.",
+      "vi": "Tôi từng ăn món Trung Quốc.",
+      "analysis_vi": "吃过 nhấn kinh nghiệm từng ăn.",
+      "highlight": [
+        "中餐"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "02f201ca-cd51-4645-8206-1730b6158daa"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8eedcdfa-a9ff-40b1-8753-d36cd9f14417",
+      "order": 2,
+      "zh": "这是我第一次吃中餐，觉得好吃极了。",
+      "pinyin": "Zhè shì wǒ dì yī cì chī zhōngcān, juéde hǎochī jí le.",
+      "vi": "Đây là lần đầu tôi ăn món Trung Quốc, tôi thấy ngon cực kỳ.",
+      "analysis_vi": "第一次 + V = lần đầu làm gì. 极了 nhấn mức độ rất cao.",
+      "highlight": [
+        "中餐"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "02f201ca-cd51-4645-8206-1730b6158daa"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d536d45f-b509-4992-9a4c-59deb51e282a",
+      "order": 3,
+      "zh": "我以前没吃过烤鸭，只吃过几次普通的中餐；第一次到北京的时候，朋友马上带我去吃了一次烤鸭。",
+      "pinyin": "Wǒ yǐqián méi chī guo kǎoyā, zhǐ chī guo jǐ cì pǔtōng de zhōngcān; dì yī cì dào Běijīng de shíhou, péngyou mǎshàng dài wǒ qù chī le yí cì kǎoyā.",
+      "vi": "Trước đây tôi chưa từng ăn vịt quay, chỉ từng ăn vài lần món Trung Quốc bình thường; lần đầu đến Bắc Kinh, bạn tôi lập tức dẫn tôi đi ăn vịt quay một lần.",
+      "analysis_vi": "没吃过 / 吃过几次 đều luyện kinh nghiệm + số lần. 第一次到北京 là lần đầu đến Bắc Kinh.",
+      "highlight": [
+        "中餐"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "02f201ca-cd51-4645-8206-1730b6158daa"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "7eb1065c-b4c8-46d4-bcb9-e7e59edb15cc",
+      "order": 1,
+      "rule_vi": "Đừng nhầm:",
+      "natural_examples": [
+        {
+          "zh": "中餐 = món Trung Quốc / bữa ăn Trung Quốc.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "午餐 = bữa trưa.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我喜欢中餐。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đừng nhầm: 中餐 = món Trung Quốc / bữa ăn Trung Quốc. 午餐 = bữa trưa. Ví dụ: 我喜欢中餐。 Tôi thích món Trung Quốc. 我十二点吃午餐。 Tôi ăn trưa lúc 12 giờ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "中餐",
+    "back": "món Trung; cơm Trung; bữa trưa",
+    "hint": "zhōngcān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong giao tiếp đời thường, người Trung nói 中国菜 nhiều và rõ hơn 中餐 khi muốn nói “món Trung Quốc”. 中餐 thường dùng khi đối lập với 西餐, hoặc trong nhà hàng/giáo trình.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "02f201ca-cd51-4645-8206-1730b6158daa",
+    "source_lesson_vocab_id": null
+  }
+}

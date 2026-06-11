@@ -1,0 +1,31 @@
+{
+  "id": "synthetic_vocab_cfa9548c8219cb92",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "哈尔滨",
+  "pinyin": "Hā'ěrbīn",
+  "meaning_vi": "Cáp Nhĩ Tân",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5ec05b3a-2b29-4f33-961a-cbc764fc73de",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5ec05b3a-2b29-4f33-961a-cbc764fc73de",
+    "type": "proper_noun",
+    "order": 8,
+    "hanzi": "哈尔滨",
+    "pinyin": "Hā'ěrbīn",
+    "meaning_vi": "Cáp Nhĩ Tân",
+    "meaning_en": "",
+    "source_origin": "generated",
+    "check_needed": false,
+    "tags": [
+      "proper_noun_in_text_not_in_main_table"
+    ]
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,103 @@
+[
+  {
+    "id": "dc59e395-c254-471a-8a2d-95ed9db0b4ff",
+    "order": 1,
+    "title_vi": "Hội họp / giảng dạy / học thuật",
+    "words": [
+      "开会",
+      "教学",
+      "研讨会",
+      "研讨",
+      "讨论"
+    ],
+    "notes": []
+  },
+  {
+    "id": "ec07b47f-80de-4d99-ba4b-863c0b731b4c",
+    "order": 2,
+    "title_vi": "Quá trình / hướng / gửi lời / mang hộ",
+    "words": [
+      "经过",
+      "向",
+      "问好",
+      "捎",
+      "送"
+    ],
+    "notes": []
+  },
+  {
+    "id": "7b337469-ed2b-40d4-aa25-9519725a9428",
+    "order": 3,
+    "title_vi": "Động từ xu hướng / điểm nhìn 来 – 去",
+    "words": [
+      "过去",
+      "过来",
+      "进去",
+      "上来",
+      "起来"
+    ],
+    "notes": []
+  },
+  {
+    "id": "59035880-8ad4-4953-9e69-339f07d70b50",
+    "order": 4,
+    "title_vi": "Lịch sự / nhờ vả / đi một chuyến",
+    "words": [
+      "辛苦",
+      "麻烦",
+      "趟",
+      "办事"
+    ],
+    "notes": []
+  },
+  {
+    "id": "a127c403-0f28-457c-97ef-c4c9e2a967ba",
+    "order": 5,
+    "title_vi": "Gia đình / người thân / di chuyển gấp",
+    "words": [
+      "爱人",
+      "马上",
+      "开始",
+      "开车",
+      "座位",
+      "主意"
+    ],
+    "notes": []
+  },
+  {
+    "id": "d643e894-60e7-4064-9f7e-ae92cc548e64",
+    "order": 6,
+    "title_vi": "Khảo cổ / văn vật / triển lãm",
+    "words": [
+      "出土",
+      "文物",
+      "展览",
+      "大约",
+      "要求"
+    ],
+    "notes": []
+  },
+  {
+    "id": "56b1006e-97e5-4e89-a25f-465ca5704052",
+    "order": 7,
+    "title_vi": "Âm thanh / rõ ràng / xưng hô / địa điểm",
+    "words": [
+      "声",
+      "清楚",
+      "师傅",
+      "大使馆"
+    ],
+    "notes": []
+  },
+  {
+    "id": "36a8f720-2735-449f-b485-a7a437bc776c",
+    "order": 8,
+    "title_vi": "Tên riêng / địa danh",
+    "words": [
+      "台湾",
+      "香港",
+      "赵"
+    ],
+    "notes": []
+  }
+]

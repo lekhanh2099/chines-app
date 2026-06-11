@@ -1,0 +1,305 @@
+{
+  "id": "e0eab29d-4712-4492-b4eb-eb3c7b181dc2",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "享受",
+  "pinyin": "xiǎngshòu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hưởng thụ",
+    "meaning_vi": "hưởng thụ, tận hưởng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hưởng thụ",
+      "tận hưởng"
+    ],
+    "short_definition_vi": "hưởng thụ, tận hưởng",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "享",
+        "lishu_vi": "hưởng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hưởng, hưởng thụ",
+        "modern_logic_vi": "享受 là nhận và tận hưởng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "受",
+        "lishu_vi": "thụ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhận, chịu, tiếp nhận",
+        "modern_logic_vi": "Nhớ 接受 là tiếp nhận/chấp nhận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "享受 được dùng trong Bài 20 với nghĩa: hưởng thụ, tận hưởng.",
+    "memory_tip_vi": "Nhớ qua cụm 享受生活.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "享有",
+        "pinyin": "xiǎngyǒu",
+        "meaning_vi": "được hưởng",
+        "difference_vi": "Trang trọng, dùng cho quyền lợi/danh dự.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "感受",
+        "pinyin": "gǎnshòu",
+        "meaning_vi": "cảm nhận",
+        "difference_vi": "Không nhất thiết vui.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "忍受",
+        "pinyin": "rěnshòu",
+        "meaning_vi": "chịu đựng",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8e3d770a-c10e-438e-9867-9e973124b663",
+      "order": 1,
+      "zh": "享受生活",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c6f55338-6fb3-4597-bbbc-cc8192cf2924",
+      "order": 2,
+      "zh": "享受自由",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "695db3dd-31f6-4ac2-9b39-774373237bd5",
+      "order": 3,
+      "zh": "享受过程",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2bab4eb-feb7-4d54-9281-fb7e7fe21720",
+      "order": 4,
+      "zh": "享受成功的喜悦",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa218a7e-bf7d-48a5-aa27-988158da8a44",
+      "order": 5,
+      "zh": "贪图享受",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f34a09b-8c4d-4ec7-8762-81e5b4bbddd9",
+      "order": 6,
+      "zh": "享受待遇",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ca944f21-d2df-41da-a53b-dbe472018814",
+      "order": 1,
+      "zh": "周末我只想在家享受安静的时光。",
+      "pinyin": "Zhōumò wǒ zhǐ xiǎng zài jiā xiǎngshòu ānjìng de shíguāng.",
+      "vi": "Cuối tuần tôi chỉ muốn ở nhà tận hưởng thời gian yên tĩnh.",
+      "analysis_vi": "享受 + trải nghiệm/danh từ trừu tượng.",
+      "highlight": [
+        "享受"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e0eab29d-4712-4492-b4eb-eb3c7b181dc2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "93103ae9-4e88-4a80-8703-2483d78711be",
+      "order": 2,
+      "zh": "她不想为了享受奖学金而违心地接受一个错误的理论。",
+      "pinyin": "Tā bù xiǎng wèile xiǎngshòu jiǎngxuéjīn ér wéixīn de jiēshòu yí ge cuòwù de lǐlùn.",
+      "vi": "Cô ấy không muốn vì hưởng học bổng mà trái lòng chấp nhận một lý thuyết sai.",
+      "analysis_vi": "为了……而…… nêu động cơ.",
+      "highlight": [
+        "享受"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e0eab29d-4712-4492-b4eb-eb3c7b181dc2"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "享受 không xấu tự thân; 贪图享受 mới tiêu cực.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "21832fa6-2e91-4c18-a59a-ea9163fb0dbb",
+      "order": 1,
+      "rule_vi": "Không nhầm 享受 với 感受.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我感受到了压力。",
+          "pinyin": "Wǒ gǎnshòu dào le yālì.",
+          "vi": "Tôi cảm nhận được áp lực.",
+          "note_vi": "感受 dùng cho cảm nhận.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "享受",
+    "back": "hưởng thụ, tận hưởng",
+    "hint": "xiǎngshòu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e0eab29d-4712-4492-b4eb-eb3c7b181dc2",
+    "source_lesson_vocab_id": null
+  }
+}

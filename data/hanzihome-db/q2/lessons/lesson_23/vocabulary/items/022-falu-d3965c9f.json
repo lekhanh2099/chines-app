@@ -1,0 +1,406 @@
+{
+  "id": "bd06b369-b641-42d4-81c5-0bcd0dad5df2",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "法律",
+  "pinyin": "fǎlǜ",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Pháp luật",
+    "meaning_vi": "pháp luật, luật pháp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "pháp luật, luật pháp"
+    ],
+    "short_definition_vi": "pháp luật, luật pháp",
+    "textbook_focus_vi": "pháp luật, luật pháp",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "法",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "pháp luật, phương pháp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "律",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi, hành động",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi, hành động",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "luật, quy luật",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 法律 hợp lại tạo nghĩa hiện đại trong bài: pháp luật, luật pháp.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "法律",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "法律 / 法律专业 / 法学",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "法律专业",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "法律 / 法律专业 / 法学",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "法学",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "法律 / 法律专业 / 法学",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "法律",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "法律 / 规定 / 规则",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "规定",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "法律 / 规定 / 规则",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "规则",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "法律 / 规定 / 规则",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "遵守法律",
+        "right": "违反法律",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "遵守法律 ↔ 违反法律",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "法律 / 法律专业 / 法学",
+      "法律 / 规定 / 规则",
+      "遵守法律 ↔ 违反法律"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "149d13ef-38e5-4c97-87e8-d4599e9e5418",
+      "order": 1,
+      "zh": "学习法律",
+      "pinyin": "",
+      "vi": "学习法律",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c56569bd-5797-4b4f-9a9a-5d025d3a5e72",
+      "order": 2,
+      "zh": "法律专业",
+      "pinyin": "",
+      "vi": "法律专业",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f9447e89-af29-4ba7-bb9a-f758cd6da5eb",
+      "order": 3,
+      "zh": "法律问题",
+      "pinyin": "",
+      "vi": "法律问题",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3658e48b-2a6a-4379-ac74-921252874d31",
+      "order": 4,
+      "zh": "法律规定",
+      "pinyin": "",
+      "vi": "法律规定",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "714083cc-5b7f-485e-871a-765014d77fcd",
+      "order": 5,
+      "zh": "遵守法律",
+      "pinyin": "",
+      "vi": "遵守法律",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "fe1d5ad1-1b73-401a-a99e-b1d20f724e74",
+      "order": 6,
+      "zh": "违反法律",
+      "pinyin": "",
+      "vi": "违反法律",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "762e9d15-7081-44ad-86b4-c32cd5acaad0",
+      "order": 7,
+      "zh": "法律责任",
+      "pinyin": "",
+      "vi": "法律责任",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c3e38817-12e3-4dcd-bbc4-2224a0dfb247",
+      "order": 1,
+      "zh": "这个词是“法律”。",
+      "pinyin": "",
+      "vi": "Từ này là “法律”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "法律"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "bd06b369-b641-42d4-81c5-0bcd0dad5df2"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4e9d0690-afbd-45a1-9c18-8dd62de7f5ab",
+      "order": 2,
+      "zh": "你想怎么用“法律”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “法律” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "法律"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "bd06b369-b641-42d4-81c5-0bcd0dad5df2"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a7725c96-623f-4954-83a3-623ffcbfd588",
+      "order": 3,
+      "zh": "我们一边复习法律，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “法律”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "法律"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "bd06b369-b641-42d4-81c5-0bcd0dad5df2"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "法律 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b7637f40-45cd-4888-baf9-c77a7f3b414f",
+      "order": 1,
+      "rule_vi": "Dùng 法律 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 法律 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "法律",
+    "back": "pháp luật, luật pháp",
+    "hint": "fǎlǜ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bd06b369-b641-42d4-81c5-0bcd0dad5df2",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "id": "ae4821c0-61bb-44d6-a2c9-b40cfe98b2a7",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "羡慕",
+  "pinyin": "xiànmù",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ tâm lý",
+    "raw_cn": "动/形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tiện mộ",
+    "meaning_vi": "ngưỡng mộ, ao ước được như người khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngưỡng mộ, ao ước được như người khác"
+    ],
+    "short_definition_vi": "ngưỡng mộ, ao ước được như người khác",
+    "textbook_focus_vi": "ngưỡng mộ, ao ước được như người khác",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "羡",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "dê/cừu",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "羊 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "羊",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dương",
+              "radical_name_zh": "",
+              "hanviet": "dương",
+              "meaning_vi": "dê/cừu",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "次",
+            "hanviet": "thứ",
+            "meaning_vi": "",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "ngưỡng mộ/ao ước",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "慕",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "莫",
+            "hanviet": "mạc",
+            "meaning_vi": "",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "⺗",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý/cảm xúc",
+            "position_vi": "bên dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "⺗ được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "⺗",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm lý/cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "mến mộ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "trong lòng hướng về thứ người khác có",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "58175eb8-3076-4f47-8a28-39b095dd3ee2",
+      "order": 1,
+      "zh": "很羡慕",
+      "pinyin": "",
+      "vi": "rất ngưỡng mộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00e436d3-8542-4c79-b2a6-c21910d80fea",
+      "order": 2,
+      "zh": "羡慕别人",
+      "pinyin": "",
+      "vi": "ngưỡng mộ người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb76ce58-095e-4857-9dce-40ae43f61fab",
+      "order": 3,
+      "zh": "羡慕他的生活",
+      "pinyin": "",
+      "vi": "ao ước cuộc sống của anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "803f505e-0777-44c1-8a3f-34229e1968d8",
+      "order": 4,
+      "zh": "让人羡慕",
+      "pinyin": "",
+      "vi": "khiến người ta ngưỡng mộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e638358-03dd-4d65-9f2a-344519e0c202",
+      "order": 5,
+      "zh": "羡慕人间的生活",
+      "pinyin": "",
+      "vi": "ao ước cuộc sống nhân gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "19013990-23f6-4cd0-b81d-e191a75ad94d",
+      "order": 1,
+      "zh": "我很羡慕他的中文说得这么好。",
+      "pinyin": "Wǒ hěn xiànmù tā de Zhōngwén shuō de zhème hǎo.",
+      "vi": "Tôi rất ngưỡng mộ việc tiếng Trung của anh ấy nói tốt như vậy.",
+      "analysis_vi": "说得这么好 là bổ ngữ trạng thái.",
+      "highlight": [
+        "羡慕"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae4821c0-61bb-44d6-a2c9-b40cfe98b2a7"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "09a7ff88-ec84-4b2e-a6ae-378c5539ca20",
+      "order": 2,
+      "zh": "如果不了解羡慕，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě xiànmù, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 羡慕, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "羡慕"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae4821c0-61bb-44d6-a2c9-b40cfe98b2a7"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c6260a83-12a9-4e1a-a051-be4c05c28476",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解羡慕在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě xiànmù zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 羡慕 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "羡慕"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae4821c0-61bb-44d6-a2c9-b40cfe98b2a7"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Motif 神仙羡慕人间 cho thấy thần tiên bất tử nhưng thiếu tình cảm đời thường.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f5878f79-47d4-4e9c-8e65-cd03cccc5101",
+      "order": 1,
+      "rule_vi": "羡慕 trung tính hơn 嫉妒; 嫉妒 nghe tiêu cực hơn。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "羡慕",
+    "back": "ngưỡng mộ, ao ước được như người khác",
+    "hint": "xiànmù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ae4821c0-61bb-44d6-a2c9-b40cfe98b2a7",
+    "source_lesson_vocab_id": null
+  }
+}

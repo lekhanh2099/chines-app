@@ -1,0 +1,286 @@
+{
+  "id": "26a8ab60-125d-4590-9533-c324b231f17e",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "迈步",
+  "pinyin": "mài bù",
+  "pos": {
+    "raw_vi": "Động từ / Cụm động từ",
+    "raw_cn": "动词 / 动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "mại bộ",
+    "meaning_vi": "bước đi, cất bước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bước đi",
+      "cất bước"
+    ],
+    "short_definition_vi": "bước đi, cất bước",
+    "textbook_focus_vi": "迈 có 辶 liên quan di chuyển, 步 là bước chân. 迈步 = cất bước đi.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "di chuyển, miêu tả",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "迈",
+        "lishu_vi": "mại",
+        "structure_note_vi": "辶 liên quan di chuyển.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi, di chuyển",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bước, tiến lên",
+        "modern_logic_vi": "Trong từ này, 迈 góp phần tạo nghĩa 'bước, tiến lên'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "步",
+        "lishu_vi": "bộ",
+        "structure_note_vi": "止 gợi bàn chân/dừng.",
+        "main_radical": {
+          "radical": "止",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chỉ",
+          "radical_name_zh": "",
+          "hanviet": "chỉ",
+          "meaning_vi": "dừng, bàn chân",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "dừng, bàn chân",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "止",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chỉ",
+              "radical_name_zh": "",
+              "hanviet": "chỉ",
+              "meaning_vi": "dừng, bàn chân",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bước chân",
+        "modern_logic_vi": "Trong từ này, 步 góp phần tạo nghĩa 'bước chân'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "迈 có 辶 liên quan di chuyển, 步 là bước chân. 迈步 = cất bước đi.",
+    "memory_tip_vi": "Nhớ qua cụm: 迈步向前 = cất bước về phía trước.",
+    "warning_vi": "迈步 không dùng cho mọi câu 'đi' đời thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "走",
+        "pinyin": "zǒu",
+        "meaning_vi": "đi",
+        "difference_vi": "Trung tính nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出发",
+        "pinyin": "chūfā",
+        "meaning_vi": "xuất phát",
+        "difference_vi": "Nhấn lên đường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "迈步 không dùng cho mọi câu 'đi' đời thường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3fc6851b-83c5-4618-98b9-c3708f0717bd",
+      "order": 1,
+      "zh": "迈步向前",
+      "pinyin": "mài bù xiàng qián",
+      "vi": "cất bước về phía trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4b84cc21-5901-496a-a64a-6d30f85048ea",
+      "order": 2,
+      "zh": "不敢迈步",
+      "pinyin": "bù gǎn mài bù",
+      "vi": "không dám cất bước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d15703d4-0efa-423b-b46e-febb0b7f9647",
+      "order": 3,
+      "zh": "迈出第一步",
+      "pinyin": "mài chū dì-yī bù",
+      "vi": "bước ra bước đầu tiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0cdeff11-69a3-48d4-954c-15c44f242edf",
+      "order": 1,
+      "zh": "他想去找赵霞，可是站在宿舍楼下，半天也不敢迈步。",
+      "pinyin": "Tā xiǎng qù zhǎo Zhào Xiá, kěshì zhàn zài sùshè lóu xià, bàntiān yě bù gǎn mài bù.",
+      "vi": "Anh ấy muốn đi tìm Triệu Hà, nhưng đứng dưới ký túc cả buổi vẫn không dám cất bước.",
+      "analysis_vi": "不敢迈步 tả tâm lý do dự.",
+      "highlight": [
+        "迈步"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "26a8ab60-125d-4590-9533-c324b231f17e"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "迈步 thường có màu văn kể chuyện, nhấn khoảnh khắc bắt đầu di chuyển.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "82c3f3cb-9081-4d30-b4ed-251bc05151a3",
+      "order": 1,
+      "rule_vi": "迈步 không dùng cho mọi câu 'đi' đời thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我迈步去上课。",
+          "pinyin": "Wǒ mài bù qù shàngkè.",
+          "vi": "Kém tự nhiên nếu chỉ nói đi học.",
+          "note_vi": "迈步 quá miêu tả.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我去上课。",
+          "pinyin": "Wǒ qù shàngkè.",
+          "vi": "Tôi đi học.",
+          "note_vi": "走/去 tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "迈步",
+    "back": "bước đi, cất bước",
+    "hint": "mài bù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "26a8ab60-125d-4590-9533-c324b231f17e",
+    "source_lesson_vocab_id": null
+  }
+}

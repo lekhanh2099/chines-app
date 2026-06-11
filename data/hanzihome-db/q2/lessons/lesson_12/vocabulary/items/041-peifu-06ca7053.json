@@ -1,0 +1,354 @@
+{
+  "id": "b62e6c5a-f0e5-4014-8e5c-e8e122fe9ab2",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "佩服",
+  "pinyin": "pèifu",
+  "pos": {
+    "raw_vi": "Động từ / Tâm lý động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "bội phục",
+    "meaning_vi": "khâm phục, nể phục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khâm phục, nể phục"
+    ],
+    "short_definition_vi": "khâm phục, nể phục",
+    "textbook_focus_vi": "khâm phục, nể phục",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "佩",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đeo, khâm phục trong 佩服",
+        "modern_logic_vi": "佩 trong 佩服 học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "服",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thành phần trái",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng, tháng; bộ phận cơ thể trong một số chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quần áo, phục tùng, tin phục, uống thuốc",
+        "modern_logic_vi": "服 trong 佩服 gợi phục/tin phục.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "佩服 = trong lòng nể và phục vì năng lực/phẩm chất/hành động của người khác.",
+    "memory_tip_vi": "佩服 = trong lòng nể và phục vì năng lực/phẩm chất/hành động của người khác.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "敬佩",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kính phục, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钦佩",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khâm phục, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "羡慕",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngưỡng mộ/ghen tị nhẹ vì muốn có điều người kia có",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "服气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phục/chịu thua, khẩu ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "轻视",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xem nhẹ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "看不起",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "coi thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "佩服",
+        "right": "羡慕",
+        "meaning_vi": "",
+        "note_vi": "khâm phục phẩm chất/năng lực ↔ ngưỡng mộ vì muốn có điều người kia có",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f3362ea8-dabf-4d50-b66e-9e7a6b6dedb6",
+      "order": 1,
+      "zh": "佩服他",
+      "pinyin": "",
+      "vi": "khâm phục anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a6cb2a30-6399-440e-8b17-d63bc0260e5c",
+      "order": 2,
+      "zh": "很佩服",
+      "pinyin": "",
+      "vi": "rất khâm phục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6a82feb-40c9-4d07-8261-f7b791352ca7",
+      "order": 3,
+      "zh": "佩服他的能力",
+      "pinyin": "",
+      "vi": "khâm phục năng lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1242d7bc-3c74-4907-b58a-607062cd5067",
+      "order": 4,
+      "zh": "佩服他的精神",
+      "pinyin": "",
+      "vi": "khâm phục tinh thần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38277292-dc9d-4e21-9f6c-abd7c30f5159",
+      "order": 5,
+      "zh": "让人佩服",
+      "pinyin": "",
+      "vi": "khiến người ta khâm phục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6e80e11d-c81d-478b-b079-20261a2f49d6",
+      "order": 1,
+      "zh": "我很佩服他的勇气。",
+      "pinyin": "",
+      "vi": "Tôi rất khâm phục sự dũng cảm của anh ấy.",
+      "analysis_vi": "佩服 + người/phẩm chất.",
+      "highlight": [
+        "佩服"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b62e6c5a-f0e5-4014-8e5c-e8e122fe9ab2"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d67accdc-fe10-46ff-95b6-b3ce21326aa3",
+      "order": 2,
+      "zh": "这个人的一言一行你都很佩服吗？",
+      "pinyin": "",
+      "vi": "Từng lời nói và hành động của người này bạn đều khâm phục à?",
+      "analysis_vi": "一言一行 là chủ đề lớn.",
+      "highlight": [
+        "佩服"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b62e6c5a-f0e5-4014-8e5c-e8e122fe9ab2"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "佩服 khác 羡慕; tiếng Việt “ngưỡng mộ” dễ làm lẫn.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c09e2aaa-3750-4fef-a3c3-01c6430e28bc",
+      "order": 1,
+      "rule_vi": "Không dùng 佩服 cho đồ vật đẹp bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我佩服这件大衣。",
+          "pinyin": "",
+          "vi": "Không tự nhiên nếu chỉ muốn nói áo đẹp.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这件大衣很好看。",
+          "pinyin": "",
+          "vi": "Cái áo khoác này rất đẹp.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "佩服",
+    "back": "khâm phục, nể phục",
+    "hint": "pèifu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b62e6c5a-f0e5-4014-8e5c-e8e122fe9ab2",
+    "source_lesson_vocab_id": null
+  }
+}

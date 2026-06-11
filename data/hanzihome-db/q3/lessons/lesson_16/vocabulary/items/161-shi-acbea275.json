@@ -1,0 +1,152 @@
+{
+  "id": "6df873d4-1cd8-4860-97e6-db7c4ca5d293",
+  "type": "deep_vocabulary_item",
+  "order": 161,
+  "hanzi": "时",
+  "pinyin": "shí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词/时间成分",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Thời gian và tiến trình"
+  ],
+  "meaning": {
+    "hanviet": "Thời",
+    "meaning_vi": "lúc, thời gian, khi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lúc",
+      "thời gian",
+      "khi"
+    ],
+    "short_definition_vi": "lúc, thời gian, khi",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: lúc, thời gian, khi.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Thời gian và tiến trình",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "时",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "时 trong bài được học theo nghĩa trọng tâm: lúc, thời gian, khi.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: lúc, thời gian, khi.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c78b3ac6-35da-4405-8842-b9f453ce1248",
+      "order": 1,
+      "zh": "我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: lúc, thời gian, khi",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d8b68fcd-b45f-4f2a-abbf-43167c2f8cfd",
+      "order": 1,
+      "zh": "我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “时” = lúc, thời gian, khi.",
+      "analysis_vi": "Câu này dùng “时” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6df873d4-1cd8-4860-97e6-db7c4ca5d293"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “时” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9a80ab56-5184-47cc-b523-a90b75582fe3",
+      "order": 1,
+      "rule_vi": "Cần dùng “时” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "时",
+    "back": "lúc, thời gian, khi",
+    "hint": "shí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Thời gian và tiến trình"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6df873d4-1cd8-4860-97e6-db7c4ca5d293",
+    "source_lesson_vocab_id": null
+  }
+}

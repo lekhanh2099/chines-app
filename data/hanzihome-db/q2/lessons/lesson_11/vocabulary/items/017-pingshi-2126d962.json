@@ -1,0 +1,325 @@
+{
+  "id": "b84d9f99-5c52-4156-bc7c-11118038061c",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "平时",
+  "pinyin": "píngshí",
+  "pos": {
+    "raw_vi": "Từ loại",
+    "raw_cn": "时间名词 / 副",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bình thời",
+    "meaning_vi": "ngày thường, lúc bình thường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngày thường, lúc bình thường"
+    ],
+    "short_definition_vi": "ngày thường, lúc bình thường",
+    "textbook_focus_vi": "ngày thường, lúc bình thường",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "平",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bình thường, bình ổn",
+        "modern_logic_vi": "平 = bình thường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "时",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "tấc",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "寸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thốn",
+              "radical_name_zh": "",
+              "hanviet": "thốn",
+              "meaning_vi": "tấc, đơn vị nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thời gian, lúc, giờ",
+        "modern_logic_vi": "时 = thời gian.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "平 = bình thường, 时 = thời gian. 平时 = thời gian bình thường / ngày thường.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "平常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "平日",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "经常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "be9b6a5d-f0d0-4d1b-8bbe-0a7931cf3008",
+      "order": 1,
+      "zh": "平时很忙",
+      "pinyin": "",
+      "vi": "ngày thường rất bận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a443737e-d0c7-436c-9bcb-45fb8ac52089",
+      "order": 2,
+      "zh": "平时很少出去",
+      "pinyin": "",
+      "vi": "ngày thường ít ra ngoài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87ac3d00-b384-430c-8d4b-2cba46bec1e9",
+      "order": 3,
+      "zh": "平时喜欢看书",
+      "pinyin": "",
+      "vi": "bình thường thích đọc sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0eee06ce-c1c2-4a36-8108-9bae2ed89120",
+      "order": 4,
+      "zh": "和平时一样",
+      "pinyin": "",
+      "vi": "giống như bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "186a84f2-dbed-4f10-93da-6a71843441c0",
+      "order": 5,
+      "zh": "比平时早",
+      "pinyin": "",
+      "vi": "sớm hơn bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d5a4a808-aff0-436d-9df5-8ffe85ee7ea6",
+      "order": 1,
+      "zh": "我平时喜欢听中文歌。",
+      "pinyin": "Wǒ píngshí xǐhuan tīng Zhōngwén gē.",
+      "vi": "Ngày thường tôi thích nghe nhạc tiếng Trung.",
+      "analysis_vi": "平时 làm trạng ngữ thời gian.",
+      "highlight": [
+        "平时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b84d9f99-5c52-4156-bc7c-11118038061c"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6a50e413-0d75-4ea7-8b22-4144770091e5",
+      "order": 2,
+      "zh": "他不是平时来的，是前天跟旅游团一起来的。",
+      "pinyin": "Tā bú shì píngshí lái de, shì qiántiān gēn lǚyóutuán yìqǐ lái de.",
+      "vi": "Anh ấy không phải đến vào ngày thường, mà hôm kia đi cùng đoàn du lịch.",
+      "analysis_vi": "是……的 sửa thông tin thời gian/cách thức.",
+      "highlight": [
+        "平时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b84d9f99-5c52-4156-bc7c-11118038061c"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bb0e771e-7ca2-481c-9348-f95721589895",
+      "order": 3,
+      "zh": "平时他很少说话，可是一见到老朋友，就高兴得说个不停。",
+      "pinyin": "Píngshí tā hěn shǎo shuōhuà, kěshì yí jiàn dào lǎo péngyou, jiù gāoxìng de shuō ge bù tíng.",
+      "vi": "Bình thường anh ấy ít nói, nhưng gặp bạn cũ là vui nói mãi.",
+      "analysis_vi": "一见到……就…… chỉ phản ứng ngay.",
+      "highlight": [
+        "平时"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b84d9f99-5c52-4156-bc7c-11118038061c"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "你平时喜欢做什么？ là câu hỏi đời sống tự nhiên hơn dùng 正常 trong nghĩa thói quen.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f832acc4-81fe-43d5-b25a-615e6562e0ad",
+      "order": 1,
+      "rule_vi": "Không nhầm 平时 với 经常; 平时 nói thời gian ngày thường, 经常 nói tần suất.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "平时",
+    "back": "ngày thường, lúc bình thường",
+    "hint": "píngshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b84d9f99-5c52-4156-bc7c-11118038061c",
+    "source_lesson_vocab_id": null
+  }
+}

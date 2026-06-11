@@ -1,0 +1,297 @@
+{
+  "id": "f7a3e552-d088-4e3b-b2a2-621e41116b2a",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "七手八脚",
+  "pinyin": "qī shǒu bā jiǎo",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thất thủ bát cước",
+    "meaning_vi": "nhiều người xúm vào làm; tay chân rối rít",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhiều người xúm vào làm",
+      "tay chân rối rít"
+    ],
+    "short_definition_vi": "nhiều người xúm vào làm; tay chân rối rít",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "七",
+        "lishu_vi": "",
+        "structure_note_vi": "七: bảy",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bảy",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: bảy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "手: tay",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "八",
+        "lishu_vi": "",
+        "structure_note_vi": "八: tám",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tám",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: tám.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "脚",
+        "lishu_vi": "",
+        "structure_note_vi": "脚: chân",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thân thể",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục dạng 月",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thân thể",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chân",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: chân.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "肉",
+          "radical_variant": "月",
+          "radical_name_vi": "bộ Nhục dạng 月",
+          "radical_name_zh": "",
+          "hanviet": "nhục",
+          "meaning_vi": "thân thể",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "月 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "七手八脚 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 七手八脚地帮忙.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8a339548-58d4-4864-b1b6-31b38a9d8b4b",
+      "order": 1,
+      "zh": "七手八脚地帮忙",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5461f694-e75e-4b94-9ef2-77fe7ec0f8b6",
+      "order": 2,
+      "zh": "七手八脚地扶起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d04251d6-cdfa-4127-8df8-c6311285ff7e",
+      "order": 3,
+      "zh": "七手八脚地搬东西",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db47a4e3-da91-4e8d-a62b-87cffd84b8eb",
+      "order": 4,
+      "zh": "七手八脚地处理问题",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3460a665-dbb0-4a6b-8058-eea715ba39c2",
+      "order": 1,
+      "zh": "大家七手八脚地把我扶了起来。",
+      "pinyin": "",
+      "vi": "Mọi người xúm vào đỡ tôi dậy。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "七手八脚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7a3e552-d088-4e3b-b2a2-621e41116b2a"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b3edf3b7-60f9-4b60-b2ce-02f0e9f7be4c",
+      "order": 2,
+      "zh": "一看到我摔倒了，旁边的人就七手八脚地跑过来帮忙。",
+      "pinyin": "",
+      "vi": "Vừa thấy tôi ngã, người bên cạnh liền xúm lại chạy tới giúp。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "七手八脚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f7a3e552-d088-4e3b-b2a2-621e41116b2a"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96e3e176-be82-410e-980b-53fc244c5e6f",
+      "order": 1,
+      "rule_vi": "Không dùng 七手八脚 cho một người。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 七手八脚 cho một người。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "七手八脚",
+    "back": "nhiều người xúm vào làm; tay chân rối rít",
+    "hint": "qī shǒu bā jiǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f7a3e552-d088-4e3b-b2a2-621e41116b2a",
+    "source_lesson_vocab_id": null
+  }
+}

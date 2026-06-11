@@ -1,0 +1,249 @@
+{
+  "id": "8134be16-945f-441b-aed1-a1ec98121cc1",
+  "type": "deep_vocabulary_item",
+  "order": 71,
+  "hanzi": "端详",
+  "pinyin": "duānxiang",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "đoan tường",
+    "meaning_vi": "nhìn kỹ, quan sát kỹ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhìn kỹ",
+      "quan sát kỹ"
+    ],
+    "short_definition_vi": "nhìn kỹ, quan sát kỹ",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "端",
+        "lishu_vi": "đoan",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "立",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lập",
+          "radical_name_zh": "",
+          "hanviet": "lập",
+          "meaning_vi": "đứng, dựng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng, dựng",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "立",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lập",
+              "radical_name_zh": "",
+              "hanviet": "lập",
+              "meaning_vi": "đứng, dựng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bưng; đầu mút; ngay ngắn",
+        "modern_logic_vi": "Trong từ này, 端 góp phần vào nghĩa hiện đại: bưng; đầu mút; ngay ngắn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "详",
+        "lishu_vi": "tường",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tường tận",
+        "modern_logic_vi": "Trong từ này, 详 góp phần vào nghĩa hiện đại: tường tận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "端详 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 仔细端详.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho xem phim/xem điện thoại thường; dùng 看."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d646a4c5-7731-4976-8ed2-6e639c6d257f",
+      "order": 1,
+      "zh": "仔细端详",
+      "pinyin": "",
+      "vi": "quan sát kỹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5370c68-a5b8-4c14-81aa-1005e20a5a7d",
+      "order": 2,
+      "zh": "端详她的脸",
+      "pinyin": "",
+      "vi": "nhìn kỹ mặt cô ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e386c43-00da-49d6-98f0-b644c7251b39",
+      "order": 3,
+      "zh": "端详照片",
+      "pinyin": "",
+      "vi": "nhìn kỹ ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f5195a91-7c8a-44c0-8ecc-d854a122b62d",
+      "order": 1,
+      "zh": "他拿起照片，仔细端详了很久。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 端详 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 端详; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "端详"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8134be16-945f-441b-aed1-a1ec98121cc1"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 端详 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5795efda-6aff-48d9-b74c-7110ea610a9e",
+      "order": 1,
+      "rule_vi": "Không dùng cho xem phim/xem điện thoại thường; dùng 看.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "端详",
+    "back": "nhìn kỹ, quan sát kỹ",
+    "hint": "duānxiang",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8134be16-945f-441b-aed1-a1ec98121cc1",
+    "source_lesson_vocab_id": null
+  }
+}

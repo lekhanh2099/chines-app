@@ -1,0 +1,330 @@
+{
+  "id": "7e94568a-5711-4586-88dd-fe148b84bb25",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "月亮",
+  "pinyin": "yuèliang",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Nguyệt lượng",
+    "meaning_vi": "mặt trăng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mặt trăng"
+    ],
+    "short_definition_vi": "mặt trăng",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "thiên nhiên, đêm, văn hóa, cảm xúc.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "月",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng/tháng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng/tháng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trăng, tháng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "月 là trăng, tháng. → 月亮 = vật sáng trên trời ban đêm, mặt trăng.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "亮",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亠",
+            "hanviet": "đầu",
+            "meaning_vi": "phần trên",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "儿",
+            "hanviet": "nhân/nhi",
+            "meaning_vi": "người/con",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng, rõ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "亮 là sáng. → 月亮 = vật sáng trên trời ban đêm, mặt trăng.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 月亮 = vật sáng trên trời ban đêm, mặt trăng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 月 có thể là “tháng” hoặc “trăng”; 月亮 rõ nghĩa là mặt trăng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "月亮 (yuèliang)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mặt trăng, khẩu ngữ/đời sống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "月 (yuè)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trăng hoặc tháng, thường trong từ ghép/văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "月光 (yuèguāng)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ánh trăng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "明月 (míngyuè)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trăng sáng, văn/thơ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: nói đời thường dùng 月亮; thơ văn hay dùng 明月 / 月光."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "03c91b95-9a59-406f-92a6-8f7d9e7c75eb",
+      "order": 1,
+      "zh": "月亮出来了",
+      "pinyin": "",
+      "vi": "mặt trăng ló ra rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "248a5b43-06f9-434d-a19c-24be9505e6b3",
+      "order": 2,
+      "zh": "月亮升起来了",
+      "pinyin": "",
+      "vi": "mặt trăng mọc lên rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ce335d0-a381-43ba-b66b-a0ae97e9cabd",
+      "order": 3,
+      "zh": "看月亮",
+      "pinyin": "",
+      "vi": "ngắm trăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fc9d676-dda0-4e72-931b-8e25c4255d99",
+      "order": 4,
+      "zh": "中秋节赏月",
+      "pinyin": "",
+      "vi": "Tết Trung thu ngắm trăng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8be06352-4f71-4e12-bf68-a6598ab13cff",
+      "order": 1,
+      "zh": "月亮升起来以后，山上的路看起来没那么黑了。",
+      "pinyin": "Yuèliang shēng qǐlai yǐhòu, shān shàng de lù kàn qǐlai méi nàme hēi le.",
+      "vi": "Sau khi mặt trăng mọc lên, đường trên núi nhìn không còn tối như vậy nữa.",
+      "analysis_vi": "升起来 nói hướng lên; 看起来 nói cảm nhận khi nhìn.",
+      "highlight": [
+        "月亮"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "7e94568a-5711-4586-88dd-fe148b84bb25"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d917163a-f591-4928-a707-63435e211a3c",
+      "order": 2,
+      "zh": "我们从寺里走出来的时候，月亮已经出来了。",
+      "pinyin": "Wǒmen cóng sì lǐ zǒu chūlai de shíhou, yuèliang yǐjīng chūlai le.",
+      "vi": "Khi chúng tôi đi từ trong chùa ra, mặt trăng đã ló ra rồi.",
+      "analysis_vi": "走出来 là đi từ trong ra ngoài; 月亮出来了 là mặt trăng xuất hiện.",
+      "highlight": [
+        "月亮"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "7e94568a-5711-4586-88dd-fe148b84bb25"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "50fb771d-0489-4aae-a687-804708083054",
+      "order": 3,
+      "zh": "中秋节晚上，很多中国家庭会一起吃月饼、看月亮。",
+      "pinyin": "Zhōngqiū Jié wǎnshang, hěn duō Zhōngguó jiātíng huì yìqǐ chī yuèbing, kàn yuèliang.",
+      "vi": "Tối Trung thu, nhiều gia đình Trung Quốc sẽ cùng ăn bánh Trung thu và ngắm trăng.",
+      "analysis_vi": "Câu gắn 月亮 với bối cảnh văn hóa thật, dễ nhớ hơn học nghĩa đơn lẻ.",
+      "highlight": [
+        "月亮"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "7e94568a-5711-4586-88dd-fe148b84bb25"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [],
+  "flashcard": {
+    "front": "月亮",
+    "back": "mặt trăng",
+    "hint": "yuèliang",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7e94568a-5711-4586-88dd-fe148b84bb25",
+    "source_lesson_vocab_id": null
+  }
+}

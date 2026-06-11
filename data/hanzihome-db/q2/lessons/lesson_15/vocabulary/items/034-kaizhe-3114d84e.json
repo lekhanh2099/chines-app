@@ -1,0 +1,317 @@
+{
+  "id": "11b4c4b9-37ce-4b13-a7ac-ab935d3ded4a",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "开着",
+  "pinyin": "kāizhe",
+  "pos": {
+    "raw_vi": "Cụm động từ trạng thái",
+    "raw_cn": "动词 + 动态助词",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Khai + 着",
+    "meaning_vi": "đang mở; đang bật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đang mở; đang bật"
+    ],
+    "short_definition_vi": "đang mở; đang bật",
+    "textbook_focus_vi": "đang mở; đang bật",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "开",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "开",
+            "hanviet": "khai",
+            "meaning_vi": "chữ giản thể độc lập",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mở, bật, bắt đầu, lái/vận hành",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "着",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt/thành phần dưới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trợ từ trạng thái zhe; cũng có âm zháo/zhuó",
+        "modern_logic_vi": "Trong V+着 không nên chiết tự theo nghĩa chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt, nhìn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "开 = mở/bật; 着 = trạng thái đang duy trì. 开着 = đang mở/đang bật.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "开了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mở rồi/bật rồi, nhấn thay đổi/hoàn thành",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "正在开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đang mở/lái/diễn ra, nhấn hành động hoặc quá trình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "关着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đang đóng/tắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "关着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đang đóng/tắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "开着",
+        "right": "关着",
+        "meaning_vi": "đang mở/bật ↔ đang đóng/tắt",
+        "note_vi": "Cặp trạng thái.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "06d3b2d5-6167-41b6-bc8d-ead7f9bd9220",
+      "order": 1,
+      "zh": "门开着",
+      "pinyin": "",
+      "vi": "cửa đang mở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b65eacc-526d-468b-ae65-51157bbf85a2",
+      "order": 2,
+      "zh": "窗户开着",
+      "pinyin": "",
+      "vi": "cửa sổ đang mở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a1d1931-f26c-430a-b456-d709ea391aa8",
+      "order": 3,
+      "zh": "灯开着",
+      "pinyin": "",
+      "vi": "đèn đang bật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a3c1acb-d742-4d10-85c5-a4656995fef3",
+      "order": 4,
+      "zh": "麦克风开着",
+      "pinyin": "",
+      "vi": "micro đang bật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "81f2df4e-bad4-4d80-9b26-b8f571bd6f73",
+      "order": 5,
+      "zh": "一直开着",
+      "pinyin": "",
+      "vi": "cứ mở/bật mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "95bccb68-175c-469a-ba63-769375071cf6",
+      "order": 1,
+      "zh": "门开着呢。",
+      "pinyin": "Mén kāizhe ne.",
+      "vi": "Cửa đang mở đó.",
+      "analysis_vi": "开着 nhấn trạng thái, 呢 nhắc tình trạng đang tồn tại.",
+      "highlight": [
+        "开着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11b4c4b9-37ce-4b13-a7ac-ab935d3ded4a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1a0047ee-3ff8-4275-b693-bff6db03a441",
+      "order": 2,
+      "zh": "会议厅的门开着，里面坐着很多客人。",
+      "pinyin": "Huìyìtīng de mén kāizhe, lǐmiàn zuòzhe hěn duō kèrén.",
+      "vi": "Cửa phòng hội nghị đang mở, bên trong có rất nhiều khách đang ngồi.",
+      "analysis_vi": "开着 và 坐着 đều là trạng thái.",
+      "highlight": [
+        "开着",
+        "坐着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "11b4c4b9-37ce-4b13-a7ac-ab935d3ded4a"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "67aead01-f99d-4452-a329-ea504fcf599a",
+      "order": 1,
+      "rule_vi": "Phân biệt 门开着 = cửa đang mở; 他正在开门 = anh ấy đang mở cửa; 门开了 = cửa mở rồi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "开着",
+    "back": "đang mở; đang bật",
+    "hint": "kāizhe",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "门开着 là trạng thái “cửa đang mở”, không phải ai đó đang mở cửa.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "11b4c4b9-37ce-4b13-a7ac-ab935d3ded4a",
+    "source_lesson_vocab_id": null
+  }
+}

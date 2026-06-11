@@ -1,0 +1,217 @@
+{
+  "id": "d239fe30-dab0-4712-8686-99041bbc78e7",
+  "type": "deep_vocabulary_item",
+  "order": 75,
+  "hanzi": "老实",
+  "pinyin": "lǎoshi",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词/副词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "lão thực",
+    "meaning_vi": "thật thà; ngoan, hiền; thật ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thật thà; ngoan",
+      "hiền; thật ra"
+    ],
+    "short_definition_vi": "thật thà; ngoan, hiền; thật ra",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "老",
+        "lishu_vi": "lão",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "già, lâu",
+        "modern_logic_vi": "Trong từ này, 老 góp phần vào nghĩa hiện đại: già, lâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "实",
+        "lishu_vi": "thực",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nơi chốn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nơi chốn",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nơi chốn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật",
+        "modern_logic_vi": "Trong từ này, 实 góp phần vào nghĩa hiện đại: thật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "老实 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 老实人.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Vừa là phẩm chất tốt, vừa có thể hàm ý không lanh/không linh hoạt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "19ea31cd-32bc-45da-b2c8-5a90b92a602a",
+      "order": 1,
+      "zh": "老实人",
+      "pinyin": "",
+      "vi": "người thật thà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0750443-7d75-438b-86eb-7d55093a72b5",
+      "order": 2,
+      "zh": "太老实",
+      "pinyin": "",
+      "vi": "quá thật thà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4fa292bf-7e4a-4980-96aa-9ce43f344e18",
+      "order": 3,
+      "zh": "老实说",
+      "pinyin": "",
+      "vi": "nói thật là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3c2b1a57-4ce3-40b0-a777-18a4138a8063",
+      "order": 1,
+      "zh": "他是个老实人，不会骗人。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 老实 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 老实; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "老实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d239fe30-dab0-4712-8686-99041bbc78e7"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 老实 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9e56047a-c702-4fef-8968-4d537b7ffefb",
+      "order": 1,
+      "rule_vi": "Vừa là phẩm chất tốt, vừa có thể hàm ý không lanh/không linh hoạt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "老实",
+    "back": "thật thà; ngoan, hiền; thật ra",
+    "hint": "lǎoshi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d239fe30-dab0-4712-8686-99041bbc78e7",
+    "source_lesson_vocab_id": null
+  }
+}

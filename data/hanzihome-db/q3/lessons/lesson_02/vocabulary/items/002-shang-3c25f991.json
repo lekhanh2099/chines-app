@@ -1,0 +1,289 @@
+{
+  "id": "300c22f4-5c28-4f80-a11c-86fe4a9a556a",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "上",
+  "pinyin": "shàng",
+  "pos": {
+    "raw_vi": "Danh từ phương vị / động từ / bổ ngữ xu hướng",
+    "raw_cn": "方位词/动/趋向补语",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "direction",
+    "time"
+  ],
+  "meaning": {
+    "hanviet": "Thượng",
+    "meaning_vi": "trên; lên; trước; đi/tham gia hoạt động",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trên; lên; trước; đi/tham gia hoạt động"
+    ],
+    "short_definition_vi": "trên; lên; trước; đi/tham gia hoạt động",
+    "textbook_focus_vi": "trên; lên; trước; đi/tham gia hoạt động",
+    "register_vi": "",
+    "usage_domain_vi": "direction,time",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "上",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "mốc ngang",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丨",
+            "hanviet": "cổn",
+            "meaning_vi": "nét chỉ vị trí phía trên",
+            "position_vi": "giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên, lên, trước, tham gia hoạt động",
+        "modern_logic_vi": "Vạch mốc và nét phía trên giúp nhớ nghĩa “ở phía trên”, mở rộng sang thời gian trước.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Vạch mốc và nét phía trên giúp nhớ nghĩa “ở phía trên”, mở rộng sang thời gian trước.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "上面",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "上",
+        "right": "下",
+        "meaning_vi": "trên/lên ↔ dưới/xuống",
+        "note_vi": "Cặp phương vị và xu hướng",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "517f8d73-b8c8-4795-8772-4fb152f67558",
+      "order": 1,
+      "zh": "上个星期",
+      "pinyin": "",
+      "vi": "tuần trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a99ce8b-c9a5-4dc3-b1c2-a90b09dfbaf6",
+      "order": 2,
+      "zh": "上次",
+      "pinyin": "",
+      "vi": "lần trước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10d29d49-4a45-4e78-996f-454b43c0daff",
+      "order": 3,
+      "zh": "上课",
+      "pinyin": "",
+      "vi": "đi học/vào lớp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2bc32716-e633-422e-b477-ee9d62121fce",
+      "order": 4,
+      "zh": "上班",
+      "pinyin": "",
+      "vi": "đi làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "239122f5-9252-48a3-8a42-52facb393dcb",
+      "order": 5,
+      "zh": "上车",
+      "pinyin": "",
+      "vi": "lên xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74f4ad07-8e2d-47b3-90c9-892eac39c1ea",
+      "order": 6,
+      "zh": "桌子上",
+      "pinyin": "",
+      "vi": "trên bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd26687f-1d1a-4643-952b-82420b5ba3d0",
+      "order": 1,
+      "zh": "上个星期，我收到了一封信。",
+      "pinyin": "Shàng ge xīngqī, wǒ shōudào le yì fēng xìn.",
+      "vi": "Tuần trước, tôi nhận được một bức thư.",
+      "analysis_vi": "上个星期 là trạng ngữ thời gian.",
+      "highlight": [
+        "上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "300c22f4-5c28-4f80-a11c-86fe4a9a556a"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3ef66d18-aa10-49e9-86b7-13d78bfdf107",
+      "order": 2,
+      "zh": "我刚上车，就发现那封信忘在桌子上了。",
+      "pinyin": "Wǒ gāng shàng chē, jiù fāxiàn nà fēng xìn wàng zài zhuōzi shang le.",
+      "vi": "Tôi vừa lên xe thì phát hiện bức thư đó bị quên trên bàn.",
+      "analysis_vi": "Hai 上 có chức năng khác nhau: lên xe và trên bàn.",
+      "highlight": [
+        "上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "300c22f4-5c28-4f80-a11c-86fe4a9a556a"
+      ],
+      "source_ref": "manual_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "上周 gọn hơn, 上个星期 rõ hơn và hợp văn phong giáo trình.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "67ed7f05-c0e8-45d6-9a8c-4897249bd3d9",
+      "order": 1,
+      "rule_vi": "Không dịch 上个星期 thành “tuần trên”; nghĩa đúng là tuần trước.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "上个星期",
+          "pinyin": "Shàng ge xīngqī",
+          "vi": "tuần trước",
+          "note_vi": "Cụm thời gian cố định.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "上",
+    "back": "trên; lên; trước; đi/tham gia hoạt động",
+    "hint": "shàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "direction",
+      "time"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "300c22f4-5c28-4f80-a11c-86fe4a9a556a",
+    "source_lesson_vocab_id": null
+  }
+}

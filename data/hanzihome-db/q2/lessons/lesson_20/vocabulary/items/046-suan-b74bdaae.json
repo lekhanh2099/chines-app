@@ -1,0 +1,341 @@
+{
+  "id": "681d7ae9-14f8-46d7-aa81-0edeccac3b10",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "酸",
+  "pinyin": "suān",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ hóa học",
+    "raw_cn": "形/名",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Toan",
+    "meaning_vi": "chua; mỏi nhức; chua xót",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chua; mỏi nhức; chua xót"
+    ],
+    "short_definition_vi": "chua; mỏi nhức; chua xót",
+    "textbook_focus_vi": "chua; mỏi nhức; chua xót",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "酸",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "酉",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dậu",
+          "radical_name_zh": "",
+          "hanviet": "dậu",
+          "meaning_vi": "rượu, lên men, vị",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "酉 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "酉",
+            "hanviet": "dậu",
+            "meaning_vi": "rượu, lên men, vị",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "酉",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dậu",
+              "radical_name_zh": "",
+              "hanviet": "dậu",
+              "meaning_vi": "rượu, lên men, vị",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "酉 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "夋",
+            "hanviet": "",
+            "meaning_vi": "thành phần bên phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "酸 có bộ 酉, nhiều chữ liên quan đến rượu/lên men/vị. Nghĩa hiện đại chính: vị chua. → 酸甜 = chua ngọt. → 太酸了 = chua quá. → 腿酸 = chân mỏi/ê.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 酸 không chỉ là vị chua. Khi nói cơ thể, 腿酸 là chân mỏi, không phải chân “chua”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "酸",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chua; mỏi ê.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "甜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngọt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "苦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đắng; khổ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "辣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 柠檬很酸; 糖很甜; 药很苦; 辣椒很辣."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9b577c14-c209-488b-b142-bf4fa594d270",
+      "order": 1,
+      "zh": "很酸",
+      "pinyin": "",
+      "vi": "rất chua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b221cf2-3395-4e88-a5a6-fc51944a2cf0",
+      "order": 2,
+      "zh": "酸甜",
+      "pinyin": "",
+      "vi": "chua ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "63c04dcc-5bf1-44bf-ba5f-d5f88994d6f2",
+      "order": 3,
+      "zh": "酸奶",
+      "pinyin": "",
+      "vi": "sữa chua",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a39a291-9507-45d8-a5d6-564ac0dc4cc4",
+      "order": 4,
+      "zh": "腿酸",
+      "pinyin": "",
+      "vi": "chân mỏi/ê",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb85cf86-e6d7-4d59-99bb-c2009e1bc431",
+      "order": 5,
+      "zh": "酸得受不了",
+      "pinyin": "",
+      "vi": "chua/mỏi đến chịu không nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "51f815dc-a5c4-47e8-88c1-4941640fd287",
+      "order": 1,
+      "zh": "这个水果太酸了，我吃不了。",
+      "pinyin": "Zhège shuǐguǒ tài suān le, wǒ chī bù liǎo.",
+      "vi": "Trái cây này chua quá, tôi ăn không nổi.",
+      "analysis_vi": "吃不了 nhấn không chịu/ăn hết nổi vì vị quá chua.",
+      "highlight": [
+        "酸"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "681d7ae9-14f8-46d7-aa81-0edeccac3b10"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1326e40-f577-42a3-8874-6d2728917b66",
+      "order": 2,
+      "zh": "菜单上写着“酸甜鱼”，我看得懂，但是没吃过。",
+      "pinyin": "Càidān shang xiězhe “suāntián yú”, wǒ kàn de dǒng, dànshì méi chī guo.",
+      "vi": "Trên thực đơn viết “cá chua ngọt”, tôi đọc hiểu được, nhưng chưa ăn bao giờ.",
+      "analysis_vi": "看得懂 là đọc hiểu chữ trên thực đơn.",
+      "highlight": [
+        "酸"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "681d7ae9-14f8-46d7-aa81-0edeccac3b10"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "816a1c82-072f-48b6-859d-ff54ef445dc8",
+      "order": 3,
+      "zh": "走了两个小时以后，我的腿酸得走不动了。",
+      "pinyin": "Zǒu le liǎng ge xiǎoshí yǐhòu, wǒ de tuǐ suān de zǒu bú dòng le.",
+      "vi": "Sau khi đi hai tiếng, chân tôi mỏi đến mức đi không nổi nữa.",
+      "analysis_vi": "走不动 là không đi nổi; 酸得…… nói mức độ mỏi.",
+      "highlight": [
+        "酸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "681d7ae9-14f8-46d7-aa81-0edeccac3b10"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "92424748-090c-4a75-a0a3-91d76e36363c",
+      "order": 1,
+      "rule_vi": "Chỉ nhớ 酸 là chua mà quên nghĩa cơ thể. 这个橘子很酸。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Chỉ nhớ 酸 là chua mà quên nghĩa cơ thể. 这个橘子很酸。 Zhège júzi hěn suān. Quả quýt này rất chua. 我的腿很酸。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "酸",
+    "back": "chua; mỏi nhức; chua xót",
+    "hint": "suān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Ẩm thực Trung Quốc có nhóm vị 酸甜苦辣 – chua, ngọt, đắng, cay. Cụm này còn dùng ẩn dụ cho đủ loại trải nghiệm trong đời, giống tiếng Việt nói “đắng cay ngọt bùi”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "681d7ae9-14f8-46d7-aa81-0edeccac3b10",
+    "source_lesson_vocab_id": null
+  }
+}

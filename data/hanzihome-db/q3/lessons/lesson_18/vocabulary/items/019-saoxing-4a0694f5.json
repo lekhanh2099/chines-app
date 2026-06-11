@@ -1,0 +1,300 @@
+{
+  "id": "9ccdd4a2-e1f5-4763-81c3-bea28b5b2b23",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "扫兴",
+  "pinyin": "sǎoxìng",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动 / 形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tảo hứng",
+    "meaning_vi": "làm mất hứng, cụt hứng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm mất hứng",
+      "cụt hứng"
+    ],
+    "short_definition_vi": "làm mất hứng, cụt hứng",
+    "textbook_focus_vi": "Phá bầu không khí vui hoặc khiến người khác cụt hứng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "扫",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quét",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "兴",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hứng thú/vui",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Phá bầu không khí vui hoặc khiến người khác cụt hứng.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 扫兴 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "失望",
+        "pinyin": "",
+        "meaning_vi": "thất vọng",
+        "difference_vi": "Vì kỳ vọng không đạt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "败兴",
+        "pinyin": "",
+        "meaning_vi": "mất hứng",
+        "difference_vi": "Gần nghĩa nhưng ít gặp hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不高兴",
+        "pinyin": "",
+        "meaning_vi": "không vui",
+        "difference_vi": "Rộng và nhẹ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7e889c14-b2db-4684-ae90-258917aa1ae4",
+      "order": 1,
+      "zh": "让人扫兴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "faaac304-8741-4a04-9ca7-065defba1a02",
+      "order": 2,
+      "zh": "真扫兴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "55d7dccb-5e03-485b-a37e-ef577def163c",
+      "order": 3,
+      "zh": "别扫兴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bbc50ea0-17bc-441a-aa37-538eef4b7699",
+      "order": 4,
+      "zh": "扫大家的兴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10671bf8-ece3-4636-8fbe-3e2327856cc4",
+      "order": 5,
+      "zh": "令人扫兴",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ea5ac1f7-1e54-478b-aaea-7b52cb3766a2",
+      "order": 1,
+      "zh": "我不忍让大家扫兴，就没有马上解释。",
+      "pinyin": "",
+      "vi": "Tôi không nỡ làm mọi người mất hứng nên không giải thích ngay.",
+      "analysis_vi": "让大家扫兴 = làm mọi người mất hứng.",
+      "highlight": [
+        "扫兴"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ccdd4a2-e1f5-4763-81c3-bea28b5b2b23"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3d89b03d-7df6-4ca3-9714-e47374f306a3",
+      "order": 1,
+      "rule_vi": "让大家扫兴 và 扫大家的兴 đều dùng được.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "别说扫兴的话。",
+          "pinyin": "",
+          "vi": "Đừng nói lời làm mất hứng.",
+          "note_vi": "Cấu trúc tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "扫兴",
+    "back": "làm mất hứng, cụt hứng",
+    "hint": "sǎoxìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9ccdd4a2-e1f5-4763-81c3-bea28b5b2b23",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,349 @@
+{
+  "id": "61d47179-9c46-4fb0-a292-5759cc84473f",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "了不起",
+  "pinyin": "liǎobuqǐ",
+  "pos": {
+    "raw_vi": "Tính từ / Cụm tính từ",
+    "raw_cn": "形容词/形容词短语",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "adjective"
+  ],
+  "meaning": {
+    "hanviet": "liễu bất khởi",
+    "meaning_vi": "phi thường, đáng nể; ghê gớm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phi thường"
+    ],
+    "short_definition_vi": "phi thường, đáng nể; ghê gớm",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "了",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoàn tất/khả năng trong cụm",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "起",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi, chạy",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "走 được dùng như bộ/thành phần chỉ trường nghĩa: đi, chạy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "走 được dùng như bộ/thành phần chỉ trường nghĩa: đi, chạy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "走 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng lên, nổi lên",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "了不起 được ghi nhớ theo nghĩa hiện đại: phi thường, đáng nể; ghê gớm.",
+    "memory_tip_vi": "Nhớ qua cụm: 了不起的人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "厉害",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "伟大",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "优秀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "普通",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "了不起 là nguyên cụm; không tách thành 起不了."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f22c2540-ceb8-459b-9c22-aaf1cccc79c2",
+      "order": 1,
+      "zh": "了不起的人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef588c48-f50c-40ce-964b-8c8af79472d2",
+      "order": 2,
+      "zh": "了不起的母亲",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d076223a-fd86-40ff-ad27-fed300b4aebd",
+      "order": 3,
+      "zh": "真了不起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56efbb7d-9325-400e-b9ec-3a0f8de98f4c",
+      "order": 4,
+      "zh": "非常了不起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c4c78c8e-dd9b-4717-b66a-1db018749ff5",
+      "order": 5,
+      "zh": "没什么了不起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3baaed0a-e4a0-4cda-b165-181edb393906",
+      "order": 6,
+      "zh": "有什么了不起的",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ce6c9d30-cd47-4321-9c30-9d1576ff5482",
+      "order": 1,
+      "zh": "她真是一位了不起的母亲。",
+      "pinyin": "Tā zhēn shì yí wèi liǎobuqǐ de mǔqīn.",
+      "vi": "Bà ấy thật sự là một người mẹ phi thường.",
+      "analysis_vi": "了不起的 + danh từ = người/cái gì đáng nể.",
+      "highlight": [
+        "了不起"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "61d47179-9c46-4fb0-a292-5759cc84473f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ae83ac05-492e-4dd4-94a3-7055cfa2c5b8",
+      "order": 2,
+      "zh": "小敏能重新学习说话，这本身就是一件了不起的事。",
+      "pinyin": "Xiǎomǐn néng chóngxīn xuéxí shuōhuà, zhè běnshēn jiù shì yí jiàn liǎobuqǐ de shì.",
+      "vi": "Tiểu Mẫn có thể học nói lại, bản thân việc này đã rất đáng nể.",
+      "analysis_vi": "本身就是 nhấn bản thân sự việc đã đủ đáng chú ý.",
+      "highlight": [
+        "了不起"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "61d47179-9c46-4fb0-a292-5759cc84473f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Có thể khen thật hoặc phủ định xem nhẹ: 没什么了不起的.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5b0f4964-60ee-4475-b21c-8cef5c9641d1",
+      "order": 1,
+      "rule_vi": "了不起 là nguyên cụm; không tách thành 起不了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "了不起 là nguyên cụm; không tách thành 起不了.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "了不起",
+    "back": "phi thường, đáng nể; ghê gớm",
+    "hint": "liǎobuqǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "adjective"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "61d47179-9c46-4fb0-a292-5759cc84473f",
+    "source_lesson_vocab_id": null
+  }
+}

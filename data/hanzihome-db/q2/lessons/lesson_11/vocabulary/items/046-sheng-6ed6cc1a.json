@@ -1,0 +1,236 @@
+{
+  "id": "09c7de0e-5027-468b-a78d-c2292e4c3c30",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "声",
+  "pinyin": "shēng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名 / 量 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thanh",
+    "meaning_vi": "âm thanh, tiếng, giọng; danh tiếng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "âm thanh, tiếng, giọng; danh tiếng"
+    ],
+    "short_definition_vi": "âm thanh, tiếng, giọng; danh tiếng",
+    "textbook_focus_vi": "âm thanh, tiếng, giọng; danh tiếng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "声",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm thanh, tiếng, giọng, danh tiếng",
+        "modern_logic_vi": "声 là giản thể; học theo cụm 声音, 声调, 大声, 小声.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "声 = âm thanh/tiếng/giọng, thường làm thành tố trong từ ghép.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f567e1c9-39b5-4609-8a6f-6de1493f5e3f",
+      "order": 1,
+      "zh": "声音",
+      "pinyin": "",
+      "vi": "âm thanh, giọng nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "86362fd3-39f0-4194-b3ca-4e6030c55faf",
+      "order": 2,
+      "zh": "声调",
+      "pinyin": "",
+      "vi": "thanh điệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41bed3f8-693b-4d7f-9bc6-484cb03c895c",
+      "order": 3,
+      "zh": "大声",
+      "pinyin": "",
+      "vi": "tiếng to",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e0b29c46-6028-4c3d-acd0-c73ced70cd72",
+      "order": 4,
+      "zh": "小声",
+      "pinyin": "",
+      "vi": "tiếng nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6d613c6-3c75-4a7f-b7f7-c50a57634af7",
+      "order": 5,
+      "zh": "一声",
+      "pinyin": "",
+      "vi": "một tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "519c0edb-2162-4ebd-a0f3-298b774a410f",
+      "order": 6,
+      "zh": "名声",
+      "pinyin": "",
+      "vi": "danh tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "69f8f33a-0bea-4a97-b049-8d1140d72635",
+      "order": 1,
+      "zh": "他的声音很好听。",
+      "pinyin": "Tā de shēngyīn hěn hǎotīng.",
+      "vi": "Giọng của anh ấy rất dễ nghe.",
+      "analysis_vi": "声音 là danh từ chỉ âm thanh/giọng nói.",
+      "highlight": [
+        "声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "09c7de0e-5027-468b-a78d-c2292e4c3c30"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6ecbb716-dcf4-4fb4-9bf4-e23cc025d86f",
+      "order": 2,
+      "zh": "我是听见他的声音以后才知道他来了的。",
+      "pinyin": "Wǒ shì tīngjiàn tā de shēngyīn yǐhòu cái zhīdào tā lái le de.",
+      "vi": "Tôi nghe thấy giọng anh ấy rồi mới biết anh ấy đến.",
+      "analysis_vi": "是……的 nhấn thời điểm/căn cứ nhận ra.",
+      "highlight": [
+        "声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "09c7de0e-5027-468b-a78d-c2292e4c3c30"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1925927a-782f-4b51-9859-132afce34d7f",
+      "order": 3,
+      "zh": "一听见外面有人大声叫我的名字，我就马上跑了出去。",
+      "pinyin": "Yì tīngjiàn wàimian yǒu rén dàshēng jiào wǒ de míngzi, wǒ jiù mǎshàng pǎo le chūqù.",
+      "vi": "Vừa nghe bên ngoài có người gọi to tên tôi, tôi liền chạy ra ngoài.",
+      "analysis_vi": "跑出去 là bổ ngữ xu hướng.",
+      "highlight": [
+        "声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "09c7de0e-5027-468b-a78d-c2292e4c3c30"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "小声一点儿 là cách nhắc nói nhỏ lịch sự hơn quát 别说话.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9906f343-1eab-4145-bf7c-438cbfd4ee15",
+      "order": 1,
+      "rule_vi": "Khẩu ngữ thường dùng 声音 hơn 声 khi nói giọng/âm thanh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "声",
+    "back": "âm thanh, tiếng, giọng; danh tiếng",
+    "hint": "shēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "09c7de0e-5027-468b-a78d-c2292e4c3c30",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "id": "c33d02a3-3b32-4c22-a77f-379c2595737c",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "慌忙",
+  "pinyin": "huāngmáng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hoảng mang",
+    "meaning_vi": "vội vàng, cuống quýt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vội vàng",
+      "cuống quýt"
+    ],
+    "short_definition_vi": "vội vàng, cuống quýt",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "慌",
+        "lishu_vi": "hoảng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "荒",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoảng, luống cuống",
+        "modern_logic_vi": "hoảng, luống cuống",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "忙",
+        "lishu_vi": "mang",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "亡",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bận, vội",
+        "modern_logic_vi": "bận, vội",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Hai chữ đều liên quan trạng thái tâm lý gấp/cuống; 慌忙 là vừa hoảng vừa vội.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 慌忙站起来.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "急忙",
+        "pinyin": "jímáng",
+        "meaning_vi": "vội làm ngay",
+        "difference_vi": "急忙 trung tính hơn, không nhất thiết hoảng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "匆忙",
+        "pinyin": "cōngmáng",
+        "meaning_vi": "vội vã",
+        "difference_vi": "匆忙 thiên về thiếu thời gian.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "沉着",
+        "pinyin": "chénzhuó",
+        "meaning_vi": "bình tĩnh",
+        "difference_vi": "đối lập trong bài",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e5a9f1ca-c7ae-4d99-9f71-e8cfd6907247",
+      "order": 1,
+      "zh": "慌忙站起来",
+      "pinyin": "huāngmáng zhàn qǐlai",
+      "vi": "cuống quýt đứng dậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc24e53c-19c1-4e13-834a-0f06f9647aaf",
+      "order": 2,
+      "zh": "慌忙解释",
+      "pinyin": "huāngmáng jiěshì",
+      "vi": "vội vàng giải thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "838f82dc-6c0a-4f22-94c4-490de6f0376f",
+      "order": 3,
+      "zh": "慌忙把书拿出来",
+      "pinyin": "huāngmáng bǎ shū ná chūlai",
+      "vi": "cuống quýt lấy sách ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "13be1c2a-ee71-42dc-b616-2ce298599402",
+      "order": 1,
+      "zh": "他慌忙站起来，差点儿把书碰掉了。",
+      "pinyin": "Tā huāngmáng zhàn qǐlai, chàdiǎnr bǎ shū pèng diào le.",
+      "vi": "Anh ấy cuống quýt đứng dậy, suýt làm rơi sách.",
+      "analysis_vi": "慌忙 bổ nghĩa cho động tác trong trạng thái mất bình tĩnh.",
+      "highlight": [
+        "慌忙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c33d02a3-3b32-4c22-a77f-379c2595737c"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "836d6305-e32d-406f-ae71-960ff3cb69e7",
+      "order": 2,
+      "zh": "一听见校长叫他的名字，他就慌忙把教案拿出来。",
+      "pinyin": "Yì tīngjiàn xiàozhǎng jiào tā de míngzi, tā jiù huāngmáng bǎ jiào’àn ná chūlai.",
+      "vi": "Vừa nghe hiệu trưởng gọi tên, anh ấy cuống quýt lấy giáo án ra.",
+      "analysis_vi": "把教案拿出来 nhấn lấy giáo án ra khỏi chỗ cất.",
+      "highlight": [
+        "慌忙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c33d02a3-3b32-4c22-a77f-379c2595737c"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong phỏng vấn/thuyết trình, 慌忙 cho thấy người nói mất nhịp và thiếu bình tĩnh.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f52fddd-61ca-4b28-9f9c-f338173c5914",
+      "order": 1,
+      "rule_vi": "Không dùng 我很慌忙 để nói tôi bận; nói 我很忙.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "慌忙",
+    "back": "vội vàng, cuống quýt",
+    "hint": "huāngmáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c33d02a3-3b32-4c22-a77f-379c2595737c",
+    "source_lesson_vocab_id": null
+  }
+}

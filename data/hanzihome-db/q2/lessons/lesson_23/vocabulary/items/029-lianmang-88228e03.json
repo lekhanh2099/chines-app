@@ -1,0 +1,348 @@
+{
+  "id": "de537a63-61b5-4b60-b4bc-98873e4dfb38",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "连忙",
+  "pinyin": "liánmáng",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Liên mang",
+    "meaning_vi": "vội vàng, lập tức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vội vàng, lập tức"
+    ],
+    "short_definition_vi": "vội vàng, lập tức",
+    "textbook_focus_vi": "vội vàng, lập tức",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "连",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nối liền, liên tiếp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "忙",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "cảm xúc, tâm trạng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "cảm xúc, tâm trạng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bận, vội",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 连忙 hợp lại tạo nghĩa hiện đại trong bài: vội vàng, lập tức.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "连忙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "连忙 / 赶紧 / 立刻 / 马上",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赶紧",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "连忙 / 赶紧 / 立刻 / 马上",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "立刻",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "连忙 / 赶紧 / 立刻 / 马上",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "马上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "连忙 / 赶紧 / 立刻 / 马上",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "连忙",
+        "right": "慢慢儿",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "连忙 ↔ 慢慢儿",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "连忙 / 赶紧 / 立刻 / 马上",
+      "连忙 ↔ 慢慢儿"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a98c4bec-575b-485a-855f-8a1975117de7",
+      "order": 1,
+      "zh": "连忙说",
+      "pinyin": "",
+      "vi": "连忙说",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "be6f36fa-6fd4-4fa1-9617-db0fe14f357d",
+      "order": 2,
+      "zh": "连忙问",
+      "pinyin": "",
+      "vi": "连忙问",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "daf8d2b2-f4c8-434d-8c5b-6591dfc7ea1e",
+      "order": 3,
+      "zh": "连忙站起来",
+      "pinyin": "",
+      "vi": "连忙站起来",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "54a60229-1f48-484d-ae4d-ead2bfcb4e36",
+      "order": 4,
+      "zh": "连忙跑过去",
+      "pinyin": "",
+      "vi": "连忙跑过去",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "4343a759-618f-4774-b18f-c5b75cd515df",
+      "order": 5,
+      "zh": "连忙道歉",
+      "pinyin": "",
+      "vi": "连忙道歉",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f632578d-4882-406c-8386-844e62454687",
+      "order": 6,
+      "zh": "连忙打电话",
+      "pinyin": "",
+      "vi": "连忙打电话",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d6ab59ac-fbfc-462c-86f1-69e4394915a7",
+      "order": 1,
+      "zh": "这个词是“连忙”。",
+      "pinyin": "",
+      "vi": "Từ này là “连忙”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "连忙"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "de537a63-61b5-4b60-b4bc-98873e4dfb38"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6baf44aa-de17-412b-8ac5-7f140ff5b5ce",
+      "order": 2,
+      "zh": "你想怎么用“连忙”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “连忙” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "连忙"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "de537a63-61b5-4b60-b4bc-98873e4dfb38"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2853b3e4-415d-4d80-b1e1-db4bd226c51e",
+      "order": 3,
+      "zh": "我们一边复习连忙，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “连忙”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "连忙"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "de537a63-61b5-4b60-b4bc-98873e4dfb38"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "连忙 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "173eaa6f-e72a-4caf-980a-9bdc40f912b2",
+      "order": 1,
+      "rule_vi": "Dùng 连忙 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 连忙 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "连忙",
+    "back": "vội vàng, lập tức",
+    "hint": "liánmáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "de537a63-61b5-4b60-b4bc-98873e4dfb38",
+    "source_lesson_vocab_id": null
+  }
+}

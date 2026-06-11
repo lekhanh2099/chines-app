@@ -1,0 +1,122 @@
+{
+  "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "钥匙忘拔下来了",
+      "title_vi": "Chìa khóa quên rút ra rồi",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+          "order": 1,
+          "zh": "星期天，我和麦克一起骑车到图书城去买书。图书城离我们学校比较远。那天刮风，我们骑了一个多小时才骑到。图书城很大，里边有很多书店。每个书店我们都想进去看看。我们从一个书店走出来，又走进另一个书店。看到书店里有各种各样的书，我很兴奋。从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。我挑了几本历史书，麦克选了一些中文小说儿。快放寒假了，我们都想买一些书带回国去。",
+          "vi": "Chủ nhật, tôi và Mike cùng đạp xe đến thành phố sách để mua sách. Thành phố sách cách trường chúng tôi khá xa. Hôm đó có gió, chúng tôi đạp hơn một tiếng mới tới nơi. Thành phố sách rất lớn, bên trong có rất nhiều hiệu sách. Hiệu sách nào chúng tôi cũng muốn vào xem. Chúng tôi đi ra khỏi một hiệu sách, rồi lại bước vào một hiệu sách khác. Nhìn thấy trong hiệu sách có đủ loại sách, tôi rất phấn khích. Tôi lấy một quyển từ trên giá sách xuống xem, rồi lại đặt lên; sau đó lại rút một quyển từ giá sách khác ra xem. Tôi chọn vài quyển sách lịch sử, Mike chọn một ít tiểu thuyết tiếng Trung. Sắp nghỉ đông rồi, chúng tôi đều muốn mua một ít sách mang về nước.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+          "order": 2,
+          "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。于是我们又走进一家商场去。",
+          "vi": "Ngoài mua sách ra, chúng tôi còn muốn mua một ít quà nhỏ, mang về tặng bạn bè. Vì thế chúng tôi lại đi vào một trung tâm thương mại.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+          "order": 3,
+          "zh": "这家商场里边什么商品都有。我买了一些京剧脸谱的小饰物，还买了一些丝织品。麦克买了很多漂亮的钥匙链儿，还买了不少小玩具，有小熊猫、小汽车什么的。他说，这些玩具带回去送给小朋友们，他们肯定喜欢。",
+          "vi": "Trong trung tâm thương mại này có đủ mọi loại hàng hóa. Tôi mua một ít đồ trang trí nhỏ hình mặt nạ Kinh kịch, còn mua thêm vài món hàng dệt tơ. Mike mua rất nhiều móc chìa khóa đẹp, còn mua không ít đồ chơi nhỏ, nào là gấu trúc con, ô tô nhỏ vân vân. Anh ấy nói, mang những món đồ chơi này về tặng các bạn nhỏ, chắc chắn các em sẽ thích.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
+          "order": 4,
+          "zh": "售货员看我们买的东西多，不好拿，就给我们一人找了一个小纸箱。我们买的书和礼品正好都能放进去。",
+          "vi": "Nhân viên bán hàng thấy chúng tôi mua nhiều đồ, khó cầm, nên tìm cho mỗi người chúng tôi một chiếc thùng giấy nhỏ. Sách và quà chúng tôi mua vừa khéo đều có thể cho vào đó.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
+          "order": 5,
+          "zh": "从商场出来，已经十二点多了。我和麦克走进一个小饭馆儿去吃午饭。我们要了一盘饺子和几个菜，吃得很舒服。",
+          "vi": "Từ trung tâm thương mại đi ra thì đã hơn mười hai giờ rồi. Tôi và Mike bước vào một quán ăn nhỏ để ăn trưa. Chúng tôi gọi một đĩa sủi cảo và vài món ăn, ăn rất thoải mái.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
+          "order": 6,
+          "zh": "吃完饭，我们就骑车回来了。回到学校，我又累又困，想赶快回到宿舍去洗个澡，休息休息。我从车上拿下小纸箱。走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。爬了半天才爬到十层。到了门口，我放下箱子，要拿出钥匙开门的时候，却发现钥匙不见了，找了半天也没有找到。啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。这时，我真是哭笑不得。",
+          "vi": "Ăn cơm xong, chúng tôi liền đạp xe về. Về đến trường, tôi vừa mệt vừa buồn ngủ, muốn nhanh chóng về ký túc xá tắm một cái rồi nghỉ ngơi. Tôi lấy chiếc thùng giấy nhỏ từ trên xe xuống. Vừa đi vào tòa nhà, tôi thấy ở cửa thang máy có dán một thông báo: “Thang máy sửa chữa, xin đi cầu thang bộ.” Tôi ở tầng mười, không còn cách nào khác, đành phải leo lên. Tay tôi xách một thùng đồ, từng bước từng bước leo lên trên. Leo mãi mới lên tới tầng mười. Đến cửa phòng, tôi đặt thùng xuống, lúc định lấy chìa khóa mở cửa thì lại phát hiện chìa khóa không thấy đâu. Tìm hồi lâu vẫn không tìm thấy. A! Tôi bỗng nhớ ra rồi, chìa khóa vẫn đang cắm ở xe đạp dưới lầu, tôi quên rút ra rồi. Lúc đó, tôi thật sự dở khóc dở cười.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
+          "order": 7,
+          "zh": "我刚要跑下楼去，就看见麦克也爬上来了，他手里拿的正是我的那串儿钥匙。",
+          "vi": "Tôi vừa định chạy xuống lầu thì nhìn thấy Mike cũng đã leo lên tới nơi. Thứ anh ấy cầm trong tay đúng là chùm chìa khóa của tôi.",
+          "pinyin": "",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "lines": [],
+      "comprehension_questions": []
+    }
+  ]
+}

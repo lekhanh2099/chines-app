@@ -1,0 +1,258 @@
+{
+  "id": "3d2d82ba-a3eb-4618-b4e5-c24c09d17ae4",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "难得",
+  "pinyin": "nándé",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "nan đắc",
+    "meaning_vi": "hiếm có, khó có được",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiếm có",
+      "khó có được"
+    ],
+    "short_definition_vi": "khó có được nên đáng quý",
+    "textbook_focus_vi": "Trong bài: 这是个难得的机会.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "难",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "难得 được học trong bài theo nghĩa: khó có được nên đáng quý.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 难得的机会.",
+    "warning_vi": "Không dịch máy 难得 thành 'khó được' trong mọi câu; nên dịch hiếm có/khó có được.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "少见",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ít thấy, nhấn tần suất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "宝贵",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Quý báu, nhấn giá trị.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dịch máy 难得 thành 'khó được' trong mọi câu; nên dịch hiếm có/khó có được."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9ebffb3a-d797-4e69-ab73-8e932aa1fddb",
+      "order": 1,
+      "zh": "难得的机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f7f6776-b067-4c5b-acfa-14ce85d4aac3",
+      "order": 2,
+      "zh": "难得的经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65d69b4a-6d7a-4595-9a86-b1929577b544",
+      "order": 3,
+      "zh": "难得见面",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "722bbe09-3bb8-48f3-8777-52f4609af4c5",
+      "order": 4,
+      "zh": "难得有空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5f94d57d-e8b1-4de4-919b-6de2d1558cea",
+      "order": 5,
+      "zh": "难得来一次",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef891784-51b5-4278-b5e6-18e7e0c0e142",
+      "order": 6,
+      "zh": "真难得",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2f5793a8-d5e5-4e69-b588-d5cfdd7f8bf2",
+      "order": 1,
+      "zh": "这是个难得的机会。",
+      "pinyin": "",
+      "vi": "Đây là một cơ hội hiếm có.",
+      "analysis_vi": "难得的 làm định ngữ cho 机会.",
+      "highlight": [
+        "难得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d2d82ba-a3eb-4618-b4e5-c24c09d17ae4"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fe49f522-c539-490f-950a-2cfb839d0dc9",
+      "order": 2,
+      "zh": "难得有空，我们出去走走吧。",
+      "pinyin": "",
+      "vi": "Hiếm khi rảnh, chúng ta ra ngoài đi dạo đi.",
+      "analysis_vi": "难得 tạo cảm giác nên tranh thủ.",
+      "highlight": [
+        "难得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d2d82ba-a3eb-4618-b4e5-c24c09d17ae4"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "难得 thường dùng trong lời rủ rê hoặc đánh giá một dịp đáng quý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bc517d53-628c-4aba-aad5-bef26cdf1008",
+      "order": 1,
+      "rule_vi": "Không dịch máy 难得 thành 'khó được' trong mọi câu; nên dịch hiếm có/khó có được.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch máy 难得 thành 'khó được' trong mọi câu; nên dịch hiếm có/khó có được.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "难得",
+    "back": "hiếm có, khó có được",
+    "hint": "nándé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3d2d82ba-a3eb-4618-b4e5-c24c09d17ae4",
+    "source_lesson_vocab_id": null
+  }
+}

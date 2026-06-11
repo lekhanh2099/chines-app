@@ -1,0 +1,185 @@
+{
+  "id": "f47d1e54-cdcf-4272-8de4-101a06a3abf3",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "难以",
+  "pinyin": "nányǐ",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词性结构",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "nan dĩ",
+    "meaning_vi": "khó có thể, khó mà",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khó có thể",
+      "khó mà"
+    ],
+    "short_definition_vi": "khó có thể, khó mà",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "难",
+        "lishu_vi": "nan",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khó",
+        "modern_logic_vi": "Trong từ này, 难 góp phần vào nghĩa hiện đại: khó.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "以",
+        "lishu_vi": "dĩ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lấy, để",
+        "modern_logic_vi": "Trong từ này, 以 góp phần vào nghĩa hiện đại: lấy, để.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "难以 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 难以忍受.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Hơi văn viết, thường đi với động từ hai âm tiết như 接受, 忍受, 理解."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "375d9834-1c90-4b85-a382-46906615238f",
+      "order": 1,
+      "zh": "难以忍受",
+      "pinyin": "",
+      "vi": "khó chịu đựng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03dfb86b-b26c-46bb-ba7b-1eb54e2482ee",
+      "order": 2,
+      "zh": "难以理解",
+      "pinyin": "",
+      "vi": "khó hiểu nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d179723-33d2-4819-bff1-928a2200092d",
+      "order": 3,
+      "zh": "难以相信",
+      "pinyin": "",
+      "vi": "khó tin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a46fba8b-34c5-4594-bc22-0f75571f1b08",
+      "order": 1,
+      "zh": "这件事让我难以相信。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 难以 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 难以; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "难以"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f47d1e54-cdcf-4272-8de4-101a06a3abf3"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 难以 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "47d72ecc-d12b-4145-aee7-a354bef60b25",
+      "order": 1,
+      "rule_vi": "Hơi văn viết, thường đi với động từ hai âm tiết như 接受, 忍受, 理解.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "难以",
+    "back": "khó có thể, khó mà",
+    "hint": "nányǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f47d1e54-cdcf-4272-8de4-101a06a3abf3",
+    "source_lesson_vocab_id": null
+  }
+}

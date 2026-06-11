@@ -1,0 +1,349 @@
+{
+  "id": "abc578e0-bf16-4ef2-8ddb-2ac7dd687136",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "奇怪",
+  "pinyin": "qíguài",
+  "pos": {
+    "raw_vi": "Tính từ / động từ tâm lý",
+    "raw_cn": "形/心理动词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "emotion",
+    "description"
+  ],
+  "meaning": {
+    "hanviet": "Kỳ quái",
+    "meaning_vi": "kỳ lạ, lạ; thấy lạ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỳ lạ, lạ; thấy lạ"
+    ],
+    "short_definition_vi": "kỳ lạ, lạ; thấy lạ",
+    "textbook_focus_vi": "kỳ lạ, lạ; thấy lạ",
+    "register_vi": "",
+    "usage_domain_vi": "emotion,description",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "奇",
+        "lishu_vi": "",
+        "structure_note_vi": "Chưa phân tích chắc thành phần theo nguồn đã soạn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Cần kiểm chứng thêm nếu muốn phân tích bộ thủ sâu.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "怪",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm lý/cảm xúc",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ Tâm trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "圣",
+            "hanviet": "thánh",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lạ, trách, quái",
+        "modern_logic_vi": "忄 gợi cảm giác thấy lạ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ Tâm trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "忄 gợi cảm giác thấy lạ.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "Một số chữ giản thể không nên tách sâu nếu chưa cần chữ học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "奇特",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "古怪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "怪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "正常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dddb17f8-c0cc-413e-8002-ee3040f422a3",
+      "order": 1,
+      "zh": "很奇怪",
+      "pinyin": "",
+      "vi": "rất lạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41228748-2502-4c6d-b107-93906330c3c0",
+      "order": 2,
+      "zh": "真奇怪",
+      "pinyin": "",
+      "vi": "lạ thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a63f60e8-e99e-4189-8ae8-5898125cc034",
+      "order": 3,
+      "zh": "觉得奇怪",
+      "pinyin": "",
+      "vi": "cảm thấy lạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "61026255-d18b-4aed-8882-a7be05d06b69",
+      "order": 4,
+      "zh": "奇怪的事",
+      "pinyin": "",
+      "vi": "chuyện lạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac4261fb-beb8-456d-bde4-0a228f1e060f",
+      "order": 5,
+      "zh": "一点儿也不奇怪",
+      "pinyin": "",
+      "vi": "chẳng lạ chút nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3064d760-9376-41e8-aab7-e28a00fbe31d",
+      "order": 1,
+      "zh": "这件事很奇怪。",
+      "pinyin": "Zhè jiàn shì hěn qíguài.",
+      "vi": "Việc này rất lạ.",
+      "analysis_vi": "奇怪 làm tính từ vị ngữ.",
+      "highlight": [
+        "奇怪"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "abc578e0-bf16-4ef2-8ddb-2ac7dd687136"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "96881d43-5c9f-4f06-bdfc-1ff90df76a84",
+      "order": 2,
+      "zh": "橱窗里的那幅竹子画看起来有点儿奇怪，可是老师说这种画法很有意思。",
+      "pinyin": "Chúchuāng lǐ de nà fú zhúzi huà kàn qǐlái yǒudiǎnr qíguài, kěshì lǎoshī shuō zhè zhǒng huàfǎ hěn yǒu yìsi.",
+      "vi": "Bức tranh tre trong tủ trưng bày nhìn hơi lạ, nhưng thầy/cô nói cách vẽ này thú vị.",
+      "analysis_vi": "看起来有点儿奇怪 = nhìn hơi lạ.",
+      "highlight": [
+        "奇怪"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "abc578e0-bf16-4ef2-8ddb-2ac7dd687136"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "奇怪 trong khẩu ngữ có thể nhẹ như “lạ nhỉ”, không nhất thiết quái dị nặng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ccec9481-536b-4ef3-9bb5-b9d4f9056085",
+      "order": 1,
+      "rule_vi": "奇怪 nhiều khi dịch là “lạ” tự nhiên hơn “kỳ quái”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我觉得很奇怪。",
+          "pinyin": "Wǒ juéde hěn qíguài.",
+          "vi": "Tôi thấy rất lạ.",
+          "note_vi": "Dịch tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "奇怪",
+    "back": "kỳ lạ, lạ; thấy lạ",
+    "hint": "qíguài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "emotion",
+      "description"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "abc578e0-bf16-4ef2-8ddb-2ac7dd687136",
+    "source_lesson_vocab_id": null
+  }
+}

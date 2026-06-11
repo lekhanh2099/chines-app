@@ -1,0 +1,204 @@
+{
+  "id": "c56155dd-0b7e-4292-b738-7dd2021bc211",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "画家",
+  "pinyin": "huàjiā",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Họa gia",
+    "meaning_vi": "họa sĩ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "họa sĩ"
+    ],
+    "short_definition_vi": "họa sĩ",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "画",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vẽ; tranh",
+        "modern_logic_vi": "画 vừa là động từ vẽ vừa là danh từ tranh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "家",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "豕",
+            "hanviet": "thỉ",
+            "meaning_vi": "heo; thành phần cấu chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà; chuyên gia",
+        "modern_logic_vi": "Trong nghề nghiệp, 家 = người chuyên môn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "画家 = họa sĩ.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dịch 家 trong 画家 là “nhà” literal; 画家 = họa sĩ.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "210e6a4d-41ca-43aa-ac83-7dd9b08126fe",
+      "order": 1,
+      "zh": "画家",
+      "pinyin": "",
+      "vi": "họa sĩ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "08ff38ac-16e0-4d90-8d92-4550f0b04ff6",
+      "order": 1,
+      "zh": "这位画家很喜欢画梅花。",
+      "pinyin": "Zhè wèi huàjiā hěn xǐhuan huà méihuā.",
+      "vi": "Vị họa sĩ này rất thích vẽ hoa mai.",
+      "analysis_vi": "Không dịch 家 trong 画家 là “nhà” literal; 画家 = họa sĩ.",
+      "level": "basic",
+      "highlight": [
+        "画家"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c56155dd-0b7e-4292-b738-7dd2021bc211"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c426fb78-1e08-4995-b6f9-db46be78a034",
+      "kind": "usage",
+      "text_vi": "Không dịch 家 trong 画家 là “nhà” literal; 画家 = họa sĩ.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "画家",
+    "back": "họa sĩ",
+    "hint": "huàjiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c56155dd-0b7e-4292-b738-7dd2021bc211",
+    "source_lesson_vocab_id": null
+  }
+}

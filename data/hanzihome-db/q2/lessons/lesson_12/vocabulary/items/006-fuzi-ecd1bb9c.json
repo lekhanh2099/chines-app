@@ -1,0 +1,336 @@
+{
+  "id": "ae244d35-a2df-403f-a577-009b319059ea",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "斧子",
+  "pinyin": "fǔzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "documents_objects"
+  ],
+  "meaning": {
+    "hanviet": "phủ tử",
+    "meaning_vi": "cái rìu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cái rìu"
+    ],
+    "short_definition_vi": "cái rìu",
+    "textbook_focus_vi": "cái rìu",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "斧",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "父",
+            "hanviet": "phụ",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "斤",
+            "hanviet": "cân",
+            "meaning_vi": "rìu/búa nhỏ trong chữ cổ",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rìu",
+        "modern_logic_vi": "斧 là rìu, dụng cụ chặt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con/hậu tố",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ, hậu tố trong một số danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con; hậu tố danh từ",
+        "modern_logic_vi": "子 trong nhiều từ là hậu tố danh từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "斧 là rìu; 子 là hậu tố danh từ, không dịch riêng.",
+    "memory_tip_vi": "斧 là rìu; 子 là hậu tố danh từ, không dịch riêng.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "斧头",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đầu rìu/cái rìu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "刀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dao",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "锤子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "búa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "工具",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dụng cụ nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3bd65bfa-2481-471c-9696-bf2c930e01e3",
+      "order": 1,
+      "zh": "一把斧子",
+      "pinyin": "",
+      "vi": "một cái rìu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "655ff65b-9617-4025-9616-427c044b2655",
+      "order": 2,
+      "zh": "拿斧子",
+      "pinyin": "",
+      "vi": "cầm rìu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a9f52db-97c7-4f39-a837-6a313ca0ce8d",
+      "order": 3,
+      "zh": "用斧子砍柴",
+      "pinyin": "",
+      "vi": "dùng rìu chặt củi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab8a3838-5d85-473c-b073-3bdea3219f34",
+      "order": 4,
+      "zh": "锋利的斧子",
+      "pinyin": "",
+      "vi": "cái rìu sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5f95d30-722a-4c8f-8a82-7b19cf5a5a7b",
+      "order": 5,
+      "zh": "斧子掉了",
+      "pinyin": "",
+      "vi": "cái rìu rơi/mất rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0faf362d-ba5c-4cca-81fb-8a45c1df2aca",
+      "order": 6,
+      "zh": "斧子柄",
+      "pinyin": "",
+      "vi": "cán rìu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "88b0314b-a21b-44e9-b8dd-10d7b131eec5",
+      "order": 1,
+      "zh": "他用斧子砍柴。",
+      "pinyin": "",
+      "vi": "Anh ấy dùng rìu chặt củi.",
+      "analysis_vi": "用 + công cụ + V.",
+      "highlight": [
+        "斧子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae244d35-a2df-403f-a577-009b319059ea"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2ba6ada8-6994-40ae-9ff7-8ee704600027",
+      "order": 2,
+      "zh": "那把斧子你找到了没有？",
+      "pinyin": "",
+      "vi": "Cái rìu đó bạn tìm thấy chưa?",
+      "analysis_vi": "那把斧子 là chủ đề lớn; 找到了没有 hỏi kết quả.",
+      "highlight": [
+        "斧子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae244d35-a2df-403f-a577-009b319059ea"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "斧子 hay gặp trong truyện dân gian hoặc bối cảnh lao động nông thôn.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5175261f-5baa-46bb-81bd-b06eb11b2684",
+      "order": 1,
+      "rule_vi": "Lượng từ của 斧子 thường dùng 把.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "一把斧子",
+          "pinyin": "",
+          "vi": "một cái rìu",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "斧子",
+    "back": "cái rìu",
+    "hint": "fǔzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "documents_objects"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ae244d35-a2df-403f-a577-009b319059ea",
+    "source_lesson_vocab_id": null
+  }
+}

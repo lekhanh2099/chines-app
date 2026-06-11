@@ -1,0 +1,398 @@
+{
+  "id": "e821ff77-9365-4349-bc40-f0fa283ed33c",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "香港",
+  "pinyin": "Xiānggǎng",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab",
+    "proper_noun"
+  ],
+  "meaning": {
+    "hanviet": "Hương Cảng",
+    "meaning_vi": "Hong Kong / Hồng Kông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Hong Kong / Hồng Kông"
+    ],
+    "short_definition_vi": "Hong Kong / Hồng Kông",
+    "textbook_focus_vi": "Âm Hán Việt: Hương Cảng. Nghĩa tiếng Việt hiện đại: Hồng Kông / Hong Kong. Nghĩa chính: Hồng Kông. Địa danh, tên riêng. Có thể dùng trong ngữ cảnh đi họp, du lịch, kinh doanh, văn hóa.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "香",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa / cây lương thực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa / cây lương thực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời / ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời / ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thơm, hương",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "港",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước / chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước / chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "巷",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "香 = hương; 港 = cảng. 香港 là tên riêng, dịch là Hồng Kông.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: Đây là tên riêng, không nên phân tích quá đà như từ ghép thông thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "香港",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Hồng Kông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "台湾",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đài Loan.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大陆",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đại lục.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "澳门",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ma Cao.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "他去香港办事了。",
+      "Anh ấy đi Hồng Kông xử lý việc rồi.",
+      "老师从香港带回来一本书。",
+      "Thầy/cô mang từ Hồng Kông về một quyển sách."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "754ba85c-949f-4072-bff9-145ef02a885a",
+      "order": 1,
+      "zh": "去香港",
+      "pinyin": "",
+      "vi": "đi Hồng Kông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe5db898-cc15-4010-ab26-f29977daae4a",
+      "order": 2,
+      "zh": "从香港回来",
+      "pinyin": "",
+      "vi": "từ Hồng Kông về",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03b5be9b-5d1e-4a26-8827-906010ea588b",
+      "order": 3,
+      "zh": "香港朋友",
+      "pinyin": "",
+      "vi": "bạn Hồng Kông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5df1c88-1856-4390-aa02-ad8bffde90fc",
+      "order": 4,
+      "zh": "香港研讨会",
+      "pinyin": "",
+      "vi": "hội thảo ở Hồng Kông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "02b64be6-ee37-43a8-aa44-19d43823ac30",
+      "order": 5,
+      "zh": "香港来的资料",
+      "pinyin": "",
+      "vi": "tài liệu đến từ Hồng Kông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e727a22-d0ce-45f1-96f5-6087b56b5238",
+      "order": 6,
+      "zh": "到香港办事",
+      "pinyin": "",
+      "vi": "đến Hồng Kông xử lý việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8de5b5a2-7bf4-4999-9a2f-82ca0e410221",
+      "order": 1,
+      "zh": "赵老师去香港参加研讨会了。",
+      "pinyin": "Zhào lǎoshī qù Xiānggǎng cānjiā yántǎohuì le.",
+      "vi": "Thầy Triệu đi Hồng Kông tham gia hội thảo rồi.",
+      "analysis_vi": "去香港参加研讨会 = đi Hồng Kông để tham gia hội thảo.",
+      "highlight": [
+        "香港"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "e821ff77-9365-4349-bc40-f0fa283ed33c"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "454f681e-3ea7-4488-ac6a-5fca23e59228",
+      "order": 2,
+      "zh": "他从香港回来以后，把新的要求清楚地告诉了我们。",
+      "pinyin": "Tā cóng Xiānggǎng huílai yǐhòu, bǎ xīn de yāoqiú qīngchu de gàosu le wǒmen.",
+      "vi": "Sau khi anh ấy từ Hồng Kông trở về, anh ấy nói rõ yêu cầu mới cho chúng tôi.",
+      "analysis_vi": "从香港回来以后 là mốc thời gian. 把要求告诉我们 là 把字句. 清楚地告诉 dùng 地.",
+      "highlight": [
+        "香港"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "e821ff77-9365-4349-bc40-f0fa283ed33c"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "45d51fd4-2b40-458d-8daa-aa8a55d2ea5e",
+      "order": 3,
+      "zh": "车马上要开了，可是从香港来的老师还没上来，师傅只好大声问：“那位赵老师的座位在哪儿？”",
+      "pinyin": "Chē mǎshàng yào kāi le, kěshì cóng Xiānggǎng lái de lǎoshī hái méi shànglai, shīfu zhǐhǎo dàshēng wèn: “Nà wèi Zhào lǎoshī de zuòwèi zài nǎr?”",
+      "vi": "Xe sắp chạy ngay rồi, nhưng thầy/cô đến từ Hồng Kông vẫn chưa lên xe, bác tài đành hỏi lớn: “Chỗ ngồi của thầy/cô Triệu kia ở đâu?”",
+      "analysis_vi": "马上要开了 báo rất gần. 从香港来的老师 là định ngữ. 还没上来 = vẫn chưa lên đây. 大声问 = hỏi lớn tiếng.",
+      "highlight": [
+        "香港"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "e821ff77-9365-4349-bc40-f0fa283ed33c"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "香港 trong Hán Việt là Hương Cảng, nghĩa chữ là “cảng thơm”. Trong tiếng Việt hiện đại dùng phổ biến là Hồng Kông hoặc Hong Kong.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "36eda392-d1b4-4d4a-b735-48a773de5be8",
+      "order": 1,
+      "rule_vi": "香港 là tên riêng, dịch tự nhiên là Hồng Kông, không dịch chữ từng phần.",
+      "natural_examples": [
+        {
+          "zh": "香港 là tên riêng, pinyin viết hoa: Xiānggǎng.",
+          "pinyin": "Đừng dịch từng chữ trong câu học bình thường; cứ hiểu là địa danh.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "香港",
+    "back": "Hong Kong / Hồng Kông",
+    "hint": "Xiānggǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab",
+      "proper_noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e821ff77-9365-4349-bc40-f0fa283ed33c",
+    "source_lesson_vocab_id": null
+  }
+}

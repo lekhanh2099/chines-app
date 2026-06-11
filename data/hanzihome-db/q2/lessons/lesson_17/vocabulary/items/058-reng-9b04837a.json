@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_36868e74f38114d9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "扔",
+  "pinyin": "rēng",
+  "meaning_vi": "ném; vứt",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Động từ chỉ ném/vứt; trong bài là 扔到车窗外边去.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "78bd7222-4637-5753-b9cd-a8843447e702",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "78bd7222-4637-5753-b9cd-a8843447e702",
+    "type": "vocabulary_item",
+    "order": 56,
+    "hanzi": "扔",
+    "pinyin": "rēng",
+    "meaning_vi": "ném; vứt",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "扔",
+      "back": "rēng — ném; vứt",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_supplementary",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Động từ chỉ ném/vứt; trong bài là 扔到车窗外边去.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

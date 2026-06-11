@@ -1,0 +1,297 @@
+{
+  "id": "3b63795b-85c9-4108-9566-ec9919139fa1",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "低",
+  "pinyin": "dī",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ trạng thái",
+    "raw_cn": "形/动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đê",
+    "meaning_vi": "thấp, thấp xuống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thấp",
+      "thấp xuống"
+    ],
+    "short_definition_vi": "thấp, thấp xuống",
+    "textbook_focus_vi": "Âm Hán Việt: đê Nghĩa: Thấp về chiều cao, vị trí. Thấp về mức độ, âm lượng, giá cả, nhiệt độ, trình độ.",
+    "register_vi": "rất thường dùng; nghĩa cụ thể tùy danh từ đi cùng.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "低",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "氐",
+            "hanviet": "đê",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thấp, hạ thấp, mức thấp",
+        "modern_logic_vi": "Học qua cặp 高 / 低 là chắc nhất.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "低 có bộ 亻, thường liên quan đến người/trạng thái người trong cấu tạo chữ. Lõi nghĩa hiện đại: vị trí hoặc mức độ nằm ở phía thấp. → 声音低 = giọng/âm lượng thấp; 价格低 = giá thấp; 水平低 = trình độ thấp. Cảnh báo: 低 không chỉ dùng cho chiều cao vật lý.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "低 (dī)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thấp, mức thấp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "矮 (ǎi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thấp về chiều cao người/vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "低级 (dījí)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cấp thấp, đôi khi có sắc thái chê.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "小声 (xiǎoshēng): nhỏ tiếng, âm lượng nhỏ.",
+      "→ Phân biệt nhanh: người thấp dùng 矮; giá/mức/âm thanh/trình độ thấp dùng 低."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f9c14193-b786-4df1-83d1-c588aaed74eb",
+      "order": 1,
+      "zh": "声音低",
+      "pinyin": "",
+      "vi": "giọng/âm lượng thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "42eb2c79-8598-4e18-a2c5-70016a23d549",
+      "order": 2,
+      "zh": "价格低",
+      "pinyin": "",
+      "vi": "giá thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "90652a42-7319-4801-95af-878a4aafa196",
+      "order": 3,
+      "zh": "水平低",
+      "pinyin": "",
+      "vi": "trình độ thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5c529b0-2803-49c5-ad13-a66cdf6f0b44",
+      "order": 4,
+      "zh": "[Đời sống] 低头看手机",
+      "pinyin": "",
+      "vi": "cúi đầu xem điện thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "da32756e-0c81-4668-a329-2866092aceda",
+      "order": 1,
+      "zh": "他说话声音太低了，我没听清楚。",
+      "pinyin": "Tā shuōhuà shēngyīn tài dī le, wǒ méi tīng qīngchu.",
+      "vi": "Anh ấy nói giọng nhỏ/thấp quá, tôi không nghe rõ.",
+      "analysis_vi": "声音低 ở đây gần với âm lượng thấp; 没听清楚 là chưa nghe rõ âm thanh.",
+      "highlight": [
+        "低"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3b63795b-85c9-4108-9566-ec9919139fa1"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "59c2b31e-4780-4693-9879-d096f2524255",
+      "order": 2,
+      "zh": "这张照片的清楚程度太低，放大以后更看不清楚。",
+      "pinyin": "Zhè zhāng zhàopiàn de qīngchu chéngdù tài dī, fàngdà yǐhòu gèng kàn bù qīngchu.",
+      "vi": "Mức độ rõ của tấm ảnh này quá thấp, sau khi phóng to càng nhìn không rõ.",
+      "analysis_vi": "程度低 nói mức độ thấp; câu nối tự nhiên với 放大以后.",
+      "highlight": [
+        "低"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3b63795b-85c9-4108-9566-ec9919139fa1"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3ab09ed3-f16b-4243-8fb2-0a5ce091f774",
+      "order": 3,
+      "zh": "不要因为现在水平低就失望，重要的是每天都能改一点儿。",
+      "pinyin": "Bú yào yīnwèi xiànzài shuǐpíng dī jiù shīwàng, zhòngyào de shì měitiān dōu néng gǎi yìdiǎnr.",
+      "vi": "Đừng vì trình độ hiện tại thấp mà thất vọng, điều quan trọng là mỗi ngày đều có thể sửa một chút.",
+      "analysis_vi": "水平低 là trình độ thấp; câu này dùng được trong bối cảnh tự học, không chỉ miêu tả vật.",
+      "highlight": [
+        "低"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3b63795b-85c9-4108-9566-ec9919139fa1"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi nhắc người khác nói nhỏ lại, không nên nói 你的声音很低 nếu ý là “nói bé thôi”. Tự nhiên hơn là 请小声一点儿 – xin nhỏ tiếng một chút.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "48fcc001-e384-40f1-9002-c191fd5ea902",
+      "order": 1,
+      "rule_vi": "Nhầm 低 và 矮.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他个子矮。",
+          "pinyin": "Tā gèzi ǎi.",
+          "vi": "Anh ấy thấp người.",
+          "note_vi": "Tự nhiên:",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Nhầm 低 và 矮. Tự nhiên: 他个子矮。 Tā gèzi ǎi. Anh ấy thấp người. 他的声音很低。 Tā de shēngyīn hěn dī. Giọng/âm lượng của anh ấy thấp.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "低",
+    "back": "thấp, thấp xuống",
+    "hint": "dī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "低"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3b63795b-85c9-4108-9566-ec9919139fa1",
+    "source_lesson_vocab_id": null
+  }
+}

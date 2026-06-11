@@ -1,0 +1,331 @@
+{
+  "id": "374ad8d1-e936-4413-b960-aff822331c5d",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "裤子",
+  "pinyin": "kùzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "khố tử",
+    "meaning_vi": "quần",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "quần",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "裤",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "衤",
+            "hanviet": "y",
+            "meaning_vi": "quần áo",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "衤",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "quần áo",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "衤 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "库",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quần",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "衤",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "quần áo",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "衤 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, hậu tố danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, hậu tố danh từ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Quần mặc phần dưới cơ thể; 子 là hậu tố danh từ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "长裤",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần dài",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "短裤",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần short",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "牛仔裤",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần jeans",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "衣服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần áo nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9a3a0a6c-83e0-4fda-83ba-598c5b7d7f5b",
+      "order": 1,
+      "zh": "一条裤子",
+      "pinyin": "",
+      "vi": "một cái quần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54f0c6a8-a8cb-444b-b095-319e0f11f0f3",
+      "order": 2,
+      "zh": "穿裤子",
+      "pinyin": "",
+      "vi": "mặc quần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bca32eb9-e180-407d-b821-777380a6a326",
+      "order": 3,
+      "zh": "裤子上有油漆",
+      "pinyin": "",
+      "vi": "trên quần có sơn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0e4e1e3b-a649-4790-923c-b1c4f406eb0b",
+      "order": 1,
+      "zh": "这条裤子很干净。",
+      "pinyin": "Zhè tiáo kùzi hěn gānjìng.",
+      "vi": "Cái quần này rất sạch.",
+      "en": "",
+      "highlight": [
+        "裤子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "374ad8d1-e936-4413-b960-aff822331c5d"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Quần thường dùng lượng từ 条, áo thường dùng 件.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a7032d0d-655f-4628-8643-e695a39ec4e2",
+      "order": 1,
+      "title_vi": "Không dùng 件 cho 裤子 trong bài thi cơ bản",
+      "explanation_vi": "Chuẩn là 一条裤子.",
+      "wrong_examples": [
+        "一件裤子"
+      ],
+      "correct_examples": [
+        "一条裤子"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "裤子",
+    "back": "quần",
+    "hint": "kùzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "裤子"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "374ad8d1-e936-4413-b960-aff822331c5d",
+    "source_lesson_vocab_id": null
+  }
+}

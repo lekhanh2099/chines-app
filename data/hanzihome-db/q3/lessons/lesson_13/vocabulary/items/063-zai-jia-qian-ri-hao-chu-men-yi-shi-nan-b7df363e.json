@@ -1,0 +1,346 @@
+{
+  "id": "89863c79-ec82-4dfc-ab7f-10df1c5b616b",
+  "type": "deep_vocabulary_item",
+  "order": 63,
+  "hanzi": "在家千日好，出门一时难",
+  "pinyin": "zài jiā qiān rì hǎo, chū mén yì shí nán",
+  "pos": {
+    "raw_vi": "Tục ngữ",
+    "raw_cn": "谚语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "B+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "proverb"
+  ],
+  "meaning": {
+    "hanviet": "tại gia thiên nhật hảo, xuất môn nhất thời nan",
+    "meaning_vi": "ở nhà ngàn ngày tốt, ra ngoài một lúc cũng khó",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ở nhà ngàn ngày tốt",
+      "ra ngoài một lúc cũng khó"
+    ],
+    "short_definition_vi": "ở nhà ngàn ngày tốt, ra ngoài một lúc cũng khó",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "在",
+        "lishu_vi": "tại",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở/tồn tại",
+        "modern_logic_vi": "Trong từ/cụm này, 在 góp phần vào nghĩa hiện đại: ở/tồn tại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "家",
+        "lishu_vi": "gia",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "豕",
+            "hanviet": "thỉ",
+            "meaning_vi": "heo/lợn",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhà/gia đình",
+        "modern_logic_vi": "Trong từ/cụm này, 家 góp phần vào nghĩa hiện đại: nhà/gia đình.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "千",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 千 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "日",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 日 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "hảo",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt/may",
+        "modern_logic_vi": "Trong từ/cụm này, 好 góp phần vào nghĩa hiện đại: tốt/may.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "xuất",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra/phát sinh",
+        "modern_logic_vi": "Trong từ/cụm này, 出 góp phần vào nghĩa hiện đại: ra/phát sinh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "门",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 门 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "Trong từ/cụm này, 一 góp phần vào nghĩa hiện đại: một.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "时",
+        "lishu_vi": "thời",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thời gian",
+        "modern_logic_vi": "Trong từ/cụm này, 时 góp phần vào nghĩa hiện đại: thời gian.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "难",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ/cụm này, 难 góp phần vào nghĩa hiện đại: cần học theo toàn cụm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "在家千日好，出门一时难 cần học theo nghĩa hiện đại trong bài: ở nhà ngàn ngày tốt, ra ngoài một lúc cũng khó.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 俗话说，在家千日好，出门一时难.",
+    "warning_vi": "Không tách nghĩa từng chữ nếu là tên riêng, tục ngữ hoặc cấu trúc cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "13dd95f4-ce4c-476b-8b81-6fc45ee1c99d",
+      "order": 1,
+      "zh": "俗话说，在家千日好，出门一时难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "288a5c43-a8fe-4639-ad66-6ff1d89cc6ff",
+      "order": 2,
+      "zh": "出门一时难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4dda98f0-5bed-4a33-a729-772bc62dadfb",
+      "order": 3,
+      "zh": "出门在外不容易",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "169ef418-43b2-4f0b-8ee0-97c463f7f624",
+      "order": 1,
+      "zh": "俗话说，在家千日好，出门一时难。",
+      "pinyin": "Súhuà shuō, zài jiā qiān rì hǎo, chū mén yì shí nán.",
+      "vi": "Tục ngữ nói: ở nhà ngàn ngày tốt, ra ngoài một lúc cũng khó.",
+      "analysis_vi": "俗话说 mở đầu tục ngữ.",
+      "highlight": [
+        "在家千日好，出门一时难"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89863c79-ec82-4dfc-ab7f-10df1c5b616b"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1166f4aa-14af-4c8a-b6c1-ffb876a41ccc",
+      "order": 2,
+      "zh": "哪怕出门一时难，年轻人也总得学会自立。",
+      "pinyin": "Nǎpà chū mén yì shí nán, niánqīng rén yě zǒng děi xuéhuì zìlì.",
+      "vi": "Dù ra ngoài khó, người trẻ rốt cuộc vẫn phải học tự lập.",
+      "analysis_vi": "哪怕……也…… nối tục ngữ với ý tự lập.",
+      "highlight": [
+        "在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "89863c79-ec82-4dfc-ab7f-10df1c5b616b"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu này phản ánh nhà là nơi an toàn, ra ngoài là thế giới nhiều bất trắc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ae0d8714-4230-485e-add0-03590143c13f",
+      "order": 1,
+      "rule_vi": "Dùng 在家千日好，出门一时难 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "在家千日好，出门一时难",
+    "back": "ở nhà ngàn ngày tốt, ra ngoài một lúc cũng khó",
+    "hint": "zài jiā qiān rì hǎo, chū mén yì shí nán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "89863c79-ec82-4dfc-ab7f-10df1c5b616b",
+    "source_lesson_vocab_id": null
+  }
+}

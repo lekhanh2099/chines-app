@@ -1,0 +1,388 @@
+{
+  "id": "1a72624f-7d40-47bd-b423-8fcb16483c4f",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "等",
+  "pinyin": "děng",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Trợ từ liệt kê 【动词 / 名词 / 助词】",
+    "raw_cn": "",
+    "normalized": "particle",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "degree_motion",
+    "rank",
+    "polysemy"
+  ],
+  "meaning": {
+    "hanviet": "Đẳng",
+    "meaning_vi": "hạng, cấp; đợi; vân vân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hạng, cấp",
+      "đợi",
+      "vân vân"
+    ],
+    "short_definition_vi": "hạng, cấp",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "等",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寺",
+            "hanviet": "tự",
+            "meaning_vi": "thành phần âm/cấu tạo",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đợi; hạng/cấp; vân vân; bằng nhau",
+        "modern_logic_vi": "等 phải học theo cụm; trong 上等/中等/下等 là hạng/cấp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "等 được phân tích theo các thành phần đã chắc trong phần soạn; phần không chắc không ép chiết tự.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "等等",
+        "pinyin": "",
+        "meaning_vi": "vân vân",
+        "difference_vi": "Liệt kê, khẩu ngữ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "等待",
+        "pinyin": "",
+        "meaning_vi": "chờ đợi",
+        "difference_vi": "Trang trọng hơn 等.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "级",
+        "pinyin": "",
+        "meaning_vi": "cấp/bậc",
+        "difference_vi": "Dùng trong 高级/中级/低级.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "类",
+        "pinyin": "",
+        "meaning_vi": "loại",
+        "difference_vi": "Chủng loại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不等",
+        "pinyin": "",
+        "meaning_vi": "không đều/không bằng nhau",
+        "difference_vi": "Đối lập tùy ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "85e1cf86-aa5d-477b-9d3b-14be670e001b",
+      "order": 1,
+      "zh": "等人",
+      "pinyin": "",
+      "vi": "đợi người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "306645bf-e4c7-41ef-b16b-298619bfc34b",
+      "order": 2,
+      "zh": "等车",
+      "pinyin": "",
+      "vi": "đợi xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "abdc96de-13c2-424e-8dfc-751626d316f5",
+      "order": 3,
+      "zh": "等一下",
+      "pinyin": "",
+      "vi": "đợi một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c630d825-555d-4c24-842e-73c4a76db48a",
+      "order": 4,
+      "zh": "等等",
+      "pinyin": "",
+      "vi": "vân vân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a729af3-0e55-4407-8e11-014605d29e25",
+      "order": 5,
+      "zh": "上等",
+      "pinyin": "",
+      "vi": "hạng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "882f4e47-f28e-4811-9060-58b1378cbdfa",
+      "order": 6,
+      "zh": "中等",
+      "pinyin": "",
+      "vi": "hạng trung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87f84ce8-3c15-43cf-beb8-74ab72c50f62",
+      "order": 7,
+      "zh": "下等",
+      "pinyin": "",
+      "vi": "hạng thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8066cfbb-a802-41c1-b02d-77dbcf7a2880",
+      "order": 8,
+      "zh": "相等",
+      "pinyin": "",
+      "vi": "bằng nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "707efd31-740c-4bbe-afd3-605b2c0246dc",
+      "order": 1,
+      "zh": "请等一下。",
+      "pinyin": "Qǐng děng yíxià.",
+      "vi": "Xin đợi một chút.",
+      "analysis_vi": "等一下 rất phổ biến.",
+      "highlight": [
+        "等"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a72624f-7d40-47bd-b423-8fcb16483c4f"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "90d56e01-096c-481a-bd15-2e24c389be33",
+      "order": 2,
+      "zh": "这些画册可以分成上等、中等和下等。",
+      "pinyin": "Zhèxiē huàcè kěyǐ fēn chéng shàngděng, zhōngděng hé xiàděng.",
+      "vi": "Những tập tranh ảnh này có thể chia thành hạng tốt, hạng trung và hạng thấp.",
+      "analysis_vi": "等 mang nghĩa hạng/cấp.",
+      "highlight": [
+        "等",
+        "上等",
+        "中等",
+        "下等"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a72624f-7d40-47bd-b423-8fcb16483c4f"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b22ee5fc-1785-441e-a214-6d098c394d89",
+      "order": 3,
+      "zh": "我们不但要看价格，而且要看质量，不能只看它是上等还是中等。",
+      "pinyin": "Wǒmen búdàn yào kàn jiàgé, érqiě yào kàn zhìliàng, bù néng zhǐ kàn tā shì shàngděng háishi zhōngděng.",
+      "vi": "Chúng ta không những phải xem giá mà còn phải xem chất lượng, không thể chỉ xem nó là hạng tốt hay hạng trung.",
+      "analysis_vi": "不但……而且…… nối hai tiêu chí đánh giá.",
+      "highlight": [
+        "等",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "1a72624f-7d40-47bd-b423-8fcb16483c4f"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "等 vừa có nghĩa đời thường “đợi” trong 等一下, vừa có nghĩa “đẳng cấp/hạng” trong 中等/上等/下等.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e073c928-86cb-4ae5-b146-69b5326a3ad1",
+      "order": 1,
+      "rule_vi": "Không nhầm 等人 và 中等/上等/下等.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我在等人。",
+          "pinyin": "Wǒ zài děng rén.",
+          "vi": "Tôi đang đợi người.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这件衣服是中等质量。",
+          "pinyin": "Zhè jiàn yīfu shì zhōngděng zhìliàng.",
+          "vi": "Bộ quần áo này có chất lượng trung bình.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "等",
+    "back": "hạng, cấp; đợi; vân vân",
+    "hint": "děng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "rank",
+      "polysemy"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1a72624f-7d40-47bd-b423-8fcb16483c4f",
+    "source_lesson_vocab_id": null
+  }
+}

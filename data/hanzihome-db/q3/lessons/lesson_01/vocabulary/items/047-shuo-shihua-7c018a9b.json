@@ -1,0 +1,487 @@
+{
+  "id": "d76445a5-48fd-486d-a367-32cd7f2d1e85",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "说实话",
+  "pinyin": "shuō shíhuà",
+  "pos": {
+    "raw_vi": "Cụm động từ / Cụm mở lời",
+    "raw_cn": "动词短语/插入语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thuyết thực thoại",
+    "meaning_vi": "nói thật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nói thật"
+    ],
+    "short_definition_vi": "nói thật",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: nói thật.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "说",
+        "lishu_vi": "thuyết",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兑",
+            "hanviet": "đoái",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, giải thích",
+        "modern_logic_vi": "Dùng lời nói để truyền đạt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "实",
+        "lishu_vi": "thực",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "头",
+            "hanviet": "đầu",
+            "meaning_vi": "thành phần giản thể",
+            "position_vi": "dưới",
+            "role": "simplified_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực, đầy đủ",
+        "modern_logic_vi": "Nhấn tính thật/hiện thực.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "话",
+        "lishu_vi": "thoại",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lời nói, câu chuyện",
+        "modern_logic_vi": "Lời được nói ra bằng miệng/lưỡi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "说实话 trong bài dùng theo nghĩa: nói thật. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 说实话 qua văn cảnh 离家的时候: nói thật.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "说真的",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói thật đấy, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "说心里话",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói thật lòng, cảm xúc hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "实话实说",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "có sao nói vậy",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "告诉真相",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói ra chân tướng/sự thật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "说谎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nói dối",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "瞒着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấu giếm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "41d03452-6b01-4a51-a2b7-6e4e0e869dce",
+      "order": 1,
+      "zh": "跟父母说实话",
+      "pinyin": "",
+      "vi": "nói thật với bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a2cbaf9-6717-41b2-acf9-ca1903c879b7",
+      "order": 2,
+      "zh": "我说实话",
+      "pinyin": "",
+      "vi": "tôi nói thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fee41e2b-0b3e-4f28-b9d4-dd9c56d5a85e",
+      "order": 3,
+      "zh": "说实话吧",
+      "pinyin": "",
+      "vi": "nói thật đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea4bcb2c-0724-4078-b097-78a2f018b8d5",
+      "order": 4,
+      "zh": "不敢说实话",
+      "pinyin": "",
+      "vi": "không dám nói thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac564e70-30cd-43e8-9ca9-89f059beb03c",
+      "order": 5,
+      "zh": "说句实话",
+      "pinyin": "",
+      "vi": "nói thật một câu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "253404cb-7a47-4a7c-a714-2de5fe488195",
+      "order": 1,
+      "zh": "说实话，我有点儿害怕。",
+      "pinyin": "",
+      "vi": "Nói thật, tôi hơi sợ.",
+      "analysis_vi": "说实话 đứng đầu câu như cụm mở lời.",
+      "highlight": [
+        "说实话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d76445a5-48fd-486d-a367-32cd7f2d1e85"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "06ec636a-9a94-4260-a3d5-e5261e65b853",
+      "order": 2,
+      "zh": "她不想再瞒着父母，决定今天晚上说实话。",
+      "pinyin": "",
+      "vi": "Cô ấy không muốn giấu bố mẹ nữa, quyết định tối nay nói thật.",
+      "analysis_vi": "再 + phủ định = không tiếp tục nữa.",
+      "highlight": [
+        "说实话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d76445a5-48fd-486d-a367-32cd7f2d1e85"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dcc8645a-6161-4c05-98b9-b1cd1f8afbb5",
+      "order": 3,
+      "zh": "如果你已经考虑清楚了，就应该跟父母说实话。",
+      "pinyin": "",
+      "vi": "Nếu đã cân nhắc rõ rồi thì nên nói thật với bố mẹ.",
+      "analysis_vi": "如果……就…… đưa lời khuyên.",
+      "highlight": [
+        "说实话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d76445a5-48fd-486d-a367-32cd7f2d1e85"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "说实话 đối lập với 瞒: nói thật là thái độ chịu trách nhiệm.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8c06655a-8be0-4608-8f7a-b09b288583bb",
+      "order": 1,
+      "rule_vi": "Không nói *说实话事情; nói 跟父母说实话 hoặc 把情况说清楚.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "说实话",
+    "back": "nói thật",
+    "hint": "shuō shíhuà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_047"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d76445a5-48fd-486d-a367-32cd7f2d1e85",
+    "source_lesson_vocab_id": null
+  }
+}

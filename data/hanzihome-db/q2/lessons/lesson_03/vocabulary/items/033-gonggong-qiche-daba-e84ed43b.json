@@ -1,0 +1,482 @@
+{
+  "id": "f8d4b581-3282-4587-ad5e-81345eb1a83a",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "公共汽车 / 大巴",
+  "pinyin": "gōnggòng qìchē / dàbā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "traffic",
+    "transport"
+  ],
+  "meaning": {
+    "hanviet": "Công cộng khí xa / đại ba",
+    "meaning_vi": "xe buýt; xe khách lớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xe buýt",
+      "xe khách lớn"
+    ],
+    "short_definition_vi": "xe buýt; xe khách lớn",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "traffic, transport",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "公",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "công cộng, chung, công bằng",
+        "modern_logic_vi": "公 trong 公共 là công/chung.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "共",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cùng, chung",
+        "modern_logic_vi": "共 trong 公共 là chung.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "汽",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/chất lỏng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước; chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "气",
+            "hanviet": "khí",
+            "meaning_vi": "khí, hơi",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hơi nước, xe hơi trong 汽车",
+        "modern_logic_vi": "汽 liên quan hơi/khí trong 汽车.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước; chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "车",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xe",
+        "modern_logic_vi": "车 là xe.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "大",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "大 là lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "巴",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "巴",
+            "hanviet": "ba",
+            "meaning_vi": "phần âm/phiên âm trong 大巴",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ba; yếu tố phiên âm trong 大巴",
+        "modern_logic_vi": "巴 trong 大巴 là thành phần gọi xe bus lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "公共 là công cộng; 汽车 là ô tô; 公共汽车 là xe buýt. 大巴 là xe bus/xe khách lớn, đời sống hơn tùy ngữ cảnh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "公交车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xe buýt, khẩu ngữ Mainland phổ biến hơn 公共汽车.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大巴",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xe bus lớn/xe khách lớn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "地铁",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Metro/tàu điện ngầm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出租车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Taxi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "私家车",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xe riêng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "公共汽车",
+        "right": "大巴",
+        "meaning_vi": "公共汽车 là xe buýt công cộng đầy đủ; 大巴 là xe bus lớn/xe khách lớn, tùy ngữ cảnh.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1efcdab3-3e64-4947-85bf-f4d7595b55fb",
+      "order": 1,
+      "zh": "坐公共汽车",
+      "pinyin": "",
+      "vi": "đi xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26845451-0d33-490e-b61d-8d8a9a0bf665",
+      "order": 2,
+      "zh": "公共汽车站",
+      "pinyin": "",
+      "vi": "trạm xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94fb72e1-a878-49cf-9b9c-01ebfb9f987a",
+      "order": 3,
+      "zh": "等公共汽车",
+      "pinyin": "",
+      "vi": "đợi xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e3ad5ba-023d-4946-8984-ed71d9cba432",
+      "order": 4,
+      "zh": "上公共汽车",
+      "pinyin": "",
+      "vi": "lên xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fade3581-7882-4a0c-a320-068b7ddf55af",
+      "order": 5,
+      "zh": "下公共汽车",
+      "pinyin": "",
+      "vi": "xuống xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24384198-d257-4a3f-8ffe-a14a8908066e",
+      "order": 6,
+      "zh": "坐大巴",
+      "pinyin": "",
+      "vi": "đi xe khách/xe bus lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2148bd67-5015-42b2-befa-87d2b9762e33",
+      "order": 7,
+      "zh": "旅游大巴",
+      "pinyin": "",
+      "vi": "xe bus du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d6a09c0b-d32e-4f6b-b31e-3c09126bd1b2",
+      "order": 8,
+      "zh": "公交车",
+      "pinyin": "",
+      "vi": "xe buýt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "23ccb6b8-9749-4f0e-bbd3-47cb8dfec74a",
+      "order": 1,
+      "zh": "我每天坐公共汽车上学。",
+      "pinyin": "Wǒ měitiān zuò gōnggòng qìchē shàngxué.",
+      "vi": "Mỗi ngày tôi đi xe buýt đi học.",
+      "analysis_vi": "坐 + phương tiện = đi bằng phương tiện đó.",
+      "highlight": [
+        "公共汽车"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f8d4b581-3282-4587-ad5e-81345eb1a83a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "52bf3eb9-07d0-4666-9b52-a2a5b3d4a6f1",
+      "order": 2,
+      "zh": "虽然坐公共汽车便宜，但是有时候会堵车。",
+      "pinyin": "Suīrán zuò gōnggòng qìchē piányi, dànshì yǒu shíhou huì dǔchē.",
+      "vi": "Tuy đi xe buýt rẻ, nhưng đôi khi sẽ kẹt xe.",
+      "analysis_vi": "虽然……但是…… đối lập giá rẻ và bất tiện giao thông.",
+      "highlight": [
+        "公共汽车"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f8d4b581-3282-4587-ad5e-81345eb1a83a"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "18a9d90c-7178-4e67-9a50-4e9da71f8893",
+      "order": 3,
+      "zh": "要是附近没有地铁站，我们就只能坐公共汽车去体育馆。",
+      "pinyin": "Yàoshi fùjìn méiyǒu dìtiězhàn, wǒmen jiù zhǐ néng zuò gōnggòng qìchē qù tǐyùguǎn.",
+      "vi": "Nếu gần đó không có ga tàu điện ngầm, chúng tôi chỉ có thể đi xe buýt đến nhà thi đấu.",
+      "analysis_vi": "要是……就……; 只能 = chỉ có thể.",
+      "highlight": [
+        "公共汽车"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f8d4b581-3282-4587-ad5e-81345eb1a83a"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở Mainland, đời sống hằng ngày thường nói 公交车 hơn 公共汽车; giáo trình dùng 公共汽车 vì rõ nghĩa và chuẩn cho người mới học.",
+    "tags": [
+      "traffic",
+      "transport"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "00cc092a-caa8-466d-9f3c-68cad73b81a5",
+      "order": 1,
+      "rule_vi": "Đừng dịch 公共汽车 cứng thành 'xe ô tô công cộng'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我坐公交车上班。",
+          "pinyin": "",
+          "vi": "Tôi đi xe buýt đi làm.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "汽车",
+          "pinyin": "",
+          "vi": "ô tô nói chung",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Tiếng Việt tự nhiên là xe buýt. 大巴 là xe bus lớn/xe khách lớn, có thể là xe du lịch/xe đoàn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "公共汽车 / 大巴",
+    "back": "xe buýt; xe khách lớn",
+    "hint": "gōnggòng qìchē / dàbā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "traffic",
+      "transport"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f8d4b581-3282-4587-ad5e-81345eb1a83a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "id": "26987c54-d654-4ec6-b408-46b6c27bc7ff",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "三峡",
+  "pinyin": "Sānxiá",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Tam Hiệp",
+    "meaning_vi": "Tam Hiệp Trường Giang",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Tam Hiệp Trường Giang"
+    ],
+    "short_definition_vi": "Tam Hiệp Trường Giang",
+    "textbook_focus_vi": "Tam Hiệp Trường Giang",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "三",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ba",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "峡",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "三峡 là tên riêng/địa danh/di tích; học theo nghĩa dùng trong bài: Tam Hiệp Trường Giang.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "三峡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "三峡 / 长江三峡",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长江三峡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "三峡 / 长江三峡",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "峡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "峡 / 山谷",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "山谷",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "峡 / 山谷",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "三峡 / 长江三峡",
+      "峡 / 山谷"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "92a71f79-978a-4a12-b4a8-a3148f4f233c",
+      "order": 1,
+      "zh": "长江三峡",
+      "pinyin": "",
+      "vi": "长江三峡",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "69d9a089-3c38-4920-9069-261f1f2643bf",
+      "order": 2,
+      "zh": "游览三峡",
+      "pinyin": "",
+      "vi": "游览三峡",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ef3be7f7-06a9-4939-837f-59d6baf59721",
+      "order": 3,
+      "zh": "坐船游览三峡",
+      "pinyin": "",
+      "vi": "坐船游览三峡",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f626ebae-f621-437c-9525-10f61d8b9812",
+      "order": 4,
+      "zh": "三峡风光",
+      "pinyin": "",
+      "vi": "三峡风光",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "e3889434-85ad-42ed-af16-37d68a6421b5",
+      "order": 5,
+      "zh": "三峡大坝",
+      "pinyin": "",
+      "vi": "三峡大坝",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f8a4cc9c-f6b7-48ef-a2b6-e71286fb8789",
+      "order": 6,
+      "zh": "三峡旅游",
+      "pinyin": "",
+      "vi": "三峡旅游",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0ef08db2-c0a9-4474-8b55-b1d44fe59872",
+      "order": 1,
+      "zh": "寒假我打算去三峡旅行。",
+      "pinyin": "",
+      "vi": "Kỳ nghỉ đông tôi dự định đi Tam Hiệp Trường Giang du lịch.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "三峡"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "26987c54-d654-4ec6-b408-46b6c27bc7ff"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a980906c-8d10-4975-8ec3-70e34a509544",
+      "order": 2,
+      "zh": "你想什么时候去三峡，我们就什么时候去。",
+      "pinyin": "",
+      "vi": "Bạn muốn đi Tam Hiệp Trường Giang lúc nào thì chúng ta đi lúc đó.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "三峡"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "26987c54-d654-4ec6-b408-46b6c27bc7ff"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fc3b21f6-abcd-47e7-ae50-be68b0d4b2c1",
+      "order": 3,
+      "zh": "我们先安排路线，再去三峡，最后把旅行计划发给大家。",
+      "pinyin": "",
+      "vi": "Chúng tôi trước tiên sắp xếp tuyến đường, rồi đi Tam Hiệp Trường Giang, cuối cùng gửi kế hoạch du lịch cho mọi người.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "三峡"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "26987c54-d654-4ec6-b408-46b6c27bc7ff"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "三峡 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5f273572-9774-4ced-babe-9c57d40bf834",
+      "order": 1,
+      "rule_vi": "Dùng 三峡 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 三峡 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "三峡",
+    "back": "Tam Hiệp Trường Giang",
+    "hint": "Sānxiá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "26987c54-d654-4ec6-b408-46b6c27bc7ff",
+    "source_lesson_vocab_id": null
+  }
+}

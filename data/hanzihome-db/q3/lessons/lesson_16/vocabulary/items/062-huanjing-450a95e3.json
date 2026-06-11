@@ -1,0 +1,163 @@
+{
+  "id": "42d998da-5e04-441a-8b35-7fdc1ecb7a62",
+  "type": "deep_vocabulary_item",
+  "order": 62,
+  "hanzi": "环境",
+  "pinyin": "huánjìng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Khí quyển và môi trường"
+  ],
+  "meaning": {
+    "hanviet": "Hoàn cảnh",
+    "meaning_vi": "môi trường, hoàn cảnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "môi trường",
+      "hoàn cảnh"
+    ],
+    "short_definition_vi": "môi trường, hoàn cảnh",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: môi trường, hoàn cảnh.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Khí quyển và môi trường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "环",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "境",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "环境 trong bài được học theo nghĩa trọng tâm: môi trường, hoàn cảnh.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: môi trường, hoàn cảnh.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "45d80dfa-f36d-4fd0-b4d9-bdddd0d74ba6",
+      "order": 1,
+      "zh": "第二，地球的大气中充满氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: môi trường, hoàn cảnh",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "de8ca2d4-d907-454e-80a9-d48031dbe132",
+      "order": 1,
+      "zh": "第二，地球的大气中充满氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “环境” = môi trường, hoàn cảnh.",
+      "analysis_vi": "Câu này dùng “环境” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "环境"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "42d998da-5e04-441a-8b35-7fdc1ecb7a62"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “环境” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1bdb4fe2-be34-48dc-8d49-282f33380d79",
+      "order": 1,
+      "rule_vi": "Cần dùng “环境” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "环境",
+    "back": "môi trường, hoàn cảnh",
+    "hint": "huánjìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Khí quyển và môi trường"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "42d998da-5e04-441a-8b35-7fdc1ecb7a62",
+    "source_lesson_vocab_id": null
+  }
+}

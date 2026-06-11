@@ -1,0 +1,175 @@
+{
+  "id": "0e423597-8dc9-4f6d-b898-673a75f1a53d",
+  "type": "deep_vocabulary_item",
+  "order": 151,
+  "hanzi": "为什么",
+  "pinyin": "wèishénme",
+  "pos": {
+    "raw_vi": "Đại từ",
+    "raw_cn": "疑问代词",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Giao tiếp và hỏi đáp"
+  ],
+  "meaning": {
+    "hanviet": "Vị thập ma",
+    "meaning_vi": "tại sao, vì sao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tại sao",
+      "vì sao"
+    ],
+    "short_definition_vi": "tại sao, vì sao",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: tại sao, vì sao.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Giao tiếp và hỏi đáp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "为",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "什",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "么",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "为什么 trong bài được học theo nghĩa trọng tâm: tại sao, vì sao.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: tại sao, vì sao.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c3844242-e157-450f-a10e-ff520197d44d",
+      "order": 1,
+      "zh": "教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: tại sao, vì sao",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "506e13b5-0129-4f54-b6c6-ee139b2ac23e",
+      "order": 1,
+      "zh": "教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “为什么” = tại sao, vì sao.",
+      "analysis_vi": "Câu này dùng “为什么” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "为什么"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0e423597-8dc9-4f6d-b898-673a75f1a53d"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “为什么” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "795d3618-dad1-4aef-884d-0fa8cfff2c44",
+      "order": 1,
+      "rule_vi": "Cần dùng “为什么” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "为什么",
+    "back": "tại sao, vì sao",
+    "hint": "wèishénme",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Giao tiếp và hỏi đáp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0e423597-8dc9-4f6d-b898-673a75f1a53d",
+    "source_lesson_vocab_id": null
+  }
+}

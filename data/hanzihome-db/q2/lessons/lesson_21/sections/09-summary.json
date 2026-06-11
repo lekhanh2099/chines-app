@@ -1,0 +1,57 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết bài",
+  "source_origin": "generated",
+  "check_needed": false,
+  "lesson_parts": [
+    "课文",
+    "生词",
+    "专名",
+    "注释",
+    "语法 / 词语用法",
+    "练习",
+    "阅读理解 / 读后复述",
+    "写汉字"
+  ],
+  "grammar_points": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "title": "可能补语（2）"
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "title": "可能补语与状态补语"
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "title": "只要……就……"
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "title": "恐怕"
+    }
+  ],
+  "key_patterns": [
+    "山这么高，你爬得上去吗？",
+    "没问题，爬得上去。",
+    "我总记不住台词。",
+    "我担心自己演不好。",
+    "只要我们好好儿练，就一定能演好。",
+    "这个地方这么小，坐得下二百多人吗？",
+    "世上无难事，只怕有心人。"
+  ],
+  "coverage": {
+    "text_covered": true,
+    "vocabulary_covered": true,
+    "proper_nouns_covered": true,
+    "notes_covered": true,
+    "grammar_covered": true,
+    "exercises_covered": true,
+    "reading_covered": true,
+    "character_writing_covered": true,
+    "remaining_check_needed": []
+  }
+}

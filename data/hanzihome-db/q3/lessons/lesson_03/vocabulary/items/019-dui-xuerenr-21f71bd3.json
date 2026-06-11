@@ -1,0 +1,459 @@
+{
+  "id": "1be75b54-5a29-4a14-802f-34c23bec0284",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "堆雪人儿",
+  "pinyin": "duī xuěrénr",
+  "pos": {
+    "raw_vi": "phrase",
+    "raw_cn": "",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "winter",
+    "activity"
+  ],
+  "meaning": {
+    "hanviet": "đôi tuyết nhân nhi",
+    "meaning_vi": "đắp người tuyết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đắp người tuyết"
+    ],
+    "short_definition_vi": "đắp người tuyết",
+    "textbook_focus_vi": "đắp người tuyết",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "winter, activity",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "堆",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, mặt đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, mặt đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, mặt đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "隹",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đống, chất đống",
+        "modern_logic_vi": "Trong từ này, 堆 góp phần vào lớp nghĩa hiện đại: đống, chất đống",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "雪",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "雨",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "mưa, hiện tượng khí trời",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa, hiện tượng khí trời",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa, hiện tượng khí trời",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "彐",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tuyết",
+        "modern_logic_vi": "Trong từ này, 雪 góp phần vào lớp nghĩa hiện đại: tuyết",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Trong từ này, 人 góp phần vào lớp nghĩa hiện đại: người",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "儿",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhi hóa/đứa trẻ tùy cụm",
+        "modern_logic_vi": "Trong từ này, 儿 góp phần vào lớp nghĩa hiện đại: nhi hóa/đứa trẻ tùy cụm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "堆 = gom/chất thành đống; 雪人儿 = người tuyết có nhi hóa. 堆雪人儿 = gom tuyết thành hình người.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打雪仗",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "玩雪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "扫雪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "铲雪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "17cdbd60-0fbb-4ea5-a114-7d7c317c0ba1",
+      "order": 1,
+      "zh": "堆雪人儿",
+      "pinyin": "",
+      "vi": "đắp người tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b47707e-0184-4f17-912f-c79d2f3a9742",
+      "order": 2,
+      "zh": "一起堆雪人儿",
+      "pinyin": "",
+      "vi": "cùng đắp người tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38437c40-a81b-4937-a440-2493f933bdd0",
+      "order": 3,
+      "zh": "堆一个雪人儿",
+      "pinyin": "",
+      "vi": "đắp một người tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a7f7d3f-79ea-45fa-9842-60f7d128447d",
+      "order": 4,
+      "zh": "孩子们堆雪人儿",
+      "pinyin": "",
+      "vi": "bọn trẻ đắp người tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e708f386-17e4-480a-a275-17f1c23171e3",
+      "order": 5,
+      "zh": "又堆雪人儿又打雪仗",
+      "pinyin": "",
+      "vi": "vừa đắp người tuyết vừa ném tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94036016-af10-44b0-8dfc-c6d7f111844d",
+      "order": 6,
+      "zh": "堆得很像",
+      "pinyin": "",
+      "vi": "đắp trông rất giống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "73128a00-dfb2-44d7-b1ed-3c4f3a95d3d1",
+      "order": 1,
+      "zh": "下雪了，孩子们都出去堆雪人儿。",
+      "pinyin": "",
+      "vi": "Tuyết rơi rồi, bọn trẻ đều ra ngoài đắp người tuyết.",
+      "analysis_vi": "出去 + V.",
+      "highlight": [
+        "堆雪人儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1be75b54-5a29-4a14-802f-34c23bec0284"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7b997a08-042c-4e8e-91d5-2e602bfdce99",
+      "order": 2,
+      "zh": "冬天一到，公园里就有很多孩子堆雪人儿。",
+      "pinyin": "",
+      "vi": "Mùa đông vừa đến, trong công viên có nhiều trẻ con đắp người tuyết.",
+      "analysis_vi": "一到……就…….",
+      "highlight": [
+        "堆雪人儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1be75b54-5a29-4a14-802f-34c23bec0284"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "184a0cde-c2fc-449e-b839-bc07614f43b4",
+      "order": 3,
+      "zh": "我们一到楼下，就看见几个小朋友正在堆雪人儿。",
+      "pinyin": "",
+      "vi": "Vừa xuống dưới lầu, chúng tôi thấy mấy bạn nhỏ đang đắp người tuyết.",
+      "analysis_vi": "正在 + V.",
+      "highlight": [
+        "堆雪人儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1be75b54-5a29-4a14-802f-34c23bec0284"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "堆雪人儿 trong Bài 3 北京的四季",
+    "content_vi": "堆雪人儿/打雪仗 là hình ảnh mùa đông quen ở miền Bắc có tuyết.",
+    "tags": [
+      "winter",
+      "activity"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c95b0c0a-84f3-4f42-b0b7-11c4a8d8351f",
+      "order": 1,
+      "rule_vi": "Tự nhiên nhất là 堆雪人儿; 做雪人儿 không phải trọng tâm bài và kém chuẩn hơn cho hành động đắp bằng tuyết.",
+      "natural_examples": [
+        {
+          "zh": "下雪了，孩子们都出去堆雪人儿。",
+          "pinyin": "",
+          "vi": "Tuyết rơi rồi, bọn trẻ đều ra ngoài đắp người tuyết.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Tự nhiên nhất là 堆雪人儿; 做雪人儿 không phải trọng tâm bài và kém chuẩn hơn cho hành động đắp bằng tuyết.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "堆雪人儿",
+    "back": "đắp người tuyết",
+    "hint": "duī xuěrénr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "winter",
+      "activity"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1be75b54-5a29-4a14-802f-34c23bec0284",
+    "source_lesson_vocab_id": null
+  }
+}

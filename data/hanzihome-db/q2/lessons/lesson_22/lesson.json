@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "hanzihome-db-lesson-v3",
+  "dataset": "q2",
+  "lessonIndex": 22,
+  "id": "b527d813-a184-4d1c-94e5-2f2f0545ce19",
+  "title": {
+    "zh": "我想起来了",
+    "pinyin": "Wǒ xiǎng qǐlai le",
+    "vi": "Tôi nhớ ra rồi",
+    "en": "I remember now"
+  },
+  "sourceRefs": {
+    "lessonFile": "data/hanzihome/q2/lessons/hanyu_2_2_lesson_22.json",
+    "vocabFile": "data/hanzihome/q2/vocab/hanyu_2_2_lesson_22_deep_vocab.json"
+  },
+  "counts": {
+    "sections": 9,
+    "lessonVocabItems": 44,
+    "sourceDeepVocabItems": 42,
+    "materializedVocabItems": 49,
+    "syntheticVocabItems": 7,
+    "hanziOnlyVocabMatches": 0,
+    "relations": 132,
+    "checkNeededRelations": 7,
+    "checkNeededVocabItems": 7,
+    "unresolved": 0,
+    "warnings": 7
+  }
+}

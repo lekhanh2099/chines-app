@@ -1,0 +1,351 @@
+{
+  "id": "a5095f9f-a541-4efa-b405-900a3e2f0640",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "特色",
+  "pinyin": "tèsè",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ hóa",
+    "raw_cn": "名/形化",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Đặc sắc",
+    "meaning_vi": "nét đặc sắc, đặc trưng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nét đặc sắc, đặc trưng"
+    ],
+    "short_definition_vi": "nét đặc sắc, đặc trưng",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "rất hay dùng khi giới thiệu văn hóa, món ăn, du lịch, hoạt động.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "特",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "牛",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Ngưu",
+          "radical_name_zh": "",
+          "hanviet": "ngưu",
+          "meaning_vi": "trâu/bò",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "牛",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "牛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Ngưu",
+              "radical_name_zh": "",
+              "hanviet": "ngưu",
+              "meaning_vi": "trâu/bò",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寺",
+            "hanviet": "tự",
+            "meaning_vi": "chùa/cơ quan xưa; thường là thành phần âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đặc biệt, riêng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "色",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "⺈",
+            "hanviet": "đao biến thể",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "巴",
+            "hanviet": "ba",
+            "meaning_vi": "ba; thành phần gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "màu sắc, sắc thái",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "特 là đặc biệt. 色 ở đây không chỉ là màu sắc, mà có thể hiểu rộng là sắc thái, đặc điểm bên ngoài. → 特色 = sắc thái/đặc điểm đặc biệt riêng. Cảnh báo: 特色 không phải “màu đặc biệt”. Trong đa số ngữ cảnh, nó là “đặc trưng / nét riêng”.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "特色",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nét đặc sắc, đặc trưng riêng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "特点",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặc điểm, điểm nổi bật; trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "特征",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặc trưng/dấu hiệu nhận diện, hơi học thuật hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "特别",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đặc biệt, phó từ/tính từ rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 特色 có màu “nét riêng đáng chú ý”; 特点 chỉ đặc điểm nói chung."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e26db4f2-9d6c-4fd4-af5a-3ec774847987",
+      "order": 1,
+      "zh": "有特色",
+      "pinyin": "",
+      "vi": "có nét đặc sắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "394baee5-9063-488c-a010-4489685a6355",
+      "order": 2,
+      "zh": "地方特色",
+      "pinyin": "",
+      "vi": "nét đặc sắc địa phương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f2ef093-6272-4f55-a7d0-693b980c51ee",
+      "order": 3,
+      "zh": "特色菜",
+      "pinyin": "",
+      "vi": "món đặc sắc/đặc sản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "debf23c1-a4f5-497d-bfbf-a84f42de8ae5",
+      "order": 4,
+      "zh": "中国特色",
+      "pinyin": "",
+      "vi": "đặc sắc Trung Quốc / đặc trưng Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "30a455af-c114-4e56-8477-626753add0b0",
+      "order": 1,
+      "zh": "这个会场布置得很有中国特色，门上贴着红色的“福”字。",
+      "pinyin": "Zhège huìchǎng bùzhì de hěn yǒu Zhōngguó tèsè, mén shang tiēzhe hóngsè de “Fú” zì.",
+      "vi": "Hội trường này được trang trí rất có nét Trung Quốc, trên cửa dán chữ “Phúc” màu đỏ.",
+      "analysis_vi": "布置得很有特色 dùng 得 để đánh giá cách bố trí; 门上贴着…… là trạng thái tồn tại.",
+      "highlight": [
+        "特色"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "a5095f9f-a541-4efa-b405-900a3e2f0640"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "10e85f83-d723-4f43-b248-93c35d82ea68",
+      "order": 2,
+      "zh": "春节的时候，大家会品尝一些有地方特色的食物。",
+      "pinyin": "Chūnjié de shíhou, dàjiā huì pǐncháng yìxiē yǒu dìfang tèsè de shíwù.",
+      "vi": "Vào dịp Tết, mọi người sẽ thưởng thức một số món ăn có nét đặc sắc địa phương.",
+      "analysis_vi": "有地方特色的食物 là cụm định ngữ; 品尝 hợp với món ăn đặc sắc.",
+      "highlight": [
+        "特色"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "a5095f9f-a541-4efa-b405-900a3e2f0640"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2a05b7ca-6ef9-4f9b-b583-604b6e848796",
+      "order": 3,
+      "zh": "我们把教室布置成一个有节日特色的小会场。",
+      "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng yí ge yǒu jiérì tèsè de xiǎo huìchǎng.",
+      "vi": "Chúng tôi bố trí lớp học thành một hội trường nhỏ có nét đặc trưng ngày lễ.",
+      "analysis_vi": "Đây là câu chữ 把 chuẩn: 把教室 + 布置成 + 会场, tân ngữ bị xử lý và đổi trạng thái/chức năng.",
+      "highlight": [
+        "特色"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "a5095f9f-a541-4efa-b405-900a3e2f0640"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 特色",
+    "content_vi": "Khi nói về Tết Trung Quốc, các yếu tố như 福字, 对联儿, 红灯笼, 水仙花 đều có thể tạo nên 春节特色 – nét đặc sắc ngày Tết.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f8e6d6d9-e2d1-4870-b34c-83c75bc3ba70",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 特色 như tính từ đứng trực tiếp trước mọi danh từ. Tự nhiên: 这个地方很有特色。 Zhège dìfang hěn yǒu tèsè. Nơi này rất có nét đặc sắc. 这是这里的特色菜。 Zhè shì zhèlǐ de tèsè cài. Đây là món đặc sản/món đặc sắc ở đây.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "特色",
+    "back": "nét đặc sắc, đặc trưng",
+    "hint": "tèsè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a5095f9f-a541-4efa-b405-900a3e2f0640",
+    "source_lesson_vocab_id": null
+  }
+}

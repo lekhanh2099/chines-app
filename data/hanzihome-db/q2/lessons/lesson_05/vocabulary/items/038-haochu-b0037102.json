@@ -1,0 +1,370 @@
+{
+  "id": "391eabe8-6213-4f40-9dab-975de574505a",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "好处",
+  "pinyin": "hǎochu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "hảo xứ",
+    "meaning_vi": "lợi ích, điểm tốt",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "lợi ích, điểm tốt",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "nữ giới",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "nữ giới",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "女 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, hậu tố danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, dễ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "nữ giới",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "女 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "处",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "夂",
+            "hanviet": "truy",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "夂",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Truy",
+              "radical_name_zh": "",
+              "hanviet": "truy",
+              "meaning_vi": "thành phần cấu chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "夂 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卜",
+            "hanviet": "bốc",
+            "meaning_vi": "bói; thành phần cấu chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "卜",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bốc",
+              "radical_name_zh": "",
+              "hanviet": "bốc",
+              "meaning_vi": "bói; thành phần cấu chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "卜 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chù: chỗ/điểm; chǔ: xử lý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "夂",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Truy",
+          "radical_name_zh": "",
+          "hanviet": "truy",
+          "meaning_vi": "thành phần cấu chữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "夂 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Mặt tốt/điểm tốt của một việc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "优点",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ưu điểm của người/vật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "益处",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ích lợi, trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "利益",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lợi ích/quyền lợi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0c3a7a54-2deb-4cc4-98a1-0daab64e78f5",
+      "order": 1,
+      "zh": "有好处",
+      "pinyin": "",
+      "vi": "có lợi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ebe9da3-1702-4805-af1a-5fd3449ad46d",
+      "order": 2,
+      "zh": "对身体有好处",
+      "pinyin": "",
+      "vi": "có lợi cho sức khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b2dfa3f-a1c8-4469-83d0-efcddff65358",
+      "order": 3,
+      "zh": "好处很多",
+      "pinyin": "",
+      "vi": "có nhiều lợi ích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5fc59597-15be-4dcf-82b0-b20385bfcb72",
+      "order": 1,
+      "zh": "跑步对身体有好处。",
+      "pinyin": "Pǎobù duì shēntǐ yǒu hǎochu.",
+      "vi": "Chạy bộ có lợi cho sức khỏe.",
+      "en": "",
+      "highlight": [
+        "好处"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "391eabe8-6213-4f40-9dab-975de574505a"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "对身体有好处 / 对学习有好处 là mẫu dễ dùng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c119b176-7521-4d34-9f45-ae81ed0310df",
+      "order": 1,
+      "title_vi": "Không nói 有好",
+      "explanation_vi": "Phải nói 有好处.",
+      "wrong_examples": [
+        "跑步对身体有好。"
+      ],
+      "correct_examples": [
+        "跑步对身体有好处。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "好处",
+    "back": "lợi ích, điểm tốt",
+    "hint": "hǎochu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "好处"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "391eabe8-6213-4f40-9dab-975de574505a",
+    "source_lesson_vocab_id": null
+  }
+}

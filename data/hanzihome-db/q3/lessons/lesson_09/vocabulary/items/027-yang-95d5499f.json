@@ -1,0 +1,271 @@
+{
+  "id": "6500b00b-bcdb-4cde-b495-65e783820950",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "养",
+  "pinyin": "yǎng",
+  "pos": {
+    "raw_vi": "Động từ / yếu tố cấu tạo từ",
+    "raw_cn": "动词/语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "dưỡng",
+    "meaning_vi": "nuôi; dưỡng; chăm sóc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nuôi",
+      "dưỡng",
+      "chăm sóc"
+    ],
+    "short_definition_vi": "nuôi",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "养",
+        "lishu_vi": "dưỡng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "dê; trong vài chữ gợi tốt/đẹp",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羊",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dương",
+              "radical_name_zh": "",
+              "hanviet": "dương",
+              "meaning_vi": "dê; trong vài chữ gợi tốt/đẹp",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nuôi, dưỡng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "羊",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dương",
+          "radical_name_zh": "",
+          "hanviet": "dương",
+          "meaning_vi": "dê; trong vài chữ gợi tốt/đẹp",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "养 là cung cấp điều kiện để người/vật/trạng thái sống, lớn lên hoặc tốt hơn.",
+    "memory_tip_vi": "Nhớ 养孩子, 养家, 养成习惯.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "喂",
+        "pinyin": "",
+        "meaning_vi": "喂",
+        "difference_vi": "喂 là cho ăn; 养 là chăm nuôi lâu dài.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "遗弃",
+        "pinyin": "",
+        "meaning_vi": "遗弃",
+        "difference_vi": "bỏ rơi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6b12a313-5e2f-4a9d-a4bb-b75236a1d987",
+      "order": 1,
+      "zh": "养孩子",
+      "pinyin": "yǎng háizi",
+      "vi": "nuôi con",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2792e21-cf1a-445c-a266-993a19580778",
+      "order": 2,
+      "zh": "养猫",
+      "pinyin": "yǎng māo",
+      "vi": "nuôi mèo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cdd99e6e-2482-412a-97b3-cbc0ad7d2f05",
+      "order": 3,
+      "zh": "养病",
+      "pinyin": "yǎng bìng",
+      "vi": "dưỡng bệnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d6690d2c-bdc3-4952-bf31-4bda155cec0d",
+      "order": 4,
+      "zh": "养家",
+      "pinyin": "yǎng jiā",
+      "vi": "nuôi gia đình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ab4e5456-3d04-4c7e-bb53-fdbca5b7b6f3",
+      "order": 1,
+      "zh": "我家养了一只猫。",
+      "pinyin": "Wǒ jiā yǎng le yì zhī māo.",
+      "vi": "Nhà tôi nuôi một con mèo.",
+      "analysis_vi": "养 + động vật rất thường gặp.",
+      "highlight": [
+        "养"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6500b00b-bcdb-4cde-b495-65e783820950"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "748afb6a-397e-49a2-9f01-56bed9215ce1",
+      "order": 2,
+      "zh": "父母养家不容易。",
+      "pinyin": "Fùmǔ yǎng jiā bù róngyì.",
+      "vi": "Cha mẹ nuôi gia đình không dễ.",
+      "analysis_vi": "养家 = kiếm sống nuôi gia đình.",
+      "highlight": [
+        "养"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6500b00b-bcdb-4cde-b495-65e783820950"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "养家 không phải “nuôi nhà”, mà là nuôi gia đình.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "caf5eb87-489f-4c6c-aff2-0051fdde35ac",
+      "order": 1,
+      "rule_vi": "Không nhầm 养 với 喂.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我每天养狗。",
+          "pinyin": "Wǒ měi tiān yǎng gǒu.",
+          "vi": "Sai nếu muốn nói mỗi ngày cho chó ăn.",
+          "note_vi": "养 là quan hệ nuôi lâu dài.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我每天喂狗。",
+          "pinyin": "Wǒ měi tiān wèi gǒu.",
+          "vi": "Mỗi ngày tôi cho chó ăn.",
+          "note_vi": "喂 đúng cho hành động cho ăn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "养",
+    "back": "nuôi; dưỡng; chăm sóc",
+    "hint": "yǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6500b00b-bcdb-4cde-b495-65e783820950",
+    "source_lesson_vocab_id": null
+  }
+}

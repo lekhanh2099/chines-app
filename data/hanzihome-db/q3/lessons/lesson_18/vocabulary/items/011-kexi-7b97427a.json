@@ -1,0 +1,307 @@
+{
+  "id": "3fdca38d-b7bb-4c58-bd76-717928f5a512",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "可惜",
+  "pinyin": "kěxī",
+  "pos": {
+    "raw_vi": "Tính từ / Từ bình luận cảm xúc",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khả tích",
+    "meaning_vi": "đáng tiếc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đáng tiếc"
+    ],
+    "short_definition_vi": "đáng tiếc",
+    "textbook_focus_vi": "Dùng khi điều tốt đẹp/đáng mong đợi không xảy ra trọn vẹn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "可",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "có thể/đáng",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "惜",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "cảm xúc/tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "cảm xúc/tâm lý",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "cảm xúc/tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiếc",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Dùng khi điều tốt đẹp/đáng mong đợi không xảy ra trọn vẹn.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 可惜 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "遗憾",
+        "pinyin": "",
+        "meaning_vi": "tiếc nuối",
+        "difference_vi": "Trang trọng và sâu hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "舍不得",
+        "pinyin": "",
+        "meaning_vi": "không nỡ/tiếc",
+        "difference_vi": "Vì gắn bó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "可怜",
+        "pinyin": "",
+        "meaning_vi": "đáng thương",
+        "difference_vi": "Không phải đáng tiếc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ecedd676-5d26-4d2b-902c-6766f90a54e7",
+      "order": 1,
+      "zh": "真可惜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "209564c8-7da7-489b-a572-da43e4a68a6b",
+      "order": 2,
+      "zh": "太可惜了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77c240c8-d729-44ba-a6c7-c4ee9a0951ce",
+      "order": 3,
+      "zh": "可惜你没来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15650cf6-e3c7-4f97-94f1-ad209957352f",
+      "order": 4,
+      "zh": "可惜时间不够",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "821c3733-88ba-4486-9f40-766d1dab4bfc",
+      "order": 5,
+      "zh": "可惜没看见",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7dbe5efe-0a8b-49ff-b04e-44306754d1f9",
+      "order": 1,
+      "zh": "可惜你回来晚了，没看见蛋糕上的字。",
+      "pinyin": "",
+      "vi": "Tiếc là bạn về muộn, không nhìn thấy chữ trên bánh.",
+      "analysis_vi": "可惜 + câu nêu điều đáng tiếc.",
+      "highlight": [
+        "可惜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3fdca38d-b7bb-4c58-bd76-717928f5a512"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "42595a3f-b3a3-4546-850d-fb9c3ec70d85",
+      "order": 1,
+      "rule_vi": "Không dùng 可怜 thay 可惜.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "太可怜了。",
+          "pinyin": "",
+          "vi": "Đáng thương quá.",
+          "note_vi": "Không phải “tiếc quá”.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "太可惜了。",
+          "pinyin": "",
+          "vi": "Tiếc quá.",
+          "note_vi": "可惜 đúng nghĩa đáng tiếc.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "可惜",
+    "back": "đáng tiếc",
+    "hint": "kěxī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3fdca38d-b7bb-4c58-bd76-717928f5a512",
+    "source_lesson_vocab_id": null
+  }
+}

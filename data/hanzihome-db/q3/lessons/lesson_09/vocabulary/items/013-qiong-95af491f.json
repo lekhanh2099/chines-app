@@ -1,0 +1,292 @@
+{
+  "id": "45126cb9-75d1-42df-ad23-66a9f789f23a",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "穷",
+  "pinyin": "qióng",
+  "pos": {
+    "raw_vi": "Tính từ / động từ / yếu tố cấu tạo từ",
+    "raw_cn": "形容词/动词/语素",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cùng",
+    "meaning_vi": "nghèo; cạn kiệt; đến tận cùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghèo",
+      "cạn kiệt",
+      "đến tận cùng"
+    ],
+    "short_definition_vi": "nghèo",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "穷",
+        "lishu_vi": "cùng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "huyệt",
+            "meaning_vi": "hang, nơi hẹp",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "huyệt",
+              "meaning_vi": "hang, nơi hẹp",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức mạnh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức mạnh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghèo, cùng tận",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "huyệt",
+          "meaning_vi": "hang, nơi hẹp",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "穷 trọng tâm bài là nghèo, ngoài ra còn có nghĩa cùng tận/cạn kiệt.",
+    "memory_tip_vi": "Nhớ 家里很穷.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "贫穷",
+        "pinyin": "",
+        "meaning_vi": "贫穷",
+        "difference_vi": "Trang trọng hơn 穷.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "富",
+        "pinyin": "",
+        "meaning_vi": "富",
+        "difference_vi": "giàu đối lập nghèo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "944a5173-b03c-4cbf-9011-f3a6d6670a2c",
+      "order": 1,
+      "zh": "很穷",
+      "pinyin": "hěn qióng",
+      "vi": "rất nghèo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "826cef8c-fa31-48a9-a7b8-290ba5aa598d",
+      "order": 2,
+      "zh": "穷人",
+      "pinyin": "qióngrén",
+      "vi": "người nghèo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b43c5a3a-d86c-438b-90da-97862611b2d9",
+      "order": 3,
+      "zh": "家里很穷",
+      "pinyin": "jiā lǐ hěn qióng",
+      "vi": "nhà rất nghèo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d879d324-9062-422d-9c66-0c54a1b7cebe",
+      "order": 4,
+      "zh": "穷得吃不上饭",
+      "pinyin": "qióng de chī bu shàng fàn",
+      "vi": "nghèo đến mức không có cơm ăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "df39424a-4fa5-4a52-b3ab-9d5730801166",
+      "order": 1,
+      "zh": "他小时候家里很穷。",
+      "pinyin": "Tā xiǎoshíhou jiā lǐ hěn qióng.",
+      "vi": "Hồi nhỏ nhà anh ấy rất nghèo.",
+      "analysis_vi": "很穷 là khẩu ngữ tự nhiên.",
+      "highlight": [
+        "穷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45126cb9-75d1-42df-ad23-66a9f789f23a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bab45bc0-34d3-4923-a40f-12deb9d9f878",
+      "order": 2,
+      "zh": "对一个穷孩子来说，能继续上学就是一种幸福。",
+      "pinyin": "Duì yí ge qióng háizi lái shuō, néng jìxù shàngxué jiù shì yì zhǒng xìngfú.",
+      "vi": "Đối với một đứa trẻ nghèo, được tiếp tục đi học là hạnh phúc.",
+      "analysis_vi": "Gài 对……来说.",
+      "highlight": [
+        "穷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45126cb9-75d1-42df-ad23-66a9f789f23a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Nói thẳng 他很穷 có thể nghe đánh giá; có thể nói 经济条件不好.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6cce77e1-f860-49e9-972d-c32b437c69be",
+      "order": 1,
+      "rule_vi": "Không dùng 穷 để nói thiếu mọi thứ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我穷时间。",
+          "pinyin": "Wǒ qióng shíjiān.",
+          "vi": "Sai khi muốn nói thiếu thời gian.",
+          "note_vi": "穷 chủ yếu nói nghèo tiền/hoàn cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我时间不够。",
+          "pinyin": "Wǒ shíjiān bú gòu.",
+          "vi": "Tôi không đủ thời gian.",
+          "note_vi": "不够 hợp với thiếu thời gian.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "穷",
+    "back": "nghèo; cạn kiệt; đến tận cùng",
+    "hint": "qióng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "45126cb9-75d1-42df-ad23-66a9f789f23a",
+    "source_lesson_vocab_id": null
+  }
+}

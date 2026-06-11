@@ -1,0 +1,251 @@
+{
+  "id": "f23717d0-3577-49aa-93d2-249035b92d5c",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "方向",
+  "pinyin": "fāngxiàng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phương hướng",
+    "meaning_vi": "phương hướng, hướng đi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phương hướng",
+      "hướng đi"
+    ],
+    "short_definition_vi": "phương hướng, hướng đi",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "方",
+        "lishu_vi": "phương",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "向",
+        "lishu_vi": "hướng",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "方向 là hướng cụ thể hoặc hướng phát triển/tư duy.",
+    "memory_tip_vi": "方向错了 = sai hướng; 地方错了 = sai chỗ.",
+    "warning_vi": "方向 không phải địa điểm.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "地方",
+        "dìfang",
+        "địa điểm",
+        "nơi chốn"
+      ],
+      [
+        "路线",
+        "lùxiàn",
+        "lộ trình",
+        "tuyến cụ thể"
+      ],
+      [
+        "目的地",
+        "mùdìdì",
+        "điểm đến",
+        "nơi cuối"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "方向错了 = sai hướng; 地方错了 = sai chỗ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6292e3de-2fed-4989-87a5-b98bd4ca7999",
+      "order": 1,
+      "zh": "找方向",
+      "pinyin": "",
+      "vi": "tìm phương hướng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "971c5e6a-4cf8-4f15-8570-52dbc2e07e4f",
+      "order": 2,
+      "zh": "迷失方向",
+      "pinyin": "",
+      "vi": "mất phương hướng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "061c269f-8841-4a28-b40e-660087efc5ec",
+      "order": 3,
+      "zh": "方向错了",
+      "pinyin": "",
+      "vi": "sai hướng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99c7b6cb-f750-4e0c-945a-1e255480eb36",
+      "order": 4,
+      "zh": "朝这个方向走",
+      "pinyin": "",
+      "vi": "đi về hướng này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1025347-6f7d-448a-872c-4a404dcc090c",
+      "order": 5,
+      "zh": "发展方向",
+      "pinyin": "",
+      "vi": "hướng phát triển",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1bd090e8-3b7d-41de-9db4-073a12ef7c76",
+      "order": 1,
+      "zh": "我刚上到地面，一下子找不到方向了。",
+      "pinyin": "Wǒ gāng shàng dào dìmiàn, yíxiàzi zhǎo bú dào fāngxiàng le.",
+      "vi": "Tôi vừa lên mặt đất thì lập tức không tìm được phương hướng.",
+      "analysis_vi": "找不到方向 = không xác định được hướng.",
+      "highlight": [
+        "方向"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f23717d0-3577-49aa-93d2-249035b92d5c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "26fbde05-6220-4fb5-895a-2a6582b635b8",
+      "order": 2,
+      "zh": "学汉语不能只背词，还要知道自己努力的方向。",
+      "pinyin": "Xué Hànyǔ bù néng zhǐ bèi cí, hái yào zhīdào zìjǐ nǔlì de fāngxiàng.",
+      "vi": "Học tiếng Hán không thể chỉ học từ, còn phải biết hướng nỗ lực.",
+      "analysis_vi": "方向 nghĩa trừu tượng.",
+      "highlight": [
+        "方向"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f23717d0-3577-49aa-93d2-249035b92d5c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hỏi đường có thể nói 我有点儿找不到方向, nghe mềm và tự nhiên.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1d761a23-7689-489a-9614-bb7e3dde2212",
+      "order": 1,
+      "rule_vi": "我不知道地方。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我找不到方向。",
+          "pinyin": "Wǒ zhǎo bú dào fāngxiàng.",
+          "vi": "Tôi không tìm được phương hướng.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "方向 không phải địa điểm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "方向",
+    "back": "phương hướng, hướng đi",
+    "hint": "fāngxiàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f23717d0-3577-49aa-93d2-249035b92d5c",
+    "source_lesson_vocab_id": null
+  }
+}

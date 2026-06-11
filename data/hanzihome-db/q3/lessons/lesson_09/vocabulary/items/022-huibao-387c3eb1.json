@@ -1,0 +1,337 @@
+{
+  "id": "f9993b7a-43ab-4485-8d66-6a6a3e8dbd7d",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "回报",
+  "pinyin": "huíbào",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词/名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hồi báo",
+    "meaning_vi": "báo đáp; hồi đáp; báo cáo kết quả",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "báo đáp",
+      "hồi đáp",
+      "báo cáo kết quả"
+    ],
+    "short_definition_vi": "báo đáp",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "回",
+        "lishu_vi": "hồi",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao, phạm vi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao, phạm vi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quay lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao, phạm vi",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "报",
+        "lishu_vi": "báo",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "báo đáp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "回报 là đáp lại bằng hành động hoặc báo lại tình hình.",
+    "memory_tip_vi": "Nhớ 回报社会, 回报父母.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "报答",
+        "pinyin": "",
+        "meaning_vi": "报答",
+        "difference_vi": "报答 thiên về ân tình; 回报 rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "忘恩",
+        "pinyin": "",
+        "meaning_vi": "忘恩",
+        "difference_vi": "quên ơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c788b198-db9a-456a-a22b-d6a8960e8ae6",
+      "order": 1,
+      "zh": "回报父母",
+      "pinyin": "huíbào fùmǔ",
+      "vi": "báo đáp cha mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "448a6646-b2d3-4023-8f26-3b7a6c25ccf7",
+      "order": 2,
+      "zh": "回报社会",
+      "pinyin": "huíbào shèhuì",
+      "vi": "báo đáp xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e3783d6-acb0-486e-b71a-5065d6d514a3",
+      "order": 3,
+      "zh": "回报祖国",
+      "pinyin": "huíbào zǔguó",
+      "vi": "báo đáp tổ quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9048fa5-8dfe-4284-a92c-a3f0f669e13a",
+      "order": 4,
+      "zh": "得到回报",
+      "pinyin": "dédào huíbào",
+      "vi": "nhận được hồi báo/thành quả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8d546316-56b5-4ab9-b13c-214c05db9788",
+      "order": 1,
+      "zh": "我不知道该怎么回报你。",
+      "pinyin": "Wǒ bù zhīdào gāi zěnme huíbào nǐ.",
+      "vi": "Tôi không biết nên báo đáp bạn thế nào.",
+      "analysis_vi": "怎么回报你 = báo đáp bằng cách nào.",
+      "highlight": [
+        "回报"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9993b7a-43ab-4485-8d66-6a6a3e8dbd7d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "85df322d-9a97-4c55-ae6f-b09a1ce0d293",
+      "order": 2,
+      "zh": "努力学习就是回报父母最好的方式。",
+      "pinyin": "Nǔlì xuéxí jiù shì huíbào fùmǔ zuì hǎo de fāngshì.",
+      "vi": "Học chăm là cách tốt nhất để báo đáp cha mẹ.",
+      "analysis_vi": "就是 nhấn định nghĩa.",
+      "highlight": [
+        "回报"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9993b7a-43ab-4485-8d66-6a6a3e8dbd7d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "回报社会 rất hay gặp trong diễn ngôn từ thiện, giáo dục, doanh nghiệp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b4898ecd-a817-4f27-ae84-66f54313d369",
+      "order": 1,
+      "rule_vi": "Không nhầm 回报 với 回答.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "老师问我问题，我回报了。",
+          "pinyin": "Lǎoshī wèn wǒ wèntí, wǒ huíbào le.",
+          "vi": "Sai nếu muốn nói trả lời câu hỏi.",
+          "note_vi": "回报 không phải trả lời câu hỏi.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "老师问我问题，我回答了。",
+          "pinyin": "Lǎoshī wèn wǒ wèntí, wǒ huídá le.",
+          "vi": "Thầy cô hỏi tôi, tôi trả lời rồi.",
+          "note_vi": "回答 đúng cho câu hỏi.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "回报",
+    "back": "báo đáp; hồi đáp; báo cáo kết quả",
+    "hint": "huíbào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f9993b7a-43ab-4485-8d66-6a6a3e8dbd7d",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "id": "e6dcc682-9ce6-4b3f-b0f5-9b5f6c664dba",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "脸",
+  "pinyin": "liǎn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kiểm",
+    "meaning_vi": "mặt; khuôn mặt; thể diện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mặt",
+      "khuôn mặt",
+      "thể diện"
+    ],
+    "short_definition_vi": "mặt",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "脸",
+        "lishu_vi": "kiểm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thịt, cơ thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thịt, cơ thể",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "肉",
+          "radical_variant": "月",
+          "radical_name_vi": "bộ Nhục",
+          "radical_name_zh": "",
+          "hanviet": "nhục",
+          "meaning_vi": "thịt, cơ thể",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "脸 nghĩa chính là mặt, mở rộng thành thể diện.",
+    "memory_tip_vi": "Nhớ 脸上有笑容.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "面子",
+        "pinyin": "",
+        "meaning_vi": "面子",
+        "difference_vi": "面子 chủ yếu là thể diện; 脸 vừa là mặt thật vừa là thể diện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "背",
+        "pinyin": "",
+        "meaning_vi": "背",
+        "difference_vi": "lưng đối hướng với mặt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bd69b5b0-8667-4ce2-a3e7-d0bbc4e4eecf",
+      "order": 1,
+      "zh": "洗脸",
+      "pinyin": "xǐ liǎn",
+      "vi": "rửa mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e48ec697-7dfd-40c8-98ec-d3afa1b008a1",
+      "order": 2,
+      "zh": "脸红",
+      "pinyin": "liǎn hóng",
+      "vi": "đỏ mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa467a4e-b5ee-4377-99ee-a3413f0254d5",
+      "order": 3,
+      "zh": "脸上",
+      "pinyin": "liǎn shang",
+      "vi": "trên mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d357bec1-f5b9-463f-a9a3-81b5d6ee08aa",
+      "order": 4,
+      "zh": "丢脸",
+      "pinyin": "diū liǎn",
+      "vi": "mất mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d749d022-c4d3-433d-9c0b-a95693ab4373",
+      "order": 1,
+      "zh": "她的脸红了。",
+      "pinyin": "Tā de liǎn hóng le.",
+      "vi": "Mặt cô ấy đỏ lên rồi.",
+      "analysis_vi": "脸红了 báo thay đổi trạng thái.",
+      "highlight": [
+        "脸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6dcc682-9ce6-4b3f-b0f5-9b5f6c664dba"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "36f8e623-ab95-4976-903f-13119292f1b1",
+      "order": 2,
+      "zh": "脸上带着温暖的笑容。",
+      "pinyin": "Liǎn shang dàizhe wēnnuǎn de xiàoróng.",
+      "vi": "Trên mặt mang nụ cười ấm áp.",
+      "analysis_vi": "脸上 + 笑容 là collocation tự nhiên.",
+      "highlight": [
+        "脸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6dcc682-9ce6-4b3f-b0f5-9b5f6c664dba"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "脸 / 面子 là vùng nghĩa văn hóa quan trọng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a67cfd15-bf1b-4f84-87a8-d6c5dcc42710",
+      "order": 1,
+      "rule_vi": "Khẩu ngữ nói rửa mặt là 洗脸, không nói 洗面 trong đời thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我去洗面。",
+          "pinyin": "Wǒ qù xǐ miàn.",
+          "vi": "Không tự nhiên trong khẩu ngữ rửa mặt.",
+          "note_vi": "洗面 xuất hiện trong 洗面奶.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我去洗脸。",
+          "pinyin": "Wǒ qù xǐ liǎn.",
+          "vi": "Tôi đi rửa mặt.",
+          "note_vi": "洗脸 là cách nói tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "脸",
+    "back": "mặt; khuôn mặt; thể diện",
+    "hint": "liǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e6dcc682-9ce6-4b3f-b0f5-9b5f6c664dba",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "id": "eb609dcc-df51-4809-ac0f-3dce06947f27",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "再说",
+  "pinyin": "zàishuō",
+  "pos": {
+    "raw_vi": "Động từ / Liên từ khẩu ngữ",
+    "raw_cn": "动/连",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tái thuyết",
+    "meaning_vi": "nói sau; bàn sau; hơn nữa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nói sau",
+      "bàn sau",
+      "hơn nữa"
+    ],
+    "short_definition_vi": "nói sau",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "再",
+        "lishu_vi": "tái",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "说",
+        "lishu_vi": "thuyết",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "再说 = nói tiếp vào lúc khác; cũng dùng để thêm lý do: hơn nữa.",
+    "memory_tip_vi": "Nhớ qua 到时候再说 = đến lúc đó rồi tính.",
+    "warning_vi": "Không phải lúc nào cũng là nói lại một lần nữa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "以后再说",
+        "pinyin": "yǐhòu zài shuō",
+        "meaning_vi": "sau này nói",
+        "difference_vi": "rõ thời gian hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "再说一遍",
+        "pinyin": "zài shuō yí biàn",
+        "meaning_vi": "nói lại một lần",
+        "difference_vi": "khác với nghĩa bàn sau",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "到时候再说",
+        "pinyin": "dào shíhou zài shuō",
+        "meaning_vi": "đến lúc đó rồi tính",
+        "difference_vi": "khẩu ngữ tự nhiên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nhớ qua 到时候再说 = đến lúc đó rồi tính."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "74ff10fc-ef73-498e-ab78-efbcd953c442",
+      "order": 1,
+      "zh": "回头再说",
+      "pinyin": "",
+      "vi": "để sau nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "785db8c9-8612-4ab7-a37c-7293683512c2",
+      "order": 2,
+      "zh": "明天再说",
+      "pinyin": "",
+      "vi": "mai nói tiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf35d7d8-36cf-4076-845a-2473981009d9",
+      "order": 3,
+      "zh": "以后再说",
+      "pinyin": "",
+      "vi": "sau này nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e4afa64-b3a4-43cc-ae9a-40178f462791",
+      "order": 4,
+      "zh": "到时候再说",
+      "pinyin": "",
+      "vi": "đến lúc đó rồi tính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09f71815-6945-456a-a4ee-d81773062abe",
+      "order": 5,
+      "zh": "再说了",
+      "pinyin": "",
+      "vi": "hơn nữa là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4e220ec8-30d2-4f30-a595-a8bf6fe72eb5",
+      "order": 1,
+      "zh": "今天太晚了，这个问题明天再说吧。",
+      "pinyin": "Jīntiān tài wǎn le, zhège wèntí míngtiān zài shuō ba.",
+      "vi": "Hôm nay muộn quá rồi, vấn đề này mai nói tiếp nhé.",
+      "analysis_vi": "明天再说 dời việc bàn bạc sang ngày mai.",
+      "highlight": [
+        "再说"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb609dcc-df51-4809-ac0f-3dce06947f27"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2c1f20ad-4262-401f-91a6-ffe098204501",
+      "order": 2,
+      "zh": "我不是不想去，只是最近太忙了；再说，票也不好买。",
+      "pinyin": "Wǒ bú shì bù xiǎng qù, zhǐshì zuìjìn tài máng le; zàishuō, piào yě bù hǎo mǎi.",
+      "vi": "Không phải tôi không muốn đi, chỉ là dạo này bận quá; hơn nữa vé cũng khó mua.",
+      "analysis_vi": "再说 ở đây thêm lý do thứ hai.",
+      "highlight": [
+        "再说"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "eb609dcc-df51-4809-ac0f-3dce06947f27"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "再说吧 là câu hoãn lịch sự, không nên hỏi dồn nếu đối phương đang né quyết định.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "aaa1fa36-e455-4298-ae02-0de3b87222fe",
+      "order": 1,
+      "rule_vi": "Phân biệt 再说 với 再说一遍.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你再说一遍。",
+          "pinyin": "Nǐ zài shuō yí biàn.",
+          "vi": "Bạn nói lại một lần nữa đi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这件事以后再说。",
+          "pinyin": "Zhè jiàn shì yǐhòu zài shuō.",
+          "vi": "Việc này để sau nói.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không phải lúc nào cũng là nói lại một lần nữa.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "再说",
+    "back": "nói sau; bàn sau; hơn nữa",
+    "hint": "zàishuō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "eb609dcc-df51-4809-ac0f-3dce06947f27",
+    "source_lesson_vocab_id": null
+  }
+}

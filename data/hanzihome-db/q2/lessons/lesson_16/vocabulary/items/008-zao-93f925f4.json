@@ -1,0 +1,300 @@
+{
+  "id": "c912cd4c-6c66-4733-9465-daa34ee73b55",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "枣",
+  "pinyin": "zǎo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tảo",
+    "meaning_vi": "táo tàu, táo đỏ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "táo tàu, táo đỏ"
+    ],
+    "short_definition_vi": "táo tàu, táo đỏ",
+    "textbook_focus_vi": "táo tàu, táo đỏ",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "枣",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "táo tàu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "枣 là táo tàu/táo đỏ, không phải 苹果 táo tây.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "红枣",
+        "pinyin": "",
+        "meaning_vi": "táo đỏ khô",
+        "difference_vi": "Thường dùng nấu ăn, pha trà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "苹果",
+        "pinyin": "",
+        "meaning_vi": "táo tây",
+        "difference_vi": "Không phải 枣.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "枣树",
+        "pinyin": "",
+        "meaning_vi": "cây táo tàu",
+        "difference_vi": "Cây cho quả 枣.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "282bf7ce-ca43-4ff0-b0f8-9e8c10083d64",
+      "order": 1,
+      "zh": "红枣",
+      "pinyin": "",
+      "vi": "táo đỏ khô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e3a733bf-db8a-4406-b110-a8ebdc1f58c6",
+      "order": 2,
+      "zh": "枣树",
+      "pinyin": "",
+      "vi": "cây táo tàu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "abfe74ed-6e5b-4b26-9950-0895cff3c358",
+      "order": 3,
+      "zh": "吃枣",
+      "pinyin": "",
+      "vi": "ăn táo tàu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8ccfb40-14dc-4db1-baee-15990173b1cd",
+      "order": 4,
+      "zh": "摘枣",
+      "pinyin": "",
+      "vi": "hái táo tàu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "57c96148-1524-4d84-84db-6d6d167dee3e",
+      "order": 5,
+      "zh": "红枣茶",
+      "pinyin": "",
+      "vi": "trà táo đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1bbb0c33-df31-434f-817f-53ad0851cb29",
+      "order": 1,
+      "zh": "这些枣很甜。",
+      "pinyin": "Zhèxiē zǎo hěn tián.",
+      "vi": "Những quả táo tàu này rất ngọt.",
+      "analysis_vi": "枣 là táo tàu, không phải 苹果.",
+      "highlight": [
+        "枣"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "c912cd4c-6c66-4733-9465-daa34ee73b55"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "04da5c66-27c5-4c1d-842e-02e818caf719",
+      "order": 2,
+      "zh": "院子里种着一棵枣树，树上结着很多枣。",
+      "pinyin": "Yuànzi lǐ zhòngzhe yì kē zǎoshù, shù shang jiēzhe hěn duō zǎo.",
+      "vi": "Trong sân có trồng một cây táo tàu, trên cây đang kết rất nhiều quả táo tàu.",
+      "analysis_vi": "Hai câu tồn hiện liên tiếp.",
+      "highlight": [
+        "枣"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "c912cd4c-6c66-4733-9465-daa34ee73b55"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "184dcfd3-bb91-4532-ab89-fe47eb558f92",
+      "order": 3,
+      "zh": "爷爷从树下捡起几个枣，让我尝一尝。",
+      "pinyin": "Yéye cóng shù xià jiǎnqǐ jǐ ge zǎo, ràng wǒ cháng yi cháng.",
+      "vi": "Ông nội nhặt vài quả táo tàu dưới gốc cây lên, bảo tôi nếm thử.",
+      "analysis_vi": "尝一尝 là nếm thử một chút.",
+      "highlight": [
+        "枣"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "c912cd4c-6c66-4733-9465-daa34ee73b55"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong cưới hỏi Trung Quốc, 红枣 thường gắn với lời chúc 早生贵子 vì 枣 đồng âm với 早.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7ca0c6f6-0274-4abb-95c9-8ce3ed7d6d0d",
+      "order": 1,
+      "rule_vi": "Không dịch 枣 là táo tây; 苹果 mới là táo tây.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 枣 là táo tây; 苹果 mới là táo tây.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "枣",
+    "back": "táo tàu, táo đỏ",
+    "hint": "zǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_008"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c912cd4c-6c66-4733-9465-daa34ee73b55",
+    "source_lesson_vocab_id": null
+  }
+}

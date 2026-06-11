@@ -1,0 +1,251 @@
+{
+  "id": "baa28f83-5309-49de-b228-2195dd5fffc1",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "咬牙",
+  "pinyin": "yǎoyá",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giảo nha",
+    "meaning_vi": "nghiến răng, cắn chặt răng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghiến răng",
+      "cắn chặt răng"
+    ],
+    "short_definition_vi": "nghiến răng, cắn chặt răng",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: đau, chịu đựng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đau, chịu đựng",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "咬",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cắn",
+        "modern_logic_vi": "Trong từ 咬牙, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "牙",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "牙",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nha",
+          "radical_name_zh": "",
+          "hanviet": "nha",
+          "meaning_vi": "răng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "牙 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "牙",
+            "hanviet": "nha",
+            "meaning_vi": "răng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "牙",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nha",
+              "radical_name_zh": "",
+              "hanviet": "nha",
+              "meaning_vi": "răng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "牙 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "牙 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "răng",
+        "modern_logic_vi": "Trong từ 咬牙, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "咬牙 nên được học theo nghĩa hiện đại trong cụm/tình huống: nghiến răng, cắn chặt răng.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 咬牙忍住.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忍",
+        "pinyin": "rěn",
+        "meaning_vi": "nhịn",
+        "difference_vi": "咬牙 là cắn răng; 忍 là chịu đựng nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a614c46d-9231-47c5-815b-01c458373ff3",
+      "order": 1,
+      "zh": "咬牙忍住",
+      "pinyin": "",
+      "vi": "cắn răng chịu đựng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "970fcde1-1432-4826-8e0b-0f207ce58e32",
+      "order": 2,
+      "zh": "咬着牙",
+      "pinyin": "",
+      "vi": "đang cắn chặt răng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "20b4dc43-dc69-4997-a27a-d4d3fd1af1a3",
+      "order": 3,
+      "zh": "咬牙坚持",
+      "pinyin": "",
+      "vi": "cắn răng kiên trì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "33b5802c-975d-4da9-b946-35b9e1187dce",
+      "order": 1,
+      "zh": "他疼得直咬牙。",
+      "pinyin": "",
+      "vi": "Anh ấy đau đến mức cứ nghiến răng.",
+      "analysis_vi": "疼得 + trạng thái diễn tả mức độ đau.",
+      "highlight": [
+        "咬牙"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "baa28f83-5309-49de-b228-2195dd5fffc1"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 咬牙 được dùng trong ngữ cảnh đau, chịu đựng; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5893eaeb-7de8-45a3-9f59-08c47a55150a",
+      "order": 1,
+      "rule_vi": "咬牙切齿 thường là căm tức mạnh, không chỉ chịu đau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "咬牙切齿 thường là căm tức mạnh, không chỉ chịu đau.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "咬牙",
+    "back": "nghiến răng, cắn chặt răng",
+    "hint": "yǎoyá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "baa28f83-5309-49de-b228-2195dd5fffc1",
+    "source_lesson_vocab_id": null
+  }
+}

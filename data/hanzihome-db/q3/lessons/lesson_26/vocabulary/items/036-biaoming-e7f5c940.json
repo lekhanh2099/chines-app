@@ -1,0 +1,267 @@
+{
+  "id": "65ccdd83-cb2a-43df-b822-1945f828900e",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "表明",
+  "pinyin": "biǎomíng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "biểu minh",
+    "meaning_vi": "bày tỏ rõ, nói rõ, cho thấy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bày tỏ rõ",
+      "nói rõ",
+      "cho thấy"
+    ],
+    "short_definition_vi": "bày tỏ rõ, nói rõ, cho thấy",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "biểu",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "表 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "明",
+        "lishu_vi": "minh",
+        "structure_note_vi": "Chữ có thành phần/bộ 日; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 明 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "表明 trong bài được học theo nghĩa: bày tỏ rõ, nói rõ, cho thấy.",
+    "memory_tip_vi": "Nhớ 表明 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "表达",
+        "pinyin": "biǎodá",
+        "meaning_vi": "biểu đạt",
+        "difference_vi": "Nhấn diễn đạt tư tưởng/cảm xúc; 表明 nhấn làm rõ thái độ/kết luận.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 表明 thay 表白 trong câu tỏ tình trực tiếp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "83f13742-cb77-45ab-86b5-04bfdedd67da",
+      "order": 1,
+      "zh": "表明态度",
+      "pinyin": "",
+      "vi": "bày tỏ thái độ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2dd9c69-6b44-4034-82ae-b2bb80fc9c5e",
+      "order": 2,
+      "zh": "表明立场",
+      "pinyin": "",
+      "vi": "bày tỏ lập trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b79abff8-c3da-43d6-8767-79b198493684",
+      "order": 3,
+      "zh": "事实表明",
+      "pinyin": "",
+      "vi": "sự thật cho thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85aa2b23-08bc-40bc-b88c-706ed8643a02",
+      "order": 4,
+      "zh": "表明身份",
+      "pinyin": "",
+      "vi": "làm rõ thân phận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "87755b56-9015-4308-93dc-c1083a9405ed",
+      "order": 1,
+      "zh": "他已经表明了自己的态度。",
+      "pinyin": "",
+      "vi": "Anh ấy đã bày tỏ rõ thái độ của mình.",
+      "analysis_vi": "表明态度 là collocation chuẩn.",
+      "highlight": [
+        "表明"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "65ccdd83-cb2a-43df-b822-1945f828900e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "979adaab-571b-4d5f-b0ff-39fb4f3db58a",
+      "order": 2,
+      "zh": "在楼台相会时，祝英台终于表明了自己的真实身份。",
+      "pinyin": "",
+      "vi": "Khi gặp nhau ở lầu đài, Chúc Anh Đài cuối cùng đã nói rõ thân phận thật của mình.",
+      "analysis_vi": "表明身份 = làm rõ thân phận.",
+      "highlight": [
+        "表明"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "65ccdd83-cb2a-43df-b822-1945f828900e"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "表明 dùng tốt khi viết phân tích: chi tiết/kết cục cho thấy điều gì.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7332acf7-ccac-4bf2-9e52-a5cdd59b7641",
+      "order": 1,
+      "rule_vi": "Không dùng 表明 thay 表白 trong câu tỏ tình trực tiếp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表明",
+    "back": "bày tỏ rõ, nói rõ, cho thấy",
+    "hint": "biǎomíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "65ccdd83-cb2a-43df-b822-1945f828900e",
+    "source_lesson_vocab_id": null
+  }
+}

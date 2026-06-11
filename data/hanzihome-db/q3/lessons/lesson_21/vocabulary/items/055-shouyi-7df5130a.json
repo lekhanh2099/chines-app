@@ -1,0 +1,328 @@
+{
+  "id": "c26581ee-f574-4a13-b8cd-748ff5816d99",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "手艺",
+  "pinyin": "shǒuyì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "thủ nghệ",
+    "meaning_vi": "tay nghề, kỹ năng nghề thực tế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tay nghề",
+      "kỹ năng nghề thực tế"
+    ],
+    "short_definition_vi": "tay nghề, kỹ năng nghề thực tế",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: tay nghề, kỹ năng nghề thực tế.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "手 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 手.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "艺",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ/cây",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ/cây",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ/cây",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 艺.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手艺 trong bài được hiểu theo nghĩa: tay nghề, kỹ năng nghề thực tế. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 手艺.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "手艺 dùng cho kỹ năng nghề thực hành bằng tay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c93e21e3-08cb-4fb0-865e-c494a3bba7f8",
+      "order": 1,
+      "zh": "手艺好",
+      "pinyin": "",
+      "vi": "tay nghề tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75673c51-b88d-459c-ac20-f3ff238bc3b1",
+      "order": 2,
+      "zh": "手艺不错",
+      "pinyin": "",
+      "vi": "tay nghề không tệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "867364dc-1278-4dc0-a830-51b0629c37bd",
+      "order": 3,
+      "zh": "手艺差",
+      "pinyin": "",
+      "vi": "tay nghề kém",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "117a5eaa-887b-4a93-8d97-a02383889267",
+      "order": 4,
+      "zh": "练手艺",
+      "pinyin": "",
+      "vi": "luyện tay nghề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0103634-b638-4cf9-b19b-4f93755978a4",
+      "order": 5,
+      "zh": "理发师的手艺",
+      "pinyin": "",
+      "vi": "tay nghề thợ cắt tóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "989a42e4-2c93-4ead-8eb8-c64b5934590b",
+      "order": 1,
+      "zh": "这位理发师手艺很好。",
+      "pinyin": "",
+      "vi": "Thợ cắt tóc này tay nghề rất tốt.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "手艺"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c26581ee-f574-4a13-b8cd-748ff5816d99"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c58ecea8-5bde-4836-8f23-07879d77c24f",
+      "order": 2,
+      "zh": "朋友们推荐那家发廊，说那儿的理发师手艺特好。",
+      "pinyin": "",
+      "vi": "Bạn bè giới thiệu salon đó, nói thợ cắt tóc ở đó tay nghề rất tốt.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "手艺"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c26581ee-f574-4a13-b8cd-748ff5816d99"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "手艺 dùng cho kỹ năng nghề thực hành bằng tay.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "60cf52d1-f4ae-4948-ac62-e564efc229a4",
+      "order": 1,
+      "rule_vi": "手艺 dùng cho kỹ năng nghề thực hành bằng tay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他的数学手艺很好。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "手艺 dùng cho kỹ năng nghề thực hành bằng tay.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他的数学能力很强。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "手艺 dùng cho kỹ năng nghề thực hành bằng tay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手艺",
+    "back": "tay nghề, kỹ năng nghề thực tế",
+    "hint": "shǒuyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c26581ee-f574-4a13-b8cd-748ff5816d99",
+    "source_lesson_vocab_id": null
+  }
+}

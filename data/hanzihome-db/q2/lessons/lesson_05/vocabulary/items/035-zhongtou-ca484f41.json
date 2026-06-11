@@ -1,0 +1,268 @@
+{
+  "id": "54bb3db3-dae1-4509-a57e-38f4baafd100",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "钟头",
+  "pinyin": "zhōngtóu",
+  "pos": {
+    "raw_vi": "Danh từ / Lượng thời gian khẩu ngữ",
+    "raw_cn": "名 / 时间量",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "chung đầu",
+    "meaning_vi": "tiếng, giờ đồng hồ",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "tiếng, giờ đồng hồ",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "钟",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "钅 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "中",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đồng hồ, chuông",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "钅 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "头",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đầu; hậu tố",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Đơn vị thời gian khẩu ngữ tương đương 小时.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小时",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giờ, trung tính/văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "点",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mốc giờ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "分钟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phút",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f02a285c-d78a-4bea-baea-6227c960920a",
+      "order": 1,
+      "zh": "一个钟头",
+      "pinyin": "",
+      "vi": "một tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "92b846a9-7e64-4907-8311-df68a37a470a",
+      "order": 2,
+      "zh": "半个钟头",
+      "pinyin": "",
+      "vi": "nửa tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b5070e7-282f-4ec8-8f9e-e0a2427bd2da",
+      "order": 3,
+      "zh": "练了一个钟头",
+      "pinyin": "",
+      "vi": "luyện một tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "766ba71a-df43-4edc-b075-039c85586bee",
+      "order": 1,
+      "zh": "我每天练一个钟头。",
+      "pinyin": "Wǒ měitiān liàn yí ge zhōngtóu.",
+      "vi": "Mỗi ngày tôi luyện một tiếng.",
+      "en": "",
+      "highlight": [
+        "钟头"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "54bb3db3-dae1-4509-a57e-38f4baafd100"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "钟头 đời thường, 小时 hợp văn bản hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fb6dbe3c-8700-44aa-a7eb-c8684e839bca",
+      "order": 1,
+      "title_vi": "Không nhầm 点 và 钟头",
+      "explanation_vi": "点 là mốc giờ; 钟头 là thời lượng.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "我三点上课。",
+        "我上了三个钟头课。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "钟头",
+    "back": "tiếng, giờ đồng hồ",
+    "hint": "zhōngtóu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "钟头"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "54bb3db3-dae1-4509-a57e-38f4baafd100",
+    "source_lesson_vocab_id": null
+  }
+}

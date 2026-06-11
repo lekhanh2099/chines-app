@@ -1,0 +1,286 @@
+{
+  "id": "292e3de3-04ec-4504-8673-1bd50899ecb9",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "损失",
+  "pinyin": "sǔnshī",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名/动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "tổn thất",
+    "meaning_vi": "tổn thất, thiệt hại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tổn thất",
+      "thiệt hại"
+    ],
+    "short_definition_vi": "tổn thất, thiệt hại",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: tổn thất, thiệt hại.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "损",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 损.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "失",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "损失 trong bài được hiểu theo nghĩa: tổn thất, thiệt hại. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 损失.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "损失 là tổn thất; 丢失 là đánh mất đồ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d426585f-3a77-4ba5-b98f-6dba20cd9628",
+      "order": 1,
+      "zh": "经济损失",
+      "pinyin": "",
+      "vi": "tổn thất kinh tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99d8fc68-a2f7-40c6-b4be-a755d380217a",
+      "order": 2,
+      "zh": "造成损失",
+      "pinyin": "",
+      "vi": "gây tổn thất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e9696d3a-a267-44e2-81f2-d75959dc56a4",
+      "order": 3,
+      "zh": "赔偿损失",
+      "pinyin": "",
+      "vi": "bồi thường tổn thất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3cb0f3b1-d623-41a7-8182-e3832dd26432",
+      "order": 4,
+      "zh": "减少损失",
+      "pinyin": "",
+      "vi": "giảm tổn thất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3566c8a0-ee84-4560-bb6c-922492649213",
+      "order": 5,
+      "zh": "重大损失",
+      "pinyin": "",
+      "vi": "tổn thất lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "14b1213e-92bf-41e4-9fba-80248d54b6f7",
+      "order": 1,
+      "zh": "这次事故造成了很大的经济损失。",
+      "pinyin": "",
+      "vi": "Sự cố lần này gây tổn thất kinh tế rất lớn.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "损失"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "292e3de3-04ec-4504-8673-1bd50899ecb9"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bb956fba-6c23-4171-8643-b95558330bd5",
+      "order": 2,
+      "zh": "我的耳朵只是破了一个小口，其实没有什么经济损失。",
+      "pinyin": "",
+      "vi": "Tai tôi chỉ rách một vết nhỏ, thật ra không có tổn thất kinh tế gì.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "损失"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "292e3de3-04ec-4504-8673-1bd50899ecb9"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "损失 là tổn thất; 丢失 là đánh mất đồ.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f2166a1-c0bf-4cc3-9c16-ac98d167a12d",
+      "order": 1,
+      "rule_vi": "损失 là tổn thất; 丢失 là đánh mất đồ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我的钱包损失了。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "损失 là tổn thất; 丢失 là đánh mất đồ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我的钱包丢了。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "损失 là tổn thất; 丢失 là đánh mất đồ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "损失",
+    "back": "tổn thất, thiệt hại",
+    "hint": "sǔnshī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "292e3de3-04ec-4504-8673-1bd50899ecb9",
+    "source_lesson_vocab_id": null
+  }
+}

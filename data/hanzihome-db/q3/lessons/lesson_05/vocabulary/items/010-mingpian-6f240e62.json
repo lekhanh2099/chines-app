@@ -1,0 +1,259 @@
+{
+  "id": "b6d5ca8b-a218-47f3-9371-fa7c2c021729",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "名片",
+  "pinyin": "míngpiàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "danh phiến",
+    "meaning_vi": "danh thiếp, card giới thiệu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "danh thiếp",
+      "card giới thiệu"
+    ],
+    "short_definition_vi": "danh thiếp, card giới thiệu",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "名",
+        "lishu_vi": "danh",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "片",
+        "lishu_vi": "phiến",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "名片 là tấm ghi tên/chức vụ/liên hệ để trao đổi khi gặp gỡ.",
+    "memory_tip_vi": "名 = tên, 片 = tấm mỏng.",
+    "warning_vi": "Dùng lượng từ 张.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "卡片",
+        "kǎpiàn",
+        "thẻ/card nói chung",
+        "rộng hơn 名片"
+      ],
+      [
+        "身份证",
+        "shēnfènzhèng",
+        "căn cước",
+        "giấy tờ tùy thân"
+      ],
+      [
+        "联系方式",
+        "liánxì fāngshì",
+        "thông tin liên hệ",
+        "không nhất thiết là tấm card"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "名 = tên, 片 = tấm mỏng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5158eea9-a74e-48eb-adee-f6d9aac70393",
+      "order": 1,
+      "zh": "一张名片",
+      "pinyin": "",
+      "vi": "một tấm danh thiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b45334e1-01e2-4c27-b82a-c80afe31d4d8",
+      "order": 2,
+      "zh": "递名片",
+      "pinyin": "",
+      "vi": "đưa danh thiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09f50274-2007-4612-8d01-287c8be532c0",
+      "order": 3,
+      "zh": "交换名片",
+      "pinyin": "",
+      "vi": "trao đổi danh thiếp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9e7cad0-06cf-45d4-a550-d278d5024de7",
+      "order": 4,
+      "zh": "名片上写着",
+      "pinyin": "",
+      "vi": "trên danh thiếp ghi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35446c39-c354-438a-b115-b5e67846557a",
+      "order": 5,
+      "zh": "电子名片",
+      "pinyin": "",
+      "vi": "danh thiếp điện tử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c5208f62-741e-420d-a0ac-7bef6cdfcd19",
+      "order": 1,
+      "zh": "他给了我一张名片，让我以后有事给他打电话。",
+      "pinyin": "Tā gěi le wǒ yì zhāng míngpiàn, ràng wǒ yǐhòu yǒu shì gěi tā dǎ diànhuà.",
+      "vi": "Anh ấy đưa tôi một tấm danh thiếp, bảo sau này có việc thì gọi.",
+      "analysis_vi": "一张名片 dùng 张.",
+      "highlight": [
+        "名片"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b6d5ca8b-a218-47f3-9371-fa7c2c021729"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f2d299cb-b584-406c-aa9b-94bd55b4da1a",
+      "order": 2,
+      "zh": "名片上写着他的名字、电话和工作单位。",
+      "pinyin": "Míngpiàn shang xiězhe tā de míngzi, diànhuà hé gōngzuò dānwèi.",
+      "vi": "Trên danh thiếp có ghi tên, điện thoại và đơn vị công tác.",
+      "analysis_vi": "写着 chỉ trạng thái chữ đang được ghi.",
+      "highlight": [
+        "名片"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b6d5ca8b-a218-47f3-9371-fa7c2c021729"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hiện nay nhiều người thay danh thiếp bằng 微信 hoặc 电子名片, nhưng 交换名片 vẫn gặp trong công việc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2f7c4381-b6bc-4432-98de-10fc1b4cf192",
+      "order": 1,
+      "rule_vi": "Không dùng 个名片 trong văn chuẩn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "一个名片",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "一张名片",
+          "pinyin": "Yì zhāng míngpiàn.",
+          "vi": "Một tấm danh thiếp.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dùng lượng từ 张.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "名片",
+    "back": "danh thiếp, card giới thiệu",
+    "hint": "míngpiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b6d5ca8b-a218-47f3-9371-fa7c2c021729",
+    "source_lesson_vocab_id": null
+  }
+}

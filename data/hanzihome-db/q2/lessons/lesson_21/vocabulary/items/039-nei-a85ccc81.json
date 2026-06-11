@@ -1,0 +1,265 @@
+{
+  "id": "76bed0a4-6141-4ead-8dce-bd5fe940df25",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "内",
+  "pinyin": "nèi",
+  "pos": {
+    "raw_vi": "Danh từ phương vị / Yếu tố cấu tạo từ",
+    "raw_cn": "方位/语素",
+    "normalized": "morpheme",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Nội",
+    "meaning_vi": "bên trong, nội bộ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bên trong, nội bộ"
+    ],
+    "short_definition_vi": "bên trong, nội bộ",
+    "textbook_focus_vi": "bên trong, nội bộ",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "内",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "冂",
+            "hanviet": "quynh",
+            "meaning_vi": "khung bao ngoài",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "冂 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "冂",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Quynh",
+              "radical_name_zh": "",
+              "hanviet": "quynh",
+              "meaning_vi": "khung bao ngoài",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "人/入",
+            "hanviet": "nhân/nhập",
+            "meaning_vi": "người/vào dạng nhìn thấy",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "trong/bên trong",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "nằm trong phạm vi/khung nào đó",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0a5bedb5-6bf1-4cd1-9f9c-2e6ce529953b",
+      "order": 1,
+      "zh": "内容",
+      "pinyin": "",
+      "vi": "nội dung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35e364a2-d48a-4590-a69e-7342d690af2b",
+      "order": 2,
+      "zh": "国内",
+      "pinyin": "",
+      "vi": "trong nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bd911217-ca2f-4389-9fab-d1d03c529556",
+      "order": 3,
+      "zh": "室内",
+      "pinyin": "",
+      "vi": "trong nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ab48ddb-7986-47ff-8d7c-ccf8d93501f5",
+      "order": 4,
+      "zh": "校内",
+      "pinyin": "",
+      "vi": "trong trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca6b0b04-c9e2-48d9-848c-b02366e91519",
+      "order": 5,
+      "zh": "三天内",
+      "pinyin": "",
+      "vi": "trong vòng ba ngày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "eb7ab880-87b1-4d76-b706-ecdb5881198f",
+      "order": 1,
+      "zh": "节目单内有故事介绍。",
+      "pinyin": "Jiémùdān nèi yǒu gùshi jièshào.",
+      "vi": "Trong tờ chương trình có phần giới thiệu câu chuyện.",
+      "analysis_vi": "内 hơi văn; đời thường có thể dùng 里.",
+      "highlight": [
+        "内"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "76bed0a4-6141-4ead-8dce-bd5fe940df25"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1e41f730-cfa0-42bc-b83a-20766d09380a",
+      "order": 2,
+      "zh": "如果不了解内，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě nèi, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 内, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "内"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "76bed0a4-6141-4ead-8dce-bd5fe940df25"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5d5e2ebe-566f-4368-afaf-51d96cfd28c0",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解内在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě nèi zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 内 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "内"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "76bed0a4-6141-4ead-8dce-bd5fe940df25"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "内 tạo cảm giác văn viết/thông báo hơn 里: 校内活动 trang trọng hơn 学校里的活动.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fa829f12-c467-4f49-952e-9179caa64ce4",
+      "order": 1,
+      "rule_vi": "Không thay 内 cho 里 máy móc; 书包内 nghe văn bản hơn 书包里。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "内",
+    "back": "bên trong, nội bộ",
+    "hint": "nèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "76bed0a4-6141-4ead-8dce-bd5fe940df25",
+    "source_lesson_vocab_id": null
+  }
+}

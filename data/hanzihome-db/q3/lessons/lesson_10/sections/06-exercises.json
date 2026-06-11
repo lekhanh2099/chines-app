@@ -1,0 +1,1072 @@
+{
+  "id": "2b9bfb22-9023-4436-8ce6-9664f4282b65",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 8,
+    "actual_exercise_count_in_json": 8,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_checked_second_pass",
+    "allowed_final_status_when_incomplete": "draft_or_verified_only",
+    "blocked_final_statuses": [
+      "final_verified",
+      "final_verified_with_marked_generated_fields"
+    ]
+  },
+  "items": [
+    {
+      "id": "7ab5e479-5bfa-4d24-bf33-516a71cfb4ab",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调。朗读下面的俗语。",
+        "vi": "Phân biệt âm/thanh điệu. Đọc các câu tục ngữ/câu nói sau."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "listening"
+      ],
+      "parts": [
+        {
+          "id": "5e5c479b-5028-463a-8ee3-90166fbe312a",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "2d749529-636a-44a4-890a-2ed449a9f147",
+              "left": "反问 fǎnwèn",
+              "right": "访问 fǎngwèn"
+            },
+            {
+              "id": "99eca080-b015-42ab-9407-37b38fc2ea86",
+              "left": "甚至 shènzhì",
+              "right": "称职 chènzhí"
+            },
+            {
+              "id": "16798e26-5a72-4973-b5a1-df06b40391f7",
+              "left": "修理 xiūlǐ",
+              "right": "秀丽 xiùlì"
+            },
+            {
+              "id": "02c733c0-b775-4119-8ebf-cb96e4b008f3",
+              "left": "不足 bùzú",
+              "right": "补足 bǔzú"
+            },
+            {
+              "id": "f1e74650-3ece-477d-9861-e7387900a44a",
+              "left": "埋怨 mányuàn",
+              "right": "满眼 mǎnyǎn"
+            },
+            {
+              "id": "52e2bcf1-cdbe-475c-a442-62c2c922f56c",
+              "left": "重视 zhòngshì",
+              "right": "充实 chōngshí"
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "3524c8aa-ab30-4e60-bc99-e19f8e290ddf",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "691e597c-8412-46c4-a2e4-f37312dd0ed7",
+              "text": "学而不厌，诲人不倦。",
+              "pinyin": "Xué ér bú yàn, huì rén bú juàn.",
+              "vi": "Học không biết chán, dạy người không biết mỏi."
+            },
+            {
+              "id": "8dd776ad-181b-4ba2-a308-f53b2e11ddf0",
+              "text": "学然后知不足。",
+              "pinyin": "Xué ránhòu zhī bùzú.",
+              "vi": "Học rồi mới biết mình còn thiếu."
+            },
+            {
+              "id": "60d31944-8e00-4c80-bb2c-0574f6109c6b",
+              "text": "君子之交淡如水。",
+              "pinyin": "Jūnzǐ zhī jiāo dàn rú shuǐ.",
+              "vi": "Tình bạn/giao tình quân tử bình đạm như nước."
+            },
+            {
+              "id": "42d49fc3-f3c2-4071-a4a2-96caec6f1289",
+              "text": "良药苦口利于病，忠言逆耳利于行。",
+              "pinyin": "Liángyào kǔkǒu lì yú bìng, zhōngyán nì’ěr lì yú xíng.",
+              "vi": "Thuốc tốt đắng miệng nhưng có lợi cho bệnh; lời thật trái tai nhưng có lợi cho hành động."
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": false
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e7194584-ba2a-4a78-a387-ad26ca2ab885",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Đọc từ/cụm từ",
+      "instruction": {
+        "zh": "朗读下面的词语。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "vocabulary"
+      ],
+      "chunks": [
+        {
+          "id": "6a843266-58b1-494c-a6d9-ecfccd7fccb8",
+          "text": "修理复印机",
+          "pinyin": "xiūlǐ fùyìnjī",
+          "vi": "sửa máy photocopy",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "5431203a-dd7e-4f2c-89a7-23b9d0cbadde",
+          "text": "修理自行车",
+          "pinyin": "xiūlǐ zìxíngchē",
+          "vi": "sửa xe đạp",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "48baea84-cc83-49c7-9f31-2402a3749681",
+          "text": "刻苦学习",
+          "pinyin": "kèkǔ xuéxí",
+          "vi": "học tập chăm chỉ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e9eb8121-ffe9-4cd2-b721-2b21b7b7d614",
+          "text": "刻苦研究",
+          "pinyin": "kèkǔ yánjiū",
+          "vi": "nghiên cứu miệt mài",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e86b26a9-d0fc-4b8b-8b28-fde6e5d89d48",
+          "text": "偶然遇到",
+          "pinyin": "ǒurán yùdào",
+          "vi": "tình cờ gặp",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "c9d9d01d-dba6-4ac4-bbe4-c80a768f8c2a",
+          "text": "偶然发现",
+          "pinyin": "ǒurán fāxiàn",
+          "vi": "tình cờ phát hiện",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "86df8fa8-76cc-48db-9ee4-f746d7c55215",
+          "text": "能力不足",
+          "pinyin": "nénglì bùzú",
+          "vi": "năng lực không đủ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "4993af31-d571-4cb4-b7f9-b2fae877691e",
+          "text": "准备不足",
+          "pinyin": "zhǔnbèi bùzú",
+          "vi": "chuẩn bị chưa đủ",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "3dc18aad-896f-4173-8da0-5b9d587f6abe",
+          "text": "埋怨领导",
+          "pinyin": "mányuàn lǐngdǎo",
+          "vi": "oán trách lãnh đạo",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f57a0c9a-994d-4d29-a2cb-b262e5bb1389",
+          "text": "埋怨别人",
+          "pinyin": "mányuàn biérén",
+          "vi": "oán trách người khác",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "16a42513-aeb5-40ba-adeb-8c76443a6862",
+          "text": "辞职不干",
+          "pinyin": "cízhí bú gàn",
+          "vi": "nghỉ việc, không làm nữa",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9bbd8c35-93df-4f57-b1d5-c1f4f771a0d1",
+          "text": "免费学习",
+          "pinyin": "miǎnfèi xuéxí",
+          "vi": "học miễn phí",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "9bfdb8ea-25c2-4734-bf0f-e06961f780ab",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền vào chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "vocabulary",
+        "grammar"
+      ],
+      "word_bank": [
+        "辞职",
+        "甚至",
+        "偶然",
+        "改天",
+        "修理",
+        "埋怨",
+        "刻苦",
+        "不足",
+        "满意",
+        "重视",
+        "建议",
+        "刮目相看"
+      ],
+      "parts": [
+        {
+          "id": "65f21492-aeb8-4e87-9f0d-4086ba19f90d",
+          "type": "word_bank_fill_blank",
+          "title": "A",
+          "questions": [
+            {
+              "id": "9e5ef893-2f7e-440a-9c05-bc6308241a89",
+              "prompt_zh": "他对这里的环境很________，既安静又干净。",
+              "prompt_pinyin": "tā duì zhè lǐ de huánjìng hěn _ _ _， jì ānjìng yòu gàn jìng。",
+              "answer": "满意",
+              "answer_pinyin": "mǎnyì",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "52a28fbe-06a6-4fa3-a2e0-e42cae4f7156",
+              "prompt_zh": "今天实在没有时间，我们________再说吧。",
+              "prompt_pinyin": "jīn tiān shízài méiyǒu shíjiān， wǒmen _ _ _ zài shuō ba。",
+              "answer": "改天",
+              "answer_pinyin": "gǎitiān",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "e0e3b222-f1ee-4dd9-989d-c3b20c5ac166",
+              "prompt_zh": "他已经不在这个公司了，听说他________了。",
+              "prompt_pinyin": "tā yǐjīng bú zài zhè ge gōngsī le， tīngshuō tā _ _ _ le。",
+              "answer": "辞职",
+              "answer_pinyin": "cízhí",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "2f7d863c-62f2-4474-a5cc-167b3aa06988",
+              "prompt_zh": "他接受了朋友的________，从此刻苦学习，终于把公司的业务弄通了。",
+              "prompt_pinyin": "tā jiēshòu le péngyou de _ _ _， cóngcǐ kèkǔ xuéxí， zhōngyú bǎ gōngsī de yèwù nòng tōng le。",
+              "answer": "建议",
+              "answer_pinyin": "jiànyì",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "39f4048d-eb01-4735-a182-2ba845cef08b",
+              "prompt_zh": "这个故事在中国很有名，________连孩子都知道。",
+              "prompt_pinyin": "zhè ge gù shì zài Zhōngguó hěn yǒumíng， _ _ _ lián háizi dōu zhīdào。",
+              "answer": "甚至",
+              "answer_pinyin": "shènzhì",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "05d373e7-e90b-4829-bb6b-c0598be2e933",
+              "prompt_zh": "我的车有点儿毛病，请你给________一下儿。",
+              "prompt_pinyin": "wǒ de chē yǒudiǎn ér máobìng， qǐng nǐ gěi _ _ _ yíxiàr。",
+              "answer": "修理",
+              "answer_pinyin": "xiūlǐ",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "0f381cd0-62e8-4809-8da3-2ba39dfaadc4",
+              "prompt_zh": "年轻人只要________学习，就没有学不会的。",
+              "prompt_pinyin": "niánqīng rén zhǐyào _ _ _ xuéxí， jiù méiyǒu xué bú huì de。",
+              "answer": "刻苦",
+              "answer_pinyin": "kèkǔ",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "2ab0abd5-9762-463e-8cfb-cf57154de7ff",
+              "prompt_zh": "这本书我是在旧书店________发现的。",
+              "prompt_pinyin": "zhè běn shū wǒ shì zài jiù shū diàn _ _ _ fāxiàn de。",
+              "answer": "偶然",
+              "answer_pinyin": "ǒurán",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "84e801b0-cc6e-46a4-861d-cbb576f6e363",
+              "prompt_zh": "留学几年回来，真要对他________了。",
+              "prompt_pinyin": "liúxué jǐ nián huí lái， zhēn yào duì tā _ _ _ le。",
+              "answer": "刮目相看",
+              "answer_pinyin": "guāmù-xiāngkàn",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "4cca1f6a-ec28-4626-936e-e0923c10dfdb",
+              "prompt_zh": "一个国家只有________教育，重视人才，才有希望。",
+              "prompt_pinyin": "yí gè guójiā zhǐ yǒu _ _ _ jiào yù， zhòngshì réncái， cái yǒu xīwàng。",
+              "answer": "重视",
+              "answer_pinyin": "zhòngshì",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "e90da332-458a-4afc-8911-06c443966ec5",
+              "prompt_zh": "现在让他做这么重要的工作，他的能力还________。",
+              "prompt_pinyin": "xiànzài ràng tā zuò zhè me zhòng yào de gōngzuò， tā de nénglì hái _ _ _。",
+              "answer": "不足",
+              "answer_pinyin": "bùzú",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "45b0ad36-3e44-4b81-b4b4-7fa4dca6354f",
+              "prompt_zh": "做错了事要先检查自己，不要去________别人。",
+              "prompt_pinyin": "zuò cuò liǎo shì yào xiān jiǎn chá zìjǐ， bú yào qù _ _ _ biérén。",
+              "answer": "埋怨",
+              "answer_pinyin": "mányuàn",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "a8b304ee-d1c0-48df-a2af-41e8f6699ebf",
+          "type": "multiple_choice",
+          "title": "B",
+          "questions": [
+            {
+              "id": "ce33cdba-3d04-4431-8272-9076d90aedc8",
+              "prompt_zh": "这件事你不要把它放________心上。",
+              "prompt_pinyin": "zhè jiàn shì nǐ bú yào bǎ tā fàng _ _ _ xīn shàng。",
+              "choices": [
+                {
+                  "label": "A",
+                  "text": "到",
+                  "pinyin": "dào"
+                },
+                {
+                  "label": "B",
+                  "text": "在",
+                  "pinyin": "zài"
+                },
+                {
+                  "label": "C",
+                  "text": "上",
+                  "pinyin": "shàng"
+                },
+                {
+                  "label": "D",
+                  "text": "进",
+                  "pinyin": "jìn"
+                }
+              ],
+              "answer": "在",
+              "answer_pinyin": "zài",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "89356013-b1be-45c5-b1f0-38b7b41a42b5",
+              "prompt_zh": "听了这孩子的话，我一下子把他________在怀里。",
+              "prompt_pinyin": "tīng le zhè háizi de huà， wǒ yī xià zi bǎ tā _ _ _ zài huái lǐ。",
+              "choices": [
+                {
+                  "label": "A",
+                  "text": "抓",
+                  "pinyin": "zhuā"
+                },
+                {
+                  "label": "B",
+                  "text": "握",
+                  "pinyin": "wò"
+                },
+                {
+                  "label": "C",
+                  "text": "抱",
+                  "pinyin": "bào"
+                },
+                {
+                  "label": "D",
+                  "text": "拉",
+                  "pinyin": "lā"
+                }
+              ],
+              "answer": "抱",
+              "answer_pinyin": "bào",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "573a3438-a96a-465e-8d40-77d358c0bd3b",
+              "prompt_zh": "我感觉他________我越来越不好了，所以准备跟他分手。",
+              "prompt_pinyin": "wǒ gǎn jué tā _ _ _ wǒ yuè lái yuè bù hǎo le， suǒyǐ zhǔnbèi gēn tā fēn shǒu。",
+              "choices": [
+                {
+                  "label": "A",
+                  "text": "对于",
+                  "pinyin": "duìyú"
+                },
+                {
+                  "label": "B",
+                  "text": "给",
+                  "pinyin": "gěi"
+                },
+                {
+                  "label": "C",
+                  "text": "跟",
+                  "pinyin": "gēn"
+                },
+                {
+                  "label": "D",
+                  "text": "对",
+                  "pinyin": "duì"
+                }
+              ],
+              "answer": "对",
+              "answer_pinyin": "duì",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "60799279-8297-4271-bc3f-fa0318da2b8b",
+              "prompt_zh": "请你替我________老师请个假，就说我今天有点儿不舒服。",
+              "prompt_pinyin": "qǐng nǐ tì wǒ _ _ _ lǎoshī qǐng gè jiǎ， jiù shuō wǒ jīn tiān yǒudiǎn ér bù shūfu。",
+              "choices": [
+                {
+                  "label": "A",
+                  "text": "给",
+                  "pinyin": "gěi"
+                },
+                {
+                  "label": "B",
+                  "text": "向",
+                  "pinyin": "xiàng"
+                },
+                {
+                  "label": "C",
+                  "text": "对",
+                  "pinyin": "duì"
+                },
+                {
+                  "label": "D",
+                  "text": "朝",
+                  "pinyin": "cháo"
+                }
+              ],
+              "answer": "向",
+              "answer_pinyin": "xiàng",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            },
+            {
+              "id": "a9492f0c-9168-453e-a96f-248c9d3a291d",
+              "prompt_zh": "她是这样一个人，在大家面前，她________喜欢多说话，但是只要你有事需要帮助的时候，她总会第一个站出来帮助你。",
+              "prompt_pinyin": "tā shì zhè yàng yí gè rén， zài dàjiā miàn qián， tā _ _ _ xǐhuan duō shuō huà， dànshì zhǐyào nǐ yǒu shì xū yào bāng zhù de shí hòu， tā zǒng huì dì yí gè zhàn chūlái bāng zhù nǐ。",
+              "choices": [
+                {
+                  "label": "A",
+                  "text": "从此",
+                  "pinyin": "cóngcǐ"
+                },
+                {
+                  "label": "B",
+                  "text": "从来",
+                  "pinyin": "cónglái"
+                },
+                {
+                  "label": "C",
+                  "text": "从不",
+                  "pinyin": "cóngbù"
+                },
+                {
+                  "label": "D",
+                  "text": "经常",
+                  "pinyin": "jīngcháng"
+                }
+              ],
+              "answer": "从不",
+              "answer_pinyin": "cóngbù",
+              "answer_verified": true,
+              "source_origin": "textbook_question_checked_answer",
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "d77d561c-476f-4a36-b52a-e1671c95ada1",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ/cụm trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ/cụm trong ngoặc hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "f34ab1f1-e742-4b53-b118-de0306efe4ea",
+          "prompt_zh": "______________________________，我还不太清楚。",
+          "prompt_pinyin": "_ _ _， wǒ hái bú tài qīngchu。",
+          "required_word": "对于",
+          "sample_answer_zh": "对于这件事，我还不太清楚。",
+          "sample_answer_pinyin": "duìyú zhè jiàn shì，wǒ hái bú tài qīngchu。",
+          "sample_answer_vi": "Về chuyện này, tôi vẫn chưa rõ lắm.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "cca86456-407d-4c5a-81d7-f796b7dc4d0e",
+          "prompt_zh": "我对中国的情况不太了解，______________________________。",
+          "prompt_pinyin": "wǒ duì Zhōngguó de qíngkuàng bú tài liǎojiě， _ _ _。",
+          "required_word": "甚至",
+          "sample_answer_zh": "我对中国的情况不太了解，甚至不知道中国有多少人口。",
+          "sample_answer_pinyin": "wǒ duì Zhōngguó de qíngkuàng bú tài liǎojiě，shènzhì bù zhīdào Zhōngguó yǒu duōshǎo rénkǒu。",
+          "sample_answer_vi": "Tôi không hiểu rõ lắm tình hình Trung Quốc, thậm chí không biết Trung Quốc có bao nhiêu dân.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "6240c55c-989c-44ea-9fe7-935357dde8cc",
+          "prompt_zh": "她不爱旅行，来中国这么长时间______________________________。",
+          "prompt_pinyin": "tā bú ài lǚxíng， lái Zhōngguó zhè me zhǎng shíjiān _ _ _。",
+          "required_word": "甚至",
+          "sample_answer_zh": "她不爱旅行，来中国这么长时间甚至连北京都没有去过。",
+          "sample_answer_pinyin": "tā bú ài lǚxíng，lái Zhōngguó zhème cháng shíjiān shènzhì lián Běijīng dōu méiyǒu qù guo。",
+          "sample_answer_vi": "Cô ấy không thích du lịch, đến Trung Quốc lâu như vậy mà thậm chí cả Bắc Kinh cũng chưa từng đi.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "3a2b6e4b-789d-4037-b33b-57394adfc002",
+          "prompt_zh": "我先在这儿学习一年汉语，______________________________。",
+          "prompt_pinyin": "wǒ xiān zài zhè ér xuéxí yī nián Hànyǔ， _ _ _。",
+          "required_word": "以后",
+          "sample_answer_zh": "我先在这儿学习一年汉语，以后去中国留学。",
+          "sample_answer_pinyin": "wǒ xiān zài zhèr xuéxí yì nián Hànyǔ，yǐhòu qù Zhōngguó liúxué。",
+          "sample_answer_vi": "Tôi trước hết học tiếng Hán ở đây một năm, sau đó sẽ đi Trung Quốc du học.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "0603b77a-51b5-41e1-b593-b926261db8d6",
+          "prompt_zh": "他对我说，他今天一定来，可是______________________________。",
+          "prompt_pinyin": "tā duì wǒ shuō， tā jīn tiān yídìng lái， kěshì _ _ _。",
+          "required_word": "却",
+          "sample_answer_zh": "他对我说，他今天一定来，可是到现在却还没来。",
+          "sample_answer_pinyin": "tā duì wǒ shuō，tā jīntiān yídìng lái，kěshì dào xiànzài què hái méi lái。",
+          "sample_answer_vi": "Anh ấy nói với tôi hôm nay nhất định đến, nhưng đến giờ lại vẫn chưa đến.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "abae9384-81fe-4e42-b2a4-7a05c0c91695",
+          "prompt_zh": "我喜欢坐火车去旅行，坐火车______________________________。",
+          "prompt_pinyin": "wǒ xǐhuan zuò huǒchē qù lǚxíng， zuò huǒchē _ _ _。",
+          "required_word": "既……又……",
+          "sample_answer_zh": "我喜欢坐火车去旅行，坐火车既方便又舒适。",
+          "sample_answer_pinyin": "wǒ xǐhuan zuò huǒchē qù lǚxíng，zuò huǒchē jì fāngbiàn yòu shūshì。",
+          "sample_answer_vi": "Tôi thích đi du lịch bằng tàu hỏa; đi tàu hỏa vừa tiện vừa thoải mái.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended completion; sample answer is checked for naturalness."
+          }
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "6c7bb3b6-df6f-4654-bbcc-53d8bc3391f0",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ/cụm trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ/cụm trong ngoặc hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "00cc6fe9-c070-46c0-a3e0-06673b5d8941",
+          "prompt_zh": "A：你是不是想辞职？\nB：是的，______________________________。",
+          "prompt_pinyin": "A： nǐ shì bú shì xiǎng cízhí？ B： shì de， _ _ _。",
+          "required_word": "满意",
+          "sample_answer_zh": "是的，我对现在的工作很不满意。",
+          "sample_answer_pinyin": "shì de，wǒ duì xiànzài de gōngzuò hěn bù mǎnyì。",
+          "sample_answer_vi": "Đúng vậy, tôi rất không hài lòng với công việc hiện tại.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended dialogue completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "cda1712e-3af3-43f7-9489-cc664e93f09b",
+          "prompt_zh": "A：你怎么那么不喜欢你们的领导？\nB：我当然不喜欢他了，______________________________。",
+          "prompt_pinyin": "A： nǐ zěnme nà me bù xǐhuan nǐmen de lǐngdǎo？ B： wǒ dāngrán bù xǐhuan tā le， _ _ _。",
+          "required_word": "不把……放在眼里",
+          "sample_answer_zh": "我当然不喜欢他了，他一点儿也不把我放在眼里。",
+          "sample_answer_pinyin": "wǒ dāngrán bù xǐhuan tā le，tā yìdiǎnr yě bù bǎ wǒ fàng zài yǎn lǐ。",
+          "sample_answer_vi": "Tất nhiên tôi không thích ông ấy rồi, ông ấy chẳng coi tôi ra gì cả.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended dialogue completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "071ffe07-9d3c-4ae6-99ff-434112a1e62f",
+          "prompt_zh": "A：我建议你先不要忙着辞职，你应该把这个公司的业务都学会了再辞职，______________________________。\nB：我再想想。",
+          "prompt_pinyin": "A： wǒ jiànyì nǐ xiān bú yào mángzhe cízhí， nǐ yīnggāi bǎ zhè ge gōngsī de yèwù dōu xuéhuì le zài cízhí， _ _ _。 B： wǒ zài xiǎngxiang。",
+          "required_word": "甚至",
+          "sample_answer_zh": "甚至连怎么修理打印机、复印机的小毛病都要学会。",
+          "sample_answer_pinyin": "shènzhì lián zěnme xiūlǐ dǎyìnjī、fùyìnjī de xiǎo máobìng dōu yào xuéhuì。",
+          "sample_answer_vi": "Thậm chí ngay cả những lỗi nhỏ của máy in, máy photocopy sửa thế nào cũng phải học.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended dialogue completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "f992f141-83ba-4bf0-9180-81d3c4dd02e4",
+          "prompt_zh": "A：你的眼睛怎么这么红？是不是病了？\nB：没事儿，______________________________。",
+          "prompt_pinyin": "A： nǐ de yǎnjing zěnme zhè me hóng？ shì bú shì bìng le？ B： méi shìr， _ _ _。",
+          "required_word": "开夜车",
+          "sample_answer_zh": "没事儿，我昨晚开夜车练习写各种商业文件了。",
+          "sample_answer_pinyin": "méi shìr，wǒ zuówǎn kāi yèchē liànxí xiě gèzhǒng shāngyè wénjiàn le。",
+          "sample_answer_vi": "Không sao, tối qua tôi thức khuya luyện viết các loại tài liệu thương mại.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended dialogue completion; sample answer is checked for naturalness."
+          }
+        },
+        {
+          "id": "39ff8175-ba68-4d0f-a85b-78de1c025093",
+          "prompt_zh": "A：我现在又不想辞职了。\nB：为什么？\nA：我觉得我们头儿对我不错，什么事儿都跟我商量，最近还给我加了薪。\nB：哈哈，______________________________。",
+          "prompt_pinyin": "A： wǒ xiànzài yòu bù xiǎng cízhí le。 B： wèishénme？ A： wǒ juéde wǒmen tóur duì wǒ bú cuò， shénme shì ér dōu gēn wǒ shāngliang， zuìjìn hái gěi wǒ jiā le xīn。 B： hā hā， _ _ _。",
+          "required_word": "料到",
+          "sample_answer_zh": "哈哈，这是我早就料到的。",
+          "sample_answer_pinyin": "hāhā，zhè shì wǒ zǎo jiù liàodào de。",
+          "sample_answer_vi": "Haha, chuyện này tôi đã đoán được từ lâu rồi.",
+          "answer_verified": false,
+          "source_origin": "generated_checked_sample_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual",
+            "reason": "Open-ended dialogue completion; sample answer is checked for naturalness."
+          }
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "17bd0e59-c1c5-4c19-9cd8-a8c8ab83f79f",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Nối câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "3d35612b-91b1-4a12-95d5-d1958773d1ab",
+          "sentences": [
+            {
+              "label": "A",
+              "zh": "所以，还必须掌握每个词在交际中的用法，了解它在此时此地的意思。",
+              "pinyin": "suǒyǐ， hái bìxū zhǎngwò měi ge cí zài jiāojì zhōng de yòng fǎ， liǎojiě tā zài cǐ shí cǐ dì de yìsi。"
+            },
+            {
+              "label": "B",
+              "zh": "但是，只了解一个词的表面意义是不够的。",
+              "pinyin": "dànshì， zhǐ liǎojiě yí gè cí de biǎomiàn yìyì shì bú gòu de。"
+            },
+            {
+              "label": "C",
+              "zh": "因为一种语言的词汇，除了表面意义以外，还有语境义、交际义和文化义等。",
+              "pinyin": "yīnwèi yī zhǒng yǔyán de cíhuì， chúle biǎomiàn yìyì yǐwài， hái yǒu yǔjìng yì、 jiāojì yì hé wénhuà yì děng。"
+            },
+            {
+              "label": "D",
+              "zh": "学习一门外语，就要了解和掌握这种语言的词汇。",
+              "pinyin": "xuéxí yī mén wàiyǔ， jiù yào liǎojiě hé zhǎngwò zhè zhǒng yǔyán de cíhuì。"
+            }
+          ],
+          "answer_order": [
+            "D",
+            "B",
+            "C",
+            "A"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false
+        },
+        {
+          "id": "59340ad7-0b71-4bd3-9d3a-8a8e8d4e9891",
+          "sentences": [
+            {
+              "label": "A",
+              "zh": "因为平时在自己国家用外语讲话的机会很少。",
+              "pinyin": "yīnwèi píng shízài zìjǐ guójiā yòng wàiyǔ jiǎng huà de jīhuì hěn shǎo。"
+            },
+            {
+              "label": "B",
+              "zh": "自己的外语能力会提高得很快。",
+              "pinyin": "zìjǐ de wàiyǔ nénglì huì tígāo dé hěn kuài。"
+            },
+            {
+              "label": "C",
+              "zh": "要学好一门外语，我认为最好是到说那种语言的国家去学习。",
+              "pinyin": "yào xué hǎo yī mén wàiyǔ， wǒ rèn wèi zuì hǎo shì dào shuō nà zhǒng yǔyán de guójiā qù xuéxí。"
+            },
+            {
+              "label": "D",
+              "zh": "如果能够生活在好的语言环境中。",
+              "pinyin": "rú guǒ nénggòu shēnghuó zài hǎo de yǔyán huánjìng zhōng。"
+            },
+            {
+              "label": "E",
+              "zh": "因此，我决定出国去留学。",
+              "pinyin": "yīn cǐ， wǒ juédìng chūguó qù liúxué。"
+            }
+          ],
+          "answer_order": [
+            "C",
+            "A",
+            "D",
+            "B",
+            "E"
+          ],
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "6ad3e7b8-e9db-4ea6-98e9-127606f89bf8",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "73e3b91e-7c09-4aa1-a9bc-91a941dc8683",
+          "wrong_zh": "他已经辞职工作，接着就要去中国留学。",
+          "wrong_pinyin": "tā yǐjīng cízhí gōngzuò， jiē zhe jiù yào qù Zhōngguó liúxué。",
+          "correct_zh": "他已经辞掉工作，接着就要去中国留学。",
+          "correct_pinyin": "tā yǐjīng cídiào gōngzuò，jiēzhe jiù yào qù Zhōngguó liúxué。",
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual"
+          }
+        },
+        {
+          "id": "fda047fc-20b7-4984-b773-4ff9edabf78d",
+          "wrong_zh": "他想让老师刮目相看他。",
+          "wrong_pinyin": "tā xiǎng ràng lǎoshī guāmù xiāngkàn tā。",
+          "correct_zh": "他想让老师对他刮目相看。",
+          "correct_pinyin": "tā xiǎng ràng lǎoshī duì tā guāmù-xiāngkàn。",
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual"
+          }
+        },
+        {
+          "id": "c1b605d4-419c-4284-b903-56fe0ff241a3",
+          "wrong_zh": "一般的中国电影他不太喜欢，但这个电影却他很喜欢。",
+          "wrong_pinyin": "yì bān de Zhōngguó diànyǐng tā bú tài xǐhuan， dàn zhè ge diànyǐng què tā hěn xǐhuan。",
+          "correct_zh": "一般的中国电影他不太喜欢，但这个电影他却很喜欢。",
+          "correct_pinyin": "yìbān de Zhōngguó diànyǐng tā bú tài xǐhuan，dàn zhè ge diànyǐng tā què hěn xǐhuan。",
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual"
+          }
+        },
+        {
+          "id": "15e9a31f-b00a-487c-a1b7-489492d12b8d",
+          "wrong_zh": "我虽然很爱她，却她不喜欢我，没办法。",
+          "wrong_pinyin": "wǒ suīrán hěn ài tā， què tā bù xǐhuan wǒ， méi bànfǎ。",
+          "correct_zh": "我虽然很爱她，但没办法，她却不喜欢我。",
+          "correct_pinyin": "wǒ suīrán hěn ài tā，dàn méi bànfǎ，tā què bù xǐhuan wǒ。",
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual"
+          }
+        },
+        {
+          "id": "337f970a-aec8-41dd-91e4-fd7736cdb753",
+          "wrong_zh": "我没有给妈妈打电话，妈妈对我很埋怨。",
+          "wrong_pinyin": "wǒ méiyǒu gěi māma dǎ diànhuà， māma duì wǒ hěn mányuàn。",
+          "correct_zh": "我没有给妈妈打电话，妈妈埋怨我了。",
+          "correct_pinyin": "wǒ méiyǒu gěi māma dǎ diànhuà，māma mányuàn wǒ le。",
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual"
+          }
+        },
+        {
+          "id": "eb71baaf-ac40-47ab-9e48-160d6e0c6eda",
+          "wrong_zh": "北京比香港骑自行车有点儿容易。",
+          "wrong_pinyin": "Běijīng bǐ xiāng gǎng qí zìxíngchē yǒudiǎn ér róngyì。",
+          "correct_zh": "在北京骑自行车比在香港骑自行车容易一点儿。",
+          "correct_pinyin": "zài Běijīng qí zìxíngchē bǐ zài Xiānggǎng qí zìxíngchē róngyìyìdiǎnr。",
+          "answer_verified": true,
+          "source_origin": "textbook_question_checked_answer",
+          "check_needed": false,
+          "grading": {
+            "mode": "manual"
+          }
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ecaf9cd0-d121-4eb3-95f6-8de808fad375",
+      "type": "custom",
+      "variant": "language_context",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "情景表达。",
+        "vi": "Diễn đạt theo tình huống."
+      },
+      "parts": [
+        {
+          "id": "f5d21173-7041-48be-93ae-2442a1879be4",
+          "title": "下列句子什么情景下说？",
+          "questions": [
+            {
+              "id": "e5198aad-6d69-454f-829b-65c318eea91a",
+              "prompt_zh": "他一点儿也不把我放在眼里。",
+              "prompt_pinyin": "tā yìdiǎnr yě bù bǎ wǒ fàng zài yǎn lǐ。",
+              "sample_context_vi": "Khi cảm thấy cấp trên/người khác không coi trọng mình hoặc xem thường mình.",
+              "sample_answer_zh": "比如：我在公司做了很多事，可是领导从来不听我的意见，我可以说：“他一点儿也不把我放在眼里。”",
+              "sample_answer_pinyin": "bǐ rú： wǒ zài gōngsī zuò le hěn duō shì， kěshì lǐngdǎo cónglái bù tīng wǒ de yì jiàn， wǒ kěyǐ shuō： “tā yìdiǎnr yě bù bǎ wǒ fàng zài yǎn lǐ。”",
+              "answer_verified": false,
+              "check_needed": false,
+              "source_origin": "generated_checked_sample_answer"
+            },
+            {
+              "id": "265e33f5-ddc4-4a5e-974d-3eab2d6646c1",
+              "prompt_zh": "真要对他刮目相看了。",
+              "prompt_pinyin": "zhēn yào duì tā guāmù xiāngkàn le。",
+              "sample_context_vi": "Khi một người tiến bộ rõ rệt, khiến mình phải đánh giá lại theo hướng tốt hơn.",
+              "sample_answer_zh": "比如：一个同学以前汉语很差，现在说得很流利，我可以说：“真要对他刮目相看了。”",
+              "sample_answer_pinyin": "bǐ rú： yí gè tóng xué yǐ qián Hànyǔ hěn chà， xiànzài shuō dé hěn liú lì， wǒ kěyǐ shuō： “zhēn yào duì tā guāmù xiāngkàn le。”",
+              "answer_verified": false,
+              "check_needed": false,
+              "source_origin": "generated_checked_sample_answer"
+            },
+            {
+              "id": "bf1281b6-c8b0-4407-9788-2d43403f0252",
+              "prompt_zh": "我早就料到会这样。",
+              "prompt_pinyin": "wǒ zǎo jiù liàodào huì zhè yàng。",
+              "sample_context_vi": "Khi kết quả xảy ra đúng như mình đã dự đoán từ trước.",
+              "sample_answer_zh": "比如：我早就知道他会成功，现在事情真的发生了，我可以说：“我早就料到会这样。”",
+              "sample_answer_pinyin": "bǐ rú： wǒ zǎo jiù zhīdào tā huì chéng gōng， xiànzài shì qíng zhēn de fā shēng le， wǒ kěyǐ shuō： “wǒ zǎo jiù liàodào huì zhè yàng。”",
+              "answer_verified": false,
+              "check_needed": false,
+              "source_origin": "generated_checked_sample_answer"
+            }
+          ]
+        },
+        {
+          "id": "08e2914c-999e-47f1-bdbd-ff3542619c86",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "3ba27929-417d-4794-b843-087e4f8c6173",
+              "prompt_zh": "你对这儿的生活已经习惯了，觉得各方面都不错，你向别人说这种感觉。",
+              "required_word": "满意",
+              "sample_answer_zh": "我对这儿的生活很满意。",
+              "sample_answer_pinyin": "wǒ duì zhè ér de shēnghuó hěn mǎnyì。",
+              "answer_verified": false,
+              "check_needed": false,
+              "source_origin": "generated_checked_sample_answer"
+            },
+            {
+              "id": "6ae9b459-42c6-4e34-9017-64034c7b4e1b",
+              "prompt_zh": "你刚到一个公司，谁也不认识，觉得大家都不把你放在眼里，你说出这种感觉。",
+              "required_word": "",
+              "sample_answer_zh": "我刚到公司，谁也不认识，觉得大家一点儿也不把我放在眼里。",
+              "sample_answer_pinyin": "wǒ gāng dào gōngsī， shuí yě bú rènshi， jué dé dàjiā yìdiǎnr yě bù bǎ wǒ fàng zài yǎn lǐ。",
+              "answer_verified": false,
+              "check_needed": false,
+              "source_origin": "generated_checked_sample_answer"
+            },
+            {
+              "id": "ecc53ce0-d24b-4827-aef5-8192566489ac",
+              "prompt_zh": "你想向公司提出辞职，要对老板说。",
+              "required_word": "",
+              "sample_answer_zh": "老板，我想辞职。",
+              "sample_answer_pinyin": "lǎobǎn， wǒ xiǎng cízhí。",
+              "answer_verified": false,
+              "check_needed": false,
+              "source_origin": "generated_checked_sample_answer"
+            }
+          ]
+        }
+      ],
+      "grading": {
+        "mode": "manual",
+        "reason": "Open-ended situation expression; sample answers are checked for naturalness."
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

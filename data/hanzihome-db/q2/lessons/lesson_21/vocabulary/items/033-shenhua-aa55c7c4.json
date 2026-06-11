@@ -1,0 +1,337 @@
+{
+  "id": "d23f20c7-8636-489d-b34f-648510a9e3ec",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "神话",
+  "pinyin": "shénhuà",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thần thoại",
+    "meaning_vi": "thần thoại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thần thoại"
+    ],
+    "short_definition_vi": "thần thoại",
+    "textbook_focus_vi": "thần thoại",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "神",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "thị",
+            "meaning_vi": "lễ nghi/thần linh",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "礻 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "lễ nghi/thần linh",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "申",
+            "hanviet": "thân",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "thần/tinh thần",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "话",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "舌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "舌",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thiệt",
+              "radical_name_zh": "",
+              "hanviet": "thiệt",
+              "meaning_vi": "lưỡi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "lời nói",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "câu chuyện về thần linh/siêu nhiên",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "09a4e22c-0481-49fe-ba2d-175c91089b73",
+      "order": 1,
+      "zh": "古代神话",
+      "pinyin": "",
+      "vi": "thần thoại cổ đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c3c4c86-09dd-4118-9079-b534024f673b",
+      "order": 2,
+      "zh": "中国神话",
+      "pinyin": "",
+      "vi": "thần thoại Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91a95e60-f3ef-47fe-9fe0-207cb4aa6a93",
+      "order": 3,
+      "zh": "神话故事",
+      "pinyin": "",
+      "vi": "câu chuyện thần thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b20c292-9734-4732-8a9a-27f2787a7a67",
+      "order": 4,
+      "zh": "神话人物",
+      "pinyin": "",
+      "vi": "nhân vật thần thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "914e62bc-46a3-4811-9c72-48b701e1b0f4",
+      "order": 5,
+      "zh": "神话传说",
+      "pinyin": "",
+      "vi": "thần thoại truyền thuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "82bad253-a51d-4530-824d-3ad6cd0090dc",
+      "order": 1,
+      "zh": "这个节目讲的是一个古代神话。",
+      "pinyin": "Zhège jiémù jiǎng de shì yí ge gǔdài shénhuà.",
+      "vi": "Tiết mục này kể về một thần thoại cổ đại.",
+      "analysis_vi": "讲的是 dùng 是……的 nhấn nội dung.",
+      "highlight": [
+        "神话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d23f20c7-8636-489d-b34f-648510a9e3ec"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1bbf17e4-3de1-48bc-b997-364be9f6cdc2",
+      "order": 2,
+      "zh": "如果不了解神话，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě shénhuà, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 神话, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "神话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d23f20c7-8636-489d-b34f-648510a9e3ec"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b8adc550-cfbb-4167-9ec3-a98343e87fac",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解神话在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě shénhuà zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 神话 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "神话"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d23f20c7-8636-489d-b34f-648510a9e3ec"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Thần thoại Trung Quốc có 女娲、嫦娥、后羿、夸父、精卫.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "429181a0-c91a-4d6b-9f0d-762fdeaafba2",
+      "order": 1,
+      "rule_vi": "Không nhầm 神话 với 传说 hoặc 童话。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "神话",
+    "back": "thần thoại",
+    "hint": "shénhuà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d23f20c7-8636-489d-b34f-648510a9e3ec",
+    "source_lesson_vocab_id": null
+  }
+}

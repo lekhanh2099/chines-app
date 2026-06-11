@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_bb97b7aec9c7805e",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "罗兰",
+  "pinyin": "Luólán",
+  "meaning_vi": "Roland / La Lan",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+    "type": "proper_noun",
+    "order": 1,
+    "hanzi": "罗兰",
+    "pinyin": "Luólán",
+    "meaning_vi": "Roland / La Lan",
+    "meaning_en": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

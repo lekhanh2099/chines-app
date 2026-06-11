@@ -1,0 +1,440 @@
+{
+  "id": "bbb365b5-321c-4026-98dd-993b97ddbb16",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "方便",
+  "pinyin": "fāngbiàn",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ / Uyển ngữ",
+    "raw_cn": "形容词/动词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "evaluation"
+  ],
+  "meaning": {
+    "hanviet": "Phương tiện",
+    "meaning_vi": "thuận tiện; tiện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuận tiện",
+      "tiện"
+    ],
+    "short_definition_vi": "thuận tiện; tiện",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "evaluation",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "方",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng; cách",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phương hướng, cách thức, phía",
+        "modern_logic_vi": "方 có thể nhớ là cách/phương thức.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "便",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "更",
+            "hanviet": "canh",
+            "meaning_vi": "phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiện, thuận lợi",
+        "modern_logic_vi": "便 là tiện/thuận lợi.",
+        "warning_vi": "便 trong 方便 đọc biàn; trong 便宜 đọc pián.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "方 là phương thức/cách; 便 là tiện. 方便 = dễ làm, thuận tiện cho người dùng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "便利",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tiện lợi, hơi trang trọng/quảng cáo hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "容易",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Dễ, thiên về độ khó của việc làm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "合适",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phù hợp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麻烦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phiền phức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不方便",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Không tiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "麻烦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phiền phức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不方便",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Không thuận tiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "方便",
+        "right": "容易",
+        "meaning_vi": "方便 là tiện về điều kiện/vị trí/thời gian; 容易 là dễ về độ khó.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a908e8c8-0aa1-4bef-94c8-0d1eb0caa28a",
+      "order": 1,
+      "zh": "交通方便",
+      "pinyin": "",
+      "vi": "giao thông thuận tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "81c40b96-d191-4f95-b9a8-74f391d9fbd9",
+      "order": 2,
+      "zh": "很方便",
+      "pinyin": "",
+      "vi": "rất tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d76606cd-1b40-4fa5-b5f9-2c9a11c694a5",
+      "order": 3,
+      "zh": "不太方便",
+      "pinyin": "",
+      "vi": "không tiện lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e6615b9-32ab-4e7f-a601-23a71ccaf240",
+      "order": 4,
+      "zh": "方便多了",
+      "pinyin": "",
+      "vi": "tiện hơn nhiều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb7821f7-f91b-4b00-82da-d1935c31567f",
+      "order": 5,
+      "zh": "生活方便",
+      "pinyin": "",
+      "vi": "sinh hoạt thuận tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10c92457-6dcb-402c-85c4-43d43c40a0ae",
+      "order": 6,
+      "zh": "买东西方便",
+      "pinyin": "",
+      "vi": "mua đồ thuận tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e16041a-a486-4d01-a553-5af51f31d2a1",
+      "order": 7,
+      "zh": "上班方便",
+      "pinyin": "",
+      "vi": "đi làm thuận tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4316e96-958c-40f3-b942-43a5b7cac76f",
+      "order": 8,
+      "zh": "如果方便的话",
+      "pinyin": "",
+      "vi": "nếu tiện thì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "64fa5c35-ac8d-4071-a855-0bf1b585b98e",
+      "order": 1,
+      "zh": "这儿买东西很方便。",
+      "pinyin": "Zhèr mǎi dōngxi hěn fāngbiàn.",
+      "vi": "Ở đây mua đồ rất thuận tiện.",
+      "analysis_vi": "买东西方便 = việc mua đồ tiện.",
+      "highlight": [
+        "方便"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbb365b5-321c-4026-98dd-993b97ddbb16"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b828dab4-2c07-42a9-95ee-b2318993e25d",
+      "order": 2,
+      "zh": "虽然房租贵一点儿，但是上班很方便。",
+      "pinyin": "Suīrán fángzū guì yìdiǎnr, dànshì shàngbān hěn fāngbiàn.",
+      "vi": "Tuy tiền thuê hơi đắt một chút, nhưng đi làm rất tiện.",
+      "analysis_vi": "虽然……但是……; 上班很方便 = đi làm thuận tiện.",
+      "highlight": [
+        "方便"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbb365b5-321c-4026-98dd-993b97ddbb16"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "930f6323-9d62-4502-a156-61827a3f8915",
+      "order": 3,
+      "zh": "要是这套房子旁边有公共汽车站，附近还有地铁站，交通就真方便了。",
+      "pinyin": "Yàoshi zhè tào fángzi pángbiān yǒu gōnggòng qìchē zhàn, fùjìn hái yǒu dìtiězhàn, jiāotōng jiù zhēn fāngbiàn le.",
+      "vi": "Nếu bên cạnh căn nhà này có trạm xe buýt, gần đó lại có ga tàu điện ngầm, thì giao thông thật sự tiện rồi.",
+      "analysis_vi": "要是……就……; 真方便 nhấn đánh giá mạnh.",
+      "highlight": [
+        "方便"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bbb365b5-321c-4026-98dd-993b97ddbb16"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "如果方便的话 là cách mở lời lịch sự: 'nếu tiện thì...', dùng khi nhờ người khác sẽ mềm hơn.",
+    "tags": [
+      "evaluation"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bd2697ae-edc0-484c-b5c3-a91a3608b4e0",
+      "order": 1,
+      "rule_vi": "Đừng nhầm 方便 và 容易.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "交通很容易。",
+          "pinyin": "",
+          "vi": "Giao thông rất dễ.",
+          "note_vi": "Không tự nhiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这儿交通很方便。",
+          "pinyin": "",
+          "vi": "Giao thông ở đây rất thuận tiện.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "这个汉字很容易写。",
+          "pinyin": "",
+          "vi": "Chữ Hán này rất dễ viết.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "方便 là tiện về điều kiện; 容易 là dễ về độ khó.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "方便",
+    "back": "thuận tiện; tiện",
+    "hint": "fāngbiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "evaluation"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bbb365b5-321c-4026-98dd-993b97ddbb16",
+    "source_lesson_vocab_id": null
+  }
+}

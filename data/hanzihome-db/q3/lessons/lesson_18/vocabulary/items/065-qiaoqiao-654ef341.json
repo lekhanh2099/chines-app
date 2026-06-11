@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_78b1e72149205ca6",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "悄悄",
+  "pinyin": "qiāoqiāo",
+  "meaning_vi": "lặng lẽ, khẽ, âm thầm",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "l18_vocab_029",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "l18_vocab_029",
+    "type": "vocabulary_item",
+    "order": 29,
+    "hanzi": "悄悄",
+    "pinyin": "qiāoqiāo",
+    "meaning_vi": "lặng lẽ, khẽ, âm thầm",
+    "meaning_en": "quietly; on the quiet",
+    "pos": "Phó từ",
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false,
+    "flashcard": {
+      "front": "悄悄",
+      "back": "qiāoqiāo — lặng lẽ, khẽ, âm thầm",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

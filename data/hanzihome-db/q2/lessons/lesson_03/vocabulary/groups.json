@@ -1,0 +1,106 @@
+[
+  {
+    "id": "56f9f427-6daa-426a-84df-4eb3a502d83f",
+    "order": 1,
+    "title_vi": "Nhà cửa / tầng lầu / không gian sống",
+    "words": [
+      "套",
+      "层",
+      "楼",
+      "房子",
+      "厨房",
+      "卧室",
+      "客厅",
+      "面积",
+      "平方米"
+    ],
+    "notes": []
+  },
+  {
+    "id": "aeb95c7b-9666-49eb-82e1-6c29104606e5",
+    "order": 2,
+    "title_vi": "Môi trường xung quanh / đánh giá nhà",
+    "words": [
+      "周围",
+      "环境",
+      "乱",
+      "阳光",
+      "印象",
+      "还是",
+      "真"
+    ],
+    "notes": []
+  },
+  {
+    "id": "6a1415cd-a122-4170-b9cf-001842f9875d",
+    "order": 3,
+    "title_vi": "Di chuyển lên xuống / vị trí gần xa",
+    "words": [
+      "上去",
+      "下去",
+      "旁边",
+      "附近"
+    ],
+    "notes": []
+  },
+  {
+    "id": "822fae60-005b-4e7e-a680-6a9b2cdf8ca9",
+    "order": 4,
+    "title_vi": "Gia đình / người liên quan",
+    "words": [
+      "妻子"
+    ],
+    "notes": []
+  },
+  {
+    "id": "3f3dadb1-d0de-4801-9c67-c5615723b474",
+    "order": 5,
+    "title_vi": "Giao thông / phương tiện / địa điểm",
+    "words": [
+      "堵车",
+      "赶",
+      "交通",
+      "方便",
+      "顺便",
+      "公共汽车 / 大巴",
+      "站",
+      "车站",
+      "地铁",
+      "体育馆"
+    ],
+    "notes": []
+  },
+  {
+    "id": "018981c3-554f-4570-adff-c46f787fc853",
+    "order": 6,
+    "title_vi": "Từ ngữ pháp / chức năng câu",
+    "words": [
+      "有的",
+      "才",
+      "要是",
+      "虽然",
+      "条"
+    ],
+    "notes": []
+  },
+  {
+    "id": "428328c8-29a1-4b4a-a2c0-3e606cbaeeab",
+    "order": 7,
+    "title_vi": "Học tập / bài luyện",
+    "words": [
+      "组",
+      "会话",
+      "解答"
+    ],
+    "notes": []
+  },
+  {
+    "id": "882d3896-3b2f-4b51-adb2-3a674a50b54d",
+    "order": 8,
+    "title_vi": "Tự nhiên / cảnh vật",
+    "words": [
+      "河"
+    ],
+    "notes": []
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_bddbf1e9ac22eb6d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "看见",
+  "pinyin": "kànjiàn",
+  "meaning_vi": "nhìn thấy; trông thấy",
+  "pos": "Động từ + bổ ngữ kết quả",
+  "pos_detail": {
+    "vi": "Động từ + bổ ngữ kết quả",
+    "cn": "动词 + 结果补语",
+    "normalized": "verb_phrase",
+    "schema_compatible_pos": "verb_phrase",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "động từ 看 + bổ ngữ kết quả 见",
+    "usage_note_vi": "Không phải động từ li hợp; 见 biểu thị kết quả “thấy được”.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7e74410b-bdae-5c10-8973-3fa501dec684",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7e74410b-bdae-5c10-8973-3fa501dec684",
+    "type": "vocabulary_item",
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "order": 7,
+    "hanzi": "看见",
+    "pinyin": "kànjiàn",
+    "meaning_vi": "nhìn thấy; trông thấy",
+    "meaning_en": "",
+    "pos": "Động từ + bổ ngữ kết quả",
+    "pos_detail": {
+      "vi": "Động từ + bổ ngữ kết quả",
+      "cn": "动词 + 结果补语",
+      "normalized": "verb_phrase",
+      "schema_compatible_pos": "verb_phrase",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "động từ 看 + bổ ngữ kết quả 见",
+      "usage_note_vi": "Không phải động từ li hợp; 见 biểu thị kết quả “thấy được”.",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "pdf_checked"
+    ],
+    "flashcard": {
+      "front": "看见",
+      "back": "kànjiàn — nhìn thấy; trông thấy",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

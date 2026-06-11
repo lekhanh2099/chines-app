@@ -1,0 +1,332 @@
+{
+  "id": "84e24306-ae26-47e1-8c28-bb2c355aee5a",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "回信",
+  "pinyin": "huíxìn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "bai_04",
+    "thu_tu"
+  ],
+  "meaning": {
+    "hanviet": "Hồi tín",
+    "meaning_vi": "trả lời thư; thư hồi âm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trả lời thư",
+      "thư hồi âm"
+    ],
+    "short_definition_vi": "trả lời thư; thư hồi âm",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "回",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "vây quanh",
+            "position_vi": "khung ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "vây quanh / bao bọc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / phần trong",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quay lại, đáp lại",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "vây quanh / bao bọc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "信",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "言",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói / thông tin",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thư, tin, tin tưởng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "回信 = đáp lại một bức thư/tin bằng chữ viết.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "回复",
+        "pinyin": "",
+        "meaning_vi": "phản hồi",
+        "difference_vi": "hiện đại và rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "回邮件",
+        "pinyin": "",
+        "meaning_vi": "trả lời email",
+        "difference_vi": "cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "收到信",
+        "right": "回信",
+        "meaning_vi": "nhận thư ↔ trả lời thư",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de7bc09e-0199-48a8-b577-8b0ef2a16ff5",
+      "order": 1,
+      "zh": "给他回信",
+      "pinyin": "",
+      "vi": "trả lời thư cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eeb758ad-83cb-4837-9fb2-c2fa4396c452",
+      "order": 2,
+      "zh": "收到回信",
+      "pinyin": "",
+      "vi": "nhận được thư hồi âm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98b57d24-edbd-4d0d-b53a-19b0967bab75",
+      "order": 3,
+      "zh": "马上回信",
+      "pinyin": "",
+      "vi": "trả lời thư ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c9aeefb1-6d2c-4e48-92e6-0a29022cfd3f",
+      "order": 1,
+      "zh": "我给安娜回信了。",
+      "pinyin": "Wǒ gěi Ānnà huí xìn le.",
+      "vi": "Tôi đã trả lời thư cho Anna rồi.",
+      "analysis_vi": "给 + người + 回信.",
+      "highlight": [
+        "回信"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "84e24306-ae26-47e1-8c28-bb2c355aee5a"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4f0d8f1b-20e3-4142-af15-c16a9b426c11",
+      "order": 2,
+      "zh": "我把作业做完以后，就给老师回信。",
+      "pinyin": "Wǒ bǎ zuòyè zuò wán yǐhòu, jiù gěi lǎoshī huí xìn.",
+      "vi": "Sau khi làm xong bài tập, tôi sẽ trả lời thư cho thầy/cô.",
+      "analysis_vi": "做完以后 rồi 回信.",
+      "highlight": [
+        "回信"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "84e24306-ae26-47e1-8c28-bb2c355aee5a"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Đời sống hiện đại thường dùng 回邮件, 回消息, 回复 cụ thể hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fb732dab-b4b8-4eaf-85b1-c559f1c83ffa",
+      "order": 1,
+      "rule_vi": "Không nói 回答信.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我回答信。",
+          "pinyin": "Wǒ huídá xìn.",
+          "vi": "Tôi trả lời thư.",
+          "note_vi": "Không tự nhiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我回信。",
+          "pinyin": "Wǒ huí xìn.",
+          "vi": "Tôi hồi âm.",
+          "note_vi": "Đúng với thư.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "回信",
+    "back": "trả lời thư; thư hồi âm",
+    "hint": "huíxìn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "thu_tu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "84e24306-ae26-47e1-8c28-bb2c355aee5a",
+    "source_lesson_vocab_id": null
+  }
+}

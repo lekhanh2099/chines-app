@@ -1,0 +1,152 @@
+{
+  "id": "1c9fe51a-661b-48b1-97e9-486e4c07d1f0",
+  "type": "deep_vocabulary_item",
+  "order": 90,
+  "hanzi": "线",
+  "pinyin": "xiàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Dữ liệu và quan sát"
+  ],
+  "meaning": {
+    "hanviet": "Tuyến",
+    "meaning_vi": "đường, dây, đường nét",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đường",
+      "dây",
+      "đường nét"
+    ],
+    "short_definition_vi": "đường, dây, đường nét",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: đường, dây, đường nét.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Dữ liệu và quan sát",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "线",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "线 trong bài được học theo nghĩa trọng tâm: đường, dây, đường nét.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: đường, dây, đường nét.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8d6a0607-02be-43a3-ac3b-c65c8cc8407b",
+      "order": 1,
+      "zh": "线",
+      "pinyin": "",
+      "vi": "đường, dây, đường nét",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd3dce45-d11a-4bd8-a4e3-1bb498b1b5cc",
+      "order": 1,
+      "zh": "你看到的这些线，实际上是地球上的一条条河流，但卫星已发现，这些河水里充满了有害物质，根本不能饮用。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “线” = đường, dây, đường nét.",
+      "analysis_vi": "Câu này dùng “线” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "线"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1c9fe51a-661b-48b1-97e9-486e4c07d1f0"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “线” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "20e5a246-9e48-4541-ba40-0f75bbce18ed",
+      "order": 1,
+      "rule_vi": "Cần dùng “线” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "线",
+    "back": "đường, dây, đường nét",
+    "hint": "xiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Dữ liệu và quan sát"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1c9fe51a-661b-48b1-97e9-486e4c07d1f0",
+    "source_lesson_vocab_id": null
+  }
+}

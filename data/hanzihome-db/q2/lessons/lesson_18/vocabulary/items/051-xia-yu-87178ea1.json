@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_090cc1df1d074bcf",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "夏雨",
+  "pinyin": "Xià Yǔ",
+  "meaning_vi": "Hạ Vũ; tên người nữ trong bài",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "bd642d13-691a-4a05-b9c3-ebec4bcb4a01",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "bd642d13-691a-4a05-b9c3-ebec4bcb4a01",
+    "type": "proper_noun",
+    "order": 2,
+    "hanzi": "夏雨",
+    "pinyin": "Xià Yǔ",
+    "meaning_vi": "Hạ Vũ; tên người nữ trong bài",
+    "meaning_en": "female personal name",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

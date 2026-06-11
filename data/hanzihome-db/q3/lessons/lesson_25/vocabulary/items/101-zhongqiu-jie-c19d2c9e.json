@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_4af9c4674a74912d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "中秋节",
+  "pinyin": "Zhōngqiū Jié",
+  "meaning_vi": "Tết Trung thu",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+    "type": "proper_noun",
+    "order": 1,
+    "hanzi": "中秋节",
+    "pinyin": "Zhōngqiū Jié",
+    "meaning_vi": "Tết Trung thu",
+    "meaning_en": "Mid-Autumn Festival",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

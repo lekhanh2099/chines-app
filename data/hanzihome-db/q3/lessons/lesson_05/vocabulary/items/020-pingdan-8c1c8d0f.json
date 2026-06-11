@@ -1,0 +1,311 @@
+{
+  "id": "279b35b1-aee8-41bd-8515-6bd28c456e40",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "平淡",
+  "pinyin": "píngdàn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bình đạm",
+    "meaning_vi": "bình dị, phẳng lặng, không đặc sắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bình dị",
+      "phẳng lặng",
+      "không đặc sắc"
+    ],
+    "short_definition_vi": "bình dị, phẳng lặng, không đặc sắc",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "平",
+        "lishu_vi": "bình",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "淡",
+        "lishu_vi": "đạm",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "平淡 = bình + nhạt, chỉ ít biến động/không nổi bật.",
+    "memory_tip_vi": "Không luôn xấu; 平淡而温暖 rất tự nhiên.",
+    "warning_vi": "Món ăn nhạt dùng 淡, không dùng 平淡 là chính.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "平常",
+        "píngcháng",
+        "bình thường",
+        "thường ngày"
+      ],
+      [
+        "普通",
+        "pǔtōng",
+        "phổ thông/bình thường",
+        "không đặc biệt"
+      ],
+      [
+        "无聊",
+        "wúliáo",
+        "chán",
+        "tiêu cực hơn"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không luôn xấu; 平淡而温暖 rất tự nhiên."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bb3816a3-e091-4169-b47b-64851666c2a7",
+      "order": 1,
+      "zh": "生活平淡",
+      "pinyin": "",
+      "vi": "cuộc sống bình dị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5a0083e-888e-4d49-832f-7ef88978e137",
+      "order": 2,
+      "zh": "日子过得很平淡",
+      "pinyin": "",
+      "vi": "ngày tháng bình dị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50aa8eb2-5674-4bf6-9b62-195edddcafda",
+      "order": 3,
+      "zh": "平淡无奇",
+      "pinyin": "",
+      "vi": "bình thường không có gì lạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8eef3c8-22a6-43b1-a1b0-68717520d67a",
+      "order": 4,
+      "zh": "语气平淡",
+      "pinyin": "",
+      "vi": "giọng điệu bình thản",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e9b9da9-151e-4506-8654-eac4aec26b78",
+      "order": 5,
+      "zh": "平淡而温暖",
+      "pinyin": "",
+      "vi": "bình dị mà ấm áp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e1acd9ed-b1f1-428f-8e60-6bf096884c7b",
+      "order": 1,
+      "zh": "他的日子过得很平淡，但是很踏实。",
+      "pinyin": "Tā de rìzi guò de hěn píngdàn, dànshì hěn tāshi.",
+      "vi": "Cuộc sống anh ấy bình dị nhưng rất yên ổn.",
+      "analysis_vi": "日子过得…… nói cuộc sống trôi qua thế nào.",
+      "highlight": [
+        "平淡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "279b35b1-aee8-41bd-8515-6bd28c456e40"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "33c854cf-1ff9-44f3-afb9-a2d23edbaf35",
+      "order": 2,
+      "zh": "这篇文章写得太平淡了，没有什么吸引人的地方。",
+      "pinyin": "Zhè piān wénzhāng xiě de tài píngdàn le, méiyǒu shénme xīyǐn rén de dìfang.",
+      "vi": "Bài này viết quá nhạt, không có điểm thu hút.",
+      "analysis_vi": "Ở đây 平淡 tiêu cực.",
+      "highlight": [
+        "平淡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "279b35b1-aee8-41bd-8515-6bd28c456e40"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "平淡 đôi khi là mỹ cảm: không phô trương nhưng có chiều sâu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7a510cd1-1753-4e26-a92f-78e050f734ec",
+      "order": 1,
+      "rule_vi": "这个菜很平淡。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "这个菜有点儿淡。",
+          "pinyin": "Zhège cài yǒudiǎnr dàn.",
+          "vi": "Món này hơi nhạt.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Món ăn nhạt dùng 淡, không dùng 平淡 là chính.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "平淡",
+    "back": "bình dị, phẳng lặng, không đặc sắc",
+    "hint": "píngdàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "279b35b1-aee8-41bd-8515-6bd28c456e40",
+    "source_lesson_vocab_id": null
+  }
+}

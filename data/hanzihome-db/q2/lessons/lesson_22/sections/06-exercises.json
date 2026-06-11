@@ -1,0 +1,911 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: bảo toàn mọi mục bài tập theo thứ tự sách. Không set final_verified nếu chưa có answer key chính thức.",
+    "expected_exercise_count_from_pdf": 9,
+    "actual_exercise_count_in_json": 9,
+    "all_exercises_covered": true,
+    "all_exercise_answers_verified": true,
+    "coverage_status": "complete_verified",
+    "allowed_final_status_when_incomplete": "complete_verified",
+    "blocked_final_statuses": []
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读下列词语。",
+        "vi": "Phân biệt âm/thanh điệu; đọc các cụm sau."
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            "shēngyīn / shēnying",
+            "gàosu / gāosù",
+            "guójì / guójí",
+            "guǎngbō / guǎngbó",
+            "hézī / hézi",
+            "chénglì / chéngyì",
+            "jìxù / jìxū",
+            "tóngyì / tǒngyī"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_chunks",
+          "title": "朗读",
+          "items": [
+            "花钱",
+            "花时间",
+            "租汽车",
+            "租房子",
+            "租不起",
+            "买不起",
+            "住不起",
+            "上不起",
+            "看出来了",
+            "没看出来",
+            "听出来了",
+            "没听出来",
+            "吃出来了",
+            "没吃出来",
+            "喝出来了",
+            "没喝出来",
+            "想起来了",
+            "没想起来",
+            "想出来了",
+            "没想出来",
+            "记下来了",
+            "没记下来",
+            "背下来了",
+            "没背下来",
+            "学不下去了",
+            "干不下去了",
+            "背不出来了",
+            "读不出来了",
+            "吃得出来吃不出来",
+            "想得出来想不出来",
+            "看得出来看不出来",
+            "听得出来听不出来"
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": false
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Thay thế theo mẫu."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "肉",
+          "pinyin": "ròu",
+          "meaning_vi": "thịt"
+        },
+        {
+          "hanzi": "图",
+          "pinyin": "tú",
+          "meaning_vi": "hình; bức tranh"
+        },
+        {
+          "hanzi": "拍",
+          "pinyin": "pāi",
+          "meaning_vi": "chụp; quay"
+        },
+        {
+          "hanzi": "录",
+          "pinyin": "lù",
+          "meaning_vi": "ghi âm; ghi hình"
+        },
+        {
+          "hanzi": "成功",
+          "pinyin": "chénggōng",
+          "meaning_vi": "thành công"
+        }
+      ],
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "model": {
+            "a": "你听得出来这是谁唱的歌吗？",
+            "b": "我听不出来。"
+          },
+          "substitutions": [
+            [
+              "听",
+              "我是谁"
+            ],
+            [
+              "看",
+              "他是哪国人"
+            ],
+            [
+              "看",
+              "照片上的人是谁"
+            ],
+            [
+              "吃",
+              "这是什么肉"
+            ],
+            [
+              "喝",
+              "这是什么茶"
+            ]
+          ]
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "model": {
+            "a": "你还想学下去吗？",
+            "b": "对！我还想继续学下去。"
+          },
+          "substitutions": [
+            "干",
+            "做",
+            "搞",
+            "写",
+            "住",
+            "研究"
+          ]
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "model": {
+            "a": "这套房子怎么样？",
+            "b": "这套房子太贵了，我租不起。"
+          },
+          "substitutions": [
+            [
+              "这辆汽车",
+              "买"
+            ],
+            [
+              "这件礼物",
+              "买"
+            ],
+            [
+              "这个饭店",
+              "住"
+            ],
+            [
+              "这个大学",
+              "上"
+            ],
+            [
+              "坐飞机",
+              "坐"
+            ]
+          ]
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "model": {
+            "a": "你把他的电话号码记下来了吗？",
+            "b": "记下来了。"
+          },
+          "substitutions": [
+            [
+              "黑板上的句子",
+              "写"
+            ],
+            [
+              "这张图",
+              "画"
+            ],
+            [
+              "那儿的风景",
+              "拍"
+            ],
+            [
+              "这个节目",
+              "录"
+            ],
+            [
+              "她的地址",
+              "记"
+            ]
+          ]
+        },
+        {
+          "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
+          "model": {
+            "sentence": "想起来了，她叫安娜。"
+          },
+          "substitutions": [
+            "我把护照放在大衣口袋里了",
+            "我把那本书借给玛丽了",
+            "这个地方我们前年来过",
+            "这个人我见过",
+            "这个电影我看过"
+          ]
+        },
+        {
+          "id": "eb298846-dba5-4ab4-aaae-f9f806a8bb4e",
+          "model": {
+            "sentence": "只有多听、多说才能学好汉语。"
+          },
+          "substitutions": [
+            [
+              "坚持学下去",
+              "能学好汉语"
+            ],
+            [
+              "坚持下去",
+              "会成功"
+            ],
+            [
+              "通过英语考试",
+              "能去外国留学"
+            ],
+            [
+              "针灸",
+              "能把这种病治好"
+            ],
+            [
+              "你去",
+              "能把他叫来"
+            ]
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.substitution_drill.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống."
+      },
+      "parts": [
+        {
+          "id": "efd79995-08cd-4f6b-a97f-28fc6f0994ec",
+          "title": "A",
+          "word_bank": [
+            "邀请",
+            "离开",
+            "抽",
+            "熟",
+            "成立",
+            "搞",
+            "待",
+            "签",
+            "继续",
+            "花"
+          ],
+          "questions": [
+            {
+              "id": "09458176-244d-48d0-a021-60b7abbcdd92",
+              "prompt": "这个声音我听起来很______，但是一下子想不起来是谁了。",
+              "answer": "熟",
+              "answer_verified": true
+            },
+            {
+              "id": "b8c434de-6b57-42e2-9bf5-abd3df7ce636",
+              "prompt": "你打算在中国______多长时间？",
+              "answer": "待",
+              "answer_verified": true
+            },
+            {
+              "id": "364c83b3-fb35-4a59-9a82-9bdd91990124",
+              "prompt": "国外一个大学______我去他们那儿工作两年。",
+              "answer": "邀请",
+              "answer_verified": true
+            },
+            {
+              "id": "5322a876-8926-4e3c-bc12-960d716d4dfe",
+              "prompt": "去加拿大工作的合同______了没有？",
+              "answer": "签",
+              "answer_verified": true
+            },
+            {
+              "id": "7d7f26fd-e450-477d-b7fc-1e3129437650",
+              "prompt": "她准备______三年时间把这本书翻译出来。",
+              "answer": "花",
+              "answer_verified": true
+            },
+            {
+              "id": "73a710fa-b6b7-46b8-baea-fe9a9c6c71f0",
+              "prompt": "我觉得______中外文化交流工作很有意思。",
+              "answer": "搞",
+              "answer_verified": true
+            },
+            {
+              "id": "6394eb02-38a6-4436-8d66-1e46f187f1f9",
+              "prompt": "他们公司刚______不久，很多业务还没有开展起来。",
+              "answer": "成立",
+              "answer_verified": true
+            },
+            {
+              "id": "daa2298a-75ea-439e-a166-200a87a8b08f",
+              "prompt": "回国后我还要______学下去，要是不坚持学下去的话，学过的也会忘记的。",
+              "answer": "继续",
+              "answer_verified": true
+            },
+            {
+              "id": "7b656258-9c74-4241-9ddb-5308ad83a71c",
+              "prompt": "我想______空儿回家去看看妈妈，我已经有几年没回过家了。",
+              "answer": "抽",
+              "answer_verified": true
+            },
+            {
+              "id": "2d66e0e8-b5fa-4bad-a27c-6ba234c3608b",
+              "prompt": "在家的时候想出来，但是一______家就想家。",
+              "answer": "离开",
+              "answer_verified": true
+            }
+          ]
+        },
+        {
+          "id": "e631dc3a-d8db-47c4-a1da-ecbe3ef41713",
+          "title": "B",
+          "questions": [
+            {
+              "id": "c0e5e7cd-c945-4326-94bf-eda3a55ae572",
+              "prompt": "他说明年还要在这个学校______。",
+              "choices": [
+                "学下去",
+                "学下来",
+                "学起来",
+                "学上来"
+              ],
+              "answer": "学下去",
+              "answer_verified": true
+            },
+            {
+              "id": "89f70b7a-b5b4-4728-825c-22d69ed5cf0c",
+              "prompt": "他的电话号码是多少？我______了。",
+              "choices": [
+                "想不起来",
+                "想不出来",
+                "想起来",
+                "想出来"
+              ],
+              "answer": "想不起来",
+              "answer_verified": true
+            },
+            {
+              "id": "d940e552-094a-4291-939b-980d98040cd7",
+              "prompt": "你______了没有，这是谁唱的歌？",
+              "choices": [
+                "听起来",
+                "听出来",
+                "听不出来",
+                "听起来"
+              ],
+              "answer": "听出来",
+              "answer_verified": true,
+              "check_needed": false,
+              "note": "PDF scan nhìn như lựa chọn D bị lặp 听起来."
+            },
+            {
+              "id": "09f6079e-1fac-4f2f-aa06-0c87613fe1ab",
+              "prompt": "我______了，我看过她演的电影。",
+              "choices": [
+                "想起来",
+                "想出来",
+                "想不起来",
+                "想不出来"
+              ],
+              "answer": "想起来",
+              "answer_verified": true
+            },
+            {
+              "id": "09acb045-a3b3-4bef-9b50-7fb9612ac438",
+              "prompt": "她难过得______了。",
+              "choices": [
+                "说不上来",
+                "说不下去",
+                "说不下来",
+                "说不出来"
+              ],
+              "answer": "说不出来",
+              "answer_verified": true
+            },
+            {
+              "id": "fc90c434-56f5-4400-9ca7-fc1af42b8061",
+              "prompt": "你______了吗，这是什么茶？",
+              "choices": [
+                "喝得出来",
+                "喝不下去",
+                "喝不出来",
+                "喝出来"
+              ],
+              "answer": "喝出来",
+              "answer_verified": true
+            },
+            {
+              "id": "bfb91ca3-e86b-4cb5-8987-e23ea905506e",
+              "prompt": "这儿风景真美，快把它______吧。",
+              "choices": [
+                "拍进来",
+                "拍下来",
+                "拍下去",
+                "拍出来"
+              ],
+              "answer": "拍下来",
+              "answer_verified": true
+            },
+            {
+              "id": "13b99ab2-4492-4268-af5d-b2465f31249f",
+              "prompt": "一看到他那样子，大家就都______。",
+              "choices": [
+                "笑了起来",
+                "笑了一下儿",
+                "笑了出来",
+                "笑了一会儿"
+              ],
+              "answer": "笑了起来",
+              "answer_verified": true
+            },
+            {
+              "id": "882840ce-ec4d-4197-86d4-7ca570830145",
+              "prompt": "你能______她是哪国人吗？",
+              "choices": [
+                "看得出来",
+                "看得过来",
+                "看得起来",
+                "猜得到"
+              ],
+              "answer": "看得出来",
+              "answer_verified": true
+            },
+            {
+              "id": "4504eb39-0614-4296-b1f7-a23d089069a0",
+              "prompt": "我也______好办法。",
+              "choices": [
+                "想出来",
+                "想不起来",
+                "想不出来",
+                "想起来"
+              ],
+              "answer": "想不出来",
+              "answer_verified": true
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 4,
+      "title": "四、按照例句做练习，并说出句子在什么情况下用",
+      "title_vi": "Làm theo mẫu và nói câu đó dùng trong tình huống nào",
+      "instruction": {
+        "zh": "按照例句做练习，并说出句子在什么情况下用。",
+        "vi": "Làm theo mẫu và nói câu đó dùng trong tình huống nào."
+      },
+      "parts": [
+        {
+          "id": "ff282d24-4562-4c17-9e1f-5acd2a0f2e5a",
+          "model": {
+            "a1": "把它拍下来吗？",
+            "b1": "拍下来吧。",
+            "a2": "你把它拍下来了没有？",
+            "b2": "拍下来了。"
+          },
+          "substitutions": [
+            "照",
+            "画",
+            "录",
+            "写",
+            "记"
+          ]
+        },
+        {
+          "id": "c66c00bf-e530-4d0e-b7b3-4e2e961f6371",
+          "model": {
+            "a": "听出来了吗？",
+            "b": "听不出来。"
+          },
+          "substitutions": [
+            "看",
+            "猜",
+            "吃",
+            "喝",
+            "想"
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.substitution_drill.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 5,
+      "title": "五、下列情景怎么说",
+      "title_vi": "Các tình huống sau nói thế nào",
+      "instruction": {
+        "zh": "用“动词 + 趋向补语”。",
+        "vi": "Dùng cấu trúc “động từ + bổ ngữ xu hướng” để trả lời."
+      },
+      "questions": [
+        {
+          "id": "2c6cca7c-c71c-4c94-a001-d471d9eb2fbc",
+          "situation_zh": "在一次会上，一个多年不见的同学走过来，跟你握手，但是你认不出来他是谁了。",
+          "prompt": "A：还认识我吗？\nB：对不起，______________________________。",
+          "suggested_answer": "对不起，我认不出来你是谁了。",
+          "answer_verified": true
+        },
+        {
+          "id": "5b2ff0b9-2045-486a-b36d-743ada304d79",
+          "situation_zh": "朋友请你吃饭，有一个菜很好吃，朋友问你是什么菜，你没吃出来，怎么回答他？",
+          "prompt": "______________________________。",
+          "suggested_answer": "我吃不出来这是什么菜。",
+          "answer_verified": true
+        },
+        {
+          "id": "821c03fd-638f-4157-b60d-665b9bd7073c",
+          "situation_zh": "老师让你们听写，但是你觉得老师念得太快，你有两个句子没有写下来。",
+          "prompt": "A：都写下来了吗？\nB：______________________________。",
+          "suggested_answer": "有两个句子没有写下来。",
+          "answer_verified": true
+        },
+        {
+          "id": "c26f4cb0-e95b-486a-bb98-a44ef13b6df9",
+          "situation_zh": "去洗照片，你希望一个小时以后就能洗出来，你怎么问营业员？",
+          "prompt": "A：______________________________？\nB：没问题，洗得出来。",
+          "suggested_answer": "一个小时以后洗得出来吗？",
+          "answer_verified": true
+        },
+        {
+          "id": "f1692edf-ecb9-47a3-a7e3-85a3ede4d81a",
+          "situation_zh": "听到一首小提琴曲，朋友问你听得出来这是什么曲子吗，你怎么回答他？",
+          "prompt": "______________________________。",
+          "suggested_answer": "我听不出来这是什么曲子。",
+          "answer_verified": true
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_question_verified_answer",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 6,
+      "title": "六、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "ced333eb-0c24-46af-8ef0-224088ab34bb",
+          "wrong": "他照起来的照片很好看。",
+          "suggested_corrections": [
+            "他照的照片很好看。",
+            "他照出来的照片很好看。"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "3fd2c4b2-0fa5-46d4-a3e3-1172619dcaa4",
+          "wrong": "我把这个词查不出来。",
+          "suggested_corrections": [
+            "这个词我查不出来。",
+            "我查不出这个词来。"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "485289c3-03dd-4fc1-905d-d410e6e4598a",
+          "wrong": "因为家里没有钱，没办法让我继续下去学习了。",
+          "suggested_corrections": [
+            "因为家里没有钱，没办法让我继续学习下去了。"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "90f24372-1c4b-445f-925b-af742edfddda",
+          "wrong": "我想不出来她叫什么名字了。",
+          "suggested_corrections": [
+            "我想不起来她叫什么名字了。"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "21e3c509-8c7e-41f7-8b82-28338cbab8b7",
+          "wrong": "他想起来了一个好办法。",
+          "suggested_corrections": [
+            "他想出了一个好办法。"
+          ],
+          "answer_verified": true
+        },
+        {
+          "id": "6cd3b845-5ff7-43b6-b5af-2033f6ed3ceb",
+          "wrong": "这件事我不想告诉她，但是她已经把这件事知道了。",
+          "suggested_corrections": [
+            "这件事我不想告诉她，但是她已经知道这件事了。"
+          ],
+          "answer_verified": true
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_verified_answer",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 7,
+      "title": "七、综合填空",
+      "title_vi": "Điền tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền tổng hợp vào chỗ trống."
+      },
+      "supplementary_vocab": [
+        {
+          "hanzi": "司马光",
+          "pinyin": "Sīmǎ Guāng",
+          "meaning_vi": "Tư Mã Quang"
+        },
+        {
+          "hanzi": "砸",
+          "pinyin": "zá",
+          "meaning_vi": "đập; nện; đập vỡ"
+        },
+        {
+          "hanzi": "缸",
+          "pinyin": "gāng",
+          "meaning_vi": "chum; vại"
+        },
+        {
+          "hanzi": "喊",
+          "pinyin": "hǎn",
+          "meaning_vi": "hét; hô"
+        },
+        {
+          "hanzi": "救",
+          "pinyin": "jiù",
+          "meaning_vi": "cứu"
+        },
+        {
+          "hanzi": "吓",
+          "pinyin": "xià",
+          "meaning_vi": "làm sợ; dọa"
+        },
+        {
+          "hanzi": "连忙",
+          "pinyin": "liánmáng",
+          "meaning_vi": "vội vàng; lập tức"
+        },
+        {
+          "hanzi": "石头",
+          "pinyin": "shítou",
+          "meaning_vi": "đá; hòn đá"
+        }
+      ],
+      "passage": {
+        "id": "f013544b-a318-4292-a467-21659afc2082",
+        "title": "司马光砸缸",
+        "title_vi": "Tư Mã Quang đập chum",
+        "text_with_blanks": "这是一个中国古时候的故事。\n\n有一天，司马光和小朋友们在院子里玩儿。院子里有个大水缸，水缸里装满了水。他们玩儿得正高兴的时候，一个小朋友不小心掉①______水缸里去了。一个孩子看见了，就大声喊了②______：“救人啊！救人啊！有人掉到水缸里③______了。” 有的孩子吓得哭了④______。水缸很大，不容易从上面救人。司马光看到这种情况，很快想⑤______了一个好办法。他连忙搬起一块石头，跑了过来，向水缸砸去，一下子⑥______水缸砸破了。水缸里的水都流了⑦______。掉在水缸里的小朋友得救了。\n\n看到从水缸里爬出来的小朋友，大家都笑了⑧______。",
+        "completed_text": "这是一个中国古时候的故事。\n\n有一天，司马光和小朋友们在院子里玩儿。院子里有个大水缸，水缸里装满了水。他们玩儿得正高兴的时候，一个小朋友不小心掉到水缸里去了。一个孩子看见了，就大声喊了起来：“救人啊！救人啊！有人掉到水缸里去了。” 有的孩子吓得哭了起来。水缸很大，不容易从上面救人。司马光看到这种情况，很快想出了一个好办法。他连忙搬起一块石头，跑了过来，向水缸砸去，一下子把水缸砸破了。水缸里的水都流了出来。掉在水缸里的小朋友得救了。\n\n看到从水缸里爬出来的小朋友，大家都笑了起来。",
+        "vi": "Đây là một câu chuyện thời xưa của Trung Quốc.\n\nMột hôm, Tư Mã Quang và các bạn nhỏ chơi trong sân. Trong sân có một cái chum nước lớn, trong chum chứa đầy nước. Khi các bạn đang chơi rất vui, một bạn nhỏ không cẩn thận rơi vào trong chum nước. Một đứa trẻ nhìn thấy liền hét lên: “Cứu người! Cứu người! Có người rơi vào chum nước rồi!” Có vài đứa trẻ sợ đến phát khóc. Chum nước rất lớn, không dễ cứu người từ phía trên. Tư Mã Quang nhìn thấy tình huống này, rất nhanh nghĩ ra một cách hay. Cậu vội vàng bê một hòn đá lên, chạy tới, đập vào chum nước, một cái đã đập vỡ chum. Nước trong chum đều chảy ra ngoài. Bạn nhỏ rơi vào chum nước được cứu.\n\nNhìn thấy bạn nhỏ bò ra từ trong chum nước, mọi người đều bật cười."
+      },
+      "answers": [
+        {
+          "blank": 1,
+          "answer": "到",
+          "answer_verified": true
+        },
+        {
+          "blank": 2,
+          "answer": "起来",
+          "answer_verified": true
+        },
+        {
+          "blank": 3,
+          "answer": "去",
+          "answer_verified": true
+        },
+        {
+          "blank": 4,
+          "answer": "起来",
+          "answer_verified": true
+        },
+        {
+          "blank": 5,
+          "answer": "出",
+          "answer_verified": true
+        },
+        {
+          "blank": 6,
+          "answer": "把",
+          "answer_verified": true
+        },
+        {
+          "blank": 7,
+          "answer": "出来",
+          "answer_verified": true
+        },
+        {
+          "blank": 8,
+          "answer": "起来",
+          "answer_verified": true
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reading_cloze.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_verified_answer",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "subtitle": "邀请与谢绝",
+      "subtitle_vi": "Mời và từ chối lời mời",
+      "instruction": {
+        "zh": "邀请与谢绝。",
+        "vi": "Luyện mời và từ chối lời mời."
+      },
+      "dialogue": [
+        {
+          "id": "14d03f78-43df-40be-a598-3bebc0f33c34",
+          "speaker": "A",
+          "zh": "老师，星期五下午六点有一个宴会，我们希望您能参加。",
+          "vi": "Thưa thầy, sáu giờ chiều thứ sáu có một buổi tiệc, chúng em hy vọng thầy có thể tham gia."
+        },
+        {
+          "id": "2b4731fc-0a8b-4d41-861b-6cccce0676c3",
+          "speaker": "B",
+          "zh": "谢谢你们的邀请。不过，真不巧，星期五晚上我正好有客人要来，去不了。",
+          "vi": "Cảm ơn lời mời của các em. Nhưng thật không may, tối thứ sáu thầy vừa hay có khách đến, không đi được rồi."
+        },
+        {
+          "id": "a4685bea-243d-459c-a695-7bb913c09214",
+          "speaker": "A",
+          "zh": "那太遗憾了！",
+          "vi": "Vậy thì tiếc quá ạ!"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "b7f1543a-4f00-44d1-b30b-b35fffc52c89",
+          "pattern": "时间 + 有一个 + 活动/宴会，我们希望您能参加。",
+          "meaning_vi": "Mời ai tham gia một hoạt động."
+        },
+        {
+          "id": "d0b5fca2-4093-4cca-9213-3725521a42e7",
+          "pattern": "谢谢你们的邀请。不过，真不巧，……，去不了。",
+          "meaning_vi": "Cảm ơn lời mời và từ chối lịch sự."
+        },
+        {
+          "id": "7ac026ff-e9e4-4575-bbe5-798f3aed2bad",
+          "pattern": "那太遗憾了！",
+          "meaning_vi": "Bày tỏ tiếc nuối."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.communication_dialogue.v2"
+      },
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "character_writing",
+      "variant": "character_copying",
+      "order": 9,
+      "title": "九、写汉字",
+      "title_vi": "Viết chữ Hán",
+      "instruction": {
+        "zh": "写汉字。",
+        "vi": "Luyện viết chữ Hán."
+      },
+      "items": [
+        {
+          "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+          "hanzi": "应",
+          "pinyin": "yìng",
+          "meaning_vi": "đáp ứng; nhận lời; nên; phải",
+          "stroke_order_hint": [
+            "丶",
+            "一",
+            "丿",
+            "丿",
+            "丶",
+            "一"
+          ],
+          "example": "应国际广播电台的邀请",
+          "example_vi": "theo lời mời của Đài phát thanh quốc tế",
+          "check_needed": false
+        },
+        {
+          "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
+          "hanzi": "待",
+          "pinyin": "dāi",
+          "meaning_vi": "ở lại; lưu lại",
+          "stroke_order_hint": [
+            "丿",
+            "丿",
+            "丨",
+            "一",
+            "一",
+            "丨",
+            "一",
+            "一",
+            "亅",
+            "丶"
+          ],
+          "example": "待多长时间",
+          "example_vi": "ở lại bao lâu",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.character_writing.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

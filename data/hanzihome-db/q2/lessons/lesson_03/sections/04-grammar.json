@@ -1,0 +1,154 @@
+{
+  "id": "section_04_grammar",
+  "type": "grammar",
+  "order": 4,
+  "title": "语法",
+  "title_vi": "Ngữ pháp",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "grammar_001",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "就 / 才",
+      "title_vi": "Phân biệt 就 và 才",
+      "level": "HSK3",
+      "tags": [
+        "副词",
+        "comparison"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_001_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "就 nhấn mạnh sớm, nhanh, dễ đạt hoặc sắp xảy ra; 才 nhấn mạnh muộn, chậm, khó hoặc mãi mới đạt.",
+          "examples": [
+            {
+              "id": "grammar_001_ex_001",
+              "zh": "我吃了早饭就来了。",
+              "pinyin": "Wǒ chī le zǎofàn jiù lái le.",
+              "vi": "Tôi ăn sáng xong là đến ngay.",
+              "highlight": [
+                "就"
+              ],
+              "source_ref": "text_001_line_003"
+            },
+            {
+              "id": "grammar_001_ex_002",
+              "zh": "怎么现在才下班？",
+              "pinyin": "Zěnme xiànzài cái xià bān?",
+              "vi": "Sao bây giờ em mới tan làm?",
+              "highlight": [
+                "才"
+              ],
+              "source_ref": "text_002_line_002"
+            }
+          ]
+        },
+        {
+          "id": "grammar_001_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Khung dùng nhanh",
+          "pattern": "时间/条件 + 就/才 + 动词",
+          "meaning_vi": "就 = sớm/nhanh/dễ; 才 = muộn/chậm/khó.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "grammar_002",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "要是……就……",
+      "title_vi": "Nếu... thì...",
+      "level": "HSK3",
+      "tags": [
+        "条件句",
+        "口语"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_002_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "要是 đưa ra giả thiết, 就 dẫn ra kết quả. Gần nghĩa 如果……就…… nhưng khẩu ngữ hơn.",
+          "examples": [
+            {
+              "id": "grammar_002_ex_001",
+              "zh": "要是你也满意，咱们就租了。",
+              "pinyin": "Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
+              "vi": "Nếu em cũng hài lòng, chúng ta thuê luôn.",
+              "highlight": [
+                "要是",
+                "就"
+              ],
+              "source_ref": "text_002_line_004"
+            }
+          ]
+        },
+        {
+          "id": "grammar_002_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "要是 + 条件，主语 + 就 + 结果",
+          "meaning_vi": "Nếu điều kiện A xảy ra thì kết quả B xảy ra.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "grammar_003",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "虽然……但是……",
+      "title_vi": "Tuy... nhưng...",
+      "level": "HSK3",
+      "tags": [
+        "让步复句"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "grammar_003_block_001",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "虽然 thừa nhận một sự thật ở vế trước; 但是 đưa ý chính hoặc điểm trái chiều ở vế sau.",
+          "examples": [
+            {
+              "id": "grammar_003_ex_001",
+              "zh": "虽然贵了点儿，但是房子真好。",
+              "pinyin": "Suīrán guì le diǎnr, dànshì fángzi zhēn hǎo.",
+              "vi": "Tuy hơi đắt một chút, nhưng căn nhà thật sự tốt.",
+              "highlight": [
+                "虽然",
+                "但是"
+              ],
+              "source_ref": "text_002_line_008"
+            }
+          ]
+        },
+        {
+          "id": "grammar_003_block_002",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "虽然 + A，但是 + B",
+          "meaning_vi": "Tuy A, nhưng B. B thường là ý chính.",
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

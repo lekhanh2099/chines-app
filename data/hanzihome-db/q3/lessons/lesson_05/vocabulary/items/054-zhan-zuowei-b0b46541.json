@@ -1,0 +1,382 @@
+{
+  "id": "4cd4fef6-eb21-43f3-b17a-2d716ae082e5",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "占座位",
+  "pinyin": "zhàn zuòwèi",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chiếm tọa vị",
+    "meaning_vi": "chiếm chỗ, giữ chỗ ngồi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chiếm chỗ",
+      "giữ chỗ ngồi"
+    ],
+    "short_definition_vi": "chiếm chỗ, giữ chỗ ngồi",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "占",
+        "lishu_vi": "chiếm/chiêm",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "座",
+        "lishu_vi": "tọa",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái nhà, không gian che phủ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "广 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái nhà, không gian che phủ",
+            "position_vi": "bao ngoài chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái nhà, không gian che phủ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "广 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "广 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "位",
+        "lishu_vi": "vị",
+        "structure_note_vi": "Có thành phần/bộ thủ thấy rõ liên quan trực tiếp đến trường nghĩa hiện đại.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người, hành vi/con người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành vi/con người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành vi/con người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được phân tích là bộ/thành phần bộ thủ thấy rõ trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ chắc, không copy từ chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "占座位 = chiếm/giữ một vị trí để ngồi.",
+    "memory_tip_vi": "Khẩu ngữ gọn hơn: 占座.",
+    "warning_vi": "占 đọc zhàn, không đọc zhān.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "占座",
+        "zhàn zuò",
+        "giữ chỗ",
+        "khẩu ngữ gọn"
+      ],
+      [
+        "让座",
+        "ràng zuò",
+        "nhường chỗ",
+        "hành động ngược lại"
+      ],
+      [
+        "抢座位",
+        "qiǎng zuòwèi",
+        "giành chỗ",
+        "mạnh hơn"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khẩu ngữ gọn hơn: 占座."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e305b2fa-6d4f-4e9c-9a20-2b621d5dbd69",
+      "order": 1,
+      "zh": "占座位",
+      "pinyin": "",
+      "vi": "chiếm/giữ chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5633b28-6392-4ad8-9af2-91f663004127",
+      "order": 2,
+      "zh": "占个座",
+      "pinyin": "",
+      "vi": "giữ một chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3fd318c-4d3d-40a5-ab32-2f66e3dc4ef3",
+      "order": 3,
+      "zh": "给朋友占座位",
+      "pinyin": "",
+      "vi": "giữ chỗ cho bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47cf6857-12d4-4947-8286-7fe4ef023632",
+      "order": 4,
+      "zh": "用书包占座位",
+      "pinyin": "",
+      "vi": "dùng cặp giữ chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d1a47a95-f508-409d-b2cb-37a4efe169e6",
+      "order": 5,
+      "zh": "图书馆占座",
+      "pinyin": "",
+      "vi": "giữ chỗ ở thư viện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b4557537-07b0-4d33-a570-2c68f36e90e0",
+      "order": 1,
+      "zh": "他用书包占了两个座位。",
+      "pinyin": "Tā yòng shūbāo zhàn le liǎng ge zuòwèi.",
+      "vi": "Anh ấy dùng cặp giữ hai chỗ ngồi.",
+      "analysis_vi": "用 + đồ vật + 占座位.",
+      "highlight": [
+        "占座位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4cd4fef6-eb21-43f3-b17a-2d716ae082e5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e078ce20-de0b-49ba-9b41-f37be8c68d24",
+      "order": 2,
+      "zh": "如果你先到教室，就帮我占个座，不过别占太久。",
+      "pinyin": "Rúguǒ nǐ xiān dào jiàoshì, jiù bāng wǒ zhàn ge zuò, búguò bié zhàn tài jiǔ.",
+      "vi": "Nếu bạn đến lớp trước thì giữ giúp tôi một chỗ, nhưng đừng giữ quá lâu.",
+      "analysis_vi": "占个座 khẩu ngữ tự nhiên.",
+      "highlight": [
+        "占座位"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4cd4fef6-eb21-43f3-b17a-2d716ae082e5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở nơi công cộng, giữ nhiều chỗ hoặc giữ quá lâu dễ bị xem là thiếu ý thức.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4878ba1e-af22-4050-9479-81cabd2e49f7",
+      "order": 1,
+      "rule_vi": "我坐一个座位给你。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我给你占个座。",
+          "pinyin": "Wǒ gěi nǐ zhàn ge zuò.",
+          "vi": "Tôi giữ cho bạn một chỗ.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "占 đọc zhàn, không đọc zhān.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "占座位",
+    "back": "chiếm chỗ, giữ chỗ ngồi",
+    "hint": "zhàn zuòwèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4cd4fef6-eb21-43f3-b17a-2d716ae082e5",
+    "source_lesson_vocab_id": null
+  }
+}

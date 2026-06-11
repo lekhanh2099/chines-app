@@ -1,0 +1,394 @@
+{
+  "id": "195d10fb-c2d5-4271-a73c-1f6a1dd89f54",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "惊喜",
+  "pinyin": "jīngxǐ",
+  "pos": {
+    "raw_vi": "Danh từ / Tính từ trạng thái",
+    "raw_cn": "名/形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Kinh hỷ",
+    "meaning_vi": "bất ngờ vui, niềm bất ngờ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bất ngờ vui, niềm bất ngờ"
+    ],
+    "short_definition_vi": "bất ngờ vui, niềm bất ngờ",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "tích cực, cảm xúc, thường dùng trong sinh nhật, lễ Tết, quà tặng, sự kiện.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "惊",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim/lòng/cảm xúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim/lòng/cảm xúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "京",
+            "hanviet": "kinh",
+            "meaning_vi": "kinh; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kinh ngạc, hoảng, giật mình",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "喜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "士",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sĩ",
+          "radical_name_zh": "",
+          "hanviet": "sĩ",
+          "meaning_vi": "kẻ sĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "士",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "士",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sĩ",
+              "radical_name_zh": "",
+              "hanviet": "sĩ",
+              "meaning_vi": "kẻ sĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui, thích, mừng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "惊 là kinh ngạc, bất ngờ. 喜 là vui, mừng. → 惊喜 = vui vì điều bất ngờ. Cảnh báo: 惊喜 khác 惊吓. 惊喜 là bất ngờ vui; 惊吓 là hoảng sợ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "惊喜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bất ngờ vui.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "意外",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bất ngờ, ngoài dự đoán; có thể tốt hoặc xấu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "惊讶",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngạc nhiên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "惊吓",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hoảng sợ vì bị làm giật mình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: tặng quà bí mật là 惊喜; gặp tai nạn bất ngờ là 意外, không phải 惊喜."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e9fc9c30-aa15-4128-9712-5af0a045655b",
+      "order": 1,
+      "zh": "一个惊喜",
+      "pinyin": "",
+      "vi": "một điều bất ngờ vui",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b458695a-4642-416f-afdf-e91661146b34",
+      "order": 2,
+      "zh": "一份惊喜",
+      "pinyin": "",
+      "vi": "một niềm bất ngờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c7340827-f150-41ed-88c4-994bbdf29c0f",
+      "order": 3,
+      "zh": "给……一个惊喜",
+      "pinyin": "",
+      "vi": "cho ai một bất ngờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b40a4ac1-dab3-45c8-8068-33e7e98c44ef",
+      "order": 4,
+      "zh": "准备惊喜",
+      "pinyin": "",
+      "vi": "chuẩn bị bất ngờ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfc5f9b2-ea24-4204-b330-232f793fe27a",
+      "order": 5,
+      "zh": "又惊又喜",
+      "pinyin": "",
+      "vi": "vừa kinh ngạc vừa vui mừng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e14e92a5-302e-4bb1-a1e5-4b9c63497db2",
+      "order": 1,
+      "zh": "同学们悄悄把会场布置好，想给老师一个惊喜。",
+      "pinyin": "Tóngxuémen qiāoqiāo bǎ huìchǎng bùzhì hǎo, xiǎng gěi lǎoshī yí ge jīngxǐ.",
+      "vi": "Các bạn học lặng lẽ bố trí xong hội trường, muốn cho thầy/cô một bất ngờ.",
+      "analysis_vi": "把会场布置好 là câu chữ 把 có kết quả 好; 悄悄 làm rõ cách chuẩn bị bí mật.",
+      "highlight": [
+        "惊喜"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "195d10fb-c2d5-4271-a73c-1f6a1dd89f54"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1a637182-9adc-4659-976f-9d549a397820",
+      "order": 2,
+      "zh": "老师一走进会场，就看见黑板上写着“新春快乐”，觉得又惊又喜。",
+      "pinyin": "Lǎoshī yì zǒu jìn huìchǎng, jiù kànjiàn hēibǎn shang xiězhe “Xīnchūn kuàilè”, juéde yòu jīng yòu xǐ.",
+      "vi": "Thầy/cô vừa bước vào hội trường đã nhìn thấy trên bảng viết “Chúc mừng xuân mới”, cảm thấy vừa bất ngờ vừa vui.",
+      "analysis_vi": "一……就…… diễn tả việc xảy ra ngay; 黑板上写着…… là câu tồn hiện.",
+      "highlight": [
+        "惊"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "195d10fb-c2d5-4271-a73c-1f6a1dd89f54"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "81ce0f4b-403d-40e2-a875-aab266df8e2c",
+      "order": 3,
+      "zh": "这份礼物不贵，但是很有心意，对她来说是一个很大的惊喜。",
+      "pinyin": "Zhè fèn lǐwù bú guì, dànshì hěn yǒu xīnyì, duì tā lái shuō shì yí ge hěn dà de jīngxǐ.",
+      "vi": "Món quà này không đắt, nhưng rất có tấm lòng; với cô ấy mà nói, đó là một bất ngờ lớn.",
+      "analysis_vi": "很有心意 nhấn tâm ý; 惊喜 không nằm ở giá tiền mà ở cảm xúc bất ngờ.",
+      "highlight": [
+        "惊喜"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "195d10fb-c2d5-4271-a73c-1f6a1dd89f54"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 惊喜",
+    "content_vi": "Trong tiếng Trung hiện đại, 仪式感 – yíshìgǎn – “cảm giác nghi thức” là từ rất hay dùng khi nói về quà, sinh nhật, lễ Tết, kỷ niệm. Một 惊喜 nhỏ thường tạo 仪式感, làm người nhận thấy mình được coi trọng.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b966f53e-f8f2-4e4a-987f-32729163f966",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 惊喜 cho bất ngờ xấu. Không tự nhiên: 听到坏消息，我很惊喜。 Đúng: 听到坏消息，我很惊讶。 Tīng dào huài xiāoxi, wǒ hěn jīngyà. Nghe tin xấu, tôi rất ngạc nhiên. 收到这份礼物，我很惊喜。 Shōu dào zhè fèn lǐwù, wǒ hěn jīngxǐ. Nhận được món quà này, tôi rất bất ngờ vui.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "惊喜",
+    "back": "bất ngờ vui, niềm bất ngờ",
+    "hint": "jīngxǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "195d10fb-c2d5-4271-a73c-1f6a1dd89f54",
+    "source_lesson_vocab_id": null
+  }
+}

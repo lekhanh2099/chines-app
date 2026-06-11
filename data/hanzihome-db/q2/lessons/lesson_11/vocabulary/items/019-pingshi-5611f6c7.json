@@ -1,0 +1,348 @@
+{
+  "id": "ef108171-3cf7-4c35-a86d-ff3155c5551f",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "平实",
+  "pinyin": "píngshí",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bình thực",
+    "meaning_vi": "mộc mạc, thực tế, không hoa mỹ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mộc mạc, thực tế, không hoa mỹ"
+    ],
+    "short_definition_vi": "mộc mạc, thực tế, không hoa mỹ",
+    "textbook_focus_vi": "mộc mạc, thực tế, không hoa mỹ",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "平",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bình ổn, không phô",
+        "modern_logic_vi": "平 = bình/không phô.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "实",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "头",
+            "hanviet": "đầu",
+            "meaning_vi": "thành phần dưới trong giản thể",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực, chắc",
+        "modern_logic_vi": "Không nên tách sâu chữ giản thể 实.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "平 = bình ổn/không phô, 实 = thật/chắc. 平实 = mộc mạc, thực tế, không khoa trương.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "朴实",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "实在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "普通",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "华丽",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "浮夸",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "73f9ad60-f0b3-4ef4-99cc-d2758924f6d0",
+      "order": 1,
+      "zh": "语言平实",
+      "pinyin": "",
+      "vi": "ngôn ngữ mộc mạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbb8d11e-3e6b-4500-8379-8e702c12eb1e",
+      "order": 2,
+      "zh": "文章平实",
+      "pinyin": "",
+      "vi": "bài văn mộc mạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3abf7215-b707-46a1-b18a-392c1864d435",
+      "order": 3,
+      "zh": "风格平实",
+      "pinyin": "",
+      "vi": "phong cách mộc mạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7d37575-2037-4431-a535-d3a9b3033c19",
+      "order": 4,
+      "zh": "说话平实",
+      "pinyin": "",
+      "vi": "nói năng chân thực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98c49267-843c-4581-8c03-b49bcb9312dd",
+      "order": 5,
+      "zh": "内容平实",
+      "pinyin": "",
+      "vi": "nội dung thực tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5a84e52c-eca3-4c68-b519-0981febb8009",
+      "order": 6,
+      "zh": "态度平实",
+      "pinyin": "",
+      "vi": "thái độ thực tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a95dbed1-bf4e-48a8-b633-0ee6eb322c58",
+      "order": 1,
+      "zh": "这篇文章写得很平实。",
+      "pinyin": "Zhè piān wénzhāng xiě de hěn píngshí.",
+      "vi": "Bài văn này viết rất mộc mạc, chân thực.",
+      "analysis_vi": "写得很平实 là bổ ngữ trình độ.",
+      "highlight": [
+        "平实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ef108171-3cf7-4c35-a86d-ff3155c5551f"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4ea6e6be-cf46-4fce-9d79-5e4bc5351a2d",
+      "order": 2,
+      "zh": "他介绍中国风景的时候，语言很平实，不像广告那么夸张。",
+      "pinyin": "Tā jièshào Zhōngguó fēngjǐng de shíhou, yǔyán hěn píngshí, bú xiàng guǎnggào nàme kuāzhāng.",
+      "vi": "Khi giới thiệu phong cảnh Trung Quốc, ngôn ngữ rất mộc mạc.",
+      "analysis_vi": "平实 đối lập với 夸张.",
+      "highlight": [
+        "平实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ef108171-3cf7-4c35-a86d-ff3155c5551f"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7be9a2bd-0eda-4c3e-bdeb-2cc9320dd22e",
+      "order": 3,
+      "zh": "导游把一路上的故事讲得很平实，可是大家一听就听懂了。",
+      "pinyin": "Dǎoyóu bǎ yí lù shang de gùshi jiǎng de hěn píngshí, kěshì dàjiā yì tīng jiù tīng dǒng le.",
+      "vi": "Hướng dẫn viên kể chuyện rất mộc mạc, nhưng mọi người nghe là hiểu.",
+      "analysis_vi": "把故事讲得很平实 là 把字句 + bổ ngữ trình độ.",
+      "highlight": [
+        "平实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ef108171-3cf7-4c35-a86d-ff3155c5551f"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong nhận xét văn phong, 平实 thường là lời khen: không hoa mỹ nhưng rõ và thật.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "00928927-6fda-43d8-b302-72e65aa0d93a",
+      "order": 1,
+      "rule_vi": "Không dùng 平实 để nói 'thường xuyên' hay 'ngày thường'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "平实",
+    "back": "mộc mạc, thực tế, không hoa mỹ",
+    "hint": "píngshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ef108171-3cf7-4c35-a86d-ff3155c5551f",
+    "source_lesson_vocab_id": null
+  }
+}

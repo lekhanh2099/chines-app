@@ -1,0 +1,334 @@
+{
+  "id": "1408e03a-70e5-45a2-a8e1-e747aeec7eb0",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "图书",
+  "pinyin": "túshū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Đồ thư",
+    "meaning_vi": "sách, sách vở",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sách",
+      "sách vở"
+    ],
+    "short_definition_vi": "sách, sách vở",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "học tập, thư viện, nhà sách, văn bản.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "图",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "bao quanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "冬",
+            "hanviet": "đông",
+            "meaning_vi": "mùa đông",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bản đồ, hình ảnh; mưu tính",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "图 là hình vẽ, bản đồ, hình ảnh. → 图书 vốn chỉ nhóm sách/tài liệu có chữ và hình, sau dùng rộng là sách vở.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "书",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sách, viết, thư",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "书 là sách, chữ viết, tài liệu. → 图书 vốn chỉ nhóm sách/tài liệu có chữ và hình, sau dùng rộng là sách vở.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 图书 vốn chỉ nhóm sách/tài liệu có chữ và hình, sau dùng rộng là sách vở.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: khẩu ngữ đời thường thường nói 书 hơn 图书.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "图书 (túshū)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sách vở, tài liệu sách; hơi văn/trang trọng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "书 (shū)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sách, từ thông dụng nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "书籍 (shūjí)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sách vở, văn viết hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "资料 (zīliào)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tài liệu, dữ liệu/thông tin tham khảo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: nói đời thường dùng 书; nói thư viện/nhà sách/hệ thống dùng 图书 rất hợp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4da1cb51-f473-4418-a9ba-7a63034a114b",
+      "order": 1,
+      "zh": "图书馆",
+      "pinyin": "",
+      "vi": "thư viện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a950f8a6-797e-46d8-8610-70aff2b0a3be",
+      "order": 2,
+      "zh": "图书城",
+      "pinyin": "",
+      "vi": "trung tâm sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db86ea9c-ed6f-4249-b2d3-f69f6a077b0a",
+      "order": 3,
+      "zh": "图书资料",
+      "pinyin": "",
+      "vi": "tài liệu sách vở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "232bdfe5-c95a-4885-8312-3d90ad281bb9",
+      "order": 4,
+      "zh": "图书分类",
+      "pinyin": "",
+      "vi": "phân loại sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b07e3110-b7a0-44fb-8a14-f3d7b45a1bed",
+      "order": 1,
+      "zh": "这些图书已经从纸箱里拿出来，放到书架上去了。",
+      "pinyin": "Zhèxiē túshū yǐjīng cóng zhǐxiāng lǐ ná chūlai, fàng dào shūjià shàng qù le.",
+      "vi": "Những quyển sách này đã được lấy ra khỏi thùng giấy và đặt lên kệ sách rồi.",
+      "analysis_vi": "拿出来 là lấy từ trong ra; 放到书架上去 nói đưa vật đến vị trí xa điểm nói hoặc theo hướng đi ra.",
+      "highlight": [
+        "图书"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "1408e03a-70e5-45a2-a8e1-e747aeec7eb0"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cffbb97b-8ce1-43ea-a84c-5f183164d067",
+      "order": 2,
+      "zh": "图书馆里的图书不能随便带出去。",
+      "pinyin": "Túshūguǎn lǐ de túshū bù néng suíbiàn dài chūqù.",
+      "vi": "Sách trong thư viện không được tùy tiện mang ra ngoài.",
+      "analysis_vi": "带出去 nhấn mạnh mang từ trong thư viện ra ngoài.",
+      "highlight": [
+        "图书"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "1408e03a-70e5-45a2-a8e1-e747aeec7eb0"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "60b4e194-3283-4bc7-bfc9-2b98849978a6",
+      "order": 3,
+      "zh": "如果只背课本，不看另外的图书，词汇量会增加得比较慢。",
+      "pinyin": "Rúguǒ zhǐ bèi kèběn, bú kàn lìngwài de túshū, cíhuìliàng huì zēngjiā de bǐjiào màn.",
+      "vi": "Nếu chỉ học thuộc sách giáo trình, không đọc thêm sách khác, lượng từ vựng sẽ tăng khá chậm.",
+      "analysis_vi": "另外的图书 là sách khác ngoài giáo trình; câu này hợp định hướng học sâu.",
+      "highlight": [
+        "图书"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "1408e03a-70e5-45a2-a8e1-e747aeec7eb0"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "6d2f13c8-080f-42fa-b4ed-269400803723",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 图书 quá nhiều trong khẩu ngữ. Khẩu ngữ:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "图书",
+    "back": "sách, sách vở",
+    "hint": "túshū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "图书馆 là từ cực cơ bản trong môi trường học thuật Trung Quốc. Nhưng khi hỏi bạn bè “bạn mua sách chưa?”, nói 你买书了吗？ tự nhiên hơn 你买图书了吗？",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1408e03a-70e5-45a2-a8e1-e747aeec7eb0",
+    "source_lesson_vocab_id": null
+  }
+}

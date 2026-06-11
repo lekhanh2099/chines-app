@@ -1,0 +1,213 @@
+{
+  "id": "e09003cb-5375-47d9-9964-319055980b2b",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "高",
+  "pinyin": "gāo",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ / Yếu tố cấu tạo từ",
+    "raw_cn": "形 / 名 / 语素",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cao",
+    "meaning_vi": "cao; mức cao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cao",
+      "mức cao"
+    ],
+    "short_definition_vi": "cao; mức cao",
+    "textbook_focus_vi": "cao; mức cao",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "高",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "高 dùng cho chiều cao, mức độ, chất lượng, giá cả, địa vị.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "eabdd09c-1df6-46fb-9789-0d981a9f919c",
+      "order": 1,
+      "zh": "很高",
+      "pinyin": "",
+      "vi": "rất cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa6f77a9-2c7a-482b-b1cb-c1b4e0828aac",
+      "order": 2,
+      "zh": "越来越高",
+      "pinyin": "",
+      "vi": "ngày càng cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68522c8a-ec94-4f42-8c38-46a2cf9ab1c5",
+      "order": 3,
+      "zh": "越长越高",
+      "pinyin": "",
+      "vi": "càng lớn càng cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "981b6e76-1651-4e27-b5a6-e136efc80f15",
+      "order": 4,
+      "zh": "价格高",
+      "pinyin": "",
+      "vi": "giá cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fc08495-2843-4e65-a68f-caa391e9e2b6",
+      "order": 5,
+      "zh": "水平高",
+      "pinyin": "",
+      "vi": "trình độ cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4d5d158f-4654-4aa9-9412-8776a689a6ed",
+      "order": 1,
+      "zh": "院子里的枣树越长越高。",
+      "pinyin": "Yuànzi lǐ de zǎoshù yuè zhǎng yuè gāo.",
+      "vi": "Cây táo tàu trong sân càng lớn càng cao.",
+      "analysis_vi": "越……越…… là trọng tâm Bài 16.",
+      "highlight": [
+        "高"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "e09003cb-5375-47d9-9964-319055980b2b"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e902571-253f-4730-94c3-a87ac04f617d",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：高。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: cao; mức cao.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "高"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "e09003cb-5375-47d9-9964-319055980b2b"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 高 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7d6b0807-06ef-4e9a-afd8-a904f5c5fa4b",
+      "order": 1,
+      "rule_vi": "价格高 trung tính hơn; 东西贵 đời sống hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "价格高 trung tính hơn; 东西贵 đời sống hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "高",
+    "back": "cao; mức cao",
+    "hint": "gāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_025"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e09003cb-5375-47d9-9964-319055980b2b",
+    "source_lesson_vocab_id": null
+  }
+}

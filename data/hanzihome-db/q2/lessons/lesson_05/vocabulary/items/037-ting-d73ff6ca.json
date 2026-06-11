@@ -1,0 +1,256 @@
+{
+  "id": "0bec7543-3473-4c98-8cf7-634480e768c2",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "挺",
+  "pinyin": "tǐng",
+  "pos": {
+    "raw_vi": "Phó từ / Động từ / Tính từ",
+    "raw_cn": "副 / 动 / 形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "đĩnh",
+    "meaning_vi": "khá, rất; thẳng",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "khá, rất; thẳng",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "挺",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "廷",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khá/rất; thẳng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Trong 挺好, 挺 là phó từ khẩu ngữ nghĩa khá/rất.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rất trung tính",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "非常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "太……了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm xúc mạnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c4ebbbf2-9d34-4d7d-a963-7256452bad1c",
+      "order": 1,
+      "zh": "挺好",
+      "pinyin": "",
+      "vi": "khá tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad1036d9-80a0-410d-b3b6-ba26180eb12c",
+      "order": 2,
+      "zh": "挺不错",
+      "pinyin": "",
+      "vi": "khá ổn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0915b90f-f0fe-42c3-8b4e-344108e324bb",
+      "order": 3,
+      "zh": "挺难记",
+      "pinyin": "",
+      "vi": "khá khó nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ce3af59e-27e5-431c-9b05-38a2c42e0e2a",
+      "order": 1,
+      "zh": "这个办法挺好。",
+      "pinyin": "Zhège bànfǎ tǐng hǎo.",
+      "vi": "Cách này khá tốt.",
+      "en": "",
+      "highlight": [
+        "挺"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0bec7543-3473-4c98-8cf7-634480e768c2"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "还挺好 nghĩa là cũng khá ổn đấy.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "210e1192-50ce-4ada-97b3-a0ec7b49db85",
+      "order": 1,
+      "title_vi": "Tránh văn phong quá trang trọng",
+      "explanation_vi": "Văn bản trang trọng nên dùng 很/非常 hoặc cách khác.",
+      "wrong_examples": [],
+      "correct_examples": [
+        "这个办法挺好。",
+        "这个方法效果很好。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "挺",
+    "back": "khá, rất; thẳng",
+    "hint": "tǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "挺"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0bec7543-3473-4c98-8cf7-634480e768c2",
+    "source_lesson_vocab_id": null
+  }
+}

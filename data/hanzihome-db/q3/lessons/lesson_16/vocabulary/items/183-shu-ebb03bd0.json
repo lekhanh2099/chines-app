@@ -1,0 +1,61 @@
+{
+  "id": "synthetic_vocab_fe1fd6542af2f196",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "数",
+  "pinyin": "shù",
+  "meaning_vi": "vài, mấy, một số",
+  "pos": "Số từ / Định ngữ số lượng",
+  "pos_detail": {
+    "vi": "Số từ / Định ngữ số lượng",
+    "cn": "数词 / 数量定语",
+    "normalized": "numeral",
+    "schema_compatible_pos": "numeral",
+    "is_separable_verb": false,
+    "notes": [],
+    "usage_note_vi": "Trong 数十亿, 数年来 đọc shù, nghĩa là vài/mấy/nhiều; không đọc shǔ trong ngữ cảnh này."
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "aad16c46-9b0b-4ef6-9266-b249b391d624",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "aad16c46-9b0b-4ef6-9266-b249b391d624",
+    "type": "vocabulary_item",
+    "order": 61,
+    "hanzi": "数",
+    "pinyin": "shù",
+    "meaning_vi": "vài, mấy, một số",
+    "meaning_en": "several",
+    "pos": "Số từ / Định ngữ số lượng",
+    "pos_detail": {
+      "vi": "Số từ / Định ngữ số lượng",
+      "cn": "数词 / 数量定语",
+      "normalized": "numeral",
+      "schema_compatible_pos": "numeral",
+      "is_separable_verb": false,
+      "notes": [],
+      "usage_note_vi": "Trong 数十亿, 数年来 đọc shù, nghĩa là vài/mấy/nhiều; không đọc shǔ trong ngữ cảnh này."
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "数",
+      "back": "shù — vài, mấy, một số",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,342 @@
+{
+  "id": "a2dc368e-c830-4692-ac88-b8b09f6dcc79",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "方面",
+  "pinyin": "fāngmiàn",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Phương diện",
+    "meaning_vi": "phương diện, mặt, lĩnh vực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phương diện, mặt, lĩnh vực"
+    ],
+    "short_definition_vi": "phương diện, mặt, lĩnh vực",
+    "textbook_focus_vi": "phương diện, mặt, lĩnh vực",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "方",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phía, phương diện",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "面",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặt, phương diện",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 方面 hợp lại tạo nghĩa hiện đại trong bài: phương diện, mặt, lĩnh vực.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "方面",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "方面 / 地方 / 部分",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "地方",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "方面 / 地方 / 部分",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "部分",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "方面 / 地方 / 部分",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "在……方面",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "在……方面 / 关于……",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "关于……",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "在……方面 / 关于……",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "方面 / 地方 / 部分",
+      "在……方面 / 关于……"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5a286a60-7c01-442e-accb-0654061e845c",
+      "order": 1,
+      "zh": "在学习方面",
+      "pinyin": "",
+      "vi": "在学习方面",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "48fe6f38-bb19-4b15-8219-9fe95a81a489",
+      "order": 2,
+      "zh": "在工作方面",
+      "pinyin": "",
+      "vi": "在工作方面",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "3e0aa11b-e0a4-4b80-aaff-cd5227ccfe70",
+      "order": 3,
+      "zh": "在经济方面",
+      "pinyin": "",
+      "vi": "在经济方面",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "569a67bd-c01d-4250-aea8-aa8b795aaa98",
+      "order": 4,
+      "zh": "法律方面的问题",
+      "pinyin": "",
+      "vi": "法律方面的问题",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d70b2a02-202d-41c3-b4d5-bc85e74521bb",
+      "order": 5,
+      "zh": "医学方面的知识",
+      "pinyin": "",
+      "vi": "医学方面的知识",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "042f34dc-2e7d-4c6e-bc43-f52fbe85a954",
+      "order": 6,
+      "zh": "各个方面",
+      "pinyin": "",
+      "vi": "各个方面",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d354b137-0b30-4876-a80c-c6a1835e04a4",
+      "order": 7,
+      "zh": "这方面",
+      "pinyin": "",
+      "vi": "这方面",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1feddc7b-6064-4152-9115-cf129be496a1",
+      "order": 1,
+      "zh": "这个词是“方面”。",
+      "pinyin": "",
+      "vi": "Từ này là “方面”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "方面"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "a2dc368e-c830-4692-ac88-b8b09f6dcc79"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dbafaa60-8cae-40ea-a358-403cd52e8521",
+      "order": 2,
+      "zh": "你想怎么用“方面”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “方面” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "方面"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "a2dc368e-c830-4692-ac88-b8b09f6dcc79"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2f3e48ec-07b8-4698-97c2-63d685febf2c",
+      "order": 3,
+      "zh": "我们一边复习方面，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “方面”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "方面"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "a2dc368e-c830-4692-ac88-b8b09f6dcc79"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "方面 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fca5a1c9-88c1-453f-892d-bf48c8f3088c",
+      "order": 1,
+      "rule_vi": "Dùng 方面 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 方面 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "方面",
+    "back": "phương diện, mặt, lĩnh vực",
+    "hint": "fāngmiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a2dc368e-c830-4692-ac88-b8b09f6dcc79",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "id": "3364b24e-3269-4591-bce5-444f75159e01",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "乐于助人",
+  "pinyin": "lèyú zhùrén",
+  "pos": {
+    "raw_vi": "Thành ngữ / cụm tính từ",
+    "raw_cn": "成语/形容词性短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lạc vu trợ nhân",
+    "meaning_vi": "sẵn lòng giúp đỡ người khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sẵn lòng giúp đỡ người khác"
+    ],
+    "short_definition_vi": "sẵn lòng giúp đỡ người khác",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "乐",
+        "lishu_vi": "",
+        "structure_note_vi": "乐: vui; sẵn lòng",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui; sẵn lòng",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: vui; sẵn lòng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "于",
+        "lishu_vi": "",
+        "structure_note_vi": "于: ở; đối với",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở; đối với",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: ở; đối với.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "助",
+        "lishu_vi": "",
+        "structure_note_vi": "助: giúp",
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giúp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: giúp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "人: người",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: người.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "乐于助人 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 乐于助人的人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5a769876-a0fb-4d6e-be32-42b05cc460e3",
+      "order": 1,
+      "zh": "乐于助人的人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4cc0973d-9192-43cc-9276-e14100bbca46",
+      "order": 2,
+      "zh": "非常乐于助人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27ec8bd4-3235-4034-a48b-767e06954450",
+      "order": 3,
+      "zh": "心地善良、乐于助人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e025646a-259f-48a3-9749-85ed0ee1e45b",
+      "order": 4,
+      "zh": "乐于帮助别人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "57c3f99a-06d2-4d82-b8b8-95836d6f6f26",
+      "order": 1,
+      "zh": "他是一个乐于助人的人。",
+      "pinyin": "",
+      "vi": "Anh ấy là người sẵn lòng giúp đỡ người khác。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "乐于助人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3364b24e-3269-4591-bce5-444f75159e01"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4bd04a5b-bf0c-4a21-a6aa-c164251f022a",
+      "order": 2,
+      "zh": "从这件事来看，他不但心地善良，而且乐于助人。",
+      "pinyin": "",
+      "vi": "Từ chuyện này mà xét, anh ấy không chỉ lương thiện mà còn sẵn lòng giúp người。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "乐于助人"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3364b24e-3269-4591-bce5-444f75159e01"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "497ef204-4b67-4830-9e23-92f3a89a6ad5",
+      "order": 1,
+      "rule_vi": "Không nói 他乐于帮助 khi thiếu tân ngữ。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 他乐于帮助 khi thiếu tân ngữ。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "乐于助人",
+    "back": "sẵn lòng giúp đỡ người khác",
+    "hint": "lèyú zhùrén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3364b24e-3269-4591-bce5-444f75159e01",
+    "source_lesson_vocab_id": null
+  }
+}

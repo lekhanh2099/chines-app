@@ -1,0 +1,414 @@
+{
+  "id": "344f32b0-c5fc-4a13-a213-cac4c1141d13",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "技术",
+  "pinyin": "jìshù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kỹ thuật",
+    "meaning_vi": "kỹ thuật; kỹ năng chuyên môn; tay nghề",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỹ thuật; kỹ năng chuyên môn; tay nghề"
+    ],
+    "short_definition_vi": "kỹ thuật; kỹ năng chuyên môn; tay nghề",
+    "textbook_focus_vi": "kỹ thuật; kỹ năng chuyên môn; tay nghề",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "技",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "支",
+            "hanviet": "",
+            "meaning_vi": "chống/nhánh; thành phần bên phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "术",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丶",
+            "hanviet": "",
+            "meaning_vi": "nét điểm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "技 = kỹ năng, kỹ xảo. 术 = phương pháp, kỹ thuật. → 技术 = phương pháp/kỹ năng chuyên môn để làm việc gì.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 技术 thiên về kỹ năng thực hiện; 艺术 thiên về biểu đạt thẩm mỹ. Một diễn viên giỏi cần cả hai.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "技术",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỹ thuật, tay nghề.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "技巧",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỹ xảo, mẹo/kỹ thuật nhỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "技能",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kỹ năng, năng lực làm việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "艺术",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghệ thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 开车技术 là kỹ thuật lái xe; 艺术表现 là biểu hiện nghệ thuật."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "71370dfe-8a85-4888-a55d-26dea95d0b29",
+      "order": 1,
+      "zh": "技术很好",
+      "pinyin": "",
+      "vi": "kỹ thuật rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0bc5ac7e-ed3b-4921-90f2-f863fe6059cc",
+      "order": 2,
+      "zh": "开车技术",
+      "pinyin": "",
+      "vi": "kỹ thuật lái xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87d3b242-f767-44ba-9c59-bf812914220b",
+      "order": 3,
+      "zh": "武打技术",
+      "pinyin": "",
+      "vi": "kỹ thuật võ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "64ca8bab-d70a-42d6-b713-752438935f68",
+      "order": 4,
+      "zh": "提高技术",
+      "pinyin": "",
+      "vi": "nâng cao kỹ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e65dc347-b0d0-4b58-a228-7437293d6c6e",
+      "order": 5,
+      "zh": "技术水平",
+      "pinyin": "",
+      "vi": "trình độ kỹ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c5bcdf0e-897d-4cfc-bc4f-b30b1c55fa79",
+      "order": 1,
+      "zh": "这个车夫技术很好，但是他走的方向不对。",
+      "pinyin": "Zhège chēfū jìshù hěn hǎo, dànshì tā zǒu de fāngxiàng bú duì.",
+      "vi": "Người phu xe này kỹ thuật rất tốt, nhưng hướng anh ấy đi không đúng.",
+      "analysis_vi": "Đây là điểm mấu chốt: 技术好 không cứu được 方向错.",
+      "highlight": [
+        "技术"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "344f32b0-c5fc-4a13-a213-cac4c1141d13"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3deec824-db45-4f1b-b905-d1f6d2913bcf",
+      "order": 2,
+      "zh": "演员的武打技术太好了，很多动作我都看得懂。",
+      "pinyin": "Yǎnyuán de wǔdǎ jìshù tài hǎo le, hěn duō dòngzuò wǒ dōu kàn de dǒng.",
+      "vi": "Kỹ thuật võ thuật của diễn viên quá tốt, rất nhiều động tác tôi đều xem hiểu được.",
+      "analysis_vi": "看得懂 là hiểu được động tác/nội dung qua xem.",
+      "highlight": [
+        "技术"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "344f32b0-c5fc-4a13-a213-cac4c1141d13"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "595cc561-95d2-4f44-8007-ad30d60b1f25",
+      "order": 3,
+      "zh": "如果只练技术，不了解艺术表现，也可能演不好这个人物。",
+      "pinyin": "Rúguǒ zhǐ liàn jìshù, bù liǎojiě yìshù biǎoxiàn, yě kěnéng yǎn bù hǎo zhège rénwù.",
+      "vi": "Nếu chỉ luyện kỹ thuật mà không hiểu biểu hiện nghệ thuật, cũng có thể diễn không tốt nhân vật này.",
+      "analysis_vi": "演不好 là không diễn tốt được; câu phân biệt 技术 và 艺术.",
+      "highlight": [
+        "技术"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "344f32b0-c5fc-4a13-a213-cac4c1141d13"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "090eb1c7-ecb5-4cb8-8a54-6c66ab7e4024",
+      "order": 1,
+      "rule_vi": "Nhầm 技术 với 艺术. 技术很好。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Nhầm 技术 với 艺术. 技术很好。 Jìshù hěn hǎo. Kỹ thuật rất tốt. 艺术表现很好。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "技术",
+    "back": "kỹ thuật; kỹ năng chuyên môn; tay nghề",
+    "hint": "jìshù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Trong nghệ thuật Trung Quốc, đặc biệt là Kinh kịch, kỹ thuật rất quan trọng: giọng hát, bước chân, động tác tay, ánh mắt, võ thuật. Nhưng người xem giỏi không chỉ nhìn 技术, mà còn nhìn diễn viên có thể 表现人物性格 hay không.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "344f32b0-c5fc-4a13-a213-cac4c1141d13",
+    "source_lesson_vocab_id": null
+  }
+}

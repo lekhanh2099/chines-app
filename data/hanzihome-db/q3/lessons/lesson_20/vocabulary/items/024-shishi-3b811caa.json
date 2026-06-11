@@ -1,0 +1,350 @@
+{
+  "id": "3a2d1185-79b3-4119-86fb-2430b0c6792a",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "事实",
+  "pinyin": "shìshí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "sự thực",
+    "meaning_vi": "sự thật, sự việc thực tế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sự thật",
+      "sự việc thực tế"
+    ],
+    "short_definition_vi": "sự thật, sự việc thực tế",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "事",
+        "lishu_vi": "sự",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "việc, chuyện",
+        "modern_logic_vi": "事实 = sự việc có thật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "实",
+        "lishu_vi": "thực",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "宀 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "宀 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "宀 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thật, thực, đầy đủ",
+        "modern_logic_vi": "Gợi sự thật/thực nghiệm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "事实 được dùng trong Bài 20 với nghĩa: sự thật, sự việc thực tế.",
+    "memory_tip_vi": "Nhớ qua cụm 事实证明.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "真相",
+        "pinyin": "zhēnxiàng",
+        "meaning_vi": "chân tướng",
+        "difference_vi": "Sự thật phía sau một việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "现实",
+        "pinyin": "xiànshí",
+        "meaning_vi": "hiện thực",
+        "difference_vi": "Thực tế đời sống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "谎言",
+        "pinyin": "huǎngyán",
+        "meaning_vi": "lời nói dối",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "想象",
+        "pinyin": "xiǎngxiàng",
+        "meaning_vi": "tưởng tượng",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "82c19862-e8c1-4099-8a91-5accab4e0beb",
+      "order": 1,
+      "zh": "事实证明",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4076a4e5-d79b-46ed-af43-9d975e898d3f",
+      "order": 2,
+      "zh": "尊重事实",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50b5f9b9-4eac-4550-b380-60d58b3a4345",
+      "order": 3,
+      "zh": "根据事实",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8d95e5ec-e460-4d86-9116-655cfe121fe5",
+      "order": 4,
+      "zh": "凭事实说话",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9860b591-53e1-496d-9c1e-e592dba0994e",
+      "order": 5,
+      "zh": "基本事实",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0dc19262-e980-43a0-9fc0-7073227fad0c",
+      "order": 6,
+      "zh": "客观事实",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "60291263-7e76-4725-b7d8-f085df11f98b",
+      "order": 7,
+      "zh": "事实真相",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c137d236-edc9-4ba4-8de7-e647e4d0e120",
+      "order": 1,
+      "zh": "我们应该尊重事实。",
+      "pinyin": "Wǒmen yīnggāi zūnzhòng shìshí.",
+      "vi": "Chúng ta nên tôn trọng sự thật.",
+      "analysis_vi": "尊重事实 là collocation chuẩn.",
+      "highlight": [
+        "事实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3a2d1185-79b3-4119-86fb-2430b0c6792a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3d8c867e-ffb6-46be-a88a-db33f7c5085b",
+      "order": 2,
+      "zh": "她相信科学研究必须凭事实说话。",
+      "pinyin": "Tā xiāngxìn kēxué yánjiū bìxū píng shìshí shuōhuà.",
+      "vi": "Cô ấy tin rằng nghiên cứu khoa học phải dựa vào sự thật mà nói.",
+      "analysis_vi": "凭事实说话 là cụm xương sống của bài.",
+      "highlight": [
+        "事实"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3a2d1185-79b3-4119-86fb-2430b0c6792a"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "用事实说话 / 凭事实说话 là cách nói rất hay: đừng nói suông, hãy để sự thật chứng minh.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "09bc4e52-7936-4347-80dc-76dd24265318",
+      "order": 1,
+      "rule_vi": "Không nhầm 事实, 真相, 真理.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "事实证明，他说错了。",
+          "pinyin": "Shìshí zhèngmíng, tā shuō cuò le.",
+          "vi": "Sự thật chứng minh anh ấy nói sai.",
+          "note_vi": "事实 là sự thật thực tế.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "事实",
+    "back": "sự thật, sự việc thực tế",
+    "hint": "shìshí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3a2d1185-79b3-4119-86fb-2430b0c6792a",
+    "source_lesson_vocab_id": null
+  }
+}

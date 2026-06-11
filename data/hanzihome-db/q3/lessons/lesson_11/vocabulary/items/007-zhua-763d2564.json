@@ -1,0 +1,318 @@
+{
+  "id": "5b867377-2b93-41b4-878c-378586f268b7",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "抓",
+  "pinyin": "zhuā",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "trảo",
+    "meaning_vi": "nắm, chụp, bắt, bốc, cào",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nắm",
+      "chụp",
+      "bắt",
+      "bốc"
+    ],
+    "short_definition_vi": "dùng tay/móng để nắm, chụp, bắt hoặc cào",
+    "textbook_focus_vi": "Trong 手抓羊肉, 抓 chỉ cách bốc/cầm bằng tay.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "抓",
+        "lishu_vi": "",
+        "structure_note_vi": "扌 + 爪",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "tay",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "爪",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nắm, bắt, bốc",
+        "modern_logic_vi": "nắm, bắt, bốc",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "tay",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "抓 được học trong bài theo nghĩa: dùng tay/móng để nắm, chụp, bắt hoặc cào.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 抓住机会.",
+    "warning_vi": "抓 mạnh hơn 拿; 拿 là cầm/lấy trung tính, 抓 có cảm giác chụp/giữ/bắt.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cầm/lấy trung tính, không có lực chụp/bắt như 抓.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "握",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Nắm chặt trong tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "抓 mạnh hơn 拿; 拿 là cầm/lấy trung tính, 抓 có cảm giác chụp/giữ/bắt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "debf32fa-8f87-41f6-a6bf-e86c592b4a93",
+      "order": 1,
+      "zh": "抓住机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d53d0249-5c20-476e-8f11-a16035add49c",
+      "order": 2,
+      "zh": "抓小偷",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c4a1f5b-b2cc-4e31-b0c1-f0587964d9e9",
+      "order": 3,
+      "zh": "抓鱼",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e737c5ed-275c-4c9e-a93e-cf16d9aef389",
+      "order": 4,
+      "zh": "抓紧时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be1431af-4683-4809-82af-9bd14ca64848",
+      "order": 5,
+      "zh": "用手抓",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0342904-9a08-4735-94a7-f45ed2216025",
+      "order": 6,
+      "zh": "手抓羊肉",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b107fbf7-82e1-4537-8e43-67085c7da6c8",
+      "order": 1,
+      "zh": "他用手抓了一块羊肉。",
+      "pinyin": "",
+      "vi": "Anh ấy dùng tay bốc một miếng thịt cừu.",
+      "analysis_vi": "用手抓 nói rõ thao tác bằng tay.",
+      "highlight": [
+        "抓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5b867377-2b93-41b4-878c-378586f268b7"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08e33eee-957a-440d-8ac5-3a535fe22243",
+      "order": 2,
+      "zh": "机会很难得，你应该马上抓住。",
+      "pinyin": "",
+      "vi": "Cơ hội rất hiếm, bạn nên lập tức nắm lấy.",
+      "analysis_vi": "抓住机会 là nghĩa ẩn dụ rất thường gặp.",
+      "highlight": [
+        "抓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5b867377-2b93-41b4-878c-378586f268b7"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "手抓羊肉 không phải thịt cừu bị bắt bằng tay, mà là món ăn bốc tay.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a7903d00-9c22-476a-ada7-e42dd6f8593a",
+      "order": 1,
+      "rule_vi": "抓 mạnh hơn 拿; 拿 là cầm/lấy trung tính, 抓 có cảm giác chụp/giữ/bắt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "抓 mạnh hơn 拿; 拿 là cầm/lấy trung tính, 抓 có cảm giác chụp/giữ/bắt.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "抓",
+    "back": "nắm, chụp, bắt, bốc, cào",
+    "hint": "zhuā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5b867377-2b93-41b4-878c-378586f268b7",
+    "source_lesson_vocab_id": null
+  }
+}

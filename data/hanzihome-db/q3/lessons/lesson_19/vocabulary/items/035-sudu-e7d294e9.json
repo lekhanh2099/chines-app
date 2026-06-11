@@ -1,0 +1,353 @@
+{
+  "id": "aba3b9e6-e951-4d45-a27a-95addb0ec114",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "速度",
+  "pinyin": "sùdù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "tốc độ",
+    "meaning_vi": "tốc độ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tốc độ"
+    ],
+    "short_definition_vi": "tốc độ",
+    "textbook_focus_vi": "速度 là mức độ nhanh chậm của chuyển động hoặc công việc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "速",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi, chuyển động",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi, chuyển động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi, chuyển động",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhanh",
+        "modern_logic_vi": "Trong từ “速度”, chữ “速” góp phần vào trường nghĩa: nhanh",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "度",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái, không gian che phủ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "广 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "nghiễm",
+            "meaning_vi": "mái, không gian che phủ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái, không gian che phủ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "广 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "广 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mức độ, độ",
+        "modern_logic_vi": "Trong từ “速度”, chữ “度” góp phần vào trường nghĩa: mức độ, độ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "速度 là mức độ nhanh chậm của chuyển động hoặc công việc.",
+    "memory_tip_vi": "速度 là mức độ nhanh chậm của chuyển động hoặc công việc.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "进度",
+        "pinyin": "",
+        "meaning_vi": "tiến độ hoàn thành",
+        "difference_vi": "tiến độ hoàn thành",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "效率",
+        "pinyin": "",
+        "meaning_vi": "hiệu suất, kết quả trên thời gian",
+        "difference_vi": "hiệu suất, kết quả trên thời gian",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b047ceae-44b8-4b08-a4b3-c32827cc4fce",
+      "order": 1,
+      "zh": "速度快",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7790da13-7283-43b9-b89d-c2376e141623",
+      "order": 2,
+      "zh": "加快速度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b23a5072-dd96-4df8-9121-819316f997ce",
+      "order": 3,
+      "zh": "工作速度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b06992b3-5a35-411c-b1cc-bc86a8b00a6f",
+      "order": 4,
+      "zh": "处理速度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4b723ec3-5974-42a7-ae3a-9cfd93e753e6",
+      "order": 1,
+      "zh": "他的工作速度很快。",
+      "pinyin": "",
+      "vi": "Tốc độ làm việc của anh ấy rất nhanh.",
+      "analysis_vi": "速度很快 là cách nói đúng.",
+      "highlight": [
+        "速度"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aba3b9e6-e951-4d45-a27a-95addb0ec114"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "93dd785e-c7aa-4c35-9c36-523db6d20904",
+      "order": 2,
+      "zh": "他想加快速度，减少差错。",
+      "pinyin": "",
+      "vi": "Anh ấy muốn tăng tốc độ, giảm sai sót.",
+      "analysis_vi": "加快速度 / 减少差错.",
+      "highlight": [
+        "速度"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "aba3b9e6-e951-4d45-a27a-95addb0ec114"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "速度 là mức độ nhanh chậm của chuyển động hoặc công việc.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4ab97c95-7489-4c14-b090-ebec0ffe8b76",
+      "order": 1,
+      "rule_vi": "速度 là nhanh/chậm; 进度 là công việc đã tới đâu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "速度 là nhanh/chậm; 进度 là công việc đã tới đâu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "速度",
+    "back": "tốc độ",
+    "hint": "sùdù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "aba3b9e6-e951-4d45-a27a-95addb0ec114",
+    "source_lesson_vocab_id": null
+  }
+}

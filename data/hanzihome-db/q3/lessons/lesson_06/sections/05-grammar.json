@@ -1,0 +1,305 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法 / 语法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook_generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "不料",
+      "title_vi": "Liên từ 不料",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Diễn tả kết quả xảy ra ngoài dự đoán; thiên về văn viết/kể chuyện.",
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "我以为他不会来，不料他第一个到了。",
+              "pinyin": "Wǒ yǐwéi tā bú huì lái, búliào tā dì yī ge dào le.",
+              "vi": "Tôi tưởng anh ấy sẽ không đến, không ngờ anh ấy lại đến đầu tiên.",
+              "grammar_refs": [
+                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Câu A，不料 + câu B ngoài dự đoán",
+          "meaning_vi": "Diễn tả kết quả xảy ra ngoài dự đoán; thiên về văn viết/kể chuyện.",
+          "examples": [],
+          "notes_vi": [],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "竟然",
+      "title_vi": "Phó từ 竟然",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nhấn mạnh sự bất ngờ, khó tin, trái với dự đoán ban đầu.",
+          "examples": [
+            {
+              "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+              "zh": "他竟然没来。",
+              "pinyin": "Tā jìngrán méi lái.",
+              "vi": "Không ngờ anh ấy lại không đến.",
+              "grammar_refs": [
+                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Chủ ngữ + 竟然 + vị ngữ",
+          "meaning_vi": "Nhấn mạnh sự bất ngờ, khó tin, trái với dự đoán ban đầu.",
+          "examples": [],
+          "notes_vi": [],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "一 + 动词",
+      "title_vi": "Cấu trúc 一 + V",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Diễn tả vừa làm hành động thứ nhất thì kết quả/hành động sau xảy ra ngay.",
+          "examples": [
+            {
+              "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
+              "zh": "一看就懂。",
+              "pinyin": "Yí kàn jiù dǒng.",
+              "vi": "Nhìn một cái là hiểu.",
+              "grammar_refs": [
+                "fa804fff-372b-4874-8571-f54e613d7e07"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "一 + V1 + 就 + V2",
+          "meaning_vi": "Diễn tả vừa làm hành động thứ nhất thì kết quả/hành động sau xảy ra ngay.",
+          "examples": [],
+          "notes_vi": [],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "只是",
+      "title_vi": "Phó từ/liên từ 只是",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nghĩa là chỉ là/chỉ có điều; dùng để giới hạn ý hoặc chuyển ý nhẹ.",
+          "examples": [
+            {
+              "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
+              "zh": "我只是问问。",
+              "pinyin": "Wǒ zhǐshì wènwen.",
+              "vi": "Tôi chỉ hỏi chút thôi.",
+              "grammar_refs": [
+                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "只是 + động từ/cụm động từ; Câu A，只是 + câu B",
+          "meaning_vi": "Nghĩa là chỉ là/chỉ có điều; dùng để giới hạn ý hoặc chuyển ý nhẹ.",
+          "examples": [],
+          "notes_vi": [],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "并",
+      "title_vi": "Phó từ 并",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Nhấn mạnh phủ định: thực ra không, không hề, không phải như người nghe nghĩ.",
+          "examples": [
+            {
+              "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
+              "zh": "他并没有生气。",
+              "pinyin": "Tā bìng méiyǒu shēngqì.",
+              "vi": "Anh ấy thực ra không giận.",
+              "grammar_refs": [
+                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "并 + 不/没/没有/非 + vị ngữ",
+          "meaning_vi": "Nhấn mạnh phủ định: thực ra không, không hề, không phải như người nghe nghĩ.",
+          "examples": [],
+          "notes_vi": [],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "一……一……",
+      "title_vi": "Cấu trúc 一……一……",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Diễn tả hai hành động/trạng thái đi kèm, tạo sắc thái miêu tả sinh động.",
+          "examples": [
+            {
+              "id": "dac06a15-2133-4363-b088-fba19458cb07",
+              "zh": "孩子一蹦一跳地回家了。",
+              "pinyin": "Háizi yì bèng yí tiào de huí jiā le.",
+              "vi": "Đứa trẻ nhảy chân sáo về nhà.",
+              "grammar_refs": [
+                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+              ],
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "36af8925-9df2-4371-9cce-405d3672953f",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "一 + V1 + 一 + V2 + 地 + V3",
+          "meaning_vi": "Diễn tả hai hành động/trạng thái đi kèm, tạo sắc thái miêu tả sinh động.",
+          "examples": [],
+          "notes_vi": [],
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

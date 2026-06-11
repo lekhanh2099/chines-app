@@ -1,0 +1,334 @@
+{
+  "id": "f9241f14-ec09-412a-b8f6-3ff565a33eb2",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "样子",
+  "pinyin": "yàngzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "appearance_behavior"
+  ],
+  "meaning": {
+    "hanviet": "dạng tử",
+    "meaning_vi": "dáng vẻ, bộ dạng, kiểu dáng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dáng vẻ, bộ dạng, kiểu dáng"
+    ],
+    "short_definition_vi": "dáng vẻ, bộ dạng, kiểu dáng",
+    "textbook_focus_vi": "dáng vẻ, bộ dạng, kiểu dáng",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "样",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiểu, mẫu, dáng",
+        "modern_logic_vi": "样 là kiểu/dạng/mẫu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con/hậu tố",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ, hậu tố trong một số danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con; hậu tố danh từ",
+        "modern_logic_vi": "子 trong nhiều từ là hậu tố danh từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "样子 là dạng/mẫu bên ngoài của người/vật.",
+    "memory_tip_vi": "样子 là dạng/mẫu bên ngoài của người/vật.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "外表",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vẻ ngoài",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "模样",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dáng vẻ/bộ dạng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "表情",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "biểu cảm trên mặt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b2230277-f416-4ae1-8c40-c1051969069e",
+      "order": 1,
+      "zh": "他的样子",
+      "pinyin": "",
+      "vi": "dáng vẻ của anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8cf60a6-a944-49cf-9d82-ffa30834b961",
+      "order": 2,
+      "zh": "看样子",
+      "pinyin": "",
+      "vi": "xem ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d90f1fb2-0bca-4b17-b225-5f1675a214e5",
+      "order": 3,
+      "zh": "原来的样子",
+      "pinyin": "",
+      "vi": "dáng vẻ ban đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7654a9d4-099c-4288-b995-ffce08d21b1c",
+      "order": 4,
+      "zh": "这个样子",
+      "pinyin": "",
+      "vi": "bộ dạng này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "81e08607-c1c2-4e89-9959-a4d8a0dfa181",
+      "order": 5,
+      "zh": "什么样子",
+      "pinyin": "",
+      "vi": "dáng vẻ thế nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "72566367-d201-4629-8143-fad84a9189d2",
+      "order": 1,
+      "zh": "他今天的样子有点儿奇怪。",
+      "pinyin": "",
+      "vi": "Dáng vẻ hôm nay của anh ấy hơi lạ.",
+      "analysis_vi": "样子 chỉ vẻ ngoài/thần thái nhìn thấy.",
+      "highlight": [
+        "样子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9241f14-ec09-412a-b8f6-3ff565a33eb2"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d55dc2d5-8d25-46eb-9dfa-75d3ecf07270",
+      "order": 2,
+      "zh": "他这个样子你以前见过吗？",
+      "pinyin": "",
+      "vi": "Bộ dạng này của anh ấy trước đây bạn từng thấy chưa?",
+      "analysis_vi": "他这个样子 là chủ đề lớn.",
+      "highlight": [
+        "样子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f9241f14-ec09-412a-b8f6-3ff565a33eb2"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "看样子 = xem ra/có vẻ như, không luôn là nhìn dáng vẻ theo nghĩa đen.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96f3dfd6-9fbb-4b86-b71f-65d41827da2e",
+      "order": 1,
+      "rule_vi": "Không nhầm 样子 với 样本; 样本 là mẫu/sample.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "看样子他不会来了。",
+          "pinyin": "",
+          "vi": "Xem ra anh ấy sẽ không đến nữa.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "样子",
+    "back": "dáng vẻ, bộ dạng, kiểu dáng",
+    "hint": "yàngzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "appearance_behavior"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f9241f14-ec09-412a-b8f6-3ff565a33eb2",
+    "source_lesson_vocab_id": null
+  }
+}

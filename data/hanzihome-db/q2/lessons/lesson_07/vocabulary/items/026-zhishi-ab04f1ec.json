@@ -1,0 +1,434 @@
+{
+  "id": "9ca774af-8fbd-4c0c-a8bb-5f0724f1a899",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "只是",
+  "pinyin": "zhǐshì",
+  "pos": {
+    "raw_vi": "Phó từ / Liên từ 【副词 / 连词】",
+    "raw_cn": "",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "society_major",
+    "adverb",
+    "connector"
+  ],
+  "meaning": {
+    "hanviet": "Chỉ thị",
+    "meaning_vi": "chỉ là; chỉ; nhưng mà; có điều là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chỉ là",
+      "chỉ",
+      "nhưng mà",
+      "có điều là"
+    ],
+    "short_definition_vi": "chỉ là",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "liên kết / sắc thái",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "只",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/lời nói/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "八",
+            "hanviet": "bát",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "八",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Bát",
+              "radical_name_zh": "",
+              "hanviet": "bát",
+              "meaning_vi": "tách ra/tám",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chỉ, chỉ có",
+        "modern_logic_vi": "只 = chỉ/giới hạn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/lời nói/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "ngày/mặt trời",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời/ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là, đúng",
+        "modern_logic_vi": "是 = là/đúng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời/ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "只是 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "只",
+        "pinyin": "",
+        "meaning_vi": "chỉ",
+        "difference_vi": "Ngắn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "只不过",
+        "pinyin": "",
+        "meaning_vi": "chỉ chẳng qua là",
+        "difference_vi": "Nhấn giảm nhẹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "但是",
+        "pinyin": "",
+        "meaning_vi": "nhưng",
+        "difference_vi": "Đối lập rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不过",
+        "pinyin": "",
+        "meaning_vi": "nhưng mà",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不只是",
+        "pinyin": "",
+        "meaning_vi": "không chỉ là",
+        "difference_vi": "Phủ định mở rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1559f7f1-f413-43ee-8803-a76f3b2cf09e",
+      "order": 1,
+      "zh": "只是看看",
+      "pinyin": "",
+      "vi": "chỉ xem thôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0257e44d-64e8-4ab2-9e0b-6aedea826867",
+      "order": 2,
+      "zh": "只是问问",
+      "pinyin": "",
+      "vi": "chỉ hỏi thôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6eb5ecfc-0329-4d4e-9644-8b8c9b6f7c2f",
+      "order": 3,
+      "zh": "只是觉得",
+      "pinyin": "",
+      "vi": "chỉ cảm thấy là",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0b3f2478-13b3-4131-b236-d55e5f4924f8",
+      "order": 4,
+      "zh": "只是有点儿贵",
+      "pinyin": "",
+      "vi": "chỉ là hơi đắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a8aeb32-6c60-4cc6-8562-eca04933a770",
+      "order": 5,
+      "zh": "只是时间不够",
+      "pinyin": "",
+      "vi": "chỉ là thời gian không đủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "daa472e8-efbc-401e-af97-5342e7be7e16",
+      "order": 6,
+      "zh": "不只是……而且……",
+      "pinyin": "",
+      "vi": "không chỉ……mà còn……",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1c685db-531e-4db9-a457-60c543574c65",
+      "order": 7,
+      "zh": "只是普通朋友",
+      "pinyin": "",
+      "vi": "chỉ là bạn bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ae0e139b-9c2e-49a4-a0d2-bc5be182cc01",
+      "order": 1,
+      "zh": "我只是看看，不买。",
+      "pinyin": "Wǒ zhǐshì kànkan, bù mǎi.",
+      "vi": "Tôi chỉ xem thôi, không mua.",
+      "analysis_vi": "只是 giới hạn hành động.",
+      "highlight": [
+        "只是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ca774af-8fbd-4c0c-a8bb-5f0724f1a899"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ff4f5c53-d8f6-42f0-b003-242ab2ab1573",
+      "order": 2,
+      "zh": "这本画册很好，只是价格有点儿高。",
+      "pinyin": "Zhè běn huàcè hěn hǎo, zhǐshì jiàgé yǒudiǎnr gāo.",
+      "vi": "Tập tranh ảnh này rất tốt, chỉ có điều giá hơi cao.",
+      "analysis_vi": "只是 ở đây gần nghĩa “chỉ có điều/nhưng mà”.",
+      "highlight": [
+        "只是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ca774af-8fbd-4c0c-a8bb-5f0724f1a899"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9727cc23-b60a-45cf-9c8c-7ec6aedf664e",
+      "order": 3,
+      "zh": "我以前只是觉得北京冬天冷，后来去了以后，才发现那儿不但冷，而且常常刮风。",
+      "pinyin": "Wǒ yǐqián zhǐshì juéde Běijīng dōngtiān lěng, hòulái qù le yǐhòu, cái fāxiàn nàr búdàn lěng, érqiě chángcháng guā fēng.",
+      "vi": "Trước đây tôi chỉ nghĩ mùa đông Bắc Kinh lạnh, sau này đi rồi mới phát hiện nơi đó không những lạnh mà còn thường có gió.",
+      "analysis_vi": "只是觉得 = chỉ nghĩ/cảm thấy; 才发现 = lúc đó mới phát hiện.",
+      "highlight": [
+        "只是",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "9ca774af-8fbd-4c0c-a8bb-5f0724f1a899"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "只是 có thể làm câu bớt gắt khi nêu điểm chưa hài lòng: 只是有点儿贵 mềm hơn 太贵了.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0df2d772-3184-4008-8c09-be58fc173153",
+      "order": 1,
+      "rule_vi": "Không luôn dịch 只是 là “chỉ là”; trong nhiều câu nên dịch “chỉ có điều”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这个房子很好，只是有点儿小。",
+          "pinyin": "Zhège fángzi hěn hǎo, zhǐshì yǒudiǎnr xiǎo.",
+          "vi": "Căn nhà này rất tốt, chỉ có điều hơi nhỏ.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "只是",
+    "back": "chỉ là; chỉ; nhưng mà; có điều là",
+    "hint": "zhǐshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "adverb",
+      "connector"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9ca774af-8fbd-4c0c-a8bb-5f0724f1a899",
+    "source_lesson_vocab_id": null
+  }
+}

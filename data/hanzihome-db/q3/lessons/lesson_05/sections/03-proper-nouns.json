@@ -1,0 +1,103 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "中国民航",
+      "pinyin": "Zhōngguó Mínháng",
+      "meaning_vi": "Hàng không Dân dụng Trung Quốc / CAAC",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Tên riêng / Cụm danh từ",
+      "pos_detail": {
+        "vi": "Tên riêng / Cụm danh từ",
+        "cn": "专名；名词短语",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Hàng không Dân dụng Trung Quốc / hệ thống hàng không dân dụng Trung Quốc.",
+        "notes": []
+      }
+    },
+    {
+      "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "建国门",
+      "pinyin": "Jiànguó Mén",
+      "meaning_vi": "Kiến Quốc Môn, địa danh ở Bắc Kinh",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Tên riêng / Địa danh",
+      "pos_detail": {
+        "vi": "Tên riêng / Địa danh",
+        "cn": "专名；地名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Địa danh/ga ở Bắc Kinh; pinyin theo PDF là Jiànguó Mén.",
+        "notes": []
+      }
+    },
+    {
+      "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "西直门",
+      "pinyin": "Xīzhí Mén",
+      "meaning_vi": "Tây Trực Môn, địa danh ở Bắc Kinh",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Tên riêng / Địa danh",
+      "pos_detail": {
+        "vi": "Tên riêng / Địa danh",
+        "cn": "专名；地名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Địa danh/ga ở Bắc Kinh; pinyin theo PDF là Xīzhí Mén.",
+        "notes": []
+      }
+    },
+    {
+      "id": "41894f87-dcc8-4f67-b1b8-b992eca7af65",
+      "type": "proper_noun",
+      "order": 4,
+      "hanzi": "复兴门",
+      "pinyin": "Fùxīng Mén",
+      "meaning_vi": "Phục Hưng Môn, địa danh ở Bắc Kinh",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Tên riêng / Địa danh",
+      "pos_detail": {
+        "vi": "Tên riêng / Địa danh",
+        "cn": "专名；地名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "Địa danh/ga ở Bắc Kinh; pinyin theo PDF là Fùxīng Mén.",
+        "notes": []
+      }
+    }
+  ]
+}

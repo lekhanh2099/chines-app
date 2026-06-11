@@ -1,0 +1,296 @@
+{
+  "id": "71a78442-063e-44fa-b975-e9e07b216ca6",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "哲学",
+  "pinyin": "zhéxué",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Triết học",
+    "meaning_vi": "triết học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "triết học"
+    ],
+    "short_definition_vi": "triết học",
+    "textbook_focus_vi": "triết học",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "哲",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "折",
+            "hanviet": "chiết",
+            "meaning_vi": "bẻ, gấp; thành phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng suốt, triết lý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ; hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ; hậu tố danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, ngành học",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "哲学 = triết học, ngành học truy hỏi vấn đề căn bản về thế giới/con người/tri thức.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cf4ceae4-b162-41be-af90-622427d23075",
+      "order": 1,
+      "zh": "学习哲学",
+      "pinyin": "",
+      "vi": "học triết học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ae8aaf1d-731b-404f-b5d8-43e3a4b6c6f4",
+      "order": 2,
+      "zh": "哲学书",
+      "pinyin": "",
+      "vi": "sách triết học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cace3359-0b97-4b87-9b43-de33556cf498",
+      "order": 3,
+      "zh": "哲学问题",
+      "pinyin": "",
+      "vi": "vấn đề triết học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10041454-7008-4e9c-a802-2d3d1f0e88b5",
+      "order": 4,
+      "zh": "中国哲学",
+      "pinyin": "",
+      "vi": "triết học Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "26129eed-d68f-4b81-8746-aa6a23a4a119",
+      "order": 5,
+      "zh": "人生哲学",
+      "pinyin": "",
+      "vi": "triết lý sống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3a2ccf10-7c34-4a1c-be56-0e093dd7193d",
+      "order": 1,
+      "zh": "爷爷的书房里放着几本哲学书。",
+      "pinyin": "Yéye de shūfáng lǐ fàngzhe jǐ běn zhéxué shū.",
+      "vi": "Trong phòng đọc của ông nội có đặt vài quyển sách triết học.",
+      "analysis_vi": "书房里放着…… là câu tồn hiện.",
+      "highlight": [
+        "哲学"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "71a78442-063e-44fa-b975-e9e07b216ca6"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cfd263d1-c327-4742-9793-ab710f35baa4",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：哲学。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: triết học.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "哲学"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "71a78442-063e-44fa-b975-e9e07b216ca6"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 哲学 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b8264b0a-6df4-44bc-a46a-9f893a28d1fc",
+      "order": 1,
+      "rule_vi": "哲学, 文学, 政治 là ba lĩnh vực khác nhau, không thay thế cho nhau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "哲学, 文学, 政治 là ba lĩnh vực khác nhau, không thay thế cho nhau.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "哲学",
+    "back": "triết học",
+    "hint": "zhéxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_047"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "71a78442-063e-44fa-b975-e9e07b216ca6",
+    "source_lesson_vocab_id": null
+  }
+}

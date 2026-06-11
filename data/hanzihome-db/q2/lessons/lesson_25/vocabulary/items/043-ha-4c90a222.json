@@ -1,0 +1,336 @@
+{
+  "id": "25899e91-ee1c-4c3b-bd46-5806c87e66dc",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "哈",
+  "pinyin": "hā",
+  "pos": {
+    "raw_vi": "Thán từ / Tượng thanh từ",
+    "raw_cn": "叹/拟声",
+    "normalized": "interjection",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab",
+    "number_culture"
+  ],
+  "meaning": {
+    "hanviet": "Ha",
+    "meaning_vi": "ha, tiếng cười; từ cảm thán",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ha, tiếng cười",
+      "từ cảm thán"
+    ],
+    "short_definition_vi": "ha, tiếng cười; từ cảm thán",
+    "textbook_focus_vi": "Âm Hán Việt tham khảo: ha.",
+    "register_vi": "khẩu ngữ, chat, cảm xúc nhẹ, thân mật.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "哈",
+        "lishu_vi": "ha",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng / lời nói / âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / lời nói / âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng / lời nói / âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "合",
+            "hanviet": "hợp",
+            "meaning_vi": "hợp lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ha, tiếng cười/hơi thở",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "哈哈 = ha ha. 哈哈哈 = hahaha.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 哈 là âm cảm thán, không nên dịch cứng từng chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "哈",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiếng cười/cảm thán nhẹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哈哈",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ha ha, tiếng cười rõ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "啊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "à, a, cảm thán rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哎呀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ôi, ái chà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "嘿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hey, này, hắc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 哈哈，你真有意思。 = Haha, bạn thú vị thật.",
+      "→ 哈？你说什么？ = Hả? Bạn nói gì cơ?"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "46ba9c0d-5e0e-433d-b224-8b751b69392f",
+      "order": 1,
+      "zh": "哈哈",
+      "pinyin": "",
+      "vi": "ha ha",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3b5fee25-a48e-4f57-b814-bfa832ae97ad",
+      "order": 2,
+      "zh": "哈哈哈",
+      "pinyin": "",
+      "vi": "hahaha",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d53b234c-2d81-413f-960e-3ce01990c8a0",
+      "order": 3,
+      "zh": "哈？",
+      "pinyin": "",
+      "vi": "hả?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11fb219a-151e-4aae-81b6-66be2e4d5e84",
+      "order": 4,
+      "zh": "哈，这个我知道",
+      "pinyin": "",
+      "vi": "À, cái này tôi biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5ec32010-7cec-4407-bf50-119203449447",
+      "order": 5,
+      "zh": "笑哈哈",
+      "pinyin": "",
+      "vi": "cười ha hả, vui vẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e83454eb-3324-4748-90a1-e5f87854ebe5",
+      "order": 1,
+      "zh": "哈哈，这个数字真有意思。",
+      "pinyin": "Hāhā, zhège shùzì zhēn yǒu yìsi.",
+      "vi": "Haha, con số này thú vị thật.",
+      "analysis_vi": "哈哈 biểu thị tiếng cười nhẹ, làm câu thân mật hơn.",
+      "highlight": [
+        "哈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "25899e91-ee1c-4c3b-bd46-5806c87e66dc"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f88e878e-0283-4905-b42b-207ce6497c35",
+      "order": 2,
+      "zh": "哈？你连“八”和“发”的关系都不知道吗？",
+      "pinyin": "Hā? Nǐ lián “bā” hé “fā” de guānxi dōu bù zhīdào ma?",
+      "vi": "Hả? Bạn ngay cả quan hệ giữa “8” và “phát” cũng không biết sao?",
+      "analysis_vi": "哈？ biểu thị ngạc nhiên. 连……都…… nhấn điều đáng lẽ cơ bản mà người nghe vẫn không biết.",
+      "highlight": [
+        "哈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "25899e91-ee1c-4c3b-bd46-5806c87e66dc"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "23dc42a8-d947-4018-8a4f-7d67cdda8091",
+      "order": 3,
+      "zh": "老师刚把“520”的谐音写在黑板上，几个同学就哈哈笑了起来，可是旁边的新同学还没听出来，只好小声问别人这是什么意思。",
+      "pinyin": "Lǎoshī gāng bǎ “wǔ èr líng” de xiéyīn xiě zài hēibǎn shang, jǐ ge tóngxué jiù hāhā xiào le qǐlai, kěshì pángbiān de xīn tóngxué hái méi tīng chūlai, zhǐhǎo xiǎoshēng wèn biéren zhè shì shénme yìsi.",
+      "vi": "Thầy/cô vừa viết hài âm của “520” lên bảng, vài bạn liền bật cười haha, nhưng bạn mới bên cạnh vẫn chưa nghe ra, đành hỏi nhỏ người khác nghĩa là gì.",
+      "analysis_vi": "把“520”的谐音写在黑板上 là 把字句. 笑了起来 chỉ bắt đầu cười. 听出来 là nghe ra ý nghĩa qua âm.",
+      "highlight": [
+        "哈"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "25899e91-ee1c-4c3b-bd46-5806c87e66dc"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong chat tiếng Trung, 哈哈哈 rất phổ biến, giống “haha” trong tiếng Việt. Nếu cười rất mạnh có thể thấy 哈哈哈哈哈, còn 呵呵 đôi khi lại mang sắc thái lạnh/khó chịu tùy ngữ cảnh, không phải lúc nào cũng vui.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "78f20919-1447-43fc-a18a-0f588d06037e",
+      "order": 1,
+      "rule_vi": "Dùng 哈 trong văn trang trọng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Chat/khẩu ngữ: 哈哈，太好笑了。 Hāhā, tài hǎoxiào le.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "哈",
+    "back": "ha, tiếng cười; từ cảm thán",
+    "hint": "hā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab",
+      "number_culture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "25899e91-ee1c-4c3b-bd46-5806c87e66dc",
+    "source_lesson_vocab_id": null
+  }
+}

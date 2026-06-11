@@ -1,0 +1,394 @@
+{
+  "id": "8af64730-3fbd-466e-86bd-b371bda1bbbd",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "吉祥",
+  "pinyin": "jíxiáng",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ hóa",
+    "raw_cn": "形/名化",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Cát tường",
+    "meaning_vi": "may mắn, tốt lành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "may mắn, tốt lành"
+    ],
+    "short_definition_vi": "may mắn, tốt lành",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "văn hóa truyền thống, lễ Tết, lời chúc.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吉",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "士",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sĩ",
+          "radical_name_zh": "",
+          "hanviet": "sĩ",
+          "meaning_vi": "kẻ sĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "士",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "士",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sĩ",
+              "radical_name_zh": "",
+              "hanviet": "sĩ",
+              "meaning_vi": "kẻ sĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt lành, may mắn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "祥",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "示",
+          "radical_variant": "礻",
+          "radical_name_vi": "bộ Thị",
+          "radical_name_zh": "",
+          "hanviet": "thị",
+          "meaning_vi": "nghi lễ/cầu phúc",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "nghi lễ/cầu phúc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "dê/cừu",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điềm lành, tốt lành",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "吉 là tốt lành, cát. 祥 là điềm lành, điều may. → 吉祥 = tốt lành, may mắn, có điềm lành. Cảnh báo: 吉祥 không dùng như 幸运 trong mọi câu đời thường. 幸运 là may mắn theo nghĩa gặp vận tốt; 吉祥 có màu chúc tụng/truyền thống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吉祥",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cát tường, tốt lành, màu văn hóa/lời chúc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "幸运",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "may mắn, gặp vận tốt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好运",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vận may.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "幸福",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hạnh phúc, đời sống tốt đẹp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 新春吉祥 là lời chúc; 我很幸运 là tôi may mắn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d766bf78-9812-465f-9d6f-fd38104b86d8",
+      "order": 1,
+      "zh": "新春吉祥",
+      "pinyin": "",
+      "vi": "xuân mới cát tường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4261a5a5-e96c-4ba0-b5c6-bc28088d3a61",
+      "order": 2,
+      "zh": "吉祥如意",
+      "pinyin": "",
+      "vi": "cát tường như ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2174bf48-808b-463e-b01f-aee4025b06d3",
+      "order": 3,
+      "zh": "吉祥话",
+      "pinyin": "",
+      "vi": "lời chúc tốt lành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fce448ef-449f-4516-a8f9-8349178918c5",
+      "order": 4,
+      "zh": "吉祥物",
+      "pinyin": "",
+      "vi": "linh vật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "980339dd-f0ef-4b5a-9829-81d0dac6ac4c",
+      "order": 5,
+      "zh": "大吉大利",
+      "pinyin": "",
+      "vi": "đại cát đại lợi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fa8a7f5a-85d9-466f-b6f4-191a699950fa",
+      "order": 1,
+      "zh": "对联儿上写着“新春吉祥”。",
+      "pinyin": "Duìliánr shang xiězhe “Xīnchūn jíxiáng”.",
+      "vi": "Trên câu đối viết “Xuân mới cát tường”.",
+      "analysis_vi": "对联儿上写着…… là câu tồn hiện; chữ/lời chúc đang nằm trên câu đối.",
+      "highlight": [
+        "吉祥"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "8af64730-3fbd-466e-86bd-b371bda1bbbd"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1eb44d77-1bb0-4c32-8979-0ca9d4d4e94d",
+      "order": 2,
+      "zh": "春节前，爷爷亲手写了几个吉祥字。",
+      "pinyin": "Chūnjié qián, yéye qīnshǒu xiě le jǐ ge jíxiáng zì.",
+      "vi": "Trước Tết, ông nội tự tay viết vài chữ tốt lành.",
+      "analysis_vi": "亲手写 nhấn tự tay viết; 吉祥字 là chữ mang ý chúc may mắn.",
+      "highlight": [
+        "吉祥"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "8af64730-3fbd-466e-86bd-b371bda1bbbd"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "deccd800-9eca-4e4d-832f-432d4ddf2267",
+      "order": 3,
+      "zh": "我们把“吉祥如意”贴在会场门口。",
+      "pinyin": "Wǒmen bǎ “Jíxiáng rúyì” tiē zài huìchǎng ménkǒu.",
+      "vi": "Chúng tôi dán “Cát tường như ý” ở cửa hội trường.",
+      "analysis_vi": "把……贴在…… là câu chữ 把 có kết quả vị trí.",
+      "highlight": [
+        "吉祥"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "8af64730-3fbd-466e-86bd-b371bda1bbbd"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 吉祥",
+    "content_vi": "Trong văn hóa Tết Trung Quốc, người ta rất thích dùng những chữ/cụm mang ý tốt như 福, 吉, 祥, 如意, 平安, 兴旺. Đây là kiểu “ngôn ngữ cầu may”: treo chữ đẹp để gửi mong ước tốt lành cho năm mới.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8d58577d-6d54-42ec-9090-d0c5b2743465",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 吉祥 để nói may mắn cá nhân đời thường. Không tự nhiên lắm: 我今天很吉祥。 Tự nhiên: 我今天很幸运。 Wǒ jīntiān hěn xìngyùn. Hôm nay tôi rất may mắn. Lời chúc: 祝你新春吉祥！ Zhù nǐ xīnchūn jíxiáng! Chúc bạn xuân mới cát tường!",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吉祥",
+    "back": "may mắn, tốt lành",
+    "hint": "jíxiáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8af64730-3fbd-466e-86bd-b371bda1bbbd",
+    "source_lesson_vocab_id": null
+  }
+}

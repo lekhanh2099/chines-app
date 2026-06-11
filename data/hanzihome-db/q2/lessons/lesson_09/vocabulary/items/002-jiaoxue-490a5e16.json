@@ -1,0 +1,435 @@
+{
+  "id": "1dfc9810-c7c3-4d20-bd0b-365dbd4ee0f2",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "教学",
+  "pinyin": "jiàoxué",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名/动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Giáo học",
+    "meaning_vi": "giảng dạy, dạy học; công tác dạy và học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giảng dạy",
+      "dạy học",
+      "công tác dạy và học"
+    ],
+    "short_definition_vi": "giảng dạy, dạy học; công tác dạy và học",
+    "textbook_focus_vi": "Âm Hán Việt: giáo học. Nghĩa chính: Giảng dạy, dạy học. Công tác dạy và học trong nhà trường. Thường dùng trong văn cảnh giáo dục, trường học, phương pháp dạy học. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "教",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "孝",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh / tác động / hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh / tác động / hành động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dạy, chỉ bảo",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "⺍",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "冖",
+            "hanviet": "mịch",
+            "meaning_vi": "mái che / phủ lên",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冖",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mịch/Miên che",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "mái che / phủ lên",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con / trẻ nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con / trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, trường học",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "教 = dạy; 学 = học. 教学 = hoạt động dạy và học / giảng dạy.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo đọc âm: 教学 đọc jiàoxué, không đọc jiāoxué. Nhưng 教书 đọc jiāo shū.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "教学",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giảng dạy/dạy học, thiên hệ thống giáo dục.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "教书",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dạy học/dạy ở trường, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "学习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "học tập.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "教育",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giáo dục, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上课",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lên lớp/học lớp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "他教书教了十年。",
+      "Anh ấy dạy học mười năm rồi.",
+      "老师们正在讨论教学方法。",
+      "Các thầy cô đang thảo luận phương pháp giảng dạy.",
+      "我学习汉语。",
+      "Tôi học tiếng Hán."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a2d70cfd-b4f6-4afb-9d30-caa69f6baf02",
+      "order": 1,
+      "zh": "汉语教学",
+      "pinyin": "",
+      "vi": "giảng dạy tiếng Hán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88fc9487-9c22-49a8-94ed-aa6789c2ea7c",
+      "order": 2,
+      "zh": "教学方法",
+      "pinyin": "",
+      "vi": "phương pháp giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0912a352-8912-4d07-a681-32bbe23b3b6a",
+      "order": 3,
+      "zh": "教学问题",
+      "pinyin": "",
+      "vi": "vấn đề dạy học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13b43e28-2926-4d46-bec9-928f2cc7d13c",
+      "order": 4,
+      "zh": "教学经验",
+      "pinyin": "",
+      "vi": "kinh nghiệm giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6edc75a2-ed0f-457f-8f62-08813d8cb0d5",
+      "order": 5,
+      "zh": "教学研讨会",
+      "pinyin": "",
+      "vi": "hội thảo giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48b62b86-c054-4e85-8b7d-b9a51ce4cc20",
+      "order": 6,
+      "zh": "教学要求",
+      "pinyin": "",
+      "vi": "yêu cầu giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dc8e00f0-6e83-4436-acd5-4757043d67ee",
+      "order": 1,
+      "zh": "老师们正在讨论教学方法。",
+      "pinyin": "Lǎoshīmen zhèngzài tǎolùn jiàoxué fāngfǎ.",
+      "vi": "Các thầy cô đang thảo luận phương pháp giảng dạy.",
+      "analysis_vi": "教学方法 là cụm danh từ, nghĩa là phương pháp dạy học.",
+      "highlight": [
+        "教学"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "1dfc9810-c7c3-4d20-bd0b-365dbd4ee0f2"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e283561a-2cb5-4395-a4ab-bbc64f8ba88b",
+      "order": 2,
+      "zh": "教学研讨会快开始了，请大家快进教室来。",
+      "pinyin": "Jiàoxué yántǎohuì kuài kāishǐ le, qǐng dàjiā kuài jìn jiàoshì lái.",
+      "vi": "Hội thảo giảng dạy sắp bắt đầu rồi, mời mọi người nhanh vào lớp/phòng học về phía này.",
+      "analysis_vi": "快开始了 báo sắp xảy ra. 进教室来 dùng 来 vì người nói đang ở trong phòng/lớp.",
+      "highlight": [
+        "教学"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "1dfc9810-c7c3-4d20-bd0b-365dbd4ee0f2"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d7440feb-f6d4-48ae-a797-5b81e4856e75",
+      "order": 3,
+      "zh": "经过这次教学研讨会以后，我才明白，好的汉语教学不但要解释语法，而且要清楚地告诉学生这些句子怎么用。",
+      "pinyin": "Jīngguò zhè cì jiàoxué yántǎohuì yǐhòu, wǒ cái míngbai, hǎo de Hànyǔ jiàoxué búdàn yào jiěshì yǔfǎ, érqiě yào qīngchu de gàosu xuésheng zhèxiē jùzi zěnme yòng.",
+      "vi": "Sau hội thảo giảng dạy lần này, tôi mới hiểu rằng giảng dạy tiếng Hán tốt không những phải giải thích ngữ pháp, mà còn phải nói rõ cho học sinh biết những câu này dùng thế nào.",
+      "analysis_vi": "经过……以后 = sau khi trải qua/sau... 才明白 nhấn đến lúc đó mới hiểu. 不但……而且…… tăng tiến. 清楚地告诉 dùng 地.",
+      "highlight": [
+        "教学"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "1dfc9810-c7c3-4d20-bd0b-365dbd4ee0f2"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung học thuật, 汉语教学 rất hay gặp khi nói về dạy tiếng Trung cho người nước ngoài. Nếu sau này muốn nói “tôi muốn đi dạy tiếng Trung”, có thể nói: 将来我想从事汉语教学。",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7e19b521-da62-47b4-a843-2e665fe79422",
+      "order": 1,
+      "rule_vi": "Không dùng 教学 thay cho mọi câu “dạy ai cái gì”; câu trực tiếp thường dùng 教。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "教学 = jiàoxué.",
+          "pinyin": "教书 = jiāo shū.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "教书 = jiāo shū.",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他研究汉语教学。",
+          "pinyin": "Anh ấy nghiên cứu giảng dạy tiếng Hán.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Anh ấy dạy học ở trường.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "教学",
+    "back": "giảng dạy, dạy học; công tác dạy và học",
+    "hint": "jiàoxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1dfc9810-c7c3-4d20-bd0b-365dbd4ee0f2",
+    "source_lesson_vocab_id": null
+  }
+}

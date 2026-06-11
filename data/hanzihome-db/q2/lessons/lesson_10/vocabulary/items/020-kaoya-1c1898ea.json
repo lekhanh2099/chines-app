@@ -1,0 +1,499 @@
+{
+  "id": "ab0e607d-c6c1-4a8b-ad91-61e10f3dd459",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "烤鸭",
+  "pinyin": "kǎoyā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khảo áp",
+    "meaning_vi": "vịt quay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vịt quay"
+    ],
+    "short_definition_vi": "vịt quay",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "烤",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "火 được dùng như bộ Hỏa trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "火 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nướng, quay bằng nhiệt.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "火 được dùng như bộ Hỏa trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "鸭",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "鸟",
+            "hanviet": "điểu",
+            "meaning_vi": "chim, loài có cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "鳥",
+              "radical_variant": "鸟",
+              "radical_name_vi": "bộ Điểu",
+              "radical_name_zh": "",
+              "hanviet": "điểu",
+              "meaning_vi": "chim, loài có cánh",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "鸟 được dùng như bộ Điểu trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "鸟 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vịt.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "鳥",
+          "radical_variant": "鸟",
+          "radical_name_vi": "bộ Điểu",
+          "radical_name_zh": "",
+          "hanviet": "điểu",
+          "meaning_vi": "chim, loài có cánh",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "鸟 được dùng như bộ Điểu trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "烤 = nướng, quay bằng nhiệt. 鸭 = vịt. → 烤鸭 = vịt quay/vịt nướng. Logic nhớ nghĩa hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "烤鸭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vịt quay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "北京烤鸭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vịt quay Bắc Kinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vịt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烤鸡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gà quay/gà nướng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我吃过北京烤鸭。",
+      "Tôi từng ăn vịt quay Bắc Kinh.",
+      "我没吃过烤鸭，只吃过烤鸡。",
+      "Tôi chưa từng ăn vịt quay, chỉ từng ăn gà quay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "97f49617-1048-48f4-b1f1-f6ca4aee6c3e",
+      "order": 1,
+      "zh": "吃烤鸭",
+      "pinyin": "",
+      "vi": "ăn vịt quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f766daa6-21a6-429c-9b04-023248a71846",
+      "order": 2,
+      "zh": "北京烤鸭",
+      "pinyin": "",
+      "vi": "vịt quay Bắc Kinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "031059c5-2b75-42f3-bd4e-1d6d79b41fd6",
+      "order": 3,
+      "zh": "烤鸭店",
+      "pinyin": "",
+      "vi": "tiệm/quán vịt quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "adbdb7e3-488c-463d-aa29-7d51d1788143",
+      "order": 4,
+      "zh": "一只烤鸭",
+      "pinyin": "",
+      "vi": "một con vịt quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a5664765-d44f-4a95-8641-285e6275bef4",
+      "order": 5,
+      "zh": "半只烤鸭",
+      "pinyin": "",
+      "vi": "nửa con vịt quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "b2cc48b0-14d6-41e2-b639-67cb8fccdce2",
+      "order": 6,
+      "zh": "烤鸭很好吃",
+      "pinyin": "",
+      "vi": "vịt quay rất ngon",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b09cd71d-4614-4c2a-84fb-f22f659a32c1",
+      "order": 1,
+      "zh": "我吃过北京烤鸭。",
+      "pinyin": "Wǒ chī guo Běijīng kǎoyā.",
+      "vi": "Tôi từng ăn vịt quay Bắc Kinh.",
+      "analysis_vi": "吃过 nhấn kinh nghiệm ăn.",
+      "highlight": [
+        "烤鸭"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "ab0e607d-c6c1-4a8b-ad91-61e10f3dd459"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "95d0f1d1-0d2a-40e7-89b6-01c25b12b0d2",
+      "order": 2,
+      "zh": "这是我第一次吃烤鸭，皮又香又脆，好吃极了。",
+      "pinyin": "Zhè shì wǒ dì yī cì chī kǎoyā, pí yòu xiāng yòu cuì, hǎochī jí le.",
+      "vi": "Đây là lần đầu tôi ăn vịt quay, da vừa thơm vừa giòn, ngon cực kỳ.",
+      "analysis_vi": "第一次吃烤鸭 = lần đầu ăn vịt quay. 又……又…… liệt kê hai đặc điểm cùng tồn tại.",
+      "highlight": [
+        "烤鸭"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "ab0e607d-c6c1-4a8b-ad91-61e10f3dd459"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "afd02e18-f19c-4270-841f-0834f2ee8401",
+      "order": 3,
+      "zh": "我去过北京两次，第一次没吃到烤鸭，第二次朋友特意带我去了一家老店，我才亲耳听服务员介绍怎么吃北京烤鸭。",
+      "pinyin": "Wǒ qù guo Běijīng liǎng cì, dì yī cì méi chī dào kǎoyā, dì èr cì péngyou tèyì dài wǒ qù le yì jiā lǎo diàn, wǒ cái qīněr tīng fúwùyuán jièshào zěnme chī Běijīng kǎoyā.",
+      "vi": "Tôi từng đi Bắc Kinh hai lần, lần đầu không ăn được vịt quay, lần thứ hai bạn tôi cố ý dẫn tôi đến một quán lâu đời, lúc đó tôi mới tận tai nghe nhân viên giới thiệu cách ăn vịt quay Bắc Kinh.",
+      "analysis_vi": "去过两次 = từng đi hai lần. 第一次 / 第二次 sắp xếp trải nghiệm. 没吃到 là không ăn được/không có cơ hội ăn được.",
+      "highlight": [
+        "烤鸭"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "ab0e607d-c6c1-4a8b-ad91-61e10f3dd459"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "0a4d1801-e03a-4169-93ac-8531da1c7fec",
+      "order": 1,
+      "rule_vi": "吃过烤鸭 = từng ăn vịt quay.",
+      "natural_examples": [
+        {
+          "zh": "吃过烤鸭 = từng ăn vịt quay.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "吃到烤鸭 = ăn được vịt quay / có cơ hội ăn được.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我吃过烤鸭。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "吃过烤鸭 = từng ăn vịt quay. 吃到烤鸭 = ăn được vịt quay / có cơ hội ăn được. Ví dụ: 我吃过烤鸭。 Tôi từng ăn vịt quay. 我这次没吃到烤鸭。 Lần này tôi không ăn được vịt quay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "烤鸭",
+    "back": "vịt quay",
+    "hint": "kǎoyā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "北京烤鸭 là món biểu tượng của Bắc Kinh. Cách ăn thường là cuốn miếng vịt với bánh mỏng, hành, dưa chuột và sốt ngọt. Khi học văn hóa ẩm thực Trung Quốc, món này gần như chắc chắn xuất hiện.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ab0e607d-c6c1-4a8b-ad91-61e10f3dd459",
+    "source_lesson_vocab_id": null
+  }
+}

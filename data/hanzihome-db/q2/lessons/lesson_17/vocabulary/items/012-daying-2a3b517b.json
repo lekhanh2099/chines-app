@@ -1,0 +1,373 @@
+{
+  "id": "509129b1-82df-4cbb-8ef1-4f6275531cde",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "答应",
+  "pinyin": "dāying",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Đáp ứng",
+    "meaning_vi": "đồng ý, nhận lời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đồng ý, nhận lời"
+    ],
+    "short_definition_vi": "đồng ý, nhận lời",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "giao tiếp đời sống, cam kết nhẹ, không trang trọng bằng 承诺.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "答",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "合",
+            "hanviet": "hợp",
+            "meaning_vi": "hợp/lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trả lời, đáp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "应",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "广",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nghiễm",
+          "radical_name_zh": "",
+          "hanviet": "nghiễm",
+          "meaning_vi": "mái nhà rộng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "广",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "广",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nghiễm",
+              "radical_name_zh": "",
+              "hanviet": "nghiễm",
+              "meaning_vi": "mái nhà rộng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nên, phải; đáp ứng, đồng ý",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "答 là đáp, trả lời. 应 là ứng, phản ứng, đáp lại. → 答应 = đáp lại lời yêu cầu bằng sự đồng ý. Cảnh báo: 答应 không phải “trả lời” nói chung. Trả lời câu hỏi là 回答. 答应 là đồng ý/nhận lời.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "答应",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng ý, nhận lời.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "同意",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng ý, trung tính/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "愿意",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sẵn lòng, bằng lòng, nói ý chí.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "回答",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trả lời câu hỏi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "承诺",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cam kết, hứa chính thức hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 回答问题 là trả lời câu hỏi; 答应帮忙 là nhận lời giúp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "50502434-7f68-4c70-b9e4-7d9f3f6e71d1",
+      "order": 1,
+      "zh": "答应帮忙",
+      "pinyin": "",
+      "vi": "đồng ý giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d2b2299-5fdf-4560-8414-7e66de2a8dde",
+      "order": 2,
+      "zh": "答应了",
+      "pinyin": "",
+      "vi": "đã đồng ý rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0cff1df-f53c-4a24-8a70-b9da3d34ccc2",
+      "order": 3,
+      "zh": "答应我一件事",
+      "pinyin": "",
+      "vi": "hứa/nhận lời với tôi một việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "25554651-2904-4165-8d25-6ed2f35827fe",
+      "order": 4,
+      "zh": "没有答应",
+      "pinyin": "",
+      "vi": "không đồng ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a20479cb-23b5-43ee-8713-092d20c52d31",
+      "order": 1,
+      "zh": "管理员答应下午把会场借给我们用。",
+      "pinyin": "Guǎnlǐyuán dāying xiàwǔ bǎ huìchǎng jiè gěi wǒmen yòng.",
+      "vi": "Người quản lý đồng ý chiều nay cho chúng tôi mượn hội trường dùng.",
+      "analysis_vi": "答应 + việc là nhận lời; 把会场借给我们用 nhấn hội trường được cho mượn để sử dụng.",
+      "highlight": [
+        "答应"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "509129b1-82df-4cbb-8ef1-4f6275531cde"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "99b58e9a-d913-462a-96dd-b742037a7997",
+      "order": 2,
+      "zh": "班长答应帮我们把教室布置成会场。",
+      "pinyin": "Bānzhǎng dāying bāng wǒmen bǎ jiàoshì bùzhì chéng huìchǎng.",
+      "vi": "Lớp trưởng đồng ý giúp chúng tôi bố trí lớp học thành hội trường.",
+      "analysis_vi": "答应帮我们…… là nhận lời giúp; phía sau là câu chữ 把 chuẩn.",
+      "highlight": [
+        "答应"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "509129b1-82df-4cbb-8ef1-4f6275531cde"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bf1f40f4-3c76-4816-b9ef-abd79de6ba8f",
+      "order": 3,
+      "zh": "他答应得很快，可是后来没有来，大家都有点儿失望。",
+      "pinyin": "Tā dāying de hěn kuài, kěshì hòulái méiyǒu lái, dàjiā dōu yǒudiǎnr shīwàng.",
+      "vi": "Anh ấy đồng ý rất nhanh, nhưng sau đó lại không đến, mọi người đều hơi thất vọng.",
+      "analysis_vi": "答应得很快 dùng 得 để đánh giá cách đồng ý; nhưng đồng ý không đồng nghĩa với đã làm.",
+      "highlight": [
+        "答应"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "509129b1-82df-4cbb-8ef1-4f6275531cde"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 答应",
+    "content_vi": "Trong giao tiếp Trung Quốc, sau khi đã 答应 người khác, việc không làm theo có thể làm mất 信用 – uy tín/sự đáng tin. Cụm 说话算数 nghĩa là “nói lời giữ lời”, rất gần văn hóa coi trọng chữ tín trong tiếng Việt.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4fdf8c68-a1ed-4b4d-bcac-85fa8915a4aa",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 答应 với 回答. 回答问题 Huídá wèntí Trả lời câu hỏi. 答应帮忙 Dāying bāngmáng Đồng ý giúp. Không nói: 答应问题 nếu nghĩa là trả lời câu hỏi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "答应",
+    "back": "đồng ý, nhận lời",
+    "hint": "dāying",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "509129b1-82df-4cbb-8ef1-4f6275531cde",
+    "source_lesson_vocab_id": null
+  }
+}

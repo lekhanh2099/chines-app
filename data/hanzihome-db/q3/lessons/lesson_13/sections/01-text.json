@@ -1,0 +1,566 @@
+{
+  "id": "l13_section_001",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "l13_block_001",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "高明的话",
+      "title_vi": "Lời của Cao Minh",
+      "summary_vi": "高明 là nam, thanh niên đi làm thuê ở nơi khác; kể về gia đình, khó khăn khi xa nhà và nhu cầu tự lập.",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "l13_line_001",
+          "order": 1,
+          "speaker": "姓名",
+          "zh": "高明",
+          "pinyin": "Gāo Míng",
+          "vi": "Cao Minh",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_002",
+          "order": 2,
+          "speaker": "性别",
+          "zh": "男",
+          "pinyin": "nán",
+          "vi": "Nam",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_003",
+          "order": 3,
+          "speaker": "职业",
+          "zh": "外地打工青年",
+          "pinyin": "wàidì dǎgōng qīngnián",
+          "vi": "Thanh niên đi làm thuê ở nơi khác",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_004",
+          "order": 4,
+          "speaker": "高明",
+          "zh": "出来打工快一年了，特别想家，想爸爸妈妈。",
+          "pinyin": "Chūlái dǎgōng kuài yì nián le, tèbié xiǎng jiā, xiǎng bàba māma.",
+          "vi": "Ra ngoài làm thuê gần một năm rồi, tôi đặc biệt nhớ nhà, nhớ bố mẹ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_005",
+          "order": 5,
+          "speaker": "高明",
+          "zh": "我在家是老大，下面还有一个弟弟，一个妹妹。",
+          "pinyin": "Wǒ zài jiā shì lǎodà, xiàmiàn hái yǒu yí ge dìdi, yí ge mèimei.",
+          "vi": "Ở nhà tôi là con cả, bên dưới còn có một em trai và một em gái.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_001"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_006",
+          "order": 6,
+          "speaker": "高明",
+          "zh": "我们家生活挺好的，以种地为主，兼搞一些副业。",
+          "pinyin": "Wǒmen jiā shēnghuó tǐng hǎo de, yǐ zhòng dì wéi zhǔ, jiān gǎo yìxiē fùyè.",
+          "vi": "Cuộc sống nhà chúng tôi khá tốt, lấy làm ruộng làm chính, đồng thời làm thêm một số nghề phụ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_002"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_007",
+          "order": 7,
+          "speaker": "高明",
+          "zh": "家里有房，有地。",
+          "pinyin": "Jiālǐ yǒu fáng, yǒu dì.",
+          "vi": "Nhà có nhà cửa, có ruộng đất.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_008",
+          "order": 8,
+          "speaker": "高明",
+          "zh": "我高中毕业后，在家常帮爸爸妈妈干些农活儿。",
+          "pinyin": "Wǒ gāozhōng bìyè hòu, zài jiā cháng bāng bàba māma gàn xiē nónghuór.",
+          "vi": "Sau khi tốt nghiệp cấp ba, tôi thường ở nhà giúp bố mẹ làm việc đồng áng.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_009",
+          "order": 9,
+          "speaker": "高明",
+          "zh": "在家千日好，出门一时难。",
+          "pinyin": "Zài jiā qiān rì hǎo, chū mén yì shí nán.",
+          "vi": "Ở nhà nghìn ngày thì tốt, ra ngoài một lúc cũng khó.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "note_003"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_010",
+          "order": 10,
+          "speaker": "高明",
+          "zh": "出来总没有在家好。",
+          "pinyin": "Chūlái zǒng méiyǒu zài jiā hǎo.",
+          "vi": "Ra ngoài thì dù sao cũng không bằng ở nhà.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_011",
+          "order": 11,
+          "speaker": "高明",
+          "zh": "要自己照顾自己，要自己洗衣服，还要学习怎么跟周围的人打交道。",
+          "pinyin": "Yào zìjǐ zhàogu zìjǐ, yào zìjǐ xǐ yīfu, hái yào xuéxí zěnme gēn zhōuwéi de rén dǎ jiāodào.",
+          "vi": "Phải tự chăm sóc bản thân, tự giặt quần áo, còn phải học cách giao tiếp/ứng xử với người xung quanh.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_012",
+          "order": 12,
+          "speaker": "高明",
+          "zh": "总之，挺难的。",
+          "pinyin": "Zǒngzhī, tǐng nán de.",
+          "vi": "Tóm lại là khá khó khăn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_003"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_013",
+          "order": 13,
+          "speaker": "高明",
+          "zh": "不过我想，这对我也是个锻炼，一个人总不能守着父母过一辈子，总得自立。",
+          "pinyin": "Búguò wǒ xiǎng, zhè duì wǒ yě shì ge duànliàn, yí ge rén zǒng bù néng shǒuzhe fùmǔ guò yí bèizi, zǒng děi zìlì.",
+          "vi": "Nhưng tôi nghĩ, điều này cũng là một sự rèn luyện đối với tôi; một người không thể cứ ở bên cha mẹ cả đời, cuối cùng cũng phải tự lập.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_004"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_014",
+          "order": 14,
+          "speaker": "高明",
+          "zh": "想到这儿，心情就好一点儿。",
+          "pinyin": "Xiǎng dào zhèr, xīnqíng jiù hǎo yìdiǎnr.",
+          "vi": "Nghĩ đến đây thì tâm trạng tôi tốt hơn một chút.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    },
+    {
+      "id": "l13_block_002",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "李文的话",
+      "title_vi": "Lời của Lý Văn",
+      "summary_vi": "李文 là nữ biên tập viên đài truyền hình, là mẹ đơn thân, vừa đi làm vừa nuôi con và lo việc học của con.",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "l13_line_015",
+          "order": 1,
+          "speaker": "姓名",
+          "zh": "李文",
+          "pinyin": "Lǐ Wén",
+          "vi": "Lý Văn",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_016",
+          "order": 2,
+          "speaker": "性别",
+          "zh": "女",
+          "pinyin": "nǚ",
+          "vi": "Nữ",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_017",
+          "order": 3,
+          "speaker": "职业",
+          "zh": "电视台编辑",
+          "pinyin": "diànshìtái biānjí",
+          "vi": "Biên tập viên đài truyền hình",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_018",
+          "order": 4,
+          "speaker": "李文",
+          "zh": "单亲家庭的日子不好过。",
+          "pinyin": "Dānqīn jiātíng de rìzi bù hǎo guò.",
+          "vi": "Cuộc sống của gia đình đơn thân không dễ dàng.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_019",
+          "order": 5,
+          "speaker": "李文",
+          "zh": "离婚后，儿子跟了我，我很高兴。",
+          "pinyin": "Líhūn hòu, érzi gēn le wǒ, wǒ hěn gāoxìng.",
+          "vi": "Sau khi ly hôn, con trai theo tôi, tôi rất vui.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_020",
+          "order": 6,
+          "speaker": "李文",
+          "zh": "但一个女人带一个孩子，家务事就够我忙的了，想出去玩儿玩儿，哪怕是看一场电影都不行。",
+          "pinyin": "Dàn yí ge nǚrén dài yí ge háizi, jiāwùshì jiù gòu wǒ máng de le, xiǎng chūqù wánrwanr, nǎpà shì kàn yì chǎng diànyǐng dōu bù xíng.",
+          "vi": "Nhưng một người phụ nữ nuôi một đứa con, riêng việc nhà đã đủ khiến tôi bận; muốn ra ngoài chơi một chút, dù chỉ xem một bộ phim cũng không được.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_005",
+            "grammar_006"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_021",
+          "order": 7,
+          "speaker": "李文",
+          "zh": "一下班就得赶快往家跑，特别怕孩子出事。",
+          "pinyin": "Yí xiàbān jiù děi gǎnkuài wǎng jiā pǎo, tèbié pà háizi chū shì.",
+          "vi": "Tan làm là phải vội chạy về nhà, đặc biệt sợ con xảy ra chuyện.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_022",
+          "order": 8,
+          "speaker": "李文",
+          "zh": "休息日得给儿子复习功课，自己的能力不够，给儿子请了个家教，我得陪读。",
+          "pinyin": "Xiūxirì děi gěi érzi fùxí gōngkè, zìjǐ de nénglì bú gòu, gěi érzi qǐng le ge jiājiào, wǒ děi péidú.",
+          "vi": "Ngày nghỉ phải ôn bài cho con; năng lực của bản thân không đủ nên tôi thuê gia sư cho con, còn tôi thì phải ngồi kèm học.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_023",
+          "order": 9,
+          "speaker": "李文",
+          "zh": "孩子今年考初中，晚上连电视我都不敢看，怕影响儿子学习。",
+          "pinyin": "Háizi jīnnián kǎo chūzhōng, wǎnshang lián diànshì wǒ dōu bù gǎn kàn, pà yǐngxiǎng érzi xuéxí.",
+          "vi": "Năm nay con thi cấp hai, buổi tối ngay cả tivi tôi cũng không dám xem, sợ ảnh hưởng đến việc học của con.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_007"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_024",
+          "order": 10,
+          "speaker": "李文",
+          "zh": "好在孩子还算听话，功课也不错。",
+          "pinyin": "Hǎozài háizi hái suàn tīnghuà, gōngkè yě búcuò.",
+          "vi": "May mà con cũng khá nghe lời, bài vở cũng không tệ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_008"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_025",
+          "order": 11,
+          "speaker": "李文",
+          "zh": "我自己的事三年内不考虑，等孩子大点儿，懂事时再说。",
+          "pinyin": "Wǒ zìjǐ de shì sān nián nèi bù kǎolǜ, děng háizi dà diǎnr, dǒngshì shí zài shuō.",
+          "vi": "Chuyện cá nhân của tôi trong ba năm tới chưa tính, đợi con lớn hơn, hiểu chuyện hơn rồi tính sau.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "note_004"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    },
+    {
+      "id": "l13_block_003",
+      "type": "text_dialogue",
+      "order": 3,
+      "title": "克风的话",
+      "title_vi": "Lời của Khắc Phong",
+      "summary_vi": "克风 là ca sĩ; kể về mẹ, việc ở Bắc Kinh, áp lực chưa có thành tựu và cảm giác mâu thuẫn.",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "lines": [
+        {
+          "id": "l13_line_026",
+          "order": 1,
+          "speaker": "姓名",
+          "zh": "克风",
+          "pinyin": "Kè Fēng",
+          "vi": "Khắc Phong",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_027",
+          "order": 2,
+          "speaker": "性别",
+          "zh": "男",
+          "pinyin": "nán",
+          "vi": "Nam",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_028",
+          "order": 3,
+          "speaker": "职业",
+          "zh": "歌手",
+          "pinyin": "gēshǒu",
+          "vi": "Ca sĩ",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_029",
+          "order": 4,
+          "speaker": "克风",
+          "zh": "最初来北京是想考电影学院，没有考上，就留在这儿当了歌手，一待就是四年。",
+          "pinyin": "Zuìchū lái Běijīng shì xiǎng kǎo diànyǐng xuéyuàn, méiyǒu kǎo shàng, jiù liú zài zhèr dāng le gēshǒu, yì dāi jiù shì sì nián.",
+          "vi": "Ban đầu tôi đến Bắc Kinh là muốn thi Học viện Điện ảnh, nhưng không đỗ nên ở lại đây làm ca sĩ; ở lại một cái là bốn năm.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_009"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_030",
+          "order": 5,
+          "speaker": "克风",
+          "zh": "家中只有母亲一人，春节前又摔伤了。",
+          "pinyin": "Jiā zhōng zhǐ yǒu mǔqīn yì rén, Chūnjié qián yòu shuāi shāng le.",
+          "vi": "Trong nhà chỉ còn một mình mẹ, trước Tết bà lại bị ngã bị thương.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_031",
+          "order": 6,
+          "speaker": "克风",
+          "zh": "我一岁多父亲就去世了，母亲一个人把我们姐弟三人养大。",
+          "pinyin": "Wǒ yí suì duō fùqīn jiù qùshì le, mǔqīn yí ge rén bǎ wǒmen jiědì sān rén yǎng dà.",
+          "vi": "Khi tôi hơn một tuổi thì cha qua đời, một mình mẹ nuôi ba chị em chúng tôi khôn lớn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_032",
+          "order": 7,
+          "speaker": "克风",
+          "zh": "我想把母亲接到北京来，可我们歌手的工作、生活都不安定，母亲知道了反而更担心；",
+          "pinyin": "Wǒ xiǎng bǎ mǔqīn jiē dào Běijīng lái, kě wǒmen gēshǒu de gōngzuò, shēnghuó dōu bù āndìng, mǔqīn zhīdào le fǎn’ér gèng dānxīn;",
+          "vi": "Tôi muốn đón mẹ lên Bắc Kinh, nhưng công việc và cuộc sống của ca sĩ chúng tôi đều không ổn định, mẹ biết rồi trái lại càng lo hơn.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [
+            "grammar_010"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_033",
+          "order": 8,
+          "speaker": "克风",
+          "zh": "回到母亲身边去吧，我现在一没有成就，二没有钱，实在没脸回去见同学、朋友。",
+          "pinyin": "Huí dào mǔqīn shēnbiān qù ba, wǒ xiànzài yī méiyǒu chéngjiù, èr méiyǒu qián, shízài méi liǎn huíqù jiàn tóngxué, péngyou.",
+          "vi": "Còn quay về bên mẹ thì hiện giờ tôi một là chưa có thành tựu, hai là không có tiền, thật sự không còn mặt mũi nào về gặp bạn học, bạn bè.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_034",
+          "order": 9,
+          "speaker": "克风",
+          "zh": "朋友们说我不孝，我知道自己不是不孝。",
+          "pinyin": "Péngyoumen shuō wǒ bú xiào, wǒ zhīdào zìjǐ bú shì bú xiào.",
+          "vi": "Bạn bè nói tôi bất hiếu, tôi biết mình không phải là bất hiếu.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_line_035",
+          "order": 10,
+          "speaker": "克风",
+          "zh": "其实我心里也很矛盾，觉得挺苦的。",
+          "pinyin": "Qíshí wǒ xīnli yě hěn máodùn, juéde tǐng kǔ de.",
+          "vi": "Thật ra trong lòng tôi cũng rất mâu thuẫn, cảm thấy khá khổ.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [],
+      "comprehension_questions": []
+    }
+  ],
+  "comprehension_questions": [
+    {
+      "id": "l13_cq_001",
+      "order": 1,
+      "prompt": "打工青年高明为什么觉得自己“挺难的”？",
+      "answer": "因为他出来打工后要自己照顾自己、洗衣服，还要学习怎么跟周围的人打交道。",
+      "acceptable_answers": [],
+      "explanation_vi": "Dựa trực tiếp vào lời 高明: 要自己照顾自己，要自己洗衣服，还要学习怎么跟周围的人打交道。",
+      "source_origin": "textbook_pdf_checked",
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "l13_cq_002",
+      "order": 2,
+      "prompt": "电视台编辑李文的日子过得怎么样？她现在为什么不想解决自己的个人问题？",
+      "answer": "她的日子不好过。因为她一个人带孩子，家务事很多，还要照顾孩子学习。她想等孩子大点儿、懂事时再说，所以三年内不考虑自己的事。",
+      "acceptable_answers": [],
+      "explanation_vi": "自己的事 trong ngữ cảnh này chỉ chuyện riêng/chuyện cá nhân của 李文, thường hiểu là chuyện tình cảm hoặc tái hôn.",
+      "source_origin": "textbook_pdf_checked",
+      "answer_verified": true,
+      "check_needed": false
+    },
+    {
+      "id": "l13_cq_003",
+      "order": 3,
+      "prompt": "歌手克风为什么不把母亲接到自己身边？他是不孝吗？",
+      "answer": "因为他的工作、生活都不安定，母亲知道了反而更担心。他不是不孝，只是现在没有成就、没有钱，觉得没脸回去，心里很矛盾。",
+      "acceptable_answers": [],
+      "explanation_vi": "Câu trả lời cần nêu đủ hai phía: không đón mẹ vì đời sống không ổn định; không phải bất hiếu mà là mâu thuẫn và áp lực thể diện.",
+      "source_origin": "textbook_pdf_checked",
+      "answer_verified": true,
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "id": "094e88ed-863f-4f2c-95b4-8369bd78ca4b",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "彭艺云",
+  "pinyin": "Péng Yìyún",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bành Nghệ Vân",
+    "meaning_vi": "tên người: Bành Nghệ Vân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tên người: Bành Nghệ Vân"
+    ],
+    "short_definition_vi": "tên người: Bành Nghệ Vân",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "彭",
+        "lishu_vi": "bành",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "彡",
+            "hanviet": "sam",
+            "meaning_vi": "nét trang trí",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "họ Bành",
+        "modern_logic_vi": "Trong 彭艺云 là họ người.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "艺",
+        "lishu_vi": "nghệ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cây cỏ",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cây cỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cây cỏ",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "乙",
+            "hanviet": "ất",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghệ thuật, kỹ năng",
+        "modern_logic_vi": "Trong tên riêng không ép nghĩa tính cách.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "云",
+        "lishu_vi": "vân",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mây; yếu tố tên riêng",
+        "modern_logic_vi": "Trong 艺云 là tên riêng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "彭艺云 được dùng trong Bài 20 với nghĩa: tên người: Bành Nghệ Vân.",
+    "memory_tip_vi": "Nhớ qua cụm 彭艺云去面试.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "彭",
+        "pinyin": "Péng",
+        "meaning_vi": "họ Bành",
+        "difference_vi": "Họ của nhân vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "艺云",
+        "pinyin": "Yìyún",
+        "meaning_vi": "tên Nghệ Vân",
+        "difference_vi": "Tên riêng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "73f1e9e5-47bf-4450-a33d-618b8e166e8e",
+      "order": 1,
+      "zh": "彭艺云去面试",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8aae19c-33a4-4bc0-9f15-776e34feeacf",
+      "order": 2,
+      "zh": "彭艺云被录取",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d00c734-82da-41c0-a879-56e0738aabf1",
+      "order": 3,
+      "zh": "彭艺云的观点",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37fb813f-ad6f-4646-b8a8-72bfaa16114c",
+      "order": 4,
+      "zh": "彭艺云的导师",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "761f37c5-9805-453a-a8ed-28ce1a6263ae",
+      "order": 5,
+      "zh": "彭艺云很坦白",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "287f12ed-e177-4d8a-824d-d0ee6248825f",
+      "order": 6,
+      "zh": "彭艺云敢于反对",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5213eb12-2711-452d-bac4-3068ea613660",
+      "order": 1,
+      "zh": "彭艺云去牛津大学面试。",
+      "pinyin": "Péng Yìyún qù Niújīn Dàxué miànshì.",
+      "vi": "Bành Nghệ Vân đi phỏng vấn ở Đại học Oxford.",
+      "analysis_vi": "Tên người đứng làm chủ ngữ.",
+      "highlight": [
+        "彭艺云"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "094e88ed-863f-4f2c-95b4-8369bd78ca4b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4ad00890-d941-4925-9698-a4cfec3667bd",
+      "order": 2,
+      "zh": "众人都以为彭艺云会失去机会，然而导师却宣布她被录取了。",
+      "pinyin": "Zhòngrén dōu yǐwéi Péng Yìyún huì shīqù jīhuì, rán’ér dǎoshī què xuānbù tā bèi lùqǔ le.",
+      "vi": "Mọi người tưởng Bành Nghệ Vân sẽ mất cơ hội, nhưng thầy lại tuyên bố cô ấy được nhận.",
+      "analysis_vi": "Tên người trong câu chuyển ngoặt.",
+      "highlight": [
+        "彭艺云"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "094e88ed-863f-4f2c-95b4-8369bd78ca4b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tên người Trung theo trật tự họ trước tên sau: 彭 là họ, 艺云 là tên.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c9f656a1-1405-46db-8d67-6ae51fcab898",
+      "order": 1,
+      "rule_vi": "Không đảo tên người Trung theo kiểu tiếng Anh trong bản Hán Việt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "艺云彭",
+          "pinyin": "Yìyún Péng",
+          "vi": "Nghệ Vân Bành.",
+          "note_vi": "Sai nếu đang giữ trật tự tên Trung.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "彭艺云",
+          "pinyin": "Péng Yìyún",
+          "vi": "Bành Nghệ Vân.",
+          "note_vi": "Đúng trật tự họ trước tên sau.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "彭艺云",
+    "back": "tên người: Bành Nghệ Vân",
+    "hint": "Péng Yìyún",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "094e88ed-863f-4f2c-95b4-8369bd78ca4b",
+    "source_lesson_vocab_id": null
+  }
+}

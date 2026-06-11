@@ -1,0 +1,247 @@
+{
+  "id": "b2945c53-de54-4492-b3b1-845382604e65",
+  "type": "deep_vocabulary_item",
+  "order": 67,
+  "hanzi": "久久",
+  "pinyin": "jiǔjiǔ",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "cửu cửu",
+    "meaning_vi": "rất lâu, mãi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rất lâu",
+      "mãi"
+    ],
+    "short_definition_vi": "trong một thời gian dài, nhấn sự kéo dài",
+    "textbook_focus_vi": "Trong bài: 久久不能入睡.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "久",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lâu",
+        "modern_logic_vi": "lâu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "久",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lâu",
+        "modern_logic_vi": "lâu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "久久 được học trong bài theo nghĩa: trong một thời gian dài, nhấn sự kéo dài.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 久久不能入睡.",
+    "warning_vi": "Không dùng 久久 với hành động chớp nhoáng như 闪了一下.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很久",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Rất lâu, thông dụng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好久",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Lâu lắm, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 久久 với hành động chớp nhoáng như 闪了一下."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "428072fc-abba-4181-be1e-aea338ed4728",
+      "order": 1,
+      "zh": "久久不能入睡",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "236cb928-16fc-4309-a205-a045b6dad649",
+      "order": 2,
+      "zh": "久久不说话",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "217622f8-9ea2-444a-ae06-9568a3c91b50",
+      "order": 3,
+      "zh": "久久地看着",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3186c72-2e5a-4e08-8be6-4f4d85367021",
+      "order": 4,
+      "zh": "久久不能平静",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a22b9039-de51-485b-84bc-ea694786b4f4",
+      "order": 5,
+      "zh": "久久没有回来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0f671459-6e22-417f-926b-90edaf3450ff",
+      "order": 1,
+      "zh": "已经很晚了，可我久久不能入睡。",
+      "pinyin": "",
+      "vi": "Đã rất khuya rồi, nhưng tôi rất lâu vẫn không ngủ được.",
+      "analysis_vi": "久久不能入睡 có sắc thái văn kể.",
+      "highlight": [
+        "久久"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2945c53-de54-4492-b3b1-845382604e65"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e00c08f7-3021-478c-ad5b-26b8d618e6d4",
+      "order": 2,
+      "zh": "他一想到晚上看到的飞碟，就久久不能平静。",
+      "pinyin": "",
+      "vi": "Anh ấy cứ nghĩ đến đĩa bay tối đó là rất lâu không bình tĩnh lại được.",
+      "analysis_vi": "一想到……就…… nói phản ứng lặp lại.",
+      "highlight": [
+        "久久"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2945c53-de54-4492-b3b1-845382604e65"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "久久 văn hơn 很久, có sắc thái kéo dài và cảm xúc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "efde1382-9421-400b-9d95-5c732b452eca",
+      "order": 1,
+      "rule_vi": "Không dùng 久久 với hành động chớp nhoáng như 闪了一下.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 久久 với hành động chớp nhoáng như 闪了一下.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "久久",
+    "back": "rất lâu, mãi",
+    "hint": "jiǔjiǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b2945c53-de54-4492-b3b1-845382604e65",
+    "source_lesson_vocab_id": null
+  }
+}

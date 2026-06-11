@@ -1,0 +1,310 @@
+{
+  "id": "7f1c7414-9ac3-4830-b175-8acf0ea1af1b",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "落",
+  "pinyin": "là / luò",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "actions_results"
+  ],
+  "meaning": {
+    "hanviet": "lạc",
+    "meaning_vi": "bỏ sót, để quên; rơi xuống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bỏ sót, để quên; rơi xuống"
+    ],
+    "short_definition_vi": "bỏ sót, để quên; rơi xuống",
+    "textbook_focus_vi": "bỏ sót, để quên; rơi xuống",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "落",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "洛",
+            "hanviet": "lạc",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bỏ sót, để quên; rơi xuống",
+        "modern_logic_vi": "落 trong bài đọc là là: để quên/bỏ sót.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Trong bài 12, 落 đọc là là, nghĩa là để quên/bỏ sót ở đâu.",
+    "memory_tip_vi": "Trong bài 12, 落 đọc là là, nghĩa là để quên/bỏ sót ở đâu.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "丢",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "làm mất, mất rồi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忘带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên mang",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "掉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rơi, rớt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "落在家里",
+        "right": "丢了",
+        "meaning_vi": "",
+        "note_vi": "để quên ở nhà ↔ mất rồi",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0c5421d2-ff9a-4703-88dc-b748a953d6a6",
+      "order": 1,
+      "zh": "落在家里",
+      "pinyin": "",
+      "vi": "để quên ở nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0fd0dde1-1a96-4144-942c-1ec55bcd29ec",
+      "order": 2,
+      "zh": "落在车上",
+      "pinyin": "",
+      "vi": "để quên trên xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "290b9978-a79a-4005-b405-5e102292143b",
+      "order": 3,
+      "zh": "落在朋友那儿",
+      "pinyin": "",
+      "vi": "để quên ở chỗ bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "90f43feb-1522-41bf-bf43-cabde7532371",
+      "order": 4,
+      "zh": "落了一个字",
+      "pinyin": "",
+      "vi": "sót mất một chữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dada077f-1d0f-4d3b-af11-b1bda152c134",
+      "order": 5,
+      "zh": "丢三落四",
+      "pinyin": "",
+      "vi": "hay quên trước quên sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "83c237d2-66c5-4f62-b760-d11352ecc18a",
+      "order": 1,
+      "zh": "我的护照落在家里了。",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi để quên ở nhà rồi.",
+      "analysis_vi": "落在家里: để quên ở nhà.",
+      "highlight": [
+        "落"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7f1c7414-9ac3-4830-b175-8acf0ea1af1b"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ec6720d3-718a-4af0-a90d-327b71e10ca9",
+      "order": 2,
+      "zh": "我的护照是不是落在你那儿了？",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi có phải để quên ở chỗ bạn không?",
+      "analysis_vi": "我的护照 là chủ đề lớn.",
+      "highlight": [
+        "落"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7f1c7414-9ac3-4830-b175-8acf0ea1af1b"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "我东西落在车上了 rất thực dụng khi để quên đồ trên xe.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "15f3332a-94f2-44b5-a103-6813394b6486",
+      "order": 1,
+      "rule_vi": "Trong nghĩa để quên, 落 đọc là là, không đọc luò.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "落在家里 là là zài jiā lǐ",
+          "pinyin": "",
+          "vi": "để quên ở nhà",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "落",
+    "back": "bỏ sót, để quên; rơi xuống",
+    "hint": "là / luò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "actions_results"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7f1c7414-9ac3-4830-b175-8acf0ea1af1b",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "id": "b9f8b0a6-0413-443c-b258-46d014c5ce72",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "得出",
+  "pinyin": "déchū",
+  "pos": {
+    "raw_vi": "Cụm động từ",
+    "raw_cn": "动补结构",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Lập luận và kết luận"
+  ],
+  "meaning": {
+    "hanviet": "Đắc xuất",
+    "meaning_vi": "rút ra, đưa ra kết luận",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rút ra",
+      "đưa ra kết luận"
+    ],
+    "short_definition_vi": "rút ra, đưa ra kết luận",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: rút ra, đưa ra kết luận.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Lập luận và kết luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "得出 trong bài được học theo nghĩa trọng tâm: rút ra, đưa ra kết luận.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: rút ra, đưa ra kết luận.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b4db54c7-005c-42ac-97e3-663713eea34e",
+      "order": 1,
+      "zh": "我们已经能得出结论，”格林教授说，“地球上是没有生命存在的。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: rút ra, đưa ra kết luận",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "90190846-cee8-40ea-8186-2b8e5b4ddfa5",
+      "order": 1,
+      "zh": "我们已经能得出结论，”格林教授说，“地球上是没有生命存在的。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “得出” = rút ra, đưa ra kết luận.",
+      "analysis_vi": "Câu này dùng “得出” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "得出"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b9f8b0a6-0413-443c-b258-46d014c5ce72"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “得出” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "359ffee3-36d9-40f9-8008-b777ed8d1e45",
+      "order": 1,
+      "rule_vi": "Cần dùng “得出” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "得出",
+    "back": "rút ra, đưa ra kết luận",
+    "hint": "déchū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Lập luận và kết luận"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b9f8b0a6-0413-443c-b258-46d014c5ce72",
+    "source_lesson_vocab_id": null
+  }
+}

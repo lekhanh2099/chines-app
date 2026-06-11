@@ -1,0 +1,451 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法",
+  "title_vi": "Cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "逐渐",
+      "title_vi": "Dần dần",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "逐渐 diễn tả mức độ hoặc số lượng tăng lên / giảm đi một cách từ từ. Thường đứng trước động từ hoặc tính từ để làm trạng ngữ.",
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我逐渐领悟到，人的一生，可能会遇到各种不幸的事。",
+              "pinyin": "Wǒ zhújiàn lǐngwù dào, rén de yì shēng, kěnéng huì yùdào gè zhǒng bùxìng de shì.",
+              "vi": "Tôi dần dần hiểu ra rằng đời người có thể gặp đủ loại chuyện bất hạnh.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "text_paragraph_003",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "逐渐 + 动词 / 形容词",
+          "meaning_vi": "Dần dần làm gì / dần dần trở nên thế nào.",
+          "examples": [
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "五月，天气逐渐热起来了。",
+              "pinyin": "Wǔ yuè, tiānqì zhújiàn rè qǐlai le.",
+              "vi": "Tháng năm, thời tiết dần dần nóng lên.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            },
+            {
+              "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+              "zh": "我对学习汉语逐渐有了信心。",
+              "pinyin": "Wǒ duì xuéxí Hànyǔ zhújiàn yǒu le xìnxīn.",
+              "vi": "Tôi dần dần có niềm tin với việc học tiếng Hán.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "逐渐 thiên về văn viết hơn 渐渐.",
+            "渐渐 thiên khẩu ngữ hơn, tự nhiên trong đời sống hằng ngày."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "决心",
+      "title_vi": "Quyết tâm",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "决心 trong bài làm động từ: quyết tâm làm gì. Ngoài ra trong tiếng Trung hiện đại còn dùng như danh từ trong cụm 下决心 / 有决心.",
+          "examples": [
+            {
+              "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+              "zh": "我决心以一个母亲的耐力，点燃儿子心中的希望之火。",
+              "pinyin": "Wǒ juéxīn yǐ yí ge mǔqīn de nàilì, diǎnrán érzi xīnzhōng de xīwàng zhī huǒ.",
+              "vi": "Tôi quyết tâm dùng sự bền bỉ của một người mẹ để thắp lên ngọn lửa hy vọng trong lòng con trai.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "text_paragraph_003",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "a6012e0f-4ca0-438c-bcf0-1043d8150bda",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "决心 làm danh từ",
+          "pattern": "有决心 / 下决心 + 做某事",
+          "meaning_vi": "Có quyết tâm / hạ quyết tâm làm việc gì.",
+          "examples": [
+            {
+              "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
+              "zh": "他下决心要自己开个公司。",
+              "pinyin": "Tā xià juéxīn yào zìjǐ kāi ge gōngsī.",
+              "vi": "Anh ấy hạ quyết tâm tự mở một công ty.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            },
+            {
+              "id": "82ac449f-b649-41c9-9b89-22e4336c1b77",
+              "zh": "我们有决心把这个工作做好。",
+              "pinyin": "Wǒmen yǒu juéxīn bǎ zhège gōngzuò zuò hǎo.",
+              "vi": "Chúng tôi có quyết tâm làm tốt công việc này.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "fcfef93c-e55f-46bb-9a38-17ca999a1197",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "决心 làm động từ",
+          "pattern": "决心 + 动词短语",
+          "meaning_vi": "Quyết tâm làm việc gì.",
+          "examples": [
+            {
+              "id": "3612c4ea-a7c8-4455-8632-f98679055c65",
+              "zh": "我决心把烟戒掉。",
+              "pinyin": "Wǒ juéxīn bǎ yān jiè diào.",
+              "vi": "Tôi quyết tâm cai thuốc.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Không nói: 他决心地要学好汉语。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "不论",
+      "title_vi": "Bất kể; bất luận",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "不论 dùng để nói dù điều kiện thay đổi thế nào thì kết quả phía sau vẫn không đổi. Vế sau thường có 都 / 总 / 也 hô ứng.",
+          "examples": [
+            {
+              "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
+              "zh": "几年来，不论夏天还是冬天，无论刮风还是下雨，我从来没有缺过一次课。",
+              "pinyin": "Jǐ nián lái, búlùn xiàtiān háishi dōngtiān, wúlùn guā fēng háishi xià yǔ, wǒ cónglái méiyǒu quē guo yí cì kè.",
+              "vi": "Mấy năm nay, bất kể mùa hè hay mùa đông, bất kể gió thổi hay mưa rơi, tôi chưa từng vắng một buổi học nào.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "text_paragraph_009",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "不论 + A 还是 B，主语 + 都 / 总 / 也 + 结果",
+          "meaning_vi": "Bất kể A hay B, kết quả vẫn như nhau.",
+          "examples": [
+            {
+              "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
+              "zh": "不论什么时候，她都能坚持上课。",
+              "pinyin": "Búlùn shénme shíhou, tā dōu néng jiānchí shàngkè.",
+              "vi": "Bất kể lúc nào, cô ấy đều có thể kiên trì đi học.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            },
+            {
+              "id": "aa9509ab-7504-49c9-8207-821c2b856a23",
+              "zh": "不论你回来不回来，都给我来个电话。",
+              "pinyin": "Búlùn nǐ huílai bù huílai, dōu gěi wǒ lái ge diànhuà.",
+              "vi": "Dù bạn có về hay không, cũng gọi điện cho tôi một cuộc.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ],
+          "notes_vi": [
+            "Không nói: 不论下大雨我们也去. Nên nói: 不论下不下大雨，我们都去."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "了不起",
+      "title_vi": "Phi thường; có gì ghê gớm",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "了不起 có hai lớp nghĩa: khen ai/việc gì rất xuất sắc; hoặc trong phủ định/phản vấn nghĩa là không có gì to tát.",
+          "examples": [
+            {
+              "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
+              "zh": "你真是一位了不起的母亲！",
+              "pinyin": "Nǐ zhēn shì yí wèi liǎobuqǐ de mǔqīn!",
+              "vi": "Chị thật là một người mẹ phi thường!",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "text_paragraph_019",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "70ec9d94-052a-421c-ba8f-1d2e57bd3ad4",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Nghĩa khen ngợi",
+          "pattern": "了不起的 + 名词 / 真了不起",
+          "meaning_vi": "Rất đáng nể, rất xuất sắc.",
+          "examples": [
+            {
+              "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
+              "zh": "才学了半年多就说得这么好，真了不起！",
+              "pinyin": "Cái xué le bàn nián duō jiù shuō de zhème hǎo, zhēn liǎobuqǐ!",
+              "vi": "Mới học hơn nửa năm mà nói tốt như vậy, thật đáng nể!",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "f144b6f8-a371-4eb2-9657-82bf132a0c19",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Nghĩa phản vấn / phủ định",
+          "pattern": "没什么了不起的 / 有什么了不起的？",
+          "meaning_vi": "Không có gì ghê gớm; có gì to tát đâu.",
+          "examples": [
+            {
+              "id": "8288a918-6f9b-494b-a233-412682661258",
+              "zh": "困难没有什么了不起的，只要我们不怕，认真对待，就一定能克服。",
+              "pinyin": "Kùnnan méi shénme liǎobuqǐ de, zhǐyào wǒmen bú pà, rènzhēn duìdài, jiù yídìng néng kèfú.",
+              "vi": "Khó khăn chẳng có gì ghê gớm, chỉ cần chúng ta không sợ và nghiêm túc đối mặt thì nhất định có thể vượt qua.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "即使",
+      "title_vi": "Dù cho; cho dù",
+      "level": "HSK4+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "即使 thường đi với 也, nêu một tình huống giả định cực đoan; dù tình huống đó xảy ra thì kết quả phía sau vẫn không thay đổi.",
+          "examples": [
+            {
+              "id": "6bf266cb-265d-4e6d-9c03-ff8d7f47ff9a",
+              "zh": "即使我闭上了双眼，心里也是无愧的。",
+              "pinyin": "Jíshǐ wǒ bì shàng le shuāng yǎn, xīnli yě shì wúkuì de.",
+              "vi": "Dù tôi có nhắm mắt, trong lòng cũng không còn gì hối tiếc.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "text_paragraph_020",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc",
+          "pattern": "即使 + 情况，主语 + 也 + 结果",
+          "meaning_vi": "Dù cho tình huống nào đó xảy ra, vẫn sẽ làm / vẫn có kết quả như vậy.",
+          "examples": [
+            {
+              "id": "8775efc2-08d3-431f-ba3d-04de4aa5337e",
+              "zh": "不要怕说错，即使说错了也没关系。",
+              "pinyin": "Bú yào pà shuō cuò, jíshǐ shuō cuò le yě méi guānxi.",
+              "vi": "Đừng sợ nói sai, dù nói sai cũng không sao.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            },
+            {
+              "id": "8733a0e4-04f0-4d61-944d-7b6dcbd69d7f",
+              "zh": "即使再困难，我也要坚持学下去。",
+              "pinyin": "Jíshǐ zài kùnnan, wǒ yě yào jiānchí xué xiàqù.",
+              "vi": "Dù khó khăn hơn nữa, tôi vẫn phải kiên trì học tiếp.",
+              "en": "",
+              "highlight": [],
+              "grammar_refs": [],
+              "vocab_refs": [],
+              "source_ref": "",
+              "note_vi": "",
+              "audio_key": "",
+              "source_origin": "generated",
+              "check_needed": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

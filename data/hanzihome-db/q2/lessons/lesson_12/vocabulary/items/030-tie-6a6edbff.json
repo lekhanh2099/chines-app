@@ -1,0 +1,328 @@
+{
+  "id": "c1fd859b-9b96-4fc8-8b3d-d1a809d5f8ad",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "贴",
+  "pinyin": "tiē",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "actions_results"
+  ],
+  "meaning": {
+    "hanviet": "thiếp",
+    "meaning_vi": "dán; áp sát; trợ cấp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dán; áp sát; trợ cấp"
+    ],
+    "short_definition_vi": "dán; áp sát; trợ cấp",
+    "textbook_focus_vi": "dán; áp sát; trợ cấp",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "贴",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "tài vật",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền, tài vật",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "贝 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "占",
+            "hanviet": "chiêm",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dán, áp sát",
+        "modern_logic_vi": "贴 học theo cụm 贴在墙上/贴通知.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "贴 học theo cụm 贴在墙上/贴在门上 = dán lên vị trí cụ thể.",
+    "memory_tip_vi": "贴 học theo cụm 贴在墙上/贴在门上 = dán lên vị trí cụ thể.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "粘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dính/dán, nhấn tính dính",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "treo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "贴上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dán lên, nhấn hoàn tất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "贴在",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dán ở/lên vị trí cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "贴上",
+        "right": "撕下来",
+        "meaning_vi": "",
+        "note_vi": "dán lên ↔ bóc/xé xuống",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "de239af3-9709-4161-b293-1e533586b6f8",
+      "order": 1,
+      "zh": "贴在墙上",
+      "pinyin": "",
+      "vi": "dán lên tường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0a82329-e823-49d0-bfcb-5b48b274a57b",
+      "order": 2,
+      "zh": "贴在门上",
+      "pinyin": "",
+      "vi": "dán lên cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df069c93-318e-45e4-bc00-7a60491d92e6",
+      "order": 3,
+      "zh": "贴通知",
+      "pinyin": "",
+      "vi": "dán thông báo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0ed3372-e42a-4171-aae6-f730cbedffa9",
+      "order": 4,
+      "zh": "贴照片",
+      "pinyin": "",
+      "vi": "dán ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f57f1c6-f0a7-44a7-a307-7a97578c56b2",
+      "order": 5,
+      "zh": "贴邮票",
+      "pinyin": "",
+      "vi": "dán tem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "195a9dd1-b396-47b1-b24a-74badb4e97db",
+      "order": 6,
+      "zh": "贴近",
+      "pinyin": "",
+      "vi": "áp sát/gần gũi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d8adbe5b-8320-48fc-ab74-65d79b263405",
+      "order": 1,
+      "zh": "他把通知贴在门上了。",
+      "pinyin": "",
+      "vi": "Anh ấy đã dán thông báo lên cửa rồi.",
+      "analysis_vi": "把通知贴在门上 dùng 把 + kết quả vị trí.",
+      "highlight": [
+        "贴"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c1fd859b-9b96-4fc8-8b3d-d1a809d5f8ad"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c44e6a75-8c7b-4cf1-936b-b604005592f8",
+      "order": 2,
+      "zh": "那张通知是谁贴在墙上的？",
+      "pinyin": "",
+      "vi": "Tờ thông báo đó là ai dán lên tường?",
+      "analysis_vi": "是……的 nhấn người thực hiện.",
+      "highlight": [
+        "贴"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c1fd859b-9b96-4fc8-8b3d-d1a809d5f8ad"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "贴春联, 贴“福”字, 贴通知 đều rất đời sống.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "69975183-89a5-4428-add1-83c750bd7575",
+      "order": 1,
+      "rule_vi": "Không nhầm 贴 với 帖: 贴 là dán; 帖子 là bài đăng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "贴通知",
+          "pinyin": "",
+          "vi": "dán thông báo",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "帖子",
+          "pinyin": "",
+          "vi": "bài đăng",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "贴",
+    "back": "dán; áp sát; trợ cấp",
+    "hint": "tiē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "actions_results"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c1fd859b-9b96-4fc8-8b3d-d1a809d5f8ad",
+    "source_lesson_vocab_id": null
+  }
+}

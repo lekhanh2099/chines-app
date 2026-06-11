@@ -1,0 +1,265 @@
+{
+  "id": "521149cf-5f4f-48d9-aef8-c650ad6c0c37",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "意义",
+  "pinyin": "yìyì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ý nghĩa",
+    "meaning_vi": "ý nghĩa, giá trị, tầm quan trọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ý nghĩa",
+      "giá trị",
+      "tầm quan trọng"
+    ],
+    "short_definition_vi": "ý nghĩa, giá trị, tầm quan trọng",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "意",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "音",
+            "hanviet": "âm",
+            "meaning_vi": "âm thanh",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, suy nghĩ",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ý nghĩ, ý định",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "义",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩa, đạo nghĩa",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "意义 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 意义 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "意思",
+        "pinyin": "yìsi",
+        "meaning_vi": "ý/ý muốn/nghĩa",
+        "difference_vi": "Khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "价值",
+        "pinyin": "jiàzhí",
+        "meaning_vi": "giá trị",
+        "difference_vi": "Có thể kinh tế/xã hội/tinh thần",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a2750724-8117-466a-8083-901e912325e6",
+      "order": 1,
+      "zh": "有意义",
+      "pinyin": "yǒu yìyì",
+      "vi": "có ý nghĩa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea9608d6-db8f-46f5-add8-7bed5b6ea578",
+      "order": 2,
+      "zh": "重要意义",
+      "pinyin": "zhòngyào yìyì",
+      "vi": "ý nghĩa quan trọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eee9a757-cd23-4e33-80eb-f85c02427889",
+      "order": 3,
+      "zh": "人生意义",
+      "pinyin": "rénshēng yìyì",
+      "vi": "ý nghĩa đời người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "133d256a-be1d-416c-a731-c457b8d6edad",
+      "order": 4,
+      "zh": "失去意义",
+      "pinyin": "shīqù yìyì",
+      "vi": "mất ý nghĩa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c06af639-d033-40c3-a695-f37675bcd442",
+      "order": 1,
+      "zh": "这次交谈对我很有意义。",
+      "pinyin": "Zhè cì jiāotán duì wǒ hěn yǒu yìyì.",
+      "vi": "Cuộc trò chuyện lần này rất có ý nghĩa với tôi.",
+      "analysis_vi": "对……有意义.",
+      "highlight": [
+        "意义"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "521149cf-5f4f-48d9-aef8-c650ad6c0c37"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e385be29-0dad-4a4b-bf4e-785fc03e2649",
+      "order": 2,
+      "zh": "人生的意义不一定在于取得多大的成功。",
+      "pinyin": "Rénshēng de yìyì bù yídìng zàiyú qǔdé duō dà de chénggōng.",
+      "vi": "Ý nghĩa đời người không nhất định nằm ở thành công lớn đến đâu.",
+      "analysis_vi": "人生意义 là cụm nghị luận.",
+      "highlight": [
+        "意义"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "521149cf-5f4f-48d9-aef8-c650ad6c0c37"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "人生的意义 hay gặp trong văn nghị luận, diễn thuyết, sách self-help Trung Quốc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "685e7207-bc06-4a68-94fe-0d5f3c637a2a",
+      "order": 1,
+      "rule_vi": "Hỏi nghĩa của từ nên nói 这个词是什么意思, không nói 这个词是什么意义.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "意义",
+    "back": "ý nghĩa, giá trị, tầm quan trọng",
+    "hint": "yìyì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "521149cf-5f4f-48d9-aef8-c650ad6c0c37",
+    "source_lesson_vocab_id": null
+  }
+}

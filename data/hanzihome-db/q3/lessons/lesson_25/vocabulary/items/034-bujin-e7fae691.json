@@ -1,0 +1,185 @@
+{
+  "id": "fe3d737f-8fe0-4ac2-a1ed-a1dc05a04ad1",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "不禁",
+  "pinyin": "bùjīn",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "bất cấm",
+    "meaning_vi": "không kìm được, bất giác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không kìm được",
+      "bất giác"
+    ],
+    "short_definition_vi": "không kìm được, bất giác",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "bất",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ này, 不 góp phần vào nghĩa hiện đại: không.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "禁",
+        "lishu_vi": "cấm",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cấm; kìm",
+        "modern_logic_vi": "Trong từ này, 禁 góp phần vào nghĩa hiện đại: cấm; kìm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "不禁 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 不禁笑了.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm với 禁止; 不禁 là không kìm được."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4254c0fb-9745-4083-b5b5-0607901170ed",
+      "order": 1,
+      "zh": "不禁笑了",
+      "pinyin": "",
+      "vi": "không kìm được cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "290abd00-040c-4516-8079-f5ca07f428d0",
+      "order": 2,
+      "zh": "不禁流泪",
+      "pinyin": "",
+      "vi": "không kìm được rơi nước mắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91936a1e-5e76-459c-8b88-95c93cd4bccc",
+      "order": 3,
+      "zh": "不禁一阵心酸",
+      "pinyin": "",
+      "vi": "bất giác chua xót",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0b089f37-49a5-41fa-9729-8ee5f7d30bf8",
+      "order": 1,
+      "zh": "听到这个消息，我不禁笑了。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 不禁 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 不禁; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "不禁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fe3d737f-8fe0-4ac2-a1ed-a1dc05a04ad1"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 不禁 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e5252db3-0b03-4082-8d30-4b1ef6477ade",
+      "order": 1,
+      "rule_vi": "Không nhầm với 禁止; 不禁 là không kìm được.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不禁",
+    "back": "không kìm được, bất giác",
+    "hint": "bùjīn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fe3d737f-8fe0-4ac2-a1ed-a1dc05a04ad1",
+    "source_lesson_vocab_id": null
+  }
+}

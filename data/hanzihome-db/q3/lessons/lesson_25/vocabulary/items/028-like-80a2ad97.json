@@ -1,0 +1,217 @@
+{
+  "id": "0bc78bec-bcaa-4ec0-872d-e7eb8b99720c",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "立刻",
+  "pinyin": "lìkè",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "lập khắc",
+    "meaning_vi": "lập tức, ngay lập tức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lập tức",
+      "ngay lập tức"
+    ],
+    "short_definition_vi": "lập tức, ngay lập tức",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "立",
+        "lishu_vi": "lập",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng, lập",
+        "modern_logic_vi": "Trong từ này, 立 góp phần vào nghĩa hiện đại: đứng, lập.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "刻",
+        "lishu_vi": "khắc",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khắc, khoảnh khắc",
+        "modern_logic_vi": "Trong từ này, 刻 góp phần vào nghĩa hiện đại: khắc, khoảnh khắc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "立刻 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 立刻出发.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Khác 快要: 立刻 là ngay bây giờ, 快要 là sắp."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e2c7c4e6-4674-4a67-80ac-6e7f84e9a8b8",
+      "order": 1,
+      "zh": "立刻出发",
+      "pinyin": "",
+      "vi": "lập tức xuất phát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4861c200-ae35-4f35-a9d7-ebeabeeb85d4",
+      "order": 2,
+      "zh": "立刻告诉我",
+      "pinyin": "",
+      "vi": "nói ngay cho tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70c8fda2-bf5d-4c52-b59a-6eaeb42624c5",
+      "order": 3,
+      "zh": "立刻停止",
+      "pinyin": "",
+      "vi": "lập tức dừng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "84ab5299-c39d-4d2d-ac10-f2b1677e9eeb",
+      "order": 1,
+      "zh": "听到这个消息，他立刻跑了出去。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 立刻 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 立刻; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "立刻"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0bc78bec-bcaa-4ec0-872d-e7eb8b99720c"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 立刻 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "167cf691-97e8-4e12-a592-ec6d4d6a6135",
+      "order": 1,
+      "rule_vi": "Khác 快要: 立刻 là ngay bây giờ, 快要 là sắp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "立刻",
+    "back": "lập tức, ngay lập tức",
+    "hint": "lìkè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0bc78bec-bcaa-4ec0-872d-e7eb8b99720c",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "id": "1b083e7e-8519-4d5c-884e-6e999b2de7f3",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "下海",
+  "pinyin": "xiàhǎi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "hạ hải",
+    "meaning_vi": "ra thương trường, bỏ việc ổn định để kinh doanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ra thương trường",
+      "bỏ việc ổn định để kinh doanh"
+    ],
+    "short_definition_vi": "ra thương trường, bỏ việc ổn định để kinh doanh",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "下",
+        "lishu_vi": "hạ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xuống",
+        "modern_logic_vi": "Trong từ này, 下 góp phần vào nghĩa hiện đại: xuống.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "海",
+        "lishu_vi": "hải",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biển",
+        "modern_logic_vi": "Trong từ này, 海 góp phần vào nghĩa hiện đại: biển.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "下海 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 下海经商.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Có nghĩa gốc ra biển, nhưng trong bài là ra thương trường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "80654b8e-683b-480e-8b54-8d2890528887",
+      "order": 1,
+      "zh": "下海经商",
+      "pinyin": "",
+      "vi": "ra thương trường kinh doanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e89edc7-2e9a-450e-89ab-fcf8fb8aa84a",
+      "order": 2,
+      "zh": "辞职下海",
+      "pinyin": "",
+      "vi": "nghỉ việc ra kinh doanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69ead18f-42e6-4351-a189-1e08d10df4a7",
+      "order": 3,
+      "zh": "下海创业",
+      "pinyin": "",
+      "vi": "ra khởi nghiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2b50bdb0-d5d1-4f42-91ad-8a48e1017f4b",
+      "order": 1,
+      "zh": "他辞职下海，开始做生意。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 下海 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 下海; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "下海"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1b083e7e-8519-4d5c-884e-6e999b2de7f3"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 下海 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3644ee5d-3a5c-4ee2-9fdf-68124930b4f5",
+      "order": 1,
+      "rule_vi": "Có nghĩa gốc ra biển, nhưng trong bài là ra thương trường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "下海",
+    "back": "ra thương trường, bỏ việc ổn định để kinh doanh",
+    "hint": "xiàhǎi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1b083e7e-8519-4d5c-884e-6e999b2de7f3",
+    "source_lesson_vocab_id": null
+  }
+}

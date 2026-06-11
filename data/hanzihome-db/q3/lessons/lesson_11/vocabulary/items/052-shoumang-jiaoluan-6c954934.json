@@ -1,0 +1,411 @@
+{
+  "id": "bf5e0b86-2797-4b04-a9af-61bd0e5a4e22",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "手忙脚乱",
+  "pinyin": "shǒumáng jiǎoluàn",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "thủ mang cước loạn",
+    "meaning_vi": "luống cuống, tay chân rối loạn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "luống cuống",
+      "tay chân rối loạn"
+    ],
+    "short_definition_vi": "rối tay chân vì gấp hoặc hoảng",
+    "textbook_focus_vi": "Hợp cảnh mọi người vội lấy điện thoại/chạy ra xem.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "tay",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "忙",
+        "lishu_vi": "",
+        "structure_note_vi": "忄 + 亡",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "",
+            "meaning_vi": "tim, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "tim, tâm lý",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "亡",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bận, vội",
+        "modern_logic_vi": "bận, vội",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "tim, tâm lý",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "脚",
+        "lishu_vi": "",
+        "structure_note_vi": "月 + 却",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "",
+            "meaning_vi": "mặt trăng; dạng liên quan thân thể trong một số chữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mặt trăng; dạng liên quan thân thể trong một số chữ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "月 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "却",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chân",
+        "modern_logic_vi": "chân",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mặt trăng; dạng liên quan thân thể trong một số chữ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "月 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "乱",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "loạn, rối",
+        "modern_logic_vi": "loạn, rối",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手忙脚乱 được học trong bài theo nghĩa: rối tay chân vì gấp hoặc hoảng.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 手忙脚乱地找手机.",
+    "warning_vi": "Không dùng 手忙脚乱 chỉ để nói bận bình thường; 很忙 là đủ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "慌张",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Hoảng hốt, mất bình tĩnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "紧张",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Căng thẳng, không nhất thiết rối tay chân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 手忙脚乱 chỉ để nói bận bình thường; 很忙 là đủ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6bf716a6-b515-4755-95ac-f9407de31839",
+      "order": 1,
+      "zh": "手忙脚乱地找手机",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "550c82bf-33c5-4d8d-b9a1-3ac871b54a9a",
+      "order": 2,
+      "zh": "手忙脚乱地跑出去",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecf37b92-9e0f-4d99-98f5-f3a28d75b927",
+      "order": 3,
+      "zh": "忙得手忙脚乱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9251fe79-c827-42fb-ab2f-46404c384da9",
+      "order": 4,
+      "zh": "别手忙脚乱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c6924657-9c0d-41f1-a49c-a3525f8b8ce8",
+      "order": 5,
+      "zh": "大家都手忙脚乱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5b3633f2-2049-4dbf-a78f-a286cc79a9bd",
+      "order": 1,
+      "zh": "大家手忙脚乱地拿出手机拍飞碟。",
+      "pinyin": "",
+      "vi": "Mọi người luống cuống lấy điện thoại ra chụp đĩa bay.",
+      "analysis_vi": "手忙脚乱地 làm trạng ngữ.",
+      "highlight": [
+        "手忙脚乱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bf5e0b86-2797-4b04-a9af-61bd0e5a4e22"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "35e901bf-50fb-4758-8021-a94901879e83",
+      "order": 2,
+      "zh": "老师突然叫我上台，我一下子手忙脚乱。",
+      "pinyin": "",
+      "vi": "Thầy/cô đột nhiên gọi tôi lên bảng, tôi lập tức luống cuống.",
+      "analysis_vi": "一下子 nói phản ứng đột ngột.",
+      "highlight": [
+        "手忙脚乱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bf5e0b86-2797-4b04-a9af-61bd0e5a4e22"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Thành ngữ bốn chữ này giàu hình ảnh, hợp văn kể chuyện.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "32882c81-dece-4e4e-90a6-28c83feaa987",
+      "order": 1,
+      "rule_vi": "Không dùng 手忙脚乱 chỉ để nói bận bình thường; 很忙 là đủ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 手忙脚乱 chỉ để nói bận bình thường; 很忙 là đủ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手忙脚乱",
+    "back": "luống cuống, tay chân rối loạn",
+    "hint": "shǒumáng jiǎoluàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bf5e0b86-2797-4b04-a9af-61bd0e5a4e22",
+    "source_lesson_vocab_id": null
+  }
+}

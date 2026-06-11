@@ -1,0 +1,280 @@
+{
+  "id": "8afc2173-5498-4ce4-8798-71335c1fab48",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "颗",
+  "pinyin": "kē",
+  "pos": {
+    "raw_vi": "Lượng từ / Danh từ",
+    "raw_cn": "量词/名",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khỏa",
+    "meaning_vi": "viên, hạt, quả nhỏ; lượng từ cho vật nhỏ tròn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "viên",
+      "hạt",
+      "quả nhỏ",
+      "lượng từ cho vật nhỏ tròn"
+    ],
+    "short_definition_vi": "viên, hạt, quả nhỏ",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "颗",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu, trang; thành phần bên phải trong chữ giản thể",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "页 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu, trang; thành phần bên phải trong chữ giản thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu, trang; thành phần bên phải trong chữ giản thể",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "页 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lượng từ cho vật nhỏ tròn",
+        "modern_logic_vi": "Trong từ 颗, chữ 颗 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "颗 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 我只吃了一颗葡萄。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "粒",
+        "pinyin": "lì",
+        "meaning_vi": "hạt nhỏ",
+        "difference_vi": "粒 thường dùng cho hạt nhỏ hơn như gạo/thuốc.",
+        "register_vi": "",
+        "example_zh": "一粒米。",
+        "example_vi": "Một hạt gạo.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0c2d9e98-5672-42cf-85a1-514f95a8ce45",
+      "order": 1,
+      "zh": "一颗葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c380a946-4933-4027-9e4d-99f19bb750a5",
+      "order": 2,
+      "zh": "几颗葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f9dba68-94d1-4e43-a464-40e02a0a4578",
+      "order": 3,
+      "zh": "一颗糖",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "53b654ae-10c5-4a4d-9604-1459d0e9fd61",
+      "order": 4,
+      "zh": "一颗牙",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc64cdc4-2764-4f59-92e4-b3a82d4b496a",
+      "order": 5,
+      "zh": "一颗心",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2e3e2452-2284-4117-b977-cee517dfe841",
+      "order": 6,
+      "zh": "一颗星星",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb9a7d83-ce35-45b2-9b44-90feec85f88b",
+      "order": 7,
+      "zh": "一颗珍珠",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e2152e86-89f4-4818-8c6f-ccf3bb12f73a",
+      "order": 1,
+      "zh": "我只吃了一颗葡萄。",
+      "pinyin": "",
+      "vi": "Tôi chỉ ăn một quả nho.",
+      "analysis_vi": "Ví dụ dùng 颗 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "颗"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8afc2173-5498-4ce4-8798-71335c1fab48"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "颗 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e9bb01ae-6cb5-437d-8a92-23b84d3e5a3c",
+      "order": 1,
+      "rule_vi": "颗 không dùng cho mọi trái cây; quả lớn thường dùng 个, còn nho từng quả dùng 颗.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "颗",
+    "back": "viên, hạt, quả nhỏ; lượng từ cho vật nhỏ tròn",
+    "hint": "kē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8afc2173-5498-4ce4-8798-71335c1fab48",
+    "source_lesson_vocab_id": null
+  }
+}

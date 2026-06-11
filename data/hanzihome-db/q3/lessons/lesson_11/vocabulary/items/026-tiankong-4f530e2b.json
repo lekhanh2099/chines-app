@@ -1,0 +1,416 @@
+{
+  "id": "c0a4469e-e0ca-4447-8744-be37ad1e7343",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "天空",
+  "pinyin": "tiānkōng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "thiên không",
+    "meaning_vi": "bầu trời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bầu trời"
+    ],
+    "short_definition_vi": "khoảng không trên cao nhìn từ mặt đất",
+    "textbook_focus_vi": "Nơi xuất hiện luồng sáng và đĩa bay.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "天",
+        "lishu_vi": "",
+        "structure_note_vi": "大",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trời",
+        "modern_logic_vi": "trời",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "空",
+        "lishu_vi": "",
+        "structure_note_vi": "穴 + 工",
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "",
+            "meaning_vi": "hang, khoảng trống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "穴 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "hang, khoảng trống",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "穴 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "",
+            "meaning_vi": "thợ, công",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "工 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "工",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Công",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "thợ, công",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "工 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không gian, trống",
+        "modern_logic_vi": "không gian, trống",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "hang, khoảng trống",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "穴 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "天空 được học trong bài theo nghĩa: khoảng không trên cao nhìn từ mặt đất.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 蓝蓝的天空.",
+    "warning_vi": "Không nhầm 天空 với 天气; 天空 là bầu trời, 天气 là thời tiết.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "天上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trên trời, vị trí.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "空中",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trong không trung/trên không.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 天空 với 天气; 天空 là bầu trời, 天气 là thời tiết."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1dd3ec99-5f0b-4eb9-9b59-f8099f09052f",
+      "order": 1,
+      "zh": "蓝蓝的天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c8f3463-442f-442a-aa66-0bb1a224ce3b",
+      "order": 2,
+      "zh": "望着天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "13833235-0768-4235-bdcb-182ca3032c5e",
+      "order": 3,
+      "zh": "天空中",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1c7a53fa-973a-4ecd-b7a0-28d2f6ac47e8",
+      "order": 4,
+      "zh": "西北天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fd43d8c4-222a-4367-aa4c-49100993db54",
+      "order": 5,
+      "zh": "照亮天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "042e51a7-cd6d-43d6-9405-6ed6b9362e03",
+      "order": 6,
+      "zh": "天空渐渐黑了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fceb0827-e671-4fa0-8715-355b3c057b45",
+      "order": 1,
+      "zh": "今天的天空特别蓝。",
+      "pinyin": "",
+      "vi": "Bầu trời hôm nay đặc biệt xanh.",
+      "analysis_vi": "特别 nhấn mức độ.",
+      "highlight": [
+        "天空"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c0a4469e-e0ca-4447-8744-be37ad1e7343"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a4869654-c124-4a07-8933-6bc8ef0f5059",
+      "order": 2,
+      "zh": "我一跑出去，就看见西北天空被橙红色的光照亮了。",
+      "pinyin": "",
+      "vi": "Tôi vừa chạy ra ngoài thì thấy bầu trời phía tây bắc bị ánh sáng đỏ cam chiếu sáng.",
+      "analysis_vi": "被……照亮了 nhấn tác động của ánh sáng.",
+      "highlight": [
+        "天空"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c0a4469e-e0ca-4447-8744-be37ad1e7343"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "天空 dùng nhiều trong văn miêu tả; 天上 thường dùng cho vị trí trên trời.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cf7e4783-58b8-4382-9529-5cc24630c192",
+      "order": 1,
+      "rule_vi": "Không nhầm 天空 với 天气; 天空 là bầu trời, 天气 là thời tiết.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 天空 với 天气; 天空 là bầu trời, 天气 là thời tiết.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "天空",
+    "back": "bầu trời",
+    "hint": "tiānkōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c0a4469e-e0ca-4447-8744-be37ad1e7343",
+    "source_lesson_vocab_id": null
+  }
+}

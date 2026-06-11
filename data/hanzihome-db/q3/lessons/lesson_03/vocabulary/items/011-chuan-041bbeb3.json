@@ -1,0 +1,348 @@
+{
+  "id": "9924bfea-00ee-46af-bea8-5a489091c61b",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "船",
+  "pinyin": "chuán",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "transport",
+    "lake"
+  ],
+  "meaning": {
+    "hanviet": "thuyền",
+    "meaning_vi": "thuyền; tàu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuyền",
+      "tàu"
+    ],
+    "short_definition_vi": "thuyền; tàu",
+    "textbook_focus_vi": "thuyền; tàu",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "transport, lake",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "船",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "舟",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Chu",
+          "radical_name_zh": "",
+          "hanviet": "chu",
+          "meaning_vi": "thuyền",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "舟",
+            "hanviet": "chu",
+            "meaning_vi": "thuyền",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "舟",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Chu",
+              "radical_name_zh": "",
+              "hanviet": "chu",
+              "meaning_vi": "thuyền",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "㕣",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuyền, tàu",
+        "modern_logic_vi": "Trong từ này, 船 góp phần vào lớp nghĩa hiện đại: thuyền, tàu",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "船 có 舟, chỉ phương tiện đi trên nước.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "舟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "轮船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "游船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "飞船",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "81094441-54d7-438d-81b1-b3d6d95e8393",
+      "order": 1,
+      "zh": "一条船",
+      "pinyin": "",
+      "vi": "một chiếc thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "924ff712-1fb4-494b-bb0a-959df9e3e0aa",
+      "order": 2,
+      "zh": "坐船",
+      "pinyin": "",
+      "vi": "đi/ngồi thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2b91b8e9-e3dd-4a9f-8c0d-22233916d729",
+      "order": 3,
+      "zh": "划船",
+      "pinyin": "",
+      "vi": "chèo thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f19f101c-ea9d-4776-8a41-dcad833bc4e9",
+      "order": 4,
+      "zh": "上船",
+      "pinyin": "",
+      "vi": "lên thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95587ffa-b4e8-4a6a-b7af-726fa3a38d2b",
+      "order": 5,
+      "zh": "下船",
+      "pinyin": "",
+      "vi": "xuống thuyền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db1c3d7e-f8fe-4437-a237-d4b11f47d0be",
+      "order": 6,
+      "zh": "湖上的船",
+      "pinyin": "",
+      "vi": "thuyền trên hồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28546109-41d6-4e7e-a3ab-4830e6508f57",
+      "order": 1,
+      "zh": "湖上有几条小船。",
+      "pinyin": "",
+      "vi": "Trên hồ có mấy chiếc thuyền nhỏ.",
+      "analysis_vi": "船 thường dùng lượng từ 条.",
+      "highlight": [
+        "船"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9924bfea-00ee-46af-bea8-5a489091c61b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "588b5d24-1c92-4f3b-8970-ee34cb37047e",
+      "order": 2,
+      "zh": "春天来了，湖上的船多起来了。",
+      "pinyin": "",
+      "vi": "Mùa xuân đến rồi, thuyền trên hồ nhiều lên.",
+      "analysis_vi": "多起来了 chỉ sự thay đổi.",
+      "highlight": [
+        "船"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9924bfea-00ee-46af-bea8-5a489091c61b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "78edc3b3-2538-41a1-bebe-98f2cd7c3180",
+      "order": 3,
+      "zh": "我们刚上船，风就大起来了。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa lên thuyền thì gió mạnh lên.",
+      "analysis_vi": "刚……就…….",
+      "highlight": [
+        "船"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9924bfea-00ee-46af-bea8-5a489091c61b"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "船 trong Bài 3 北京的四季",
+    "content_vi": "上船/下船 giống 上车/下车: lên/xuống phương tiện.",
+    "tags": [
+      "transport",
+      "lake"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e5c308f3-bdfd-4417-af5a-c7c29191c578",
+      "order": 1,
+      "rule_vi": "Lên thuyền nói 上船, không nói 进船 trong ngữ cảnh thường.",
+      "natural_examples": [
+        {
+          "zh": "湖上有几条小船。",
+          "pinyin": "",
+          "vi": "Trên hồ có mấy chiếc thuyền nhỏ.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lên thuyền nói 上船, không nói 进船 trong ngữ cảnh thường.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "船",
+    "back": "thuyền; tàu",
+    "hint": "chuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "transport",
+      "lake"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9924bfea-00ee-46af-bea8-5a489091c61b",
+    "source_lesson_vocab_id": null
+  }
+}

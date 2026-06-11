@@ -1,0 +1,318 @@
+{
+  "id": "c8d2ca78-695c-43cb-b1db-6f5bba74b818",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "主持",
+  "pinyin": "zhǔchí",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Chủ trì",
+    "meaning_vi": "chủ trì, dẫn chương trình, điều hành",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chủ trì, dẫn chương trình, điều hành"
+    ],
+    "short_definition_vi": "chủ trì, dẫn chương trình, điều hành",
+    "textbook_focus_vi": "chủ trì, dẫn chương trình, điều hành",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "主",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "主",
+            "hanviet": "chủ",
+            "meaning_vi": "chủ, chính, làm chủ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chủ, chính, làm chủ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "持",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寺",
+            "hanviet": "tự",
+            "meaning_vi": "thành phần phải, không ép nghĩa chùa",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cầm, giữ, duy trì, chủ trì",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "主 = chính/làm chủ; 持 = nắm giữ/duy trì. 主持 = nắm vai trò chính để điều hành hoạt động.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "组织",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tổ chức/sắp xếp hoạt động từ trước",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安排",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sắp xếp việc cụ thể",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "管理",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quản lý lâu dài hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "领导",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lãnh đạo/dẫn dắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d0bd2627-b774-43b3-8cad-654b4b441e69",
+      "order": 1,
+      "zh": "主持会议",
+      "pinyin": "",
+      "vi": "chủ trì cuộc họp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d74347e2-d3e4-447b-bbb3-085f1d9aba0a",
+      "order": 2,
+      "zh": "主持婚礼",
+      "pinyin": "",
+      "vi": "dẫn/chủ trì lễ cưới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b73b76e8-1641-4bc8-8644-fdf216d34f5c",
+      "order": 3,
+      "zh": "主持节目",
+      "pinyin": "",
+      "vi": "dẫn chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36b67390-02bd-44af-80d1-4f4f42580959",
+      "order": 4,
+      "zh": "主持讨论",
+      "pinyin": "",
+      "vi": "chủ trì thảo luận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df34a421-9c71-415f-af88-811f02679671",
+      "order": 5,
+      "zh": "由他主持",
+      "pinyin": "",
+      "vi": "do anh ấy chủ trì",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "eaacd737-a4cf-4a80-93ef-76aaac6fd6de",
+      "order": 1,
+      "zh": "今天的会议由班长主持。",
+      "pinyin": "Jīntiān de huìyì yóu bānzhǎng zhǔchí.",
+      "vi": "Cuộc họp hôm nay do lớp trưởng chủ trì.",
+      "analysis_vi": "由 + người + 主持 là cách nói trang trọng.",
+      "highlight": [
+        "主持"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c8d2ca78-695c-43cb-b1db-6f5bba74b818"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6f67e53e-1fd6-48ab-b27d-ced7f147c2c2",
+      "order": 2,
+      "zh": "主持婚礼的人站在讲台上，手里拿着麦克风。",
+      "pinyin": "Zhǔchí hūnlǐ de rén zhàn zài jiǎngtái shàng, shǒu lǐ názhe màikèfēng.",
+      "vi": "Người chủ trì lễ cưới đứng trên bục, trong tay cầm micro.",
+      "analysis_vi": "主持婚礼的人 là định ngữ; 拿着 tả trạng thái.",
+      "highlight": [
+        "主持",
+        "拿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c8d2ca78-695c-43cb-b1db-6f5bba74b818"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "a0d876c3-cf69-463b-93e2-99cbc481e137",
+      "order": 1,
+      "rule_vi": "主持 là động từ; 主持人 là danh từ người chủ trì.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "主持",
+    "back": "chủ trì, dẫn chương trình, điều hành",
+    "hint": "zhǔchí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "主持人 không chỉ đọc lời dẫn mà còn điều phối nhịp chương trình.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c8d2ca78-695c-43cb-b1db-6f5bba74b818",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "id": "e6d64bc6-4813-47d0-82ad-9980620f5482",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "忘",
+  "pinyin": "wàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_01",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Vong",
+    "meaning_vi": "quên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "quên"
+    ],
+    "short_definition_vi": "quên",
+    "textbook_focus_vi": "Bài 1 Quyển 2: 田芳去哪儿了",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "忘",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, tâm trí, cảm xúc",
+            "position_vi": "bên dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, tâm trí, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được nguồn phân tích như bộ thủ/thành phần bộ thủ của chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, tâm trí, cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "忘 có phần 心, liên quan đến tâm trí, ghi nhớ, cảm xúc. Nên học theo cụm hiện đại: 忘了 = quên rồi. 忘记 = quên, đầy đủ hơn. 忘不了 = không quên được. 别忘了 = đừng quên. Cảnh báo: 忘 thường cần có tân ngữ hoặc việc phía sau. Không nên chỉ nói cụt 我忘 nếu không rõ quên cái gì.",
+    "memory_tip_vi": "",
+    "warning_vi": "忘 thường cần có tân ngữ hoặc việc phía sau. Không nên chỉ nói cụt 我忘 nếu không rõ quên cái gì.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "忘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên, khẩu ngữ, gọn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忘记",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên, đầy đủ hơn, dùng rộng trong nói và viết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "记得",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhớ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "想起来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhớ ra.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "记下来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ghi lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我忘了。",
+      "Tôi quên rồi.",
+      "我想起来了。",
+      "Tôi nhớ ra rồi.",
+      "我把地址记下来了。",
+      "Tôi ghi địa chỉ lại rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a7a0630d-010c-4c7e-a11a-9e182ff5fe33",
+      "order": 1,
+      "zh": "忘了带书",
+      "pinyin": "",
+      "vi": "quên mang sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "057c9189-e22f-43b9-9223-cf3324f81b4a",
+      "order": 2,
+      "zh": "忘了关机",
+      "pinyin": "",
+      "vi": "quên tắt máy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a5085ec-9d4b-4856-8a6e-7fdd45db9c8f",
+      "order": 3,
+      "zh": "忘了他的名字",
+      "pinyin": "",
+      "vi": "quên tên anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33652d7c-22d1-460e-8f28-ca33f3a4cb83",
+      "order": 4,
+      "zh": "别忘了",
+      "pinyin": "",
+      "vi": "đừng quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e72a3f1-e93d-486a-a906-7b293eea3057",
+      "order": 5,
+      "zh": "忘不了",
+      "pinyin": "",
+      "vi": "không quên được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af3bad27-213a-4853-b3e6-ee3860b4a349",
+      "order": 6,
+      "zh": "差点儿忘了",
+      "pinyin": "",
+      "vi": "suýt quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "30d3ef68-c08b-4dc0-b549-a1cefe219eff",
+      "order": 1,
+      "zh": "我忘了给田芳打电话。",
+      "pinyin": "Wǒ wàng le gěi Tián Fāng dǎ diànhuà.",
+      "vi": "Tôi quên gọi điện cho Điền Phương rồi.",
+      "analysis_vi": "忘了 + làm việc gì = quên làm việc đó. 给田芳打电话 là gọi điện cho Điền Phương.",
+      "highlight": [
+        "忘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6d64bc6-4813-47d0-82ad-9980620f5482"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cb5a23a1-ee37-427c-954c-5257379865e1",
+      "order": 2,
+      "zh": "你不是说已经记下来了吗？怎么又忘了？",
+      "pinyin": "Nǐ bú shì shuō yǐjīng jì xiàlai le ma? Zěnme yòu wàng le?",
+      "vi": "Chẳng phải bạn nói đã ghi lại rồi sao? Sao lại quên nữa rồi?",
+      "analysis_vi": "不是……吗？ là câu hỏi tu từ nhắc lại lời người nghe. 又忘了 dùng 又 vì việc quên đã xảy ra lần nữa.",
+      "highlight": [
+        "忘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6d64bc6-4813-47d0-82ad-9980620f5482"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "89f89203-9e5a-4be7-960b-c5a541e2833e",
+      "order": 3,
+      "zh": "考试以前，老师一再提醒我们把手机关机，可是他还是忘了，铃声一响起来，全班同学都看着他。",
+      "pinyin": "Kǎoshì yǐqián, lǎoshī yízài tíxǐng wǒmen bǎ shǒujī guānjī, kěshì tā háishi wàng le, língshēng yì xiǎng qǐlai, quán bān tóngxué dōu kànzhe tā.",
+      "vi": "Trước khi thi, thầy/cô nhắc đi nhắc lại chúng tôi tắt điện thoại, nhưng anh ấy vẫn quên; tiếng chuông vừa vang lên, cả lớp đều nhìn anh ấy.",
+      "analysis_vi": "考试以前 là trạng ngữ thời gian. 把手机关机 là 把字句. 一……就…… rút gọn trong 铃声一响起来，全班…… diễn tả vừa vang lên là mọi người phản ứng. 看着他 dùng 着 chỉ trạng thái nhìn.",
+      "highlight": [
+        "忘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e6d64bc6-4813-47d0-82ad-9980620f5482"
+      ],
+      "source_ref": "BÀI 1-10.docx:Bài 1",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong khẩu ngữ, 别忘了…… rất hay dùng để nhắc nhẹ: 别忘了报名, 别忘了带护照, 别忘了给老师打电话. Nếu muốn lịch sự hơn, thêm 啊 / 哦 tùy quan hệ thân mật.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "95946d9c-d9d8-402e-91a8-3f2617650aa1",
+      "order": 1,
+      "rule_vi": "Nhầm 忘了 và 忘不了.",
+      "natural_examples": [
+        {
+          "zh": "Nhầm 忘了 và 忘不了.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我忘了他的名字。",
+          "pinyin": "Wǒ wàng le tā de míngzi.",
+          "vi": "Tôi quên tên anh ấy rồi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我忘不了那一天。",
+          "pinyin": "Wǒ wàng bù liǎo nà yì tiān.",
+          "vi": "Tôi không quên được ngày hôm đó.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nhầm 忘了 và 忘不了.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "忘",
+    "back": "quên",
+    "hint": "wàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_01",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "hanyu2/bai01/vocab/015",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e6d64bc6-4813-47d0-82ad-9980620f5482",
+    "source_lesson_vocab_id": null
+  }
+}

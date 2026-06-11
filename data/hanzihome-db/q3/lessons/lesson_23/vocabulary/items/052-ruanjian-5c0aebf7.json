@@ -1,0 +1,479 @@
+{
+  "id": "93eabe6a-90fd-4083-b45d-7979d435452b",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "软件",
+  "pinyin": "ruǎnjiàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhuyễn kiện",
+    "meaning_vi": "phần mềm, software",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phần mềm",
+      "software"
+    ],
+    "short_definition_vi": "phần mềm, software",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về công nghệ, app, máy tính.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công nghệ, app, máy tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "软",
+        "lishu_vi": "nhuyễn",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 软 trong từ 软件; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "車",
+          "radical_variant": "车",
+          "radical_name_vi": "bộ Xa",
+          "radical_name_zh": "",
+          "hanviet": "xa",
+          "meaning_vi": "xe",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "车 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "车 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "车 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "há miệng, thiếu",
+            "position_vi": "bên phải chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "欠 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "há miệng, thiếu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 软件, chữ 软 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "件",
+        "lishu_vi": "kiện",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 件 trong từ 软件; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân đứng",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân đứng",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "牛",
+            "hanviet": "ngưu",
+            "meaning_vi": "trâu/bò",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 软件, chữ 件 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "软件 trong bài được nhớ theo nghĩa hiện đại: phần mềm.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 教学软件 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "应用程序",
+        "pinyin": "yìngyòng chéngxù",
+        "meaning_vi": "ứng dụng/app; cụ thể hơn",
+        "difference_vi": "ứng dụng/app; cụ thể hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "程序",
+        "pinyin": "chéngxù",
+        "meaning_vi": "chương trình",
+        "difference_vi": "chương trình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "硬件",
+        "pinyin": "yìngjiàn",
+        "meaning_vi": "phần cứng",
+        "difference_vi": "phần cứng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 软件 với 文件."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a2d03c74-99a1-432b-a0d5-9cd19e193076",
+      "order": 1,
+      "zh": "教学软件",
+      "pinyin": "",
+      "vi": "phần mềm dạy học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e82c3ea2-0b04-4a22-a1a1-5f480e0a0ec3",
+      "order": 2,
+      "zh": "学习软件",
+      "pinyin": "",
+      "vi": "phần mềm học tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06dbb80b-c717-4eb8-a017-e122accbc490",
+      "order": 3,
+      "zh": "安装软件",
+      "pinyin": "",
+      "vi": "cài phần mềm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e15e61a-dae7-40ef-8481-fa7e65bbbf19",
+      "order": 4,
+      "zh": "下载软件",
+      "pinyin": "",
+      "vi": "tải phần mềm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03b9f05b-7004-4d77-991f-b015bf275cb6",
+      "order": 5,
+      "zh": "开发软件",
+      "pinyin": "",
+      "vi": "phát triển phần mềm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7d352cf1-58aa-4942-98ab-9d5666516941",
+      "order": 1,
+      "zh": "这个教学软件很好用。",
+      "pinyin": "",
+      "vi": "phần mềm, software",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "软件"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93eabe6a-90fd-4083-b45d-7979d435452b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "43ff5a4e-7261-4028-8266-f6683bc5d4ca",
+      "order": 2,
+      "zh": "这个词语“软件”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 软件 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "软件"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93eabe6a-90fd-4083-b45d-7979d435452b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b0aba1a8-9d94-4f1a-b79a-7bdc66557640",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“软件”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 软件 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "软件"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93eabe6a-90fd-4083-b45d-7979d435452b"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Người dùng phổ thông hay nói App; văn bản kỹ thuật dùng 应用程序.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9c804218-a009-4034-9e73-4545684750c1",
+      "order": 1,
+      "rule_vi": "Không nhầm 软件 với 文件.",
+      "natural_examples": [
+        {
+          "zh": "这个软件打不开这个文件。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "这个软件打不开这个软件。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "这个软件打不开这个软件。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个软件打不开这个文件。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 软件 với 文件.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "软件",
+    "back": "phần mềm, software",
+    "hint": "ruǎnjiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "93eabe6a-90fd-4083-b45d-7979d435452b",
+    "source_lesson_vocab_id": null
+  }
+}

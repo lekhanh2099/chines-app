@@ -1,0 +1,214 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "“把”字句（1）",
+      "title_vi": "Câu chữ 把 (1)",
+      "level": "HSK3+",
+      "tags": [
+        "语法",
+        "把字句",
+        "disposal_construction"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Câu chữ 把 đưa đối tượng bị xử lý lên trước động từ, rồi nói rõ đối tượng đó bị làm gì, chuyển đến đâu, giao cho ai, biến thành gì hoặc đạt kết quả gì.",
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我们把教室布置成了会场。",
+              "vi": "Chúng tôi trang trí phòng học thành hội trường.",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng le huìchǎng."
+            },
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "我把“福”字贴在门上吧。",
+              "vi": "Tôi dán chữ “Phúc” lên cửa nhé.",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "pinyin": "Wǒ bǎ “Fú” zì tiē zài mén shang ba."
+            }
+          ]
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "S + 把 + O + V + result/place/direction/receiver/state",
+          "meaning_vi": "Ai đó xử lý một đối tượng, làm cho đối tượng ấy có vị trí mới, trạng thái mới, người nhận mới hoặc kết quả mới.",
+          "formulas": [
+            {
+              "label": "V + 在",
+              "pattern": "S + 把 + O + V + 在 + place"
+            },
+            {
+              "label": "V + 到",
+              "pattern": "S + 把 + O + V + 到 + place"
+            },
+            {
+              "label": "V + 给",
+              "pattern": "S + 把 + O + V + 给 + receiver"
+            },
+            {
+              "label": "V + 成",
+              "pattern": "S + 把 + O + V + 成 + result"
+            }
+          ],
+          "examples": [
+            {
+              "id": "92aa1855-c06f-49c9-8cc5-506e8b35b440",
+              "zh": "把你写的对联儿也贴上去吧。",
+              "vi": "Dán cả câu đối bạn viết lên nữa đi.",
+              "source_origin": "textbook",
+              "pinyin": "Bǎ nǐ xiě de duìliánr yě tiē shàngqù ba."
+            },
+            {
+              "id": "9dfe4e21-1b6d-4f7c-8da9-ee29f914749b",
+              "zh": "你是不是把“兴”字也写成“旺”字了？",
+              "vi": "Có phải anh cũng viết chữ “兴” thành chữ “旺” rồi không?",
+              "source_origin": "textbook",
+              "pinyin": "Nǐ shì bú shì bǎ “xīng” zì yě xiě chéng “wàng” zì le?"
+            }
+          ]
+        },
+        {
+          "id": "f9d96f02-6b23-4c56-a739-db75b628cdcf",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Điều kiện dùng 把",
+          "notes_vi": [
+            "Tân ngữ sau 把 thường phải xác định hoặc đã được nhắc đến.",
+            "Động từ phải có tính xử lý/tác động lên tân ngữ.",
+            "Động từ thường không đứng trơ một mình; phía sau cần có 了, bổ ngữ kết quả, nơi chốn, người nhận hoặc kết quả mới.",
+            "Không dùng 把 với động từ tâm lý như 喜欢 nếu đối tượng không bị tác động."
+          ],
+          "examples": [
+            {
+              "id": "af3179bb-cac5-47fc-be2f-be94b9701fee",
+              "zh": "我把门打开了。",
+              "vi": "Tôi mở cửa ra rồi.",
+              "source_origin": "generated",
+              "pinyin": "Wǒ bǎ mén dǎkāi le."
+            },
+            {
+              "id": "f4803aa6-a61f-4a04-9b6d-ca39344100de",
+              "zh": "我喜欢中文。",
+              "vi": "Tôi thích tiếng Trung.",
+              "note_vi": "Không nói *我把中文喜欢。",
+              "source_origin": "generated",
+              "pinyin": "Wǒ xǐhuan Zhōngwén."
+            }
+          ]
+        },
+        {
+          "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+          "type": "grammar_negative_form",
+          "order": 4,
+          "title": "Dạng phủ định",
+          "pattern": "S + 没 / 没有 + 把 + O + V + result/place/receiver",
+          "wrong_pattern": "*S + 把 + O + 没 + V + result/place/receiver",
+          "meaning_vi": "Phủ định thường đặt trước 把, phủ định toàn bộ cấu trúc xử lý đối tượng.",
+          "correct_examples": [
+            {
+              "id": "16895d79-eae2-4cee-8f35-6a5d54787bec",
+              "zh": "我们还没把这事儿告诉她。",
+              "vi": "Chúng tôi vẫn chưa nói chuyện này với cô ấy.",
+              "source_origin": "textbook",
+              "pinyin": "Wǒmen hái méi bǎ zhè shìr gàosu tā."
+            },
+            {
+              "id": "717b6c9b-1cd7-4d69-b64d-28d9294f41e5",
+              "zh": "我没把作业交给老师。",
+              "vi": "Tôi chưa nộp bài tập cho giáo viên.",
+              "source_origin": "generated",
+              "pinyin": "Wǒ méi bǎ zuòyè jiāo gěi lǎoshī."
+            }
+          ],
+          "wrong_examples": [
+            {
+              "id": "0b7e7bde-7bbc-4c5c-8a09-dcd4100810ee",
+              "zh": "*我把书没放在桌子上。",
+              "explanation_vi": "没 đặt sai vị trí; phải đặt trước 把.",
+              "source_origin": "generated",
+              "pinyin": "*Wǒ bǎ shū méi fàng zài zhuōzi shang."
+            }
+          ]
+        },
+        {
+          "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
+          "type": "grammar_question_form",
+          "order": 5,
+          "title": "Dạng nghi vấn",
+          "pattern": "S + 把 + O + V + result/place + 了吗？ / 是不是 + 把...",
+          "meaning_vi": "Hỏi đối tượng đã được xử lý đến kết quả/vị trí/người nhận nào chưa.",
+          "examples": [
+            {
+              "id": "bccc2688-3046-4eb6-a85e-64c39f5815a0",
+              "zh": "你把“福”字贴在门上了吗？",
+              "vi": "Bạn đã dán chữ “Phúc” lên cửa chưa?",
+              "source_origin": "generated",
+              "pinyin": "Nǐ bǎ “Fú” zì tiē zài mén shang le ma?"
+            },
+            {
+              "id": "8fb1af45-d259-45eb-8880-80037ae50bc3",
+              "zh": "你是不是把“兴”字也写成“旺”字了？",
+              "vi": "Có phải anh cũng viết chữ “兴” thành chữ “旺” rồi không?",
+              "source_origin": "textbook",
+              "pinyin": "Nǐ shì bú shì bǎ “xīng” zì yě xiě chéng “wàng” zì le?"
+            }
+          ]
+        },
+        {
+          "id": "887640f9-1173-43fc-ad6b-663c06a0b9b3",
+          "type": "grammar_common_mistakes",
+          "order": 6,
+          "title": "Lỗi sai dễ gặp",
+          "items": [
+            {
+              "id": "fcca9d55-0c2d-4c43-a7dc-53d87054f2ad",
+              "wrong": "我贴“福”字在门上了。",
+              "correct": "我把“福”字贴在门上了。",
+              "explanation_vi": "Khi động từ có nơi chốn/kết quả phía sau, nên dùng 把 để đưa tân ngữ lên trước."
+            },
+            {
+              "id": "43ad1993-846b-4c58-95cb-71d086060b17",
+              "wrong": "我把中文喜欢。",
+              "correct": "我喜欢中文。",
+              "explanation_vi": "喜欢 là động từ tâm lý, không xử lý đối tượng."
+            },
+            {
+              "id": "e9feed73-8319-4195-9b00-03aab9bbda3e",
+              "wrong": "我把作业做。",
+              "correct": "我把作业做完了。",
+              "explanation_vi": "Động từ sau 把 không nên đứng trơ một mình."
+            },
+            {
+              "id": "ccd14908-21af-41df-9f0b-f6fa405b2647",
+              "wrong": "我把礼物没送给她。",
+              "correct": "我没把礼物送给她。",
+              "explanation_vi": "Phủ định đặt trước 把."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

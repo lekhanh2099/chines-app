@@ -1,0 +1,319 @@
+{
+  "id": "a6162e40-0793-464b-b09b-38e233bab2e5",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "双喜",
+  "pinyin": "shuāngxǐ",
+  "pos": {
+    "raw_vi": "Danh từ / từ văn hóa",
+    "raw_cn": "名 / 文化词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Song hỷ",
+    "meaning_vi": "song hỷ, chữ hỷ đôi trong cưới hỏi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "song hỷ, chữ hỷ đôi trong cưới hỏi"
+    ],
+    "short_definition_vi": "song hỷ, chữ hỷ đôi trong cưới hỏi",
+    "textbook_focus_vi": "song hỷ, chữ hỷ đôi trong cưới hỏi",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "双",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "hai thành phần 又 lặp lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "hai thành phần 又 lặp lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đôi, cặp, hai, kép",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "喜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vui, mừng, hỷ sự",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "双 = đôi; 喜 = hỷ/vui. 双喜 = hai niềm vui, biểu tượng hỷ sự đôi bên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "喜字",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chữ hỷ nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "喜事",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "việc vui/hỷ sự",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "婚礼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hôn lễ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "结婚",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kết hôn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "36f54fc3-245e-404c-81e6-8e3f45155f9f",
+      "order": 1,
+      "zh": "双喜字",
+      "pinyin": "",
+      "vi": "chữ song hỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0f56a56-5a0f-457d-8554-ce785998932c",
+      "order": 2,
+      "zh": "红双喜字",
+      "pinyin": "",
+      "vi": "chữ song hỷ đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "20a45da0-e45e-4151-ad5a-59e0f765dfdb",
+      "order": 3,
+      "zh": "贴双喜字",
+      "pinyin": "",
+      "vi": "dán chữ song hỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a38a2d1-8736-4058-a81f-c1349da33567",
+      "order": 4,
+      "zh": "门上贴着双喜字",
+      "pinyin": "",
+      "vi": "trên cửa dán chữ song hỷ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7109f7dd-79c9-49c7-9b01-22bf341e465a",
+      "order": 5,
+      "zh": "双喜临门",
+      "pinyin": "",
+      "vi": "song hỷ lâm môn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d8b76b61-93d2-47b1-881f-c5770dcd7734",
+      "order": 1,
+      "zh": "门上贴着一个红双喜字。",
+      "pinyin": "Mén shàng tiēzhe yí ge hóng shuāngxǐ zì.",
+      "vi": "Trên cửa dán một chữ song hỷ màu đỏ.",
+      "analysis_vi": "贴着 tả trạng thái chữ đã được dán.",
+      "highlight": [
+        "双喜",
+        "贴着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6162e40-0793-464b-b09b-38e233bab2e5"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a1927461-2894-4872-b671-6d4c2749b577",
+      "order": 2,
+      "zh": "墙上贴着双喜字，会议厅里挂着红灯笼。",
+      "pinyin": "Qiáng shàng tiēzhe shuāngxǐ zì, huìyìtīng lǐ guàzhe hóng dēnglong.",
+      "vi": "Trên tường dán chữ song hỷ, trong phòng hội nghị treo đèn lồng đỏ.",
+      "analysis_vi": "贴着 / 挂着 đều tả trạng thái trang trí.",
+      "highlight": [
+        "双喜",
+        "贴着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a6162e40-0793-464b-b09b-38e233bab2e5"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "410ba715-ecb3-42b8-938a-0e7518127856",
+      "order": 1,
+      "rule_vi": "Khi nói biểu tượng dán lên tường/cửa, thường nói 双喜字 hoặc 红双喜字, không dịch từng chữ thành “hai vui”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "双喜",
+    "back": "song hỷ, chữ hỷ đôi trong cưới hỏi",
+    "hint": "shuāngxǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "双喜 / 囍 là biểu tượng cưới hỏi quen thuộc trong văn hóa Hán và Việt Nam.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a6162e40-0793-464b-b09b-38e233bab2e5",
+    "source_lesson_vocab_id": null
+  }
+}

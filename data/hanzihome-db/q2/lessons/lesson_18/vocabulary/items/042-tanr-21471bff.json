@@ -1,0 +1,328 @@
+{
+  "id": "18da8707-04a1-4217-a27d-65c9a85c812d",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "摊儿",
+  "pinyin": "tānr",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Than nhi",
+    "meaning_vi": "sạp, quầy nhỏ, hàng rong",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sạp, quầy nhỏ, hàng rong"
+    ],
+    "short_definition_vi": "sạp, quầy nhỏ, hàng rong",
+    "textbook_focus_vi": "sạp, quầy nhỏ, hàng rong",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "摊",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "难",
+            "hanviet": "nan",
+            "meaning_vi": "phần phải giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bày/trải ra; sạp/quầy nhỏ; chia phần",
+        "modern_logic_vi": "摊 gợi bày/trải đồ ra để bán.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố 儿化 trong 牌儿/摊儿",
+        "modern_logic_vi": "Trong các từ này, 儿 là hậu tố uốn lưỡi, không mang nghĩa trẻ con.",
+        "warning_vi": "Không đọc tách mạnh thành ér khi nói khẩu âm Bắc phương.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "摊 có bộ 扌, liên quan đến thao tác bày/trải ra. Lõi nghĩa hiện đại: bày hàng ra một chỗ để bán. → 水果摊儿 = sạp trái cây. → 小吃摊儿 = quầy đồ ăn vặt.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "商店",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cửa hàng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "超市",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "siêu thị.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "柜台",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quầy trong sân bay/ngân hàng/cửa hàng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "摊儿: sạp/quầy nhỏ, thường đời thường, ngoài chợ/ven đường."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cdb56979-6d48-469d-acab-661aec230a3c",
+      "order": 1,
+      "zh": "小摊儿",
+      "pinyin": "",
+      "vi": "quầy nhỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2956a115-a49a-4988-889e-c48f88310664",
+      "order": 2,
+      "zh": "水果摊儿",
+      "pinyin": "",
+      "vi": "sạp trái cây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36803e66-9da9-4eb2-a6a1-7a1e35c20321",
+      "order": 3,
+      "zh": "小吃摊儿",
+      "pinyin": "",
+      "vi": "quầy đồ ăn vặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e1f71b7-67cf-4f86-a364-0e3efe79ddfa",
+      "order": 4,
+      "zh": "摆摊儿",
+      "pinyin": "",
+      "vi": "bày sạp/bán hàng rong",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e85a1b12-8368-4200-9acc-f95710b0c6c3",
+      "order": 5,
+      "zh": "摊儿上",
+      "pinyin": "",
+      "vi": "trên quầy/sạp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28f0c343-b322-41eb-ac1d-d82acd6f692c",
+      "order": 1,
+      "zh": "他从口袋里掏出几个硬币，放在摊儿上。",
+      "pinyin": "Tā cóng kǒudài lǐ tāo chū jǐ ge yìngbì, fàng zài tānr shang.",
+      "vi": "Anh ấy móc từ trong túi ra vài đồng xu, đặt lên quầy hàng nhỏ.",
+      "analysis_vi": "从口袋里掏出…… là móc từ trong túi ra; 摊儿上 là vị trí trên sạp.",
+      "highlight": [
+        "摊儿"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "18da8707-04a1-4217-a27d-65c9a85c812d"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "292760eb-722f-43d4-a410-e6851b941185",
+      "order": 2,
+      "zh": "机场外边有几个小吃摊儿，价钱不算贵。",
+      "pinyin": "Jīchǎng wàibian yǒu jǐ ge xiǎochī tānr, jiàqián bú suàn guì.",
+      "vi": "Bên ngoài sân bay có mấy quầy đồ ăn vặt, giá không算 đắt.",
+      "analysis_vi": "机场外边有…… là câu tồn hiện; 价钱不算贵 là giá không đến mức đắt.",
+      "highlight": [
+        "摊儿"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "18da8707-04a1-4217-a27d-65c9a85c812d"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2777d748-4c34-4606-9af3-c72b5ad9be9b",
+      "order": 3,
+      "zh": "买水果的时候，老板把苹果称好以后装进袋子里。",
+      "pinyin": "Mǎi shuǐguǒ de shíhou, lǎobǎn bǎ píngguǒ chēng hǎo yǐhòu zhuāng jìn dàizi lǐ.",
+      "vi": "Khi mua trái cây, ông chủ cân táo xong rồi bỏ vào túi.",
+      "analysis_vi": "把苹果称好 là cân xong; 装进袋子里 là bỏ vào trong túi.",
+      "highlight": [
+        "摊儿"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "18da8707-04a1-4217-a27d-65c9a85c812d"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Không có fact văn hóa riêng cần tách sâu; dùng theo ngữ cảnh đời sống/sân bay trong bài.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3ef46c53-bc35-4d01-97ae-9f49861bf3f3",
+      "order": 1,
+      "rule_vi": "Dùng đúng ngữ cảnh của từ; tránh dịch máy theo tiếng Việt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 摊儿 theo cụm và ngữ cảnh bài 18; nghĩa chính là sạp, quầy nhỏ, hàng rong.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "摊儿",
+    "back": "sạp, quầy nhỏ, hàng rong",
+    "hint": "tānr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "18da8707-04a1-4217-a27d-65c9a85c812d",
+    "source_lesson_vocab_id": null
+  }
+}

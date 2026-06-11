@@ -1,0 +1,247 @@
+{
+  "id": "dee74c5c-4d90-48a7-ab79-1d0798367bfc",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "亲切",
+  "pinyin": "qīnqiè",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thân thiết",
+    "meaning_vi": "thân thiết, ân cần, gần gũi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thân thiết",
+      "ân cần",
+      "gần gũi"
+    ],
+    "short_definition_vi": "thân thiết, ân cần, gần gũi",
+    "textbook_focus_vi": "亲 = gần gũi/thân, 切 = sát/thiết. 亲切 = thân tình, ân cần, không xa cách.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thái độ, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "thân",
+        "structure_note_vi": "Chữ giản thể; học theo nghĩa thân/gần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, gần gũi",
+        "modern_logic_vi": "Trong từ này, 亲 góp phần tạo nghĩa 'thân, gần gũi'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "切",
+        "lishu_vi": "thiết",
+        "structure_note_vi": "刂 liên quan dao/cắt.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cắt; sát, thiết",
+        "modern_logic_vi": "Trong từ này, 切 góp phần tạo nghĩa 'cắt; sát, thiết'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲 = gần gũi/thân, 切 = sát/thiết. 亲切 = thân tình, ân cần, không xa cách.",
+    "memory_tip_vi": "Nhớ qua cụm: 亲切的问候 = lời hỏi thăm thân tình.",
+    "warning_vi": "亲切 nói thái độ/cảm giác gần gũi; 亲密 mới nhấn quan hệ thân mật.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "亲密",
+        "pinyin": "qīnmì",
+        "meaning_vi": "thân mật",
+        "difference_vi": "Thiên về quan hệ gần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "热情",
+        "pinyin": "rèqíng",
+        "meaning_vi": "nhiệt tình",
+        "difference_vi": "Nhấn sự nồng nhiệt/chủ động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "亲切 nói thái độ/cảm giác gần gũi; 亲密 mới nhấn quan hệ thân mật."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9acd5b84-e4b1-4fc5-b4b5-c9ff92d96b62",
+      "order": 1,
+      "zh": "亲切的问候",
+      "pinyin": "qīnqiè de wènhòu",
+      "vi": "lời hỏi thăm thân tình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "94e5f134-062b-4e90-a319-4d074d7adb8d",
+      "order": 2,
+      "zh": "亲切地说",
+      "pinyin": "qīnqiè de shuō",
+      "vi": "nói ân cần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "86ea75e9-67f0-4831-ad89-a257b7e847ba",
+      "order": 3,
+      "zh": "亲切的微笑",
+      "pinyin": "qīnqiè de wēixiào",
+      "vi": "nụ cười thân thiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "63a07e2b-5a2e-4140-bcfb-4058dd41753b",
+      "order": 1,
+      "zh": "赵霞给他写了一封信，信里有几句很亲切的问候。",
+      "pinyin": "Zhào Xiá gěi tā xiě le yì fēng xìn, xìn lǐ yǒu jǐ jù hěn qīnqiè de wènhòu.",
+      "vi": "Triệu Hà viết cho anh ấy một lá thư, trong thư có vài câu hỏi thăm rất thân tình.",
+      "analysis_vi": "亲切的问候 là cụm tự nhiên.",
+      "highlight": [
+        "亲切"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dee74c5c-4d90-48a7-ab79-1d0798367bfc"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "亲切 thường dùng để khen thầy cô, người lớn, nhân viên phục vụ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "28b535d7-3e1f-42bf-8820-7baf03ab58f7",
+      "order": 1,
+      "rule_vi": "亲切 nói thái độ/cảm giác gần gũi; 亲密 mới nhấn quan hệ thân mật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "老师说话很亲切。",
+          "pinyin": "Lǎoshī shuōhuà hěn qīnqiè.",
+          "vi": "Thầy/cô nói chuyện rất ân cần.",
+          "note_vi": "亲切 hợp với thái độ/lời nói.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲切",
+    "back": "thân thiết, ân cần, gần gũi",
+    "hint": "qīnqiè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dee74c5c-4d90-48a7-ab79-1d0798367bfc",
+    "source_lesson_vocab_id": null
+  }
+}

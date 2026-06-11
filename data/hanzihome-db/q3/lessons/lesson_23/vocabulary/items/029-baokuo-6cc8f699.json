@@ -1,0 +1,368 @@
+{
+  "id": "9679f437-13ed-4c1c-af09-7c385a917141",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "包括",
+  "pinyin": "bāokuò",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bao quát",
+    "meaning_vi": "bao gồm, gồm có",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bao gồm",
+      "gồm có"
+    ],
+    "short_definition_vi": "bao gồm, gồm có",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về liệt kê, phạm vi.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "liệt kê, phạm vi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "包",
+        "lishu_vi": "bao",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 包 trong từ 包括; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 包括, chữ 包 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "括",
+        "lishu_vi": "quát",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 括 trong từ 包括; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "舌",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 包括, chữ 括 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "包括 trong bài được nhớ theo nghĩa hiện đại: bao gồm.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 包括听说读写 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "包含",
+        "pinyin": "bāohán",
+        "meaning_vi": "chứa đựng, bao hàm",
+        "difference_vi": "chứa đựng, bao hàm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "由……组成",
+        "pinyin": "yóu... zǔchéng",
+        "meaning_vi": "do... tạo thành",
+        "difference_vi": "do... tạo thành",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "包括 không dùng như danh từ đánh giá."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a6207c81-b2bb-46cc-895e-5663974a1a9b",
+      "order": 1,
+      "zh": "包括听说读写",
+      "pinyin": "",
+      "vi": "bao gồm nghe nói đọc viết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e35eb101-f7ef-4763-aa82-3d32b234c819",
+      "order": 2,
+      "zh": "课程包括……",
+      "pinyin": "",
+      "vi": "khóa học bao gồm…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ef21c05-a340-448b-85c6-abfc0addacff",
+      "order": 3,
+      "zh": "内容包括……",
+      "pinyin": "",
+      "vi": "nội dung bao gồm…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4eeb26fd-8517-4152-ab28-56acba48ca80",
+      "order": 4,
+      "zh": "不包括住宿",
+      "pinyin": "",
+      "vi": "không bao gồm chỗ ở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d440570a-f4aa-4a83-9d04-1d4aa7e46de2",
+      "order": 5,
+      "zh": "包括在内",
+      "pinyin": "",
+      "vi": "bao gồm trong đó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c8e15515-f9e6-47a1-b62a-d6be08d3860f",
+      "order": 1,
+      "zh": "这个课程包括听力训练和口语训练。",
+      "pinyin": "",
+      "vi": "bao gồm, gồm có",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "包括"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9679f437-13ed-4c1c-af09-7c385a917141"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "96e1495b-efc9-4923-83ed-b8a1be175d8e",
+      "order": 2,
+      "zh": "这个词语“包括”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 包括 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "包括"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9679f437-13ed-4c1c-af09-7c385a917141"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0b09bc8c-f2ae-4654-bc2c-40541f0865f4",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“包括”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 包括 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "包括"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9679f437-13ed-4c1c-af09-7c385a917141"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "包括 thường dùng trong thông báo, mô tả khóa học, phí dịch vụ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e3d58032-f40a-4123-a8cb-adc2ffe1fbab",
+      "order": 1,
+      "rule_vi": "包括 không dùng như danh từ đánh giá.",
+      "natural_examples": [
+        {
+          "zh": "这个课程包括三个部分。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "这个包括很好。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "这个包括很好。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个课程包括三个部分。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "包括 không dùng như danh từ đánh giá.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "包括",
+    "back": "bao gồm, gồm có",
+    "hint": "bāokuò",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9679f437-13ed-4c1c-af09-7c385a917141",
+    "source_lesson_vocab_id": null
+  }
+}

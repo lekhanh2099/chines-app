@@ -1,0 +1,278 @@
+{
+  "id": "d6548738-351e-4334-a9f6-8700d4618a6e",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "一点儿也不",
+  "pinyin": "yìdiǎnr yě bù",
+  "pos": {
+    "raw_vi": "Cấu trúc nhấn mạnh phủ định",
+    "raw_cn": "固定结构",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhất điểm nhi dã bất",
+    "meaning_vi": "một chút cũng không",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "một chút cũng không"
+    ],
+    "short_definition_vi": "một chút cũng không",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "点",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "儿",
+            "hanviet": "nhi",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "儿",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhi",
+              "radical_name_zh": "",
+              "hanviet": "nhi",
+              "meaning_vi": "trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, trẻ",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "也",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Chưa tách component để tránh đoán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "一点儿也不 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 一点儿也不 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不太",
+        "pinyin": "bù tài",
+        "meaning_vi": "không quá",
+        "difference_vi": "Phủ định nhẹ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一点儿都不",
+        "pinyin": "yìdiǎnr dōu bù",
+        "meaning_vi": "một chút cũng không",
+        "difference_vi": "Nghĩa gần, 都 quét phạm vi mạnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0bcee10b-c3c9-45d8-aaa6-48771b07fa74",
+      "order": 1,
+      "zh": "一点儿也不知道",
+      "pinyin": "yìdiǎnr yě bù zhīdào",
+      "vi": "một chút cũng không biết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41329e92-db38-41e8-91f5-c0d0896bdcb0",
+      "order": 2,
+      "zh": "一点儿也不累",
+      "pinyin": "yìdiǎnr yě bù lèi",
+      "vi": "không mệt chút nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d583645c-b9e0-4caf-9d45-6dd480706f29",
+      "order": 3,
+      "zh": "一点儿也不了解",
+      "pinyin": "yìdiǎnr yě bù liǎojiě",
+      "vi": "chẳng hiểu chút nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d90b98e3-8793-4ad2-8e8d-2ced9076b530",
+      "order": 1,
+      "zh": "我一点儿也不知道这件事。",
+      "pinyin": "Wǒ yìdiǎnr yě bù zhīdào zhè jiàn shì.",
+      "vi": "Tôi một chút cũng không biết chuyện này.",
+      "analysis_vi": "一点儿也不 + V/Adj nhấn phủ định hoàn toàn.",
+      "highlight": [
+        "一点儿也不"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d6548738-351e-4334-a9f6-8700d4618a6e"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "015ae7c4-4001-4e3f-b6d7-dec206c5b1b7",
+      "order": 2,
+      "zh": "经历了那么多风雨以后，她一点儿也没有失去信心。",
+      "pinyin": "Jīnglì le nàme duō fēngyǔ yǐhòu, tā yìdiǎnr yě méiyǒu shīqù xìnxīn.",
+      "vi": "Sau nhiều mưa gió, cô ấy không hề mất niềm tin.",
+      "analysis_vi": "Với sự việc đã/không xảy ra dùng 没有.",
+      "highlight": [
+        "一点儿也不"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d6548738-351e-4334-a9f6-8700d4618a6e"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tương ứng tự nhiên với tiếng Việt 'không... chút nào'.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6839571a-4b67-4469-b369-89bb2543e75c",
+      "order": 1,
+      "rule_vi": "Không đặt 也 sai vị trí: nói 我一点儿也不知道, không nói 我也一点儿不知道.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一点儿也不",
+    "back": "một chút cũng không",
+    "hint": "yìdiǎnr yě bù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d6548738-351e-4334-a9f6-8700d4618a6e",
+    "source_lesson_vocab_id": null
+  }
+}

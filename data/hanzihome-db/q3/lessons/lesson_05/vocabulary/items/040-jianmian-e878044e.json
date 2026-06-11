@@ -1,0 +1,250 @@
+{
+  "id": "c2a3fc1d-7226-4011-afd7-28a54ad2a950",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "见面",
+  "pinyin": "jiànmiàn",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Cụm động từ",
+    "raw_cn": "离合动词/动词短语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kiến diện",
+    "meaning_vi": "gặp mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gặp mặt"
+    ],
+    "short_definition_vi": "gặp mặt",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "见",
+        "lishu_vi": "kiến",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "面",
+        "lishu_vi": "diện",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "见面 = thấy mặt nhau, gặp trực tiếp.",
+    "memory_tip_vi": "见过面 = từng gặp mặt.",
+    "warning_vi": "Khác 看见 = nhìn thấy.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "看见",
+        "kànjiàn",
+        "nhìn thấy",
+        "không nhất thiết gặp trực tiếp"
+      ],
+      [
+        "遇见",
+        "yùjiàn",
+        "gặp tình cờ",
+        "tình cờ gặp"
+      ],
+      [
+        "会面",
+        "huìmiàn",
+        "hội kiến/gặp",
+        "trang trọng hơn"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "见过面 = từng gặp mặt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ada0062c-817b-4554-8d92-dd764fde2241",
+      "order": 1,
+      "zh": "第一次见面",
+      "pinyin": "",
+      "vi": "lần đầu gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6237ecdf-6422-4a09-90b3-9fa55caae9d6",
+      "order": 2,
+      "zh": "见面的时候",
+      "pinyin": "",
+      "vi": "lúc gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef447f4c-0704-4293-ad06-2ebaea812277",
+      "order": 3,
+      "zh": "见了一面",
+      "pinyin": "",
+      "vi": "gặp một lần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9336bed3-8e6b-4b8b-9c2d-69df5dfe058e",
+      "order": 4,
+      "zh": "好久不见面",
+      "pinyin": "",
+      "vi": "lâu không gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29997993-5ab8-4a44-9cb7-6c89b5bbb572",
+      "order": 5,
+      "zh": "有机会见面",
+      "pinyin": "",
+      "vi": "có cơ hội gặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "212791dc-7cab-4a92-98dc-f95c9c4f61ad",
+      "order": 1,
+      "zh": "我们第一次见面的时候，他主动跟我打招呼。",
+      "pinyin": "Wǒmen dì yī cì jiànmiàn de shíhou, tā zhǔdòng gēn wǒ dǎ zhāohu.",
+      "vi": "Lần đầu gặp mặt, anh ấy chủ động chào tôi.",
+      "analysis_vi": "第一次见面的时候 = lúc gặp lần đầu.",
+      "highlight": [
+        "见面"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2a3fc1d-7226-4011-afd7-28a54ad2a950"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6fcc6c63-134e-4a42-be5f-d7f7e26a0e8c",
+      "order": 2,
+      "zh": "我们只在电话里聊过，还没有见过面。",
+      "pinyin": "Wǒmen zhǐ zài diànhuà lǐ liáoguo, hái méiyǒu jiànguo miàn.",
+      "vi": "Chúng tôi chỉ nói qua điện thoại, chưa gặp mặt.",
+      "analysis_vi": "没见过面 = chưa gặp trực tiếp.",
+      "highlight": [
+        "见面"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c2a3fc1d-7226-4011-afd7-28a54ad2a950"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Có thể 联系很多次 nhưng 没见过面: liên hệ nhiều lần nhưng chưa gặp trực tiếp.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cc659973-01c1-40c8-a9aa-15e9ce089784",
+      "order": 1,
+      "rule_vi": "我看见他一次。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我跟他见过一面。",
+          "pinyin": "Wǒ gēn tā jiànguo yí miàn.",
+          "vi": "Tôi từng gặp anh ấy một lần.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Khác 看见 = nhìn thấy.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "见面",
+    "back": "gặp mặt",
+    "hint": "jiànmiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c2a3fc1d-7226-4011-afd7-28a54ad2a950",
+    "source_lesson_vocab_id": null
+  }
+}

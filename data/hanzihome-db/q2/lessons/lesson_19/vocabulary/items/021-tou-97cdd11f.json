@@ -1,0 +1,363 @@
+{
+  "id": "b5bc9fca-24ec-4f8f-aa3b-1d9557b31d7b",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "偷",
+  "pinyin": "tōu",
+  "pos": {
+    "raw_vi": "động từ / danh từ / phó từ",
+    "raw_cn": "动词 / 名词 / 副词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "theft"
+  ],
+  "meaning": {
+    "hanviet": "Thâu",
+    "meaning_vi": "trộm; lén; tranh thủ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trộm; lén; tranh thủ"
+    ],
+    "short_definition_vi": "trộm; lén; tranh thủ",
+    "textbook_focus_vi": "Hành động trộm trong câu bị động.",
+    "register_vi": "đời sống",
+    "usage_domain_vi": "mất đồ, tội phạm nhỏ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "偷",
+        "lishu_vi": "thâu",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "俞",
+            "hanviet": "du",
+            "meaning_vi": "thành phần ghi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trộm, lén",
+        "modern_logic_vi": "亻 gợi hành vi của người; 偷 = làm lén/lấy lén.",
+        "warning_vi": "Không suy nghĩa từ 俞.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "偷 là trộm, lấy đồ khi người khác không biết; mở rộng là làm lén như 偷看, 偷听.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "偷走",
+        "pinyin": "",
+        "meaning_vi": "trộm lấy đi mất",
+        "difference_vi": "Nhấn kết quả lấy đi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抢",
+        "pinyin": "",
+        "meaning_vi": "cướp",
+        "difference_vi": "Dùng sức/đe dọa công khai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "骗",
+        "pinyin": "",
+        "meaning_vi": "lừa",
+        "difference_vi": "Dùng lời nói/thủ đoạn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "cầm/lấy",
+        "difference_vi": "Trung tính, không có nghĩa trộm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "偷",
+        "right": "还",
+        "meaning_vi": "trộm/lấy lén ↔ trả lại",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a8749e99-0ad7-4ec1-997f-a4eb7afde7b0",
+      "order": 1,
+      "zh": "偷东西",
+      "pinyin": "",
+      "vi": "trộm đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8828f36c-3fcd-4fee-983f-d4f170b9b8df",
+      "order": 2,
+      "zh": "偷钱",
+      "pinyin": "",
+      "vi": "trộm tiền",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2133f8e-d3a0-4169-a4d0-51dc840a0c0d",
+      "order": 3,
+      "zh": "偷钱包儿",
+      "pinyin": "",
+      "vi": "trộm ví",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "25890348-4c5c-4d0a-b494-d94d18357027",
+      "order": 4,
+      "zh": "偷走",
+      "pinyin": "",
+      "vi": "trộm lấy đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c172d6ba-be81-408b-91af-777c5ff2aa94",
+      "order": 5,
+      "zh": "被偷了",
+      "pinyin": "",
+      "vi": "bị trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e78a5537-8b63-4204-ae95-db3d5974707a",
+      "order": 6,
+      "zh": "小偷",
+      "pinyin": "",
+      "vi": "tên trộm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88a65fe1-1487-45e5-870b-e28a40a05f0c",
+      "order": 7,
+      "zh": "偷看",
+      "pinyin": "",
+      "vi": "nhìn lén",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e1e4d6b-9e12-4c48-a780-eade28e55156",
+      "order": 8,
+      "zh": "偷听",
+      "pinyin": "",
+      "vi": "nghe lén",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "39865670-49d6-4254-b20e-d80a7f1b58bc",
+      "order": 1,
+      "zh": "有人偷了我的钱包儿。",
+      "pinyin": "Yǒu rén tōu le wǒ de qiánbāor.",
+      "vi": "Có người trộm ví của tôi rồi.",
+      "analysis_vi": "有人 dùng khi chưa biết ai trộm.",
+      "highlight": [
+        "偷"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b5bc9fca-24ec-4f8f-aa3b-1d9557b31d7b"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "786a4345-7bd7-4765-96f7-526009aaf2d0",
+      "order": 2,
+      "zh": "我的钱包儿被小偷偷走了。",
+      "pinyin": "Wǒ de qiánbāor bèi xiǎotōu tōu zǒu le.",
+      "vi": "Ví của tôi bị tên trộm lấy mất.",
+      "analysis_vi": "被字句; 偷走了 nhấn kết quả ví đã bị lấy đi.",
+      "highlight": [
+        "偷走",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "b5bc9fca-24ec-4f8f-aa3b-1d9557b31d7b"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ff837f26-20c6-4d64-a374-990d774d2d92",
+      "order": 3,
+      "zh": "他一发现手机被偷了，就马上去派出所报警。",
+      "pinyin": "Tā yì fāxiàn shǒujī bèi tōu le, jiù mǎshàng qù pàichūsuǒ bàojǐng.",
+      "vi": "Anh ấy vừa phát hiện điện thoại bị trộm thì lập tức đến đồn công an báo cảnh sát.",
+      "analysis_vi": "Ôn 一……就……; 手机被偷了 không nêu tác nhân vì chưa biết ai lấy.",
+      "highlight": [
+        "偷",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "b5bc9fca-24ec-4f8f-aa3b-1d9557b31d7b"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ở nơi đông người có thể thấy cảnh báo 小心扒手 / 保管好随身物品. 扒手 là móc túi, cụ thể hơn 小偷.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "76af92e0-9bd3-442a-85f0-73c89e4247c7",
+      "order": 1,
+      "rule_vi": "偷 khác 骗: một bên lấy lén đồ, một bên dùng thủ đoạn/lời nói.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我被人偷了钱。",
+          "pinyin": "Wǒ bèi rén tōu le qián.",
+          "vi": "Tiền của tôi bị người ta trộm.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我被骗了钱。",
+          "pinyin": "Wǒ bèi piàn le qián.",
+          "vi": "Tôi bị lừa mất tiền.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "偷",
+    "back": "trộm; lén; tranh thủ",
+    "hint": "tōu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "theft"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b5bc9fca-24ec-4f8f-aa3b-1d9557b31d7b",
+    "source_lesson_vocab_id": null
+  }
+}

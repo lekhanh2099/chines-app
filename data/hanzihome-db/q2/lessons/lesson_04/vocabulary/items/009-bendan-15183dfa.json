@@ -1,0 +1,336 @@
+{
+  "id": "0e09b388-fd0f-4b24-bf06-a8b1472585ee",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "笨蛋",
+  "pinyin": "bèndàn",
+  "pos": {
+    "raw_vi": "Danh từ mắng người / khẩu ngữ",
+    "raw_cn": "名 / 骂人话",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "bai_04",
+    "canh_bao"
+  ],
+  "meaning": {
+    "hanviet": "Bổn đản",
+    "meaning_vi": "đồ ngốc; kẻ ngốc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đồ ngốc",
+      "kẻ ngốc"
+    ],
+    "short_definition_vi": "đồ ngốc; kẻ ngốc",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "笨",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "本",
+            "hanviet": "bản",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "bên dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngu, vụng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "蛋",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "疋",
+            "hanviet": "",
+            "meaning_vi": "phần trên",
+            "position_vi": "bên trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "sâu bọ",
+            "position_vi": "bên dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "sâu bọ / sinh vật nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trứng; trong từ mắng người không dịch riêng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "虫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trùng",
+          "radical_name_zh": "",
+          "hanviet": "trùng",
+          "meaning_vi": "sâu bọ / sinh vật nhỏ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "笨蛋 = đồ ngốc, là lời mắng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "傻瓜",
+        "pinyin": "",
+        "meaning_vi": "đồ ngốc",
+        "difference_vi": "có thể đùa thân mật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "蠢人",
+        "pinyin": "",
+        "meaning_vi": "người ngu xuẩn",
+        "difference_vi": "nặng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "聪明人",
+        "pinyin": "",
+        "meaning_vi": "người thông minh",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "087377aa-c5c8-4504-a2aa-742fd1919a66",
+      "order": 1,
+      "zh": "你这个笨蛋",
+      "pinyin": "",
+      "vi": "đồ ngốc này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a8555a8-d948-4d40-a678-81de7c9ebb28",
+      "order": 2,
+      "zh": "不是笨蛋",
+      "pinyin": "",
+      "vi": "không phải đồ ngốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bae8ec8e-d438-4d0c-849f-3e6175692554",
+      "order": 3,
+      "zh": "小笨蛋",
+      "pinyin": "",
+      "vi": "đồ ngốc nhỏ / cách gọi đùa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b9ff705e-418e-4623-b072-219e4840edeb",
+      "order": 1,
+      "zh": "别说他是笨蛋。",
+      "pinyin": "Bié shuō tā shì bèndàn.",
+      "vi": "Đừng nói anh ấy là đồ ngốc.",
+      "analysis_vi": "别 + V dùng để khuyên/cấm.",
+      "highlight": [
+        "笨蛋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0e09b388-fd0f-4b24-bf06-a8b1472585ee"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f31c992b-8048-4996-81d5-ce4e5f57fe61",
+      "order": 2,
+      "zh": "这道题我做错了，可是我不是笨蛋。",
+      "pinyin": "Zhè dào tí wǒ zuò cuò le, kěshì wǒ bú shì bèndàn.",
+      "vi": "Câu này tôi làm sai rồi, nhưng tôi không phải đồ ngốc.",
+      "analysis_vi": "做错了 là kết quả sai.",
+      "highlight": [
+        "笨蛋"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0e09b388-fd0f-4b24-bf06-a8b1472585ee"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "笨蛋 có thể đùa giữa người rất thân nhưng với người không thân là xúc phạm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4c3165b9-f8b6-4944-9a21-dd0587484319",
+      "order": 1,
+      "rule_vi": "Không dùng 笨蛋 để nhận xét năng lực người khác.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "你是笨蛋。",
+          "pinyin": "Nǐ shì bèndàn.",
+          "vi": "Bạn là đồ ngốc.",
+          "note_vi": "Xúc phạm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这道题你做错了。",
+          "pinyin": "Zhè dào tí nǐ zuò cuò le.",
+          "vi": "Câu này bạn làm sai rồi.",
+          "note_vi": "Chỉ nói lỗi cụ thể.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "笨蛋",
+    "back": "đồ ngốc; kẻ ngốc",
+    "hint": "bèndàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "canh_bao"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0e09b388-fd0f-4b24-bf06-a8b1472585ee",
+    "source_lesson_vocab_id": null
+  }
+}

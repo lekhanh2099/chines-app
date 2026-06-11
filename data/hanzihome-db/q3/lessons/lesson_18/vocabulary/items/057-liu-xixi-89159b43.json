@@ -1,0 +1,234 @@
+{
+  "id": "981991d1-388f-49a4-9e68-f0b47b8c2abe",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "刘西西",
+  "pinyin": "Liú Xīxī",
+  "pos": {
+    "raw_vi": "Tên riêng người",
+    "raw_cn": "专名 / 人名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lưu Tây Tây",
+    "meaning_vi": "tên riêng nhân vật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tên riêng nhân vật"
+    ],
+    "short_definition_vi": "tên riêng nhân vật",
+    "textbook_focus_vi": "Tên nhân vật nữ trong bài; 刘 là họ, 西西 là tên gọi thân mật.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "刘",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "họ Lưu",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "西",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phía tây",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "西",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phía tây",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Tên nhân vật nữ trong bài; 刘 là họ, 西西 là tên gọi thân mật.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 刘西西 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3c2f7c9e-2d69-4c30-a4bb-b47cb2faed7a",
+      "order": 1,
+      "zh": "刘西西",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62238d39-f3ca-4dd3-a3f5-236c56bb3086",
+      "order": 2,
+      "zh": "西西",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bbeda168-7c59-4303-a5a8-2a18f2ecd644",
+      "order": 3,
+      "zh": "西西的生日",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "90dcf6d4-9e1e-464e-a6f7-883453983ef7",
+      "order": 4,
+      "zh": "告诉西西真相",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a0ea68ea-d228-4591-9858-8839236be94c",
+      "order": 5,
+      "zh": "让西西出丑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "49da730b-f587-4321-a67f-aec8e5f04b0d",
+      "order": 1,
+      "zh": "刘西西以为那盒蛋糕是别人送给她的。",
+      "pinyin": "",
+      "vi": "Lưu Tây Tây tưởng hộp bánh đó là người khác tặng cho mình.",
+      "analysis_vi": "以为 nói hiểu lầm.",
+      "highlight": [
+        "刘西西"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "981991d1-388f-49a4-9e68-f0b47b8c2abe"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "94d441a3-59d9-4dd9-8e38-bc045d9f4ae2",
+      "order": 1,
+      "rule_vi": "Tên riêng không dịch nghĩa từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "刘西西 = Lưu phía Tây phía Tây",
+          "pinyin": "",
+          "vi": "Dịch sai tên riêng.",
+          "note_vi": "Tên riêng chỉ phiên âm/ngữ âm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "刘西西 = Lưu Tây Tây",
+          "pinyin": "",
+          "vi": "Cách dịch tên riêng phù hợp.",
+          "note_vi": "Giữ như tên nhân vật.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "刘西西",
+    "back": "tên riêng nhân vật",
+    "hint": "Liú Xīxī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "981991d1-388f-49a4-9e68-f0b47b8c2abe",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "id": "32dfb63c-1a02-4c72-8c78-1bdc8fd390fd",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "基本上",
+  "pinyin": "jīběnshàng",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "adverb",
+    "degree"
+  ],
+  "meaning": {
+    "hanviet": "Cơ bản thượng",
+    "meaning_vi": "về cơ bản, nhìn chung, gần như",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "về cơ bản, nhìn chung, gần như"
+    ],
+    "short_definition_vi": "về cơ bản, nhìn chung, gần như",
+    "textbook_focus_vi": "về cơ bản, nhìn chung, gần như",
+    "register_vi": "",
+    "usage_domain_vi": "adverb,degree",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "基",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "其",
+            "hanviet": "kỳ",
+            "meaning_vi": "thành phần cấu tạo",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất, nền",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất, nền",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ Thổ trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nền móng, cơ sở",
+        "modern_logic_vi": "基 gợi phần nền/cơ sở.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất, nền",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ Thổ trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "本",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "木 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "nét đánh dấu gốc",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gốc, căn bản, vốn",
+        "modern_logic_vi": "本 là gốc của cây, mở rộng thành nền tảng/căn bản.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 được dùng như bộ Mộc trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "上",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "mốc ngang",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丨",
+            "hanviet": "cổn",
+            "meaning_vi": "nét chỉ vị trí phía trên",
+            "position_vi": "giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên, lên, trước, tham gia hoạt động",
+        "modern_logic_vi": "Vạch mốc và nét phía trên giúp nhớ nghĩa “ở phía trên”, mở rộng sang thời gian trước.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "基 gợi phần nền/cơ sở.; 本 là gốc của cây, mở rộng thành nền tảng/căn bản.; Vạch mốc và nét phía trên giúp nhớ nghĩa “ở phía trên”, mở rộng sang thời gian trước.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "差不多",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大概",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "几乎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "48cfdf50-25e6-4f2e-b427-41f65ce43d36",
+      "order": 1,
+      "zh": "基本上完成",
+      "pinyin": "",
+      "vi": "về cơ bản hoàn thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c541f4d5-856a-4f6e-9405-ed8d09e908d1",
+      "order": 2,
+      "zh": "基本上同意",
+      "pinyin": "",
+      "vi": "về cơ bản đồng ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c033242-f737-48d1-a3a0-32c2a477f90f",
+      "order": 3,
+      "zh": "基本上了解",
+      "pinyin": "",
+      "vi": "về cơ bản hiểu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "993bfd18-57d5-4d0f-8687-c6f12efa809c",
+      "order": 4,
+      "zh": "基本上没问题",
+      "pinyin": "",
+      "vi": "về cơ bản không vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5158921a-dfea-447a-af3d-7d470ef3eda3",
+      "order": 5,
+      "zh": "基本上适应了",
+      "pinyin": "",
+      "vi": "về cơ bản đã thích nghi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d432a340-aa7b-4a2c-8e97-b33d1897e60e",
+      "order": 1,
+      "zh": "这封信我基本上看懂了。",
+      "pinyin": "Zhè fēng xìn wǒ jīběnshàng kàn dǒng le.",
+      "vi": "Bức thư này tôi về cơ bản đã đọc hiểu.",
+      "analysis_vi": "基本上 làm mềm mức độ, không khẳng định 100%.",
+      "highlight": [
+        "基本上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32dfb63c-1a02-4c72-8c78-1bdc8fd390fd"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a4664395-2aca-453c-adef-a15e087ae2cf",
+      "order": 2,
+      "zh": "来中国两个多月以后，他基本上适应了这里的生活。",
+      "pinyin": "Lái Zhōngguó liǎng ge duō yuè yǐhòu, tā jīběnshàng shìyìng le zhèlǐ de shēnghuó.",
+      "vi": "Sau hơn hai tháng đến Trung Quốc, anh ấy về cơ bản đã thích nghi với cuộc sống ở đây.",
+      "analysis_vi": "基本上 + 适应了 diễn tả trạng thái gần hoàn tất.",
+      "highlight": [
+        "基本上"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32dfb63c-1a02-4c72-8c78-1bdc8fd390fd"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong báo cáo/học tập, 基本上 giúp tránh nói tuyệt đối khi chưa chắc 100%.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b02b0475-6edc-422f-9b4d-a0fb03610abf",
+      "order": 1,
+      "rule_vi": "基本上 không phải “rất cơ bản”; nó là phó từ mức độ “về cơ bản”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这件事基本上没问题。",
+          "pinyin": "Zhè jiàn shì jīběnshàng méi wèntí.",
+          "vi": "Việc này về cơ bản không có vấn đề.",
+          "note_vi": "Dùng đúng như phó từ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "基本上",
+    "back": "về cơ bản, nhìn chung, gần như",
+    "hint": "jīběnshàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "adverb",
+      "degree"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "32dfb63c-1a02-4c72-8c78-1bdc8fd390fd",
+    "source_lesson_vocab_id": null
+  }
+}

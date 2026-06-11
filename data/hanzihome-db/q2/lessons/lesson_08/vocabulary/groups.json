@@ -1,0 +1,112 @@
+[
+  {
+    "id": "80e9f1b2-e921-44ce-a383-2c487331f572",
+    "order": 1,
+    "title_vi": "Sở thích / hoạt động / học tập",
+    "words": [
+      "爱",
+      "滑冰",
+      "化学",
+      "活动"
+    ],
+    "notes": []
+  },
+  {
+    "id": "730fffd8-c849-438b-a447-ad9990a85779",
+    "order": 2,
+    "title_vi": "Quê hương / thiên nhiên / du lịch",
+    "words": [
+      "家乡",
+      "水",
+      "有名",
+      "风景",
+      "区",
+      "旅游",
+      "尤其",
+      "避暑",
+      "人家",
+      "靠",
+      "经营",
+      "发财"
+    ],
+    "notes": []
+  },
+  {
+    "id": "de5f05bf-e87d-465d-bf7f-d1d180c6509e",
+    "order": 3,
+    "title_vi": "Mùa đông / lá đỏ / hiện tượng thời tiết",
+    "words": [
+      "树叶",
+      "捡",
+      "红叶",
+      "冻",
+      "瑞雪兆丰年",
+      "瓜果",
+      "郊外"
+    ],
+    "notes": []
+  },
+  {
+    "id": "0d6455ad-2ad6-4c66-861b-6d4ffb11f86c",
+    "order": 4,
+    "title_vi": "Lo lắng / đồ vật hỏng / thay pin / đúng lúc",
+    "words": [
+      "着急",
+      "着呢",
+      "表",
+      "坏",
+      "停",
+      "该",
+      "电池",
+      "迟到",
+      "好事",
+      "坏事"
+    ],
+    "notes": []
+  },
+  {
+    "id": "44ed8d90-ba29-493f-9d8f-6c6e35832542",
+    "order": 5,
+    "title_vi": "Gia đình / hôn nhân",
+    "words": [
+      "母亲",
+      "父亲",
+      "结婚",
+      "离婚",
+      "未婚夫",
+      "未婚妻",
+      "将来"
+    ],
+    "notes": []
+  },
+  {
+    "id": "7af71cbc-4d1c-425e-afc8-288487842d43",
+    "order": 6,
+    "title_vi": "Cách thức / miêu tả / trang điểm / trang phục",
+    "words": [
+      "地",
+      "这样",
+      "那样",
+      "亮",
+      "脱",
+      "装",
+      "打扮",
+      "显得"
+    ],
+    "notes": []
+  },
+  {
+    "id": "7053eb17-f511-4228-aa8e-64526f4c0eec",
+    "order": 7,
+    "title_vi": "Du lịch / ăn uống / chụp ảnh / số lượng",
+    "words": [
+      "划船",
+      "照相",
+      "到处",
+      "火锅儿",
+      "节",
+      "堆"
+    ],
+    "notes": []
+  }
+]

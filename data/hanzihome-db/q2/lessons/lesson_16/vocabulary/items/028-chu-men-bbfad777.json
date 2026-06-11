@@ -1,0 +1,255 @@
+{
+  "id": "fdba2b00-bde6-434a-b056-78d81defc77c",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "出门",
+  "pinyin": "chū mén",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Cụm động từ",
+    "raw_cn": "动宾",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xuất môn",
+    "meaning_vi": "ra khỏi nhà, ra ngoài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ra khỏi nhà, ra ngoài"
+    ],
+    "short_definition_vi": "ra khỏi nhà, ra ngoài",
+    "textbook_focus_vi": "ra khỏi nhà, ra ngoài",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra, đi ra",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "门",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "門",
+              "radical_variant": "门",
+              "radical_name_vi": "bộ Môn",
+              "radical_name_zh": "",
+              "hanviet": "môn",
+              "meaning_vi": "cửa",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "门 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cửa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "出门 = ra khỏi cửa nhà, đi ra ngoài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a66f91ad-f19b-45de-806c-dc43502548d7",
+      "order": 1,
+      "zh": "出门前",
+      "pinyin": "",
+      "vi": "trước khi ra khỏi nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "064db92a-005d-42c6-ab3e-084fdc0ebf3d",
+      "order": 2,
+      "zh": "刚出门",
+      "pinyin": "",
+      "vi": "vừa ra khỏi nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "957a092f-4513-409e-9990-ae3826a02a17",
+      "order": 3,
+      "zh": "出门买东西",
+      "pinyin": "",
+      "vi": "ra ngoài mua đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc108a61-d966-4f1d-97a2-85f6e0940d4a",
+      "order": 4,
+      "zh": "出门散步",
+      "pinyin": "",
+      "vi": "ra ngoài đi dạo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33ec8dd0-7432-4b99-a5ed-e3f106787f86",
+      "order": 5,
+      "zh": "一出门就……",
+      "pinyin": "",
+      "vi": "vừa ra khỏi nhà đã…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cfeac13a-cc9a-4bae-a3db-7906569a6971",
+      "order": 1,
+      "zh": "他一出门，就看见前边开过来一辆空车。",
+      "pinyin": "Tā yì chūmén, jiù kànjiàn qiánbian kāi guòlai yí liàng kōngchē.",
+      "vi": "Anh ấy vừa ra khỏi nhà thì nhìn thấy phía trước có một chiếc xe trống chạy tới.",
+      "analysis_vi": "一……就…… ôn phản ứng ngay.",
+      "highlight": [
+        "出门"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "fdba2b00-bde6-434a-b056-78d81defc77c"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "954bd085-7ba6-4f78-ac47-528515e8f1ef",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：出门。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: ra khỏi nhà, ra ngoài.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "出门"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "fdba2b00-bde6-434a-b056-78d81defc77c"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 出门 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ab91beb5-9200-4237-aebd-f0666221d28f",
+      "order": 1,
+      "rule_vi": "出门 thường là ra khỏi nhà; ra khỏi phòng nên nói 走出房间.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "出门 thường là ra khỏi nhà; ra khỏi phòng nên nói 走出房间.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "出门",
+    "back": "ra khỏi nhà, ra ngoài",
+    "hint": "chū mén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_028"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fdba2b00-bde6-434a-b056-78d81defc77c",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "id": "bcd2b435-bb72-4dae-b7e4-291900b8a89a",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "周围",
+  "pinyin": "zhōuwéi",
+  "pos": {
+    "raw_vi": "Danh từ / Từ chỉ vị trí",
+    "raw_cn": "名词/方位词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "position",
+    "housing"
+  ],
+  "meaning": {
+    "hanviet": "Chu vi",
+    "meaning_vi": "xung quanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xung quanh"
+    ],
+    "short_definition_vi": "xung quanh",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "position, housing",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "周",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "冂",
+            "hanviet": "quynh",
+            "meaning_vi": "khung bao ngoài",
+            "position_vi": "bao ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/ô vuông nhỏ",
+            "position_vi": "phần dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng; lời nói; âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quanh; khắp; chu đáo; tuần",
+        "modern_logic_vi": "周 gợi nghĩa quanh/chu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "围",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao quanh",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh; vây quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "韦",
+            "hanviet": "vi",
+            "meaning_vi": "phần bên trong giản thể",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bao quanh, vây quanh",
+        "modern_logic_vi": "围 là bao vây/bọc quanh.",
+        "warning_vi": "囗 là bộ Vi, không phải 口 nhỏ.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "bao quanh; vây quanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "周 + 围 đều gợi vùng bao quanh một điểm trung tâm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "附近",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Gần đó, vùng lân cận.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "旁边",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bên cạnh, sát bên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "周边",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Khu vực xung quanh, thường văn viết/quảng cáo hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "周围",
+        "right": "旁边",
+        "meaning_vi": "周围 rộng hơn, 旁边 sát cạnh hơn.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "52a1fb76-c829-4601-982f-fed3f5f13823",
+      "order": 1,
+      "zh": "房子周围",
+      "pinyin": "",
+      "vi": "xung quanh căn nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f9cfead3-9638-4130-9968-d7dd9e65e91f",
+      "order": 2,
+      "zh": "学校周围",
+      "pinyin": "",
+      "vi": "xung quanh trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "facbd58c-9ae9-40e5-9993-47e87c10d3d0",
+      "order": 3,
+      "zh": "周围环境",
+      "pinyin": "",
+      "vi": "môi trường xung quanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f3552cd-d546-4628-b246-91a8b0b6ecad",
+      "order": 4,
+      "zh": "周围的人",
+      "pinyin": "",
+      "vi": "người xung quanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d8ecc02-8c2c-45cf-be11-881ba5afc327",
+      "order": 5,
+      "zh": "周围很安静",
+      "pinyin": "",
+      "vi": "xung quanh rất yên tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfc2f8f3-f627-4267-8c0e-77eeb6230079",
+      "order": 6,
+      "zh": "周围很乱",
+      "pinyin": "",
+      "vi": "xung quanh rất lộn xộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "beadf321-98ec-448a-bfdc-f465bcb9570f",
+      "order": 7,
+      "zh": "周围有地铁站",
+      "pinyin": "",
+      "vi": "xung quanh có ga tàu điện ngầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d22cc3ea-e307-4deb-ab03-f483f0122aa4",
+      "order": 8,
+      "zh": "看看周围",
+      "pinyin": "",
+      "vi": "nhìn xung quanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f5452549-b3e3-48f6-a485-83b5795dd016",
+      "order": 1,
+      "zh": "房子周围有很多树。",
+      "pinyin": "Fángzi zhōuwéi yǒu hěn duō shù.",
+      "vi": "Xung quanh căn nhà có nhiều cây.",
+      "analysis_vi": "Địa điểm + 有 + vật; 房子周围 làm địa điểm.",
+      "highlight": [
+        "周围"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bcd2b435-bb72-4dae-b7e4-291900b8a89a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1fbd8e5f-a625-4d77-b3a1-d8afe651a846",
+      "order": 2,
+      "zh": "要是房子周围有地铁站，交通就方便多了。",
+      "pinyin": "Yàoshi fángzi zhōuwéi yǒu dìtiězhàn, jiāotōng jiù fāngbiàn duō le.",
+      "vi": "Nếu xung quanh nhà có ga tàu điện ngầm thì giao thông sẽ tiện hơn nhiều.",
+      "analysis_vi": "要是……就……; điều kiện là 房子周围有地铁站.",
+      "highlight": [
+        "周围"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bcd2b435-bb72-4dae-b7e4-291900b8a89a"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d5bec4b0-6dc1-42f9-8bea-8af64fccb339",
+      "order": 3,
+      "zh": "我们看了半天房子，最后觉得这套最好，因为周围不乱，楼下有公共汽车站，附近还有一个体育馆。",
+      "pinyin": "Wǒmen kàn le bàntiān fángzi, zuìhòu juéde zhè tào zuì hǎo, yīnwèi zhōuwéi bú luàn, lóuxià yǒu gōnggòng qìchē zhàn, fùjìn hái yǒu yí ge tǐyùguǎn.",
+      "vi": "Chúng tôi xem nhà cả buổi, cuối cùng thấy căn này tốt nhất, vì xung quanh không lộn xộn, dưới lầu có trạm xe buýt, gần đó còn có một nhà thi đấu.",
+      "analysis_vi": "这套 thay cho 这套房子; gom 周围，乱，公共汽车站，附近，体育馆.",
+      "highlight": [
+        "周围"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bcd2b435-bb72-4dae-b7e4-291900b8a89a"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khi xem nhà ở Trung Quốc, 周围环境 và 交通方便不方便 là hai tiêu chí thực tế: môi trường sống và giao thông.",
+    "tags": [
+      "position",
+      "housing"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2ffca47f-246b-49fa-ada4-303f2d2510d6",
+      "order": 1,
+      "rule_vi": "周围 không giống hoàn toàn 旁边.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "房子旁边有一家商店。",
+          "pinyin": "",
+          "vi": "Bên cạnh nhà có một cửa hàng.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "房子周围有很多商店。",
+          "pinyin": "",
+          "vi": "Xung quanh nhà có nhiều cửa hàng.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "旁边 là bên cạnh, khá gần; 周围 là xung quanh, phạm vi rộng hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "周围",
+    "back": "xung quanh",
+    "hint": "zhōuwéi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "position",
+      "housing"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bcd2b435-bb72-4dae-b7e4-291900b8a89a",
+    "source_lesson_vocab_id": null
+  }
+}

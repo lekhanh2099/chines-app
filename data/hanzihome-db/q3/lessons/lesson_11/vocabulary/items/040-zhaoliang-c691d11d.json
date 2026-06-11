@@ -1,0 +1,317 @@
+{
+  "id": "184159f6-5e44-4bd9-b38c-0c4e65cc4158",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "照亮",
+  "pinyin": "zhàoliàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "chiếu lượng",
+    "meaning_vi": "chiếu sáng, soi sáng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chiếu sáng",
+      "soi sáng"
+    ],
+    "short_definition_vi": "ánh sáng làm cho nơi/vật khác sáng lên",
+    "textbook_focus_vi": "Trong bài ánh sáng chiếu sáng cả bầu trời tây bắc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "照",
+        "lishu_vi": "",
+        "structure_note_vi": "日 + 灬",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "日 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "灬",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chiếu, soi",
+        "modern_logic_vi": "chiếu, soi",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mặt trời, ngày",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "日 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "亮",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sáng",
+        "modern_logic_vi": "sáng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "照亮 được học trong bài theo nghĩa: ánh sáng làm cho nơi/vật khác sáng lên.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 照亮天空.",
+    "warning_vi": "照亮 là chiếu sáng cái khác; phát亮 là bản thân vật sáng lên.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "发亮",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bản thân vật sáng lên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "照明",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Chiếu sáng, thường là hệ thống/thiết bị.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "照亮 là chiếu sáng cái khác; phát亮 là bản thân vật sáng lên."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0cd519af-ff6e-4436-991e-feb29d517299",
+      "order": 1,
+      "zh": "照亮天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "046ac1d0-b2b2-4f49-a211-8f220e0ae6e1",
+      "order": 2,
+      "zh": "照亮房间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d86edfe-13cb-4e20-a7f3-24e934ab17b7",
+      "order": 3,
+      "zh": "照亮道路",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2c6957f-0df5-46fe-9591-44ffbda400a5",
+      "order": 4,
+      "zh": "灯光照亮了教室",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7445424a-d289-4e72-b52c-738b6c661ae3",
+      "order": 5,
+      "zh": "照亮整个西北天空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0dcbc2c5-c95b-4417-90dc-115cea1a1463",
+      "order": 1,
+      "zh": "它照亮了整个西北天空。",
+      "pinyin": "",
+      "vi": "Nó đã chiếu sáng cả bầu trời phía tây bắc.",
+      "analysis_vi": "照亮 là động từ + bổ ngữ kết quả 亮.",
+      "highlight": [
+        "照亮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "184159f6-5e44-4bd9-b38c-0c4e65cc4158"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ddbf089-49d5-4f05-8778-c1eeef5060ed",
+      "order": 2,
+      "zh": "我一打开手电筒，光就把前面的路照亮了。",
+      "pinyin": "",
+      "vi": "Tôi vừa bật đèn pin, ánh sáng liền soi sáng con đường phía trước.",
+      "analysis_vi": "把路照亮了 là 把字句 + kết quả.",
+      "highlight": [
+        "照亮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "184159f6-5e44-4bd9-b38c-0c4e65cc4158"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "照亮 còn dùng ẩn dụ: 照亮未来, nhưng bài này là nghĩa vật lý.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "43f73b51-fa3e-43cf-91fb-e5988972a7db",
+      "order": 1,
+      "rule_vi": "照亮 là chiếu sáng cái khác; phát亮 là bản thân vật sáng lên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "照亮 là chiếu sáng cái khác; phát亮 là bản thân vật sáng lên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "照亮",
+    "back": "chiếu sáng, soi sáng",
+    "hint": "zhàoliàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "184159f6-5e44-4bd9-b38c-0c4e65cc4158",
+    "source_lesson_vocab_id": null
+  }
+}

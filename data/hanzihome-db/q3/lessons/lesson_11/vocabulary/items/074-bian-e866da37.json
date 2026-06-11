@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_141b8a48f1985690",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "便",
+  "pinyin": "biàn",
+  "meaning_vi": "liền; bèn",
+  "pos": "Phó từ",
+  "pos_detail": {
+    "vi": "Phó từ",
+    "cn": "副词",
+    "normalized": "adverb",
+    "schema_compatible_pos": "adverb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+    "type": "vocabulary_item",
+    "order": 18,
+    "hanzi": "便",
+    "pinyin": "biàn",
+    "meaning_vi": "liền; bèn",
+    "meaning_en": "",
+    "pos": "Phó từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "便",
+      "back": "biàn — liền; bèn",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Phó từ",
+      "cn": "副词",
+      "normalized": "adverb",
+      "schema_compatible_pos": "adverb",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

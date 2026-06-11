@@ -1,0 +1,213 @@
+{
+  "id": "81dec22f-9eba-4c17-bacf-a7bfa2b7946c",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "向来",
+  "pinyin": "xiànglái",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hướng lai",
+    "meaning_vi": "từ trước đến nay; xưa nay vẫn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ trước đến nay",
+      "xưa nay vẫn"
+    ],
+    "short_definition_vi": "từ trước đến nay; xưa nay vẫn",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "向",
+        "lishu_vi": "",
+        "structure_note_vi": "向: hướng; xưa nay",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hướng; xưa nay",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: hướng; xưa nay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "来",
+        "lishu_vi": "",
+        "structure_note_vi": "来: đến",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đến",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: đến.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "向来 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 向来如此.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "002268c4-f8f5-4970-85a7-e80f1872e853",
+      "order": 1,
+      "zh": "向来如此",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0973276-6375-4698-8aa6-54b624fc899b",
+      "order": 2,
+      "zh": "向来不爱运动",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "784b0b74-e061-449f-a072-0cd40518c954",
+      "order": 3,
+      "zh": "向来很认真",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68a9511f-e70a-44d8-957d-426e69e9d41e",
+      "order": 4,
+      "zh": "向来守时",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ded389f5-c432-4252-b84a-abefe8ecdc66",
+      "order": 1,
+      "zh": "我向来不爱运动。",
+      "pinyin": "",
+      "vi": "Tôi từ trước đến nay không thích vận động。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "向来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81dec22f-9eba-4c17-bacf-a7bfa2b7946c"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "03cc8e3a-ddea-4777-a664-5b0ab34564ab",
+      "order": 2,
+      "zh": "他向来待人热情，所以大家都愿意找他帮忙。",
+      "pinyin": "",
+      "vi": "Anh ấy xưa nay đối đãi nhiệt tình nên mọi người đều sẵn lòng tìm anh ấy giúp。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "向来"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "81dec22f-9eba-4c17-bacf-a7bfa2b7946c"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bfefe31c-b646-4e12-a057-f1d69055aeb5",
+      "order": 1,
+      "rule_vi": "Không dùng 向来 cho việc mới xảy ra một lần.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 向来 cho việc mới xảy ra một lần.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "向来",
+    "back": "từ trước đến nay; xưa nay vẫn",
+    "hint": "xiànglái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "81dec22f-9eba-4c17-bacf-a7bfa2b7946c",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "id": "fcf1c0fd-f520-475b-9308-8f3f2624b637",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "吼",
+  "pinyin": "hǒu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "hống",
+    "meaning_vi": "gầm, hét to, quát",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gầm, hét to, quát"
+    ],
+    "short_definition_vi": "Âm thanh lớn, mạnh, thường có tức giận.",
+    "textbook_focus_vi": "Dùng trong 冲我吼, 大吼一声.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吼",
+        "lishu_vi": "hống",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hét/quát",
+        "modern_logic_vi": "hét/quát",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 口 nên liên quan âm thanh từ miệng.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "喊",
+        "pinyin": "hǎn",
+        "meaning_vi": "gọi to/hô",
+        "difference_vi": "喊 có thể trung tính; 吼 thô và mạnh hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d7fee31b-0851-4fe9-9c65-9537e421db10",
+      "order": 1,
+      "zh": "大吼一声",
+      "pinyin": "",
+      "vi": "hét lớn một tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18614d27-ce9d-4421-be46-598e591e9130",
+      "order": 2,
+      "zh": "冲我吼",
+      "pinyin": "",
+      "vi": "quát vào mặt tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa3109ae-5d44-4a67-b10b-5802a7b746df",
+      "order": 3,
+      "zh": "别吼了",
+      "pinyin": "",
+      "vi": "đừng quát nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ba0dd40-2923-4dc0-aced-366c32a293bb",
+      "order": 4,
+      "zh": "被他吼了一顿",
+      "pinyin": "",
+      "vi": "bị quát một trận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9b561d77-e508-4ded-8c96-81304d8ae972",
+      "order": 1,
+      "zh": "他突然大吼了一声，大家都吓了一跳。",
+      "pinyin": "",
+      "vi": "Anh ấy đột nhiên hét lớn một tiếng, mọi người giật mình.",
+      "analysis_vi": "一声 là lượng ngữ âm thanh.",
+      "highlight": [
+        "吼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fcf1c0fd-f520-475b-9308-8f3f2624b637"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8d6ae8df-3eca-4622-8f99-23497624505d",
+      "order": 2,
+      "zh": "孩子只是打翻了一盒冰激凌，你别冲他吼。",
+      "pinyin": "",
+      "vi": "Đứa bé chỉ làm đổ một hộp kem, đừng quát nó.",
+      "analysis_vi": "冲 + người + 吼 = quát vào ai.",
+      "highlight": [
+        "吼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fcf1c0fd-f520-475b-9308-8f3f2624b637"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a834b2ad-7f48-4d21-857c-6e852a179ddb",
+      "order": 1,
+      "rule_vi": "Không dùng 吼 cho “nói to” trung tính.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 吼 cho “nói to” trung tính.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吼",
+    "back": "gầm, hét to, quát",
+    "hint": "hǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fcf1c0fd-f520-475b-9308-8f3f2624b637",
+    "source_lesson_vocab_id": null
+  }
+}

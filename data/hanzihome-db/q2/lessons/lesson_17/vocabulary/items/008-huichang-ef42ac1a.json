@@ -1,0 +1,373 @@
+{
+  "id": "fb36c0e7-bb40-47f8-adbc-979dee8f75d8",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "会场",
+  "pinyin": "huìchǎng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Hội trường",
+    "meaning_vi": "địa điểm tổ chức hội nghị/sự kiện",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "địa điểm tổ chức hội nghị/sự kiện"
+    ],
+    "short_definition_vi": "địa điểm tổ chức hội nghị/sự kiện",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "sự kiện, trường học, công việc, tổ chức tập thể.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "会",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "mây/nói",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "họp, gặp, hội; biết/làm được",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "场",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất/nơi chốn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất/nơi chốn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nơi chốn, sân, bãi, sự kiện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "会 là họp, gặp gỡ, hội. 场 là nơi chốn, không gian diễn ra hoạt động. → 会场 = nơi diễn ra cuộc họp/sự kiện. Cảnh báo: 会场 không nhất thiết là “hội trường lớn” cố định. Một phòng học cũng có thể được 布置成会场.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "会场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "địa điểm tổ chức sự kiện/cuộc họp, nhấn chức năng sự kiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "会议厅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phòng họp lớn/hội trường họp, nhấn loại phòng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "礼堂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lễ đường/hội trường lớn, thường trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "教室",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lớp học, nhưng có thể được bố trí thành 会场.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 教室 là phòng học; sau khi trang trí, xếp bàn ghế, chuẩn bị âm thanh, nó có thể trở thành 会场."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2e21e8b6-d2a8-4e29-8d3e-fdd7b9963594",
+      "order": 1,
+      "zh": "布置会场",
+      "pinyin": "",
+      "vi": "bố trí hội trường / địa điểm sự kiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28a6dbce-1d41-4357-96cc-e70eb6b1b5e4",
+      "order": 2,
+      "zh": "进入会场",
+      "pinyin": "",
+      "vi": "vào hội trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c11587cf-91f3-4e3f-9e34-3304f7a4b4f1",
+      "order": 3,
+      "zh": "会场里",
+      "pinyin": "",
+      "vi": "trong hội trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c7ee779a-6a12-4f36-9822-f3c4808d94c1",
+      "order": 4,
+      "zh": "会场气氛",
+      "pinyin": "",
+      "vi": "không khí hội trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2571edd-1bba-4155-9079-0e7960e2bd7a",
+      "order": 5,
+      "zh": "会场前面 / 后面",
+      "pinyin": "",
+      "vi": "phía trước / phía sau hội trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f65332e5-e7b4-4ac3-a1b8-f13a67d7d650",
+      "order": 1,
+      "zh": "我们把教室布置成了春节联欢会的会场。",
+      "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng le Chūnjié liánhuānhuì de huìchǎng.",
+      "vi": "Chúng tôi đã bố trí lớp học thành địa điểm tổ chức buổi liên hoan Tết.",
+      "analysis_vi": "Câu chữ 把 rất chuẩn: 教室 là đối tượng xác định, 布置成会场 là biến lớp học thành không gian có chức năng mới.",
+      "highlight": [
+        "会场"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "fb36c0e7-bb40-47f8-adbc-979dee8f75d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c2603fe5-dc1a-4ced-8b05-432ac0d63adc",
+      "order": 2,
+      "zh": "会场前面摆着一张桌子，后面挂着彩带。",
+      "pinyin": "Huìchǎng qiánmian bǎizhe yì zhāng zhuōzi, hòumian guàzhe cǎidài.",
+      "vi": "Phía trước hội trường bày một cái bàn, phía sau treo dây ruy băng màu.",
+      "analysis_vi": "Đây là câu tồn hiện: 会场前面 / 后面 là địa điểm, 摆着 / 挂着 nói trạng thái đồ vật đang ở đó.",
+      "highlight": [
+        "会场"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "fb36c0e7-bb40-47f8-adbc-979dee8f75d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3ba0ecbd-8be4-40a2-b46e-83c40a10820f",
+      "order": 3,
+      "zh": "管理员说，不能把会场里的音响调得太大。",
+      "pinyin": "Guǎnlǐyuán shuō, bù néng bǎ huìchǎng lǐ de yīnxiǎng tiáo de tài dà.",
+      "vi": "Người quản lý nói không được chỉnh âm thanh trong hội trường quá lớn.",
+      "analysis_vi": "把音响调得太大 là câu chữ 把: tác động lên âm thanh/thiết bị làm mức âm lượng thay đổi.",
+      "highlight": [
+        "会场"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "fb36c0e7-bb40-47f8-adbc-979dee8f75d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 会场",
+    "content_vi": "Trong trường học hoặc cơ quan Trung Quốc, khi tổ chức hoạt động, người ta rất hay nói 布置会场. Một nét khá quen thuộc là treo 横幅 – héngfú – băng rôn ngang, ví dụ 欢迎…… hoặc tên sự kiện. Đây là kiểu trang trí sự kiện rất phổ biến ở Trung Quốc lẫn Việt Nam.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "973e402a-e47b-4e8c-b16f-fdf2c114281d",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dịch 会场 cứng thành “phòng họp” trong mọi trường hợp. Tự nhiên hơn: 布置会场 Bùzhì huìchǎng Bố trí địa điểm tổ chức sự kiện. 会议在三楼会议厅举行。 Huìyì zài sān lóu huìyìtīng jǔxíng. Cuộc họp tổ chức ở phòng họp lớn tầng ba.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "会场",
+    "back": "địa điểm tổ chức hội nghị/sự kiện",
+    "hint": "huìchǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fb36c0e7-bb40-47f8-adbc-979dee8f75d8",
+    "source_lesson_vocab_id": null
+  }
+}

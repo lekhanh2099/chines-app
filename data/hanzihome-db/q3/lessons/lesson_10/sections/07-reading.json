@@ -1,0 +1,553 @@
+{
+  "id": "e7e70061-d8b7-41b0-aabb-2d36fc866501",
+  "type": "reading",
+  "order": 7,
+  "title": "综合填空",
+  "title_vi": "Điền khuyết tổng hợp / đọc hiểu",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "6a821742-0f34-4663-8a4a-150b1ca5bfa9",
+      "type": "reading_vocabulary",
+      "order": 1,
+      "title": "补充生词",
+      "items": [
+        {
+          "id": "3051da38-613c-485f-8646-d63ef6c6eb5b",
+          "type": "vocabulary_item",
+          "order": 1,
+          "hanzi": "抱歉",
+          "pinyin": "bàoqiàn",
+          "meaning_vi": "xin lỗi; lấy làm tiếc",
+          "meaning_en": "",
+          "pos": "Động từ / Tính từ",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ",
+            "cn": "动词 / 形容词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ / Tính từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "抱歉",
+            "back": "bàoqiàn — xin lỗi; lấy làm tiếc",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "8eba5dd1-5c70-49be-8252-fac5f68cd9ba",
+          "type": "vocabulary_item",
+          "order": 2,
+          "hanzi": "经营",
+          "pinyin": "jīngyíng",
+          "meaning_vi": "kinh doanh; quản lý vận hành",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "经营",
+            "back": "jīngyíng — kinh doanh; quản lý vận hành",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "600bc124-40e3-479c-b2a7-4f95e42e263c",
+          "type": "vocabulary_item",
+          "order": 3,
+          "hanzi": "生存",
+          "pinyin": "shēngcún",
+          "meaning_vi": "sinh tồn; tồn tại; sống sót",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "生存",
+            "back": "shēngcún — sinh tồn; tồn tại; sống sót",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "46aede47-4430-4d17-befd-37576908c5ab",
+          "type": "vocabulary_item",
+          "order": 4,
+          "hanzi": "辞退",
+          "pinyin": "cítuì",
+          "meaning_vi": "sa thải; cho thôi việc",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "辞退",
+            "back": "cítuì — sa thải; cho thôi việc",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "080004d9-dd03-4a10-80f8-c0fa6a3604cf",
+          "type": "vocabulary_item",
+          "order": 5,
+          "hanzi": "年龄",
+          "pinyin": "niánlíng",
+          "meaning_vi": "tuổi tác",
+          "meaning_en": "",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Danh từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "年龄",
+            "back": "niánlíng — tuổi tác",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ee1b9f25-18ac-42b1-984b-8fab624e0bf8",
+          "type": "vocabulary_item",
+          "order": 6,
+          "hanzi": "颤抖",
+          "pinyin": "chàndǒu",
+          "meaning_vi": "run rẩy",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "颤抖",
+            "back": "chàndǒu — run rẩy",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cb78e64f-56f6-420f-b7ba-937921ddd98f",
+          "type": "vocabulary_item",
+          "order": 7,
+          "hanzi": "公平",
+          "pinyin": "gōngpíng",
+          "meaning_vi": "công bằng",
+          "meaning_en": "",
+          "pos": "Tính từ",
+          "pos_detail": {
+            "vi": "Tính từ",
+            "cn": "形容词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Tính từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "公平",
+            "back": "gōngpíng — công bằng",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "19248625-775e-44d6-a88a-3396d5cf228c",
+          "type": "vocabulary_item",
+          "order": 8,
+          "hanzi": "同情",
+          "pinyin": "tóngqíng",
+          "meaning_vi": "thông cảm; thương cảm; đồng tình",
+          "meaning_en": "",
+          "pos": "Động từ / Danh từ",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ",
+            "cn": "动词 / 名词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ / Danh từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "同情",
+            "back": "tóngqíng — thông cảm; thương cảm; đồng tình",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "8f9eaa92-9c33-41c3-b22b-6306828eef72",
+          "type": "vocabulary_item",
+          "order": 9,
+          "hanzi": "振作",
+          "pinyin": "zhènzuò",
+          "meaning_vi": "vực dậy tinh thần; phấn chấn lên",
+          "meaning_en": "",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "振作",
+            "back": "zhènzuò — vực dậy tinh thần; phấn chấn lên",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fca002f7-1bcf-47c2-a66a-a1bf3a7121d8",
+          "type": "vocabulary_item",
+          "order": 10,
+          "hanzi": "即使",
+          "pinyin": "jíshǐ",
+          "meaning_vi": "cho dù; dù cho",
+          "meaning_en": "",
+          "pos": "Liên từ",
+          "pos_detail": {
+            "vi": "Liên từ",
+            "cn": "连词",
+            "normalized": "conjunction",
+            "schema_compatible_pos": "conjunction",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Liên từ. Không xử lý như động từ li hợp.",
+            "notes": []
+          },
+          "tags": [
+            "supplementary_vocab",
+            "reading_vocab"
+          ],
+          "examples": [],
+          "flashcard": {
+            "front": "即使",
+            "back": "jíshǐ — cho dù; dù cho",
+            "modes": [
+              "hanzi_to_meaning",
+              "meaning_to_hanzi",
+              "pinyin_to_hanzi",
+              "audio_to_hanzi"
+            ],
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "notes": []
+          },
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "6e5f5258-33c9-42fb-8c81-2b3425ad68c4",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 2,
+      "title": "从头再来",
+      "title_vi": "Bắt đầu lại từ đầu",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền vào chỗ trống."
+      },
+      "text": "一个美丽的早晨，你早早地起床，走①________办公室，准备迎接新的一天的工作。你是那么热爱你的工作，因为你在这个公司干②________二十年了，上上下下的关系都不错。\n\n忽然老板打来电话，③________你马上去一下儿，电话里他的语调让你感到要有麻烦。在老板的办公室里，他说：“非常抱歉，你也知道，公司经营一直不太好，为了能使公司继续生存④________，经过认真考虑，决定辞退一部分年龄较大的员工，你是其中之一。”\n\n什么？你用颤抖的手拿⑤________辞退通知书，简直不敢相信这是真的。\n\n这时，你怎么办？你会感到不安，这很正常。你会问：“为什么是我？”你觉得不公平，但谁说这个世界是公平⑥________！\n\n别为自己难过，因为你周围的人可能会同情你，但没有用。你也不用埋怨老板，他们也有他们的难处。这时，重要的是自己要有信心。既然你不希望别人看到自己的失败，你就必须在痛苦之后，振作⑦________。只要你有信心，相信自己的能力，即使没有什么能力，还可以学习，谁说四十岁以后就不能重新学习了？天下的路有千条万条，只要你做好了准备，那么你就信心十足地上路吧。不过是从头再来。\n\n明天的早晨说不定会⑧________美丽。",
+      "pinyin": "yí ge měilì de zǎochén，nǐ zǎozǎo de qǐchuáng，zǒu ① _ _ _ bàngōngshì，zhǔnbèi yíngjiē xīn de yì tiān de gōngzuò。nǐ shì nàme rè’ài nǐ de gōngzuò，yīnwèi nǐ zài zhè ge gōngsī gàn ② _ _ _ èrshí nián le，shàngshang-xiàxia de guānxi dōu bú cuò。\n\nhūrán lǎobǎn dǎlái diànhuà，③ _ _ _ nǐ mǎshàng qù yíxiàr，diànhuà lǐ tā de yǔdiào ràng nǐ gǎndào yào yǒu máfan。zài lǎobǎn de bàngōngshì lǐ，tā shuō：“fēicháng bàoqiàn，nǐ yě zhīdào，gōngsī jīngyíng yìzhí bú tài hǎo，wèile néng shǐ gōngsī jìxù shēngcún ④ _ _ _，jīngguò rènzhēn kǎolǜ，juédìng cítuì yí bùfen niánlíng jiào dà de yuángōng，nǐ shì qízhōng zhī yī。”\n\nshénme？nǐ yòng chàndǒu de shǒu ná ⑤ _ _ _ cítuì tōngzhīshū，jiǎnzhí bù gǎn xiāngxìn zhè shì zhēn de。\n\nzhè shí，nǐ zěnme bàn？nǐ huì gǎndào bù’ān，zhè hěn zhèngcháng。nǐ huì wèn：“wèishénme shì wǒ？”nǐ juéde bù gōngpíng，dàn shuí shuō zhè ge shìjiè shì gōngpíng ⑥ _ _ _！\n\nbié wèi zìjǐ nánguò，yīnwèi nǐ zhōuwéi de rén kěnéng huì tóngqíng nǐ，dàn méiyǒu yòng。nǐ yě bú yòng mányuàn lǎobǎn，tāmen yě yǒu tāmen de nánchu。zhè shí，zhòngyào de shì zìjǐ yào yǒu xìnxīn。jìrán nǐ bù xīwàng biérén kàndào zìjǐ de shībài，nǐ jiù bìxū zài tòngkǔ zhīhòu，zhènzuò ⑦ _ _ _。zhǐyào nǐ yǒu xìnxīn，xiāngxìn zìjǐ de nénglì，jíshǐ méiyǒu shénme nénglì，hái kěyǐ xuéxí，shuí shuō sìshí suì yǐhòu jiù bù néng chóngxīn xuéxí le？tiānxià de lù yǒu qiān tiáo wàn tiáo，zhǐyào nǐ zuò hǎo le zhǔnbèi，nàme nǐ jiù xìnxīn shízú de shànglù ba。búguò shì cóngtóu zài lái。\n\nmíngtiān de zǎochén shuōbudìng huì ⑧ _ _ _ měilì。",
+      "blanks": [
+        {
+          "id": "d9aa6465-1ff3-48f3-8447-45f1d039325e",
+          "index": 1,
+          "answer": "进",
+          "answer_pinyin": "jìn",
+          "explanation_vi": "走进办公室 = đi vào văn phòng.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "2d3acd0f-24f2-4344-8520-ec0a2d9cf5c3",
+          "index": 2,
+          "answer": "了",
+          "answer_pinyin": "le",
+          "explanation_vi": "干了二十年了 = đã làm được hai mươi năm rồi; 了 sau động từ + cuối câu cùng nhấn thời lượng kéo dài đến hiện tại.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "94f97ca7-512a-4dd2-8cde-1c02a00e6959",
+          "index": 3,
+          "answer": "要",
+          "answer_pinyin": "yào",
+          "explanation_vi": "要你马上去一下儿 = yêu cầu/bảo bạn lập tức qua một lát; đáp án theo key là 要, không phải 叫.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "bc3f49ff-dbb4-44bf-b4d3-9345a983123d",
+          "index": 4,
+          "answer": "下去",
+          "answer_pinyin": "xiàqu",
+          "explanation_vi": "生存下去 = tiếp tục sinh tồn/tồn tại.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "47b6ba1b-5adc-4d7f-8806-b2c538af639c",
+          "index": 5,
+          "answer": "着",
+          "answer_pinyin": "zhe",
+          "explanation_vi": "拿着辞退通知书 = cầm trong tay thông báo sa thải; 着 chỉ trạng thái đang giữ/cầm.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "151c63b0-d2ef-474d-9812-23a845e855b0",
+          "index": 6,
+          "answer": "的",
+          "answer_pinyin": "de",
+          "explanation_vi": "世界是公平的 = thế giới là công bằng; 的 làm câu phán đoán/tính chất tự nhiên hơn.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "d17985ba-faf4-4cdf-b0a0-00a00ee4e8ac",
+          "index": 7,
+          "answer": "起来",
+          "answer_pinyin": "qǐlai",
+          "explanation_vi": "振作起来 = vực dậy tinh thần/phấn chấn lên.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e69a8918-b691-44de-9198-373715192652",
+          "index": 8,
+          "answer": "更",
+          "answer_pinyin": "gèng",
+          "explanation_vi": "会更美丽 = sẽ càng đẹp hơn; đáp án theo key là 更.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "answer_verified": true,
+      "translation_vi": "Một buổi sáng đẹp trời, bạn dậy thật sớm, bước vào văn phòng, chuẩn bị đón một ngày làm việc mới. Bạn yêu công việc của mình đến thế, bởi vì bạn đã làm ở công ty này hai mươi năm rồi, quan hệ trên dưới đều khá tốt.\n\nBỗng nhiên ông chủ gọi điện thoại tới, yêu cầu bạn lập tức qua một lát. Giọng nói của ông ấy trong điện thoại khiến bạn cảm thấy sắp có chuyện phiền phức. Trong phòng làm việc của ông chủ, ông ấy nói: “Rất xin lỗi, bạn cũng biết đấy, việc kinh doanh của công ty trước nay vẫn không tốt lắm. Để công ty có thể tiếp tục tồn tại, sau khi cân nhắc nghiêm túc, chúng tôi quyết định sa thải một bộ phận nhân viên lớn tuổi hơn, và bạn là một trong số đó.”\n\nCái gì? Bạn cầm thông báo sa thải bằng đôi tay run rẩy, thật sự gần như không dám tin đây là sự thật.\n\nLúc này, bạn sẽ làm gì? Bạn sẽ cảm thấy bất an; điều này rất bình thường. Bạn sẽ hỏi: “Tại sao lại là tôi?” Bạn cảm thấy không công bằng, nhưng ai nói thế giới này là công bằng chứ!\n\nĐừng buồn cho bản thân, vì những người xung quanh có thể sẽ thương cảm bạn, nhưng điều đó không có ích. Bạn cũng không cần oán trách ông chủ; họ cũng có cái khó của họ. Lúc này, điều quan trọng là bản thân phải có niềm tin. Đã vậy, nếu bạn không hy vọng người khác nhìn thấy thất bại của mình, thì sau đau khổ bạn nhất định phải vực dậy tinh thần. Chỉ cần bạn có niềm tin, tin vào năng lực của mình, thì cho dù không có năng lực gì, vẫn có thể học. Ai nói sau bốn mươi tuổi thì không thể học lại từ đầu? Đường trong thiên hạ có ngàn vạn nẻo; chỉ cần bạn đã chuẩn bị xong, vậy thì hãy đầy tự tin mà lên đường. Cùng lắm chỉ là bắt đầu lại từ đầu.\n\nBuổi sáng ngày mai biết đâu sẽ càng đẹp hơn.",
+      "source_origin": "textbook_question_checked_answer",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_ca8903245e4d0109",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "笑",
+  "pinyin": "xiào",
+  "meaning_vi": "cười; mỉm cười",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "3fe44e24-9a39-5c07-917d-fdfd90122442",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "3fe44e24-9a39-5c07-917d-fdfd90122442",
+    "type": "vocabulary_item",
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "order": 23,
+    "hanzi": "笑",
+    "pinyin": "xiào",
+    "meaning_vi": "cười; mỉm cười",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "pdf_checked"
+    ],
+    "flashcard": {
+      "front": "笑",
+      "back": "xiào — cười; mỉm cười",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

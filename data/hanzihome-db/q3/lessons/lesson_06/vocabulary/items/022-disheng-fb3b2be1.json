@@ -1,0 +1,291 @@
+{
+  "id": "9cf66da8-756a-4590-8ac6-68e7400e9512",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "低声",
+  "pinyin": "dīshēng",
+  "pos": {
+    "raw_vi": "Trạng ngữ / Cụm tính từ",
+    "raw_cn": "副词性短语/形",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đê thanh",
+    "meaning_vi": "nhỏ giọng; nói khẽ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhỏ giọng",
+      "nói khẽ"
+    ],
+    "short_definition_vi": "nhỏ giọng",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "低",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người, hành vi của người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người, hành vi của người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người, hành vi của người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thấp",
+        "modern_logic_vi": "Trong từ 低声, chữ 低 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "声",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiếng, âm thanh",
+        "modern_logic_vi": "Trong từ 低声, chữ 声 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "Không gán bộ thủ/thành phần nếu không chắc; ưu tiên học theo cụm.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "低声 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他低声说：“别让邻居听见。”",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小声",
+        "pinyin": "xiǎoshēng",
+        "meaning_vi": "nhỏ tiếng",
+        "difference_vi": "小声 khẩu ngữ hơn 低声.",
+        "register_vi": "",
+        "example_zh": "请小声一点儿。",
+        "example_vi": "Xin nói nhỏ một chút.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e25cee73-6348-49ef-befc-084f5e08ea2f",
+      "order": 1,
+      "zh": "低声说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "210dd622-b6ed-47d5-9241-e4f34ce68e20",
+      "order": 2,
+      "zh": "低声问",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99042134-ed22-47b4-a5df-6340d34a10cc",
+      "order": 3,
+      "zh": "低声回答",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bcd56f07-2eb0-42ec-9e12-4e2721965bc3",
+      "order": 4,
+      "zh": "低声告诉我",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "224f7799-b962-459b-bcb8-15e71ca4f20b",
+      "order": 5,
+      "zh": "低声哭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b91b349-e331-4a06-9ac7-fe96879897be",
+      "order": 6,
+      "zh": "低声下气",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c534419-fb9f-4b1e-8e6b-9b789098d599",
+      "order": 7,
+      "zh": "低声闲谈",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "165d36b1-dadd-4833-9b79-b4e112b82768",
+      "order": 1,
+      "zh": "他低声说：“别让邻居听见。”",
+      "pinyin": "",
+      "vi": "Anh ấy nói nhỏ: “Đừng để hàng xóm nghe thấy.”",
+      "analysis_vi": "Ví dụ dùng 低声 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "低声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9cf66da8-756a-4590-8ac6-68e7400e9512"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "低声 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b7227565-e252-40d5-abb4-2b95960ca57e",
+      "order": 1,
+      "rule_vi": "低声 thường đi trước động từ nói như 低声说, 低声问; không dùng như động từ độc lập.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "低声",
+    "back": "nhỏ giọng; nói khẽ",
+    "hint": "dīshēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9cf66da8-756a-4590-8ac6-68e7400e9512",
+    "source_lesson_vocab_id": null
+  }
+}

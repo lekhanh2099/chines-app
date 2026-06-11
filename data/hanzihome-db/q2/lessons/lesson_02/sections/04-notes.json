@@ -1,0 +1,155 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "你怎么了？",
+      "structure": "你怎么了？",
+      "meaning_vi": "Dùng để hỏi người khác “bạn bị sao vậy?”, thường khi thấy người đó có biểu hiện bất thường. 怎么 hỏi “thế nào / sao”, 了 cuối câu báo hiệu một tình trạng mới hoặc thay đổi.",
+      "examples": [
+        {
+          "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+          "zh": "你怎么了？",
+          "vi": "",
+          "pinyin": "Nǐ zěnme le?",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
+          "zh": "玛丽，你怎么哭了？",
+          "vi": "",
+          "pinyin": "Mǎlì, nǐ zěnme kū le?",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b8b00131-7f5e-4693-ac5b-7bcfce304e11",
+          "zh": "你怎么不说话了？",
+          "vi": "",
+          "pinyin": "Nǐ zěnme bù shuōhuà le?",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "就吃了一些鱼和牛肉。",
+      "structure": "就 + 动词 + 了 + 数量/宾语",
+      "meaning_vi": "就 ở đây nghĩa là “chỉ / chỉ có”, nhấn mạnh phạm vi hạn chế. Trong bài, người bệnh nói mình chỉ ăn một ít cá và thịt bò thôi.",
+      "examples": [
+        {
+          "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+          "zh": "就吃了一些鱼和牛肉。",
+          "vi": "",
+          "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b45bc13e-c6e0-4fab-a808-4b732cb085a7",
+          "zh": "我就喝了一杯水。",
+          "vi": "",
+          "pinyin": "Wǒ jiù hē le yì bēi shuǐ.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "f88bd16e-4cfa-40b5-841c-cfbc61411c51",
+          "zh": "他就买了两本书。",
+          "vi": "",
+          "pinyin": "Tā jiù mǎi le liǎng běn shū.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "别难过了。",
+      "structure": "别 + 动词/形容词 + 了",
+      "meaning_vi": "Khuyên người khác đừng tiếp tục ở trạng thái đó nữa. 别 là “đừng”, 了 làm sắc thái “đừng... nữa”.",
+      "examples": [
+        {
+          "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
+          "zh": "别难过了。",
+          "vi": "",
+          "pinyin": "Bié nánguò le.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "1b3405fa-a29a-4d15-a133-d8b1cc886dec",
+          "zh": "别哭了。",
+          "vi": "",
+          "pinyin": "Bié kū le.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "725e3118-8a0a-4e0b-928a-e06e4004f156",
+          "zh": "别说了。",
+          "vi": "",
+          "pinyin": "Bié shuō le.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
+      "type": "note",
+      "order": 4,
+      "title": "跳跳舞",
+      "structure": "V + V + O",
+      "meaning_vi": "Lặp động từ để làm giọng nhẹ hơn: làm một chút / làm cho vui. 跳舞 là động từ ly hợp, lặp phần động từ phía trước: 跳跳舞.",
+      "examples": [
+        {
+          "id": "ba6f33e1-5a6f-47fc-896e-13e6e19ed2d0",
+          "zh": "我们一起去跳跳舞吧。",
+          "vi": "",
+          "pinyin": "Wǒmen yìqǐ qù tiàotiao wǔ ba.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "7ab25155-2d20-40f8-81ed-fc1b421cdbd6",
+          "zh": "我想出去散散步。",
+          "vi": "",
+          "pinyin": "Wǒ xiǎng chūqù sànsan bù.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "efe958a9-0c4e-4f47-bfbb-8ede12a3ce31",
+          "zh": "你休息休息吧。",
+          "vi": "",
+          "pinyin": "Nǐ xiūxi xiūxi ba.",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

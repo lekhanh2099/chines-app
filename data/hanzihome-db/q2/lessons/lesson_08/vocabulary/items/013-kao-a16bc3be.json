@@ -1,0 +1,309 @@
+{
+  "id": "17ede4e0-f99c-4a2e-9299-0d9a9b966275",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "靠",
+  "pinyin": "kào",
+  "pos": {
+    "raw_vi": "Động từ / Giới từ",
+    "raw_cn": "动/介",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kháo",
+    "meaning_vi": "dựa vào, nhờ vào, sát gần",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "dựa vào, nhờ vào, sát gần",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "靠",
+        "lishu_vi": "kháo",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dựa vào, tựa vào",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Không cần chiết tự sâu. Logic hiện đại: Một người/vùng dựa vào nguồn thu nào để sống → 靠 + nguồn/cách + 生活. Một người đứng/sit gần một vật → 靠 + nơi/vật.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 靠 trong khẩu ngữ còn có thể là câu cảm thán tục/khó chịu ở một số vùng, nhưng trong giáo trình mình học nghĩa chuẩn là “dựa vào / gần”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "靠",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dựa vào, nhờ vào.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "依靠",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dựa vào, trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "凭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dựa vào, bằng vào năng lực/giấy tờ/chứng cứ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "离……近",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gần..., nói khoảng cách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "在……旁边",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ở bên cạnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "他们靠旅游生活。",
+      "Họ sống dựa vào du lịch.",
+      "他靠自己的努力考上了大学。",
+      "Anh ấy dựa vào nỗ lực của mình mà thi đậu đại học.",
+      "我坐在靠窗的座位上。",
+      "Tôi ngồi ở chỗ gần cửa sổ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "528e26ae-423d-4873-9c0c-87a4d95e6c95",
+      "order": 1,
+      "zh": "靠旅游生活",
+      "pinyin": "",
+      "vi": "sống dựa vào du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "866172b4-5ca0-429b-b3f0-dbd88c1ce6ec",
+      "order": 2,
+      "zh": "靠经营旅馆发财",
+      "pinyin": "",
+      "vi": "làm giàu nhờ kinh doanh khách sạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b83d28a8-881b-4ed4-a0a4-76828c894d44",
+      "order": 3,
+      "zh": "靠自己",
+      "pinyin": "",
+      "vi": "dựa vào chính mình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "164df3ad-ebb2-4930-88f7-9a91c577ccb6",
+      "order": 4,
+      "zh": "靠父母",
+      "pinyin": "",
+      "vi": "dựa vào cha mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2247f09f-ea55-46fc-a8a4-d46093b3c518",
+      "order": 5,
+      "zh": "靠窗",
+      "pinyin": "",
+      "vi": "gần cửa sổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f8855f4-8965-4f0a-b490-0ce64eb5bbbb",
+      "order": 6,
+      "zh": "靠近",
+      "pinyin": "",
+      "vi": "lại gần, gần sát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fed37d7c-92a7-4c39-99d0-ebfba9b6520d",
+      "order": 1,
+      "zh": "很多人家靠旅游生活。",
+      "pinyin": "Hěn duō rénjiā kào lǚyóu shēnghuó.",
+      "vi": "Nhiều hộ dân sống dựa vào du lịch.",
+      "analysis_vi": "靠旅游生活 = dựa vào du lịch để sống. 人家 ở đây là hộ dân/gia đình.",
+      "highlight": [
+        "靠"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17ede4e0-f99c-4a2e-9299-0d9a9b966275"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "121f41ba-dcb2-4138-99ea-1dbb68312c5a",
+      "order": 2,
+      "zh": "冬天快要到了，靠避暑发财的人家不再那么忙了。",
+      "pinyin": "Dōngtiān kuài yào dào le, kào bìshǔ fācái de rénjiā bú zài nàme máng le.",
+      "vi": "Mùa đông sắp đến rồi, những hộ dân làm giàu nhờ du lịch tránh nóng không còn bận như vậy nữa.",
+      "analysis_vi": "快要到了 báo sắp đến. 靠避暑发财的人家 là cụm định ngữ. 不再……了 = không còn... nữa.",
+      "highlight": [
+        "靠"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17ede4e0-f99c-4a2e-9299-0d9a9b966275"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b0e09ce3-342c-4f90-bc64-c06ca56cfc7a",
+      "order": 3,
+      "zh": "这个风景区过去只有几户人家靠种瓜果生活，后来旅游发展起来了，他们才慢慢地靠经营小旅馆赚到钱。",
+      "pinyin": "Zhège fēngjǐngqū guòqù zhǐ yǒu jǐ hù rénjiā kào zhòng guāguǒ shēnghuó, hòulái lǚyóu fāzhǎn qǐlai le, tāmen cái mànmàn de kào jīngyíng xiǎo lǚguǎn zhuàn dào qián.",
+      "vi": "Khu thắng cảnh này trước đây chỉ có vài hộ dân sống nhờ trồng rau quả; sau đó du lịch phát triển lên, họ mới dần dần kiếm được tiền nhờ kinh doanh nhà nghỉ nhỏ.",
+      "analysis_vi": "过去 / 后来 tạo đối chiếu thời gian. 发展起来了 là biến hóa phát triển. 慢慢地靠…… dùng 地 làm trạng ngữ.",
+      "highlight": [
+        "靠"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17ede4e0-f99c-4a2e-9299-0d9a9b966275"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Ở các vùng du lịch Trung Quốc, nhiều hộ dân địa phương có thể chuyển từ nông nghiệp sang 靠旅游生活: mở nhà nghỉ, bán đặc sản, làm dịch vụ chụp ảnh, ăn uống, hướng dẫn du lịch.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d9e2af32-9d52-4926-9647-6b8f4867a3fa",
+      "order": 1,
+      "rule_vi": "Đừng dịch 靠 chỉ là “dựa lưng”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "靠墙站 = đứng dựa/sát tường. 靠旅游生活 = sống dựa vào du lịch. 靠自己努力 = dựa vào nỗ lực của chính mình.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "靠",
+    "back": "dựa vào, nhờ vào, sát gần",
+    "hint": "kào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "17ede4e0-f99c-4a2e-9299-0d9a9b966275",
+    "source_lesson_vocab_id": null
+  }
+}

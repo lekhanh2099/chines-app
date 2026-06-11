@@ -1,0 +1,265 @@
+{
+  "id": "f71b4121-3b38-4e35-9d8a-2c9c293766c8",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "甜",
+  "pinyin": "tián",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Điềm",
+    "meaning_vi": "ngọt; dễ chịu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ngọt; dễ chịu"
+    ],
+    "short_definition_vi": "ngọt; dễ chịu",
+    "textbook_focus_vi": "ngọt; dễ chịu",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "甜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "舌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "舌",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thiệt",
+              "radical_name_zh": "",
+              "hanviet": "thiệt",
+              "meaning_vi": "lưỡi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "甘",
+            "hanviet": "cam",
+            "meaning_vi": "ngọt",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "ngọt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "vị ngọt như đường/mật",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "10b9e42c-af39-4c31-bfdd-34d21708e29f",
+      "order": 1,
+      "zh": "很甜",
+      "pinyin": "",
+      "vi": "rất ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "45799ea0-0f9c-4a37-abc4-e5cb4127c0f9",
+      "order": 2,
+      "zh": "太甜了",
+      "pinyin": "",
+      "vi": "ngọt quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c618217-3ef3-4a41-bead-efb6ffff7edc",
+      "order": 3,
+      "zh": "甜味",
+      "pinyin": "",
+      "vi": "vị ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d4ac7a99-0ce3-4109-9515-f75e55bf2a9e",
+      "order": 4,
+      "zh": "甜点",
+      "pinyin": "",
+      "vi": "đồ ngọt/tráng miệng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91a3c6b2-c8d4-4d07-939c-bd8387ebfde8",
+      "order": 5,
+      "zh": "嘴甜",
+      "pinyin": "",
+      "vi": "miệng ngọt/khéo nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b708d84c-77ac-46a6-908c-7b4f27f53512",
+      "order": 1,
+      "zh": "这个水果很甜。",
+      "pinyin": "Zhège shuǐguǒ hěn tián.",
+      "vi": "Loại trái cây này rất ngọt.",
+      "analysis_vi": "甜 là vị giác cơ bản.",
+      "highlight": [
+        "甜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f71b4121-3b38-4e35-9d8a-2c9c293766c8"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b078615f-9443-425c-843d-b04d3478160e",
+      "order": 2,
+      "zh": "如果不了解甜，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě tián, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 甜, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "甜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f71b4121-3b38-4e35-9d8a-2c9c293766c8"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fbf8e38d-198a-42c4-a863-caf5ee1c4620",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解甜在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě tián zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 甜 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "甜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f71b4121-3b38-4e35-9d8a-2c9c293766c8"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "甜 còn dùng nghĩa cảm xúc: 甜蜜的爱情, 嘴甜.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4cb6e285-a352-42ac-b124-84ebbfcaf6e5",
+      "order": 1,
+      "rule_vi": "甜 là tính từ, 糖 là danh từ đường/kẹo; không nói 很糖。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "甜",
+    "back": "ngọt; dễ chịu",
+    "hint": "tián",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f71b4121-3b38-4e35-9d8a-2c9c293766c8",
+    "source_lesson_vocab_id": null
+  }
+}

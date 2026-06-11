@@ -1,0 +1,289 @@
+{
+  "id": "7b98c600-83c8-4822-a0de-4bf920ad1d25",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "熟练",
+  "pinyin": "shúliàn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thục luyện",
+    "meaning_vi": "thành thạo, thuần thục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thành thạo",
+      "thuần thục"
+    ],
+    "short_definition_vi": "thành thạo do luyện nhiều",
+    "textbook_focus_vi": "thành thạo do luyện nhiều",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "熟",
+        "lishu_vi": "thục",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "灬",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "练",
+        "lishu_vi": "luyện",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thành thạo do luyện nhiều",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 操作熟练.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "熟悉",
+        "pinyin": "shúxī",
+        "meaning_vi": "quen thuộc",
+        "difference_vi": "biết rõ nhưng chưa chắc thao tác giỏi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1891e746-a934-494a-86b5-907861847595",
+      "order": 1,
+      "zh": "操作熟练",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35a3d154-cf32-43a8-8006-6db927df9da6",
+      "order": 2,
+      "zh": "熟练地操作电脑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62d03bbd-3893-4a16-874d-630269abc7da",
+      "order": 3,
+      "zh": "熟练使用软件",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "96999d21-5292-44d4-9536-1203abd5e184",
+      "order": 4,
+      "zh": "熟练掌握技巧",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88977492-9ec6-4a78-afb2-f81410533b8f",
+      "order": 5,
+      "zh": "熟练工人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82ef8f79-bd32-4a44-9870-0514cd3acdbb",
+      "order": 6,
+      "zh": "越来越熟练",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3ac4a621-33c1-4b90-acba-ab5ae25ec0fb",
+      "order": 1,
+      "zh": "他现在操作电脑很熟练。",
+      "pinyin": "Tā xiànzài cāozuò diànnǎo hěn shúliàn.",
+      "vi": "Bây giờ anh ấy thao tác máy tính rất thành thạo.",
+      "analysis_vi": "熟练 miêu tả thao tác trơn tru do luyện nhiều.",
+      "highlight": [
+        "熟练"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7b98c600-83c8-4822-a0de-4bf920ad1d25"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "CV hay dùng 熟练使用…… để nói sử dụng thành thạo.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2e6fc5ac-0dba-4606-95b8-5e73f46ff3c3",
+      "order": 1,
+      "rule_vi": "熟悉 là quen biết rõ; 熟练 là làm được trơn tru.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "熟练",
+    "back": "thành thạo, thuần thục",
+    "hint": "shúliàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7b98c600-83c8-4822-a0de-4bf920ad1d25",
+    "source_lesson_vocab_id": null
+  }
+}

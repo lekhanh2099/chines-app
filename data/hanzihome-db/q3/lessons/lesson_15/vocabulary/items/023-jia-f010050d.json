@@ -1,0 +1,202 @@
+{
+  "id": "3731cb5d-85d8-415b-b014-7da2f86d1bf2",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "夹",
+  "pinyin": "jiā",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giáp",
+    "meaning_vi": "kẹp; gắp; mắc kẹt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kẹp",
+      "gắp",
+      "mắc kẹt"
+    ],
+    "short_definition_vi": "kẹp; gắp; mắc kẹt",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "夹",
+        "lishu_vi": "",
+        "structure_note_vi": "夹: kẹp",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kẹp",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: kẹp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "夹 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 夹在中间.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "552fe282-e196-4ea5-94b9-7fb55ebd7f9a",
+      "order": 1,
+      "zh": "夹在中间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf072cfd-d892-46e4-ab2d-5dc3bea3a41b",
+      "order": 2,
+      "zh": "被门夹了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69e67601-a9ca-4b78-8687-61b5a2a22829",
+      "order": 3,
+      "zh": "夹菜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1f9a2c6-5071-446f-9632-f89bc611d85f",
+      "order": 4,
+      "zh": "夹住车轮",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c61f351b-651d-4cd1-9676-a50c73f80ab5",
+      "order": 1,
+      "zh": "车轮夹在铁道里，怎么也拉不出来。",
+      "pinyin": "",
+      "vi": "Bánh xe kẹt trong đường ray, kéo thế nào cũng không ra。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "夹"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3731cb5d-85d8-415b-b014-7da2f86d1bf2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a1c4cd90-2a34-4194-93c4-ba767d50eeaa",
+      "order": 2,
+      "zh": "我的手被门夹了一下。",
+      "pinyin": "",
+      "vi": "Tay tôi bị cửa kẹp một cái。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "夹"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3731cb5d-85d8-415b-b014-7da2f86d1bf2"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6ebca49e-ae48-4b9b-a792-f3e2e6ecaadc",
+      "order": 1,
+      "rule_vi": "Không nói 用筷子拿菜; dùng 用筷子夹菜。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 用筷子拿菜; dùng 用筷子夹菜。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "夹",
+    "back": "kẹp; gắp; mắc kẹt",
+    "hint": "jiā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3731cb5d-85d8-415b-b014-7da2f86d1bf2",
+    "source_lesson_vocab_id": null
+  }
+}

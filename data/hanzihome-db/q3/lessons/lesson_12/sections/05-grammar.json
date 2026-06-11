@@ -1,0 +1,251 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法 / 语法",
+  "title_vi": "Cách dùng từ / Ngữ pháp",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "尽管",
+      "title_vi": "尽管",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "尽管 có 2 cách dùng chính: liên từ nghĩa là 'mặc dù', thường đi với 但是/可是; phó từ nghĩa là 'cứ việc'.",
+          "examples": []
+        },
+        {
+          "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "尽管 làm liên từ",
+          "pattern": "尽管 + vế nhượng bộ，可是/但是 + kết quả trái kỳ vọng",
+          "meaning_vi": "Diễn tả 'mặc dù A, nhưng B'.",
+          "examples": [
+            {
+              "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+              "zh": "尽管他最近身体不太好，但是仍坚持工作。",
+              "vi": "Dù gần đây sức khỏe anh ấy không tốt lắm, nhưng anh ấy vẫn kiên trì làm việc.",
+              "pinyin": "Jǐnguǎn tā zuìjìn shēntǐ bù tài hǎo, dànshì réng jiānchí gōngzuò."
+            },
+            {
+              "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
+              "zh": "你们有问题尽管问老师。",
+              "vi": "Các bạn có vấn đề gì thì cứ hỏi giáo viên.",
+              "pinyin": "Nǐmen yǒu wèntí jǐnguǎn wèn lǎoshī."
+            }
+          ],
+          "notes_vi": [
+            "Không nên hiểu máy móc 尽管 = 尽量. 尽管说 là 'cứ nói đi', còn 尽量说 là 'cố gắng nói'."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "难免",
+      "title_vi": "难免",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "难免 nghĩa là khó tránh khỏi, thường dùng với chuyện không tốt hoặc không mong muốn.",
+          "examples": []
+        },
+        {
+          "id": "a6012e0f-4ca0-438c-bcf0-1043d8150bda",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "难免 + 要/会 + V",
+          "meaning_vi": "Khó tránh khỏi việc xảy ra chuyện gì đó.",
+          "examples": [
+            {
+              "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+              "zh": "做事不认真就难免要出问题。",
+              "vi": "Làm việc không nghiêm túc thì khó tránh khỏi xảy ra vấn đề.",
+              "pinyin": "Zuò shì bù rènzhēn jiù nánmiǎn yào chū wèntí."
+            },
+            {
+              "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
+              "zh": "学习外语，写错、说错都是难免的。",
+              "vi": "Học ngoại ngữ thì viết sai, nói sai đều là chuyện khó tránh khỏi.",
+              "pinyin": "Xuéxí wàiyǔ, xiěcuò, shuōcuò dōu shì nánmiǎn de."
+            }
+          ],
+          "notes_vi": [
+            "难免 thiên về chuyện không tốt: sai sót, khó khăn, hiểu lầm, bất đồng, vấn đề."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "恐怕",
+      "title_vi": "恐怕",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "恐怕 biểu thị phỏng đoán có sắc thái lo lắng hoặc dự đoán kết quả không tốt; khác với 可能 trung tính hơn.",
+          "examples": []
+        },
+        {
+          "id": "6b417a86-ee99-4c94-b342-c9bff5f564c5",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "恐怕 + câu phỏng đoán",
+          "meaning_vi": "E rằng / sợ rằng / có lẽ là... nhưng người nói hơi lo.",
+          "examples": [
+            {
+              "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+              "zh": "他们是双职工，恐怕不能回来收。",
+              "vi": "Họ là hai vợ chồng đều đi làm, e rằng không thể về thu chăn được.",
+              "pinyin": "Tāmen shì shuāngzhígōng, kǒngpà bù néng huílai shōu."
+            },
+            {
+              "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
+              "zh": "看样子他恐怕不会来了，我们别等了。",
+              "vi": "Nhìn tình hình thì e rằng anh ấy sẽ không đến nữa, chúng ta đừng đợi nữa.",
+              "pinyin": "Kàn yàngzi tā kǒngpà bú huì lái le, wǒmen bié děng le."
+            }
+          ],
+          "notes_vi": [
+            "可能 có thể được 很/非常 bổ nghĩa, còn 恐怕 thì không."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "免得",
+      "title_vi": "免得",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "免得 dùng ở vế sau, chỉ mục đích tránh một kết quả không mong muốn: để khỏi, kẻo.",
+          "examples": []
+        },
+        {
+          "id": "70ec9d94-052a-421c-ba8f-1d2e57bd3ad4",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "Làm A，免得 + xảy ra chuyện không mong muốn",
+          "meaning_vi": "Làm việc ở vế trước để tránh kết quả xấu ở vế sau.",
+          "examples": [
+            {
+              "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+              "zh": "就把被子抱进自己的单身宿舍里，免得被雨淋湿。",
+              "vi": "Tôi ôm chăn vào ký túc xá độc thân của mình, để khỏi bị mưa làm ướt.",
+              "pinyin": "Jiù bǎ bèizi bào jìn zìjǐ de dānshēn sùshè lǐ, miǎnde bèi yǔ lín shī."
+            },
+            {
+              "id": "857c43af-3f3e-491c-988c-f6e69807c407",
+              "zh": "带上雨伞吧，免得下雨淋着。",
+              "vi": "Mang ô theo đi, kẻo trời mưa bị ướt.",
+              "pinyin": "Dài shàng yǔsǎn ba, miǎnde xià yǔ línzháo."
+            }
+          ],
+          "notes_vi": [
+            "Sau 免得 thường là chuyện người nói không muốn xảy ra."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "来",
+      "title_vi": "来",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "Trong bài này, 来 không chỉ là 'đến'. Nó có thể thay cho động từ cụ thể hoặc đứng trước động từ khác để biểu thị 'để tôi/ai đó làm việc này'.",
+          "examples": []
+        },
+        {
+          "id": "db0f6192-fd1b-43c8-90e6-1b8b6b13015b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "来 + V: chủ động nhận làm việc gì",
+          "pattern": "我/你/大家 + 来 + V",
+          "meaning_vi": "Ai đó chủ động nhận hoặc đề xuất làm việc gì.",
+          "examples": [
+            {
+              "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
+              "zh": "我来帮你打吧。",
+              "vi": "Để tôi giúp cô bơm nhé.",
+              "pinyin": "Wǒ lái bāng nǐ dǎ ba."
+            },
+            {
+              "id": "b50bbea9-e176-4f1d-a9da-57239b4a25e0",
+              "zh": "别着急，这个问题大家来想想办法。",
+              "vi": "Đừng vội, vấn đề này mọi người cùng nghĩ cách xem.",
+              "pinyin": "Bié zháojí, zhè ge wèntí dàjiā lái xiǎngxiang bànfǎ."
+            }
+          ],
+          "notes_vi": [
+            "我来帮你打吧 nghe chủ động hơn 我帮你打吧."
+          ]
+        }
+      ]
+    }
+  ]
+}

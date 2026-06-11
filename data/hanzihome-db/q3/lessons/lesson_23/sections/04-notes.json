@@ -1,0 +1,75 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "网络学校",
+      "structure": "网络 + 学校",
+      "meaning_vi": "Trường học sử dụng Internet để tiến hành giảng dạy.",
+      "examples": [
+        {
+          "id": "95d3afd4-e83f-4a06-b8da-df58e6a9b6b0",
+          "zh": "新时代网校不是只学电脑，而是通过电脑，在多媒体的环境下，学习各种现代科学文化知识。",
+          "pinyin": "Xīn Shídài Wǎngxiào bú shì zhǐ xué diànnǎo, ér shì tōngguò diànnǎo, zài duōméitǐ de huánjìng xià, xuéxí gè zhǒng xiàndài kēxué wénhuà zhīshi.",
+          "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học về máy tính, mà là thông qua máy tính, trong môi trường đa phương tiện để học các loại kiến thức khoa học văn hóa hiện đại.",
+          "en": "",
+          "highlight": [
+            "网络学校"
+          ],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "p003",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "p003"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "夏令营",
+      "structure": "夏令 + 营",
+      "meaning_vi": "Trại hè; trại tổ chức vào mùa hè ở bờ biển, vùng núi hoặc địa điểm phù hợp cho thanh thiếu niên / tập thể nghỉ ngơi, vui chơi, sinh hoạt tập thể.",
+      "examples": [
+        {
+          "id": "b18891fe-2a40-4f9a-8d44-8c30a976e10a",
+          "zh": "学校决定在今年暑假开办一个“新时代夏令营”。",
+          "pinyin": "Xuéxiào juédìng zài jīnnián shǔjià kāibàn yí ge “Xīn Shídài Xiàlìngyíng”.",
+          "vi": "Nhà trường quyết định mở một “Trại hè Thời Đại Mới” vào kỳ nghỉ hè năm nay.",
+          "en": "",
+          "highlight": [
+            "夏令营"
+          ],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "p010",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "p010"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

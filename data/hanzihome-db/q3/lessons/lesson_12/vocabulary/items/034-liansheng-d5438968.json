@@ -1,0 +1,280 @@
+{
+  "id": "0a8fdabe-a195-4706-a89a-c674136faf12",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "连声",
+  "pinyin": "liánshēng",
+  "pos": {
+    "raw_vi": "Phó từ / Trạng ngữ",
+    "raw_cn": "副词 / 状语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "liên thanh",
+    "meaning_vi": "liên tục lên tiếng, nói rối rít",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "liên tục lên tiếng, nói rối rít"
+    ],
+    "short_definition_vi": "Một tiếng nối một tiếng, thường trước động từ lời nói.",
+    "textbook_focus_vi": "Dùng trong 连声道谢, 连声道歉.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "连",
+        "lishu_vi": "liên",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại/di chuyển",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại/di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại/di chuyển",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "liên tục",
+        "modern_logic_vi": "liên tục",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "声",
+        "lishu_vi": "thanh",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiếng",
+        "modern_logic_vi": "tiếng",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "连 + 声 = tiếng nối tiếng.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "连忙",
+        "pinyin": "liánmáng",
+        "meaning_vi": "vội vàng",
+        "difference_vi": "连忙 nhấn tốc độ; 连声 nhấn lời nói lặp liên tiếp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5ca687e3-17b9-47de-ada2-3d0a3ab45b20",
+      "order": 1,
+      "zh": "连声道歉",
+      "pinyin": "",
+      "vi": "xin lỗi rối rít",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "add35e7c-6d13-42ed-bb13-db2a9585657b",
+      "order": 2,
+      "zh": "连声道谢",
+      "pinyin": "",
+      "vi": "cảm ơn rối rít",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d00c9338-77d1-40fa-b35c-30c4c24e18a2",
+      "order": 3,
+      "zh": "连声说好",
+      "pinyin": "",
+      "vi": "liên tục nói được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1ea90acb-1940-4c4d-88ce-b5caf54dc1d0",
+      "order": 4,
+      "zh": "连声答应",
+      "pinyin": "",
+      "vi": "liên tục đồng ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c5416266-55b3-4547-98ca-27c8e1cec787",
+      "order": 1,
+      "zh": "他连声道谢。",
+      "pinyin": "",
+      "vi": "Anh ấy cảm ơn rối rít.",
+      "analysis_vi": "连声 làm trạng ngữ cho 道谢.",
+      "highlight": [
+        "连声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0a8fdabe-a195-4706-a89a-c674136faf12"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9f481867-dce4-4dd5-9025-1ed99b549be5",
+      "order": 2,
+      "zh": "他不小心把被子弄脏了，吓得连声道歉。",
+      "pinyin": "",
+      "vi": "Anh ấy bất cẩn làm bẩn chăn, sợ đến xin lỗi rối rít.",
+      "analysis_vi": "吓得 + kết quả/trạng thái.",
+      "highlight": [
+        "连声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0a8fdabe-a195-4706-a89a-c674136faf12"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3b47a63d-d611-43eb-ae4d-672e7afef229",
+      "order": 1,
+      "rule_vi": "连声 không tự đứng làm động từ; cần động từ lời nói phía sau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "连声 không tự đứng làm động từ; cần động từ lời nói phía sau.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "连声",
+    "back": "liên tục lên tiếng, nói rối rít",
+    "hint": "liánshēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0a8fdabe-a195-4706-a89a-c674136faf12",
+    "source_lesson_vocab_id": null
+  }
+}

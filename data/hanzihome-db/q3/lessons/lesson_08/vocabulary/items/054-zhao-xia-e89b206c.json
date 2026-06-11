@@ -1,0 +1,285 @@
+{
+  "id": "22f5b13d-9b39-4d33-b9fc-b9ea5ae1baee",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "赵霞",
+  "pinyin": "Zhào Xiá",
+  "pos": {
+    "raw_vi": "Tên riêng",
+    "raw_cn": "专名 / 人名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Triệu Hà",
+    "meaning_vi": "tên riêng nhân vật nữ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tên riêng nhân vật nữ"
+    ],
+    "short_definition_vi": "tên riêng nhân vật nữ",
+    "textbook_focus_vi": "赵 là họ Triệu; 霞 gợi ráng mây. Trong tên người, không dịch nghĩa từng chữ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tên riêng, nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "赵",
+        "lishu_vi": "triệu",
+        "structure_note_vi": "走 + phần giản thể; trong tên riêng là họ.",
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi, chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "họ Triệu",
+        "modern_logic_vi": "Trong từ này, 赵 góp phần tạo nghĩa 'họ Triệu'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "霞",
+        "lishu_vi": "hà",
+        "structure_note_vi": "雨 + 叚; liên quan hiện tượng trời.",
+        "main_radical": {
+          "radical": "雨",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "mưa, hiện tượng trời",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa, hiện tượng trời",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa, hiện tượng trời",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ráng mây",
+        "modern_logic_vi": "Trong từ này, 霞 góp phần tạo nghĩa 'ráng mây'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "赵 là họ Triệu; 霞 gợi ráng mây. Trong tên người, không dịch nghĩa từng chữ.",
+    "memory_tip_vi": "Nhớ qua cụm: 赵霞同学 = bạn Triệu Hà.",
+    "warning_vi": "Tên riêng không dịch nghĩa từng chữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "小赵",
+        "pinyin": "Xiǎo Zhào",
+        "meaning_vi": "Tiểu Triệu",
+        "difference_vi": "Cách gọi thân mật theo họ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赵同学",
+        "pinyin": "Zhào tóngxué",
+        "meaning_vi": "bạn Triệu",
+        "difference_vi": "Cách gọi trong lớp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Tên riêng không dịch nghĩa từng chữ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bf542b2a-4be6-4d8b-bafe-cda25cb0aa68",
+      "order": 1,
+      "zh": "赵霞同学",
+      "pinyin": "Zhào Xiá tóngxué",
+      "vi": "bạn Triệu Hà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e4cae06f-0e84-471b-a41b-d0faa7b6ac0d",
+      "order": 2,
+      "zh": "赵霞的信",
+      "pinyin": "Zhào Xiá de xìn",
+      "vi": "thư của Triệu Hà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fcee27c4-3021-4227-a286-465179657828",
+      "order": 3,
+      "zh": "喜欢赵霞",
+      "pinyin": "xǐhuan Zhào Xiá",
+      "vi": "thích Triệu Hà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f5d42f44-038c-4be9-9678-60002a4164bc",
+      "order": 1,
+      "zh": "赵霞是一个聪明开朗的女孩儿。",
+      "pinyin": "Zhào Xiá shì yí ge cōngming kāilǎng de nǚháir.",
+      "vi": "Triệu Hà là một cô gái thông minh, cởi mở.",
+      "analysis_vi": "Tên riêng giữ nguyên hoặc dịch Hán Việt là Triệu Hà.",
+      "highlight": [
+        "赵霞"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "22f5b13d-9b39-4d33-b9fc-b9ea5ae1baee"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "霞 là chữ tên nữ khá đẹp vì gợi hình ảnh ráng mây, nhưng chỉ nên hiểu sắc thái.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ade9fb9b-aa34-4cc4-a5f6-bf8e90b102f4",
+      "order": 1,
+      "rule_vi": "Tên riêng không dịch nghĩa từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "赵霞 = Triệu ráng mây。",
+          "pinyin": "Zhào Xiá = Triệu ráng mây.",
+          "vi": "Sai cách dịch tên trong bài.",
+          "note_vi": "Không dịch nghĩa tên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "赵霞 = Triệu Hà。",
+          "pinyin": "Zhào Xiá = Triệu Hà.",
+          "vi": "Dịch theo Hán Việt tên riêng.",
+          "note_vi": "Cách xử lý đúng khi dịch sang tiếng Việt.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "赵霞",
+    "back": "tên riêng nhân vật nữ",
+    "hint": "Zhào Xiá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "22f5b13d-9b39-4d33-b9fc-b9ea5ae1baee",
+    "source_lesson_vocab_id": null
+  }
+}

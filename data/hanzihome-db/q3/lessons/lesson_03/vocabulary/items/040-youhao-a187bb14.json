@@ -1,0 +1,382 @@
+{
+  "id": "98819618-8efa-4dcf-bfab-ca0dc6880c32",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "友好",
+  "pinyin": "yǒuhǎo",
+  "pos": {
+    "raw_vi": "adjective",
+    "raw_cn": "",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "relationship"
+  ],
+  "meaning": {
+    "hanviet": "hữu hảo",
+    "meaning_vi": "thân thiện, hữu hảo; bạn tốt trong nghĩa cũ/ít dùng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thân thiện",
+      "hữu hảo",
+      "bạn tốt trong nghĩa cũ",
+      "ít dùng"
+    ],
+    "short_definition_vi": "thân thiện, hữu hảo; bạn tốt trong nghĩa cũ/ít dùng",
+    "textbook_focus_vi": "thân thiện, hữu hảo; bạn tốt trong nghĩa cũ/ít dùng",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "relationship",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "友",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "thành phần chính",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bạn, thân thiện",
+        "modern_logic_vi": "Trong từ này, 友 góp phần vào lớp nghĩa hiện đại: bạn, thân thiện",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "好",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "女",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nữ",
+          "radical_name_zh": "",
+          "hanviet": "nữ",
+          "meaning_vi": "phụ nữ, nữ giới",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "女",
+            "hanviet": "nữ",
+            "meaning_vi": "phụ nữ, nữ giới",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "女",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nữ",
+              "radical_name_zh": "",
+              "hanviet": "nữ",
+              "meaning_vi": "phụ nữ, nữ giới",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "子",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt, thích",
+        "modern_logic_vi": "Trong từ này, 好 góp phần vào lớp nghĩa hiện đại: tốt, thích",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "友 = bạn; 好 = tốt. 友好 là thái độ/quan hệ tốt với nhau.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "友善",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "善良",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲切",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "热情",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "敌对",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冷淡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6c2df4b9-8816-40ec-bd44-209665927a56",
+      "order": 1,
+      "zh": "友好的人",
+      "pinyin": "",
+      "vi": "người thân thiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb76889e-1b7c-4cec-af4a-0bcb50a1688d",
+      "order": 2,
+      "zh": "友好的态度",
+      "pinyin": "",
+      "vi": "thái độ thân thiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ea71b54e-cb0a-4548-b3df-eabd38267195",
+      "order": 3,
+      "zh": "友好关系",
+      "pinyin": "",
+      "vi": "quan hệ hữu hảo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ee96c97-aad6-4b70-b844-ed1b8e6b5cbc",
+      "order": 4,
+      "zh": "友好往来",
+      "pinyin": "",
+      "vi": "giao lưu hữu hảo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c9030795-63c8-48b5-af1a-06a7fe1215f6",
+      "order": 5,
+      "zh": "对人友好",
+      "pinyin": "",
+      "vi": "thân thiện với người khác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb15aeec-9a15-461c-a922-1d772f2f81ec",
+      "order": 6,
+      "zh": "中越友好",
+      "pinyin": "",
+      "vi": "hữu nghị Trung–Việt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "56cc4447-4fc3-4ea3-9cb3-34214e587509",
+      "order": 1,
+      "zh": "这里的人都很友好。",
+      "pinyin": "",
+      "vi": "Người ở đây đều rất thân thiện.",
+      "analysis_vi": "友好 tả thái độ.",
+      "highlight": [
+        "友好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "98819618-8efa-4dcf-bfab-ca0dc6880c32"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8005e5a8-cc1d-4336-b9f9-b04f9d73344a",
+      "order": 2,
+      "zh": "每次去郊外，我都会遇到很友好的当地人。",
+      "pinyin": "",
+      "vi": "Mỗi lần đi ngoại ô, tôi đều gặp người địa phương thân thiện.",
+      "analysis_vi": "每次……都…….",
+      "highlight": [
+        "友好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "98819618-8efa-4dcf-bfab-ca0dc6880c32"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5f8c90c8-17bf-4b86-b753-dca049dd70a5",
+      "order": 3,
+      "zh": "美丽的景色和友好的人都会让游人向往。",
+      "pinyin": "",
+      "vi": "Cảnh đẹp và con người thân thiện đều khiến du khách mong đến.",
+      "analysis_vi": "友好的人 đối xứng với 美丽的景色.",
+      "highlight": [
+        "友好"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "98819618-8efa-4dcf-bfab-ca0dc6880c32"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "友好 trong Bài 3 北京的四季",
+    "content_vi": "友好关系/中越友好 có sắc thái ngoại giao, hữu nghị.",
+    "tags": [
+      "relationship"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "edfd5fd1-623f-435a-910d-3620a026c68d",
+      "order": 1,
+      "rule_vi": "Bạn tôi nói 我的朋友, không nói 我的友好. 友好 thường là tính từ.",
+      "natural_examples": [
+        {
+          "zh": "这里的人都很友好。",
+          "pinyin": "",
+          "vi": "Người ở đây đều rất thân thiện.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Bạn tôi nói 我的朋友, không nói 我的友好. 友好 thường là tính từ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "友好",
+    "back": "thân thiện, hữu hảo; bạn tốt trong nghĩa cũ/ít dùng",
+    "hint": "yǒuhǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "relationship"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "98819618-8efa-4dcf-bfab-ca0dc6880c32",
+    "source_lesson_vocab_id": null
+  }
+}

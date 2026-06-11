@@ -1,0 +1,270 @@
+{
+  "id": "9c8e4380-240c-4142-b6bc-6bf0568a9967",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "舍不得",
+  "pinyin": "shěbude",
+  "pos": {
+    "raw_vi": "Cụm động từ tâm lý",
+    "raw_cn": "心理动词短语",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "xả bất đắc",
+    "meaning_vi": "không nỡ, tiếc không muốn bỏ/rời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không nỡ",
+      "tiếc không muốn bỏ/rời"
+    ],
+    "short_definition_vi": "không nỡ, tiếc không muốn bỏ/rời",
+    "textbook_focus_vi": "Không bỏ được vì có tình cảm hoặc thấy quý.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "舍",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bỏ, buông",
+        "modern_logic_vi": "Trong từ “舍不得”, chữ “舍” góp phần vào trường nghĩa: bỏ, buông",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Trong từ “舍不得”, chữ “不” góp phần vào trường nghĩa: không",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "được, có thể, đạt",
+        "modern_logic_vi": "Trong từ “舍不得”, chữ “得” góp phần vào trường nghĩa: được, có thể, đạt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Không bỏ được vì có tình cảm hoặc thấy quý.",
+    "memory_tip_vi": "Không bỏ được vì có tình cảm hoặc thấy quý.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不想",
+        "pinyin": "",
+        "meaning_vi": "không muốn, trung tính hơn",
+        "difference_vi": "không muốn, trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放不下",
+        "pinyin": "",
+        "meaning_vi": "không buông bỏ được, nặng tâm lý hơn",
+        "difference_vi": "không buông bỏ được, nặng tâm lý hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "eebcaf66-ba12-44b8-bc4d-0752cf850da4",
+      "order": 1,
+      "zh": "舍不得离开",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d9ae6a2-1001-42cd-99d8-7f2dff380195",
+      "order": 2,
+      "zh": "舍不得放弃",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ca60ca7d-289a-4bf5-a694-7b0cbccc3ddf",
+      "order": 3,
+      "zh": "舍不得花钱",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2185b75-4d0d-45a2-8187-ba455a901283",
+      "order": 4,
+      "zh": "实在舍不得",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0b9001a8-7d21-4b03-a067-af0c0ba98f9c",
+      "order": 1,
+      "zh": "我舍不得离开这里。",
+      "pinyin": "",
+      "vi": "Tôi không nỡ rời khỏi nơi này.",
+      "analysis_vi": "舍不得 + V.",
+      "highlight": [
+        "舍不得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9c8e4380-240c-4142-b6bc-6bf0568a9967"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "de7455ae-1001-4e91-a4ec-916fd2a9b0b4",
+      "order": 2,
+      "zh": "他舍不得放弃这份工作。",
+      "pinyin": "",
+      "vi": "Anh ấy không nỡ từ bỏ công việc này.",
+      "analysis_vi": "舍不得放弃 nhấn gắn bó.",
+      "highlight": [
+        "舍不得"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9c8e4380-240c-4142-b6bc-6bf0568a9967"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Không bỏ được vì có tình cảm hoặc thấy quý.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "80f64c30-1182-4e41-b071-96bc1b19a4e6",
+      "order": 1,
+      "rule_vi": "舍不得 thay đổi nghĩa theo tân ngữ: tiếc tiền, không nỡ xa, không nỡ bỏ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "舍不得 thay đổi nghĩa theo tân ngữ: tiếc tiền, không nỡ xa, không nỡ bỏ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "舍不得",
+    "back": "không nỡ, tiếc không muốn bỏ/rời",
+    "hint": "shěbude",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9c8e4380-240c-4142-b6bc-6bf0568a9967",
+    "source_lesson_vocab_id": null
+  }
+}

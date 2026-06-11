@@ -1,0 +1,234 @@
+{
+  "id": "2aeee97f-930b-4572-969e-85dc1489b1f3",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "淡",
+  "pinyin": "dàn",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đạm",
+    "meaning_vi": "nhạt; lạnh nhạt; phai nhạt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhạt",
+      "lạnh nhạt",
+      "phai nhạt"
+    ],
+    "short_definition_vi": "nhạt; lạnh nhạt; phai nhạt",
+    "textbook_focus_vi": "淡 có 氵, gợi vị/chất lỏng loãng; mở rộng sang màu nhạt và tình cảm lạnh nhạt/phai nhạt.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "vị giác, cảm xúc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "淡",
+        "lishu_vi": "đạm",
+        "structure_note_vi": "氵 gợi chất lỏng loãng; 炎 biểu âm.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhạt, loãng, lạnh nhạt",
+        "modern_logic_vi": "Trong từ này, 淡 góp phần tạo nghĩa 'nhạt, loãng, lạnh nhạt'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "淡 có 氵, gợi vị/chất lỏng loãng; mở rộng sang màu nhạt và tình cảm lạnh nhạt/phai nhạt.",
+    "memory_tip_vi": "Nhớ qua cụm: 味道很淡 = vị rất nhạt.",
+    "warning_vi": "淡 không chỉ là vị nhạt; trong tình cảm là phai nhạt/lạnh nhạt.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "浅",
+        "pinyin": "qiǎn",
+        "meaning_vi": "nông/cạn/màu nhạt",
+        "difference_vi": "Thiên về độ sâu/màu sắc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冷淡",
+        "pinyin": "lěngdàn",
+        "meaning_vi": "lạnh nhạt",
+        "difference_vi": "Rõ nghĩa thái độ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "淡 không chỉ là vị nhạt; trong tình cảm là phai nhạt/lạnh nhạt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cc7fd47a-0fab-4a79-b58b-7c44454f3ced",
+      "order": 1,
+      "zh": "味道很淡",
+      "pinyin": "wèidao hěn dàn",
+      "vi": "vị rất nhạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a609969-bd04-4a77-9469-5e801c57efcd",
+      "order": 2,
+      "zh": "感情淡了",
+      "pinyin": "gǎnqíng dàn le",
+      "vi": "tình cảm phai nhạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ab50622-3991-4f79-9a95-f925bf7c214e",
+      "order": 3,
+      "zh": "关系变淡了",
+      "pinyin": "guānxi biàn dàn le",
+      "vi": "quan hệ nhạt đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2ade98bb-b9ab-4abe-bff6-3a264627535e",
+      "order": 1,
+      "zh": "他们本来常常一起聊天，可是后来消息越来越少，关系也慢慢变淡了。",
+      "pinyin": "Tāmen běnlái chángcháng yìqǐ liáotiān, kěshì hòulái xiāoxi yuè lái yuè shǎo, guānxi yě mànmàn biàn dàn le.",
+      "vi": "Họ vốn thường trò chuyện, nhưng sau này tin nhắn ngày càng ít, quan hệ cũng dần nhạt đi.",
+      "analysis_vi": "变淡了 chỉ quan hệ/tình cảm phai đi.",
+      "highlight": [
+        "淡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2aeee97f-930b-4572-969e-85dc1489b1f3"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "淡了 trong chuyện tình cảm nói mềm hơn 'hết yêu'.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0c857ddd-b2a4-480e-b272-f6f5b8a769ee",
+      "order": 1,
+      "rule_vi": "淡 không chỉ là vị nhạt; trong tình cảm là phai nhạt/lạnh nhạt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "感情淡了。",
+          "pinyin": "Gǎnqíng dàn le.",
+          "vi": "Tình cảm phai nhạt rồi.",
+          "note_vi": "Dịch theo nghĩa bóng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "淡",
+    "back": "nhạt; lạnh nhạt; phai nhạt",
+    "hint": "dàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2aeee97f-930b-4572-969e-85dc1489b1f3",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "id": "275ea7cd-fa8b-4f5e-90e7-2c46f9d855cc",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "美",
+  "pinyin": "měi",
+  "pos": {
+    "raw_vi": "Tính từ / Yếu tố cấu tạo từ",
+    "raw_cn": "形/语素",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Mỹ",
+    "meaning_vi": "đẹp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đẹp"
+    ],
+    "short_definition_vi": "đẹp",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "rộng, cơ bản, nhưng đứng một mình có lúc hơi văn hoặc cảm thán.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "美",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "dê/cừu",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đẹp, tốt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "美 là đẹp, cái đẹp. Trong tiếng Trung hiện đại, 美 thường làm yếu tố tạo từ hoặc dùng trong câu cảm thán/miêu tả ngắn.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 风景很美 = phong cảnh rất đẹp; 美术 = mỹ thuật.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: khen người đẹp đời thường thường nói 漂亮 hơn 美 nếu nói trực tiếp.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "美 (měi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đẹp, mỹ, hơi rộng/văn hơn trong nhiều ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "漂亮 (piàoliang)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đẹp, xinh, dùng rất rộng cho người/vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "美丽 (měilì)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đẹp, mỹ lệ, văn hơn 漂亮.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好看 (hǎokàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đẹp/dễ nhìn, khẩu ngữ rất thông dụng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 风景很美 rất tự nhiên; khen người thường dùng 漂亮 / 好看; viết văn có thể dùng 美丽."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1fc792d1-a2e4-4428-9dc3-5e8208959d74",
+      "order": 1,
+      "zh": "风景很美",
+      "pinyin": "",
+      "vi": "phong cảnh rất đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "91f4938c-30c1-4410-aac8-f1cebd70e2c1",
+      "order": 2,
+      "zh": "日出很美",
+      "pinyin": "",
+      "vi": "mặt trời mọc rất đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0b068140-a258-4ae1-a951-8ab6e08ca8cd",
+      "order": 3,
+      "zh": "美丽的地方",
+      "pinyin": "",
+      "vi": "nơi đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be103e05-93af-4339-8e15-4edc674dc176",
+      "order": 4,
+      "zh": "太美了",
+      "pinyin": "",
+      "vi": "đẹp quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d3744da9-f9e9-4663-ac9a-66c10a05eb59",
+      "order": 1,
+      "zh": "泰山的日出很美，很多人半夜就爬上山去看。",
+      "pinyin": "Tàishān de rìchū hěn měi, hěn duō rén bànyè jiù pá shàng shān qù kàn.",
+      "vi": "Cảnh mặt trời mọc ở Thái Sơn rất đẹp, nhiều người nửa đêm đã leo lên núi để xem.",
+      "analysis_vi": "爬上山去 là leo lên núi theo hướng rời điểm xuất phát; 很美 đánh giá cảnh.",
+      "highlight": [
+        "美"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "275ea7cd-fa8b-4f5e-90e7-2c46f9d855cc"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "afcf2ed9-98b7-4591-83b1-d3711bbf7d24",
+      "order": 2,
+      "zh": "月亮出来以后，寺里的灯光和山上的路看起来都很美。",
+      "pinyin": "Yuèliang chūlai yǐhòu, sì lǐ de dēngguāng hé shān shàng de lù kàn qǐlai dōu hěn měi.",
+      "vi": "Sau khi mặt trăng ló ra, ánh đèn trong chùa và đường trên núi nhìn đều rất đẹp.",
+      "analysis_vi": "出来 nói mặt trăng xuất hiện; 看起来很美 là cảm nhận khi nhìn.",
+      "highlight": [
+        "美"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "275ea7cd-fa8b-4f5e-90e7-2c46f9d855cc"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5f88e0dd-a9c6-4707-b48d-5b3eade39685",
+      "order": 3,
+      "zh": "这个脸谱钥匙链不贵，但是颜色很美，送朋友很合适。",
+      "pinyin": "Zhège liǎnpǔ yàoshi liàn bú guì, dànshì yánsè hěn měi, sòng péngyou hěn héshì.",
+      "vi": "Móc khóa mặt nạ kinh kịch này không đắt, nhưng màu sắc rất đẹp, tặng bạn rất phù hợp.",
+      "analysis_vi": "但是 nối giá không cao với điểm mạnh là màu đẹp; câu thực tế trong mua quà.",
+      "highlight": [
+        "美"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "275ea7cd-fa8b-4f5e-90e7-2c46f9d855cc"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [],
+  "flashcard": {
+    "front": "美",
+    "back": "đẹp",
+    "hint": "měi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "275ea7cd-fa8b-4f5e-90e7-2c46f9d855cc",
+    "source_lesson_vocab_id": null
+  }
+}

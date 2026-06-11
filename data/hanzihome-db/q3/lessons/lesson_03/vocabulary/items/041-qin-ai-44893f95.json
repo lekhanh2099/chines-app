@@ -1,0 +1,383 @@
+{
+  "id": "4f3a8943-37fe-406c-b323-c12593751bb8",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "亲爱",
+  "pinyin": "qīn’ài",
+  "pos": {
+    "raw_vi": "adjective",
+    "raw_cn": "",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "relationship",
+    "address"
+  ],
+  "meaning": {
+    "hanviet": "thân ái",
+    "meaning_vi": "thân yêu, yêu quý, thân thiết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thân yêu",
+      "yêu quý",
+      "thân thiết"
+    ],
+    "short_definition_vi": "thân yêu, yêu quý, thân thiết",
+    "textbook_focus_vi": "thân yêu, yêu quý, thân thiết",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "relationship, address",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, gần gũi",
+        "modern_logic_vi": "Trong từ này, 亲 góp phần vào lớp nghĩa hiện đại: thân, gần gũi",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "爱",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "爫",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "友",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "yêu, thích",
+        "modern_logic_vi": "Trong từ này, 爱 góp phần vào lớp nghĩa hiện đại: yêu, thích",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲 = thân/gần; 爱 = yêu. 亲爱 là thân yêu/yêu quý.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 亲爱的 để gọi người lạ; dễ quá thân. Với người lạ nói 你好，请问……",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "亲切",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "可爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "热爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "敬爱",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "憎恨",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ab5ad050-eac0-4390-9186-57c8c1e3e08d",
+      "order": 1,
+      "zh": "亲爱的朋友",
+      "pinyin": "",
+      "vi": "bạn thân mến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9126300c-f9a7-45e8-a7fa-b0060eb04d43",
+      "order": 2,
+      "zh": "亲爱的同学们",
+      "pinyin": "",
+      "vi": "các bạn học thân mến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "76082cfc-2178-4872-86e7-63bb8cc1bc97",
+      "order": 3,
+      "zh": "亲爱的老师",
+      "pinyin": "",
+      "vi": "thầy/cô kính mến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62977aa6-fb45-4875-85a8-3fb474a2b0f4",
+      "order": 4,
+      "zh": "亲爱的妈妈",
+      "pinyin": "",
+      "vi": "mẹ thân yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09ef5c93-4cc2-444c-a5b7-e11c2e8d3f87",
+      "order": 5,
+      "zh": "亲爱的祖国",
+      "pinyin": "",
+      "vi": "Tổ quốc thân yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9e018a9-81b7-465d-a6c8-24377fb57d66",
+      "order": 6,
+      "zh": "亲爱的家人",
+      "pinyin": "",
+      "vi": "gia đình thân yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e046703a-e146-4774-aff9-44a0eecb9cd6",
+      "order": 1,
+      "zh": "亲爱的朋友，欢迎你来北京。",
+      "pinyin": "",
+      "vi": "Bạn thân mến, hoan nghênh bạn đến Bắc Kinh.",
+      "analysis_vi": "亲爱的 dùng trong xưng hô thân mật/thư.",
+      "highlight": [
+        "亲爱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f3a8943-37fe-406c-b323-c12593751bb8"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5ced81e3-0daa-43ae-ab2d-129f92c214b0",
+      "order": 2,
+      "zh": "每到秋天，我都会想起亲爱的家人。",
+      "pinyin": "",
+      "vi": "Mỗi khi đến mùa thu, tôi nhớ gia đình thân yêu.",
+      "analysis_vi": "每到……都…….",
+      "highlight": [
+        "亲爱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f3a8943-37fe-406c-b323-c12593751bb8"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ef45252-2a19-4f12-b192-20024840b421",
+      "order": 3,
+      "zh": "他离开家以后，才明白亲爱的父母一直在为他担心。",
+      "pinyin": "",
+      "vi": "Sau khi rời nhà, anh ấy mới hiểu bố mẹ thân yêu vẫn luôn lo cho mình.",
+      "analysis_vi": "才明白 = lúc đó mới hiểu.",
+      "highlight": [
+        "亲爱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f3a8943-37fe-406c-b323-c12593751bb8"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "亲爱 trong Bài 3 北京的四季",
+    "content_vi": "亲爱的 tùy quan hệ: thân mến, thân yêu, anh/em yêu.",
+    "tags": [
+      "relationship",
+      "address"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d460b752-5a8a-48c0-a80b-a86b5f818dc0",
+      "order": 1,
+      "rule_vi": "Không dùng 亲爱的 để gọi người lạ; dễ quá thân. Với người lạ nói 你好，请问……",
+      "natural_examples": [
+        {
+          "zh": "亲爱的朋友，欢迎你来北京。",
+          "pinyin": "",
+          "vi": "Bạn thân mến, hoan nghênh bạn đến Bắc Kinh.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 亲爱的 để gọi người lạ; dễ quá thân. Với người lạ nói 你好，请问……",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲爱",
+    "back": "thân yêu, yêu quý, thân thiết",
+    "hint": "qīn’ài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "relationship",
+      "address"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f3a8943-37fe-406c-b323-c12593751bb8",
+    "source_lesson_vocab_id": null
+  }
+}

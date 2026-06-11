@@ -1,0 +1,61 @@
+{
+  "id": "synthetic_vocab_7d2a8acb1a6b9fc9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "载人",
+  "pinyin": "zàirén",
+  "meaning_vi": "chở người; có người lái",
+  "pos": "Động từ / Định ngữ",
+  "pos_detail": {
+    "vi": "Động từ / Định ngữ",
+    "cn": "动词 / 定语用法",
+    "normalized": "verb_attributive",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "notes": [],
+    "usage_note_vi": "Trong bài dùng trong 载人飞船, nghĩa là tàu vũ trụ có người lái/chở người."
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "9fc1d4da-d675-4709-a6ae-68759bb99e07",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "9fc1d4da-d675-4709-a6ae-68759bb99e07",
+    "type": "vocabulary_item",
+    "order": 15,
+    "hanzi": "载人",
+    "pinyin": "zàirén",
+    "meaning_vi": "chở người; có người lái",
+    "meaning_en": "manned",
+    "pos": "Động từ / Định ngữ",
+    "pos_detail": {
+      "vi": "Động từ / Định ngữ",
+      "cn": "动词 / 定语用法",
+      "normalized": "verb_attributive",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "notes": [],
+      "usage_note_vi": "Trong bài dùng trong 载人飞船, nghĩa là tàu vũ trụ có người lái/chở người."
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "载人",
+      "back": "zàirén — chở người; có người lái",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

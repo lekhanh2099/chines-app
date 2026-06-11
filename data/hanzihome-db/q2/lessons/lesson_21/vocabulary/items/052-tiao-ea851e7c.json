@@ -1,0 +1,265 @@
+{
+  "id": "d929693e-7d39-4b9b-8e65-101c31aedd1c",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "挑",
+  "pinyin": "tiāo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thiêu / khiêu",
+    "meaning_vi": "chọn lựa; gánh bằng đòn gánh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chọn lựa; gánh bằng đòn gánh"
+    ],
+    "short_definition_vi": "chọn lựa; gánh bằng đòn gánh",
+    "textbook_focus_vi": "chọn lựa; gánh bằng đòn gánh",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "挑",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兆",
+            "hanviet": "triệu",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "chọn/gánh",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "dùng tay/công cụ lựa ra hoặc gánh lên",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5a9c8638-99da-427b-90b2-bee34d8ca50e",
+      "order": 1,
+      "zh": "挑衣服",
+      "pinyin": "",
+      "vi": "chọn quần áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1818f60-74de-4bec-a4d9-3bbfd846efb3",
+      "order": 2,
+      "zh": "挑节目",
+      "pinyin": "",
+      "vi": "chọn tiết mục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "59aee749-cdff-41ea-84ab-2daffa5021bf",
+      "order": 3,
+      "zh": "挑一个",
+      "pinyin": "",
+      "vi": "chọn một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6cf935e-a7e1-4ae5-9714-97ca2686bc22",
+      "order": 4,
+      "zh": "挑出来",
+      "pinyin": "",
+      "vi": "chọn ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30846b02-7f26-4183-862f-792036f1883d",
+      "order": 5,
+      "zh": "挑水",
+      "pinyin": "",
+      "vi": "gánh nước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a8c639ef-b26d-4d4d-b0e8-8201d211fb9a",
+      "order": 1,
+      "zh": "节目太多了，我挑不出来。",
+      "pinyin": "Jiémù tài duō le, wǒ tiāo bù chūlai.",
+      "vi": "Tiết mục nhiều quá, tôi chọn không ra.",
+      "analysis_vi": "挑不出来 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "挑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d929693e-7d39-4b9b-8e65-101c31aedd1c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b1197bf-5e81-4637-8c23-f5a3f7d3b27f",
+      "order": 2,
+      "zh": "如果不了解挑，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě tiāo, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 挑, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "挑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d929693e-7d39-4b9b-8e65-101c31aedd1c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "89873b01-6063-470e-baf9-8b987924aacf",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解挑在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě tiāo zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 挑 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "挑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d929693e-7d39-4b9b-8e65-101c31aedd1c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "挑水/挑担子 phản ánh đời sống dùng đòn gánh; hiện đại thường gặp nghĩa chọn.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "52e0bda9-c21a-4a3c-a946-c54ff6845fc5",
+      "order": 1,
+      "rule_vi": "Phân biệt tiāo chọn/gánh và tiǎo khều/khiêu như 挑衅。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "挑",
+    "back": "chọn lựa; gánh bằng đòn gánh",
+    "hint": "tiāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d929693e-7d39-4b9b-8e65-101c31aedd1c",
+    "source_lesson_vocab_id": null
+  }
+}

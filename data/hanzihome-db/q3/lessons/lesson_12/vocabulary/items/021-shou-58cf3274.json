@@ -1,0 +1,208 @@
+{
+  "id": "ae0d6a08-e4aa-456f-ac1e-95f464c115fd",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "收",
+  "pinyin": "shōu",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thu",
+    "meaning_vi": "nhận; thu lại; cất; dọn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhận; thu lại; cất; dọn"
+    ],
+    "short_definition_vi": "Đưa vật về phía mình, gom lại, cất lại hoặc nhận được.",
+    "textbook_focus_vi": "Dùng trong 收被子, 收起来, 收到信.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "收",
+        "lishu_vi": "thu",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thu/cất/nhận",
+        "modern_logic_vi": "thu/cất/nhận",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Lõi nghĩa là thu/gom/nhận vào.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "接",
+        "pinyin": "jiē",
+        "meaning_vi": "đón/nhận/nghe",
+        "difference_vi": "接 dùng với điện thoại, đón người; 收 nhấn nhận/gom/cất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fa27336e-5ae4-4357-addb-8a08db6c3996",
+      "order": 1,
+      "zh": "收东西",
+      "pinyin": "",
+      "vi": "thu dọn đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e80b42c-8cd1-4e82-b7ed-4bdb243e74dd",
+      "order": 2,
+      "zh": "收起来",
+      "pinyin": "",
+      "vi": "cất lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a5e4bac-f26d-42b9-8e4e-41227daf7a73",
+      "order": 3,
+      "zh": "收好",
+      "pinyin": "",
+      "vi": "cất gọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "846402b1-c1e9-4d6b-935e-3358563eacd8",
+      "order": 4,
+      "zh": "收到信",
+      "pinyin": "",
+      "vi": "nhận được thư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a523518f-2ed1-4e97-b5d3-dee484265e6c",
+      "order": 1,
+      "zh": "快下雨了，快把被子收进来。",
+      "pinyin": "",
+      "vi": "Sắp mưa rồi, mau thu chăn vào.",
+      "analysis_vi": "把 + O + 收进来.",
+      "highlight": [
+        "收"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae0d6a08-e4aa-456f-ac1e-95f464c115fd"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f222af90-1df0-43cd-bd0d-a2d4d50dc17c",
+      "order": 2,
+      "zh": "妈妈把孩子的玩具都收好了。",
+      "pinyin": "",
+      "vi": "Mẹ cất gọn hết đồ chơi của con.",
+      "analysis_vi": "收好 là kết quả cất gọn.",
+      "highlight": [
+        "收"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ae0d6a08-e4aa-456f-ac1e-95f464c115fd"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bc2f2aba-2d29-40f7-b179-3bc6af2836dc",
+      "order": 1,
+      "rule_vi": "Không dùng 收电话 cho “nghe điện thoại”; dùng 接电话.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 收电话 cho “nghe điện thoại”; dùng 接电话.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "收",
+    "back": "nhận; thu lại; cất; dọn",
+    "hint": "shōu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ae0d6a08-e4aa-456f-ac1e-95f464c115fd",
+    "source_lesson_vocab_id": null
+  }
+}

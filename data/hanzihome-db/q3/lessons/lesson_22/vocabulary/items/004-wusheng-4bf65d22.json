@@ -1,0 +1,255 @@
+{
+  "id": "f2d087b9-184e-4fe4-a3d4-cb9d01394345",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "无声",
+  "pinyin": "wúshēng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "adjective"
+  ],
+  "meaning": {
+    "hanviet": "vô thanh",
+    "meaning_vi": "không có tiếng, im lặng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không có tiếng"
+    ],
+    "short_definition_vi": "không có tiếng, im lặng",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "无",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không có",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "声",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm thanh, tiếng",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "无声 được ghi nhớ theo nghĩa hiện đại: không có tiếng, im lặng.",
+    "memory_tip_vi": "Nhớ qua cụm: 无声的世界.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "没有声音",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安静",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "沉默",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Thiết bị/video không có tiếng thì nói 没有声音 tự nhiên hơn 无声."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "610eca4e-a09e-4adc-a50b-1982f57cc41b",
+      "order": 1,
+      "zh": "无声的世界",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05af078c-10aa-46bb-a751-95aebfaa4082",
+      "order": 2,
+      "zh": "无声地哭",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8d4904f-9676-44f9-8f65-79d809ed8458",
+      "order": 3,
+      "zh": "无声地离开",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1f834b6e-db06-4c31-aa35-d4f5324a91a4",
+      "order": 4,
+      "zh": "无声电影",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06511a2c-ba6a-4fc1-b89a-6326065b7012",
+      "order": 5,
+      "zh": "无声的眼泪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d89074f5-be6b-4f71-8a1f-158637fc5c7c",
+      "order": 1,
+      "zh": "病房里一片无声。",
+      "pinyin": "Bìngfáng lǐ yí piàn wúshēng.",
+      "vi": "Trong phòng bệnh im phăng phắc.",
+      "analysis_vi": "一片无声 tạo không khí nặng, văn hơn 没有声音.",
+      "highlight": [
+        "无声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2d087b9-184e-4fe4-a3d4-cb9d01394345"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b7d3f201-46dc-4b6f-865c-f71c6bd3f966",
+      "order": 2,
+      "zh": "由于疾病，孩子进入了一个无声的世界。",
+      "pinyin": "Yóuyú jíbìng, háizi jìnrù le yí ge wúshēng de shìjiè.",
+      "vi": "Vì bệnh tật, đứa trẻ bước vào một thế giới không âm thanh.",
+      "analysis_vi": "进入……世界 dùng nghĩa mở rộng.",
+      "highlight": [
+        "无声"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f2d087b9-184e-4fe4-a3d4-cb9d01394345"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "无声 thường tạo sắc thái văn học: 无声的爱, 无声的眼泪.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "713bf400-8411-4ee4-b114-ce00238b2b24",
+      "order": 1,
+      "rule_vi": "Thiết bị/video không có tiếng thì nói 没有声音 tự nhiên hơn 无声.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Thiết bị/video không có tiếng thì nói 没有声音 tự nhiên hơn 无声.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "无声",
+    "back": "không có tiếng, im lặng",
+    "hint": "wúshēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "adjective"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f2d087b9-184e-4fe4-a3d4-cb9d01394345",
+    "source_lesson_vocab_id": null
+  }
+}

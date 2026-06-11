@@ -1,0 +1,438 @@
+{
+  "id": "789a4aec-a261-47d8-9031-004b2ae30b93",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "鸭",
+  "pinyin": "yā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Áp",
+    "meaning_vi": "vịt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vịt"
+    ],
+    "short_definition_vi": "vịt",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鸭",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "鸟",
+            "hanviet": "điểu",
+            "meaning_vi": "chim, loài có cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "鳥",
+              "radical_variant": "鸟",
+              "radical_name_vi": "bộ Điểu",
+              "radical_name_zh": "",
+              "hanviet": "điểu",
+              "meaning_vi": "chim, loài có cánh",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "鸟 được dùng như bộ Điểu trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "鸟 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "鳥",
+          "radical_variant": "鸟",
+          "radical_name_vi": "bộ Điểu",
+          "radical_name_zh": "",
+          "hanviet": "điểu",
+          "meaning_vi": "chim, loài có cánh",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "鸟 được dùng như bộ Điểu trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "鸭 có bộ 鸟, liên quan đến chim/loài có cánh. Logic nhớ nghĩa hiện đại: Con vịt hoặc thịt vịt → 鸭 / 鸭子 / 鸭肉. Cảnh báo: Nói con vịt đời thường thường dùng 鸭子. Trong món ăn/từ ghép dùng 鸭 nhiều.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "鸭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vịt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸭子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "con vịt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸭肉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thịt vịt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸡",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸡肉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thịt gà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烤鸭",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vịt quay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我喜欢吃鸭肉。",
+      "Tôi thích ăn thịt vịt.",
+      "我没养过鸭子。",
+      "Tôi chưa từng nuôi vịt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c68d79be-3df1-4139-bd62-4d8b81183658",
+      "order": 1,
+      "zh": "鸭子",
+      "pinyin": "",
+      "vi": "con vịt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "4b54c10c-695a-40e7-866a-ed9abc38d188",
+      "order": 2,
+      "zh": "鸭肉",
+      "pinyin": "",
+      "vi": "thịt vịt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "89e41eeb-751e-49d7-bcc0-f3be93a1c580",
+      "order": 3,
+      "zh": "烤鸭",
+      "pinyin": "",
+      "vi": "vịt quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "536b4c7a-5458-4c7b-a930-15a4288f519f",
+      "order": 4,
+      "zh": "北京烤鸭",
+      "pinyin": "",
+      "vi": "vịt quay Bắc Kinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "b33a3617-fae0-4ecf-8a57-e482b5c880cd",
+      "order": 5,
+      "zh": "一只鸭子",
+      "pinyin": "",
+      "vi": "một con vịt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "8a118d6d-3991-4291-bcb5-e5df03a53b62",
+      "order": 6,
+      "zh": "鸭蛋",
+      "pinyin": "",
+      "vi": "trứng vịt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c87390b5-715f-409a-bfd1-7c0be35a3b1d",
+      "order": 1,
+      "zh": "我吃过鸭肉。",
+      "pinyin": "Wǒ chī guo yāròu.",
+      "vi": "Tôi từng ăn thịt vịt.",
+      "analysis_vi": "鸭肉 = thịt vịt. 吃过 nhấn kinh nghiệm.",
+      "highlight": [
+        "鸭"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "789a4aec-a261-47d8-9031-004b2ae30b93"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "76a47c50-b80e-4cd4-b45f-26a98a984113",
+      "order": 2,
+      "zh": "我没吃过北京烤鸭，但是吃过普通的鸭肉。",
+      "pinyin": "Wǒ méi chī guo Běijīng kǎoyā, dànshì chī guo pǔtōng de yāròu.",
+      "vi": "Tôi chưa từng ăn vịt quay Bắc Kinh, nhưng từng ăn thịt vịt bình thường.",
+      "analysis_vi": "没吃过……但是吃过…… đối lập giữa chưa có và đã có kinh nghiệm.",
+      "highlight": [
+        "鸭"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "789a4aec-a261-47d8-9031-004b2ae30b93"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "aa0ee7f7-72f9-4cbb-b2d0-f8ec1e27c3ac",
+      "order": 3,
+      "zh": "第一次吃烤鸭的时候，我以为鸭肉会很油腻，没想到服务员把鸭皮切得很薄，吃起来香极了。",
+      "pinyin": "Dì yī cì chī kǎoyā de shíhou, wǒ yǐwéi yāròu huì hěn yóunì, méi xiǎngdào fúwùyuán bǎ yāpí qiē de hěn báo, chī qǐlai xiāng jí le.",
+      "vi": "Lần đầu ăn vịt quay, tôi tưởng thịt vịt sẽ rất ngấy, không ngờ nhân viên cắt da vịt rất mỏng, ăn lên thơm cực kỳ.",
+      "analysis_vi": "第一次 = lần đầu. 以为……没想到…… diễn tả tưởng khác với thực tế. 吃起来 = ăn lên/cảm giác khi ăn.",
+      "highlight": [
+        "鸭"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "789a4aec-a261-47d8-9031-004b2ae30b93"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "6554213d-7dde-490f-a193-bfe342e61d3b",
+      "order": 1,
+      "rule_vi": "Con vịt:",
+      "natural_examples": [
+        {
+          "zh": "鸭子",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "鸭肉",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "烤鸭",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Con vịt: 鸭子 Thịt vịt: 鸭肉 Món vịt quay: 烤鸭",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "鸭",
+    "back": "vịt",
+    "hint": "yā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung, món ăn thường dùng tên con vật trực tiếp: 鸭, 鸡, 鱼, 牛肉. Nhưng nếu muốn nói rõ “thịt”, thêm 肉: 鸭肉, 鸡肉.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "789a4aec-a261-47d8-9031-004b2ae30b93",
+    "source_lesson_vocab_id": null
+  }
+}

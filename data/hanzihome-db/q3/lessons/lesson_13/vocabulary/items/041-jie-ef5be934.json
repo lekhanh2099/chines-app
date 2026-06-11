@@ -1,0 +1,221 @@
+{
+  "id": "9a294bda-15d5-4ca8-904c-0036dd0bb04e",
+  "type": "deep_vocabulary_item",
+  "order": 41,
+  "hanzi": "接",
+  "pinyin": "jiē",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "action"
+  ],
+  "meaning": {
+    "hanviet": "tiếp",
+    "meaning_vi": "đón, nhận, nối, tiếp tục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đón",
+      "nhận",
+      "nối",
+      "tiếp tục"
+    ],
+    "short_definition_vi": "đón, nhận, nối, tiếp tục",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "接",
+        "lishu_vi": "tiếp",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, động tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, động tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, động tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đón/nhận/nối",
+        "modern_logic_vi": "Trong từ/cụm này, 接 góp phần vào nghĩa hiện đại: đón/nhận/nối.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "接 cần học theo nghĩa hiện đại trong bài: đón, nhận, nối, tiếp tục.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 接孩子.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6c67735f-8209-4998-8187-baba580e3472",
+      "order": 1,
+      "zh": "接孩子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3a9deedd-acf2-4286-bf64-eec79ffeac3c",
+      "order": 2,
+      "zh": "接电话",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "be9a2650-73e0-4cca-abee-713cd6071ebb",
+      "order": 3,
+      "zh": "接到通知",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5013cb0a-06fa-4943-860d-a347bdb51b36",
+      "order": 1,
+      "zh": "我下午去学校接妹妹。",
+      "pinyin": "Wǒ xiàwǔ qù xuéxiào jiē mèimei.",
+      "vi": "Chiều tôi đến trường đón em gái.",
+      "analysis_vi": "去 + địa điểm + 接 + người.",
+      "highlight": [
+        "接"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a294bda-15d5-4ca8-904c-0036dd0bb04e"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6b1c167e-c91f-489d-91a9-3cd361f38169",
+      "order": 2,
+      "zh": "他刚接到学院的通知，就马上打电话告诉母亲。",
+      "pinyin": "Tā gāng jiēdào xuéyuàn de tōngzhī, jiù mǎshàng dǎ diànhuà gàosu mǔqīn.",
+      "vi": "Anh ấy vừa nhận thông báo của học viện liền gọi cho mẹ.",
+      "analysis_vi": "接到通知 là nhận được thông báo.",
+      "highlight": [
+        "接"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a294bda-15d5-4ca8-904c-0036dd0bb04e"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "接送孩子 là cụm đời sống: đưa đón con đi học.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a0dc330f-0100-4d43-9dc7-a674fcd16311",
+      "order": 1,
+      "rule_vi": "Dùng 接 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "接",
+    "back": "đón, nhận, nối, tiếp tục",
+    "hint": "jiē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9a294bda-15d5-4ca8-904c-0036dd0bb04e",
+    "source_lesson_vocab_id": null
+  }
+}

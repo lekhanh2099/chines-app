@@ -1,0 +1,308 @@
+{
+  "id": "d96f41c4-7109-4317-9469-f711405b9f01",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "结拜",
+  "pinyin": "jiébài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "kết bái",
+    "meaning_vi": "kết nghĩa anh em / chị em",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kết nghĩa anh em",
+      "chị em"
+    ],
+    "short_definition_vi": "kết nghĩa anh em / chị em",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "结",
+        "lishu_vi": "kết",
+        "structure_note_vi": "Chữ có thành phần/bộ 纟; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 结 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "拜",
+        "lishu_vi": "bái",
+        "structure_note_vi": "Chữ có thành phần/bộ 手; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "手 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 拜 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "结拜 trong bài được học theo nghĩa: kết nghĩa anh em / chị em.",
+    "memory_tip_vi": "Nhớ 结拜 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "结义",
+        "pinyin": "jiéyì",
+        "meaning_vi": "kết nghĩa",
+        "difference_vi": "Văn chương/cổ trang hơn 结拜.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 结拜 để nói quen bạn bình thường; nên dùng 认识 hoặc 成为朋友."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a36b507a-b244-4c75-9c41-e01bd5e895ec",
+      "order": 1,
+      "zh": "结拜兄弟",
+      "pinyin": "",
+      "vi": "anh em kết nghĩa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df54ece4-59b3-444e-a5fb-082569ab8458",
+      "order": 2,
+      "zh": "结拜为兄弟",
+      "pinyin": "",
+      "vi": "kết nghĩa làm anh em",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "60f1fa62-dbd9-49b3-83b6-1400276d550c",
+      "order": 3,
+      "zh": "两人结拜",
+      "pinyin": "",
+      "vi": "hai người kết nghĩa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5db78641-8fcd-45aa-8717-d38733f269d5",
+      "order": 4,
+      "zh": "结拜姐妹",
+      "pinyin": "",
+      "vi": "chị em kết nghĩa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "24a5707e-3a1f-409d-91bf-1f2be90a0dcc",
+      "order": 1,
+      "zh": "他们虽然不是亲兄弟，但是结拜以后感情很深。",
+      "pinyin": "",
+      "vi": "Tuy họ không phải anh em ruột, nhưng sau khi kết nghĩa thì tình cảm rất sâu.",
+      "analysis_vi": "结拜以后 nêu mốc thời gian sau nghi thức kết nghĩa.",
+      "highlight": [
+        "结拜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d96f41c4-7109-4317-9469-f711405b9f01"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4a131c5e-4d9d-49ad-9c74-ff58a5b75025",
+      "order": 2,
+      "zh": "梁山伯和祝英台一见如故，后来结拜为兄弟。",
+      "pinyin": "",
+      "vi": "Lương Sơn Bá và Chúc Anh Đài vừa gặp đã như quen từ lâu, sau đó kết nghĩa làm anh em.",
+      "analysis_vi": "结拜为兄弟 dùng 为 đọc wéi, nghĩa là trở thành/làm thành.",
+      "highlight": [
+        "结拜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d96f41c4-7109-4317-9469-f711405b9f01"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Quan hệ nghĩa khí/truyền thống; không dùng như kết bạn thông thường.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "003f7483-d2c4-48a8-a280-9178415e8e67",
+      "order": 1,
+      "rule_vi": "Không dùng 结拜 để nói quen bạn bình thường; nên dùng 认识 hoặc 成为朋友.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "结拜",
+    "back": "kết nghĩa anh em / chị em",
+    "hint": "jiébài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d96f41c4-7109-4317-9469-f711405b9f01",
+    "source_lesson_vocab_id": null
+  }
+}

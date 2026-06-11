@@ -1,0 +1,374 @@
+{
+  "id": "a70ac12f-9846-48c7-b526-e3f62f10ca55",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "手语",
+  "pinyin": "shǒuyǔ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "thủ ngữ",
+    "meaning_vi": "thủ ngữ, ngôn ngữ ký hiệu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thủ ngữ",
+      "ngôn ngữ ký hiệu"
+    ],
+    "short_definition_vi": "thủ ngữ, ngôn ngữ ký hiệu",
+    "textbook_focus_vi": "手语 là ngôn ngữ bằng tay và biểu cảm.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "手 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "手 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "手 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "Trong từ “手语”, chữ “手” góp phần vào trường nghĩa: tay",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "语",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn giản thể",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn giản thể",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "吾",
+            "hanviet": "ngô",
+            "meaning_vi": "ta; thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "吾 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngôn ngữ, lời nói",
+        "modern_logic_vi": "Trong từ “手语”, chữ “语” góp phần vào trường nghĩa: ngôn ngữ, lời nói",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "手语 là ngôn ngữ bằng tay và biểu cảm.",
+    "memory_tip_vi": "手语 là ngôn ngữ bằng tay và biểu cảm.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "手势",
+        "pinyin": "",
+        "meaning_vi": "cử chỉ tay, không phải hệ thống ngôn ngữ",
+        "difference_vi": "cử chỉ tay, không phải hệ thống ngôn ngữ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "肢体语言",
+        "pinyin": "",
+        "meaning_vi": "ngôn ngữ cơ thể, rộng hơn",
+        "difference_vi": "ngôn ngữ cơ thể, rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0177413f-eada-4de4-8449-c2375bbabd29",
+      "order": 1,
+      "zh": "学手语",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3bb1b68d-aa8c-450a-adb8-189f707e97f8",
+      "order": 2,
+      "zh": "手语老师",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "457c769d-dfa5-49ef-94fb-14b00dfbd639",
+      "order": 3,
+      "zh": "用手语沟通",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "af86f5dd-08a8-4ef6-9c96-67a95caea757",
+      "order": 4,
+      "zh": "手语翻译",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "72ba7813-5ef7-486e-97f2-fd9f362dccee",
+      "order": 1,
+      "zh": "他们正在学手语。",
+      "pinyin": "",
+      "vi": "Họ đang học thủ ngữ.",
+      "analysis_vi": "正在 + V.",
+      "highlight": [
+        "手语"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a70ac12f-9846-48c7-b526-e3f62f10ca55"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3c5598e4-bd6e-4203-9c11-7bc4d4247ae0",
+      "order": 2,
+      "zh": "同事们请了一位手语老师来教他们。",
+      "pinyin": "",
+      "vi": "Đồng nghiệp mời một giáo viên thủ ngữ đến dạy họ.",
+      "analysis_vi": "请 + người + 来 + V.",
+      "highlight": [
+        "手语"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a70ac12f-9846-48c7-b526-e3f62f10ca55"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "手语 là ngôn ngữ bằng tay và biểu cảm.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "de0a377e-3f81-4bb6-b8a8-ea8476a4c446",
+      "order": 1,
+      "rule_vi": "手语 là ngôn ngữ ký hiệu có hệ thống, không chỉ ra dấu tùy tiện.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "手语 là ngôn ngữ ký hiệu có hệ thống, không chỉ ra dấu tùy tiện.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "手语",
+    "back": "thủ ngữ, ngôn ngữ ký hiệu",
+    "hint": "shǒuyǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a70ac12f-9846-48c7-b526-e3f62f10ca55",
+    "source_lesson_vocab_id": null
+  }
+}

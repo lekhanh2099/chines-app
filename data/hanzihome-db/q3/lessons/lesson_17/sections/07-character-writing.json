@@ -1,0 +1,11 @@
+{
+  "id": "section_char_writing",
+  "type": "character_writing",
+  "order": 7,
+  "title": "写汉字",
+  "title_vi": "Viết chữ Hán",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [],
+  "empty_reason_vi": "Không thấy phần 写汉字 riêng trong PDF; bài 17 kết thúc sau 交际会话, trang kế tiếp bắt đầu 第十八课 一盒蛋糕."
+}

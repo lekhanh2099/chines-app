@@ -1,0 +1,336 @@
+{
+  "id": "9617d6d0-8c51-4716-abcd-75a9a4d609d9",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "电子信箱",
+  "pinyin": "diànzǐ xìnxiāng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "điện tử tín tương",
+    "meaning_vi": "hộp thư điện tử, email / địa chỉ email",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hộp thư điện tử",
+      "email / địa chỉ email"
+    ],
+    "short_definition_vi": "hộp thư điện tử, email / địa chỉ email",
+    "textbook_focus_vi": "电子 = điện tử, 信箱 = hộp thư. 电子信箱 = hộp thư điện tử/email.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công nghệ, liên lạc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "电",
+        "lishu_vi": "điện",
+        "structure_note_vi": "Chữ giản thể; học theo nghĩa hiện đại.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điện, điện tử",
+        "modern_logic_vi": "Trong từ này, 电 góp phần tạo nghĩa 'điện, điện tử'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "tử",
+        "structure_note_vi": "Bộ Tử, nghĩa trực tiếp.",
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ nhỏ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, phần tử",
+        "modern_logic_vi": "Trong từ này, 子 góp phần tạo nghĩa 'con, phần tử'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "信",
+        "lishu_vi": "tín",
+        "structure_note_vi": "亻 + 言; liên quan lời đáng tin/thư.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tin, thư, niềm tin",
+        "modern_logic_vi": "Trong từ này, 信 góp phần tạo nghĩa 'tin, thư, niềm tin'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "箱",
+        "lishu_vi": "tương",
+        "structure_note_vi": "竹 + 相; nghĩa hộp/thùng.",
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hòm, thùng, hộp",
+        "modern_logic_vi": "Trong từ này, 箱 góp phần tạo nghĩa 'hòm, thùng, hộp'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "电子 = điện tử, 信箱 = hộp thư. 电子信箱 = hộp thư điện tử/email.",
+    "memory_tip_vi": "Nhớ qua cụm: 电子信箱地址 = địa chỉ email.",
+    "warning_vi": "电子信箱 hơi giáo trình; đời sống hiện đại thường nói 邮箱/电子邮箱.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "邮箱",
+        "pinyin": "yóuxiāng",
+        "meaning_vi": "email/hòm thư",
+        "difference_vi": "Ngắn và đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "电子邮件",
+        "pinyin": "diànzǐ yóujiàn",
+        "meaning_vi": "bức email/thư điện tử",
+        "difference_vi": "Chỉ email message.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "电子信箱 hơi giáo trình; đời sống hiện đại thường nói 邮箱/电子邮箱."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "96e08fd9-2061-42fe-a67a-3bb988503e06",
+      "order": 1,
+      "zh": "电子信箱地址",
+      "pinyin": "diànzǐ xìnxiāng dìzhǐ",
+      "vi": "địa chỉ email",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ed2a0e81-67b5-442c-804c-d6fc3bbdc1d5",
+      "order": 2,
+      "zh": "查电子信箱",
+      "pinyin": "chá diànzǐ xìnxiāng",
+      "vi": "kiểm tra email",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dad61061-cf51-4fac-a366-ab09df29aa7e",
+      "order": 3,
+      "zh": "留下电子信箱",
+      "pinyin": "liúxià diànzǐ xìnxiāng",
+      "vi": "để lại email",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fff3733f-3f1c-40c3-bf79-5cb819fff60d",
+      "order": 1,
+      "zh": "赵霞在信的最后加上了自己的电子信箱。",
+      "pinyin": "Zhào Xiá zài xìn de zuìhòu jiā shàng le zìjǐ de diànzǐ xìnxiāng.",
+      "vi": "Triệu Hà thêm email của mình vào cuối thư.",
+      "analysis_vi": "加上了 = thêm vào rồi.",
+      "highlight": [
+        "电子信箱"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9617d6d0-8c51-4716-abcd-75a9a4d609d9"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "电子信箱 nghe hơi cũ/giáo trình; 邮箱 phổ biến hơn hiện nay.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "95da8dde-4562-4aa7-8146-be9efe22becc",
+      "order": 1,
+      "rule_vi": "电子信箱 hơi giáo trình; đời sống hiện đại thường nói 邮箱/电子邮箱.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我的邮箱是……",
+          "pinyin": "Wǒ de yóuxiāng shì...",
+          "vi": "Email của tôi là…",
+          "note_vi": "邮箱 tự nhiên hơn trong đời sống.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "电子信箱",
+    "back": "hộp thư điện tử, email / địa chỉ email",
+    "hint": "diànzǐ xìnxiāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9617d6d0-8c51-4716-abcd-75a9a4d609d9",
+    "source_lesson_vocab_id": null
+  }
+}

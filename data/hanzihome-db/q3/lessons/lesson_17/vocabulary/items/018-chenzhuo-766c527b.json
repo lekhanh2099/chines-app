@@ -1,0 +1,284 @@
+{
+  "id": "c3d9cffa-0870-4ef2-b385-ecea5da99ea8",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "沉着",
+  "pinyin": "chénzhuó",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trầm trước",
+    "meaning_vi": "bình tĩnh, điềm tĩnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bình tĩnh",
+      "điềm tĩnh"
+    ],
+    "short_definition_vi": "bình tĩnh, điềm tĩnh",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "沉",
+        "lishu_vi": "trầm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìm, lắng xuống, nặng",
+        "modern_logic_vi": "chìm, lắng xuống, nặng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "着",
+        "lishu_vi": "trước/trứ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dính vào, đặt vào; đọc tùy chức năng",
+        "modern_logic_vi": "dính vào, đặt vào; đọc tùy chức năng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "沉 gợi lắng xuống; 沉着 là tinh thần lắng ổn, không hoảng.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 保持沉着.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "冷静",
+        "pinyin": "lěngjìng",
+        "meaning_vi": "bình tĩnh/lý trí",
+        "difference_vi": "冷静 nhấn lý trí, không bị cảm xúc chi phối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "镇定",
+        "pinyin": "zhèndìng",
+        "meaning_vi": "trấn tĩnh",
+        "difference_vi": "镇定 thường dùng khi gặp sự cố.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "慌忙",
+        "pinyin": "huāngmáng",
+        "meaning_vi": "cuống quýt",
+        "difference_vi": "đối lập theo phong thái",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "508b9e72-ec13-484b-8c7c-60bb850830a5",
+      "order": 1,
+      "zh": "保持沉着",
+      "pinyin": "bǎochí chénzhuó",
+      "vi": "giữ bình tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa1c6155-5ecd-4b4b-81ac-9b70f6f784f3",
+      "order": 2,
+      "zh": "沉着地回答",
+      "pinyin": "chénzhuó de huídá",
+      "vi": "bình tĩnh trả lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa08770e-3aea-4096-8e65-088ba2786a7f",
+      "order": 3,
+      "zh": "沉着下来",
+      "pinyin": "chénzhuó xiàlai",
+      "vi": "bình tĩnh lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7e9d8f54-3993-45c4-9d86-b830be2f15aa",
+      "order": 1,
+      "zh": "面试的时候一定要沉着。",
+      "pinyin": "Miànshì de shíhou yídìng yào chénzhuó.",
+      "vi": "Khi phỏng vấn nhất định phải bình tĩnh.",
+      "analysis_vi": "一定要 nhắc nhở mạnh.",
+      "highlight": [
+        "沉着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c3d9cffa-0870-4ef2-b385-ecea5da99ea8"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e9c5fef-2c55-40ed-9339-7fe961d68d2a",
+      "order": 2,
+      "zh": "他把教案放在桌子上，努力让自己沉着下来。",
+      "pinyin": "Tā bǎ jiào’àn fàng zài zhuōzi shang, nǔlì ràng zìjǐ chénzhuó xiàlai.",
+      "vi": "Anh ấy đặt giáo án lên bàn và cố làm mình bình tĩnh lại.",
+      "analysis_vi": "沉着下来 chỉ trạng thái dần ổn định.",
+      "highlight": [
+        "沉着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c3d9cffa-0870-4ef2-b385-ecea5da99ea8"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "沉着 thường dùng khi đánh giá biểu hiện trong thi cử, phỏng vấn, nguy hiểm hoặc thuyết trình.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0e0bcf14-8a06-4bbb-8910-161684868e7c",
+      "order": 1,
+      "rule_vi": "Không nhầm 沉着 với 沉重; 沉着 là bình tĩnh, 沉重 là nặng nề.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "沉着",
+    "back": "bình tĩnh, điềm tĩnh",
+    "hint": "chénzhuó",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c3d9cffa-0870-4ef2-b385-ecea5da99ea8",
+    "source_lesson_vocab_id": null
+  }
+}

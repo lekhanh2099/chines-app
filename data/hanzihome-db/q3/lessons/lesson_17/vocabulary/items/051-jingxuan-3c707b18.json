@@ -1,0 +1,295 @@
+{
+  "id": "f98abdd7-60b0-4b4a-aba6-b906a3f5ae93",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "竞选",
+  "pinyin": "jìngxuǎn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cạnh tuyển",
+    "meaning_vi": "tranh cử, vận động để được bầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tranh cử",
+      "vận động để được bầu"
+    ],
+    "short_definition_vi": "tranh cử, vận động để được bầu",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "竞",
+        "lishu_vi": "cạnh",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "兄",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cạnh tranh, thi đua",
+        "modern_logic_vi": "cạnh tranh, thi đua",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "选",
+        "lishu_vi": "tuyển",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, chuyển động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "先",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chọn, bầu chọn, tuyển chọn",
+        "modern_logic_vi": "chọn, bầu chọn, tuyển chọn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, chuyển động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "竞 là cạnh tranh; 选 là bầu/chọn; 竞选 là cạnh tranh để được chọn.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 竞选班长.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "选举",
+        "pinyin": "xuǎnjǔ",
+        "meaning_vi": "bầu cử",
+        "difference_vi": "选举 chỉ hoạt động bầu chọn nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "应聘",
+        "pinyin": "yìngpìn",
+        "meaning_vi": "ứng tuyển",
+        "difference_vi": "应聘 là xin việc, không phải tranh cử.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "37cdb6c9-ac5a-476e-bfbd-6e099b85fcd2",
+      "order": 1,
+      "zh": "竞选班长",
+      "pinyin": "jìngxuǎn bānzhǎng",
+      "vi": "tranh cử lớp trưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "886b49a3-f041-43e6-bb33-b7aabc9cc03e",
+      "order": 2,
+      "zh": "参加竞选",
+      "pinyin": "cānjiā jìngxuǎn",
+      "vi": "tham gia tranh cử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3adef990-6b9e-441a-801b-690070ff322d",
+      "order": 3,
+      "zh": "竞选演讲",
+      "pinyin": "jìngxuǎn yǎnjiǎng",
+      "vi": "bài phát biểu tranh cử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "730bbdea-8424-4493-81a2-67f78b3fc374",
+      "order": 1,
+      "zh": "他想竞选班长。",
+      "pinyin": "Tā xiǎng jìngxuǎn bānzhǎng.",
+      "vi": "Anh ấy muốn tranh cử lớp trưởng.",
+      "analysis_vi": "竞选 + chức vụ là kết cấu tự nhiên.",
+      "highlight": [
+        "竞选"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f98abdd7-60b0-4b4a-aba6-b906a3f5ae93"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0198dd19-d707-4c92-bc4e-f993151a5fbf",
+      "order": 2,
+      "zh": "他把竞选演讲准备好了，可一登台就紧张得心直跳。",
+      "pinyin": "Tā bǎ jìngxuǎn yǎnjiǎng zhǔnbèi hǎo le, kě yì dēngtái jiù jǐnzhāng de xīn zhí tiào.",
+      "vi": "Anh ấy chuẩn bị xong bài tranh cử, nhưng vừa lên bục đã căng đến tim đập thình thịch.",
+      "analysis_vi": "把演讲准备好 là 把 + kết quả.",
+      "highlight": [
+        "竞选"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f98abdd7-60b0-4b4a-aba6-b906a3f5ae93"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "竞选 dùng được trong trường học như 竞选班长, không chỉ chính trị.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1682a4aa-8401-498f-84d5-20d8596c44a6",
+      "order": 1,
+      "rule_vi": "学校招聘老师, 学生竞选班长; không nói 学校竞选老师.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "竞选",
+    "back": "tranh cử, vận động để được bầu",
+    "hint": "jìngxuǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f98abdd7-60b0-4b4a-aba6-b906a3f5ae93",
+    "source_lesson_vocab_id": null
+  }
+}

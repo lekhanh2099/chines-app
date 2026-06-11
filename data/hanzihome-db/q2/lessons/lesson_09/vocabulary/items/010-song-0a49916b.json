@@ -1,0 +1,371 @@
+{
+  "id": "a8ddef96-348b-4981-9713-e2631c4de39c",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "送",
+  "pinyin": "sòng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tống",
+    "meaning_vi": "đưa, tặng, tiễn, gửi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đưa",
+      "tặng",
+      "tiễn",
+      "gửi"
+    ],
+    "short_definition_vi": "đưa, tặng, tiễn, gửi",
+    "textbook_focus_vi": "Âm Hán Việt: tống. Nghĩa chính: Tặng: 送礼物. Đưa đến/giao: 送资料来. Tiễn: 送朋友去车站. Đưa ai đi đâu: 送孩子上学.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "送",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại / di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại / di chuyển",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "关",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đưa, tặng, tiễn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 辶 nên gắn với di chuyển. 送 = đưa người/vật đi, mở rộng thành tặng và tiễn.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 送 rất đa nghĩa, phải nhìn tân ngữ: tặng đồ, đưa người, tiễn người.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "送",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đưa, tặng, tiễn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "给",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cho, đưa cho; chức năng ngữ pháp rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寄",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gửi qua bưu điện/chuyển phát.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "捎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiện mang/gửi hộ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mang theo/dẫn theo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我送你一张票。",
+      "Tôi tặng/đưa bạn một tấm vé.",
+      "我寄给你一张票。",
+      "Tôi gửi vé cho bạn qua đường gửi.",
+      "我给你带来一张票。",
+      "Tôi mang đến cho bạn một tấm vé."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1906bd28-1f9a-4751-8e9b-b4f8dcc62ae4",
+      "order": 1,
+      "zh": "送礼物",
+      "pinyin": "",
+      "vi": "tặng quà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f8491713-096c-4866-a0e3-5cbe2e4a5f86",
+      "order": 2,
+      "zh": "送书",
+      "pinyin": "",
+      "vi": "tặng/đưa sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a3fa867-a02c-4a73-8b96-f06f5b3ea949",
+      "order": 3,
+      "zh": "送资料来",
+      "pinyin": "",
+      "vi": "đưa tài liệu đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cf61d7b-2630-4385-b328-aedf212303cb",
+      "order": 4,
+      "zh": "送朋友去车站",
+      "pinyin": "",
+      "vi": "tiễn bạn ra ga",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7b563141-eef3-40eb-97e1-ba5ede01bbf3",
+      "order": 5,
+      "zh": "送孩子上学",
+      "pinyin": "",
+      "vi": "đưa con đi học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e38685e-e36e-4277-8670-8ff8053ba548",
+      "order": 6,
+      "zh": "送行",
+      "pinyin": "",
+      "vi": "tiễn đi xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "835422f2-7e2d-4e15-9b24-2e19ec89a4ac",
+      "order": 1,
+      "zh": "我送你一本书。",
+      "pinyin": "Wǒ sòng nǐ yì běn shū.",
+      "vi": "Tôi tặng bạn một quyển sách.",
+      "analysis_vi": "送 + người + vật = tặng/đưa cho ai cái gì.",
+      "highlight": [
+        "送"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a8ddef96-348b-4981-9713-e2631c4de39c"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e0074c75-a735-4e47-82c2-e10f46e06e63",
+      "order": 2,
+      "zh": "他马上要去香港了，我们去车站送他。",
+      "pinyin": "Tā mǎshàng yào qù Xiānggǎng le, wǒmen qù chēzhàn sòng tā.",
+      "vi": "Anh ấy sắp đi Hồng Kông ngay rồi, chúng tôi ra ga tiễn anh ấy.",
+      "analysis_vi": "马上要……了 báo sắp xảy ra rất gần. 送他 ở đây là tiễn anh ấy.",
+      "highlight": [
+        "送"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a8ddef96-348b-4981-9713-e2631c4de39c"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "094396c4-73e2-495d-b8f7-a291099877f1",
+      "order": 3,
+      "zh": "研讨会快开始了，赵老师让师傅把新的文物展览资料送进会议室来，要求大家先看清楚再讨论。",
+      "pinyin": "Yántǎohuì kuài kāishǐ le, Zhào lǎoshī ràng shīfu bǎ xīn de wénwù zhǎnlǎn zīliào sòng jìn huìyìshì lái, yāoqiú dàjiā xiān kàn qīngchu zài tǎolùn.",
+      "vi": "Hội thảo sắp bắt đầu rồi, thầy Triệu bảo bác/tài xế/thợ đưa tài liệu triển lãm văn vật mới vào phòng họp về phía này, yêu cầu mọi người xem rõ trước rồi mới thảo luận.",
+      "analysis_vi": "送进会议室来 dùng 来 vì đưa vào phía người nói/nhóm trong phòng. 把资料送进来 là 把字句 + xu hướng. 先……再…… diễn tả trình tự.",
+      "highlight": [
+        "送"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a8ddef96-348b-4981-9713-e2631c4de39c"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "送 trong tiếng Trung không chỉ là “tặng”. Khi nói 我送你回家, nghĩa là “tôi đưa bạn về nhà”, không phải “tặng bạn về nhà”. Khi nói 送朋友去机场, nghĩa là tiễn/đưa bạn ra sân bay.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6683997f-73d1-4d42-b609-5e7f766fba4f",
+      "order": 1,
+      "rule_vi": "Lưu ý sử dụng từ đúng văn cảnh, tránh dịch máy.",
+      "natural_examples": [
+        {
+          "zh": "送礼物 = tặng quà.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "送朋友 = tiễn/đưa bạn.",
+          "pinyin": "送资料来 = đưa tài liệu đến.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "送资料来 = đưa tài liệu đến.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "送",
+    "back": "đưa, tặng, tiễn, gửi",
+    "hint": "sòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a8ddef96-348b-4981-9713-e2631c4de39c",
+    "source_lesson_vocab_id": null
+  }
+}

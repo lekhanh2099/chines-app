@@ -1,0 +1,272 @@
+{
+  "id": "98181ba3-fb02-4407-b1df-373a6b3c2104",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "骨折",
+  "pinyin": "gǔzhé",
+  "pos": {
+    "raw_vi": "Danh từ / động từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "cốt chiết",
+    "meaning_vi": "gãy xương",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gãy xương"
+    ],
+    "short_definition_vi": "gãy xương",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "骨",
+        "lishu_vi": "",
+        "structure_note_vi": "骨: xương",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xương",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: xương.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "折",
+        "lishu_vi": "",
+        "structure_note_vi": "折: gãy",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay; động tác bằng tay",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay; động tác bằng tay",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gãy",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: gãy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay; động tác bằng tay",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "骨折 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 腿骨折了.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "609742c2-f28f-45b4-97f3-9ad8691a07b1",
+      "order": 1,
+      "zh": "腿骨折了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bce40aea-da04-47a1-959a-86e3cb87b286",
+      "order": 2,
+      "zh": "手臂骨折",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f106ce9-f289-467d-ad7e-d174946667f1",
+      "order": 3,
+      "zh": "检查骨折",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f917cee5-d9e4-4eb2-af62-4871264a2024",
+      "order": 4,
+      "zh": "严重骨折",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e8ed84e9-cc9c-4924-9658-3f84c3502a83",
+      "order": 1,
+      "zh": "医生说我的腿可能骨折了。",
+      "pinyin": "",
+      "vi": "Bác sĩ nói chân tôi có thể bị gãy xương rồi。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "骨折"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "98181ba3-fb02-4407-b1df-373a6b3c2104"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bf94e498-6a65-4bca-8919-e0b813359998",
+      "order": 2,
+      "zh": "如果骨折了，就要认真治疗。",
+      "pinyin": "",
+      "vi": "Nếu bị gãy xương thì phải điều trị nghiêm túc。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "骨折"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "98181ba3-fb02-4407-b1df-373a6b3c2104"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1923e93f-0f7e-49c3-8c66-a6b2d6c129f3",
+      "order": 1,
+      "rule_vi": "Không nói 我的腿破了骨折。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 我的腿破了骨折。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "骨折",
+    "back": "gãy xương",
+    "hint": "gǔzhé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "98181ba3-fb02-4407-b1df-373a6b3c2104",
+    "source_lesson_vocab_id": null
+  }
+}

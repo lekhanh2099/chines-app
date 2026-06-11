@@ -1,0 +1,388 @@
+{
+  "id": "ed01ef01-dedf-4829-afa4-fd6b2b810c53",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "救济",
+  "pinyin": "jiùjì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cứu tế",
+    "meaning_vi": "cứu trợ, trợ cấp, cứu tế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cứu trợ, trợ cấp, cứu tế"
+    ],
+    "short_definition_vi": "cứu trợ, trợ cấp, cứu tế",
+    "textbook_focus_vi": "Âm Hán Việt: cứu tế.",
+    "register_vi": "xã hội, chính sách, từ thiện, hơi trang trọng.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "救",
+        "lishu_vi": "cứu",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "động tác, tác động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "求",
+            "hanviet": "cầu",
+            "meaning_vi": "cầu xin, tìm kiếm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "động tác, tác động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "động tác, tác động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cứu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "济",
+        "lishu_vi": "tế",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng, dòng chảy",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng, dòng chảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng, dòng chảy",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "齐",
+            "hanviet": "tề",
+            "meaning_vi": "đều, chỉnh tề",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giúp đỡ, cứu trợ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 救济 = cứu giúp người gặp khó khăn, nhất là bằng vật chất/tiền/gạo/quần áo.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 救济 khác 救命. 救济 là cứu trợ đời sống; 救命 là cứu mạng trong tình huống nguy hiểm đến tính mạng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "救济",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cứu tế, cứu trợ vật chất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "帮助",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giúp đỡ nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "救助",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cứu trợ/cứu giúp, trung tính và hiện đại hơn trong nhiều văn bản.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "救命",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cứu mạng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "资助",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tài trợ, hỗ trợ tài chính.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 救济流浪汉 = cứu trợ người vô gia cư.",
+      "→ 救命！ = cứu mạng!"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "82263800-961b-4231-906d-de0512e1ad66",
+      "order": 1,
+      "zh": "社会救济",
+      "pinyin": "",
+      "vi": "cứu trợ xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a330c95-c850-41b2-bb6e-909852c2ccbc",
+      "order": 2,
+      "zh": "救济穷人",
+      "pinyin": "",
+      "vi": "cứu tế người nghèo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d474717-2e33-475f-bbbb-99418b6072f5",
+      "order": 3,
+      "zh": "接受救济",
+      "pinyin": "",
+      "vi": "nhận cứu trợ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "997605f1-4ff8-4a90-8246-de94654501cf",
+      "order": 4,
+      "zh": "救济金",
+      "pinyin": "",
+      "vi": "tiền trợ cấp/cứu tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "455acce5-44fd-435b-a842-1fe0841d1724",
+      "order": 5,
+      "zh": "救济流浪汉",
+      "pinyin": "",
+      "vi": "cứu trợ người vô gia cư",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "46e62a7a-5848-4617-8429-62f53630c9e6",
+      "order": 1,
+      "zh": "他们给流浪汉送去救济。",
+      "pinyin": "Tāmen gěi liúlànghàn sòng qù jiùjì.",
+      "vi": "Họ gửi cứu trợ đến cho người vô gia cư.",
+      "analysis_vi": "送去救济 nhấn đưa đồ/tiền hỗ trợ đến cho người cần giúp.",
+      "highlight": [
+        "救济"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ed01ef01-dedf-4829-afa4-fd6b2b810c53"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "da4e58b8-721d-4970-bbe0-91248c677255",
+      "order": 2,
+      "zh": "如果没有社会救济，很多人冬天可能活不下去。",
+      "pinyin": "Rúguǒ méiyǒu shèhuì jiùjì, hěn duō rén dōngtiān kěnéng huó bú xiàqù.",
+      "vi": "Nếu không có cứu trợ xã hội, nhiều người mùa đông có thể không sống tiếp nổi.",
+      "analysis_vi": "如果…… nêu điều kiện giả định. 活不下去 là bổ ngữ khả năng phủ định, nghĩa là không thể sống tiếp.",
+      "highlight": [
+        "救济"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ed01ef01-dedf-4829-afa4-fd6b2b810c53"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "933f058d-fbfe-4fd2-85a7-eb1f36178ce3",
+      "order": 3,
+      "zh": "社区门口放着几箱衣服和食品，工作人员把它们一件件登记好，再送给需要救济的老人和流浪者。",
+      "pinyin": "Shèqū ménkǒu fàngzhe jǐ xiāng yīfu hé shípǐn, gōngzuò rényuán bǎ tāmen yí jiàn jiàn dēngjì hǎo, zài sòng gěi xūyào jiùjì de lǎorén hé liúlàngzhě.",
+      "vi": "Trước cửa khu dân cư có đặt mấy thùng quần áo và thực phẩm, nhân viên đăng ký từng món xong rồi gửi cho người già và người lang thang cần cứu trợ.",
+      "analysis_vi": "社区门口放着几箱…… là câu tồn hiện. 把它们一件件登记好 là 把字句 + lượng từ lặp lại + kết quả 好.",
+      "highlight": [
+        "救济"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ed01ef01-dedf-4829-afa4-fd6b2b810c53"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "救济 là từ khá trang trọng, hay gặp trong bối cảnh chính sách xã hội hoặc từ thiện. Trong khẩu ngữ đời thường, người ta có thể nói đơn giản hơn: 帮助他们, 给他们送吃的, 帮他们渡过难关.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3c383507-4e8b-4e56-8c51-ae514eda2f85",
+      "order": 1,
+      "rule_vi": "Nhầm 救济 với 救命.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "他们需要救济。 Tāmen xūyào jiùjì. Họ cần cứu trợ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "救济",
+    "back": "cứu trợ, trợ cấp, cứu tế",
+    "hint": "jiùjì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ed01ef01-dedf-4829-afa4-fd6b2b810c53",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "id": "facefdba-2d6c-4972-952c-f5312415cf2b",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "掏",
+  "pinyin": "tāo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Đào",
+    "meaning_vi": "móc ra, lôi ra từ túi/ví/ngăn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "móc ra, lôi ra từ túi/ví/ngăn"
+    ],
+    "short_definition_vi": "móc ra, lôi ra từ túi/ví/ngăn",
+    "textbook_focus_vi": "móc ra, lôi ra từ túi/ví/ngăn",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "掏",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "匋",
+            "hanviet": "",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "móc/lôi ra từ bên trong",
+        "modern_logic_vi": "掏 là thò tay vào trong rồi lấy ra.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "掏 có bộ 扌, liên quan đến thao tác bằng tay. Lõi nghĩa: đưa tay vào trong một không gian hẹp rồi lấy vật ra. → 从口袋里掏出硬币 = móc tiền xu từ trong túi ra. → 掏出护照 = lôi hộ chiếu ra.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿出",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lấy ra, trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "取出",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lấy ra, hơi văn/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "找出",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tìm ra.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "掏: móc/lôi ra từ trong túi/ví/ngăn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "16e51afb-ff54-46b9-a77d-76118deaead8",
+      "order": 1,
+      "zh": "掏出硬币",
+      "pinyin": "",
+      "vi": "móc tiền xu ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "324dc429-5ea8-448c-b02e-9b8fd0bdb875",
+      "order": 2,
+      "zh": "从包里掏出护照",
+      "pinyin": "",
+      "vi": "lôi hộ chiếu từ trong túi ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c884f671-aaa6-42aa-94e2-3d732444f2cf",
+      "order": 3,
+      "zh": "从口袋里掏钱",
+      "pinyin": "",
+      "vi": "móc tiền từ túi ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "93c43100-c47d-431e-808a-28e55630a3e6",
+      "order": 4,
+      "zh": "掏了半天",
+      "pinyin": "",
+      "vi": "móc/tìm trong túi rất lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "761e8f84-2627-4703-b613-2735b28ebe98",
+      "order": 5,
+      "zh": "掏钱包",
+      "pinyin": "",
+      "vi": "móc/lấy ví ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "57dc9e6b-160d-4fa7-906d-901bb5060cf7",
+      "order": 1,
+      "zh": "他从口袋里掏出几个硬币，准备买水。",
+      "pinyin": "Tā cóng kǒudài lǐ tāo chū jǐ ge yìngbì, zhǔnbèi mǎi shuǐ.",
+      "vi": "Anh ấy móc từ trong túi ra vài đồng xu, chuẩn bị mua nước.",
+      "analysis_vi": "从口袋里掏出…… nhấn động tác lấy từ trong túi ra.",
+      "highlight": [
+        "掏"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "facefdba-2d6c-4972-952c-f5312415cf2b"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d60b983e-d7d3-445e-8c77-749bccc9634b",
+      "order": 2,
+      "zh": "办理手续的时候，她把护照从包里掏出来了。",
+      "pinyin": "Bànlǐ shǒuxù de shíhou, tā bǎ hùzhào cóng bāo lǐ tāo chūlai le.",
+      "vi": "Khi làm thủ tục, cô ấy lôi hộ chiếu từ trong túi ra.",
+      "analysis_vi": "把护照从包里掏出来 là câu 把 có nguồn 从包里 và hướng 出来.",
+      "highlight": [
+        "掏"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "facefdba-2d6c-4972-952c-f5312415cf2b"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e8e78398-9f12-4e2a-b0a9-bef264a799ac",
+      "order": 3,
+      "zh": "他掏了半天，才找到登机牌儿。",
+      "pinyin": "Tā tāo le bàntiān, cái zhǎodào dēngjīpáir.",
+      "vi": "Anh ấy móc/tìm trong túi mãi mới tìm thấy boarding pass.",
+      "analysis_vi": "才找到 cho thấy tìm ra muộn; 掏了半天 rất khẩu ngữ.",
+      "highlight": [
+        "掏"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "facefdba-2d6c-4972-952c-f5312415cf2b"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trong khẩu ngữ Trung Quốc, 掏钱 nghĩa là móc tiền ra/trả tiền, đôi khi có sắc thái “phải bỏ tiền túi”. Ví dụ 这顿饭我掏钱 = bữa này tôi trả.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cd5f0626-5e63-42fd-bc29-d355997a225d",
+      "order": 1,
+      "rule_vi": "Dùng 掏 khi vật không nằm trong vật chứa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 掏 theo cụm và ngữ cảnh bài 18; nghĩa chính là móc ra, lôi ra từ túi/ví/ngăn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "掏",
+    "back": "móc ra, lôi ra từ túi/ví/ngăn",
+    "hint": "tāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "facefdba-2d6c-4972-952c-f5312415cf2b",
+    "source_lesson_vocab_id": null
+  }
+}

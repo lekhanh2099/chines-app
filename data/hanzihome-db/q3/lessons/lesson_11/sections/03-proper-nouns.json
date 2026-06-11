@@ -1,0 +1,71 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "新疆",
+      "pinyin": "Xīnjiāng",
+      "meaning_vi": "Tân Cương; Khu tự trị Duy Ngô Nhĩ Tân Cương của Trung Quốc",
+      "meaning_en": "Xinjiang",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ riêng",
+      "pos_detail": {
+        "vi": "Danh từ riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "乌鲁木齐",
+      "pinyin": "Wūlǔmùqí",
+      "meaning_vi": "Urumqi; thủ phủ của Tân Cương",
+      "meaning_en": "Urumqi",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ riêng",
+      "pos_detail": {
+        "vi": "Danh từ riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "大刘",
+      "pinyin": "Dà Liú",
+      "meaning_vi": "Đại Lưu; tên người",
+      "meaning_en": "Da Liu",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ riêng",
+      "pos_detail": {
+        "vi": "Danh từ riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    }
+  ]
+}

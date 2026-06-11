@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_895fcb0be63e6bbd",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "仙女",
+  "pinyin": "xiānnǚ",
+  "meaning_vi": "tiên nữ; nữ tiên",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Danh từ chỉ tiên nữ/nữ tiên, thường gặp trong thần thoại.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+    "type": "vocabulary_item",
+    "order": 32,
+    "hanzi": "仙女",
+    "pinyin": "xiānnǚ",
+    "meaning_vi": "tiên nữ; nữ tiên",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "仙女",
+      "back": "tiên nữ; nữ tiên",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Danh từ chỉ tiên nữ/nữ tiên, thường gặp trong thần thoại.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,376 @@
+{
+  "id": "15c899c5-c1f2-44e2-99c0-7eaeb3f5c3b0",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "鱼",
+  "pinyin": "yú",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "bai-02",
+    "hanyu2",
+    "deep-vocab",
+    "group_003"
+  ],
+  "meaning": {
+    "hanviet": "Ngư",
+    "meaning_vi": "cá",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cá"
+    ],
+    "short_definition_vi": "cá",
+    "textbook_focus_vi": "Nghĩa ưu tiên theo Bài 2: 玛丽哭了.",
+    "register_vi": "đời sống, ăn uống, món ăn.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 2; y tế, cơ thể, cảm xúc, hoạt động xã hội.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鱼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "鱼",
+            "hanviet": "ngư",
+            "meaning_vi": "cá",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "魚",
+              "radical_variant": "鱼",
+              "radical_name_vi": "bộ Ngư",
+              "radical_name_zh": "",
+              "hanviet": "ngư",
+              "meaning_vi": "cá",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cá; món cá",
+        "modern_logic_vi": "鱼 là chữ/bộ chỉ cá, học trực tiếp theo hình chữ và cụm ăn uống.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "魚",
+          "radical_variant": "鱼",
+          "radical_name_vi": "bộ Ngư",
+          "radical_name_zh": "",
+          "hanviet": "ngư",
+          "meaning_vi": "cá",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "鱼 là chữ chỉ con cá. Nên học theo cụm hiện đại: 一条鱼 = một con cá. 吃鱼 = ăn cá. 鱼肉 = thịt cá. 糖醋鱼 = cá sốt chua ngọt.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: nguyên con cá thường dùng 条, không dùng 个.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "鱼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cá nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鱼肉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thịt cá.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "海鲜",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hải sản, rộng hơn cá.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "牛肉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thịt bò.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "肉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thịt nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "Tôi ăn cá.",
+      "Con cá này không tươi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "89879c91-2fb8-4149-befb-0a3dcdc668d5",
+      "order": 1,
+      "zh": "一条鱼",
+      "pinyin": "",
+      "vi": "một con cá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fe510fe-a920-435a-9cf7-3235a2c9c86a",
+      "order": 2,
+      "zh": "吃鱼",
+      "pinyin": "",
+      "vi": "ăn cá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df655fc7-8153-47d6-84bc-ac2330d867b9",
+      "order": 3,
+      "zh": "买鱼",
+      "pinyin": "",
+      "vi": "mua cá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecc80322-2095-4b1d-a293-faf9d321b746",
+      "order": 4,
+      "zh": "鱼不新鲜",
+      "pinyin": "",
+      "vi": "cá không tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b31ae43f-e383-4c84-891e-92199c67c96f",
+      "order": 5,
+      "zh": "糖醋鱼",
+      "pinyin": "",
+      "vi": "cá sốt chua ngọt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "343dd85e-5001-493b-a5cb-2af6540651de",
+      "order": 6,
+      "zh": "鱼片",
+      "pinyin": "",
+      "vi": "lát cá / phi lê cá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "578632e7-aa07-4f47-8458-310faa76c3b7",
+      "order": 1,
+      "zh": "玛丽昨天吃了一些鱼。",
+      "pinyin": "Mǎlì zuótiān chī le yìxiē yú.",
+      "vi": "Hôm qua Mary đã ăn một ít cá.",
+      "analysis_vi": "吃了 + O là động tác đã hoàn thành. 一些鱼 = một ít cá.",
+      "highlight": [
+        "鱼"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "15c899c5-c1f2-44e2-99c0-7eaeb3f5c3b0"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "81aae547-40d8-4ca0-b482-4e62e731fd72",
+      "order": 2,
+      "zh": "因为那条鱼不新鲜，所以她今天拉肚子了。",
+      "pinyin": "Yīnwèi nà tiáo yú bù xīnxiān, suǒyǐ tā jīntiān lā dùzi le.",
+      "vi": "Vì con cá đó không tươi nên hôm nay cô ấy bị tiêu chảy.",
+      "analysis_vi": "因为……所以…… nêu nguyên nhân – kết quả. 一条鱼 dùng 条 vì nói nguyên con cá.",
+      "highlight": [
+        "鱼"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "15c899c5-c1f2-44e2-99c0-7eaeb3f5c3b0"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fc25f622-d63f-49e9-909c-b492d0d8d50a",
+      "order": 3,
+      "zh": "桌子上放着半条没吃完的鱼，医生一听说玛丽昨天吃了它，就让护士把剩下的鱼拿去化验。",
+      "pinyin": "Zhuōzi shang fàngzhe bàn tiáo méi chī wán de yú, yīshēng yì tīngshuō Mǎlì zuótiān chī le tā, jiù ràng hùshi bǎ shèng xià de yú ná qù huàyàn.",
+      "vi": "Trên bàn có nửa con cá chưa ăn hết, bác sĩ vừa nghe nói hôm qua Mary đã ăn nó thì bảo y tá mang phần cá còn lại đi xét nghiệm.",
+      "analysis_vi": "桌子上放着半条鱼 là câu tồn hiện. 没吃完 = chưa ăn hết. 把剩下的鱼拿去化验 là 把字句, đưa vật đi xử lý.",
+      "highlight": [
+        "鱼"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "15c899c5-c1f2-44e2-99c0-7eaeb3f5c3b0"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "flashcard": {
+    "front": "鱼",
+    "back": "cá",
+    "hint": "yú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai-02",
+      "hanyu2",
+      "deep-vocab",
+      "group_003"
+    ],
+    "notes": []
+  },
+  "warnings": [
+    {
+      "id": "b40ddff3-f0cf-4c84-b9f5-f04028c5654a",
+      "order": 1,
+      "rule_vi": "Dùng sai lượng từ.",
+      "natural_examples": [
+        {
+          "zh": "一条鱼",
+          "pinyin": "",
+          "vi": "Yì tiáo yú",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "一片鱼",
+          "pinyin": "Yí piàn yú",
+          "vi": "Một lát cá.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "一条鱼",
+          "pinyin": "",
+          "vi": "Yì tiáo yú",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "一片鱼",
+          "pinyin": "Yí piàn yú",
+          "vi": "Một lát cá.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dùng sai lượng từ. Tự nhiên: Yì tiáo yú",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ghi chú sử dụng",
+    "content_vi": "Trong văn hóa Trung Quốc, 鱼 yú còn gợi liên tưởng tốt vì gần âm với 余 yú trong 年年有余 – năm nào cũng dư dả. Nhưng trong Bài 2, trọng tâm là cá như món ăn có thể gây đau bụng nếu không tươi.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_and_BAI_1-10_docx"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "15c899c5-c1f2-44e2-99c0-7eaeb3f5c3b0",
+    "source_lesson_vocab_id": null
+  }
+}

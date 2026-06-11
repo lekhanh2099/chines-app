@@ -1,0 +1,145 @@
+[
+  {
+    "id": "ca99488a-ac1c-404d-92bf-c0623bdfb791",
+    "order": 1,
+    "title_vi": "Quan hệ kết nghĩa / tình bạn / tình nghĩa",
+    "words": [
+      "结拜",
+      "兄弟",
+      "深厚",
+      "情谊",
+      "一见如故"
+    ],
+    "notes": []
+  },
+  {
+    "id": "ddab5436-bbbe-433f-bd46-2c75d83486ed",
+    "order": 2,
+    "title_vi": "Danh tiếng / truyền thuyết / lưu truyền",
+    "words": [
+      "家喻户晓",
+      "流传",
+      "代"
+    ],
+    "notes": []
+  },
+  {
+    "id": "a26783b2-fc97-4842-be11-c5b15a4d360e",
+    "order": 3,
+    "title_vi": "Nữ cải nam trang / học hành / phẩm chất",
+    "words": [
+      "绣花",
+      "女扮男装",
+      "男生 / 女生",
+      "学问",
+      "出众",
+      "人品"
+    ],
+    "notes": []
+  },
+  {
+    "id": "51d57cf1-aa55-49cb-86be-f96fbe6871a8",
+    "order": 4,
+    "title_vi": "Cầu xin / áp lực / lựa chọn",
+    "words": [
+      "经不住",
+      "苦苦",
+      "哀求",
+      "逼",
+      "请求",
+      "坚决",
+      "宁可",
+      "无奈"
+    ],
+    "notes": []
+  },
+  {
+    "id": "48027acb-4b68-4944-8db9-0582d118580a",
+    "order": 5,
+    "title_vi": "Chia tay / gửi gắm / tín vật",
+    "words": [
+      "送别",
+      "送行",
+      "结",
+      "师母",
+      "心思",
+      "玉",
+      "手镯",
+      "信物",
+      "拜托",
+      "转交",
+      "暗示",
+      "始终"
+    ],
+    "notes": []
+  },
+  {
+    "id": "3a74ab16-0248-41ed-a2cf-7eca3d8b4740",
+    "order": 6,
+    "title_vi": "Hôn nhân / mai mối / gặp lại",
+    "words": [
+      "做媒",
+      "相亲",
+      "相会",
+      "赠送",
+      "嫁",
+      "官",
+      "楼台",
+      "表明",
+      "求婚"
+    ],
+    "notes": []
+  },
+  {
+    "id": "0e273168-1eb5-4cb2-8917-73365ab270a1",
+    "order": 7,
+    "title_vi": "Tang lễ / mộ phần / khóc than",
+    "words": [
+      "吊孝",
+      "迎亲",
+      "花轿",
+      "路过",
+      "坟墓",
+      "墓",
+      "告别",
+      "跪",
+      "痛哭",
+      "诉说",
+      "心愿"
+    ],
+    "notes": []
+  },
+  {
+    "id": "5b666c8f-6757-414a-b184-8124fd2070c2",
+    "order": 8,
+    "title_vi": "Thiên nhiên / hóa bướm / cảnh kịch tính",
+    "words": [
+      "天空",
+      "乌云",
+      "翻滚",
+      "雷",
+      "隆隆",
+      "霹雳",
+      "裂",
+      "跃",
+      "散",
+      "蝴蝶",
+      "翩翩起舞",
+      "飞翔",
+      "化蝶"
+    ],
+    "notes": []
+  },
+  {
+    "id": "b82e15a8-6085-4385-ba67-6a35726368e3",
+    "order": 9,
+    "title_vi": "Từ chức năng / cách dùng trọng điểm",
+    "words": [
+      "由于",
+      "为",
+      "不然",
+      "表达"
+    ],
+    "notes": []
+  }
+]

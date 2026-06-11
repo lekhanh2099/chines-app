@@ -1,0 +1,406 @@
+{
+  "id": "591c4952-2f3c-4e44-a8ba-8ac44dfff942",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "下等",
+  "pinyin": "xiàděng",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ chỉ cấp bậc 【形容词 / 名词】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "degree_motion",
+    "rank",
+    "negative"
+  ],
+  "meaning": {
+    "hanviet": "Hạ đẳng",
+    "meaning_vi": "hạng thấp; loại kém; phẩm cấp thấp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hạng thấp",
+      "loại kém",
+      "phẩm cấp thấp"
+    ],
+    "short_definition_vi": "hạng thấp",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "下",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "vạch chuẩn",
+            "position_vi": "trên",
+            "role": "stroke_shape",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丨",
+            "hanviet": "cổn",
+            "meaning_vi": "nét chỉ vị trí dưới",
+            "position_vi": "dưới",
+            "role": "stroke_shape",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưới, xuống, thấp hơn",
+        "modern_logic_vi": "下 = phía dưới/thấp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "等",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "竹",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寺",
+            "hanviet": "tự",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hạng/cấp",
+        "modern_logic_vi": "等 = hạng/cấp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "下等 được phân tích theo các thành phần đã chắc trong phần soạn; phần không chắc không ép chiết tự.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "低级",
+        "pinyin": "",
+        "meaning_vi": "cấp thấp; thô thấp",
+        "difference_vi": "Có thể mang sắc thái xấu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "劣质",
+        "pinyin": "",
+        "meaning_vi": "chất lượng kém",
+        "difference_vi": "Thường dùng cho hàng hóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "差",
+        "pinyin": "",
+        "meaning_vi": "kém/xấu",
+        "difference_vi": "Khẩu ngữ rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不好",
+        "pinyin": "",
+        "meaning_vi": "không tốt",
+        "difference_vi": "Nhẹ hơn 下等.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "上等",
+        "pinyin": "",
+        "meaning_vi": "hạng tốt/cao",
+        "difference_vi": "Đối lập trực tiếp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3e10c67b-675d-47d4-9164-7650db246821",
+      "order": 1,
+      "zh": "下等材料",
+      "pinyin": "",
+      "vi": "nguyên liệu loại kém",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c560c501-db88-4e96-b52a-b12d37e7aca3",
+      "order": 2,
+      "zh": "下等货",
+      "pinyin": "",
+      "vi": "hàng loại kém",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1f0c5e1-79df-460f-b94e-d32d1a75d950",
+      "order": 3,
+      "zh": "下等质量",
+      "pinyin": "",
+      "vi": "chất lượng kém",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36ea1def-863d-4afc-8f0e-bd96061311cc",
+      "order": 4,
+      "zh": "下等水平",
+      "pinyin": "",
+      "vi": "trình độ thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85435409-97fb-4d0c-b105-1dda965310a6",
+      "order": 5,
+      "zh": "下等品",
+      "pinyin": "",
+      "vi": "hàng phẩm cấp thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb4c0f25-3634-420d-833e-8a05067ab440",
+      "order": 6,
+      "zh": "不是下等",
+      "pinyin": "",
+      "vi": "không phải loại kém",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c98b3e86-8975-4377-a937-ad187bc9d476",
+      "order": 7,
+      "zh": "上等、中等、下等",
+      "pinyin": "",
+      "vi": "hạng tốt, hạng trung, hạng thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c7ff0a32-1156-4297-bc32-2a326c3fa4e5",
+      "order": 1,
+      "zh": "这种材料不是上等的，只能算下等。",
+      "pinyin": "Zhè zhǒng cáiliào bú shì shàngděng de, zhǐ néng suàn xiàděng.",
+      "vi": "Loại vật liệu này không phải loại tốt, chỉ có thể xem là loại kém.",
+      "analysis_vi": "只能算…… = chỉ có thể tính là...",
+      "highlight": [
+        "下等",
+        "上等"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "591c4952-2f3c-4e44-a8ba-8ac44dfff942"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c7e66011-c6bd-45dd-ad4f-d048a229d991",
+      "order": 2,
+      "zh": "这本画册的价格不高，但是纸张质量也比较下等。",
+      "pinyin": "Zhè běn huàcè de jiàgé bù gāo, dànshì zhǐzhāng zhìliàng yě bǐjiào xiàděng.",
+      "vi": "Giá tập tranh ảnh này không cao, nhưng chất lượng giấy cũng khá kém.",
+      "analysis_vi": "比较下等 hơi văn/đánh giá trực tiếp; khẩu ngữ thường nói 比较差.",
+      "highlight": [
+        "下等"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "591c4952-2f3c-4e44-a8ba-8ac44dfff942"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4193102a-995c-465b-b810-f493b14f1c53",
+      "order": 3,
+      "zh": "买东西不能只看价格，有些东西虽然便宜，但是质量很差，甚至可以说是下等货。",
+      "pinyin": "Mǎi dōngxi bù néng zhǐ kàn jiàgé, yǒuxiē dōngxi suīrán piányi, dànshì zhìliàng hěn chà, shènzhì kěyǐ shuō shì xiàděng huò.",
+      "vi": "Mua đồ không thể chỉ nhìn giá; có thứ tuy rẻ nhưng chất lượng rất kém, thậm chí có thể gọi là hàng loại kém.",
+      "analysis_vi": "虽然……但是…… ôn nhượng bộ.",
+      "highlight": [
+        "下等货"
+      ],
+      "grammar_refs": [
+        "suiran_danshi"
+      ],
+      "vocab_refs": [
+        "591c4952-2f3c-4e44-a8ba-8ac44dfff942"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "下等 dùng với người như 下等人 rất xúc phạm và mang sắc thái phân biệt; giao tiếp hiện đại nên tránh.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "51e00c2c-fe50-4e5a-aea3-774285ea8457",
+      "order": 1,
+      "rule_vi": "Không dùng 下等人 để chê người.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他的水平还比较低。",
+          "pinyin": "Tā de shuǐpíng hái bǐjiào dī.",
+          "vi": "Trình độ anh ấy còn khá thấp.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他的水平还需要提高。",
+          "pinyin": "Tā de shuǐpíng hái xūyào tígāo.",
+          "vi": "Trình độ anh ấy vẫn cần cải thiện.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "下等",
+    "back": "hạng thấp; loại kém; phẩm cấp thấp",
+    "hint": "xiàděng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "rank",
+      "negative"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "591c4952-2f3c-4e44-a8ba-8ac44dfff942",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "id": "d05f2e68-8dcd-41a4-8640-22dee58cfd2d",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "改革",
+  "pinyin": "gǎigé",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ 【动词 / 名词】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "society_major",
+    "society",
+    "change"
+  ],
+  "meaning": {
+    "hanviet": "Cải cách",
+    "meaning_vi": "cải cách; đổi mới hệ thống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cải cách",
+      "đổi mới hệ thống"
+    ],
+    "short_definition_vi": "cải cách",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "xã hội / chính sách",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "改",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "bản thân",
+            "position_vi": "trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động/hành động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sửa, đổi",
+        "modern_logic_vi": "改 = sửa/đổi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động/hành động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "革",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "革",
+            "hanviet": "cách",
+            "meaning_vi": "da thuộc; thay đổi/cải cách",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "da; thay đổi, cách mạng/cải cách",
+        "modern_logic_vi": "革 trong nhiều từ mang sắc thái thay đổi mạnh, loại bỏ cái cũ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "改革 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "改",
+        "pinyin": "",
+        "meaning_vi": "sửa/đổi",
+        "difference_vi": "Rộng và đời thường hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改变",
+        "pinyin": "",
+        "meaning_vi": "thay đổi",
+        "difference_vi": "Trạng thái thay đổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "革命",
+        "pinyin": "",
+        "meaning_vi": "cách mạng",
+        "difference_vi": "Mạnh/căn bản hơn 改革.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "调整",
+        "pinyin": "",
+        "meaning_vi": "điều chỉnh",
+        "difference_vi": "Nhẹ hơn 改革.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "保守",
+        "pinyin": "",
+        "meaning_vi": "bảo thủ",
+        "difference_vi": "Đối lập cải cách trong tư tưởng/chính sách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7c3ade7c-ddcf-4648-aadc-2d406907751f",
+      "order": 1,
+      "zh": "改革开放",
+      "pinyin": "",
+      "vi": "cải cách mở cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69993d65-c65d-4eac-9fe8-1e5f3215505c",
+      "order": 2,
+      "zh": "经济改革",
+      "pinyin": "",
+      "vi": "cải cách kinh tế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cd3980bb-de78-4658-9b0e-999a83c51dc4",
+      "order": 3,
+      "zh": "教育改革",
+      "pinyin": "",
+      "vi": "cải cách giáo dục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82a6b5f2-8e53-4451-8faf-fafa867208b4",
+      "order": 4,
+      "zh": "社会改革",
+      "pinyin": "",
+      "vi": "cải cách xã hội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "12e91e28-642f-4c49-aa32-cf9518235815",
+      "order": 5,
+      "zh": "进行改革",
+      "pinyin": "",
+      "vi": "tiến hành cải cách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d0db816-35a8-42ef-995c-1d4f0bebb9ac",
+      "order": 6,
+      "zh": "深化改革",
+      "pinyin": "",
+      "vi": "đi sâu cải cách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf4dd427-1fe0-4f4b-a203-6e24bc7d2a8d",
+      "order": 7,
+      "zh": "改革以后",
+      "pinyin": "",
+      "vi": "sau cải cách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f748ada-9573-4b46-b96b-f62f362fe069",
+      "order": 8,
+      "zh": "改革政策",
+      "pinyin": "",
+      "vi": "chính sách cải cách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2951616a-bfe7-4595-8d39-8e8d676f2b74",
+      "order": 1,
+      "zh": "这个国家正在进行教育改革。",
+      "pinyin": "Zhège guójiā zhèngzài jìnxíng jiàoyù gǎigé.",
+      "vi": "Quốc gia này đang tiến hành cải cách giáo dục.",
+      "analysis_vi": "进行改革 là collocation trang trọng.",
+      "highlight": [
+        "改革"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d05f2e68-8dcd-41a4-8640-22dee58cfd2d"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e9e328eb-23b2-4979-82b4-56d8b3f5dac6",
+      "order": 2,
+      "zh": "改革以后，这个城市的变化跟以前不一样了。",
+      "pinyin": "Gǎigé yǐhòu, zhège chéngshì de biànhuà gēn yǐqián bù yíyàng le.",
+      "vi": "Sau cải cách, sự thay đổi của thành phố này đã khác trước.",
+      "analysis_vi": "跟以前不一样了 gắn mẫu bài 7.",
+      "highlight": [
+        "改革",
+        "不一样"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "d05f2e68-8dcd-41a4-8640-22dee58cfd2d"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5ad94f2d-d45a-4a38-84a0-50d406376b90",
+      "order": 3,
+      "zh": "改革开放以后，中国不但经济发展得很快，而且跟世界的联系也越来越多。",
+      "pinyin": "Gǎigé kāifàng yǐhòu, Zhōngguó búdàn jīngjì fāzhǎn de hěn kuài, érqiě gēn shìjiè de liánxì yě yuè lái yuè duō.",
+      "vi": "Sau cải cách mở cửa, kinh tế Trung Quốc không những phát triển rất nhanh mà liên hệ với thế giới cũng ngày càng nhiều.",
+      "analysis_vi": "不但……而且…… nối hai kết quả.",
+      "highlight": [
+        "改革开放",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "d05f2e68-8dcd-41a4-8640-22dee58cfd2d"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "改革开放 là khái niệm trung tâm khi nói về Trung Quốc hiện đại sau năm 1978; hiểu phổ thông là đối nội cải cách, đối ngoại mở cửa.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8cad3e43-b6e8-4974-b625-1249dcef80d0",
+      "order": 1,
+      "rule_vi": "Không dùng 改革 cho việc sửa lỗi cá nhân nhỏ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "老师改革我的作业。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Sai phạm vi, vì 作业 không phải hệ thống cần cải cách.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "老师改我的作业。",
+          "pinyin": "Lǎoshī gǎi wǒ de zuòyè.",
+          "vi": "Thầy/cô sửa bài tập của tôi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "改革",
+    "back": "cải cách; đổi mới hệ thống",
+    "hint": "gǎigé",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "society",
+      "change"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d05f2e68-8dcd-41a4-8640-22dee58cfd2d",
+    "source_lesson_vocab_id": null
+  }
+}

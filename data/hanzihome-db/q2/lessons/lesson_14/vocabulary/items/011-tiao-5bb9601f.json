@@ -1,0 +1,313 @@
+{
+  "id": "39e27995-f389-4ea5-82b9-2445f2defba1",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "挑",
+  "pinyin": "tiāo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Thiêu",
+    "meaning_vi": "chọn lựa, kén chọn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chọn lựa",
+      "kén chọn"
+    ],
+    "short_definition_vi": "chọn lựa, kén chọn",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, mua sắm; thường có cảm giác lựa kỹ hơn 选.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "挑",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兆",
+            "hanviet": "triệu",
+            "meaning_vi": "điềm/triệu",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chọn lựa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "挑 có bộ 扌, liên quan đến thao tác bằng tay. → 挑礼品 = chọn quà; 挑出来 = chọn/lựa ra.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 挑礼品 = chọn quà; 挑出来 = chọn/lựa ra.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 挑 còn có âm tiǎo trong nghĩa khiêu khích/khều gợi như 挑衅. Bài này đọc tiāo.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "挑 (tiāo)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chọn lựa kỹ, kén.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "选 (xuǎn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chọn, trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挑选 (tiāoxuǎn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lựa chọn kỹ, đầy đủ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "选择 (xuǎnzé)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lựa chọn, có thể là quyết định lớn/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 选 là chọn nói chung; 挑 là lựa kỹ, thường trong mua đồ/chọn vật cụ thể."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "06736cd0-7328-4abc-b951-e6fd5394370f",
+      "order": 1,
+      "zh": "挑礼品",
+      "pinyin": "",
+      "vi": "chọn quà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe3768ce-5db0-4d25-9532-d102c38745a9",
+      "order": 2,
+      "zh": "挑一本书",
+      "pinyin": "",
+      "vi": "chọn một quyển sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e75c6df-dca8-4fb7-a180-c9827bf370ed",
+      "order": 3,
+      "zh": "挑出来",
+      "pinyin": "",
+      "vi": "chọn/lựa ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "06c594b9-a2fc-417c-b831-13e94a1e4050",
+      "order": 4,
+      "zh": "太挑了",
+      "pinyin": "",
+      "vi": "kén quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7bc3c755-e13c-4965-907f-1fbd19947d89",
+      "order": 1,
+      "zh": "他在图书城里挑了半天，最后挑出一本语法书来。",
+      "pinyin": "Tā zài túshūchéng lǐ tiāo le bàntiān, zuìhòu tiāo chū yì běn yǔfǎ shū lái.",
+      "vi": "Anh ấy chọn trong trung tâm sách cả buổi, cuối cùng chọn ra một quyển sách ngữ pháp.",
+      "analysis_vi": "挑出一本……来 dùng tân ngữ sự vật chen giữa 出 và 来, rất đúng trọng tâm bài.",
+      "highlight": [
+        "挑"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "39e27995-f389-4ea5-82b9-2445f2defba1"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a1c7cea3-bb06-4d10-bc7d-83aba916cd9c",
+      "order": 2,
+      "zh": "给老师买礼品的时候，不要只挑贵的，要挑合适的。",
+      "pinyin": "Gěi lǎoshī mǎi lǐpǐn de shíhou, bú yào zhǐ tiāo guì de, yào tiāo héshì de.",
+      "vi": "Khi mua quà cho thầy/cô, đừng chỉ chọn đồ đắt, phải chọn đồ phù hợp.",
+      "analysis_vi": "挑贵的 / 挑合适的 là chọn theo tiêu chí; câu thực tế trong văn hóa tặng quà.",
+      "highlight": [
+        "挑"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "39e27995-f389-4ea5-82b9-2445f2defba1"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6eec6df9-1714-4082-ba33-8ea97b5da455",
+      "order": 3,
+      "zh": "例句也要挑，太书面的句子可以先放一边，能说出口的句子先学起来。",
+      "pinyin": "Lìjù yě yào tiāo, tài shūmiàn de jùzi kěyǐ xiān fàng yìbiān, néng shuō chūkǒu de jùzi xiān xué qǐlai.",
+      "vi": "Câu ví dụ cũng phải chọn, câu quá văn viết có thể để sang một bên trước, câu nói ra miệng được thì học trước.",
+      "analysis_vi": "学起来 ở đây là bắt đầu học; câu đúng với mục tiêu học từ để dùng thật.",
+      "highlight": [
+        "挑"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "39e27995-f389-4ea5-82b9-2445f2defba1"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "c08d82a2-c976-43c8-bea5-8622606f2649",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Không phân biệt 挑 và 选. Tự nhiên:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "挑",
+    "back": "chọn lựa, kén chọn",
+    "hint": "tiāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Khi mua quà ở Trung Quốc, 挑礼物 / 挑礼品 thường không chỉ xét giá, mà còn xét quan hệ, tuổi tác, dịp tặng và thể diện. Quà quá rẻ hoặc quá đắt đều có thể gây khó xử.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "39e27995-f389-4ea5-82b9-2445f2defba1",
+    "source_lesson_vocab_id": null
+  }
+}

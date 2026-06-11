@@ -1,0 +1,276 @@
+{
+  "id": "23052c13-3c03-4164-a9ab-0c26108abbb9",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "搅",
+  "pinyin": "jiǎo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "giảo",
+    "meaning_vi": "khuấy, trộn; làm rối, phá rối",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khuấy",
+      "trộn",
+      "làm rối",
+      "phá rối"
+    ],
+    "short_definition_vi": "khuấy, trộn; làm rối, phá rối",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: khuấy, trộn; làm rối, phá rối.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "搅",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 搅.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "搅 trong bài được hiểu theo nghĩa: khuấy, trộn; làm rối, phá rối. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 搅.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "搅 với tâm trạng/tình huống thường có sắc thái tiêu cực."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b680f87c-8665-42d1-ad52-5a1770ea6083",
+      "order": 1,
+      "zh": "搅乱心情",
+      "pinyin": "",
+      "vi": "làm rối tâm trạng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aec35f22-2d42-441f-8c90-a7b3b6c3b58a",
+      "order": 2,
+      "zh": "把好心情搅了",
+      "pinyin": "",
+      "vi": "làm hỏng tâm trạng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d1202cc-b958-48c6-b821-f41d4c023fe2",
+      "order": 3,
+      "zh": "搅拌一下",
+      "pinyin": "",
+      "vi": "khuấy một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "85b9f364-93bc-4403-9930-3dc8417a7559",
+      "order": 4,
+      "zh": "搅在一起",
+      "pinyin": "",
+      "vi": "trộn lẫn vào nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2bec7dc-07ff-452c-a8db-216947261c8c",
+      "order": 5,
+      "zh": "别来搅局",
+      "pinyin": "",
+      "vi": "đừng phá đám",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6b540d01-0cf7-4a7c-8504-2ed54624e98b",
+      "order": 1,
+      "zh": "请把汤搅一搅。",
+      "pinyin": "",
+      "vi": "Hãy khuấy canh/súp một chút.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "搅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "23052c13-3c03-4164-a9ab-0c26108abbb9"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "01137149-dcf4-48db-b07f-262b05ce8030",
+      "order": 2,
+      "zh": "朋友们的玩笑把我的好心情给搅了。",
+      "pinyin": "",
+      "vi": "Mấy câu đùa của bạn bè làm hỏng tâm trạng tốt của tôi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "搅"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "23052c13-3c03-4164-a9ab-0c26108abbb9"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "搅 với tâm trạng/tình huống thường có sắc thái tiêu cực.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1dc0f86d-a5b4-4eb7-89ec-750eeabc3aba",
+      "order": 1,
+      "rule_vi": "搅 với tâm trạng/tình huống thường có sắc thái tiêu cực.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "搅你一下。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "搅 với tâm trạng/tình huống thường có sắc thái tiêu cực.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "打扰你一下。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "搅 với tâm trạng/tình huống thường có sắc thái tiêu cực.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "搅",
+    "back": "khuấy, trộn; làm rối, phá rối",
+    "hint": "jiǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "23052c13-3c03-4164-a9ab-0c26108abbb9",
+    "source_lesson_vocab_id": null
+  }
+}

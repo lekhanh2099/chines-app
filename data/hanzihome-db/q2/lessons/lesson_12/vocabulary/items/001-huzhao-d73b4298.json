@@ -1,0 +1,385 @@
+{
+  "id": "6a00722c-1e11-467a-ba1b-20e3097624f7",
+  "type": "deep_vocabulary_item",
+  "order": 1,
+  "hanzi": "护照",
+  "pinyin": "hùzhào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "documents_objects"
+  ],
+  "meaning": {
+    "hanviet": "hộ chiếu",
+    "meaning_vi": "hộ chiếu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hộ chiếu"
+    ],
+    "short_definition_vi": "hộ chiếu",
+    "textbook_focus_vi": "hộ chiếu",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "护",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "户",
+            "hanviet": "hộ",
+            "meaning_vi": "cửa/hộ",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bảo vệ, giữ gìn",
+        "modern_logic_vi": "护 gợi hành động bảo vệ/giữ gìn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "照",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ánh sáng",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày, ánh sáng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "召",
+            "hanviet": "",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "giữa",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa/ánh sáng",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt, ánh sáng",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "灬 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "soi, chiếu, chụp, chứng chiếu",
+        "modern_logic_vi": "照 trong 护照 học theo nghĩa giấy tờ/chứng nhận, không hiểu máy móc là chụp ảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "护照 là giấy tờ bảo hộ/chứng nhận thân phận khi xuất nhập cảnh.",
+    "memory_tip_vi": "护照 là giấy tờ bảo hộ/chứng nhận thân phận khi xuất nhập cảnh.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "签证",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "visa/thị thực, không phải hộ chiếu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "身份证",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "căn cước/chứng minh nhân dân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "证件",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giấy tờ nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "704882f3-9075-49cd-bb16-630408d2b2c7",
+      "order": 1,
+      "zh": "办护照",
+      "pinyin": "",
+      "vi": "làm hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1aa04092-7bb3-40ce-9eac-323340c1e415",
+      "order": 2,
+      "zh": "带护照",
+      "pinyin": "",
+      "vi": "mang hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc9dbb64-5870-48b9-8408-86b0916a8527",
+      "order": 3,
+      "zh": "拿护照",
+      "pinyin": "",
+      "vi": "cầm/lấy hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "12dae62e-f550-4174-a91a-5a1d51bcf751",
+      "order": 4,
+      "zh": "检查护照",
+      "pinyin": "",
+      "vi": "kiểm tra hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8a86c2c-d82e-4ce5-821f-88e88b005fe7",
+      "order": 5,
+      "zh": "护照号码",
+      "pinyin": "",
+      "vi": "số hộ chiếu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e4224595-cd88-4af6-a547-a62be860844d",
+      "order": 6,
+      "zh": "护照和签证",
+      "pinyin": "",
+      "vi": "hộ chiếu và visa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1108b5dd-ced9-4f38-b968-71429e3c4ac1",
+      "order": 1,
+      "zh": "我的护照你找到了没有？",
+      "pinyin": "",
+      "vi": "Hộ chiếu của tôi bạn tìm thấy chưa?",
+      "analysis_vi": "我的护照 là chủ đề lớn; 你找到了没有 hỏi kết quả tìm thấy chưa.",
+      "highlight": [
+        "护照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a00722c-1e11-467a-ba1b-20e3097624f7"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0c8d4869-c2b4-4547-9a00-bcf5d0dcc493",
+      "order": 2,
+      "zh": "我把护照放在手提包儿里了。",
+      "pinyin": "",
+      "vi": "Tôi đã để hộ chiếu trong túi xách tay.",
+      "analysis_vi": "把 + 护照 + 放在 nói rõ vị trí kết quả.",
+      "highlight": [
+        "护照"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6a00722c-1e11-467a-ba1b-20e3097624f7"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "护照 thường đi cặp với 签证 trong bối cảnh du lịch/xuất nhập cảnh.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96777791-0a16-4abc-b6dd-8d3d9b57f43d",
+      "order": 1,
+      "rule_vi": "Không dùng 护照 thay cho mọi loại giấy tờ; giấy tờ nói chung là 证件.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我忘了带证件。",
+          "pinyin": "",
+          "vi": "Tôi quên mang giấy tờ.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "护照",
+    "back": "hộ chiếu",
+    "hint": "hùzhào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "documents_objects"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6a00722c-1e11-467a-ba1b-20e3097624f7",
+    "source_lesson_vocab_id": null
+  }
+}

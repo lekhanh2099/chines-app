@@ -1,0 +1,489 @@
+{
+  "id": "66b749ef-8cc8-414b-a2cf-37220be5ae8a",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "自相矛盾",
+  "pinyin": "zì xiāng máo dùn",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "tự tương mâu thuẫn",
+    "meaning_vi": "tự mâu thuẫn, lời trước đá lời sau",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự mâu thuẫn, lời trước đá lời sau"
+    ],
+    "short_definition_vi": "tự mâu thuẫn, lời trước đá lời sau",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "自",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tự mình",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "相",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "木 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây, gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "木 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 木.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt, nhìn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 目.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lẫn nhau",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "矛",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "矛",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mâu",
+          "radical_name_zh": "",
+          "hanviet": "mâu",
+          "meaning_vi": "cây mâu",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "矛 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "矛",
+            "hanviet": "mâu",
+            "meaning_vi": "cây mâu",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "矛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mâu",
+              "radical_name_zh": "",
+              "hanviet": "mâu",
+              "meaning_vi": "cây mâu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "矛 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 矛.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cây mâu",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "盾",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "盾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thuẫn",
+          "radical_name_zh": "",
+          "hanviet": "thuẫn",
+          "meaning_vi": "cái khiên",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "盾 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "盾",
+            "hanviet": "thuẫn",
+            "meaning_vi": "cái khiên",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "盾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thuẫn",
+              "radical_name_zh": "",
+              "hanviet": "thuẫn",
+              "meaning_vi": "cái khiên",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "盾 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 盾.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cái khiên",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Mâu tấn công và khiên phòng thủ tự chống nhau trong cùng một lời khoe.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 自相矛盾.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "矛盾",
+        "pinyin": "máodùn",
+        "meaning_vi": "mâu thuẫn",
+        "difference_vi": "rộng hơn, có thể giữa hai bên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "前后不一致",
+        "pinyin": "qiánhòu bù yízhì",
+        "meaning_vi": "trước sau không nhất quán",
+        "difference_vi": "trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "言行一致",
+          "",
+          "lời nói và hành động nhất quán",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1f3a7390-b1cb-4b11-a54d-ae535598a75f",
+      "order": 1,
+      "zh": "说法自相矛盾",
+      "pinyin": "",
+      "vi": "cách nói tự mâu thuẫn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65df4f1a-e521-46a8-8c10-7bd402152b69",
+      "order": 2,
+      "zh": "前后自相矛盾",
+      "pinyin": "",
+      "vi": "trước sau tự mâu thuẫn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a26ee66-afde-4014-8613-29adccf837bd",
+      "order": 3,
+      "zh": "逻辑自相矛盾",
+      "pinyin": "",
+      "vi": "logic tự mâu thuẫn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "75ec62dd-3f43-4768-b19c-90635a9a97d4",
+      "order": 4,
+      "zh": "避免自相矛盾",
+      "pinyin": "",
+      "vi": "tránh tự mâu thuẫn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b8aa46c0-c1e6-474e-a93a-d47c7e0a405a",
+      "order": 1,
+      "zh": "你的说法自相矛盾。",
+      "pinyin": "Nǐ de shuōfǎ zì xiāng máo dùn.",
+      "vi": "Cách nói của bạn tự mâu thuẫn.",
+      "analysis_vi": "说法 = cách nói/lập luận.",
+      "highlight": [
+        "自相矛盾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "66b749ef-8cc8-414b-a2cf-37220be5ae8a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7cb96007-a37f-4c36-9847-4580ca2f7a06",
+      "order": 2,
+      "zh": "既然你说这个盾什么都刺不透，又说这个矛什么都能刺透，这不是自相矛盾吗？",
+      "pinyin": "Jìrán nǐ shuō zhège dùn shénme dōu cì bù tòu, yòu shuō zhège máo shénme dōu néng cì tòu, zhè bú shì zì xiāng máo dùn ma?",
+      "vi": "Đã nói khiên không gì đâm thủng, lại nói mâu đâm thủng mọi thứ, chẳng phải tự mâu thuẫn sao?",
+      "analysis_vi": "Câu hỏi tu từ phản biện logic.",
+      "highlight": [
+        "自相矛盾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "66b749ef-8cc8-414b-a2cf-37220be5ae8a"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Câu chuyện gốc từ người bán mâu và khiên; dùng để bắt lỗi logic.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "78619521-4536-4e83-a0b6-2588e95374b3",
+      "order": 1,
+      "rule_vi": "Không dùng 自相矛盾 cho mọi bất đồng; nó là tự mâu thuẫn trong chính một bên.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "自相矛盾",
+    "back": "tự mâu thuẫn, lời trước đá lời sau",
+    "hint": "zì xiāng máo dùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "66b749ef-8cc8-414b-a2cf-37220be5ae8a",
+    "source_lesson_vocab_id": null
+  }
+}

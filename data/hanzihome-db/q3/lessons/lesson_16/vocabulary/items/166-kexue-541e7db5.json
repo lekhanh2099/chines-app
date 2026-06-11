@@ -1,0 +1,60 @@
+{
+  "id": "synthetic_vocab_82d3b5049fe5cdd5",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "科学",
+  "pinyin": "kēxué",
+  "meaning_vi": "khoa học; có tính khoa học",
+  "pos": "Danh từ / Tính từ",
+  "pos_detail": {
+    "vi": "Danh từ / Tính từ",
+    "cn": "名词 / 形容词",
+    "normalized": "noun_adjective",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "e4cd3715-738e-4245-84f4-629e65455056",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "e4cd3715-738e-4245-84f4-629e65455056",
+    "type": "vocabulary_item",
+    "order": 4,
+    "hanzi": "科学",
+    "pinyin": "kēxué",
+    "meaning_vi": "khoa học; có tính khoa học",
+    "meaning_en": "science; scientific",
+    "pos": "Danh từ / Tính từ",
+    "pos_detail": {
+      "vi": "Danh từ / Tính từ",
+      "cn": "名词 / 形容词",
+      "normalized": "noun_adjective",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "textbook_subentry"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "科学",
+      "back": "kēxué — khoa học; có tính khoa học",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

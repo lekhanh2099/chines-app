@@ -1,0 +1,424 @@
+{
+  "id": "8995b76b-8b62-4b03-974b-597744d90ba7",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "病人",
+  "pinyin": "bìngrén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "bai-02",
+    "hanyu2",
+    "deep-vocab",
+    "group_001"
+  ],
+  "meaning": {
+    "hanviet": "Bệnh nhân",
+    "meaning_vi": "người bệnh, bệnh nhân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người bệnh",
+      "bệnh nhân"
+    ],
+    "short_definition_vi": "người bệnh, bệnh nhân",
+    "textbook_focus_vi": "Nghĩa ưu tiên theo Bài 2: 玛丽哭了.",
+    "register_vi": "y tế, trung tính.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 2; y tế, cơ thể, cảm xúc, hoạt động xã hội.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "病",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật, đau ốm",
+            "position_vi": "bên ngoài/trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch/Bệnh",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật, đau ốm",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丙",
+            "hanviet": "bính",
+            "meaning_vi": "phần cấu tạo/âm",
+            "position_vi": "bên trong/phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bệnh, ốm, vấn đề",
+        "modern_logic_vi": "Có 疒 thì nhớ trường nghĩa bệnh tật; 病 là tình trạng cơ thể hoặc sự việc có vấn đề.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch/Bệnh",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật, đau ốm",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "人",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "người, con người",
+        "modern_logic_vi": "人 chỉ người; trong từ ghép thường đánh dấu đối tượng là con người.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "病 = bệnh. 人 = người. → 病人 = người bị bệnh / bệnh nhân.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 病人 là người đang bệnh, không phải bác sĩ. Bác sĩ là 医生.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "病人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bệnh nhân, người bệnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "患者",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bệnh nhân, trang trọng/y học hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "医生",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bác sĩ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "护士",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "y tá.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "身体不好的人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người sức khỏe không tốt, diễn đạt rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "Bác sĩ kiểm tra cơ thể cho bệnh nhân.",
+      "Bệnh nhân cần nghỉ ngơi. Trang trọng hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ba782057-4738-476e-8f21-503553ce034e",
+      "order": 1,
+      "zh": "一个病人",
+      "pinyin": "",
+      "vi": "một bệnh nhân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef20d15a-e58e-403c-8da4-897c822e9271",
+      "order": 2,
+      "zh": "照顾病人",
+      "pinyin": "",
+      "vi": "chăm sóc bệnh nhân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0dab33d3-427b-49bb-9df6-f02fe18b0651",
+      "order": 3,
+      "zh": "病人很多",
+      "pinyin": "",
+      "vi": "bệnh nhân rất nhiều",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d703cce6-67f1-4d29-b95e-2c0427e21073",
+      "order": 4,
+      "zh": "给病人检查",
+      "pinyin": "",
+      "vi": "kiểm tra cho bệnh nhân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6df30e4a-a76b-4f21-8575-679c1fc398c7",
+      "order": 5,
+      "zh": "病人需要休息",
+      "pinyin": "",
+      "vi": "bệnh nhân cần nghỉ ngơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5580e0c2-e4d6-4c9b-9d01-a602ab532ca4",
+      "order": 6,
+      "zh": "病人的结果出来了",
+      "pinyin": "",
+      "vi": "kết quả của bệnh nhân có rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a9e30267-d52e-473b-89a3-fbe92f5966ea",
+      "order": 1,
+      "zh": "医院里有很多病人。",
+      "pinyin": "Yīyuàn lǐ yǒu hěn duō bìngrén.",
+      "vi": "Trong bệnh viện có rất nhiều bệnh nhân.",
+      "analysis_vi": "医院里有…… là cấu trúc tồn tại cơ bản.",
+      "highlight": [
+        "病人"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "8995b76b-8b62-4b03-974b-597744d90ba7"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "46887326-3d64-4be7-97b8-4017da36fbf7",
+      "order": 2,
+      "zh": "医生给病人检查了肚子。",
+      "pinyin": "Yīshēng gěi bìngrén jiǎnchá le dùzi.",
+      "vi": "Bác sĩ đã kiểm tra bụng cho bệnh nhân.",
+      "analysis_vi": "Ôn V + 了 + O: 检查了肚子 = đã kiểm tra bụng. 给病人 là đối tượng nhận hành động.",
+      "highlight": [
+        "病人"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "8995b76b-8b62-4b03-974b-597744d90ba7"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "03e185b0-aff9-428c-9c16-13d12a49cbd5",
+      "order": 3,
+      "zh": "诊室门口坐着几个病人，有的人发烧，有的人拉肚子，护士让他们一个个进去检查。",
+      "pinyin": "Zhěnshì ménkǒu zuòzhe jǐ ge bìngrén, yǒu de rén fāshāo, yǒu de rén lā dùzi, hùshi ràng tāmen yí ge ge jìnqù jiǎnchá.",
+      "vi": "Trước cửa phòng khám có vài bệnh nhân đang ngồi, có người sốt, có người tiêu chảy, y tá để họ từng người một vào kiểm tra.",
+      "analysis_vi": "诊室门口坐着几个病人 là câu tồn hiện. 有的人……有的人…… chia nhóm. 一个个进去检查 dùng lượng từ lặp lại để nhấn từng người.",
+      "highlight": [
+        "病人"
+      ],
+      "grammar_refs": [
+        "grammar_02_verb_le",
+        "grammar_02_yinwei_suoyi"
+      ],
+      "vocab_refs": [
+        "8995b76b-8b62-4b03-974b-597744d90ba7"
+      ],
+      "source_ref": "current_thread_and_BAI_1-10_docx",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "flashcard": {
+    "front": "病人",
+    "back": "người bệnh, bệnh nhân",
+    "hint": "bìngrén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai-02",
+      "hanyu2",
+      "deep-vocab",
+      "group_001"
+    ],
+    "notes": []
+  },
+  "warnings": [
+    {
+      "id": "4e358d93-8cdd-4974-be27-dd416e70ad3b",
+      "order": 1,
+      "rule_vi": "Nhầm 病人 và 病.",
+      "natural_examples": [
+        {
+          "zh": "Nhầm 病人 và 病.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "病人 là người.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "病 là bệnh hoặc bị bệnh.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Zhège bìngrén fāshāo le. Bệnh nhân này sốt rồi. Zhè zhǒng bìng hěn yánzhòng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ghi chú sử dụng",
+    "content_vi": "Trong văn nói đời thường, người Trung hay nói 看病 = đi khám bệnh. Người đi khám là 病人, còn nơi khám là 医院 / 诊所.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_and_BAI_1-10_docx"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8995b76b-8b62-4b03-974b-597744d90ba7",
+    "source_lesson_vocab_id": null
+  }
+}

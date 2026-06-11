@@ -1,0 +1,372 @@
+{
+  "id": "7ca92907-a4f1-4f8d-af1c-fb398fd8d6e3",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "发狂",
+  "pinyin": "fākuáng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "phát cuồng",
+    "meaning_vi": "phát điên, nổi điên, cuồng lên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phát điên, nổi điên, cuồng lên"
+    ],
+    "short_definition_vi": "phát điên, nổi điên, cuồng lên",
+    "textbook_focus_vi": "phát điên, nổi điên, cuồng lên",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "发",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phát ra, xảy ra, phát triển, gửi",
+        "modern_logic_vi": "发 giản thể gộp nhiều nguồn, không nên tách sâu.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "狂",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "犭",
+            "hanviet": "khuyển",
+            "meaning_vi": "thú/vật",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "犬",
+              "radical_variant": "犭",
+              "radical_name_vi": "bộ Khuyển",
+              "radical_name_zh": "",
+              "hanviet": "khuyển",
+              "meaning_vi": "chó, thú vật",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "犭 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "王",
+            "hanviet": "vương",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "玉",
+              "radical_variant": "王",
+              "radical_name_vi": "bộ Ngọc/Vương",
+              "radical_name_zh": "",
+              "hanviet": "ngọc/vương",
+              "meaning_vi": "ngọc; thành phần hình thể 王",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "王 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cuồng, điên, quá mức",
+        "modern_logic_vi": "狂 là trạng thái vượt mức bình thường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "发狂 = trạng thái cuồng bộc phát ra, mất kiểm soát.",
+    "memory_tip_vi": "发狂 = trạng thái cuồng bộc phát ra, mất kiểm soát.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "发疯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phát điên, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "疯狂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "điên cuồng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "生气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tức giận nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "着急",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sốt ruột/lo lắng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "冷静",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bình tĩnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "镇定",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "điềm tĩnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "发狂",
+        "right": "冷静",
+        "meaning_vi": "",
+        "note_vi": "phát điên/cuồng lên ↔ bình tĩnh",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8a1bb2a1-901a-4d10-ad5b-8d8714e77b72",
+      "order": 1,
+      "zh": "急得发狂",
+      "pinyin": "",
+      "vi": "sốt ruột đến phát điên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef30ea51-9ca0-4567-ae36-d318b48f3f6e",
+      "order": 2,
+      "zh": "气得发狂",
+      "pinyin": "",
+      "vi": "tức đến phát điên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1fddddc0-cc36-4b5a-8821-9898391afabf",
+      "order": 3,
+      "zh": "快要发狂了",
+      "pinyin": "",
+      "vi": "sắp phát điên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "84cbb830-c5c8-4bc8-a4a9-039cdcebd3ec",
+      "order": 4,
+      "zh": "让人发狂",
+      "pinyin": "",
+      "vi": "khiến người ta phát điên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff0bdd16-0672-43ad-b226-f33f3c4fd9cf",
+      "order": 5,
+      "zh": "发狂地喊",
+      "pinyin": "",
+      "vi": "hét như phát điên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "11a78664-8d02-4f4b-ba41-40ebb1a3ef4e",
+      "order": 1,
+      "zh": "他急得快要发狂了。",
+      "pinyin": "",
+      "vi": "Anh ấy sốt ruột đến mức sắp phát điên.",
+      "analysis_vi": "急得…… là bổ ngữ trạng thái.",
+      "highlight": [
+        "发狂"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ca92907-a4f1-4f8d-af1c-fb398fd8d6e3"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d50931e3-eef4-496f-ab80-57833c4280d1",
+      "order": 2,
+      "zh": "护照找不着这件事让他快发狂了。",
+      "pinyin": "",
+      "vi": "Chuyện không tìm thấy hộ chiếu khiến anh ấy gần phát điên.",
+      "analysis_vi": "让他快发狂了 nêu tác động cảm xúc.",
+      "highlight": [
+        "发狂"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7ca92907-a4f1-4f8d-af1c-fb398fd8d6e3"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "发狂/发疯 đều mạnh; môi trường lịch sự dùng 非常着急 an toàn hơn.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4a2d81dd-4574-407f-8c60-7c3aee45fa44",
+      "order": 1,
+      "rule_vi": "Không dùng 发狂 cho cảm xúc nhẹ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我有点儿着急。",
+          "pinyin": "",
+          "vi": "Tôi hơi sốt ruột.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他急得快发狂了。",
+          "pinyin": "",
+          "vi": "Anh ấy sốt ruột đến gần phát điên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "发狂",
+    "back": "phát điên, nổi điên, cuồng lên",
+    "hint": "fākuáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7ca92907-a4f1-4f8d-af1c-fb398fd8d6e3",
+    "source_lesson_vocab_id": null
+  }
+}

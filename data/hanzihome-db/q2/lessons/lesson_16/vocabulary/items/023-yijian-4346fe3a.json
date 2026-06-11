@@ -1,0 +1,317 @@
+{
+  "id": "7ed8e4ca-a77c-4b1d-ad75-ea8ac3129994",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "意见",
+  "pinyin": "yìjiàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Ý kiến",
+    "meaning_vi": "ý kiến, quan điểm; sự bất mãn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ý kiến, quan điểm",
+      "sự bất mãn"
+    ],
+    "short_definition_vi": "ý kiến, quan điểm; sự bất mãn",
+    "textbook_focus_vi": "ý kiến, quan điểm; sự bất mãn",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "意",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "音",
+            "hanviet": "âm",
+            "meaning_vi": "âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "音",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Âm",
+              "radical_name_zh": "",
+              "hanviet": "âm",
+              "meaning_vi": "âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "音 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ý nghĩ, ý định",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "见",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy, nhìn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "見",
+              "radical_variant": "见",
+              "radical_name_vi": "bộ Kiến",
+              "radical_name_zh": "",
+              "hanviet": "kiến",
+              "meaning_vi": "thấy, nhìn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "见 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thấy; quan điểm",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "意见 = ý kiến/quan điểm; cũng có thể chỉ bất mãn/không hài lòng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "05d52795-0e86-47a6-abc9-df06810150fc",
+      "order": 1,
+      "zh": "有意见",
+      "pinyin": "",
+      "vi": "có ý kiến / không hài lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cd18c74-98e3-42a5-a9bc-56ded002aa19",
+      "order": 2,
+      "zh": "提意见",
+      "pinyin": "",
+      "vi": "nêu/góp ý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a38ab30-d228-478b-bb0b-9496a1656053",
+      "order": 3,
+      "zh": "听取意见",
+      "pinyin": "",
+      "vi": "lắng nghe ý kiến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bcb3ffdf-3bb6-477f-90e3-d840ee90ed0f",
+      "order": 4,
+      "zh": "交换意见",
+      "pinyin": "",
+      "vi": "trao đổi ý kiến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d0a4c2e-a0c1-449c-ada3-b96c1b9389c1",
+      "order": 5,
+      "zh": "意见很大",
+      "pinyin": "",
+      "vi": "rất bất mãn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ea1a32a0-4e19-48ea-8c75-1454c05a6fb2",
+      "order": 1,
+      "zh": "关于搬家的事，爷爷有自己的意见。",
+      "pinyin": "Guānyú bānjiā de shì, yéye yǒu zìjǐ de yìjiàn.",
+      "vi": "Về chuyện chuyển nhà, ông nội có ý kiến riêng của mình.",
+      "analysis_vi": "有自己的意见 = có quan điểm riêng.",
+      "highlight": [
+        "意见"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "7ed8e4ca-a77c-4b1d-ad75-ea8ac3129994"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e3525e8d-3f77-47d8-bef3-62ba0d015969",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：意见。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: ý kiến, quan điểm; sự bất mãn.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "意见"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "7ed8e4ca-a77c-4b1d-ad75-ea8ac3129994"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 意见 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "30936865-5bc2-4002-a2a0-e605dae35275",
+      "order": 1,
+      "rule_vi": "我对你有意见 thường là tôi không hài lòng về bạn, không chỉ 'có ý kiến'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "我对你有意见 thường là tôi không hài lòng về bạn, không chỉ 'có ý kiến'.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "意见",
+    "back": "ý kiến, quan điểm; sự bất mãn",
+    "hint": "yìjiàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_023"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7ed8e4ca-a77c-4b1d-ad75-ea8ac3129994",
+    "source_lesson_vocab_id": null
+  }
+}

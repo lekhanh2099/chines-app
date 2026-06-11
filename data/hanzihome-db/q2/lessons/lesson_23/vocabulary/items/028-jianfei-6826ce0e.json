@@ -1,0 +1,384 @@
+{
+  "id": "b43477f6-b843-409f-bc9b-b1293e8845e9",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "减肥",
+  "pinyin": "jiǎnféi",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "动宾",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Giảm phì",
+    "meaning_vi": "giảm cân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giảm cân"
+    ],
+    "short_definition_vi": "giảm cân",
+    "textbook_focus_vi": "giảm cân",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "减",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giảm, bớt",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "肥",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục/nguyệt",
+            "meaning_vi": "thịt, cơ thể; mặt trăng tùy chữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục dạng 月",
+              "radical_name_zh": "",
+              "hanviet": "nhục/nguyệt",
+              "meaning_vi": "thịt, cơ thể; mặt trăng tùy chữ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "béo, mập",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 减肥 hợp lại tạo nghĩa hiện đại trong bài: giảm cân.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "减肥",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "减肥 / 减重 / 瘦身",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "减重",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "减肥 / 减重 / 瘦身",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "瘦身",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "减肥 / 减重 / 瘦身",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "肥",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "肥 / 胖 / 瘦",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "胖",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "肥 / 胖 / 瘦",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "瘦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "肥 / 胖 / 瘦",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "胖",
+        "right": "瘦",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "胖 ↔ 瘦",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "减肥 / 减重 / 瘦身",
+      "肥 / 胖 / 瘦",
+      "胖 ↔ 瘦"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8116a227-b873-4272-8944-fa726d728edf",
+      "order": 1,
+      "zh": "想减肥",
+      "pinyin": "",
+      "vi": "想减肥",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "adc4466f-f40a-4b0b-b656-40f2796a296f",
+      "order": 2,
+      "zh": "正在减肥",
+      "pinyin": "",
+      "vi": "正在减肥",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "24f1979f-8b6b-4203-b768-5b14a07b6167",
+      "order": 3,
+      "zh": "减肥方法",
+      "pinyin": "",
+      "vi": "减肥方法",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a30dbfea-dc19-49d7-959f-2f808cb0ab1b",
+      "order": 4,
+      "zh": "减肥计划",
+      "pinyin": "",
+      "vi": "减肥计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "d88c0f17-b8c8-4ddd-aa8a-7c70d250a05f",
+      "order": 5,
+      "zh": "减肥成功",
+      "pinyin": "",
+      "vi": "减肥成功",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "2ae0b55a-4751-4e3d-b305-1e981237b229",
+      "order": 6,
+      "zh": "运动减肥",
+      "pinyin": "",
+      "vi": "运动减肥",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "1e98aaee-c0e5-40c9-ba43-211ec84255fe",
+      "order": 7,
+      "zh": "健康减肥",
+      "pinyin": "",
+      "vi": "健康减肥",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28d141d4-6d17-44d6-82b5-587d16a7dff5",
+      "order": 1,
+      "zh": "这个词是“减肥”。",
+      "pinyin": "",
+      "vi": "Từ này là “减肥”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "减肥"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "b43477f6-b843-409f-bc9b-b1293e8845e9"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "103821e7-1f9f-4a00-add8-02e8c1104e7e",
+      "order": 2,
+      "zh": "你想怎么用“减肥”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “减肥” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "减肥"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "b43477f6-b843-409f-bc9b-b1293e8845e9"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9ec0bb9c-2f88-4d72-870a-783ad92f6755",
+      "order": 3,
+      "zh": "我们一边复习减肥，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “减肥”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "减肥"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "b43477f6-b843-409f-bc9b-b1293e8845e9"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "减肥 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "288fcb09-b0ac-4955-bbd2-d2f07b407a49",
+      "order": 1,
+      "rule_vi": "Dùng 减肥 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 减肥 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "减肥",
+    "back": "giảm cân",
+    "hint": "jiǎnféi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b43477f6-b843-409f-bc9b-b1293e8845e9",
+    "source_lesson_vocab_id": null
+  }
+}

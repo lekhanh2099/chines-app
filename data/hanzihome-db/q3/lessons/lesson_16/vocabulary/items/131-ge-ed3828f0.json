@@ -1,0 +1,151 @@
+{
+  "id": "7a9fc3e9-a3c0-4547-9e5f-66345a7e4e38",
+  "type": "deep_vocabulary_item",
+  "order": 131,
+  "hanzi": "个",
+  "pinyin": "ge",
+  "pos": {
+    "raw_vi": "Lượng từ",
+    "raw_cn": "量词/助词",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ chức năng ngữ pháp"
+  ],
+  "meaning": {
+    "hanviet": "Cá",
+    "meaning_vi": "lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lượng từ",
+      "yếu tố bổ trợ trong một số cấu trúc kết quả"
+    ],
+    "short_definition_vi": "lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ chức năng ngữ pháp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "个",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "个 trong bài được học theo nghĩa trọng tâm: lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9fe6cf39-564b-4317-a6e8-0a1dfc2d1ca3",
+      "order": 1,
+      "zh": "对这个重大问题，他们也已经取得了某些突破。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7f88dd14-8173-48ad-b9f1-58fc38afeb60",
+      "order": 1,
+      "zh": "对这个重大问题，他们也已经取得了某些突破。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “个” = lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả.",
+      "analysis_vi": "Câu này dùng “个” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "个"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7a9fc3e9-a3c0-4547-9e5f-66345a7e4e38"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “个” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "63fc110b-3262-4474-822a-a84a4db626bc",
+      "order": 1,
+      "rule_vi": "Cần dùng “个” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "个",
+    "back": "lượng từ; yếu tố bổ trợ trong một số cấu trúc kết quả",
+    "hint": "ge",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ chức năng ngữ pháp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7a9fc3e9-a3c0-4547-9e5f-66345a7e4e38",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,343 @@
+{
+  "id": "f5e71613-33de-4ee2-bd08-725db9dc656d",
+  "type": "deep_vocabulary_item",
+  "order": 53,
+  "hanzi": "正常",
+  "pinyin": "zhèngcháng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "fixed_phrases_state"
+  ],
+  "meaning": {
+    "hanviet": "chính thường",
+    "meaning_vi": "bình thường, đúng trạng thái thường lệ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bình thường, đúng trạng thái thường lệ"
+    ],
+    "short_definition_vi": "bình thường, đúng trạng thái thường lệ",
+    "textbook_focus_vi": "bình thường, đúng trạng thái thường lệ",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "正",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đúng, chính, thẳng, đang",
+        "modern_logic_vi": "正 là đúng/chính.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "常",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "尚",
+            "hanviet": "thượng",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thường, thường xuyên, bình thường",
+        "modern_logic_vi": "常 là thường/thường lệ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "正常 = đúng với trạng thái thường lệ, không bất thường.",
+    "memory_tip_vi": "正常 = đúng với trạng thái thường lệ, không bất thường.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "普通",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bình thường/không đặc biệt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "平常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thường ngày",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一般",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bình thường/trung bình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "异常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bất thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "异常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bất thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "反常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khác thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "失常",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mất bình thường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "正常",
+        "right": "异常",
+        "meaning_vi": "",
+        "note_vi": "bình thường ↔ bất thường",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "319f5a92-9fd3-4cf5-a108-3f569cf8b978",
+      "order": 1,
+      "zh": "正常营业",
+      "pinyin": "",
+      "vi": "mở cửa bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03558b23-cdfa-44bf-8afd-15e2b221c214",
+      "order": 2,
+      "zh": "情况正常",
+      "pinyin": "",
+      "vi": "tình hình bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "947ee63d-a956-433c-b301-bf746f5ae12a",
+      "order": 3,
+      "zh": "身体正常",
+      "pinyin": "",
+      "vi": "cơ thể bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7487b14-060a-4c8b-ad6b-3570139a12d4",
+      "order": 4,
+      "zh": "精神正常",
+      "pinyin": "",
+      "vi": "tinh thần bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e20bf38a-8fbc-43ca-9c98-808693683366",
+      "order": 5,
+      "zh": "恢复正常",
+      "pinyin": "",
+      "vi": "khôi phục bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd2ddcf7-15e6-4f87-8910-2356952ad386",
+      "order": 1,
+      "zh": "这家商店今天正常营业。",
+      "pinyin": "",
+      "vi": "Cửa hàng này hôm nay mở cửa bình thường.",
+      "analysis_vi": "正常营业 đối lập 暂停营业.",
+      "highlight": [
+        "正常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f5e71613-33de-4ee2-bd08-725db9dc656d"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3d0a913b-c287-46db-9cad-dddcddce34cf",
+      "order": 2,
+      "zh": "他的精神正常吗？",
+      "pinyin": "",
+      "vi": "Tinh thần của anh ấy có bình thường không?",
+      "analysis_vi": "他的精神 là chủ đề.",
+      "highlight": [
+        "正常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f5e71613-33de-4ee2-bd08-725db9dc656d"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "正常营业/暂停营业/照常营业 rất hay gặp trên thông báo.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "92f1f112-326d-4e20-855a-946289c7565d",
+      "order": 1,
+      "rule_vi": "正常 khác 平常: 正常 là không lỗi/bất thường; 平常 là thường ngày.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "今天商店正常营业。",
+          "pinyin": "",
+          "vi": "Hôm nay cửa hàng mở bình thường.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我平常晚上学习汉语。",
+          "pinyin": "",
+          "vi": "Tôi thường học tiếng Hán buổi tối.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "正常",
+    "back": "bình thường, đúng trạng thái thường lệ",
+    "hint": "zhèngcháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "fixed_phrases_state"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f5e71613-33de-4ee2-bd08-725db9dc656d",
+    "source_lesson_vocab_id": null
+  }
+}

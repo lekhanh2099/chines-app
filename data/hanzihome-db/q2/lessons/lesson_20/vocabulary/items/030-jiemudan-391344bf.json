@@ -1,0 +1,428 @@
+{
+  "id": "3006a4ad-4b95-41bd-b777-85c5cebfcc7f",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "节目单",
+  "pinyin": "jiémùdān",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-20",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tiết mục đơn",
+    "meaning_vi": "tờ chương trình; danh sách tiết mục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tờ chương trình; danh sách tiết mục"
+    ],
+    "short_definition_vi": "tờ chương trình; danh sách tiết mục",
+    "textbook_focus_vi": "tờ chương trình; danh sách tiết mục",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 20: bổ ngữ khả năng, nghệ thuật biểu diễn, thần thoại và truyện ngụ ngôn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "节",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卩",
+            "hanviet": "",
+            "meaning_vi": "đốt tre/dáng quỳ; thành phần dưới",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "目",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt, nhìn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "目 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt, nhìn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 được ghi là bộ thủ/biến thể bộ thủ trong phân tích chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "单",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "单",
+            "hanviet": "",
+            "meaning_vi": "chữ giản thể, không nên tách sâu",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "节目 = tiết mục / chương trình. 单 = tờ đơn, danh sách, phiếu. → 节目单 = tờ ghi danh sách tiết mục.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 节目单 không phải “một tiết mục”. “Một tiết mục” là 一个节目.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "节目单",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tờ chương trình/danh sách tiết mục.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "节目",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiết mục hoặc chương trình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "菜单",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thực đơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "名单",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "danh sách tên.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Nhìn chữ 单 phía sau thường đoán được nó là một loại “danh sách/tờ ghi”."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c583ab9f-1bb4-4944-9ba6-8b3ace587352",
+      "order": 1,
+      "zh": "看节目单",
+      "pinyin": "",
+      "vi": "xem tờ chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1026311d-3db8-4f3b-94c2-777d4ac22a2e",
+      "order": 2,
+      "zh": "节目单上写着……",
+      "pinyin": "",
+      "vi": "trên tờ chương trình viết...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "78cd894b-558f-4bbe-8480-3351a69ee101",
+      "order": 3,
+      "zh": "拿节目单",
+      "pinyin": "",
+      "vi": "lấy tờ chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8201f77-ba7f-45b3-bdc5-a2f359ac86d5",
+      "order": 4,
+      "zh": "节目单上的内容",
+      "pinyin": "",
+      "vi": "nội dung trên tờ chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7be72e80-97a8-40f8-b578-68c02aeed986",
+      "order": 5,
+      "zh": "一张节目单",
+      "pinyin": "",
+      "vi": "một tờ chương trình",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5db26c6f-5e90-4ac4-b2bc-5d3ec4ab6fa8",
+      "order": 1,
+      "zh": "节目单上的介绍很简单，我看得懂。",
+      "pinyin": "Jiémùdān shang de jièshào hěn jiǎndān, wǒ kàn de dǒng.",
+      "vi": "Phần giới thiệu trên tờ chương trình rất đơn giản, tôi đọc hiểu được.",
+      "analysis_vi": "看得懂 là bổ ngữ khả năng: có khả năng đọc/xem hiểu.",
+      "highlight": [
+        "节目单"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "3006a4ad-4b95-41bd-b777-85c5cebfcc7f"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9ff63c9c-343b-493f-a986-2e8bf284020e",
+      "order": 2,
+      "zh": "如果你听不懂京剧的话，可以先看看节目单。",
+      "pinyin": "Rúguǒ nǐ tīng bù dǒng Jīngjù dehuà, kěyǐ xiān kànkan jiémùdān.",
+      "vi": "Nếu bạn nghe không hiểu Kinh kịch, có thể xem tờ chương trình trước.",
+      "analysis_vi": "听不懂的话 đặt điều kiện; 看看 làm lời khuyên nhẹ hơn.",
+      "highlight": [
+        "节目单"
+      ],
+      "grammar_refs": [
+        "potential_complement_lesson_20"
+      ],
+      "vocab_refs": [
+        "3006a4ad-4b95-41bd-b777-85c5cebfcc7f"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "771e6159-78cf-43b6-a9ef-e22df4406ef4",
+      "order": 3,
+      "zh": "人太多了，门口的节目单一下子拿完了。",
+      "pinyin": "Rén tài duō le, ménkǒu de jiémùdān yíxiàzi ná wán le.",
+      "vi": "Người đông quá, tờ chương trình ở cửa bị lấy hết ngay.",
+      "analysis_vi": "拿完了 là lấy hết; nếu nói khả năng có thể nói 拿不到节目单 – không lấy được tờ chương trình.",
+      "highlight": [
+        "节目单"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3006a4ad-4b95-41bd-b777-85c5cebfcc7f"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "9c43c810-9933-4146-a608-30fbbaee3d24",
+      "order": 1,
+      "rule_vi": "Nhầm 节目 và 节目单. 节目",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Lỗi sai phổ biến: Nhầm 节目 và 节目单. 节目 Jiémù Tiết mục/chương trình. 节目单",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "节目单",
+    "back": "tờ chương trình; danh sách tiết mục",
+    "hint": "jiémùdān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-20",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / văn hóa sử dụng",
+    "content_vi": "Khi đi xem kịch, múa, Kinh kịch hoặc hòa nhạc ở Trung Quốc, 节目单 rất hữu ích vì nó giúp người xem hiểu bối cảnh, tên tiết mục và thứ tự biểu diễn. Với người học tiếng Trung, đọc 节目单 trước có thể giúp 听不懂 nhưng vẫn 看得懂 phần lớn nội dung.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3006a4ad-4b95-41bd-b777-85c5cebfcc7f",
+    "source_lesson_vocab_id": null
+  }
+}

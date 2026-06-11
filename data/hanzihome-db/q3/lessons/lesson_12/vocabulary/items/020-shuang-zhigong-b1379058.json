@@ -1,0 +1,293 @@
+{
+  "id": "512b9c56-2398-4345-9729-dfb067808edd",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "双职工",
+  "pinyin": "shuāng zhígōng",
+  "pos": {
+    "raw_vi": "Danh từ / Cụm danh từ",
+    "raw_cn": "名词 / 名词短语",
+    "normalized": "noun_phrase",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "song chức công",
+    "meaning_vi": "hai vợ chồng đều đi làm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hai vợ chồng đều đi làm"
+    ],
+    "short_definition_vi": "Gia đình/cặp vợ chồng cả hai đều có việc làm.",
+    "textbook_focus_vi": "Từ hơi sách vở/hành chính, dùng trong bối cảnh gia đình.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "双",
+        "lishu_vi": "song",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đôi/cặp",
+        "modern_logic_vi": "đôi/cặp",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "职",
+        "lishu_vi": "chức",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": {
+          "radical": "耳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhĩ",
+          "radical_name_zh": "",
+          "hanviet": "nhĩ",
+          "meaning_vi": "tai",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "耳 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "耳 là bộ/thành phần bộ thủ nhìn thấy trong chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "耳 được tách độc lập cho chữ này; không suy diễn quá mức từ bộ thủ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghề/chức",
+        "modern_logic_vi": "nghề/chức",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "工",
+        "lishu_vi": "công",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lao động",
+        "modern_logic_vi": "lao động",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "双 + 职工 = hai người lao động trong một gia đình.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "夫妻俩都上班",
+        "pinyin": "fūqī liǎ dōu shàngbān",
+        "meaning_vi": "hai vợ chồng đều đi làm",
+        "difference_vi": "Khẩu ngữ và đời sống hơn 双职工.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f902a6c0-4194-459f-83ae-8fc0376bf6d8",
+      "order": 1,
+      "zh": "双职工家庭",
+      "pinyin": "",
+      "vi": "gia đình hai vợ chồng đi làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ce3cbad-907e-4056-8c32-52d18481b7dc",
+      "order": 2,
+      "zh": "双职工父母",
+      "pinyin": "",
+      "vi": "cha mẹ đều đi làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2b2c3e4-f0ed-46bc-9501-018a9729db9d",
+      "order": 3,
+      "zh": "他们是双职工",
+      "pinyin": "",
+      "vi": "họ đều đi làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eab5110b-4ce2-46b5-8cb7-3fb52566a19e",
+      "order": 4,
+      "zh": "职工宿舍",
+      "pinyin": "",
+      "vi": "nhà/ký túc xá công nhân viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5fc98620-69aa-4ba5-af0a-98823937f0cf",
+      "order": 1,
+      "zh": "他们家是双职工家庭。",
+      "pinyin": "",
+      "vi": "Nhà họ là gia đình hai vợ chồng đều đi làm.",
+      "analysis_vi": "是 + danh từ xác định loại gia đình.",
+      "highlight": [
+        "双职工"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "512b9c56-2398-4345-9729-dfb067808edd"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c05f0bc5-4bde-4a0d-9847-559930a0dc6c",
+      "order": 2,
+      "zh": "因为父母都是双职工，孩子常常一个人在家。",
+      "pinyin": "",
+      "vi": "Vì bố mẹ đều đi làm, đứa trẻ thường ở nhà một mình.",
+      "analysis_vi": "因为 nêu nguyên nhân.",
+      "highlight": [
+        "双职工"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "512b9c56-2398-4345-9729-dfb067808edd"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7cea776f-dadd-46ed-8c32-6dc30722ba73",
+      "order": 1,
+      "rule_vi": "Không dịch 双职工 thành “hai công việc”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 双职工 thành “hai công việc”.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "双职工",
+    "back": "hai vợ chồng đều đi làm",
+    "hint": "shuāng zhígōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "512b9c56-2398-4345-9729-dfb067808edd",
+    "source_lesson_vocab_id": null
+  }
+}

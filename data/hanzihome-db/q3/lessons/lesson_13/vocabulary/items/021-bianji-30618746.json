@@ -1,0 +1,232 @@
+{
+  "id": "e27b4c10-cb1f-4f91-976b-ef6d786c2396",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "编辑",
+  "pinyin": "biānjí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "work"
+  ],
+  "meaning": {
+    "hanviet": "biên tập",
+    "meaning_vi": "biên tập; biên tập viên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biên tập",
+      "biên tập viên"
+    ],
+    "short_definition_vi": "biên tập; biên tập viên",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "编",
+        "lishu_vi": "biên",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biên soạn/sắp xếp",
+        "modern_logic_vi": "Trong từ/cụm này, 编 góp phần vào nghĩa hiện đại: biên soạn/sắp xếp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "辑",
+        "lishu_vi": "tập",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gom tập/biên tập",
+        "modern_logic_vi": "Trong từ/cụm này, 辑 góp phần vào nghĩa hiện đại: gom tập/biên tập.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "编辑 cần học theo nghĩa hiện đại trong bài: biên tập; biên tập viên.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 编辑文章.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ffe33b13-1599-4b56-a24e-65b083358f39",
+      "order": 1,
+      "zh": "编辑文章",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "027dad4e-0719-431d-a58c-abe21bb80226",
+      "order": 2,
+      "zh": "杂志编辑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b09aa2ab-d568-487b-af35-3be726451482",
+      "order": 3,
+      "zh": "当编辑",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "85369f79-ff66-486c-b5c8-329971cedc60",
+      "order": 1,
+      "zh": "他在一家出版社当编辑。",
+      "pinyin": "Tā zài yì jiā chūbǎnshè dāng biānjí.",
+      "vi": "Anh ấy làm biên tập viên ở một nhà xuất bản.",
+      "analysis_vi": "当编辑 nêu nghề.",
+      "highlight": [
+        "编辑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e27b4c10-cb1f-4f91-976b-ef6d786c2396"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "73366074-610d-4814-8a09-ed78d1ba7768",
+      "order": 2,
+      "zh": "她的职业是编辑，工作以修改文章为主。",
+      "pinyin": "Tā de zhíyè shì biānjí, gōngzuò yǐ xiūgǎi wénzhāng wéi zhǔ.",
+      "vi": "Nghề của cô ấy là biên tập viên, công việc chủ yếu là sửa bài.",
+      "analysis_vi": "以修改文章为主 nêu nội dung công việc.",
+      "highlight": [
+        "编辑"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e27b4c10-cb1f-4f91-976b-ef6d786c2396"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Ngày nay 编辑 còn dùng trong 内容编辑, 视频编辑, 新媒体编辑.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "dcc81c6a-5c95-4541-ac80-6c7e3743ef66",
+      "order": 1,
+      "rule_vi": "Dùng 编辑 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "编辑",
+    "back": "biên tập; biên tập viên",
+    "hint": "biānjí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e27b4c10-cb1f-4f91-976b-ef6d786c2396",
+    "source_lesson_vocab_id": null
+  }
+}

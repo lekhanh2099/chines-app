@@ -1,0 +1,380 @@
+{
+  "id": "9a62a426-17ca-447b-8d6e-cf99eb98954d",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "短文",
+  "pinyin": "duǎnwén",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đoản văn",
+    "meaning_vi": "bài văn ngắn, đoạn văn ngắn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bài văn ngắn",
+      "đoạn văn ngắn"
+    ],
+    "short_definition_vi": "bài văn ngắn, đoạn văn ngắn",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về đọc hiểu, bài học.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đọc hiểu, bài học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "短",
+        "lishu_vi": "đoản",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 短 trong từ 短文; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "矢",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thỉ",
+          "radical_name_zh": "",
+          "hanviet": "thỉ",
+          "meaning_vi": "mũi tên",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "矢 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "矢",
+            "hanviet": "thỉ",
+            "meaning_vi": "mũi tên",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "矢 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "矢",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thỉ",
+              "radical_name_zh": "",
+              "hanviet": "thỉ",
+              "meaning_vi": "mũi tên",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "矢 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "豆",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 短文, chữ 短 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "文",
+        "lishu_vi": "văn",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 文 trong từ 短文; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 短文, chữ 文 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "短文 trong bài được nhớ theo nghĩa hiện đại: bài văn ngắn.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 一篇短文 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "文章",
+        "pinyin": "wénzhāng",
+        "meaning_vi": "bài viết nói chung",
+        "difference_vi": "bài viết nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "课文",
+        "pinyin": "kèwén",
+        "meaning_vi": "bài khóa trong giáo trình",
+        "difference_vi": "bài khóa trong giáo trình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "长文",
+        "pinyin": "chángwén",
+        "meaning_vi": "bài dài",
+        "difference_vi": "bài dài",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 短文 cho tin nhắn ngắn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c65df028-2082-4f0c-b195-35fe5e747040",
+      "order": 1,
+      "zh": "一篇短文",
+      "pinyin": "",
+      "vi": "một bài ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a822d2b9-b418-46b2-ac22-fe7898691127",
+      "order": 2,
+      "zh": "读短文",
+      "pinyin": "",
+      "vi": "đọc bài ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80fe19c0-3f99-47f7-be07-1858576d15e5",
+      "order": 3,
+      "zh": "写短文",
+      "pinyin": "",
+      "vi": "viết bài ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3425f79f-2bd1-4ef4-8196-cc4e5908e7ca",
+      "order": 4,
+      "zh": "短文内容",
+      "pinyin": "",
+      "vi": "nội dung bài ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "37431315-b5cd-405c-bee4-e51614894a49",
+      "order": 5,
+      "zh": "根据短文回答问题",
+      "pinyin": "",
+      "vi": "dựa vào bài ngắn trả lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8c9ea621-e2c9-44fc-aab7-1ae358084ca0",
+      "order": 1,
+      "zh": "请读这篇短文。",
+      "pinyin": "",
+      "vi": "bài văn ngắn, đoạn văn ngắn",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "短文"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a62a426-17ca-447b-8d6e-cf99eb98954d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "06269a43-e60f-46aa-ba57-d5af073e7696",
+      "order": 2,
+      "zh": "这个词语“短文”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 短文 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "短文"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a62a426-17ca-447b-8d6e-cf99eb98954d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5c1563f8-0883-4f7d-a5f0-ff09afd009b0",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“短文”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 短文 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "短文"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9a62a426-17ca-447b-8d6e-cf99eb98954d"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "短文理解 rất hay gặp trong phần đọc/nghe hiểu.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5eac508f-debe-4c30-8f51-deca963c0d88",
+      "order": 1,
+      "rule_vi": "Không dùng 短文 cho tin nhắn ngắn.",
+      "natural_examples": [
+        {
+          "zh": "我收到一条短信。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我收到一篇短文。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我收到一篇短文。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我收到一条短信。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không dùng 短文 cho tin nhắn ngắn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "短文",
+    "back": "bài văn ngắn, đoạn văn ngắn",
+    "hint": "duǎnwén",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9a62a426-17ca-447b-8d6e-cf99eb98954d",
+    "source_lesson_vocab_id": null
+  }
+}

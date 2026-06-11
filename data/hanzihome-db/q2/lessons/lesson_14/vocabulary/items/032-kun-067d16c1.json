@@ -1,0 +1,314 @@
+{
+  "id": "c6141087-dea5-46b9-b504-fec6f3175ad9",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "困",
+  "pinyin": "kùn",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ",
+    "raw_cn": "形/动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Khốn",
+    "meaning_vi": "buồn ngủ; bị kẹt, khó khăn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "buồn ngủ",
+      "bị kẹt",
+      "khó khăn"
+    ],
+    "short_definition_vi": "buồn ngủ; bị kẹt, khó khăn",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "khẩu ngữ rất thường dùng với nghĩa buồn ngủ.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "困",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "bao quanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "buồn ngủ; bị kẹt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "困 có hình 木 nằm trong 囗, có thể gợi ý bị bao vây/khó thoát. Cảnh báo: 困 không phải “khó” trong mọi ngữ cảnh. “Bài khó” là 难, không nói 这个题很困.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "困 có hình 木 nằm trong 囗, có thể gợi ý bị bao vây/khó thoát. Lõi nghĩa mở rộng: bị kẹt trong trạng thái khó thoát; với cơ thể là bị cơn buồn ngủ “vây”.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 困 không phải “khó” trong mọi ngữ cảnh. “Bài khó” là 难, không nói 这个题很困.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "困 (kùn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "buồn ngủ; bị kẹt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "累 (lèi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mệt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "困乏 (kùnfá)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mệt mỏi buồn ngủ, văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "难 (nán)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khó.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 困 là muốn ngủ; 累 là hết sức; 难 là khó về mức độ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ea095c52-a856-4bbd-904c-c3795cbdab26",
+      "order": 1,
+      "zh": "很困",
+      "pinyin": "",
+      "vi": "rất buồn ngủ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e27472fe-27ec-4b54-88ea-04416542ec79",
+      "order": 2,
+      "zh": "困得睁不开眼睛",
+      "pinyin": "",
+      "vi": "buồn ngủ đến mức mở mắt không nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e2888b5-ff79-4643-b985-9da259e98ade",
+      "order": 3,
+      "zh": "被困在电梯里",
+      "pinyin": "",
+      "vi": "bị kẹt trong thang máy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38020578-a941-4dd5-ad90-b35461609db0",
+      "order": 4,
+      "zh": "困了就睡一会儿",
+      "pinyin": "",
+      "vi": "buồn ngủ thì ngủ một lát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7880a444-1103-4274-af1f-850e3e2428c7",
+      "order": 1,
+      "zh": "他昨晚看书看到很晚，今天上课困得抬不起头来。",
+      "pinyin": "Tā zuówǎn kàn shū kàn dào hěn wǎn, jīntiān shàngkè kùn de tái bù qǐ tóu lái.",
+      "vi": "Tối qua anh ấy đọc sách đến rất khuya, hôm nay lên lớp buồn ngủ đến mức ngẩng đầu không nổi.",
+      "analysis_vi": "抬不起头来 là không ngẩng đầu lên được; 起来 liên quan hướng lên.",
+      "highlight": [
+        "困"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "c6141087-dea5-46b9-b504-fec6f3175ad9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7e998370-8abc-48ba-92e3-0407707b264c",
+      "order": 2,
+      "zh": "如果你太困，就先把书放回书架上去，明天再看。",
+      "pinyin": "Rúguǒ nǐ tài kùn, jiù xiān bǎ shū fàng huí shūjià shàng qù, míngtiān zài kàn.",
+      "vi": "Nếu bạn buồn ngủ quá, trước hết để sách lại lên kệ đi, mai xem tiếp.",
+      "analysis_vi": "放回……去 là đặt trở lại chỗ cũ, hướng rời khỏi người nói.",
+      "highlight": [
+        "困"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "c6141087-dea5-46b9-b504-fec6f3175ad9"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "47535d23-5670-4bd3-ae69-d4b0762ef2a6",
+      "order": 3,
+      "zh": "电梯突然停了，几个人被困在里面，只好打电话叫房管过来。",
+      "pinyin": "Diàntī tūrán tíng le, jǐ ge rén bèi kùn zài lǐmian, zhǐhǎo dǎ diànhuà jiào fángguǎn guòlai.",
+      "vi": "Thang máy đột nhiên dừng, vài người bị kẹt bên trong, đành gọi điện kêu quản lý nhà qua.",
+      "analysis_vi": "被困在里面 là bị kẹt bên trong; 叫……过来 là gọi người tới phía mình.",
+      "highlight": [
+        "困"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "c6141087-dea5-46b9-b504-fec6f3175ad9"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "474905eb-8c37-4678-81ca-ea7571292040",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng 困 để nói “bài khó”. Sai:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "困",
+    "back": "buồn ngủ; bị kẹt, khó khăn",
+    "hint": "kùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Trong khẩu ngữ, 困死了 là cách nói phóng đại “buồn ngủ chết đi được”. Dùng với bạn bè được, nhưng trong văn cảnh trang trọng nên nói 我有点儿困.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c6141087-dea5-46b9-b504-fec6f3175ad9",
+    "source_lesson_vocab_id": null
+  }
+}

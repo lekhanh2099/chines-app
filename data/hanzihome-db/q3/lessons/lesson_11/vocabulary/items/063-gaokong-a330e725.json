@@ -1,0 +1,357 @@
+{
+  "id": "24dcc095-4fbd-4d37-b7a2-b100f81429ba",
+  "type": "deep_vocabulary_item",
+  "order": 63,
+  "hanzi": "高空",
+  "pinyin": "gāokōng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "cao không",
+    "meaning_vi": "không trung cao, tầng trời cao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không trung cao",
+      "tầng trời cao"
+    ],
+    "short_definition_vi": "vùng trời cao trên mặt đất",
+    "textbook_focus_vi": "Trong bài đĩa bay lại bay lên cao.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "高",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao",
+        "modern_logic_vi": "cao",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "空",
+        "lishu_vi": "",
+        "structure_note_vi": "穴 + 工",
+        "components": [
+          {
+            "text": "穴",
+            "hanviet": "",
+            "meaning_vi": "hang, khoảng trống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "穴 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "穴",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Huyệt",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "hang, khoảng trống",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "穴 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "",
+            "meaning_vi": "thợ, công",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "工 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "工",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Công",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "thợ, công",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "工 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không gian, trống",
+        "modern_logic_vi": "không gian, trống",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "穴",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Huyệt",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "hang, khoảng trống",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "穴 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "高空 được học trong bài theo nghĩa: vùng trời cao trên mặt đất.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 向高空飞去.",
+    "warning_vi": "Không nhầm 高空 với 天空 hoặc 空中.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "空中",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trên không, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "低空",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vùng trời thấp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 高空 với 天空 hoặc 空中."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7026c0ea-9bf4-4b25-b21d-85bb2ae566e9",
+      "order": 1,
+      "zh": "向高空飞去",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "df868fe6-9025-4bea-8ce9-69eae70037b3",
+      "order": 2,
+      "zh": "高空飞行",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f6e7a468-b044-4d3b-904c-f916e64c2a44",
+      "order": 3,
+      "zh": "高空作业",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8c43eb90-5ef9-4160-9e97-e7bbf05a87b9",
+      "order": 4,
+      "zh": "高空中的飞行物",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8028d005-3fb2-435a-bf2d-633b4e34490a",
+      "order": 5,
+      "zh": "高空云层",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e55818e-0b15-4dc9-9443-dad2fe7d55a3",
+      "order": 6,
+      "zh": "飞向高空",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "12f2e048-8343-4cf2-b899-a56af956a168",
+      "order": 1,
+      "zh": "飞碟又向高空慢慢飞去。",
+      "pinyin": "",
+      "vi": "Đĩa bay lại từ từ bay lên không trung cao.",
+      "analysis_vi": "向高空 chỉ hướng.",
+      "highlight": [
+        "高空"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24dcc095-4fbd-4d37-b7a2-b100f81429ba"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4a54ba7c-d9b8-4a8e-b01d-476a24232c6a",
+      "order": 2,
+      "zh": "我一抬头，就看见一个亮点儿在高空中慢慢变小。",
+      "pinyin": "",
+      "vi": "Tôi vừa ngẩng đầu thì thấy một điểm sáng trên cao từ từ nhỏ lại.",
+      "analysis_vi": "在高空中 là vị trí.",
+      "highlight": [
+        "高空"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "24dcc095-4fbd-4d37-b7a2-b100f81429ba"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "高空作业 là công việc trên cao, nhưng trong bài 高空 là vùng trời cao.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7959062d-c569-489d-bdae-7b268382ebbe",
+      "order": 1,
+      "rule_vi": "Không nhầm 高空 với 天空 hoặc 空中.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 高空 với 天空 hoặc 空中.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "高空",
+    "back": "không trung cao, tầng trời cao",
+    "hint": "gāokōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "24dcc095-4fbd-4d37-b7a2-b100f81429ba",
+    "source_lesson_vocab_id": null
+  }
+}

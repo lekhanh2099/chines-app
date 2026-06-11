@@ -1,0 +1,11 @@
+{
+  "id": "e9372384-2377-46f0-9dcb-47036fb47d50",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [],
+  "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
+}

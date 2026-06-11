@@ -1,0 +1,395 @@
+{
+  "id": "f47befe2-d170-4128-9702-1ab4a082901b",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "改",
+  "pinyin": "gǎi",
+  "pos": {
+    "raw_vi": "Động từ 【动词】",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "society_major",
+    "change"
+  ],
+  "meaning": {
+    "hanviet": "Cải",
+    "meaning_vi": "sửa; đổi; thay đổi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sửa",
+      "đổi",
+      "thay đổi"
+    ],
+    "short_definition_vi": "sửa",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "sửa đổi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "改",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "bản thân",
+            "position_vi": "trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động/hành động",
+            "position_vi": "phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động/hành động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sửa, đổi, thay đổi",
+        "modern_logic_vi": "攵 gợi hành động tác động làm sự vật khác đi.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động/hành động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "改 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "改变",
+        "pinyin": "",
+        "meaning_vi": "thay đổi",
+        "difference_vi": "Nhấn biến đổi trạng thái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "修改",
+        "pinyin": "",
+        "meaning_vi": "sửa đổi",
+        "difference_vi": "Thường văn bản/kế hoạch/lỗi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改正",
+        "pinyin": "",
+        "meaning_vi": "sửa cho đúng",
+        "difference_vi": "Sửa lỗi sai.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "改革",
+        "pinyin": "",
+        "meaning_vi": "cải cách hệ thống lớn",
+        "difference_vi": "Không dùng cho lỗi nhỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "保持",
+        "pinyin": "",
+        "meaning_vi": "giữ nguyên",
+        "difference_vi": "Đối lập sửa/đổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "71f0993a-ef2b-4e3a-a7a5-64087b695c03",
+      "order": 1,
+      "zh": "改错",
+      "pinyin": "",
+      "vi": "sửa lỗi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "19f8a314-f8c2-400f-9eca-90d41439acb0",
+      "order": 2,
+      "zh": "改作业",
+      "pinyin": "",
+      "vi": "sửa/chấm bài tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da032796-fceb-44b6-89fe-f50656724f8e",
+      "order": 3,
+      "zh": "改时间",
+      "pinyin": "",
+      "vi": "đổi thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22622265-af5e-430f-b98e-d3c1fe425969",
+      "order": 4,
+      "zh": "改地方",
+      "pinyin": "",
+      "vi": "đổi địa điểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d43924b-5566-45dd-ad08-5d90e4aee43b",
+      "order": 5,
+      "zh": "改名字",
+      "pinyin": "",
+      "vi": "đổi tên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c123c578-0175-4755-94c4-1fabb6658249",
+      "order": 6,
+      "zh": "改计划",
+      "pinyin": "",
+      "vi": "đổi kế hoạch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3dc14be3-865d-43c8-9ea9-3ce4bd22eeab",
+      "order": 7,
+      "zh": "改习惯",
+      "pinyin": "",
+      "vi": "sửa thói quen",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e54e896-e36d-455a-9ef8-18b531278b11",
+      "order": 8,
+      "zh": "改成……",
+      "pinyin": "",
+      "vi": "sửa/đổi thành...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd1c049f-9e19-4f4d-8b35-f09ffd4ff860",
+      "order": 1,
+      "zh": "请你把这个错句改一下。",
+      "pinyin": "Qǐng nǐ bǎ zhège cuòjù gǎi yíxià.",
+      "vi": "Bạn sửa câu sai này một chút đi.",
+      "analysis_vi": "把错句改一下 là 把字句; 一下 làm nhẹ hành động.",
+      "highlight": [
+        "改"
+      ],
+      "grammar_refs": [
+        "ba_sentence"
+      ],
+      "vocab_refs": [
+        "f47befe2-d170-4128-9702-1ab4a082901b"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "19a069af-6213-419f-8293-c4780692ba24",
+      "order": 2,
+      "zh": "这个句子不但有语法错误，而且用词也不自然，所以要改。",
+      "pinyin": "Zhège jùzi búdàn yǒu yǔfǎ cuòwù, érqiě yòngcí yě bù zìrán, suǒyǐ yào gǎi.",
+      "vi": "Câu này không những có lỗi ngữ pháp mà dùng từ cũng không tự nhiên, nên phải sửa.",
+      "analysis_vi": "不但……而且…… nêu hai lý do cần sửa.",
+      "highlight": [
+        "改",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "f47befe2-d170-4128-9702-1ab4a082901b"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "32017ded-b277-412f-aeac-ea7de3fcdfcf",
+      "order": 3,
+      "zh": "老师把我昨天写错的那几个句子都改好了，还让我自己再看一遍。",
+      "pinyin": "Lǎoshī bǎ wǒ zuótiān xiě cuò de nà jǐ ge jùzi dōu gǎi hǎo le, hái ràng wǒ zìjǐ zài kàn yí biàn.",
+      "vi": "Thầy/cô đã sửa xong mấy câu tôi viết sai hôm qua, còn bảo tôi tự xem lại một lần nữa.",
+      "analysis_vi": "把……改好了 là 把字句 + bổ ngữ kết quả 好.",
+      "highlight": [
+        "改好了"
+      ],
+      "grammar_refs": [
+        "ba_sentence"
+      ],
+      "vocab_refs": [
+        "f47befe2-d170-4128-9702-1ab4a082901b"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "改错 là dạng bài rất phổ biến trong học tiếng Trung: tìm và sửa lỗi sai.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b2518edb-e8bd-4e7a-893e-377f1a3b4de3",
+      "order": 1,
+      "rule_vi": "Không dùng 改革 cho việc sửa một câu sai.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "改革这个句子。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Sai phạm vi từ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "改这个句子。",
+          "pinyin": "gǎi zhège jùzi",
+          "vi": "sửa câu này",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "改正这个错误。",
+          "pinyin": "gǎizhèng zhège cuòwù",
+          "vi": "sửa lỗi này cho đúng",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "改",
+    "back": "sửa; đổi; thay đổi",
+    "hint": "gǎi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "change"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f47befe2-d170-4128-9702-1ab4a082901b",
+    "source_lesson_vocab_id": null
+  }
+}

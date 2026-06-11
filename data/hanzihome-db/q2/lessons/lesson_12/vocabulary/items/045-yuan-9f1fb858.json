@@ -1,0 +1,344 @@
+{
+  "id": "fca0a801-f05d-4618-9a8c-1e5e20573b5d",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "愿",
+  "pinyin": "yuàn",
+  "pos": {
+    "raw_vi": "Động từ / Hình vị",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "function_words"
+  ],
+  "meaning": {
+    "hanviet": "nguyện",
+    "meaning_vi": "muốn, sẵn lòng; mong muốn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "muốn, sẵn lòng; mong muốn"
+    ],
+    "short_definition_vi": "muốn, sẵn lòng; mong muốn",
+    "textbook_focus_vi": "muốn, sẵn lòng; mong muốn",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "愿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng/ý muốn",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, suy nghĩ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "原",
+            "hanviet": "nguyên",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mong muốn, nguyện ý, sẵn lòng",
+        "modern_logic_vi": "愿 là ý muốn trong lòng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "愿 = điều trong lòng muốn hoặc sẵn lòng làm.",
+    "memory_tip_vi": "愿 = điều trong lòng muốn hoặc sẵn lòng làm.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "愿意",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sẵn lòng, khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "希望",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hy vọng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "想",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "muốn, nghĩ, khẩu ngữ rộng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "情愿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cam lòng/tình nguyện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不愿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không muốn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不肯",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không chịu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "愿",
+        "right": "不愿",
+        "meaning_vi": "",
+        "note_vi": "muốn/sẵn lòng ↔ không muốn",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3fb3dea1-0646-4ee7-8f6d-1e8a4e907490",
+      "order": 1,
+      "zh": "愿意",
+      "pinyin": "",
+      "vi": "sẵn lòng, bằng lòng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03cc726e-ac5e-4722-ba61-d3ed8289b00d",
+      "order": 2,
+      "zh": "愿望",
+      "pinyin": "",
+      "vi": "nguyện vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1fdca21a-83ac-4493-9150-deaff36d0e1f",
+      "order": 3,
+      "zh": "心愿",
+      "pinyin": "",
+      "vi": "tâm nguyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cb09b2d7-9271-4699-99a3-d5c95e08c56c",
+      "order": 4,
+      "zh": "自愿",
+      "pinyin": "",
+      "vi": "tự nguyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f23b285f-b97c-48a5-bef0-662bbd1dee48",
+      "order": 5,
+      "zh": "但愿",
+      "pinyin": "",
+      "vi": "chỉ mong rằng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9e6b08b-027c-4f1b-ba52-74578232656a",
+      "order": 6,
+      "zh": "如愿",
+      "pinyin": "",
+      "vi": "như ý nguyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9b442cb9-23c9-4021-bac2-2f835ad4cfe2",
+      "order": 1,
+      "zh": "我愿帮助他。",
+      "pinyin": "",
+      "vi": "Tôi sẵn lòng giúp anh ấy.",
+      "analysis_vi": "愿 + V đúng nhưng hơi văn viết.",
+      "highlight": [
+        "愿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fca0a801-f05d-4618-9a8c-1e5e20573b5d"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "38f38611-a6f8-4fab-acdd-bfbeadffdc51",
+      "order": 2,
+      "zh": "这件事他愿不愿做？",
+      "pinyin": "",
+      "vi": "Chuyện này anh ấy có muốn làm không?",
+      "analysis_vi": "这件事 là chủ đề lớn.",
+      "highlight": [
+        "愿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fca0a801-f05d-4618-9a8c-1e5e20573b5d"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Nói chuyện thường ngày ưu tiên 愿意 hơn 愿.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e1afce08-e3f6-494a-9e65-13dd795e6b1c",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 愿 trong khẩu ngữ; 愿意 tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我愿意帮你。",
+          "pinyin": "",
+          "vi": "Tôi sẵn lòng giúp bạn.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "愿",
+    "back": "muốn, sẵn lòng; mong muốn",
+    "hint": "yuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "function_words"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fca0a801-f05d-4618-9a8c-1e5e20573b5d",
+    "source_lesson_vocab_id": null
+  }
+}

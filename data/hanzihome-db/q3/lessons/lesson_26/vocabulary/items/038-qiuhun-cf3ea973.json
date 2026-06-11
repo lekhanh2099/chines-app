@@ -1,0 +1,213 @@
+{
+  "id": "1ec2d31b-f380-4592-ba20-662a037a167c",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "求婚",
+  "pinyin": "qiúhūn",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "cầu hôn",
+    "meaning_vi": "cầu hôn, xin được kết hôn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cầu hôn",
+      "xin được kết hôn"
+    ],
+    "short_definition_vi": "cầu hôn, xin được kết hôn",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "求",
+        "lishu_vi": "cầu",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "求 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "婚",
+        "lishu_vi": "hôn",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "婚 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "求婚 trong bài được học theo nghĩa: cầu hôn, xin được kết hôn.",
+    "memory_tip_vi": "Nhớ 求婚 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "结婚",
+        "pinyin": "jiéhūn",
+        "meaning_vi": "kết hôn",
+        "difference_vi": "Kết quả hôn nhân chính thức; không phải hành động cầu hôn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Nói 向她求婚, không nói 跟她求婚."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "63fd42f5-9366-4d02-bbac-f9edb9c5cd25",
+      "order": 1,
+      "zh": "向她求婚",
+      "pinyin": "",
+      "vi": "cầu hôn cô ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dffdd0c9-9bd1-4893-bec3-6a06f25c7187",
+      "order": 2,
+      "zh": "求婚成功",
+      "pinyin": "",
+      "vi": "cầu hôn thành công",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0fd4b4c7-4b5d-482e-85f1-9fcf8fa3a8f0",
+      "order": 3,
+      "zh": "拒绝求婚",
+      "pinyin": "",
+      "vi": "từ chối lời cầu hôn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "26e3caa3-bdd7-4705-beb7-0bc24cb5e9e1",
+      "order": 1,
+      "zh": "他准备明天向女朋友求婚。",
+      "pinyin": "",
+      "vi": "Anh ấy chuẩn bị cầu hôn bạn gái vào ngày mai.",
+      "analysis_vi": "向 + người + 求婚.",
+      "highlight": [
+        "求婚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1ec2d31b-f380-4592-ba20-662a037a167c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f8d1b15b-37b0-4706-b1c9-785aad8119d8",
+      "order": 2,
+      "zh": "梁山伯知道真相以后，马上去祝家求婚。",
+      "pinyin": "",
+      "vi": "Sau khi biết sự thật, Lương Sơn Bá lập tức đến nhà họ Chúc cầu hôn.",
+      "analysis_vi": "知道真相以后 là mốc thời gian.",
+      "highlight": [
+        "求婚"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1ec2d31b-f380-4592-ba20-662a037a167c"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bối cảnh truyền thống, cầu hôn vẫn phải qua gia đình và hôn ước.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "060b0579-8d42-4359-bc67-4c4927870be7",
+      "order": 1,
+      "rule_vi": "Nói 向她求婚, không nói 跟她求婚.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "求婚",
+    "back": "cầu hôn, xin được kết hôn",
+    "hint": "qiúhūn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1ec2d31b-f380-4592-ba20-662a037a167c",
+    "source_lesson_vocab_id": null
+  }
+}

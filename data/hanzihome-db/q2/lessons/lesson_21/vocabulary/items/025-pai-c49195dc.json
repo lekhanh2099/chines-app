@@ -1,0 +1,265 @@
+{
+  "id": "1a6d6ff9-e55b-4947-90b2-c682050d0ce0",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "排",
+  "pinyin": "pái",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ / Lượng từ",
+    "raw_cn": "动/名/量",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bài / bài liệt",
+    "meaning_vi": "xếp; hàng, dãy; dàn dựng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xếp; hàng, dãy; dàn dựng"
+    ],
+    "short_definition_vi": "xếp; hàng, dãy; dàn dựng",
+    "textbook_focus_vi": "xếp; hàng, dãy; dàn dựng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "排",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "非",
+            "hanviet": "phi",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "xếp/hàng/dàn dựng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "xếp thứ tự/thành hàng hoặc dàn dựng",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8665a2e8-19fa-49cc-b099-ddfcc1c5a900",
+      "order": 1,
+      "zh": "第一排",
+      "pinyin": "",
+      "vi": "hàng thứ nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3cdf7f22-5eac-4920-a3a9-aec5d6ae554f",
+      "order": 2,
+      "zh": "第三排",
+      "pinyin": "",
+      "vi": "hàng thứ ba",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24fe68a4-590e-4e46-a419-9c999dd48524",
+      "order": 3,
+      "zh": "后排",
+      "pinyin": "",
+      "vi": "hàng sau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4f1a9741-17cf-4079-815b-c5cb3c1e2d38",
+      "order": 4,
+      "zh": "排队",
+      "pinyin": "",
+      "vi": "xếp hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "836bafa3-84e0-454f-8ea0-027ff69ffb0c",
+      "order": 5,
+      "zh": "排节目",
+      "pinyin": "",
+      "vi": "dàn dựng tiết mục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "99a9c4e0-eddf-449f-b56d-62166f47423f",
+      "order": 1,
+      "zh": "我们坐在第三排，看得很清楚。",
+      "pinyin": "Wǒmen zuò zài dì sān pái, kàn de hěn qīngchu.",
+      "vi": "Chúng tôi ngồi ở hàng thứ ba, nhìn rất rõ.",
+      "analysis_vi": "第三排 là hàng ghế; 看得很清楚 là bổ ngữ trạng thái.",
+      "highlight": [
+        "排"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a6d6ff9-e55b-4947-90b2-c682050d0ce0"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ab2d4a91-bb44-4861-984e-7d13feada0a1",
+      "order": 2,
+      "zh": "如果不了解排，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě pái, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 排, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "排"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a6d6ff9-e55b-4947-90b2-c682050d0ce0"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4d86b9b0-1869-4a28-b7ee-7d4e59ed9d54",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解排在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě pái zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 排 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "排"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a6d6ff9-e55b-4947-90b2-c682050d0ce0"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trên vé rạp có thể ghi 三排五座 = hàng 3 ghế 5.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "184d41cd-1b4d-49b7-be67-7105808ed9f7",
+      "order": 1,
+      "rule_vi": "Không nhầm 排 với 座: 排 là hàng, 座 là ghế/chỗ。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "排",
+    "back": "xếp; hàng, dãy; dàn dựng",
+    "hint": "pái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1a6d6ff9-e55b-4947-90b2-c682050d0ce0",
+    "source_lesson_vocab_id": null
+  }
+}

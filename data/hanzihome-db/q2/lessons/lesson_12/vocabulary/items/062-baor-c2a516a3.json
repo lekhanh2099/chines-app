@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_8331512232980c62",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "包儿",
+  "pinyin": "bāor",
+  "meaning_vi": "túi, bao",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab-12-bao-er",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab-12-bao-er",
+    "type": "vocabulary_item",
+    "order": 7,
+    "hanzi": "包儿",
+    "pinyin": "bāor",
+    "meaning_vi": "túi, bao",
+    "meaning_en": "bag",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "subentry"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "包儿",
+      "back": "bāor — túi, bao",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,223 @@
+{
+  "id": "d1fea694-ea0c-4806-9343-d2f833c707af",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "整个",
+  "pinyin": "zhěnggè",
+  "pos": {
+    "raw_vi": "Định ngữ / Lượng hóa từ",
+    "raw_cn": "限定成分",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "chỉnh cá",
+    "meaning_vi": "cả, toàn bộ, nguyên cả",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cả",
+      "toàn bộ",
+      "nguyên cả"
+    ],
+    "short_definition_vi": "cả, toàn bộ, nguyên cả",
+    "textbook_focus_vi": "整 = chỉnh thể/toàn bộ, 个 là lượng từ. 整个 = nguyên cả một chỉnh thể.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "toàn thể, phạm vi",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "整",
+        "lishu_vi": "chỉnh",
+        "structure_note_vi": "Học theo nghĩa chỉnh thể/toàn bộ.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "toàn bộ, chỉnh tề",
+        "modern_logic_vi": "Trong từ này, 整 góp phần tạo nghĩa 'toàn bộ, chỉnh tề'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "个",
+        "lishu_vi": "cá",
+        "structure_note_vi": "Lượng từ phổ thông.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cái, lượng từ",
+        "modern_logic_vi": "Trong từ này, 个 góp phần tạo nghĩa 'cái, lượng từ'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "整 = chỉnh thể/toàn bộ, 个 là lượng từ. 整个 = nguyên cả một chỉnh thể.",
+    "memory_tip_vi": "Nhớ qua cụm: 整个晚上 = cả buổi tối.",
+    "warning_vi": "整个 phải đi với danh từ/cụm danh từ rõ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "全部",
+        "pinyin": "quánbù",
+        "meaning_vi": "toàn bộ",
+        "difference_vi": "Có thể đứng độc lập hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "所有",
+        "pinyin": "suǒyǒu",
+        "meaning_vi": "tất cả",
+        "difference_vi": "Nhấn mọi thành viên trong tập hợp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "整个 phải đi với danh từ/cụm danh từ rõ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e2e448d9-e4a3-4695-9aed-d096978a2a82",
+      "order": 1,
+      "zh": "整个晚上",
+      "pinyin": "zhěnggè wǎnshang",
+      "vi": "cả buổi tối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71f17670-2fdd-4f9d-b901-4e7e598f16e3",
+      "order": 2,
+      "zh": "整个故事",
+      "pinyin": "zhěnggè gùshi",
+      "vi": "toàn bộ câu chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e06a5fd-7597-4a21-8064-a399e16ca2f0",
+      "order": 3,
+      "zh": "整个人",
+      "pinyin": "zhěng ge rén",
+      "vi": "cả con người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "89649eb5-d8db-4e56-b621-e13985573c69",
+      "order": 1,
+      "zh": "收到赵霞的信以后，他整个下午都在翻来覆去地看。",
+      "pinyin": "Shōu dào Zhào Xiá de xìn yǐhòu, tā zhěnggè xiàwǔ dōu zài fān lái fù qù de kàn.",
+      "vi": "Sau khi nhận thư của Triệu Hà, anh ấy cả buổi chiều xem đi xem lại.",
+      "analysis_vi": "整个下午都在…… nhấn suốt cả chiều.",
+      "highlight": [
+        "整个"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d1fea694-ea0c-4806-9343-d2f833c707af"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "整个人都不好了 là khẩu ngữ mạng, không nên dùng trong văn trang trọng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f036ecf1-a513-42f5-8ba3-4b0560c19d49",
+      "order": 1,
+      "rule_vi": "整个 phải đi với danh từ/cụm danh từ rõ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我整个都累。",
+          "pinyin": "Wǒ zhěnggè dōu lèi.",
+          "vi": "Kém tự nhiên.",
+          "note_vi": "Thiếu danh từ trung tâm.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我整个人都很累。",
+          "pinyin": "Wǒ zhěng ge rén dōu hěn lèi.",
+          "vi": "Cả người tôi đều rất mệt.",
+          "note_vi": "整个人 là cụm đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "整个",
+    "back": "cả, toàn bộ, nguyên cả",
+    "hint": "zhěnggè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d1fea694-ea0c-4806-9343-d2f833c707af",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "id": "5dcd7d02-2b30-48fd-abce-ac18e137559a",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "辞职",
+  "pinyin": "cízhí",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "từ chức",
+    "meaning_vi": "nghỉ việc, xin thôi chức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghỉ việc, xin thôi chức"
+    ],
+    "short_definition_vi": "nghỉ việc, xin thôi chức",
+    "textbook_focus_vi": "nghỉ việc, xin thôi chức",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "辞",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "舌",
+            "hanviet": "thiệt",
+            "meaning_vi": "lưỡi/lời nói",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "辛",
+            "hanviet": "tân",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "từ biệt, từ chối, từ bỏ, lời nói",
+        "modern_logic_vi": "辞 gợi lời nói và sự từ bỏ/từ biệt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "职",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "耳",
+            "hanviet": "nhĩ",
+            "meaning_vi": "tai",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "耳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhĩ",
+              "radical_name_zh": "",
+              "hanviet": "nhĩ",
+              "meaning_vi": "tai, nghe",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "耳 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "只",
+            "hanviet": "chỉ",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chức vụ, công việc",
+        "modern_logic_vi": "职 là chức vụ/nghề nghiệp.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "辞职 = từ bỏ chức vụ/công việc mình đang đảm nhiệm.",
+    "memory_tip_vi": "辞职 = từ bỏ chức vụ/công việc mình đang đảm nhiệm.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "离职",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rời công việc/công ty, trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "退休",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nghỉ hưu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "解雇",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sa thải",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开除",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đuổi việc/kỷ luật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "就职",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhậm chức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "辞职",
+        "right": "就职",
+        "meaning_vi": "",
+        "note_vi": "nghỉ việc/từ chức ↔ nhậm chức",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f632f190-a779-402a-a73f-f1472f1b776a",
+      "order": 1,
+      "zh": "提出辞职",
+      "pinyin": "",
+      "vi": "đề xuất xin nghỉ việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b48a5df7-d559-4350-ae71-17630ee78863",
+      "order": 2,
+      "zh": "辞职信",
+      "pinyin": "",
+      "vi": "đơn xin nghỉ việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da662971-3a87-4ece-bafe-a041e449407c",
+      "order": 3,
+      "zh": "决定辞职",
+      "pinyin": "",
+      "vi": "quyết định nghỉ việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e58aba8-738b-4031-843d-db50a9ba59cd",
+      "order": 4,
+      "zh": "突然辞职",
+      "pinyin": "",
+      "vi": "đột nhiên nghỉ việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2174442-6640-4966-880b-b8629f09b836",
+      "order": 5,
+      "zh": "从公司辞职",
+      "pinyin": "",
+      "vi": "nghỉ khỏi công ty",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e9be067c-b6bb-4667-97f1-330c8d6a0ae4",
+      "order": 1,
+      "zh": "他决定辞职。",
+      "pinyin": "",
+      "vi": "Anh ấy quyết định nghỉ việc.",
+      "analysis_vi": "辞职 là động từ, không cần tân ngữ trong câu này.",
+      "highlight": [
+        "辞职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5dcd7d02-2b30-48fd-abce-ac18e137559a"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "21539d3c-250c-45c2-8419-26af26124ebb",
+      "order": 2,
+      "zh": "他辞职的事你知道了吗？",
+      "pinyin": "",
+      "vi": "Chuyện anh ấy nghỉ việc bạn biết chưa?",
+      "analysis_vi": "他辞职的事 là chủ đề lớn.",
+      "highlight": [
+        "辞职"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5dcd7d02-2b30-48fd-abce-ac18e137559a"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "辞职 trong tiếng Trung dùng rộng cho cả nhân viên bình thường nghỉ việc.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5ee2ec7b-5bec-42ca-8d8e-6649d4b756dc",
+      "order": 1,
+      "rule_vi": "辞职 nhấn chủ động xin nghỉ; 离职 trung tính hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "他辞职了。",
+          "pinyin": "",
+          "vi": "Anh ấy xin nghỉ việc rồi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他已经离职了。",
+          "pinyin": "",
+          "vi": "Anh ấy đã rời công ty rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "辞职",
+    "back": "nghỉ việc, xin thôi chức",
+    "hint": "cízhí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5dcd7d02-2b30-48fd-abce-ac18e137559a",
+    "source_lesson_vocab_id": null
+  }
+}

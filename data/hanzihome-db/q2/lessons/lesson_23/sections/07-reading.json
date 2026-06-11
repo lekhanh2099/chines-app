@@ -1,0 +1,118 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "读后复述",
+  "title_vi": "Đọc xong kể lại",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "reading_l23_001_chi_yao_chi_de",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "吃药吃的",
+      "title_vi": "Do uống thuốc mà ra",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "tags": [
+        "read_and_retell",
+        "health",
+        "humor"
+      ],
+      "supplement_vocab": [
+        {
+          "hanzi": "减肥",
+          "pinyin": "jiǎnféi",
+          "meaning_vi": "giảm cân"
+        },
+        {
+          "hanzi": "奥林匹克",
+          "pinyin": "Àolínpǐkè",
+          "meaning_vi": "Olympic"
+        },
+        {
+          "hanzi": "嗓子",
+          "pinyin": "sǎngzi",
+          "meaning_vi": "cổ họng"
+        },
+        {
+          "hanzi": "连忙",
+          "pinyin": "liánmáng",
+          "meaning_vi": "vội vàng; lập tức"
+        },
+        {
+          "hanzi": "厕所",
+          "pinyin": "cèsuǒ",
+          "meaning_vi": "nhà vệ sinh"
+        },
+        {
+          "hanzi": "脸色",
+          "pinyin": "liǎnsè",
+          "meaning_vi": "sắc mặt"
+        },
+        {
+          "hanzi": "难看",
+          "pinyin": "nánkàn",
+          "meaning_vi": "khó coi; trông không ổn"
+        },
+        {
+          "hanzi": "立刻",
+          "pinyin": "lìkè",
+          "meaning_vi": "lập tức; ngay"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "reading_l23_p01",
+          "order": 1,
+          "zh": "因为吃得好也吃得多，我越来越胖。天冷了，为了减肥，我决定去游泳。那天，我去奥林匹克体育中心游泳馆游了一会儿泳，第二天头就疼起来了。我到医院去看病。大夫说我感冒了，开了一些药让我吃。吃了感冒药就想睡觉。睡了两天以后，头不疼了，但是嗓子却疼起来了。大夫说，天气太干燥，又让我吃药。过了三天，嗓子不疼了，又咳嗽起来了，而且越咳越厉害，咳得晚上睡不着觉。大夫看了以后给我开了一些咳嗽药。没想到，当天晚上我就发起烧来了。大夫只好又给我开退烧药。他说这药很好，但是要多喝水。",
+          "pinyin": "Yīnwèi chī de hǎo yě chī de duō, wǒ yuè lái yuè pàng. Tiān lěng le, wèile jiǎnféi, wǒ juédìng qù yóuyǒng. Nà tiān, wǒ qù Àolínpǐkè Tǐyù Zhōngxīn yóuyǒngguǎn yóu le yíhuìr yǒng, dì-èr tiān tóu jiù téng qǐlai le. Wǒ dào yīyuàn qù kànbìng. Dàifu shuō wǒ gǎnmào le, kāi le yìxiē yào ràng wǒ chī. Chī le gǎnmào yào jiù xiǎng shuìjiào. Shuì le liǎng tiān yǐhòu, tóu bù téng le, dànshì sǎngzi què téng qǐlai le. Dàifu shuō, tiānqì tài gānzào, yòu ràng wǒ chī yào. Guò le sān tiān, sǎngzi bù téng le, yòu késou qǐlai le, érqiě yuè ké yuè lìhai, ké de wǎnshang shuì bù zháo jiào. Dàifu kàn le yǐhòu gěi wǒ kāi le yìxiē késou yào. Méi xiǎngdào, dàngtiān wǎnshang wǒ jiù fā qǐ shāo lái le. Dàifu zhǐhǎo yòu gěi wǒ kāi tuìshāo yào. Tā shuō zhè yào hěn hǎo, dànshì yào duō hē shuǐ.",
+          "vi": "Vì ăn ngon lại ăn nhiều, tôi càng ngày càng béo. Trời lạnh rồi, để giảm cân, tôi quyết định đi bơi. Hôm đó, tôi đến bể bơi của Trung tâm Thể thao Olympic bơi một lúc, sang ngày thứ hai đầu liền đau lên. Tôi đến bệnh viện khám. Bác sĩ nói tôi bị cảm, kê một ít thuốc cho tôi uống. Uống thuốc cảm xong là muốn ngủ. Ngủ hai ngày sau, đầu không đau nữa, nhưng cổ họng lại đau lên. Bác sĩ nói thời tiết quá khô, lại bảo tôi uống thuốc. Qua ba ngày, cổ họng không đau nữa, lại ho lên, hơn nữa càng ho càng dữ, ho đến mức buổi tối không ngủ được. Bác sĩ xem xong kê cho tôi ít thuốc ho. Không ngờ, ngay tối hôm đó tôi lại sốt lên. Bác sĩ đành lại kê thuốc hạ sốt cho tôi. Ông ấy nói thuốc này rất tốt, nhưng phải uống nhiều nước.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "reading_l23_p02",
+          "order": 2,
+          "zh": "药真的很好，很快就不发烧了。但是好几天没有大便了。大夫一检查说我大便干燥。这次，大夫说吃点儿中药吧。中药也很好，吃了以后，第二天就有了要大便的感觉，连忙去厕所，没想到又拉起肚子来了。去找大夫，他说我把肚子吃坏了，再开点儿治肚子的药吃吃吧。",
+          "pinyin": "Yào zhēn de hěn hǎo, hěn kuài jiù bù fāshāo le. Dànshì hǎo jǐ tiān méiyǒu dàbiàn le. Dàifu yì jiǎnchá shuō wǒ dàbiàn gānzào. Zhè cì, dàifu shuō chī diǎnr Zhōngyào ba. Zhōngyào yě hěn hǎo, chī le yǐhòu, dì-èr tiān jiù yǒu le yào dàbiàn de gǎnjué, liánmáng qù cèsuǒ, méi xiǎngdào yòu lā qǐ dùzi lái le. Qù zhǎo dàifu, tā shuō wǒ bǎ dùzi chī huài le, zài kāi diǎnr zhì dùzi de yào chīchi ba.",
+          "vi": "Thuốc thật sự rất tốt, rất nhanh đã hết sốt. Nhưng mấy ngày liền không đi đại tiện. Bác sĩ kiểm tra thì nói tôi bị táo bón/phân khô. Lần này, bác sĩ nói uống chút thuốc Đông y đi. Thuốc Đông y cũng rất tốt, uống xong, sang ngày thứ hai liền có cảm giác muốn đi đại tiện, tôi vội đi nhà vệ sinh, không ngờ lại bị tiêu chảy. Tôi đi tìm bác sĩ, ông ấy nói tôi uống thuốc làm hỏng bụng rồi, lại kê chút thuốc chữa bụng uống thử đi.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "reading_l23_p03",
+          "order": 3,
+          "zh": "昨天下午，一位当医生的朋友来看我。他说：“你的脸色怎么这么难看，我给你开点儿药吃吃吧。”我说：“不用了。我这难看的脸色都是吃药吃的。”",
+          "pinyin": "Zuótiān xiàwǔ, yí wèi dāng yīshēng de péngyou lái kàn wǒ. Tā shuō: “Nǐ de liǎnsè zěnme zhème nánkàn, wǒ gěi nǐ kāi diǎnr yào chīchi ba.” Wǒ shuō: “Bú yòng le. Wǒ zhè nánkàn de liǎnsè dōu shì chī yào chī de.”",
+          "vi": "Chiều hôm qua, một người bạn làm bác sĩ đến thăm tôi. Anh ấy nói: “Sắc mặt của bạn sao khó coi thế này, để tôi kê cho bạn chút thuốc uống thử nhé.” Tôi nói: “Không cần đâu. Cái sắc mặt khó coi này của tôi đều là do uống thuốc mà ra.”",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "reading_l23_p04",
+          "order": 4,
+          "zh": "他好像听不懂我的话，我就把这些天看病的经过跟他说了说。他听了以后大笑起来，对我说：“是，是，你不能再吃药了。不过，应该去运动运动。冬天太冷，到外边运动容易感冒，到奥体中心去游游泳吧。”我一听他的话，头又立刻疼了起来。",
+          "pinyin": "Tā hǎoxiàng tīng bù dǒng wǒ de huà, wǒ jiù bǎ zhèxiē tiān kànbìng de jīngguò gēn tā shuō le shuō. Tā tīng le yǐhòu dàxiào qǐlai, duì wǒ shuō: “Shì, shì, nǐ bù néng zài chī yào le. Búguò, yīnggāi qù yùndòng yùndong. Dōngtiān tài lěng, dào wàibian yùndòng róngyì gǎnmào, dào Àotǐ Zhōngxīn qù yóu you yǒng ba.” Wǒ yì tīng tā de huà, tóu yòu lìkè téng le qǐlai.",
+          "vi": "Anh ấy hình như nghe không hiểu lời tôi, tôi bèn kể sơ cho anh ấy nghe quá trình đi khám mấy ngày nay. Nghe xong anh ấy cười lớn và nói với tôi: “Đúng, đúng, bạn không thể uống thuốc tiếp nữa. Có điều, nên đi vận động một chút. Mùa đông lạnh quá, vận động bên ngoài dễ bị cảm, đến trung tâm Olympic bơi một chút đi.” Tôi vừa nghe lời anh ấy, đầu lại lập tức đau lên.",
+          "audio_key": "",
+          "vocab_refs": [],
+          "grammar_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": []
+    }
+  ]
+}

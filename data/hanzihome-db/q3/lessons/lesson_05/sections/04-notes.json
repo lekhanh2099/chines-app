@@ -1,0 +1,116 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "临了儿，他还送我好多书。",
+      "structure": "临了儿，……",
+      "meaning_vi": "“临了儿” nghĩa là đến cuối cùng, lúc sắp kết thúc. “了” đọc liǎo, mang nghĩa kết thúc.",
+      "examples": [
+        {
+          "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+          "zh": "临了儿，他还送我好多书。",
+          "vi": "Đến cuối, anh ấy còn tặng tôi rất nhiều sách.",
+          "pinyin": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
+          "zh": "临了儿，他又说了一句“回头再说”。",
+          "vi": "Đến cuối, anh ấy lại nói một câu “để sau rồi nói”.",
+          "pinyin": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "之后我多次提起给他书钱的事。",
+      "structure": "提起 + người / việc / chủ đề",
+      "meaning_vi": "“提起” nghĩa là nhắc đến, nói đến, đề cập đến; trong bài là lôi một chủ đề ra nói.",
+      "examples": [
+        {
+          "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+          "zh": "之后我多次提起给他书钱的事。",
+          "vi": "Sau đó tôi nhiều lần nhắc đến chuyện trả tiền sách cho anh ấy.",
+          "pinyin": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "b45bc13e-c6e0-4fab-a808-4b732cb085a7",
+          "zh": "一提起这件事我就生气。",
+          "vi": "Cứ nhắc đến chuyện này là tôi tức giận.",
+          "pinyin": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "正在我左顾右盼的时候",
+      "structure": "正在 + người + 左顾右盼 + 的时候",
+      "meaning_vi": "“左顾右盼” nghĩa là nhìn trái nhìn phải, nhìn quanh, thường khi đang tìm đường, tìm người hoặc lúng túng.",
+      "examples": [
+        {
+          "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
+          "zh": "正在我左顾右盼的时候，身后有两个小伙子主动跟我打招呼。",
+          "vi": "Đúng lúc tôi đang nhìn quanh trái phải, phía sau có hai chàng trai trẻ chủ động chào tôi.",
+          "pinyin": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        },
+        {
+          "id": "1b3405fa-a29a-4d15-a133-d8b1cc886dec",
+          "zh": "他站在地铁口左顾右盼，好像在等人。",
+          "vi": "Anh ấy đứng ở cửa tàu điện ngầm nhìn trái nhìn phải, hình như đang đợi ai đó.",
+          "pinyin": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

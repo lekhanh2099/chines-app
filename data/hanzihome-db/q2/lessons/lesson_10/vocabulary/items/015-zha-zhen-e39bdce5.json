@@ -1,0 +1,504 @@
+{
+  "id": "c25a5984-4056-49d3-8167-617b3d27bce4",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "扎针",
+  "pinyin": "zhā zhēn",
+  "pos": {
+    "raw_vi": "Động từ / Cụm động từ",
+    "raw_cn": "动",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Trát châm",
+    "meaning_vi": "châm kim; tiêm/chích",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "châm kim",
+      "tiêm",
+      "chích"
+    ],
+    "short_definition_vi": "châm kim; tiêm/chích",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "扎",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ Thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đâm/chích/châm vào.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ Thủ trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "针",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "钅 được dùng như bộ Kim trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "钅 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kim.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "钅 được dùng như bộ Kim trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "扎 = đâm/chích/châm vào. 针 = kim. → 扎针 = dùng kim châm/đâm vào cơ thể. Logic nhớ nghĩa hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "扎针",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "châm/tiêm kim, nhấn hành động kim đâm vào.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打针",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiêm thuốc, khẩu ngữ phổ biến hơn khi nói bệnh viện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "针灸",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "châm cứu, tên phương pháp Đông y.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "输液",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "truyền dịch.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抽血",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lấy máu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我怕打针。",
+      "Tôi sợ tiêm.",
+      "我没做过针灸。",
+      "Tôi chưa từng châm cứu.",
+      "医生给我扎了一针。",
+      "Bác sĩ châm/tiêm cho tôi một mũi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "17b1a384-6d90-4be9-995c-dd72b8a9c07a",
+      "order": 1,
+      "zh": "扎针",
+      "pinyin": "",
+      "vi": "châm/tiêm kim",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "216ea38b-52a9-45ed-87a4-85cf914daa3d",
+      "order": 2,
+      "zh": "扎一针",
+      "pinyin": "",
+      "vi": "châm/tiêm một mũi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ba7defe5-f64f-46cd-a9d0-fd9ba4bffeec",
+      "order": 3,
+      "zh": "扎过针",
+      "pinyin": "",
+      "vi": "từng bị châm/tiêm kim",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "6a6f5958-e20e-435c-a2d7-6255232edf56",
+      "order": 4,
+      "zh": "怕扎针",
+      "pinyin": "",
+      "vi": "sợ châm/tiêm kim",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "358da126-10ea-4399-a1f3-3debc6d837ef",
+      "order": 5,
+      "zh": "给我扎针",
+      "pinyin": "",
+      "vi": "châm/tiêm kim cho tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ff45d89e-6ff9-4cd2-9890-872e0ceca334",
+      "order": 6,
+      "zh": "扎针不疼",
+      "pinyin": "",
+      "vi": "châm/tiêm không đau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7c352cb6-616a-4cdc-8c08-838bcc72a71b",
+      "order": 1,
+      "zh": "我怕扎针。",
+      "pinyin": "Wǒ pà zhā zhēn.",
+      "vi": "Tôi sợ châm/tiêm kim.",
+      "analysis_vi": "怕 + V/N = sợ cái gì/làm gì.",
+      "highlight": [
+        "扎针"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "c25a5984-4056-49d3-8167-617b3d27bce4"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5c5fbb30-30d5-433e-b744-aeacd0aef857",
+      "order": 2,
+      "zh": "医生给我扎过一次针。",
+      "pinyin": "Yīshēng gěi wǒ zhā guo yí cì zhēn.",
+      "vi": "Bác sĩ từng châm/tiêm cho tôi một lần.",
+      "analysis_vi": "扎过一次针 = từng châm/tiêm một lần. Đây là V过 + 一次 + tân ngữ.",
+      "highlight": [
+        "扎针"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "c25a5984-4056-49d3-8167-617b3d27bce4"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e638fe1a-7eef-404d-a0d0-f70ae54ef723",
+      "order": 3,
+      "zh": "我以前没做过针灸，也没扎过针，所以第一次看见那些细细的针时，紧张得一句话也说不出来。",
+      "pinyin": "Wǒ yǐqián méi zuò guo zhēnjiǔ, yě méi zhā guo zhēn, suǒyǐ dì yī cì kànjiàn nàxiē xìxì de zhēn shí, jǐnzhāng de yí jù huà yě shuō bu chūlai.",
+      "vi": "Trước đây tôi chưa từng châm cứu, cũng chưa từng bị châm kim, nên lần đầu nhìn thấy những cây kim nhỏ xíu đó, tôi căng thẳng đến mức một câu cũng không nói ra được.",
+      "analysis_vi": "没做过 / 没扎过 nhấn chưa từng có kinh nghiệm. 第一次 là lần đầu. 一句话也说不出来 dùng 也 để nhấn phủ định hoàn toàn.",
+      "highlight": [
+        "扎针"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "c25a5984-4056-49d3-8167-617b3d27bce4"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "74102231-08d8-4756-bbd2-379cd8daa18e",
+      "order": 1,
+      "rule_vi": "Nói “tiêm” hằng ngày:",
+      "natural_examples": [
+        {
+          "zh": "打针 rất tự nhiên.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "针灸.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "扎针.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Nói “tiêm” hằng ngày: 打针 rất tự nhiên. Nói hành động châm kim: 扎针. Nói phương pháp Đông y: 针灸.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "扎针",
+    "back": "châm kim; tiêm/chích",
+    "hint": "zhā zhēn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi nói với trẻ em hoặc người sợ kim, tiếng Trung đời thường thường dùng 打针 nhiều hơn. 扎针 nghe rõ hình ảnh kim châm vào da hơn, nên đôi khi tạo cảm giác sợ hơn.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c25a5984-4056-49d3-8167-617b3d27bce4",
+    "source_lesson_vocab_id": null
+  }
+}

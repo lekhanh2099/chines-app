@@ -1,0 +1,1736 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook_pdf_verified",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: giữ đủ 10 mục bài tập trong PDF theo đúng thứ tự sách.",
+    "expected_count_source": "pdf_page_scan_manual_count",
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_verified",
+    "allowed_final_status_when_incomplete": "draft_or_verified_only",
+    "blocked_final_statuses": [
+      "final_verified",
+      "final_verified_with_marked_generated_fields"
+    ]
+  },
+  "items": [
+    {
+      "id": "e4db0cd1-8b0c-4160-9b6e-c78146666fd0",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "canonical_variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc các câu tục ngữ.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [],
+      "answer_key": [],
+      "parts": [
+        {
+          "id": "5673aeb6-378f-4279-8d20-4dc68a9572d9",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "64026b63-69ac-4360-b67e-f9dd6bdbd869",
+              "left": "地球 dìqiú",
+              "right": "踢球 tī qiú"
+            },
+            {
+              "id": "d5153832-a961-4ec1-b6f1-2c1530a69584",
+              "left": "卫星 wèixīng",
+              "right": "卫生 wèishēng"
+            },
+            {
+              "id": "18144a7a-2d92-4c70-b130-7f7af16f1480",
+              "left": "信号 xìnhào",
+              "right": "幸好 xìnghǎo"
+            },
+            {
+              "id": "05075267-46d1-47f5-a731-d4f756f6c917",
+              "left": "生长 shēngzhǎng",
+              "right": "申张 shēnzhāng"
+            },
+            {
+              "id": "53009a74-9c10-41bb-9113-3ed04deefe47",
+              "left": "气体 qìtǐ",
+              "right": "集体 jítǐ"
+            },
+            {
+              "id": "93b9dc1c-0a44-4f4b-8ea8-68f8cdfb7287",
+              "left": "资金 zījīn",
+              "right": "至今 zhìjīn"
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false
+        },
+        {
+          "id": "fa5fae16-9686-4c06-bea3-6cb2580e3f81",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "c1575872-fbd5-4cc7-bd7a-bdbe3994c999",
+              "text": "一寸光阴一寸金，寸金难买寸光阴。",
+              "pinyin": "Yí cùn guāngyīn yí cùn jīn, cùn jīn nán mǎi cùn guāngyīn.",
+              "vi": "Thời gian quý như vàng, vàng không mua được thời gian."
+            },
+            {
+              "id": "26c29c2e-bbb5-48e5-826b-fea93b06dcc5",
+              "text": "一个篱笆三个桩，一个好汉三个帮。",
+              "pinyin": "Yí ge líba sān ge zhuāng, yí ge hǎohàn sān ge bāng.",
+              "vi": "Một hàng rào cần ba cọc, một người giỏi cần ba người giúp."
+            },
+            {
+              "id": "ac94bc4d-7f6d-49d0-8fc3-7e546677432b",
+              "text": "长江后浪推前浪，世上新人换旧人。",
+              "pinyin": "Cháng Jiāng hòulàng tuī qiánlàng, shìshàng xīnrén huàn jiùrén.",
+              "vi": "Sóng sau Trường Giang đẩy sóng trước, người mới thay người cũ."
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false
+        }
+      ],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "b5d9462f-17ba-4016-99a4-2046975a1c58",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "canonical_variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ/cụm từ",
+      "instruction": {
+        "zh": "朗读下列词语。",
+        "vi": "Đọc các cụm từ sau.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [],
+      "answer_key": [],
+      "parts": [
+        {
+          "id": "b2e315fd-97d7-4549-98b7-3b95cd85ceb2",
+          "type": "phrase_list",
+          "title": "Read out the following phrases",
+          "items": [
+            {
+              "id": "26a20fca-fa15-4cc2-acc4-bae456b8ecfc",
+              "text": "发射卫星",
+              "pinyin": "fāshè wèixīng"
+            },
+            {
+              "id": "3dfd3400-7d19-4701-a30a-dfcc2538003b",
+              "text": "非常成功",
+              "pinyin": "fēicháng chénggōng"
+            },
+            {
+              "id": "50f7c923-aa83-4909-92fd-bca45cd20e4c",
+              "text": "一片欢腾",
+              "pinyin": "yí piàn huānténg"
+            },
+            {
+              "id": "ed5a8aca-e993-4990-aab0-139853294cf3",
+              "text": "获得资料",
+              "pinyin": "huòdé zīliào"
+            },
+            {
+              "id": "525ec1d7-4aed-4c09-8fc2-c659a3d442e5",
+              "text": "获得成功",
+              "pinyin": "huòdé chénggōng"
+            },
+            {
+              "id": "52e9de98-528f-4153-9437-9156740a884c",
+              "text": "获得资金",
+              "pinyin": "huòdé zījīn"
+            },
+            {
+              "id": "1731de58-07a4-4e82-a07b-b07398e62b04",
+              "text": "珍贵资料",
+              "pinyin": "zhēnguì zīliào"
+            },
+            {
+              "id": "48bdfb18-8ab2-4c6a-9a78-a6f41bcba603",
+              "text": "珍贵动物",
+              "pinyin": "zhēnguì dòngwù"
+            },
+            {
+              "id": "6ab2bb88-1fb6-4308-997c-05e0d19ac296",
+              "text": "珍贵植物",
+              "pinyin": "zhēnguì zhíwù"
+            },
+            {
+              "id": "5fcbeead-c580-482e-8e9c-53e22e3729e3",
+              "text": "正在进行",
+              "pinyin": "zhèngzài jìnxíng"
+            },
+            {
+              "id": "6955371d-5c4a-469e-8191-8b3855be0ac4",
+              "text": "正在试验",
+              "pinyin": "zhèngzài shìyàn"
+            },
+            {
+              "id": "a32837e1-a3f1-40f5-98ba-c8665cab2f07",
+              "text": "正在研究",
+              "pinyin": "zhèngzài yánjiū"
+            },
+            {
+              "id": "2e98ee35-d0de-41b8-97c4-8fcc019713dc",
+              "text": "增加重量",
+              "pinyin": "zēngjiā zhòngliàng"
+            },
+            {
+              "id": "557d8002-c991-476e-8e7a-e1e1c8200b4a",
+              "text": "增加时间",
+              "pinyin": "zēngjiā shíjiān"
+            },
+            {
+              "id": "eb764db7-a293-4af0-a76c-64a2f84ae2d8",
+              "text": "增加收入",
+              "pinyin": "zēngjiā shōurù"
+            },
+            {
+              "id": "9d9bbc79-a999-4675-a3a7-5bce8077f9d8",
+              "text": "毫无疑问",
+              "pinyin": "háowú yíwèn"
+            },
+            {
+              "id": "68a0a1b2-87da-4080-85d3-9757af10544b",
+              "text": "毫无准备",
+              "pinyin": "háowú zhǔnbèi"
+            },
+            {
+              "id": "97dab3f7-9edc-4027-b1d5-efd3c5a8986d",
+              "text": "毫无信心",
+              "pinyin": "háowú xìnxīn"
+            },
+            {
+              "id": "52804b46-92dd-4042-ad7f-1ec20c165a97",
+              "text": "推迟计划",
+              "pinyin": "tuīchí jìhuà"
+            },
+            {
+              "id": "3eb2e3a0-5b01-4722-bcd0-6f7f3d4deb79",
+              "text": "推迟几天",
+              "pinyin": "tuīchí jǐ tiān"
+            },
+            {
+              "id": "177aeead-4d8d-48d3-b07c-30ed2810a4f6",
+              "text": "推迟进行",
+              "pinyin": "tuīchí jìnxíng"
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false
+        }
+      ],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "a25d4dcb-4977-4db3-aa15-203697618ea3",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "canonical_variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [
+        "不可思议",
+        "补充",
+        "欢腾",
+        "生长",
+        "生存",
+        "停留",
+        "实施",
+        "惊人",
+        "充满",
+        "取得",
+        "发射",
+        "推迟"
+      ],
+      "questions": [
+        {
+          "id": "c641df1c-c0af-4eb0-97d3-d73e723c89a3",
+          "prompt": "听说国家足球队得了奥运冠军，全国一片____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "欢腾"
+        },
+        {
+          "id": "4115dced-9dfd-4e9d-b145-32bf73a9629f",
+          "prompt": "他们国家正准备____载人飞船。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "发射"
+        },
+        {
+          "id": "a77f867c-aecc-47a3-95e8-d92e5ea31204",
+          "prompt": "这次宇宙飞船在空中____了十五天。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "停留"
+        },
+        {
+          "id": "eada6690-1614-4cc7-8fb4-3ee6a871ac3c",
+          "prompt": "经过一年的努力，你们都____了很好的成绩。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "取得"
+        },
+        {
+          "id": "9924107e-745e-4b00-8692-7b59fa03d2c1",
+          "prompt": "她从小____在海边，对大海有着很深的感情。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "生长"
+        },
+        {
+          "id": "afe26a54-2843-4931-bc12-e66626092913",
+          "prompt": "我们学校有中国学生，也有很多外国留学生，校园里____了中外师生团结友好的气氛。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "充满"
+        },
+        {
+          "id": "fd229d62-6073-482d-b601-4e3f4cdf34b1",
+          "prompt": "我们要好好儿保护地球，因为这是我们人类唯一能够____的地方。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "生存"
+        },
+        {
+          "id": "9dcf9890-f3a6-40e9-a730-d03fc106d41b",
+          "prompt": "发生这样的事情，真让人觉得____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "不可思议"
+        },
+        {
+          "id": "9ce4cd2d-44cf-4fcd-9f0a-c77a0ee44ed5",
+          "prompt": "这个地方的经济这几年取得了____的发展。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "惊人"
+        },
+        {
+          "id": "c2438ebf-3944-4542-82a3-49f507f57f3f",
+          "prompt": "放假后我想去南方旅行，所以可能要____一个月回国。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "推迟"
+        },
+        {
+          "id": "eaec48ae-feaf-45ba-92a9-ae9c4a23d944",
+          "prompt": "中国青少年发展基金会____了希望工程，让更多贫困地区的失学儿童重回校园。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "实施"
+        },
+        {
+          "id": "9fa16cf3-b984-4764-8cfa-96ba63a1874c",
+          "prompt": "课堂上，老师常常给我们____一些练习。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "补充"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "c641df1c-c0af-4eb0-97d3-d73e723c89a3",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "欢腾"
+        },
+        {
+          "question_id": "4115dced-9dfd-4e9d-b145-32bf73a9629f",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "发射"
+        },
+        {
+          "question_id": "a77f867c-aecc-47a3-95e8-d92e5ea31204",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "停留"
+        },
+        {
+          "question_id": "eada6690-1614-4cc7-8fb4-3ee6a871ac3c",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "取得"
+        },
+        {
+          "question_id": "9924107e-745e-4b00-8692-7b59fa03d2c1",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "生长"
+        },
+        {
+          "question_id": "afe26a54-2843-4931-bc12-e66626092913",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "充满"
+        },
+        {
+          "question_id": "fd229d62-6073-482d-b601-4e3f4cdf34b1",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "生存"
+        },
+        {
+          "question_id": "9dcf9890-f3a6-40e9-a730-d03fc106d41b",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "不可思议"
+        },
+        {
+          "question_id": "9ce4cd2d-44cf-4fcd-9f0a-c77a0ee44ed5",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "惊人"
+        },
+        {
+          "question_id": "c2438ebf-3944-4542-82a3-49f507f57f3f",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "推迟"
+        },
+        {
+          "question_id": "eaec48ae-feaf-45ba-92a9-ae9c4a23d944",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "实施"
+        },
+        {
+          "question_id": "9fa16cf3-b984-4764-8cfa-96ba63a1874c",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "补充"
+        }
+      ],
+      "parts": [],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "c12916d2-540e-41c2-8d6d-75213f13dcfc",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "canonical_variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ/cụm trong ngoặc hoàn thành câu.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [
+        {
+          "id": "befd8237-cada-4030-b129-cfc29109587a",
+          "prompt": "他对这次 HSK 考试____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "他对这次 HSK 考试充满信心。"
+        },
+        {
+          "id": "6c3c8058-b707-48e2-9c04-9bc27f85f42b",
+          "prompt": "下学期，我们班除了他不再继续学了以外，____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "下学期，我们班除了他不再继续学了以外，其他同学都继续学习。"
+        },
+        {
+          "id": "95388f0c-6bc7-48ff-bf18-35621a3f876f",
+          "prompt": "地球上的气候不断变暖，____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "地球上的气候不断变暖，这意味着将来地球生物会遇到很多问题。"
+        },
+        {
+          "id": "477b2208-dfcf-41f1-96dc-3e508fae4ef1",
+          "prompt": "你说他是加拿大人，可他的护照是美国的，____？",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "你说他是加拿大人，可他的护照是美国的，他究竟来自哪里？"
+        },
+        {
+          "id": "52ad73dd-036b-44e9-9297-00961e9dc892",
+          "prompt": "他的护照是美国护照，____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "他的护照是美国护照，实际上他是美国人。"
+        },
+        {
+          "id": "9da1f79b-d0d9-44c9-8271-f26bdfcc5508",
+          "prompt": "他说在中文学校学了一年汉语，可是____。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "他说在中文学校学了一年汉语，可是实际上他只学了三个月。"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "befd8237-cada-4030-b129-cfc29109587a",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "他对这次 HSK 考试充满信心。"
+        },
+        {
+          "question_id": "6c3c8058-b707-48e2-9c04-9bc27f85f42b",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "下学期，我们班除了他不再继续学了以外，其他同学都继续学习。"
+        },
+        {
+          "question_id": "95388f0c-6bc7-48ff-bf18-35621a3f876f",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "地球上的气候不断变暖，这意味着将来地球生物会遇到很多问题。"
+        },
+        {
+          "question_id": "477b2208-dfcf-41f1-96dc-3e508fae4ef1",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "你说他是加拿大人，可他的护照是美国的，他究竟来自哪里？"
+        },
+        {
+          "question_id": "52ad73dd-036b-44e9-9297-00961e9dc892",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "他的护照是美国护照，实际上他是美国人。"
+        },
+        {
+          "question_id": "9da1f79b-d0d9-44c9-8271-f26bdfcc5508",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "他说在中文学校学了一年汉语，可是实际上他只学了三个月。"
+        }
+      ],
+      "parts": [],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "de17dd7d-0947-416b-92a0-e5b330d6c16c",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "canonical_variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ/cụm trong ngoặc hoàn thành hội thoại.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [
+        {
+          "id": "df48c9d8-6efb-4956-9955-52c77c83a414",
+          "prompt": "A：明年你有什么打算？\nB：____。\n（可能）",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "我明年可能去中国留学。"
+        },
+        {
+          "id": "e60babab-6148-4021-9968-9e4be5a7edcd",
+          "prompt": "A：你认为这件事办得成吗？\nB：____。\n（可能）",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "我觉得有可能。"
+        },
+        {
+          "id": "adbb1cb8-85a1-47f2-b5d6-2e494238534f",
+          "prompt": "A：____？\nB：大概有一万多留学生。\n（究竟）",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "这个学校究竟有多少留学生？"
+        },
+        {
+          "id": "cc16e561-f8dc-4d65-96da-d2e48ab93755",
+          "prompt": "A：你觉得这场足球赛____？\nB：很难说。\n（究竟）",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "你觉得这场足球赛究竟谁会赢？"
+        },
+        {
+          "id": "85ac5730-9f2c-4b14-813e-a2b56d3c671d",
+          "prompt": "A：为了研究大熊猫的生活，她一个人在大山里和大熊猫一起生活了三年。\nB：是吗？____。\n（不可思议）",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "是吗？真是不可思议。"
+        },
+        {
+          "id": "a1ce9fe4-6702-4ad9-a824-ee29025b5be6",
+          "prompt": "A：你刚来中国一年，汉语就说得这么好，真不简单！\nB：哪里，____。\n（实际上）",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "哪里，实际上我的汉语还差得远呢。"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "df48c9d8-6efb-4956-9955-52c77c83a414",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "我明年可能去中国留学。"
+        },
+        {
+          "question_id": "e60babab-6148-4021-9968-9e4be5a7edcd",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "我觉得有可能。"
+        },
+        {
+          "question_id": "adbb1cb8-85a1-47f2-b5d6-2e494238534f",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "这个学校究竟有多少留学生？"
+        },
+        {
+          "question_id": "cc16e561-f8dc-4d65-96da-d2e48ab93755",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "你觉得这场足球赛究竟谁会赢？"
+        },
+        {
+          "question_id": "85ac5730-9f2c-4b14-813e-a2b56d3c671d",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "是吗？真是不可思议。"
+        },
+        {
+          "question_id": "a1ce9fe4-6702-4ad9-a824-ee29025b5be6",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "哪里，实际上我的汉语还差得远呢。"
+        }
+      ],
+      "parts": [],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "1432e0b5-58cc-4a47-81d6-074fbd6c8479",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "canonical_variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [
+        {
+          "id": "74fc3c73-742b-45d4-84c7-61195cc37c92",
+          "prompt": {
+            "A": "他们建议人们出门最好乘坐公共汽车、地铁，尽量少开汽车。",
+            "B": "这些物质越来越影响人们的健康。",
+            "C": "在世界上的大部分城市，空气里的一氧化碳和其他有害气体已经多得可怕。",
+            "D": "为了解决这个问题，一些环境保护组织提出限制使用汽车的建议。"
+          },
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": [
+            "C",
+            "B",
+            "D",
+            "A"
+          ]
+        },
+        {
+          "id": "4723ba43-9c67-4ca9-9c99-b292ebf2cd53",
+          "prompt": {
+            "A": "如果大家都乘坐公共交通工具上下班，就有可能大大减少空气中的一氧化碳和其他有害气体。",
+            "B": "只要大家都关心环境问题，就会愿意试着去做，时间长了就慢慢习惯了。",
+            "C": "我们怎么样才能避免空气污染呢？我们为什么不可以坐公共汽车而非要自己开车呢？",
+            "D": "当然，从方便角度来讲，坐公共汽车比不上自己开车，但是这样花钱少，对环境的污染也小。"
+          },
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": [
+            "C",
+            "D",
+            "A",
+            "B"
+          ]
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "74fc3c73-742b-45d4-84c7-61195cc37c92",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": [
+            "C",
+            "B",
+            "D",
+            "A"
+          ]
+        },
+        {
+          "question_id": "4723ba43-9c67-4ca9-9c99-b292ebf2cd53",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": [
+            "C",
+            "D",
+            "A",
+            "B"
+          ]
+        }
+      ],
+      "parts": [],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.reorder.paragraph.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "60cbf8be-180d-419c-8520-5f241f1bb55a",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "canonical_variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa các câu sai.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [
+        {
+          "id": "9479833b-e888-443c-89ad-695ae4aadee0",
+          "prompt": "我的发烧比昨天增加了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "我比昨天烧得更厉害了。",
+          "wrong_sentence": "我的发烧比昨天增加了。",
+          "correct_sentence": "我比昨天烧得更厉害了。"
+        },
+        {
+          "id": "3a1c9c9f-da56-4a67-93e7-518fc5140cd8",
+          "prompt": "好久没看见他了，他很也许回国了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "好久没看见他了，他也许已经回国了。",
+          "wrong_sentence": "好久没看见他了，他很也许回国了。",
+          "correct_sentence": "好久没看见他了，他也许已经回国了。"
+        },
+        {
+          "id": "a92870a9-d5b4-4e8d-b044-5e2dc9c21fce",
+          "prompt": "我先去香港玩儿玩儿了几天，然后就来这里学汉语了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "我先去香港玩儿了几天，然后就来这里学汉语了。",
+          "wrong_sentence": "我先去香港玩儿玩儿了几天，然后就来这里学汉语了。",
+          "correct_sentence": "我先去香港玩儿了几天，然后就来这里学汉语了。"
+        },
+        {
+          "id": "4eaccb43-5940-4a81-a1de-86a9f3b8fc8e",
+          "prompt": "他成功他的考试，所以他能上大学了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "他通过了考试，所以他能上大学了。",
+          "wrong_sentence": "他成功他的考试，所以他能上大学了。",
+          "correct_sentence": "他通过了考试，所以他能上大学了。"
+        },
+        {
+          "id": "810b32ed-a1d8-443e-8238-ffa971047a03",
+          "prompt": "他想当律师，不知道他的这个愿望究竟能成功。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "他想当律师，不知道他的这个愿望究竟能不能实现。",
+          "wrong_sentence": "他想当律师，不知道他的这个愿望究竟能成功。",
+          "correct_sentence": "他想当律师，不知道他的这个愿望究竟能不能实现。"
+        },
+        {
+          "id": "6ae1064d-777a-4f0d-89d8-1ab60ec2c534",
+          "prompt": "为了这个目的达到，我必须努力学习。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "为了达到这个目的，我必须努力学习。",
+          "wrong_sentence": "为了这个目的达到，我必须努力学习。",
+          "correct_sentence": "为了达到这个目的，我必须努力学习。"
+        },
+        {
+          "id": "323dfc70-7b1d-4380-b9f4-4a5a2795b9be",
+          "prompt": "很多人都不可思议她跟这个人结婚。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "很多人都觉得她跟这个人结婚不可思议。",
+          "wrong_sentence": "很多人都不可思议她跟这个人结婚。",
+          "correct_sentence": "很多人都觉得她跟这个人结婚不可思议。"
+        },
+        {
+          "id": "5a9b1ba7-af39-4392-979a-81649c498157",
+          "prompt": "这个问题我不但解答不了，她也同样解答不了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "这个问题不但我解答不了，她也同样解答不了。",
+          "wrong_sentence": "这个问题我不但解答不了，她也同样解答不了。",
+          "correct_sentence": "这个问题不但我解答不了，她也同样解答不了。"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "9479833b-e888-443c-89ad-695ae4aadee0",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "我比昨天烧得更厉害了。"
+        },
+        {
+          "question_id": "3a1c9c9f-da56-4a67-93e7-518fc5140cd8",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "好久没看见他了，他也许已经回国了。"
+        },
+        {
+          "question_id": "a92870a9-d5b4-4e8d-b044-5e2dc9c21fce",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "我先去香港玩儿了几天，然后就来这里学汉语了。"
+        },
+        {
+          "question_id": "4eaccb43-5940-4a81-a1de-86a9f3b8fc8e",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "他通过了考试，所以他能上大学了。"
+        },
+        {
+          "question_id": "810b32ed-a1d8-443e-8238-ffa971047a03",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "他想当律师，不知道他的这个愿望究竟能不能实现。"
+        },
+        {
+          "question_id": "6ae1064d-777a-4f0d-89d8-1ab60ec2c534",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "为了达到这个目的，我必须努力学习。"
+        },
+        {
+          "question_id": "323dfc70-7b1d-4380-b9f4-4a5a2795b9be",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "很多人都觉得她跟这个人结婚不可思议。"
+        },
+        {
+          "question_id": "5a9b1ba7-af39-4392-979a-81649c498157",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "这个问题不但我解答不了，她也同样解答不了。"
+        }
+      ],
+      "parts": [],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "ff673315-f188-4fce-9d95-518ca7b6d0b2",
+      "type": "custom",
+      "variant": "situational_expression",
+      "canonical_variant": "situational_expression",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "情景表达。",
+        "vi": "Diễn đạt theo tình huống.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [
+        {
+          "id": "92231539-4db4-4dfa-884a-1bb008a1e8f7",
+          "prompt": "下列句子什么情景下说？全城一片欢腾。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "当全城的人因为重大喜讯而非常高兴时，比如国家队夺冠、重大工程成功等。"
+        },
+        {
+          "id": "7699e44b-13e4-457b-8dab-52a20a7442c1",
+          "prompt": "下列句子什么情景下说？这件事简直不可思议。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "当一件事很难相信、超出常理或让人极其惊讶时。"
+        },
+        {
+          "id": "5859c62b-19e0-42d6-b5b6-8ccfe4e3bbe8",
+          "prompt": "下列句子什么情景下说？那条河里的水根本不能喝。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "当河水被污染、有害物质很多，完全不适合饮用时。"
+        },
+        {
+          "id": "cf4051a5-c7b7-4426-98ae-5827b6912ed3",
+          "prompt": "下列情景怎么说？科学家发明了一种治疗癌症的新药，你听到这个消息后想表达自己的想法。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。"
+        },
+        {
+          "id": "f7cec96a-15f3-4e69-a60b-03c197c930cf",
+          "prompt": "下列情景怎么说？你看到一起车祸，一辆车被撞碎了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "那辆车被撞个稀巴烂。"
+        },
+        {
+          "id": "744bd619-5700-4e05-94f8-1a982efc4dad",
+          "prompt": "下列情景怎么说？你去外地旅行了一个月，还遇到了一起车祸，但是你一点儿事没有，安全地回来了。",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "manual"
+          },
+          "answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "92231539-4db4-4dfa-884a-1bb008a1e8f7",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "当全城的人因为重大喜讯而非常高兴时，比如国家队夺冠、重大工程成功等。"
+        },
+        {
+          "question_id": "7699e44b-13e4-457b-8dab-52a20a7442c1",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "当一件事很难相信、超出常理或让人极其惊讶时。"
+        },
+        {
+          "question_id": "5859c62b-19e0-42d6-b5b6-8ccfe4e3bbe8",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "当河水被污染、有害物质很多，完全不适合饮用时。"
+        },
+        {
+          "question_id": "cf4051a5-c7b7-4426-98ae-5827b6912ed3",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。"
+        },
+        {
+          "question_id": "f7cec96a-15f3-4e69-a60b-03c197c930cf",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "那辆车被撞个稀巴烂。"
+        },
+        {
+          "question_id": "744bd619-5700-4e05-94f8-1a982efc4dad",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。"
+        }
+      ],
+      "parts": [],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.situational_expression.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "f66ef1cb-c2f8-40bf-9005-d576803cd2f3",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "canonical_variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền khuyết tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền từ vào chỗ trống trong đoạn văn.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [
+        {
+          "id": "630c8795-8705-422e-8a5b-5f87f1564df5",
+          "prompt": "Blank 1",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "为了"
+        },
+        {
+          "id": "845d058b-8260-4fa1-8a11-38c789804311",
+          "prompt": "Blank 2",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "的"
+        },
+        {
+          "id": "92bc4ebe-c23a-4a82-b619-2e6bc9469909",
+          "prompt": "Blank 3",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "连"
+        },
+        {
+          "id": "4cf45327-18a9-49ba-94f1-44ea169287ce",
+          "prompt": "Blank 4",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "把"
+        },
+        {
+          "id": "0e613be6-a9a9-4b06-a6eb-8e0c9bdcc72d",
+          "prompt": "Blank 5",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "到"
+        },
+        {
+          "id": "cdb9ea83-4907-44ef-b847-bb2032594091",
+          "prompt": "Blank 6",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "成"
+        },
+        {
+          "id": "36402c00-6f78-4e55-9b5a-c6d7489d7a1b",
+          "prompt": "Blank 7",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "多"
+        },
+        {
+          "id": "39a608a6-ac62-4b07-b8f7-f21cfa637df3",
+          "prompt": "Blank 8",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "使"
+        },
+        {
+          "id": "8024a5ef-aa03-4898-824d-6979f304d598",
+          "prompt": "Blank 9",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "出"
+        },
+        {
+          "id": "a199c53f-1625-4a82-99f9-e9ddfe402e95",
+          "prompt": "Blank 10",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "了"
+        },
+        {
+          "id": "e12c0ef4-6eda-4e2a-98e2-face42a0b285",
+          "prompt": "Blank 11",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "去"
+        },
+        {
+          "id": "887e074b-dee4-4d35-a268-627e6296a945",
+          "prompt": "Blank 12",
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false,
+          "explanation_vi": "",
+          "grading": {
+            "mode": "exact"
+          },
+          "answer": "了"
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "630c8795-8705-422e-8a5b-5f87f1564df5",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "为了"
+        },
+        {
+          "question_id": "845d058b-8260-4fa1-8a11-38c789804311",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "的"
+        },
+        {
+          "question_id": "92bc4ebe-c23a-4a82-b619-2e6bc9469909",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "连"
+        },
+        {
+          "question_id": "4cf45327-18a9-49ba-94f1-44ea169287ce",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "把"
+        },
+        {
+          "question_id": "0e613be6-a9a9-4b06-a6eb-8e0c9bdcc72d",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "到"
+        },
+        {
+          "question_id": "cdb9ea83-4907-44ef-b847-bb2032594091",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "成"
+        },
+        {
+          "question_id": "36402c00-6f78-4e55-9b5a-c6d7489d7a1b",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "多"
+        },
+        {
+          "question_id": "39a608a6-ac62-4b07-b8f7-f21cfa637df3",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "使"
+        },
+        {
+          "question_id": "8024a5ef-aa03-4898-824d-6979f304d598",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "出"
+        },
+        {
+          "question_id": "a199c53f-1625-4a82-99f9-e9ddfe402e95",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "了"
+        },
+        {
+          "question_id": "e12c0ef4-6eda-4e2a-98e2-face42a0b285",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "去"
+        },
+        {
+          "question_id": "887e074b-dee4-4d35-a268-627e6296a945",
+          "answer_verified": true,
+          "check_needed": false,
+          "answer": "了"
+        }
+      ],
+      "parts": [
+        {
+          "id": "74d0a6df-dcea-45f2-ad0b-c2c73ce5cfb4",
+          "type": "supplementary_words",
+          "title": "补充生词",
+          "items": [
+            {
+              "id": "827e8735-b106-4a36-be61-b700dbb02c6d",
+              "hanzi": "破坏",
+              "pinyin": "pòhuài",
+              "meaning_vi": "phá hoại; làm hư hại",
+              "pos": "Động từ",
+              "pos_detail": {
+                "vi": "Động từ",
+                "cn": "动词",
+                "normalized": "verb",
+                "schema_compatible_pos": "verb",
+                "is_separable_verb": false,
+                "notes": []
+              },
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "862f86d2-2625-4c1c-80b8-de691bbd7f3e",
+              "hanzi": "污染",
+              "pinyin": "wūrǎn",
+              "meaning_vi": "ô nhiễm; làm ô nhiễm",
+              "pos": "Động từ / Danh từ",
+              "pos_detail": {
+                "vi": "Động từ / Danh từ",
+                "cn": "动词 / 名词",
+                "normalized": "verb_noun",
+                "schema_compatible_pos": "verb",
+                "is_separable_verb": false,
+                "notes": []
+              },
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5f6c42c1-da4d-453f-9c9f-1d4439490c85",
+              "hanzi": "砍伐",
+              "pinyin": "kǎnfá",
+              "meaning_vi": "chặt phá cây rừng",
+              "pos": "Động từ",
+              "pos_detail": {
+                "vi": "Động từ",
+                "cn": "动词",
+                "normalized": "verb",
+                "schema_compatible_pos": "verb",
+                "is_separable_verb": false,
+                "notes": []
+              },
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "38523d93-b122-4469-a374-7e88e8084d2f",
+              "hanzi": "沙漠",
+              "pinyin": "shāmò",
+              "meaning_vi": "sa mạc",
+              "pos": "Danh từ",
+              "pos_detail": {
+                "vi": "Danh từ",
+                "cn": "名词",
+                "normalized": "noun",
+                "schema_compatible_pos": "noun",
+                "is_separable_verb": false,
+                "notes": []
+              },
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false
+        },
+        {
+          "id": "fc842e6d-d823-4f69-b749-2014e271c034",
+          "type": "cloze_text",
+          "title": "短文",
+          "items": [
+            {
+              "id": "c0ebe71a-ab24-432f-86d2-6bd815d564f3",
+              "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。"
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false
+        }
+      ],
+      "models": [],
+      "dialogues": [],
+      "rendering": {
+        "renderer": "exercise.reading_cloze.v2",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "a60b67a5-0640-4ef3-b051-3aeff2dff46b",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "canonical_variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "讨论环境问题。",
+        "vi": "Thảo luận vấn đề môi trường.",
+        "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "communication"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [],
+      "word_bank": [],
+      "questions": [],
+      "answer_key": [],
+      "parts": [
+        {
+          "id": "a8975fd6-a2d3-4b1f-a6f0-67697901bf99",
+          "type": "dialogue",
+          "title": "讨论环境问题",
+          "items": [
+            {
+              "speaker": "A",
+              "text": "你是不是觉得这篇课文有点儿不可思议？",
+              "vi": "Bạn có thấy bài khóa này hơi khó tin không?",
+              "pinyin": "Nǐ shì bu shì juéde zhè piān kèwén yǒudiǎnr bùkěsīyì?"
+            },
+            {
+              "speaker": "B",
+              "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
+              "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng.",
+              "pinyin": "Bù juéde. Kàn qǐlai yǒudiǎnr bùkěsīyì, dàn shíjìshàng tíchū de wèntí què fēicháng zhòngyào."
+            },
+            {
+              "speaker": "A",
+              "text": "是啊，我们应该爱护我们的地球。",
+              "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất.",
+              "pinyin": "Shì a, wǒmen yīnggāi àihù wǒmen de Dìqiú."
+            },
+            {
+              "speaker": "B",
+              "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
+              "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí.",
+              "pinyin": "Wǒ juéde rénlèi yào gèngjiā zhùyì huánjìng wèntí le. Chángqī yǐlái, rénlèi bǔshā dòngwù, kǎnfá sēnlín, wūrǎn le héshuǐ hé kōngqì."
+            },
+            {
+              "speaker": "A",
+              "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
+              "vi": "Tôi cũng nghĩ vấn đề môi trường là vấn đề lớn nhất mà loài người chúng ta đang đối mặt. Nếu chúng ta còn không coi trọng, Trái Đất thật sự sẽ không thể sống nổi nữa.",
+              "pinyin": "Wǒ yě juéde huánjìng wèntí shì wǒmen rénlèi miànlín de zuì dà de wèntí. Yàoshi wǒmen zài bù zhòngshì, Dìqiú kě zhēn zhù bu xiàqù le."
+            },
+            {
+              "speaker": "B",
+              "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
+              "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất.",
+              "pinyin": "Dòngwù hé zhíwù yuè lái yuè shǎo, tǔdì zhújiàn shāmòhuà. Zhèyàng xiàqù, zhēn ràng rén wèi Dìqiú de mìngyùn dānxīn."
+            },
+            {
+              "speaker": "A",
+              "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
+              "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?",
+              "pinyin": "Shì, lián Jīnxīng rén dōu guānxīn qǐ Dìqiú de huánjìng wèntí lái le, nándào wǒmen Dìqiú rén bù yīnggāi guānxīn ma?"
+            },
+            {
+              "speaker": "B",
+              "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
+              "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm.",
+              "pinyin": "Wǒ juéde mùqián zuì dà de wēixiǎn shì rénlèi hái bù zhīdào Dìqiú zhèng miànlín wēixiǎn."
+            },
+            {
+              "speaker": "A",
+              "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
+              "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày.",
+              "pinyin": "Yīncǐ, yīnggāi ràng gèng duō de rén zhīdào bǎohù huánjìng de zhòngyàoxìng. Cóng zìjǐ zuò qǐ, cóng rìcháng shēnghuó zhōng de xiǎoshì zuò qǐ."
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "check_needed": false
+        }
+      ],
+      "models": [],
+      "dialogues": [
+        {
+          "id": "daa261d9-e832-45b8-8cee-da1ff277ed61",
+          "lines": [
+            {
+              "speaker": "A",
+              "text": "你是不是觉得这篇课文有点儿不可思议？",
+              "vi": "Bạn có thấy bài khóa này hơi khó tin không?",
+              "pinyin": "Nǐ shì bu shì juéde zhè piān kèwén yǒudiǎnr bùkěsīyì?"
+            },
+            {
+              "speaker": "B",
+              "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
+              "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng.",
+              "pinyin": "Bù juéde. Kàn qǐlai yǒudiǎnr bùkěsīyì, dàn shíjìshàng tíchū de wèntí què fēicháng zhòngyào."
+            },
+            {
+              "speaker": "A",
+              "text": "是啊，我们应该爱护我们的地球。",
+              "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất.",
+              "pinyin": "Shì a, wǒmen yīnggāi àihù wǒmen de Dìqiú."
+            },
+            {
+              "speaker": "B",
+              "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
+              "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí.",
+              "pinyin": "Wǒ juéde rénlèi yào gèngjiā zhùyì huánjìng wèntí le. Chángqī yǐlái, rénlèi bǔshā dòngwù, kǎnfá sēnlín, wūrǎn le héshuǐ hé kōngqì."
+            },
+            {
+              "speaker": "A",
+              "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
+              "vi": "Tôi cũng nghĩ vấn đề môi trường là vấn đề lớn nhất mà loài người chúng ta đang đối mặt. Nếu chúng ta còn không coi trọng, Trái Đất thật sự sẽ không thể sống nổi nữa.",
+              "pinyin": "Wǒ yě juéde huánjìng wèntí shì wǒmen rénlèi miànlín de zuì dà de wèntí. Yàoshi wǒmen zài bù zhòngshì, Dìqiú kě zhēn zhù bu xiàqù le."
+            },
+            {
+              "speaker": "B",
+              "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
+              "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất.",
+              "pinyin": "Dòngwù hé zhíwù yuè lái yuè shǎo, tǔdì zhújiàn shāmòhuà. Zhèyàng xiàqù, zhēn ràng rén wèi Dìqiú de mìngyùn dānxīn."
+            },
+            {
+              "speaker": "A",
+              "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
+              "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?",
+              "pinyin": "Shì, lián Jīnxīng rén dōu guānxīn qǐ Dìqiú de huánjìng wèntí lái le, nándào wǒmen Dìqiú rén bù yīnggāi guānxīn ma?"
+            },
+            {
+              "speaker": "B",
+              "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
+              "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm.",
+              "pinyin": "Wǒ juéde mùqián zuì dà de wēixiǎn shì rénlèi hái bù zhīdào Dìqiú zhèng miànlín wēixiǎn."
+            },
+            {
+              "speaker": "A",
+              "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
+              "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày.",
+              "pinyin": "Yīncǐ, yīnggāi ràng gèng duō de rén zhīdào bǎohù huánjìng de zhòngyàoxìng. Cóng zìjǐ zuò qǐ, cóng rìcháng shēnghuó zhōng de xiǎoshì zuò qǐ."
+            }
+          ],
+          "source_origin": "textbook_pdf_verified",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.communication_dialogue.v2",
+        "show_answer_after_submit": false
+      },
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    }
+  ]
+}

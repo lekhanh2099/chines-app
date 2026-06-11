@@ -1,0 +1,71 @@
+{
+  "id": "synthetic_vocab_ff8c7f859faf036d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "颤抖",
+  "pinyin": "chàndǒu",
+  "meaning_vi": "run rẩy",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "ee1b9f25-18ac-42b1-984b-8fab624e0bf8",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "ee1b9f25-18ac-42b1-984b-8fab624e0bf8",
+    "type": "vocabulary_item",
+    "order": 6,
+    "hanzi": "颤抖",
+    "pinyin": "chàndǒu",
+    "meaning_vi": "run rẩy",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Từ loại tiếng Việt đã chuẩn hóa: Động từ. Không xử lý như động từ li hợp.",
+      "notes": []
+    },
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "颤抖",
+      "back": "chàndǒu — run rẩy",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ],
+      "tags": [
+        "supplementary_vocab",
+        "reading_vocab"
+      ],
+      "notes": []
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

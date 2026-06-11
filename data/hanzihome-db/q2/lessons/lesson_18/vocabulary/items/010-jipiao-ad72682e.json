@@ -1,0 +1,371 @@
+{
+  "id": "9b2ef21a-c008-4688-af68-3a95c6186cf0",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "机票",
+  "pinyin": "jīpiào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Cơ phiếu",
+    "meaning_vi": "vé máy bay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vé máy bay"
+    ],
+    "short_definition_vi": "vé máy bay",
+    "textbook_focus_vi": "vé máy bay",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "机",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "几",
+            "hanviet": "kỷ",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "máy móc; máy bay trong 飞机",
+        "modern_logic_vi": "机 trong bài thường gắn với 飞机.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "票",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "示",
+            "hanviet": "thị",
+            "meaning_vi": "biểu thị/lễ nghi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "biểu thị, lễ nghi",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "覀",
+            "hanviet": "",
+            "meaning_vi": "phần trên nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vé, phiếu, chứng từ",
+        "modern_logic_vi": "票 là chứng từ xác nhận quyền làm gì đó.",
+        "warning_vi": "Không chỉ có nghĩa vé; còn có cổ phiếu, phiếu bầu.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "示",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thị",
+          "radical_name_zh": "",
+          "hanviet": "thị",
+          "meaning_vi": "biểu thị, lễ nghi",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "机 là máy, ở đây rút từ 飞机 – máy bay. 票 là vé. → 机票 = vé máy bay. Cảnh báo: 机票 khác 登机牌儿. Có vé máy bay chưa có nghĩa là đã có thẻ lên máy bay. Sau check-in mới có 登机牌儿.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "登机牌儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thẻ lên máy bay/boarding pass.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "车票",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vé xe/tàu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "船票",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vé tàu thuyền.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "机票: vé máy bay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "30819e32-22d6-4309-8f3c-4a530022fc0a",
+      "order": 1,
+      "zh": "买机票",
+      "pinyin": "",
+      "vi": "mua vé máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "512e1bb3-2171-4726-860f-6144cacdab58",
+      "order": 2,
+      "zh": "订机票",
+      "pinyin": "",
+      "vi": "đặt vé máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8865296-8699-4742-98f6-57c9c201d88f",
+      "order": 3,
+      "zh": "退机票",
+      "pinyin": "",
+      "vi": "hoàn/hủy vé máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d820865b-dfa3-4ba3-a52d-bd0023f71de2",
+      "order": 4,
+      "zh": "改签机票",
+      "pinyin": "",
+      "vi": "đổi vé/chuyến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dac07ba7-d524-4f11-8297-a8f239e27bff",
+      "order": 5,
+      "zh": "把机票给我",
+      "pinyin": "",
+      "vi": "đưa vé máy bay cho tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fe5cda32-2296-4352-8dbf-072751f6a095",
+      "order": 1,
+      "zh": "请把护照和机票给我。",
+      "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ.",
+      "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi.",
+      "analysis_vi": "Đây là mẫu 把 + O + 给 + người nhận. 护照和机票 là giấy tờ xác định cần đưa cho người nói.",
+      "highlight": [
+        "机票"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "9b2ef21a-c008-4688-af68-3a95c6186cf0"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f4bebab2-6186-49a4-966e-063e116b07cf",
+      "order": 2,
+      "zh": "我已经把机票订好了，明天早上起飞。",
+      "pinyin": "Wǒ yǐjīng bǎ jīpiào dìng hǎo le, míngtiān zǎoshang qǐfēi.",
+      "vi": "Tôi đã đặt xong vé máy bay rồi, sáng mai cất cánh.",
+      "analysis_vi": "把机票订好了 là câu 把 có kết quả 好, nghĩa là đặt vé xong xuôi.",
+      "highlight": [
+        "机票"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "9b2ef21a-c008-4688-af68-3a95c6186cf0"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "afe283d7-40e2-4d8d-972b-6005acef85a5",
+      "order": 3,
+      "zh": "他把机票放在手机里，可是手机没电了。",
+      "pinyin": "Tā bǎ jīpiào fàng zài shǒujī lǐ, kěshì shǒujī méi diàn le.",
+      "vi": "Anh ấy để vé máy bay trong điện thoại, nhưng điện thoại hết pin rồi.",
+      "analysis_vi": "机票 hiện nay thường là vé điện tử; 放在手机里 là cách nói đời thường cho lưu vé trong điện thoại/app.",
+      "highlight": [
+        "机票"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "9b2ef21a-c008-4688-af68-3a95c6186cf0"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Hiện nay ở Trung Quốc, nhiều 机票 là vé điện tử. Người ta thường đặt qua app như hãng bay, đại lý du lịch online, hoặc nền tảng đặt vé. Nhưng khi ra sân bay vẫn cần 办理登机手续 để lấy/hiển thị 登机牌儿.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4165c69a-8f99-4c8f-983e-674ad089b382",
+      "order": 1,
+      "rule_vi": "Nhầm 机票 và 登机牌儿.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 机票 theo cụm và ngữ cảnh bài 18; nghĩa chính là vé máy bay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "机票",
+    "back": "vé máy bay",
+    "hint": "jīpiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9b2ef21a-c008-4688-af68-3a95c6186cf0",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "id": "93c77030-895e-4381-a530-a0088d836c79",
+  "type": "deep_vocabulary_item",
+  "order": 76,
+  "hanzi": "调皮",
+  "pinyin": "tiáopí",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "điều bì",
+    "meaning_vi": "nghịch, tinh nghịch, bướng nghịch",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nghịch",
+      "tinh nghịch",
+      "bướng nghịch"
+    ],
+    "short_definition_vi": "nghịch, tinh nghịch, bướng nghịch",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "调",
+        "lishu_vi": "điều",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điều chỉnh",
+        "modern_logic_vi": "Trong từ này, 调 góp phần vào nghĩa hiện đại: điều chỉnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "皮",
+        "lishu_vi": "bì",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "da",
+        "modern_logic_vi": "Trong từ này, 皮 góp phần vào nghĩa hiện đại: da.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "调皮 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 调皮的孩子.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho hành vi phá hoại nghiêm trọng; dùng 捣乱/破坏."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ac59e8f7-534b-4532-8912-4c57a6ccc284",
+      "order": 1,
+      "zh": "调皮的孩子",
+      "pinyin": "",
+      "vi": "đứa trẻ tinh nghịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1342b7f0-346c-4070-8dea-dea17b1c4b91",
+      "order": 2,
+      "zh": "又调皮又可爱",
+      "pinyin": "",
+      "vi": "vừa nghịch vừa đáng yêu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb9b6f3c-17bb-4c98-8205-5ff200c2d375",
+      "order": 3,
+      "zh": "别调皮",
+      "pinyin": "",
+      "vi": "đừng nghịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "30a753b1-6a28-4d4f-8cbf-0cd26fe8951f",
+      "order": 1,
+      "zh": "这个孩子很调皮，但是很聪明。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 调皮 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 调皮; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "调皮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "93c77030-895e-4381-a530-a0088d836c79"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 调皮 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a57f5f81-4a51-4e54-abc1-a88f7f80a437",
+      "order": 1,
+      "rule_vi": "Không dùng cho hành vi phá hoại nghiêm trọng; dùng 捣乱/破坏.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "调皮",
+    "back": "nghịch, tinh nghịch, bướng nghịch",
+    "hint": "tiáopí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "93c77030-895e-4381-a530-a0088d836c79",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "id": "fac3e854-2536-4ace-be4c-d9557366db91",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "铃",
+  "pinyin": "líng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Linh",
+    "meaning_vi": "chuông nhỏ, chuông báo, cái chuông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuông nhỏ, chuông báo, cái chuông"
+    ],
+    "short_definition_vi": "chuông nhỏ, chuông báo, cái chuông",
+    "textbook_focus_vi": "chuông nhỏ, chuông báo, cái chuông",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "铃",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "令",
+            "hanviet": "lệnh",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuông nhỏ, chuông báo",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "铃 có 钅 vì chuông truyền thống thường làm bằng kim loại; 令 giúp nhớ âm líng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "铃声",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiếng chuông",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "电铃",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuông điện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "门铃",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuông cửa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钟",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồng hồ/chuông lớn, không giống 铃",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "响",
+        "right": "停",
+        "meaning_vi": "reo/kêu ↔ dừng",
+        "note_vi": "Cặp trạng thái âm thanh.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d8dd9b67-85b3-4aad-81e9-6a91355babb2",
+      "order": 1,
+      "zh": "铃响了",
+      "pinyin": "",
+      "vi": "chuông reo rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8cb69e59-b49d-413d-aa60-6eb51a605b00",
+      "order": 2,
+      "zh": "上课铃",
+      "pinyin": "",
+      "vi": "chuông vào học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a18b2f8a-f7a1-46a3-a070-360e8d679017",
+      "order": 3,
+      "zh": "下课铃",
+      "pinyin": "",
+      "vi": "chuông tan học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4973ec48-a1be-4176-90a2-9fc35f562131",
+      "order": 4,
+      "zh": "门铃",
+      "pinyin": "",
+      "vi": "chuông cửa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0576d28d-a663-473e-a34c-67fd55a9757f",
+      "order": 5,
+      "zh": "按铃",
+      "pinyin": "",
+      "vi": "bấm chuông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bc0316fd-a4f2-4f67-9607-ea435aa00761",
+      "order": 1,
+      "zh": "铃响了，会议马上开始。",
+      "pinyin": "Líng xiǎng le, huìyì mǎshàng kāishǐ.",
+      "vi": "Chuông reo rồi, cuộc họp sắp bắt đầu.",
+      "analysis_vi": "响了 báo sự việc mới xảy ra.",
+      "highlight": [
+        "铃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fac3e854-2536-4ace-be4c-d9557366db91"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ab256815-727b-41df-8fb0-2bd841ceffb0",
+      "order": 2,
+      "zh": "门口的铃一直响着，可是没有人去开门。",
+      "pinyin": "Ménkǒu de líng yìzhí xiǎngzhe, kěshì méiyǒu rén qù kāi mén.",
+      "vi": "Chuông ở cửa cứ reo mãi, nhưng không ai ra mở cửa.",
+      "analysis_vi": "响着 tả âm thanh đang kéo dài.",
+      "highlight": [
+        "铃",
+        "响着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fac3e854-2536-4ace-be4c-d9557366db91"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "46bc2c11-0814-429e-8b3f-a22f4346ebd6",
+      "order": 1,
+      "rule_vi": "铃 là cái chuông; 铃声 là tiếng chuông.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "铃",
+    "back": "chuông nhỏ, chuông báo, cái chuông",
+    "hint": "líng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Trong lớp học, 上课铃 / 下课铃 là chuông vào học / chuông tan học.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fac3e854-2536-4ace-be4c-d9557366db91",
+    "source_lesson_vocab_id": null
+  }
+}

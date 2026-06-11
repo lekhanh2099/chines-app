@@ -1,0 +1,245 @@
+{
+  "id": "435241d8-fa34-42a5-9b74-9cee6b6b3d8b",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "书房",
+  "pinyin": "shūfáng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thư phòng",
+    "meaning_vi": "phòng đọc sách, phòng làm việc/học tập",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phòng đọc sách, phòng làm việc/học tập"
+    ],
+    "short_definition_vi": "phòng đọc sách, phòng làm việc/học tập",
+    "textbook_focus_vi": "phòng đọc sách, phòng làm việc/học tập",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "书",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sách, viết",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "房",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "户",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "vuông, phương hướng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phòng, nhà",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "书房 = phòng đọc/làm việc/học tập trong nhà.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "314ee45f-d5fa-40f3-b01e-46a663147334",
+      "order": 1,
+      "zh": "在书房里",
+      "pinyin": "",
+      "vi": "trong phòng đọc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "22b4e492-48fd-4e02-bb39-2ea9be491acf",
+      "order": 2,
+      "zh": "书房的窗户",
+      "pinyin": "",
+      "vi": "cửa sổ phòng đọc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fc6008a-89b5-4802-83de-8cc2902cd863",
+      "order": 3,
+      "zh": "书房里放着……",
+      "pinyin": "",
+      "vi": "trong phòng đọc có đặt…",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d57531b6-3050-4d7f-a7f6-91bb88c50e92",
+      "order": 4,
+      "zh": "整理书房",
+      "pinyin": "",
+      "vi": "dọn phòng đọc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3402583b-6be7-4a8c-823b-a7b93c722eec",
+      "order": 5,
+      "zh": "走进书房",
+      "pinyin": "",
+      "vi": "đi vào phòng đọc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "aa46eb19-5612-4d08-bab5-56fa1d77f5ae",
+      "order": 1,
+      "zh": "爷爷的书房里放着很多文学、政治和哲学方面的书。",
+      "pinyin": "Yéye de shūfáng lǐ fàngzhe hěn duō wénxué, zhèngzhì hé zhéxué fāngmiàn de shū.",
+      "vi": "Trong phòng đọc của ông nội có đặt rất nhiều sách về văn học, chính trị và triết học.",
+      "analysis_vi": "书房里放着…… là câu tồn hiện.",
+      "highlight": [
+        "书房"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "435241d8-fa34-42a5-9b74-9cee6b6b3d8b"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b7cfc40b-25fe-41f1-87d4-c89d08aa2c40",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：书房。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: phòng đọc sách, phòng làm việc/học tập.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "书房"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "435241d8-fa34-42a5-9b74-9cee6b6b3d8b"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 书房 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "17b25578-a86d-40e4-b545-a88e4f336b9f",
+      "order": 1,
+      "rule_vi": "书房 là phòng đọc/phòng làm việc; 书店 là nhà sách; 图书馆 là thư viện.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "书房 là phòng đọc/phòng làm việc; 书店 là nhà sách; 图书馆 là thư viện.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "书房",
+    "back": "phòng đọc sách, phòng làm việc/học tập",
+    "hint": "shūfáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_044"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "435241d8-fa34-42a5-9b74-9cee6b6b3d8b",
+    "source_lesson_vocab_id": null
+  }
+}

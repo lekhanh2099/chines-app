@@ -1,0 +1,235 @@
+{
+  "id": "39985f23-1b33-4442-8e9e-5134ea295972",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "君子",
+  "pinyin": "jūnzǐ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "quân tử",
+    "meaning_vi": "người quân tử, người có phẩm chất cao",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người quân tử",
+      "người có phẩm chất cao"
+    ],
+    "short_definition_vi": "người có phẩm chất cao trong văn hóa Nho gia",
+    "textbook_focus_vi": "người có phẩm chất cao trong văn hóa Nho gia",
+    "register_vi": "sách vở/văn hóa",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "君",
+        "lishu_vi": "quân",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "tử",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "người có phẩm chất cao trong văn hóa Nho gia",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 君子报仇，十年不晚.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好人",
+        "pinyin": "hǎorén",
+        "meaning_vi": "người tốt",
+        "difference_vi": "đời thường hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5cb8e52d-c1c3-4ccf-a60b-88b25f0be5d0",
+      "order": 1,
+      "zh": "君子报仇，十年不晚",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99f159b2-e750-493b-a8e8-0562bcef2b23",
+      "order": 2,
+      "zh": "君子之交淡如水",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecd28d55-6034-4783-8c46-beefd5707b49",
+      "order": 3,
+      "zh": "正人君子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "209b6cb2-f14b-4a2a-9abc-78c6277e6c35",
+      "order": 4,
+      "zh": "君子一言，驷马难追",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0d531f5b-bc9a-4de4-b4e2-fdb90b0b5af2",
+      "order": 1,
+      "zh": "真正的君子能控制自己的态度。",
+      "pinyin": "Zhēnzhèng de jūnzǐ néng kòngzhì zìjǐ de tàidu.",
+      "vi": "Người quân tử thật sự có thể kiểm soát thái độ của mình.",
+      "analysis_vi": "君子 là từ văn hóa, sắc thái đạo đức cao.",
+      "highlight": [
+        "君子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "39985f23-1b33-4442-8e9e-5134ea295972"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "君子 thường xuất hiện trong thành ngữ/cách ngôn hơn là khẩu ngữ đời thường.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f221d93c-10c0-47c0-9c08-91e7136f3288",
+      "order": 1,
+      "rule_vi": "Không dùng 君子 thay 好人 trong khen xã giao bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "君子",
+    "back": "người quân tử, người có phẩm chất cao",
+    "hint": "jūnzǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "39985f23-1b33-4442-8e9e-5134ea295972",
+    "source_lesson_vocab_id": null
+  }
+}

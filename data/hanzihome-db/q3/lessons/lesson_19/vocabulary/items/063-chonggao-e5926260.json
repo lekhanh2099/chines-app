@@ -1,0 +1,315 @@
+{
+  "id": "014663b2-51e4-4fd3-8bd4-7fed24c360e9",
+  "type": "deep_vocabulary_item",
+  "order": 63,
+  "hanzi": "崇高",
+  "pinyin": "chónggāo",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "sùng cao",
+    "meaning_vi": "cao cả, cao thượng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cao cả",
+      "cao thượng"
+    ],
+    "short_definition_vi": "cao cả, cao thượng",
+    "textbook_focus_vi": "崇高 là cao lớn đáng kính về giá trị tinh thần.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "崇",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "山",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sơn",
+          "radical_name_zh": "",
+          "hanviet": "sơn",
+          "meaning_vi": "núi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "山 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "山",
+            "hanviet": "sơn",
+            "meaning_vi": "núi",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "山",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sơn",
+              "radical_name_zh": "",
+              "hanviet": "sơn",
+              "meaning_vi": "núi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "山 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "山 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "宗",
+            "hanviet": "tông",
+            "meaning_vi": "tông/nguồn gốc; thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "宗 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao, tôn kính",
+        "modern_logic_vi": "Trong từ “崇高”, chữ “崇” góp phần vào trường nghĩa: cao, tôn kính",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "高",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cao",
+        "modern_logic_vi": "Trong từ “崇高”, chữ “高” góp phần vào trường nghĩa: cao",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "崇高 là cao lớn đáng kính về giá trị tinh thần.",
+    "memory_tip_vi": "崇高 là cao lớn đáng kính về giá trị tinh thần.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "高尚",
+        "pinyin": "",
+        "meaning_vi": "cao thượng về phẩm chất",
+        "difference_vi": "cao thượng về phẩm chất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "伟大",
+        "pinyin": "",
+        "meaning_vi": "vĩ đại, lớn lao",
+        "difference_vi": "vĩ đại, lớn lao",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "afc66879-56fe-4d4d-86b9-dd0bc9cf9235",
+      "order": 1,
+      "zh": "崇高的理想",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5bfb6d69-bcb1-4c56-bf27-7780d900a1bf",
+      "order": 2,
+      "zh": "崇高的精神",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f769d527-c59b-4cb6-bd51-4a6eb88ccf82",
+      "order": 3,
+      "zh": "人性的崇高",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "43768f4b-eb3e-4a3b-892f-47f6bff52277",
+      "order": 4,
+      "zh": "崇高而美好",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2804c67b-e0da-4406-937b-4ba2f0362dc1",
+      "order": 1,
+      "zh": "他们的精神很崇高。",
+      "pinyin": "",
+      "vi": "Tinh thần của họ rất cao cả.",
+      "analysis_vi": "精神 + 崇高.",
+      "highlight": [
+        "崇高"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "014663b2-51e4-4fd3-8bd4-7fed24c360e9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2694326d-9bf0-401c-a0d4-b6257078c3de",
+      "order": 2,
+      "zh": "他发现了人性的崇高和美好。",
+      "pinyin": "",
+      "vi": "Anh ấy phát hiện sự cao cả và tốt đẹp của nhân tính.",
+      "analysis_vi": "人性的崇高和美好.",
+      "highlight": [
+        "崇高"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "014663b2-51e4-4fd3-8bd4-7fed24c360e9"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "崇高 là cao lớn đáng kính về giá trị tinh thần.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "e95f3916-52ce-476c-8567-5de10a229e94",
+      "order": 1,
+      "rule_vi": "崇高 dùng cho tinh thần/phẩm chất/lý tưởng, không dùng cho đồ ăn thức uống.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "崇高 dùng cho tinh thần/phẩm chất/lý tưởng, không dùng cho đồ ăn thức uống.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "崇高",
+    "back": "cao cả, cao thượng",
+    "hint": "chónggāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "014663b2-51e4-4fd3-8bd4-7fed24c360e9",
+    "source_lesson_vocab_id": null
+  }
+}

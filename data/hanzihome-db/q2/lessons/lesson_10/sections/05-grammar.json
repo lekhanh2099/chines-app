@@ -1,0 +1,347 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "pdf_textbook_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "过",
+      "title_vi": "Trợ từ động thái 过: đã từng",
+      "level": "HSK3",
+      "tags": [
+        "语法",
+        "experience"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "过 đứng sau động từ để nói một hành động đã từng xảy ra trong kinh nghiệm quá khứ. Trọng tâm là có từng trải nghiệm hay chưa, không phải thời điểm xảy ra.",
+          "examples": [
+            {
+              "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+              "zh": "我听过钢琴协奏曲《黄河》。",
+              "vi": "Tôi đã từng nghe bản concerto piano 《Hoàng Hà》.",
+              "source_ref": "077fca74-cf50-4164-80a0-217b40399296",
+              "pinyin": "Wǒ tīng guo gāngqín xiézòuqǔ 《Huáng Hé》.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "S + V + 过 + O",
+          "meaning_vi": "Đã từng làm gì.",
+          "examples": [
+            {
+              "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+              "zh": "我吃过中药。",
+              "vi": "Tôi đã từng uống thuốc Đông y.",
+              "pinyin": "Wǒ chī guo zhōngyào.",
+              "check_needed": false
+            },
+            {
+              "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+              "zh": "我看过京剧。",
+              "vi": "Tôi đã từng xem Kinh kịch.",
+              "pinyin": "Wǒ kàn guo jīngjù.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Dạng phủ định",
+          "pattern": "S + 没/没有 + V + 过 + O",
+          "meaning_vi": "Chưa từng làm gì. Không dùng 不 V过.",
+          "examples": [
+            {
+              "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
+              "zh": "我没去过上海。",
+              "vi": "Tôi chưa từng đi Thượng Hải.",
+              "pinyin": "Wǒ méi qù guo Shànghǎi.",
+              "check_needed": false
+            },
+            {
+              "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
+              "zh": "我没针灸过。",
+              "vi": "Tôi chưa từng châm cứu.",
+              "pinyin": "Wǒ méi zhēnjiǔ guo.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "Dạng nghi vấn",
+          "pattern": "S + V + 过 + O + 吗？ / S + V + 过 + O + 没有？",
+          "meaning_vi": "Hỏi ai đó đã từng làm gì chưa.",
+          "examples": [
+            {
+              "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
+              "zh": "你以前来过中国吗？",
+              "vi": "Trước đây bạn đã từng đến Trung Quốc chưa?",
+              "source_ref": "887014e5-f6b0-4777-9f95-85a69532ca36",
+              "pinyin": "Nǐ yǐqián lái guo Zhōngguó ma?",
+              "check_needed": false
+            },
+            {
+              "id": "82c84378-8c03-4e23-be01-d27117bb65ef",
+              "zh": "你看过京剧吗？",
+              "vi": "Bạn đã từng xem Kinh kịch chưa?",
+              "pinyin": "Nǐ kàn guo jīngjù ma?",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "9037a868-929d-412a-8833-7f79c74218d5",
+          "type": "grammar_compare",
+          "order": 5,
+          "title": "过 và 了",
+          "items": [
+            {
+              "aspect": "Trọng tâm",
+              "left": {
+                "label": "V过",
+                "value": "kinh nghiệm đã từng"
+              },
+              "right": {
+                "label": "V了",
+                "value": "hành động đã hoàn thành trong tình huống cụ thể"
+              }
+            },
+            {
+              "aspect": "Ví dụ",
+              "left": {
+                "label": "V过",
+                "value": "我看过这部电影。"
+              },
+              "right": {
+                "label": "V了",
+                "value": "我看了这部电影。"
+              }
+            }
+          ],
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "动量补语",
+      "title_vi": "Bổ ngữ động lượng / số lần hành động",
+      "level": "HSK3",
+      "tags": [
+        "语法",
+        "measure"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "动量补语 nói hành động xảy ra mấy lần, mấy lượt hoặc mấy chuyến. Nó đếm hành động, không đếm danh từ.",
+          "examples": [
+            {
+              "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+              "zh": "来过一次。",
+              "vi": "Đã từng đến một lần.",
+              "pinyin": "Lái guo yí cì.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "V + số + động lượng từ",
+          "meaning_vi": "Diễn tả số lần/lượt/chuyến của hành động.",
+          "examples": [
+            {
+              "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
+              "zh": "看了一遍。",
+              "vi": "Đã xem một lượt.",
+              "pinyin": "Kàn le yí biàn.",
+              "check_needed": false
+            },
+            {
+              "id": "82ac449f-b649-41c9-9b89-22e4336c1b77",
+              "zh": "跑了一趟。",
+              "vi": "Đã chạy/đi một chuyến.",
+              "pinyin": "Pǎo le yí tàng.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "21fbb1a3-0847-4c15-9ca8-be559cee0dd7",
+          "type": "grammar_usage_notes",
+          "order": 3,
+          "title": "Động lượng từ thường gặp",
+          "notes_vi": [
+            "次: lần, dùng rất rộng.",
+            "遍: một lượt từ đầu đến cuối, hay dùng với đọc/nghe/xem/nói.",
+            "趟: một chuyến đi lại."
+          ],
+          "examples": [
+            {
+              "id": "3612c4ea-a7c8-4455-8632-f98679055c65",
+              "zh": "请再说一遍。",
+              "vi": "Xin hãy nói lại một lượt.",
+              "pinyin": "Qǐng zài shuō yí biàn.",
+              "check_needed": false
+            },
+            {
+              "id": "68864e8c-cf7d-4c8c-819d-3455f9ce710b",
+              "zh": "我去了一趟银行。",
+              "vi": "Tôi đã đi ngân hàng một chuyến.",
+              "pinyin": "Wǒ qù le yí tàng yínháng.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "5895a619-7555-41f1-b213-536a6307c539",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "Phủ định nhấn mạnh",
+          "pattern": "一次 + 也/都 + 没 + V过",
+          "meaning_vi": "Một lần cũng chưa từng.",
+          "examples": [
+            {
+              "id": "b2b0e643-288a-4157-9abf-1ea3b835b1b6",
+              "zh": "我一次病也没有得过。",
+              "vi": "Tôi chưa từng bị bệnh lần nào.",
+              "source_ref": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+              "pinyin": "Wǒ yí cì bìng yě méiyǒu dé guo.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      ]
+    },
+    {
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "第 + 数词",
+      "title_vi": "Cách biểu đạt số thứ tự",
+      "level": "HSK2",
+      "tags": [
+        "语法",
+        "ordinal"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "50dcd503-1832-4112-a0be-e09408954b90",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "第 đặt trước số để biến số đếm thành số thứ tự: thứ nhất, thứ hai, bài thứ mười, lần đầu tiên.",
+          "examples": [
+            {
+              "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
+              "zh": "这是第一次。",
+              "vi": "Đây là lần đầu tiên.",
+              "source_ref": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+              "pinyin": "Zhè shì dì yī cì.",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "第 + số + lượng từ/danh từ",
+          "meaning_vi": "Biểu thị thứ tự.",
+          "examples": [
+            {
+              "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
+              "zh": "第一课",
+              "vi": "bài thứ nhất",
+              "pinyin": "dì yī kè",
+              "check_needed": false
+            },
+            {
+              "id": "aa9509ab-7504-49c9-8207-821c2b856a23",
+              "zh": "第十课",
+              "vi": "bài thứ mười",
+              "pinyin": "dì shí kè",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "76d5cfd6-e9cb-43ca-af11-8a1fdf1ac8df",
+          "type": "grammar_compare",
+          "order": 3,
+          "title": "一次 và 第一次",
+          "items": [
+            {
+              "aspect": "Ý nghĩa",
+              "left": {
+                "label": "一次",
+                "value": "một lần, đếm số lần"
+              },
+              "right": {
+                "label": "第一次",
+                "value": "lần thứ nhất/lần đầu tiên trong chuỗi trải nghiệm"
+              }
+            },
+            {
+              "aspect": "Ví dụ",
+              "left": {
+                "label": "一次",
+                "value": "我去过一次北京。"
+              },
+              "right": {
+                "label": "第一次",
+                "value": "这是我第一次来中国。"
+              }
+            }
+          ],
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

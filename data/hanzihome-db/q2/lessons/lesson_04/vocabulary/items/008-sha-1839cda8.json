@@ -1,0 +1,252 @@
+{
+  "id": "655ee199-9353-4398-9056-3cc007c92a05",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "啥",
+  "pinyin": "shá",
+  "pos": {
+    "raw_vi": "Đại từ nghi vấn khẩu ngữ",
+    "raw_cn": "疑问代词 / 口语",
+    "normalized": "pronoun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "bai_04",
+    "khau_ngu"
+  ],
+  "meaning": {
+    "hanviet": "Xá",
+    "meaning_vi": "gì; cái gì",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "gì",
+      "cái gì"
+    ],
+    "short_definition_vi": "gì; cái gì",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "啥",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / lời nói",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng / lời nói / âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "舍",
+            "hanviet": "xá",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gì / cái gì",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng / lời nói / âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "啥 = 什么 nhưng khẩu ngữ hơn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "什么",
+        "pinyin": "",
+        "meaning_vi": "gì / cái gì",
+        "difference_vi": "chuẩn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Văn viết nên dùng 什么."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "10df852c-26f7-4b97-8f21-1d46a905c966",
+      "order": 1,
+      "zh": "这是啥？",
+      "pinyin": "",
+      "vi": "đây là cái gì?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "573d5f27-d87a-40d4-a91f-f1c9f2b35ba5",
+      "order": 2,
+      "zh": "你说啥？",
+      "pinyin": "",
+      "vi": "bạn nói gì?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2abd873-39d2-4081-bcd8-d3888b19cfa1",
+      "order": 3,
+      "zh": "啥意思？",
+      "pinyin": "",
+      "vi": "ý gì?",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2c48fb35-b2e2-468e-adfd-3a35bf6ad258",
+      "order": 1,
+      "zh": "这是啥？",
+      "pinyin": "Zhè shì shá?",
+      "vi": "Đây là cái gì?",
+      "analysis_vi": "啥 = 什么 khẩu ngữ.",
+      "highlight": [
+        "啥"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "655ee199-9353-4398-9056-3cc007c92a05"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7728c026-8b1a-42ee-a211-8282faff49bd",
+      "order": 2,
+      "zh": "你打开书干啥？",
+      "pinyin": "Nǐ dǎkāi shū gàn shá?",
+      "vi": "Bạn mở sách ra làm gì?",
+      "analysis_vi": "干啥 = 干什么 khẩu ngữ hơn.",
+      "highlight": [
+        "啥"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "655ee199-9353-4398-9056-3cc007c92a05"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "啥 hay gặp trong khẩu ngữ; bài viết nên dùng 什么.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "34f0dd68-f39c-46de-995c-10923050784a",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 啥 trong văn phong trang trọng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你说什么？",
+          "pinyin": "Nǐ shuō shénme?",
+          "vi": "Bạn nói gì?",
+          "note_vi": "Chuẩn hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "啥",
+    "back": "gì; cái gì",
+    "hint": "shá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "khau_ngu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "655ee199-9353-4398-9056-3cc007c92a05",
+    "source_lesson_vocab_id": null
+  }
+}

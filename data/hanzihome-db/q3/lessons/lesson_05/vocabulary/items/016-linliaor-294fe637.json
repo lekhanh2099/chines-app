@@ -1,0 +1,272 @@
+{
+  "id": "9dea84b5-ebd9-41fe-a498-5c058b7dc17c",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "临了儿",
+  "pinyin": "línliǎor",
+  "pos": {
+    "raw_vi": "Phó từ thời gian khẩu ngữ",
+    "raw_cn": "时间副词/口语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_05",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lâm liễu nhi",
+    "meaning_vi": "cuối cùng, đến lúc cuối",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cuối cùng",
+      "đến lúc cuối"
+    ],
+    "short_definition_vi": "cuối cùng, đến lúc cuối",
+    "textbook_focus_vi": "Trọng tâm là cách dùng trong Bài 5 回头再说 và giao tiếp xã hội đời thường.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giao tiếp, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "临",
+        "lishu_vi": "lâm",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "了",
+        "lishu_vi": "liễu",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Không tách sâu trong bản production vì không cần cho nghĩa hiện đại hoặc dễ suy diễn sai.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "临了儿 = đến lúc cuối cùng, mang màu khẩu ngữ Bắc Kinh.",
+    "memory_tip_vi": "Có thể thay bằng 最后, 到最后, 临走的时候.",
+    "warning_vi": "Có 儿化, không phải văn viết phổ thông nhất.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      [
+        "最后",
+        "zuìhòu",
+        "cuối cùng",
+        "trung tính phổ biến"
+      ],
+      [
+        "到最后",
+        "dào zuìhòu",
+        "rốt cuộc đến cuối",
+        "nhấn kết quả cuối"
+      ],
+      [
+        "临走的时候",
+        "lín zǒu de shíhou",
+        "lúc sắp đi",
+        "cụ thể hơn"
+      ]
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Có thể thay bằng 最后, 到最后, 临走的时候."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a5b08265-dfa0-42d6-9d2a-11a2daea1a04",
+      "order": 1,
+      "zh": "临了儿说了一句",
+      "pinyin": "",
+      "vi": "đến cuối còn nói một câu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "34bade49-722d-4625-a003-9cdac26db01a",
+      "order": 2,
+      "zh": "临了儿又送我一本书",
+      "pinyin": "",
+      "vi": "đến cuối còn tặng tôi một quyển sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82c25e1e-37fa-49c8-b5b9-48be9bfd869a",
+      "order": 3,
+      "zh": "临了儿才告诉我",
+      "pinyin": "",
+      "vi": "đến cuối mới nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2eeaaf20-af3a-4b25-afc6-1a9cb74e34e2",
+      "order": 4,
+      "zh": "到临了儿",
+      "pinyin": "",
+      "vi": "đến lúc cuối cùng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08056505-bb3d-47b4-b1f5-2d98ba625d33",
+      "order": 5,
+      "zh": "临了儿还不忘提醒我",
+      "pinyin": "",
+      "vi": "đến cuối vẫn không quên nhắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d7a11127-75bf-49c9-96b9-cd886a65e197",
+      "order": 1,
+      "zh": "临了儿，他还送我好多书。",
+      "pinyin": "Línliǎor, tā hái sòng wǒ hǎo duō shū.",
+      "vi": "Đến cuối, ông ấy còn tặng tôi rất nhiều sách.",
+      "analysis_vi": "临了儿 nhấn đoạn cuối.",
+      "highlight": [
+        "临了儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9dea84b5-ebd9-41fe-a498-5c058b7dc17c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c0aeaf04-fa07-4132-aaa5-c0d9cb888b81",
+      "order": 2,
+      "zh": "我们谈了半天，临了儿他还是说：“回头再说。”",
+      "pinyin": "Wǒmen tán le bàntiān, línliǎor tā háishi shuō: “Huítóu zài shuō.”",
+      "vi": "Chúng tôi nói cả buổi, đến cuối anh ấy vẫn nói để sau.",
+      "analysis_vi": "还是 nhấn kết quả không đổi.",
+      "highlight": [
+        "临了儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9dea84b5-ebd9-41fe-a498-5c058b7dc17c"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "临了儿 có màu khẩu ngữ miền Bắc; tự nói thì 最后 an toàn hơn.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bd73e7a8-5d54-4f18-9cde-98a6278ede1b",
+      "order": 1,
+      "rule_vi": "临了儿 cần một quá trình/sự kiện sắp kết thúc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我临了儿去学校。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "临走的时候，我给他打了个电话。",
+          "pinyin": "Lín zǒu de shíhou, wǒ gěi tā dǎ le ge diànhuà.",
+          "vi": "Lúc sắp đi, tôi gọi cho anh ấy một cuộc.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Có 儿化, không phải văn viết phổ thông nhất.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "临了儿",
+    "back": "cuối cùng, đến lúc cuối",
+    "hint": "línliǎor",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9dea84b5-ebd9-41fe-a498-5c058b7dc17c",
+    "source_lesson_vocab_id": null
+  }
+}

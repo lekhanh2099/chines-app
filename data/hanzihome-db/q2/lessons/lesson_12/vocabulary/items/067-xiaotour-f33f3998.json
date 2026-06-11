@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_3066b25029b3ce72",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "小偷儿",
+  "pinyin": "xiǎotōur",
+  "meaning_vi": "kẻ trộm",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "f5f5c02a-114d-4943-8a50-c6cb7ed80e9e",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "f5f5c02a-114d-4943-8a50-c6cb7ed80e9e",
+    "type": "vocabulary_item",
+    "order": 9,
+    "hanzi": "小偷儿",
+    "pinyin": "xiǎotōur",
+    "meaning_vi": "kẻ trộm",
+    "meaning_en": "thief",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "reading_vocab"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "flashcard": {
+      "front": "小偷儿",
+      "back": "xiǎotōur — kẻ trộm",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

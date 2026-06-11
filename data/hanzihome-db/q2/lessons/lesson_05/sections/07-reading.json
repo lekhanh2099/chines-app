@@ -1,0 +1,370 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解",
+  "title_vi": "Đọc hiểu",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "supplementary_vocabulary": [
+    {
+      "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "小伙子",
+      "pinyin": "xiǎohuǒzi",
+      "meaning_vi": "chàng trai trẻ; thanh niên",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "椅子",
+      "pinyin": "yǐzi",
+      "meaning_vi": "ghế; ghế băng/ghế dài trong ngữ cảnh bài đọc",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "老人",
+      "pinyin": "lǎorén",
+      "meaning_vi": "người già; người cao tuổi; ông/bà cụ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "怕",
+      "pinyin": "pà",
+      "meaning_vi": "sợ; e rằng; lo rằng",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Động từ tâm lý",
+      "pos_detail": {
+        "vi": "Động từ tâm lý",
+        "cn": "心理动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "077e6c6c-3462-47b0-ac93-6b325f5b1145",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "生气",
+      "pinyin": "shēngqì",
+      "meaning_vi": "tức giận; nổi giận",
+      "tags": [
+        "reading_vocab",
+        "separable_verb"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Động từ li hợp",
+      "pos_detail": {
+        "vi": "Động từ li hợp",
+        "cn": "动宾式离合词",
+        "normalized": "verb_phrase",
+        "schema_compatible_pos": "verb_phrase",
+        "is_separable_verb": true,
+        "notes": [],
+        "separable_type": "động-tân / 离合词",
+        "structure_vi": "động từ 生 + tân ngữ 气",
+        "usage_note_vi": "Có thể nói 生了半天气 / 生他的气; trong bài nghĩa là tức giận."
+      }
+    },
+    {
+      "id": "1df9ccc5-a9e5-4ebb-b9ff-814448bf99a3",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "涂",
+      "pinyin": "tú",
+      "meaning_vi": "bôi; quét; phết",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Động từ",
+      "pos_detail": {
+        "vi": "Động từ",
+        "cn": "动词",
+        "normalized": "verb",
+        "schema_compatible_pos": "verb",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "771cae37-068b-43bf-90d2-afbb351ce227",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "油漆",
+      "pinyin": "yóuqī",
+      "meaning_vi": "sơn; quét sơn/sơn phủ",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ / Động từ",
+      "pos_detail": {
+        "vi": "Danh từ / Động từ",
+        "cn": "名词 / 动词",
+        "normalized": "verb_noun",
+        "schema_compatible_pos": "verb_noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    },
+    {
+      "id": "9a34b8d8-43d8-4a1c-822f-284b33d357bf",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "裤子",
+      "pinyin": "kùzi",
+      "meaning_vi": "quần",
+      "tags": [
+        "reading_vocab"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos": "Danh từ",
+      "pos_detail": {
+        "vi": "Danh từ",
+        "cn": "名词",
+        "normalized": "noun",
+        "schema_compatible_pos": "noun",
+        "is_separable_verb": false,
+        "notes": []
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "小伙子和长椅子",
+      "title_vi": "Chàng trai và chiếc ghế dài",
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "一个小伙子在公园玩儿了半天，玩儿累了，想找一个座位坐下休息一会儿。正好在离他不远的地方有一个长椅子。他想过去坐一会儿。这时一个老人也向椅子那儿走去。小伙子怕老人先过去坐，就很快向椅子那儿跑去。",
+          "vi": "Một chàng trai trẻ chơi trong công viên cả nửa ngày. Chơi mệt rồi, cậu muốn tìm một chỗ ngồi xuống nghỉ một lát. Vừa hay ở một chỗ không xa cậu có một chiếc ghế dài. Cậu muốn đi qua đó ngồi một lát. Lúc này một ông cụ cũng đi về phía chiếc ghế. Chàng trai sợ ông cụ đi qua ngồi trước, nên nhanh chóng chạy về phía chiếc ghế.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "老人对小伙子大声叫：“小伙子，不要过去！”",
+          "vi": "Ông cụ lớn tiếng gọi chàng trai: “Chàng trai trẻ, đừng đi qua đó!”",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "小伙子不听老人的话，很快跑到椅子那儿，一下子坐在椅子上。",
+          "vi": "Chàng trai không nghe lời ông cụ, nhanh chóng chạy đến chỗ chiếc ghế, rồi ngồi phịch xuống ghế.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "这时，老人过来了，他走到椅子旁边，生气地对小伙子说：“你这个小伙子，你没有看见吗？椅子刚涂上油漆，还没干呢！”",
+          "vi": "Lúc này, ông cụ đi tới. Ông đi đến bên cạnh chiếc ghế, tức giận nói với chàng trai: “Cậu thanh niên này, cậu không nhìn thấy à? Chiếc ghế vừa mới quét sơn, vẫn chưa khô đâu!”",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "order": 5,
+          "zh": "“啊！”小伙子一听，马上站起来了。可是裤子已经坐上了很多油漆。",
+          "vi": "“Á!” Chàng trai vừa nghe xong liền lập tức đứng dậy. Nhưng quần của cậu ấy đã dính rất nhiều sơn.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
+      "type": "true_false",
+      "prompt": "小伙子玩儿累了，想去那个长椅子上休息一会儿。",
+      "answer": "对",
+      "evidence": [
+        {
+          "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "quote": "玩儿累了，想找一个座位坐下休息一会儿"
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
+      "type": "true_false",
+      "prompt": "老人也想去那个长椅子上休息。",
+      "answer": "错",
+      "evidence": [
+        {
+          "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "quote": "椅子刚涂上油漆，还没干呢"
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
+      "type": "true_false",
+      "prompt": "老人对小伙子大声叫是怕小伙子先过去坐。",
+      "answer": "错",
+      "evidence": [
+        {
+          "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "quote": "椅子刚涂上油漆，还没干呢"
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
+      "type": "true_false",
+      "prompt": "小伙子裤子上坐了很多油漆。",
+      "answer": "对",
+      "evidence": [
+        {
+          "paragraph_id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "quote": "裤子已经坐上了很多油漆"
+        }
+      ],
+      "answer_verified": true,
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    }
+  ],
+  "key_phrases": [
+    "在公园玩儿了半天",
+    "玩儿累了",
+    "找一个座位",
+    "坐下休息一会儿",
+    "长椅子",
+    "向椅子那儿走去",
+    "大声叫",
+    "不听老人的话",
+    "一下子坐在椅子上",
+    "刚涂上油漆",
+    "还没干",
+    "马上站起来",
+    "裤子已经坐上了很多油漆"
+  ],
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "小伙子和长椅子",
+      "title_vi": "Chàng trai và chiếc ghế dài",
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "一个小伙子在公园玩儿了半天，玩儿累了，想找一个座位坐下休息一会儿。正好在离他不远的地方有一个长椅子。他想过去坐一会儿。这时一个老人也向椅子那儿走去。小伙子怕老人先过去坐，就很快向椅子那儿跑去。",
+          "vi": "Một chàng trai trẻ chơi trong công viên cả nửa ngày. Chơi mệt rồi, cậu muốn tìm một chỗ ngồi xuống nghỉ một lát. Vừa hay ở một chỗ không xa cậu có một chiếc ghế dài. Cậu muốn đi qua đó ngồi một lát. Lúc này một ông cụ cũng đi về phía chiếc ghế. Chàng trai sợ ông cụ đi qua ngồi trước, nên nhanh chóng chạy về phía chiếc ghế.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "老人对小伙子大声叫：“小伙子，不要过去！”",
+          "vi": "Ông cụ lớn tiếng gọi chàng trai: “Chàng trai trẻ, đừng đi qua đó!”",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "小伙子不听老人的话，很快跑到椅子那儿，一下子坐在椅子上。",
+          "vi": "Chàng trai không nghe lời ông cụ, nhanh chóng chạy đến chỗ chiếc ghế, rồi ngồi phịch xuống ghế.",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "这时，老人过来了，他走到椅子旁边，生气地对小伙子说：“你这个小伙子，你没有看见吗？椅子刚涂上油漆，还没干呢！”",
+          "vi": "Lúc này, ông cụ đi tới. Ông đi đến bên cạnh chiếc ghế, tức giận nói với chàng trai: “Cậu thanh niên này, cậu không nhìn thấy à? Chiếc ghế vừa mới quét sơn, vẫn chưa khô đâu!”",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "order": 5,
+          "zh": "“啊！”小伙子一听，马上站起来了。可是裤子已经坐上了很多油漆。",
+          "vi": "“Á!” Chàng trai vừa nghe xong liền lập tức đứng dậy. Nhưng quần của cậu ấy đã dính rất nhiều sơn.",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

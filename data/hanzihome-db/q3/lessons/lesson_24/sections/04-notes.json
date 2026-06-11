@@ -1,0 +1,37 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "爱迪生",
+      "structure": "爱迪生 — Thomas Alva Edison",
+      "meaning_vi": "Nhà phát minh, doanh nhân người Mỹ. Trong bài dùng làm ví dụ cho luận điểm: IQ không phải yếu tố duy nhất quyết định thành công.",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "就拿爱迪生来说吧，小时候，老师对他妈妈说：“你的孩子智力有问题，我们没有办法教他。”",
+          "pinyin": "jiù ná Àidíshēng lái shuō ba, xiǎoshíhou, lǎoshī duì tā māma shuō: nǐ de háizi zhìlì yǒu wèntí, wǒmen méiyǒu bànfǎ jiào tā.",
+          "vi": "Lấy Edison làm ví dụ, hồi nhỏ giáo viên nói với mẹ ông ấy: “Con bà có vấn đề về trí lực, chúng tôi không có cách nào dạy cậu ấy.”",
+          "highlight": [
+            "爱迪生"
+          ],
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "a3594fb3-b627-42c9-b5e4-73c91bcf9f3e"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

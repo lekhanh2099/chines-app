@@ -1,0 +1,35 @@
+[
+  {
+    "id": "warning_a649cd5374c5cb079b4e2ffa",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "被",
+      "让",
+      "叫",
+      "受",
+      "腿",
+      "撞",
+      "倒",
+      "伤",
+      "流",
+      "血",
+      "躺",
+      "街",
+      "拉",
+      "偷",
+      "淋",
+      "骗",
+      "唉",
+      "傻",
+      "戒",
+      "罚",
+      "落",
+      "湿",
+      "花",
+      "抽",
+      "烟",
+      "点"
+    ]
+  }
+]

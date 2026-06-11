@@ -1,0 +1,220 @@
+{
+  "id": "4f24c61f-ef7d-463f-b13e-aa117a9992fd",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "差不多",
+  "pinyin": "chàbuduō",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "副 / 形",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "sai bất đa",
+    "meaning_vi": "gần như, xấp xỉ, suýt soát",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "gần như, xấp xỉ, suýt soát",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "差",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chênh lệch",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "多",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhiều",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "Nghĩa lõi là chênh lệch không nhiều, nên dùng cho ước lượng hoặc mức gần giống nhau.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "大概",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khoảng, trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "左右",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đứng sau số lượng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "几乎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hầu như, không dùng y hệt với số lượng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "40a3342c-f013-4b85-a303-6be508a2013d",
+      "order": 1,
+      "zh": "差不多三个月",
+      "pinyin": "",
+      "vi": "gần ba tháng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b426c7a9-9f6f-4b5c-b85f-2a300a5d3d46",
+      "order": 2,
+      "zh": "时间差不多了",
+      "pinyin": "",
+      "vi": "gần đến giờ rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f72d3802-2521-4b7b-b85a-6b0f3186a48d",
+      "order": 3,
+      "zh": "差不多完成了",
+      "pinyin": "",
+      "vi": "gần hoàn thành rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b01d433e-04b5-49e0-97c2-075303a4919e",
+      "order": 1,
+      "zh": "我来这里差不多三个月了。",
+      "pinyin": "Wǒ lái zhèlǐ chàbuduō sān ge yuè le.",
+      "vi": "Tôi đến đây gần ba tháng rồi.",
+      "en": "",
+      "highlight": [
+        "差不多"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4f24c61f-ef7d-463f-b13e-aa117a9992fd"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "差不多吧 là câu trả lời khẩu ngữ: đại khái vậy.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7b57dd43-6afb-4b32-b876-a29c01afd849",
+      "order": 1,
+      "title_vi": "Không thay hết cho 差点儿",
+      "explanation_vi": "Muốn nói 'suýt trễ' thường dùng 差点儿迟到.",
+      "wrong_examples": [
+        "我差不多迟到了。"
+      ],
+      "correct_examples": [
+        "我差点儿迟到了。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "差不多",
+    "back": "gần như, xấp xỉ, suýt soát",
+    "hint": "chàbuduō",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "差不多"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4f24c61f-ef7d-463f-b13e-aa117a9992fd",
+    "source_lesson_vocab_id": null
+  }
+}

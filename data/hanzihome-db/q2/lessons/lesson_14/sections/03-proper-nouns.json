@@ -1,0 +1,285 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook_pdf_verified",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "81783cac-f2f0-4525-8adb-02a16d5a59e3",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "泰山",
+      "pinyin": "Tài Shān",
+      "meaning_vi": "núi Thái Sơn",
+      "meaning_en": "Mount Tai",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "泰山",
+        "back": "Tài Shān — núi Thái Sơn",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "ebc375dd-4216-4396-9958-8bb741075ada",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "曲阜",
+      "pinyin": "Qūfù",
+      "meaning_vi": "Khúc Phụ, quê hương của Khổng Tử",
+      "meaning_en": "Qufu, the hometown of Confucius",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "曲阜",
+        "back": "Qūfù — Khúc Phụ, quê hương của Khổng Tử",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "65676d7f-1337-4591-be7c-8ce0aaa49adb",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "孔庙",
+      "pinyin": "Kǒng Miào",
+      "meaning_vi": "Khổng Miếu, miếu thờ Khổng Tử",
+      "meaning_en": "Temple of Confucius",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "孔庙",
+        "back": "Kǒng Miào — Khổng Miếu, miếu thờ Khổng Tử",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "1401d468-f0b4-47fb-a5d9-3e1cb4920feb",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "孔林",
+      "pinyin": "Kǒng Lín",
+      "meaning_vi": "Khổng Lâm, nghĩa trang dòng họ Khổng",
+      "meaning_en": "Cemetery of Confucius",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "孔林",
+        "back": "Kǒng Lín — Khổng Lâm, nghĩa trang dòng họ Khổng",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "527fb167-4fc8-4b99-a0ad-7f8566ae665b",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "山东大学",
+      "pinyin": "Shāndōng Dàxué",
+      "meaning_vi": "Đại học Sơn Đông",
+      "meaning_en": "Shandong University",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "山东大学",
+        "back": "Shāndōng Dàxué — Đại học Sơn Đông",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "412115ca-01fe-48a7-8f23-c955e4ce5644",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "罗兰",
+      "pinyin": "Luólán",
+      "meaning_vi": "Roland",
+      "meaning_en": "Roland",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "罗兰",
+        "back": "Luólán — Roland",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    },
+    {
+      "id": "9f60feb3-4b46-42f2-a837-5e2ca1480f2c",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "丹尼斯",
+      "pinyin": "Dānnísi",
+      "meaning_vi": "Dennis",
+      "meaning_en": "Dennis",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "separable_type": "",
+        "structure_vi": "",
+        "usage_note_vi": "",
+        "notes": []
+      },
+      "tags": [
+        "proper_noun",
+        "lesson_14"
+      ],
+      "examples": [],
+      "flashcard": {
+        "front": "丹尼斯",
+        "back": "Dānnísi — Dennis",
+        "modes": [
+          "hanzi_to_meaning",
+          "meaning_to_hanzi",
+          "pinyin_to_hanzi",
+          "audio_to_hanzi"
+        ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false
+    }
+  ],
+  "empty_reason_vi": ""
+}

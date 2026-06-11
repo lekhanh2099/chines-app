@@ -1,0 +1,240 @@
+{
+  "id": "7683bb14-5ce8-4104-838c-5da0996f76a9",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "品",
+  "pinyin": "pǐn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词 / 动词 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phẩm",
+    "meaning_vi": "vật phẩm; loại; phẩm chất; thưởng thức/đánh giá",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vật phẩm",
+      "loại",
+      "phẩm chất",
+      "thưởng thức/đánh giá"
+    ],
+    "short_definition_vi": "vật phẩm; loại; phẩm chất; thưởng thức/đánh giá",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: chữ Hán, sản phẩm, phẩm chất.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "chữ Hán, sản phẩm, phẩm chất",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "品",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vật phẩm, phẩm chất, đánh giá",
+        "modern_logic_vi": "Trong từ 品, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "品 nên được học theo nghĩa hiện đại trong cụm/tình huống: vật phẩm; loại; phẩm chất; thưởng thức/đánh giá.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 物品.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "产品",
+        "pinyin": "chǎnpǐn",
+        "meaning_vi": "sản phẩm",
+        "difference_vi": "品 là yếu tố rộng; 产品 là sản phẩm cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0a10c94a-374a-418a-a769-f0ad82e42427",
+      "order": 1,
+      "zh": "物品",
+      "pinyin": "",
+      "vi": "đồ vật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a20975d-e52b-43d8-89eb-777f03b6c4ca",
+      "order": 2,
+      "zh": "商品",
+      "pinyin": "",
+      "vi": "hàng hóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1cb8258d-c534-47eb-86be-9e0f00a756e4",
+      "order": 3,
+      "zh": "品质",
+      "pinyin": "",
+      "vi": "chất lượng/phẩm chất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8e3760be-67f0-4041-a00e-0ab491cb67dd",
+      "order": 1,
+      "zh": "这些物品是谁的？",
+      "pinyin": "",
+      "vi": "Những đồ vật này là của ai?",
+      "analysis_vi": "品 thường đi trong từ ghép như 物品/商品/品质.",
+      "highlight": [
+        "品"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7683bb14-5ce8-4104-838c-5da0996f76a9"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 品 được dùng trong ngữ cảnh chữ Hán, sản phẩm, phẩm chất; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8f0c1d7f-3409-4e03-8162-5c45dd357324",
+      "order": 1,
+      "rule_vi": "Không dịch 品 một chiều là “sản phẩm”; phải nhìn từ ghép.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dịch 品 một chiều là “sản phẩm”; phải nhìn từ ghép.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "品",
+    "back": "vật phẩm; loại; phẩm chất; thưởng thức/đánh giá",
+    "hint": "pǐn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7683bb14-5ce8-4104-838c-5da0996f76a9",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "l13_section_010",
+  "type": "summary",
+  "order": 10,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "l13_sum_001",
+      "type": "coverage_summary",
+      "order": 1,
+      "content_vi": "Đã kiểm lại lần 2 toàn bộ 课文, 生词, 专名, 注释, 词语用法, 练习, 综合填空, 交际会话 theo PDF scan Bài 13 và đối chiếu thêm answer key tham khảo. Đã sửa pinyin tone-sandhi còn sót, chỉnh đáp án bài tập theo key tham khảo, giữ đáp án tự nhiên cũ làm acceptable_answers khi cần. Câu hỏi mở trong 情景表达 có đáp án mẫu nhưng vẫn là manual/open-ended."
+    }
+  ]
+}

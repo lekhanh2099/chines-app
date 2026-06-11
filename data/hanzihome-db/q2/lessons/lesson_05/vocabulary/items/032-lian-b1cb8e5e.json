@@ -1,0 +1,268 @@
+{
+  "id": "57ce9871-db09-48df-8c80-7e3b559fed43",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "练",
+  "pinyin": "liàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "luyện",
+    "meaning_vi": "luyện tập, rèn luyện",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "luyện tập, rèn luyện",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "练",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "东",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "luyện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Làm lặp lại để thành thạo; khác 炼.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "练习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "luyện tập/bài luyện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "训练",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "huấn luyện có hệ thống",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "学习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "học kiến thức",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "复习",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ôn lại",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4a97fbbb-2437-415e-a32d-c562d56800ce",
+      "order": 1,
+      "zh": "练汉语",
+      "pinyin": "",
+      "vi": "luyện tiếng Hán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ec25ea3c-294e-4e9b-8964-e8c4884cd68f",
+      "order": 2,
+      "zh": "练口语",
+      "pinyin": "",
+      "vi": "luyện khẩu ngữ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c32466de-d776-49e3-94a1-d8f5283c1177",
+      "order": 3,
+      "zh": "练气功",
+      "pinyin": "",
+      "vi": "luyện khí công",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e3b6356a-c8fb-4d97-b819-21bc3356af9d",
+      "order": 1,
+      "zh": "我每天练汉语。",
+      "pinyin": "Wǒ měitiān liàn Hànyǔ.",
+      "vi": "Mỗi ngày tôi luyện tiếng Hán.",
+      "en": "",
+      "highlight": [
+        "练"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "57ce9871-db09-48df-8c80-7e3b559fed43"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Nên tách 学语法 với 练口语/练听力/练发音.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "32b07d84-fcc1-4c3c-a3c2-aec1ba50367e",
+      "order": 1,
+      "title_vi": "Không dùng 学习 cho mọi kỹ năng",
+      "explanation_vi": "Luyện khẩu ngữ nên dùng 练口语.",
+      "wrong_examples": [
+        "我学习口语一个小时。"
+      ],
+      "correct_examples": [
+        "我练了一个小时口语。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "练",
+    "back": "luyện tập, rèn luyện",
+    "hint": "liàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "练"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "57ce9871-db09-48df-8c80-7e3b559fed43",
+    "source_lesson_vocab_id": null
+  }
+}

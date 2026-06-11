@@ -1,0 +1,380 @@
+{
+  "id": "1a7e95a6-600a-456b-92da-0b0288ad1fa9",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "经历",
+  "pinyin": "jīnglì",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "experience"
+  ],
+  "meaning": {
+    "hanviet": "kinh lịch",
+    "meaning_vi": "trải qua; trải nghiệm, kinh nghiệm từng trải",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trải qua",
+      "trải nghiệm",
+      "kinh nghiệm từng trải"
+    ],
+    "short_definition_vi": "trải qua; trải nghiệm, kinh nghiệm từng trải",
+    "textbook_focus_vi": "trải qua; trải nghiệm, kinh nghiệm từng trải",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "experience",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "经",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "qua, kinh qua",
+        "modern_logic_vi": "Trong từ này, 经 góp phần vào lớp nghĩa hiện đại: qua, kinh qua",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "历",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lịch sử, trải qua",
+        "modern_logic_vi": "Trong từ này, 历 góp phần vào lớp nghĩa hiện đại: lịch sử, trải qua",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "经/历 đều gợi quá trình đi qua/trải qua. 经历 vừa là động từ vừa là danh từ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "经验",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "阅历",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "经过",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "体验",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0b49f8d5-598a-4323-a0ca-ae7382cc53d4",
+      "order": 1,
+      "zh": "经历困难",
+      "pinyin": "",
+      "vi": "trải qua khó khăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f8da04c-c5aa-4d1e-ac6e-02fe33e8215b",
+      "order": 2,
+      "zh": "经历变化",
+      "pinyin": "",
+      "vi": "trải qua thay đổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cec3b845-d08a-44d9-bc19-8407e85075a2",
+      "order": 3,
+      "zh": "经历过很多事",
+      "pinyin": "",
+      "vi": "trải qua nhiều chuyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d5cb15e-ead2-46a9-ac56-81d67be99a9b",
+      "order": 4,
+      "zh": "难忘的经历",
+      "pinyin": "",
+      "vi": "trải nghiệm khó quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "645b0874-af3a-4d8e-866a-f812ffd9f58c",
+      "order": 5,
+      "zh": "生活经历",
+      "pinyin": "",
+      "vi": "trải nghiệm sống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e04a847-0c77-4490-8b21-af04da580a0b",
+      "order": 6,
+      "zh": "工作经历",
+      "pinyin": "",
+      "vi": "quá trình làm việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d08869f4-442f-41a9-80ca-87560bb7914c",
+      "order": 1,
+      "zh": "这是一段难忘的经历。",
+      "pinyin": "",
+      "vi": "Đây là một trải nghiệm khó quên.",
+      "analysis_vi": "一段经历 dùng 段.",
+      "highlight": [
+        "经历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a7e95a6-600a-456b-92da-0b0288ad1fa9"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "87fdc892-82de-4c60-ac79-6916be32f107",
+      "order": 2,
+      "zh": "经历过北京的冬天以后，我才知道什么叫真正的冷。",
+      "pinyin": "",
+      "vi": "Sau khi trải qua mùa đông Bắc Kinh, tôi mới biết thế nào là lạnh thật.",
+      "analysis_vi": "经历过 dùng 过 chỉ kinh nghiệm.",
+      "highlight": [
+        "经历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a7e95a6-600a-456b-92da-0b0288ad1fa9"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2d4b2ab7-59e7-4626-b2db-e5420fbfd9f4",
+      "order": 3,
+      "zh": "他经历了将近一年的努力，终于可以介绍北京的四季了。",
+      "pinyin": "",
+      "vi": "Anh ấy trải qua gần một năm nỗ lực, cuối cùng giới thiệu được bốn mùa Bắc Kinh.",
+      "analysis_vi": "经历了将近一年 + 终于.",
+      "highlight": [
+        "经历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1a7e95a6-600a-456b-92da-0b0288ad1fa9"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "经历 trong Bài 3 北京的四季",
+    "content_vi": "工作经历 trong CV là quá trình/kinh nghiệm làm việc, sắc thái khác 经验.",
+    "tags": [
+      "experience"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "71f42899-c6ef-46df-a978-228b7db9d457",
+      "order": 1,
+      "rule_vi": "经历 là việc/quãng đã trải qua; 经验 là kinh nghiệm rút ra. Có教学经验 khác với 有教学经历.",
+      "natural_examples": [
+        {
+          "zh": "这是一段难忘的经历。",
+          "pinyin": "",
+          "vi": "Đây là một trải nghiệm khó quên.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "经历 là việc/quãng đã trải qua; 经验 là kinh nghiệm rút ra. Có教学经验 khác với 有教学经历.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "经历",
+    "back": "trải qua; trải nghiệm, kinh nghiệm từng trải",
+    "hint": "jīnglì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "experience"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1a7e95a6-600a-456b-92da-0b0288ad1fa9",
+    "source_lesson_vocab_id": null
+  }
+}

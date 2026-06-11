@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_ee82c3fa00cdba21",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "世上",
+  "pinyin": "shìshàng",
+  "meaning_vi": "trên đời; trên thế gian",
+  "pos": "Danh từ chỉ phạm vi",
+  "pos_detail": {
+    "vi": "Danh từ chỉ phạm vi",
+    "cn": "处所名词 / 范围名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Nghĩa là trên đời/trên thế gian; thường dùng trong câu khái quát.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "c99a633b-27a2-429b-a139-44113a84c189",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "c99a633b-27a2-429b-a139-44113a84c189",
+    "type": "vocabulary_item",
+    "order": 24,
+    "hanzi": "世上",
+    "pinyin": "shìshàng",
+    "meaning_vi": "trên đời; trên thế gian",
+    "meaning_en": "",
+    "pos": "Danh từ chỉ phạm vi",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "世上",
+      "back": "shìshàng — trên đời; trên thế gian",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ chỉ phạm vi",
+      "cn": "处所名词 / 范围名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Nghĩa là trên đời/trên thế gian; thường dùng trong câu khái quát.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,292 @@
+{
+  "id": "2f9ce21b-acb1-4b94-bf32-166bb969144e",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "句子",
+  "pinyin": "jùzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "bai_04",
+    "nguon_ngu"
+  ],
+  "meaning": {
+    "hanviet": "Cú tử",
+    "meaning_vi": "câu; câu văn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "câu",
+      "câu văn"
+    ],
+    "short_definition_vi": "câu; câu văn",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "句",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "勹",
+            "hanviet": "",
+            "meaning_vi": "phần bao",
+            "position_vi": "bên ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng / lời nói",
+            "position_vi": "bên trong",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng / lời nói / âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "câu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng / lời nói / âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "hậu tố danh từ",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "句子 = đơn vị câu văn/lời nói hoàn chỉnh.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "题",
+        "pinyin": "",
+        "meaning_vi": "câu hỏi bài tập",
+        "difference_vi": "khác câu văn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "词",
+        "pinyin": "",
+        "meaning_vi": "từ",
+        "difference_vi": "nhỏ hơn câu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "句子",
+        "right": "题",
+        "meaning_vi": "câu văn ↔ câu hỏi bài tập",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7c6a0ef6-c83f-43bf-bf88-e119d77c6d76",
+      "order": 1,
+      "zh": "一个句子",
+      "pinyin": "",
+      "vi": "một câu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62549f8b-af5a-4479-846a-8538275659fc",
+      "order": 2,
+      "zh": "写句子",
+      "pinyin": "",
+      "vi": "viết câu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "025c0216-5437-4e27-a333-721e24395164",
+      "order": 3,
+      "zh": "翻译句子",
+      "pinyin": "",
+      "vi": "dịch câu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a0b305ce-97d4-4579-8443-436cccada38e",
+      "order": 1,
+      "zh": "这个句子我看懂了。",
+      "pinyin": "Zhège jùzi wǒ kàn dǒng le.",
+      "vi": "Câu này tôi đọc hiểu rồi.",
+      "analysis_vi": "看懂 là bổ ngữ kết quả.",
+      "highlight": [
+        "句子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f9ce21b-acb1-4b94-bf32-166bb969144e"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "082db7ed-e78e-4e0d-866d-99f85a3fcf28",
+      "order": 2,
+      "zh": "请把这个句子改成正确的。",
+      "pinyin": "Qǐng bǎ zhège jùzi gǎi chéng zhèngquè de.",
+      "vi": "Hãy sửa câu này thành câu đúng.",
+      "analysis_vi": "改成 dùng 成.",
+      "highlight": [
+        "句子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f9ce21b-acb1-4b94-bf32-166bb969144e"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "句子 là câu văn; 题 là câu hỏi/bài trong đề.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cb79c148-d2dd-486b-a8c3-d6d83d4fdc61",
+      "order": 1,
+      "rule_vi": "Nếu là câu hỏi trong bài tập thì dùng 题.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这道题太难了。",
+          "pinyin": "Zhè dào tí tài nán le.",
+          "vi": "Câu/bài này khó quá.",
+          "note_vi": "Dùng cho bài/câu hỏi.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "句子",
+    "back": "câu; câu văn",
+    "hint": "jùzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "nguon_ngu"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2f9ce21b-acb1-4b94-bf32-166bb969144e",
+    "source_lesson_vocab_id": null
+  }
+}

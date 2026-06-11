@@ -1,0 +1,339 @@
+{
+  "id": "c16f77c6-cc5b-4038-aa68-1b5825ddca56",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "扶手",
+  "pinyin": "fúshǒu",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Phù thủ",
+    "meaning_vi": "tay vịn, chỗ tựa tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tay vịn, chỗ tựa tay"
+    ],
+    "short_definition_vi": "tay vịn, chỗ tựa tay",
+    "textbook_focus_vi": "tay vịn, chỗ tựa tay",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "扶",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "夫",
+            "hanviet": "phu",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đỡ, dìu, vịn",
+        "modern_logic_vi": "扶 = dùng tay đỡ/vịn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay, bàn tay; thao tác",
+        "modern_logic_vi": "手 là cơ quan thao tác; 扌 là biến thể trong nhiều chữ chỉ động tác tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "扶 là đỡ, vịn, dìu. 手 là tay. → 扶手 = chỗ để tay vịn/đỡ. Cảnh báo: 扶手 không phải “giúp tay”. Nó là danh từ chỉ bộ phận tay vịn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "把手",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tay cầm, núm/cần để kéo/mở.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "座位",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chỗ ngồi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "椅背",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lưng ghế.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "扶手: tay vịn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c93cd441-3cad-4612-a5d9-a4d3a5cda44f",
+      "order": 1,
+      "zh": "座位扶手",
+      "pinyin": "",
+      "vi": "tay vịn ghế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d09d9627-7084-4050-b2ea-7743358d75f8",
+      "order": 2,
+      "zh": "扶手上",
+      "pinyin": "",
+      "vi": "trên tay vịn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d65e31ad-f1d0-4ced-8032-26238f052627",
+      "order": 3,
+      "zh": "扶手下面",
+      "pinyin": "",
+      "vi": "dưới tay vịn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2f65a26-26b0-4dde-99b6-71149bb46d92",
+      "order": 4,
+      "zh": "把手放在扶手上",
+      "pinyin": "",
+      "vi": "đặt tay lên tay vịn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "35ec6cf3-eb07-425d-91e7-e2cd6c4a11af",
+      "order": 5,
+      "zh": "电梯扶手",
+      "pinyin": "",
+      "vi": "tay vịn thang cuốn/thang máy tùy ngữ cảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ee67eada-7e77-4539-9eeb-f7d9901bc1ec",
+      "order": 1,
+      "zh": "请把手放在扶手上，不要伸到旁边去。",
+      "pinyin": "Qǐng bǎ shǒu fàng zài fúshǒu shang, bú yào shēn dào pángbiān qù.",
+      "vi": "Xin hãy đặt tay lên tay vịn, đừng duỗi sang bên cạnh.",
+      "analysis_vi": "把手放在扶手上 là câu 把 có vị trí rõ.",
+      "highlight": [
+        "扶手"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "c16f77c6-cc5b-4038-aa68-1b5825ddca56"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ab67066-3320-4d0b-9eb9-8db3cc2cf595",
+      "order": 2,
+      "zh": "开关在扶手下面，你可以扳一下。",
+      "pinyin": "Kāiguān zài fúshǒu xiàmian, nǐ kěyǐ bān yíxià.",
+      "vi": "Công tắc ở dưới tay vịn, bạn có thể gạt một chút.",
+      "analysis_vi": "扶手下面 là phương vị; 扳一下 là gạt một cái.",
+      "highlight": [
+        "扶手"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "c16f77c6-cc5b-4038-aa68-1b5825ddca56"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "066dc839-ff44-467b-9e5f-84f87a06005f",
+      "order": 3,
+      "zh": "飞机起飞的时候，请把扶手放下来。",
+      "pinyin": "Fēijī qǐfēi de shíhou, qǐng bǎ fúshǒu fàng xiàlai.",
+      "vi": "Khi máy bay cất cánh, xin hãy hạ tay vịn xuống.",
+      "analysis_vi": "把扶手放下来 là câu 把 có hướng 下来, đưa tay vịn xuống vị trí đúng.",
+      "highlight": [
+        "扶手"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "c16f77c6-cc5b-4038-aa68-1b5825ddca56"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Trên máy bay, phần 扶手 đôi khi có nút chỉnh ghế, bàn ăn gấp, cổng tai nghe hoặc điều khiển giải trí. Vì vậy khi ngồi ghế lạ, câu 开关在哪儿？ rất hữu dụng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7181804d-bcd8-4ff3-bd19-c2706a69e5c3",
+      "order": 1,
+      "rule_vi": "Nhầm 扶手 và 把手.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 扶手 theo cụm và ngữ cảnh bài 18; nghĩa chính là tay vịn, chỗ tựa tay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "扶手",
+    "back": "tay vịn, chỗ tựa tay",
+    "hint": "fúshǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c16f77c6-cc5b-4038-aa68-1b5825ddca56",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "id": "8889fafa-d72c-45e3-a71f-9f5aaa6aa06a",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "大方",
+  "pinyin": "dàfang",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đại phương",
+    "meaning_vi": "tự nhiên, không rụt rè; hào phóng; nhã nhặn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự nhiên",
+      "không rụt rè",
+      "hào phóng",
+      "nhã nhặn"
+    ],
+    "short_definition_vi": "tự nhiên, không rụt rè",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "大",
+        "lishu_vi": "đại",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "lớn",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "đại",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "方",
+        "lishu_vi": "phương",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phương hướng, vuông",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "方 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "方",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Phương",
+              "radical_name_zh": "",
+              "hanviet": "phương",
+              "meaning_vi": "phương hướng, vuông",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phương hướng, phương pháp, vuông",
+        "modern_logic_vi": "phương hướng, phương pháp, vuông",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "方",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Phương",
+          "radical_name_zh": "",
+          "hanviet": "phương",
+          "meaning_vi": "phương hướng, vuông",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Không nên tách từng chữ; học theo cụm nghĩa: rộng rãi hoặc biểu hiện tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 很大方.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "自然",
+        "pinyin": "zìrán",
+        "meaning_vi": "tự nhiên",
+        "difference_vi": "自然 trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "开朗",
+        "pinyin": "kāilǎng",
+        "meaning_vi": "cởi mở",
+        "difference_vi": "开朗 là tính cách hướng ngoại/vui vẻ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "拘束",
+        "pinyin": "jūshù",
+        "meaning_vi": "gò bó",
+        "difference_vi": "trái nghĩa trong ngữ cảnh phong thái",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0871a3a3-ea8b-4e71-b02a-24784735ddcb",
+      "order": 1,
+      "zh": "很大方",
+      "pinyin": "hěn dàfang",
+      "vi": "rất tự nhiên/hào phóng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e4a783e-8c40-435a-ab62-709cfae7dd5d",
+      "order": 2,
+      "zh": "说话很大方",
+      "pinyin": "shuōhuà hěn dàfang",
+      "vi": "nói chuyện rất tự nhiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fddd7f8a-83ed-4151-ad98-7bc8e2d06235",
+      "order": 3,
+      "zh": "举止大方",
+      "pinyin": "jǔzhǐ dàfang",
+      "vi": "cử chỉ tự nhiên, lịch thiệp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "678a3e86-886d-40b8-b87e-a1e3ca4c30b7",
+      "order": 1,
+      "zh": "她说话很大方，一点儿也不紧张。",
+      "pinyin": "Tā shuōhuà hěn dàfang, yìdiǎnr yě bù jǐnzhāng.",
+      "vi": "Cô ấy nói chuyện rất tự nhiên, không căng chút nào.",
+      "analysis_vi": "大方 ở đây là phong thái tự nhiên.",
+      "highlight": [
+        "大方"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8889fafa-d72c-45e3-a71f-9f5aaa6aa06a"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ddb907c3-f311-4b03-8028-447f3af9e8ea",
+      "order": 2,
+      "zh": "我不是个大方的人，所以一上讲台就紧张。",
+      "pinyin": "Wǒ bú shì ge dàfang de rén, suǒyǐ yí shàng jiǎngtái jiù jǐnzhāng.",
+      "vi": "Tôi không phải người dạn dĩ nên vừa lên bục là căng thẳng.",
+      "analysis_vi": "一上讲台就…… là phản ứng ngay.",
+      "highlight": [
+        "大方"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8889fafa-d72c-45e3-a71f-9f5aaa6aa06a"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Với người lớn trong bối cảnh trang trọng, khen 大方 thường là khen phong thái tự nhiên.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "317fb543-0cd4-4eb0-9801-342ba09a73db",
+      "order": 1,
+      "rule_vi": "Trong bài, 大方 không phải hào phóng tiền bạc mà là tự nhiên/dạn dĩ trước đám đông.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "大方",
+    "back": "tự nhiên, không rụt rè; hào phóng; nhã nhặn",
+    "hint": "dàfang",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8889fafa-d72c-45e3-a71f-9f5aaa6aa06a",
+    "source_lesson_vocab_id": null
+  }
+}

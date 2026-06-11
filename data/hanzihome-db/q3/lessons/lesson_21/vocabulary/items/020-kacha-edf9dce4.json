@@ -1,0 +1,330 @@
+{
+  "id": "87d1748c-03f2-4836-8314-929b1ba87764",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "咔嚓",
+  "pinyin": "kāchā",
+  "pos": {
+    "raw_vi": "Từ tượng thanh",
+    "raw_cn": "象声词",
+    "normalized": "unknown",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "ca sát",
+    "meaning_vi": "xoẹt, rắc, tách; từ tượng thanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xoẹt",
+      "rắc",
+      "tách",
+      "từ tượng thanh"
+    ],
+    "short_definition_vi": "xoẹt, rắc, tách; từ tượng thanh",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: xoẹt, rắc, tách; từ tượng thanh.",
+    "register_vi": "hơi văn hoặc cần hiểu trong bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "咔",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, âm thanh",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 咔.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "嚓",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, âm thanh",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 嚓.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "咔嚓 trong bài được hiểu theo nghĩa: xoẹt, rắc, tách; từ tượng thanh. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 咔嚓.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "咔嚓 là âm thanh, không phải động từ cắt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2630e233-f2ff-4d83-a969-ef6afdbb2b96",
+      "order": 1,
+      "zh": "咔嚓一声",
+      "pinyin": "",
+      "vi": "một tiếng xoẹt/rắc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07ce3812-4377-4a00-b515-6304e14da7ac",
+      "order": 2,
+      "zh": "咔嚓咔嚓地剪",
+      "pinyin": "",
+      "vi": "cắt xoẹt xoẹt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c860d245-e929-4fbe-b888-18e122dab64d",
+      "order": 3,
+      "zh": "剪刀咔嚓咔嚓响",
+      "pinyin": "",
+      "vi": "kéo kêu xoẹt xoẹt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "05fcf8b4-880e-4599-9719-e0c2a428a7e1",
+      "order": 4,
+      "zh": "咔嚓一下",
+      "pinyin": "",
+      "vi": "xoẹt một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ae4bfc9-c222-4b94-a3ee-ce12f974ad91",
+      "order": 5,
+      "zh": "相机咔嚓一声",
+      "pinyin": "",
+      "vi": "máy ảnh tách một tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3fb463ed-58a1-4287-b0b6-c463b43c9654",
+      "order": 1,
+      "zh": "剪刀咔嚓一声，把纸剪开了。",
+      "pinyin": "",
+      "vi": "Cái kéo xoẹt một tiếng, cắt tờ giấy ra.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "咔嚓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "87d1748c-03f2-4836-8314-929b1ba87764"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a6e11c15-e4e6-4c7e-9980-680085806d4e",
+      "order": 2,
+      "zh": "她拿起剪刀，咔嚓咔嚓地剪着我的头发。",
+      "pinyin": "",
+      "vi": "Cô ấy cầm kéo, cắt tóc tôi xoẹt xoẹt.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "咔嚓"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "87d1748c-03f2-4836-8314-929b1ba87764"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "咔嚓 là âm thanh, không phải động từ cắt.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f25a287b-a8a7-4767-9113-456a5115ed7a",
+      "order": 1,
+      "rule_vi": "咔嚓 là âm thanh, không phải động từ cắt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我咔嚓头发。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "咔嚓 là âm thanh, không phải động từ cắt.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我剪头发。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "咔嚓 là âm thanh, không phải động từ cắt.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "咔嚓",
+    "back": "xoẹt, rắc, tách; từ tượng thanh",
+    "hint": "kāchā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "87d1748c-03f2-4836-8314-929b1ba87764",
+    "source_lesson_vocab_id": null
+  }
+}

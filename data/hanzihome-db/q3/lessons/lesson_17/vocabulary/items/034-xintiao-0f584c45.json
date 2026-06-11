@@ -1,0 +1,316 @@
+{
+  "id": "263bc2f4-57c6-430b-849b-89050bf42035",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "心跳",
+  "pinyin": "xīntiào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tâm khiêu",
+    "meaning_vi": "nhịp tim; tim đập",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhịp tim",
+      "tim đập"
+    ],
+    "short_definition_vi": "nhịp tim",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "tâm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, lòng, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, lòng, cảm xúc",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tim, lòng, tâm trí",
+        "modern_logic_vi": "tim, lòng, tâm trí",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, lòng, cảm xúc",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "跳",
+        "lishu_vi": "khiêu",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân, vận động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "足 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân, vận động",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兆",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhảy, bật, đập",
+        "modern_logic_vi": "nhảy, bật, đập",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân, vận động",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "心 là tim; 跳 là đập/nhảy; 心跳 là nhịp tim hoặc tim đập.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 心跳很快.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "心直跳",
+        "pinyin": "xīn zhí tiào",
+        "meaning_vi": "tim cứ đập thình thịch",
+        "difference_vi": "心直跳 sinh động hơn khi tả hồi hộp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "心慌",
+        "pinyin": "xīnhuāng",
+        "meaning_vi": "hồi hộp/hoảng trong lòng",
+        "difference_vi": "心慌 nhấn cảm giác bất an.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6dbda9ff-a654-4e76-b040-aeb63e49c3d2",
+      "order": 1,
+      "zh": "心跳很快",
+      "pinyin": "xīntiào hěn kuài",
+      "vi": "tim đập rất nhanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a1d41b92-1a63-4f44-8d8f-c2356fe25b89",
+      "order": 2,
+      "zh": "心跳加快",
+      "pinyin": "xīntiào jiākuài",
+      "vi": "nhịp tim nhanh lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e2017059-7334-4cbd-8442-a7020f661384",
+      "order": 3,
+      "zh": "心跳声",
+      "pinyin": "xīntiàoshēng",
+      "vi": "tiếng tim đập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7d022478-f7e6-4eb8-a7fc-6dd18dc7a02d",
+      "order": 1,
+      "zh": "他紧张得心跳很快。",
+      "pinyin": "Tā jǐnzhāng de xīntiào hěn kuài.",
+      "vi": "Anh ấy căng thẳng đến mức tim đập rất nhanh.",
+      "analysis_vi": "紧张得…… nêu biểu hiện cơ thể.",
+      "highlight": [
+        "心跳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "263bc2f4-57c6-430b-849b-89050bf42035"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9ecf1177-4a68-4d15-ab8f-de44f27074cd",
+      "order": 2,
+      "zh": "一走上讲台，他就觉得自己的心跳加快了。",
+      "pinyin": "Yì zǒu shàng jiǎngtái, tā jiù juéde zìjǐ de xīntiào jiākuài le.",
+      "vi": "Vừa bước lên bục, anh ấy cảm thấy tim mình đập nhanh lên.",
+      "analysis_vi": "加快了 báo biến đổi.",
+      "highlight": [
+        "心跳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "263bc2f4-57c6-430b-849b-89050bf42035"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "心跳 có thể tả căng thẳng, hưng phấn hoặc rung động tùy ngữ cảnh.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5dcc5304-a565-44e4-8534-47169aa0528c",
+      "order": 1,
+      "rule_vi": "Không dịch 心跳 là tim nhảy; dịch là tim đập/nhịp tim.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心跳",
+    "back": "nhịp tim; tim đập",
+    "hint": "xīntiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "263bc2f4-57c6-430b-849b-89050bf42035",
+    "source_lesson_vocab_id": null
+  }
+}

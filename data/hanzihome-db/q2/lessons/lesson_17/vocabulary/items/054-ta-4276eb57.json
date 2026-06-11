@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_d2352adc6c8b6897",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "它",
+  "pinyin": "tā",
+  "meaning_vi": "nó",
+  "pos": "Đại từ",
+  "pos_detail": {
+    "vi": "Đại từ",
+    "cn": "代词",
+    "normalized": "pronoun",
+    "schema_compatible_pos": "pronoun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Đại từ ngôi ba chỉ sự vật/con vật, trong bài dùng thay cho 教室/水仙/福字 tùy ngữ cảnh.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "54613016-834a-4fc3-9912-2357a6d27058",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "54613016-834a-4fc3-9912-2357a6d27058",
+    "type": "vocabulary_item",
+    "order": 7,
+    "hanzi": "它",
+    "pinyin": "tā",
+    "meaning_vi": "nó",
+    "meaning_en": "",
+    "pos": "Đại từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "它",
+      "back": "tā — nó",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Đại từ",
+      "cn": "代词",
+      "normalized": "pronoun",
+      "schema_compatible_pos": "pronoun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Đại từ ngôi ba chỉ sự vật/con vật, trong bài dùng thay cho 教室/水仙/福字 tùy ngữ cảnh.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

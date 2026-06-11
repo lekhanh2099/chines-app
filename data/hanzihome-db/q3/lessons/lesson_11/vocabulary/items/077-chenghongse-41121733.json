@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_d987426a3911d73d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "橙红色",
+  "pinyin": "chénghóngsè",
+  "meaning_vi": "màu đỏ cam",
+  "pos": "Danh từ màu sắc / tính từ định ngữ",
+  "pos_detail": {
+    "vi": "Danh từ màu sắc / tính từ định ngữ",
+    "cn": "颜色名词 / 定语性形容词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+    "type": "vocabulary_item",
+    "order": 27,
+    "hanzi": "橙红色",
+    "pinyin": "chénghóngsè",
+    "meaning_vi": "màu đỏ cam",
+    "meaning_en": "",
+    "pos": "Danh từ màu sắc / tính từ định ngữ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "橙红色",
+      "back": "chénghóngsè — màu đỏ cam",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ màu sắc / tính từ định ngữ",
+      "cn": "颜色名词 / 定语性形容词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

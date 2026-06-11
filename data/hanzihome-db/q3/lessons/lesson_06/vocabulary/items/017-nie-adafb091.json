@@ -1,0 +1,280 @@
+{
+  "id": "c70879f7-06b1-4b36-9827-519e45b28d66",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "捏",
+  "pinyin": "niē",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "niết",
+    "meaning_vi": "bóp, kẹp bằng ngón tay; nặn; bịa đặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bóp",
+      "kẹp bằng ngón tay",
+      "nặn",
+      "bịa đặt"
+    ],
+    "short_definition_vi": "bóp, kẹp bằng ngón tay",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "捏",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bóp, kẹp bằng ngón tay",
+        "modern_logic_vi": "Trong từ 捏, chữ 捏 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "捏 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 别把葡萄捏坏了。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "ná",
+        "meaning_vi": "cầm/lấy",
+        "difference_vi": "拿 là cầm/lấy nói chung; 捏 dùng ngón tay bóp/kẹp.",
+        "register_vi": "",
+        "example_zh": "他拿着书。",
+        "example_vi": "Anh ấy đang cầm sách.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dc133566-268e-4ead-a6e0-85b9e07b7853",
+      "order": 1,
+      "zh": "捏葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3019af83-2d28-4e1a-90eb-7266b9d0cf54",
+      "order": 2,
+      "zh": "捏住",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ab2bde1c-8eab-4439-b549-c52bda43af17",
+      "order": 3,
+      "zh": "捏鼻子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "98aceeb6-b96a-4f0e-9f59-f30666c01a9c",
+      "order": 4,
+      "zh": "捏饺子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6bad1ad7-4f18-4d76-9627-4711efc96033",
+      "order": 5,
+      "zh": "捏泥人儿",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68019a12-1bf8-4ba5-b0de-89aa39dfc2a8",
+      "order": 6,
+      "zh": "捏一把汗",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "15b96e4c-067e-47ef-8b5b-31042564c2f1",
+      "order": 7,
+      "zh": "捏造事实",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5bcba623-6c32-4582-a3fa-88a79a57f6c7",
+      "order": 1,
+      "zh": "别把葡萄捏坏了。",
+      "pinyin": "",
+      "vi": "Đừng bóp hỏng quả nho.",
+      "analysis_vi": "Ví dụ dùng 捏 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "捏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c70879f7-06b1-4b36-9827-519e45b28d66"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "捏 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ccaad052-fb3c-4047-92c0-70196e25b219",
+      "order": 1,
+      "rule_vi": "捏 khác 拿: 捏 là dùng ngón tay bóp/kẹp/nặn; 拿 là cầm/lấy nói chung.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "捏",
+    "back": "bóp, kẹp bằng ngón tay; nặn; bịa đặt",
+    "hint": "niē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c70879f7-06b1-4b36-9827-519e45b28d66",
+    "source_lesson_vocab_id": null
+  }
+}

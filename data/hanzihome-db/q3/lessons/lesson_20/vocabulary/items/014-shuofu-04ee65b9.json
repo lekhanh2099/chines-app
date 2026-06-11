@@ -1,0 +1,370 @@
+{
+  "id": "e2a3b787-9169-47d1-a3cf-3008c0461989",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "说服",
+  "pinyin": "shuōfú",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thuyết phục",
+    "meaning_vi": "thuyết phục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuyết phục"
+    ],
+    "short_definition_vi": "thuyết phục",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "说",
+        "lishu_vi": "thuyết",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là bộ/thành phần chắc dùng để phân tích chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được ghi là thành phần/bộ thủ đã dùng trong phần chiết tự.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "兑",
+            "hanviet": "đoài",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, giải thích, thuyết",
+        "modern_logic_vi": "说服 là dùng lời để làm người khác phục.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "服",
+        "lishu_vi": "phục",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thân thể/trăng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "又",
+            "hanviet": "hựu",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "phục, quần áo, uống thuốc",
+        "modern_logic_vi": "Trong 说服 là làm người khác phục/chấp nhận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "说服 được dùng trong Bài 20 với nghĩa: thuyết phục.",
+    "memory_tip_vi": "Nhớ qua cụm 说服别人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "劝",
+        "pinyin": "quàn",
+        "meaning_vi": "khuyên",
+        "difference_vi": "Nhẹ hơn, không nhất thiết lập luận sâu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "解释",
+        "pinyin": "jiěshì",
+        "meaning_vi": "giải thích",
+        "difference_vi": "Giải thích chưa chắc làm người khác đổi ý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "反对",
+        "pinyin": "fǎnduì",
+        "meaning_vi": "phản đối",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e59e0f00-b3d8-4472-97cf-dffc53db8c75",
+      "order": 1,
+      "zh": "说服别人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "316289cf-a1a6-4fa8-9ad3-672ba2bb3622",
+      "order": 2,
+      "zh": "说服自己",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "19f627a5-6d0a-419c-a296-a09afb53a08f",
+      "order": 3,
+      "zh": "说服导师",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "761bc08b-162e-4d8b-9ad3-72a2c8c78556",
+      "order": 4,
+      "zh": "很难说服",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f25d120-4634-4c30-9627-a80ec33558bc",
+      "order": 5,
+      "zh": "无法说服",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8f87dcd-d0f2-488e-b54c-2357229e4e5c",
+      "order": 6,
+      "zh": "说服不了他",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8807cfb8-855f-46f1-a3cf-06136860f414",
+      "order": 1,
+      "zh": "我想说服他接受这个方案。",
+      "pinyin": "Wǒ xiǎng shuōfú tā jiēshòu zhège fāng’àn.",
+      "vi": "Tôi muốn thuyết phục anh ấy chấp nhận phương án này.",
+      "analysis_vi": "说服 + 人 + V.",
+      "highlight": [
+        "说服"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e2a3b787-9169-47d1-a3cf-3008c0461989"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0dec648e-77e6-41eb-9270-87b0b3299245",
+      "order": 2,
+      "zh": "如果一个理论连基本事实都解释不了，又怎么能说服别人呢？",
+      "pinyin": "Rúguǒ yí ge lǐlùn lián jīběn shìshí dōu jiěshì bù liǎo, yòu zěnme néng shuōfú biéren ne?",
+      "vi": "Nếu một lý thuyết đến cả sự thật cơ bản cũng không giải thích nổi, sao thuyết phục được người khác?",
+      "analysis_vi": "怎么能……呢 là hỏi tu từ.",
+      "highlight": [
+        "说服"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e2a3b787-9169-47d1-a3cf-3008c0461989"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "说服力 là “sức thuyết phục”, rất hay dùng trong viết luận.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d01dc31b-8b0c-4a08-9a92-1cfd8b399190",
+      "order": 1,
+      "rule_vi": "说服 thường cần đối tượng và nội dung được thuyết phục.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他说服我这个方案。",
+          "pinyin": "Tā shuōfú wǒ zhège fāng’àn.",
+          "vi": "Anh ấy thuyết phục tôi phương án này.",
+          "note_vi": "Thiếu động tác/chủ ý cần chấp nhận.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他说服我接受这个方案。",
+          "pinyin": "Tā shuōfú wǒ jiēshòu zhège fāng’àn.",
+          "vi": "Anh ấy thuyết phục tôi chấp nhận phương án này.",
+          "note_vi": "Câu đủ cấu trúc.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "说服",
+    "back": "thuyết phục",
+    "hint": "shuōfú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e2a3b787-9169-47d1-a3cf-3008c0461989",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "id": "56673d57-a758-40ba-978f-517e5e81c7cc",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "大衣",
+  "pinyin": "dàyī",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "documents_objects"
+  ],
+  "meaning": {
+    "hanviet": "đại y",
+    "meaning_vi": "áo khoác dài, áo măng tô",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "áo khoác dài, áo măng tô"
+    ],
+    "short_definition_vi": "áo khoác dài, áo măng tô",
+    "textbook_focus_vi": "áo khoác dài, áo măng tô",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "大",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "lớn",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớn",
+        "modern_logic_vi": "大 là lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "衣",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "y",
+            "meaning_vi": "áo/quần áo",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, quần áo, vải",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "衣 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "áo, quần áo",
+        "modern_logic_vi": "衣 là áo/quần áo.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "大衣 = áo lớn/khoác ngoài, thường dài và dày.",
+    "memory_tip_vi": "大衣 = áo lớn/khoác ngoài, thường dài và dày.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "外套",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "áo khoác nói chung",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "上衣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "áo phần trên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "雨衣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "áo mưa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "羽绒服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "áo phao lông vũ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "穿大衣",
+        "right": "脱大衣",
+        "meaning_vi": "",
+        "note_vi": "mặc áo khoác dài ↔ cởi áo khoác dài",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "2cca5ee3-586a-4bd1-bace-ee0bf378b18d",
+      "order": 1,
+      "zh": "穿大衣",
+      "pinyin": "",
+      "vi": "mặc áo khoác dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a2de3e31-fd91-4352-867e-042f457f85af",
+      "order": 2,
+      "zh": "脱大衣",
+      "pinyin": "",
+      "vi": "cởi áo khoác dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f91d1be-7bad-4ff9-a7d0-e4793e906d6d",
+      "order": 3,
+      "zh": "一件大衣",
+      "pinyin": "",
+      "vi": "một chiếc áo khoác dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27c41f2d-9574-47cc-a9e0-0780ad6acc0e",
+      "order": 4,
+      "zh": "大衣口袋",
+      "pinyin": "",
+      "vi": "túi áo khoác dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c1081a88-4309-4726-bb9c-7c0cc8b6a6a6",
+      "order": 5,
+      "zh": "黑色大衣",
+      "pinyin": "",
+      "vi": "áo khoác dài màu đen",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e099f098-961c-4320-b309-8de859c085c8",
+      "order": 6,
+      "zh": "厚大衣",
+      "pinyin": "",
+      "vi": "áo khoác dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c2ae4142-68c9-451b-bf66-6822078f4ef3",
+      "order": 1,
+      "zh": "外面很冷，你穿上大衣吧。",
+      "pinyin": "",
+      "vi": "Bên ngoài lạnh lắm, bạn mặc áo khoác dài vào đi.",
+      "analysis_vi": "穿上 nhấn mặc vào người.",
+      "highlight": [
+        "大衣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "56673d57-a758-40ba-978f-517e5e81c7cc"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0d8725d1-d1c2-4473-a8e4-6c3fd32b8022",
+      "order": 2,
+      "zh": "护照不是在包里找到的，是在大衣口袋里找到的。",
+      "pinyin": "",
+      "vi": "Hộ chiếu không phải tìm thấy trong túi xách, mà trong túi áo khoác.",
+      "analysis_vi": "不是……是…… sửa thông tin sai.",
+      "highlight": [
+        "大衣"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "56673d57-a758-40ba-978f-517e5e81c7cc"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Ở miền Bắc Trung Quốc mùa đông lạnh, 大衣/羽绒服/外套 là nhóm từ rất thực tế.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "24f97aa8-658c-4e64-b2d2-172b4e526ddd",
+      "order": 1,
+      "rule_vi": "Không dùng 大衣 cho mọi loại áo khoác; 外套 rộng và an toàn hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "大衣",
+    "back": "áo khoác dài, áo măng tô",
+    "hint": "dàyī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "documents_objects"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "56673d57-a758-40ba-978f-517e5e81c7cc",
+    "source_lesson_vocab_id": null
+  }
+}

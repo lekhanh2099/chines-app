@@ -1,0 +1,251 @@
+{
+  "id": "1febe345-1df0-45ac-8253-2c5d1a9d3913",
+  "type": "deep_vocabulary_item",
+  "order": 19,
+  "hanzi": "放学",
+  "pinyin": "fàngxué",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phóng học",
+    "meaning_vi": "tan học, hết giờ học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tan học",
+      "hết giờ học"
+    ],
+    "short_definition_vi": "tan học, hết giờ học",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: trường học, thời gian.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "trường học, thời gian",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "放",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thả, đặt, cho nghỉ",
+        "modern_logic_vi": "Trong từ 放学, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ em",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ em",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ em",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học",
+        "modern_logic_vi": "Trong từ 放学, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "放学 nên được học theo nghĩa hiện đại trong cụm/tình huống: tan học, hết giờ học.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 放学回家.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "下课",
+        "pinyin": "xiàkè",
+        "meaning_vi": "hết tiết",
+        "difference_vi": "下课 là hết tiết; 放学 là tan học rời trường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "48f2f9be-c228-4167-8fd0-c96628873c62",
+      "order": 1,
+      "zh": "放学回家",
+      "pinyin": "",
+      "vi": "tan học về nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "01997bc1-d9e2-49a9-8193-9237dd66bb5e",
+      "order": 2,
+      "zh": "放学以后",
+      "pinyin": "",
+      "vi": "sau khi tan học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e272408-789a-443b-a54b-fae5653f8cd4",
+      "order": 3,
+      "zh": "接孩子放学",
+      "pinyin": "",
+      "vi": "đón con tan học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7a92d7a7-ec17-40c8-a6da-aeb50752c5c0",
+      "order": 1,
+      "zh": "儿子放学回家了。",
+      "pinyin": "",
+      "vi": "Con trai tan học về nhà rồi.",
+      "analysis_vi": "放学 gắn với kết thúc ngày học và rời trường.",
+      "highlight": [
+        "放学"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1febe345-1df0-45ac-8253-2c5d1a9d3913"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 放学 được dùng trong ngữ cảnh trường học, thời gian; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d9a13b70-2b02-4156-a718-d686d212cffd",
+      "order": 1,
+      "rule_vi": "Không nhầm 下课 và 放学; 下课 là hết tiết, 放学 là tan học về.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 下课 và 放学; 下课 là hết tiết, 放学 là tan học về.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "放学",
+    "back": "tan học, hết giờ học",
+    "hint": "fàngxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1febe345-1df0-45ac-8253-2c5d1a9d3913",
+    "source_lesson_vocab_id": null
+  }
+}

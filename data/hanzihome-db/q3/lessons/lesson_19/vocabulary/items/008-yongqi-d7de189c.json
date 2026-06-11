@@ -1,0 +1,354 @@
+{
+  "id": "c720f1ee-029a-4011-865f-a173295a4b8d",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "勇气",
+  "pinyin": "yǒngqì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "dũng khí",
+    "meaning_vi": "dũng khí, can đảm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dũng khí",
+      "can đảm"
+    ],
+    "short_definition_vi": "dũng khí, can đảm",
+    "textbook_focus_vi": "勇气 là sức tinh thần để dám đối mặt khó khăn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "勇",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "力 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "力 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dũng cảm",
+        "modern_logic_vi": "Trong từ “勇气”, chữ “勇” góp phần vào trường nghĩa: dũng cảm",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "气",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "气",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khí",
+          "radical_name_zh": "",
+          "hanviet": "khí",
+          "meaning_vi": "hơi, khí",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "气 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "气",
+            "hanviet": "khí",
+            "meaning_vi": "hơi, khí",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "气",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khí",
+              "radical_name_zh": "",
+              "hanviet": "khí",
+              "meaning_vi": "hơi, khí",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "气 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "气 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khí, tinh thần",
+        "modern_logic_vi": "Trong từ “勇气”, chữ “气” góp phần vào trường nghĩa: khí, tinh thần",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "勇气 là sức tinh thần để dám đối mặt khó khăn.",
+    "memory_tip_vi": "勇气 là sức tinh thần để dám đối mặt khó khăn.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "勇敢",
+        "pinyin": "",
+        "meaning_vi": "dũng cảm, tính từ",
+        "difference_vi": "dũng cảm, tính từ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "信心",
+        "pinyin": "",
+        "meaning_vi": "niềm tin/tự tin, không hẳn can đảm",
+        "difference_vi": "niềm tin/tự tin, không hẳn can đảm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a844465f-f03e-4734-9c5c-cd4e7f8d02f1",
+      "order": 1,
+      "zh": "有勇气",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "012e0072-37bb-4b1d-8975-676827144aad",
+      "order": 2,
+      "zh": "失去勇气",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c1452a9-2099-4e16-a1ce-7dc7880e12d6",
+      "order": 3,
+      "zh": "鼓起勇气",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80280e52-0a9f-4f9b-aa24-41cf11f73c71",
+      "order": 4,
+      "zh": "求职的勇气",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6aac2df0-dcd1-4366-9f3e-dfe9ae975532",
+      "order": 1,
+      "zh": "他几乎失去了求职的勇气。",
+      "pinyin": "",
+      "vi": "Anh ấy gần như mất dũng khí tìm việc.",
+      "analysis_vi": "失去勇气 là cụm tự nhiên.",
+      "highlight": [
+        "勇气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c720f1ee-029a-4011-865f-a173295a4b8d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4ed47a77-e6d7-489f-8459-c6696c6f8d95",
+      "order": 2,
+      "zh": "他还是鼓起勇气去面试。",
+      "pinyin": "",
+      "vi": "Anh ấy vẫn lấy hết can đảm đi phỏng vấn.",
+      "analysis_vi": "鼓起勇气 là lấy hết can đảm.",
+      "highlight": [
+        "勇气"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c720f1ee-029a-4011-865f-a173295a4b8d"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "勇气 là sức tinh thần để dám đối mặt khó khăn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c103a504-5b74-489d-849d-473ccddfa362",
+      "order": 1,
+      "rule_vi": "勇气 là danh từ; không nói 他很勇气, nói 他很有勇气 hoặc 他很勇敢.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "勇气 là danh từ; không nói 他很勇气, nói 他很有勇气 hoặc 他很勇敢.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "勇气",
+    "back": "dũng khí, can đảm",
+    "hint": "yǒngqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c720f1ee-029a-4011-865f-a173295a4b8d",
+    "source_lesson_vocab_id": null
+  }
+}

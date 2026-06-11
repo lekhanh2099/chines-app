@@ -1,0 +1,318 @@
+{
+  "id": "acd6a883-4917-408a-a4ba-cb1477c6d008",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "傻瓜",
+  "pinyin": "shǎguā",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "sỏa qua",
+    "meaning_vi": "đồ ngốc, kẻ ngốc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đồ ngốc",
+      "kẻ ngốc"
+    ],
+    "short_definition_vi": "người ngốc/khờ; có thể mắng nhẹ hoặc đùa thân mật",
+    "textbook_focus_vi": "Cần xét giọng điệu khi dịch.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "傻",
+        "lishu_vi": "",
+        "structure_note_vi": "亻",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngốc",
+        "modern_logic_vi": "ngốc",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "瓜",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưa; yếu tố trong 傻瓜",
+        "modern_logic_vi": "dưa; yếu tố trong 傻瓜",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "傻瓜 được học trong bài theo nghĩa: người ngốc/khờ; có thể mắng nhẹ hoặc đùa thân mật.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 你这个傻瓜.",
+    "warning_vi": "Không dùng 傻瓜 với người lạ/thầy cô/người lớn tuổi vì dễ xúc phạm.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "笨蛋",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Mắng rõ hơn 傻瓜.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "傻子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Có thể nặng và bất lịch sự hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 傻瓜 với người lạ/thầy cô/người lớn tuổi vì dễ xúc phạm."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b5196ae7-63f2-4634-a7e9-572cff8eaf2a",
+      "order": 1,
+      "zh": "你这个傻瓜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c73c1c76-4919-4dc6-8e47-64f6144ff952",
+      "order": 2,
+      "zh": "别做傻瓜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "23a59904-fdff-49ea-98b4-9f3ec6b13e4b",
+      "order": 3,
+      "zh": "像个傻瓜一样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8ffbc7c-592f-4da9-b7a8-5fea91327233",
+      "order": 4,
+      "zh": "傻瓜才相信",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e589bb1-eab4-4283-9056-2fa091fd051a",
+      "order": 5,
+      "zh": "小傻瓜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da1046a5-8e6c-4a59-b4a7-37be17352d42",
+      "order": 6,
+      "zh": "别傻了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "82875bb6-69b0-4a26-a428-4cb3c77ef5cf",
+      "order": 1,
+      "zh": "别做傻瓜，先把事情问清楚。",
+      "pinyin": "",
+      "vi": "Đừng làm kẻ ngốc, trước hết hỏi rõ sự việc đã.",
+      "analysis_vi": "把事情问清楚 là 把字句 + kết quả.",
+      "highlight": [
+        "傻瓜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "acd6a883-4917-408a-a4ba-cb1477c6d008"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f46b48f0-7cd1-4ef4-aac7-5f114ac1795f",
+      "order": 2,
+      "zh": "他不是傻瓜，他只是太激动了。",
+      "pinyin": "",
+      "vi": "Anh ấy không phải đồ ngốc, chỉ là quá phấn khích.",
+      "analysis_vi": "不是……只是…… giảm mức phán xét.",
+      "highlight": [
+        "傻瓜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "acd6a883-4917-408a-a4ba-cb1477c6d008"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong lời thân mật, 傻瓜 đôi khi nhẹ; trong mắng người lạ thì bất lịch sự.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "cb7c5c6c-48d1-4aa6-aa79-3378e0e2ec13",
+      "order": 1,
+      "rule_vi": "Không dùng 傻瓜 với người lạ/thầy cô/người lớn tuổi vì dễ xúc phạm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 傻瓜 với người lạ/thầy cô/người lớn tuổi vì dễ xúc phạm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "傻瓜",
+    "back": "đồ ngốc, kẻ ngốc",
+    "hint": "shǎguā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "acd6a883-4917-408a-a4ba-cb1477c6d008",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "id": "5d8c84ee-fe95-4d8d-8e96-c1bbbe062338",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "眼睛",
+  "pinyin": "yǎnjing",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Nhãn tình",
+    "meaning_vi": "mắt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mắt"
+    ],
+    "short_definition_vi": "mắt",
+    "textbook_focus_vi": "mắt",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "眼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "艮",
+            "hanviet": "cấn",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mắt",
+        "modern_logic_vi": "眼 = mắt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "睛",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mắt, tròng mắt",
+        "modern_logic_vi": "睛 thường đi trong 眼睛.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Cả 眼 và 睛 đều có 目 liên quan mắt. 眼睛 = mắt.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fba34e25-c615-4277-a0a5-cce58a8bd65d",
+      "order": 1,
+      "zh": "大眼睛",
+      "pinyin": "",
+      "vi": "mắt to",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5f4dc7a-0deb-4c97-b47f-fbbcfc41da12",
+      "order": 2,
+      "zh": "眼睛疼",
+      "pinyin": "",
+      "vi": "đau mắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0c4d39d-da04-42f4-8f30-2d7e512c211a",
+      "order": 3,
+      "zh": "眼睛红了",
+      "pinyin": "",
+      "vi": "mắt đỏ rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fed4f9df-4c43-4223-80ef-d751d83549e4",
+      "order": 4,
+      "zh": "闭上眼睛",
+      "pinyin": "",
+      "vi": "nhắm mắt lại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80fd70e9-60b2-4315-9ec5-7646ce9aeb9a",
+      "order": 5,
+      "zh": "睁开眼睛",
+      "pinyin": "",
+      "vi": "mở mắt ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "31c0d468-bd5f-4df3-8b6e-a974a1386f44",
+      "order": 6,
+      "zh": "保护眼睛",
+      "pinyin": "",
+      "vi": "bảo vệ mắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "03461525-e2a6-4b72-9d3a-07d1fea1feb1",
+      "order": 1,
+      "zh": "她的眼睛很漂亮。",
+      "pinyin": "Tā de yǎnjing hěn piàoliang.",
+      "vi": "Mắt cô ấy rất đẹp.",
+      "analysis_vi": "眼睛 là danh từ bộ phận cơ thể.",
+      "highlight": [
+        "眼睛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5d8c84ee-fe95-4d8d-8e96-c1bbbe062338"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6bd8e2c0-97b7-47a0-9e39-41772d24c173",
+      "order": 2,
+      "zh": "我的眼睛是昨天被风吹得很疼的。",
+      "pinyin": "Wǒ de yǎnjing shì zuótiān bèi fēng chuī de hěn téng de.",
+      "vi": "Mắt tôi bị gió thổi đau từ hôm qua.",
+      "analysis_vi": "是……的 nhấn thời gian; 被风吹得很疼 là bị thổi đến mức đau.",
+      "highlight": [
+        "眼睛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5d8c84ee-fe95-4d8d-8e96-c1bbbe062338"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bc974a03-54b3-4fc9-aaca-228303ac59cf",
+      "order": 3,
+      "zh": "一看手机看久了，眼睛就会累，所以要让眼睛休息一下。",
+      "pinyin": "Yí kàn shǒujī kàn jiǔ le, yǎnjing jiù huì lèi, suǒyǐ yào ràng yǎnjing xiūxi yíxià.",
+      "vi": "Cứ nhìn điện thoại lâu, mắt sẽ mỏi, nên phải để mắt nghỉ.",
+      "analysis_vi": "一……就…… chỉ quan hệ điều kiện lặp.",
+      "highlight": [
+        "眼睛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5d8c84ee-fe95-4d8d-8e96-c1bbbe062338"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "保护眼睛 là cụm rất hay gặp trong đời sống hiện đại do dùng điện thoại/máy tính nhiều.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8453779f-fb54-4785-a51a-224aa88bcc02",
+      "order": 1,
+      "rule_vi": "眼睛 yǎnjing = mắt; 眼镜 yǎnjìng = kính mắt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "眼睛",
+    "back": "mắt",
+    "hint": "yǎnjing",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5d8c84ee-fe95-4d8d-8e96-c1bbbe062338",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "id": "839082c7-dd39-47fd-a3c0-0725b8b2fd0a",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "平常",
+  "pinyin": "píngcháng",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ thời gian",
+    "raw_cn": "形 / 名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bình thường",
+    "meaning_vi": "bình thường; ngày thường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bình thường; ngày thường"
+    ],
+    "short_definition_vi": "bình thường; ngày thường",
+    "textbook_focus_vi": "bình thường; ngày thường",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "平",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bằng phẳng, bình ổn, bình thường",
+        "modern_logic_vi": "平 là chữ độc thể.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "常",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "巾",
+            "hanviet": "cân",
+            "meaning_vi": "khăn/vải",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "巾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cân",
+              "radical_name_zh": "",
+              "hanviet": "cân",
+              "meaning_vi": "khăn/vải",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thường, bình thường",
+        "modern_logic_vi": "常 = thường.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "平 = bình ổn/không đặc biệt; 常 = thường. 平常 = trạng thái bình thường hoặc lúc thường ngày.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "平时",
+        "pinyin": "",
+        "meaning_vi": "lúc bình thường/ngày thường",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "普通",
+        "pinyin": "",
+        "meaning_vi": "phổ thông",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一般",
+        "pinyin": "",
+        "meaning_vi": "bình thường/trung bình",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "经常",
+        "pinyin": "",
+        "meaning_vi": "thường xuyên",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "特别",
+        "pinyin": "",
+        "meaning_vi": "đặc biệt",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "非常",
+        "pinyin": "",
+        "meaning_vi": "rất khác thường",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c01a7762-87a7-421b-9f5a-ee45a00a0245",
+      "order": 1,
+      "zh": "平常生活",
+      "pinyin": "",
+      "vi": "đời sống bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d8f045e8-7c55-4d95-8d6d-3a30bf589e3c",
+      "order": 2,
+      "zh": "平常人",
+      "pinyin": "",
+      "vi": "người bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "64f0a6b9-2ffb-4add-83a7-7002c0f574bc",
+      "order": 3,
+      "zh": "平常的事",
+      "pinyin": "",
+      "vi": "chuyện bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3243a259-5c46-413f-b260-af721ff5737c",
+      "order": 4,
+      "zh": "和平常一样",
+      "pinyin": "",
+      "vi": "giống như bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "622d29b2-c528-459e-9b62-0abe7161e348",
+      "order": 5,
+      "zh": "比平常早",
+      "pinyin": "",
+      "vi": "sớm hơn bình thường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2834705a-a7e7-4de7-b00b-690815f2d4bd",
+      "order": 6,
+      "zh": "平常很忙",
+      "pinyin": "",
+      "vi": "ngày thường rất bận",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "73d205cd-5846-4a4d-a9eb-0515b30a92cc",
+      "order": 1,
+      "zh": "他平常很忙，周末才有时间。",
+      "pinyin": "Tā píngcháng hěn máng, zhōumò cái yǒu shíjiān.",
+      "vi": "Ngày thường anh ấy rất bận, cuối tuần mới có thời gian.",
+      "analysis_vi": "平常 ở đây là ngày thường.",
+      "highlight": [
+        "平常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "839082c7-dd39-47fd-a3c0-0725b8b2fd0a"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "114f7514-0f91-4185-84ed-95fcc543a82b",
+      "order": 2,
+      "zh": "他不是平常一个人来的，是跟旅游团一起来的。",
+      "pinyin": "Tā bú shì píngcháng yí ge rén lái de, shì gēn lǚyóutuán yìqǐ lái de.",
+      "vi": "Anh ấy không phải thường ngày đến một mình, mà đi cùng đoàn du lịch.",
+      "analysis_vi": "是……的 dùng để sửa thông tin về cách đi.",
+      "highlight": [
+        "平常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "839082c7-dd39-47fd-a3c0-0725b8b2fd0a"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ecd54855-73f6-4bca-a6f3-5380ca2838f9",
+      "order": 3,
+      "zh": "平常他很少说话，可是一谈到中国风景，他就说得停不下来。",
+      "pinyin": "Píngcháng tā hěn shǎo shuōhuà, kěshì yì tán dào Zhōngguó fēngjǐng, tā jiù shuō de tíng bù xiàlai.",
+      "vi": "Bình thường anh ấy ít nói, nhưng nói đến phong cảnh Trung Quốc là nói không dừng.",
+      "analysis_vi": "一谈到……就…… chỉ phản ứng ngay.",
+      "highlight": [
+        "平常"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "839082c7-dd39-47fd-a3c0-0725b8b2fd0a"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Gặp 平常 phải xét nó chỉ thời gian ngày thường hay tính chất bình thường.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bd3e5435-af08-404f-ace8-2f154d3a2e13",
+      "order": 1,
+      "rule_vi": "Không nhầm 平常 với 经常/常常; 平常 không trực tiếp nhấn số lần.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "平常",
+    "back": "bình thường; ngày thường",
+    "hint": "píngcháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "839082c7-dd39-47fd-a3c0-0725b8b2fd0a",
+    "source_lesson_vocab_id": null
+  }
+}

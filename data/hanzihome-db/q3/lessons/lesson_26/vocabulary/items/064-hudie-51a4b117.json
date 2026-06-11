@@ -1,0 +1,296 @@
+{
+  "id": "4d89d8ec-33f3-4949-99fc-643956e95020",
+  "type": "deep_vocabulary_item",
+  "order": 64,
+  "hanzi": "蝴蝶",
+  "pinyin": "húdié",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "hồ điệp",
+    "meaning_vi": "bướm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bướm"
+    ],
+    "short_definition_vi": "bướm",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "蝴",
+        "lishu_vi": "hồ",
+        "structure_note_vi": "Chữ có thành phần/bộ 虫; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "虫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trùng",
+          "radical_name_zh": "",
+          "hanviet": "trùng",
+          "meaning_vi": "côn trùng, sâu bọ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng, sâu bọ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng, sâu bọ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "虫 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 蝴 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "蝶",
+        "lishu_vi": "điệp",
+        "structure_note_vi": "Chữ có thành phần/bộ 虫; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "虫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Trùng",
+          "radical_name_zh": "",
+          "hanviet": "trùng",
+          "meaning_vi": "côn trùng, sâu bọ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "虫",
+            "hanviet": "trùng",
+            "meaning_vi": "côn trùng, sâu bọ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "虫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Trùng",
+              "radical_name_zh": "",
+              "hanviet": "trùng",
+              "meaning_vi": "côn trùng, sâu bọ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "虫 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 蝶 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "蝴蝶 trong bài được học theo nghĩa: bướm.",
+    "memory_tip_vi": "Nhớ 蝴蝶 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "飞蛾",
+        "pinyin": "fēié",
+        "meaning_vi": "bướm đêm/ngài",
+        "difference_vi": "Không phải 蝴蝶 theo nghĩa thông thường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Lượng từ là 一只蝴蝶, không phải 一个蝴蝶."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a8b2383b-77ea-4fb9-8237-3efd42f22a16",
+      "order": 1,
+      "zh": "一只蝴蝶",
+      "pinyin": "",
+      "vi": "một con bướm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e3a6811c-68ca-4202-a303-78f28ceaf523",
+      "order": 2,
+      "zh": "化成蝴蝶",
+      "pinyin": "",
+      "vi": "hóa thành bướm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b44e91ca-f2db-45a9-8411-c38643c26236",
+      "order": 3,
+      "zh": "蝴蝶翩翩起舞",
+      "pinyin": "",
+      "vi": "bướm múa lượn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "314962c9-97b7-4d84-8c69-74e7ba7eeeb4",
+      "order": 1,
+      "zh": "花园里有很多漂亮的蝴蝶。",
+      "pinyin": "",
+      "vi": "Trong vườn có rất nhiều con bướm đẹp.",
+      "analysis_vi": "Địa điểm + 有 + vật.",
+      "highlight": [
+        "蝴蝶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d89d8ec-33f3-4949-99fc-643956e95020"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "78f34ed9-4324-4a61-a058-a872c8e3638e",
+      "order": 2,
+      "zh": "最后，梁山伯和祝英台化成了两只蝴蝶。",
+      "pinyin": "",
+      "vi": "Cuối cùng, Lương Sơn Bá và Chúc Anh Đài hóa thành hai con bướm.",
+      "analysis_vi": "两只蝴蝶 dùng lượng từ 只.",
+      "highlight": [
+        "蝴蝶"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d89d8ec-33f3-4949-99fc-643956e95020"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "蝴蝶 trong 梁祝 là biểu tượng tình yêu vượt qua cái chết.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "083f1348-b670-4f3c-b73a-8bb8e70cd3bc",
+      "order": 1,
+      "rule_vi": "Lượng từ là 一只蝴蝶, không phải 一个蝴蝶.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "蝴蝶",
+    "back": "bướm",
+    "hint": "húdié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4d89d8ec-33f3-4949-99fc-643956e95020",
+    "source_lesson_vocab_id": null
+  }
+}

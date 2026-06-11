@@ -1,0 +1,940 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "coverage_contract": {
+    "policy": "Coverage-first: bảo toàn đầy đủ 10 mục bài tập theo thứ tự sách.",
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_unverified",
+    "allowed_final_status_when_incomplete": "draft_or_verified_only",
+    "blocked_final_statuses": [
+      "final_verified",
+      "final_verified_with_marked_generated_fields"
+    ]
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "听录音，辨音辨调，跟读。",
+        "vi": "Nghe ghi âm, phân biệt âm/thanh điệu và đọc theo."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "listening"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "cāochǎng",
+              "right": "cǎochǎng",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "bǐsài",
+              "right": "bìsè",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "zhùhè",
+              "right": "chùsuǒ",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "yǐjīng",
+              "right": "yùjīng",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "tuōfú",
+              "right": "tuōfù",
+              "check_needed": false
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "zúqiú",
+              "right": "chūqiú",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "read_aloud_chunks",
+          "title": "多音节连读",
+          "items": [
+            "dǎ lánqiú",
+            "dǎ páiqiú",
+            "dǎ wǎngqiú",
+            "dǎ yǔmáoqiú",
+            "dǎ diànhuà",
+            "dǎ zhāohu"
+          ]
+        },
+        {
+          "id": "55df771b-11c3-4ae2-844a-6439fae33934",
+          "type": "read_aloud_chunks",
+          "title": "朗读",
+          "items": [
+            "快来",
+            "快跑",
+            "快走",
+            "快看",
+            "再来",
+            "再买",
+            "再看",
+            "再练",
+            "又来了",
+            "又买了",
+            "又看了",
+            "又练了",
+            "打电话了",
+            "接电话了",
+            "去同学家了",
+            "踢足球了",
+            "回家了没有",
+            "去商店了没有",
+            "看比赛了没有",
+            "买优盘了没有",
+            "还没回来呢",
+            "还没去呢",
+            "还没看呢",
+            "还没买呢"
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2"
+      },
+      "answer_verified": true
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+        "zh": "替换练习。",
+        "vi": "Thay thế theo mẫu hội thoại."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "grammar"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+          "type": "substitution_dialogue",
+          "model": "A：昨天你看比赛了吗？\nB：没有。\nA：你去哪儿了？\nB：我去同学家了。",
+          "prompts": [
+            "图书馆",
+            "银行",
+            "看朋友",
+            "公园",
+            "商店",
+            "老师那儿"
+          ]
+        },
+        {
+          "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+          "type": "substitution_dialogue",
+          "model": "A：你预习课文了没有？\nB：还没有呢。",
+          "prompts": [
+            "预习生词",
+            "听录音",
+            "练习发音",
+            "写汉字",
+            "复习语法",
+            "做练习"
+          ]
+        },
+        {
+          "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+          "type": "substitution_dialogue",
+          "model": "A：你报名了没有？\nB：已经报了。",
+          "prompts": [
+            "买报纸",
+            "吃晚饭",
+            "预习生词",
+            "买优盘",
+            "听课文录音",
+            "复习语法"
+          ]
+        },
+        {
+          "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+          "type": "substitution_dialogue",
+          "model": "A：下午你做什么了？\nB：我去踢足球了。",
+          "prompts": [
+            "去超市",
+            "听课文录音",
+            "看足球比赛",
+            "去买羽绒服",
+            "去学太极拳",
+            "去看电影"
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.substitution_dialogue.v2"
+      }
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "vocabulary",
+        "grammar"
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "word_bank": [
+        "已经",
+        "考",
+        "接",
+        "踢",
+        "比赛",
+        "操场",
+        "又",
+        "出国"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "prompt": "我下午去操场______足球了。",
+          "answer": "踢",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "prompt": "妈妈不想让我______留学。",
+          "answer": "出国",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "prompt": "你昨天是不是______去他家了？",
+          "answer": "又",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "prompt": "他正在______电话呢。",
+          "answer": "接",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "prompt": "玛丽在______打太极拳呢。",
+          "answer": "操场",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "prompt": "我们又跟外贸大学进行篮球______了。",
+          "answer": "比赛",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "prompt": "我姐姐______大学毕业了。",
+          "answer": "已经",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "prompt": "很多留学生都想______HSK。",
+          "answer": "考",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "answer_questions",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用“还没（有）……呢”回答问题",
+      "title_vi": "Dùng “还没（有）……呢” trả lời",
+      "instruction": {
+        "zh": "用“还没（有）……呢”回答问题。",
+        "vi": "Dùng mẫu 还没（有）……呢 để trả lời câu hỏi."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar",
+        "speaking"
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "田芳回家了没有？",
+          "answer": "田芳还没（有）回家呢。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "你吃晚饭了没有？",
+          "answer": "我还没（有）吃晚饭呢。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "你做作业了没有？",
+          "answer": "我还没（有）做作业呢。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "你看这个电影了吗？",
+          "answer": "我还没（有）看这个电影呢。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "你给妈妈打电话了吗？",
+          "answer": "我还没（有）给妈妈打电话呢，我现在就打。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "你买今天的报纸了没有？",
+          "answer": "我还没（有）买今天的报纸呢，我现在就去买。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.answer_questions.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "fill_blank",
+      "variant": "free_fill_blank",
+      "order": 5,
+      "title": "五、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar"
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "32c03436-c1d1-422c-b0d2-b77445326328",
+          "title": "A. 不 / 没（有）",
+          "word_bank": [
+            "不",
+            "没（有）"
+          ],
+          "questions": [
+            {
+              "id": "6502f569-0100-45b6-b3b3-a4140a5a5e6f",
+              "prompt": "我明天______去超市，我要去书店。",
+              "answer": "不",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "0ec63b1c-3b69-48dd-a3d1-34f6a68c5ae3",
+              "prompt": "昨天我______去商店，我去书店了。",
+              "answer": "没有",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "0cc714ee-848f-4bd7-8ee7-a204852d265e",
+              "prompt": "A：你觉得昨天晚上的电影怎么样？\nB：我______看，______知道。",
+              "answer": "没；不",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "c8e1acb6-d7ec-4923-a611-43408f530b11",
+              "prompt": "我______学太极拳，______会打。",
+              "answer": "没；不",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "0de9da7e-56f7-4d7c-8f4d-58485da672db",
+              "prompt": "昨天你去______去大使馆？",
+              "answer": "没",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "b9541f39-85d6-4112-a4b2-39cf76d1d6f3",
+              "prompt": "明天你去______去看她？",
+              "answer": "不",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "1072766d-3b98-43d7-8a21-65d70fa7444f",
+              "prompt": "玛丽，你想______想家？",
+              "answer": "不",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "aaf8f166-fa24-466f-8338-7cbb5a20985c",
+              "prompt": "A：你常常给你妈妈打电话吗？\nB：我______常给她打电话，常给她发微信。",
+              "answer": "不",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "3a855835-2363-45e3-b361-cc15eff9974b",
+          "title": "B. 再 / 又",
+          "word_bank": [
+            "再",
+            "又"
+          ],
+          "questions": [
+            {
+              "id": "f96f65b6-1762-4475-9ee2-67789598c9c0",
+              "prompt": "上次比赛我们赢了，这次______赢了。",
+              "answer": "又",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "184d44dd-0b2d-4240-aacf-af89b51aaae5",
+              "prompt": "这本词典很好，我已经买了一本，想______买一本给我弟弟。",
+              "answer": "再",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "d96c7aa3-84b9-4041-b0e6-dafb6175318a",
+              "prompt": "我昨天已经去了，今天不想______去了。",
+              "answer": "再",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "c4f27fc9-fce6-4972-bbc8-73c081a4934d",
+              "prompt": "张东刚才给你打电话了，你不在，他说过一会儿______打。",
+              "answer": "再",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "d0aa690e-b99a-4442-a310-1d61029179bf",
+              "prompt": "生词我已经预习了，还要______复习复习课文。",
+              "answer": "再",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "2d75e3bb-df2b-46a8-af4a-fed88fa36669",
+              "prompt": "我______用用你的车好吗？",
+              "answer": "再",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "12a49f53-d00e-4c30-8a93-f706b8239cde",
+              "prompt": "我______买了一个手机。",
+              "answer": "又",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "79fd118a-df1b-459f-b1d8-da93a30ed8ed",
+              "prompt": "我觉得一年时间太短了，我想______学一年。",
+              "answer": "再",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 6,
+      "title": "六、完成会话",
+      "title_vi": "Hoàn thành hội thoại",
+      "instruction": {
+        "zh": "完成会话。",
+        "vi": "Hoàn thành hội thoại."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "communication",
+        "grammar"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "prompt": "A：昨天你去哪儿了？\nB：________。\nA：你买什么了？\nB：________。\nA：你买词典了没有？\nB：________。",
+          "answer": "B：我去书店了。\nB：我买了一本词典。\nB：买了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "B：我去书店了。\nB：我买了一本词典。\nB：买了。"
+          ],
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "prompt": "A：昨天晚上你做什么了？\nB：________。\nA：你看足球比赛了没有？\nB：________。",
+          "answer": "B：我看足球比赛了。\nB：看了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "B：我看足球比赛了。\nB：看了。"
+          ],
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+          "prompt": "A：张东下午去哪儿了？\nB：________。\nA：你去了没有？\nB：________。",
+          "answer": "B：他去踢足球了。\nB：我没去。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "B：他去踢足球了。\nB：我没去。"
+          ],
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+          "prompt": "A：你预习生词了没有？\nB：________。\nA：复习课文了没有？\nB：________。",
+          "answer": "B：还没有呢。\nB：也还没有呢。",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "B：还没有呢。\nB：也还没有呢。"
+          ],
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+          "prompt": "A：________？\nB：我没去朋友家。",
+          "answer": "A：你去朋友家了没有？",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "A：你去朋友家了没有？"
+          ],
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+          "prompt": "A：________？\nB：今天的作业还没做呢。",
+          "answer": "A：今天的作业你做了没有？",
+          "answer_verified": true,
+          "check_needed": false,
+          "acceptable_answers": [
+            "A：今天的作业你做了没有？"
+          ],
+          "source_origin": "textbook_question_generated_answer"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar",
+        "writing"
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "prompt": "昨天我骑了自行车去书店。",
+          "answer": "昨天我骑自行车去书店了。",
+          "answer_note_vi": "“了” chuyển ra sau địa điểm / toàn cụm hành động.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "prompt": "我们八点已经开始了上课。",
+          "answer": "我们八点已经开始上课了。",
+          "answer_note_vi": "“了” chuyển ra sau 上课.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "prompt": "我今年九月来了中国学汉语。",
+          "answer": "我今年九月来中国学汉语。",
+          "answer_note_vi": "Bỏ 了.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "prompt": "我在大学时常常参加足球比赛了。",
+          "answer": "我在大学时常常参加足球比赛。",
+          "answer_note_vi": "Bỏ 了 vì 常常 chỉ thói quen.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "prompt": "昨天下午我做练习了，预习生词了和复习语法了。",
+          "answer": "昨天下午我做了练习，预习了生词，复习了语法。",
+          "answer_note_vi": "Sửa trật tự V+了+O và bỏ 和 không tự nhiên trong chuỗi vị ngữ này.",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "prompt": "我姐姐已经毕业大学了。",
+          "answer": "我姐姐已经大学毕业了。",
+          "answer_note_vi": "大学毕业 là cách nói tự nhiên.",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "show_answer_after_submit": true
+      }
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "multiple_choice",
+      "variant": "multiple_choice",
+      "order": 8,
+      "title": "八、选择正确答案",
+      "title_vi": "Chọn đáp án đúng",
+      "instruction": {
+        "zh": "选择正确答案。",
+        "vi": "Chọn đáp án đúng."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "grammar"
+      ],
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "questions": [
+        {
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+          "prompt": "你去哪儿？",
+          "choices": [
+            "我去图书馆了。",
+            "我去图书馆。"
+          ],
+          "answer": "B",
+          "answer_text": "我去图书馆。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+          "prompt": "你买词典了没有？",
+          "choices": [
+            "我不买词典。",
+            "我没买词典。"
+          ],
+          "answer": "B",
+          "answer_text": "我没买词典。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+          "prompt": "今天晚上谁来？",
+          "choices": [
+            "张东来。",
+            "张东来了。"
+          ],
+          "answer": "A",
+          "answer_text": "张东来。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+          "prompt": "上午你上没上课？",
+          "choices": [
+            "不上课。",
+            "没上课。"
+          ],
+          "answer": "B",
+          "answer_text": "没上课。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+          "prompt": "晚上你看不看足球赛？",
+          "choices": [
+            "看了。",
+            "看。"
+          ],
+          "answer": "B",
+          "answer_text": "看。",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+          "prompt": "你去没去医院？",
+          "choices": [
+            "去了。",
+            "去。"
+          ],
+          "answer": "A",
+          "answer_text": "去了。",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.multiple_choice.v2",
+        "show_answer_after_submit": true,
+        "shuffle_choices": false
+      }
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 9,
+      "title": "九、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "communication",
+        "speaking"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+        {
+          "id": "a092f22f-6624-455b-879b-131f6e336a45",
+          "title": "提醒",
+          "title_vi": "Nhắc nhở",
+          "model_dialogue": [
+            {
+              "speaker": "A",
+              "zh": "你吃药了没有？",
+              "vi": "Bạn uống thuốc chưa?"
+            },
+            {
+              "speaker": "B",
+              "zh": "还没有呢。",
+              "vi": "Vẫn chưa."
+            },
+            {
+              "speaker": "A",
+              "zh": "该吃药了。",
+              "vi": "Đến lúc uống thuốc rồi."
+            },
+            {
+              "speaker": "B",
+              "zh": "我马上吃。",
+              "vi": "Tôi uống ngay đây."
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.role_play.v2",
+        "allow_manual_check": true
+      }
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "reading_comprehension",
+      "variant": "reading_comprehension",
+      "order": 10,
+      "title": "十、阅读理解",
+      "title_vi": "Đọc hiểu",
+      "instruction": {
+        "zh": "读短文，回答问题。",
+        "vi": "Đọc đoạn văn rồi trả lời câu hỏi."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "reading",
+        "comprehension"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "linked_section_id": "section_07_reading",
+      "rendering": {
+        "renderer": "exercise.reading_comprehension.v2",
+        "show_answer_after_submit": true
+      },
+      "questions": [
+        {
+          "id": "reading_ex_q_001",
+          "order": 1,
+          "prompt": "今天“我”去哪儿了？",
+          "answer": "今天“我”去江苹家了。",
+          "evidence": [
+            {
+              "paragraph_id": "09774607-50d1-46ab-a769-9d723c536d13",
+              "quote": "今天我去江苹（Jiang Ping）家了。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_ex_q_002",
+          "order": 2,
+          "prompt": "“我”为什么去那儿？",
+          "answer": "因为江苹下星期就要出国留学了，“我”和同学们去看她，给她送行。",
+          "evidence": [
+            {
+              "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+              "quote": "下星期她就要出国留学了，我们班的同学都去看她，给她送行。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_ex_q_003",
+          "order": 3,
+          "prompt": "“我”怎么迟到了？",
+          "answer": "因为江苹的家在东城，离“我”家比较远。“我”下午四点多就出发了，五点半才到。",
+          "evidence": [
+            {
+              "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
+              "quote": "江苹的家在东城，离我家比较远。我下午四点多就出发了，五点半才到。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_ex_q_004",
+          "order": 4,
+          "prompt": "同学们聊得高兴吗？",
+          "answer": "高兴。他们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。",
+          "evidence": [
+            {
+              "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+              "quote": "同学们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "reading_ex_q_005",
+          "order": 5,
+          "prompt": "同学们怎么向江苹表达祝福？",
+          "answer": "同学们预祝江苹成功，祝她一路平安，还说一定要常联系。",
+          "evidence": [
+            {
+              "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
+              "quote": "我们预祝江苹成功。祝她一路平安。我说，一定要常联系啊。"
+            }
+          ],
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

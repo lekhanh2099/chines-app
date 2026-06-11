@@ -1,0 +1,380 @@
+{
+  "id": "763862e1-1c86-4ca8-8f8f-2332f02d83a3",
+  "type": "deep_vocabulary_item",
+  "order": 21,
+  "hanzi": "远程",
+  "pinyin": "yuǎnchéng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "viễn trình",
+    "meaning_vi": "từ xa; remote",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ xa",
+      "remote"
+    ],
+    "short_definition_vi": "từ xa; remote",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về giáo dục, công nghệ, công việc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo dục, công nghệ, công việc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "远",
+        "lishu_vi": "viễn",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 远 trong từ 远程; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, di chuyển",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "辶 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, di chuyển",
+            "position_vi": "bên ngoài chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "辶 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, di chuyển",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "元",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trong chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 远程, chữ 远 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "程",
+        "lishu_vi": "trình",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 程 trong từ 远程; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 远程, chữ 程 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "Không suy diễn khảo cổ chữ nếu chỉ dựa vào hình giản thể.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "远程 trong bài được nhớ theo nghĩa hiện đại: từ xa, remote.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 远程教育 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "线上",
+        "pinyin": "xiànshàng",
+        "meaning_vi": "online; nhấn diễn ra trên mạng",
+        "difference_vi": "online; nhấn diễn ra trên mạng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "远距离",
+        "pinyin": "yuǎnjùlí",
+        "meaning_vi": "khoảng cách xa về vật lý",
+        "difference_vi": "khoảng cách xa về vật lý",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "现场",
+        "pinyin": "xiànchǎng",
+        "meaning_vi": "tại hiện trường",
+        "difference_vi": "tại hiện trường",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Yêu xa thường nói 远距离恋爱, không nói 远程恋爱."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "125a3ca7-ee93-4efb-8ac7-62cdf26da4e7",
+      "order": 1,
+      "zh": "远程教育",
+      "pinyin": "",
+      "vi": "giáo dục từ xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1dfaecac-e47f-4105-b516-99b2bb97789c",
+      "order": 2,
+      "zh": "远程学习",
+      "pinyin": "",
+      "vi": "học từ xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8fe23f3d-0508-4949-bf8e-97670090a6fd",
+      "order": 3,
+      "zh": "远程办公",
+      "pinyin": "",
+      "vi": "làm việc từ xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f11776b-7c56-4671-81c8-700005ee778a",
+      "order": 4,
+      "zh": "远程会议",
+      "pinyin": "",
+      "vi": "họp từ xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de6ff057-e943-4726-ae98-5ce0b35bf43a",
+      "order": 5,
+      "zh": "远程控制",
+      "pinyin": "",
+      "vi": "điều khiển từ xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "371ca6fc-a143-4893-bb2d-706da8cc10f7",
+      "order": 1,
+      "zh": "网络学校是一种远程教育。",
+      "pinyin": "",
+      "vi": "từ xa; remote",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "远程"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "763862e1-1c86-4ca8-8f8f-2332f02d83a3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a0b2046f-1094-4aa6-9666-6d4519412440",
+      "order": 2,
+      "zh": "这个词语“远程”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 远程 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "远程"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "763862e1-1c86-4ca8-8f8f-2332f02d83a3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "44d39e1d-f95b-468b-a6e6-3eef4bb5bf7d",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“远程”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 远程 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "远程"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "763862e1-1c86-4ca8-8f8f-2332f02d83a3"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "远程教育 trang trọng hơn 在线教育 khi nói học online.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "207a6396-26d3-4426-8e7c-313e57f76ca6",
+      "order": 1,
+      "rule_vi": "Yêu xa thường nói 远距离恋爱, không nói 远程恋爱.",
+      "natural_examples": [
+        {
+          "zh": "他们是远距离恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "他们是远程恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "他们是远程恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他们是远距离恋爱。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Yêu xa thường nói 远距离恋爱, không nói 远程恋爱.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "远程",
+    "back": "từ xa; remote",
+    "hint": "yuǎnchéng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "763862e1-1c86-4ca8-8f8f-2332f02d83a3",
+    "source_lesson_vocab_id": null
+  }
+}

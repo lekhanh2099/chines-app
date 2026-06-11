@@ -1,0 +1,310 @@
+{
+  "id": "fc4efab3-d8a5-44ec-91f6-de7694b1c1ef",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "父母",
+  "pinyin": "fùmǔ",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "phụ mẫu",
+    "meaning_vi": "bố mẹ, cha mẹ",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "bố mẹ, cha mẹ",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "父",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "父",
+            "hanviet": "phụ",
+            "meaning_vi": "cha",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "父",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Phụ",
+              "radical_name_zh": "",
+              "hanviet": "phụ",
+              "meaning_vi": "cha",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "父 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cha",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "父",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Phụ",
+          "radical_name_zh": "",
+          "hanviet": "phụ",
+          "meaning_vi": "cha",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "父 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "母",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "母",
+            "hanviet": "mẫu",
+            "meaning_vi": "mẹ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "母",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mẫu",
+              "radical_name_zh": "",
+              "hanviet": "mẫu",
+              "meaning_vi": "mẹ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "母 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mẹ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "母",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mẫu",
+          "radical_name_zh": "",
+          "hanviet": "mẫu",
+          "meaning_vi": "mẹ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "母 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Cách gọi chung cha mẹ, hơi văn viết hơn 爸爸妈妈.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "爸爸妈妈",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thân mật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "父亲母亲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "trang trọng/tách rõ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "家长",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phụ huynh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5fe0cdb1-38a8-40e7-b909-15bb8dc0b90c",
+      "order": 1,
+      "zh": "感谢父母",
+      "pinyin": "",
+      "vi": "cảm ơn bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16ad0541-af7b-48d5-872b-9bcadb2bbb84",
+      "order": 2,
+      "zh": "想念父母",
+      "pinyin": "",
+      "vi": "nhớ bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "244541f2-7d41-4a5e-a822-da252469478f",
+      "order": 3,
+      "zh": "父母的支持",
+      "pinyin": "",
+      "vi": "sự ủng hộ của bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d62cce21-cdcf-4b91-b932-08c990b2d9dc",
+      "order": 1,
+      "zh": "我很感谢父母。",
+      "pinyin": "Wǒ hěn gǎnxiè fùmǔ.",
+      "vi": "Tôi rất cảm ơn bố mẹ.",
+      "en": "",
+      "highlight": [
+        "父母"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fc4efab3-d8a5-44ec-91f6-de7694b1c1ef"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "父母 hợp văn viết/bài nói hơn gọi trực tiếp.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fdffd1d0-6f37-47bc-9c79-621e49a62dd6",
+      "order": 1,
+      "title_vi": "Không gọi trực tiếp bằng 父母",
+      "explanation_vi": "Gọi trong gia đình nên dùng 爸爸, 妈妈.",
+      "wrong_examples": [
+        "父母，你们好。"
+      ],
+      "correct_examples": [
+        "爸爸，妈妈。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "父母",
+    "back": "bố mẹ, cha mẹ",
+    "hint": "fùmǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "父母"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fc4efab3-d8a5-44ec-91f6-de7694b1c1ef",
+    "source_lesson_vocab_id": null
+  }
+}

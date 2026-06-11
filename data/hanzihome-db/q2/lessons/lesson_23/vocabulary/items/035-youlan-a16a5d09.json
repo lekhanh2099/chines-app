@@ -1,0 +1,361 @@
+{
+  "id": "a1bcda94-5a04-4641-beef-7b05e8a9b1aa",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "游览",
+  "pinyin": "yóulǎn",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Du lãm",
+    "meaning_vi": "tham quan, du ngoạn, đi ngắm cảnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tham quan, du ngoạn, đi ngắm cảnh"
+    ],
+    "short_definition_vi": "tham quan, du ngoạn, đi ngắm cảnh",
+    "textbook_focus_vi": "tham quan, du ngoạn, đi ngắm cảnh",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "游",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "du ngoạn, đi chơi",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "览",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "见",
+            "hanviet": "kiến",
+            "meaning_vi": "thấy, nhìn",
+            "position_vi": "phía dưới chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "見",
+              "radical_variant": "见",
+              "radical_name_vi": "bộ Kiến",
+              "radical_name_zh": "",
+              "hanviet": "kiến",
+              "meaning_vi": "thấy, nhìn",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem, tham quan",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 游览 hợp lại tạo nghĩa hiện đại trong bài: tham quan, du ngoạn, đi ngắm cảnh.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "游览",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "游览 / 旅游 / 参观 / 玩儿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "旅游",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "游览 / 旅游 / 参观 / 玩儿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "参观",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "游览 / 旅游 / 参观 / 玩儿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "玩儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "游览 / 旅游 / 参观 / 玩儿",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "游览 / 旅游 / 参观 / 玩儿"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "27d3b394-f315-4359-8599-e68cb9f8a281",
+      "order": 1,
+      "zh": "游览长城",
+      "pinyin": "",
+      "vi": "游览长城",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "613cf81d-3b00-45e2-9f74-27ca3033e73c",
+      "order": 2,
+      "zh": "游览西湖",
+      "pinyin": "",
+      "vi": "游览西湖",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "1ef4f9ed-04e8-4c90-b169-c638a5946c8e",
+      "order": 3,
+      "zh": "游览三峡",
+      "pinyin": "",
+      "vi": "游览三峡",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "fb2adaef-62ff-4045-915a-79d03746f593",
+      "order": 4,
+      "zh": "坐船游览",
+      "pinyin": "",
+      "vi": "坐船游览",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "a48c296f-6a7a-4a21-b51d-5d7b8413ad18",
+      "order": 5,
+      "zh": "游览名胜古迹",
+      "pinyin": "",
+      "vi": "游览名胜古迹",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "02cb918b-f2c7-4b18-949c-c9f0f8d59100",
+      "order": 6,
+      "zh": "游览路线",
+      "pinyin": "",
+      "vi": "游览路线",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "74801b53-88dc-4af7-ae12-09977bae9618",
+      "order": 1,
+      "zh": "这个词是“游览”。",
+      "pinyin": "",
+      "vi": "Từ này là “游览”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "游览"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "a1bcda94-5a04-4641-beef-7b05e8a9b1aa"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7614757e-146e-4b8c-9f87-11705aec3888",
+      "order": 2,
+      "zh": "你想怎么用“游览”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “游览” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "游览"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "a1bcda94-5a04-4641-beef-7b05e8a9b1aa"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f75b77b7-5616-4857-b1c3-50f3c11a8e93",
+      "order": 3,
+      "zh": "我们一边复习游览，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “游览”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "游览"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "a1bcda94-5a04-4641-beef-7b05e8a9b1aa"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "游览 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2e837f44-1be5-47e4-b8e7-467208858012",
+      "order": 1,
+      "rule_vi": "Dùng 游览 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 游览 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "游览",
+    "back": "tham quan, du ngoạn, đi ngắm cảnh",
+    "hint": "yóulǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a1bcda94-5a04-4641-beef-7b05e8a9b1aa",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "id": "33b4ea08-801c-4a0f-8a3d-96324033cda4",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "拼命",
+  "pinyin": "pīnmìng",
+  "pos": {
+    "raw_vi": "Động từ / Trạng ngữ",
+    "raw_cn": "动词/状语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bính mệnh/phanh mệnh",
+    "meaning_vi": "liều mạng; hết sức, cật lực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "liều mạng",
+      "hết sức",
+      "cật lực"
+    ],
+    "short_definition_vi": "liều mạng; hết sức, cật lực",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: liều mạng; hết sức, cật lực.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拼",
+        "lishu_vi": "bính/phanh",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "并",
+            "hanviet": "tịnh",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ghép, đấu, liều, cố hết sức",
+        "modern_logic_vi": "Dồn sức vào hành động.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "命",
+        "lishu_vi": "mệnh",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "giữa",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卩",
+            "hanviet": "tiết",
+            "meaning_vi": "thành phần dưới/phải",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mạng sống, số mệnh, mệnh lệnh",
+        "modern_logic_vi": "Liên quan đến mạng/số phận.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "拼命 trong bài dùng theo nghĩa: liều mạng; hết sức, cật lực. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 拼命 qua văn cảnh 离家的时候: liều mạng; hết sức, cật lực.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "努力",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cố gắng, trung tính",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "尽力",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cố hết khả năng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "拼死",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "liều chết, mạnh hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "偷懒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lười biếng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "放弃",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bỏ cuộc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "72c6dac8-9a05-40d0-ad79-a3fdebad88c2",
+      "order": 1,
+      "zh": "拼命学习",
+      "pinyin": "",
+      "vi": "học cật lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b78ed8ac-cf58-4fd4-ae0f-635f3bf4d94a",
+      "order": 2,
+      "zh": "拼命工作",
+      "pinyin": "",
+      "vi": "làm việc cật lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "686125bf-d511-4662-95fe-a855e6692432",
+      "order": 3,
+      "zh": "拼命跑",
+      "pinyin": "",
+      "vi": "chạy hết sức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6ec8dea-82a6-459a-bb1e-1eb28fd77401",
+      "order": 4,
+      "zh": "拼命赚钱",
+      "pinyin": "",
+      "vi": "kiếm tiền cật lực",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba85304d-9dbc-471d-89ba-6c119626d85b",
+      "order": 5,
+      "zh": "拼命努力",
+      "pinyin": "",
+      "vi": "nỗ lực hết sức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b955731d-90f5-43f9-b1ed-8593bacac937",
+      "order": 1,
+      "zh": "为了实现愿望，她一直拼命学习。",
+      "pinyin": "",
+      "vi": "Để thực hiện nguyện vọng, cô ấy luôn học cật lực.",
+      "analysis_vi": "拼命 mạnh hơn 努力.",
+      "highlight": [
+        "拼命"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33b4ea08-801c-4a0f-8a3d-96324033cda4"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4c807317-eff6-453e-beef-7af842753e39",
+      "order": 2,
+      "zh": "她拼命准备考试，终于拿到了奖学金。",
+      "pinyin": "",
+      "vi": "Cô ấy chuẩn bị thi cật lực, cuối cùng nhận được học bổng.",
+      "analysis_vi": "拼命 + 终于 tạo mạch cố gắng → kết quả.",
+      "highlight": [
+        "拼命"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33b4ea08-801c-4a0f-8a3d-96324033cda4"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "53bb573e-91a9-4f16-a3b2-f708a768b0e9",
+      "order": 3,
+      "zh": "父母不希望她为了出国拼命工作到身体受不了。",
+      "pinyin": "",
+      "vi": "Bố mẹ không muốn cô ấy vì ra nước ngoài mà làm đến mức cơ thể chịu không nổi.",
+      "analysis_vi": "V 到 + hậu quả diễn tả mức độ.",
+      "highlight": [
+        "拼命"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "33b4ea08-801c-4a0f-8a3d-96324033cda4"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "拼命学习/工作 phản ánh cạnh tranh học hành, nhưng cũng có sắc thái quá sức.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "19f6d233-3571-4f6a-a753-53ec2d23b97a",
+      "order": 1,
+      "rule_vi": "Không dùng 拼命 cho việc nhẹ nếu không muốn nói quá.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拼命",
+    "back": "liều mạng; hết sức, cật lực",
+    "hint": "pīnmìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_025"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "33b4ea08-801c-4a0f-8a3d-96324033cda4",
+    "source_lesson_vocab_id": null
+  }
+}

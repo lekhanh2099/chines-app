@@ -1,0 +1,425 @@
+{
+  "id": "5fcf867b-2c06-4140-9a1c-b9641c781ccb",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "鲜花",
+  "pinyin": "xiānhuā",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "nature",
+    "spring"
+  ],
+  "meaning": {
+    "hanviet": "tiên hoa",
+    "meaning_vi": "hoa tươi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hoa tươi"
+    ],
+    "short_definition_vi": "hoa tươi",
+    "textbook_focus_vi": "hoa tươi",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "nature, spring",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鲜",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "羊",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dương",
+          "radical_name_zh": "",
+          "hanviet": "dương",
+          "meaning_vi": "dê/cừu; cũng gặp trong chữ liên quan tốt đẹp",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "鱼",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "dê/cừu; cũng gặp trong chữ liên quan tốt đẹp",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羊",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dương",
+              "radical_name_zh": "",
+              "hanviet": "dương",
+              "meaning_vi": "dê/cừu; cũng gặp trong chữ liên quan tốt đẹp",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tươi, mới, ngon",
+        "modern_logic_vi": "Trong từ này, 鲜 góp phần vào lớp nghĩa hiện đại: tươi, mới, ngon",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "花",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây, thực vật",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây, thực vật",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây, thực vật",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "化",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoa; tiêu tiền tùy cụm",
+        "modern_logic_vi": "Trong từ này, 花 góp phần vào lớp nghĩa hiện đại: hoa; tiêu tiền tùy cụm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "鲜 = tươi/mới; 花 = hoa. 鲜花 là hoa tươi, còn sức sống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "花儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "花朵",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "假花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "干花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "假花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "干花",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0b12ec6d-c223-4994-8d02-643d6da9fc95",
+      "order": 1,
+      "zh": "一束鲜花",
+      "pinyin": "",
+      "vi": "một bó hoa tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "129bc991-8859-41bc-afdd-5429ded7b7fa",
+      "order": 2,
+      "zh": "买鲜花",
+      "pinyin": "",
+      "vi": "mua hoa tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bf0aa7d8-257b-4ba5-839a-c1a79206841d",
+      "order": 3,
+      "zh": "送鲜花",
+      "pinyin": "",
+      "vi": "tặng hoa tươi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e1b45d0-510d-4e87-a5c9-fe932ae8128c",
+      "order": 4,
+      "zh": "摆满鲜花",
+      "pinyin": "",
+      "vi": "bày đầy hoa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8d406a8-0ec6-4ad5-823b-b4c472270fb1",
+      "order": 5,
+      "zh": "开满鲜花",
+      "pinyin": "",
+      "vi": "nở đầy hoa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dea708a1-5499-437d-880f-5d77cee45927",
+      "order": 6,
+      "zh": "鲜花盛开",
+      "pinyin": "",
+      "vi": "hoa nở rộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "48eeae3d-387c-4729-a9ed-05430c230338",
+      "order": 1,
+      "zh": "桌子上放着一束鲜花。",
+      "pinyin": "",
+      "vi": "Trên bàn đặt một bó hoa tươi.",
+      "analysis_vi": "放着 chỉ trạng thái.",
+      "highlight": [
+        "鲜花"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5fcf867b-2c06-4140-9a1c-b9641c781ccb"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2edb910d-a052-41ed-87a6-72fe11931b00",
+      "order": 2,
+      "zh": "春天一到，大街上就开满了鲜花。",
+      "pinyin": "",
+      "vi": "Mùa xuân vừa đến, trên phố nở đầy hoa.",
+      "analysis_vi": "开满了 = nở đầy.",
+      "highlight": [
+        "鲜花"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5fcf867b-2c06-4140-9a1c-b9641c781ccb"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "944f250a-c885-44c9-b86d-60c1232e1177",
+      "order": 3,
+      "zh": "公园里充满了阳光和鲜花。",
+      "pinyin": "",
+      "vi": "Trong công viên tràn đầy ánh nắng và hoa tươi.",
+      "analysis_vi": "充满了 + danh từ.",
+      "highlight": [
+        "鲜花"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5fcf867b-2c06-4140-9a1c-b9641c781ccb"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "鲜花 trong Bài 3 北京的四季",
+    "content_vi": "送鲜花 phổ biến trong sinh nhật, thăm bệnh, tốt nghiệp, khai trương.",
+    "tags": [
+      "nature",
+      "spring"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9512af41-62ea-48b4-80e6-9856b4ebdd98",
+      "order": 1,
+      "rule_vi": "花 có nhiều nghĩa: hoa, tiêu tiền, hoa văn; 鲜花 chỉ hoa tươi.",
+      "natural_examples": [
+        {
+          "zh": "桌子上放着一束鲜花。",
+          "pinyin": "",
+          "vi": "Trên bàn đặt một bó hoa tươi.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "花 có nhiều nghĩa: hoa, tiêu tiền, hoa văn; 鲜花 chỉ hoa tươi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "鲜花",
+    "back": "hoa tươi",
+    "hint": "xiānhuā",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "nature",
+      "spring"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5fcf867b-2c06-4140-9a1c-b9641c781ccb",
+    "source_lesson_vocab_id": null
+  }
+}

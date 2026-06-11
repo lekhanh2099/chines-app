@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_efbadc08079fec7f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "戒烟",
+  "pinyin": "jièyān",
+  "meaning_vi": "bỏ thuốc lá",
+  "pos": "Động từ li hợp",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
+    "type": "vocabulary_item",
+    "order": 48,
+    "hanzi": "戒烟",
+    "pinyin": "jièyān",
+    "meaning_vi": "bỏ thuốc lá",
+    "meaning_en": "",
+    "pos": "Động từ li hợp",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "戒烟",
+      "back": "jièyān — bỏ thuốc lá",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/uploaded_crosscheck",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

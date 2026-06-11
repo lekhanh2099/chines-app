@@ -41,7 +41,7 @@
         "zh": "你怎么了？",
         "vi": "Anh/chị bị sao vậy?",
         "pinyin": "Nǐ zěnme le?",
-        "grammar_refs": ["grammar_03_note_ni_zenmele"]
+        "grammar_refs": ["63d654f5-4561-4d48-a144-bacbf9671dfc"]
        },
        {
         "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
@@ -99,7 +99,7 @@
         ],
         "grammar_refs": [
          "f8ec59f3-898a-47b2-b536-44dfd8183393",
-         "grammar_03_note_jiu"
+         "7e2ee128-4fbd-4a93-898c-5f5fd99b371b"
         ]
        },
        {
@@ -265,7 +265,7 @@
         ],
         "grammar_refs": [
          "f8ec59f3-898a-47b2-b536-44dfd8183393",
-         "grammar_03_note_ni_zenmele"
+         "63d654f5-4561-4d48-a144-bacbf9671dfc"
         ]
        },
        {
@@ -332,7 +332,7 @@
          "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
         ],
         "grammar_refs": [
-         "grammar_03_note_tiaotiaowu",
+         "d85c63bd-7607-4517-874a-7a596fc80b7d",
          "32221e32-5abd-40ef-abc1-2fa1076bc342"
         ]
        },
@@ -351,10 +351,7 @@
         "zh": "吃了晚饭就去吧。你在宿舍等我，我来叫你。",
         "vi": "Ăn tối xong thì đi nhé. Cậu đợi tớ ở ký túc xá, tớ sẽ đến gọi cậu.",
         "pinyin": "Chī le wǎnfàn jiù qù ba. Nǐ zài sùshè děng wǒ, wǒ lái jiào nǐ.",
-        "grammar_refs": [
-         "f8ec59f3-898a-47b2-b536-44dfd8183393",
-         "grammar_03_helper_jiu_after_action"
-        ]
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"]
        },
        {
         "id": "f7419a05-c714-4cff-ae26-210852d56303",
@@ -393,12 +390,7 @@
       "flashcard": {
        "front": "病",
        "back": "bìng — bệnh; ốm; bị bệnh",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -429,12 +421,7 @@
       "flashcard": {
        "front": "病人",
        "back": "bìngrén — bệnh nhân; người bệnh",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -465,12 +452,7 @@
       "flashcard": {
        "front": "肚子",
        "back": "dùzi — bụng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -501,12 +483,7 @@
       "flashcard": {
        "front": "厉害",
        "back": "lìhai — dữ dội; nghiêm trọng; lợi hại/giỏi tùy ngữ cảnh",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -537,12 +514,7 @@
       "flashcard": {
        "front": "了",
        "back": "le — trợ từ biểu thị hoàn thành hoặc thay đổi tình huống",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -573,12 +545,7 @@
       "flashcard": {
        "front": "害",
        "back": "hài — hại; gây hại; yếu tố trong 厉害",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -609,12 +576,7 @@
       "flashcard": {
        "front": "片",
        "back": "piàn — viên; lát; mảnh; lượng từ cho vật mỏng/thuốc viên",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -645,12 +607,7 @@
       "flashcard": {
        "front": "拉肚子",
        "back": "lā dùzi — tiêu chảy; bị đi ngoài",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -681,12 +638,7 @@
       "flashcard": {
        "front": "拉",
        "back": "lā — kéo; lôi; trong 拉肚子 nghĩa là đi ngoài/tiêu chảy",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -717,12 +669,7 @@
       "flashcard": {
        "front": "鱼",
        "back": "yú — cá",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -753,12 +700,7 @@
       "flashcard": {
        "front": "牛肉",
        "back": "niúròu — thịt bò",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -789,12 +731,7 @@
       "flashcard": {
        "front": "化验",
        "back": "huàyàn — xét nghiệm; kiểm nghiệm bằng mẫu",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -825,12 +762,7 @@
       "flashcard": {
        "front": "检查",
        "back": "jiǎnchá — kiểm tra; khám",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -861,12 +793,7 @@
       "flashcard": {
        "front": "大便",
        "back": "dàbiàn — đại tiện; phân",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -897,12 +824,7 @@
       "flashcard": {
        "front": "小便",
        "back": "xiǎobiàn — tiểu tiện; nước tiểu",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -933,12 +855,7 @@
       "flashcard": {
        "front": "结果",
        "back": "jiéguǒ — kết quả",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -969,12 +886,7 @@
       "flashcard": {
        "front": "出来",
        "back": "chūlai — đi ra; xuất hiện; có kết quả",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1005,12 +917,7 @@
       "flashcard": {
        "front": "得",
        "back": "dé — mắc; bị; đạt được; cũng đọc de/děi ở chức năng khác",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1041,12 +948,7 @@
       "flashcard": {
        "front": "肠炎",
        "back": "chángyán — viêm ruột",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1077,12 +979,7 @@
       "flashcard": {
        "front": "消化",
        "back": "xiāohuà — tiêu hóa",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1113,12 +1010,7 @@
       "flashcard": {
        "front": "开（药）",
        "back": "kāi (yào) — kê thuốc",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1149,12 +1041,7 @@
       "flashcard": {
        "front": "打针",
        "back": "dǎ zhēn — tiêm; chích thuốc",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1185,12 +1072,7 @@
       "flashcard": {
        "front": "后",
        "back": "hòu — sau; phía sau; về sau",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1221,12 +1103,7 @@
       "flashcard": {
        "front": "哭",
        "back": "kū — khóc",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1257,12 +1134,7 @@
       "flashcard": {
        "front": "寂寞",
        "back": "jìmò — cô đơn; lẻ loi",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1293,12 +1165,7 @@
       "flashcard": {
        "front": "所以",
        "back": "suǒyǐ — cho nên; vì vậy",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1329,12 +1196,7 @@
       "flashcard": {
        "front": "难过",
        "back": "nánguò — buồn; khó chịu; đau lòng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1365,12 +1227,7 @@
       "flashcard": {
        "front": "别",
        "back": "bié — đừng; không nên",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1401,12 +1258,7 @@
       "flashcard": {
        "front": "礼堂",
        "back": "lǐtáng — lễ đường; hội trường",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1437,12 +1289,7 @@
       "flashcard": {
        "front": "舞会",
        "back": "wǔhuì — buổi khiêu vũ; vũ hội",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1473,12 +1320,7 @@
       "flashcard": {
        "front": "跳舞",
        "back": "tiào wǔ — nhảy múa; khiêu vũ",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1509,12 +1351,7 @@
       "flashcard": {
        "front": "发烧",
        "back": "fāshāo — sốt; bị sốt",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1545,12 +1382,7 @@
       "flashcard": {
        "front": "嗓子",
        "back": "sǎngzi — cổ họng; giọng",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -1581,12 +1413,7 @@
       "flashcard": {
        "front": "出汗",
        "back": "chū hàn — ra mồ hôi; đổ mồ hôi",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
+       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]
       },
       "audio_key": "",
       "source_origin": "textbook",
@@ -2134,23 +1961,11 @@
        {
         "id": "6b4e5107-3092-431d-ac0c-d302df1317fc",
         "model": ["A：你吃饭了没有？ / 你吃没吃饭？", "B：吃了。"],
-        "items": [
-         "吃 — 药",
-         "发 — 微信",
-         "换 — 钱",
-         "喝 — 酒",
-         "买 — 报纸",
-         "去 — 礼堂"
-        ]
+        "items": ["吃 — 药", "发 — 微信", "换 — 钱", "喝 — 酒", "买 — 报纸", "去 — 礼堂"]
        },
        {
         "id": "2f244631-33e7-46fb-9864-aa5e7089e11d",
-        "model": [
-         "A：你吃什么了？",
-         "B：我吃饺子了。",
-         "A：吃了多少？",
-         "B：我只吃了10个。"
-        ],
+        "model": ["A：你吃什么了？", "B：我吃饺子了。", "A：吃了多少？", "B：我只吃了10个。"],
         "items": [
          "带 — 药 — 2 — 瓶",
          "要 — 啤酒 — 2 — 瓶",
@@ -2162,14 +1977,7 @@
        {
         "id": "b760e557-27ca-4e81-80b2-6bb0e9425201",
         "model": ["A：你什么时候去？", "B：我吃了饭就去。"],
-        "items": [
-         "下了课",
-         "买了书",
-         "换了衣服",
-         "做了练习",
-         "打了球",
-         "看了电影"
-        ]
+        "items": ["下了课", "买了书", "换了衣服", "做了练习", "打了球", "看了电影"]
        }
       ],
       "rendering": {
@@ -2720,11 +2528,7 @@
         "id": "3436bbad-84b4-4084-b853-b0ad41065a9f",
         "title": "劝慰",
         "title_vi": "An ủi / khuyên nhủ",
-        "lines": [
-         "A：你怎么哭了？",
-         "B：心情不太好。",
-         "A：别难过了。我们去看电影吧。"
-        ]
+        "lines": ["A：你怎么哭了？", "B：心情不太好。", "A：别难过了。我们去看电影吧。"]
        },
        {
         "id": "fe477f44-fd91-46ba-b6c9-2ed8d5c3da5c",

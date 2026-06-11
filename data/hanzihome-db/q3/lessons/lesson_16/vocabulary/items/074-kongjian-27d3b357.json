@@ -1,0 +1,163 @@
+{
+  "id": "b9981907-a8f4-4949-b9b7-cc6d4c1dc6fa",
+  "type": "deep_vocabulary_item",
+  "order": 74,
+  "hanzi": "空间",
+  "pinyin": "kōngjiān",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Hàng không vũ trụ và quan sát"
+  ],
+  "meaning": {
+    "hanviet": "Không gian",
+    "meaning_vi": "không gian; không gian vũ trụ trong ngữ cảnh bài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không gian",
+      "không gian vũ trụ trong ngữ cảnh bài"
+    ],
+    "short_definition_vi": "không gian; không gian vũ trụ trong ngữ cảnh bài",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: không gian; không gian vũ trụ trong ngữ cảnh bài.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Hàng không vũ trụ và quan sát",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "空",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "间",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "空间 trong bài được học theo nghĩa trọng tâm: không gian; không gian vũ trụ trong ngữ cảnh bài.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: không gian; không gian vũ trụ trong ngữ cảnh bài.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e9e98b88-286f-4e53-b7d5-10dd4aaa814a",
+      "order": 1,
+      "zh": "教授，这些和我们金星人的空间计划有没有联系？",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: không gian; không gian vũ trụ trong ngữ cảnh bài",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ba43fec9-2f3d-434a-88a3-6758e49b1776",
+      "order": 1,
+      "zh": "教授，这些和我们金星人的空间计划有没有联系？",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “空间” = không gian; không gian vũ trụ trong ngữ cảnh bài.",
+      "analysis_vi": "Câu này dùng “空间” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "空间"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b9981907-a8f4-4949-b9b7-cc6d4c1dc6fa"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “空间” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a90dec65-4456-44dc-8228-9d6ca31190f6",
+      "order": 1,
+      "rule_vi": "Cần dùng “空间” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "空间",
+    "back": "không gian; không gian vũ trụ trong ngữ cảnh bài",
+    "hint": "kōngjiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Hàng không vũ trụ và quan sát"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b9981907-a8f4-4949-b9b7-cc6d4c1dc6fa",
+    "source_lesson_vocab_id": null
+  }
+}

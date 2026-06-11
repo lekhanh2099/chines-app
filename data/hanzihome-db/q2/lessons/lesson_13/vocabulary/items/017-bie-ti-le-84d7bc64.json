@@ -1,0 +1,324 @@
+{
+  "id": "32801fdd-6593-41d8-b677-71b9880294f1",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "别提了",
+  "pinyin": "bié tí le",
+  "pos": {
+    "raw_vi": "Cụm khẩu ngữ cố định",
+    "raw_cn": "口语固定短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "quyen2-ha",
+    "lesson13",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Biệt đề liễu",
+    "meaning_vi": "thôi đừng nhắc nữa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thôi đừng nhắc nữa"
+    ],
+    "short_definition_vi": "thôi đừng nhắc nữa",
+    "textbook_focus_vi": "Âm Hán Việt: biệt đề liễu Nghĩa: Thôi đừng nhắc nữa. Dùng khi chuyện đó quá xui, quá phiền, quá khó nói hoặc khiến người nói bực/buồn.",
+    "register_vi": "khẩu ngữ, cảm xúc mạnh, thường dùng với chuyện không vui.",
+    "usage_domain_vi": "Bài 13: ảnh, sự cố, giao thông, nguyên nhân, đô thị.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "别",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng/âm thanh",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao/cắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khác; đừng",
+        "modern_logic_vi": "Trong 别提了, 别 là “đừng”.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "提",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay/thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "是",
+            "hanviet": "thị",
+            "meaning_vi": "phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhấc lên, nêu ra, đề cập",
+        "modern_logic_vi": "提 trong 别提了 là đề cập/nhắc tới.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "了",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trợ từ ngữ khí",
+        "modern_logic_vi": "了 làm câu mềm và hoàn chỉnh hơn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "别 là đừng. 提 là nhắc tới, đề cập. 了 ở đây làm câu có sắc thái dừng lại/thay đổi, tạo cảm giác “thôi, đừng nhắc nữa”. → 别提了 = đừng nhắc chuyện đó nữa.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "算了 (suàn le)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thôi bỏ đi, không tiếp tục nữa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "别提了 (bié tí le): thôi đừng nhắc nữa, thường vì chuyện xui/phiền.",
+      "别说了 (bié shuō le): đừng nói nữa, trực tiếp hơn.",
+      "说来话长 (shuō lái huà cháng): nói ra thì dài lắm, chuyện phức tạp.",
+      "→ Phân biệt nhanh: 别提了 thường kéo theo kể chuyện xui; 算了 là bỏ qua/không muốn xử lý nữa."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9b6a6ca4-4562-4944-8a12-a956f22a8a2e",
+      "order": 1,
+      "zh": "别提了，太倒霉了",
+      "pinyin": "",
+      "vi": "thôi đừng nhắc, xui quá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b8bbb994-dbaf-4b30-a3f9-b9364201f5da",
+      "order": 2,
+      "zh": "别提这件事了",
+      "pinyin": "",
+      "vi": "đừng nhắc chuyện này nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "625733b4-2afe-4fb6-85ee-01e3fb0a6090",
+      "order": 3,
+      "zh": "一提就生气",
+      "pinyin": "",
+      "vi": "nhắc tới là tức",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "746394e9-17db-4f6f-90aa-99eacff8d925",
+      "order": 4,
+      "zh": "[Khẩu ngữ] 别提有多麻烦了",
+      "pinyin": "",
+      "vi": "khỏi nói phiền đến mức nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b46e9db4-83bc-471d-8722-5a22752bb883",
+      "order": 1,
+      "zh": "别提了，我的眼镜儿掉在地上，摔坏了。",
+      "pinyin": "Bié tí le, wǒ de yǎnjìngr diào zài dì shàng, shuāi huài le.",
+      "vi": "Thôi đừng nhắc nữa, kính của tôi rơi xuống đất rồi hỏng luôn.",
+      "analysis_vi": "眼镜儿掉在地上，摔坏了 kể sự cố theo chuỗi kết quả rất tự nhiên.",
+      "highlight": [
+        "别提了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32801fdd-6593-41d8-b677-71b9880294f1"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0a02a969-e692-4550-bf8c-0f3940812c5c",
+      "order": 2,
+      "zh": "别提了，照片洗出来以后，张张都不清楚。",
+      "pinyin": "Bié tí le, zhàopiàn xǐ chūlai yǐhòu, zhāngzhāng dōu bù qīngchu.",
+      "vi": "Thôi đừng nhắc nữa, ảnh rửa ra xong tấm nào cũng không rõ.",
+      "analysis_vi": "张张都 nhấn mạnh không có tấm nào ngoại lệ; câu có sắc thái than phiền rõ.",
+      "highlight": [
+        "别提了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32801fdd-6593-41d8-b677-71b9880294f1"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "51a02b6c-bfda-445c-a81c-531cebe320df",
+      "order": 3,
+      "zh": "别人问你今天怎么样，如果真的很倒霉，可以先说“别提了”，再慢慢儿解释。",
+      "pinyin": "Biérén wèn nǐ jīntiān zěnmeyàng, rúguǒ zhēn de hěn dǎoméi, kěyǐ xiān shuō “bié tí le”, zài mànmānr jiěshì.",
+      "vi": "Người khác hỏi hôm nay bạn thế nào, nếu thật sự rất xui, có thể nói “thôi đừng nhắc nữa” trước, rồi từ từ giải thích.",
+      "analysis_vi": "Câu này định vị 别提了 như một phản ứng mở đầu câu chuyện xui xẻo.",
+      "highlight": [
+        "别提了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "32801fdd-6593-41d8-b677-71b9880294f1"
+      ],
+      "source_ref": "current_thread_or_structured_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "别提了 rất giống tiếng Việt “thôi đừng nhắc nữa”, thường mở đầu một màn kể khổ. Nó tạo cảm giác thân mật, đời thường, không hợp văn viết trang trọng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4770d208-f4ed-474d-9933-39b3bd62b3a8",
+      "order": 1,
+      "rule_vi": "Dùng 别提了 trong email hoặc văn bản trang trọng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 别提了 trong email hoặc văn bản trang trọng. Khẩu ngữ: 别提了，今天太倒霉了。 Bié tí le, jīntiān tài dǎoméi le. Thôi đừng nhắc nữa, hôm nay xui quá. Trang trọng hơn: 今天发生了一些不太顺利的事情。 Jīntiān fāshēng le yìxiē bú tài shùnlì de shìqing.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "别提了",
+    "back": "thôi đừng nhắc nữa",
+    "hint": "bié tí le",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson13",
+      "别提了"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "32801fdd-6593-41d8-b677-71b9880294f1",
+    "source_lesson_vocab_id": null
+  }
+}

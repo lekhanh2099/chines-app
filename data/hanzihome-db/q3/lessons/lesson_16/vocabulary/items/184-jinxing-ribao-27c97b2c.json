@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_445f65a6e9d4f8cb",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "《金星日报》",
+  "pinyin": "Jīnxīng Rìbào",
+  "meaning_vi": "《Nhật báo sao Kim》; tên tờ báo trong bài",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "392aa5a7-f3ea-47db-8f4e-4983b2b625bc",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "392aa5a7-f3ea-47db-8f4e-4983b2b625bc",
+    "type": "proper_noun",
+    "order": 3,
+    "hanzi": "《金星日报》",
+    "pinyin": "Jīnxīng Rìbào",
+    "meaning_vi": "《Nhật báo sao Kim》; tên tờ báo trong bài",
+    "meaning_en": "Venus Daily; title of a newspaper",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

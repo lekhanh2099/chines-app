@@ -1,0 +1,213 @@
+{
+  "id": "1720ca79-8343-489e-b367-fc416a559274",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "转交",
+  "pinyin": "zhuǎnjiāo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "chuyển giao",
+    "meaning_vi": "chuyển giúp, chuyển tận tay cho người khác",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuyển giúp",
+      "chuyển tận tay cho người khác"
+    ],
+    "short_definition_vi": "chuyển giúp, chuyển tận tay cho người khác",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "转",
+        "lishu_vi": "chuyển",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "转 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "交",
+        "lishu_vi": "giao",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "交 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "转交 trong bài được học theo nghĩa: chuyển giúp, chuyển tận tay cho người khác.",
+    "memory_tip_vi": "Nhớ 转交 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "交给",
+        "pinyin": "jiāo gěi",
+        "meaning_vi": "giao cho",
+        "difference_vi": "Có thể trực tiếp; 转交 nhấn qua trung gian.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "转交 là chuyển qua người trung gian; không đồng nhất với giao trực tiếp 交给."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d3be2551-852e-48d5-9594-bad34c66c8f6",
+      "order": 1,
+      "zh": "转交给他",
+      "pinyin": "",
+      "vi": "chuyển cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "904ca5c4-ef66-4d44-8099-619a187894be",
+      "order": 2,
+      "zh": "请你转交",
+      "pinyin": "",
+      "vi": "nhờ bạn chuyển giúp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ba2cd58-1af6-4150-880d-3c15d881f83a",
+      "order": 3,
+      "zh": "把信转交给老师",
+      "pinyin": "",
+      "vi": "chuyển thư cho thầy/cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2efb4686-ccd6-4dd0-babf-0612f6e2e584",
+      "order": 1,
+      "zh": "这封信请你转交给老师。",
+      "pinyin": "",
+      "vi": "Lá thư này nhờ bạn chuyển cho thầy/cô.",
+      "analysis_vi": "请你 + V là nhờ lịch sự.",
+      "highlight": [
+        "转交"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1720ca79-8343-489e-b367-fc416a559274"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4debbc8f-ce8a-49ed-982d-5344c6a8cb9b",
+      "order": 2,
+      "zh": "祝英台把手镯交给师母，请她转交给梁山伯。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài đưa vòng tay cho sư mẫu, nhờ bà chuyển cho Lương Sơn Bá.",
+      "analysis_vi": "交给 người trung gian; 转交给 người nhận cuối.",
+      "highlight": [
+        "转交"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1720ca79-8343-489e-b367-fc416a559274"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Tín vật/thư thường được chuyển qua người trung gian trong truyện tình cổ.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fcdb9ee2-ea68-4685-b19a-2c266380429e",
+      "order": 1,
+      "rule_vi": "转交 là chuyển qua người trung gian; không đồng nhất với giao trực tiếp 交给.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "转交",
+    "back": "chuyển giúp, chuyển tận tay cho người khác",
+    "hint": "zhuǎnjiāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1720ca79-8343-489e-b367-fc416a559274",
+    "source_lesson_vocab_id": null
+  }
+}

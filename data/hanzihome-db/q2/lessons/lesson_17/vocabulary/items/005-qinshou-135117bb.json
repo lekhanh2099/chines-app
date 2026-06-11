@@ -1,0 +1,362 @@
+{
+  "id": "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "亲手",
+  "pinyin": "qīnshǒu",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Thân thủ",
+    "meaning_vi": "tự tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự tay"
+    ],
+    "short_definition_vi": "tự tay",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "giàu cảm xúc hơn chỉ nói 自己.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "立",
+            "hanviet": "lập",
+            "meaning_vi": "đứng/lập",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, gần gũi, đích thân",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay, người làm việc, kỹ năng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲 là thân, chính mình, gần gũi. 手 là tay. → 亲手 = bằng chính tay mình. Cảnh báo: 亲手 chỉ hợp với hành động có thể do người đó trực tiếp làm. Không dùng cho trạng thái hoặc ý nghĩ thuần túy.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "亲手",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tự tay, nhấn hành động trực tiếp bằng chính mình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "自己",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tự mình, rộng hơn, có thể nói quyết định, suy nghĩ, làm việc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲自",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đích thân, trang trọng hơn, không nhất thiết bằng tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "手工",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thủ công, làm bằng tay, nói cách sản xuất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 亲手包礼物 = tự tay gói quà; 亲自来 = đích thân đến."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0af4f1c1-e92e-43bb-b069-2926ccd922a8",
+      "order": 1,
+      "zh": "亲手做",
+      "pinyin": "",
+      "vi": "tự tay làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f4500c2-95ef-479f-9e89-d05f7d6a4302",
+      "order": 2,
+      "zh": "亲手包礼物",
+      "pinyin": "",
+      "vi": "tự tay gói quà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f301a754-dcfb-456f-87db-022e2931e06a",
+      "order": 3,
+      "zh": "亲手布置",
+      "pinyin": "",
+      "vi": "tự tay trang trí/bố trí",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16ece2d3-5b92-4533-8e66-242e7bccee08",
+      "order": 4,
+      "zh": "亲手写的字",
+      "pinyin": "",
+      "vi": "chữ tự tay viết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e96e9133-61b0-48fa-b8d7-469d04c2370f",
+      "order": 1,
+      "zh": "这个“福”字是爷爷亲手写的。",
+      "pinyin": "Zhège “Fú” zì shì yéye qīnshǒu xiě de.",
+      "vi": "Chữ “Phúc” này là do ông nội tự tay viết.",
+      "analysis_vi": "是……的 nhấn người thực hiện; 亲手写 tăng sắc thái tình cảm.",
+      "highlight": [
+        "亲手"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8e22ace4-1c48-4c39-a13b-f2bc94462a6f",
+      "order": 2,
+      "zh": "她把礼物亲手包好，然后悄悄放在桌子上。",
+      "pinyin": "Tā bǎ lǐwù qīnshǒu bāo hǎo, ránhòu qiāoqiāo fàng zài zhuōzi shang.",
+      "vi": "Cô ấy tự tay gói quà xong, rồi lặng lẽ đặt lên bàn.",
+      "analysis_vi": "把礼物包好 là câu chữ 把 có kết quả 好; 亲手 nhấn tự mình làm.",
+      "highlight": [
+        "亲手"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6ed75e4f-ffdb-48e9-b722-29a24ec21aed",
+      "order": 3,
+      "zh": "班长说，这次会场最好由我们亲手布置。",
+      "pinyin": "Bānzhǎng shuō, zhè cì huìchǎng zuìhǎo yóu wǒmen qīnshǒu bùzhì.",
+      "vi": "Lớp trưởng nói, hội trường lần này tốt nhất nên do chúng tôi tự tay bố trí.",
+      "analysis_vi": "由我们亲手布置 nhấn nhóm tự làm, không nhờ người khác.",
+      "highlight": [
+        "亲手"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 亲手",
+    "content_vi": "Trong dịp Tết, đồ 亲手 làm thường có giá trị tình cảm: tự tay viết chữ 福, tự tay dán câu đối, tự tay gói quà. Giá trị không nằm ở tiền, mà nằm ở công sức và tâm ý.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "597f1a71-2ab5-4bd2-9580-def3be966ade",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 亲手 với 亲自. 我亲手写了这张卡片。 Wǒ qīnshǒu xiě le zhè zhāng kǎpiàn. Tôi tự tay viết tấm thiệp này. 校长亲自来了。 Xiàozhǎng qīnzì lái le. Hiệu trưởng đích thân đến.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲手",
+    "back": "tự tay",
+    "hint": "qīnshǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "id": "0b9a929c-f349-4b4c-b67a-83e05f5ea274",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "散",
+  "pinyin": "sàn / sǎn",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动/形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab",
+    "number_culture"
+  ],
+  "meaning": {
+    "hanviet": "Tán",
+    "meaning_vi": "tan, giải tán; rời rạc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tan, giải tán",
+      "rời rạc"
+    ],
+    "short_definition_vi": "tan, giải tán; rời rạc",
+    "textbook_focus_vi": "Âm Hán Việt: tán.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "散",
+        "lishu_vi": "tán/tản",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tan, giải tán; rời rạc khi đọc sǎn",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "散 sàn = tan ra, giải tán, chia lìa. 散 sǎn = rời rạc, lẻ, không đóng gói/tập trung.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: với văn hóa số, cần nhớ 三 sān và 散 sàn không đồng âm hoàn toàn về thanh điệu, nhưng đủ gần để tạo liên tưởng kiêng kỵ trong một số ngữ cảnh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "散",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tan, giải tán, rời rạc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "分开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tách ra, chia ra.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "离开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "rời khỏi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "结束",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kết thúc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "散会",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tan họp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 会散了 = cuộc họp tan rồi.",
+      "→ 他们分开了 = họ chia tay/tách ra rồi.",
+      "→ 宴会结束了 = yến tiệc kết thúc rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9beda713-767d-4218-a1f7-f5635c1d497f",
+      "order": 1,
+      "zh": "散了",
+      "pinyin": "",
+      "vi": "tan rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10c0cc2c-e6df-41ad-8906-c7811b5691a3",
+      "order": 2,
+      "zh": "散会",
+      "pinyin": "",
+      "vi": "tan họp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e5d5ce2-318f-4303-96cf-ee36f4c1a176",
+      "order": 3,
+      "zh": "队伍散了",
+      "pinyin": "",
+      "vi": "đội ngũ tan ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c9ae131-79e0-44b2-b897-730b3242c604",
+      "order": 4,
+      "zh": "感情散了",
+      "pinyin": "",
+      "vi": "tình cảm tan rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bedbe269-be4c-4e53-88ba-ccbb2a0d1b1a",
+      "order": 5,
+      "zh": "不要散",
+      "pinyin": "",
+      "vi": "đừng tan rã / đừng tản ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4b106446-611a-4ee9-a768-ca5b38065e32",
+      "order": 1,
+      "zh": "宴会散了，客人们都回家了。",
+      "pinyin": "Yànhuì sàn le, kèrénmen dōu huí jiā le.",
+      "vi": "Yến tiệc tan rồi, khách đều về nhà rồi.",
+      "analysis_vi": "散了 ở đây nghĩa là buổi tụ họp kết thúc, mọi người rời đi.",
+      "highlight": [
+        "散"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0b9a929c-f349-4b4c-b67a-83e05f5ea274"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "953136d0-c09e-4a4e-81c3-599e523f874f",
+      "order": 2,
+      "zh": "他们的感情不是一天散的，而是一次次误会以后慢慢变淡的。",
+      "pinyin": "Tāmen de gǎnqíng bú shì yì tiān sàn de, ér shì yí cì cì wùhuì yǐhòu mànman biàn dàn de.",
+      "vi": "Tình cảm của họ không phải tan trong một ngày, mà là sau từng lần hiểu lầm thì dần phai nhạt.",
+      "analysis_vi": "不是……而是…… sửa cách hiểu. 一次次 nhấn nhiều lần. 变淡 là nhạt đi, thay đổi trạng thái.",
+      "highlight": [
+        "散"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0b9a929c-f349-4b4c-b67a-83e05f5ea274"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8443cd7e-0fbf-4962-a8e8-7c433bdfd53e",
+      "order": 3,
+      "zh": "有些人结婚时不喜欢用“三”这个数字，因为它听起来容易让人想到“散”；可是这种说法只是谐音习惯，不能把它当作科学规定。",
+      "pinyin": "Yǒuxiē rén jiéhūn shí bù xǐhuan yòng “sān” zhège shùzì, yīnwèi tā tīng qǐlai róngyì ràng rén xiǎngdào “sàn”; kěshì zhè zhǒng shuōfa zhǐ shì xiéyīn xíguàn, bù néng bǎ tā dàngzuò kēxué guīdìng.",
+      "vi": "Có vài người khi kết hôn không thích dùng con số “3”, vì nó nghe dễ khiến người ta nghĩ đến “tan”; nhưng cách nói này chỉ là thói quen hài âm, không thể xem nó như quy định khoa học.",
+      "analysis_vi": "结婚时 là trạng ngữ thời gian. 听起来 là đánh giá qua âm. 把它当作科学规定 là 把字句 với 当作, nghĩa là xem nó như quy định khoa học.",
+      "highlight": [
+        "散"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0b9a929c-f349-4b4c-b67a-83e05f5ea274"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong một số ngữ cảnh cưới hỏi, số 3 三 sān có thể bị tránh vì liên tưởng đến 散 sàn – tan rã, chia lìa. Nhưng đây là liên tưởng văn hóa/âm đọc, không phải quy tắc bắt buộc; mức độ kiêng tùy người và vùng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9c8194d3-ccfb-4f85-be49-6896752c5f49",
+      "order": 1,
+      "rule_vi": "Không phân biệt hai âm sàn và sǎn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "宴会散了。 Yànhuì sàn le. Yến tiệc tan rồi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "散",
+    "back": "tan, giải tán; rời rạc",
+    "hint": "sàn / sǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab",
+      "number_culture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0b9a929c-f349-4b4c-b67a-83e05f5ea274",
+    "source_lesson_vocab_id": null
+  }
+}

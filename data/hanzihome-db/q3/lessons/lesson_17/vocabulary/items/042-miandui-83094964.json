@@ -1,0 +1,252 @@
+{
+  "id": "17265503-9c9c-4d9b-ab18-e685d65ff648",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "面对",
+  "pinyin": "miànduì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "diện đối",
+    "meaning_vi": "đối mặt, đối diện với",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đối mặt",
+      "đối diện với"
+    ],
+    "short_definition_vi": "đối mặt, đối diện với",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "面",
+        "lishu_vi": "diện",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặt, phía, bề mặt",
+        "modern_logic_vi": "mặt, phía, bề mặt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "对",
+        "lishu_vi": "đối",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "又",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đúng, đối với, đối diện",
+        "modern_logic_vi": "đúng, đối với, đối diện",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "面 là mặt/phía; 对 là đối; 面对 là đưa mặt/ý chí đối diện với người hoặc việc.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 面对学生.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "面临",
+        "pinyin": "miànlín",
+        "meaning_vi": "đứng trước/đối mặt",
+        "difference_vi": "面临 trang trọng hơn, thường nói tình huống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "对着",
+        "pinyin": "duìzhe",
+        "meaning_vi": "hướng vào",
+        "difference_vi": "对着 thiên về vị trí vật lý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "逃避",
+        "pinyin": "táobì",
+        "meaning_vi": "né tránh",
+        "difference_vi": "trái nghĩa",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fb128c35-30ca-46ed-95f5-aadf265714bd",
+      "order": 1,
+      "zh": "面对学生",
+      "pinyin": "miànduì xuésheng",
+      "vi": "đối diện học sinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "102960d5-beb5-43e2-ab99-a3ceeffabfff",
+      "order": 2,
+      "zh": "面对问题",
+      "pinyin": "miànduì wèntí",
+      "vi": "đối mặt vấn đề",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "afcd8873-a5d3-4b8d-9d18-2ea32064b748",
+      "order": 3,
+      "zh": "勇敢面对",
+      "pinyin": "yǒnggǎn miànduì",
+      "vi": "dũng cảm đối mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f41acdde-6e15-47f5-84ae-66ffa7715083",
+      "order": 1,
+      "zh": "他不敢面对那么多学生。",
+      "pinyin": "Tā bù gǎn miànduì nàme duō xuésheng.",
+      "vi": "Anh ấy không dám đối diện nhiều học sinh như vậy.",
+      "analysis_vi": "不敢面对 nêu nỗi sợ trực tiếp.",
+      "highlight": [
+        "面对"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17265503-9c9c-4d9b-ab18-e685d65ff648"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "77f4e156-123d-4413-bb1a-dba96eb6a393",
+      "order": 2,
+      "zh": "当他真正面对学生的时候，才发现他们并不可怕。",
+      "pinyin": "Dāng tā zhēnzhèng miànduì xuésheng de shíhou, cái fāxiàn tāmen bìng bù kěpà.",
+      "vi": "Khi thật sự đối diện học sinh, anh ấy mới phát hiện họ không đáng sợ.",
+      "analysis_vi": "才发现 nhấn nhận ra muộn.",
+      "highlight": [
+        "面对"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "17265503-9c9c-4d9b-ab18-e685d65ff648"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "面对现实/面对问题/面对困难 là nhóm cụm rất hay dùng trong khuyên nhủ và tự sự.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "551c990b-bef3-4dee-8d7c-a946ad97785d",
+      "order": 1,
+      "rule_vi": "Không nhầm 面对 với 对面; 面对 là động từ, 对面 là phía đối diện.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "面对",
+    "back": "đối mặt, đối diện với",
+    "hint": "miànduì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "17265503-9c9c-4d9b-ab18-e685d65ff648",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "id": "543ff860-d9f4-44e8-b8bd-4f51887a072e",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "申请",
+  "pinyin": "shēnqǐng",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动/名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thân thỉnh",
+    "meaning_vi": "xin, đăng ký xin, nộp đơn xin",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xin, đăng ký xin, nộp đơn xin"
+    ],
+    "short_definition_vi": "xin, đăng ký xin, nộp đơn xin",
+    "textbook_focus_vi": "Âm Hán Việt: thân thỉnh.",
+    "register_vi": "thủ tục, hành chính, học bổng, visa, bằng sáng chế, công việc.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "申",
+        "lishu_vi": "thân",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trình bày, khai báo",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "请",
+        "lishu_vi": "thỉnh",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "xanh; thành phần góp âm trong nhiều chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mời, xin, thỉnh cầu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 申请 = trình bày yêu cầu để xin được phê duyệt.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 申请 không phải “hỏi xin miệng” đơn giản. Nó thường có thủ tục, đơn, giấy tờ, điều kiện.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "申请",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nộp đơn xin/đăng ký xin chính thức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "请求",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thỉnh cầu, yêu cầu ai giúp, trang trọng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "请",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mời/xin, rất rộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "报名",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đăng ký tham gia.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "办理",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "làm/thực hiện thủ tục.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 申请签证 = xin visa.",
+      "→ 报名参加比赛 = đăng ký tham gia cuộc thi.",
+      "→ 办理手续 = làm thủ tục."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0bd7e283-22da-4a2e-b795-1196db4699d6",
+      "order": 1,
+      "zh": "申请专利",
+      "pinyin": "",
+      "vi": "xin bằng sáng chế",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54f98356-a9d5-4a71-92db-e3e7d0df883a",
+      "order": 2,
+      "zh": "申请签证",
+      "pinyin": "",
+      "vi": "xin visa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8caa6796-cc6f-4681-abbb-87056d48d053",
+      "order": 3,
+      "zh": "申请学校",
+      "pinyin": "",
+      "vi": "nộp đơn vào trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5c89650-5b30-4970-af21-9d881c4bac3c",
+      "order": 4,
+      "zh": "申请表",
+      "pinyin": "",
+      "vi": "đơn đăng ký/đơn xin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00a65581-60c7-4eed-b592-2d706c91beee",
+      "order": 5,
+      "zh": "提交申请",
+      "pinyin": "",
+      "vi": "nộp đơn xin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4901c6d0-76cf-4bb1-ac27-3634c2167495",
+      "order": 1,
+      "zh": "他正在申请专利。",
+      "pinyin": "Tā zhèngzài shēnqǐng zhuānlì.",
+      "vi": "Anh ấy đang xin bằng sáng chế.",
+      "analysis_vi": "申请专利 là collocation rất quan trọng: xin đăng ký bảo hộ phát minh/sáng chế.",
+      "highlight": [
+        "申请"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "543ff860-d9f4-44e8-b8bd-4f51887a072e"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3ff5ff6f-b51f-4e67-9c56-c1bcdfc02152",
+      "order": 2,
+      "zh": "申请签证材料不够，你怎么可能办得下来呢？",
+      "pinyin": "Shēnqǐng qiānzhèng cáiliào bù gòu, nǐ zěnme kěnéng bàn de xiàlai ne?",
+      "vi": "Xin visa mà hồ sơ không đủ, sao bạn có thể làm xong được?",
+      "analysis_vi": "怎么可能……呢？ là câu hỏi tu từ, gần nghĩa “làm sao mà có thể... được”. 办得下来 là bổ ngữ khả năng, nghĩa là xử lý/làm thủ tục xong được.",
+      "highlight": [
+        "申请"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "543ff860-d9f4-44e8-b8bd-4f51887a072e"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "edceb6a1-0046-4d59-b477-73bba5eb4c98",
+      "order": 3,
+      "zh": "桌子上放着一份申请表和几份材料，他先把重要信息一项项填好，再请老师检查，免得申请被退回来。",
+      "pinyin": "Zhuōzi shang fàngzhe yí fèn shēnqǐngbiǎo hé jǐ fèn cáiliào, tā xiān bǎ zhòngyào xìnxī yí xiàng xiàng tián hǎo, zài qǐng lǎoshī jiǎnchá, miǎnde shēnqǐng bèi tuì huílai.",
+      "vi": "Trên bàn có một đơn đăng ký và vài phần tài liệu, anh ấy trước tiên điền xong từng mục thông tin quan trọng, rồi nhờ thầy/cô kiểm tra, tránh để hồ sơ bị trả lại.",
+      "analysis_vi": "桌子上放着…… là câu tồn hiện. 把信息一项项填好 là 把字句 + lượng từ lặp lại + kết quả 好. 被退回来 là bị động với hướng 回来, nghĩa là bị trả lại.",
+      "highlight": [
+        "申请"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "543ff860-d9f4-44e8-b8bd-4f51887a072e"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung hiện đại, 申请 cực kỳ hay gặp trong đời sống du học và công việc: 申请学校, 申请奖学金, 申请签证, 申请工作. Nó thường kéo theo giấy tờ, điều kiện và quy trình xét duyệt.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "501115c9-089f-45cc-b6da-69713b259264",
+      "order": 1,
+      "rule_vi": "Nhầm 申请 và 报名.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "申请签证。 Shēnqǐng qiānzhèng. Xin visa.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "申请",
+    "back": "xin, đăng ký xin, nộp đơn xin",
+    "hint": "shēnqǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "543ff860-d9f4-44e8-b8bd-4f51887a072e",
+    "source_lesson_vocab_id": null
+  }
+}

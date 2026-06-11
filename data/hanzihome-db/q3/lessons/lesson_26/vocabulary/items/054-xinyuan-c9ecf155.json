@@ -1,0 +1,297 @@
+{
+  "id": "2386ae9e-bdbb-4945-848b-08c56a8615ba",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "心愿",
+  "pinyin": "xīnyuàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "tâm nguyện",
+    "meaning_vi": "tâm nguyện, nguyện vọng trong lòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tâm nguyện",
+      "nguyện vọng trong lòng"
+    ],
+    "short_definition_vi": "tâm nguyện, nguyện vọng trong lòng",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "心",
+        "lishu_vi": "tâm",
+        "structure_note_vi": "Chữ có thành phần/bộ 心; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 心 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "愿",
+        "lishu_vi": "nguyện",
+        "structure_note_vi": "Chữ có thành phần/bộ 心; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 愿 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "心愿 trong bài được học theo nghĩa: tâm nguyện, nguyện vọng trong lòng.",
+    "memory_tip_vi": "Nhớ 心愿 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "愿望",
+        "pinyin": "yuànwàng",
+        "meaning_vi": "nguyện vọng",
+        "difference_vi": "Trung tính hơn; 心愿 tình cảm và sâu hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "心愿 là danh từ; không nói 我心愿去中国."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6ed32b2e-9093-4873-ad90-84805f37440e",
+      "order": 1,
+      "zh": "实现心愿",
+      "pinyin": "",
+      "vi": "thực hiện tâm nguyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf26a083-0c85-4171-bc0a-1ff11ad91f41",
+      "order": 2,
+      "zh": "最后的心愿",
+      "pinyin": "",
+      "vi": "tâm nguyện cuối cùng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ace9df92-684e-47f4-b27f-9c6bdeacf07a",
+      "order": 3,
+      "zh": "诉说心愿",
+      "pinyin": "",
+      "vi": "giãi bày tâm nguyện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7e4f21da-ad63-47e7-8200-fb6ded1d8e9c",
+      "order": 1,
+      "zh": "我的心愿是以后当一名老师。",
+      "pinyin": "",
+      "vi": "Tâm nguyện của tôi là sau này trở thành giáo viên.",
+      "analysis_vi": "我的心愿是…… nêu mong muốn cá nhân.",
+      "highlight": [
+        "心愿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2386ae9e-bdbb-4945-848b-08c56a8615ba"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "42d8d8dc-43b1-4d8e-9151-a2f4da612769",
+      "order": 2,
+      "zh": "祝英台最后的心愿，是能和梁山伯再见一面。",
+      "pinyin": "",
+      "vi": "Tâm nguyện cuối cùng của Chúc Anh Đài là có thể gặp Lương Sơn Bá một lần nữa.",
+      "analysis_vi": "再见一面 = gặp lại một lần.",
+      "highlight": [
+        "心愿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2386ae9e-bdbb-4945-848b-08c56a8615ba"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "心愿 là mong muốn được cất giữ sâu trong lòng, không chỉ mục tiêu thực dụng.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a6309c4d-54db-4e73-be29-0cd3b24722b7",
+      "order": 1,
+      "rule_vi": "心愿 là danh từ; không nói 我心愿去中国.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "心愿",
+    "back": "tâm nguyện, nguyện vọng trong lòng",
+    "hint": "xīnyuàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2386ae9e-bdbb-4945-848b-08c56a8615ba",
+    "source_lesson_vocab_id": null
+  }
+}

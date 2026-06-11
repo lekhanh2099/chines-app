@@ -1,0 +1,339 @@
+{
+  "id": "bcc13085-81f5-4c9f-9a8c-7dc34a6927d8",
+  "type": "deep_vocabulary_item",
+  "order": 7,
+  "hanzi": "顺手",
+  "pinyin": "shùnshǒu",
+  "pos": {
+    "raw_vi": "Phó từ / Tính từ",
+    "raw_cn": "副 / 形",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thuận thủ",
+    "meaning_vi": "tiện tay, thuận tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiện tay",
+      "thuận tay"
+    ],
+    "short_definition_vi": "tiện tay, thuận tay",
+    "textbook_focus_vi": "Làm việc nhỏ ngay lúc thuận tiện, thường liên quan thao tác tay.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "顺",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuận",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "手 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "手 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Làm việc nhỏ ngay lúc thuận tiện, thường liên quan thao tác tay.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 顺手 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "随手",
+        "pinyin": "",
+        "meaning_vi": "tiện tay/tùy tay",
+        "difference_vi": "Có thể hơi tùy tiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "顺便",
+        "pinyin": "",
+        "meaning_vi": "nhân tiện",
+        "difference_vi": "Phạm vi rộng hơn, không nhất thiết bằng tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "方便",
+        "pinyin": "",
+        "meaning_vi": "thuận tiện",
+        "difference_vi": "Tính chất chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ced15aad-dfea-485b-8981-703a367f6251",
+      "order": 1,
+      "zh": "顺手放在桌子上",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "adb055dd-f9ef-4a96-adb0-4c9db2513542",
+      "order": 2,
+      "zh": "顺手关门",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "11fe7826-bf26-457e-b369-ea98b67fdc44",
+      "order": 3,
+      "zh": "顺手拿走",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc726f5d-54bc-4a98-9f7d-3de4b103a8b3",
+      "order": 4,
+      "zh": "顺手把灯关了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9b65535f-7f4a-439c-874b-148dbbfa1aa6",
+      "order": 5,
+      "zh": "用起来很顺手",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fbfb801e-489f-40f4-a9fb-4e3e56dcc259",
+      "order": 1,
+      "zh": "我顺手把蛋糕放在桌子上了。",
+      "pinyin": "",
+      "vi": "Tôi tiện tay đặt bánh lên bàn.",
+      "analysis_vi": "顺手 làm trạng ngữ.",
+      "highlight": [
+        "顺手"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bcc13085-81f5-4c9f-9a8c-7dc34a6927d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0ae8c26-018b-4510-85d2-2c9397cc6ff4",
+      "order": 2,
+      "zh": "出门的时候，请顺手把门锁上。",
+      "pinyin": "",
+      "vi": "Khi ra ngoài, tiện tay khóa cửa lại.",
+      "analysis_vi": "顺手 + 把门锁上 rất tự nhiên.",
+      "highlight": [
+        "顺手"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bcc13085-81f5-4c9f-9a8c-7dc34a6927d8"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "aba9e4be-db3f-4144-aabe-11ffb85e07e5",
+      "order": 1,
+      "rule_vi": "顺手 không thay 顺便 cho mọi việc.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我顺手去超市买水果。",
+          "pinyin": "",
+          "vi": "Kém tự nhiên.",
+          "note_vi": "Đi siêu thị không phải thao tác thuận tay tức thời.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我顺便去超市买水果。",
+          "pinyin": "",
+          "vi": "Tôi tiện thể đi siêu thị mua trái cây.",
+          "note_vi": "顺便 hợp việc nhân tiện đi làm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "顺手",
+    "back": "tiện tay, thuận tay",
+    "hint": "shùnshǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bcc13085-81f5-4c9f-9a8c-7dc34a6927d8",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "id": "958efb1f-c46d-4de9-a1d4-21f38cf4bc8f",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "久久",
+  "pinyin": "jiǔjiǔ",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "cửu cửu",
+    "meaning_vi": "rất lâu, mãi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rất lâu",
+      "mãi"
+    ],
+    "short_definition_vi": "rất lâu, mãi",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "久",
+        "lishu_vi": "cửu",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lâu",
+        "modern_logic_vi": "Trong từ này, 久 góp phần vào nghĩa hiện đại: lâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "久",
+        "lishu_vi": "cửu",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lâu",
+        "modern_logic_vi": "Trong từ này, 久 góp phần vào nghĩa hiện đại: lâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "久久 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 久久不能平静.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng cho hành động chớp nhoáng."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3232e232-6cc5-48a2-990f-62ee8609fd10",
+      "order": 1,
+      "zh": "久久不能平静",
+      "pinyin": "",
+      "vi": "mãi không bình tĩnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68489417-0749-4061-ae71-432e13c6f08a",
+      "order": 2,
+      "zh": "久久没有说话",
+      "pinyin": "",
+      "vi": "rất lâu không nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f1f9dac7-9fac-4627-9f4f-02ede0ca6218",
+      "order": 3,
+      "zh": "久久地看着",
+      "pinyin": "",
+      "vi": "nhìn rất lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "915d86e6-8438-4109-a152-02fd5ad77adc",
+      "order": 1,
+      "zh": "听完这个故事，他久久没有说话。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 久久 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 久久; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "久久"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "958efb1f-c46d-4de9-a1d4-21f38cf4bc8f"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 久久 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6ecd288f-b4f3-4786-89e5-fd9bd3462c0f",
+      "order": 1,
+      "rule_vi": "Không dùng cho hành động chớp nhoáng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "久久",
+    "back": "rất lâu, mãi",
+    "hint": "jiǔjiǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "958efb1f-c46d-4de9-a1d4-21f38cf4bc8f",
+    "source_lesson_vocab_id": null
+  }
+}

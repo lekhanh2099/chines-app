@@ -1,0 +1,408 @@
+{
+  "id": "36dfcfc3-ce8c-4ed1-9a46-e27f5866053e",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "钥匙链",
+  "pinyin": "yàoshi liàn",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Thược thi liên",
+    "meaning_vi": "móc khóa, dây chìa khóa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "móc khóa",
+      "dây chìa khóa"
+    ],
+    "short_definition_vi": "móc khóa, dây chìa khóa",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, mua sắm, quà tặng, đồ lưu niệm.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "钥",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "trăng/tháng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìa khóa/khóa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "钥匙 là chìa khóa. → 钥匙链 = dây/móc dùng để gắn chìa khóa.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "匙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "是",
+            "hanviet": "thị",
+            "meaning_vi": "là/đúng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "匕",
+            "hanviet": "chủy",
+            "meaning_vi": "muỗng/dao nhỏ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chìa/muỗng trong một số từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "钥匙 là chìa khóa. → 钥匙链 = dây/móc dùng để gắn chìa khóa.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      },
+      {
+        "hanzi": "链",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "连",
+            "hanviet": "liên",
+            "meaning_vi": "nối liền",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dây xích, chuỗi, dây nối",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "链 là dây, chuỗi, xích. → 钥匙链 = dây/móc dùng để gắn chìa khóa.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 钥匙链 = dây/móc dùng để gắn chìa khóa.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 钥匙链 là móc khóa; 钥匙 là chìa khóa. Đừng dùng lẫn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "钥匙链 (yàoshi liàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "móc khóa/dây chìa khóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钥匙 (yàoshi)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chìa khóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挂件 (guàjiàn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đồ treo/trang trí treo, có thể treo túi, điện thoại, chìa khóa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "纪念品 (jìniànpǐn)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quà lưu niệm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 钥匙链 có chức năng gắn chìa khóa; 挂件 thiên về đồ treo trang trí; 纪念品 là quà lưu niệm nói theo mục đích."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0db7e786-2bf6-4f8f-9119-1f51f206ae53",
+      "order": 1,
+      "zh": "一个钥匙链",
+      "pinyin": "",
+      "vi": "một cái móc khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "09ae783e-d0ce-43dc-9cb0-d61e88f63d4a",
+      "order": 2,
+      "zh": "脸谱钥匙链",
+      "pinyin": "",
+      "vi": "móc khóa mặt nạ kinh kịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e1df12f-85eb-484e-8849-c5f5df65b196",
+      "order": 3,
+      "zh": "把钥匙挂在钥匙链上",
+      "pinyin": "",
+      "vi": "treo chìa khóa vào móc khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6605a40c-d57a-4544-bc6d-3a282f057140",
+      "order": 4,
+      "zh": "买钥匙链作纪念",
+      "pinyin": "",
+      "vi": "mua móc khóa làm kỷ niệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "de581749-caa3-40ff-a53f-b04127a07588",
+      "order": 1,
+      "zh": "我从商场买回来一个脸谱钥匙链，打算挂在包上。",
+      "pinyin": "Wǒ cóng shāngchǎng mǎi huílai yí ge liǎnpǔ yàoshi liàn, dǎsuàn guà zài bāo shàng.",
+      "vi": "Tôi mua từ trung tâm thương mại về một cái móc khóa mặt nạ kinh kịch, định treo lên túi.",
+      "analysis_vi": "买回来 là mua rồi mang về; 挂在包上 nói vị trí treo.",
+      "highlight": [
+        "钥匙链"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "36dfcfc3-ce8c-4ed1-9a46-e27f5866053e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "87c17da2-ea3c-4a5a-bf33-10ca9a1acbbb",
+      "order": 2,
+      "zh": "钥匙链太大了，插钥匙的时候有点儿不方便。",
+      "pinyin": "Yàoshi liàn tài dà le, chā yàoshi de shíhou yǒudiǎnr bù fāngbiàn.",
+      "vi": "Móc khóa to quá, lúc cắm chìa khóa hơi bất tiện.",
+      "analysis_vi": "插钥匙 là cắm chìa khóa vào ổ; câu dùng ngữ cảnh rất thực tế.",
+      "highlight": [
+        "钥匙链"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "36dfcfc3-ce8c-4ed1-9a46-e27f5866053e"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "53aed90b-f9b2-4715-ba91-60dc331b7f2e",
+      "order": 3,
+      "zh": "售货员拿出来的钥匙链很多，我挑了半天才挑出一个来。",
+      "pinyin": "Shòuhuòyuán ná chūlai de yàoshi liàn hěn duō, wǒ tiāo le bàntiān cái tiāo chū yí ge lái.",
+      "vi": "Móc khóa nhân viên lấy ra rất nhiều, tôi chọn cả buổi mới chọn ra được một cái.",
+      "analysis_vi": "挑出一个来 là chọn ra một cái từ nhiều lựa chọn.",
+      "highlight": [
+        "钥匙链"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "36dfcfc3-ce8c-4ed1-9a46-e27f5866053e"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "eec651e8-8ffb-4c86-b6b9-dabc19d9799f",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 链 với 连 vì đều đọc gần giống. 链 – liàn – dây, chuỗi, xích: 钥匙链",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "钥匙链",
+    "back": "móc khóa, dây chìa khóa",
+    "hint": "yàoshi liàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Móc khóa là quà lưu niệm rất phổ biến ở các điểm du lịch Trung Quốc vì nhỏ, rẻ, dễ mang về. Các mẫu như 熊猫钥匙链, 脸谱钥匙链, 长城钥匙链 rất thường gặp.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "36dfcfc3-ce8c-4ed1-9a46-e27f5866053e",
+    "source_lesson_vocab_id": null
+  }
+}

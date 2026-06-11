@@ -1,0 +1,310 @@
+{
+  "id": "18481c68-9fa5-4363-bee2-64af42113d88",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "越……越……",
+  "pinyin": "yuè……yuè……",
+  "pos": {
+    "raw_vi": "Cấu trúc cố định",
+    "raw_cn": "固定结构",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Việt……việt……",
+    "meaning_vi": "càng……càng……",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "càng……càng……"
+    ],
+    "short_definition_vi": "càng……càng……",
+    "textbook_focus_vi": "càng……càng……",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "越",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi, chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi, chạy",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "走 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "戉",
+            "hanviet": "việt",
+            "meaning_vi": "thành phần biểu âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vượt; càng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "越 A 越 B = mức A tăng/tiếp diễn thì mức B cũng tăng/đổi theo.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "越来越……",
+        "pinyin": "",
+        "meaning_vi": "ngày càng…",
+        "difference_vi": "Chỉ một đường tăng dần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "更",
+        "pinyin": "",
+        "meaning_vi": "hơn",
+        "difference_vi": "Chỉ so sánh tăng mức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "越多越好",
+        "pinyin": "",
+        "meaning_vi": "càng nhiều càng tốt",
+        "difference_vi": "Công thức cố định thường gặp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b31dfc60-65c4-4d5e-af8d-f1cf5cdc76fe",
+      "order": 1,
+      "zh": "越多越好",
+      "pinyin": "",
+      "vi": "càng nhiều càng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cc6b3091-d349-493c-9f5c-66a21d642478",
+      "order": 2,
+      "zh": "越快越好",
+      "pinyin": "",
+      "vi": "càng nhanh càng tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6d9bdf3b-bf21-4e95-969d-df8b825e938f",
+      "order": 3,
+      "zh": "越看越喜欢",
+      "pinyin": "",
+      "vi": "càng xem càng thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d72ccf92-98ed-4440-800e-392ba9be449a",
+      "order": 4,
+      "zh": "越学越难",
+      "pinyin": "",
+      "vi": "càng học càng khó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "794c0723-2175-4ae5-b775-82820c22c587",
+      "order": 5,
+      "zh": "越想越遗憾",
+      "pinyin": "",
+      "vi": "càng nghĩ càng tiếc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f8d15fb0-aa8b-4212-b0db-a0c34b03208b",
+      "order": 1,
+      "zh": "汉语越学越有意思。",
+      "pinyin": "Hànyǔ yuè xué yuè yǒu yìsi.",
+      "vi": "Tiếng Trung càng học càng thú vị.",
+      "analysis_vi": "越学 là điều kiện tăng dần, 越有意思 là kết quả tăng dần.",
+      "highlight": [
+        "越……越……"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "18481c68-9fa5-4363-bee2-64af42113d88"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ac12cb2c-f792-4b99-a937-2bf06e1aeea3",
+      "order": 2,
+      "zh": "这棵枣树越长越高。",
+      "pinyin": "Zhè kē zǎoshù yuè zhǎng yuè gāo.",
+      "vi": "Cây táo tàu này càng lớn càng cao.",
+      "analysis_vi": "Gắn với cây trong sân và biến đổi tăng dần.",
+      "highlight": [
+        "越……越……"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "18481c68-9fa5-4363-bee2-64af42113d88"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ffa14640-7851-4c23-b5bb-e4b24436d4ca",
+      "order": 3,
+      "zh": "爷爷在这个四合院里住得越久，就越舍不得离开。",
+      "pinyin": "Yéye zài zhège sìhéyuàn lǐ zhù de yuè jiǔ, jiù yuè shěbude líkāi.",
+      "vi": "Ông nội sống trong tứ hợp viện này càng lâu thì càng không nỡ rời đi.",
+      "analysis_vi": "Có thể thêm 就 để nhấn quan hệ điều kiện–kết quả.",
+      "highlight": [
+        "越……越……"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "18481c68-9fa5-4363-bee2-64af42113d88"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Cấu trúc này gần tiếng Việt 'càng… càng…', nhưng tiếng Trung phải đặt 越 trước cả hai vế.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7d05e697-2314-430e-a25a-f4d567138a04",
+      "order": 1,
+      "rule_vi": "Không nói 汉语学越难; nói 汉语越学越难.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 汉语学越难; nói 汉语越学越难.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "越……越……",
+    "back": "càng……càng……",
+    "hint": "yuè……yuè……",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_012"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "18481c68-9fa5-4363-bee2-64af42113d88",
+    "source_lesson_vocab_id": null
+  }
+}

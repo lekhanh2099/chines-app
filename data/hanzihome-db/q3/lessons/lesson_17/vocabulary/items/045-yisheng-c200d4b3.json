@@ -1,0 +1,315 @@
+{
+  "id": "e671e2cf-7fc1-43fa-aa2a-443ab56fb204",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "一生",
+  "pinyin": "yìshēng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nhất sinh",
+    "meaning_vi": "cả đời, suốt đời",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cả đời",
+      "suốt đời"
+    ],
+    "short_definition_vi": "cả đời, suốt đời",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "một",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "一 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "一",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhất",
+              "radical_name_zh": "",
+              "hanviet": "nhất",
+              "meaning_vi": "một",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một, duy nhất",
+        "modern_logic_vi": "một, duy nhất",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "一",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhất",
+          "radical_name_zh": "",
+          "hanviet": "nhất",
+          "meaning_vi": "một",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "生",
+        "lishu_vi": "sinh",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "生",
+            "hanviet": "sinh",
+            "meaning_vi": "sinh ra, sống",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "生 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "生",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Sinh",
+              "radical_name_zh": "",
+              "hanviet": "sinh",
+              "meaning_vi": "sinh ra, sống",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sinh ra, sống, đời",
+        "modern_logic_vi": "sinh ra, sống, đời",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "生",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Sinh",
+          "radical_name_zh": "",
+          "hanviet": "sinh",
+          "meaning_vi": "sinh ra, sống",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "一 là một/trọn; 生 là đời sống; 一生 là toàn bộ một đời người.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 一生受益.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一辈子",
+        "pinyin": "yí bèizi",
+        "meaning_vi": "cả đời",
+        "difference_vi": "一辈子 khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "毕生",
+        "pinyin": "bìshēng",
+        "meaning_vi": "suốt đời",
+        "difference_vi": "毕生 văn viết/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "一时",
+        "pinyin": "yìshí",
+        "meaning_vi": "nhất thời/một lúc",
+        "difference_vi": "đối lập về độ dài",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "52215bf6-2e8d-41af-bc2b-8caf12a5bf5f",
+      "order": 1,
+      "zh": "一生受益",
+      "pinyin": "yìshēng shòuyì",
+      "vi": "được ích cả đời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08fa67b1-424a-4e3f-af63-42e0f3ecc99e",
+      "order": 2,
+      "zh": "一生难忘",
+      "pinyin": "yìshēng nánwàng",
+      "vi": "cả đời khó quên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "036957dd-a1bc-4f5f-9313-2c2447696fb9",
+      "order": 3,
+      "zh": "影响一生",
+      "pinyin": "yǐngxiǎng yìshēng",
+      "vi": "ảnh hưởng cả đời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c28e9902-26cf-40e2-b332-abb2ef37518d",
+      "order": 1,
+      "zh": "这件事让我一生难忘。",
+      "pinyin": "Zhè jiàn shì ràng wǒ yìshēng nánwàng.",
+      "vi": "Việc này khiến tôi cả đời khó quên.",
+      "analysis_vi": "让 + người + 一生难忘 nêu ảnh hưởng sâu.",
+      "highlight": [
+        "一生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e671e2cf-7fc1-43fa-aa2a-443ab56fb204"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cfab1268-f69c-4bf2-a493-86726af55913",
+      "order": 2,
+      "zh": "这次试讲虽然让我很紧张，却让我一生受益。",
+      "pinyin": "Zhè cì shìjiǎng suīrán ràng wǒ hěn jǐnzhāng, què ràng wǒ yìshēng shòuyì.",
+      "vi": "Lần giảng thử này tuy làm tôi căng thẳng nhưng khiến tôi được ích cả đời.",
+      "analysis_vi": "虽然……却…… tạo đối lập.",
+      "highlight": [
+        "一生"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e671e2cf-7fc1-43fa-aa2a-443ab56fb204"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "一生受益 là cụm hơi văn viết, hợp tổng kết bài học lớn.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b0b19740-2a96-4d38-b603-3e01b9a2b6dd",
+      "order": 1,
+      "rule_vi": "Không dùng 一生 cho khoảng thời gian ngắn như đợi 10 phút.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一生",
+    "back": "cả đời, suốt đời",
+    "hint": "yìshēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e671e2cf-7fc1-43fa-aa2a-443ab56fb204",
+    "source_lesson_vocab_id": null
+  }
+}

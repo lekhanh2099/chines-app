@@ -1,0 +1,44 @@
+{
+  "id": "synthetic_vocab_158a0408e1be9336",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "算命",
+  "pinyin": "suànmìng",
+  "meaning_vi": "xem bói; đoán mệnh",
+  "pos": "Động từ li hợp",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d42d3d90-443d-45da-bed7-987b50034e92",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+    "type": "vocabulary_item",
+    "order": 35,
+    "hanzi": "算命",
+    "pinyin": "suànmìng",
+    "meaning_vi": "xem bói; đoán mệnh",
+    "meaning_en": "",
+    "pos": "Động từ li hợp",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "算命",
+      "back": "suànmìng — xem bói; đoán mệnh",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook/uploaded_crosscheck",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,306 @@
+{
+  "id": "0c2c9c05-6ff2-484a-b588-4bb2acb546a8",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "叫卖",
+  "pinyin": "jiàomài",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "khiếu mại",
+    "meaning_vi": "rao bán, rao hàng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "rao bán, rao hàng"
+    ],
+    "short_definition_vi": "rao bán, rao hàng",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "叫",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói, âm thanh",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói, âm thanh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói, âm thanh",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "口 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 口.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gọi, kêu, la",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "卖",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bán",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "Không ép chiết tự sâu nếu cấu tạo giản thể khó truy nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "叫 + 卖 = vừa gọi lớn vừa bán hàng.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 叫卖.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "推销",
+        "pinyin": "tuīxiāo",
+        "meaning_vi": "chào hàng/tiếp thị",
+        "difference_vi": "thuyết phục khách mua",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吆喝",
+        "pinyin": "yāohe",
+        "meaning_vi": "hô/rao to",
+        "difference_vi": "khẩu ngữ, văn hóa chợ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "买",
+          "",
+          "mua",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4ae02065-2e5d-4111-8159-34e5b1f393c4",
+      "order": 1,
+      "zh": "大声叫卖",
+      "pinyin": "",
+      "vi": "rao bán lớn tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7beac44a-cc0a-48fc-8b67-13151147d4e8",
+      "order": 2,
+      "zh": "沿街叫卖",
+      "pinyin": "",
+      "vi": "rao dọc phố",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6745364d-c1f4-42de-8285-99481e433a47",
+      "order": 3,
+      "zh": "叫卖声",
+      "pinyin": "",
+      "vi": "tiếng rao hàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2d2a2864-fac7-41c1-907e-9f3ef3c47e82",
+      "order": 4,
+      "zh": "在市场上叫卖",
+      "pinyin": "",
+      "vi": "rao ở chợ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9973e4b4-c10d-499c-8731-a96fb6d5c32d",
+      "order": 1,
+      "zh": "他在市场上大声叫卖。",
+      "pinyin": "Tā zài shìchǎng shang dàshēng jiàomài.",
+      "vi": "Anh ta rao hàng lớn tiếng ở chợ.",
+      "analysis_vi": "在市场上 là trạng ngữ địa điểm.",
+      "highlight": [
+        "叫卖"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0c2c9c05-6ff2-484a-b588-4bb2acb546a8"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ba5895ae-bcbf-4d77-b780-71bf61d108da",
+      "order": 2,
+      "zh": "为了吸引顾客，他一边叫卖，一边举起自己的矛和盾。",
+      "pinyin": "Wèile xīyǐn gùkè, tā yìbiān jiàomài, yìbiān jǔqǐ zìjǐ de máo hé dùn.",
+      "vi": "Để thu hút khách, anh ta vừa rao vừa giơ mâu và khiên.",
+      "analysis_vi": "一边……一边…….",
+      "highlight": [
+        "叫卖"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0c2c9c05-6ff2-484a-b588-4bb2acb546a8"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "叫卖声 là hình ảnh quen ở chợ truyền thống.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8a9e3ac7-2f99-4318-b48e-435c8813b9db",
+      "order": 1,
+      "rule_vi": "叫卖 không phải gọi điện bán hàng; 电话推销 là chào hàng qua điện thoại.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "叫卖",
+    "back": "rao bán, rao hàng",
+    "hint": "jiàomài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0c2c9c05-6ff2-484a-b588-4bb2acb546a8",
+    "source_lesson_vocab_id": null
+  }
+}

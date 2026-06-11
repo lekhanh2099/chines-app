@@ -1,0 +1,290 @@
+{
+  "id": "1c61478d-a3ea-4d9a-b611-fed2941584e8",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "跳",
+  "pinyin": "tiào",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "khiêu / đào",
+    "meaning_vi": "nhảy; nhảy qua; đập lên xuống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhảy",
+      "nhảy qua",
+      "đập lên xuống"
+    ],
+    "short_definition_vi": "nhảy",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "跳",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "足",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Túc",
+          "radical_name_zh": "",
+          "hanviet": "túc",
+          "meaning_vi": "chân, đi, chạy, nhảy",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "足 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "足",
+            "hanviet": "túc",
+            "meaning_vi": "chân, đi, chạy, nhảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "足",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Túc",
+              "radical_name_zh": "",
+              "hanviet": "túc",
+              "meaning_vi": "chân, đi, chạy, nhảy",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "足 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhảy",
+        "modern_logic_vi": "Trong từ 跳, chữ 跳 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "跳 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 孩子们在院子里跳来跳去。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "蹦",
+        "pinyin": "bèng",
+        "meaning_vi": "nhảy bật/tưng tưng",
+        "difference_vi": "蹦 sinh động hơn 跳.",
+        "register_vi": "",
+        "example_zh": "孩子蹦了起来。",
+        "example_vi": "Đứa trẻ bật nhảy lên.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ad98c04c-b937-4a49-bfe4-fd8f4bcb0246",
+      "order": 1,
+      "zh": "跳起来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ac56d805-8cc7-4778-a87b-0c7363b85c3f",
+      "order": 2,
+      "zh": "跳下去",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9d007ba-9343-4ae4-822b-1032707b26be",
+      "order": 3,
+      "zh": "跳舞",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1186260d-2cd2-44b3-a7ae-9c9bcb350c95",
+      "order": 4,
+      "zh": "跳高",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5079f02-7643-4fa8-b056-87fc829b9e88",
+      "order": 5,
+      "zh": "跳远",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33ad1130-65c6-4198-a2cc-90ccf790d249",
+      "order": 6,
+      "zh": "心跳",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16478e8a-f096-4d3f-ab8e-15a2a2700875",
+      "order": 7,
+      "zh": "眼皮跳",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "79a35bb8-fb01-4ef5-a186-4d58d2e91987",
+      "order": 8,
+      "zh": "跳过这一段",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f182de70-5789-4f85-9198-9e84d926c971",
+      "order": 1,
+      "zh": "孩子们在院子里跳来跳去。",
+      "pinyin": "",
+      "vi": "Bọn trẻ nhảy qua nhảy lại trong sân.",
+      "analysis_vi": "Ví dụ dùng 跳 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "跳"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1c61478d-a3ea-4d9a-b611-fed2941584e8"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "跳 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6ccfc250-4bf1-415f-9f9a-8014099c1d71",
+      "order": 1,
+      "rule_vi": "跳 rộng hơn 蹦; 跳舞, 跳高, 心跳 không thay bằng 蹦.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "跳",
+    "back": "nhảy; nhảy qua; đập lên xuống",
+    "hint": "tiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1c61478d-a3ea-4d9a-b611-fed2941584e8",
+    "source_lesson_vocab_id": null
+  }
+}

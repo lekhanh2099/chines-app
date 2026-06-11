@@ -1,0 +1,53 @@
+{
+  "id": "synthetic_vocab_0cc9cbe03c198f1b",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "得",
+  "pinyin": "dé",
+  "meaning_vi": "được; đạt được",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
+    "type": "vocabulary_item",
+    "order": 3,
+    "hanzi": "得",
+    "pinyin": "dé",
+    "meaning_vi": "được; đạt được",
+    "pos": "Động từ",
+    "tags": [
+      "reading_vocab"
+    ],
+    "examples": [],
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

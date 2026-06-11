@@ -1,0 +1,237 @@
+{
+  "id": "602e0791-3dfa-4586-8a25-accd288b76d5",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "重视",
+  "pinyin": "zhòngshì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trọng thị",
+    "meaning_vi": "coi trọng, xem trọng, chú trọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "coi trọng",
+      "xem trọng",
+      "chú trọng"
+    ],
+    "short_definition_vi": "coi trọng, xem là quan trọng",
+    "textbook_focus_vi": "coi trọng, xem là quan trọng",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "重",
+        "lishu_vi": "trọng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "视",
+        "lishu_vi": "thị",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "coi trọng, xem là quan trọng",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 重视能力.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "看重",
+        "pinyin": "kànzhòng",
+        "meaning_vi": "coi trọng",
+        "difference_vi": "khẩu ngữ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "注重",
+        "pinyin": "zhùzhòng",
+        "meaning_vi": "chú trọng",
+        "difference_vi": "nhấn tập trung vào một mặt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "36a815db-0882-4e4f-bb4d-77f418d788f3",
+      "order": 1,
+      "zh": "重视能力",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8aaf02d-a067-4a31-993c-4e0e0bdbee75",
+      "order": 2,
+      "zh": "重视态度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfdd7c98-cd48-4181-b0d4-8b11efd2f283",
+      "order": 3,
+      "zh": "重视学习",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "080b2f46-726f-43dd-841b-37ffc6a2c91f",
+      "order": 4,
+      "zh": "重视工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38391f0d-2264-4b51-9730-98620c0d43b0",
+      "order": 5,
+      "zh": "受到重视",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "800378b1-204b-4688-8b73-8a653ea3ee5f",
+      "order": 6,
+      "zh": "高度重视",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "28cbb502-0bf5-4148-ba36-92afb931142b",
+      "order": 1,
+      "zh": "头儿很重视他的工作态度。",
+      "pinyin": "Tóur hěn zhòngshì tā de gōngzuò tàidu.",
+      "vi": "Sếp rất coi trọng thái độ làm việc của anh ấy.",
+      "analysis_vi": "重视 + N = coi trọng cái gì.",
+      "highlight": [
+        "重视"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "602e0791-3dfa-4586-8a25-accd288b76d5"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "受到重视 là cụm công sở rất hay dùng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "78a193c2-a706-4235-9630-2b13195d0fa7",
+      "order": 1,
+      "rule_vi": "重视 không phải 喜欢; thích ca sĩ là 喜欢, không phải 重视.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "重视",
+    "back": "coi trọng, xem trọng, chú trọng",
+    "hint": "zhòngshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "602e0791-3dfa-4586-8a25-accd288b76d5",
+    "source_lesson_vocab_id": null
+  }
+}

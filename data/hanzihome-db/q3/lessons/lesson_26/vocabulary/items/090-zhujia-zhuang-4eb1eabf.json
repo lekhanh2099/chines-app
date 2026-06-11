@@ -1,0 +1,30 @@
+{
+  "id": "synthetic_vocab_c1f074b04a2f6102",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "祝家庄",
+  "pinyin": "Zhùjiā Zhuāng",
+  "meaning_vi": "Chúc Gia Trang",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7f7913ed-3e88-470e-ac98-ecb06f3f6c05",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7f7913ed-3e88-470e-ac98-ecb06f3f6c05",
+    "type": "proper_noun",
+    "order": 4,
+    "hanzi": "祝家庄",
+    "pinyin": "Zhùjiā Zhuāng",
+    "meaning_vi": "Chúc Gia Trang",
+    "meaning_en": "Zhu Village",
+    "source_origin": "textbook",
+    "page_start": 218,
+    "page_end": 218,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

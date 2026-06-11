@@ -1,0 +1,423 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解",
+  "title_vi": "Đọc hiểu",
+  "source_origin": "pdf_textbook_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "text_reading",
+      "order": 1,
+      "title": "北京的四季",
+      "title_vi": "Bốn mùa ở Bắc Kinh",
+      "proper_nouns": [
+        {
+          "id": "cab1d4a0-0a48-41be-a572-b076e1fb0d64",
+          "hanzi": "北京",
+          "pinyin": "Běijīng",
+          "meaning_vi": "Bắc Kinh"
+        },
+        {
+          "id": "005ed91f-7728-427b-abbe-2dee91811ffd",
+          "hanzi": "北海",
+          "pinyin": "Běihǎi",
+          "meaning_vi": "Bắc Hải"
+        },
+        {
+          "id": "c783a023-07a9-43e4-b0c0-0e4b080c9369",
+          "hanzi": "颐和园",
+          "pinyin": "Yíhéyuán",
+          "meaning_vi": "Di Hòa Viên"
+        },
+        {
+          "id": "7251a874-510f-4a06-862c-d2f8631d6504",
+          "hanzi": "长城",
+          "pinyin": "Chángchéng",
+          "meaning_vi": "Trường Thành"
+        },
+        {
+          "id": "0715efa8-6bdb-48c3-acf8-a155518c846c",
+          "hanzi": "十三陵",
+          "pinyin": "Shísānlíng",
+          "meaning_vi": "Thập Tam Lăng"
+        },
+        {
+          "id": "da885cac-ee12-4d89-a537-45900fbe7b0b",
+          "hanzi": "香山",
+          "pinyin": "Xiāngshān",
+          "meaning_vi": "Hương Sơn"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "北京一年有四个季节：春、夏、秋、冬。从三月到五月是春季，六月到八月是夏季，九月到十一月是秋季，十二月到第二年的二月是冬季。",
+          "vi": "Bắc Kinh một năm có bốn mùa: xuân, hạ, thu, đông. Từ tháng Ba đến tháng Năm là mùa xuân, tháng Sáu đến tháng Tám là mùa hè, tháng Chín đến tháng Mười Một là mùa thu, tháng Mười Hai đến tháng Hai năm sau là mùa đông.",
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false,
+          "pinyin": "Běijīng yì nián yǒu sì ge jìjié: chūn, xià, qiū, dōng. Cóng sān yuè dào wǔ yuè shì chūnjì, liù yuè dào bā yuè shì xiàjì, jiǔ yuè dào shíyī yuè shì qiūjì, shí’èr yuè dào dì èr nián de èr yuè shì dōngjì."
+        },
+        {
+          "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+          "order": 2,
+          "zh": "春天来了，树绿了，花开了，天气暖和了。人们脱下冬衣，换上春装。姑娘和小伙子们打扮得漂漂亮亮的，他们在湖上划船，在花儿前照相，公园里到处都是年轻人的歌声和笑声。北海、颐和园、长城和十三陵……，到处都可以看到旅游的人。",
+          "vi": "Mùa xuân đến, cây xanh rồi, hoa nở rồi, thời tiết ấm áp rồi. Mọi người cởi áo mùa đông, thay sang trang phục mùa xuân. Các cô gái và các chàng trai trẻ ăn mặc thật xinh đẹp; họ chèo thuyền trên hồ, chụp ảnh trước hoa. Trong công viên, khắp nơi đều là tiếng hát và tiếng cười của người trẻ. Bắc Hải, Di Hòa Viên, Trường Thành, Thập Tam Lăng..., ở đâu cũng có thể nhìn thấy khách du lịch.",
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false,
+          "pinyin": "Chūntiān lái le, shù lǜ le, huā kāi le, tiānqì nuǎnhuo le. Rénmen tuō xià dōngyī, huàn shàng chūnzhuāng. Gūniang hé xiǎohuǒzimen dǎban de piàopiàoliàngliàng de, tāmen zài hú shang huáchuán, zài huār qián zhàoxiàng, gōngyuán lǐ dàochù dōu shì niánqīngrén de gēshēng hé xiàoshēng. Běihǎi, Yíhéyuán, Chángchéng hé Shísānlíng…, dàochù dōu kěyǐ kàndào lǚyóu de rén."
+        },
+        {
+          "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "order": 3,
+          "zh": "夏天来了，天气热了。人们常常去游泳。吃完晚饭，工作了一天的人们喜欢到外边散步、聊天儿。马路上、公园里都有散步的人。人们一边走一边聊，显得愉快和轻松。",
+          "vi": "Mùa hè đến, thời tiết nóng rồi. Mọi người thường đi bơi. Sau khi ăn xong bữa tối, những người đã làm việc cả ngày thích ra ngoài đi dạo, trò chuyện. Trên đường, trong công viên đều có người đi dạo. Mọi người vừa đi vừa trò chuyện, trông vui vẻ và thoải mái.",
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false,
+          "pinyin": "Xiàtiān lái le, tiānqì rè le. Rénmen chángcháng qù yóuyǒng. Chī wán wǎnfàn, gōngzuò le yì tiān de rénmen xǐhuan dào wàibian sànbù, liáotiānr. Mǎlù shang, gōngyuán lǐ dōu yǒu sànbù de rén. Rénmen yìbiān zǒu yìbiān liáo, xiǎnde yúkuài hé qīngsōng."
+        },
+        {
+          "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+          "order": 4,
+          "zh": "北京的冬天比较冷，但是屋子里很暖和。到了冬天，北京人喜欢吃火锅儿，一家几口人或三五个朋友，高高兴兴地坐在火锅儿旁边，一边吃，一边聊，非常愉快。",
+          "vi": "Mùa đông ở Bắc Kinh tương đối lạnh, nhưng trong nhà rất ấm áp. Đến mùa đông, người Bắc Kinh thích ăn lẩu; cả nhà vài người hoặc ba năm người bạn vui vẻ ngồi bên nồi lẩu, vừa ăn vừa trò chuyện, vô cùng vui vẻ.",
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false,
+          "pinyin": "Běijīng de dōngtiān bǐjiào lěng, dànshì wūzi lǐ hěn nuǎnhuo. Dào le dōngtiān, Běijīngrén xǐhuan chī huǒguōr, yì jiā jǐ kǒu rén huò sān wǔ ge péngyou, gāogāoxìngxìng de zuò zài huǒguōr pángbiān, yìbiān chī, yìbiān liáo, fēicháng yúkuài."
+        },
+        {
+          "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+          "order": 5,
+          "zh": "北京的冬天不常下雪，但是，要是下了雪，人们就会像过节一样高兴。很多人会带上照相机去外边照相。孩子们在雪地上堆雪人，打雪仗。小脸和小手冻得红红的。他们不怕冷，玩儿得很高兴。北京人喜欢下雪。“瑞雪兆丰年”，冬天要是下几场大雪，第二年一定有好收成。",
+          "vi": "Mùa đông ở Bắc Kinh không thường có tuyết, nhưng nếu tuyết rơi, mọi người sẽ vui như đón lễ. Rất nhiều người sẽ mang máy ảnh ra ngoài chụp ảnh. Bọn trẻ đắp người tuyết, đánh trận tuyết trên nền tuyết. Mặt nhỏ và tay nhỏ bị lạnh đến đỏ ửng. Chúng không sợ lạnh, chơi rất vui. Người Bắc Kinh thích tuyết rơi. “Tuyết lành báo năm được mùa”; mùa đông nếu có vài trận tuyết lớn, năm sau nhất định sẽ có mùa màng tốt.",
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false,
+          "pinyin": "Běijīng de dōngtiān bù cháng xià xuě, dànshì, yàoshi xià le xuě, rénmen jiù huì xiàng guò jié yíyàng gāoxìng. Hěn duō rén huì dài shang zhàoxiàngjī qù wàibian zhàoxiàng. Háizimen zài xuědì shang duī xuěrén, dǎ xuězhàng. Xiǎo liǎn hé xiǎo shǒu dòng de hónghóng de. Tāmen bú pà lěng, wánr de hěn gāoxìng. Běijīngrén xǐhuan xià xuě. “Ruì xuě zhào fēng nián”, dōngtiān yàoshi xià jǐ chǎng dà xuě, dì èr nián yídìng yǒu hǎo shōucheng."
+        },
+        {
+          "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
+          "order": 6,
+          "zh": "现在是北京的秋天了，这是一年中最好的季节。天气不冷也不热，不常下雨也很少刮风。北京的大街上到处是鲜花，到处是瓜果。到了周末，人们都喜欢到郊外去玩儿。那满山的红叶是北京最美丽的景色。爬香山、看红叶，是北京人最喜爱的活动。",
+          "vi": "Bây giờ là mùa thu ở Bắc Kinh rồi; đây là mùa đẹp nhất trong năm. Thời tiết không lạnh cũng không nóng, không thường mưa và cũng rất ít gió. Trên các đường phố lớn của Bắc Kinh, khắp nơi là hoa tươi, khắp nơi là dưa quả. Đến cuối tuần, mọi người đều thích ra ngoại ô chơi. Lá đỏ phủ đầy núi là cảnh sắc đẹp nhất của Bắc Kinh. Leo Hương Sơn, ngắm lá đỏ là hoạt động người Bắc Kinh yêu thích nhất.",
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false,
+          "pinyin": "Xiànzài shì Běijīng de qiūtiān le, zhè shì yì nián zhōng zuì hǎo de jìjié. Tiānqì bù lěng yě bù rè, bù cháng xià yǔ yě hěn shǎo guā fēng. Běijīng de dàjiē shang dàochù shì xiānhuā, dàochù shì guāguǒ. Dào le zhōumò, rénmen dōu xǐhuan dào jiāowài qù wánr. Nà mǎn shān de hóngyè shì Běijīng zuì měilì de jǐngsè. Pá Xiāngshān, kàn hóngyè, shì Běijīngrén zuì xǐ’ài de huódòng."
+        }
+      ],
+      "questions": [
+        {
+          "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+          "type": "true_false",
+          "question": "北京一年有四个季节。",
+          "answer": "对",
+          "explanation_vi": "Văn bản nói rõ: 北京一年有四个季节。",
+          "answer_verified": true,
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false
+        },
+        {
+          "id": "82b334af-11c3-4606-980f-154617982627",
+          "type": "true_false",
+          "question": "北京的夏天常常下雨。",
+          "answer": "错",
+          "explanation_vi": "Văn bản chỉ nói mùa hè nóng và mọi người thường đi bơi; phần “không thường mưa” nằm ở đoạn mùa thu.",
+          "answer_verified": true,
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false
+        },
+        {
+          "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
+          "type": "true_false",
+          "question": "北京人喜欢下雪，但是北京冬天不常下雪。",
+          "answer": "对",
+          "explanation_vi": "Văn bản nói 北京的冬天不常下雪, đồng thời nói 北京人喜欢下雪。",
+          "answer_verified": true,
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false
+        },
+        {
+          "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
+          "type": "true_false",
+          "question": "北京的秋天最好。",
+          "answer": "对",
+          "explanation_vi": "Văn bản nói mùa thu là 一年中最好的季节。",
+          "answer_verified": true,
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false
+        },
+        {
+          "id": "b7ee22d3-687c-4fed-acb8-66db927f5e7a",
+          "type": "true_false",
+          "question": "爬香山、看红叶，是北京人春天的活动。",
+          "answer": "错",
+          "explanation_vi": "爬香山、看红叶 thuộc hoạt động mùa thu, không phải mùa xuân.",
+          "answer_verified": true,
+          "source_origin": "pdf_textbook_checked",
+          "check_needed": false
+        }
+      ],
+      "source_origin": "pdf_textbook_checked",
+      "check_needed": false,
+      "supplementary_vocab": [
+        {
+          "hanzi": "脱",
+          "pinyin": "tuō",
+          "meaning_vi": "cởi",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "装",
+          "pinyin": "zhuāng",
+          "meaning_vi": "trang phục; bộ đồ",
+          "pos": "Danh từ / Động từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ",
+            "cn": "名词 / 动词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Trong bài đọc chủ yếu chỉ “trang phục” như 春装; ngoài ra còn có nghĩa mặc, lắp, chứa, giả vờ.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "打扮",
+          "pinyin": "dǎban",
+          "meaning_vi": "ăn mặc; chải chuốt; trang điểm",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "划船",
+          "pinyin": "huá chuán",
+          "meaning_vi": "chèo thuyền",
+          "pos": "Động từ li hợp",
+          "pos_detail": {
+            "vi": "Động từ li hợp",
+            "cn": "动宾式离合词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 划 + tân ngữ 船",
+            "usage_note_vi": "Có thể nói 划了一会儿船; trong bài đọc dùng 在湖上划船.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "照相",
+          "pinyin": "zhào xiàng",
+          "meaning_vi": "chụp ảnh",
+          "pos": "Động từ li hợp",
+          "pos_detail": {
+            "vi": "Động từ li hợp",
+            "cn": "动宾式离合词",
+            "normalized": "verb_phrase",
+            "schema_compatible_pos": "verb_phrase",
+            "is_separable_verb": true,
+            "separable_type": "động-tân / 离合词",
+            "structure_vi": "động từ 照 + tân ngữ 相",
+            "usage_note_vi": "Có thể nói 照了一张相 / 照过相; khẩu ngữ hiện đại cũng thường nói 拍照.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "到处",
+          "pinyin": "dàochù",
+          "meaning_vi": "khắp nơi",
+          "pos": "Phó từ / Từ nơi chốn",
+          "pos_detail": {
+            "vi": "Phó từ / Từ nơi chốn",
+            "cn": "副词 / 处所词",
+            "normalized": "adverb",
+            "schema_compatible_pos": "adverb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "显得",
+          "pinyin": "xiǎnde",
+          "meaning_vi": "trông có vẻ; tỏ ra",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "火锅儿",
+          "pinyin": "huǒguōr",
+          "meaning_vi": "lẩu",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "节",
+          "pinyin": "jié",
+          "meaning_vi": "ngày lễ; tiết",
+          "pos": "Danh từ / Lượng từ",
+          "pos_detail": {
+            "vi": "Danh từ / Lượng từ",
+            "cn": "名词 / 量词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "堆",
+          "pinyin": "duī",
+          "meaning_vi": "đống; chất đống; đắp",
+          "pos": "Danh từ / Động từ / Lượng từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ / Lượng từ",
+            "cn": "名词 / 动词 / 量词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "冻",
+          "pinyin": "dòng",
+          "meaning_vi": "rét cóng; đông lại",
+          "pos": "Động từ / Tính từ trạng thái",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ trạng thái",
+            "cn": "动词 / 形容词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "瑞雪兆丰年",
+          "pinyin": "ruì xuě zhào fēng nián",
+          "meaning_vi": "tuyết lành báo năm được mùa",
+          "pos": "Thành ngữ / Tục ngữ",
+          "pos_detail": {
+            "vi": "Thành ngữ / Tục ngữ",
+            "cn": "成语 / 农谚",
+            "normalized": "idiom",
+            "schema_compatible_pos": "idiom",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "Câu nông ngữ: tuyết đúng mùa báo hiệu năm sau được mùa.",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "瓜果",
+          "pinyin": "guāguǒ",
+          "meaning_vi": "dưa quả; trái cây",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "郊外",
+          "pinyin": "jiāowài",
+          "meaning_vi": "ngoại ô; vùng ngoài thành",
+          "pos": "Danh từ nơi chốn",
+          "pos_detail": {
+            "vi": "Danh từ nơi chốn",
+            "cn": "处所名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        },
+        {
+          "hanzi": "活动",
+          "pinyin": "huódòng",
+          "meaning_vi": "hoạt động",
+          "pos": "Danh từ / Động từ",
+          "pos_detail": {
+            "vi": "Danh từ / Động từ",
+            "cn": "名词 / 动词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          }
+        }
+      ]
+    }
+  ]
+}

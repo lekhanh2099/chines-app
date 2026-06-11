@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_113c7be3ff0bc121",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "世界杯",
+  "pinyin": "Shìjiè Bēi",
+  "meaning_vi": "World Cup, Cúp bóng đá thế giới",
+  "pos": "Tên riêng / Sự kiện thể thao",
+  "pos_detail": {
+    "vi": "Tên riêng / Sự kiện thể thao",
+    "cn": "专名",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "proper-lesson12-shijiebei",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "proper-lesson12-shijiebei",
+    "type": "vocabulary_item",
+    "order": 2,
+    "hanzi": "世界杯",
+    "pinyin": "Shìjiè Bēi",
+    "meaning_vi": "World Cup, Cúp bóng đá thế giới",
+    "meaning_en": "World Cup",
+    "pos": "Tên riêng / Sự kiện thể thao",
+    "pos_detail": {
+      "vi": "Tên riêng / Sự kiện thể thao",
+      "cn": "专名",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "proper_noun"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "世界杯",
+      "back": "Shìjiè Bēi — World Cup, Cúp bóng đá thế giới",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

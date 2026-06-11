@@ -1,0 +1,273 @@
+{
+  "id": "85c40258-0ae7-42ff-8dbf-d7dd27f2141f",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "夜",
+  "pinyin": "yè",
+  "pos": {
+    "raw_vi": "Danh từ / Yếu tố cấu tạo từ",
+    "raw_cn": "名 / 语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "bai_04",
+    "dong_am"
+  ],
+  "meaning": {
+    "hanviet": "Dạ",
+    "meaning_vi": "đêm; ban đêm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đêm",
+      "ban đêm"
+    ],
+    "short_definition_vi": "đêm; ban đêm",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "夜",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亠",
+            "hanviet": "",
+            "meaning_vi": "phần đầu chữ",
+            "position_vi": "bên trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "buổi tối / đêm",
+            "position_vi": "thành phần",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "夕",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tịch",
+              "radical_name_zh": "",
+              "hanviet": "tịch",
+              "meaning_vi": "buổi tối / đêm",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đêm, ban đêm",
+        "modern_logic_vi": "",
+        "warning_vi": "夜 / 叶 / 页 đồng âm yè.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "夕",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tịch",
+          "radical_name_zh": "",
+          "hanviet": "tịch",
+          "meaning_vi": "buổi tối / đêm",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "夜 = đêm; phân biệt với 叶 và 页.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "夜里",
+        "pinyin": "",
+        "meaning_vi": "ban đêm",
+        "difference_vi": "đời sống hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "晚上",
+        "pinyin": "",
+        "meaning_vi": "buổi tối",
+        "difference_vi": "thông dụng nhất",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "白天",
+        "pinyin": "",
+        "meaning_vi": "ban ngày",
+        "difference_vi": "trái nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d5c6fee2-4657-439d-9146-514b632d7421",
+      "order": 1,
+      "zh": "夜里",
+      "pinyin": "",
+      "vi": "ban đêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ab2ecbe-a9cd-41e9-91c2-8abfa170b66f",
+      "order": 2,
+      "zh": "半夜",
+      "pinyin": "",
+      "vi": "nửa đêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7982c28f-5d50-4585-97bf-786e3980543a",
+      "order": 3,
+      "zh": "夜班",
+      "pinyin": "",
+      "vi": "ca đêm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8dd60745-3c9a-4e4c-a528-9e36693ac8a7",
+      "order": 1,
+      "zh": "夜里很安静。",
+      "pinyin": "Yèli hěn ānjìng.",
+      "vi": "Ban đêm rất yên tĩnh.",
+      "analysis_vi": "夜里 làm bối cảnh thời gian.",
+      "highlight": [
+        "夜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85c40258-0ae7-42ff-8dbf-d7dd27f2141f"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6ad0cb4a-be2d-4cde-a0a3-3e0d1681eb80",
+      "order": 2,
+      "zh": "昨天夜里，安娜把作业都做完了。",
+      "pinyin": "Zuótiān yèli, Ānnà bǎ zuòyè dōu zuò wán le.",
+      "vi": "Đêm qua, Anna làm xong hết bài tập.",
+      "analysis_vi": "做完了 dùng 完.",
+      "highlight": [
+        "夜"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "85c40258-0ae7-42ff-8dbf-d7dd27f2141f"
+      ],
+      "source_ref": "current_thread_vocab",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Hán Việt giúp phân biệt 夜 = dạ, 叶 = diệp, 页 = hiệt.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ed62c032-465d-478d-9bc9-380bedeb4228",
+      "order": 1,
+      "rule_vi": "Không viết nhầm 夜 với 叶 hoặc 页.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "夜里我复习了两个小时。",
+          "pinyin": "Yèli wǒ fùxí le liǎng ge xiǎoshí.",
+          "vi": "Ban đêm tôi ôn bài hai tiếng.",
+          "note_vi": "夜 = đêm.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "夜",
+    "back": "đêm; ban đêm",
+    "hint": "yè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "bai_04",
+      "dong_am"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "85c40258-0ae7-42ff-8dbf-d7dd27f2141f",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "id": "0925a9b9-6193-48e0-be9f-390f43449b5b",
+  "type": "deep_vocabulary_item",
+  "order": 4,
+  "hanzi": "赞成",
+  "pinyin": "zànchéng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tán thành",
+    "meaning_vi": "tán thành, đồng ý với ý kiến/chủ trương/cách làm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tán thành",
+      "đồng ý với ý kiến/chủ trương/cách làm"
+    ],
+    "short_definition_vi": "tán thành, đồng ý với ý kiến/chủ trương/cách làm",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "赞",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò; giá trị, tiền của",
+            "position_vi": "phía dưới/bên phải trong giản thể",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "貝",
+              "radical_variant": "贝",
+              "radical_name_vi": "bộ Bối",
+              "radical_name_zh": "",
+              "hanviet": "bối",
+              "meaning_vi": "vỏ sò, tiền của",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khen, tán thành",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "成",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí cổ",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành, hoàn thành",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "赞成 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 赞成 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "同意",
+        "pinyin": "tóngyì",
+        "meaning_vi": "đồng ý",
+        "difference_vi": "Rộng và khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "支持",
+        "pinyin": "zhīchí",
+        "meaning_vi": "ủng hộ",
+        "difference_vi": "Có thể bằng thái độ hoặc hành động.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "反对",
+        "pinyin": "fǎnduì",
+        "meaning_vi": "phản đối",
+        "difference_vi": "Trái nghĩa trực tiếp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "81d6c5d2-f459-4062-8677-e7e12ac27636",
+      "order": 1,
+      "zh": "赞成这个想法",
+      "pinyin": "zànchéng zhège xiǎngfǎ",
+      "vi": "tán thành ý tưởng này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ca5e377-84e6-47c7-8405-0101001abf9d",
+      "order": 2,
+      "zh": "赞成他的选择",
+      "pinyin": "zànchéng tā de xuǎnzé",
+      "vi": "tán thành lựa chọn của anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "573e4c80-8ef0-4102-b45b-52c430a77917",
+      "order": 3,
+      "zh": "完全赞成",
+      "pinyin": "wánquán zànchéng",
+      "vi": "hoàn toàn tán thành",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb3de74b-8f92-4ce8-9465-4570382f8549",
+      "order": 4,
+      "zh": "赞成还是反对",
+      "pinyin": "zànchéng háishi fǎnduì",
+      "vi": "tán thành hay phản đối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "47019e65-1a22-49dd-9c65-4f67a0d771fb",
+      "order": 1,
+      "zh": "我赞成你的想法。",
+      "pinyin": "Wǒ zànchéng nǐ de xiǎngfǎ.",
+      "vi": "Tôi tán thành suy nghĩ của bạn.",
+      "analysis_vi": "赞成 + danh từ/cụm danh từ.",
+      "highlight": [
+        "赞成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0925a9b9-6193-48e0-be9f-390f43449b5b"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b8f2d25c-9f89-4c5c-a168-d9224bf3c60f",
+      "order": 2,
+      "zh": "妈妈一点儿也不赞成我一个人去南京。",
+      "pinyin": "Māma yìdiǎnr yě bú zànchéng wǒ yí ge rén qù Nánjīng.",
+      "vi": "Mẹ chẳng tán thành chút nào việc tôi một mình đi Nam Kinh.",
+      "analysis_vi": "我一个人去南京 là cụm chủ-vị làm tân ngữ sau 赞成.",
+      "highlight": [
+        "赞成"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0925a9b9-6193-48e0-be9f-390f43449b5b"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "父母赞成/不赞成 hay gặp trong bối cảnh chọn ngành, đi xa, đổi việc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "52569ade-c4da-4cf5-af3e-818df6afa1d7",
+      "order": 1,
+      "rule_vi": "赞成 không giống 喜欢.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我赞成吃火锅。",
+          "pinyin": "Wǒ zànchéng chī huǒguō.",
+          "vi": "Nghĩa là tán thành đề xuất ăn lẩu, không phải thích ăn lẩu.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我喜欢吃火锅。",
+          "pinyin": "Wǒ xǐhuan chī huǒguō.",
+          "vi": "Tôi thích ăn lẩu.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "赞成",
+    "back": "tán thành, đồng ý với ý kiến/chủ trương/cách làm",
+    "hint": "zànchéng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0925a9b9-6193-48e0-be9f-390f43449b5b",
+    "source_lesson_vocab_id": null
+  }
+}

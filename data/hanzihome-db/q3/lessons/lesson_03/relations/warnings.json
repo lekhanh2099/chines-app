@@ -1,0 +1,26 @@
+[
+  {
+    "id": "warning_22769b9b933582d51aa7097d",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "拿",
+      "脱",
+      "湖",
+      "划",
+      "船",
+      "围",
+      "堆",
+      "打",
+      "冻",
+      "场",
+      "瓜",
+      "果",
+      "每",
+      "美",
+      "愿",
+      "阵",
+      "抬"
+    ]
+  }
+]

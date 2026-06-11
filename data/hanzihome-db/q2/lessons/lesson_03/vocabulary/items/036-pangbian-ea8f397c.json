@@ -1,0 +1,421 @@
+{
+  "id": "c88a39d9-290f-454a-a4a4-267f3b288f88",
+  "type": "deep_vocabulary_item",
+  "order": 36,
+  "hanzi": "旁边",
+  "pinyin": "pángbiān",
+  "pos": {
+    "raw_vi": "Danh từ vị trí / Từ chỉ phương vị",
+    "raw_cn": "方位名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "position"
+  ],
+  "meaning": {
+    "hanviet": "Bàng biên",
+    "meaning_vi": "bên cạnh, cạnh bên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bên cạnh",
+      "cạnh bên"
+    ],
+    "short_definition_vi": "bên cạnh, cạnh bên",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "position",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "旁",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "方",
+            "hanviet": "phương",
+            "meaning_vi": "phần nhìn thấy",
+            "position_vi": "trong chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bên cạnh, bên lề, phụ",
+        "modern_logic_vi": "旁 là bên/cạnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "边",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/chuyển động",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi; chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bên, mép, cạnh, rìa",
+        "modern_logic_vi": "边 là cạnh/rìa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi; chuyển động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "旁 là bên; 边 là cạnh/rìa. 旁边 là bên cạnh, vị trí sát bên.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "附近",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Gần đó, phạm vi rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "周围",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xung quanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "左边",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bên trái.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "右边",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bên phải.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "对面",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đối diện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "对面",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đối diện, không phải bên cạnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "旁边",
+        "right": "附近",
+        "meaning_vi": "旁边 sát cạnh hơn; 附近 là vùng lân cận rộng hơn.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "71618e6c-9629-4894-a1eb-fd388d0a72b5",
+      "order": 1,
+      "zh": "房子旁边",
+      "pinyin": "",
+      "vi": "bên cạnh căn nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "752344be-00a5-488f-a9de-aaf9e7097f9f",
+      "order": 2,
+      "zh": "学校旁边",
+      "pinyin": "",
+      "vi": "bên cạnh trường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6180e2b6-e9be-49b3-a6a1-2add14fab6be",
+      "order": 3,
+      "zh": "车站旁边",
+      "pinyin": "",
+      "vi": "bên cạnh trạm xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4d6660ce-2dbd-4f42-8f3f-1c330bbd9a40",
+      "order": 4,
+      "zh": "旁边的人",
+      "pinyin": "",
+      "vi": "người bên cạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "40a57fd8-a94a-4ae6-aded-6c95ceda2842",
+      "order": 5,
+      "zh": "坐在旁边",
+      "pinyin": "",
+      "vi": "ngồi bên cạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f509b914-665a-407f-aa48-fb04adeb320f",
+      "order": 6,
+      "zh": "站在旁边",
+      "pinyin": "",
+      "vi": "đứng bên cạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0cf58b88-e357-4dd6-806d-3832d306d380",
+      "order": 7,
+      "zh": "旁边有一条河",
+      "pinyin": "",
+      "vi": "bên cạnh có một con sông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95fc4ad9-c21a-4f50-a988-731768c43a31",
+      "order": 8,
+      "zh": "在我旁边",
+      "pinyin": "",
+      "vi": "bên cạnh tôi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "684ec327-9e9f-4d16-ac0d-70724ca4d5d4",
+      "order": 1,
+      "zh": "房子旁边有一条河。",
+      "pinyin": "Fángzi pángbiān yǒu yì tiáo hé.",
+      "vi": "Bên cạnh căn nhà có một con sông.",
+      "analysis_vi": "Địa điểm + 有 + vật; 一条河 dùng lượng từ 条.",
+      "highlight": [
+        "旁边"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c88a39d9-290f-454a-a4a4-267f3b288f88"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8f2435f2-0180-411f-93ac-81f98c0b50ce",
+      "order": 2,
+      "zh": "虽然房子旁边有公共汽车站，但是附近没有地铁站。",
+      "pinyin": "Suīrán fángzi pángbiān yǒu gōnggòng qìchē zhàn, dànshì fùjìn méiyǒu dìtiězhàn.",
+      "vi": "Tuy bên cạnh nhà có trạm xe buýt, nhưng gần đó không có ga metro.",
+      "analysis_vi": "Phân biệt 旁边 gần sát hơn, 附近 rộng hơn.",
+      "highlight": [
+        "旁边"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c88a39d9-290f-454a-a4a4-267f3b288f88"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1f89581-ee21-439d-bbcd-adca99693307",
+      "order": 3,
+      "zh": "要是你到了车站，就在旁边那家咖啡店等我，我下课以后顺便过去接你。",
+      "pinyin": "Yàoshi nǐ dào le chēzhàn, jiù zài pángbiān nà jiā kāfēidiàn děng wǒ, wǒ xiàkè yǐhòu shùnbiàn guòqù jiē nǐ.",
+      "vi": "Nếu bạn đến trạm xe rồi thì đợi tôi ở quán cà phê bên cạnh, sau khi tan học tôi tiện thể qua đón bạn.",
+      "analysis_vi": "要是……就……; 顺便过去接你 = tiện thể qua đón bạn.",
+      "highlight": [
+        "旁边"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c88a39d9-290f-454a-a4a4-267f3b288f88"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khi chỉ đường, 旁边 / 对面 / 附近 / 前边 / 后边 là nhóm cực thực dụng.",
+    "tags": [
+      "position"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f7e80a72-3da8-4c4d-8c83-122c32ae5439",
+      "order": 1,
+      "rule_vi": "Đừng dùng 旁边 nếu chỉ nói 'gần đó' nhưng không sát cạnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "学校旁边有一家书店。",
+          "pinyin": "",
+          "vi": "Bên cạnh trường có một hiệu sách.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "学校附近有很多饭馆。",
+          "pinyin": "",
+          "vi": "Gần trường có nhiều quán ăn.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "旁边 là sát bên; 附近 là gần khu đó.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "旁边",
+    "back": "bên cạnh, cạnh bên",
+    "hint": "pángbiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "position"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c88a39d9-290f-454a-a4a4-267f3b288f88",
+    "source_lesson_vocab_id": null
+  }
+}

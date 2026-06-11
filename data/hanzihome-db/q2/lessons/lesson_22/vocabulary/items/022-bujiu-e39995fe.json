@@ -1,0 +1,236 @@
+{
+  "id": "caf7b59e-e561-466b-b198-fafde711563e",
+  "type": "deep_vocabulary_item",
+  "order": 22,
+  "hanzi": "不久",
+  "pinyin": "bùjiǔ",
+  "pos": {
+    "raw_vi": "Phó từ / Cụm thời gian",
+    "raw_cn": "副/时间短语",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson22",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Bất cửu",
+    "meaning_vi": "không lâu; chẳng bao lâu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "không lâu; chẳng bao lâu"
+    ],
+    "short_definition_vi": "không lâu; chẳng bao lâu",
+    "textbook_focus_vi": "không lâu; chẳng bao lâu",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem nghĩa trong word_logic_vi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "久",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xem nghĩa trong word_logic_vi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不 = không; 久 = lâu; 不久 = không lâu.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很快",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "từ/cấu trúc dễ nhầm với 不久",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1f3a05b5-45a4-42b7-b743-3e4d41cc3866",
+      "order": 1,
+      "zh": "成立不久",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "223df6ae-e94e-43eb-88d0-7246ebc9b2d2",
+      "order": 2,
+      "zh": "搬家不久",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "068ec65d-f3b4-4951-b1d1-d88c14e524dc",
+      "order": 3,
+      "zh": "不久以前",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b888879f-5774-4097-87bc-e2267f436386",
+      "order": 4,
+      "zh": "不久前",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4894e920-c312-4b8c-9688-46507e3f8861",
+      "order": 5,
+      "zh": "不久以后",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f2709088-7de5-4f25-a26b-6bf4ad284d29",
+      "order": 1,
+      "zh": "我今天学习“不久”这个词。",
+      "pinyin": "Wǒ jīntiān xuéxí “bùjiǔ” zhège cí.",
+      "vi": "Hôm nay tôi học từ “不久”.",
+      "analysis_vi": "Câu cơ bản dùng đúng từ 不久.",
+      "highlight": [
+        "不久"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "caf7b59e-e561-466b-b198-fafde711563e"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fdbbe0b8-4ffe-4b15-9abc-10eee9802cf5",
+      "order": 2,
+      "zh": "只有把“不久”的用法记下来，才不容易用错。",
+      "pinyin": "Zhǐyǒu bǎ “bùjiǔ” de yòngfǎ jì xiàlai, cái bù róngyì yòng cuò.",
+      "vi": "Chỉ khi ghi lại cách dùng của “不久” thì mới không dễ dùng sai.",
+      "analysis_vi": "Gài 只有……才…… và 记下来 theo trọng tâm Bài 22.",
+      "highlight": [
+        "不久",
+        "只有",
+        "才"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "caf7b59e-e561-466b-b198-fafde711563e"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / fact nhỏ",
+    "content_vi": "Thời gian",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_current"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5fe6625b-293b-4ee1-a162-0f4050860e79",
+      "order": 1,
+      "rule_vi": "不久 khác 很久; một bên là không lâu, một bên là rất lâu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不久",
+    "back": "không lâu; chẳng bao lâu",
+    "hint": "bùjiǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson22"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "caf7b59e-e561-466b-b198-fafde711563e",
+    "source_lesson_vocab_id": null
+  }
+}

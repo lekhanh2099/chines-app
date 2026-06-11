@@ -1,0 +1,163 @@
+{
+  "id": "ab39aa2e-79bf-4067-a4b5-b9b5e7b17fd8",
+  "type": "deep_vocabulary_item",
+  "order": 153,
+  "hanzi": "耗费",
+  "pinyin": "hàofèi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Kế hoạch và dự án"
+  ],
+  "meaning": {
+    "hanviet": "Hao phí",
+    "meaning_vi": "tiêu tốn, hao phí",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiêu tốn",
+      "hao phí"
+    ],
+    "short_definition_vi": "tiêu tốn, hao phí",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: tiêu tốn, hao phí.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Kế hoạch và dự án",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "耗",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "费",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "耗费 trong bài được học theo nghĩa trọng tâm: tiêu tốn, hao phí.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: tiêu tốn, hao phí.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "443d6fe3-5b96-4255-a177-5bf1e3ef3ba7",
+      "order": 1,
+      "zh": "教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: tiêu tốn, hao phí",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ca16814c-bba4-4348-8f21-27dd63c988ed",
+      "order": 1,
+      "zh": "教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “耗费” = tiêu tốn, hao phí.",
+      "analysis_vi": "Câu này dùng “耗费” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "耗费"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ab39aa2e-79bf-4067-a4b5-b9b5e7b17fd8"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “耗费” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c6205794-06ea-4c56-ba46-9d1074083b2b",
+      "order": 1,
+      "rule_vi": "Cần dùng “耗费” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "耗费",
+    "back": "tiêu tốn, hao phí",
+    "hint": "hàofèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Kế hoạch và dự án"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ab39aa2e-79bf-4067-a4b5-b9b5e7b17fd8",
+    "source_lesson_vocab_id": null
+  }
+}

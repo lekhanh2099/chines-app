@@ -1,0 +1,328 @@
+{
+  "id": "9291b486-dc30-4d47-9d6c-2821b0c29672",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "入睡",
+  "pinyin": "rùshuì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "nhập thụy",
+    "meaning_vi": "đi vào giấc ngủ, ngủ thiếp đi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi vào giấc ngủ",
+      "ngủ thiếp đi"
+    ],
+    "short_definition_vi": "bắt đầu ngủ được",
+    "textbook_focus_vi": "Trong bài: 久久不能入睡.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "入",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ được giữ nguyên như một đơn vị hình thể; không tách sâu để tránh suy diễn.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vào",
+        "modern_logic_vi": "vào",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "睡",
+        "lishu_vi": "",
+        "structure_note_vi": "目 + 垂",
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "",
+            "meaning_vi": "mắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "目 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "mắt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "目 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "垂",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngủ",
+        "modern_logic_vi": "ngủ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "mắt",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "目 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "入睡 được học trong bài theo nghĩa: bắt đầu ngủ được.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 不能入睡.",
+    "warning_vi": "入睡 văn hơn 睡着; khẩu ngữ thường nói 我睡不着.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "睡着",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ngủ thiếp đi, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "睡觉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ngủ nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "入睡 văn hơn 睡着; khẩu ngữ thường nói 我睡不着."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9b35c7ad-8ed8-43ca-8c28-b22d1b67202b",
+      "order": 1,
+      "zh": "不能入睡",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ed00210-dcf0-46f3-87d0-2e8baf04a99c",
+      "order": 2,
+      "zh": "久久不能入睡",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b33768fd-10a4-4a29-8e27-5ae6f9c5b4a4",
+      "order": 3,
+      "zh": "很快入睡",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "08502ac7-6448-4baa-846a-49bdb9124ad2",
+      "order": 4,
+      "zh": "难以入睡",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3af368cc-9ae8-4cc2-ba69-3dae3ec00834",
+      "order": 5,
+      "zh": "帮助入睡",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aad34143-b04f-4db7-b56e-529bdb634f8d",
+      "order": 6,
+      "zh": "入睡困难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a6f19667-c0ce-4267-bbe0-b0b5d6382f6a",
+      "order": 1,
+      "zh": "已经很晚了，可我还久久不能入睡。",
+      "pinyin": "",
+      "vi": "Đã rất khuya rồi, nhưng tôi vẫn rất lâu không thể ngủ được.",
+      "analysis_vi": "久久不能入睡 nhấn trạng thái kéo dài.",
+      "highlight": [
+        "入睡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9291b486-dc30-4d47-9d6c-2821b0c29672"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ad0b44f8-30d3-4bb3-8041-dcf02deba7a9",
+      "order": 2,
+      "zh": "我躺在床上，怎么也睡不着。",
+      "pinyin": "",
+      "vi": "Tôi nằm trên giường, thế nào cũng không ngủ được.",
+      "analysis_vi": "睡不着 khẩu ngữ hơn 不能入睡.",
+      "highlight": [
+        "入睡"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9291b486-dc30-4d47-9d6c-2821b0c29672"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "入睡 hay gặp trong ngữ cảnh sức khỏe: 入睡困难, 帮助入睡.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bba49f8c-a8b1-4503-a71f-8b6a8936efbb",
+      "order": 1,
+      "rule_vi": "入睡 văn hơn 睡着; khẩu ngữ thường nói 我睡不着.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "入睡 văn hơn 睡着; khẩu ngữ thường nói 我睡不着.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "入睡",
+    "back": "đi vào giấc ngủ, ngủ thiếp đi",
+    "hint": "rùshuì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9291b486-dc30-4d47-9d6c-2821b0c29672",
+    "source_lesson_vocab_id": null
+  }
+}

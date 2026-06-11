@@ -1,0 +1,202 @@
+{
+  "id": "dbf429cd-0cf6-4b41-ba16-6f9e76a0dcd3",
+  "type": "deep_vocabulary_item",
+  "order": 63,
+  "hanzi": "散",
+  "pinyin": "sàn / sǎn",
+  "pos": {
+    "raw_vi": "Động từ / tính từ",
+    "raw_cn": "动词 / 形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "tán",
+    "meaning_vi": "tan ra, phân tán; rời rạc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tan ra",
+      "phân tán",
+      "rời rạc"
+    ],
+    "short_definition_vi": "tan ra, phân tán; rời rạc",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "散",
+        "lishu_vi": "tán",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "散 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "散 trong bài được học theo nghĩa: tan ra, phân tán; rời rạc.",
+    "memory_tip_vi": "Nhớ 散 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "分散",
+        "pinyin": "fēnsàn",
+        "meaning_vi": "phân tán",
+        "difference_vi": "Nhấn chia ra nhiều nơi/hướng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Cẩn thận âm: 散开 sànkāi, 松散 sōngsǎn, 散文 sǎnwén."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5ac84f4e-5bb6-466d-958a-600330385ef2",
+      "order": 1,
+      "zh": "散开",
+      "pinyin": "",
+      "vi": "tản ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95cbd55d-e3b2-43ed-bbae-16ac35e47bf7",
+      "order": 2,
+      "zh": "乌云散了",
+      "pinyin": "",
+      "vi": "mây đen tan rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "775da803-814d-4048-8008-808122018730",
+      "order": 3,
+      "zh": "散文",
+      "pinyin": "",
+      "vi": "tản văn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "181e6757-3d98-40e7-a2f1-460b2e0a86b6",
+      "order": 1,
+      "zh": "雨停了，乌云也慢慢散了。",
+      "pinyin": "",
+      "vi": "Mưa tạnh rồi, mây đen cũng dần tan.",
+      "analysis_vi": "散 đọc sàn, nghĩa là tan ra.",
+      "highlight": [
+        "散"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dbf429cd-0cf6-4b41-ba16-6f9e76a0dcd3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "86c936ee-15e7-4bcd-9ce3-8b075abb72cb",
+      "order": 2,
+      "zh": "坟墓合上以后，乌云慢慢散去，两只蝴蝶向天空飞去。",
+      "pinyin": "",
+      "vi": "Sau khi mộ khép lại, mây đen dần tan đi, hai con bướm bay về phía bầu trời.",
+      "analysis_vi": "散去 = tan đi khỏi nơi đó.",
+      "highlight": [
+        "散"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dbf429cd-0cf6-4b41-ba16-6f9e76a0dcd3"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "乌云散去 báo hiệu căng thẳng chuyển thành siêu thoát.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "fa243227-7d19-443b-bf7e-a496b4043cdf",
+      "order": 1,
+      "rule_vi": "Cẩn thận âm: 散开 sànkāi, 松散 sōngsǎn, 散文 sǎnwén.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "散",
+    "back": "tan ra, phân tán; rời rạc",
+    "hint": "sàn / sǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dbf429cd-0cf6-4b41-ba16-6f9e76a0dcd3",
+    "source_lesson_vocab_id": null
+  }
+}

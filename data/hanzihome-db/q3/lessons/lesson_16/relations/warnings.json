@@ -1,0 +1,36 @@
+[
+  {
+    "id": "warning_c20c455f644eb0652fb85f1b",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "都",
+      "由",
+      "将",
+      "请",
+      "看",
+      "线",
+      "但",
+      "已",
+      "连",
+      "喝",
+      "水",
+      "还",
+      "些",
+      "并",
+      "被",
+      "撞",
+      "个",
+      "您",
+      "说",
+      "要",
+      "向",
+      "当",
+      "时",
+      "某",
+      "沿",
+      "喷",
+      "数"
+    ]
+  }
+]

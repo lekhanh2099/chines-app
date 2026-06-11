@@ -1,0 +1,441 @@
+{
+  "id": "950aa81c-3eeb-4bb6-92c8-51539bd99949",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "还是",
+  "pinyin": "háishi",
+  "pos": {
+    "raw_vi": "Phó từ / Liên từ lựa chọn / Cụm đề nghị",
+    "raw_cn": "副词/连词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "grammar_word",
+    "modal"
+  ],
+  "meaning": {
+    "hanviet": "Hoàn thị",
+    "meaning_vi": "vẫn; hay là; tốt hơn là",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vẫn",
+      "hay là",
+      "tốt hơn là"
+    ],
+    "short_definition_vi": "vẫn; hay là; tốt hơn là",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "grammar_word, modal",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "还",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/chuyển động",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi; chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "不",
+            "hanviet": "bất",
+            "meaning_vi": "không",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vẫn, còn, trả lại, lại",
+        "modern_logic_vi": "还 là vẫn/còn/lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi; chuyển động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "是",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời/ngày",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời; ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "正",
+            "hanviet": "chính",
+            "meaning_vi": "đúng/thẳng; phần dưới",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "là, đúng, phải",
+        "modern_logic_vi": "是 là là/đúng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời; ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "还是 là từ chức năng: vẫn / hay là / tốt hơn là tùy câu; không dịch cứng thành 'vẫn là'.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "还",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Còn, vẫn, lại; đứng trước động từ/tính từ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "仍然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vẫn, trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "或者",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Hoặc là, dùng trong câu trần thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "还是……吧",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Mẫu đề nghị mềm: nên/tốt hơn là...",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "还是",
+        "right": "或者",
+        "meaning_vi": "还是 thường dùng trong câu hỏi lựa chọn; 或者 dùng trong trần thuật.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9bae6ee1-386b-483c-acf5-34896301ab68",
+      "order": 1,
+      "zh": "还是想",
+      "pinyin": "",
+      "vi": "vẫn muốn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "541073a5-5cc6-464a-aac5-3e09fc331868",
+      "order": 2,
+      "zh": "还是觉得",
+      "pinyin": "",
+      "vi": "vẫn cảm thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5736f0e-d6ba-4605-9981-688abc00123c",
+      "order": 3,
+      "zh": "还是喜欢",
+      "pinyin": "",
+      "vi": "vẫn thích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a929d326-1484-4d65-b087-cdcc560cfd0c",
+      "order": 4,
+      "zh": "还是一样",
+      "pinyin": "",
+      "vi": "vẫn như vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47056dc6-7f60-437c-a3b8-dba6ef2d678c",
+      "order": 5,
+      "zh": "还是先……吧",
+      "pinyin": "",
+      "vi": "hay là/nên ... trước đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb178ff4-d263-40f9-9d14-35b767e5466f",
+      "order": 6,
+      "zh": "A 还是 B",
+      "pinyin": "",
+      "vi": "A hay B",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7f7fb472-17fb-4d6b-bfd1-584825edc364",
+      "order": 7,
+      "zh": "你还是……吧",
+      "pinyin": "",
+      "vi": "bạn nên...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a0fc283-c66d-4dc7-bc2b-1359c50a1de1",
+      "order": 8,
+      "zh": "我还是不去了",
+      "pinyin": "",
+      "vi": "tôi vẫn không đi / thôi tôi không đi nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ce013ed6-d3f7-414e-84b7-2391b94c7191",
+      "order": 1,
+      "zh": "她还是想再看看别的房子。",
+      "pinyin": "Tā háishi xiǎng zài kànkan bié de fángzi.",
+      "vi": "Cô ấy vẫn muốn xem thêm nhà khác.",
+      "analysis_vi": "还是想 = vẫn muốn; 再看看 = xem thêm/xem thử thêm.",
+      "highlight": [
+        "还是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "950aa81c-3eeb-4bb6-92c8-51539bd99949"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "786d29bf-c512-40b8-9514-7488d6974f8d",
+      "order": 2,
+      "zh": "虽然这套房子不错，但是我还是觉得房租有点儿贵。",
+      "pinyin": "Suīrán zhè tào fángzi búcuò, dànshì wǒ háishi juéde fángzū yǒudiǎnr guì.",
+      "vi": "Tuy căn này khá ổn, nhưng tôi vẫn thấy tiền thuê hơi đắt.",
+      "analysis_vi": "虽然……但是…… + 还是 nhấn đánh giá không đổi sau khi cân nhắc.",
+      "highlight": [
+        "还是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "950aa81c-3eeb-4bb6-92c8-51539bd99949"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "919bbe22-2964-46ad-bb79-1f45d06b695b",
+      "order": 3,
+      "zh": "要是你觉得附近的交通不方便，我们还是坐地铁去看下一套房子吧，别再开车了。",
+      "pinyin": "Yàoshi nǐ juéde fùjìn de jiāotōng bù fāngbiàn, wǒmen háishi zuò dìtiě qù kàn xià yí tào fángzi ba, bié zài kāichē le.",
+      "vi": "Nếu bạn thấy giao thông gần đây không tiện, chúng ta nên đi tàu điện ngầm xem căn tiếp theo đi, đừng lái xe nữa.",
+      "analysis_vi": "要是…… nêu điều kiện; 还是……吧 là lời đề nghị.",
+      "highlight": [
+        "还是"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "950aa81c-3eeb-4bb6-92c8-51539bd99949"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "还是……吧 là cách góp ý mềm hơn ra lệnh trực tiếp, ví dụ 你还是早点儿走吧.",
+    "tags": [
+      "grammar_word",
+      "modal"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "be922c99-2fc3-4b1c-a26e-c20d046a326f",
+      "order": 1,
+      "rule_vi": "Không phải 还是 lúc nào cũng là 'vẫn'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "你喝茶还是喝咖啡？",
+          "pinyin": "",
+          "vi": "Bạn uống trà hay cà phê?",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "你还是早点儿出门吧。",
+          "pinyin": "",
+          "vi": "Bạn nên ra khỏi nhà sớm hơn đi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他还是不想租这套房子。",
+          "pinyin": "",
+          "vi": "Anh ấy vẫn không muốn thuê căn này.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Nó có thể nghĩa 'hay là' trong lựa chọn hoặc 'nên/tốt hơn là' trong lời khuyên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "还是",
+    "back": "vẫn; hay là; tốt hơn là",
+    "hint": "háishi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "grammar_word",
+      "modal"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "950aa81c-3eeb-4bb6-92c8-51539bd99949",
+    "source_lesson_vocab_id": null
+  }
+}

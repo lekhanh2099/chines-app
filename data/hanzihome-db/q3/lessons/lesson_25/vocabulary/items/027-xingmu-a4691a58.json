@@ -1,0 +1,250 @@
+{
+  "id": "c7cbdfe0-f5d4-49e6-b57e-38593ea022d9",
+  "type": "deep_vocabulary_item",
+  "order": 27,
+  "hanzi": "醒目",
+  "pinyin": "xǐngmù",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tỉnh mục",
+    "meaning_vi": "nổi bật, bắt mắt, dễ nhìn thấy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nổi bật",
+      "bắt mắt",
+      "dễ nhìn thấy"
+    ],
+    "short_definition_vi": "nổi bật, bắt mắt, dễ nhìn thấy",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "醒",
+        "lishu_vi": "tỉnh",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "酉",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dậu",
+          "radical_name_zh": "",
+          "hanviet": "dậu",
+          "meaning_vi": "rượu, lên men",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "酉",
+            "hanviet": "dậu",
+            "meaning_vi": "rượu, lên men",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "酉",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dậu",
+              "radical_name_zh": "",
+              "hanviet": "dậu",
+              "meaning_vi": "rượu, lên men",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tỉnh, làm tỉnh",
+        "modern_logic_vi": "Trong từ này, 醒 góp phần vào nghĩa hiện đại: tỉnh, làm tỉnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "目",
+        "lishu_vi": "mục",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "目",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mục",
+          "radical_name_zh": "",
+          "hanviet": "mục",
+          "meaning_vi": "mắt, nhìn",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "目",
+            "hanviet": "mục",
+            "meaning_vi": "mắt, nhìn",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "目",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mục",
+              "radical_name_zh": "",
+              "hanviet": "mục",
+              "meaning_vi": "mắt, nhìn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mắt",
+        "modern_logic_vi": "Trong từ này, 目 góp phần vào nghĩa hiện đại: mắt.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "醒目 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 很醒目.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "醒目 không phải tỉnh ngủ; tỉnh ngủ là 醒了."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "36900e7f-626c-412c-9fb9-ef915ce8fd65",
+      "order": 1,
+      "zh": "很醒目",
+      "pinyin": "",
+      "vi": "rất nổi bật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69d266c5-5482-4850-b886-74ad3ee59b29",
+      "order": 2,
+      "zh": "标题很醒目",
+      "pinyin": "",
+      "vi": "tiêu đề bắt mắt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce4993aa-0c53-40db-b050-a70178c45649",
+      "order": 3,
+      "zh": "醒目的位置",
+      "pinyin": "",
+      "vi": "vị trí dễ thấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e1014b2c-1d9d-4e2f-92b8-2e490e2d92bd",
+      "order": 1,
+      "zh": "红色的标题很醒目。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 醒目 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 醒目; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "醒目"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c7cbdfe0-f5d4-49e6-b57e-38593ea022d9"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 醒目 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d26f8361-cef5-4153-ad41-3a6c543cc83c",
+      "order": 1,
+      "rule_vi": "醒目 không phải tỉnh ngủ; tỉnh ngủ là 醒了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "醒目",
+    "back": "nổi bật, bắt mắt, dễ nhìn thấy",
+    "hint": "xǐngmù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c7cbdfe0-f5d4-49e6-b57e-38593ea022d9",
+    "source_lesson_vocab_id": null
+  }
+}

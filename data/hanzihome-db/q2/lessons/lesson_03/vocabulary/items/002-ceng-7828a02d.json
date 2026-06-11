@@ -1,0 +1,375 @@
+{
+  "id": "df2d4101-94cb-46c4-8554-abbb24037691",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "层",
+  "pinyin": "céng",
+  "pos": {
+    "raw_vi": "Danh từ / Lượng từ",
+    "raw_cn": "名词/量词",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "housing",
+    "measure_word"
+  ],
+  "meaning": {
+    "hanviet": "Tằng",
+    "meaning_vi": "tầng; lớp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tầng",
+      "lớp"
+    ],
+    "short_definition_vi": "tầng; lớp",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "housing, measure_word",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "层",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "尸",
+            "hanviet": "thi",
+            "meaning_vi": "phần che phủ/cấu tạo",
+            "position_vi": "phần trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "尸",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thi",
+              "radical_name_zh": "",
+              "hanviet": "thi",
+              "meaning_vi": "thân/người nằm; phần che phủ trong cấu chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "mây; phần dưới giản thể",
+            "position_vi": "phần dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tầng; lớp; cấp bậc",
+        "modern_logic_vi": "层 chỉ các lớp chồng lên nhau; nhà có nhiều tầng thì dùng 层.",
+        "warning_vi": "尸 không nên ép nghĩa 'xác' vào nghĩa hiện đại của 层.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "尸",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thi",
+          "radical_name_zh": "",
+          "hanviet": "thi",
+          "meaning_vi": "thân/người nằm; phần che phủ trong cấu chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "层 dùng để nói số tầng hoặc lớp chồng lên nhau.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "楼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tòa nhà/lầu/tầng tùy cấu trúc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "楼层",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tầng lầu trong tòa nhà.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一楼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tầng một theo cách gọi Trung Quốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "层",
+        "right": "楼",
+        "meaning_vi": "层 thiên về số tầng/lớp; 楼 có thể là tòa nhà hoặc tầng.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8c025cd6-6500-4fd8-a15d-c68228cbc972",
+      "order": 1,
+      "zh": "一层楼",
+      "pinyin": "",
+      "vi": "một tầng lầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b342ab39-ab7e-4f3a-bc51-8aeea06581e8",
+      "order": 2,
+      "zh": "三层楼",
+      "pinyin": "",
+      "vi": "ba tầng lầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc74bd3d-5001-4911-a0be-de238d27c716",
+      "order": 3,
+      "zh": "第几层",
+      "pinyin": "",
+      "vi": "tầng thứ mấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e054cd1-a8ff-4e68-b760-71802ff75a54",
+      "order": 4,
+      "zh": "这栋楼有几层",
+      "pinyin": "",
+      "vi": "tòa nhà này có mấy tầng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "877391db-41aa-437d-af1f-218bbcab6472",
+      "order": 5,
+      "zh": "一层灰",
+      "pinyin": "",
+      "vi": "một lớp bụi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fe1a2ca3-1538-4312-a791-ad8c5ca720ef",
+      "order": 6,
+      "zh": "一层纸",
+      "pinyin": "",
+      "vi": "một lớp giấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b12bfc30-5938-4e53-a03c-dad9391cc82f",
+      "order": 7,
+      "zh": "楼层很高",
+      "pinyin": "",
+      "vi": "tầng lầu cao",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "499ed0be-e1ac-4cf1-9765-f5d0477ef2c7",
+      "order": 8,
+      "zh": "住在第六层",
+      "pinyin": "",
+      "vi": "sống ở tầng sáu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a5ea2d6c-cb84-4b93-aee6-ba5ce8855ffa",
+      "order": 1,
+      "zh": "这栋楼有六层。",
+      "pinyin": "Zhè dòng lóu yǒu liù céng.",
+      "vi": "Tòa nhà này có sáu tầng.",
+      "analysis_vi": "有六层 nói số tầng; 栋 là lượng từ cho tòa nhà.",
+      "highlight": [
+        "层"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df2d4101-94cb-46c4-8554-abbb24037691"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "87ddd0e3-5ee3-41f4-a964-5f9e7ae6498f",
+      "order": 2,
+      "zh": "虽然我们家住在六层，但是每天上去下去也不太累。",
+      "pinyin": "Suīrán wǒmen jiā zhù zài liù céng, dànshì měitiān shàngqù xiàqù yě bú tài lèi.",
+      "vi": "Tuy nhà chúng tôi ở tầng sáu, nhưng mỗi ngày đi lên đi xuống cũng không mệt lắm.",
+      "analysis_vi": "虽然……但是……; 上去 / 下去 là động từ xu hướng sát bài.",
+      "highlight": [
+        "层"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df2d4101-94cb-46c4-8554-abbb24037691"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "db338e2e-6571-4fd9-826e-b67b0eca7506",
+      "order": 3,
+      "zh": "要是这栋楼没有电梯，老人住在六层就不太方便了。",
+      "pinyin": "Yàoshi zhè dòng lóu méiyǒu diàntī, lǎorén zhù zài liù céng jiù bú tài fāngbiàn le.",
+      "vi": "Nếu tòa nhà này không có thang máy, người già sống ở tầng sáu thì sẽ không tiện lắm.",
+      "analysis_vi": "要是……就…… diễn tả giả thiết; 不太方便了 báo đánh giá mới.",
+      "highlight": [
+        "层"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "df2d4101-94cb-46c4-8554-abbb24037691"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Ở Trung Quốc đại lục, tầng trệt thường gọi là 一楼. Khi dịch sang tiếng Việt cần cẩn thận vì cách gọi tầng trệt/lầu có thể khác theo vùng.",
+    "tags": [
+      "housing",
+      "measure_word"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3c81c8e7-b9fe-45e2-adbd-da38f040ce2f",
+      "order": 1,
+      "rule_vi": "Đừng dịch máy 'tôi ở tầng ba' thành 我住三层 nếu thiếu 在 trong văn cảnh cần vị trí rõ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我住三层。",
+          "pinyin": "",
+          "vi": "Tôi ở tầng ba.",
+          "note_vi": "Có thể hiểu nhưng kém đầy đủ hơn khi học mẫu vị trí.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我住在三层。",
+          "pinyin": "Wǒ zhù zài sān céng.",
+          "vi": "Tôi sống ở tầng ba.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我住三楼。",
+          "pinyin": "Wǒ zhù sān lóu.",
+          "vi": "Tôi ở tầng ba.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Tự nhiên hơn là 我住在三层 hoặc 我住三楼.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "层",
+    "back": "tầng; lớp",
+    "hint": "céng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "housing",
+      "measure_word"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "df2d4101-94cb-46c4-8554-abbb24037691",
+    "source_lesson_vocab_id": null
+  }
+}

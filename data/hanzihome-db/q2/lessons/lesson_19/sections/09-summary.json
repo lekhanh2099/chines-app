@@ -1,0 +1,49 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "content": {
+    "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "语法 / 词语用法",
+      "练习",
+      "综合填空",
+      "交际会话",
+      "写汉字"
+    ],
+    "grammar_points": [
+      {
+        "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+        "title": "被动意义的表达：“被”字句"
+      },
+      {
+        "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+        "title": "又"
+      }
+    ],
+    "key_patterns": [
+      "S + 被 + tác nhân + V + kết quả",
+      "S + 让 / 叫 + tác nhân + V + kết quả",
+      "没 / 没有 + 被 / 让 / 叫 + tác nhân + V + kết quả",
+      "又不是 / 又没 + ..."
+    ],
+    "coverage_total": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": "No separate 阅读理解 found; 综合填空 covered.",
+      "character_writing_covered": true,
+      "remaining_check": "Official exercise answer key if importing checked answers."
+    }
+  }
+}

@@ -1,0 +1,349 @@
+{
+  "id": "5b64bf12-e5c5-42d0-bac9-527028000bb3",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "登机",
+  "pinyin": "dēngjī",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Đăng cơ",
+    "meaning_vi": "lên máy bay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lên máy bay"
+    ],
+    "short_definition_vi": "lên máy bay",
+    "textbook_focus_vi": "lên máy bay",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "登",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "癶",
+            "hanviet": "",
+            "meaning_vi": "phần trên nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "豆",
+            "hanviet": "đậu",
+            "meaning_vi": "phần dưới nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lên, bước lên; ghi vào/đăng",
+        "modern_logic_vi": "Học theo trục đi lên/bước lên.",
+        "warning_vi": "Không ép nghĩa 豆 vào 登.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "机",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "mộc",
+            "meaning_vi": "cây/gỗ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây, gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "几",
+            "hanviet": "kỷ",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "máy móc; máy bay trong 飞机",
+        "modern_logic_vi": "机 trong bài thường gắn với 飞机.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây, gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "登 là bước lên. 机 ở đây là 飞机 – máy bay. → 登机 = lên máy bay. Cảnh báo: 登机 không phải “check-in”. Check-in là 办理登机手续. Sau khi check-in xong mới đến bước 登机.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "办理登机手续",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "làm thủ tục check-in.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "起飞",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "máy bay cất cánh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "到达",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đến nơi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "登机: lên máy bay/boarding."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b0d60b2c-4084-4dd6-9587-6a081b362c43",
+      "order": 1,
+      "zh": "开始登机",
+      "pinyin": "",
+      "vi": "bắt đầu lên máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f0f1eb58-6ef9-4659-94c9-2728b3399812",
+      "order": 2,
+      "zh": "准备登机",
+      "pinyin": "",
+      "vi": "chuẩn bị lên máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8a60d235-6182-40e6-a868-0fcaa7768a6d",
+      "order": 3,
+      "zh": "登机口",
+      "pinyin": "",
+      "vi": "cửa lên máy bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e6d642a7-748c-49ca-82f7-2b7cf9472c92",
+      "order": 4,
+      "zh": "登机时间",
+      "pinyin": "",
+      "vi": "giờ boarding",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5e9216d-0b62-451b-8712-aea61c257ca4",
+      "order": 5,
+      "zh": "登机牌儿",
+      "pinyin": "",
+      "vi": "boarding pass",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b69b27c4-a1ea-402b-8549-ed4929fab34e",
+      "order": 1,
+      "zh": "飞机马上就要开始登机了，请把登机牌儿拿出来。",
+      "pinyin": "Fēijī mǎshàng jiù yào kāishǐ dēngjī le, qǐng bǎ dēngjīpáir ná chūlai.",
+      "vi": "Máy bay sắp bắt đầu boarding rồi, xin hãy lấy thẻ lên máy bay ra.",
+      "analysis_vi": "把登机牌儿拿出来 là câu 把 có hướng ra ngoài, rất thực tế ở cửa boarding.",
+      "highlight": [
+        "登机"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "5b64bf12-e5c5-42d0-bac9-527028000bb3"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "90c1ecd6-f3f7-4b36-b078-ba565795af74",
+      "order": 2,
+      "zh": "登机以前，工作人员会看你的护照和登机牌儿。",
+      "pinyin": "Dēngjī yǐqián, gōngzuò rényuán huì kàn nǐ de hùzhào hé dēngjīpáir.",
+      "vi": "Trước khi lên máy bay, nhân viên sẽ xem hộ chiếu và thẻ lên máy bay của bạn.",
+      "analysis_vi": "登机以前 đặt mốc trước hành động boarding; 护照和登机牌儿 là cặp giấy tờ quan trọng.",
+      "highlight": [
+        "登机"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "5b64bf12-e5c5-42d0-bac9-527028000bb3"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "24feddbc-b038-4c40-8443-c28690a17e2c",
+      "order": 3,
+      "zh": "他把机票放在包里，结果登机的时候找不到了。",
+      "pinyin": "Tā bǎ jīpiào fàng zài bāo lǐ, jiéguǒ dēngjī de shíhou zhǎo bú dào le.",
+      "vi": "Anh ấy để vé máy bay trong túi, kết quả lúc lên máy bay lại không tìm thấy.",
+      "analysis_vi": "把机票放在包里 là câu 把 với vị trí; 找不到 là không tìm thấy.",
+      "highlight": [
+        "登机"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "5b64bf12-e5c5-42d0-bac9-527028000bb3"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "登机 khác 值机. 值机 là check-in theo cách nói ngành hàng không, còn sách giáo trình hay dùng 办理登机手续. App hàng không Trung Quốc cũng hay có nút 在线值机 – check-in online.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1dcfc56e-a019-463b-bb70-3ec258311796",
+      "order": 1,
+      "rule_vi": "Nhầm 登机 với 起飞.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 登机 theo cụm và ngữ cảnh bài 18; nghĩa chính là lên máy bay.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "登机",
+    "back": "lên máy bay",
+    "hint": "dēngjī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5b64bf12-e5c5-42d0-bac9-527028000bb3",
+    "source_lesson_vocab_id": null
+  }
+}

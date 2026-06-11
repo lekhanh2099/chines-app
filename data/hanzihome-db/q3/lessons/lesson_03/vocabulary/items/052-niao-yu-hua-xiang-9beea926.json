@@ -1,0 +1,493 @@
+{
+  "id": "4d2054dc-bdd7-4b1e-a821-f80b4b997bca",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "鸟语花香",
+  "pinyin": "niǎo yǔ huā xiāng",
+  "pos": {
+    "raw_vi": "idiom",
+    "raw_cn": "",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "idiom",
+    "spring"
+  ],
+  "meaning": {
+    "hanviet": "điểu ngữ hoa hương",
+    "meaning_vi": "chim hót hoa thơm; cảnh xuân tươi đẹp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chim hót hoa thơm",
+      "cảnh xuân tươi đẹp"
+    ],
+    "short_definition_vi": "chim hót hoa thơm; cảnh xuân tươi đẹp",
+    "textbook_focus_vi": "chim hót hoa thơm; cảnh xuân tươi đẹp",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "idiom, spring",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "鸟",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "鸟",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chim",
+        "modern_logic_vi": "Trong từ này, 鸟 góp phần vào lớp nghĩa hiện đại: chim",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "语",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "吾",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, lời nói, ngôn ngữ",
+        "modern_logic_vi": "Trong từ này, 语 góp phần vào lớp nghĩa hiện đại: nói, lời nói, ngôn ngữ",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "花",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây, thực vật",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây, thực vật",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây, thực vật",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "化",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hoa; tiêu tiền tùy cụm",
+        "modern_logic_vi": "Trong từ này, 花 góp phần vào lớp nghĩa hiện đại: hoa; tiêu tiền tùy cụm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "香",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "lúa, cây lương thực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "lúa, cây lương thực",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "lúa, cây lương thực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thơm, hương",
+        "modern_logic_vi": "Trong từ này, 香 góp phần vào lớp nghĩa hiện đại: thơm, hương",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "鸟语 = tiếng chim; 花香 = hương hoa. Thành ngữ tả cảnh xuân có âm thanh và hương sắc.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 鸟语花香 để tả mùa đông nếu không cố ý đối lập.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "春暖花开",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "山清水秀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "桃红柳绿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烈日高照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "寒风刺骨",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6e10aa97-8a7a-419c-b14c-8cd7bb9b15fe",
+      "order": 1,
+      "zh": "鸟语花香的春天",
+      "pinyin": "",
+      "vi": "mùa xuân chim hót hoa thơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "efa549d6-e8c5-49fe-9c0a-700c1d9aa240",
+      "order": 2,
+      "zh": "一片鸟语花香",
+      "pinyin": "",
+      "vi": "một khung cảnh chim hót hoa thơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a2f3e62-601a-49b4-876f-8c2c7f0a59ec",
+      "order": 3,
+      "zh": "到处鸟语花香",
+      "pinyin": "",
+      "vi": "khắp nơi chim hót hoa thơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff3f68cd-6ad8-4006-a4cb-50754c196207",
+      "order": 4,
+      "zh": "公园里鸟语花香",
+      "pinyin": "",
+      "vi": "công viên chim hót hoa thơm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "028ddb13-d652-4fb4-bfd5-829d66f0ed9a",
+      "order": 5,
+      "zh": "景色宜人",
+      "pinyin": "",
+      "vi": "cảnh sắc dễ chịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dbb295cd-405b-4642-84f3-e018017c3cc7",
+      "order": 6,
+      "zh": "感受鸟语花香",
+      "pinyin": "",
+      "vi": "cảm nhận cảnh xuân tươi đẹp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "744e0627-57a3-4e6b-8af4-1cc75770dedf",
+      "order": 1,
+      "zh": "春天到了，公园里鸟语花香。",
+      "pinyin": "",
+      "vi": "Mùa xuân đến rồi, trong công viên chim hót hoa thơm.",
+      "analysis_vi": "Thành ngữ làm vị ngữ tả cảnh.",
+      "highlight": [
+        "鸟语花香"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d2054dc-bdd7-4b1e-a821-f80b4b997bca"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c508c174-202e-4cea-b174-5b1d8cec9d71",
+      "order": 2,
+      "zh": "每到春天，北海公园里一片鸟语花香。",
+      "pinyin": "",
+      "vi": "Mỗi mùa xuân, Bắc Hải là một khung cảnh chim hót hoa thơm.",
+      "analysis_vi": "一片 + cảnh tượng.",
+      "highlight": [
+        "鸟语花香"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d2054dc-bdd7-4b1e-a821-f80b4b997bca"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d7409782-7dca-4ce7-b7a9-9bde0d9b225c",
+      "order": 3,
+      "zh": "鸟语花香不是书上的词，而是真能看到、听到、闻到的景色。",
+      "pinyin": "",
+      "vi": "Chim hót hoa thơm không chỉ là từ trong sách, mà là cảnh có thể nhìn/nghe/ngửi.",
+      "analysis_vi": "Giải thích bằng giác quan.",
+      "highlight": [
+        "鸟语花香"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4d2054dc-bdd7-4b1e-a821-f80b4b997bca"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "鸟语花香 trong Bài 3 北京的四季",
+    "content_vi": "Thành ngữ tả xuân rất văn, dịch tự nhiên là “chim hót hoa thơm/cảnh xuân tươi đẹp”.",
+    "tags": [
+      "idiom",
+      "spring"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "387218fb-6a51-4e2b-8b55-9344e60de915",
+      "order": 1,
+      "rule_vi": "Không dùng 鸟语花香 để tả mùa đông nếu không cố ý đối lập.",
+      "natural_examples": [
+        {
+          "zh": "春天到了，公园里鸟语花香。",
+          "pinyin": "",
+          "vi": "Mùa xuân đến rồi, trong công viên chim hót hoa thơm.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 鸟语花香 để tả mùa đông nếu không cố ý đối lập.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "鸟语花香",
+    "back": "chim hót hoa thơm; cảnh xuân tươi đẹp",
+    "hint": "niǎo yǔ huā xiāng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "idiom",
+      "spring"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4d2054dc-bdd7-4b1e-a821-f80b4b997bca",
+    "source_lesson_vocab_id": null
+  }
+}

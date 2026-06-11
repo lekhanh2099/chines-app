@@ -1,0 +1,244 @@
+{
+  "id": "868ef35e-0364-4c74-9032-1b3ba240403e",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "低",
+  "pinyin": "dī",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ",
+    "raw_cn": "形 / 动",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Đê",
+    "meaning_vi": "thấp; mức thấp",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thấp",
+      "mức thấp"
+    ],
+    "short_definition_vi": "thấp; mức thấp",
+    "textbook_focus_vi": "thấp; mức thấp",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "低",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thấp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "低 = thấp về vị trí, mức độ, giá cả, âm lượng, chất lượng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "61c2458a-c04e-40bb-a587-f804c45b3516",
+      "order": 1,
+      "zh": "很低",
+      "pinyin": "",
+      "vi": "rất thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "664b120c-79c5-4092-a136-7646539d6501",
+      "order": 2,
+      "zh": "越来越低",
+      "pinyin": "",
+      "vi": "ngày càng thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3e26fc25-4bd9-4b28-abb0-2fd60bacccf2",
+      "order": 3,
+      "zh": "价格低",
+      "pinyin": "",
+      "vi": "giá thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "59eb59fb-6b5c-4c0a-b35a-c5721372ff27",
+      "order": 4,
+      "zh": "声音低",
+      "pinyin": "",
+      "vi": "giọng/âm lượng thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "674ebbd3-3e56-47b3-8eb4-fe4f6010fb96",
+      "order": 5,
+      "zh": "水平低",
+      "pinyin": "",
+      "vi": "trình độ thấp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f83a2ebb-608b-4ae9-8304-ddba2aa3cb34",
+      "order": 1,
+      "zh": "这个房间的窗台有点儿低。",
+      "pinyin": "Zhège fángjiān de chuāngtái yǒudiǎnr dī.",
+      "vi": "Bệ cửa sổ của căn phòng này hơi thấp.",
+      "analysis_vi": "有点儿 + tính từ thường có sắc thái hơi không như ý.",
+      "highlight": [
+        "低"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "868ef35e-0364-4c74-9032-1b3ba240403e"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f4e5b254-20aa-4ba8-8493-58ca407328eb",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：低。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: thấp; mức thấp.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "低"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "868ef35e-0364-4c74-9032-1b3ba240403e"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 低 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b256884d-64c9-488b-9a58-401f2878891d",
+      "order": 1,
+      "rule_vi": "低 là thấp về mức độ/vị trí; 矮 là thấp lùn về chiều cao người/vật.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "低 là thấp về mức độ/vị trí; 矮 là thấp lùn về chiều cao người/vật.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "低",
+    "back": "thấp; mức thấp",
+    "hint": "dī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_026"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "868ef35e-0364-4c74-9032-1b3ba240403e",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -36,7 +36,7 @@
         "pinyin": "Wáng lǎoshī ma? Wǒ shì Xiǎo Lín.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -75,7 +75,7 @@
         "pinyin": "Shì ma? Xiǎo Zhào hǎo ma?",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -140,7 +140,7 @@
         "pinyin": "Wáng lǎoshī, zhè shì Xiǎo Zhào dài gěi nín de dōngxi.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -179,7 +179,7 @@
         "pinyin": "Wǒ sòng song nǐ.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -192,7 +192,7 @@
         "pinyin": "Bú yòng sòng le, qǐng huí ba.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -205,7 +205,7 @@
         "pinyin": "Màn zǒu!",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        }
@@ -282,7 +282,7 @@
         "pinyin": "Duìbuqǐ, wǒ lái wǎn le.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -295,7 +295,7 @@
         "pinyin": "Méi guānxi.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -334,7 +334,7 @@
         "pinyin": "Tīng qīngchu le.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        },
@@ -399,7 +399,7 @@
         "pinyin": "Kěyǐ.",
         "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_l09_directional_lai_qu"],
+        "grammar_refs": [],
         "notes": [],
         "check_needed": false
        }
@@ -1609,7 +1609,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_l09_directional_lai_qu",
       "type": "grammar_point",
       "order": 1,
       "title": "动作趋向的表达：动词 + 来 / 去",
@@ -1945,13 +1945,7 @@
        {
         "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
         "sample": "A：她从台湾回来了吗？\nB：回来了。",
-        "prompts": [
-         "楼下 — 上来",
-         "山上 — 下来",
-         "里边 — 出来",
-         "那边 — 过来",
-         "外边 — 进来"
-        ],
+        "prompts": ["楼下 — 上来", "山上 — 下来", "里边 — 出来", "那边 — 过来", "外边 — 进来"],
         "check_needed": false
        },
        {
@@ -1963,39 +1957,19 @@
        {
         "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
         "sample": "A：林老师在楼上等你呢，快上去吧。\nB：我马上就上去。",
-        "prompts": [
-         "楼下 — 下去",
-         "里边 — 进去",
-         "外边 — 出去",
-         "那边 — 过去",
-         "学校 — 回去"
-        ],
+        "prompts": ["楼下 — 下去", "里边 — 进去", "外边 — 出去", "那边 — 过去", "学校 — 回去"],
         "check_needed": false
        },
        {
         "id": "6227f946-2a93-462c-8702-43b4abc4a614",
         "sample": "A：看见玛丽了吗？\nB：我看见她进教室去了。",
-        "prompts": [
-         "上楼去",
-         "下楼去",
-         "回宿舍去",
-         "到那边去",
-         "进图书馆去",
-         "出校门去"
-        ],
+        "prompts": ["上楼去", "下楼去", "回宿舍去", "到那边去", "进图书馆去", "出校门去"],
         "check_needed": false
        },
        {
         "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
         "sample": "A：林老师呢？\nB：她到台湾去了。",
-        "prompts": [
-         "进公园去",
-         "回学校去",
-         "到教室去",
-         "到河那边去",
-         "下楼去",
-         "上山去"
-        ],
+        "prompts": ["进公园去", "回学校去", "到教室去", "到河那边去", "下楼去", "上山去"],
         "check_needed": false
        },
        {
@@ -2045,18 +2019,7 @@
       "difficulty": "normal",
       "source_origin": "textbook/generated_mixed",
       "check_needed": false,
-      "word_bank": [
-       "准时",
-       "取",
-       "麻烦",
-       "拿",
-       "参观",
-       "去",
-       "顺便",
-       "清楚",
-       "要求",
-       "大约"
-      ],
+      "word_bank": ["准时", "取", "麻烦", "拿", "参观", "去", "顺便", "清楚", "要求", "大约"],
       "questions": [
        {
         "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
@@ -3165,7 +3128,7 @@
      ],
      "grammar_points": [
       {
-       "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+       "id": "grammar_l09_directional_lai_qu",
        "title": "动作趋向的表达：动词 + 来 / 去"
       }
      ],
@@ -3235,7 +3198,7 @@
    ],
    "grammar_points": [
     {
-     "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+     "id": "grammar_l09_directional_lai_qu",
      "title": "动作趋向的表达：动词 + 来 / 去"
     }
    ],

@@ -1,0 +1,215 @@
+{
+  "id": "9eb2c8bd-1050-4747-99f7-84709f87bf30",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "开",
+  "pinyin": "kāi",
+  "pos": {
+    "raw_vi": "Động từ / Yếu tố cấu tạo từ",
+    "raw_cn": "动 / 语素",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khai",
+    "meaning_vi": "mở; lái; tổ chức; bắt đầu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "mở",
+      "lái",
+      "tổ chức",
+      "bắt đầu"
+    ],
+    "short_definition_vi": "mở; lái; tổ chức; bắt đầu",
+    "textbook_focus_vi": "mở; lái; tổ chức; bắt đầu",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "开",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mở, tách ra; bắt đầu; lái/tổ chức",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "开 đa nghĩa: mở/bật/lái/tổ chức tùy tân ngữ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9d1751e8-cd39-427e-a094-48fd579bceea",
+      "order": 1,
+      "zh": "开车",
+      "pinyin": "",
+      "vi": "lái xe / xe chạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aff86dd8-24c6-4940-a234-56bfa6db8ca3",
+      "order": 2,
+      "zh": "开过来",
+      "pinyin": "",
+      "vi": "chạy/lái tới",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5e9f680-d789-4aaa-a1e7-61d0d459a0ec",
+      "order": 3,
+      "zh": "开窗户",
+      "pinyin": "",
+      "vi": "mở cửa sổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "73c89f11-9e08-425f-812e-7144ed624b98",
+      "order": 4,
+      "zh": "开会",
+      "pinyin": "",
+      "vi": "họp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c0e5123-33ee-47c6-95f6-73788729a284",
+      "order": 5,
+      "zh": "开联欢会",
+      "pinyin": "",
+      "vi": "tổ chức liên hoan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9580e41e-246f-4594-827c-011a7a0a4d7c",
+      "order": 1,
+      "zh": "前边开过来一辆空车。",
+      "pinyin": "Qiánbian kāi guòlai yí liàng kōngchē.",
+      "vi": "Phía trước có một chiếc xe trống chạy tới.",
+      "analysis_vi": "Không dịch 开 ở đây là mở; là xe chạy tới.",
+      "highlight": [
+        "开"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9eb2c8bd-1050-4747-99f7-84709f87bf30"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "faa47bf8-2da0-412a-85fe-328a5c5fd9e6",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：开。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: mở; lái; tổ chức; bắt đầu.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "开"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "9eb2c8bd-1050-4747-99f7-84709f87bf30"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 开 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "885947d7-28b9-4a5d-a04b-706c53c74c6d",
+      "order": 1,
+      "rule_vi": "开车 không phải 'mở xe'; 开会 không phải dịch cứng là 'mở hội'.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "开车 không phải 'mở xe'; 开会 không phải dịch cứng là 'mở hội'.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "开",
+    "back": "mở; lái; tổ chức; bắt đầu",
+    "hint": "kāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_035"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9eb2c8bd-1050-4747-99f7-84709f87bf30",
+    "source_lesson_vocab_id": null
+  }
+}

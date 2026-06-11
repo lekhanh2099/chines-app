@@ -1,0 +1,453 @@
+{
+  "id": "41c8a823-b6aa-4593-ad09-d29a4e69bf9b",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "中成药",
+  "pinyin": "zhōngchéngyào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Trung thành dược",
+    "meaning_vi": "thuốc Đông y chế sẵn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thuốc Đông y chế sẵn"
+    ],
+    "short_definition_vi": "thuốc Đông y chế sẵn",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "中",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Trung y / Đông y.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "成",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đã thành hình, chế thành sẵn.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "药",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây, thực vật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây, thực vật",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được dùng như bộ Thảo trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thuốc.",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "艸",
+          "radical_variant": "艹",
+          "radical_name_vi": "bộ Thảo",
+          "radical_name_zh": "",
+          "hanviet": "thảo",
+          "meaning_vi": "cỏ cây, thực vật",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "艹 được dùng như bộ Thảo trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "中 = Trung y / Đông y. 成 = đã thành hình, chế thành sẵn. 药 = thuốc. → 中成药 = thuốc Đông y đã được chế thành dạng dùng sẵn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "中成药",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thuốc Đông y chế sẵn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "中药",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thuốc Đông y/thuốc Bắc nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "汤药",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thuốc sắc dạng nước.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "西药",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thuốc Tây.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "药片",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "viên thuốc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我吃过中药。",
+      "Tôi từng uống thuốc Bắc.",
+      "我吃过中成药。",
+      "Tôi từng uống thuốc Đông y chế sẵn.",
+      "我吃过西药。",
+      "Tôi từng uống thuốc Tây."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "07f7e7d0-da8f-4ca0-9332-61ba1e8eaffd",
+      "order": 1,
+      "zh": "吃中成药",
+      "pinyin": "",
+      "vi": "uống/dùng thuốc Đông y chế sẵn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dfcf2927-b83f-4f0d-840a-dd4212bce88d",
+      "order": 2,
+      "zh": "开中成药",
+      "pinyin": "",
+      "vi": "kê thuốc Đông y chế sẵn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "fa8bd1ae-7c10-41f8-826f-2469872d2cf5",
+      "order": 3,
+      "zh": "这种中成药",
+      "pinyin": "",
+      "vi": "loại thuốc Đông y chế sẵn này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "98d97252-fd82-4788-b54e-b5a595358d0e",
+      "order": 4,
+      "zh": "中成药不太苦",
+      "pinyin": "",
+      "vi": "thuốc Đông y chế sẵn không đắng lắm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "477147ef-24ef-4f61-9964-006c849d86bd",
+      "order": 5,
+      "zh": "中成药和西药",
+      "pinyin": "",
+      "vi": "thuốc Đông y chế sẵn và thuốc Tây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    },
+    {
+      "id": "19766f96-bdd0-442a-9a4c-63e4faf2554e",
+      "order": 6,
+      "zh": "一盒中成药",
+      "pinyin": "",
+      "vi": "một hộp thuốc Đông y chế sẵn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "69defb83-b450-46d9-8d65-11a589f2cf22",
+      "order": 1,
+      "zh": "我吃过中成药。",
+      "pinyin": "Wǒ chī guo zhōngchéngyào.",
+      "vi": "Tôi từng uống/dùng thuốc Đông y chế sẵn.",
+      "analysis_vi": "吃过 nhấn kinh nghiệm. 吃药 = uống/dùng thuốc.",
+      "highlight": [
+        "中成药"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "41c8a823-b6aa-4593-ad09-d29a4e69bf9b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e38cb4c7-2038-4a6b-b3e3-fba2394f64bb",
+      "order": 2,
+      "zh": "这种中成药有点儿甜，不太苦。",
+      "pinyin": "Zhè zhǒng zhōngchéngyào yǒudiǎnr tián, bú tài kǔ.",
+      "vi": "Loại thuốc Đông y chế sẵn này hơi ngọt, không đắng lắm.",
+      "analysis_vi": "有点儿甜 = hơi ngọt. 不太苦 = không đắng lắm.",
+      "highlight": [
+        "中成药"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "41c8a823-b6aa-4593-ad09-d29a4e69bf9b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "589cc194-7523-4233-a90f-274be06a3b78",
+      "order": 3,
+      "zh": "我以前没吃过中成药，第一次吃的时候，医生让我一天吃三次，每次吃两片。",
+      "pinyin": "Wǒ yǐqián méi chī guo zhōngchéngyào, dì yī cì chī de shíhou, yīshēng ràng wǒ yì tiān chī sān cì, měi cì chī liǎng piàn.",
+      "vi": "Trước đây tôi chưa từng dùng thuốc Đông y chế sẵn, lần đầu uống, bác sĩ bảo tôi một ngày uống ba lần, mỗi lần uống hai viên.",
+      "analysis_vi": "没吃过 = chưa từng dùng. 第一次 = lần đầu. 一天三次 / 每次两片 là cách nói số lần và liều lượng.",
+      "highlight": [
+        "中成药"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "41c8a823-b6aa-4593-ad09-d29a4e69bf9b"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "503d45d6-555b-47be-9583-211e6124f087",
+      "order": 1,
+      "rule_vi": "Phân biệt:",
+      "natural_examples": [
+        {
+          "zh": "中药 = thuốc Đông y nói chung.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "中成药 = thuốc Đông y chế sẵn.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "汤药 = thuốc sắc dạng nước.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Phân biệt: 中药 = thuốc Đông y nói chung. 中成药 = thuốc Đông y chế sẵn. 汤药 = thuốc sắc dạng nước. 西药 = thuốc Tây.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "中成药",
+    "back": "thuốc Đông y chế sẵn",
+    "hint": "zhōngchéngyào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong đời sống Trung Quốc hiện đại, nhiều người dùng cả 西药 và 中成药. 中成药 tiện hơn thuốc thang vì không cần sắc, nhưng vẫn nên dùng theo hướng dẫn bác sĩ/dược sĩ, không tự uống bừa.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "41c8a823-b6aa-4593-ad09-d29a4e69bf9b",
+    "source_lesson_vocab_id": null
+  }
+}

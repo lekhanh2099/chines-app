@@ -1,0 +1,319 @@
+{
+  "id": "c834d5d9-af5b-4c9e-8149-be70ddc8d4f6",
+  "type": "deep_vocabulary_item",
+  "order": 60,
+  "hanzi": "亲手",
+  "pinyin": "qīnshǒu",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "fixed_phrases_state"
+  ],
+  "meaning": {
+    "hanviet": "thân thủ",
+    "meaning_vi": "tự tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự tay"
+    ],
+    "short_definition_vi": "tự tay",
+    "textbook_focus_vi": "tự tay",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "亲",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thân, gần, tự mình",
+        "modern_logic_vi": "亲 trong 亲眼/亲耳/亲手 nghĩa là tự mình/trực tiếp.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "手",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "手",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "手 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tay",
+        "modern_logic_vi": "手 là tay.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "亲手 = tự thân dùng tay làm, không nhờ người khác.",
+    "memory_tip_vi": "亲手 = tự thân dùng tay làm, không nhờ người khác.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "亲自",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đích thân, rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲眼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tận mắt",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲耳",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tận tai",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "亲口",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chính miệng nói",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "亲手",
+        "right": "让别人做",
+        "meaning_vi": "",
+        "note_vi": "tự tay làm ↔ để người khác làm",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "40459839-1df7-4daf-9b60-472b0b1e7c4f",
+      "order": 1,
+      "zh": "亲手做",
+      "pinyin": "",
+      "vi": "tự tay làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e9a8216b-ddde-4c9f-bce0-a32843734c81",
+      "order": 2,
+      "zh": "亲手写",
+      "pinyin": "",
+      "vi": "tự tay viết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "20862095-019d-4962-8788-5e033b151495",
+      "order": 3,
+      "zh": "亲手检查",
+      "pinyin": "",
+      "vi": "tự tay kiểm tra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fc735d4-e939-4043-8ef9-9cbedc9d8596",
+      "order": 4,
+      "zh": "亲手交给他",
+      "pinyin": "",
+      "vi": "tự tay giao cho anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7cf583bc-2f21-4ee4-9e3e-d607718ca6bb",
+      "order": 5,
+      "zh": "亲手放好",
+      "pinyin": "",
+      "vi": "tự tay cất kỹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d342c019-2b01-4cda-be0c-9962c480d7d4",
+      "order": 1,
+      "zh": "这是我亲手做的。",
+      "pinyin": "",
+      "vi": "Đây là cái tôi tự tay làm.",
+      "analysis_vi": "是……的 nhấn cách làm.",
+      "highlight": [
+        "亲手"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c834d5d9-af5b-4c9e-8149-be70ddc8d4f6"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e8149860-8cbd-45e6-92a4-c8a814f96857",
+      "order": 2,
+      "zh": "护照是你亲手放进包里的吗？",
+      "pinyin": "",
+      "vi": "Hộ chiếu là bạn tự tay bỏ vào túi à?",
+      "analysis_vi": "是……的 hỏi người trực tiếp làm hành động.",
+      "highlight": [
+        "亲手"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c834d5d9-af5b-4c9e-8149-be70ddc8d4f6"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "亲眼/亲耳/亲口/亲手/亲自 nên học theo hệ “tự mình trực tiếp”.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "83064be6-36e7-4dbc-aa38-7d6e2948304a",
+      "order": 1,
+      "rule_vi": "亲手 khác 亲自: 亲手 nhấn dùng tay; 亲自 nhấn đích thân.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "老板亲自来了。",
+          "pinyin": "",
+          "vi": "Ông chủ đích thân đến.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "老板亲手写了这张通知。",
+          "pinyin": "",
+          "vi": "Ông chủ tự tay viết thông báo này.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "亲手",
+    "back": "tự tay",
+    "hint": "qīnshǒu",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "fixed_phrases_state"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c834d5d9-af5b-4c9e-8149-be70ddc8d4f6",
+    "source_lesson_vocab_id": null
+  }
+}

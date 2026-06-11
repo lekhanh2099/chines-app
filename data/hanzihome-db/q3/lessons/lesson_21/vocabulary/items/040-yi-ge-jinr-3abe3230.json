@@ -1,0 +1,353 @@
+{
+  "id": "53af2b78-cb7a-4f71-8e44-05ce0c6390bd",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "一个劲儿",
+  "pinyin": "yí ge jìnr",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词性短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "nhất cá kính nhi",
+    "meaning_vi": "cứ mãi, liên tục, một mực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cứ mãi",
+      "liên tục",
+      "một mực"
+    ],
+    "short_definition_vi": "cứ mãi, liên tục, một mực",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: cứ mãi, liên tục, một mực.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "个",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 个.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "劲",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "力",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Lực",
+          "radical_name_zh": "",
+          "hanviet": "lực",
+          "meaning_vi": "sức lực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 劲.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "一个劲儿 trong bài được hiểu theo nghĩa: cứ mãi, liên tục, một mực. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 一个劲儿.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "一个劲儿地 + V diễn tả hành động lặp liên tục."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "49a4ac44-3875-4ca3-9f63-78d98f201688",
+      "order": 1,
+      "zh": "一个劲儿地说",
+      "pinyin": "",
+      "vi": "cứ nói mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9cb69f93-26b2-4d25-bd3f-3cd7751c1121",
+      "order": 2,
+      "zh": "一个劲儿地笑",
+      "pinyin": "",
+      "vi": "cứ cười mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "822f7a63-d832-4d2b-a06b-4d0f026b1302",
+      "order": 3,
+      "zh": "一个劲儿地哭",
+      "pinyin": "",
+      "vi": "cứ khóc mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a18410cd-a23a-4455-bba5-bdc86a1ac465",
+      "order": 4,
+      "zh": "一个劲儿地道歉",
+      "pinyin": "",
+      "vi": "cứ xin lỗi mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb94df6f-e299-4e1e-8b30-6afffa6e0a1b",
+      "order": 5,
+      "zh": "一个劲儿地问",
+      "pinyin": "",
+      "vi": "cứ hỏi mãi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7eb927f5-0b66-4a22-ac7a-3f281dc81fe7",
+      "order": 1,
+      "zh": "他一个劲儿地笑，什么也不说。",
+      "pinyin": "",
+      "vi": "Anh ấy cứ cười mãi, không nói gì.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "一个劲儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53af2b78-cb7a-4f71-8e44-05ce0c6390bd"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "150602d2-db31-4f77-b8ca-05841962cc33",
+      "order": 2,
+      "zh": "理发师把我的耳朵剪破以后，一个劲儿地说对不起。",
+      "pinyin": "",
+      "vi": "Sau khi cắt rách tai tôi, thợ cắt tóc cứ xin lỗi mãi.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "一个劲儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53af2b78-cb7a-4f71-8e44-05ce0c6390bd"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "一个劲儿地 + V diễn tả hành động lặp liên tục.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "829be1dd-32e8-41d8-97c6-96f97c508e30",
+      "order": 1,
+      "rule_vi": "一个劲儿地 + V diễn tả hành động lặp liên tục.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "一个劲儿说话很快。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "一个劲儿地 + V diễn tả hành động lặp liên tục.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他一个劲儿地说。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "一个劲儿地 + V diễn tả hành động lặp liên tục.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一个劲儿",
+    "back": "cứ mãi, liên tục, một mực",
+    "hint": "yí ge jìnr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53af2b78-cb7a-4f71-8e44-05ce0c6390bd",
+    "source_lesson_vocab_id": null
+  }
+}

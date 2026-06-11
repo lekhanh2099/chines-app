@@ -1,0 +1,379 @@
+{
+  "id": "e515a609-2fad-42e1-a013-62a040ce877d",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "托运",
+  "pinyin": "tuōyùn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson18",
+    "deep_vocab",
+    "ba_zi_extended"
+  ],
+  "meaning": {
+    "hanviet": "Thác vận",
+    "meaning_vi": "ký gửi, gửi vận chuyển",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ký gửi, gửi vận chuyển"
+    ],
+    "short_definition_vi": "ký gửi, gửi vận chuyển",
+    "textbook_focus_vi": "ký gửi, gửi vận chuyển",
+    "register_vi": "",
+    "usage_domain_vi": "Bài 18; sân bay, giấy tờ, đồ vật, cảm giác, mua bán đời sống.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "托",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "乇",
+            "hanviet": "",
+            "meaning_vi": "phần phải",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhờ, gửi gắm, ủy thác",
+        "modern_logic_vi": "托 gợi gửi nhờ/ủy thác.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "运",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi lại, di chuyển",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại, di chuyển",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "云",
+            "hanviet": "vân",
+            "meaning_vi": "phần trong",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vận chuyển, di chuyển; vận may",
+        "modern_logic_vi": "运 gắn với chuyển động/vận chuyển.",
+        "warning_vi": "Không ép nghĩa mây của 云 vào 托运.",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi lại, di chuyển",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "托 là nhờ, giao phó. 运 là vận chuyển. → 托运 = giao cho bên vận chuyển chở giúp. Cảnh báo: 托运 không phải “mang theo”. Hành lý 托运 là hành lý ký gửi, không ở bên bạn khi lên máy bay.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "带上飞机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mang lên máy bay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "随身携带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mang theo bên người, hơi chính thức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寄",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gửi qua bưu điện/chuyển phát.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "托运行李",
+        "right": "随身携带",
+        "meaning_vi": "ký gửi hành lý ↔ mang theo bên người",
+        "note_vi": "ký gửi hành lý ↔ mang theo bên người",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "托运: ký gửi/vận chuyển nhờ bên dịch vụ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bf350a7a-1ed4-401c-a902-f6fb7a9075af",
+      "order": 1,
+      "zh": "托运行李",
+      "pinyin": "",
+      "vi": "ký gửi hành lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ed10578-ce26-490e-891e-65987304ed76",
+      "order": 2,
+      "zh": "办理托运",
+      "pinyin": "",
+      "vi": "làm thủ tục ký gửi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "18266446-8f91-4ae5-8fa5-f078044727e4",
+      "order": 3,
+      "zh": "不能托运",
+      "pinyin": "",
+      "vi": "không được ký gửi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c31c432-fb1f-42dc-9fad-a31cc54b93ff",
+      "order": 4,
+      "zh": "免费托运",
+      "pinyin": "",
+      "vi": "ký gửi miễn phí",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8894e9f-a9b3-44c4-9109-ac8e3522f15b",
+      "order": 5,
+      "zh": "托运处",
+      "pinyin": "",
+      "vi": "nơi/quầy ký gửi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f5d92710-9ac7-4c9e-91cb-9e7facd0a9e4",
+      "order": 1,
+      "zh": "这件行李超过规定重量了，需要托运。",
+      "pinyin": "Zhè jiàn xíngli chāoguò guīdìng zhòngliàng le, xūyào tuōyùn.",
+      "vi": "Kiện hành lý này vượt quá cân nặng quy định rồi, cần ký gửi.",
+      "analysis_vi": "超过规定重量 là vượt cân nặng quy định; 需要托运 là cần làm ký gửi.",
+      "highlight": [
+        "托运"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "e515a609-2fad-42e1-a013-62a040ce877d"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c40de450-b500-4a8a-a02e-20342cab120a",
+      "order": 2,
+      "zh": "请把要托运的行李放到柜台上。",
+      "pinyin": "Qǐng bǎ yào tuōyùn de xíngli fàng dào guìtái shang.",
+      "vi": "Xin hãy đặt hành lý cần ký gửi lên quầy.",
+      "analysis_vi": "把行李放到柜台上 là câu 把 có đích đến 到 + địa điểm.",
+      "highlight": [
+        "托运"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "e515a609-2fad-42e1-a013-62a040ce877d"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0272094d-455f-4c40-9cd1-651a7bf61245",
+      "order": 3,
+      "zh": "护照和机票不能放进托运行李里，最好拿在手里。",
+      "pinyin": "Hùzhào hé jīpiào bù néng fàng jìn tuōyùn xíngli lǐ, zuìhǎo ná zài shǒu lǐ.",
+      "vi": "Hộ chiếu và vé máy bay không được bỏ vào hành lý ký gửi, tốt nhất cầm trên tay.",
+      "analysis_vi": "放进……里 nhấn đưa vào bên trong; giấy tờ quan trọng phải để bên người.",
+      "highlight": [
+        "托运"
+      ],
+      "grammar_refs": [
+        "grammar_把字句_扩展"
+      ],
+      "vocab_refs": [
+        "e515a609-2fad-42e1-a013-62a040ce877d"
+      ],
+      "source_ref": "current_thread_or_lesson18_source",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khi đi máy bay ở Trung Quốc, nhân viên có thể hỏi 有行李要托运吗？ – có hành lý cần ký gửi không? Câu này cực thực tế, nên học nguyên cụm để nghe sân bay không bị khớp.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "current_thread_or_lesson18_source"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4ffa3c76-64a7-43f5-8790-a39d89f013a2",
+      "order": 1,
+      "rule_vi": "Nhầm 托运 với 带.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Cách dùng an toàn: học 托运 theo cụm và ngữ cảnh bài 18; nghĩa chính là ký gửi, gửi vận chuyển.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "托运",
+    "back": "ký gửi, gửi vận chuyển",
+    "hint": "tuōyùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson18"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e515a609-2fad-42e1-a013-62a040ce877d",
+    "source_lesson_vocab_id": null
+  }
+}

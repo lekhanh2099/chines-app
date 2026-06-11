@@ -1,0 +1,117 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "817f5ea0-30df-45b3-9996-9af2d98e68e1",
+      "type": "note",
+      "order": 1,
+      "title": "孔子",
+      "structure": "专名：孔子",
+      "meaning_vi": "Khổng Tử, nhà tư tưởng và nhà giáo dục lớn của Trung Quốc cổ đại. Trong bài, 丹尼斯 nói muốn đến quê hương của Khổng Tử một chuyến.",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "我要到孔子的故乡去一趟。",
+          "pinyin": "Wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng.",
+          "vi": "Tôi muốn đến quê hương của Khổng Tử một chuyến.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "39db5a09-ed9c-4d44-a1f2-f1d406a1ff07"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false
+    },
+    {
+      "id": "b0a289a1-1769-41fd-add3-864999601b22",
+      "type": "note",
+      "order": 2,
+      "title": "马马虎虎",
+      "structure": "马马虎虎",
+      "meaning_vi": "Tạm tạm, qua loa, không quá tốt cũng không quá tệ. Khi nhận xét năng lực, thường là chê nhẹ/chưa tốt lắm.",
+      "examples": [
+        {
+          "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+          "zh": "我的汉语说得马马虎虎。",
+          "pinyin": "Wǒ de Hànyǔ shuō de mǎmǎhūhū.",
+          "vi": "Tiếng Hán của tôi nói tạm tạm.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
+          "zh": "他的英语也马马虎虎。",
+          "pinyin": "Tā de Yīngyǔ yě mǎmǎhūhū.",
+          "vi": "Tiếng Anh của anh ấy cũng tạm tạm thôi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "27996fac-9247-4d26-b4af-23257b1221f3",
+        "f5f38cbd-5f83-45dd-9527-0d84520b1ff1"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false
+    },
+    {
+      "id": "8dc8b88b-4f36-4667-b1e0-9fba02694df3",
+      "type": "note",
+      "order": 3,
+      "title": "老外",
+      "structure": "老外",
+      "meaning_vi": "Người nước ngoài; khẩu ngữ. Trong ngữ cảnh thân mật thì bình thường, nhưng ngữ cảnh trang trọng nên dùng 外国人.",
+      "examples": [
+        {
+          "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
+          "zh": "他是老外，但是汉语说得很好。",
+          "pinyin": "Tā shì lǎowài, dànshì Hànyǔ shuō de hěn hǎo.",
+          "vi": "Anh ấy là người nước ngoài, nhưng tiếng Hán nói rất tốt.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "27996fac-9247-4d26-b4af-23257b1221f3"
+      ],
+      "source_origin": "textbook_checked",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "id": "589001a9-2ac8-4b58-b0c8-2a1e0c2a3809",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "即使",
+  "pinyin": "jíshǐ",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "conjunction"
+  ],
+  "meaning": {
+    "hanviet": "tức sử",
+    "meaning_vi": "cho dù, dẫu cho",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cho dù"
+    ],
+    "short_definition_vi": "cho dù, dẫu cho",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "即",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngay, dù",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "使",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng như bộ/thành phần chỉ trường nghĩa: người.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng như bộ/thành phần chỉ trường nghĩa: người.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khiến, dùng",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "即使 được ghi nhớ theo nghĩa hiện đại: cho dù, dẫu cho.",
+    "memory_tip_vi": "Nhớ qua cụm: 即使……也…….",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "虽然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "哪怕",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不论",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "如果",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "即使 dùng cho điều kiện bất lợi/nhượng bộ; không thay 如果 trong điều kiện trung tính."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "69b6e33d-c5d6-47a2-b2ed-84dffb2cfefb",
+      "order": 1,
+      "zh": "即使……也……",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ade14c1f-2fa1-4d7c-8589-8dfed4a2d458",
+      "order": 2,
+      "zh": "即使这样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfa97391-ea43-43cd-a607-2e3af010959d",
+      "order": 3,
+      "zh": "即使很难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b206729d-4e94-4257-a6c7-f25b634387b7",
+      "order": 4,
+      "zh": "即使失败",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ac55431-da37-4e37-b1b1-ba1d20030cd9",
+      "order": 5,
+      "zh": "即使没有希望",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dd571380-323a-4b34-943f-d3c4d9c43365",
+      "order": 6,
+      "zh": "即使别人不理解",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0f2de786-2d69-428a-8085-638effde24a9",
+      "order": 1,
+      "zh": "即使下雨，我也要去。",
+      "pinyin": "Jíshǐ xiàyǔ, wǒ yě yào qù.",
+      "vi": "Cho dù trời mưa, tôi cũng phải đi.",
+      "analysis_vi": "即使 nêu điều kiện bất lợi, 也 đánh dấu kết quả không đổi.",
+      "highlight": [
+        "即使"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "589001a9-2ac8-4b58-b0c8-2a1e0c2a3809"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "47525750-4cda-40f3-ab3b-1c50725a7951",
+      "order": 2,
+      "zh": "即使小敏听不见，母亲也没有放弃教她说话。",
+      "pinyin": "Jíshǐ Xiǎomǐn tīng bu jiàn, mǔqīn yě méiyǒu fàngqì jiāo tā shuōhuà.",
+      "vi": "Cho dù Tiểu Mẫn không nghe thấy, mẹ cũng không từ bỏ việc dạy cô ấy nói.",
+      "analysis_vi": "听不见 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "即使"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "589001a9-2ac8-4b58-b0c8-2a1e0c2a3809"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "即使……也…… làm câu có lực hơn 如果 vì nhấn dù khó vẫn không đổi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "24dee8d4-c904-4bb3-a6ea-bf45d279d64c",
+      "order": 1,
+      "rule_vi": "即使 dùng cho điều kiện bất lợi/nhượng bộ; không thay 如果 trong điều kiện trung tính.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "即使 dùng cho điều kiện bất lợi/nhượng bộ; không thay 如果 trong điều kiện trung tính.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "即使",
+    "back": "cho dù, dẫu cho",
+    "hint": "jíshǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "conjunction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "589001a9-2ac8-4b58-b0c8-2a1e0c2a3809",
+    "source_lesson_vocab_id": null
+  }
+}

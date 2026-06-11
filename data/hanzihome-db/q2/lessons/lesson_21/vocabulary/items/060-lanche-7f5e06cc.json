@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_10f46ddc4612f8e9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "缆车",
+  "pinyin": "lǎnchē",
+  "meaning_vi": "cáp treo",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ phương tiện cáp treo; không phải động từ.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+    "type": "vocabulary_item",
+    "order": 1,
+    "hanzi": "缆车",
+    "pinyin": "lǎnchē",
+    "meaning_vi": "cáp treo",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "缆车",
+      "back": "lǎnchē — cáp treo",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ phương tiện cáp treo; không phải động từ.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

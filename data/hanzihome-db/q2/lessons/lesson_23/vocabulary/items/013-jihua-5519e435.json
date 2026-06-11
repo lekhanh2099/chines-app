@@ -1,0 +1,395 @@
+{
+  "id": "04fe9798-983e-4a61-acef-1c9702f17d0f",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "计划",
+  "pinyin": "jìhuà",
+  "pos": {
+    "raw_vi": "",
+    "raw_cn": "名/动",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_2",
+    "lesson_23",
+    "travel",
+    "mainland_putonghua"
+  ],
+  "meaning": {
+    "hanviet": "Kế hoạch",
+    "meaning_vi": "kế hoạch; lên kế hoạch",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kế hoạch; lên kế hoạch"
+    ],
+    "short_definition_vi": "kế hoạch; lên kế hoạch",
+    "textbook_focus_vi": "kế hoạch; lên kế hoạch",
+    "register_vi": "ưu tiên nghĩa trong Bài 23; ghi chú hiện đại nếu cần",
+    "usage_domain_vi": "du lịch / đời sống / văn hóa / ngành nghề tùy từ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "计",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tính, kế hoạch",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "划",
+        "lishu_vi": "",
+        "structure_note_vi": "Tên riêng/âm tiết hoặc chữ thường gặp; chỉ phân tích thành phần chắc chắn trong hình thể hiện đại.",
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, khắc",
+            "position_vi": "bên phải chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, khắc",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vạch, chia, hoạch định",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm đang dùng trong bài; không ép suy nguyên chữ học nếu không chắc.",
+        "warning_vi": "Không bịa etymology; thành phần trống nghĩa là chưa gán chắc thành phần/bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Các chữ trong 计划 hợp lại tạo nghĩa hiện đại trong bài: kế hoạch; lên kế hoạch.",
+    "memory_tip_vi": "Nhớ theo nghĩa hiện đại trong cụm và ví dụ bài 23.",
+    "warning_vi": "Không ép suy nguyên chữ học nếu chỉ thấy hình giản thể hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "计划",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "计划 / 打算 / 安排",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打算",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "计划 / 打算 / 安排",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "安排",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "计划 / 打算 / 安排",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "计划",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "计划 / 方案",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "方案",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "计划 / 方案",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "有计划",
+        "right": "没有计划",
+        "meaning_vi": "cặp đối lập cần nhớ",
+        "note_vi": "有计划 ↔ 没有计划",
+        "notes": []
+      }
+    ],
+    "usage_rules": [
+      "计划 / 打算 / 安排",
+      "计划 / 方案",
+      "有计划 ↔ 没有计划"
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a3f19307-ad4b-492e-ad0f-79e74c6cfe44",
+      "order": 1,
+      "zh": "旅行计划",
+      "pinyin": "",
+      "vi": "旅行计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "c6dba09d-01ee-4843-b9ca-687d2ecad495",
+      "order": 2,
+      "zh": "学习计划",
+      "pinyin": "",
+      "vi": "学习计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "b56fd872-5843-47e1-ae9c-15475c294865",
+      "order": 3,
+      "zh": "工作计划",
+      "pinyin": "",
+      "vi": "工作计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f6b8e959-53bb-4527-9762-e404b21809de",
+      "order": 4,
+      "zh": "制定计划",
+      "pinyin": "",
+      "vi": "制定计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ae5596cc-e9e3-4524-91ce-9c1f56fa3ee4",
+      "order": 5,
+      "zh": "改变计划",
+      "pinyin": "",
+      "vi": "改变计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "343cf1c9-6376-43d2-aa18-c98b7fb0996b",
+      "order": 6,
+      "zh": "按计划",
+      "pinyin": "",
+      "vi": "按计划",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    },
+    {
+      "id": "28a16a0a-9680-4e8c-b79d-03a5e91ca2eb",
+      "order": 7,
+      "zh": "计划好了",
+      "pinyin": "",
+      "vi": "计划好了",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "lesson_23"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "06b5cc3b-9c8a-4ae7-9078-3930b96fb820",
+      "order": 1,
+      "zh": "这个词是“计划”。",
+      "pinyin": "",
+      "vi": "Từ này là “计划”.",
+      "analysis_vi": "Câu cơ bản để nhận diện từ trong ngữ cảnh.",
+      "highlight": [
+        "计划"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "04fe9798-983e-4a61-acef-1c9702f17d0f"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4adee0f7-3aa8-42b9-a704-5cbfd6ada67c",
+      "order": 2,
+      "zh": "你想怎么用“计划”，就先看例句。",
+      "pinyin": "",
+      "vi": "Bạn muốn dùng “计划” thế nào thì trước tiên xem câu ví dụ.",
+      "analysis_vi": "Gài đại từ nghi vấn mở rộng của Bài 23.",
+      "highlight": [
+        "计划"
+      ],
+      "grammar_refs": [
+        "extended_interrogative_pronouns"
+      ],
+      "vocab_refs": [
+        "04fe9798-983e-4a61-acef-1c9702f17d0f"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1f6c045b-31d5-45cf-8136-1ba7b8c70c49",
+      "order": 3,
+      "zh": "我们一边复习计划，一边把它放进旅行的话题里。",
+      "pinyin": "",
+      "vi": "Chúng tôi vừa ôn “计划”, vừa đưa nó vào chủ đề du lịch.",
+      "analysis_vi": "Gài trình tự hoặc 一边……一边…… để ôn ngữ pháp Bài 23.",
+      "highlight": [
+        "计划"
+      ],
+      "grammar_refs": [
+        "lesson_23_sequence_or_parallel"
+      ],
+      "vocab_refs": [
+        "04fe9798-983e-4a61-acef-1c9702f17d0f"
+      ],
+      "source_ref": "manual_thread_lesson_23",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong Bài 23",
+    "content_vi": "计划 trong Bài 23 gắn với chủ đề du lịch, gọi món, kế hoạch và trải nghiệm văn hóa Trung Quốc; khi dùng cần ưu tiên nghĩa hiện đại trong 普通话.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "924c097d-adfd-46d9-b7d9-993fb6869c6f",
+      "order": 1,
+      "rule_vi": "Dùng 计划 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Dùng 计划 theo đúng ngữ cảnh của bài; không dịch máy từng chữ nếu là tên riêng hoặc cụm cố định.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "计划",
+    "back": "kế hoạch; lên kế hoạch",
+    "hint": "jìhuà",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "04fe9798-983e-4a61-acef-1c9702f17d0f",
+    "source_lesson_vocab_id": null
+  }
+}

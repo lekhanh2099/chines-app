@@ -1,0 +1,312 @@
+{
+  "id": "ea0588a1-f852-47c1-b41c-5f3579923c0c",
+  "type": "deep_vocabulary_item",
+  "order": 40,
+  "hanzi": "逛",
+  "pinyin": "guàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "people_activity"
+  ],
+  "meaning": {
+    "hanviet": "Cuống",
+    "meaning_vi": "đi dạo, đi chơi, dạo quanh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đi dạo",
+      "đi chơi",
+      "dạo quanh"
+    ],
+    "short_definition_vi": "đi dạo, đi chơi, dạo quanh",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "people activity",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "逛",
+        "lishu_vi": "",
+        "structure_note_vi": "辶 liên quan đi lại; 狂 là phần trong.",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bao ngoài/bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi lại/chuyển động",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "辶 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "狂",
+            "hanviet": "cuồng",
+            "meaning_vi": "điên/cuồng",
+            "position_vi": "bên trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi dạo, đi chơi",
+        "modern_logic_vi": "辶 liên quan đi lại; 狂 là phần trong.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "辶 liên quan đi lại; 逛 là đi quanh để xem/chơi/mua, không nhất thiết có mục tiêu rõ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "走",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi bộ/đi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "去",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi đến",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "参观",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tham quan có mục đích",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "散步",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đi bộ thư giãn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9a6d293f-3343-4b38-8112-5996a446d77c",
+      "order": 1,
+      "zh": "逛街",
+      "pinyin": "",
+      "vi": "đi dạo phố/đi shopping",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f149973-a028-4b87-b1bc-628d9008e9ff",
+      "order": 2,
+      "zh": "逛商场",
+      "pinyin": "",
+      "vi": "dạo trung tâm thương mại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "65d4aec3-59d8-47ba-b623-48c183c350ed",
+      "order": 3,
+      "zh": "逛书店",
+      "pinyin": "",
+      "vi": "dạo/xem nhà sách",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2144b3ae-0e37-4336-9fbd-816ac5e6aa06",
+      "order": 4,
+      "zh": "随便逛逛",
+      "pinyin": "",
+      "vi": "đi dạo linh tinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2a27b19c-2707-4bff-a759-45123a7f3737",
+      "order": 5,
+      "zh": "边逛边看",
+      "pinyin": "",
+      "vi": "vừa dạo vừa xem",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "96bacd38-736b-43c7-b6b7-9f11364b79a7",
+      "order": 1,
+      "zh": "周末我想去逛街。",
+      "pinyin": "Zhōumò wǒ xiǎng qù guàng jiē.",
+      "vi": "Cuối tuần tôi muốn đi dạo phố/đi shopping.",
+      "analysis_vi": "逛街 là cụm cố định.",
+      "highlight": [
+        "逛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea0588a1-f852-47c1-b41c-5f3579923c0c"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e0cb85c3-ec55-4fdf-847e-c3e242e51f2e",
+      "order": 2,
+      "zh": "这个商场比那个商场大，逛起来更舒服。",
+      "pinyin": "Zhège shāngchǎng bǐ nàge shāngchǎng dà, guàng qǐlai gèng shūfu.",
+      "vi": "Trung tâm này lớn hơn cái kia, đi dạo thấy dễ chịu hơn.",
+      "analysis_vi": "逛起来 nói cảm giác khi dạo.",
+      "highlight": [
+        "逛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ea0588a1-f852-47c1-b41c-5f3579923c0c"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "逛街 trong tiếng Trung thường bao gồm shopping/xem cửa hàng, không chỉ đi bộ ngoài phố.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6d5becc3-4a3d-40cd-b2bc-13f9e68c2ff6",
+      "order": 1,
+      "rule_vi": "逛 không phải 去 trung tính; 去学校 và 逛学校 khác nghĩa.",
+      "natural_examples": [
+        {
+          "zh": "我去学校逛逛。",
+          "pinyin": "Wǒ qù xuéxiào guàngguang.",
+          "vi": "Tôi đến trường dạo quanh xem chơi.",
+          "note_vi": "逛 có sắc thái dạo/xem.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我去学校逛逛。",
+          "pinyin": "Wǒ qù xuéxiào guàngguang.",
+          "vi": "Tôi đến trường dạo quanh xem chơi.",
+          "note_vi": "逛 có sắc thái dạo/xem.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "逛",
+    "back": "đi dạo, đi chơi, dạo quanh",
+    "hint": "guàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "people_activity"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ea0588a1-f852-47c1-b41c-5f3579923c0c",
+    "source_lesson_vocab_id": null
+  }
+}

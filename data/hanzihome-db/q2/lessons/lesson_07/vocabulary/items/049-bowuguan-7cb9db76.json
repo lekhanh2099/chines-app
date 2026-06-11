@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_6346281f37c8066c",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "博物馆",
+  "pinyin": "bówùguǎn",
+  "meaning_vi": "bảo tàng",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_048",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_048",
+    "type": "vocabulary_item",
+    "order": 48,
+    "hanzi": "博物馆",
+    "pinyin": "bówùguǎn",
+    "meaning_vi": "bảo tàng",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "supplementary_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "博物馆",
+      "back": "bówùguǎn — bảo tàng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_checked",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_f1d9fa7a8ea21da1",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "飞船",
+  "pinyin": "fēichuán",
+  "meaning_vi": "tàu vũ trụ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "363b7e10-27c0-496d-bd4b-9ad5d22f3a1d",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "363b7e10-27c0-496d-bd4b-9ad5d22f3a1d",
+    "type": "vocabulary_item",
+    "order": 16,
+    "hanzi": "飞船",
+    "pinyin": "fēichuán",
+    "meaning_vi": "tàu vũ trụ",
+    "meaning_en": "spacecraft",
+    "pos": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "飞船",
+      "back": "fēichuán — tàu vũ trụ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_verified",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

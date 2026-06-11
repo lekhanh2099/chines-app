@@ -1,0 +1,326 @@
+{
+  "id": "559368ac-1c2e-4c9e-bf64-cdbca0993a84",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "不论",
+  "pinyin": "búlùn",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_22",
+    "deep_vocab",
+    "conjunction"
+  ],
+  "meaning": {
+    "hanviet": "bất luận",
+    "meaning_vi": "bất kể, bất luận, dù… đi nữa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bất kể"
+    ],
+    "short_definition_vi": "bất kể, bất luận, dù… đi nữa",
+    "textbook_focus_vi": "Từ vựng trọng tâm trong bài 母亲的心.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ, học tập, y tế, thi cử hoặc miêu tả nhân vật",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "不",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "không",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "论",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được tách riêng theo từng chữ; không gán bộ thủ máy móc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được dùng như bộ/thành phần chỉ trường nghĩa: lời nói, ngôn ngữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được dùng như bộ/thành phần chỉ trường nghĩa: lời nói, ngôn ngữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 là thành phần nhìn thấy rõ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bàn luận, xét",
+        "modern_logic_vi": "Dùng để ghi nhớ nghĩa hiện đại trong từ ghép, không phải giải thích nguồn gốc chữ học đầy đủ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "不论 được ghi nhớ theo nghĩa hiện đại: bất kể, bất luận, dù… đi nữa.",
+    "memory_tip_vi": "Nhớ qua cụm: 不论是谁.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "无论",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不管",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "即使",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xem mục so sánh đã chuẩn hóa từ phần soạn bài; cần đối chiếu theo ngữ cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "不论 thường đi với 都 / 也 ở vế sau để đánh dấu kết quả không đổi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "78e0ffba-b8d6-4769-87f0-c847ddbe1d70",
+      "order": 1,
+      "zh": "不论是谁",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b6354902-19c1-4a0c-bd63-a9d18ce2800f",
+      "order": 2,
+      "zh": "不论什么时候",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74f20dbc-2c08-4342-bcdf-29df8db603a3",
+      "order": 3,
+      "zh": "不论在哪里",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41b384ab-feda-4594-b4e5-0ef2f55dac8e",
+      "order": 4,
+      "zh": "不论多难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3830807-7b34-44ff-b40e-c220f9c5bb04",
+      "order": 5,
+      "zh": "不论结果怎样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f26a8736-53c2-4769-a081-6ee0ca4f1746",
+      "order": 6,
+      "zh": "不论发生什么",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f1d87e39-7966-419b-baf1-ab8fb90646a6",
+      "order": 1,
+      "zh": "不论多难，我都不会放弃。",
+      "pinyin": "Búlùn duō nán, wǒ dōu bú huì fàngqì.",
+      "vi": "Dù khó đến đâu, tôi cũng sẽ không bỏ cuộc.",
+      "analysis_vi": "都 đánh dấu kết quả không đổi.",
+      "highlight": [
+        "不论"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "559368ac-1c2e-4c9e-bf64-cdbca0993a84"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d576f44f-1d02-42d3-9868-aed31c8a4d90",
+      "order": 2,
+      "zh": "不论小敏学得多慢，母亲都耐心地教她。",
+      "pinyin": "Búlùn Xiǎomǐn xué de duō màn, mǔqīn dōu nàixīn de jiāo tā.",
+      "vi": "Dù Tiểu Mẫn học chậm đến đâu, mẹ cũng kiên nhẫn dạy cô ấy.",
+      "analysis_vi": "学得多慢 dùng 得 bổ ngữ trình độ.",
+      "highlight": [
+        "不论"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "559368ac-1c2e-4c9e-bf64-cdbca0993a84"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không luận/xét điều kiện nào: kết quả vẫn không đổi.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "92394316-6dde-4450-b9b5-4b965ad259ec",
+      "order": 1,
+      "rule_vi": "不论 thường đi với 都 / 也 ở vế sau để đánh dấu kết quả không đổi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "不论 thường đi với 都 / 也 ở vế sau để đánh dấu kết quả không đổi.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "不论",
+    "back": "bất kể, bất luận, dù… đi nữa",
+    "hint": "búlùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_22",
+      "conjunction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "559368ac-1c2e-4c9e-bf64-cdbca0993a84",
+    "source_lesson_vocab_id": null
+  }
+}

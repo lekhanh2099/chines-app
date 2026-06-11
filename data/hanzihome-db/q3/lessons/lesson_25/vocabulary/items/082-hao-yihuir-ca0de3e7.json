@@ -1,0 +1,210 @@
+{
+  "id": "d4e029bf-e106-460d-91d5-f2ae8aea976a",
+  "type": "deep_vocabulary_item",
+  "order": 82,
+  "hanzi": "好一会儿",
+  "pinyin": "hǎo yíhuìr",
+  "pos": {
+    "raw_vi": "Cụm từ",
+    "raw_cn": "时间短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "hảo nhất hội nhi",
+    "meaning_vi": "một lúc lâu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "một lúc lâu"
+    ],
+    "short_definition_vi": "một lúc lâu",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "好",
+        "lishu_vi": "hảo",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tốt; khá",
+        "modern_logic_vi": "Trong từ này, 好 góp phần vào nghĩa hiện đại: tốt; khá.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "一",
+        "lishu_vi": "nhất",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "Trong từ này, 一 góp phần vào nghĩa hiện đại: một.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "会",
+        "lishu_vi": "hội",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biết; lúc",
+        "modern_logic_vi": "Trong từ này, 会 góp phần vào nghĩa hiện đại: biết; lúc.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "nhi",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố nhi hóa",
+        "modern_logic_vi": "Trong từ này, 儿 góp phần vào nghĩa hiện đại: hậu tố nhi hóa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "好一会儿 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 等了好一会儿.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "好 ở đây không phải tốt, mà tăng lượng thời gian."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "fb6a0e77-acbc-43c9-aa05-de5ec9b3f727",
+      "order": 1,
+      "zh": "等了好一会儿",
+      "pinyin": "",
+      "vi": "đợi một lúc lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cbf7b150-96b7-4552-bc4e-463e8ab90b2d",
+      "order": 2,
+      "zh": "沉默了好一会儿",
+      "pinyin": "",
+      "vi": "im lặng một lúc lâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "03519a87-84e7-468e-8aa6-c92ee712f07d",
+      "order": 3,
+      "zh": "好一会儿才说话",
+      "pinyin": "",
+      "vi": "một lúc lâu sau mới nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "bac276db-dfb4-42e1-96e0-66eb081e48de",
+      "order": 1,
+      "zh": "我等了好一会儿，他才来。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 好一会儿 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 好一会儿; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "好一会儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4e029bf-e106-460d-91d5-f2ae8aea976a"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 好一会儿 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f17e30b-f0eb-498e-ac5a-a4add01bf3a4",
+      "order": 1,
+      "rule_vi": "好 ở đây không phải tốt, mà tăng lượng thời gian.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "好一会儿",
+    "back": "một lúc lâu",
+    "hint": "hǎo yíhuìr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d4e029bf-e106-460d-91d5-f2ae8aea976a",
+    "source_lesson_vocab_id": null
+  }
+}

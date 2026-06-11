@@ -1,0 +1,323 @@
+{
+  "id": "abff04a7-ff84-4932-a177-4752a1e76236",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "预报",
+  "pinyin": "yùbào",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "city_weather"
+  ],
+  "meaning": {
+    "hanviet": "Dự báo",
+    "meaning_vi": "dự báo; bản tin dự báo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dự báo",
+      "bản tin dự báo"
+    ],
+    "short_definition_vi": "dự báo; bản tin dự báo",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "city weather",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "预",
+        "lishu_vi": "",
+        "structure_note_vi": "予 + 页 là thành phần nhìn thấy.",
+        "components": [
+          {
+            "text": "予",
+            "hanviet": "dư",
+            "meaning_vi": "cho",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu/trang",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trước, dự trước",
+        "modern_logic_vi": "予 + 页 là thành phần nhìn thấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "报",
+        "lishu_vi": "",
+        "structure_note_vi": "扌 liên quan thao tác; phần phải là thành phần nhìn thấy.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay/thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "báo, thông báo",
+        "modern_logic_vi": "扌 liên quan thao tác; phần phải là thành phần nhìn thấy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "预 là trước, 报 là báo; 预报 là báo trước điều sẽ xảy ra.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "报告",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "báo cáo",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "通知",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thông báo cho ai biết",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "预测",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dự đoán/dự báo rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "27b04967-c23d-4e75-9924-b83587c9ec8c",
+      "order": 1,
+      "zh": "天气预报",
+      "pinyin": "",
+      "vi": "dự báo thời tiết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "babb695b-f58d-4c15-848b-838d5b0ab017",
+      "order": 2,
+      "zh": "预报说……",
+      "pinyin": "",
+      "vi": "dự báo nói rằng...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff1ced0b-0a18-4db7-9db7-b2cba83bdc11",
+      "order": 3,
+      "zh": "听天气预报",
+      "pinyin": "",
+      "vi": "nghe dự báo thời tiết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f179fe39-d9a0-4622-8e92-7b22bdc8026d",
+      "order": 4,
+      "zh": "看天气预报",
+      "pinyin": "",
+      "vi": "xem dự báo thời tiết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69666458-3f8d-4588-84a0-fca0393801c1",
+      "order": 5,
+      "zh": "预报不准",
+      "pinyin": "",
+      "vi": "dự báo không chính xác",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "847d4a75-ca5b-4248-81f0-8bd2a07df744",
+      "order": 1,
+      "zh": "我每天早上看天气预报。",
+      "pinyin": "Wǒ měitiān zǎoshang kàn tiānqì yùbào.",
+      "vi": "Mỗi sáng tôi xem dự báo thời tiết.",
+      "analysis_vi": "看天气预报 là collocation tự nhiên.",
+      "highlight": [
+        "预报"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "abff04a7-ff84-4932-a177-4752a1e76236"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0e521be5-56f6-462c-8b4e-fe0477229792",
+      "order": 2,
+      "zh": "天气预报说，明天比今天更冷。",
+      "pinyin": "Tiānqì yùbào shuō, míngtiān bǐ jīntiān gèng lěng.",
+      "vi": "Dự báo thời tiết nói ngày mai lạnh hơn hôm nay.",
+      "analysis_vi": "比今天更冷 là mẫu so sánh.",
+      "highlight": [
+        "预报"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "abff04a7-ff84-4932-a177-4752a1e76236"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Không có ghi chú văn hóa riêng cần tách cho mục này.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7afc63aa-164c-41bf-8aad-16631093bacc",
+      "order": 1,
+      "rule_vi": "Nói 看/听天气预报 tự nhiên hơn 天气报告 khi chỉ dự báo thời tiết.",
+      "natural_examples": [
+        {
+          "zh": "看天气预报。",
+          "pinyin": "Kàn tiānqì yùbào.",
+          "vi": "Xem dự báo thời tiết.",
+          "note_vi": "Cụm tự nhiên.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "看天气预报。",
+          "pinyin": "Kàn tiānqì yùbào.",
+          "vi": "Xem dự báo thời tiết.",
+          "note_vi": "Cụm tự nhiên.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "预报",
+    "back": "dự báo; bản tin dự báo",
+    "hint": "yùbào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "city_weather"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "abff04a7-ff84-4932-a177-4752a1e76236",
+    "source_lesson_vocab_id": null
+  }
+}

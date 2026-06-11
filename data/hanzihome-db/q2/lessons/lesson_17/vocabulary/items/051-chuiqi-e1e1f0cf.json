@@ -1,0 +1,373 @@
+{
+  "id": "edf523f1-a22e-4c10-8b1a-26892ca4208a",
+  "type": "deep_vocabulary_item",
+  "order": 51,
+  "hanzi": "吹气",
+  "pinyin": "chuīqì",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Cụm động từ",
+    "raw_cn": "离合动词/动词短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Xuy khí",
+    "meaning_vi": "thổi hơi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thổi hơi"
+    ],
+    "short_definition_vi": "thổi hơi",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "động tác nhỏ, đời sống, chuẩn bị trang trí.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "吹",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng/âm thanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng/âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "欠",
+            "hanviet": "khiếm",
+            "meaning_vi": "há miệng/ngáp; liên quan hơi thở trong một số chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thổi",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "气",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "气",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khí",
+          "radical_name_zh": "",
+          "hanviet": "khí",
+          "meaning_vi": "hơi/khí",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "气",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "气",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khí",
+              "radical_name_zh": "",
+              "hanviet": "khí",
+              "meaning_vi": "hơi/khí",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hơi, khí",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "吹 là thổi. 气 là khí, hơi. → 吹气 = thổi hơi/khí ra. Cảnh báo: 吹气 là thổi hơi nói chung; 吹风 có thể là gió thổi hoặc dùng máy sấy/thổi gió.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吹气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thổi hơi bằng miệng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吹",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thổi nói chung, có thể là gió thổi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吹风",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thổi gió, hóng gió, hoặc dùng máy sấy trong một số ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "打气",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bơm hơi vào bóng/lốp bằng dụng cụ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: thổi bằng miệng là 吹气; bơm bóng bằng bơm là 打气."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7f7aaafb-8fc6-4540-bc41-f42b8beb8718",
+      "order": 1,
+      "zh": "吹一口气",
+      "pinyin": "",
+      "vi": "thổi một hơi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f57ccb6c-ed4f-4d4d-9312-a4fa29820168",
+      "order": 2,
+      "zh": "吹气球",
+      "pinyin": "",
+      "vi": "thổi bóng bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8d85389a-cd51-493f-89e5-d75af2defebd",
+      "order": 3,
+      "zh": "对着……吹气",
+      "pinyin": "",
+      "vi": "thổi hơi vào/hướng về...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9098cb96-4847-406b-9132-2e5162aea52f",
+      "order": 4,
+      "zh": "轻轻吹气",
+      "pinyin": "",
+      "vi": "thổi nhẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8e50d8e2-da95-46de-a10c-91c55f50202a",
+      "order": 5,
+      "zh": "吹掉灰尘",
+      "pinyin": "",
+      "vi": "thổi bay bụi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b420cc43-ebbc-4f94-b094-9dae9be5194c",
+      "order": 1,
+      "zh": "他对着彩带轻轻吹了一口气，想把上面的灰尘吹掉。",
+      "pinyin": "Tā duìzhe cǎidài qīngqīng chuī le yì kǒu qì, xiǎng bǎ shàngmian de huīchén chuī diào.",
+      "vi": "Anh ấy thổi nhẹ một hơi vào dây ruy băng màu, muốn thổi bay bụi ở trên đó.",
+      "analysis_vi": "把灰尘吹掉 là câu 把 có kết quả: bụi bị thổi bay mất.",
+      "highlight": [
+        "吹"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "edf523f1-a22e-4c10-8b1a-26892ca4208a"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "448487d7-b287-4027-a15b-08a8ac108700",
+      "order": 2,
+      "zh": "同学们正在吹气球，准备把气球挂在会场两边。",
+      "pinyin": "Tóngxuémen zhèngzài chuī qìqiú, zhǔnbèi bǎ qìqiú guà zài huìchǎng liǎng biān.",
+      "vi": "Các bạn học đang thổi bóng bay, chuẩn bị treo bóng ở hai bên hội trường.",
+      "analysis_vi": "吹气球 là thổi bóng; 把气球挂在…… là câu 把 với vị trí rõ.",
+      "highlight": [
+        "吹气"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "edf523f1-a22e-4c10-8b1a-26892ca4208a"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4be50429-2f7b-4bba-9337-6b868ebd286e",
+      "order": 3,
+      "zh": "这个“福”字刚贴好，别对着它吹气，小心把它吹下来。",
+      "pinyin": "Zhège “Fú” zì gāng tiē hǎo, bié duìzhe tā chuīqì, xiǎoxīn bǎ tā chuī xiàlai.",
+      "vi": "Chữ “Phúc” này vừa dán xong, đừng thổi vào nó, cẩn thận thổi làm nó rơi xuống.",
+      "analysis_vi": "贴好 là dán xong; 把它吹下来 là câu 把 với kết quả rơi xuống.",
+      "highlight": [
+        "吹气"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "edf523f1-a22e-4c10-8b1a-26892ca4208a"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 吹气",
+    "content_vi": "Trong trang trí lớp học hoặc tiệc nhỏ ở Trung Quốc lẫn Việt Nam, 吹气球 là việc rất quen thuộc. Nhưng ở các sự kiện lớn, người ta thường dùng bơm tay hoặc bơm điện, lúc đó nói 给气球打气 tự nhiên hơn.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "976ecf9d-70ff-48d9-8ec2-2e1d3a95c702",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 吹气 và 打气. 吹气球 Chuī qìqiú Thổi bóng bay bằng miệng. 给气球打气 Gěi qìqiú dǎ qì Bơm hơi cho bóng bay.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "吹气",
+    "back": "thổi hơi",
+    "hint": "chuīqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "edf523f1-a22e-4c10-8b1a-26892ca4208a",
+    "source_lesson_vocab_id": null
+  }
+}

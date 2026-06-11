@@ -1,0 +1,1731 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập",
+  "source_origin": "textbook_question_generated_answer",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_checked",
+    "blocked_final_statuses": [],
+    "answer_key_checked": true
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调。朗读。",
+        "vi": "Phân biệt âm/thanh điệu và đọc bài thơ.",
+        "pinyin": "Biàn yīn biàn diào。 Lǎngdú。"
+      },
+      "parts": [
+        {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "终于 zhōngyú",
+              "right": "充裕 chōngyù"
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "心里 xīnlǐ",
+              "right": "心理 xīnlǐ"
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "联系 liánxì",
+              "right": "练习 liànxí"
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "如果 rúguǒ",
+              "right": "路过 lùguò"
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "因此 yīncǐ",
+              "right": "影视 yǐngshì"
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "想念 xiǎngniàn",
+              "right": "项链 xiàngliàn"
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+          "type": "poem_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "e1588c8e-d701-4284-b161-8b89c51cfa87",
+              "title": "游子吟",
+              "author": "[唐] 孟郊",
+              "text": "慈母手中线，\n游子身上衣。\n临行密密缝，\n意恐迟迟归。\n谁言寸草心，\n报得三春晖。",
+              "pinyin": "Cí mǔ shǒu zhōng xiàn, Yóuzǐ shēn shàng yī. Lín xíng mì mì féng, Yì kǒng chí chí guī. Shuí yán cùn cǎo xīn, Bào dé sān chūn huī.",
+              "source_origin": "textbook",
+              "check_needed": false,
+              "vi": "Mẹ hiền cầm sợi chỉ trong tay,\nÁo mặc trên thân người con xa nhà.\nTrước lúc con đi, mẹ khâu từng mũi thật dày,\nLòng lo con mãi chậm ngày trở về.\nAi nói tấm lòng nhỏ bé của con cái,\nCó thể báo đáp được ánh xuân ba tháng?"
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Từ ngữ",
+      "instruction": {
+        "zh": "读下列词语。",
+        "vi": "Đọc các cụm từ sau.",
+        "pinyin": "Dú xiàliè cíyǔ。"
+      },
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "实现理想",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Shíxiàn lǐxiǎng"
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "实现愿望",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Shíxiàn yuànwàng"
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "实现不了",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Shíxiàn bù liǎo"
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "改变主意",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gǎibiàn zhǔyi"
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "改变计划",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gǎibiàn jìhuà"
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "改变想法",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gǎibiàn xiǎngfǎ"
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "有联系",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Yǒu liánxì"
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "没有联系",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Méi yǒu liánxì"
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "联系学校",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Liánxì xuéxiào"
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "办手续",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Bàn shǒuxù"
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "办事",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Bàn shì"
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "办签证",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Bàn qiānzhèng"
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "临出发",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Lín chūfā"
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "临上车前",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Lín shàng chē qián"
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "临上飞机",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Lín shàng fēijī"
+        },
+        {
+          "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+          "text": "拼命跑",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Pīnmìng pǎo"
+        },
+        {
+          "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
+          "text": "拼命学习",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Pīnmìng xuéxí"
+        },
+        {
+          "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
+          "text": "拼命工作",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Pīnmìng gōngzuò"
+        },
+        {
+          "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
+          "text": "跟父母商量",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gēn fùmǔ shāngliang"
+        },
+        {
+          "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
+          "text": "跟学校商量",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gēn xuéxiào shāngliang"
+        },
+        {
+          "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
+          "text": "跟朋友商量",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gēn péngyou shāngliang"
+        },
+        {
+          "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
+          "text": "请放心",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Qǐng fàngxīn"
+        },
+        {
+          "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
+          "text": "不放心",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Bù fàngxīn"
+        },
+        {
+          "id": "71556026-f031-4d36-9a7e-7abd82202c42",
+          "text": "放不下心",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Fàng bu xià xīn"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ đúng điền vào chỗ trống.",
+        "pinyin": "Xuǎn cí tiánkòng。"
+      },
+      "parts": [
+        {
+          "id": "90aa4fee-e79c-43aa-ba47-698c21d1b9c5",
+          "title": "A",
+          "word_bank": [
+            "恋恋不舍",
+            "如果",
+            "只好",
+            "果然",
+            "将来",
+            "终于",
+            "想念",
+            "联系",
+            "改变",
+            "嘱咐"
+          ],
+          "questions": [
+            {
+              "id": "d9a9a0fa-52b8-4416-a83b-90723f14f5b2",
+              "order": 1,
+              "prompt": "我早就想能有机会到长城去看看，今天这个愿望________实现了。",
+              "answer": "终于",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Wǒ zǎojiù xiǎng néng yǒu jīhuì dào Chángchéng qù kànkan， jīntiān zhè ge yuànwàng______shíxiàn le。",
+              "answer_pinyin": "Zhōngyú"
+            },
+            {
+              "id": "38d9ee94-15b5-463b-9116-b9d4c5b9d700",
+              "order": 2,
+              "prompt": "大学毕业以后，我和她没有________过。",
+              "answer": "联系",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Dàxué bìyè yǐhòu， wǒ hé tā méi yǒu______guò。",
+              "answer_pinyin": "Liánxì"
+            },
+            {
+              "id": "80af13bc-72be-4894-b20e-3b0240046e7e",
+              "order": 3,
+              "prompt": "________她知道了这件事，一定会不高兴。",
+              "answer": "如果",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "______Tā zhīdào le zhè jiàn shì， yī dìng huì bù gāoxìng。",
+              "answer_pinyin": "Rúguǒ"
+            },
+            {
+              "id": "fb498798-133a-42b3-96ef-2b41d6fb3b33",
+              "order": 4,
+              "prompt": "天气预报说今天有雨，你看，________下起来了。",
+              "answer": "果然",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Tiānqì yùbào shuō jīntiān yǒu yǔ， nǐ kàn，______xià qǐlái le。",
+              "answer_pinyin": "Guǒrán"
+            },
+            {
+              "id": "550309ca-788b-4859-9f6d-650749a11c98",
+              "order": 5,
+              "prompt": "离开家以后，才知道我是多么________父母。",
+              "answer": "想念",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Lí kāi jiā yǐhòu， cái zhīdào wǒ shì duōme______fùmǔ。",
+              "answer_pinyin": "Xiǎngniàn"
+            },
+            {
+              "id": "f7a5c5c4-d85c-4641-b6d4-693ca7399d07",
+              "order": 6,
+              "prompt": "妈妈总是________我要注意安全。",
+              "answer": "嘱咐",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Māma zǒng shì______wǒ yào zhùyì ānquán。",
+              "answer_pinyin": "Zhǔfù"
+            },
+            {
+              "id": "e16a4aa8-ee9c-4ce6-9c9d-2ae0829cb1f0",
+              "order": 7,
+              "prompt": "我知道，如果把这件事告诉父母的话，他们多半不会同意，所以________瞒着他们。",
+              "answer": "只好",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Wǒ zhīdào， rúguǒ bǎ zhè jiàn shì gàosu fùmǔ de huà， tāmen duōbàn bú huì tóngyì， suǒyǐ______mánzhe tāmen。",
+              "answer_pinyin": "Zhǐhǎo"
+            },
+            {
+              "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
+              "order": 8,
+              "prompt": "刚到中国的时候，有好多地方不习惯，但是现在要离开了，还真有点儿________。",
+              "answer": "恋恋不舍",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Gāng dào Zhōngguó de shíhou， yǒu hǎo duō dìfang bù xíguàn， dànshì xiànzài yào líkāi le， hái zhēn yǒu diǎn ér______。",
+              "answer_pinyin": "Liànliàn-bùshě"
+            },
+            {
+              "id": "3d2951e4-c09f-4887-80cd-9e2e46617f29",
+              "order": 9,
+              "prompt": "A：你________打算做什么？\nB：我觉得我的性格当老师比较好。",
+              "answer": "将来",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "A： nǐ______dǎsuàn zuò shénme？ B： wǒ juéde wǒ de xìnggé dāng lǎoshī bǐjiào hǎo。",
+              "answer_pinyin": "Jiānglái"
+            },
+            {
+              "id": "b6f002b2-c530-48cc-8a45-6cb9fe96e211",
+              "order": 10,
+              "prompt": "世界上的一切事情都在变化中，你不觉得人的性格也会________吗？",
+              "answer": "改变",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Shìjiè shàng de yíqiè shìqing dōu zài biànhuà zhōng， nǐ bù juéde rén de xìnggé yě huì______ma？",
+              "answer_pinyin": "Gǎibiàn"
+            }
+          ]
+        },
+        {
+          "id": "7382b7c5-024b-4aea-8161-626977f0b516",
+          "title": "B",
+          "word_bank": [
+            "着",
+            "了",
+            "的",
+            "到",
+            "给",
+            "把",
+            "好",
+            "地",
+            "下"
+          ],
+          "questions": [
+            {
+              "id": "94ab3d83-50ac-4807-90f5-3ccc46be4ae1",
+              "order": 1,
+              "prompt": "我收________了她从国外寄来的礼物。",
+              "answer": "到",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Wǒ shōu______le tā cóng guówài jì lái de lǐ wù。",
+              "answer_pinyin": "Dào"
+            },
+            {
+              "id": "07469e97-a1b0-46e0-8866-d361f064c457",
+              "order": 2,
+              "prompt": "下班以后，她就忙________买菜、做饭。",
+              "answer": "着",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Xià bān yǐhòu， tā jiù máng______mǎi cài、 zuò fàn。",
+              "answer_pinyin": "Zhe"
+            },
+            {
+              "id": "b60a0be3-2dd2-4ce6-8f3d-71f8b8f293f9",
+              "order": 3,
+              "prompt": "我把一切手续办________以后，才告诉她我要出国，她听了以后有点儿不大高兴。",
+              "answer": "好",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Wǒ bǎ yíqiè shǒuxù bàn______yǐhòu， cái gàosu tā wǒ yào chūguó， tā tīng le yǐhòu yǒu diǎn ér bú dà gāoxìng。",
+              "answer_pinyin": "Hǎo"
+            },
+            {
+              "id": "1d405d7a-2484-4a21-bf6d-b5a49c5fa380",
+              "order": 4,
+              "prompt": "妈妈要我到中国以后，每个星期都________她打个电话。",
+              "answer": "给",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Māma yào wǒ Dào Zhōngguó yǐhòu， měi ge xīngqī dōu______tā dǎ gè diànhuà。",
+              "answer_pinyin": "Gěi"
+            },
+            {
+              "id": "dce87767-a467-497b-b4a9-5434e845aedf",
+              "order": 5,
+              "prompt": "我很早就想爬上长城看看，今天这个愿望终于实现________，心里有说不出________高兴。",
+              "answer": "了；的",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Wǒ hěn zǎo jiù xiǎng pá shàng Chángchéng kàn kàn， jīntiān zhè ge yuànwàng zhōngyú shíxiàn______， xīnlǐ yǒu shuō bù chū______gāoxìng。",
+              "answer_pinyin": "Le； de"
+            },
+            {
+              "id": "d2a0d942-c444-4b73-bfc9-58a9dc9fd96d",
+              "order": 6,
+              "prompt": "临出发时，爸爸给我买________很多东西，拼命________往我箱子里塞。因为东西太多，箱子都装不________了。",
+              "answer": "了；地；下",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Lín chūfā shí， bàba gěi wǒ mǎi______hěn duō dōngxi， pīnmìng______wǎng wǒ xiāngzi lǐ sāi。 Yīnwèi dōngxi tài duō， xiāngzi dōu zhuāng bù______le。",
+              "answer_pinyin": "Le； de； xià"
+            },
+            {
+              "id": "daeadd79-6c9c-4f14-92f6-d7a4c907b10c",
+              "order": 7,
+              "prompt": "朋友开车________我送________机场，离别时看他恋恋不舍________样子，我的眼泪也流了出来。",
+              "answer": "把；到；的",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Péngyou kāi chē______wǒ sòng______jīchǎng， líbié shí kàn tā liànliàn-bùshě______yàngzi， wǒ de yǎnlèi yě liú le chūlái。",
+              "answer_pinyin": "Bǎ； dào； de"
+            },
+            {
+              "id": "693c7f3e-bbea-4ef7-beec-92a70e277fd1",
+              "order": 8,
+              "prompt": "你知道我的性格，决定了的事情是不会改变________。",
+              "answer": "的",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Nǐ zhīdào wǒ de xìnggé， juédìng le de shìqing shì bú huì gǎibiàn______。",
+              "answer_pinyin": "De"
+            }
+          ]
+        },
+        {
+          "id": "e947f5d1-785b-49fe-a748-44694d79532d",
+          "title": "C",
+          "questions": [
+            {
+              "id": "3a38dab7-8de8-49de-a130-59f1a55b4dc5",
+              "order": 1,
+              "prompt": "北京烤鸭很好吃，________不太贵。",
+              "answer": "而且",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "而",
+                "而且"
+              ],
+              "pinyin": "Běijīng kǎo yā hěn hǎo chī，______bú tài guì。",
+              "answer_pinyin": "Érqiě"
+            },
+            {
+              "id": "f765b082-e924-4d7b-ae01-a2877d61150f",
+              "order": 2,
+              "prompt": "快考试了，大家都在忙着复习，________麦克却旅行去了。",
+              "answer": "而",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "而",
+                "而且"
+              ],
+              "pinyin": "Kuài kǎo shì le， dàjiā dōu zài mángzhe fù xí，______mài kè què lǚ xíng qù le。",
+              "answer_pinyin": "Ér"
+            },
+            {
+              "id": "f5af46c4-1ff8-4832-99a0-84e30a496e48",
+              "order": 3,
+              "prompt": "我大学毕业________，还没有跟她联系过。",
+              "answer": "以后",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "以后",
+                "然后"
+              ],
+              "pinyin": "Wǒ dàxué bìyè______， hái méi yǒu gēn tā liánxì guò。",
+              "answer_pinyin": "Yǐhòu"
+            },
+            {
+              "id": "f41dd12e-7759-4790-815d-b93f89bc19b9",
+              "order": 4,
+              "prompt": "我打算明天下午先去邮局寄包裹，________去银行换点儿钱。",
+              "answer": "然后",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "然后",
+                "以后"
+              ],
+              "pinyin": "Wǒ dǎsuàn míngtiān xià wǔ xiān qù yóu jú jì bāo guǒ，______qù yín xíng huàn diǎn ér qián。",
+              "answer_pinyin": "Ránhòu"
+            },
+            {
+              "id": "bf7f9ce6-163c-4fb0-8df7-d389bcdbcbb8",
+              "order": 5,
+              "prompt": "我________先在这儿学两年汉语，然后去别的大学学习中国经济。",
+              "answer": "打算",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "打算",
+                "愿意"
+              ],
+              "pinyin": "Wǒ______xiān zài zhè ér xué liǎng nián Hànyǔ， ránhòu qù bié de dàxué xuéxí Zhōngguó jīngjì。",
+              "answer_pinyin": "Dǎsuàn"
+            },
+            {
+              "id": "7b68af61-aff1-42d6-b887-22d42ec9590b",
+              "order": 6,
+              "prompt": "我们打算星期天去爬山，你要是________就跟我们一起去。",
+              "answer": "愿意",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "希望",
+                "愿意"
+              ],
+              "pinyin": "Wǒmen dǎsuàn xīng qī tiān qù pá shān， nǐ yào shì______jiù gēn wǒmen yìqǐ qù。",
+              "answer_pinyin": "Yuànyì"
+            },
+            {
+              "id": "1f2b5253-da5b-47c8-9a2c-26e51bd79428",
+              "order": 7,
+              "prompt": "A：暑假你有什么________？\nB：我还没________好呢。",
+              "answer": "打算；考虑",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "打算",
+                "考虑"
+              ],
+              "pinyin": "A： shǔ jiǎ nǐ yǒu shénme______？ B： wǒ hái méi______hǎo ne。",
+              "answer_pinyin": "Dǎsuàn； kǎolǜ"
+            },
+            {
+              "id": "166cf1ec-4907-408f-9fbb-c6b906108c22",
+              "order": 8,
+              "prompt": "A：你________不________去云南？你要是想去，咱们一起去，怎么样？\nB：让我________一下儿，然后再告诉你，好吗？",
+              "answer": "打算；打算；考虑",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "打算",
+                "考虑"
+              ],
+              "pinyin": "A： nǐ______bù______qù yún nán？ Nǐ yào shì xiǎng qù， zán men yìqǐ qù， zěnmeyàng？ B： ràng wǒ______yī xià ér， ránhòu zài gàosu nǐ， hǎo ma？",
+              "answer_pinyin": "Dǎsuàn； dǎsuàn； kǎolǜ"
+            },
+            {
+              "id": "64067186-dda2-41e4-9964-cc1afac23bc3",
+              "order": 9,
+              "prompt": "科学家认为现在全球气候正在________暖。",
+              "answer": "变",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "改变",
+                "变"
+              ],
+              "pinyin": "Kē xué jiā rèn wèi xiànzài quán qiú qì hòu zhèngzài______nuǎn。",
+              "answer_pinyin": "Biàn"
+            },
+            {
+              "id": "b9859d59-6e66-42fe-ac9a-11d05a59a86d",
+              "order": 10,
+              "prompt": "他们研究过了，可能要________原来的计划。",
+              "answer": "改变",
+              "source_origin": "textbook",
+              "answer_verified": true,
+              "check_needed": false,
+              "choices": [
+                "改变",
+                "变"
+              ],
+              "pinyin": "Tāmen yán jiū guò le， kě néng yào______yuán lái de jìhuà。",
+              "answer_pinyin": "Gǎibiàn"
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "custom",
+      "variant": "choose_position",
+      "order": 4,
+      "title": "四、给括号里的词语选择正确的位置",
+      "title_vi": "Chọn vị trí đúng cho từ trong ngoặc",
+      "instruction": {
+        "zh": "给括号里的词语选择正确的位置。",
+        "vi": "Chọn vị trí đúng cho từ trong ngoặc.",
+        "pinyin": "Gěi kuòhào lǐ de cíyǔ xuǎnzé zhèngquè de wèizhi。"
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "order": 1,
+          "prompt": "这 A 就是 B 我要 C 告诉你的 D。",
+          "answer": "B",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "一切",
+          "pinyin": "Zhè A jiùshì B wǒ yào C gàosu nǐ de D。"
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "order": 2,
+          "prompt": "A 刚到 B 中国的时候，感到 C 都是 D 那么新鲜。",
+          "answer": "C",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "一切",
+          "pinyin": "A gāng dào B Zhōngguó de shíhou， gǎndào C dōu shì D nàme xīn xiān。"
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "order": 3,
+          "prompt": "A 那位老人 B 没走好，C 摔倒了 D。",
+          "answer": "C",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "一下子",
+          "pinyin": "A nà wèi lǎo rén B méi zǒu hǎo， C shuāi dào le D。"
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "order": 4,
+          "prompt": "我想 A 用 B 你的 C 词典 D，可以吗？",
+          "answer": "D",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "一下儿",
+          "pinyin": "Wǒ xiǎng A yòng B nǐ de C cí diǎn D， kěyǐ ma？"
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "order": 5,
+          "prompt": "A 他到 B 现在 C 还没来，D 不来了。",
+          "answer": "D",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "多半",
+          "pinyin": "A tā dào B xiànzài C hái méi lái， D bù lái le。"
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "order": 6,
+          "prompt": "他 A 想多 B 睡 C 一会儿，D 不是病了。",
+          "answer": "A",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "就是",
+          "pinyin": "Tā A xiǎng duō B shuì C yī huì ér， D bú shì bìng le。"
+        },
+        {
+          "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
+          "order": 7,
+          "prompt": "这一个星期 A 我就收 B 到 C 五件礼物 D。",
+          "answer": "D",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "了",
+          "pinyin": "Zhè yí ge xīng qī A wǒ jiù shōu B dào C wǔ jiàn lǐ wù D。"
+        },
+        {
+          "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
+          "order": 8,
+          "prompt": "我打算 A 放 B 假 C 就去南方旅行 D。",
+          "answer": "C",
+          "source_origin": "textbook",
+          "answer_verified": true,
+          "check_needed": false,
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "given_word": "了",
+          "pinyin": "Wǒ dǎsuàn A fàng B jiǎ C jiù qù nán fāng lǚ xíng D。"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.choose_position.v1",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 5,
+      "title": "五、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ trong ngoặc để hoàn thành câu.",
+        "pinyin": "Yòng kuòhào lǐ de cíyǔ wánchéng jùzi。"
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "order": 1,
+          "prompt": "刚来的时候我很不习惯，老师说，过一两个月就好了。现在，一个多月过去了，________________。",
+          "given_word": "果然",
+          "answer": "我果然习惯多了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Gāng lái de shíhou wǒ hěn bù xíguàn， lǎoshī shuō， guò yì liǎng ge yuè jiù hǎo le。 Xiànzài， yí ge duō yuè guò qù le，______。",
+          "answer_pinyin": "Wǒ guǒrán xí guàn duō le。"
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "order": 2,
+          "prompt": "大夫跟我说，坚持打一年的太极拳，你的病就会好的。你看，我才打了半年，________________。",
+          "given_word": "果然",
+          "answer": "我的病果然好多了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Dà fū gēn wǒ shuō， jiānchí dǎ yì nián de tài jí quán， nǐ de bìng jiù huì hǎo de。 Nǐ kàn， wǒ cái dǎ le bàn nián，______。",
+          "answer_pinyin": "Wǒ de bìng guǒrán hǎo duō le。"
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "order": 3,
+          "prompt": "那天，我迷路了，________________。",
+          "given_word": "只好",
+          "answer": "只好问路。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Nà tiān， wǒ mí lù le，______。",
+          "answer_pinyin": "Zhǐhǎo wèn lù。"
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "order": 4,
+          "prompt": "你看她的样子，________________。",
+          "given_word": "多半",
+          "answer": "她多半是累了。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Nǐ kàn tā de yàngzi，______。",
+          "answer_pinyin": "Tā duōbàn shì lèi le。"
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "order": 5,
+          "prompt": "玛丽病了，同学们都来看她，________________。",
+          "given_word": "嘱咐",
+          "answer": "嘱咐她好好儿休息，按时吃药。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Mǎlì bìng le， tóngxué men dōu lái kàn tā，______。",
+          "answer_pinyin": "Zhǔfù tā hǎo hǎo ér xiū xī， àn shí chī yào。"
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "order": 6,
+          "prompt": "经过努力，________________。",
+          "given_word": "终于",
+          "answer": "他终于实现了自己的愿望。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Jīng guò nǔ lì，______。",
+          "answer_pinyin": "Tā zhōngyú shíxiàn le zìjǐ de yuànwàng。"
+        },
+        {
+          "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+          "order": 7,
+          "prompt": "________________大家还有不同意见。",
+          "given_word": "对于",
+          "answer": "对于这个问题，大家还有不同意见。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "______Dàjiā hái yǒu bù tóngyì jiàn。",
+          "answer_pinyin": "Duìyú zhè ge wèntí， dàjiā hái yǒu bù tóngyì jiàn。"
+        },
+        {
+          "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+          "order": 8,
+          "prompt": "我哪儿都不想去，________________。",
+          "given_word": "就是",
+          "answer": "就是想在家休息。",
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "generated_answer_checked",
+          "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
+          "pinyin": "Wǒ nǎ ér dōu bù xiǎng qù，______。",
+          "answer_pinyin": "Jiùshì xiǎng zài jiā xiū xī。"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v1",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp câu thành đoạn văn.",
+        "pinyin": "Lián jù chéng duàn。"
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "order": 1,
+          "items": [
+            {
+              "label": "A",
+              "text": "尤其是冬天的星空，常常使我看得入迷。",
+              "pinyin": "Yóuqí shì dōngtiān de xīngkōng， chángcháng shǐ wǒ kàn de rùmí。"
+            },
+            {
+              "label": "B",
+              "text": "我的家乡是一个美丽的小城。",
+              "pinyin": "Wǒ de jiāxiāng shì yí ge měilì de xiǎochéng。"
+            },
+            {
+              "label": "C",
+              "text": "每到晴天的夜晚，就可以看到明亮的星星。",
+              "pinyin": "Měi dào qíngtiān de yèwǎn， jiù kěyǐ kàn dào míngliàng de xīngxing。"
+            },
+            {
+              "label": "D",
+              "text": "小时候，我常爱看那美丽的星空。",
+              "pinyin": "Xiǎoshíhou， wǒ cháng ài kàn nà měilì de xīngkōng。"
+            }
+          ],
+          "answer": [
+            "B",
+            "C",
+            "D",
+            "A"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_generated_answer"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "order": 2,
+          "items": [
+            {
+              "label": "A",
+              "text": "到中国以后我还是这样。",
+              "pinyin": "Dào Zhōngguó yǐhòu wǒ háishi zhè yàng。"
+            },
+            {
+              "label": "B",
+              "text": "后来离开了家乡，我仍然经常想起家乡那美丽的星空。",
+              "pinyin": "Hòulái lí kāi le jiāxiāng， wǒ réng rán jīng cháng xiǎng qǐ jiāxiāng nà měilì de xīngkōng。"
+            },
+            {
+              "label": "C",
+              "text": "常常一到晚上就不由得会抬起头来往天上看。",
+              "pinyin": "Chángcháng yī dào wǎn shàng jiù bù yóu dé huì tái qǐ tóu lái wǎng tiān shàng kàn。"
+            },
+            {
+              "label": "D",
+              "text": "天空有没有明亮的星星。",
+              "pinyin": "Tiān kōng yǒu méi yǒu míngliàng de xīngxing。"
+            }
+          ],
+          "answer": [
+            "B",
+            "A",
+            "C",
+            "D"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "textbook_question_checked_answer"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reorder_paragraph.v1",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai.",
+        "pinyin": "Gǎi cuò jù。"
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "order": 1,
+          "prompt": "这件事你对她不该瞒。",
+          "answer": "这件事你不该瞒着她。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Zhè jiàn shì nǐ duì tā bù gāi mán。",
+          "answer_pinyin": "Zhè jiàn shì nǐ bù gāi mánzhe tā。",
+          "explanation_vi": "瞒 là động từ cần tân ngữ trực tiếp; trong câu này dùng 瞒着她 tự nhiên hơn, không nói 对她瞒."
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "order": 2,
+          "prompt": "我终于快到中国了。",
+          "answer": "我终于到中国了。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Wǒ zhōngyú kuài dào Zhōngguó le。",
+          "answer_pinyin": "Wǒ zhōngyú dào Zhōngguó le。",
+          "explanation_vi": "终于 nhấn kết quả cuối cùng đã đạt được; 快到 chỉ sắp tới, mâu thuẫn với 终于 trong câu này."
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "order": 3,
+          "prompt": "你可以把我作你的朋友。",
+          "answer": "你可以把我当作你的朋友。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Nǐ kěyǐ bǎ wǒ zuò nǐ de péngyou。",
+          "answer_pinyin": "Nǐ kěyǐ bǎ wǒ dāng zuò nǐ de péngyou。",
+          "explanation_vi": "把……作…… không tự nhiên ở đây; dùng 把……当作…… = coi ai/cái gì là...."
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "order": 4,
+          "prompt": "看到这种情况，我的眼里流了眼泪。",
+          "answer": "看到这种情况，我的眼泪一下子流了出来。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎn lǐ liú le yǎnlèi。",
+          "answer_pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎnlèi yíxiàzi liú le chūlái。",
+          "explanation_vi": "Chủ ngữ tự nhiên là 眼泪; nói 眼泪流出来, không nói 我的眼里流了眼泪 trong văn cảnh này."
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "order": 5,
+          "prompt": "因为买票太多人，我们没有买卧铺，只好买了硬座。",
+          "answer": "因为买票的人太多，我们没有买到卧铺，只好买了硬座。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Yīnwèi mǎi piào tài duō rén， wǒmen méi yǒu mǎi wò pù， zhǐhǎo mǎi le yìng zuò。",
+          "answer_pinyin": "Yīnwèi mǎi piào de rén tài duō， wǒmen méi yǒu mǎi dào wò pù， zhǐhǎo mǎi le yìng zuò。",
+          "explanation_vi": "要 nói “người mua vé quá nhiều”: 买票的人太多. 没有买到 nhấn không mua được vé giường nằm."
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "order": 6,
+          "prompt": "我放行李在飞机场的大厅里。",
+          "answer": "我把行李放在飞机场的大厅里。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Wǒ fàng xíng lǐ zài fēijīchǎng de dà tīng lǐ。",
+          "answer_pinyin": "Wǒ bǎ xíng lǐ fàng zài fēijīchǎng de dà tīng lǐ。",
+          "explanation_vi": "放 + đồ vật + 在 + nơi chốn; với tân ngữ xác định 行李, dùng 把行李放在…… tự nhiên hơn."
+        },
+        {
+          "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
+          "order": 7,
+          "prompt": "她结婚了一个有钱人。",
+          "answer": "她和一个有钱人结婚了。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Tā jiéhūn le yí ge yǒu qián rén。",
+          "answer_pinyin": "Tā hé yí ge yǒu qián rén jiéhūn le。",
+          "explanation_vi": "结婚 không trực tiếp mang tân ngữ người; phải dùng 和/跟 + người + 结婚."
+        },
+        {
+          "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
+          "order": 8,
+          "prompt": "我从小就是喝妈妈的牛奶长大的。",
+          "answer": "我从小就是喝妈妈的奶长大的。",
+          "source_origin": "generated_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "pinyin": "Wǒ cóng xiǎo jiùshì hē māma de niú nǎi zhǎng dà de。",
+          "answer_pinyin": "Wǒ cóng xiǎo jiùshì hē māma de nǎi zhǎng dà de。",
+          "explanation_vi": "牛奶 là sữa bò/sữa uống; sữa mẹ nói 妈妈的奶 hoặc 母乳. Câu này dùng 妈妈的奶 tự nhiên hơn."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v1",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "context_expression",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo ngữ cảnh",
+      "instruction": {
+        "zh": "情景表达。",
+        "vi": "Luyện diễn đạt theo ngữ cảnh.",
+        "pinyin": "Qíngjǐng biǎodá。"
+      },
+      "parts": [
+        {
+          "id": "25b54876-62e8-4f94-b204-4c2ee708b2b3",
+          "title": "下列句子什么情景下说？",
+          "title_vi": "Những câu sau dùng trong tình huống nào?",
+          "questions": [
+            {
+              "id": "c27289fb-5395-45bf-8c4f-dbfdc93a63a5",
+              "order": 1,
+              "prompt": "现在我的愿望终于实现了，心里有说不出的高兴。",
+              "answer": "一个人长期希望来中国学习汉语，现在机会终于来了、愿望实现了。",
+              "source_origin": "generated_answer_checked",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Xiànzài wǒ de yuànwàng zhōngyú shíxiàn le， xīnlǐ yǒu shuō bù chū de gāoxìng。",
+              "answer_pinyin": "Yí ge rén zhǎng qī xīwàng lái Zhōngguó xuéxí Hànyǔ， xiànzài jīhuì zhōngyú lái le、 yuànwàng shíxiàn le。"
+            },
+            {
+              "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
+              "order": 2,
+              "prompt": "如果把这件事告诉她，她多半不会同意。",
+              "answer": "想告诉某人一件事，但判断她很可能不同意。",
+              "source_origin": "generated_answer_checked",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Rúguǒ bǎ zhè jiàn shì gàosu tā， tā duōbàn bú huì tóngyì。",
+              "answer_pinyin": "Xiǎng gàosu mǒu rén yī jiàn shì， dàn pàn duàn tā hěn kě néng bù tóngyì。"
+            },
+            {
+              "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
+              "order": 3,
+              "prompt": "看她那恋恋不舍的样子，我的眼泪也一下子流了出来。",
+              "answer": "离别时看到对方舍不得离开，自己也忍不住流泪。",
+              "source_origin": "generated_answer_checked",
+              "answer_verified": true,
+              "check_needed": false,
+              "pinyin": "Kàn tā nà liànliàn-bùshě de yàngzi， wǒ de yǎnlèi yě yíxiàzi liú le chūlái。",
+              "answer_pinyin": "Líbié shí kàn dào duìfang shěbude lí kāi， zìjǐ yě rěn bù zhù liú lèi。"
+            }
+          ]
+        },
+        {
+          "id": "f0e71485-f72f-4ecf-9357-426332e4da76",
+          "title": "下列情景怎么说？",
+          "title_vi": "Gặp tình huống sau thì nói thế nào?",
+          "questions": [
+            {
+              "id": "e1ef3a5f-4baa-422e-8e36-2eeab7b1384c",
+              "order": 1,
+              "prompt": "朋友请你帮帮她，你没有时间，但看到朋友着急的样子，你还是答应了。",
+              "given_word": "只好",
+              "answer": "我没有时间，可是看到她着急的样子，只好答应了。",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "generated_answer_checked",
+              "pinyin": "Péngyou qǐng nǐ bāng bāng tā， nǐ méi yǒu shíjiān， dàn kàn dào péngyou zháojí de yàngzi， nǐ háishi dāying le。",
+              "answer_pinyin": "Wǒ méi yǒu shíjiān， kěshì kàn dào tā zháojí de yàngzi， zhǐhǎo dāying le。"
+            },
+            {
+              "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
+              "order": 2,
+              "prompt": "和男 / 女朋友离别时，你不想离开，眼泪都流了出来。",
+              "given_word": "恋恋不舍",
+              "answer": "和女朋友分别时，我恋恋不舍，眼泪都流了出来。",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "generated_answer_checked",
+              "pinyin": "Hé nán / nǚ péngyou líbié shí， nǐ bù xiǎng lí kāi， yǎnlèi dōu liú le chūlái。",
+              "answer_pinyin": "Hé nǚ péngyou fēnbié shí， wǒ liànliàn-bùshě， yǎnlèi dōu liú le chūlái。"
+            },
+            {
+              "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
+              "order": 3,
+              "prompt": "刚来中国，你觉得不习惯，特别想家。",
+              "given_word": "想念",
+              "answer": "刚来中国的时候，我很不习惯，特别想念家人。",
+              "answer_verified": true,
+              "check_needed": false,
+              "source_origin": "generated_answer_checked",
+              "pinyin": "Gāng lái Zhōngguó， nǐ juéde bù xíguàn， tèbié xiǎng jiā。",
+              "answer_pinyin": "Gāng lái Zhōngguó de shíhou， wǒ hěn bù xíguàn， tèbié xiǎngniàn jiā rén。"
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.context_expression.v1",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Tổng hợp điền khuyết",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền vào chỗ trống theo ngữ cảnh.",
+        "pinyin": "Zōnghé tiánkòng。"
+      },
+      "supplementary_vocabulary": [
+        {
+          "hanzi": "戒指",
+          "pinyin": "jièzhi",
+          "meaning_vi": "nhẫn",
+          "pos": "Danh từ",
+          "pos_detail": {
+            "vi": "Danh từ",
+            "cn": "名词",
+            "normalized": "noun",
+            "schema_compatible_pos": "noun",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "刻",
+          "pinyin": "kè",
+          "meaning_vi": "khắc; khắc chữ",
+          "pos": "Động từ / Danh từ thời gian / Hình vị",
+          "pos_detail": {
+            "vi": "Động từ / Danh từ thời gian / Hình vị",
+            "cn": "动词 / 时间名词 / 语素",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "分别",
+          "pinyin": "fēnbié",
+          "meaning_vi": "chia tay; phân biệt; lần lượt",
+          "pos": "Động từ / Phó từ",
+          "pos_detail": {
+            "vi": "Động từ / Phó từ",
+            "cn": "动词 / 副词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "异国他乡",
+          "pinyin": "yìguó tāxiāng",
+          "meaning_vi": "đất khách quê người",
+          "pos": "Cụm danh từ / Thành ngữ hóa",
+          "pos_detail": {
+            "vi": "Cụm danh từ / Thành ngữ hóa",
+            "cn": "名词性短语",
+            "normalized": "noun_phrase",
+            "schema_compatible_pos": "phrase",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "鼓励",
+          "pinyin": "gǔlì",
+          "meaning_vi": "khuyến khích; động viên",
+          "pos": "Động từ",
+          "pos_detail": {
+            "vi": "Động từ",
+            "cn": "动词",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "孤独",
+          "pinyin": "gūdú",
+          "meaning_vi": "cô độc; cô đơn",
+          "pos": "Tính từ / Danh từ trạng thái",
+          "pos_detail": {
+            "vi": "Tính từ / Danh từ trạng thái",
+            "cn": "形容词 / 状态名词",
+            "normalized": "adjective",
+            "schema_compatible_pos": "adjective",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "后悔",
+          "pinyin": "hòuhuǐ",
+          "meaning_vi": "hối hận; hối tiếc",
+          "pos": "Động từ / Tính từ tâm lý",
+          "pos_detail": {
+            "vi": "Động từ / Tính từ tâm lý",
+            "cn": "动词 / 心理形容",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        },
+        {
+          "hanzi": "落",
+          "pinyin": "là",
+          "meaning_vi": "bị tụt lại; bỏ sót; rớt lại phía sau",
+          "pos": "Động từ / Hình vị đa âm",
+          "pos_detail": {
+            "vi": "Động từ / Hình vị đa âm",
+            "cn": "动词 / 多音语素",
+            "normalized": "verb",
+            "schema_compatible_pos": "verb",
+            "is_separable_verb": false,
+            "separable_type": "",
+            "structure_vi": "",
+            "usage_note_vi": "",
+            "notes": []
+          },
+          "check_needed": false
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "b7aa77cc-e97b-4721-a0d3-6c56ce508a53",
+          "order": 1,
+          "zh": "半年前，我临来中国时，朋友们一起①________我过了一次生日。当时，最让我难忘的是，大家送给我一个戒指，上面刻②________一句话：“我们都爱你。”看到这句话，我的眼泪一下子就流了③________。想到就要和朋友们分别了，我真有点儿恋恋不舍。但是，来中国留学的手续已经办好了，我只好与朋友分别，坐④________了飞往中国的飞机。",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dànshì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐhǎo yǔ péngyou fēnbié， zuò④ ______ le fēiwǎng Zhōngguó de fēijī。"
+        },
+        {
+          "id": "9bf6f21e-c30f-4adb-94c3-35c3b2e1b12a",
+          "order": 2,
+          "zh": "一个人来到异国他乡，⑤________都是陌生的，一切都感到不习惯。但是到中国不久，我就认识了不少新朋友。可以说，我能一直坚持学习到现在，除了国内的朋友支持我、帮助我、鼓励我以外，更重要的是因为有了这些新朋友。⑥________没有她们，我在中国的生活会是非常孤独和寂寞的。",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dànshì dào Zhōngguó bùjiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。"
+        },
+        {
+          "id": "2aed955a-1c84-4a71-a100-eb50315cb0a3",
+          "order": 3,
+          "zh": "刚到中国一个月，我⑦________生病住进了医院。在医院里，我感到非常寂寞，十分后悔到中国来。正在我感到非常孤独和寂寞时，我遇到了一位热心的中国大学生。⑧________与我同住一个病房，每天都邀请我一起下楼去吃饭、散步。我觉得心情一下子好多了。晚上，有时医院里还组织联欢会，每次大家都邀请我唱一支我们国家的歌。虽然我唱得不太好，但是大家听了都给我鼓掌，让我很感动。在病房里，这位朋友还教我学汉语，成了我的辅导老师。⑨________她的帮助下，我的功课并没有因为住院而落下。",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēngbìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìngfáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīnqíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī liánhuānhuì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng de bú tài hǎo， dànshì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìngfáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōngkè bìng méi yǒu yīnwèi zhùyuàn ér là xià。"
+        },
+        {
+          "id": "4afd733e-6faf-4d2e-a05c-d627d5eec1ef",
+          "order": 4,
+          "zh": "出院后，朋友还邀请我到她家去玩儿，她的父母像对自己的女儿一样对待我，使我感到就像回到了自己家一样。认识了朋友这一家人，⑩________我对中国、对中国人有了更多的了解。",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Chūyuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。"
+        }
+      ],
+      "blanks": [
+        {
+          "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
+          "order": 1,
+          "answer": "给",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Gěi"
+        },
+        {
+          "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
+          "order": 2,
+          "answer": "着",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Zhe"
+        },
+        {
+          "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
+          "order": 3,
+          "answer": "出来",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Chūlái"
+        },
+        {
+          "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
+          "order": 4,
+          "answer": "上",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Shàng"
+        },
+        {
+          "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
+          "order": 5,
+          "answer": "一切",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Yíqiè"
+        },
+        {
+          "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
+          "order": 6,
+          "answer": "如果",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Rúguǒ"
+        },
+        {
+          "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
+          "order": 7,
+          "answer": "就",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "刚到中国一个月，我就生病住进了医院: 就 nhấn sự việc xảy ra sớm sau khi đến Trung Quốc.",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Jiù"
+        },
+        {
+          "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
+          "order": 8,
+          "answer": "她",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Tā"
+        },
+        {
+          "id": "a16e1e89-5c64-4895-a450-e4d057f5c79f",
+          "order": 9,
+          "answer": "在",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Zài"
+        },
+        {
+          "id": "e35e1bf7-610d-4619-a193-04b69f5c3998",
+          "order": 10,
+          "answer": "使",
+          "answer_verified": true,
+          "check_needed": false,
+          "note_vi": "",
+          "source_origin": "textbook_question_checked_answer",
+          "answer_pinyin": "Shǐ"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reading_cloze.v1",
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_question_checked_answer",
+      "check_needed": false,
+      "answers": [
+        "给",
+        "着",
+        "出来",
+        "上",
+        "一切",
+        "如果",
+        "就",
+        "她",
+        "在",
+        "使"
+      ],
+      "answer_key": [
+        {
+          "order": 1,
+          "answer": "给",
+          "check_needed": false,
+          "answer_pinyin": "Gěi"
+        },
+        {
+          "order": 2,
+          "answer": "着",
+          "check_needed": false,
+          "answer_pinyin": "Zhe"
+        },
+        {
+          "order": 3,
+          "answer": "出来",
+          "check_needed": false,
+          "answer_pinyin": "Chūlái"
+        },
+        {
+          "order": 4,
+          "answer": "上",
+          "check_needed": false,
+          "answer_pinyin": "Shàng"
+        },
+        {
+          "order": 5,
+          "answer": "一切",
+          "check_needed": false,
+          "answer_pinyin": "Yíqiè"
+        },
+        {
+          "order": 6,
+          "answer": "如果",
+          "check_needed": false,
+          "answer_pinyin": "Rúguǒ"
+        },
+        {
+          "order": 7,
+          "answer": "就",
+          "check_needed": false,
+          "answer_pinyin": "Jiù"
+        },
+        {
+          "order": 8,
+          "answer": "她",
+          "check_needed": false,
+          "answer_pinyin": "Tā"
+        },
+        {
+          "order": 9,
+          "answer": "在",
+          "check_needed": false,
+          "answer_pinyin": "Zài"
+        },
+        {
+          "order": 10,
+          "answer": "使",
+          "check_needed": false,
+          "answer_pinyin": "Shǐ"
+        }
+      ]
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "交际会话。",
+        "vi": "Luyện hội thoại giao tiếp.",
+        "pinyin": "Jiāojì huìhuà。"
+      },
+      "dialogues": [
+        {
+          "id": "717741c4-a444-413a-9538-06898c4f033c",
+          "title": "请教（1）",
+          "lines": [
+            {
+              "speaker": "A",
+              "zh": "老师，我想去中国学汉语。",
+              "pinyin": "Lǎoshī， wǒ xiǎng qù Zhōngguó xué Hànyǔ。"
+            },
+            {
+              "speaker": "B",
+              "zh": "好啊！手续办好了吗？",
+              "pinyin": "Hǎo a！ Shǒuxù bàn hǎo le ma？"
+            },
+            {
+              "speaker": "A",
+              "zh": "还没有呢。我想请教老师，几月去比较好？",
+              "pinyin": "Hái méiyǒu ne。 Wǒ xiǎng qǐngjiào lǎoshī， jǐ yuè qù bǐjiào hǎo？"
+            },
+            {
+              "speaker": "B",
+              "zh": "你准备学多长时间？",
+              "pinyin": "Nǐ zhǔnbèi xué duō cháng shíjiān？"
+            },
+            {
+              "speaker": "A",
+              "zh": "一年。",
+              "pinyin": "Yì nián。"
+            },
+            {
+              "speaker": "B",
+              "zh": "如果只学一年的话，还是从九月开始比较好。因为中国学校的新学年是从九月开始的。",
+              "pinyin": "Rúguǒ zhǐ xué yì nián de huà， háishi cóng jiǔ yuè kāishǐ bǐjiào hǎo。 Yīnwèi Zhōngguó xuéxiào de xīn xuénián shì cóng jiǔ yuè kāishǐ de。"
+            },
+            {
+              "speaker": "A",
+              "zh": "我去以后读二年级可以吗？",
+              "pinyin": "Wǒ qù yǐhòu dú èr niánjí kěyǐ ma？"
+            },
+            {
+              "speaker": "B",
+              "zh": "根据你的情况，我想，最好从一年级开始，先把语音和语法基础打好了，对你今后的学习会更好。",
+              "pinyin": "Gēnjù nǐ de qíngkuàng， wǒ xiǎng， zuì hǎo cóng yī niánjí kāishǐ， xiān bǎ yǔyīn hé yǔfǎ jīchǔ dǎ hǎo le， duì nǐ jīnhòu de xuéxí huì gèng hǎo。"
+            }
+          ],
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.communication_dialogue.v1"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

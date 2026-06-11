@@ -1,0 +1,293 @@
+{
+  "id": "da86baa7-c53a-47c4-8dc4-34b7113ebf39",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "矛",
+  "pinyin": "máo",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "mâu",
+    "meaning_vi": "cây mâu, giáo dài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cây mâu, giáo dài"
+    ],
+    "short_definition_vi": "cây mâu, giáo dài",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "矛",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "矛",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mâu",
+          "radical_name_zh": "",
+          "hanviet": "mâu",
+          "meaning_vi": "cây mâu",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "矛 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "矛",
+            "hanviet": "mâu",
+            "meaning_vi": "cây mâu",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "矛",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mâu",
+              "radical_name_zh": "",
+              "hanviet": "mâu",
+              "meaning_vi": "cây mâu",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "矛 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 矛.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cây mâu",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "矛 = vũ khí tấn công dùng để刺.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 矛.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "剑",
+        "pinyin": "jiàn",
+        "meaning_vi": "kiếm",
+        "difference_vi": "vũ khí lưỡi dài",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "枪",
+        "pinyin": "qiāng",
+        "meaning_vi": "súng/thương",
+        "difference_vi": "hiện đại ưu tiên nghĩa súng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "盾",
+          "",
+          "khiên",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "173a2647-062d-4a12-9830-9e67a872cabe",
+      "order": 1,
+      "zh": "一支矛",
+      "pinyin": "",
+      "vi": "một cây mâu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c416a8a4-9f48-4c5a-9d91-9b45b391a81a",
+      "order": 2,
+      "zh": "锋利的矛",
+      "pinyin": "",
+      "vi": "cây mâu sắc bén",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7aeb1ba8-b0f0-4c96-9d16-a15e3b44e348",
+      "order": 3,
+      "zh": "用矛刺",
+      "pinyin": "",
+      "vi": "dùng mâu đâm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fed8967d-1788-4d54-8862-c5d0887b6ce0",
+      "order": 4,
+      "zh": "矛和盾",
+      "pinyin": "",
+      "vi": "mâu và khiên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ecc4b353-279e-42d8-95d6-0268218ee17f",
+      "order": 1,
+      "zh": "矛是古代的一种兵器。",
+      "pinyin": "Máo shì gǔdài de yì zhǒng bīngqì.",
+      "vi": "Mâu là một loại binh khí thời cổ.",
+      "analysis_vi": "一种兵器 = một loại vũ khí.",
+      "highlight": [
+        "矛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "da86baa7-c53a-47c4-8dc4-34b7113ebf39"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e52b79f6-4ef5-4694-8466-91dfc283b07e",
+      "order": 2,
+      "zh": "那个卖东西的人说，他的矛什么盾都能刺透。",
+      "pinyin": "Nàge mài dōngxi de rén shuō, tā de máo shénme dùn dōu néng cì tòu.",
+      "vi": "Người bán nói mâu của anh ta khiên nào cũng đâm thủng được.",
+      "analysis_vi": "什么……都…… = bất kỳ… cũng….",
+      "highlight": [
+        "矛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "da86baa7-c53a-47c4-8dc4-34b7113ebf39"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Mâu là một nửa của từ mâu thuẫn: tấn công đối lập với phòng thủ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "141a1c60-4a94-4ceb-86a0-681363966521",
+      "order": 1,
+      "rule_vi": "矛 là vũ khí cổ, không phải súng hiện đại; súng hiện đại thường là 枪.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "矛",
+    "back": "cây mâu, giáo dài",
+    "hint": "máo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "da86baa7-c53a-47c4-8dc4-34b7113ebf39",
+    "source_lesson_vocab_id": null
+  }
+}

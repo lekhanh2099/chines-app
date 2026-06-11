@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_7229e9486218c392",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "满意",
+  "pinyin": "mǎnyì",
+  "meaning_vi": "hài lòng; vừa ý",
+  "pos": "Tính từ",
+  "pos_detail": {
+    "vi": "Tính từ",
+    "cn": "形容词",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "vocab_003",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "vocab_003",
+    "type": "vocabulary_item",
+    "order": 3,
+    "hanzi": "满意",
+    "pinyin": "mǎnyì",
+    "meaning_vi": "hài lòng; vừa ý",
+    "meaning_en": "satisfied",
+    "pos": "Tính từ",
+    "pos_detail": {
+      "vi": "Tính từ",
+      "cn": "形容词",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab_pdf_added"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "满意",
+      "back": "mǎnyì — hài lòng; vừa ý",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "main_vocab_pdf_added",
+    "check_needed": false,
+    "notes": []
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

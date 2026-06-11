@@ -1,0 +1,351 @@
+{
+  "id": "6ef2b430-6569-44ed-bc8c-c24e55d97beb",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "演员",
+  "pinyin": "yǎnyuán",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Diễn viên",
+    "meaning_vi": "diễn viên",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "diễn viên"
+    ],
+    "short_definition_vi": "diễn viên",
+    "textbook_focus_vi": "diễn viên",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "演",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/chất lỏng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "寅",
+            "hanviet": "dần",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "diễn, biểu diễn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "员",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, âm thanh",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, âm thanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "贝",
+            "hanviet": "bối",
+            "meaning_vi": "vỏ sò/tiền",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "người/thành viên",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "người biểu diễn trong phim, kịch, sân khấu",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "明星",
+        "pinyin": "",
+        "meaning_vi": "ngôi sao",
+        "difference_vi": "không phải diễn viên nào cũng nổi tiếng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "艺人",
+        "pinyin": "",
+        "meaning_vi": "nghệ sĩ/giới giải trí",
+        "difference_vi": "rộng hơn 演员",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9e1fcb43-8f5e-47e1-8502-b6a456b6635c",
+      "order": 1,
+      "zh": "一位演员",
+      "pinyin": "",
+      "vi": "một diễn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2acb4a0-152d-47f3-94d9-81f2a430e895",
+      "order": 2,
+      "zh": "京剧演员",
+      "pinyin": "",
+      "vi": "diễn viên Kinh kịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9cebca89-10e0-4e84-8584-73ff2a228dc5",
+      "order": 3,
+      "zh": "电影演员",
+      "pinyin": "",
+      "vi": "diễn viên điện ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8828c661-1587-40e2-b610-97113a1b87ac",
+      "order": 4,
+      "zh": "著名演员",
+      "pinyin": "",
+      "vi": "diễn viên nổi tiếng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2f389023-b22c-4664-bdec-9c42ac46bf26",
+      "order": 5,
+      "zh": "演员表",
+      "pinyin": "",
+      "vi": "danh sách diễn viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "41f8b0b8-6c2b-4680-9c11-e1accbcf4efa",
+      "order": 6,
+      "zh": "武打演员",
+      "pinyin": "",
+      "vi": "diễn viên võ thuật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "06966848-01f6-48e5-8eb1-fda3b5c86f99",
+      "order": 1,
+      "zh": "这位演员唱得很好。",
+      "pinyin": "Zhè wèi yǎnyuán chàng de hěn hǎo.",
+      "vi": "Diễn viên này hát rất hay.",
+      "analysis_vi": "唱得很好 là bổ ngữ trạng thái.",
+      "highlight": [
+        "演员"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6ef2b430-6569-44ed-bc8c-c24e55d97beb"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "eff942de-fece-43da-b71e-22240c37ead2",
+      "order": 2,
+      "zh": "这个演员的动作太复杂了，我看不懂。",
+      "pinyin": "Zhège yǎnyuán de dòngzuò tài fùzá le, wǒ kàn bù dǒng.",
+      "vi": "Động tác của diễn viên này phức tạp quá, tôi xem không hiểu.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "演员"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6ef2b430-6569-44ed-bc8c-c24e55d97beb"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "39447cad-adc1-4a99-8d0f-b5486dbcab60",
+      "order": 3,
+      "zh": "只要演员一上台，观众就安静下来了。",
+      "pinyin": "Zhǐyào yǎnyuán yí shàng tái, guānzhòng jiù ānjìng xiàlai le.",
+      "vi": "Chỉ cần diễn viên vừa lên sân khấu, khán giả liền yên lặng lại.",
+      "analysis_vi": "一……就…… và 下来 chỉ chuyển trạng thái.",
+      "highlight": [
+        "演员"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6ef2b430-6569-44ed-bc8c-c24e55d97beb"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Kinh kịch diễn viên cần hát, nói, diễn, võ thuật và hình thể.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c68b9914-cc52-4389-a668-186885bfc290",
+      "order": 1,
+      "rule_vi": "Không nhầm 演员 với 服务员; muốn nói diễn hay: 这个演员演得很好。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "演员",
+    "back": "diễn viên",
+    "hint": "yǎnyuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6ef2b430-6569-44ed-bc8c-c24e55d97beb",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "id": "58b1fbf5-2e22-406f-b191-0c7e4f5ff3a3",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "赵",
+  "pinyin": "Zhào",
+  "pos": {
+    "raw_vi": "Tên họ",
+    "raw_cn": "姓",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab",
+    "proper_noun"
+  ],
+  "meaning": {
+    "hanviet": "Triệu",
+    "meaning_vi": "họ Triệu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "họ Triệu"
+    ],
+    "short_definition_vi": "họ Triệu",
+    "textbook_focus_vi": "Âm Hán Việt: Triệu. Nghĩa chính: Một họ phổ biến của người Trung Quốc. Dùng trong tên người: 赵老师, 赵先生, 赵小姐. Khi làm họ, pinyin viết hoa: Zhào. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "赵",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi / chạy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi / chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "乂",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "họ Triệu; tên nước cổ Triệu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "赵 trong bài này là họ người, không dịch nghĩa trong câu.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: Tên họ không nên phân tích nghĩa theo kiểu “chữ này nghĩa là gì nên người này là gì”. Với tên riêng, ưu tiên đọc đúng và dùng đúng xưng hô.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "赵",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "họ Triệu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "王",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "họ Vương.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "李",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "họ Lý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "张",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "họ Trương.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "老师 / 先生 / 小姐: danh xưng đi sau họ.",
+      "Ví dụ:",
+      "赵老师来了。",
+      "Thầy/cô Triệu đến rồi.",
+      "王先生在开会。",
+      "Ông Vương đang họp.",
+      "李小姐去大使馆办事了。",
+      "Cô Lý đi đại sứ quán xử lý việc rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e32640f8-21d0-44a7-b2e5-e5bd3c3007a2",
+      "order": 1,
+      "zh": "赵老师",
+      "pinyin": "",
+      "vi": "thầy/cô Triệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cf5bdfd9-9b66-4fae-abfa-b209f7bf315f",
+      "order": 2,
+      "zh": "赵先生",
+      "pinyin": "",
+      "vi": "ông/anh Triệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f25e95d-4641-407d-b9dd-e7c8b914c1e1",
+      "order": 3,
+      "zh": "赵小姐",
+      "pinyin": "",
+      "vi": "cô Triệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "27be4164-a01b-453e-88ea-af36146e6098",
+      "order": 4,
+      "zh": "老赵",
+      "pinyin": "",
+      "vi": "lão Triệu/anh Triệu, thân mật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a44623a7-5be3-40e8-bba7-098107f586c4",
+      "order": 5,
+      "zh": "小赵",
+      "pinyin": "",
+      "vi": "Tiểu Triệu, gọi người trẻ/thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "953f291f-c7e2-4482-8f77-eb7d16cbd12b",
+      "order": 6,
+      "zh": "姓赵",
+      "pinyin": "",
+      "vi": "họ Triệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "20b252d0-9faa-4a3f-9e01-9f5b630cd896",
+      "order": 1,
+      "zh": "赵老师来了。",
+      "pinyin": "Zhào lǎoshī lái le.",
+      "vi": "Thầy/cô Triệu đến rồi.",
+      "analysis_vi": "赵 là họ. 老师 là danh xưng.",
+      "highlight": [
+        "赵"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "58b1fbf5-2e22-406f-b191-0c7e4f5ff3a3"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "df2bc420-f9c2-4e70-b7cc-0e45db15542f",
+      "order": 2,
+      "zh": "赵老师向大家问好以后，就开始开会。",
+      "pinyin": "Zhào lǎoshī xiàng dàjiā wènhǎo yǐhòu, jiù kāishǐ kāihuì.",
+      "vi": "Sau khi thầy/cô Triệu chào hỏi mọi người, liền bắt đầu họp.",
+      "analysis_vi": "向大家问好 = chào hỏi mọi người. 开始开会 = bắt đầu họp.",
+      "highlight": [
+        "赵"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "58b1fbf5-2e22-406f-b191-0c7e4f5ff3a3"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4f3082a8-675c-485a-8890-2a917f05ff96",
+      "order": 3,
+      "zh": "赵老师从台湾参加教学研讨会回来以后，给我们捎来了很多资料，还要求我们把每个问题都讨论清楚。",
+      "pinyin": "Zhào lǎoshī cóng Táiwān cānjiā jiàoxué yántǎohuì huílai yǐhòu, gěi wǒmen shāo lái le hěn duō zīliào, hái yāoqiú wǒmen bǎ měi ge wèntí dōu tǎolùn qīngchu.",
+      "vi": "Sau khi thầy/cô Triệu từ Đài Loan tham gia hội thảo giảng dạy trở về, thầy/cô tiện mang đến cho chúng tôi rất nhiều tài liệu, còn yêu cầu chúng tôi thảo luận rõ từng vấn đề.",
+      "analysis_vi": "从台湾……回来以后 là sau khi từ Đài Loan về. 捎来 hướng về phía người nói. 把每个问题都讨论清楚 là 把字句 + kết quả.",
+      "highlight": [
+        "赵"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "58b1fbf5-2e22-406f-b191-0c7e4f5ff3a3"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung, gọi người theo họ + chức danh rất phổ biến và lịch sự: 赵老师, 王经理, 李医生. Với người chưa thân, không nên gọi trống tên riêng.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96988fd2-87de-41be-b903-ecbafdda06a6",
+      "order": 1,
+      "rule_vi": "赵 là họ Triệu trong bài, không dịch nghĩa chữ trong câu.",
+      "natural_examples": [
+        {
+          "zh": "赵 = Zhào",
+          "pinyin": "Cách gọi an toàn:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "赵老师",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "赵先生",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Pinyin họ người viết hoa: Thầy/cô Triệu. Ông/anh Triệu. Cô Triệu.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "赵",
+    "back": "họ Triệu",
+    "hint": "Zhào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab",
+      "proper_noun"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "58b1fbf5-2e22-406f-b191-0c7e4f5ff3a3",
+    "source_lesson_vocab_id": null
+  }
+}

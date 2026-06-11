@@ -1,0 +1,315 @@
+{
+  "id": "be9d439a-d273-496a-8cc3-967600cc876f",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "脸红",
+  "pinyin": "liǎnhóng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kiểm hồng",
+    "meaning_vi": "đỏ mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đỏ mặt"
+    ],
+    "short_definition_vi": "đỏ mặt",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "脸",
+        "lishu_vi": "kiểm",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thịt, cơ thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "月 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thịt, cơ thể",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mặt, khuôn mặt",
+        "modern_logic_vi": "mặt, khuôn mặt",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "肉",
+          "radical_variant": "月",
+          "radical_name_vi": "bộ Nhục",
+          "radical_name_zh": "",
+          "hanviet": "nhục",
+          "meaning_vi": "thịt, cơ thể",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "红",
+        "lishu_vi": "hồng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đỏ, màu đỏ",
+        "modern_logic_vi": "đỏ, màu đỏ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "脸 là mặt; 红 là đỏ; 脸红 là mặt đỏ lên do ngại, căng thẳng hoặc xúc động.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 脸红了.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "害羞",
+        "pinyin": "hàixiū",
+        "meaning_vi": "xấu hổ/ngại",
+        "difference_vi": "害羞 là trạng thái tâm lý.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不好意思",
+        "pinyin": "bù hǎoyìsi",
+        "meaning_vi": "ngại/ái ngại",
+        "difference_vi": "不好意思 khẩu ngữ rất hay dùng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ce6a2d43-d0a8-407a-86fa-e5747d4c5388",
+      "order": 1,
+      "zh": "脸红了",
+      "pinyin": "liǎn hóng le",
+      "vi": "đỏ mặt rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e4a95d45-9099-45b8-9c41-c34e4c91c8c5",
+      "order": 2,
+      "zh": "脸一下子红了",
+      "pinyin": "liǎn yíxiàzi hóng le",
+      "vi": "mặt bỗng đỏ lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c3460b2b-b968-4232-8804-16a4b8ffc90e",
+      "order": 3,
+      "zh": "紧张得脸红",
+      "pinyin": "jǐnzhāng de liǎn hóng",
+      "vi": "căng thẳng đến đỏ mặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d7aa08bc-b8b9-427d-b169-af578d6fb85b",
+      "order": 1,
+      "zh": "她一听这句话，脸就红了。",
+      "pinyin": "Tā yì tīng zhè jù huà, liǎn jiù hóng le.",
+      "vi": "Cô ấy vừa nghe câu này thì mặt đỏ lên.",
+      "analysis_vi": "一……就…… chỉ phản ứng ngay.",
+      "highlight": [
+        "脸红"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "be9d439a-d273-496a-8cc3-967600cc876f"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a6bf7f38-a8c2-41fc-90e3-1bd0f3fab32e",
+      "order": 2,
+      "zh": "学生们都看着他，他紧张得脸红了。",
+      "pinyin": "Xuéshengmen dōu kànzhe tā, tā jǐnzhāng de liǎn hóng le.",
+      "vi": "Học sinh đều nhìn anh ấy, anh ấy căng thẳng đến đỏ mặt.",
+      "analysis_vi": "紧张得…… là bổ ngữ trình độ.",
+      "highlight": [
+        "脸红"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "be9d439a-d273-496a-8cc3-967600cc876f"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "脸红 trong văn kể chuyện thường biểu thị xấu hổ, hồi hộp hoặc bị chú ý.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "347813f4-d5e3-48d4-a5b0-4cc7e4edeef0",
+      "order": 1,
+      "rule_vi": "Không nói 我的脸变成红色了 trong văn cảnh đỏ mặt; nói 我脸红了 tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "脸红",
+    "back": "đỏ mặt",
+    "hint": "liǎnhóng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "be9d439a-d273-496a-8cc3-967600cc876f",
+    "source_lesson_vocab_id": null
+  }
+}

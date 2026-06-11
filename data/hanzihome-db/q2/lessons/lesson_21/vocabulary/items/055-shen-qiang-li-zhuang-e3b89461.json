@@ -1,0 +1,361 @@
+{
+  "id": "128ef211-de72-4546-893e-e95464a64e80",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "身强力壮",
+  "pinyin": "shēn qiáng lì zhuàng",
+  "pos": {
+    "raw_vi": "Thành ngữ / Tính ngữ",
+    "raw_cn": "成语/形容性短语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thân cường lực tráng",
+    "meaning_vi": "thân thể khỏe mạnh, sức lực sung mãn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thân thể khỏe mạnh, sức lực sung mãn"
+    ],
+    "short_definition_vi": "thân thể khỏe mạnh, sức lực sung mãn",
+    "textbook_focus_vi": "thân thể khỏe mạnh, sức lực sung mãn",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "身",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "身",
+            "hanviet": "thân",
+            "meaning_vi": "thân thể",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "thân thể",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "强",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "弓",
+            "hanviet": "cung",
+            "meaning_vi": "cây cung",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "弓 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "弓",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cung",
+              "radical_name_zh": "",
+              "hanviet": "cung",
+              "meaning_vi": "cây cung",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "虽",
+            "hanviet": "tuy",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "mạnh",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "力",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "力",
+            "hanviet": "lực",
+            "meaning_vi": "sức lực",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "力 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "力",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Lực",
+              "radical_name_zh": "",
+              "hanviet": "lực",
+              "meaning_vi": "sức lực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "sức lực",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "壮",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "丬",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "士",
+            "hanviet": "sĩ",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "khỏe/tráng kiện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "thân mạnh + lực khỏe",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cddf970d-d96b-42c1-b386-9d68429c0607",
+      "order": 1,
+      "zh": "身强力壮的人",
+      "pinyin": "",
+      "vi": "người khỏe lực lưỡng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "970319a7-e85b-4187-9b8e-df74315485c2",
+      "order": 2,
+      "zh": "身强力壮的马",
+      "pinyin": "",
+      "vi": "ngựa khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9ff7f84c-677d-4a18-8fca-76570cf4ba21",
+      "order": 3,
+      "zh": "看起来身强力壮",
+      "pinyin": "",
+      "vi": "trông khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "497685fc-61db-4c7c-80dd-70273f784584",
+      "order": 4,
+      "zh": "身强力壮也没用",
+      "pinyin": "",
+      "vi": "khỏe cũng vô ích",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc0c997d-cacf-4379-a46d-34ab9bd7cd39",
+      "order": 5,
+      "zh": "身体强壮",
+      "pinyin": "",
+      "vi": "thân thể khỏe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "108ce242-ac5f-4867-93d1-ee2837f450d2",
+      "order": 1,
+      "zh": "这匹马身强力壮。",
+      "pinyin": "Zhè pǐ mǎ shēn qiáng lì zhuàng.",
+      "vi": "Con ngựa này khỏe mạnh lực lưỡng.",
+      "analysis_vi": "匹 là lượng từ cho ngựa.",
+      "highlight": [
+        "身强力壮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "128ef211-de72-4546-893e-e95464a64e80"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d98719e3-e3bb-40b7-8a96-e329668c2dfc",
+      "order": 2,
+      "zh": "如果不了解身强力壮，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě shēn qiáng lì zhuàng, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 身强力壮, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "身强力壮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "128ef211-de72-4546-893e-e95464a64e80"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1fafd8e3-40cd-462e-bfeb-b839bba82a55",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解身强力壮在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě shēn qiáng lì zhuàng zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 身强力壮 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "身强力壮"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "128ef211-de72-4546-893e-e95464a64e80"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "南辕北辙 cho thấy sức mạnh không tự động tốt; hướng sai thì càng khỏe càng đi xa mục tiêu.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2e3a721f-2d70-44d4-845f-4e8d23569746",
+      "order": 1,
+      "rule_vi": "Khẩu ngữ thường nói 身体很好/很强壮 hơn 身强力壮。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "身强力壮",
+    "back": "thân thể khỏe mạnh, sức lực sung mãn",
+    "hint": "shēn qiáng lì zhuàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "128ef211-de72-4546-893e-e95464a64e80",
+    "source_lesson_vocab_id": null
+  }
+}

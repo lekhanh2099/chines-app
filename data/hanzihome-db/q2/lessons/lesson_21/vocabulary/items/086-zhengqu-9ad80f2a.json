@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_f16035cfe1b2b700",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "争取",
+  "pinyin": "zhēngqǔ",
+  "meaning_vi": "phấn đấu giành được; cố gắng đạt được",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Nghĩa là cố gắng giành lấy/đạt được: 争取胜利, 争取机会.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+    "type": "vocabulary_item",
+    "order": 28,
+    "hanzi": "争取",
+    "pinyin": "zhēngqǔ",
+    "meaning_vi": "phấn đấu giành được; cố gắng đạt được",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "争取",
+      "back": "zhēngqǔ — phấn đấu giành được; cố gắng đạt được",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Nghĩa là cố gắng giành lấy/đạt được: 争取胜利, 争取机会.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

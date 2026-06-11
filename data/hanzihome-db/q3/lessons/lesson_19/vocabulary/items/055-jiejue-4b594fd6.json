@@ -1,0 +1,414 @@
+{
+  "id": "5dcf8def-4a8c-4715-ae06-fb70e2fbdeea",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "解决",
+  "pinyin": "jiějué",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "giải quyết",
+    "meaning_vi": "giải quyết, xử lý xong vấn đề",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giải quyết",
+      "xử lý xong vấn đề"
+    ],
+    "short_definition_vi": "giải quyết, xử lý xong vấn đề",
+    "textbook_focus_vi": "解决 là tháo gỡ và xử lý dứt điểm trở ngại.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "解",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "角",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Giác",
+          "radical_name_zh": "",
+          "hanviet": "giác",
+          "meaning_vi": "sừng, góc",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "角 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "角",
+            "hanviet": "giác",
+            "meaning_vi": "sừng, góc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "角",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Giác",
+              "radical_name_zh": "",
+              "hanviet": "giác",
+              "meaning_vi": "sừng, góc",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "角 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "角 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "刀",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "刀 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          },
+          {
+            "text": "牛",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "牛 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giải, tháo, hiểu",
+        "modern_logic_vi": "Trong từ “解决”, chữ “解” góp phần vào trường nghĩa: giải, tháo, hiểu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "决",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "冫",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Băng",
+          "radical_name_zh": "",
+          "hanviet": "băng",
+          "meaning_vi": "lạnh, băng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "冫 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "冫",
+            "hanviet": "băng",
+            "meaning_vi": "lạnh, băng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "冫",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Băng",
+              "radical_name_zh": "",
+              "hanviet": "băng",
+              "meaning_vi": "lạnh, băng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "冫 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "冫 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "夬",
+            "hanviet": "quái",
+            "meaning_vi": "thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "夬 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quyết định, dứt khoát",
+        "modern_logic_vi": "Trong từ “解决”, chữ “决” góp phần vào trường nghĩa: quyết định, dứt khoát",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "解决 là tháo gỡ và xử lý dứt điểm trở ngại.",
+    "memory_tip_vi": "解决 là tháo gỡ và xử lý dứt điểm trở ngại.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "处理",
+        "pinyin": "",
+        "meaning_vi": "xử lý, chưa chắc giải quyết triệt để",
+        "difference_vi": "xử lý, chưa chắc giải quyết triệt để",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "克服",
+        "pinyin": "",
+        "meaning_vi": "khắc phục/vượt qua khó khăn",
+        "difference_vi": "khắc phục/vượt qua khó khăn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a1ab1723-e210-4be4-954a-64f937068df5",
+      "order": 1,
+      "zh": "解决问题",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10313587-3b2f-4f5a-b84e-47c9a9ad8f16",
+      "order": 2,
+      "zh": "解决困难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "34c0c9d1-9d95-47dd-8827-a1af8eafa90d",
+      "order": 3,
+      "zh": "解决沟通困难",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2adf912e-d567-49fc-a7be-b68465c03a33",
+      "order": 4,
+      "zh": "解决办法",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "489169ef-0c49-4b93-9a1e-ef3b998cd8f3",
+      "order": 1,
+      "zh": "我们要想办法解决这个问题。",
+      "pinyin": "",
+      "vi": "Chúng ta phải nghĩ cách giải quyết vấn đề này.",
+      "analysis_vi": "想办法 + V.",
+      "highlight": [
+        "解决"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5dcf8def-4a8c-4715-ae06-fb70e2fbdeea"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "eff59614-4ff6-4a4a-8be4-1b1b0b3ab1c1",
+      "order": 2,
+      "zh": "同事们学手语，是为了解决沟通的困难。",
+      "pinyin": "",
+      "vi": "Đồng nghiệp học thủ ngữ để giải quyết khó khăn giao tiếp.",
+      "analysis_vi": "是为了 nhấn mục đích.",
+      "highlight": [
+        "解决"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5dcf8def-4a8c-4715-ae06-fb70e2fbdeea"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "解决 là tháo gỡ và xử lý dứt điểm trở ngại.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f5fd64c9-2570-4850-818c-57a3ec3fdd48",
+      "order": 1,
+      "rule_vi": "解决问题 là giải quyết vấn đề; 决定 là quyết định, không thay nhau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "解决问题 là giải quyết vấn đề; 决定 là quyết định, không thay nhau.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "解决",
+    "back": "giải quyết, xử lý xong vấn đề",
+    "hint": "jiějué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5dcf8def-4a8c-4715-ae06-fb70e2fbdeea",
+    "source_lesson_vocab_id": null
+  }
+}

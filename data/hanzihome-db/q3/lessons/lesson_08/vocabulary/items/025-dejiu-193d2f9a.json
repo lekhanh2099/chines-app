@@ -1,0 +1,286 @@
+{
+  "id": "6fce9a93-b0e0-485d-beeb-ea27ec78e346",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "得救",
+  "pinyin": "déjiù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "đắc cứu",
+    "meaning_vi": "được cứu, thoát nạn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "được cứu",
+      "thoát nạn"
+    ],
+    "short_definition_vi": "được cứu, thoát nạn",
+    "textbook_focus_vi": "得 đọc dé trong 得救, nghĩa là nhận được; 救 = cứu. 得救 = được cứu.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "cứu giúp, thoát nạn",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "得",
+        "lishu_vi": "đắc",
+        "structure_note_vi": "Trong 得救 đọc dé, nghĩa là đạt/được.",
+        "main_radical": {
+          "radical": "彳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Xích",
+          "radical_name_zh": "",
+          "hanviet": "xích",
+          "meaning_vi": "bước đi, hành động",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi, hành động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi, hành động",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "được, đạt được",
+        "modern_logic_vi": "Trong từ này, 得 góp phần tạo nghĩa 'được, đạt được'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "救",
+        "lishu_vi": "cứu",
+        "structure_note_vi": "求 + 攵; học theo nghĩa cứu.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "đánh, gõ, tác động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "đánh, gõ, tác động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "đánh, gõ, tác động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cứu giúp",
+        "modern_logic_vi": "Trong từ này, 救 góp phần tạo nghĩa 'cứu giúp'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "得 đọc dé trong 得救, nghĩa là nhận được; 救 = cứu. 得救 = được cứu.",
+    "memory_tip_vi": "Nhớ qua cụm: 终于得救了 = cuối cùng được cứu.",
+    "warning_vi": "得救 là được cứu, không phải cứu người khác.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "获救",
+        "pinyin": "huòjiù",
+        "meaning_vi": "được cứu",
+        "difference_vi": "Trang trọng, hay dùng tin tức.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "救出",
+        "pinyin": "jiù chū",
+        "meaning_vi": "cứu ra",
+        "difference_vi": "Nhấn cứu ra khỏi nơi nguy hiểm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "得救 là được cứu, không phải cứu người khác."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c7f4d83e-0978-4dd8-8e24-d290d5ab4218",
+      "order": 1,
+      "zh": "终于得救了",
+      "pinyin": "zhōngyú déjiù le",
+      "vi": "cuối cùng được cứu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef7358b0-452f-4786-af26-94976308658f",
+      "order": 2,
+      "zh": "得救的希望",
+      "pinyin": "déjiù de xīwàng",
+      "vi": "hy vọng được cứu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "251c826e-e12c-46b1-88de-2413467337e6",
+      "order": 3,
+      "zh": "从危险中得救",
+      "pinyin": "cóng wēixiǎn zhōng déjiù",
+      "vi": "được cứu khỏi nguy hiểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c409279d-6b0e-4d94-ae72-d4807f66cd5a",
+      "order": 1,
+      "zh": "看到赵霞的消息，他觉得自己好像从痛苦里得救了。",
+      "pinyin": "Kàn dào Zhào Xiá de xiāoxi, tā juéde zìjǐ hǎoxiàng cóng tòngkǔ lǐ déjiù le.",
+      "vi": "Thấy tin của Triệu Hà, anh ấy cảm thấy như được cứu khỏi đau khổ.",
+      "analysis_vi": "得救 có thể dùng nghĩa bóng trong văn kể tâm lý.",
+      "highlight": [
+        "得救"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6fce9a93-b0e0-485d-beeb-ea27ec78e346"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "得救 có nghĩa đen trong tai nạn và nghĩa bóng trong văn kể cảm xúc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c4bb3431-db0a-494a-b5a0-b2f0388cad4b",
+      "order": 1,
+      "rule_vi": "得救 là được cứu, không phải cứu người khác.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我得救他。",
+          "pinyin": "Wǒ déjiù tā.",
+          "vi": "Sai: tôi được cứu anh ấy.",
+          "note_vi": "Muốn nói cứu ai dùng 救.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我救了他。",
+          "pinyin": "Wǒ jiù le tā.",
+          "vi": "Tôi đã cứu anh ấy.",
+          "note_vi": "Động từ chủ động là 救.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "得救",
+    "back": "được cứu, thoát nạn",
+    "hint": "déjiù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6fce9a93-b0e0-485d-beeb-ea27ec78e346",
+    "source_lesson_vocab_id": null
+  }
+}

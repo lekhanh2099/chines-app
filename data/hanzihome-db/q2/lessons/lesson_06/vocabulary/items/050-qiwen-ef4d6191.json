@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_80b85a971297bec9",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "气温",
+  "pinyin": "qìwēn",
+  "meaning_vi": "nhiệt độ không khí; nhiệt độ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "3c760b02-8d64-423f-83ed-765c9da2fd9c",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "3c760b02-8d64-423f-83ed-765c9da2fd9c",
+    "type": "vocabulary_item",
+    "order": 19,
+    "hanzi": "气温",
+    "pinyin": "qìwēn",
+    "meaning_vi": "nhiệt độ không khí; nhiệt độ",
+    "meaning_en": "temperature",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "气温",
+      "back": "qìwēn — nhiệt độ không khí; nhiệt độ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

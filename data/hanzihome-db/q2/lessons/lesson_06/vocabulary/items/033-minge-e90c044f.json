@@ -1,0 +1,311 @@
+{
+  "id": "c59a2935-df57-4ff3-8d11-c7d6b3727b9b",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "民歌",
+  "pinyin": "míngē",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_06",
+    "modern_music"
+  ],
+  "meaning": {
+    "hanviet": "Dân ca",
+    "meaning_vi": "dân ca",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dân ca"
+    ],
+    "short_definition_vi": "dân ca",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "modern music",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "民",
+        "lishu_vi": "",
+        "structure_note_vi": "Chữ độc lập chỉ dân/người dân.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dân, dân gian",
+        "modern_logic_vi": "Chữ độc lập chỉ dân/người dân.",
+        "warning_vi": "Không phân tích sâu nếu chưa chắc cấu tạo.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "歌",
+        "lishu_vi": "",
+        "structure_note_vi": "哥 + 欠; 欠 liên quan miệng/hơi thở trong nhiều chữ.",
+        "components": [
+          {
+            "text": "哥",
+            "hanviet": "ca",
+            "meaning_vi": "anh trai/âm ca",
+            "position_vi": "bên trái/trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "欠",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "欠",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khiếm",
+              "radical_name_zh": "",
+              "hanviet": "khiếm",
+              "meaning_vi": "há miệng/thở",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "欠 được dùng như bộ thủ/biến thể bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hát, bài hát",
+        "modern_logic_vi": "哥 + 欠; 欠 liên quan miệng/hơi thở trong nhiều chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "民 là dân gian/người dân, 歌 là bài hát; 民歌 là bài hát dân gian.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "民谣",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "folk/ballad; hiện đại cũng chỉ nhạc folk",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "流行歌曲",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bài hát thịnh hành",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "国歌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quốc ca",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "56b20a20-038c-41d5-ae4b-3b200ccdd726",
+      "order": 1,
+      "zh": "中国民歌",
+      "pinyin": "",
+      "vi": "dân ca Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6c941fc4-ad90-4aee-b9cf-dda2fa46c7ed",
+      "order": 2,
+      "zh": "越南民歌",
+      "pinyin": "",
+      "vi": "dân ca Việt Nam",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c04da43-3973-4410-b3c0-fa42c85a8f93",
+      "order": 3,
+      "zh": "一首民歌",
+      "pinyin": "",
+      "vi": "một bài dân ca",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "447170a8-322f-4354-9245-7f2487690958",
+      "order": 4,
+      "zh": "唱民歌",
+      "pinyin": "",
+      "vi": "hát dân ca",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b54cbac1-041a-47a8-aca4-e0eb300c1753",
+      "order": 5,
+      "zh": "地方民歌",
+      "pinyin": "",
+      "vi": "dân ca địa phương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "93ff047f-0f4b-450d-b3f7-2dbc06803e86",
+      "order": 1,
+      "zh": "我喜欢听中国民歌。",
+      "pinyin": "Wǒ xǐhuan tīng Zhōngguó míngē.",
+      "vi": "Tôi thích nghe dân ca Trung Quốc.",
+      "analysis_vi": "听 + loại nhạc.",
+      "highlight": [
+        "民歌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c59a2935-df57-4ff3-8d11-c7d6b3727b9b"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e0c8d73e-ef8c-467b-9f74-0b7fc561895b",
+      "order": 2,
+      "zh": "这首民歌比那首流行歌曲更有地方特色。",
+      "pinyin": "Zhè shǒu míngē bǐ nà shǒu liúxíng gēqǔ gèng yǒu dìfāng tèsè.",
+      "vi": "Bài dân ca này có màu sắc địa phương hơn bài pop kia.",
+      "analysis_vi": "比……更有…… dùng để so sánh đặc điểm.",
+      "highlight": [
+        "民歌"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "c59a2935-df57-4ff3-8d11-c7d6b3727b9b"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "",
+    "content_vi": "Dân ca Trung Quốc thường gắn với vùng miền và dân tộc; Việt Nam cũng có nhiều hệ dân ca vùng miền.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a59daa80-5128-4a9d-b15a-d372b859aad6",
+      "order": 1,
+      "rule_vi": "Không nhầm 民歌 với 国歌.",
+      "natural_examples": [
+        {
+          "zh": "这是一首民歌。",
+          "pinyin": "Zhè shì yì shǒu míngē.",
+          "vi": "Đây là một bài dân ca.",
+          "note_vi": "Dịch là dân ca, không phải bài hát nhân dân.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "这是一首民歌。",
+          "pinyin": "Zhè shì yì shǒu míngē.",
+          "vi": "Đây là một bài dân ca.",
+          "note_vi": "Dịch là dân ca, không phải bài hát nhân dân.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "民歌",
+    "back": "dân ca",
+    "hint": "míngē",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_06",
+      "modern_music"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "c59a2935-df57-4ff3-8d11-c7d6b3727b9b",
+    "source_lesson_vocab_id": null
+  }
+}

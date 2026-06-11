@@ -1,0 +1,287 @@
+{
+  "id": "45c8b06b-48b8-4d3c-a67c-93fbaab3e90c",
+  "type": "deep_vocabulary_item",
+  "order": 39,
+  "hanzi": "随和",
+  "pinyin": "suíhe",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tùy hòa",
+    "meaning_vi": "dễ tính, hòa nhã, dễ gần",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dễ tính",
+      "hòa nhã",
+      "dễ gần"
+    ],
+    "short_definition_vi": "dễ tính, hòa nhã, dễ gần",
+    "textbook_focus_vi": "随 = tùy theo, 和 = hòa hợp. 随和 = tính cách mềm, dễ hòa hợp, không cố chấp.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tính cách",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "随",
+        "lishu_vi": "tùy",
+        "structure_note_vi": "Có 阝; nghĩa đi theo/tùy theo.",
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "gò đất hoặc khu vực, tùy vị trí",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "gò đất hoặc khu vực, tùy vị trí",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "gò đất hoặc khu vực, tùy vị trí",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "theo, tùy theo",
+        "modern_logic_vi": "Trong từ này, 随 góp phần tạo nghĩa 'theo, tùy theo'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "和",
+        "lishu_vi": "hòa",
+        "structure_note_vi": "禾 + 口; nghĩa hòa hợp.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hòa hợp, và",
+        "modern_logic_vi": "Trong từ này, 和 góp phần tạo nghĩa 'hòa hợp, và'.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "随 = tùy theo, 和 = hòa hợp. 随和 = tính cách mềm, dễ hòa hợp, không cố chấp.",
+    "memory_tip_vi": "Nhớ qua cụm: 性格随和 = tính cách dễ chịu.",
+    "warning_vi": "随和 không phải 随便.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "温和",
+        "pinyin": "wēnhé",
+        "meaning_vi": "ôn hòa",
+        "difference_vi": "Nhẹ nhàng, dùng cho tính khí/thời tiết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "好相处",
+        "pinyin": "hǎo xiāngchǔ",
+        "meaning_vi": "dễ ở chung/dễ giao tiếp",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "随和 không phải 随便."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cc73d786-a4a9-4727-b7cc-0b018ce5ad31",
+      "order": 1,
+      "zh": "性格随和",
+      "pinyin": "xìnggé suíhe",
+      "vi": "tính cách dễ chịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2226a8fb-fc3b-4188-9c48-1cf6d148954a",
+      "order": 2,
+      "zh": "很随和",
+      "pinyin": "hěn suíhe",
+      "vi": "rất dễ tính",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c73beabd-5b75-4648-a59f-fa95eeb86a2a",
+      "order": 3,
+      "zh": "看起来很随和",
+      "pinyin": "kàn qǐlai hěn suíhe",
+      "vi": "trông rất dễ gần",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2df836e1-783f-4562-beab-2bc22c59dc2c",
+      "order": 1,
+      "zh": "余辉看起来很随和，所以赵霞很愿意跟他聊天。",
+      "pinyin": "Yú Huī kàn qǐlai hěn suíhe, suǒyǐ Zhào Xiá hěn yuànyì gēn tā liáotiān.",
+      "vi": "Dư Huy trông rất dễ gần, nên Triệu Hà rất sẵn lòng trò chuyện với anh ấy.",
+      "analysis_vi": "看起来 = trông có vẻ.",
+      "highlight": [
+        "随和"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45c8b06b-48b8-4d3c-a67c-93fbaab3e90c"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "性格随和 là điểm cộng khi giới thiệu bạn bè, làm việc nhóm hoặc hẹn hò.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ea24eeb6-91a8-4bda-bb37-88db2d8f5925",
+      "order": 1,
+      "rule_vi": "随和 không phải 随便.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他很随便。",
+          "pinyin": "Tā hěn suíbiàn.",
+          "vi": "Anh ấy tùy tiện/xuề xòa.",
+          "note_vi": "Có thể tiêu cực.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他很随和。",
+          "pinyin": "Tā hěn suíhe.",
+          "vi": "Anh ấy dễ tính/dễ gần.",
+          "note_vi": "Tích cực hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "随和",
+    "back": "dễ tính, hòa nhã, dễ gần",
+    "hint": "suíhe",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_08",
+      "hanyu_3_1",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "45c8b06b-48b8-4d3c-a67c-93fbaab3e90c",
+    "source_lesson_vocab_id": null
+  }
+}

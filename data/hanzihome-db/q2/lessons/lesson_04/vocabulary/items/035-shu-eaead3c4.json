@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_84e79e14f64cc515",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "熟",
+  "pinyin": "shú",
+  "meaning_vi": "thuộc; quen; chín; thành thạo",
+  "pos": "Tính từ / Bổ ngữ kết quả",
+  "pos_detail": {
+    "vi": "Tính từ / Bổ ngữ kết quả",
+    "cn": "形容词 / 结果补语",
+    "normalized": "adjective",
+    "schema_compatible_pos": "adjective",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Trong 念熟、读熟 chỉ kết quả đọc đến mức thuộc/quen.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "c6712cd4-6000-5ddf-a99a-6d1fa423d9e8",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "c6712cd4-6000-5ddf-a99a-6d1fa423d9e8",
+    "type": "vocabulary_item",
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "order": 32,
+    "hanzi": "熟",
+    "pinyin": "shú",
+    "meaning_vi": "thuộc; quen; chín; thành thạo",
+    "meaning_en": "",
+    "pos": "Tính từ / Bổ ngữ kết quả",
+    "pos_detail": {
+      "vi": "Tính từ / Bổ ngữ kết quả",
+      "cn": "形容词 / 结果补语",
+      "normalized": "adjective",
+      "schema_compatible_pos": "adjective",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Trong 念熟、读熟 chỉ kết quả đọc đến mức thuộc/quen.",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab",
+      "pdf_checked"
+    ],
+    "flashcard": {
+      "front": "熟",
+      "back": "shú — thuộc; quen; chín; thành thạo",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

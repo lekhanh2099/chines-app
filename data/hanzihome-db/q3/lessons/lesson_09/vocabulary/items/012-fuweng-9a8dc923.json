@@ -1,0 +1,315 @@
+{
+  "id": "bfbf2fb5-d774-47db-a1f0-eb22ec50d75e",
+  "type": "deep_vocabulary_item",
+  "order": 12,
+  "hanzi": "富翁",
+  "pinyin": "fùwēng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phú ông",
+    "meaning_vi": "người rất giàu; phú ông",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người rất giàu",
+      "phú ông"
+    ],
+    "short_definition_vi": "người rất giàu",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "富",
+        "lishu_vi": "phú",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nơi che phủ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nơi che phủ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giàu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nơi che phủ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "翁",
+        "lishu_vi": "ông",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "羽",
+            "hanviet": "vũ",
+            "meaning_vi": "lông chim, cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羽",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "lông chim, cánh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ông lão",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "羽",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "lông chim, cánh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "富翁 = người rất giàu, hơi sách vở/kể chuyện hơn 有钱人.",
+    "memory_tip_vi": "Nhớ 富翁不一定幸福.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "有钱人",
+        "pinyin": "",
+        "meaning_vi": "有钱人",
+        "difference_vi": "Khẩu ngữ tự nhiên hơn 富翁.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "穷人",
+        "pinyin": "",
+        "meaning_vi": "穷人",
+        "difference_vi": "người nghèo đối lập với người giàu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "f1032add-6bcf-4a36-8dc4-7f201f88ee2c",
+      "order": 1,
+      "zh": "一个富翁",
+      "pinyin": "yí ge fùwēng",
+      "vi": "một phú ông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9bfc5633-b9c7-4a4b-b227-2174b8c62d05",
+      "order": 2,
+      "zh": "百万富翁",
+      "pinyin": "bǎiwàn fùwēng",
+      "vi": "triệu phú",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "24cce4d7-fe0a-4a63-b4fb-4596d88896b3",
+      "order": 3,
+      "zh": "成为富翁",
+      "pinyin": "chéngwéi fùwēng",
+      "vi": "trở thành người giàu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b45ae80-b0b9-477c-b5c1-c2da3729bf7a",
+      "order": 4,
+      "zh": "富翁的生活",
+      "pinyin": "fùwēng de shēnghuó",
+      "vi": "cuộc sống của người giàu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "deb0212d-636a-45ad-bb85-3c863ae6dc3e",
+      "order": 1,
+      "zh": "他后来成了一个富翁。",
+      "pinyin": "Tā hòulái chéng le yí ge fùwēng.",
+      "vi": "Sau này anh ấy trở thành một phú ông.",
+      "analysis_vi": "成了 báo thay đổi thân phận.",
+      "highlight": [
+        "富翁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bfbf2fb5-d774-47db-a1f0-eb22ec50d75e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5288252b-64e9-42ce-bb94-9de43008344a",
+      "order": 2,
+      "zh": "他虽然是个富翁，可是并不觉得自己幸福。",
+      "pinyin": "Tā suīrán shì ge fùwēng, kěshì bìng bù juéde zìjǐ xìngfú.",
+      "vi": "Tuy ông ấy là người giàu, nhưng không thấy mình hạnh phúc.",
+      "analysis_vi": "Sát chủ đề tiền và hạnh phúc.",
+      "highlight": [
+        "富翁"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bfbf2fb5-d774-47db-a1f0-eb22ec50d75e"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "富翁 không khẩu ngữ bằng 有钱人.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "443e943b-019e-4b53-a61a-f24111c34570",
+      "order": 1,
+      "rule_vi": "Không gọi mọi người khá có tiền là 富翁.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他挺有钱的，所以是富翁。",
+          "pinyin": "Tā tǐng yǒuqián de, suǒyǐ shì fùwēng.",
+          "vi": "Suy quá mạnh.",
+          "note_vi": "有钱 không đồng nghĩa chắc chắn là 富翁.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他后来成了一个富翁。",
+          "pinyin": "Tā hòulái chéng le yí ge fùwēng.",
+          "vi": "Sau này ông ấy trở thành người rất giàu.",
+          "note_vi": "富翁 hợp khi mức giàu rõ.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "富翁",
+    "back": "người rất giàu; phú ông",
+    "hint": "fùwēng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bfbf2fb5-d774-47db-a1f0-eb22ec50d75e",
+    "source_lesson_vocab_id": null
+  }
+}

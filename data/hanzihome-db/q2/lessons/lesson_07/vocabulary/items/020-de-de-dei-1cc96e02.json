@@ -1,0 +1,374 @@
+{
+  "id": "5ae030f1-3371-4728-8a08-618077da3ad6",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "得",
+  "pinyin": "de / dé / děi",
+  "pos": {
+    "raw_vi": "Trợ từ / Động từ / Động từ năng nguyện 【助词 / 动词 / 能愿动词】",
+    "raw_cn": "",
+    "normalized": "particle",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "function_words",
+    "polyphone",
+    "grammar"
+  ],
+  "meaning": {
+    "hanviet": "Đắc",
+    "meaning_vi": "trợ từ bổ ngữ; được; phải",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trợ từ bổ ngữ",
+      "được",
+      "phải"
+    ],
+    "short_definition_vi": "trợ từ bổ ngữ",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "ngữ pháp / đa âm",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "得",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi/hành vi",
+            "position_vi": "trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "旦",
+            "hanviet": "đán",
+            "meaning_vi": "thành phần giữa",
+            "position_vi": "trên/phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "寸",
+            "hanviet": "thốn",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới/phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "de: trợ từ bổ ngữ; dé: đạt được; děi: phải",
+        "modern_logic_vi": "得 là chữ chức năng cao, cần nhớ theo vị trí trong câu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "得 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "的",
+        "pinyin": "",
+        "meaning_vi": "trợ từ định ngữ",
+        "difference_vi": "我的书.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "地",
+        "pinyin": "",
+        "meaning_vi": "trợ từ trạng ngữ",
+        "difference_vi": "慢慢地说.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "必须",
+        "pinyin": "",
+        "meaning_vi": "bắt buộc phải",
+        "difference_vi": "Mạnh/trang trọng hơn 得 děi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "要",
+        "pinyin": "",
+        "meaning_vi": "cần/phải/sẽ",
+        "difference_vi": "Rộng nghĩa hơn 得 děi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "得到",
+        "pinyin": "",
+        "meaning_vi": "đạt được",
+        "difference_vi": "Đọc dédào.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1674aac2-9af1-4c23-9e49-4307ef5098a5",
+      "order": 1,
+      "zh": "说得很好",
+      "pinyin": "",
+      "vi": "nói rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0febf553-9765-40e1-a06f-3538fe98a75f",
+      "order": 2,
+      "zh": "写得不错",
+      "pinyin": "",
+      "vi": "viết không tệ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d87cc9e5-8059-43e6-a4d3-e4c92d25e586",
+      "order": 3,
+      "zh": "冷得受不了",
+      "pinyin": "",
+      "vi": "lạnh không chịu nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ffb01313-ca2d-4965-941e-44ff953eeb90",
+      "order": 4,
+      "zh": "热得睡不着",
+      "pinyin": "",
+      "vi": "nóng đến mức không ngủ được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4b36c404-e40e-472f-838a-90a5548bf3f3",
+      "order": 5,
+      "zh": "得走了",
+      "pinyin": "",
+      "vi": "phải đi rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e9c976d-ad60-4e35-ad07-2efa0e866a5e",
+      "order": 6,
+      "zh": "得到帮助",
+      "pinyin": "",
+      "vi": "nhận được sự giúp đỡ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d5660421-748e-4647-b521-d348a8b365e6",
+      "order": 7,
+      "zh": "得分",
+      "pinyin": "",
+      "vi": "ghi điểm/được điểm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "230f38dc-7e89-4d8f-892c-232def38e7ac",
+      "order": 1,
+      "zh": "他说汉语说得很好。",
+      "pinyin": "Tā shuō Hànyǔ shuō de hěn hǎo.",
+      "vi": "Anh ấy nói tiếng Hán rất tốt.",
+      "analysis_vi": "Có tân ngữ 汉语 nên lặp động từ 说 trước 得.",
+      "highlight": [
+        "得"
+      ],
+      "grammar_refs": [
+        "degree_complement"
+      ],
+      "vocab_refs": [
+        "5ae030f1-3371-4728-8a08-618077da3ad6"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1479d443-f483-409a-a35c-7ab696d54da1",
+      "order": 2,
+      "zh": "北京的冬天冷得很，我得多穿一点儿。",
+      "pinyin": "Běijīng de dōngtiān lěng de hěn, wǒ děi duō chuān yìdiǎnr.",
+      "vi": "Mùa đông Bắc Kinh lạnh lắm, tôi phải mặc nhiều thêm một chút.",
+      "analysis_vi": "冷得很 đọc de; 我得 đọc děi.",
+      "highlight": [
+        "得"
+      ],
+      "grammar_refs": [
+        "degree_complement"
+      ],
+      "vocab_refs": [
+        "5ae030f1-3371-4728-8a08-618077da3ad6"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bb58878c-f173-4c6f-a416-01bdd9bdd123",
+      "order": 3,
+      "zh": "他不但考得好，而且还得到了老师的表扬。",
+      "pinyin": "Tā búdàn kǎo de hǎo, érqiě hái dédào le lǎoshī de biǎoyáng.",
+      "vi": "Anh ấy không những thi tốt mà còn nhận được lời khen của thầy/cô.",
+      "analysis_vi": "考得好 dùng de; 得到 đọc dédào.",
+      "highlight": [
+        "得",
+        "得到",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "5ae030f1-3371-4728-8a08-618077da3ad6"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "的 / 地 / 得 đều có thể đọc nhẹ de nhưng vai trò khác nhau: 的 nối định ngữ, 地 nối trạng ngữ, 得 nối bổ ngữ.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0d6a2239-4d49-447f-b5b0-c63e056558ff",
+      "order": 1,
+      "rule_vi": "Không bỏ 得 trong bổ ngữ mức độ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他汉语说很好。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Kém tự nhiên/thiếu 得 trong cấu trúc bổ ngữ.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "他汉语说得很好。",
+          "pinyin": "Tā Hànyǔ shuō de hěn hǎo.",
+          "vi": "Tiếng Hán của anh ấy nói rất tốt.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他说汉语说得很好。",
+          "pinyin": "Tā shuō Hànyǔ shuō de hěn hǎo.",
+          "vi": "Anh ấy nói tiếng Hán rất tốt.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "得",
+    "back": "trợ từ bổ ngữ; được; phải",
+    "hint": "de / dé / děi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "polyphone",
+      "grammar"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5ae030f1-3371-4728-8a08-618077da3ad6",
+    "source_lesson_vocab_id": null
+  }
+}

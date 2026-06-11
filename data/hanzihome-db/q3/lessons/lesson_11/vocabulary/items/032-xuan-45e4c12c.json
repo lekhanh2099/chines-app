@@ -1,0 +1,296 @@
+{
+  "id": "889df36d-654d-460f-bfb4-3ced2b952845",
+  "type": "deep_vocabulary_item",
+  "order": 32,
+  "hanzi": "悬",
+  "pinyin": "xuán",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动词 / 形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "huyền",
+    "meaning_vi": "treo, lơ lửng; để ngỏ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "treo",
+      "lơ lửng",
+      "để ngỏ"
+    ],
+    "short_definition_vi": "ở trạng thái treo/lơ lửng không chạm đất",
+    "textbook_focus_vi": "Trong bài dùng ở 悬在空中.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "悬",
+        "lishu_vi": "",
+        "structure_note_vi": "心",
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "",
+            "meaning_vi": "tim, lòng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "tim, lòng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "心 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "treo, lơ lửng",
+        "modern_logic_vi": "treo, lơ lửng",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "tim, lòng",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "心 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "悬 được học trong bài theo nghĩa: ở trạng thái treo/lơ lửng không chạm đất.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 悬在空中.",
+    "warning_vi": "Không nhầm 悬 với 挂; 挂 thường có điểm treo cụ thể.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "挂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Treo vào điểm cố định.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "吊",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Treo lủng lẳng từ trên xuống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 悬 với 挂; 挂 thường có điểm treo cụ thể."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3b07845b-e1d9-4eb3-85bb-2f2b2d346c94",
+      "order": 1,
+      "zh": "悬在空中",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fb37d7fc-8d10-408e-9370-3937b4c092e8",
+      "order": 2,
+      "zh": "悬在半空中",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f90e8f2c-ab24-4d4a-bdc0-016b9dda9d47",
+      "order": 3,
+      "zh": "高高地悬着",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "30d6274c-7222-4c8a-acb2-ffd911fa6b59",
+      "order": 4,
+      "zh": "悬着一颗心",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89101fd3-e385-42d2-a4a9-07c9d3282d12",
+      "order": 5,
+      "zh": "问题还悬着",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "31cf9c71-0da0-4af8-b852-4a6f3db74f21",
+      "order": 1,
+      "zh": "飞碟好像悬在了空中。",
+      "pinyin": "",
+      "vi": "Đĩa bay hình như lơ lửng trên không.",
+      "analysis_vi": "悬在空中 nói vị trí/trạng thái.",
+      "highlight": [
+        "悬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "889df36d-654d-460f-bfb4-3ced2b952845"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a7968ce7-5303-4b8b-aced-93ae68e79b4c",
+      "order": 2,
+      "zh": "那个东西不是挂在树上的，是悬在空中的。",
+      "pinyin": "",
+      "vi": "Vật đó không treo trên cây, mà lơ lửng trên không.",
+      "analysis_vi": "挂 và 悬 khác điểm treo/vị trí.",
+      "highlight": [
+        "悬"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "889df36d-654d-460f-bfb4-3ced2b952845"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "悬 còn có mặt trong 悬疑, gợi cảm giác treo lơ lửng/chưa rõ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "35dff9e2-c2f7-4f33-9325-3589c32a37a2",
+      "order": 1,
+      "rule_vi": "Không nhầm 悬 với 挂; 挂 thường có điểm treo cụ thể.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nhầm 悬 với 挂; 挂 thường có điểm treo cụ thể.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "悬",
+    "back": "treo, lơ lửng; để ngỏ",
+    "hint": "xuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "889df36d-654d-460f-bfb4-3ced2b952845",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "id": "bab60d9b-8b09-4407-b75c-872184a43834",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "告别",
+  "pinyin": "gàobié",
+  "pos": {
+    "raw_vi": "Động từ / danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "cáo biệt",
+    "meaning_vi": "từ biệt, nói lời chia tay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ biệt",
+      "nói lời chia tay"
+    ],
+    "short_definition_vi": "từ biệt, nói lời chia tay",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "告",
+        "lishu_vi": "cáo",
+        "structure_note_vi": "Chữ có thành phần/bộ 口; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "口",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Khẩu",
+          "radical_name_zh": "",
+          "hanviet": "khẩu",
+          "meaning_vi": "miệng, lời nói",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng, lời nói",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "口",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Khẩu",
+              "radical_name_zh": "",
+              "hanviet": "khẩu",
+              "meaning_vi": "miệng, lời nói",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "口 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 告 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "别",
+        "lishu_vi": "biệt",
+        "structure_note_vi": "Chữ có thành phần/bộ 刂; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt, tách",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt, tách",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt, tách",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刂 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 别 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "告别 trong bài được học theo nghĩa: từ biệt, nói lời chia tay.",
+    "memory_tip_vi": "Nhớ 告别 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "再见",
+        "pinyin": "zàijiàn",
+        "meaning_vi": "tạm biệt",
+        "difference_vi": "Lời chào thường ngày, nhẹ hơn 告别.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 告别 cho mọi câu bye đời thường; nói 再见 là đủ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "15b0b5fb-239f-483e-91fc-f8416b229a14",
+      "order": 1,
+      "zh": "向某人告别",
+      "pinyin": "",
+      "vi": "từ biệt ai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d44dd1df-8cb8-4a1b-ab3b-30b66a4b8a7d",
+      "order": 2,
+      "zh": "最后一次告别",
+      "pinyin": "",
+      "vi": "từ biệt lần cuối",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d4a0cccb-2ebb-4e1b-9af5-55fac9594c77",
+      "order": 3,
+      "zh": "在墓前告别",
+      "pinyin": "",
+      "vi": "từ biệt trước mộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f358ade6-57d5-46e2-88c3-05db9e115e6e",
+      "order": 1,
+      "zh": "毕业那天，我们依依不舍地告别了老师和同学。",
+      "pinyin": "",
+      "vi": "Ngày tốt nghiệp, chúng tôi lưu luyến từ biệt thầy cô và bạn học.",
+      "analysis_vi": "依依不舍地 làm trạng ngữ cảm xúc.",
+      "highlight": [
+        "告别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bab60d9b-8b09-4407-b75c-872184a43834"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "601ea408-0373-476e-85d4-d9b3812b712e",
+      "order": 2,
+      "zh": "祝英台来到梁山伯的墓前，想向他作最后的告别。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài đến trước mộ Lương Sơn Bá, muốn từ biệt anh lần cuối.",
+      "analysis_vi": "向某人作告别 trang trọng và bi thương.",
+      "highlight": [
+        "告别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "bab60d9b-8b09-4407-b75c-872184a43834"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "告别 có thể là lời từ biệt cuối cùng với người đã mất.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f6ff5d2b-bdc7-4a11-b397-e211058b4c4d",
+      "order": 1,
+      "rule_vi": "Không dùng 告别 cho mọi câu bye đời thường; nói 再见 là đủ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "告别",
+    "back": "từ biệt, nói lời chia tay",
+    "hint": "gàobié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "bab60d9b-8b09-4407-b75c-872184a43834",
+    "source_lesson_vocab_id": null
+  }
+}

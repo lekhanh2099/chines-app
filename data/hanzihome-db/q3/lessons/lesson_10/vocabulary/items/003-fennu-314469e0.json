@@ -1,0 +1,300 @@
+{
+  "id": "62a8336c-58d8-44ff-a60f-0ff2cc712847",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "愤怒",
+  "pinyin": "fènnù",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ trạng thái",
+    "raw_cn": "形容词 / 名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_10",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phẫn nộ",
+    "meaning_vi": "phẫn nộ, cực kỳ tức giận",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phẫn nộ",
+      "cực kỳ tức giận"
+    ],
+    "short_definition_vi": "tức giận mạnh, phẫn nộ",
+    "textbook_focus_vi": "tức giận mạnh, phẫn nộ",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "công việc, học tập, tự nâng cao bản thân",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "愤",
+        "lishu_vi": "phẫn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "怒",
+        "lishu_vi": "nộ",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, cảm xúc, tâm lý",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, cảm xúc, tâm lý",
+            "position_vi": "thành phần nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, cảm xúc, tâm lý",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "tức giận mạnh, phẫn nộ",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 感到愤怒.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "生气",
+        "pinyin": "shēngqì",
+        "meaning_vi": "tức giận",
+        "difference_vi": "khẩu ngữ và nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "气愤",
+        "pinyin": "qìfèn",
+        "meaning_vi": "bực tức",
+        "difference_vi": "thường do thấy bất công",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9c14a3ac-e322-4541-94d8-7f83d147e143",
+      "order": 1,
+      "zh": "感到愤怒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b078a4d2-c737-459f-9072-142042096d3d",
+      "order": 2,
+      "zh": "非常愤怒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6b81871e-68fd-484a-a4f5-4f531811a905",
+      "order": 3,
+      "zh": "愤怒地说",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9a31f9a9-13e2-4dec-880e-341e5c21e28e",
+      "order": 4,
+      "zh": "愤怒的表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "da33dd64-0178-4010-b898-326cf17a9cd9",
+      "order": 5,
+      "zh": "压住愤怒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "128823c9-1d56-47fc-8367-2062dcf48864",
+      "order": 6,
+      "zh": "让人愤怒",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7f24fabf-e7db-4bae-8add-04fadb73b3da",
+      "order": 1,
+      "zh": "听到这个消息，他很愤怒。",
+      "pinyin": "Tīng dào zhège xiāoxi, tā hěn fènnù.",
+      "vi": "Nghe tin này, anh ấy rất phẫn nộ.",
+      "analysis_vi": "很愤怒 diễn tả cảm xúc mạnh.",
+      "highlight": [
+        "愤怒"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "62a8336c-58d8-44ff-a60f-0ff2cc712847"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong công sở, biểu hiện 愤怒 quá rõ dễ bị xem là mất kiểm soát.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9622419e-67be-4c19-9f7a-5b772c2bbf1f",
+      "order": 1,
+      "rule_vi": "Không dùng 愤怒 cho mọi mức độ giận; hơi giận nên nói 有点儿生气.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "愤怒",
+    "back": "phẫn nộ, cực kỳ tức giận",
+    "hint": "fènnù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_10"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "62a8336c-58d8-44ff-a60f-0ff2cc712847",
+    "source_lesson_vocab_id": null
+  }
+}

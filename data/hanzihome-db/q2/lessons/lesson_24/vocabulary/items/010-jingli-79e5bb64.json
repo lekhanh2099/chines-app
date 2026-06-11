@@ -1,0 +1,330 @@
+{
+  "id": "695f5889-e1a3-478a-bc78-f5e69147c00e",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "敬礼",
+  "pinyin": "jìnglǐ",
+  "pos": {
+    "raw_vi": "verb/noun",
+    "raw_cn": "",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kính lễ",
+    "meaning_vi": "chào kính lễ; chào theo nghi thức",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chào kính lễ",
+      "chào theo nghi thức"
+    ],
+    "short_definition_vi": "chào kính lễ; chào theo nghi thức",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "敬",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "苟",
+            "hanviet": "",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "hành động/tác động",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kính trọng",
+        "modern_logic_vi": "敬 = thái độ nghiêm túc, tôn trọng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "礼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "示",
+          "radical_variant": "礻",
+          "radical_name_vi": "bộ Thị",
+          "radical_name_zh": "",
+          "hanviet": "thị",
+          "meaning_vi": "lễ nghi; cúng tế",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "thị",
+            "meaning_vi": "lễ nghi; cúng tế",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "thị",
+              "meaning_vi": "lễ nghi; cúng tế",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "乚",
+            "hanviet": "",
+            "meaning_vi": "dạng giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lễ; lễ nghi; phép lịch sự",
+        "modern_logic_vi": "Có 礻 nên liên quan lễ nghi/quy tắc ứng xử.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "敬礼 = chào kính lễ; chào theo nghi thức.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 敬礼 cho chào hỏi bình thường giữa bạn bè.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "打招呼",
+        "pinyin": "",
+        "meaning_vi": "chào hỏi",
+        "difference_vi": "Chào bình thường.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "问好",
+        "pinyin": "",
+        "meaning_vi": "chào/hỏi thăm",
+        "difference_vi": "Lịch sự, đời sống.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鞠躬",
+        "pinyin": "",
+        "meaning_vi": "cúi chào",
+        "difference_vi": "Chỉ động tác cúi.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0cd7dcdc-00f0-4b95-91e9-a1249a83dced",
+      "order": 1,
+      "zh": "立正敬礼",
+      "pinyin": "",
+      "vi": "đứng nghiêm chào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cfcfc2b2-59ea-4347-b3bc-711a9fad6d3e",
+      "order": 2,
+      "zh": "向老师敬礼",
+      "pinyin": "",
+      "vi": "chào kính lễ thầy cô",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad84b4ca-bfd6-43bc-b6b8-dcf4ee619aef",
+      "order": 3,
+      "zh": "向警察敬礼",
+      "pinyin": "",
+      "vi": "chào kính lễ cảnh sát",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3f3bd62b-9eac-44c4-9a59-428d4dbf8a23",
+      "order": 4,
+      "zh": "敬礼！",
+      "pinyin": "",
+      "vi": "nghiêm chào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4c1e31f5-2d01-4714-bedb-0be3c1d78e25",
+      "order": 5,
+      "zh": "此致，敬礼",
+      "pinyin": "",
+      "vi": "trân trọng kính chào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ddd75c53-941b-4e0e-b668-262001727723",
+      "order": 1,
+      "zh": "小学生看见警察叔叔，都向他敬礼。",
+      "pinyin": "Xiǎoxuéshēng kànjiàn jǐngchá shūshu, dōu xiàng tā jìnglǐ.",
+      "vi": "Học sinh tiểu học nhìn thấy chú cảnh sát đều chào kính lễ.",
+      "analysis_vi": "向 + người + 敬礼.",
+      "level": "basic",
+      "highlight": [
+        "敬礼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "695f5889-e1a3-478a-bc78-f5e69147c00e"
+      ],
+      "notes": []
+    },
+    {
+      "id": "e5d137da-c5ce-4085-a2b1-959a5b6e117c",
+      "order": 2,
+      "zh": "警察扶老人过马路以后，孩子们高兴地向他敬礼。",
+      "pinyin": "Jǐngchá fú lǎorén guò mǎlù yǐhòu, háizimen gāoxìng de xiàng tā jìnglǐ.",
+      "vi": "Sau khi cảnh sát dìu cụ già qua đường, bọn trẻ vui vẻ chào kính lễ.",
+      "analysis_vi": "地 nối trạng thái với động tác.",
+      "level": "expanded",
+      "highlight": [
+        "敬礼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "695f5889-e1a3-478a-bc78-f5e69147c00e"
+      ],
+      "notes": []
+    },
+    {
+      "id": "11ae3971-414a-4d87-9577-e286850a2c2f",
+      "order": 3,
+      "zh": "老师说：“立正，敬礼！”大家马上站好了。",
+      "pinyin": "Lǎoshī shuō: “Lìzhèng, jìnglǐ!” Dàjiā mǎshàng zhàn hǎo le.",
+      "vi": "Thầy/cô nói: “Nghiêm, chào!” Mọi người lập tức đứng ngay ngắn.",
+      "analysis_vi": "站好了 = đứng xong/đúng.",
+      "level": "complex",
+      "highlight": [
+        "敬礼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "695f5889-e1a3-478a-bc78-f5e69147c00e"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "敬礼 gắn với nghi thức trường học, đội thiếu niên, cảnh sát/quân đội và cuối thư.",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d9fb3600-e312-494a-b24d-18e4f88daceb",
+      "kind": "usage",
+      "text_vi": "Không dùng 敬礼 cho chào hỏi bình thường giữa bạn bè.",
+      "wrong_examples": [
+        "我每天向朋友敬礼。"
+      ],
+      "correct_examples": [
+        "我每天跟朋友打招呼。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "敬礼",
+    "back": "chào kính lễ; chào theo nghi thức",
+    "hint": "jìnglǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "695f5889-e1a3-478a-bc78-f5e69147c00e",
+    "source_lesson_vocab_id": null
+  }
+}

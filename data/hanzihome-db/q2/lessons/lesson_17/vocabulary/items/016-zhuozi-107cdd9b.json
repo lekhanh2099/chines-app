@@ -1,0 +1,331 @@
+{
+  "id": "27c6ca54-5c36-45bb-a954-83d52f06cb58",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "桌子",
+  "pinyin": "zhuōzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Trác tử",
+    "meaning_vi": "cái bàn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cái bàn"
+    ],
+    "short_definition_vi": "cái bàn",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "đời sống, lớp học, nhà ở, hội trường.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "桌",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bàn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con/trẻ; hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "桌 là bàn. 子 là hậu tố danh từ. → 桌子 = cái bàn. Cảnh báo: lượng từ của bàn thường là 张, không phải 个 trong bài học chuẩn.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "桌子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cái bàn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "书桌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bàn học/bàn đọc sách.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "饭桌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bàn ăn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "讲台",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bục giảng/bục phát biểu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: học ở 书桌, ăn ở 饭桌, thầy cô đứng ở 讲台."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7c079c58-9243-4906-add2-18ae75a4eca1",
+      "order": 1,
+      "zh": "一张桌子",
+      "pinyin": "",
+      "vi": "một cái bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "644b8a76-baad-4d7f-b801-0497a901c858",
+      "order": 2,
+      "zh": "擦桌子",
+      "pinyin": "",
+      "vi": "lau bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aaf31825-42d6-443f-b9ae-e57edb528014",
+      "order": 3,
+      "zh": "摆桌子",
+      "pinyin": "",
+      "vi": "xếp/bày bàn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "99c0d804-f82e-4bdd-85b2-2829be856959",
+      "order": 4,
+      "zh": "把桌子摆成圆圈儿",
+      "pinyin": "",
+      "vi": "xếp bàn thành vòng tròn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77d5c1e6-be1c-4d5b-90e9-4fe43e93f6d8",
+      "order": 5,
+      "zh": "桌子上放着……",
+      "pinyin": "",
+      "vi": "trên bàn đang đặt...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c726f843-de11-4ca7-b7c7-6ca9fb8213c5",
+      "order": 1,
+      "zh": "班长让我们把桌子摆成一个圆圈儿。",
+      "pinyin": "Bānzhǎng ràng wǒmen bǎ zhuōzi bǎi chéng yí ge yuánquānr.",
+      "vi": "Lớp trưởng bảo chúng tôi xếp bàn thành một vòng tròn.",
+      "analysis_vi": "把桌子摆成圆圈儿 là câu 把 có kết quả hình dạng/sắp xếp.",
+      "highlight": [
+        "桌子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "27c6ca54-5c36-45bb-a954-83d52f06cb58"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d0d092a5-0618-41de-8f07-8572ac737087",
+      "order": 2,
+      "zh": "桌子上放着一份礼物和一副对联儿。",
+      "pinyin": "Zhuōzi shang fàngzhe yí fèn lǐwù hé yí fù duìliánr.",
+      "vi": "Trên bàn đang đặt một phần quà và một bộ câu đối.",
+      "analysis_vi": "桌子上放着…… là câu tồn hiện; địa điểm 桌子上 đứng đầu.",
+      "highlight": [
+        "桌子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "27c6ca54-5c36-45bb-a954-83d52f06cb58"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ba0c978-85f9-4098-9fba-969b283aca9a",
+      "order": 3,
+      "zh": "打扫会场的时候，先把桌子擦干净，再摆好。",
+      "pinyin": "Dǎsǎo huìchǎng de shíhou, xiān bǎ zhuōzi cā gānjìng, zài bǎi hǎo.",
+      "vi": "Khi dọn hội trường, lau sạch bàn trước, rồi xếp cho ổn.",
+      "analysis_vi": "把桌子擦干净 nhấn kết quả sạch; 摆好 nhấn xếp xong/xếp ổn.",
+      "highlight": [
+        "桌子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "27c6ca54-5c36-45bb-a954-83d52f06cb58"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 桌子",
+    "content_vi": "Trong lớp học Trung Quốc, khi tổ chức 班级联欢会, bàn ghế thường được xếp lại, có khi thành 圆圈儿 để mọi người dễ nhìn nhau, chơi trò chơi, biểu diễn hoặc thảo luận. Cách xếp bàn ghế phản ánh mục đích hoạt động: học bài thì hướng lên bảng, liên hoan thì hướng vào nhau.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a67a2fcb-889f-4803-99d8-9f6471948d97",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên: 一张桌子 Yì zhāng zhuōzi Một cái bàn. 一把椅子 Yì bǎ yǐzi Một cái ghế.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "桌子",
+    "back": "cái bàn",
+    "hint": "zhuōzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "27c6ca54-5c36-45bb-a954-83d52f06cb58",
+    "source_lesson_vocab_id": null
+  }
+}

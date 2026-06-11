@@ -1,0 +1,253 @@
+{
+  "id": "ba83948d-71f4-42cf-8176-686962d55304",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "学历",
+  "pinyin": "xuélì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "học lịch",
+    "meaning_vi": "trình độ học vấn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trình độ học vấn"
+    ],
+    "short_definition_vi": "trình độ học vấn",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "学",
+        "lishu_vi": "học",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, việc học, trường học",
+        "modern_logic_vi": "học, việc học, trường học",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "历",
+        "lishu_vi": "lịch",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "厂",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "力",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trải qua, quá trình",
+        "modern_logic_vi": "trải qua, quá trình",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "学 là học; 历 là quá trình; 学历 là quá trình/cấp bậc học tập đã được công nhận.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 本科学历.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "学位",
+        "pinyin": "xuéwèi",
+        "meaning_vi": "học vị",
+        "difference_vi": "学位 là danh hiệu học thuật như cử nhân/thạc sĩ/tiến sĩ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "能力",
+        "pinyin": "nénglì",
+        "meaning_vi": "năng lực",
+        "difference_vi": "能力 là năng lực thật, không phải giấy tờ học vấn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8ac2c0ef-3565-42fb-a481-517858d773b6",
+      "order": 1,
+      "zh": "本科学历",
+      "pinyin": "běnkē xuélì",
+      "vi": "trình độ đại học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "16b1f765-9471-4524-a547-de535719ef1d",
+      "order": 2,
+      "zh": "学历要求",
+      "pinyin": "xuélì yāoqiú",
+      "vi": "yêu cầu học vấn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4377c83b-5bbc-4f74-80e0-b4307ec1b8ae",
+      "order": 3,
+      "zh": "最高学历",
+      "pinyin": "zuìgāo xuélì",
+      "vi": "trình độ học vấn cao nhất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1416a8c4-e229-4c9d-837e-72ced28c8010",
+      "order": 1,
+      "zh": "这个职位要求本科学历。",
+      "pinyin": "Zhège zhíwèi yāoqiú běnkē xuélì.",
+      "vi": "Vị trí này yêu cầu trình độ đại học.",
+      "analysis_vi": "要求 + 学历 là khung tuyển dụng.",
+      "highlight": [
+        "学历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ba83948d-71f4-42cf-8176-686962d55304"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "08ea8e0f-9d98-468c-9579-44b62d7a7606",
+      "order": 2,
+      "zh": "他的学历不低，可是第一次试讲的时候还是很紧张。",
+      "pinyin": "Tā de xuélì bù dī, kěshì dì yī cì shìjiǎng de shíhou háishi hěn jǐnzhāng.",
+      "vi": "Trình độ học vấn của anh ấy không thấp, nhưng lần đầu giảng thử vẫn rất căng thẳng.",
+      "analysis_vi": "学历 không đồng nghĩa với năng lực trình bày.",
+      "highlight": [
+        "学历"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "ba83948d-71f4-42cf-8176-686962d55304"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "学历 là mục quan trọng trong tuyển dụng, nhưng không đồng nhất với năng lực làm việc.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a0f1592b-8ba7-4859-a7c9-01df72d7be08",
+      "order": 1,
+      "rule_vi": "Không dịch 学历 là lịch học; lịch học là 课程表 hoặc 上课时间表 tùy ngữ cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "学历",
+    "back": "trình độ học vấn",
+    "hint": "xuélì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "ba83948d-71f4-42cf-8176-686962d55304",
+    "source_lesson_vocab_id": null
+  }
+}

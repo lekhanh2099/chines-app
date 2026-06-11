@@ -1,0 +1,68 @@
+{
+  "id": "synthetic_vocab_81c5f7e836b7217f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "了",
+  "pinyin": "le",
+  "meaning_vi": "trợ từ biểu thị hoàn thành hoặc thay đổi tình huống",
+  "pos": "Trợ từ",
+  "pos_detail": {
+    "vi": "Trợ từ",
+    "cn": "助词",
+    "normalized": "particle",
+    "schema_compatible_pos": "particle",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "96496113-b897-4cca-a571-7c57260b4c1f",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "96496113-b897-4cca-a571-7c57260b4c1f",
+    "type": "vocabulary_item",
+    "order": 5,
+    "hanzi": "了",
+    "pinyin": "le",
+    "meaning_vi": "trợ từ biểu thị hoàn thành hoặc thay đổi tình huống",
+    "meaning_en": "aspect particle; modal particle",
+    "pos": "Trợ từ",
+    "tags": [
+      "hanyu_2_1",
+      "lesson_02",
+      "main_vocab",
+      "added_after_pdf_check"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "了",
+      "back": "le — trợ từ biểu thị hoàn thành hoặc thay đổi tình huống",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Trợ từ",
+      "cn": "助词",
+      "normalized": "particle",
+      "schema_compatible_pos": "particle",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

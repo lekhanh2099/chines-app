@@ -1,0 +1,152 @@
+{
+  "id": "0069ab47-c55c-4c75-87af-ee5d2180f2f9",
+  "type": "deep_vocabulary_item",
+  "order": 111,
+  "hanzi": "还",
+  "pinyin": "hái",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ chức năng ngữ pháp"
+  ],
+  "meaning": {
+    "hanviet": "Hoàn",
+    "meaning_vi": "vẫn, còn, lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vẫn",
+      "còn",
+      "lại"
+    ],
+    "short_definition_vi": "vẫn, còn, lại",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: vẫn, còn, lại.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ chức năng ngữ pháp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "还",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "还 trong bài được học theo nghĩa trọng tâm: vẫn, còn, lại.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: vẫn, còn, lại.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "43669278-40f4-40b2-87e0-4a2668e1cc9c",
+      "order": 1,
+      "zh": "这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: vẫn, còn, lại",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "f5d90110-2a9b-4080-ab26-3d5f76905bc5",
+      "order": 1,
+      "zh": "这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “还” = vẫn, còn, lại.",
+      "analysis_vi": "Câu này dùng “还” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "还"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0069ab47-c55c-4c75-87af-ee5d2180f2f9"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “还” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "21595902-b4ba-4533-ba39-7f6a049cb0e0",
+      "order": 1,
+      "rule_vi": "Cần dùng “还” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "还",
+    "back": "vẫn, còn, lại",
+    "hint": "hái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ chức năng ngữ pháp"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0069ab47-c55c-4c75-87af-ee5d2180f2f9",
+    "source_lesson_vocab_id": null
+  }
+}

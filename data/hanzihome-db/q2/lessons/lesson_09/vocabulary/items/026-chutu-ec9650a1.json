@@ -1,0 +1,382 @@
+{
+  "id": "f459d32b-6496-4e3d-ab42-98ebfc77477f",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "出土",
+  "pinyin": "chūtǔ",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xuất thổ",
+    "meaning_vi": "được khai quật, đào lên từ dưới đất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "được khai quật",
+      "đào lên từ dưới đất"
+    ],
+    "short_definition_vi": "được khai quật, đào lên từ dưới đất",
+    "textbook_focus_vi": "Âm Hán Việt: xuất thổ. Nghĩa chính: Được đào lên từ dưới đất. Được khai quật. Thường dùng với cổ vật, văn vật, di tích khảo cổ. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "出",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "出",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ra, xuất hiện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "土",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đất",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "出 = ra; 土 = đất. 出土 = từ trong đất được đưa ra ngoài, tức được khai quật.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 出土 thường dùng cho văn vật/di tích, không dùng cho việc nhặt đồ bình thường.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "出土",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "được khai quật từ đất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "发现",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "phát hiện, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "挖出来",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đào ra, khẩu ngữ/hành động cụ thể hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "考古",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khảo cổ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "文物",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "văn vật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "他们发现了一件文物。",
+      "Họ phát hiện một văn vật.",
+      "这件文物是新出土的。",
+      "Văn vật này mới được khai quật.",
+      "工人把东西挖出来了。",
+      "Công nhân đào vật đó ra rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4491bb45-6e27-448d-81d4-f859c527b1a2",
+      "order": 1,
+      "zh": "出土文物",
+      "pinyin": "",
+      "vi": "văn vật được khai quật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72e7cbc6-6381-4550-9614-ee09d2212fa0",
+      "order": 2,
+      "zh": "新出土的文物",
+      "pinyin": "",
+      "vi": "văn vật mới khai quật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6029f4b1-f455-4d74-bba6-09b259e397e4",
+      "order": 3,
+      "zh": "去年出土",
+      "pinyin": "",
+      "vi": "được khai quật năm ngoái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5635c3eb-c4aa-43bf-88cd-fae1ff33ac6e",
+      "order": 4,
+      "zh": "从地下出土",
+      "pinyin": "",
+      "vi": "được khai quật từ dưới đất",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2f05da2-61ea-47a5-b76b-746daed302af",
+      "order": 5,
+      "zh": "出土地点",
+      "pinyin": "",
+      "vi": "địa điểm khai quật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2fcc26d-a677-4a8f-8be7-a0c214ddc208",
+      "order": 6,
+      "zh": "出土以后",
+      "pinyin": "",
+      "vi": "sau khi được khai quật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2b40f156-bb09-43aa-be7c-e5ac90cc9f38",
+      "order": 1,
+      "zh": "这是新出土的文物。",
+      "pinyin": "Zhè shì xīn chūtǔ de wénwù.",
+      "vi": "Đây là văn vật mới được khai quật.",
+      "analysis_vi": "新出土的 làm định ngữ bổ nghĩa cho 文物.",
+      "highlight": [
+        "出土"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "f459d32b-6496-4e3d-ab42-98ebfc77477f"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "778dd22b-92eb-4930-acdb-95f9ba8be13c",
+      "order": 2,
+      "zh": "这些出土文物要送到展览馆去。",
+      "pinyin": "Zhèxiē chūtǔ wénwù yào sòng dào zhǎnlǎnguǎn qù.",
+      "vi": "Những văn vật khai quật này phải được đưa đến nhà triển lãm.",
+      "analysis_vi": "送到……去 dùng 去 vì đưa đến nơi xa người nói.",
+      "highlight": [
+        "出土"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "f459d32b-6496-4e3d-ab42-98ebfc77477f"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ab677c95-ce55-4297-9c86-cf7e545643e9",
+      "order": 3,
+      "zh": "经过专家认真地研究以后，大家才清楚地知道，这些文物大约是两千年前出土地区留下来的东西。",
+      "pinyin": "Jīngguò zhuānjiā rènzhēn de yánjiū yǐhòu, dàjiā cái qīngchu de zhīdào, zhèxiē wénwù dàyuē shì liǎng qiān nián qián chūtǔ dìqū liú xiàlai de dōngxi.",
+      "vi": "Sau khi các chuyên gia nghiên cứu nghiêm túc, mọi người mới biết rõ rằng những văn vật này đại khái là đồ được để lại từ khu vực khai quật khoảng hai nghìn năm trước.",
+      "analysis_vi": "经过……以后 chỉ quá trình trước kết quả. 认真地研究 / 清楚地知道 dùng 地. 大约 chỉ ước lượng.",
+      "highlight": [
+        "出土"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "f459d32b-6496-4e3d-ab42-98ebfc77477f"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Khi đọc tin hoặc bài giới thiệu bảo tàng Trung Quốc, 出土文物 xuất hiện rất nhiều. Trung Quốc có truyền thống khảo cổ mạnh, nên các bài về 文物、遗址、博物馆、展览 rất hay dùng cụm này.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7438b9c1-65a5-4057-9d03-85a7dea04e55",
+      "order": 1,
+      "rule_vi": "出土 chỉ khai quật/mọc lên khỏi đất; không dùng cho lấy đồ bình thường ra khỏi cặp.",
+      "natural_examples": [
+        {
+          "zh": "Không dùng 出土 cho đồ rơi trên đất.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我捡到了一块表。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "出土了一件文物。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Nhặt được đồng hồ: Văn vật được khai quật:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "出土",
+    "back": "được khai quật, đào lên từ dưới đất",
+    "hint": "chūtǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f459d32b-6496-4e3d-ab42-98ebfc77477f",
+    "source_lesson_vocab_id": null
+  }
+}

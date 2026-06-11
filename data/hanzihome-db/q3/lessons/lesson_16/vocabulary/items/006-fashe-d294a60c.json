@@ -1,0 +1,164 @@
+{
+  "id": "48de299a-e083-4190-a3d3-ca1dcbcd46ce",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "发射",
+  "pinyin": "fāshè",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Hàng không vũ trụ và quan sát"
+  ],
+  "meaning": {
+    "hanviet": "Phát xạ",
+    "meaning_vi": "phóng, bắn, phát xạ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phóng",
+      "bắn",
+      "phát xạ"
+    ],
+    "short_definition_vi": "phóng, bắn, phát xạ",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: phóng, bắn, phát xạ.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Hàng không vũ trụ và quan sát",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "发",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "射",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "发射 trong bài được học theo nghĩa trọng tâm: phóng, bắn, phát xạ.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: phóng, bắn, phát xạ.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4854255b-5c49-47aa-8ad0-3b410750b4a7",
+      "order": 1,
+      "zh": "上星期，金星上一片欢腾科学家们成功地向地球发射了一颗卫星。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: phóng, bắn, phát xạ",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dc7c1c2c-e90a-4429-b598-b7e5671e2ee8",
+      "order": 1,
+      "zh": "上星期，金星上一片欢腾科学家们成功地向地球发射了一颗卫星。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “发射” = phóng, bắn, phát xạ.",
+      "analysis_vi": "Câu này dùng “发射” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "发射"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "48de299a-e083-4190-a3d3-ca1dcbcd46ce"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “发射” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "948f318e-81d3-4874-ac22-b30def5c8dc4",
+      "order": 1,
+      "rule_vi": "Cần dùng “发射” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "发射",
+    "back": "phóng, bắn, phát xạ",
+    "hint": "fāshè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Hàng không vũ trụ và quan sát"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "48de299a-e083-4190-a3d3-ca1dcbcd46ce",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_4299c36ba3b60801",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "壶",
+  "pinyin": "hú",
+  "meaning_vi": "bình; ấm; bầu rượu/nước",
+  "pos": "Danh từ / Lượng từ",
+  "pos_detail": {
+    "vi": "Danh từ / Lượng từ",
+    "cn": "名词 / 量词",
+    "normalized": "measure_word",
+    "schema_compatible_pos": "measure_word",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Có thể chỉ bình/ấm, cũng dùng làm lượng từ: 一壶酒.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d42d3d90-443d-45da-bed7-987b50034e92",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+    "type": "vocabulary_item",
+    "order": 37,
+    "hanzi": "壶",
+    "pinyin": "hú",
+    "meaning_vi": "bình; ấm; bầu rượu/nước",
+    "meaning_en": "",
+    "pos": "Danh từ / Lượng từ",
+    "tags": [
+      "supplementary_vocab",
+      "reading_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "壶",
+      "back": "hú — bình; ấm; bầu rượu/nước",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_reading",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ / Lượng từ",
+      "cn": "名词 / 量词",
+      "normalized": "measure_word",
+      "schema_compatible_pos": "measure_word",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Có thể chỉ bình/ấm, cũng dùng làm lượng từ: 一壶酒.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

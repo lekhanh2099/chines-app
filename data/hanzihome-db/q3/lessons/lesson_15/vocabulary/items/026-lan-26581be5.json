@@ -1,0 +1,262 @@
+{
+  "id": "1dd78e49-a39e-4c46-a3b6-e45e2eb13864",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "拦",
+  "pinyin": "lán",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "lan",
+    "meaning_vi": "chặn; cản; gọi xe dừng lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chặn",
+      "cản",
+      "gọi xe dừng lại"
+    ],
+    "short_definition_vi": "chặn; cản; gọi xe dừng lại",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拦",
+        "lishu_vi": "",
+        "structure_note_vi": "拦: chặn",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay; động tác bằng tay",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay; động tác bằng tay",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chặn",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: chặn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay; động tác bằng tay",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "拦 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 拦车.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e9732554-321f-4c6e-b812-acaecdb3e595",
+      "order": 1,
+      "zh": "拦车",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7d44f42-5d82-4d28-aff0-eef9ae25818f",
+      "order": 2,
+      "zh": "拦住他",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b4e136b6-375b-4f08-8a25-b9b19cb4793e",
+      "order": 3,
+      "zh": "拦下出租车",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1bb9eb26-9f86-4fb0-b908-8160ba35b3c0",
+      "order": 4,
+      "zh": "把路拦住",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5a475a52-1b02-4627-9868-a913b12ea405",
+      "order": 1,
+      "zh": "他在路边拦了一辆出租车。",
+      "pinyin": "",
+      "vi": "Anh ấy đứng bên đường gọi một chiếc taxi。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "拦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1dd78e49-a39e-4c46-a3b6-e45e2eb13864"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e5ee4e21-6cab-4154-b587-59eb62fac26d",
+      "order": 2,
+      "zh": "老师看见我受伤了，急忙拦了一辆车送我去医院。",
+      "pinyin": "",
+      "vi": "Thầy/cô thấy tôi bị thương thì vội gọi một chiếc xe đưa tôi đến bệnh viện。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "拦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "1dd78e49-a39e-4c46-a3b6-e45e2eb13864"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "13023f20-2cc7-44c7-87d6-51289f3ebf54",
+      "order": 1,
+      "rule_vi": "拦车 nhiều khi là vẫy/gọi xe。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "拦车 nhiều khi là vẫy/gọi xe。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拦",
+    "back": "chặn; cản; gọi xe dừng lại",
+    "hint": "lán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "1dd78e49-a39e-4c46-a3b6-e45e2eb13864",
+    "source_lesson_vocab_id": null
+  }
+}

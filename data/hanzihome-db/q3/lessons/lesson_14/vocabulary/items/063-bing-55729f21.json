@@ -1,0 +1,180 @@
+{
+  "id": "f6cf60c5-9117-45c9-8142-488a75d6d5c3",
+  "type": "deep_vocabulary_item",
+  "order": 63,
+  "hanzi": "并",
+  "pinyin": "bìng",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词 / 副词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tịnh",
+    "meaning_vi": "và, đồng thời; nhấn phủ định trong 并不/并没有",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "và",
+      "đồng thời",
+      "nhấn phủ định trong 并不/并没有"
+    ],
+    "short_definition_vi": "và, đồng thời; nhấn phủ định trong 并不/并没有",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: liên kết, phủ định.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "liên kết, phủ định",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "并",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "gộp, cùng, nhấn phủ định",
+        "modern_logic_vi": "Trong từ 并, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "Không tự suy nghĩa hiện đại chỉ từ hình chữ.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "并 nên được học theo nghĩa hiện đại trong cụm/tình huống: và, đồng thời; nhấn phủ định trong 并不/并没有.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 并不难.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "而且",
+        "pinyin": "érqiě",
+        "meaning_vi": "hơn nữa",
+        "difference_vi": "并且 gần 而且; 并不 là cách dùng nhấn phủ định riêng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7d3150f2-6c37-46db-9e15-399b94edec2f",
+      "order": 1,
+      "zh": "并不难",
+      "pinyin": "",
+      "vi": "không hề khó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "174ba8e4-090e-4703-bef6-98b1224572d8",
+      "order": 2,
+      "zh": "并不是这样",
+      "pinyin": "",
+      "vi": "không phải như vậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1b090d4b-bdeb-4e3e-990a-cf7ab3fc9ac6",
+      "order": 3,
+      "zh": "并且",
+      "pinyin": "",
+      "vi": "và, hơn nữa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "947d99f8-5166-4d49-99dc-1c393074367c",
+      "order": 1,
+      "zh": "这个问题并不难。",
+      "pinyin": "",
+      "vi": "Vấn đề này không hề khó.",
+      "analysis_vi": "并不 thường phản bác dự đoán rằng sự việc là như vậy.",
+      "highlight": [
+        "并"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f6cf60c5-9117-45c9-8142-488a75d6d5c3"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 并 được dùng trong ngữ cảnh liên kết, phủ định; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1f097c76-2a42-47b5-ae4d-53e9719a789f",
+      "order": 1,
+      "rule_vi": "Không lạm dụng 并不 cho mọi phủ định; phủ định bình thường dùng 不/没 là đủ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không lạm dụng 并不 cho mọi phủ định; phủ định bình thường dùng 不/没 là đủ.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "并",
+    "back": "và, đồng thời; nhấn phủ định trong 并不/并没有",
+    "hint": "bìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f6cf60c5-9117-45c9-8142-488a75d6d5c3",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook/generated_mixed",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+      "type": "note",
+      "order": 1,
+      "title": "哦，可不是嘛。",
+      "structure": "哦，可不是嘛。",
+      "meaning_vi": "Dùng khi người nói đột nhiên nhận ra / hiểu ra điều gì đó và đồng ý mạnh với lời người khác. Không hiểu theo nghĩa phủ định.",
+      "examples": [
+        {
+          "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+          "zh": "哦，可不是嘛，写错了。",
+          "vi": "À, đúng thật, viết sai rồi.",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Ò, kě bú shì ma, xiě cuò le."
+        }
+      ],
+      "source_refs": [
+        "cc8da348-3e89-4f64-a680-de239f505497"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    },
+    {
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+      "type": "note",
+      "order": 2,
+      "title": "名词重叠：家家 / 天天 / 人人",
+      "structure": "单音节名词 + 单音节名词 = 每 + 名词",
+      "meaning_vi": "Một số danh từ một âm tiết lặp lại để mang nghĩa mỗi / mọi / ... nào cũng.",
+      "examples": [
+        {
+          "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+          "zh": "过春节的时候，差不多家家都贴“福”字。",
+          "vi": "Khi đón Tết, hầu như nhà nào cũng dán chữ “Phúc”.",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Guò Chūnjié de shíhou, chàbuduō jiājiā dōu tiē “Fú” zì."
+        },
+        {
+          "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
+          "zh": "我天天都坚持锻炼一个小时。",
+          "vi": "Ngày nào tôi cũng kiên trì tập luyện một tiếng.",
+          "source_origin": "generated",
+          "check_needed": false,
+          "pinyin": "Wǒ tiāntiān dōu jiānchí duànliàn yí ge xiǎoshí."
+        },
+        {
+          "id": "b2d63b5e-4dff-4d3a-98c9-f96916db8256",
+          "zh": "人人都要遵守交通规则。",
+          "vi": "Ai cũng phải tuân thủ quy tắc giao thông.",
+          "source_origin": "generated",
+          "check_needed": false,
+          "pinyin": "Rénrén dōu yào zūnshǒu jiāotōng guīzé."
+        }
+      ],
+      "source_refs": [
+        "8fb969b7-ea3c-4f62-a650-16652a998ba7"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+    }
+  ]
+}

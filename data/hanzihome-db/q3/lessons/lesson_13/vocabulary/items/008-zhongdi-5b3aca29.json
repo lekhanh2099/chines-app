@@ -1,0 +1,324 @@
+{
+  "id": "8a6b31f5-4a7e-4d6c-af95-78d19e89d81b",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "种地",
+  "pinyin": "zhòngdì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "work",
+    "rural"
+  ],
+  "meaning": {
+    "hanviet": "chủng địa",
+    "meaning_vi": "làm ruộng, canh tác đất",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "làm ruộng",
+      "canh tác đất"
+    ],
+    "short_definition_vi": "làm ruộng, canh tác đất",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "种",
+        "lishu_vi": "chủng",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "禾",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hòa",
+          "radical_name_zh": "",
+          "hanviet": "hòa",
+          "meaning_vi": "cây lúa/cây lương thực",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "禾",
+            "hanviet": "hòa",
+            "meaning_vi": "cây lúa/cây lương thực",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "禾",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hòa",
+              "radical_name_zh": "",
+              "hanviet": "hòa",
+              "meaning_vi": "cây lúa/cây lương thực",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "中",
+            "hanviet": "trung",
+            "meaning_vi": "ở giữa",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trồng/loại",
+        "modern_logic_vi": "Trong từ/cụm này, 种 góp phần vào nghĩa hiện đại: trồng/loại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "地",
+        "lishu_vi": "địa",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "thổ",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "thổ",
+            "meaning_vi": "đất",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "thổ",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "也",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đất/nơi chốn",
+        "modern_logic_vi": "Trong từ/cụm này, 地 góp phần vào nghĩa hiện đại: đất/nơi chốn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "种地 cần học theo nghĩa hiện đại trong bài: làm ruộng, canh tác đất.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 在农村种地.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "种田",
+        "pinyin": "zhòngtián",
+        "meaning_vi": "làm ruộng",
+        "difference_vi": "gần nghĩa",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "种植",
+        "pinyin": "zhòngzhí",
+        "meaning_vi": "trồng trọt",
+        "difference_vi": "văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "59117c18-07ee-48c2-8528-e89465a0463e",
+      "order": 1,
+      "zh": "在农村种地",
+      "pinyin": "zài nóngcūn zhòngdì",
+      "vi": "làm ruộng ở nông thôn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "71d937a0-e159-4f41-b5c3-c6e83653f929",
+      "order": 2,
+      "zh": "靠种地生活",
+      "pinyin": "kào zhòngdì shēnghuó",
+      "vi": "sống dựa vào làm ruộng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8debad0d-cccc-4f8f-9977-1f82b2ecbfd8",
+      "order": 3,
+      "zh": "种了一辈子地",
+      "pinyin": "zhòng le yí bèi zi dì",
+      "vi": "làm ruộng cả đời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e9de5ca4-e530-4d0a-9300-493fb445d271",
+      "order": 1,
+      "zh": "他父母在农村种地。",
+      "pinyin": "Tā fùmǔ zài nóngcūn zhòngdì.",
+      "vi": "Bố mẹ anh ấy làm ruộng ở nông thôn.",
+      "analysis_vi": "种地 là hoạt động chính.",
+      "highlight": [
+        "种地"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8a6b31f5-4a7e-4d6c-af95-78d19e89d81b"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e16c44ba-7578-43b2-b96b-6cc741c28df7",
+      "order": 2,
+      "zh": "他们家以种地为主，生活虽然不富裕，但是很安定。",
+      "pinyin": "Tāmen jiā yǐ zhòngdì wéi zhǔ, shēnghuó suīrán bù fùyù, dànshì hěn āndìng.",
+      "vi": "Nhà họ chủ yếu làm ruộng, cuộc sống tuy không giàu nhưng ổn định.",
+      "analysis_vi": "以种地为主 sát bài.",
+      "highlight": [
+        "种地"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8a6b31f5-4a7e-4d6c-af95-78d19e89d81b"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "种地 gắn với đời sống nông thôn, sinh kế và cấu trúc gia đình.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "17a1428c-c12d-42ac-b1b4-61ce0c95628f",
+      "order": 1,
+      "rule_vi": "地 trong 种地 đọc dì, không đọc nhẹ de.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "zhòng de",
+          "pinyin": "",
+          "vi": "Sai đọc âm.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "zhòngdì",
+          "pinyin": "",
+          "vi": "Đọc đúng: làm ruộng.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "种地",
+    "back": "làm ruộng, canh tác đất",
+    "hint": "zhòngdì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8a6b31f5-4a7e-4d6c-af95-78d19e89d81b",
+    "source_lesson_vocab_id": null
+  }
+}

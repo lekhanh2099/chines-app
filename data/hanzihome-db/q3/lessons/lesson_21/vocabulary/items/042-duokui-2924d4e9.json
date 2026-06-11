@@ -1,0 +1,286 @@
+{
+  "id": "af6258c6-aee9-4591-bc36-dc480f05e4fc",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "多亏",
+  "pinyin": "duōkuī",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动/副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "đa khuy",
+    "meaning_vi": "may nhờ, may mà có",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "may nhờ",
+      "may mà có"
+    ],
+    "short_definition_vi": "may nhờ, may mà có",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: may nhờ, may mà có.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "多",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "夕",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tịch",
+          "radical_name_zh": "",
+          "hanviet": "tịch",
+          "meaning_vi": "chiều tối",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "夕",
+            "hanviet": "tịch",
+            "meaning_vi": "chiều tối",
+            "position_vi": "trên/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "夕",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tịch",
+              "radical_name_zh": "",
+              "hanviet": "tịch",
+              "meaning_vi": "chiều tối",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "夕 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 多.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "亏",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép chiết tự khi cấu tạo hiện đại không đủ chắc để giải thích nghĩa.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "多亏 trong bài được hiểu theo nghĩa: may nhờ, may mà có. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 多亏.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "多亏 dùng khi nhờ một yếu tố mà tránh được kết quả xấu hoặc có kết quả tốt."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4196923d-bbb8-4ceb-b486-daf0b1c91551",
+      "order": 1,
+      "zh": "多亏你",
+      "pinyin": "",
+      "vi": "may nhờ bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a9553122-77e9-4263-94c3-44d0789e01e1",
+      "order": 2,
+      "zh": "多亏你的帮助",
+      "pinyin": "",
+      "vi": "may nhờ sự giúp đỡ của bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4630fa53-f7b0-4144-b3f4-4373d028133e",
+      "order": 3,
+      "zh": "多亏发现得早",
+      "pinyin": "",
+      "vi": "may nhờ phát hiện sớm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9db429ef-d869-4b69-a98e-1538bf5c113a",
+      "order": 4,
+      "zh": "多亏伤口不大",
+      "pinyin": "",
+      "vi": "may mà vết thương không lớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5fb02907-30e8-4fa7-9af6-6a0b63553135",
+      "order": 5,
+      "zh": "多亏有你",
+      "pinyin": "",
+      "vi": "may mà có bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "74864d2c-2827-4b8b-a74d-dbbf4dd72515",
+      "order": 1,
+      "zh": "多亏你帮忙，我才找到护照。",
+      "pinyin": "",
+      "vi": "May nhờ bạn giúp, tôi mới tìm thấy hộ chiếu.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "多亏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "af6258c6-aee9-4591-bc36-dc480f05e4fc"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e139467d-53f0-43f2-919c-7635ff03ecfd",
+      "order": 2,
+      "zh": "多亏伤口不大，不然理发师一定更害怕。",
+      "pinyin": "",
+      "vi": "May mà vết thương không lớn, nếu không thợ cắt tóc chắc còn sợ hơn.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "多亏"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "af6258c6-aee9-4591-bc36-dc480f05e4fc"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "多亏 dùng khi nhờ một yếu tố mà tránh được kết quả xấu hoặc có kết quả tốt.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4bf403de-092c-4244-91f1-d12f6196948e",
+      "order": 1,
+      "rule_vi": "多亏 dùng khi nhờ một yếu tố mà tránh được kết quả xấu hoặc có kết quả tốt.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "多亏下雨，我迟到了。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "多亏 dùng khi nhờ một yếu tố mà tránh được kết quả xấu hoặc có kết quả tốt.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "因为下雨，我迟到了。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "多亏 dùng khi nhờ một yếu tố mà tránh được kết quả xấu hoặc có kết quả tốt.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "多亏",
+    "back": "may nhờ, may mà có",
+    "hint": "duōkuī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "af6258c6-aee9-4591-bc36-dc480f05e4fc",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "id": "dddd2f66-06a7-496a-b98e-b1c6f87ebf7f",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "混",
+  "pinyin": "hùn",
+  "pos": {
+    "raw_vi": "Động từ / Tính từ",
+    "raw_cn": "动词/形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_07",
+    "deep_vocab",
+    "chengyu_story"
+  ],
+  "meaning": {
+    "hanviet": "hỗn",
+    "meaning_vi": "trộn lẫn; trà trộn; sống qua ngày",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trộn lẫn; trà trộn; sống qua ngày"
+    ],
+    "short_definition_vi": "trộn lẫn; trà trộn; sống qua ngày",
+    "textbook_focus_vi": "Nghĩa trọng tâm theo Bài 7 成语故事.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "thành ngữ, kể chuyện, ngữ cảnh học tiếng Trung",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "混",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không suy diễn khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "氵 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "氵 là thành phần/bộ thủ đã được dùng trong phần chiết tự đã soạn.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "Thành phần nhìn thấy: 氵.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trộn lẫn, trà trộn",
+        "modern_logic_vi": "Dùng nghĩa hiện đại và logic nhớ nghĩa đã soạn cho bài này.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "氵 gợi sự pha trộn, mở rộng thành trà trộn trong đám đông.",
+    "memory_tip_vi": "Nhớ qua cụm hoặc câu ví dụ chính của bài có 混.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là thành ngữ, tục ngữ hoặc tên riêng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "混合",
+        "pinyin": "hùnhé",
+        "meaning_vi": "trộn hợp",
+        "difference_vi": "trung tính hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冒充",
+        "pinyin": "màochōng",
+        "meaning_vi": "giả mạo",
+        "difference_vi": "nhấn giả làm ai/cái gì",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": [
+          "分清",
+          "",
+          "phân biệt rõ",
+          ""
+        ],
+        "pinyin": "",
+        "meaning_vi": "",
+        "notes": []
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "05838eca-4d51-4168-b8c8-2d9512827477",
+      "order": 1,
+      "zh": "混在一起",
+      "pinyin": "",
+      "vi": "trộn/lẫn vào nhau",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "74451655-8d95-452b-99fe-538994902671",
+      "order": 2,
+      "zh": "混进乐队",
+      "pinyin": "",
+      "vi": "trà trộn vào ban nhạc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3b8526c7-288a-40a1-9b58-9f2f4abc40a6",
+      "order": 3,
+      "zh": "混日子",
+      "pinyin": "",
+      "vi": "sống/làm qua ngày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ac26bca-5083-437e-802d-21f2dbc83cf4",
+      "order": 4,
+      "zh": "混不下去",
+      "pinyin": "",
+      "vi": "không thể tiếp tục trà trộn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0e377b6a-cf2d-4d19-91d7-f7f901354045",
+      "order": 1,
+      "zh": "南郭先生混在乐队里。",
+      "pinyin": "Nán Guō xiānsheng hùn zài yuèduì lǐ.",
+      "vi": "Nam Quách trà trộn trong ban nhạc.",
+      "analysis_vi": "混在……里 = lẫn/trà trộn vào.",
+      "highlight": [
+        "混"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dddd2f66-06a7-496a-b98e-b1c6f87ebf7f"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a0c951f0-1327-49f3-820d-dcefbda7d27c",
+      "order": 2,
+      "zh": "既然国王的儿子要一个人一个人地听，南郭先生就再也混不下去了。",
+      "pinyin": "Jìrán guówáng de érzi yào yí ge rén yí ge rén de tīng, Nán Guō xiānsheng jiù zài yě hùn bú xiàqù le.",
+      "vi": "Đã phải nghe từng người một, Nam Quách không thể tiếp tục trà trộn nữa.",
+      "analysis_vi": "混不下去 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "混"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "dddd2f66-06a7-496a-b98e-b1c6f87ebf7f"
+      ],
+      "source_ref": "",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "混日子 mang sắc thái chê: sống/làm qua ngày, không nghiêm túc.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9972ebde-910b-4041-9ad7-d873570606eb",
+      "order": 1,
+      "rule_vi": "混 nói về người thường có sắc thái tiêu cực.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "混",
+    "back": "trộn lẫn; trà trộn; sống qua ngày",
+    "hint": "hùn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_07",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "dddd2f66-06a7-496a-b98e-b1c6f87ebf7f",
+    "source_lesson_vocab_id": null
+  }
+}

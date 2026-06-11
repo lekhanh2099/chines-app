@@ -1,0 +1,56 @@
+{
+  "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "罗兰",
+      "pinyin": "Luólán",
+      "meaning_vi": "Roland / La Lan",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "玛丽",
+      "pinyin": "Mǎlì",
+      "meaning_vi": "Mary",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "大山",
+      "pinyin": "Dàshān",
+      "meaning_vi": "Dashan",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "41894f87-dcc8-4f67-b1b8-b992eca7af65",
+      "type": "proper_noun",
+      "order": 4,
+      "hanzi": "爱德华",
+      "pinyin": "Àidéhuá",
+      "meaning_vi": "Edward",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ],
+  "note_vi": "Bảng 专名 trong sách chỉ ghi 大山; 罗兰、玛丽、爱德华 là tên nhân vật xuất hiện trong bài khóa, giữ để app tra cứu."
+}

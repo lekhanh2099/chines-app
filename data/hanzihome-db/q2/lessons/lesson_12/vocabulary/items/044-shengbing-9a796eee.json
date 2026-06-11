@@ -1,0 +1,360 @@
+{
+  "id": "b132872b-0939-4247-8b1f-8938af073ced",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "生病",
+  "pinyin": "shēngbìng",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Cụm động từ",
+    "raw_cn": "",
+    "normalized": "verb_phrase",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "work_psychology"
+  ],
+  "meaning": {
+    "hanviet": "sinh bệnh",
+    "meaning_vi": "bị bệnh, ốm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bị bệnh, ốm"
+    ],
+    "short_definition_vi": "bị bệnh, ốm",
+    "textbook_focus_vi": "bị bệnh, ốm",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "生",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sinh, sống, phát sinh",
+        "modern_logic_vi": "生 là phát sinh/sống.",
+        "warning_vi": "Không tách sâu nếu không chắc hình thể giản thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "病",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "bệnh",
+            "meaning_vi": "bệnh tật",
+            "position_vi": "ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch/Bệnh",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "疒 được xử lý là bộ thủ hoặc biến thể bộ thủ trong phân tích chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丙",
+            "hanviet": "bính",
+            "meaning_vi": "thành phần âm",
+            "position_vi": "trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bệnh, ốm, vấn đề",
+        "modern_logic_vi": "病 là bệnh tật.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "生病 = phát sinh bệnh trong người, bị ốm/bệnh.",
+    "memory_tip_vi": "生病 = phát sinh bệnh trong người, bị ốm/bệnh.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "得病",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mắc bệnh, có thể nghiêm trọng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "患病",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mắc bệnh, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "感冒",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cảm cúm/cảm lạnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "不舒服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không khỏe, nhẹ hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "好了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khỏi rồi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "身体健康",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cơ thể khỏe mạnh",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "生病",
+        "right": "好了",
+        "meaning_vi": "",
+        "note_vi": "bị bệnh ↔ khỏi rồi",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6b8f6e02-62f3-4b7b-81e4-83061ae93ea3",
+      "order": 1,
+      "zh": "生病了",
+      "pinyin": "",
+      "vi": "bị bệnh rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "43469bb3-b682-4079-9008-0aecaae68419",
+      "order": 2,
+      "zh": "因为生病",
+      "pinyin": "",
+      "vi": "vì bị bệnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "49b06577-9225-4728-9660-0e7f353f9142",
+      "order": 3,
+      "zh": "生病期间",
+      "pinyin": "",
+      "vi": "trong thời gian bị bệnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3750f281-4593-4d4e-b6ec-c804c9b0d7ce",
+      "order": 4,
+      "zh": "容易生病",
+      "pinyin": "",
+      "vi": "dễ bị bệnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c2cadd8-3c16-4f43-8dd8-122fa74512f4",
+      "order": 5,
+      "zh": "生病请假",
+      "pinyin": "",
+      "vi": "bị bệnh xin nghỉ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "52a82a3c-587c-4ac7-acc4-f2555e1a6821",
+      "order": 1,
+      "zh": "老板今天生病了。",
+      "pinyin": "",
+      "vi": "Hôm nay ông chủ bị bệnh rồi.",
+      "analysis_vi": "生病了 báo tình huống mới.",
+      "highlight": [
+        "生病"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b132872b-0939-4247-8b1f-8938af073ced"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "334581ac-3e95-479d-a503-7c82430d9811",
+      "order": 2,
+      "zh": "老板生病的事你知道了吗？",
+      "pinyin": "",
+      "vi": "Chuyện ông chủ bị bệnh bạn biết chưa?",
+      "analysis_vi": "老板生病的事 là chủ đề lớn.",
+      "highlight": [
+        "生病"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b132872b-0939-4247-8b1f-8938af073ced"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "Xin nghỉ vì bệnh có thể nói 我生病了，想请假.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a91c25d9-f758-453d-96e9-2ec3469b4659",
+      "order": 1,
+      "rule_vi": "生病 là động từ ly hợp; không thêm tân ngữ bệnh cụ thể trực tiếp phía sau.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我生病感冒了。",
+          "pinyin": "",
+          "vi": "Không tự nhiên.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我感冒了。",
+          "pinyin": "",
+          "vi": "Tôi bị cảm rồi.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我生病了。",
+          "pinyin": "",
+          "vi": "Tôi bị bệnh rồi.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "生病",
+    "back": "bị bệnh, ốm",
+    "hint": "shēngbìng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "work_psychology"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b132872b-0939-4247-8b1f-8938af073ced",
+    "source_lesson_vocab_id": null
+  }
+}

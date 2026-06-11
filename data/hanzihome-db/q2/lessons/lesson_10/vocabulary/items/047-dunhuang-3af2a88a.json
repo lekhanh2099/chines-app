@@ -1,0 +1,496 @@
+{
+  "id": "db173100-0be9-4e57-9f99-1045ce9c24f6",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "敦煌",
+  "pinyin": "Dūnhuáng",
+  "pos": {
+    "raw_vi": "Tên riêng địa danh",
+    "raw_cn": "专名/地名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson-10",
+    "deep-vocab",
+    "proper-name"
+  ],
+  "meaning": {
+    "hanviet": "Đôn Hoàng",
+    "meaning_vi": "Đôn Hoàng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Đôn Hoàng"
+    ],
+    "short_definition_vi": "Đôn Hoàng",
+    "textbook_focus_vi": "Nghĩa chính trong Bài 10 Quyển 2.",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "敦",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "động tác đánh/tác động",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "động tác đánh/tác động",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ Phộc trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "động tác đánh/tác động",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ Phộc trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "煌",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "火 được dùng như bộ Hỏa trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "火 là thành phần/bộ thủ nhận diện được trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "火 được dùng như bộ Hỏa trong chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Đây là tên riêng địa danh, không chiết tự để học nghĩa hiện đại. Cần nhớ: 敦煌 = một địa danh văn hóa – lịch sử cực nổi tiếng. Cảnh báo: Đừng phân tích từng chữ 敦 / 煌 để suy nghĩa du lịch hiện đại. Nó là tên riêng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "敦煌",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Đôn Hoàng, nổi tiếng văn hóa Phật giáo và Con đường Tơ lụa.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "西安",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tây An, cố đô.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "故宫",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Cố Cung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长城",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Trường Thành.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "Ví dụ",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "我去过西安，但是没去过敦煌。",
+      "Tôi từng đi Tây An, nhưng chưa từng đi Đôn Hoàng.",
+      "敦煌的历史很有意思。",
+      "Lịch sử Đôn Hoàng rất thú vị."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d94a756f-0f99-4cd0-94e2-141873f0089a",
+      "order": 1,
+      "zh": "去敦煌",
+      "pinyin": "",
+      "vi": "đi Đôn Hoàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "1846b048-f8b8-4bfd-b944-12cff9e91539",
+      "order": 2,
+      "zh": "敦煌旅游",
+      "pinyin": "",
+      "vi": "du lịch Đôn Hoàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "0907d399-e592-4eec-81fd-36d514525695",
+      "order": 3,
+      "zh": "敦煌壁画",
+      "pinyin": "",
+      "vi": "bích họa Đôn Hoàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "167ec75e-d607-45de-8cd4-365ead2ace2a",
+      "order": 4,
+      "zh": "敦煌文化",
+      "pinyin": "",
+      "vi": "văn hóa Đôn Hoàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "9e430799-5113-4cb4-ad4a-10e7589b6c39",
+      "order": 5,
+      "zh": "第一次去敦煌",
+      "pinyin": "",
+      "vi": "lần đầu đi Đôn Hoàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    },
+    {
+      "id": "0cea425d-a2f7-453c-86f0-478bed4d130d",
+      "order": 6,
+      "zh": "没去过敦煌",
+      "pinyin": "",
+      "vi": "chưa từng đi Đôn Hoàng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [
+        "hanyu2",
+        "lesson-10",
+        "deep-vocab",
+        "proper-name"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dd97517e-fdb7-482a-8f6e-4a6efa95e2b9",
+      "order": 1,
+      "zh": "我没去过敦煌。",
+      "pinyin": "Wǒ méi qù guo Dūnhuáng.",
+      "vi": "Tôi chưa từng đi Đôn Hoàng.",
+      "analysis_vi": "没去过 = chưa từng đi.",
+      "highlight": [
+        "敦煌"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "db173100-0be9-4e57-9f99-1045ce9c24f6"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "07405011-596a-44c9-845f-3e18f0e33735",
+      "order": 2,
+      "zh": "我曾经看过一次敦煌壁画的展览。",
+      "pinyin": "Wǒ céngjīng kàn guo yí cì Dūnhuáng bìhuà de zhǎnlǎn.",
+      "vi": "Tôi từng xem một lần triển lãm bích họa Đôn Hoàng.",
+      "analysis_vi": "曾经看过一次 = đã từng xem một lần. 展览 = triển lãm.",
+      "highlight": [
+        "敦煌"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "db173100-0be9-4e57-9f99-1045ce9c24f6"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9d1a32ac-bac6-446f-ac8c-4dd4ab4e2102",
+      "order": 3,
+      "zh": "第一次听老师介绍敦煌的时候，我以为它只是一个很远的地方，后来才知道那里有很多有名的文物和壁画。",
+      "pinyin": "Dì yī cì tīng lǎoshī jièshào Dūnhuáng de shíhou, wǒ yǐwéi tā zhǐshì yí ge hěn yuǎn de dìfang, hòulái cái zhīdào nàlǐ yǒu hěn duō yǒumíng de wénwù hé bìhuà.",
+      "vi": "Lần đầu nghe thầy/cô giới thiệu Đôn Hoàng, tôi tưởng nó chỉ là một nơi rất xa, sau đó mới biết ở đó có rất nhiều văn vật và bích họa nổi tiếng.",
+      "analysis_vi": "第一次听 = lần đầu nghe. 以为……后来才知道…… = tưởng là..., sau đó mới biết....",
+      "highlight": [
+        "敦煌"
+      ],
+      "grammar_refs": [
+        "grammar-10-b6952e96"
+      ],
+      "vocab_refs": [
+        "db173100-0be9-4e57-9f99-1045ce9c24f6"
+      ],
+      "source_ref": "thread_current_lesson_10",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "3e2c39a8-b99d-4dca-a1cc-44dfd5a3e502",
+      "order": 1,
+      "rule_vi": "Hỏi kinh nghiệm:",
+      "natural_examples": [
+        {
+          "zh": "你去过敦煌吗？",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我没去过敦煌。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我看过敦煌的展览。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Hỏi kinh nghiệm: 你去过敦煌吗？ Nói chưa từng: 我没去过敦煌。 Nếu chỉ từng xem triển lãm về Đôn Hoàng, nói: 我看过敦煌的展览。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "敦煌",
+    "back": "Đôn Hoàng",
+    "hint": "Dūnhuáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson-10",
+      "deep-vocab",
+      "proper-name"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "敦煌 là điểm then chốt trên Con đường Tơ lụa. Nhắc đến Đôn Hoàng thường nghĩ đến 莫高窟 và tranh bích họa. Đây là địa danh có màu văn hóa – lịch sử rất mạnh, không chỉ là nơi du lịch.",
+    "tags": [
+      "culture",
+      "hanyu2",
+      "lesson-10"
+    ],
+    "source_refs": [
+      "thread_current_lesson_10"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "db173100-0be9-4e57-9f99-1045ce9c24f6",
+    "source_lesson_vocab_id": null
+  }
+}

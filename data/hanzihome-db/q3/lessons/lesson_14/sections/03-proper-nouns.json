@@ -1,0 +1,31 @@
+{
+  "id": "d4ba1ba0-d319-4505-ad07-6b63d68e5853",
+  "type": "proper_nouns",
+  "order": 3,
+  "title": "专名",
+  "title_vi": "Tên riêng",
+  "source_origin": "textbook_pdf_crosschecked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "3fc549d1-9923-4455-9bec-8b2950f94813",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "吕",
+      "pinyin": "Lǚ",
+      "meaning_vi": "họ Lữ, một họ của người Trung Quốc",
+      "meaning_en": "a Chinese surname",
+      "pos": "Tên riêng",
+      "pos_detail": {
+        "vi": "Tên riêng",
+        "cn": "专名",
+        "normalized": "proper_noun",
+        "schema_compatible_pos": "proper_noun",
+        "is_separable_verb": false,
+        "notes": []
+      },
+      "source_origin": "textbook_pdf_crosschecked",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "id": "b7ba7540-1ba3-4b2d-befd-279f61d63025",
+  "type": "deep_vocabulary_item",
+  "order": 46,
+  "hanzi": "控制",
+  "pinyin": "kòngzhì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "khống chế",
+    "meaning_vi": "kiểm soát, khống chế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kiểm soát",
+      "khống chế"
+    ],
+    "short_definition_vi": "kiểm soát, khống chế",
+    "textbook_focus_vi": "控制 là nắm và giữ trong giới hạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "控",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ đứng",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, hành động bằng tay",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, hành động bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ đứng",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, hành động bằng tay",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "扌 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "空",
+            "hanviet": "không",
+            "meaning_vi": "trống/không; thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "空 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điều khiển, kiểm soát",
+        "modern_logic_vi": "Trong từ “控制”, chữ “控” góp phần vào trường nghĩa: điều khiển, kiểm soát",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "制",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "刀",
+          "radical_variant": "刂",
+          "radical_name_vi": "bộ Đao đứng",
+          "radical_name_zh": "",
+          "hanviet": "đao",
+          "meaning_vi": "dao, cắt",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "刂 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "刂",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao đứng",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao, cắt",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "刂 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "刂 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chế định, khống chế",
+        "modern_logic_vi": "Trong từ “控制”, chữ “制” góp phần vào trường nghĩa: chế định, khống chế",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "控制 là nắm và giữ trong giới hạn.",
+    "memory_tip_vi": "控制 là nắm và giữ trong giới hạn.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "克制",
+        "pinyin": "",
+        "meaning_vi": "kiềm chế bản thân/cảm xúc",
+        "difference_vi": "kiềm chế bản thân/cảm xúc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "管理",
+        "pinyin": "",
+        "meaning_vi": "quản lý có hệ thống",
+        "difference_vi": "quản lý có hệ thống",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4597a790-432c-45cd-9220-beb09a1434e9",
+      "order": 1,
+      "zh": "控制自己",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8f5d3228-b060-4d6f-b69a-319aec241e62",
+      "order": 2,
+      "zh": "控制不住",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d88a6bc-9c4f-491b-965e-d25716eabaac",
+      "order": 3,
+      "zh": "控制情绪",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b0d02614-116f-4177-b191-3d19ad6702cc",
+      "order": 4,
+      "zh": "控制速度",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "25f6ebaa-3953-4d6f-9dba-373d3b0323e9",
+      "order": 1,
+      "zh": "你要控制自己的情绪。",
+      "pinyin": "",
+      "vi": "Bạn phải kiểm soát cảm xúc của mình.",
+      "analysis_vi": "控制情绪.",
+      "highlight": [
+        "控制"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7ba7540-1ba3-4b2d-befd-279f61d63025"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8ecc73ea-e2e7-49d4-b485-21d7f1e047b9",
+      "order": 2,
+      "zh": "他实在控制不住自己了。",
+      "pinyin": "",
+      "vi": "Anh ấy thật sự không kiểm soát nổi mình nữa.",
+      "analysis_vi": "V 不住 = không giữ nổi.",
+      "highlight": [
+        "控制"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7ba7540-1ba3-4b2d-befd-279f61d63025"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "控制 là nắm và giữ trong giới hạn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b090268d-7180-4504-b173-ed562ce6756c",
+      "order": 1,
+      "rule_vi": "控制不住 là đã cố nhưng không giữ nổi; mạnh hơn 不能控制 chung chung.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "控制不住 là đã cố nhưng không giữ nổi; mạnh hơn 不能控制 chung chung.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "控制",
+    "back": "kiểm soát, khống chế",
+    "hint": "kòngzhì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7ba7540-1ba3-4b2d-befd-279f61d63025",
+    "source_lesson_vocab_id": null
+  }
+}

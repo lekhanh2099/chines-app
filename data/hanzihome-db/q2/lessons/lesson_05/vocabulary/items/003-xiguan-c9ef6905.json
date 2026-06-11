@@ -1,0 +1,258 @@
+{
+  "id": "6fa81e5b-c955-46e6-9e4a-a34657b1c3b7",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "习惯",
+  "pinyin": "xíguàn",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "tập quán",
+    "meaning_vi": "quen; thói quen",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "quen; thói quen",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "习",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, luyện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "惯",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "贯",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quen",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Do lặp lại nhiều lần mà thành trạng thái quen trong hành vi/tâm lý.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "适应",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "thích nghi, nhấn quá trình",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "熟悉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quen thuộc/biết rõ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4caa5809-3798-4fe0-b617-f689567bf15d",
+      "order": 1,
+      "zh": "习惯这里的生活",
+      "pinyin": "",
+      "vi": "quen cuộc sống ở đây",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "088feb2c-c7a5-4a8d-b717-2ee2fe1c50c8",
+      "order": 2,
+      "zh": "生活习惯",
+      "pinyin": "",
+      "vi": "thói quen sinh hoạt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "940c2534-253f-48d2-af12-b9c9cd6f1bd3",
+      "order": 3,
+      "zh": "慢慢习惯",
+      "pinyin": "",
+      "vi": "dần dần quen",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "943a2ac3-b4eb-434b-9be5-2dde6963d0ed",
+      "order": 1,
+      "zh": "你习惯这里的饭菜了吗？",
+      "pinyin": "Nǐ xíguàn zhèlǐ de fàncài le ma?",
+      "vi": "Bạn đã quen đồ ăn ở đây chưa?",
+      "en": "",
+      "highlight": [
+        "习惯"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6fa81e5b-c955-46e6-9e4a-a34657b1c3b7"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "习惯了吗？ là câu xã giao tự nhiên với người mới đến.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "26d6b780-cb45-44dd-88f7-26b78b125958",
+      "order": 1,
+      "title_vi": "Không dùng cho quen biết người",
+      "explanation_vi": "Quen biết ai là 认识.",
+      "wrong_examples": [
+        "我习惯他。"
+      ],
+      "correct_examples": [
+        "我认识他。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "习惯",
+    "back": "quen; thói quen",
+    "hint": "xíguàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "习惯"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6fa81e5b-c955-46e6-9e4a-a34657b1c3b7",
+    "source_lesson_vocab_id": null
+  }
+}

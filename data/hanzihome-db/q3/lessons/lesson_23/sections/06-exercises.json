@@ -1,0 +1,1120 @@
+{
+  "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+  "type": "exercises",
+  "order": 6,
+  "title": "练习",
+  "title_vi": "Bài tập trong sách",
+  "source_origin": "textbook/reference_checked",
+  "check_needed": false,
+  "coverage_contract": {
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "coverage_status": "complete_verified",
+    "note": "Exercise prompts checked against PDF printed pages 160-173; closed-form answer keys cross-checked against available reference answer source where applicable."
+  },
+  "items": [
+    {
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+      "type": "phonetics",
+      "variant": "pronunciation_tone_minimal_pairs",
+      "order": 1,
+      "title": "一、语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+        "zh": "辨音辨调；朗读。",
+        "vi": "Phân biệt âm/thanh điệu; đọc thành tiếng."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "pronunciation",
+        "listening"
+      ],
+      "parts": [
+        {
+          "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
+          "type": "minimal_pair_group",
+          "title": "辨音辨调",
+          "items": [
+            {
+              "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+              "left": "同行 tóngháng",
+              "right": "懂行 dǒngháng",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+              "left": "原子 yuánzǐ",
+              "right": "院子 yuànzi",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+              "left": "意愿 yìyuàn",
+              "right": "医院 yīyuàn",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+              "left": "制订 zhìdìng",
+              "right": "指定 zhǐdìng",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+              "left": "作为 zuòwéi",
+              "right": "座位 zuòwèi",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+              "left": "无数 wúshù",
+              "right": "武术 wǔshù",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
+              "left": "之间 zhī jiān",
+              "right": "只见 zhǐ jiàn",
+              "audio_keys": [],
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
+          "type": "proverb_reading",
+          "title": "朗读",
+          "items": [
+            {
+              "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+              "text": "机不可失，时不再来。",
+              "pinyin": "Jī bùkě shī, shí bú zài lái.",
+              "vi": "Cơ hội không thể bỏ lỡ, thời gian qua rồi không trở lại.",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+              "text": "不怕慢，只怕站。",
+              "pinyin": "Bú pà màn, zhǐ pà zhàn.",
+              "vi": "Không sợ chậm, chỉ sợ đứng yên.",
+              "source_origin": "textbook",
+              "check_needed": false
+            },
+            {
+              "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
+              "text": "学而不思则罔，思而不学则殆。",
+              "pinyin": "Xué ér bù sī zé wǎng, sī ér bù xué zé dài.",
+              "vi": "Học mà không nghĩ thì mờ mịt; nghĩ mà không học thì nguy hiểm.",
+              "source_origin": "textbook",
+              "check_needed": false
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.phonetics.v2",
+        "show_answer_after_submit": false
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "read_aloud",
+      "variant": "word_phrase_sentence_chunks",
+      "order": 2,
+      "title": "二、词语",
+      "title_vi": "Đọc cụm từ",
+      "instruction": {
+        "zh": "读下列词语。",
+        "vi": "Đọc các cụm từ sau."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "speaking",
+        "vocabulary"
+      ],
+      "chunks": [
+        {
+          "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+          "text": "现代教育",
+          "pinyin": "xiàndài jiàoyù",
+          "vi": "giáo dục hiện đại",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+          "text": "网络教育",
+          "pinyin": "wǎngluò jiàoyù",
+          "vi": "giáo dục qua mạng",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+          "text": "接受教育",
+          "pinyin": "jiēshòu jiàoyù",
+          "vi": "tiếp nhận giáo dục",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+          "text": "有关问题",
+          "pinyin": "yǒuguān wèntí",
+          "vi": "vấn đề liên quan",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "9e310873-3483-4086-91b4-53e6c4982438",
+          "text": "有关国家",
+          "pinyin": "yǒuguān guójiā",
+          "vi": "quốc gia liên quan",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+          "text": "有关情况",
+          "pinyin": "yǒuguān qíngkuàng",
+          "vi": "tình hình liên quan",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+          "text": "很遗憾",
+          "pinyin": "hěn yíhàn",
+          "vi": "rất tiếc",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+          "text": "真遗憾",
+          "pinyin": "zhēn yíhàn",
+          "vi": "thật tiếc",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+          "text": "非常遗憾",
+          "pinyin": "fēicháng yíhàn",
+          "vi": "vô cùng tiếc",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+          "text": "增进友谊",
+          "pinyin": "zēngjìn yǒuyì",
+          "vi": "tăng cường tình hữu nghị",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+          "text": "增进了解",
+          "pinyin": "zēngjìn liǎojiě",
+          "vi": "tăng thêm sự hiểu biết",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+          "text": "增进团结",
+          "pinyin": "zēngjìn tuánjié",
+          "vi": "tăng cường đoàn kết",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+          "text": "选择学校",
+          "pinyin": "xuǎnzé xuéxiào",
+          "vi": "chọn trường",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+          "text": "选择专业",
+          "pinyin": "xuǎnzé zhuānyè",
+          "vi": "chọn chuyên ngành",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+          "text": "选择工作",
+          "pinyin": "xuǎnzé gōngzuò",
+          "vi": "chọn công việc",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.read_aloud.v2"
+      },
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+        "zh": "选词填空。",
+        "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": [
+        "vocabulary",
+        "grammar"
+      ],
+      "word_bank": [
+        "选择",
+        "遗憾",
+        "作为",
+        "有关",
+        "自豪",
+        "开办",
+        "增进",
+        "申请",
+        "按照",
+        "无数",
+        "信息",
+        "之间"
+      ],
+      "questions": [
+        {
+          "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "type": "fill_blank",
+          "prompt": "我们已经进入了一个____时代。",
+          "answer": "信息",
+          "acceptable_answers": [
+            "信息"
+          ],
+          "explanation_vi": "Chúng ta đã bước vào một thời đại thông tin.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "type": "fill_blank",
+          "prompt": "我对____多媒体的知识知道得还不太多。",
+          "answer": "有关",
+          "acceptable_answers": [
+            "有关"
+          ],
+          "explanation_vi": "Tôi biết chưa nhiều về kiến thức liên quan đến đa phương tiện.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "type": "fill_blank",
+          "prompt": "____学校的要求，我们不但要学习汉语，还要学习中国文化。",
+          "answer": "按照",
+          "acceptable_answers": [
+            "按照"
+          ],
+          "explanation_vi": "Theo yêu cầu của nhà trường, chúng tôi không những phải học tiếng Hán mà còn phải học văn hóa Trung Quốc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "type": "fill_blank",
+          "prompt": "一个人的一生都在____，选择学校、选择工作、选择爱人等。",
+          "answer": "选择",
+          "acceptable_answers": [
+            "选择"
+          ],
+          "explanation_vi": "Cả đời người đều đang lựa chọn: chọn trường, chọn công việc, chọn người yêu, v.v.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "type": "fill_blank",
+          "prompt": "我已经向学校提出____，想再延长一年。",
+          "answer": "申请",
+          "acceptable_answers": [
+            "申请"
+          ],
+          "explanation_vi": "Tôi đã nộp đơn xin nhà trường, muốn gia hạn thêm một năm.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "type": "fill_blank",
+          "prompt": "____一个大夫，我要对病人负责。",
+          "answer": "作为",
+          "acceptable_answers": [
+            "作为"
+          ],
+          "explanation_vi": "Với tư cách là một bác sĩ, tôi phải chịu trách nhiệm với bệnh nhân.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "type": "fill_blank",
+          "prompt": "这个大学已经有一百多年的历史了，一百多年来他们为社会培养了____人才。",
+          "answer": "无数",
+          "acceptable_answers": [
+            "无数"
+          ],
+          "explanation_vi": "Trường đại học này đã có hơn một trăm năm lịch sử; hơn một trăm năm qua họ đã đào tạo vô số nhân tài cho xã hội.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "105a0775-7adb-418e-b770-133481e26360",
+          "type": "fill_blank",
+          "prompt": "我为有这样的学生而感到____。",
+          "answer": "自豪",
+          "acceptable_answers": [
+            "自豪"
+          ],
+          "explanation_vi": "Tôi cảm thấy tự hào vì có những học sinh như vậy.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "type": "fill_blank",
+          "prompt": "这次回国，没有见到我的导师张教授，感到十分____。",
+          "answer": "遗憾",
+          "acceptable_answers": [
+            "遗憾"
+          ],
+          "explanation_vi": "Lần này về nước, không gặp được người hướng dẫn là Giáo sư Trương, tôi cảm thấy vô cùng tiếc.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "type": "fill_blank",
+          "prompt": "我们学校暑假____了一个科技夏令营。",
+          "answer": "开办",
+          "acceptable_answers": [
+            "开办"
+          ],
+          "explanation_vi": "Trường chúng tôi đã mở một trại hè khoa học-kỹ thuật vào kỳ nghỉ hè.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
+          "type": "fill_blank",
+          "prompt": "我们想通过这种方式____同学们之间的了解和友谊。",
+          "answer": "增进",
+          "acceptable_answers": [
+            "增进"
+          ],
+          "explanation_vi": "Chúng tôi muốn thông qua cách này để tăng thêm sự hiểu biết và tình bạn giữa các bạn học.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
+          "type": "fill_blank",
+          "prompt": "我们两国人民____有着传统的友谊。",
+          "answer": "之间",
+          "acceptable_answers": [
+            "之间"
+          ],
+          "explanation_vi": "Giữa nhân dân hai nước chúng ta có tình hữu nghị truyền thống.",
+          "grading": {
+            "mode": "exact"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "answer_key": [
+        {
+          "question_id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
+          "answer": "信息",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
+          "answer": "有关",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
+          "answer": "按照",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
+          "answer": "选择",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
+          "answer": "申请",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
+          "answer": "作为",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
+          "answer": "无数",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "105a0775-7adb-418e-b770-133481e26360",
+          "answer": "自豪",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
+          "answer": "遗憾",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
+          "answer": "开办",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
+          "answer": "增进",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "question_id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
+          "answer": "之间",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.fill_blank.word_bank.v2",
+        "show_word_bank": true,
+        "show_answer_after_submit": true
+      },
+      "source_origin": "textbook_reference_checked",
+      "check_needed": false
+    },
+    {
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
+      "order": 4,
+      "title": "四、用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+        "zh": "用括号里的词语完成句子。",
+        "vi": "Dùng từ/cụm trong ngoặc hoàn thành câu."
+      },
+      "questions": [
+        {
+          "id": "668ef942-39b3-4816-be06-f347b64fa456",
+          "prompt": "这份快递我已经写好地址了，你________________。",
+          "given_word": "只需",
+          "sample_answer": "你只需把它寄出去就可以了。",
+          "acceptable_answers": [
+            "你只需把它寄出去就可以了。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "sample_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Nǐ zhǐxū bǎ tā jì chūqù jiù kěyǐ le.",
+          "sample_answer_vi": "Bạn chỉ cần gửi nó đi là được."
+        },
+        {
+          "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+          "prompt": "我每天都会收到许多电子邮件，________________。",
+          "given_word": "其中",
+          "sample_answer": "其中有老师发来的通知，有同学交来的作业，还有朋友发来的信。",
+          "acceptable_answers": [
+            "其中有老师发来的通知，有同学交来的作业，还有朋友发来的信。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "sample_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Qízhōng yǒu lǎoshī fā lái de tōngzhī, yǒu tóngxué jiāo lái de zuòyè, hái yǒu péngyou fā lái de xìn.",
+          "sample_answer_vi": "Trong đó có thông báo giáo viên gửi đến, bài tập bạn học nộp lên, và thư bạn bè gửi đến."
+        },
+        {
+          "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+          "prompt": "我来中国不是为了学汉语，________________。",
+          "given_word": "而是",
+          "sample_answer": "而是为了了解中国文化。",
+          "acceptable_answers": [
+            "而是为了了解中国文化。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "sample_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Ér shì wèile liǎojiě Zhōngguó wénhuà.",
+          "sample_answer_vi": "Mà là để tìm hiểu văn hóa Trung Quốc."
+        },
+        {
+          "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+          "prompt": "________________________________，我为自己没能参加这次比赛而感到遗憾。",
+          "given_word": "作为",
+          "sample_answer": "作为一名运动员，我为自己没能参加这次比赛而感到遗憾。",
+          "acceptable_answers": [
+            "作为一名运动员，我为自己没能参加这次比赛而感到遗憾。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "sample_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Zuòwéi yì míng yùndòngyuán, wǒ wèi zìjǐ méi néng cānjiā zhè cì bǐsài ér gǎndào yíhàn.",
+          "sample_answer_vi": "Là một vận động viên, tôi cảm thấy tiếc vì mình không thể tham gia cuộc thi lần này."
+        },
+        {
+          "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+          "prompt": "我________________，也没有读过他的书。",
+          "given_word": "既",
+          "sample_answer": "我既没有见过他，也没有读过他的书。",
+          "acceptable_answers": [
+            "我既没有见过他，也没有读过他的书。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "sample_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Wǒ jì méiyǒu jiàn guo tā, yě méiyǒu dú guo tā de shū.",
+          "sample_answer_vi": "Tôi chưa từng gặp ông ấy, cũng chưa từng đọc sách của ông ấy."
+        },
+        {
+          "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+          "prompt": "他的性格________________。",
+          "given_word": "适合",
+          "sample_answer": "他的性格适合做老师。",
+          "acceptable_answers": [
+            "他的性格适合做老师。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "sample_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Tā de xìnggé shìhé zuò lǎoshī.",
+          "sample_answer_vi": "Tính cách của anh ấy phù hợp làm giáo viên."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_sentence.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_sample_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "complete_dialogue",
+      "variant": "complete_dialogue",
+      "order": 5,
+      "title": "五、用括号里的词语完成会话",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+      "instruction": {
+        "zh": "用括号里的词语完成会话。",
+        "vi": "Dùng từ/cụm trong ngoặc hoàn thành hội thoại."
+      },
+      "questions": [
+        {
+          "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+          "prompt": "A：你每周应该上多少节课？\nB：________________________________。",
+          "given_word": "按照",
+          "sample_answer": "按照学校的要求，我每周应该上五节课。",
+          "acceptable_answers": [
+            "按照学校的要求，我每周应该上五节课。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Ànzhào xuéxiào de yāoqiú, wǒ měi zhōu yīnggāi shàng wǔ jié kè.",
+          "sample_answer_vi": "Theo yêu cầu của nhà trường, mỗi tuần tôi phải học/lên năm tiết."
+        },
+        {
+          "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+          "prompt": "A：中国有多少所大学？\nB：两千多所吧，________________________________。",
+          "given_word": "其中",
+          "sample_answer": "我的大学就是其中之一。",
+          "acceptable_answers": [
+            "我的大学就是其中之一。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Wǒ de dàxué jiù shì qízhōng zhī yī.",
+          "sample_answer_vi": "Trường đại học của tôi là một trong số đó."
+        },
+        {
+          "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+          "prompt": "A：你 HSK 考得怎么样？\nB：还可以，________________________________。",
+          "given_word": "通过",
+          "sample_answer": "我通过了。",
+          "acceptable_answers": [
+            "我通过了。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Wǒ tōngguò le.",
+          "sample_answer_vi": "Tôi đã thi đậu rồi."
+        },
+        {
+          "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+          "prompt": "A：你现在的听力水平比过去有很大提高。\nB：哪里，我觉得有的发音________________________________。",
+          "given_word": "分辨",
+          "sample_answer": "还是很难分辨。",
+          "acceptable_answers": [
+            "还是很难分辨。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Háishi hěn nán fēnbiàn.",
+          "sample_answer_vi": "Vẫn rất khó phân biệt."
+        },
+        {
+          "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+          "prompt": "A：你来中国以后都去过什么地方？\nB：我这个人不爱动，来中国半年多了，____________________________。",
+          "given_word": "既……也……",
+          "sample_answer": "既没有去过北京，也没有去过上海。",
+          "acceptable_answers": [
+            "既没有去过北京，也没有去过上海。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Jì méiyǒu qù guo Běijīng, yě méiyǒu qù guo Shànghǎi.",
+          "sample_answer_vi": "Tôi chưa từng đi Bắc Kinh, cũng chưa từng đi Thượng Hải."
+        },
+        {
+          "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+          "prompt": "A：学校组织我们去西安旅行，你报名了吗？\nB：报了，我觉得这样的活动可以________________，所以我很愿意参加。",
+          "given_word": "增进",
+          "sample_answer": "增进同学们之间的关系。",
+          "acceptable_answers": [
+            "增进同学们之间的关系。",
+            "增进同学们之间的了解和友谊。"
+          ],
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "sample_answer_pinyin": "Zēngjìn tóngxuémen zhījiān de guānxi.",
+          "sample_answer_vi": "Tăng cường mối quan hệ giữa các bạn học."
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.complete_dialogue.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_reference_checked",
+      "check_needed": false
+    },
+    {
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+      "type": "reorder_sentence",
+      "variant": "reorder_sentences_or_paragraph",
+      "order": 6,
+      "title": "六、连句成段",
+      "title_vi": "Sắp xếp câu thành đoạn",
+      "instruction": {
+        "zh": "连句成段。",
+        "vi": "Sắp xếp các câu thành đoạn văn."
+      },
+      "questions": [
+        {
+          "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+          "items": {
+            "A": "但应当看到网络发展的前途是不可限量的。",
+            "B": "虽然目前世界各国都还没有达到人人上网的程度。",
+            "C": "网络是当今社会通信交流的主要工具。",
+            "D": "虽然有的地区因为经济落后还没有享受到网络所带来的便利。"
+          },
+          "answer_order": [
+            "C",
+            "D",
+            "B",
+            "A"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "reference_answer_checked"
+        },
+        {
+          "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+          "items": {
+            "A": "你甚至可以不用出国，就能买到正常的法国香水。",
+            "B": "在现代社会中，它带给我们的便利是巨大的，没有使用过互联网的人，很难想象网络的好处。",
+            "C": "你能够在网上发信息、读书、看报、进行网络购物或网络办公。",
+            "D": "互联网（hùliánwǎng, Internet）就像传说中的百宝箱。"
+          },
+          "answer_order": [
+            "D",
+            "C",
+            "A",
+            "B"
+          ],
+          "answer_verified": true,
+          "check_needed": false,
+          "source_origin": "reference_answer_checked"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.reorder_paragraph.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_reference_checked",
+      "check_needed": false
+    },
+    {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "correct_sentence",
+      "variant": "error_correction",
+      "order": 7,
+      "title": "七、改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+        "zh": "改错句。",
+        "vi": "Sửa câu sai."
+      },
+      "questions": [
+        {
+          "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+          "wrong_sentence": "昨天我去看京剧，连半支歌也听得不懂。",
+          "correct_sentence": "昨天我去看京剧，连一句也听不懂。",
+          "acceptable_answers": [
+            "昨天我去看京剧，连一句也听不懂。",
+            "昨天我去看京剧，连一句也没听懂。"
+          ],
+          "explanation_vi": "“半支歌”搭配不当；能力补语应说“听不懂”。",
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "correct_pinyin": "Zuótiān wǒ qù kàn jīngjù, lián yí jù yě tīng bù dǒng."
+        },
+        {
+          "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+          "wrong_sentence": "我的发烧终于好了点儿。",
+          "correct_sentence": "我终于退烧了。",
+          "acceptable_answers": [
+            "我终于退烧了。",
+            "我的烧终于退了。"
+          ],
+          "explanation_vi": "“发烧”是症状/动作，表示退烧应说“退烧了”或“烧退了”。",
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "correct_pinyin": "Wǒ zhōngyú tuì shāo le."
+        },
+        {
+          "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
+          "wrong_sentence": "作业难得我直有头疼。",
+          "correct_sentence": "作业难得我直头疼。",
+          "acceptable_answers": [
+            "作业难得我直头疼。"
+          ],
+          "explanation_vi": "“难得”作程度补语，后接“我直头疼”，不用“有”。",
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "correct_pinyin": "Zuòyè nán de wǒ zhí tóuténg."
+        },
+        {
+          "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
+          "wrong_sentence": "北京的公共汽车总是很挤满。",
+          "correct_sentence": "北京的公共汽车总是很挤。",
+          "acceptable_answers": [
+            "北京的公共汽车总是很挤。"
+          ],
+          "explanation_vi": "“挤”本身可作形容词，不能说“很挤满”。",
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "correct_pinyin": "Běijīng de gōnggòng qìchē zǒng shì hěn jǐ."
+        },
+        {
+          "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
+          "wrong_sentence": "每个月的最后我都没有了我的钱。",
+          "correct_sentence": "每到月末我的钱就都花完了。",
+          "acceptable_answers": [
+            "每到月末我的钱就都花完了。",
+            "每到月末我的钱就都花光了。"
+          ],
+          "explanation_vi": "“没有了我的钱” không tự nhiên; khi nói tiền đã dùng hết nên nói “钱都花完/花光了”.",
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "correct_pinyin": "Měi dào yuèmò wǒ de qián jiù dōu huā wán le."
+        },
+        {
+          "id": "6db3da52-2247-4991-a1d3-225528d56fff",
+          "wrong_sentence": "你把这篇课文看得懂吗？",
+          "correct_sentence": "这篇课文你看得懂吗？",
+          "acceptable_answers": [
+            "这篇课文你看得懂吗？"
+          ],
+          "explanation_vi": "可能补语“看得懂”一般不用把字句。",
+          "grading": {
+            "mode": "semantic"
+          },
+          "source_origin": "reference_answer_checked",
+          "answer_verified": true,
+          "check_needed": false,
+          "correct_pinyin": "Zhè piān kèwén nǐ kàn de dǒng ma?"
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.error_correction.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_reference_checked",
+      "check_needed": false
+    },
+    {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "custom",
+      "variant": "role_play",
+      "order": 8,
+      "title": "八、情景表达",
+      "title_vi": "Diễn đạt theo tình huống",
+      "instruction": {
+        "zh": "下列句子什么情景下说？下列情景怎么说？",
+        "vi": "Các câu sau dùng trong tình huống nào? Gặp tình huống sau thì nói thế nào?"
+      },
+      "parts": [
+        {
+          "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+          "title": "下列句子什么情景下说？",
+          "questions": [
+            {
+              "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+              "prompt": "这件事跟他无关。",
+              "sample_answer_vi": "Dùng khi muốn nói việc này không liên quan đến người đó.",
+              "source_origin": "sample_answer_checked",
+              "answer_verified": true,
+              "check_needed": false
+            },
+            {
+              "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+              "prompt": "我为有这样的朋友感到自豪。",
+              "sample_answer_vi": "Dùng khi muốn bày tỏ sự tự hào vì có một người bạn như vậy.",
+              "source_origin": "sample_answer_checked",
+              "answer_verified": true,
+              "check_needed": false
+            }
+          ]
+        },
+        {
+          "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+          "title": "下列情景怎么说？",
+          "questions": [
+            {
+              "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+              "prompt": "一位老奶奶不会用自动取款机取钱，你告诉她怎么做。（把，卡，只有，按）",
+              "sample_answer_zh": "您只需把卡插进去，然后按照屏幕上的提示按键就可以取钱了。",
+              "sample_answer_vi": "Bà chỉ cần đưa thẻ vào, rồi bấm phím theo hướng dẫn trên màn hình là có thể rút tiền được.",
+              "source_origin": "sample_answer_checked",
+              "answer_verified": true,
+              "check_needed": false,
+              "sample_answer_pinyin": "Nín zhǐxū bǎ kǎ chā jìnqù, ránhòu ànzhào píngmù shang de tíshì àn jiàn jiù kěyǐ qǔ qián le."
+            },
+            {
+              "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+              "prompt": "你想在网上查找今天《人民日报》有什么消息，但不知道它的网址，你要问别人。",
+              "sample_answer_zh": "请问，今天《人民日报》的网址是什么？我想在网上查一下今天有什么消息。",
+              "sample_answer_vi": "Xin hỏi địa chỉ website của Nhân Dân Nhật Báo là gì? Tôi muốn tra trên mạng xem hôm nay có tin gì.",
+              "source_origin": "sample_answer_checked",
+              "answer_verified": true,
+              "check_needed": false,
+              "sample_answer_pinyin": "Qǐngwèn, jīntiān Rénmín Rìbào de wǎngzhǐ shì shénme? Wǒ xiǎng zài wǎngshàng chá yíxià jīntiān yǒu shénme xiāoxi."
+            }
+          ]
+        }
+      ],
+      "rendering": {
+        "renderer": "exercise.context_expression.v2",
+        "allow_manual_check": true
+      },
+      "source_origin": "textbook_sample_answer_checked",
+      "check_needed": false
+    },
+    {
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền khuyết tổng hợp",
+      "instruction": {
+        "zh": "综合填空。",
+        "vi": "Điền vào chỗ trống trong bài đọc."
+      },
+      "linked_reading_id": "reading_01",
+      "source_origin": "textbook",
+      "check_needed": false
+    },
+    {
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 10,
+      "title": "十、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+        "zh": "说“遗憾”。",
+        "vi": "Luyện nói về “tiếc nuối”."
+      },
+      "linked_communication_id": "communication_01",
+      "source_origin": "textbook",
+      "check_needed": false
+    }
+  ]
+}

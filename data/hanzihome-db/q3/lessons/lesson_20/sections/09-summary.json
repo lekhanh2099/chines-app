@@ -1,0 +1,17 @@
+{
+  "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
+  "type": "summary",
+  "order": 9,
+  "title": "总结",
+  "title_vi": "Tổng kết",
+  "source_origin": "generated",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "f6eb63b6-2129-419f-9686-4e0db51bd37c",
+      "type": "coverage_summary",
+      "order": 1,
+      "content_vi": "Đã phủ đủ 课文, 生词, 专名, 词语用法, 10 mục 练习, 综合填空. Không thấy 注释 riêng và 写汉字 riêng. Answer key một số bài tập cần manual verification."
+    }
+  ]
+}

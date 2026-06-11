@@ -1,0 +1,291 @@
+{
+  "id": "7494a142-5001-4ee7-8cf9-ed4635ce8c9b",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "失望",
+  "pinyin": "shīwàng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动 / 形",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thất vọng",
+    "meaning_vi": "thất vọng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thất vọng"
+    ],
+    "short_definition_vi": "thất vọng",
+    "textbook_focus_vi": "thất vọng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "失",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mất, đánh mất, sai sót",
+        "modern_logic_vi": "失 = mất.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "望",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nguyệt",
+            "meaning_vi": "thành phần trái",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "月",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nguyệt",
+              "radical_name_zh": "",
+              "hanviet": "nguyệt",
+              "meaning_vi": "trăng/thịt/thời gian tùy chữ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "王",
+            "hanviet": "vương",
+            "meaning_vi": "thành phần dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhìn xa, mong, hy vọng",
+        "modern_logic_vi": "望 = mong/hy vọng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "月",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nguyệt",
+          "radical_name_zh": "",
+          "hanviet": "nguyệt",
+          "meaning_vi": "trăng/thịt/thời gian tùy chữ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "失 = mất, 望 = hy vọng. 失望 = mất hy vọng → thất vọng.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "65a5a266-39ee-4a7f-bbe5-272f41406530",
+      "order": 1,
+      "zh": "很失望",
+      "pinyin": "",
+      "vi": "rất thất vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fbce8e33-986d-4aad-beaa-2636bc4e658f",
+      "order": 2,
+      "zh": "有点儿失望",
+      "pinyin": "",
+      "vi": "hơi thất vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e9118b8-0deb-4862-b858-c204b2ae4c83",
+      "order": 3,
+      "zh": "感到失望",
+      "pinyin": "",
+      "vi": "cảm thấy thất vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b75a088a-23d3-42cf-b2c4-bf8e0e56c107",
+      "order": 4,
+      "zh": "让人失望",
+      "pinyin": "",
+      "vi": "khiến người ta thất vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d9abee0-e8f6-4e50-a559-6396c46f234e",
+      "order": 5,
+      "zh": "别让我失望",
+      "pinyin": "",
+      "vi": "đừng làm tôi thất vọng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3784e5e4-7140-481e-9ffb-b75d038b8dff",
+      "order": 6,
+      "zh": "对……失望",
+      "pinyin": "",
+      "vi": "thất vọng về...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "babea0a7-e88d-4128-bd68-32125556fddf",
+      "order": 1,
+      "zh": "听到这个消息，我很失望。",
+      "pinyin": "Tīng dào zhège xiāoxi, wǒ hěn shīwàng.",
+      "vi": "Nghe tin này, tôi rất thất vọng.",
+      "analysis_vi": "失望 là tính từ tâm lý.",
+      "highlight": [
+        "失望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7494a142-5001-4ee7-8cf9-ed4635ce8c9b"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "71925ac6-e071-453b-8bf0-9af95df95ad3",
+      "order": 2,
+      "zh": "我不是对你失望，是对这次安排有点儿失望。",
+      "pinyin": "Wǒ bú shì duì nǐ shīwàng, shì duì zhè cì ānpái yǒudiǎnr shīwàng.",
+      "vi": "Tôi không thất vọng về bạn, mà hơi thất vọng về sự sắp xếp lần này.",
+      "analysis_vi": "对……失望 = thất vọng về.",
+      "highlight": [
+        "失望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7494a142-5001-4ee7-8cf9-ed4635ce8c9b"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "62ed4e66-33d4-43f4-bd95-c5a78d7aac92",
+      "order": 3,
+      "zh": "他一发现自己又把声调读错了，就失望得一句话也说不出来。",
+      "pinyin": "Tā yì fāxiàn zìjǐ yòu bǎ shēngdiào dú cuò le, jiù shīwàng de yí jù huà yě shuō bù chūlai.",
+      "vi": "Anh ấy vừa phát hiện mình lại đọc sai thanh điệu liền thất vọng đến không nói nên lời.",
+      "analysis_vi": "说不出来 = không nói ra được.",
+      "highlight": [
+        "失望"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7494a142-5001-4ee7-8cf9-ed4635ce8c9b"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "别让我失望 là câu có sức ép cảm xúc; mềm hơn có thể nói 希望下次会更好.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5d2f698f-3d72-4f5e-bddf-348d260e312e",
+      "order": 1,
+      "rule_vi": "失望 thường đi với 对; muốn nói làm ai thất vọng dùng 让.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "失望",
+    "back": "thất vọng",
+    "hint": "shīwàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7494a142-5001-4ee7-8cf9-ed4635ce8c9b",
+    "source_lesson_vocab_id": null
+  }
+}

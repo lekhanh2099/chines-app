@@ -1,0 +1,263 @@
+{
+  "id": "53b2fd3f-1d0c-41aa-a270-b8e2cfa768f8",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "从……起",
+  "pinyin": "cóng……qǐ",
+  "pos": {
+    "raw_vi": "Cấu trúc cố định",
+    "raw_cn": "固定结构",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "grammar"
+  ],
+  "meaning": {
+    "hanviet": "tòng……khởi",
+    "meaning_vi": "từ……trở đi, kể từ……",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ……trở đi",
+      "kể từ……"
+    ],
+    "short_definition_vi": "từ……trở đi, kể từ……",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "从",
+        "lishu_vi": "tòng",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "人",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "từ/theo",
+        "modern_logic_vi": "Trong từ/cụm này, 从 góp phần vào nghĩa hiện đại: từ/theo.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "起",
+        "lishu_vi": "khởi",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": {
+          "radical": "走",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tẩu",
+          "radical_name_zh": "",
+          "hanviet": "tẩu",
+          "meaning_vi": "đi/chạy",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "走",
+            "hanviet": "tẩu",
+            "meaning_vi": "đi/chạy",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "走",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tẩu",
+              "radical_name_zh": "",
+              "hanviet": "tẩu",
+              "meaning_vi": "đi/chạy",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "己",
+            "hanviet": "kỷ",
+            "meaning_vi": "bản thân",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bắt đầu/đứng dậy",
+        "modern_logic_vi": "Trong từ/cụm này, 起 góp phần vào nghĩa hiện đại: bắt đầu/đứng dậy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "从……起 cần học theo nghĩa hiện đại trong bài: từ……trở đi, kể từ…….",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 从今天起.",
+    "warning_vi": "Không tách nghĩa từng chữ nếu là tên riêng, tục ngữ hoặc cấu trúc cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3ea01239-ed0d-4750-9912-4993f53104a6",
+      "order": 1,
+      "zh": "从今天起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82227b6d-be59-4c6c-af5e-4b50c4deb484",
+      "order": 2,
+      "zh": "从现在起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "196397af-db97-448d-a785-50c8dfa7ab43",
+      "order": 3,
+      "zh": "从初中起",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d9d643a9-8a8a-444c-9afa-8df3a1c4da91",
+      "order": 1,
+      "zh": "从今天起，我要每天练习汉语。",
+      "pinyin": "Cóng jīntiān qǐ, wǒ yào měitiān liànxí Hànyǔ.",
+      "vi": "Từ hôm nay trở đi, tôi phải luyện tiếng Hán mỗi ngày.",
+      "analysis_vi": "从今天起 đặt mốc bắt đầu.",
+      "highlight": [
+        "从"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53b2fd3f-1d0c-41aa-a270-b8e2cfa768f8"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6951f1a7-d9f3-4e78-ba29-6a420e67d3cb",
+      "order": 2,
+      "zh": "从初中起，他就开始帮妈妈做家务。",
+      "pinyin": "Cóng chūzhōng qǐ, tā jiù kāishǐ bāng māma zuò jiāwù.",
+      "vi": "Từ cấp hai trở đi, anh ấy đã bắt đầu giúp mẹ làm việc nhà.",
+      "analysis_vi": "就开始 nhấn bắt đầu sớm.",
+      "highlight": [
+        "从"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "53b2fd3f-1d0c-41aa-a270-b8e2cfa768f8"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "从……起 hay dùng khi tuyên bố thay đổi hoặc mốc hiệu lực.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d8a68369-1169-4d79-97ac-f0c82862ea75",
+      "order": 1,
+      "rule_vi": "Dùng 从……起 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "从……起",
+    "back": "từ……trở đi, kể từ……",
+    "hint": "cóng……qǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "53b2fd3f-1d0c-41aa-a270-b8e2cfa768f8",
+    "source_lesson_vocab_id": null
+  }
+}

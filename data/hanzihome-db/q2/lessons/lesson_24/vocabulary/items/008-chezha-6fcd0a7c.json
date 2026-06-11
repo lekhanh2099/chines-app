@@ -1,0 +1,288 @@
+{
+  "id": "6c8e2525-29e6-4d23-a6c7-218c8d5ab3a6",
+  "type": "deep_vocabulary_item",
+  "order": 8,
+  "hanzi": "车闸",
+  "pinyin": "chēzhá",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xa áp",
+    "meaning_vi": "phanh xe; thắng xe",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "phanh xe",
+      "thắng xe"
+    ],
+    "short_definition_vi": "phanh xe; thắng xe",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "车",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "xe",
+        "modern_logic_vi": "车 = phương tiện có bánh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "闸",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "门",
+            "hanviet": "môn",
+            "meaning_vi": "cửa/cổng",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "甲",
+            "hanviet": "giáp",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thiết bị chặn/hãm",
+        "modern_logic_vi": "闸 có lõi chặn/hãm; 车闸 = bộ phận hãm xe.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "车闸 = phanh xe; thắng xe.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 车闸 như động từ.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "刹车",
+        "pinyin": "",
+        "meaning_vi": "phanh xe",
+        "difference_vi": "Hiện đại và phổ biến hơn khi nói hành động phanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "手刹",
+        "pinyin": "",
+        "meaning_vi": "phanh tay",
+        "difference_vi": "Bộ phận phanh tay.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "制动器",
+        "pinyin": "",
+        "meaning_vi": "thiết bị hãm",
+        "difference_vi": "Thuật ngữ kỹ thuật.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5fab15bc-7aa4-455e-8e12-3e42041514ea",
+      "order": 1,
+      "zh": "车闸坏了",
+      "pinyin": "",
+      "vi": "phanh xe hỏng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0deadd8-7910-4d44-b8d1-c668f3e8d7a4",
+      "order": 2,
+      "zh": "修车闸",
+      "pinyin": "",
+      "vi": "sửa phanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "42b19872-b02d-45e3-9aef-bb062b2e52b7",
+      "order": 3,
+      "zh": "车闸不灵",
+      "pinyin": "",
+      "vi": "phanh không ăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f82e4f71-f8b0-4c14-8d85-d91edea902d0",
+      "order": 4,
+      "zh": "刹车坏了",
+      "pinyin": "",
+      "vi": "phanh hỏng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "29ab8adf-ac09-4b86-a773-0b49c01bdf3b",
+      "order": 5,
+      "zh": "踩刹车",
+      "pinyin": "",
+      "vi": "đạp phanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "dd414289-bb4d-47ea-84bc-a95af9e1ed6a",
+      "order": 1,
+      "zh": "自行车的车闸坏了，很危险。",
+      "pinyin": "Zìxíngchē de chēzhá huài le, hěn wēixiǎn.",
+      "vi": "Phanh xe đạp hỏng rồi, rất nguy hiểm.",
+      "analysis_vi": "车闸坏了 báo trạng thái mới.",
+      "level": "basic",
+      "highlight": [
+        "车闸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c8e2525-29e6-4d23-a6c7-218c8d5ab3a6"
+      ],
+      "notes": []
+    },
+    {
+      "id": "567fb440-ad75-4a5a-8026-95dc4c6b86f9",
+      "order": 2,
+      "zh": "他发现车闸不灵，就立即停下来检查。",
+      "pinyin": "Tā fāxiàn chēzhá bù líng, jiù lìjí tíng xiàlai jiǎnchá.",
+      "vi": "Anh ấy phát hiện phanh không ăn, liền dừng lại kiểm tra.",
+      "analysis_vi": "不灵 = không nhạy/không hiệu quả.",
+      "level": "expanded",
+      "highlight": [
+        "车闸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c8e2525-29e6-4d23-a6c7-218c8d5ab3a6"
+      ],
+      "notes": []
+    },
+    {
+      "id": "48ead106-e8f6-4789-85d7-4761002c3453",
+      "order": 3,
+      "zh": "过十字路口儿以前，一定要看看车闸有没有问题。",
+      "pinyin": "Guò shízì lùkǒur yǐqián, yídìng yào kànkan chēzhá yǒu méiyǒu wèntí.",
+      "vi": "Trước khi qua ngã tư, nhất định phải xem phanh có vấn đề không.",
+      "analysis_vi": "有没有问题 dùng để kiểm tra tình trạng.",
+      "level": "complex",
+      "highlight": [
+        "车闸"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6c8e2525-29e6-4d23-a6c7-218c8d5ab3a6"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Trong giáo trình ngữ cảnh thường là xe đạp nên 车闸 hợp; đời sống hiện đại nói 刹车 nhiều hơn.",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a8513b20-bbc2-4659-9584-fde9ac8b88ff",
+      "kind": "usage",
+      "text_vi": "Không dùng 车闸 như động từ.",
+      "wrong_examples": [
+        "你快车闸！"
+      ],
+      "correct_examples": [
+        "你快刹车！"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "车闸",
+    "back": "phanh xe; thắng xe",
+    "hint": "chēzhá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6c8e2525-29e6-4d23-a6c7-218c8d5ab3a6",
+    "source_lesson_vocab_id": null
+  }
+}

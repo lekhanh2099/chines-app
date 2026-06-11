@@ -1,0 +1,179 @@
+{
+  "id": "section_text",
+  "type": "text",
+  "order": 1,
+  "title": "课文",
+  "title_vi": "Bài khóa",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "blocks": [
+    {
+      "id": "l18_text_block",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "一盒蛋糕",
+      "title_vi": "Một hộp bánh kem",
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false,
+      "paragraphs": [
+        {
+          "id": "l18_p01",
+          "order": 1,
+          "zh": "说起来，这已经是好几年前的事了。",
+          "pinyin": "Shuō qǐlái, zhè yǐjīng shì hǎo jǐ nián qián de shì le.",
+          "vi": "Nói ra thì chuyện này đã là chuyện của mấy năm trước rồi.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p02",
+          "order": 2,
+          "zh": "那一年，我在大学读书。一天傍晚，我刚要锁上宿舍的门出去，姐姐急忙跑来，递给我一盒生日蛋糕。她说本来想给我搞个生日晚会，但刚接到通知，晚上要出差，没时间搞了。我因为也有急事要出去，就顺手把那盒蛋糕放在靠门口的桌子上了，那是刘西西的桌子。",
+          "pinyin": "Nà yì nián, wǒ zài dàxué dúshū. Yì tiān bàngwǎn, wǒ gāng yào suǒ shang sùshè de mén chūqù, jiějie jímáng pǎo lái, dì gěi wǒ yì hé shēngrì dàngāo. Tā shuō běnlái xiǎng gěi wǒ gǎo ge shēngrì wǎnhuì, dàn gāng jiē dào tōngzhī, wǎnshang yào chū chāi, méi shíjiān gǎo le. Wǒ yīnwèi yě yǒu jíshì yào chūqù, jiù shùnshǒu bǎ nà hé dàngāo fàng zài kào ménkǒu de zhuōzi shang le, nà shì Liú Xīxī de zhuōzi.",
+          "vi": "Năm ấy, tôi đang học đại học. Một buổi chiều tối, tôi vừa định khóa cửa ký túc xá để ra ngoài thì chị tôi vội chạy đến, đưa cho tôi một hộp bánh sinh nhật. Chị nói vốn định tổ chức cho tôi một buổi sinh nhật, nhưng vừa nhận được thông báo tối phải đi công tác nên không còn thời gian tổ chức nữa. Vì tôi cũng có việc gấp phải ra ngoài, tôi tiện tay đặt hộp bánh ấy lên chiếc bàn gần cửa; đó là bàn của Lưu Tây Tây.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p03",
+          "order": 3,
+          "zh": "晚自习后，我回到宿舍，屋子里特别热闹。八九个女孩子围着刘西西，个个手中拿着一块蛋糕，高高兴兴地吃着。我忽然想起姐姐送来的蛋糕，可我还来不及弄清这是怎么回事，刘西西就拉着我的手兴奋地对我说：“我真高兴！竟然有人知道我今天过生日，特意给我送来一盒蛋糕。蛋糕上面还有漂亮的花儿和字，可惜你回来晚了，没有见……”我一下子傻眼了。刘西西把一块蛋糕递到我手里：“她们都说不知道是谁送的蛋糕，你是最后一个离开宿舍的，我猜你一定看见了，告诉我，那个人是男的还是女的？”这时候有人开玩笑地说：“一定是女的。咱们西西长得这么丑，哪里会有男孩子喜欢嘛！”西西脸上显出一点儿失望。她摇着我的肩：“你快说嘛！你快说嘛！”那一刻，我几乎要大声喊出来，这蛋糕是我姐姐送给我的！可是，看到那一张张兴高采烈的脸和西西充满期待的目光，我不忍让大家扫兴，更不忍让西西出丑。于是，我只好将错就错地说了一个谎：“是一个很帅的男孩儿！”“好啊！”随着西西的欢呼，大伙儿一齐鼓掌。有人说了一句：“一定是哪个人偷偷儿地喜欢上你了！”西西笑了。",
+          "pinyin": "Wǎn zìxí hòu, wǒ huí dào sùshè, wūzi lǐ tèbié rènao. Bā jiǔ ge nǚháizi wéizhe Liú Xīxī, gègè shǒuzhōng názhe yí kuài dàngāo, gāogāoxìngxìng de chīzhe. Wǒ hūrán xiǎng qǐ jiějie sòng lái de dàngāo, kě wǒ hái láibují nòng qīng zhè shì zěnme huí shì, Liú Xīxī jiù lāzhe wǒ de shǒu xīngfèn de duì wǒ shuō: “Wǒ zhēn gāoxìng! Jìngrán yǒu rén zhīdào wǒ jīntiān guò shēngrì, tèyì gěi wǒ sòng lái yì hé dàngāo. Dàngāo shàngmiàn hái yǒu piàoliang de huār hé zì, kěxī nǐ huílái wǎn le, méiyǒu jiàn...” Wǒ yíxiàzi shǎyǎn le. Liú Xīxī bǎ yí kuài dàngāo dì dào wǒ shǒu lǐ: “Tāmen dōu shuō bù zhīdào shì shéi sòng de dàngāo, nǐ shì zuìhòu yí ge líkāi sùshè de, wǒ cāi nǐ yídìng kànjiàn le, gàosu wǒ, nà ge rén shì nán de háishi nǚ de?” Zhè shíhou yǒu rén kāi wánxiào de shuō: “Yídìng shì nǚ de. Zánmen Xīxī zhǎng de zhème chǒu, nǎlǐ huì yǒu nánháizi xǐhuan ma!” Xīxī liǎn shang xiǎn chū yìdiǎnr shīwàng. Tā yáozhe wǒ de jiān: “Nǐ kuài shuō ma! Nǐ kuài shuō ma!” Nà yí kè, wǒ jīhū yào dàshēng hǎn chūlai, zhè dàngāo shì wǒ jiějie sòng gěi wǒ de! Kěshì, kàn dào nà yì zhāng zhāng xìnggāo-cǎiliè de liǎn hé Xīxī chōngmǎn qīdài de mùguāng, wǒ bùrěn ràng dàjiā sǎoxìng, gèng bùrěn ràng Xīxī chūchǒu. Yúshì, wǒ zhǐhǎo jiāngcuò-jiùcuò de shuō le yí ge huǎng: “Shì yí ge hěn shuài de nánháir!” “Hǎo a!” Suízhe Xīxī de huānhū, dàhuǒr yìqí gǔzhǎng. Yǒu rén shuō le yí jù: “Yídìng shì nǎ ge rén tōutōur de xǐhuan shang nǐ le!” Xīxī xiào le.",
+          "vi": "Sau giờ tự học buổi tối, tôi trở về ký túc xá, trong phòng rất náo nhiệt. Tám chín cô gái vây quanh Lưu Tây Tây, ai cũng cầm một miếng bánh và vui vẻ ăn. Tôi chợt nhớ đến hộp bánh chị tôi mang đến, nhưng còn chưa kịp hiểu rõ chuyện gì đang xảy ra thì Lưu Tây Tây đã kéo tay tôi, hào hứng nói: “Tôi vui quá! Không ngờ lại có người biết hôm nay là sinh nhật tôi, còn đặc biệt gửi cho tôi một hộp bánh. Trên bánh còn có hoa và chữ rất đẹp, tiếc là bạn về muộn nên không nhìn thấy...” Tôi lập tức sững người. Lưu Tây Tây đưa một miếng bánh vào tay tôi: “Mọi người đều nói không biết ai tặng bánh, bạn là người cuối cùng rời ký túc xá, tôi đoán chắc bạn đã nhìn thấy. Nói tôi biết đi, người đó là nam hay nữ?” Lúc ấy có người đùa: “Chắc chắn là nữ rồi. Tây Tây nhà mình xấu thế này thì làm gì có con trai thích chứ!” Trên mặt Tây Tây lộ ra chút thất vọng. Cô ấy lay vai tôi: “Bạn nói nhanh đi! Nói nhanh đi!” Khoảnh khắc ấy, tôi gần như muốn hét lên rằng hộp bánh này là chị tôi tặng tôi. Nhưng nhìn những gương mặt hớn hở và ánh mắt đầy mong đợi của Tây Tây, tôi không nỡ làm mọi người cụt hứng, càng không nỡ để Tây Tây bẽ mặt. Thế là tôi đành thuận theo cái sai mà nói một lời nói dối: “Là một cậu con trai rất đẹp trai!” “Hay quá!” Theo tiếng reo vui của Tây Tây, mọi người cùng vỗ tay. Có người nói một câu: “Chắc chắn là ai đó đang lén thích cậu rồi!” Tây Tây cười.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p04",
+          "order": 4,
+          "zh": "半夜，西西推醒我，悄悄地问我：“那个男孩儿是不是我们年级的？”我摇摇头。她又问：“是不是我们学校的？”我只好解释：“天太黑，我没看清那人的脸。”",
+          "pinyin": "Bànyè, Xīxī tuī xǐng wǒ, qiāoqiāo de wèn wǒ: “Nà ge nánháir shì bú shì wǒmen niánjí de?” Wǒ yáo yao tóu. Tā yòu wèn: “Shì bú shì wǒmen xuéxiào de?” Wǒ zhǐhǎo jiěshì: “Tiān tài hēi, wǒ méi kàn qīng nà rén de liǎn.”",
+          "vi": "Nửa đêm, Tây Tây đẩy tôi tỉnh dậy, khẽ hỏi: “Cậu con trai đó có phải cùng khóa với chúng ta không?” Tôi lắc đầu. Cô ấy lại hỏi: “Có phải người trường mình không?” Tôi đành giải thích: “Trời tối quá, tôi không nhìn rõ mặt người đó.”",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p05",
+          "order": 5,
+          "zh": "以后的几个星期，宿舍里周末的中心话题都是关于送蛋糕给西西的那个男孩儿，虽然谈不出什么结果，却为我们找到了一个有趣的话题。",
+          "pinyin": "Yǐhòu de jǐ ge xīngqī, sùshè lǐ zhōumò de zhōngxīn huàtí dōu shì guānyú sòng dàngāo gěi Xīxī de nà ge nánháir, suīrán tán bù chū shénme jiéguǒ, què wèi wǒmen zhǎo dào le yí ge yǒuqù de huàtí.",
+          "vi": "Mấy tuần sau đó, chủ đề trung tâm vào cuối tuần trong ký túc xá đều là về cậu con trai đã tặng bánh cho Tây Tây. Tuy không bàn ra được kết quả gì, chuyện ấy lại trở thành một chủ đề thú vị của chúng tôi.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p06",
+          "order": 6,
+          "zh": "渐渐地，我们都忘了这件事。只是偶然有人向西西问上一句：“那个神秘的男孩儿有没有消息？”而西西总是摇头，还故意加上一声叹息。",
+          "pinyin": "Jiànjiàn de, wǒmen dōu wàng le zhè jiàn shì. Zhǐshì ǒurán yǒu rén xiàng Xīxī wèn shàng yí jù: “Nà ge shénmì de nánháir yǒu méiyǒu xiāoxi?” Ér Xīxī zǒng shì yáo tóu, hái gùyì jiā shang yì shēng tànxī.",
+          "vi": "Dần dần, chúng tôi đều quên chuyện ấy. Chỉ là thỉnh thoảng có người hỏi Tây Tây một câu: “Cậu con trai bí ẩn đó có tin tức gì không?” Còn Tây Tây thì luôn lắc đầu, rồi còn cố ý thêm một tiếng thở dài.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p07",
+          "order": 7,
+          "zh": "毕业前的一天，西西一个人靠着窗口坐着，手里拿着一条粉色的绸带。也许除了西西之外，只有我还记得这绸带正是我生日蛋糕盒上的那一条。看到她那副样子，我很想把真相告诉她，好让她死了那份心，可总也开不了口。",
+          "pinyin": "Bìyè qián de yì tiān, Xīxī yí ge rén kàozhe chuāngkǒu zuòzhe, shǒu lǐ názhe yì tiáo fěnsè de chóudài. Yěxǔ chúle Xīxī zhī wài, zhǐyǒu wǒ hái jìde zhè chóudài zhèng shì wǒ shēngrì dàngāo hé shang de nà yì tiáo. Kàn dào tā nà fù yàngzi, wǒ hěn xiǎng bǎ zhēnxiàng gàosu tā, hǎo ràng tā sǐ le nà fèn xīn, kě zǒng yě kāi bù liǎo kǒu.",
+          "vi": "Một ngày trước khi tốt nghiệp, Tây Tây ngồi một mình tựa bên cửa sổ, trong tay cầm một dải lụa màu hồng. Có lẽ ngoài Tây Tây ra, chỉ có tôi còn nhớ dải lụa này chính là dải buộc trên hộp bánh sinh nhật của tôi. Nhìn dáng vẻ ấy của cô ấy, tôi rất muốn nói sự thật cho cô ấy để cô ấy từ bỏ hy vọng ấy, nhưng mãi vẫn không sao mở lời được.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p08",
+          "order": 8,
+          "zh": "后来，西西要跟随家人到国外去了。我下定决心要把真相告诉她。可是，当我看见她系在头上的那条粉色绸带时，我的心立即又软了下来。她所表露的那份少女特有的期待，让我深深地感动。我终于什么都没有说，继续将错就错，让她带着这场甜蜜的梦上了飞机，飞向不可预知的未来……",
+          "pinyin": "Hòulái, Xīxī yào gēnsuí jiārén dào guówài qù le. Wǒ xià dìng juéxīn yào bǎ zhēnxiàng gàosu tā. Kěshì, dāng wǒ kànjiàn tā jì zài tóu shang de nà tiáo fěnsè chóudài shí, wǒ de xīn lìjí yòu ruǎn le xiàlai. Tā suǒ biǎolù de nà fèn shàonǚ tèyǒu de qīdài, ràng wǒ shēnshēn de gǎndòng. Wǒ zhōngyú shénme dōu méiyǒu shuō, jìxù jiāngcuò-jiùcuò, ràng tā dàizhe zhè chǎng tiánmì de mèng shàng le fēijī, fēi xiàng bù kě yùzhī de wèilái...",
+          "vi": "Sau đó, Tây Tây sắp theo gia đình ra nước ngoài. Tôi hạ quyết tâm phải nói sự thật cho cô ấy. Nhưng khi nhìn thấy dải lụa màu hồng cô ấy buộc trên đầu, lòng tôi lập tức lại mềm xuống. Niềm mong đợi rất riêng của tuổi thiếu nữ mà cô ấy bộc lộ ra khiến tôi vô cùng cảm động. Cuối cùng tôi không nói gì cả, tiếp tục thuận theo cái sai, để cô ấy mang theo giấc mơ ngọt ngào ấy lên máy bay, bay về phía tương lai không thể biết trước...",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p09",
+          "order": 9,
+          "zh": "六年后，西西已是两个孩子的母亲了。丈夫是一位美籍华人。当然，她后来终于知道了那个所谓男孩儿送蛋糕的事只是一场美丽的误会。但她并没有责怪我。相反，她感谢我给了她一段美丽的回忆。她还说，当她女儿十八岁时，她会把这段往事当作一个美丽的笑话讲给女儿听……",
+          "pinyin": "Liù nián hòu, Xīxī yǐ shì liǎng ge háizi de mǔqīn le. Zhàngfu shì yí wèi Měijí Huárén. Dāngrán, tā hòulái zhōngyú zhīdào le nà ge suǒwèi nánháir sòng dàngāo de shì zhǐ shì yì chǎng měilì de wùhuì. Dàn tā bìng méiyǒu zéguài wǒ. Xiāngfǎn, tā gǎnxiè wǒ gěi le tā yí duàn měilì de huíyì. Tā hái shuō, dāng tā nǚ'ér shíbā suì shí, tā huì bǎ zhè duàn wǎngshì dàngzuò yí ge měilì de xiàohua jiǎng gěi nǚ'ér tīng...",
+          "vi": "Sáu năm sau, Tây Tây đã là mẹ của hai đứa trẻ. Chồng cô ấy là một người Hoa quốc tịch Mỹ. Tất nhiên, sau này cuối cùng cô ấy cũng biết chuyện cậu con trai gọi là người tặng bánh ấy chỉ là một hiểu lầm đẹp. Nhưng cô ấy không hề trách tôi. Ngược lại, cô ấy cảm ơn tôi vì đã cho cô ấy một đoạn hồi ức đẹp. Cô ấy còn nói, khi con gái cô ấy mười tám tuổi, cô ấy sẽ xem chuyện cũ này như một câu chuyện cười đẹp để kể cho con gái nghe...",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p10",
+          "order": 10,
+          "zh": "原来，并不是所有的错误都会留下遗憾，有时候将错就错，也能错出一段美丽的故事来。",
+          "pinyin": "Yuánlái, bìng bú shì suǒyǒu de cuòwù dōu huì liúxià yíhàn, yǒu shíhou jiāngcuò-jiùcuò, yě néng cuò chū yí duàn měilì de gùshi lái.",
+          "vi": "Hóa ra, không phải mọi sai lầm đều sẽ để lại tiếc nuối; đôi khi thuận theo cái sai cũng có thể từ cái sai mà tạo nên một câu chuyện đẹp.",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l18_p11",
+          "order": 11,
+          "zh": "（根据黄文婷的文章改写）",
+          "pinyin": "(Gēnjù Huáng Wéntíng de wénzhāng gǎixiě.)",
+          "vi": "(Viết lại dựa theo bài viết của Hoàng Văn Đình.)",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "comprehension_questions": [
+        {
+          "id": "l18_comp_01",
+          "question": "这盒蛋糕是谁送给谁的？",
+          "answer": "这盒蛋糕是“我”的姐姐送给“我”的。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "l18_comp_02",
+          "question": "刘西西为什么把蛋糕分给大家吃了？",
+          "answer": "因为刘西西误以为这盒蛋糕是别人特意送给她的生日蛋糕，所以她把蛋糕分给大家吃了。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "l18_comp_03",
+          "question": "“我”为什么说谎？",
+          "answer": "因为“我”不忍让大家扫兴，更不忍让刘西西出丑，所以只好将错就错，说了一个谎。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "l18_comp_04",
+          "question": "后来“我”说出真相没有？为什么？",
+          "answer": "没有。因为“我”看到刘西西对这件事一直怀着一种美好的期待，不忍心打破她的梦。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "l18_comp_05",
+          "question": "这场误会的结果怎样？",
+          "answer": "这场误会没有留下遗憾，反而给刘西西留下一段美丽的回忆，也变成了一个美丽的故事。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "l18_comp_06",
+          "question": "生活中，有时候要把真相告诉别人时可能会让别人感到尴尬，为了不让这种不愉快的情况出现，你会怎么做？",
+          "answer": "开放题。可根据实际情况委婉表达，或选择合适的时间和方式说明真相，尽量不让对方尴尬。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": false,
+          "check_needed": false
+        },
+        {
+          "id": "l18_comp_07",
+          "question": "讲一个你在生活中和朋友发生“误会”的小故事。",
+          "answer": "开放题。可讲述自己与朋友之间因信息不清、表达不准确或判断错误产生误会，后来解释清楚的经历。",
+          "source_origin": "textbook_question_generated_answer",
+          "answer_verified": false,
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

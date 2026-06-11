@@ -1,0 +1,925 @@
+[
+  {
+    "id": "rel_90678835a70e9bf2ec733156",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.0"
+    },
+    "to": {
+      "id": "936f9adf-be8c-4e81-9f76-6c2d2e6a49c0",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/001-huitou-7a8cf1d2.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "回头"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_458968ef4058e149ed63d3d6",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.1"
+    },
+    "to": {
+      "id": "eb609dcc-df51-4809-ac0f-3dce06947f27",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/002-zaishuo-6847f58b.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "再说"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_cacef25011f385619a0b9edc",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.10"
+    },
+    "to": {
+      "id": "7c7c9147-41d6-4643-bc75-b1998089b041",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/011-jihu-f32bc652.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "几乎"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_994f92dc19c233a0b4315506",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.11"
+    },
+    "to": {
+      "id": "be305f28-7810-4b78-88a5-df3e826cf265",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/012-tongshi-acb6d14e.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "同时"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_855d2fa778715472c293917b",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.12"
+    },
+    "to": {
+      "id": "87c6536f-47b6-44cd-8a38-d8b6ffa5d2d1",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/013-shizai-shizai-3dba5e0b.json"
+    },
+    "evidence": {
+      "source": "hanzi_match",
+      "matched_text": "实在",
+      "reason": "Matched by hanzi only because pinyin did not exactly match."
+    },
+    "confidence": "medium",
+    "check_needed": true
+  },
+  {
+    "id": "rel_57efa72ad1a5a8c115fd06d7",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.13"
+    },
+    "to": {
+      "id": "0a650938-21c3-4860-aa8c-650c02ea1f50",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/014-zhihou-00f9e14f.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "之后"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a96fb07ff337b57283a3b0b3",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.14"
+    },
+    "to": {
+      "id": "2b2adb79-9ea7-47bb-90d4-1b1b7cf8f400",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/015-taitai-c8e59831.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "太太"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3d2d518e8eec0586cdba37b7",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.15"
+    },
+    "to": {
+      "id": "9dea84b5-ebd9-41fe-a498-5c058b7dc17c",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/016-linliaor-294fe637.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "临了儿"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_dfe4e502107908b29c556828",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.16"
+    },
+    "to": {
+      "id": "5a7c9ead-215f-4d9c-9878-ba71e7c8f6e9",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/017-cu-9efa9d29.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "粗"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f220f67be176d195cc8fc3a5",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.17"
+    },
+    "to": {
+      "id": "12ea005b-ae33-4cf2-9f3f-aed4fb9f8ab8",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/018-jiaqian-b3801767.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "价钱"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e820d55b8b85ebad004b3420",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.18"
+    },
+    "to": {
+      "id": "3f52dd3b-18b3-451a-8e00-a81d91945f60",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/019-fu-fb63e472.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "付"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_ab933513312a1c0c71f9103b",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.19"
+    },
+    "to": {
+      "id": "279b35b1-aee8-41bd-8515-6bd28c456e40",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/020-pingdan-8c1c8d0f.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "平淡"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_430b2f6e1aced9a800b499de",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.2"
+    },
+    "to": {
+      "id": "cd28e6d9-f2de-4fe5-8f1f-9efdc9aec82a",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/003-koutouyu-d74a435c.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "口头语"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2571581c5ff125762940fb34",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.20"
+    },
+    "to": {
+      "id": "dda23983-772d-4fae-9a88-cb26909d0aee",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/021-zhiyu-a5139244.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "至于"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_70a9a1721447b2150e66a7cf",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.21"
+    },
+    "to": {
+      "id": "fcfdc26e-17f9-4ef8-96b6-fe15d2a06b1d",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/022-rizi-65f80baa.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "日子"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a545996c4082f873a899f919",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.22"
+    },
+    "to": {
+      "id": "988a6a6c-2ae3-4b02-9141-706b2c81e46c",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/023-tuici-e68f205c.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "推辞"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_f37484e8b4bf5a0d6f2578b9",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.23"
+    },
+    "to": {
+      "id": "2e5ee362-9e19-4ddd-aab5-c433767d012e",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/024-wennuan-9b1e57a0.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "温暖"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b9b15f2e54d01ac3d11f239e",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.24"
+    },
+    "to": {
+      "id": "24d070b1-87bf-49e1-b020-36ff773b36f3",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/025-dengdai-1250e202.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "等待"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7a5c1f619b13a38461adfadd",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.25"
+    },
+    "to": {
+      "id": "f50556a2-81ea-4fdc-905f-64232e18cb24",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/026-dimian-557b43d3.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "地面"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_3384eb7ff622ca5fdda2fa26",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.26"
+    },
+    "to": {
+      "id": "207201bf-2cc0-40d8-a22e-1ae2ce0c2825",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/027-shuxi-897d04bb.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "熟悉"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_48799b5ca213557360d47a52",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.27"
+    },
+    "to": {
+      "id": "60e8e8a1-4379-4033-86e6-d9a6b8759795",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/028-lu-3d372d39.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "路"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_27325cc189ca1a2da9027cce",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.28"
+    },
+    "to": {
+      "id": "synthetic_vocab_18f49452cdd9faaa",
+      "kind": "materialized_vocabulary_item",
+      "path": "vocabulary/items/055-zuogu-youpan-56b0a648.json"
+    },
+    "evidence": {
+      "source": "synthetic_from_lesson_vocab",
+      "matched_text": "左顾右盼",
+      "reason": "Created synthetic item because no source deep vocab item matched."
+    },
+    "confidence": "medium",
+    "check_needed": true
+  },
+  {
+    "id": "rel_024ff93c906842b3a072b3ba",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.29"
+    },
+    "to": {
+      "id": "0f19504b-d154-4d66-bd20-89f841e8119f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/030-zhudong-93e58d19.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "主动"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e8e1cefa9827f4d47d286e97",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.3"
+    },
+    "to": {
+      "id": "23c87406-b271-49fe-bcce-ed9e0958bcca",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/004-houlai-5ff240e0.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "后来"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_30748b226a1fbec5c5779916",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.30"
+    },
+    "to": {
+      "id": "ced71949-35b1-40ad-97b6-cdffe3639b3b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/031-da-zhaohu-af1e506f.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "打招呼"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d9bc11b784f2c7b9696facc7",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.31"
+    },
+    "to": {
+      "id": "77fe5e4e-0fc1-4731-8e8f-42f7769b83b8",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/032-li-33d726ce.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "理"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d767f0be7a721b8ac006dd13",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.32"
+    },
+    "to": {
+      "id": "f23717d0-3577-49aa-93d2-249035b92d5c",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/033-fangxiang-5196037c.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "方向"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_7eb0577b8f362d6a7de45325",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.33"
+    },
+    "to": {
+      "id": "b1864e37-b893-41fd-8130-5f6aa93d81ce",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/034-youyu-314d5251.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "犹豫"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c67695558d92e62e5db18da2",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.34"
+    },
+    "to": {
+      "id": "8cea6b39-34cc-4ada-b23a-61a1a755aee6",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/035-da-jiaodao-b50e1cf8.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "打交道"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_770f299082e52dd66c98dba9",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.35"
+    },
+    "to": {
+      "id": "66029959-9bf8-4baf-9001-ee20df36521b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/036-shunlu-fbf3a40b.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "顺路"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a22eea9e88998b3c07d3a568",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.36"
+    },
+    "to": {
+      "id": "742393bc-3cf1-41f8-ab48-a18dffd728d7",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/037-fadong-c3944d97.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "发动"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_754647eedd23ace6cf47ff00",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.37"
+    },
+    "to": {
+      "id": "67b02d84-f28e-4ce0-b5ca-093251611800",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/038-zhaoshou-26c3ec02.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "招手"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_c19742be8528ed6e5e331c59",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.38"
+    },
+    "to": {
+      "id": "fb9aa2ec-a40e-44fd-a78b-1d004af24d4b",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/039-mei-zhunr-be48eebd.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "没准儿"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e2a169a7636b826dd8d5f456",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.39"
+    },
+    "to": {
+      "id": "c2a3fc1d-7226-4011-afd7-28a54ad2a950",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/040-jianmian-e878044e.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "见面"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_9270a4bcfc370c28dc863491",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.4"
+    },
+    "to": {
+      "id": "f2e94823-d8a4-46af-9124-7519206e73fd",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/005-qishi-6eabcabc.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "其实"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a72dd629fa21f1b0dc4bb62b",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.40"
+    },
+    "to": {
+      "id": "69e8ee1b-831c-430e-bf95-97ad6f6248df",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/041-leng-27292238.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "愣"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_b5d3e6b597a929a3307d25e5",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.41"
+    },
+    "to": {
+      "id": "5383bb22-a220-40d3-80ba-599c52f01349",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/042-zhijin-d6f2e825.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "至今"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_5d07ed86a28e64643ebb10f9",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.5"
+    },
+    "to": {
+      "id": "73a175b7-962a-43a3-8cb4-24e91c4edf52",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/006-minhang-6072e9e2.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "民航"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_867abfbcd724cdd615f442bc",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.6"
+    },
+    "to": {
+      "id": "fca1d9a2-7de5-4304-9039-2cafb2fb07b5",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/007-lin-d3dee1c9.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "邻"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_d1a58d84fff82d9f790ecbfc",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.7"
+    },
+    "to": {
+      "id": "dbd186b1-b669-40bf-bafc-6a875b7b3787",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/008-didao-didao-55425d7e.json"
+    },
+    "evidence": {
+      "source": "hanzi_match",
+      "matched_text": "地道",
+      "reason": "Matched by hanzi only because pinyin did not exactly match."
+    },
+    "confidence": "medium",
+    "check_needed": true
+  },
+  {
+    "id": "rel_b69dd52ced02b87295e61397",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.8"
+    },
+    "to": {
+      "id": "f5388978-b756-4ee7-9c3c-e086e1a90a2f",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/009-huida-9d3c8dfd.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "回答"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_e6f2b07cfa4420b8dd843cb0",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "kind": "vocabulary_item",
+      "path": "$.lesson.sections.1.items.9"
+    },
+    "to": {
+      "id": "b6d5ca8b-a218-47f3-9371-fa7c2c021729",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/010-mingpian-6f240e62.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "名片"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_bd74702e3b209c98c2cc85eb",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+      "kind": "proper_noun",
+      "path": "$.lesson.sections.2.items.0"
+    },
+    "to": {
+      "id": "246e4ec5-af2b-4c34-bad7-b11c9dfeba82",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/043-zhongguo-minhang-fc91593b.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "中国民航"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_a8c1ed8ff377e0883cb040fa",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+      "kind": "proper_noun",
+      "path": "$.lesson.sections.2.items.1"
+    },
+    "to": {
+      "id": "ee760058-3b2a-43f6-96f3-f633b6008ef7",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/044-jianguomen-259277c0.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "建国门"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_87cae0f8f48c369a27dceb29",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
+      "kind": "proper_noun",
+      "path": "$.lesson.sections.2.items.2"
+    },
+    "to": {
+      "id": "59518ddd-9bdf-4b36-b105-158ad3a10287",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/045-xizhimen-36cb5186.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "西直门"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  },
+  {
+    "id": "rel_2d351a2bad51773fe616bd89",
+    "type": "lesson_vocab_to_vocabulary_item",
+    "from": {
+      "id": "41894f87-dcc8-4f67-b1b8-b992eca7af65",
+      "kind": "proper_noun",
+      "path": "$.lesson.sections.2.items.3"
+    },
+    "to": {
+      "id": "979d05da-cfbe-4608-a40c-f568c04283da",
+      "kind": "deep_vocabulary_item",
+      "path": "vocabulary/items/046-fuxingmen-1b3b2ebb.json"
+    },
+    "evidence": {
+      "source": "hanzi_pinyin_match",
+      "matched_text": "复兴门"
+    },
+    "confidence": "exact",
+    "check_needed": false
+  }
+]

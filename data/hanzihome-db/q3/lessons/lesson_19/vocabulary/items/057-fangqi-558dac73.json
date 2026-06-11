@@ -1,0 +1,295 @@
+{
+  "id": "f5517838-ffc0-480b-ba5a-0666916a4b70",
+  "type": "deep_vocabulary_item",
+  "order": 57,
+  "hanzi": "放弃",
+  "pinyin": "fàngqì",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "phóng khí",
+    "meaning_vi": "từ bỏ, bỏ đi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "từ bỏ",
+      "bỏ đi"
+    ],
+    "short_definition_vi": "từ bỏ, bỏ đi",
+    "textbook_focus_vi": "放弃 là buông ra thứ mình đang có hoặc muốn giữ.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "放",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "攴",
+          "radical_variant": "攵",
+          "radical_name_vi": "bộ Phộc",
+          "radical_name_zh": "",
+          "hanviet": "phộc",
+          "meaning_vi": "tác động, đánh/sửa",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "tác động, đánh/sửa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "攴",
+              "radical_variant": "攵",
+              "radical_name_vi": "bộ Phộc",
+              "radical_name_zh": "",
+              "hanviet": "phộc",
+              "meaning_vi": "tác động, đánh/sửa",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "攵 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "攵 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đặt, thả, buông",
+        "modern_logic_vi": "Trong từ “放弃”, chữ “放” góp phần vào trường nghĩa: đặt, thả, buông",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "弃",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bỏ, từ bỏ",
+        "modern_logic_vi": "Trong từ “放弃”, chữ “弃” góp phần vào trường nghĩa: bỏ, từ bỏ",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "放弃 là buông ra thứ mình đang có hoặc muốn giữ.",
+    "memory_tip_vi": "放弃 là buông ra thứ mình đang có hoặc muốn giữ.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "放下",
+        "pinyin": "",
+        "meaning_vi": "đặt xuống/buông bỏ tâm lý",
+        "difference_vi": "đặt xuống/buông bỏ tâm lý",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "取消",
+        "pinyin": "",
+        "meaning_vi": "hủy bỏ kế hoạch/sự kiện",
+        "difference_vi": "hủy bỏ kế hoạch/sự kiện",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ef0f22b6-5e2d-485a-921a-c038ca598e06",
+      "order": 1,
+      "zh": "放弃机会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ebf79f11-301d-4b65-b6d4-bb3e2980ce44",
+      "order": 2,
+      "zh": "放弃工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc593e2f-2044-4370-9f74-07b597efc0bf",
+      "order": 3,
+      "zh": "放弃休息时间",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "319ab868-9cc0-4417-b04e-3c884c91f9c8",
+      "order": 4,
+      "zh": "不要轻易放弃",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4fd5c019-099e-433a-be42-3a2991d1dc3c",
+      "order": 1,
+      "zh": "不要轻易放弃。",
+      "pinyin": "",
+      "vi": "Đừng dễ dàng từ bỏ.",
+      "analysis_vi": "不要 + V.",
+      "highlight": [
+        "放弃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f5517838-ffc0-480b-ba5a-0666916a4b70"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c75f267d-3620-44ca-afc6-8bf2066031ca",
+      "order": 2,
+      "zh": "同事们放弃了下班后的休息时间来学手语。",
+      "pinyin": "",
+      "vi": "Đồng nghiệp từ bỏ thời gian nghỉ sau giờ làm để học thủ ngữ.",
+      "analysis_vi": "放弃 + thời gian/quyền lợi.",
+      "highlight": [
+        "放弃"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "f5517838-ffc0-480b-ba5a-0666916a4b70"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "放弃 là buông ra thứ mình đang có hoặc muốn giữ.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8a76ed79-2c48-484f-9abd-79bb6ce11252",
+      "order": 1,
+      "rule_vi": "放弃 là bỏ hẳn hoặc chấp nhận không tiếp tục, khác nghỉ tạm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "放弃 là bỏ hẳn hoặc chấp nhận không tiếp tục, khác nghỉ tạm.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "放弃",
+    "back": "từ bỏ, bỏ đi",
+    "hint": "fàngqì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "f5517838-ffc0-480b-ba5a-0666916a4b70",
+    "source_lesson_vocab_id": null
+  }
+}

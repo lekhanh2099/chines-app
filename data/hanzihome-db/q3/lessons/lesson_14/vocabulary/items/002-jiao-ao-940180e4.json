@@ -1,0 +1,310 @@
+{
+  "id": "5d0eef41-b75e-481e-88a7-4e89da18a5c1",
+  "type": "deep_vocabulary_item",
+  "order": 2,
+  "hanzi": "骄傲",
+  "pinyin": "jiāo’ào",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词 / 名词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_14",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kiêu ngạo",
+    "meaning_vi": "tự hào; kiêu ngạo",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tự hào",
+      "kiêu ngạo"
+    ],
+    "short_definition_vi": "tự hào; kiêu ngạo",
+    "textbook_focus_vi": "Từ/cụm dùng trong Bài 14, trọng tâm ngữ cảnh: tâm lý, đánh giá.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "tâm lý, đánh giá",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "骄",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "馬",
+          "radical_variant": "马",
+          "radical_name_vi": "bộ Mã",
+          "radical_name_zh": "",
+          "hanviet": "mã",
+          "meaning_vi": "ngựa",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "马 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "mã",
+            "meaning_vi": "ngựa",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "馬",
+              "radical_variant": "马",
+              "radical_name_vi": "bộ Mã",
+              "radical_name_zh": "",
+              "hanviet": "mã",
+              "meaning_vi": "ngựa",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "马 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "马 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiêu, tự cao",
+        "modern_logic_vi": "Trong từ 骄傲, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "傲",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không suy diễn chữ học vượt quá nội dung đã soạn.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "亻 được dùng ở đây như thành phần/bộ thủ nhìn thấy của chữ.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 là thành phần/bộ thủ thấy được, không dùng để suy toàn bộ nghĩa hiện đại nếu không chắc.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngạo, tự cao",
+        "modern_logic_vi": "Trong từ 骄傲, chữ này góp phần tạo nghĩa/cách nhớ hiện đại của cụm; ưu tiên học theo từ ghép và ngữ cảnh.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "骄傲 nên được học theo nghĩa hiện đại trong cụm/tình huống: tự hào; kiêu ngạo.",
+    "memory_tip_vi": "Ghi nhớ qua cụm thường gặp: 感到骄傲.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng cách tách từng nét/chữ nếu phần chữ học không chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "自豪",
+        "pinyin": "zìháo",
+        "meaning_vi": "tự hào",
+        "difference_vi": "自豪 luôn tích cực hơn; 骄傲 có thể tích cực hoặc tiêu cực.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9cecb277-e876-4da0-8b75-197534571b57",
+      "order": 1,
+      "zh": "感到骄傲",
+      "pinyin": "",
+      "vi": "cảm thấy tự hào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47741e69-57fa-4969-bdf1-9bec5b1bfac1",
+      "order": 2,
+      "zh": "为你骄傲",
+      "pinyin": "",
+      "vi": "tự hào về bạn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "748e2467-780f-4eec-b195-9e34b67e1b28",
+      "order": 3,
+      "zh": "不要骄傲",
+      "pinyin": "",
+      "vi": "đừng kiêu ngạo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "253c6875-51ca-4401-bba2-5900afa9231a",
+      "order": 1,
+      "zh": "我为你感到骄傲。",
+      "pinyin": "",
+      "vi": "Tôi tự hào về bạn.",
+      "analysis_vi": "骄傲 có thể tích cực hoặc tiêu cực tùy ngữ cảnh.",
+      "highlight": [
+        "骄傲"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5d0eef41-b75e-481e-88a7-4e89da18a5c1"
+      ],
+      "source_ref": "conversation_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Trong bài 14, 骄傲 được dùng trong ngữ cảnh tâm lý, đánh giá; khi dùng ngoài bài cần kiểm tra sắc thái khẩu ngữ/văn viết và collocation đi kèm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3723c87c-8af8-478b-b413-c13ae05260fd",
+      "order": 1,
+      "rule_vi": "Không mặc định dịch 骄傲 là “kiêu ngạo”; trong 为你骄傲 là tự hào.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không mặc định dịch 骄傲 là “kiêu ngạo”; trong 为你骄傲 là tự hào.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "骄傲",
+    "back": "tự hào; kiêu ngạo",
+    "hint": "jiāo’ào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5d0eef41-b75e-481e-88a7-4e89da18a5c1",
+    "source_lesson_vocab_id": null
+  }
+}

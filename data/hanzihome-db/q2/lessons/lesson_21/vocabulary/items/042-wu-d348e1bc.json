@@ -1,0 +1,265 @@
+{
+  "id": "fa6f92fb-bbbc-471f-9704-933cb45b8847",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "雾",
+  "pinyin": "wù",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Vụ",
+    "meaning_vi": "sương mù",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "sương mù"
+    ],
+    "short_definition_vi": "sương mù",
+    "textbook_focus_vi": "sương mù",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "雾",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa, hiện tượng thời tiết",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "雨 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa, hiện tượng thời tiết",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "务",
+            "hanviet": "vụ",
+            "meaning_vi": "",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "sương mù",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "hơi nước trong không khí làm tầm nhìn mờ",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "695159ad-f1bf-4b08-9bc6-98d34619547f",
+      "order": 1,
+      "zh": "大雾",
+      "pinyin": "",
+      "vi": "sương mù dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bfa0d3ef-05c7-45e7-bdbd-ebe839c7e500",
+      "order": 2,
+      "zh": "有雾",
+      "pinyin": "",
+      "vi": "có sương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "867e75e5-0e23-4c32-a81e-ac457876019e",
+      "order": 3,
+      "zh": "雾很大",
+      "pinyin": "",
+      "vi": "sương dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9c075c22-7330-418d-aeb2-ec341e865314",
+      "order": 4,
+      "zh": "雾散了",
+      "pinyin": "",
+      "vi": "sương tan",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46a9e496-e9b9-40ef-b7a3-a28012cee39f",
+      "order": 5,
+      "zh": "浓雾",
+      "pinyin": "",
+      "vi": "sương dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3ec0fde1-b6a5-4e81-8d04-0e4fa6d4f79f",
+      "order": 1,
+      "zh": "今天早上有雾。",
+      "pinyin": "Jīntiān zǎoshang yǒu wù.",
+      "vi": "Sáng nay có sương mù.",
+      "analysis_vi": "有雾 là cách nói thời tiết đơn giản.",
+      "highlight": [
+        "雾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa6f92fb-bbbc-471f-9704-933cb45b8847"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c824eb44-dca5-49d5-981d-1678cdfd5b39",
+      "order": 2,
+      "zh": "如果不了解雾，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě wù, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 雾, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "雾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa6f92fb-bbbc-471f-9704-933cb45b8847"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e16e48ba-4e68-4d94-b000-6c97905059e6",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解雾在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě wù zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 雾 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "雾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa6f92fb-bbbc-471f-9704-933cb45b8847"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Sân khấu có thể dùng sương mù làm hiệu ứng tạo không khí thần thoại.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "41ee89c7-f319-4181-9680-a024f903ca24",
+      "order": 1,
+      "rule_vi": "Phân biệt 雾 sương mù, 烟 khói, 霾 mù ô nhiễm。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "雾",
+    "back": "sương mù",
+    "hint": "wù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fa6f92fb-bbbc-471f-9704-933cb45b8847",
+    "source_lesson_vocab_id": null
+  }
+}

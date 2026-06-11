@@ -1,0 +1,67 @@
+{
+  "id": "synthetic_vocab_1fe846892de9e5b6",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "孔林",
+  "pinyin": "Kǒng Lín",
+  "meaning_vi": "Khổng Lâm, nghĩa trang dòng họ Khổng",
+  "pos": "Tên riêng",
+  "pos_detail": {
+    "vi": "Tên riêng",
+    "cn": "专名",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "0cf40727-3d03-4a15-b838-b54cba41391f",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "0cf40727-3d03-4a15-b838-b54cba41391f",
+    "type": "vocabulary_item",
+    "order": 65,
+    "hanzi": "孔林",
+    "pinyin": "Kǒng Lín",
+    "meaning_vi": "Khổng Lâm, nghĩa trang dòng họ Khổng",
+    "meaning_en": "Cemetery of Confucius",
+    "pos": "Tên riêng",
+    "tags": [
+      "supplementary_vocab",
+      "proper_noun",
+      "culture"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "孔林",
+      "back": "Kǒng Lín — Khổng Lâm, nghĩa trang dòng họ Khổng",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_supplementary_added",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tên riêng",
+      "cn": "专名",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

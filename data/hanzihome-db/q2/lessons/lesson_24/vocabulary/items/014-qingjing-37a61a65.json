@@ -1,0 +1,248 @@
+{
+  "id": "004d5009-857b-4059-ad22-1fa9d6bc41d6",
+  "type": "deep_vocabulary_item",
+  "order": 14,
+  "hanzi": "情景",
+  "pinyin": "qíngjǐng",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Tình cảnh",
+    "meaning_vi": "tình cảnh; cảnh tượng; tình huống",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tình cảnh",
+      "cảnh tượng",
+      "tình huống"
+    ],
+    "short_definition_vi": "tình cảnh; cảnh tượng; tình huống",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "情",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tâm đứng; cảm xúc, tâm lý",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tâm đứng; cảm xúc, tâm lý",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tâm đứng; cảm xúc, tâm lý",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "thành phần giúp âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm; tình hình",
+        "modern_logic_vi": "Có 忄 nên liên quan cảm xúc/tâm lý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "景",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời; ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời; ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời; ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "京",
+            "hanviet": "kinh",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cảnh; cảnh tượng",
+        "modern_logic_vi": "景 thường liên quan cảnh vật/cảnh tượng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "情景 = tình cảnh; cảnh tượng; tình huống.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 情景 thay 情况 trong mọi câu hành chính.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c96a9b72-5403-4638-84e3-7fac2f366533",
+      "order": 1,
+      "zh": "情景",
+      "pinyin": "",
+      "vi": "tình cảnh; cảnh tượng; tình huống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5c8bc612-2f22-4114-b49f-f4baf6e496cf",
+      "order": 1,
+      "zh": "看到这种情景，大家都很感动。",
+      "pinyin": "Kàndào zhè zhǒng qíngjǐng, dàjiā dōu hěn gǎndòng.",
+      "vi": "Nhìn thấy tình cảnh này, mọi người đều rất cảm động.",
+      "analysis_vi": "Không dùng 情景 thay 情况 trong mọi câu hành chính.",
+      "level": "basic",
+      "highlight": [
+        "情景"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "004d5009-857b-4059-ad22-1fa9d6bc41d6"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "108d7267-a208-4a13-b9bc-4ae2b103a1a1",
+      "kind": "usage",
+      "text_vi": "Không dùng 情景 thay 情况 trong mọi câu hành chính.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "情景",
+    "back": "tình cảnh; cảnh tượng; tình huống",
+    "hint": "qíngjǐng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "004d5009-857b-4059-ad22-1fa9d6bc41d6",
+    "source_lesson_vocab_id": null
+  }
+}

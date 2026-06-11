@@ -1,0 +1,174 @@
+{
+  "id": "l13_section_004",
+  "type": "notes",
+  "order": 4,
+  "title": "注释",
+  "title_vi": "Chú thích",
+  "source_origin": "textbook_pdf_checked",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "note_001",
+      "type": "note",
+      "order": 1,
+      "title": "老大",
+      "structure": "老大 / 老二 / 老三",
+      "meaning_vi": "Dùng để gọi thứ tự con cái trong gia đình: con cả, con thứ hai, con thứ ba.",
+      "examples": [
+        {
+          "id": "l13_ex_001",
+          "zh": "老大。",
+          "pinyin": "Lǎodà.",
+          "vi": "Con cả.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_ex_002",
+          "zh": "老二。",
+          "pinyin": "Lǎo’èr.",
+          "vi": "Con thứ hai.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_ex_003",
+          "zh": "老三。",
+          "pinyin": "Lǎosān.",
+          "vi": "Con thứ ba.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "l13_line_005"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "note_002",
+      "type": "note",
+      "order": 2,
+      "title": "以……为主",
+      "structure": "以 + A + 为主",
+      "meaning_vi": "Lấy A làm chính, xem A là phần chủ yếu hoặc quan trọng nhất.",
+      "examples": [
+        {
+          "id": "l13_ex_004",
+          "zh": "以种地为主。",
+          "pinyin": "Yǐ zhòng dì wéi zhǔ.",
+          "vi": "Lấy làm ruộng làm chính.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        },
+        {
+          "id": "l13_ex_005",
+          "zh": "我们家以种地为主，兼搞一些副业。",
+          "pinyin": "Wǒmen jiā yǐ zhòng dì wéi zhǔ, jiān gǎo yìxiē fùyè.",
+          "vi": "Nhà chúng tôi lấy làm ruộng làm chính, đồng thời làm thêm nghề phụ.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "l13_line_006"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "note_003",
+      "type": "note",
+      "order": 3,
+      "title": "在家千日好，出门一时难",
+      "structure": "在家千日好，出门一时难。",
+      "meaning_vi": "Tục ngữ chỉ xa nhà, sống bên ngoài thường vất vả và bất tiện hơn ở nhà.",
+      "examples": [
+        {
+          "id": "l13_ex_006",
+          "zh": "在家千日好，出门一时难。",
+          "pinyin": "Zài jiā qiān rì hǎo, chū mén yì shí nán.",
+          "vi": "Ở nhà nghìn ngày thì tốt, ra ngoài một lúc cũng khó.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [
+        "l13_line_009"
+      ],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    },
+    {
+      "id": "note_004",
+      "type": "note",
+      "order": 4,
+      "title": "我自己的事三年内不考虑",
+      "structure": "自己的事 = chuyện cá nhân / chuyện riêng trong ngữ cảnh bài",
+      "meaning_vi": "Trong bài, 自己的事 không chỉ việc cá nhân nói chung mà chỉ chuyện riêng của 李文; có thể hiểu là chuyện tình cảm/tái hôn sau ly hôn.",
+      "examples": [
+        {
+          "id": "l13_ex_007",
+          "zh": "我自己的事三年内不考虑。",
+          "pinyin": "Wǒ zìjǐ de shì sān nián nèi bù kǎolǜ.",
+          "vi": "Trong vòng ba năm tới, tôi chưa tính đến chuyện riêng của mình.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook_pdf_checked",
+          "check_needed": false
+        }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook_pdf_checked",
+      "check_needed": false
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "id": "65e4fec0-e7e7-4b11-a2f3-8ae7197adf2d",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "筷子",
+  "pinyin": "kuàizi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "food",
+    "culture"
+  ],
+  "meaning": {
+    "hanviet": "Khoái tử",
+    "meaning_vi": "đũa",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đũa"
+    ],
+    "short_definition_vi": "đũa",
+    "textbook_focus_vi": "đũa",
+    "register_vi": "",
+    "usage_domain_vi": "food,culture",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "筷",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "⺮",
+            "hanviet": "trúc",
+            "meaning_vi": "tre",
+            "position_vi": "trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "⺮ là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "竹",
+              "radical_variant": "⺮",
+              "radical_name_vi": "bộ Trúc",
+              "radical_name_zh": "",
+              "hanviet": "trúc",
+              "meaning_vi": "tre",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "⺮ được dùng như bộ Trúc trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "快",
+            "hanviet": "khoái",
+            "meaning_vi": "gợi âm",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đũa",
+        "modern_logic_vi": "⺮ gợi chất liệu tre/gỗ truyền thống của đũa.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "竹",
+          "radical_variant": "⺮",
+          "radical_name_vi": "bộ Trúc",
+          "radical_name_zh": "",
+          "hanviet": "trúc",
+          "meaning_vi": "tre",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "⺮ được dùng như bộ Trúc trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ nhỏ; hậu tố",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 là thành phần bộ thủ/biến thể bộ thủ nhìn thấy trong chữ.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ nhỏ; hậu tố",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ Tử trong phân tích hình chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, trẻ nhỏ; hậu tố danh từ",
+        "modern_logic_vi": "Trong nhiều từ như 个子/筷子, 子 là hậu tố danh từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ nhỏ; hậu tố",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng như bộ Tử trong phân tích hình chữ hiện đại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "⺮ gợi chất liệu tre/gỗ truyền thống của đũa.; Trong nhiều từ như 个子/筷子, 子 là hậu tố danh từ.",
+    "memory_tip_vi": "Học theo nghĩa và cụm dùng trong bài, không suy diễn etymology nếu phần chữ hiện đại không rõ.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "勺子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "叉子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "刀子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d58d0514-1f92-42c3-bbde-81696546f340",
+      "order": 1,
+      "zh": "一双筷子",
+      "pinyin": "",
+      "vi": "một đôi đũa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "500dc7bd-1fdd-4ee9-97eb-02192b1fc308",
+      "order": 2,
+      "zh": "一根筷子",
+      "pinyin": "",
+      "vi": "một chiếc đũa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "89e13be7-2561-471d-93a5-f435a9827b9c",
+      "order": 3,
+      "zh": "用筷子",
+      "pinyin": "",
+      "vi": "dùng đũa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4681a36a-46c4-4977-8408-70186af8f206",
+      "order": 4,
+      "zh": "拿筷子",
+      "pinyin": "",
+      "vi": "cầm đũa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07ee5b65-9f4e-4390-8e7f-2ff07695c34a",
+      "order": 5,
+      "zh": "放下筷子",
+      "pinyin": "",
+      "vi": "đặt đũa xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9160e31a-7b1f-4c0b-a66e-acc9dcd5181d",
+      "order": 6,
+      "zh": "公筷",
+      "pinyin": "",
+      "vi": "đũa chung",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "239cbb07-3d6e-4ed6-bef2-2c92e5b5f78e",
+      "order": 1,
+      "zh": "请给我一双筷子。",
+      "pinyin": "Qǐng gěi wǒ yì shuāng kuàizi.",
+      "vi": "Cho tôi một đôi đũa với.",
+      "analysis_vi": "一双筷子 là lượng từ chuẩn.",
+      "highlight": [
+        "筷子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "65e4fec0-e7e7-4b11-a2f3-8ae7197adf2d"
+      ],
+      "source_ref": "manual_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9501adcb-cb43-4fc1-9df0-a0831f326ca1",
+      "order": 2,
+      "zh": "吃饭的时候，不要用筷子指别人，这样很不礼貌。",
+      "pinyin": "Chīfàn de shíhou, bú yào yòng kuàizi zhǐ biéren, zhèyàng hěn bù lǐmào.",
+      "vi": "Khi ăn, đừng dùng đũa chỉ người khác; như vậy rất bất lịch sự.",
+      "analysis_vi": "用筷子 + V = dùng đũa để làm gì.",
+      "highlight": [
+        "筷子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "65e4fec0-e7e7-4b11-a2f3-8ae7197adf2d"
+      ],
+      "source_ref": "manual_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "Không nên dùng đũa chỉ người, gõ bát, cắm thẳng vào bát cơm; 公筷 là đũa chung.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "24197e9b-ddb1-418a-9716-a4468974370a",
+      "order": 1,
+      "rule_vi": "Đếm một đôi đũa dùng 双; một chiếc đũa đơn dùng 根.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "一双筷子",
+          "pinyin": "Yì shuāng kuàizi",
+          "vi": "một đôi đũa",
+          "note_vi": "Lượng từ chuẩn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "筷子",
+    "back": "đũa",
+    "hint": "kuàizi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "food",
+      "culture"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "65e4fec0-e7e7-4b11-a2f3-8ae7197adf2d",
+    "source_lesson_vocab_id": null
+  }
+}

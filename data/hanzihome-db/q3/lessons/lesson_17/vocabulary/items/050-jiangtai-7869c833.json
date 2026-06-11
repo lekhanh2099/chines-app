@@ -1,0 +1,285 @@
+{
+  "id": "b7dcc1a4-06ae-468d-8112-2bb76c650ea7",
+  "type": "deep_vocabulary_item",
+  "order": 50,
+  "hanzi": "讲台",
+  "pinyin": "jiǎngtái",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "giảng đài",
+    "meaning_vi": "bục giảng, bục diễn thuyết",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bục giảng",
+      "bục diễn thuyết"
+    ],
+    "short_definition_vi": "bục giảng, bục diễn thuyết",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "讲",
+        "lishu_vi": "giảng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói, ngôn ngữ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi là bộ/thành phần chắc chắn trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói, ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "井",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nói, giảng, trình bày",
+        "modern_logic_vi": "nói, giảng, trình bày",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói, ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "台",
+        "lishu_vi": "đài",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bục, đài, sân khấu, nền",
+        "modern_logic_vi": "bục, đài, sân khấu, nền",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "讲 là giảng; 台 là bục/đài; 讲台 là bục để giảng.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 走上讲台.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "舞台",
+        "pinyin": "wǔtái",
+        "meaning_vi": "sân khấu",
+        "difference_vi": "舞台 dùng cho biểu diễn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "讲桌",
+        "pinyin": "jiǎngzhuō",
+        "meaning_vi": "bàn giáo viên",
+        "difference_vi": "讲桌 là bàn, không nhất thiết bục cao.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3a1ea454-fe8b-4513-98ca-1d4cae303c29",
+      "order": 1,
+      "zh": "走上讲台",
+      "pinyin": "zǒu shàng jiǎngtái",
+      "vi": "bước lên bục giảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47e4971e-7491-48cc-a996-61513233fd1e",
+      "order": 2,
+      "zh": "站在讲台上",
+      "pinyin": "zhàn zài jiǎngtái shang",
+      "vi": "đứng trên bục giảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2c89c8e9-99b9-4474-a4ad-95199f5d5862",
+      "order": 3,
+      "zh": "讲台前",
+      "pinyin": "jiǎngtái qián",
+      "vi": "trước bục giảng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "67fd443f-500f-447f-820f-4b40e36e81e1",
+      "order": 1,
+      "zh": "他第一次走上讲台，心里很紧张。",
+      "pinyin": "Tā dì yī cì zǒu shàng jiǎngtái, xīnli hěn jǐnzhāng.",
+      "vi": "Lần đầu anh ấy bước lên bục giảng, trong lòng rất căng thẳng.",
+      "analysis_vi": "走上讲台 cũng gợi chuyển vai sang người giảng.",
+      "highlight": [
+        "讲台"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7dcc1a4-06ae-468d-8112-2bb76c650ea7"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "048f1cf7-c997-4049-a9de-acb4dbf3d950",
+      "order": 2,
+      "zh": "他把教案放在讲台上，努力让自己沉着下来。",
+      "pinyin": "Tā bǎ jiào’àn fàng zài jiǎngtái shang, nǔlì ràng zìjǐ chénzhuó xiàlai.",
+      "vi": "Anh ấy đặt giáo án lên bục giảng và cố bình tĩnh lại.",
+      "analysis_vi": "把教案放在讲台上 là 把 + V + 在.",
+      "highlight": [
+        "讲台"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b7dcc1a4-06ae-468d-8112-2bb76c650ea7"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "走上讲台 có thể mang nghĩa biểu tượng: bắt đầu đứng lớp hoặc nghề dạy.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6d52ea9c-964c-4869-a1b8-0025c74678bc",
+      "order": 1,
+      "rule_vi": "Không nhầm 讲台 với 舞台 hoặc 平台.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "讲台",
+    "back": "bục giảng, bục diễn thuyết",
+    "hint": "jiǎngtái",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b7dcc1a4-06ae-468d-8112-2bb76c650ea7",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "id": "357bc69b-afe7-46fe-84d8-3757a66c865f",
+  "type": "deep_vocabulary_item",
+  "order": 23,
+  "hanzi": "了",
+  "pinyin": "liǎo",
+  "pos": {
+    "raw_vi": "Bổ ngữ khả năng",
+    "raw_cn": "可能补语",
+    "normalized": "grammar_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Liễu",
+    "meaning_vi": "xong, nổi, được; dùng trong bổ ngữ khả năng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xong, nổi, được; dùng trong bổ ngữ khả năng"
+    ],
+    "short_definition_vi": "xong, nổi, được; dùng trong bổ ngữ khả năng",
+    "textbook_focus_vi": "xong, nổi, được; dùng trong bổ ngữ khả năng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "了",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "了",
+            "hanviet": "liễu",
+            "meaning_vi": "chữ đơn",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "xong/kết thúc; trợ từ/bổ ngữ",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu hình thể hiện đại.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "V得了/V不了 nói làm được hay không xử lý nổi",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a1f4d11b-c289-4eb3-bc18-c24afb7f781b",
+      "order": 1,
+      "zh": "来不了",
+      "pinyin": "",
+      "vi": "không đến được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b4b83bf-1653-4cdd-94a9-aaeac096b483",
+      "order": 2,
+      "zh": "去不了",
+      "pinyin": "",
+      "vi": "không đi được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "720ae9bd-ac48-474c-b1f1-bc32e7c58fb1",
+      "order": 3,
+      "zh": "吃不了",
+      "pinyin": "",
+      "vi": "ăn không nổi/không hết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3a61d5e-62b3-4c6f-ae78-cd6e405eaac8",
+      "order": 4,
+      "zh": "受不了",
+      "pinyin": "",
+      "vi": "chịu không nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a3e22ce1-1d7a-44ff-b9a4-d5bdf3bafd13",
+      "order": 5,
+      "zh": "解决不了",
+      "pinyin": "",
+      "vi": "không giải quyết được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1ea7c7c8-c11f-473f-afd4-0c6b7bb12ae1",
+      "order": 1,
+      "zh": "我今天有事，来不了了。",
+      "pinyin": "Wǒ jīntiān yǒu shì, lái bù liǎo le.",
+      "vi": "Hôm nay tôi có việc, không đến được nữa.",
+      "analysis_vi": "来不了 là không đến được; 了 cuối câu là le báo tình huống mới.",
+      "highlight": [
+        "了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "357bc69b-afe7-46fe-84d8-3757a66c865f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f4813019-e8e0-4c41-b9a5-7a6c6cfd3eab",
+      "order": 2,
+      "zh": "如果不了解了，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě liǎo, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 了, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "357bc69b-afe7-46fe-84d8-3757a66c865f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ae7c1340-9c6c-4a63-afb3-6dd76e8df45b",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解了在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě liǎo zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 了 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "了"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "357bc69b-afe7-46fe-84d8-3757a66c865f"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "受不了 là khẩu ngữ cực hay dùng: chịu hết nổi.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d8103d40-3792-4106-baa2-04162515a586",
+      "order": 1,
+      "rule_vi": "Trong 不了 đọc liǎo, không đọc le。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "了",
+    "back": "xong, nổi, được; dùng trong bổ ngữ khả năng",
+    "hint": "liǎo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "357bc69b-afe7-46fe-84d8-3757a66c865f",
+    "source_lesson_vocab_id": null
+  }
+}

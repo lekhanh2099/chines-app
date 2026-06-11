@@ -1,0 +1,328 @@
+{
+  "id": "401b3a67-d40a-4237-be29-b66826a3ba62",
+  "type": "deep_vocabulary_item",
+  "order": 58,
+  "hanzi": "美园",
+  "pinyin": "Měiyuán",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "专名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_21",
+    "deep_vocab",
+    "理发"
+  ],
+  "meaning": {
+    "hanviet": "mỹ viên",
+    "meaning_vi": "Mỹ Viên, tên riêng salon trong bài",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Mỹ Viên",
+      "tên riêng salon trong bài"
+    ],
+    "short_definition_vi": "Mỹ Viên, tên riêng salon trong bài",
+    "textbook_focus_vi": "Trọng tâm trong Bài 21 理发: Mỹ Viên, tên riêng salon trong bài.",
+    "register_vi": "trung tính/khẩu ngữ theo ngữ cảnh bài",
+    "usage_domain_vi": "cắt tóc, dịch vụ, sự cố, giao tiếp đời sống, trách nhiệm bồi thường",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "美",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "羊",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Dương",
+          "radical_name_zh": "",
+          "hanviet": "dương",
+          "meaning_vi": "con dê",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "羊",
+            "hanviet": "dương",
+            "meaning_vi": "con dê",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羊",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Dương",
+              "radical_name_zh": "",
+              "hanviet": "dương",
+              "meaning_vi": "con dê",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "羊 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 美.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "园",
+        "lishu_vi": "",
+        "structure_note_vi": "Có phân tích bộ/thành phần rõ nếu chắc; nếu không, chỉ giữ chữ để tránh bịa chiết tự.",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "khung bao quanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "vi",
+            "meaning_vi": "khung bao quanh",
+            "position_vi": "bao ngoài",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "khung bao quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "囗 được ghi nhận như bộ thủ/thành phần bộ thủ chính của chữ 园.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "美园 trong bài được hiểu theo nghĩa: Mỹ Viên, tên riêng salon trong bài. Phần cấu tạo chữ chỉ giữ các thành phần chắc, không ép diễn giải nguồn gốc.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh Bài 21《理发》 và các cụm 搭配 của 美园.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là từ ghép, thành ngữ, tên riêng hoặc từ tượng thanh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "美园 là tên riêng, không dùng như danh từ chung."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "44d6e499-0330-45da-a698-b612dc70f0d7",
+      "order": 1,
+      "zh": "“美园”发廊",
+      "pinyin": "",
+      "vi": "salon “Mỹ Viên”",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7914a50-6b98-4995-be73-32713596b9e2",
+      "order": 2,
+      "zh": "去“美园”理发",
+      "pinyin": "",
+      "vi": "đến Mỹ Viên cắt tóc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5358f2db-67f8-4826-ab68-d6d52d8f72a1",
+      "order": 3,
+      "zh": "朋友推荐“美园”",
+      "pinyin": "",
+      "vi": "bạn giới thiệu Mỹ Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "55a4358a-2813-42a5-801e-eaf155aab4d6",
+      "order": 4,
+      "zh": "“美园”的理发师",
+      "pinyin": "",
+      "vi": "thợ cắt tóc của Mỹ Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f7d740ae-db49-48d8-a889-562507a2ee9b",
+      "order": 5,
+      "zh": "在“美园”排队",
+      "pinyin": "",
+      "vi": "xếp hàng ở Mỹ Viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "67b9595a-f5a0-43c9-a638-ee1fd07dafb7",
+      "order": 1,
+      "zh": "朋友推荐我去“美园”理发。",
+      "pinyin": "",
+      "vi": "Bạn giới thiệu tôi đến “Mỹ Viên” cắt tóc.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "美园"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "401b3a67-d40a-4237-be29-b66826a3ba62"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7867111f-dc66-473e-a534-e369dd85bc75",
+      "order": 2,
+      "zh": "“美园”发廊的生意很红火，还要排队等候。",
+      "pinyin": "",
+      "vi": "Salon Mỹ Viên làm ăn phát đạt, còn phải xếp hàng chờ.",
+      "analysis_vi": "Ví dụ tự nhiên, bám ngữ cảnh bài 理发 và cách dùng đã soạn.",
+      "highlight": [
+        "美园"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "401b3a67-d40a-4237-be29-b66826a3ba62"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / Ghi chú dùng thật",
+    "content_vi": "美园 là tên riêng, không dùng như danh từ chung.",
+    "tags": [
+      "usage",
+      "mainland_putonghua",
+      "hanyu_jiaocheng"
+    ],
+    "source_refs": [
+      "thread_vocab_compilation"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7ae6cbae-a3d5-4d5b-8fb5-c122508c0541",
+      "order": 1,
+      "rule_vi": "美园 là tên riêng, không dùng như danh từ chung.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我想开一家美园。",
+          "pinyin": "",
+          "vi": "Câu sai/kém tự nhiên cần tránh.",
+          "note_vi": "美园 là tên riêng, không dùng như danh từ chung.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我想开一家发廊。",
+          "pinyin": "",
+          "vi": "Câu đúng/tự nhiên hơn.",
+          "note_vi": "Dùng theo cách an toàn trong Putonghua hiện đại.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "美园 là tên riêng, không dùng như danh từ chung.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "美园",
+    "back": "Mỹ Viên, tên riêng salon trong bài",
+    "hint": "Měiyuán",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_21",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "401b3a67-d40a-4237-be29-b66826a3ba62",
+    "source_lesson_vocab_id": null
+  }
+}

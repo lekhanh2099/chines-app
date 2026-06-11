@@ -1,0 +1,378 @@
+{
+  "id": "5e7648e9-11ae-4cd6-9084-f4753e4143e8",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "存在",
+  "pinyin": "cúnzài",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动词 / 名词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "tồn tại",
+    "meaning_vi": "tồn tại, có thật",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tồn tại",
+      "có thật"
+    ],
+    "short_definition_vi": "hiện hữu, có mặt như một sự thật/trạng thái",
+    "textbook_focus_vi": "Trong bài dùng với 飞碟的存在 và 可能性.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "存",
+        "lishu_vi": "",
+        "structure_note_vi": "子",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "",
+            "meaning_vi": "con, trẻ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "子 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "con, trẻ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "còn, lưu giữ, tồn tại",
+        "modern_logic_vi": "còn, lưu giữ, tồn tại",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "con, trẻ",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "子 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "在",
+        "lishu_vi": "",
+        "structure_note_vi": "土",
+        "components": [
+          {
+            "text": "土",
+            "hanviet": "",
+            "meaning_vi": "đất",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "土 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "土",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Thổ",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "đất",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "土 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ở, tồn tại",
+        "modern_logic_vi": "ở, tồn tại",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "土",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Thổ",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "đất",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "土 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "存在 được học trong bài theo nghĩa: hiện hữu, có mặt như một sự thật/trạng thái.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 飞碟的存在.",
+    "warning_vi": "Không dùng 存在 thay 有 cho vật đơn giản trên bàn; 桌子上有一本书 tự nhiên hơn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "有",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Có, thông dụng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "出现",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Xuất hiện, nhấn từ không thấy đến thấy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không dùng 存在 thay 有 cho vật đơn giản trên bàn; 桌子上有一本书 tự nhiên hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "24fb0dd5-5773-463d-9086-375cb59793c7",
+      "order": 1,
+      "zh": "飞碟的存在",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0f77a887-a5a2-456b-9c99-78e2e87d1d86",
+      "order": 2,
+      "zh": "相信……的存在",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ddc8b16-e731-4389-bd2f-abc4ce3744e2",
+      "order": 3,
+      "zh": "存在问题",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2fe79e5b-d348-4aa5-a4e8-edcbfc9261a3",
+      "order": 4,
+      "zh": "客观存在",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e1f0475-d2fa-4b67-a13b-7fe5900f7722",
+      "order": 5,
+      "zh": "存在可能性",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "87a239b5-76d0-4463-8a80-2e4ff349166b",
+      "order": 6,
+      "zh": "存在着无数可能性",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ff92e4b3-b448-46ad-aded-5fea464bdcd2",
+      "order": 1,
+      "zh": "我相信飞碟的存在。",
+      "pinyin": "",
+      "vi": "Tôi tin vào sự tồn tại của đĩa bay.",
+      "analysis_vi": "飞碟的存在 là cụm danh từ.",
+      "highlight": [
+        "存在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e7648e9-11ae-4cd6-9084-f4753e4143e8"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ba3b8eb9-808a-403d-bd97-5b702a396742",
+      "order": 2,
+      "zh": "这个问题已经存在很久了。",
+      "pinyin": "",
+      "vi": "Vấn đề này đã tồn tại rất lâu rồi.",
+      "analysis_vi": "存在很久了 nói trạng thái kéo dài.",
+      "highlight": [
+        "存在"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5e7648e9-11ae-4cd6-9084-f4753e4143e8"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "存在 nghiêm túc hơn 有, dùng cho vấn đề, hiện tượng, khả năng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7b9d602a-870e-490e-917d-bf4a0e9431eb",
+      "order": 1,
+      "rule_vi": "Không dùng 存在 thay 有 cho vật đơn giản trên bàn; 桌子上有一本书 tự nhiên hơn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 存在 thay 有 cho vật đơn giản trên bàn; 桌子上有一本书 tự nhiên hơn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "存在",
+    "back": "tồn tại, có thật",
+    "hint": "cúnzài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5e7648e9-11ae-4cd6-9084-f4753e4143e8",
+    "source_lesson_vocab_id": null
+  }
+}

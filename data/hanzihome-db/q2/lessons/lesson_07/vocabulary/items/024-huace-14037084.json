@@ -1,0 +1,389 @@
+{
+  "id": "0a7c6eea-8414-4c0c-95da-650d75a864b4",
+  "type": "deep_vocabulary_item",
+  "order": 24,
+  "hanzi": "画册",
+  "pinyin": "huàcè",
+  "pos": {
+    "raw_vi": "Danh từ 【名词】",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson07",
+    "time_history",
+    "book",
+    "visual"
+  ],
+  "meaning": {
+    "hanviet": "Họa sách",
+    "meaning_vi": "tập tranh ảnh; sách ảnh; album ảnh in",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tập tranh ảnh",
+      "sách ảnh",
+      "album ảnh in"
+    ],
+    "short_definition_vi": "tập tranh ảnh",
+    "textbook_focus_vi": "",
+    "register_vi": "phổ thông",
+    "usage_domain_vi": "sách ảnh / xuất bản",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "画",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "田",
+            "hanviet": "điền",
+            "meaning_vi": "ruộng/ô vuông",
+            "position_vi": "trong",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "凵",
+            "hanviet": "khảm",
+            "meaning_vi": "khung dưới",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vẽ, tranh, bức họa",
+        "modern_logic_vi": "画 = tranh/vẽ; chữ giản thể không nên tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "册",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "冂",
+            "hanviet": "quynh",
+            "meaning_vi": "khung ngoài",
+            "position_vi": "ngoài",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "丨",
+            "hanviet": "cổn",
+            "meaning_vi": "nét dọc như thẻ sách",
+            "position_vi": "trong",
+            "role": "stroke_shape",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quyển, tập, sách mỏng, sổ",
+        "modern_logic_vi": "册 có thể nhớ như các thẻ/sách ghép lại.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "画册 cần học theo nghĩa hiện đại và collocation trong bài.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相册",
+        "pinyin": "",
+        "meaning_vi": "album ảnh",
+        "difference_vi": "Đặc biệt album ảnh điện thoại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "图册",
+        "pinyin": "",
+        "meaning_vi": "tập hình ảnh/atlas",
+        "difference_vi": "Trung tính hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "画报",
+        "pinyin": "",
+        "meaning_vi": "báo tranh/tạp chí ảnh",
+        "difference_vi": "Hơi cũ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "书",
+        "pinyin": "",
+        "meaning_vi": "sách",
+        "difference_vi": "Nói chung.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c08337d0-7cf4-4506-a73c-53eb02bc5f33",
+      "order": 1,
+      "zh": "一本画册",
+      "pinyin": "",
+      "vi": "một tập tranh ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "02438d58-65a0-4ac8-b8b6-87427210c024",
+      "order": 2,
+      "zh": "一份画册",
+      "pinyin": "",
+      "vi": "một bản/tập tranh ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a731067-fa8b-4f31-b3b8-69d317b01fc9",
+      "order": 3,
+      "zh": "中国画册",
+      "pinyin": "",
+      "vi": "tập tranh ảnh Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d2712e25-84c1-48b4-8354-5569ccbba335",
+      "order": 4,
+      "zh": "历史画册",
+      "pinyin": "",
+      "vi": "tập ảnh lịch sử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e76a6204-94b7-4703-b17e-24a55a8235ec",
+      "order": 5,
+      "zh": "旅游画册",
+      "pinyin": "",
+      "vi": "tập ảnh du lịch",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d19a6d8b-5b7b-443c-8403-eb7720bd9e50",
+      "order": 6,
+      "zh": "翻画册",
+      "pinyin": "",
+      "vi": "lật/xem tập tranh ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aba18afd-119e-463f-b9ef-4135917a84a9",
+      "order": 7,
+      "zh": "出版画册",
+      "pinyin": "",
+      "vi": "xuất bản tập tranh ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1e9ca021-4e9f-491d-b440-b87b38509540",
+      "order": 8,
+      "zh": "画册设计",
+      "pinyin": "",
+      "vi": "thiết kế sách ảnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fd9f8f6d-f7c0-4a96-9218-41e520a0aa08",
+      "order": 1,
+      "zh": "这本画册很漂亮。",
+      "pinyin": "Zhè běn huàcè hěn piàoliang.",
+      "vi": "Tập tranh ảnh này rất đẹp.",
+      "analysis_vi": "本 là lượng từ cho sách/tập đóng quyển.",
+      "highlight": [
+        "画册"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0a7c6eea-8414-4c0c-95da-650d75a864b4"
+      ],
+      "source_ref": "thread_current",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "215d8bc0-6476-40fd-ad16-8ebcb87a3e2f",
+      "order": 2,
+      "zh": "这本画册不但有照片，而且有很多历史介绍。",
+      "pinyin": "Zhè běn huàcè búdàn yǒu zhàopiàn, érqiě yǒu hěn duō lìshǐ jièshào.",
+      "vi": "Tập tranh ảnh này không những có ảnh mà còn có nhiều phần giới thiệu lịch sử.",
+      "analysis_vi": "不但……而且…… nối hai nội dung.",
+      "highlight": [
+        "画册",
+        "不但",
+        "而且"
+      ],
+      "grammar_refs": [
+        "grammar_07_budan_erqie"
+      ],
+      "vocab_refs": [
+        "0a7c6eea-8414-4c0c-95da-650d75a864b4"
+      ],
+      "source_ref": "thread_current",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "077deed7-7cfb-46c6-856c-8f0951dad0ee",
+      "order": 3,
+      "zh": "我周末在图书馆看到一本介绍北京四个季节的画册，里面的秋天照片跟我想象的一样美。",
+      "pinyin": "Wǒ zhōumò zài túshūguǎn kàn dào yì běn jièshào Běijīng sì ge jìjié de huàcè, lǐmiàn de qiūtiān zhàopiàn gēn wǒ xiǎngxiàng de yíyàng měi.",
+      "vi": "Cuối tuần tôi thấy ở thư viện một tập tranh ảnh giới thiệu bốn mùa Bắc Kinh, ảnh mùa thu bên trong đẹp như tôi tưởng tượng.",
+      "analysis_vi": "一本介绍北京四个季节的画册 là định ngữ dài.",
+      "highlight": [
+        "画册",
+        "季节",
+        "一样美"
+      ],
+      "grammar_refs": [
+        "grammar_07_geng_yiyang"
+      ],
+      "vocab_refs": [
+        "0a7c6eea-8414-4c0c-95da-650d75a864b4"
+      ],
+      "source_ref": "thread_current",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "画册 hay gặp trong bối cảnh giới thiệu phong cảnh, bảo tàng, triển lãm, văn hóa nghệ thuật; ảnh điện thoại dùng 相册 tự nhiên hơn.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d739aa6f-5069-4023-8971-d024012fa673",
+      "order": 1,
+      "rule_vi": "Không dùng 画册 cho album ảnh điện thoại thông thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "手机画册",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Không tự nhiên nếu nói album ảnh trong điện thoại.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "手机相册",
+          "pinyin": "shǒujī xiàngcè",
+          "vi": "album ảnh trong điện thoại",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Dựa vào ngữ cảnh và collocation chuẩn để chọn từ/cấu trúc tự nhiên.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "画册",
+    "back": "tập tranh ảnh; sách ảnh; album ảnh in",
+    "hint": "huàcè",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson07",
+      "book",
+      "visual"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0a7c6eea-8414-4c0c-95da-650d75a864b4",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "id": "cf94f41a-fa79-4127-95b7-73d9c68d65a9",
+  "type": "deep_vocabulary_item",
+  "order": 25,
+  "hanzi": "电池",
+  "pinyin": "diànchí",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson_08",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Điện trì",
+    "meaning_vi": "pin, ắc quy nhỏ",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "pin, ắc quy nhỏ",
+    "textbook_focus_vi": "Nghĩa trọng tâm trong Bài 8: 冬天快要到了.",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, bài 8",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "电",
+        "lishu_vi": "điện",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điện",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "parser",
+            "text_vi": "Chưa tách component vì không đủ chắc chắn; giữ nghĩa hiện đại ở cấp chữ.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": true
+      },
+      {
+        "hanzi": "池",
+        "lishu_vi": "trì",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "也",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ao, bể, vật chứa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước/chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "电 = điện. 池 = ao, bể, nơi chứa. → 电池 = vật chứa điện, tức pin/ắc quy. Logic nhớ nghĩa hiện đại:",
+    "memory_tip_vi": "",
+    "warning_vi": "Thiết bị nhỏ cần nguồn điện riêng → dùng 电池. Cảnh báo: 电池没电了 là hết pin; không nhất thiết pin “hỏng”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "电池",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "pin.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "充电",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "sạc điện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "没电了",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hết điện/hết pin.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "电源",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nguồn điện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "充电器",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bộ sạc.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "手机没电了。",
+      "Điện thoại hết pin rồi.",
+      "我要给手机充电。",
+      "Tôi phải sạc điện thoại.",
+      "表该换电池了。",
+      "Đồng hồ đến lúc thay pin rồi."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "bdb4f30e-f4f8-41c7-aa10-abff2f6832bc",
+      "order": 1,
+      "zh": "换电池",
+      "pinyin": "",
+      "vi": "thay pin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "00913ff9-916f-438d-8f6f-11363e399cdb",
+      "order": 2,
+      "zh": "电池没电了",
+      "pinyin": "",
+      "vi": "pin hết điện rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a5a41eb3-2bee-4d27-9abe-16fd57a67986",
+      "order": 3,
+      "zh": "一节电池",
+      "pinyin": "",
+      "vi": "một viên pin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0e5062bb-c37c-4e79-a637-437e93f360bf",
+      "order": 4,
+      "zh": "电池坏了",
+      "pinyin": "",
+      "vi": "pin hỏng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "68075f67-8a31-448d-9427-dd087a11352e",
+      "order": 5,
+      "zh": "装电池",
+      "pinyin": "",
+      "vi": "lắp pin",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "210f3c7c-3ffc-4d5d-9ed5-4ba96ef1acd3",
+      "order": 6,
+      "zh": "取出电池",
+      "pinyin": "",
+      "vi": "lấy pin ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1534d9e7-0310-42c5-b33a-2c6a2600b227",
+      "order": 1,
+      "zh": "电池没电了。",
+      "pinyin": "Diànchí méi diàn le.",
+      "vi": "Pin hết điện rồi.",
+      "analysis_vi": "没电了 báo trạng thái mới: trước còn điện, giờ hết.",
+      "highlight": [
+        "电池"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf94f41a-fa79-4127-95b7-73d9c68d65a9"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8b7a2538-9fa6-46c4-bcd8-2d581f4b99d5",
+      "order": 2,
+      "zh": "表停了，不一定是坏了，也许只是该换电池了。",
+      "pinyin": "Biǎo tíng le, bù yídìng shì huài le, yěxǔ zhǐshì gāi huàn diànchí le.",
+      "vi": "Đồng hồ ngừng chạy chưa chắc là hỏng, có lẽ chỉ là đến lúc thay pin rồi.",
+      "analysis_vi": "不一定 = chưa chắc. 只是 = chỉ là. 该换电池了 là mẫu Bài 8 rất quan trọng.",
+      "highlight": [
+        "电池"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf94f41a-fa79-4127-95b7-73d9c68d65a9"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "aaf61971-92aa-4fe5-bd56-2026724bf6c5",
+      "order": 3,
+      "zh": "快考试了，可是他的表突然停了；他急急忙忙地跑到商店，想先把电池换好，再回教室。",
+      "pinyin": "Kuài kǎoshì le, kěshì tā de biǎo tūrán tíng le; tā jíjímángmáng de pǎo dào shāngdiàn, xiǎng xiān bǎ diànchí huàn hǎo, zài huí jiàoshì.",
+      "vi": "Sắp thi rồi, nhưng đồng hồ của anh ấy đột nhiên ngừng chạy; anh ấy vội vội vàng vàng chạy đến cửa hàng, muốn thay pin xong trước rồi mới về lớp.",
+      "analysis_vi": "快考试了 báo sắp xảy ra. 突然停了 báo tình huống mới. 急急忙忙地跑到 dùng 地. 把电池换好 là 把字句 + kết quả.",
+      "highlight": [
+        "电池"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cf94f41a-fa79-4127-95b7-73d9c68d65a9"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung hiện đại, với điện thoại thường nói 手机没电了 / 给手机充电, còn với đồng hồ hoặc điều khiển thì nói 换电池. Đừng dùng 换电池 cho điện thoại nếu chỉ muốn nói “sạc pin”.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "96b0fb2b-8175-4344-8da5-08b1918a2832",
+      "order": 1,
+      "rule_vi": "Phân biệt:",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "换电池 = thay pin. 充电 = sạc pin. 没电了 = hết pin/hết điện. Ví dụ:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "电池",
+    "back": "pin, ắc quy nhỏ",
+    "hint": "diànchí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_08"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cf94f41a-fa79-4127-95b7-73d9c68d65a9",
+    "source_lesson_vocab_id": null
+  }
+}

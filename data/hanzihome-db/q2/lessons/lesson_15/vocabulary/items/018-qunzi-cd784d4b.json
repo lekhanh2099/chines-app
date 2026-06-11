@@ -1,0 +1,348 @@
+{
+  "id": "3af00c1a-87b1-47bc-bafb-047955dafbd8",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "裙子",
+  "pinyin": "qúnzi",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Quần tử",
+    "meaning_vi": "váy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "váy"
+    ],
+    "short_definition_vi": "váy",
+    "textbook_focus_vi": "váy",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "裙",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "衤",
+            "hanviet": "y",
+            "meaning_vi": "áo/quần áo",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "衤",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "áo, quần áo, trang phục",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "君",
+            "hanviet": "quân",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "váy",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "衤",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "áo, quần áo, trang phục",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ, hậu tố danh từ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con, trẻ, hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "子",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tử",
+          "radical_name_zh": "",
+          "hanviet": "tử",
+          "meaning_vi": "con, trẻ, hậu tố danh từ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "裙 có 衤 nên liên quan trang phục; 子 là hậu tố. 裙子 = váy.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "连衣裙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "váy liền thân",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "短裙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "váy ngắn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "长裙",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "váy dài",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "裤子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quần",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "裙子",
+        "right": "裤子",
+        "meaning_vi": "váy ↔ quần",
+        "note_vi": "Cặp trang phục.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "b5596144-d5b2-46a8-893d-7fc141279948",
+      "order": 1,
+      "zh": "一条裙子",
+      "pinyin": "",
+      "vi": "một chiếc váy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "831b95b2-06b2-4809-be42-87c0a76f803f",
+      "order": 2,
+      "zh": "穿裙子",
+      "pinyin": "",
+      "vi": "mặc váy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bc306692-c47b-4233-ae52-7089222a6872",
+      "order": 3,
+      "zh": "红裙子",
+      "pinyin": "",
+      "vi": "váy đỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b38ed07-0d54-49c5-bf34-c13bdab5c026",
+      "order": 4,
+      "zh": "长裙子",
+      "pinyin": "",
+      "vi": "váy dài",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "95f3fcfb-6ff0-4a8a-bad9-c27fcf085fb8",
+      "order": 5,
+      "zh": "短裙子",
+      "pinyin": "",
+      "vi": "váy ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7d67de1a-a200-406f-8caf-37598884619f",
+      "order": 1,
+      "zh": "新娘穿着一条白色裙子。",
+      "pinyin": "Xīnniáng chuānzhe yì tiáo báisè qúnzi.",
+      "vi": "Cô dâu mặc một chiếc váy trắng.",
+      "analysis_vi": "一条裙子 dùng lượng từ 条.",
+      "highlight": [
+        "裙子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3af00c1a-87b1-47bc-bafb-047955dafbd8"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "06d0e085-b0b0-4bf8-b3ff-aa5bf918a269",
+      "order": 2,
+      "zh": "那位女士穿着红裙子，坐在第一排。",
+      "pinyin": "Nà wèi nǚshì chuānzhe hóng qúnzi, zuò zài dì-yī pái.",
+      "vi": "Người phụ nữ kia mặc váy đỏ, ngồi ở hàng đầu.",
+      "analysis_vi": "穿着红裙子 tả trạng thái trang phục đang mặc.",
+      "highlight": [
+        "裙子",
+        "穿着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3af00c1a-87b1-47bc-bafb-047955dafbd8"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "4a44d8c3-702f-4790-8241-cc73deb39d0b",
+      "order": 1,
+      "rule_vi": "Lượng từ thường là 条: 一条裙子.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "裙子",
+    "back": "váy",
+    "hint": "qúnzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "Miêu tả trang phục hiện đại thường nói màu + loại váy: 白色裙子、黑色长裙、红色连衣裙.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3af00c1a-87b1-47bc-bafb-047955dafbd8",
+    "source_lesson_vocab_id": null
+  }
+}

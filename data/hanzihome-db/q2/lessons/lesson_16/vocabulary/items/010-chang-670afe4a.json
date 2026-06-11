@@ -1,0 +1,269 @@
+{
+  "id": "a2fa1cbc-dd8f-499a-8d66-148f1c178558",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "尝",
+  "pinyin": "cháng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thường / Nếm",
+    "meaning_vi": "nếm, thử nếm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nếm, thử nếm"
+    ],
+    "short_definition_vi": "nếm, thử nếm",
+    "textbook_focus_vi": "nếm, thử nếm",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "尝",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nếm, thử nếm",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "尝 = nếm thử, thường dùng với đồ ăn/đồ uống.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "吃",
+        "pinyin": "",
+        "meaning_vi": "ăn",
+        "difference_vi": "Hành động ăn thật sự.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "品尝",
+        "pinyin": "",
+        "meaning_vi": "thưởng thức, nếm kỹ",
+        "difference_vi": "Trang trọng/kỹ hơn 尝.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "试试",
+        "pinyin": "",
+        "meaning_vi": "thử nói chung",
+        "difference_vi": "Không nhất thiết là nếm.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c43e35c8-9566-44f4-a262-72959a41c7e0",
+      "order": 1,
+      "zh": "尝一尝",
+      "pinyin": "",
+      "vi": "nếm thử một chút",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0772c45e-c895-415e-868b-d32de8caa75a",
+      "order": 2,
+      "zh": "尝尝",
+      "pinyin": "",
+      "vi": "nếm thử",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c30baf6c-cf10-47ca-8f38-898223610da0",
+      "order": 3,
+      "zh": "尝一下",
+      "pinyin": "",
+      "vi": "thử nếm một cái",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62e5cf2b-d60d-40fb-b9e3-ee38cccf3ecc",
+      "order": 4,
+      "zh": "尝味道",
+      "pinyin": "",
+      "vi": "nếm vị",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1679bada-5222-4a31-9298-c0ed1c31458d",
+      "order": 5,
+      "zh": "品尝美食",
+      "pinyin": "",
+      "vi": "thưởng thức món ngon",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "a50e2366-cc23-4d4d-9f67-7559d87843a5",
+      "order": 1,
+      "zh": "你尝一尝，这些枣很甜。",
+      "pinyin": "Nǐ cháng yi cháng, zhèxiē zǎo hěn tián.",
+      "vi": "Bạn nếm thử đi, mấy quả táo tàu này rất ngọt.",
+      "analysis_vi": "尝一尝 là động từ lặp nhẹ.",
+      "highlight": [
+        "尝"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "a2fa1cbc-dd8f-499a-8d66-148f1c178558"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c99ca09e-1a8b-4460-8588-03132d889e50",
+      "order": 2,
+      "zh": "院子里的枣熟了，爷爷让我尝一尝。",
+      "pinyin": "Yuànzi lǐ de zǎo shú le, yéye ràng wǒ cháng yi cháng.",
+      "vi": "Táo tàu trong sân chín rồi, ông nội bảo tôi nếm thử.",
+      "analysis_vi": "院子里的枣 là cụm định ngữ.",
+      "highlight": [
+        "尝"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "a2fa1cbc-dd8f-499a-8d66-148f1c178558"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "fc256c71-32cf-40dc-af15-9a5ff6c4c3aa",
+      "order": 3,
+      "zh": "树上结的枣越来越多，孩子们一看见就想尝一尝。",
+      "pinyin": "Shù shang jiē de zǎo yuè lái yuè duō, háizimen yí kànjiàn jiù xiǎng cháng yi cháng.",
+      "vi": "Táo tàu kết trên cây ngày càng nhiều, bọn trẻ vừa nhìn thấy là muốn nếm thử.",
+      "analysis_vi": "一……就…… ôn phản ứng ngay.",
+      "highlight": [
+        "尝"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "a2fa1cbc-dd8f-499a-8d66-148f1c178558"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "尝尝 / 尝一尝 là cách mời ăn thử nhẹ và thân thiện.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7bc5c271-26f1-4208-8edf-b1c0303ccfac",
+      "order": 1,
+      "rule_vi": "尝 không thay cho 吃 trong mọi trường hợp.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "尝 không thay cho 吃 trong mọi trường hợp.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "尝",
+    "back": "nếm, thử nếm",
+    "hint": "cháng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_010"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a2fa1cbc-dd8f-499a-8d66-148f1c178558",
+    "source_lesson_vocab_id": null
+  }
+}

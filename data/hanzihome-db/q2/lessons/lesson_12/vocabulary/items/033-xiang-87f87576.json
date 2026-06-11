@@ -1,0 +1,309 @@
+{
+  "id": "3faae09f-5b91-4f00-b559-2debb525e09d",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "像",
+  "pinyin": "xiàng",
+  "pos": {
+    "raw_vi": "Động từ / Giới từ so sánh",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu",
+    "hanyu_2_1",
+    "lesson_12",
+    "actions_results"
+  ],
+  "meaning": {
+    "hanviet": "tượng",
+    "meaning_vi": "giống, giống như; hình tượng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giống, giống như; hình tượng"
+    ],
+    "short_definition_vi": "giống, giống như; hình tượng",
+    "textbook_focus_vi": "giống, giống như; hình tượng",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "像",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "象",
+            "hanviet": "tượng",
+            "meaning_vi": "voi/hình tượng",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giống, giống như, hình tượng",
+        "modern_logic_vi": "像 gợi hình dáng giống một hình tượng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "像 = hình dáng/biểu hiện giống một hình tượng/người/vật nào đó.",
+    "memory_tip_vi": "像 = hình dáng/biểu hiện giống một hình tượng/người/vật nào đó.",
+    "warning_vi": "Không bịa etymology; chỉ giữ phân tích chắc hoặc đã nêu trong phần đã soạn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "好像",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hình như, có vẻ như",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "相像",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giống nhau",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "似乎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "dường như, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "仿佛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "như thể, văn chương hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "不像",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "không giống",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "像",
+        "right": "不像",
+        "meaning_vi": "",
+        "note_vi": "giống ↔ không giống",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "dd1655da-bb14-40d6-a753-ba74dfea399c",
+      "order": 1,
+      "zh": "像他爸爸",
+      "pinyin": "",
+      "vi": "giống bố anh ấy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb7594f4-e850-4342-9748-0f0aa0fca2de",
+      "order": 2,
+      "zh": "像真的一样",
+      "pinyin": "",
+      "vi": "giống như thật",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "56eac8f9-a5b1-45d9-b6af-172a09e12a5c",
+      "order": 3,
+      "zh": "看起来像",
+      "pinyin": "",
+      "vi": "trông giống như",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e35b8780-f8e3-45b2-9cc1-a782a0a43f5f",
+      "order": 4,
+      "zh": "听起来像",
+      "pinyin": "",
+      "vi": "nghe giống như",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ebc07090-dfbc-47fc-85a4-10404434b85e",
+      "order": 5,
+      "zh": "一点儿也不像",
+      "pinyin": "",
+      "vi": "chẳng giống chút nào",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "c34ac173-a107-4ad0-8647-1d14646aa58c",
+      "order": 1,
+      "zh": "他长得很像他爸爸。",
+      "pinyin": "",
+      "vi": "Anh ấy trông rất giống bố anh ấy.",
+      "analysis_vi": "长得很像 dùng 得 miêu tả ngoại hình.",
+      "highlight": [
+        "像"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3faae09f-5b91-4f00-b559-2debb525e09d"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "73053b5f-4151-4ca7-be22-6d5971b06ed2",
+      "order": 2,
+      "zh": "他这个样子像不像生病了？",
+      "pinyin": "",
+      "vi": "Bộ dạng này của anh ấy có giống như bị bệnh không?",
+      "analysis_vi": "他这个样子 là chủ đề lớn.",
+      "highlight": [
+        "像"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3faae09f-5b91-4f00-b559-2debb525e09d"
+      ],
+      "source_ref": "thread_current_lesson_12",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "像 và 好像 khác sắc thái: 像 là giống, 好像 là hình như/có vẻ.",
+    "tags": [],
+    "source_refs": [
+      "thread_current_lesson_12"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d5c00aba-395f-44e0-91aa-1920fa164d8a",
+      "order": 1,
+      "rule_vi": "Không nhầm 像 với 象: 像 là giống/hình ảnh; 大象 là con voi.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "大象",
+          "pinyin": "",
+          "vi": "con voi",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "现象",
+          "pinyin": "",
+          "vi": "hiện tượng",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "像",
+    "back": "giống, giống như; hình tượng",
+    "hint": "xiàng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12",
+      "actions_results"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3faae09f-5b91-4f00-b559-2debb525e09d",
+    "source_lesson_vocab_id": null
+  }
+}

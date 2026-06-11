@@ -1,0 +1,303 @@
+{
+  "id": "d3c743f8-0efe-4c26-a361-f162c2dc7aeb",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "扛",
+  "pinyin": "káng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson15",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "Giang / kháng",
+    "meaning_vi": "vác, khiêng bằng vai",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vác, khiêng bằng vai"
+    ],
+    "short_definition_vi": "vác, khiêng bằng vai",
+    "textbook_focus_vi": "vác, khiêng bằng vai",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "扛",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "工",
+            "hanviet": "công",
+            "meaning_vi": "phần phải hỗ trợ âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vác trên vai",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "扛 có 扌, trong khẩu ngữ hiện đại đọc káng = vác trên vai.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "cầm bằng tay",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "提",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "xách bằng tay, thường có quai",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "背",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đeo/cõng trên lưng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "搬",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyển/dọn/bê vật",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "放下",
+        "right": "扛起来",
+        "meaning_vi": "đặt xuống ↔ vác lên",
+        "note_vi": "Cặp thao tác.",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "0a275872-3e9f-4279-b09d-d81ada8d7f0d",
+      "order": 1,
+      "zh": "扛摄像机",
+      "pinyin": "",
+      "vi": "vác máy quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff025f89-e136-48b0-9a20-cf5dcaa05f46",
+      "order": 2,
+      "zh": "扛着摄像机",
+      "pinyin": "",
+      "vi": "đang vác máy quay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f996188e-88bb-4213-ac01-01b8a44f46d9",
+      "order": 3,
+      "zh": "扛行李",
+      "pinyin": "",
+      "vi": "vác hành lý",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d69db52-6d1c-451f-b525-ca812e53f05d",
+      "order": 4,
+      "zh": "扛在肩上",
+      "pinyin": "",
+      "vi": "vác trên vai",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7e5c422f-002a-46c8-a8d6-09d25a0384be",
+      "order": 5,
+      "zh": "扛不动",
+      "pinyin": "",
+      "vi": "vác không nổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1ce72ac6-b83b-48ba-8f9a-d8b61e05433f",
+      "order": 1,
+      "zh": "那个小伙子扛着一台摄像机。",
+      "pinyin": "Nà ge xiǎohuǒzi kángzhe yì tái shèxiàngjī.",
+      "vi": "Chàng trai kia đang vác một máy quay.",
+      "analysis_vi": "扛着 nhấn trạng thái vác trên vai.",
+      "highlight": [
+        "扛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d3c743f8-0efe-4c26-a361-f162c2dc7aeb"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "884db7fa-cef9-4c26-868d-0515e6c77d1a",
+      "order": 2,
+      "zh": "小伙子扛着摄像机站在讲台旁边。",
+      "pinyin": "Xiǎohuǒzi kángzhe shèxiàngjī zhàn zài jiǎngtái pángbiān.",
+      "vi": "Chàng trai vác máy quay đứng bên cạnh bục giảng.",
+      "analysis_vi": "扛着摄像机 là trạng thái/cách thức đi kèm.",
+      "highlight": [
+        "扛",
+        "扛着"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d3c743f8-0efe-4c26-a361-f162c2dc7aeb"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "7c269353-20b0-4490-9044-7a0cad02687b",
+      "order": 1,
+      "rule_vi": "Không nói 扛着手机 trong ngữ cảnh thường vì điện thoại nhỏ; nói 拿着手机.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "扛",
+    "back": "vác, khiêng bằng vai",
+    "hint": "káng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson15",
+      "vocabulary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Ghi chú dùng từ",
+    "content_vi": "扛着摄像机 hợp với máy quay lớn; quay bằng điện thoại thường nói 拿着手机拍视频.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d3c743f8-0efe-4c26-a361-f162c2dc7aeb",
+    "source_lesson_vocab_id": null
+  }
+}

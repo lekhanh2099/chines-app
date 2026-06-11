@@ -1,0 +1,317 @@
+{
+  "id": "a609b982-942c-4743-b770-e6e8269a7ccd",
+  "type": "deep_vocabulary_item",
+  "order": 26,
+  "hanzi": "估计",
+  "pinyin": "gūjì",
+  "pos": {
+    "raw_vi": "Động từ / Phó từ",
+    "raw_cn": "动/副",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cô kế",
+    "meaning_vi": "ước tính; đoán chừng; có lẽ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "ước tính; đoán chừng; có lẽ"
+    ],
+    "short_definition_vi": "ước tính; đoán chừng; có lẽ",
+    "textbook_focus_vi": "ước tính; đoán chừng; có lẽ",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "估",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "亻 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "古",
+            "hanviet": "cổ",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "ước lượng",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "计",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "讠 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "十",
+            "hanviet": "thập",
+            "meaning_vi": "mười",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "tính/kế hoạch",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "dựa vào thông tin hiện có để tính/đoán sơ bộ",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d11394f4-ce6a-4db5-9e55-3a98a6e6b42b",
+      "order": 1,
+      "zh": "估计时间",
+      "pinyin": "",
+      "vi": "ước tính thời gian",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "de79bc18-2fb0-43b2-a53b-9f934033eeaa",
+      "order": 2,
+      "zh": "估计人数",
+      "pinyin": "",
+      "vi": "ước tính số người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "77564ea6-ab89-4082-bb61-30243495a1b4",
+      "order": 3,
+      "zh": "我估计……",
+      "pinyin": "",
+      "vi": "tôi đoán...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8b4da4c1-0597-49e4-b1f1-4a45e643bc81",
+      "order": 4,
+      "zh": "估计来不了",
+      "pinyin": "",
+      "vi": "chắc không đến được",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d58e5f7d-121e-418c-8671-ac7013af75cb",
+      "order": 5,
+      "zh": "初步估计",
+      "pinyin": "",
+      "vi": "ước tính sơ bộ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2d242962-a54d-4d2a-9df1-9ef0b3c70d9b",
+      "order": 1,
+      "zh": "我估计演出八点结束。",
+      "pinyin": "Wǒ gūjì yǎnchū bā diǎn jiéshù.",
+      "vi": "Tôi đoán buổi biểu diễn kết thúc lúc 8 giờ.",
+      "analysis_vi": "估计 + câu nhỏ là ước đoán tình huống.",
+      "highlight": [
+        "估计"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a609b982-942c-4743-b770-e6e8269a7ccd"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "1d3f6774-f9aa-4e55-bfb9-6e5ec503a987",
+      "order": 2,
+      "zh": "如果不了解估计，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě gūjì, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 估计, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "估计"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a609b982-942c-4743-b770-e6e8269a7ccd"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9b33daca-5556-44df-87bf-0ffe5389f3f2",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解估计在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě gūjì zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 估计 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "估计"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a609b982-942c-4743-b770-e6e8269a7ccd"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khẩu ngữ Mainland dùng 估计 như 'chắc là': 估计不行、估计来不了.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f4f84651-6a35-4e3d-a020-c0d23726da2f",
+      "order": 1,
+      "rule_vi": "估计 không mạnh bằng 确定。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "估计",
+    "back": "ước tính; đoán chừng; có lẽ",
+    "hint": "gūjì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a609b982-942c-4743-b770-e6e8269a7ccd",
+    "source_lesson_vocab_id": null
+  }
+}

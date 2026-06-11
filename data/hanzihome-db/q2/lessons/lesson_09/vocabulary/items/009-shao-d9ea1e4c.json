@@ -1,0 +1,370 @@
+{
+  "id": "a9d45180-856d-4b01-b330-87b34e15a028",
+  "type": "deep_vocabulary_item",
+  "order": 9,
+  "hanzi": "捎",
+  "pinyin": "shāo",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson09",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Sao",
+    "meaning_vi": "tiện mang, tiện gửi, nhắn hộ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiện mang",
+      "tiện gửi",
+      "nhắn hộ"
+    ],
+    "short_definition_vi": "tiện mang, tiện gửi, nhắn hộ",
+    "textbook_focus_vi": "Âm Hán Việt tham khảo: sao. Nghĩa chính: Tiện mang hộ cái gì cho ai. Tiện gửi hộ cái gì. Tiện nhắn/gửi lời: 捎个信儿 = nhắn hộ một lời. Ví dụ:",
+    "register_vi": "",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2 Bài 9; 普通话 / Mainland usage.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "捎",
+        "lishu_vi": "",
+        "structure_note_vi": "thành phần nhìn thấy theo chữ giản thể hiện đại",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay / thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay / thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "肖",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tiện mang hộ, tiện nhắn hộ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Có 扌 nên gợi hành động cầm/mang/chuyển. 捎 = tiện tay/tiện đường mang hoặc chuyển giúp.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 捎 có sắc thái “tiện”. Nếu gửi chính thức/bưu điện, dùng 寄. Nếu đưa trực tiếp, dùng 送 / 给 tùy ngữ cảnh.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "捎",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiện mang/gửi/nhắn hộ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "送",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đưa, tặng, tiễn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "带",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "mang theo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "寄",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "gửi qua bưu điện/chuyển phát.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "转告",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "chuyển lời, nói lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ví dụ:",
+      "我给你捎来了一本书。",
+      "Tôi tiện mang đến cho bạn một quyển sách.",
+      "我送你一本书。",
+      "Tôi tặng/đưa bạn một quyển sách.",
+      "我寄给你一本书。",
+      "Tôi gửi bưu điện/chuyển phát cho bạn một quyển sách."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1d62f094-887a-482a-9fbd-a3f73385a645",
+      "order": 1,
+      "zh": "捎来",
+      "pinyin": "",
+      "vi": "tiện mang đến",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b1943bca-aff6-45cd-9298-6e4aa32f00b3",
+      "order": 2,
+      "zh": "捎去",
+      "pinyin": "",
+      "vi": "tiện mang/gửi đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72ba30d7-39e7-4f33-9709-9f6e55737d6e",
+      "order": 3,
+      "zh": "捎东西",
+      "pinyin": "",
+      "vi": "tiện mang đồ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "529e3243-ca7f-49ef-ae49-a2db28b37871",
+      "order": 4,
+      "zh": "捎口信",
+      "pinyin": "",
+      "vi": "nhắn hộ lời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "599d8c75-20c5-4b7b-a90a-0a15e0e00b25",
+      "order": 5,
+      "zh": "给……捎来……",
+      "pinyin": "",
+      "vi": "tiện mang đến cho ai...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dc2c47e5-7b47-4076-bc83-6939d13eaf38",
+      "order": 6,
+      "zh": "给……捎去……",
+      "pinyin": "",
+      "vi": "tiện mang/gửi đến cho ai ở xa...",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9ecc913d-58f2-412b-8433-a4d86f900ce4",
+      "order": 1,
+      "zh": "我给您捎来了一些东西。",
+      "pinyin": "Wǒ gěi nín shāo lái le yìxiē dōngxi.",
+      "vi": "Tôi tiện mang đến cho ông/bà một ít đồ.",
+      "analysis_vi": "捎来 dùng 来 vì đồ được mang về phía người nghe/người nói.",
+      "highlight": [
+        "捎"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a9d45180-856d-4b01-b330-87b34e15a028"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1620190-ce91-4890-b5bb-df8da19aaafe",
+      "order": 2,
+      "zh": "老师去台湾开会，给我们捎回来一些教学资料。",
+      "pinyin": "Lǎoshī qù Táiwān kāihuì, gěi wǒmen shāo huílai yìxiē jiàoxué zīliào.",
+      "vi": "Thầy/cô đi Đài Loan họp, tiện mang về cho chúng tôi một ít tài liệu giảng dạy.",
+      "analysis_vi": "捎回来 = tiện mang về phía người nói/nhóm người nói. 回来 là xu hướng kép.",
+      "highlight": [
+        "捎"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a9d45180-856d-4b01-b330-87b34e15a028"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7da1a18f-56d9-4289-ae10-775688caa75d",
+      "order": 3,
+      "zh": "你明天要去大使馆办事，要是经过赵老师家，就麻烦你给他捎去这份研讨会的要求。",
+      "pinyin": "Nǐ míngtiān yào qù dàshǐguǎn bàn shì, yàoshi jīngguò Zhào lǎoshī jiā, jiù máfan nǐ gěi tā shāo qù zhè fèn yántǎohuì de yāoqiú.",
+      "vi": "Ngày mai bạn phải đi đại sứ quán làm việc, nếu đi qua nhà thầy Triệu thì phiền bạn tiện mang/gửi cho thầy bản yêu cầu hội thảo này.",
+      "analysis_vi": "要是……就…… điều kiện – kết quả. 经过赵老师家 = đi qua nhà thầy Triệu. 捎去 dùng 去 vì mang đến chỗ xa người nói.",
+      "highlight": [
+        "捎"
+      ],
+      "grammar_refs": [
+        "grammar_09_directional_complements_lai_qu"
+      ],
+      "vocab_refs": [
+        "a9d45180-856d-4b01-b330-87b34e15a028"
+      ],
+      "source_ref": "thread_lesson_09",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "捎 rất đời thường trong xã hội quen biết: tiện đi đâu thì mang hộ đồ, chuyển lời hộ. Nó tạo cảm giác thân tình hơn 寄 hoặc 送 vì hàm ý “sẵn tiện giúp”.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu2",
+      "lesson09"
+    ],
+    "source_refs": [
+      "thread_lesson_09"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0f3240c9-50c1-438a-a28e-aea124c7f7d2",
+      "order": 1,
+      "rule_vi": "Chốt hướng:",
+      "natural_examples": [
+        {
+          "zh": "捎来 = tiện mang đến đây.",
+          "pinyin": "捎去 = tiện mang/gửi đi đó.",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "捎去 = tiện mang/gửi đi đó.",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "捎回来 = tiện mang về.",
+          "pinyin": "Ví dụ:",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Chốt hướng:",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "捎",
+    "back": "tiện mang, tiện gửi, nhắn hộ",
+    "hint": "shāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson09",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a9d45180-856d-4b01-b330-87b34e15a028",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "id": "0aca98b4-c783-4587-b7cc-a018442400eb",
+  "type": "deep_vocabulary_item",
+  "order": 55,
+  "hanzi": "万里雪飘",
+  "pinyin": "wàn lǐ xuě piāo",
+  "pos": {
+    "raw_vi": "idiom",
+    "raw_cn": "",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "idiom",
+    "winter",
+    "literary"
+  ],
+  "meaning": {
+    "hanviet": "vạn lý tuyết phiêu",
+    "meaning_vi": "tuyết bay phủ khắp muôn dặm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tuyết bay phủ khắp muôn dặm"
+    ],
+    "short_definition_vi": "tuyết bay phủ khắp muôn dặm",
+    "textbook_focus_vi": "tuyết bay phủ khắp muôn dặm",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "idiom, winter, literary",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "万",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "万",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mười nghìn, rất nhiều",
+        "modern_logic_vi": "Trong từ này, 万 góp phần vào lớp nghĩa hiện đại: mười nghìn, rất nhiều",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "里",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "里",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dặm, bên trong",
+        "modern_logic_vi": "Trong từ này, 里 góp phần vào lớp nghĩa hiện đại: dặm, bên trong",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "雪",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "雨",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "mưa, hiện tượng khí trời",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "雨",
+            "hanviet": "vũ",
+            "meaning_vi": "mưa, hiện tượng khí trời",
+            "position_vi": "phía trên",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "雨",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "mưa, hiện tượng khí trời",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "彐",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "phía dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tuyết",
+        "modern_logic_vi": "Trong từ này, 雪 góp phần vào lớp nghĩa hiện đại: tuyết",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "飘",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "风",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "票",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bay phất phơ, bay theo gió",
+        "modern_logic_vi": "Trong từ này, 飘 góp phần vào lớp nghĩa hiện đại: bay phất phơ, bay theo gió",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "万里 = phạm vi rất rộng; 雪飘 = tuyết bay. Cụm thơ văn tả cảnh tuyết bao la.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không dùng 万里雪飘 cho tuyết nhỏ hoặc câu đời thường; nói 今天下雪了 khi chỉ thông báo thời tiết.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "千里冰封",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "冰天雪地",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大雪纷飞",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "白雪皑皑",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "鸟语花香",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烈日高照",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cc42b4d0-23ba-458b-bd50-432994b198d8",
+      "order": 1,
+      "zh": "万里雪飘",
+      "pinyin": "",
+      "vi": "tuyết bay muôn dặm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6e75ef64-79d5-483b-b0b8-5590144c8180",
+      "order": 2,
+      "zh": "千里冰封，万里雪飘",
+      "pinyin": "",
+      "vi": "nghìn dặm đóng băng, muôn dặm tuyết bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c9801934-267d-4ed2-b8f6-684b73f1de18",
+      "order": 3,
+      "zh": "北国风光，万里雪飘",
+      "pinyin": "",
+      "vi": "phong cảnh phương Bắc, tuyết bay muôn dặm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5622d844-4180-46dd-b515-773516ea2427",
+      "order": 4,
+      "zh": "大雪纷飞",
+      "pinyin": "",
+      "vi": "tuyết lớn bay dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "54897790-50e2-4d1e-9820-43819b2752b5",
+      "order": 5,
+      "zh": "冰天雪地",
+      "pinyin": "",
+      "vi": "trời băng đất tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7ffb985c-f568-4ba8-9b1b-317a9fba2c3e",
+      "order": 6,
+      "zh": "白雪皑皑",
+      "pinyin": "",
+      "vi": "tuyết trắng phủ dày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e815f73c-3ad7-406b-9d23-53531d3519f1",
+      "order": 1,
+      "zh": "冬天的北方，有时候真是一片万里雪飘的景象。",
+      "pinyin": "",
+      "vi": "Miền Bắc mùa đông đôi khi đúng là cảnh tuyết bay muôn dặm.",
+      "analysis_vi": "一片……的景象.",
+      "highlight": [
+        "万里雪飘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0aca98b4-c783-4587-b7cc-a018442400eb"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f44006be-2532-43a6-a803-98cdaf526d83",
+      "order": 2,
+      "zh": "课文里常用“万里雪飘”来形容北方壮丽的雪景。",
+      "pinyin": "",
+      "vi": "Bài khóa thường dùng “vạn lý tuyết phiêu” để tả cảnh tuyết phương Bắc hùng vĩ.",
+      "analysis_vi": "用……来形容…….",
+      "highlight": [
+        "万里雪飘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0aca98b4-c783-4587-b7cc-a018442400eb"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ab89c06c-5b41-400e-9d68-696e781f2a3c",
+      "order": 3,
+      "zh": "春天是鸟语花香，夏天是烈日高照，秋天是秋高气爽，冬天可以写万里雪飘。",
+      "pinyin": "",
+      "vi": "Xuân là chim hót hoa thơm, hè nắng gắt, thu trời cao mát, đông có thể viết tuyết bay muôn dặm.",
+      "analysis_vi": "Gom bốn mùa bằng bốn cụm.",
+      "highlight": [
+        "万里雪飘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0aca98b4-c783-4587-b7cc-a018442400eb"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "万里雪飘 trong Bài 3 北京的四季",
+    "content_vi": "Cụm gắn màu thơ văn, nổi tiếng qua câu 北国风光，千里冰封，万里雪飘.",
+    "tags": [
+      "idiom",
+      "winter",
+      "literary"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6eaf7b05-9a76-43c8-b044-b0fc26575b88",
+      "order": 1,
+      "rule_vi": "Không dùng 万里雪飘 cho tuyết nhỏ hoặc câu đời thường; nói 今天下雪了 khi chỉ thông báo thời tiết.",
+      "natural_examples": [
+        {
+          "zh": "冬天的北方，有时候真是一片万里雪飘的景象。",
+          "pinyin": "",
+          "vi": "Miền Bắc mùa đông đôi khi đúng là cảnh tuyết bay muôn dặm.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không dùng 万里雪飘 cho tuyết nhỏ hoặc câu đời thường; nói 今天下雪了 khi chỉ thông báo thời tiết.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "万里雪飘",
+    "back": "tuyết bay phủ khắp muôn dặm",
+    "hint": "wàn lǐ xuě piāo",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "idiom",
+      "winter",
+      "literary"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0aca98b4-c783-4587-b7cc-a018442400eb",
+    "source_lesson_vocab_id": null
+  }
+}

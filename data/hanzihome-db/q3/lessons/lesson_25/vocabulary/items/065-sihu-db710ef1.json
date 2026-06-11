@@ -1,0 +1,217 @@
+{
+  "id": "91b35f30-f31f-4e25-b312-2358c88dc0e0",
+  "type": "deep_vocabulary_item",
+  "order": 65,
+  "hanzi": "似乎",
+  "pinyin": "sìhū",
+  "pos": {
+    "raw_vi": "Phó từ",
+    "raw_cn": "副词",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_25",
+    "deep_vocab",
+    "zhongqiu_yueyuan"
+  ],
+  "meaning": {
+    "hanviet": "tự hồ",
+    "meaning_vi": "dường như, có vẻ như",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dường như",
+      "có vẻ như"
+    ],
+    "short_definition_vi": "dường như, có vẻ như",
+    "textbook_focus_vi": "Từ/cụm này được học trong mạch bài 中秋月圆, liên quan gia đình, Trung thu, cảm xúc hoặc lựa chọn sống.",
+    "register_vi": "trung tính/văn viết tùy ngữ cảnh",
+    "usage_domain_vi": "Giáo trình Hán ngữ, tự sự gia đình, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "似",
+        "lishu_vi": "tự",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "人",
+          "radical_variant": "亻",
+          "radical_name_vi": "bộ Nhân",
+          "radical_name_zh": "",
+          "hanviet": "nhân",
+          "meaning_vi": "người",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "亻",
+            "hanviet": "nhân",
+            "meaning_vi": "người",
+            "position_vi": "thành phần/bộ thủ nhìn thấy trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "人",
+              "radical_variant": "亻",
+              "radical_name_vi": "bộ Nhân",
+              "radical_name_zh": "",
+              "hanviet": "nhân",
+              "meaning_vi": "người",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giống như",
+        "modern_logic_vi": "Trong từ này, 似 góp phần vào nghĩa hiện đại: giống như.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "乎",
+        "lishu_vi": "hồ",
+        "structure_note_vi": "Có thể học theo thành phần nhìn thấy; không ép diễn giải khảo cổ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trợ từ",
+        "modern_logic_vi": "Trong từ này, 乎 góp phần vào nghĩa hiện đại: trợ từ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "似乎 được phân tích theo từng chữ nếu có thể; ưu tiên logic nghĩa hiện đại, không bịa nguồn chữ học.",
+    "memory_tip_vi": "Nhớ qua cụm: 似乎很累.",
+    "warning_vi": "Không ép nghĩa từng bộ thủ nếu chữ là từ cố định hoặc cụm cố định.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không đi với 一定 trong cùng phán đoán vì một bên không chắc, một bên chắc chắn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "94162cbf-5ca7-47b7-9129-f5c0b9192b41",
+      "order": 1,
+      "zh": "似乎很累",
+      "pinyin": "",
+      "vi": "có vẻ mệt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "43f431f5-72aa-4d22-a1f5-47f9f68581cd",
+      "order": 2,
+      "zh": "似乎没有变化",
+      "pinyin": "",
+      "vi": "dường như không đổi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3d8c59db-cdcc-4a0e-9dbc-0d5f61168c89",
+      "order": 3,
+      "zh": "事情似乎很复杂",
+      "pinyin": "",
+      "vi": "sự việc có vẻ phức tạp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fef3b497-0859-4e9b-a2a7-95998a02816d",
+      "order": 1,
+      "zh": "他今天似乎不太高兴。",
+      "pinyin": "",
+      "vi": "Ví dụ dùng 似乎 trong ngữ cảnh bài học/đời sống.",
+      "analysis_vi": "Câu này đặt trọng tâm vào cách dùng 似乎; highlight và vocab_refs đã trỏ đúng item.",
+      "highlight": [
+        "似乎"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "91b35f30-f31f-4e25-b312-2358c88dc0e0"
+      ],
+      "source_ref": "conversation_vocab",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong bài",
+    "content_vi": "Trong bài 中秋月圆, 似乎 góp phần thể hiện không khí Trung thu, trạng thái gia đình, cảm xúc của nhân vật hoặc sự chuyển biến từ xa cách sang đoàn viên.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "conversation_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "336406d1-ebce-4c06-b5e0-f346201e957f",
+      "order": 1,
+      "rule_vi": "Không đi với 一定 trong cùng phán đoán vì một bên không chắc, một bên chắc chắn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Đã tách thành rule ngắn để UI render trực tiếp; không giữ nguyên đoạn markdown dài.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "似乎",
+    "back": "dường như, có vẻ như",
+    "hint": "sìhū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_25"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "91b35f30-f31f-4e25-b312-2358c88dc0e0",
+    "source_lesson_vocab_id": null
+  }
+}

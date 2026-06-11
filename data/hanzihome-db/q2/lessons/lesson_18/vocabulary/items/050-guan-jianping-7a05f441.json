@@ -1,0 +1,28 @@
+{
+  "id": "synthetic_vocab_d4826198b1c404a2",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "关建平",
+  "pinyin": "Guān Jiànpíng",
+  "meaning_vi": "Quan Kiến Bình; tên người nam trong bài",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "6e414eda-1f1c-496d-802b-6cd342f52ed7",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "6e414eda-1f1c-496d-802b-6cd342f52ed7",
+    "type": "proper_noun",
+    "order": 1,
+    "hanzi": "关建平",
+    "pinyin": "Guān Jiànpíng",
+    "meaning_vi": "Quan Kiến Bình; tên người nam trong bài",
+    "meaning_en": "male personal name",
+    "source_origin": "textbook",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

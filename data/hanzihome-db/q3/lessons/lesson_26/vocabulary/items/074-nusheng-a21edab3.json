@@ -1,0 +1,68 @@
+{
+  "id": "synthetic_vocab_a779d0bf5b531788",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "女生",
+  "pinyin": "nǚshēng",
+  "meaning_vi": "nữ sinh; học sinh/sinh viên nữ",
+  "pos": "noun",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "54b36889-82be-485b-8342-fb8aab572065",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "54b36889-82be-485b-8342-fb8aab572065",
+    "type": "vocabulary_item",
+    "order": 9,
+    "hanzi": "女生",
+    "pinyin": "nǚshēng",
+    "meaning_vi": "nữ sinh; học sinh/sinh viên nữ",
+    "meaning_en": "female student",
+    "pos": "noun",
+    "pos_vi": "Danh từ",
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "女生",
+      "back": "nǚshēng — nữ sinh; học sinh/sinh viên nữ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "page_start": 215,
+    "page_end": 215,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

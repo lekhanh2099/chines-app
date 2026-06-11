@@ -1,0 +1,298 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "语法 / 词语用法",
+  "title_vi": "Ngữ pháp / Cách dùng từ",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "grammar_l09_directional_lai_qu",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "动作趋向的表达：动词 + 来 / 去",
+      "title_vi": "Bổ ngữ xu hướng đơn: động từ + 来 / 去",
+      "level": "HSK3",
+      "tags": [
+        "语法",
+        "趋向补语"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất",
+          "content_vi": "来 / 去 đứng sau động từ để chỉ hướng di chuyển của hành động so với người nói hoặc điểm mốc đang được lấy làm trung tâm. 来 là hướng về điểm mốc; 去 là hướng rời xa điểm mốc.",
+          "examples": [],
+          "check_needed": false
+        },
+        {
+          "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
+          "type": "grammar_structure",
+          "order": 2,
+          "title": "Cấu trúc chính",
+          "pattern": "V + 来 / 去",
+          "meaning_vi": "Diễn tả hướng của hành động.",
+          "examples": [
+            {
+              "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
+              "zh": "上来吧。",
+              "vi": "Lên đây đi.",
+              "highlight": [
+                "上来"
+              ],
+              "pinyin": "Shànglai ba.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
+              "zh": "下去吧。",
+              "vi": "Xuống đó đi.",
+              "highlight": [
+                "下去"
+              ],
+              "pinyin": "Xiàqù ba.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
+              "zh": "进来吧。",
+              "vi": "Vào đây đi.",
+              "highlight": [
+                "进来"
+              ],
+              "pinyin": "Jìnlai ba.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "3c9a4bcc-7b95-4fbf-a27e-833a24841a8b",
+              "zh": "出去吧。",
+              "vi": "Ra ngoài đi.",
+              "highlight": [
+                "出去"
+              ],
+              "pinyin": "Chūqù ba.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
+          "type": "grammar_structure",
+          "order": 3,
+          "title": "Khi tân ngữ là nơi chốn",
+          "pattern": "V + place object + 来 / 去",
+          "meaning_vi": "Nếu tân ngữ chỉ nơi chốn, thường đặt sau động từ và trước 来/去.",
+          "examples": [
+            {
+              "id": "dd839fde-a24a-4a33-bc3a-4e0db7c01197",
+              "zh": "我到小赵家去了。",
+              "vi": "Tôi đến nhà Tiểu Triệu rồi.",
+              "highlight": [
+                "到小赵家去"
+              ],
+              "pinyin": "Wǒ dào Xiǎo Zhào jiā qù le.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "6d81a490-7d47-451c-b5d2-ffe940b59486",
+              "zh": "我正好要下楼去。",
+              "vi": "Tôi vừa hay đang định xuống lầu.",
+              "highlight": [
+                "下楼去"
+              ],
+              "pinyin": "Wǒ zhènghǎo yào xià lóu qù.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "4e8b40b1-222a-4104-9eb5-372e426eae08",
+              "zh": "我们进教室去吧。",
+              "vi": "Chúng ta vào lớp đi.",
+              "highlight": [
+                "进教室去"
+              ],
+              "pinyin": "Wǒmen jìn jiàoshì qù ba.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "b4cc66d6-0523-4a75-bc1b-366c9bb288d0",
+          "type": "grammar_structure",
+          "order": 4,
+          "title": "Khi tân ngữ là sự vật",
+          "pattern": "V + object + 来 / 去; V + 来 / 去 + object",
+          "meaning_vi": "Nếu tân ngữ là sự vật, có thể đặt trước hoặc sau 来/去 tùy nhịp câu.",
+          "examples": [
+            {
+              "id": "7a0c67dc-9f12-46ea-bc9e-c946ff927aaa",
+              "zh": "他带了一个照相机来。",
+              "vi": "Anh ấy mang một cái máy ảnh đến.",
+              "highlight": [
+                "带了一个照相机来"
+              ],
+              "pinyin": "Tā dài le yí ge zhàoxiàngjī lái.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "b1c0ce7d-2341-49ec-93e5-facb7a6fcfb1",
+              "zh": "他带来了一个照相机。",
+              "vi": "Anh ấy đã mang đến một cái máy ảnh.",
+              "highlight": [
+                "带来了"
+              ],
+              "pinyin": "Tā dàilai le yí ge zhàoxiàngjī.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "3dad9197-94af-465a-b322-982c4dc03ec6",
+              "zh": "我给你带来了一些东西。",
+              "vi": "Tôi mang đến cho bạn một ít đồ.",
+              "highlight": [
+                "带来了"
+              ],
+              "pinyin": "Wǒ gěi nǐ dàilai le yìxiē dōngxi.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+          "type": "grammar_usage_notes",
+          "order": 5,
+          "title": "Dạng phủ định / nghi vấn",
+          "notes_vi": [
+            "Phủ định: 不 / 没 + V + 来/去.",
+            "Nghi vấn: V + 来/去 + 了吗？ hoặc V + 来/去 + 没有？"
+          ],
+          "examples": [
+            {
+              "id": "27e65dea-2e6d-471f-8404-ca29b9c6f47f",
+              "zh": "他不上来了。",
+              "vi": "Anh ấy không lên đây nữa.",
+              "highlight": [
+                "不上来"
+              ],
+              "pinyin": "Tā bú shànglai le.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "e971e9e0-945e-43fd-b304-dd401513d558",
+              "zh": "她没回来。",
+              "vi": "Cô ấy chưa về / đã không quay về.",
+              "highlight": [
+                "没回来"
+              ],
+              "pinyin": "Tā méi huílai.",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            },
+            {
+              "id": "d575f715-61f9-4acf-af7b-ed38cbba0d33",
+              "zh": "他回来了吗？",
+              "vi": "Anh ấy về chưa?",
+              "highlight": [
+                "回来了吗"
+              ],
+              "pinyin": "Tā huílai le ma?",
+              "grammar_refs": [
+                "grammar_l09_directional_lai_qu"
+              ],
+              "vocab_refs": [],
+              "source_origin": "textbook/generated_mixed",
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        {
+          "id": "887640f9-1173-43fc-ad6b-663c06a0b9b3",
+          "type": "grammar_common_mistakes",
+          "order": 6,
+          "title": "Lỗi sai phổ biến",
+          "items": [
+            {
+              "id": "e6c981d9-5f80-4a61-bcdd-d0604aa46be6",
+              "wrong": "快上去吧，要开车了。",
+              "correct": "快上来吧，要开车了。",
+              "explanation_vi": "Cô giáo đang ở trên xe gọi học sinh lên xe, hành động hướng về phía người nói nên dùng 上来."
+            },
+            {
+              "id": "2d6814c0-b987-4fc9-a117-6301a61c4aff",
+              "wrong": "我们进去了教室。",
+              "correct": "我们进教室去吧。",
+              "explanation_vi": "Trong mẫu đang học, 教室 là nơi chốn nên đặt trước 去."
+            }
+          ],
+          "check_needed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "id": "9466d6c6-c60c-4e6d-9b31-32598c4adcfb",
+  "type": "deep_vocabulary_item",
+  "order": 10,
+  "hanzi": "兼",
+  "pinyin": "jiān",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_13",
+    "work"
+  ],
+  "meaning": {
+    "hanviet": "kiêm",
+    "meaning_vi": "kiêm, đồng thời làm thêm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kiêm",
+      "đồng thời làm thêm"
+    ],
+    "short_definition_vi": "kiêm, đồng thời làm thêm",
+    "textbook_focus_vi": "Bám theo Bài 13 百姓的话 và phần đọc thêm liên quan.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, gia đình, giáo dục, đọc hiểu văn hóa",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "兼",
+        "lishu_vi": "kiêm",
+        "structure_note_vi": "Thành phần nhìn thấy được tách ở mức học hiện đại; không ép khảo cổ chữ nếu không chắc.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "kiêm",
+        "modern_logic_vi": "Trong từ/cụm này, 兼 góp phần vào nghĩa hiện đại: kiêm.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "兼 cần học theo nghĩa hiện đại trong bài: kiêm, đồng thời làm thêm.",
+    "memory_tip_vi": "Nhớ qua cụm tiêu biểu: 兼做副业.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "db283c8e-a8b3-41a2-990b-edd0268300c3",
+      "order": 1,
+      "zh": "兼做副业",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4e115d5f-5629-4cd4-b679-f7798e2d28a9",
+      "order": 2,
+      "zh": "兼职工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bb96e14d-fdb4-47d9-8a5b-0cb7a21ac251",
+      "order": 3,
+      "zh": "兼顾家庭和工作",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8c709139-04ec-44cf-8195-06eb4c6b8821",
+      "order": 1,
+      "zh": "他白天种地，晚上兼做一点儿副业。",
+      "pinyin": "Tā báitiān zhòngdì, wǎnshang jiān zuò yìdiǎnr fùyè.",
+      "vi": "Ban ngày anh ấy làm ruộng, buổi tối kiêm làm thêm nghề phụ.",
+      "analysis_vi": "兼做 nêu việc phụ.",
+      "highlight": [
+        "兼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9466d6c6-c60c-4e6d-9b31-32598c4adcfb"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cdb2b396-28d5-4560-a46f-333361efb614",
+      "order": 2,
+      "zh": "他们家以种地为主，兼养鸡、养鸭。",
+      "pinyin": "Tāmen jiā yǐ zhòngdì wéi zhǔ, jiān yǎng jī, yǎng yā.",
+      "vi": "Nhà họ chủ yếu làm ruộng, kiêm nuôi gà vịt.",
+      "analysis_vi": "以……为主 + 兼 nêu chính/phụ.",
+      "highlight": [
+        "兼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9466d6c6-c60c-4e6d-9b31-32598c4adcfb"
+      ],
+      "source_ref": "current_thread",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "兼 không đơn giản là 也; nó nhấn vai trò hoặc công việc kiêm nhiệm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "08493941-dcd0-4502-be24-e69c9e72a9fe",
+      "order": 1,
+      "rule_vi": "Dùng 兼 đúng theo ngữ cảnh bài; không dịch máy từng chữ.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "兼",
+    "back": "kiêm, đồng thời làm thêm",
+    "hint": "jiān",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_13"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9466d6c6-c60c-4e6d-9b31-32598c4adcfb",
+    "source_lesson_vocab_id": null
+  }
+}

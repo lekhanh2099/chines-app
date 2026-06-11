@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_3837d0964840a0cf",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "老人",
+  "pinyin": "lǎorén",
+  "meaning_vi": "người già, cụ già",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ người già/cụ già; có thể làm tân ngữ của 扶/照顾.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "faa60f28-ca2b-4ddc-af6b-3bace98d2691",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "faa60f28-ca2b-4ddc-af6b-3bace98d2691",
+    "type": "vocabulary_item",
+    "order": 13,
+    "hanzi": "老人",
+    "pinyin": "lǎorén",
+    "meaning_vi": "người già, cụ già",
+    "meaning_en": "old person; elderly person",
+    "pos": "Danh từ",
+    "tags": [
+      "textbook_main",
+      "pdf_checked"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "老人",
+      "back": "người già, cụ già",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ người già/cụ già; có thể làm tân ngữ của 扶/照顾.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

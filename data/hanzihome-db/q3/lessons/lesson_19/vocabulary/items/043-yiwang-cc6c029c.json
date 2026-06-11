@@ -1,0 +1,277 @@
+{
+  "id": "2f84db2b-ed03-460b-89f0-b3894ff804a6",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "以往",
+  "pinyin": "yǐwǎng",
+  "pos": {
+    "raw_vi": "Danh từ thời gian",
+    "raw_cn": "时间名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "dĩ vãng",
+    "meaning_vi": "trước đây, trong quá khứ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trước đây",
+      "trong quá khứ"
+    ],
+    "short_definition_vi": "trước đây, trong quá khứ",
+    "textbook_focus_vi": "以往 là những gì đã qua trước hiện tại.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "以",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lấy, dùng, từ",
+        "modern_logic_vi": "Trong từ “以往”, chữ “以” góp phần vào trường nghĩa: lấy, dùng, từ",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "往",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy, không nên ép nghĩa hiện đại",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": true
+          },
+          {
+            "text": "主",
+            "hanviet": "chủ",
+            "meaning_vi": "chủ; thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "主 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đi về phía, quá khứ",
+        "modern_logic_vi": "Trong từ “以往”, chữ “往” góp phần vào trường nghĩa: đi về phía, quá khứ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "以往 là những gì đã qua trước hiện tại.",
+    "memory_tip_vi": "以往 là những gì đã qua trước hiện tại.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "以前",
+        "pinyin": "",
+        "meaning_vi": "trước đây, phổ biến hơn",
+        "difference_vi": "trước đây, phổ biến hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "从前",
+        "pinyin": "",
+        "meaning_vi": "ngày xưa, màu kể chuyện hơn",
+        "difference_vi": "ngày xưa, màu kể chuyện hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c1ecfd3a-6f1e-4ff4-9e0c-7942c1b5375b",
+      "order": 1,
+      "zh": "像以往那样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b68a9699-727b-48f0-9b40-451d8cdb03f2",
+      "order": 2,
+      "zh": "以往的经验",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "60ec40f5-d6b9-4664-a9e3-c085fbe3fa42",
+      "order": 3,
+      "zh": "不同于以往",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f15a0e83-3c80-4950-b274-993dc5b2821e",
+      "order": 4,
+      "zh": "和以往一样",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "167a07aa-9735-4360-9240-525b33eaa470",
+      "order": 1,
+      "zh": "今天和以往不一样。",
+      "pinyin": "",
+      "vi": "Hôm nay không giống trước đây.",
+      "analysis_vi": "和……不一样.",
+      "highlight": [
+        "以往"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f84db2b-ed03-460b-89f0-b3894ff804a6"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "dbf6a656-6048-4405-a767-62526328a1c3",
+      "order": 2,
+      "zh": "他觉得同事们不再像以往那样热情了。",
+      "pinyin": "",
+      "vi": "Anh ấy thấy đồng nghiệp không còn nhiệt tình như trước.",
+      "analysis_vi": "像以往那样.",
+      "highlight": [
+        "以往"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "2f84db2b-ed03-460b-89f0-b3894ff804a6"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "以往 là những gì đã qua trước hiện tại.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "55479505-c1f7-4c51-b9cb-18b6a9142528",
+      "order": 1,
+      "rule_vi": "以往 không dùng cho tương lai; tương lai dùng 今后/以后.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "以往 không dùng cho tương lai; tương lai dùng 今后/以后.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "以往",
+    "back": "trước đây, trong quá khứ",
+    "hint": "yǐwǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2f84db2b-ed03-460b-89f0-b3894ff804a6",
+    "source_lesson_vocab_id": null
+  }
+}

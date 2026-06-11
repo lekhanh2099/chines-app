@@ -1,0 +1,322 @@
+{
+  "id": "0f4e5765-4bf0-4481-9e1c-fa2e9ca3ab05",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "痛",
+  "pinyin": "tòng",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ trạng thái",
+    "raw_cn": "形/状态动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thống",
+    "meaning_vi": "đau, đau đớn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đau, đau đớn"
+    ],
+    "short_definition_vi": "đau, đau đớn",
+    "textbook_focus_vi": "Âm Hán Việt: thống.",
+    "register_vi": "sức khỏe, cảm xúc, văn viết, từ ghép.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "痛",
+        "lishu_vi": "thống",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "疒",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nạch",
+          "radical_name_zh": "",
+          "hanviet": "nạch",
+          "meaning_vi": "bệnh tật, đau ốm",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "疒",
+            "hanviet": "nạch",
+            "meaning_vi": "bệnh tật, đau ốm",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "疒",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nạch",
+              "radical_name_zh": "",
+              "hanviet": "nạch",
+              "meaning_vi": "bệnh tật, đau ốm",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "甬",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đau",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "头痛 = đau đầu. 牙痛 = đau răng.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: Hỏi đời thường “đau không?” thường dùng 疼不疼？ tự nhiên hơn 痛不痛？, nhưng 牙痛 / 头痛 vẫn rất phổ biến.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "痛",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đau, thường mạnh hơn, hay trong từ ghép hoặc văn viết.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "疼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đau, khẩu ngữ rất thông dụng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "痛苦",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đau khổ, cả thể xác hoặc tinh thần.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "难受",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "khó chịu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 我牙疼。 rất khẩu ngữ.",
+      "→ 牙痛 cũng đúng, hơi từ vựng/hồ sơ hơn."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e2758522-53d3-4ad3-8a82-6d2da2140336",
+      "order": 1,
+      "zh": "头痛",
+      "pinyin": "",
+      "vi": "đau đầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7c5f732f-aac2-428d-8dad-9fa19f9b22ab",
+      "order": 2,
+      "zh": "牙痛",
+      "pinyin": "",
+      "vi": "đau răng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "47a9e6db-b0e1-4acb-a5f6-21be634e038f",
+      "order": 3,
+      "zh": "痛得厉害",
+      "pinyin": "",
+      "vi": "đau dữ dội",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "50539e1f-e32a-4833-b918-e4e11a730946",
+      "order": 4,
+      "zh": "疼痛",
+      "pinyin": "",
+      "vi": "đau đớn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "2bbfbb77-ee4c-4b4c-b870-8dc53e96c481",
+      "order": 5,
+      "zh": "痛苦",
+      "pinyin": "",
+      "vi": "đau khổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "88cda5a4-6732-434d-a883-765835ad775b",
+      "order": 1,
+      "zh": "我今天牙痛。",
+      "pinyin": "Wǒ jīntiān yá tòng.",
+      "vi": "Hôm nay tôi đau răng.",
+      "analysis_vi": "牙痛 là từ ghép rất thường gặp; khẩu ngữ cũng có thể nói 牙疼.",
+      "highlight": [
+        "痛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0f4e5765-4bf0-4481-9e1c-fa2e9ca3ab05"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c6f961d9-6a80-4da4-b68d-07c0a77018d9",
+      "order": 2,
+      "zh": "他痛得连话都说不出来。",
+      "pinyin": "Tā tòng de lián huà dōu shuō bù chūlai.",
+      "vi": "Anh ấy đau đến mức ngay cả lời cũng không nói ra được.",
+      "analysis_vi": "痛得…… là bổ ngữ trạng thái. 连话都…… nhấn mức cực đoan. 说不出来 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "痛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0f4e5765-4bf0-4481-9e1c-fa2e9ca3ab05"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9a92f1a1-385f-4bff-8a5c-7c083f852856",
+      "order": 3,
+      "zh": "病房里躺着一个牙痛的孩子，护士先让他放松下来，再把医生的话一句句解释给他听，孩子才慢慢不那么害怕了。",
+      "pinyin": "Bìngfáng lǐ tǎngzhe yí ge yá tòng de háizi, hùshi xiān ràng tā fàngsōng xiàlai, zài bǎ yīshēng de huà yí jù jù jiěshì gěi tā tīng, háizi cái mànman bú nàme hàipà le.",
+      "vi": "Trong phòng bệnh có một đứa trẻ đau răng đang nằm, y tá trước tiên để em bình tĩnh lại, rồi giải thích từng câu lời bác sĩ cho em nghe, đứa trẻ mới dần không còn sợ như vậy nữa.",
+      "analysis_vi": "病房里躺着一个孩子 là câu tồn hiện. 放松下来 là chuyển sang trạng thái bình tĩnh hơn. 把医生的话一句句解释给他听 là 把字句 + lượng từ lặp lại.",
+      "highlight": [
+        "痛"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0f4e5765-4bf0-4481-9e1c-fa2e9ca3ab05"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Trung đời thường, 疼 thường nghe tự nhiên hơn khi nói đau cơ thể: 牙疼, 肚子疼, 脚疼. 痛 hay gặp trong từ ghép, biển báo, y học, hoặc khi muốn nói mạnh hơn.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "01f5f442-f8d5-4024-a54f-e969087c5988",
+      "order": 1,
+      "rule_vi": "Dùng 痛 và 疼 không theo sắc thái.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Khẩu ngữ rất tự nhiên: 我牙疼。 Wǒ yá téng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "痛",
+    "back": "đau, đau đớn",
+    "hint": "tòng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0f4e5765-4bf0-4481-9e1c-fa2e9ca3ab05",
+    "source_lesson_vocab_id": null
+  }
+}

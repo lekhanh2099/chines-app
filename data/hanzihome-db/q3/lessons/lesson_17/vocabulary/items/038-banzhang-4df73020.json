@@ -1,0 +1,243 @@
+{
+  "id": "e2a7b7b3-7676-4ff2-a505-afc496a578d6",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "班长",
+  "pinyin": "bānzhǎng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_17",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ban trưởng",
+    "meaning_vi": "lớp trưởng; tiểu đội trưởng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lớp trưởng",
+      "tiểu đội trưởng"
+    ],
+    "short_definition_vi": "lớp trưởng",
+    "textbook_focus_vi": "Bám ngữ cảnh Bài 17 再试一次: thử giảng, tuyển dụng, tâm lý đứng trước lớp và lựa chọn tiếp tục hay rút lui.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "giáo trình Hán ngữ quyển 3, tuyển dụng giáo viên, thử giảng, tâm lý học tập",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "班",
+        "lishu_vi": "ban",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [
+          {
+            "text": "王",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刂",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lớp, nhóm, ca",
+        "modern_logic_vi": "lớp, nhóm, ca",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "长",
+        "lishu_vi": "trưởng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy và nghĩa hiện đại; không suy diễn lịch sử khi không cần.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dài; người đứng đầu",
+        "modern_logic_vi": "dài; người đứng đầu",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "班 là lớp/nhóm; 长 là người đứng đầu; 班长 là người đứng đầu lớp/nhóm.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm: 当班长.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "班主任",
+        "pinyin": "bānzhǔrèn",
+        "meaning_vi": "giáo viên chủ nhiệm",
+        "difference_vi": "班主任 là giáo viên, không phải học sinh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "组长",
+        "pinyin": "zǔzhǎng",
+        "meaning_vi": "nhóm trưởng",
+        "difference_vi": "组长 nhỏ hơn hoặc khác phạm vi lớp.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "39f6cda7-4c8c-46d9-86cb-458db39afbc5",
+      "order": 1,
+      "zh": "当班长",
+      "pinyin": "dāng bānzhǎng",
+      "vi": "làm lớp trưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28db0862-e6f8-4db2-934f-bcbf9cf84a89",
+      "order": 2,
+      "zh": "选班长",
+      "pinyin": "xuǎn bānzhǎng",
+      "vi": "bầu lớp trưởng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c8992acf-9d07-4c9d-a116-c5adb9959a6f",
+      "order": 3,
+      "zh": "班长喊起立",
+      "pinyin": "bānzhǎng hǎn qǐlì",
+      "vi": "lớp trưởng hô đứng dậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0106e2a3-48e5-4605-98f6-8e67523002d9",
+      "order": 1,
+      "zh": "他是我们班的班长。",
+      "pinyin": "Tā shì wǒmen bān de bānzhǎng.",
+      "vi": "Anh ấy là lớp trưởng lớp chúng tôi.",
+      "analysis_vi": "我们班的班长 là lớp trưởng của lớp chúng tôi.",
+      "highlight": [
+        "班长"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e2a7b7b3-7676-4ff2-a505-afc496a578d6"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3bc67f8c-525d-4edc-98d4-deef6d3c3e1d",
+      "order": 2,
+      "zh": "班长一看见老师进来，就喊：“起立！”",
+      "pinyin": "Bānzhǎng yí kànjiàn lǎoshī jìnlai, jiù hǎn: ‘Qǐlì!’",
+      "vi": "Lớp trưởng vừa thấy thầy/cô vào thì hô: 'Đứng dậy!'",
+      "analysis_vi": "一……就…… là phản ứng ngay.",
+      "highlight": [
+        "班长"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e2a7b7b3-7676-4ff2-a505-afc496a578d6"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "班长 trong lớp học có vai trò điều phối, truyền thông báo, giữ trật tự.",
+    "tags": [
+      "usage",
+      "hanyu_3_2_lesson_17"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0fffb057-0912-4f60-881e-984db41d02f2",
+      "order": 1,
+      "rule_vi": "Không gọi giáo viên chủ nhiệm là 班长; giáo viên chủ nhiệm là 班主任.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "班长",
+    "back": "lớp trưởng; tiểu đội trưởng",
+    "hint": "bānzhǎng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_17"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e2a7b7b3-7676-4ff2-a505-afc496a578d6",
+    "source_lesson_vocab_id": null
+  }
+}

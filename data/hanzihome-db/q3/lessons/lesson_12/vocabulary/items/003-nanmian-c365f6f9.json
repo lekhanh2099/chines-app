@@ -1,0 +1,221 @@
+{
+  "id": "3c779564-0e7c-47c2-81b8-f82c61408fe0",
+  "type": "deep_vocabulary_item",
+  "order": 3,
+  "hanzi": "难免",
+  "pinyin": "nánmiǎn",
+  "pos": {
+    "raw_vi": "Phó từ / Động từ sắc thái",
+    "raw_cn": "副词 / 动词性用法",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_12",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "nan miễn",
+    "meaning_vi": "khó tránh khỏi",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "khó tránh khỏi"
+    ],
+    "short_definition_vi": "Việc tiêu cực hoặc không mong muốn khó tránh trong hoàn cảnh đó.",
+    "textbook_focus_vi": "Dùng với sai sót, căng thẳng, hiểu lầm, thất vọng.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng, Bài 12",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "难",
+        "lishu_vi": "nan",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khó",
+        "modern_logic_vi": "khó",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "免",
+        "lishu_vi": "miễn",
+        "structure_note_vi": "Tách thành phần nhìn thấy nếu chắc; không ép nguồn gốc chữ học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tránh/miễn",
+        "modern_logic_vi": "tránh/miễn",
+        "warning_vi": "Không tách component để tránh gán sai.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "难 + 免 = khó tránh.",
+    "memory_tip_vi": "Nhớ qua ví dụ và collocation trọng tâm trong bài.",
+    "warning_vi": "Không suy nghĩa hiện đại chỉ bằng từng chữ riêng lẻ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "不免",
+        "pinyin": "bùmiǎn",
+        "meaning_vi": "không khỏi",
+        "difference_vi": "不免 thường văn hơn và nghiêng cảm xúc/đánh giá nhẹ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "9e730f26-7314-4195-90df-d24d87c1f063",
+      "order": 1,
+      "zh": "难免紧张",
+      "pinyin": "",
+      "vi": "khó tránh hồi hộp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ecc0f237-0408-419e-b7a1-81d1e0522f8a",
+      "order": 2,
+      "zh": "难免出错",
+      "pinyin": "",
+      "vi": "khó tránh sai sót",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3bd5953a-7543-4a72-991b-0f3678d48ae9",
+      "order": 3,
+      "zh": "难免误会",
+      "pinyin": "",
+      "vi": "khó tránh hiểu lầm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "218e84b0-d8e7-44b7-b206-34d5235f12ae",
+      "order": 4,
+      "zh": "在所难免",
+      "pinyin": "",
+      "vi": "điều khó tránh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0faa92b2-be4f-4ffa-a379-1fcfeac773ac",
+      "order": 1,
+      "zh": "第一次考试，难免紧张。",
+      "pinyin": "",
+      "vi": "Lần đầu thi, khó tránh hồi hộp.",
+      "analysis_vi": "难免 + trạng thái.",
+      "highlight": [
+        "难免"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c779564-0e7c-47c2-81b8-f82c61408fe0"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b3a3ed96-f895-4604-afa4-df01be9f27fb",
+      "order": 2,
+      "zh": "尽管准备得很充分，考试时还是难免会出错。",
+      "pinyin": "",
+      "vi": "Dù chuẩn bị đầy đủ, lúc thi vẫn khó tránh mắc lỗi.",
+      "analysis_vi": "难免会 + V nói khả năng khó tránh.",
+      "highlight": [
+        "难免"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3c779564-0e7c-47c2-81b8-f82c61408fe0"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Không có ghi chú văn hóa bắt buộc; trọng tâm là dùng đúng sắc thái hiện đại.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "ad87c080-4c38-4d40-a48f-d5173010a655",
+      "order": 1,
+      "rule_vi": "难免 thường đi với việc không mong muốn, không dùng cho kết quả tích cực đơn thuần.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "难免 thường đi với việc không mong muốn, không dùng cho kết quả tích cực đơn thuần.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "难免",
+    "back": "khó tránh khỏi",
+    "hint": "nánmiǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_12"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3c779564-0e7c-47c2-81b8-f82c61408fe0",
+    "source_lesson_vocab_id": null
+  }
+}

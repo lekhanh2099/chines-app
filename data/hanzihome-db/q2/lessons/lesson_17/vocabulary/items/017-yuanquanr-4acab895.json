@@ -1,0 +1,417 @@
+{
+  "id": "114d55cb-2716-4187-b91d-bec3fbae8761",
+  "type": "deep_vocabulary_item",
+  "order": 17,
+  "hanzi": "圆圈儿",
+  "pinyin": "yuánquānr",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Viên quyển nhi",
+    "meaning_vi": "vòng tròn",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vòng tròn"
+    ],
+    "short_definition_vi": "vòng tròn",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "đời sống, lớp học, sắp xếp đồ vật, hình dạng.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "圆",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "bao quanh/vây quanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh/vây quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "员",
+            "hanviet": "viên",
+            "meaning_vi": "người/thành viên; thành phần trong 圆",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tròn, viên mãn",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "圈",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "囗",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vi",
+          "radical_name_zh": "",
+          "hanviet": "vi",
+          "meaning_vi": "bao quanh/vây quanh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "囗",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "囗",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vi",
+              "radical_name_zh": "",
+              "hanviet": "vi",
+              "meaning_vi": "bao quanh/vây quanh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卷",
+            "hanviet": "quyển",
+            "meaning_vi": "cuốn/quyển; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "vòng, khoanh, khu vực bao quanh",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "儿",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhi",
+          "radical_name_zh": "",
+          "hanviet": "nhi",
+          "meaning_vi": "trẻ/con, hậu tố trong một số từ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "儿",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "儿",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhi",
+              "radical_name_zh": "",
+              "hanviet": "nhi",
+              "meaning_vi": "trẻ/con, hậu tố trong một số từ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hậu tố 儿化 trong từ này",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "圆 là tròn. 圈 là vòng, vòng bao quanh. 儿 là âm nhi hóa, thường gặp trong khẩu ngữ Bắc phương. → 圆圈儿 = vòng tròn. Cảnh báo: khi viết trang trọng, có thể gặp 圆圈 không có 儿.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "圆圈儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vòng tròn, khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "圆形",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hình tròn, thiên hình học/trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "圈子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "vòng/nhóm/giới, cũng có nghĩa cộng đồng nhỏ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一圈",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một vòng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: xếp bàn thành vòng tròn dùng 摆成圆圈儿; hình tròn trong toán có thể dùng 圆形."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "91bd93e1-247e-4fa3-a900-7fa95e73bbc1",
+      "order": 1,
+      "zh": "一个圆圈儿",
+      "pinyin": "",
+      "vi": "một vòng tròn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b5075e37-7c49-47dd-b09e-5b127cabf75d",
+      "order": 2,
+      "zh": "画一个圆圈儿",
+      "pinyin": "",
+      "vi": "vẽ một vòng tròn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "793ec73a-b2ff-4938-a5be-109b79e359b6",
+      "order": 3,
+      "zh": "围成一个圆圈儿",
+      "pinyin": "",
+      "vi": "vây/thành một vòng tròn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a9a3272-a5cb-4a3c-958e-63d79f564a34",
+      "order": 4,
+      "zh": "摆成圆圈儿",
+      "pinyin": "",
+      "vi": "xếp thành vòng tròn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "1de02d62-eb05-4fa2-a8f8-a17c5707f808",
+      "order": 1,
+      "zh": "我们把桌子摆成一个圆圈儿，中间留出地方表演节目。",
+      "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng yí ge yuánquānr, zhōngjiān liú chū dìfang biǎoyǎn jiémù.",
+      "vi": "Chúng tôi xếp bàn thành một vòng tròn, chừa chỗ ở giữa để biểu diễn tiết mục.",
+      "analysis_vi": "把桌子摆成…… là câu 把 có kết quả hình dạng; 中间 là phương vị quan trọng.",
+      "highlight": [
+        "圆圈儿"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "114d55cb-2716-4187-b91d-bec3fbae8761"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "03baa57f-224e-4060-9dd6-bc023a7428f3",
+      "order": 2,
+      "zh": "孩子们围成一个圆圈儿，悄悄准备给老师一个惊喜。",
+      "pinyin": "Háizimen wéi chéng yí ge yuánquānr, qiāoqiāo zhǔnbèi gěi lǎoshī yí ge jīngxǐ.",
+      "vi": "Bọn trẻ vây thành một vòng tròn, lặng lẽ chuẩn bị cho thầy/cô một bất ngờ.",
+      "analysis_vi": "围成 nhấn kết quả thành vòng; 悄悄 nói làm âm thầm.",
+      "highlight": [
+        "圆圈儿"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "114d55cb-2716-4187-b91d-bec3fbae8761"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8f588144-f2bf-4389-b764-213b08d1b56e",
+      "order": 3,
+      "zh": "黑板上画着一个圆圈儿，里面写着“新春快乐”。",
+      "pinyin": "Hēibǎn shang huàzhe yí ge yuánquānr, lǐmian xiězhe “Xīnchūn kuàilè”.",
+      "vi": "Trên bảng vẽ một vòng tròn, bên trong viết “Chúc mừng xuân mới”.",
+      "analysis_vi": "黑板上画着…… là câu tồn hiện; 里面 nói vị trí bên trong vòng tròn.",
+      "highlight": [
+        "圆圈儿"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "114d55cb-2716-4187-b91d-bec3fbae8761"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 圆圈儿",
+    "content_vi": "Trong hoạt động lớp học Trung Quốc, xếp ghế/bàn thành 圆圈儿 thường dùng cho trò chơi tập thể hoặc thảo luận mở. Vòng tròn làm giảm cảm giác “thầy giảng – trò nghe”, khiến không khí bình đẳng và thân mật hơn.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c0027b32-8486-4068-b8c4-09f75bbfd26a",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 圆圈儿 với 圈子. 圆圈儿 thường là vòng tròn cụ thể. 圈子 có thể là “giới/nhóm quan hệ”. Ví dụ: 画一个圆圈儿。 Huà yí ge yuánquānr. Vẽ một vòng tròn. 他的朋友圈子很大。 Tā de péngyou quānzi hěn dà. Vòng bạn bè của anh ấy rất rộng.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "圆圈儿",
+    "back": "vòng tròn",
+    "hint": "yuánquānr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "114d55cb-2716-4187-b91d-bec3fbae8761",
+    "source_lesson_vocab_id": null
+  }
+}

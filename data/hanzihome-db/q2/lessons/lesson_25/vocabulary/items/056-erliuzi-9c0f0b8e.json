@@ -1,0 +1,362 @@
+{
+  "id": "b3f20d2a-77b2-4e5f-ad71-503dfb3ed06b",
+  "type": "deep_vocabulary_item",
+  "order": 56,
+  "hanzi": "二流子",
+  "pinyin": "èrliúzi",
+  "pos": {
+    "raw_vi": "Danh từ khẩu ngữ mang nghĩa xấu",
+    "raw_cn": "贬义名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson25",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Nhị lưu tử",
+    "meaning_vi": "kẻ lêu lổng, vô công rồi nghề",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kẻ lêu lổng, vô công rồi nghề"
+    ],
+    "short_definition_vi": "kẻ lêu lổng, vô công rồi nghề",
+    "textbook_focus_vi": "Âm Hán Việt: nhị lưu tử.",
+    "register_vi": "khẩu ngữ, nghĩa xấu, không nên dùng tùy tiện.",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "二",
+        "lishu_vi": "nhị",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "số 2",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "流",
+        "lishu_vi": "lưu",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy, không khẳng định nguồn gốc chữ học nếu chưa có nguồn riêng.",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước, chất lỏng, dòng chảy",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước, chất lỏng, dòng chảy",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước, chất lỏng, dòng chảy",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chảy, lưu chuyển, lang bạt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "Không tách sâu theo hình hiện đại.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "",
+        "warning_vi": "Không ép diễn giải chiết tự nếu chữ giản thể hoặc chữ độc thể không cho logic học nghĩa rõ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 二流子 = người “hạng kém”, lêu lổng, không đứng đắn.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: đây không phải từ trung tính để chỉ người thất nghiệp. Nó có sắc thái phán xét đạo đức/hành vi.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "二流子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "kẻ lêu lổng, vô công rồi nghề, nghĩa xấu.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "流氓",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lưu manh, côn đồ, nặng hơn nếu có hành vi xấu/quấy rối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "无业游民",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người không nghề nghiệp, lang thang, trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "懒人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người lười.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "坏人",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "người xấu, rộng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ 二流子 chê lối sống lêu lổng.",
+      "→ 流氓 chê hành vi vô lại/côn đồ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "1cf0df29-db68-44e3-961a-3cad2f298c0d",
+      "order": 1,
+      "zh": "一个二流子",
+      "pinyin": "",
+      "vi": "một kẻ lêu lổng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7d988a0a-57d1-40bc-b012-42369c1c0f86",
+      "order": 2,
+      "zh": "像个二流子",
+      "pinyin": "",
+      "vi": "giống kẻ lêu lổng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7a5d1882-b6e9-4513-b97c-7d26c33f3bec",
+      "order": 3,
+      "zh": "别跟二流子来往",
+      "pinyin": "",
+      "vi": "đừng qua lại với kẻ lêu lổng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ef093361-3b92-43b5-9509-cc3dcb581448",
+      "order": 4,
+      "zh": "二流子样子",
+      "pinyin": "",
+      "vi": "dáng vẻ lêu lổng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "04aea53b-4965-42c9-bc99-544c72d8efca",
+      "order": 5,
+      "zh": "被人看成二流子",
+      "pinyin": "",
+      "vi": "bị người ta xem là kẻ lêu lổng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d979ba76-c817-4504-b53e-2c79c19c4f79",
+      "order": 1,
+      "zh": "他整天不工作，像个二流子。",
+      "pinyin": "Tā zhěngtiān bù gōngzuò, xiàng ge èrliúzi.",
+      "vi": "Anh ấy cả ngày không làm việc, giống một kẻ lêu lổng.",
+      "analysis_vi": "像个二流子 là đánh giá rất tiêu cực, không nên dùng nếu chỉ muốn nói nhẹ.",
+      "highlight": [
+        "二流子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b3f20d2a-77b2-4e5f-ad71-503dfb3ed06b"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4914cd66-8eaa-4bc2-aff4-4661fc71c90e",
+      "order": 2,
+      "zh": "你连事情的经过都不了解，怎么能随便说别人是二流子呢？",
+      "pinyin": "Nǐ lián shìqing de jīngguò dōu bù liǎojiě, zěnme néng suíbiàn shuō biéren shì èrliúzi ne?",
+      "vi": "Bạn ngay cả diễn biến sự việc còn không hiểu, sao có thể tùy tiện nói người khác là kẻ lêu lổng được?",
+      "analysis_vi": "连……都…… nhấn nền tảng còn chưa biết. 怎么能……呢？ là câu hỏi tu từ để trách việc gán nhãn người khác quá vội.",
+      "highlight": [
+        "二流子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b3f20d2a-77b2-4e5f-ad71-503dfb3ed06b"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "b38ea28a-964a-4048-80b2-5aba79edc398",
+      "order": 3,
+      "zh": "小区门口站着几个年轻人，别人不了解情况就说他们是二流子，后来才发现他们是在等社区工作人员，一起去给流浪老人送救济。",
+      "pinyin": "Xiǎoqū ménkǒu zhànzhe jǐ ge niánqīngrén, biéren bù liǎojiě qíngkuàng jiù shuō tāmen shì èrliúzi, hòulái cái fāxiàn tāmen shì zài děng shèqū gōngzuò rényuán, yìqǐ qù gěi liúlàng lǎorén sòng jiùjì.",
+      "vi": "Trước cổng khu dân cư có vài người trẻ đang đứng, người khác chưa hiểu tình hình đã nói họ là kẻ lêu lổng, sau đó mới phát hiện họ đang chờ nhân viên cộng đồng để cùng đi gửi cứu trợ cho người già lang thang.",
+      "analysis_vi": "小区门口站着几个年轻人 là câu tồn hiện. 后来才发现 nhấn sau đó mới nhận ra. Câu này cảnh báo không nên dùng từ nghĩa xấu khi chưa biết rõ tình huống.",
+      "highlight": [
+        "二流子"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b3f20d2a-77b2-4e5f-ad71-503dfb3ed06b"
+      ],
+      "source_ref": "thread_or_source_vocabulary_block",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa Trung–Việt / Fact nhỏ",
+    "content_vi": "Trong tiếng Việt cũng có kiểu mắng “đồ lêu lổng”, “vô công rồi nghề”. 二流子 gần nhóm này, nhưng trong tiếng Trung nghe khá miệt thị, nhất là khi nói trực tiếp về người khác.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [
+      "thread_or_source_vocabulary_block"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5b2f5041-5de4-4553-90f9-186646cf749c",
+      "order": 1,
+      "rule_vi": "Dùng 二流子 để nói “người thất nghiệp”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他没有工作，所以是二流子。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "他现在没有工作。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "correct_examples": [],
+      "explanation_vi": "Không nên nói: 他没有工作，所以是二流子。 Vì thất nghiệp chưa chắc là lêu lổng.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "二流子",
+    "back": "kẻ lêu lổng, vô công rồi nghề",
+    "hint": "èrliúzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson25",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b3f20d2a-77b2-4e5f-ad71-503dfb3ed06b",
+    "source_lesson_vocab_id": null
+  }
+}

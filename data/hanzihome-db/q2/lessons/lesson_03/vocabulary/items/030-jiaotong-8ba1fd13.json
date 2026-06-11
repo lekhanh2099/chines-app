@@ -1,0 +1,408 @@
+{
+  "id": "b90bffc2-7d38-4c5c-9bdf-cd331e68c16b",
+  "type": "deep_vocabulary_item",
+  "order": 30,
+  "hanzi": "交通",
+  "pinyin": "jiāotōng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson_03",
+    "traffic"
+  ],
+  "meaning": {
+    "hanviet": "Giao thông",
+    "meaning_vi": "giao thông; vận tải, đi lại",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giao thông",
+      "vận tải",
+      "đi lại"
+    ],
+    "short_definition_vi": "giao thông; vận tải, đi lại",
+    "textbook_focus_vi": "Trọng tâm theo Bài 3: dùng trong ngữ cảnh xem nhà, giao thông, điều kiện sống hoặc luyện tập hội thoại nếu phù hợp.",
+    "register_vi": "tiếng Trung hiện đại / 普通话",
+    "usage_domain_vi": "traffic",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "交",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giao nhau, trao đổi, kết nối",
+        "modern_logic_vi": "交 gợi kết nối/giao nhau.",
+        "warning_vi": "Thành phần chữ không phân tích sâu ở đây.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "通",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "辶",
+            "hanviet": "sước",
+            "meaning_vi": "đi/chuyển động",
+            "position_vi": "bên trái/dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "辵",
+              "radical_variant": "辶",
+              "radical_name_vi": "bộ Sước",
+              "radical_name_zh": "",
+              "hanviet": "sước",
+              "meaning_vi": "đi; chuyển động",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "甬",
+            "hanviet": "dũng",
+            "meaning_vi": "phần phải gợi âm",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thông, thông suốt, đi qua, hiểu",
+        "modern_logic_vi": "通 là thông suốt/đi qua.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "辵",
+          "radical_variant": "辶",
+          "radical_name_vi": "bộ Sước",
+          "radical_name_zh": "",
+          "hanviet": "sước",
+          "meaning_vi": "đi; chuyển động",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "交 là giao/kết nối; 通 là thông suốt; 交通 là hệ thống đi lại/kết nối giữa các nơi.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "交通工具",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Phương tiện giao thông.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "公共交通",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Giao thông công cộng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "运输",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Vận chuyển/vận tải, trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "路况",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Tình hình đường sá.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "交通堵塞",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Ùn tắc giao thông, đối lập 交通顺畅.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [
+      {
+        "left": "交通方便",
+        "right": "交通不方便",
+        "meaning_vi": "Giao thông thuận tiện đối lập không thuận tiện.",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "d3b0ab8e-ce0c-42a0-8908-9b1a50c2c709",
+      "order": 1,
+      "zh": "交通方便",
+      "pinyin": "",
+      "vi": "giao thông thuận tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d0cc735-efa5-43ca-a300-b11dcab74669",
+      "order": 2,
+      "zh": "交通不方便",
+      "pinyin": "",
+      "vi": "giao thông không tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a6356514-5542-4bf2-b92e-87b1f88f1415",
+      "order": 3,
+      "zh": "交通很好",
+      "pinyin": "",
+      "vi": "giao thông rất tốt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "62817975-dfd4-4f90-9be3-7cba2841b3bf",
+      "order": 4,
+      "zh": "交通问题",
+      "pinyin": "",
+      "vi": "vấn đề giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c6aeb418-11e9-4293-8c7d-fb78b8cf6995",
+      "order": 5,
+      "zh": "公共交通",
+      "pinyin": "",
+      "vi": "giao thông công cộng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb0b63aa-1acc-4c04-b31c-b0ce6a123849",
+      "order": 6,
+      "zh": "交通工具",
+      "pinyin": "",
+      "vi": "phương tiện giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6543f031-c443-478d-a6d0-bd18300d3687",
+      "order": 7,
+      "zh": "交通堵塞",
+      "pinyin": "",
+      "vi": "ùn tắc giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c0514a29-1f1b-4e30-89d5-c2769b49333b",
+      "order": 8,
+      "zh": "交通事故",
+      "pinyin": "",
+      "vi": "tai nạn giao thông",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "45016386-d049-4b9a-8e54-fe35a14dce8d",
+      "order": 1,
+      "zh": "这儿交通很方便。",
+      "pinyin": "Zhèr jiāotōng hěn fāngbiàn.",
+      "vi": "Giao thông ở đây rất thuận tiện.",
+      "analysis_vi": "这儿 làm địa điểm; 交通方便 rất thường gặp khi nói nhà ở.",
+      "highlight": [
+        "交通"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b90bffc2-7d38-4c5c-9bdf-cd331e68c16b"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6755cca2-b172-43b6-838e-922c4d44cea5",
+      "order": 2,
+      "zh": "虽然房租贵一点儿，但是交通很方便。",
+      "pinyin": "Suīrán fángzū guì yìdiǎnr, dànshì jiāotōng hěn fāngbiàn.",
+      "vi": "Tuy tiền thuê hơi đắt một chút, nhưng giao thông rất thuận tiện.",
+      "analysis_vi": "虽然……但是……; vế sau là lý do vẫn cân nhắc.",
+      "highlight": [
+        "交通"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b90bffc2-7d38-4c5c-9bdf-cd331e68c16b"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a3065f58-50b6-4343-9e16-c0819c220f42",
+      "order": 3,
+      "zh": "要是附近有地铁站，交通就方便多了，上班也不会天天堵车。",
+      "pinyin": "Yàoshi fùjìn yǒu dìtiězhàn, jiāotōng jiù fāngbiàn duō le, shàngbān yě bú huì tiāntiān dǔchē.",
+      "vi": "Nếu gần đó có ga tàu điện ngầm thì giao thông sẽ thuận tiện hơn nhiều, đi làm cũng sẽ không kẹt xe mỗi ngày.",
+      "analysis_vi": "要是……就……; 方便多了 = tiện hơn nhiều.",
+      "highlight": [
+        "交通"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b90bffc2-7d38-4c5c-9bdf-cd331e68c16b"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / ngữ cảnh dùng",
+    "content_vi": "Khi xem nhà ở thành phố Trung Quốc, 交通方便 thường gần nghĩa gần metro/bus, dễ đi làm, dễ đi học.",
+    "tags": [
+      "traffic"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "7d610b08-bb14-4eb4-bf2b-cca25470bea1",
+      "order": 1,
+      "rule_vi": "Đừng nói 交通很容易.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "交通很容易。",
+          "pinyin": "",
+          "vi": "Giao thông rất dễ.",
+          "note_vi": "Không tự nhiên.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "交通很方便。",
+          "pinyin": "",
+          "vi": "Giao thông rất thuận tiện.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "路上很堵。",
+          "pinyin": "",
+          "vi": "Trên đường rất kẹt.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Tự nhiên là 交通很方便. Nếu nói kẹt xe dùng 堵车 / 交通堵塞.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "交通",
+    "back": "giao thông; vận tải, đi lại",
+    "hint": "jiāotōng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_03",
+      "traffic"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b90bffc2-7d38-4c5c-9bdf-cd331e68c16b",
+    "source_lesson_vocab_id": null
+  }
+}

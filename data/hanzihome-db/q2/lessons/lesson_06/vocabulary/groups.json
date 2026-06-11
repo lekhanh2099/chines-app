@@ -1,0 +1,94 @@
+[
+  {
+    "id": "c8bd0e44-d3df-4618-ade7-4d63d7d87e25",
+    "order": 1,
+    "title_vi": "Thay đổi / thời gian / quá khứ – hiện tại",
+    "words": [
+      "变化",
+      "变",
+      "暑假",
+      "过去",
+      "现代",
+      "代"
+    ],
+    "notes": []
+  },
+  {
+    "id": "f0cfd83c-5cea-420a-b5c2-ee78221d75be",
+    "order": 2,
+    "title_vi": "So sánh / mức độ / số liệu",
+    "words": [
+      "还",
+      "比",
+      "最",
+      "更",
+      "高",
+      "低",
+      "度",
+      "人口",
+      "增加"
+    ],
+    "notes": []
+  },
+  {
+    "id": "9843843b-c3b5-4ddd-a2ee-ad2416c03eb4",
+    "order": 3,
+    "title_vi": "Thành phố / thời tiết / nơi ở",
+    "words": [
+      "城市",
+      "冬",
+      "可是",
+      "天气",
+      "预报",
+      "暖气",
+      "感觉",
+      "旅馆"
+    ],
+    "notes": []
+  },
+  {
+    "id": "df793108-4c7b-4304-b798-a7eeaa5116fa",
+    "order": 4,
+    "title_vi": "Âm nhạc / văn hóa nghe nhìn",
+    "words": [
+      "迷",
+      "交响乐",
+      "下载",
+      "首",
+      "也许",
+      "世界",
+      "名曲",
+      "民歌",
+      "流行",
+      "歌曲",
+      "歌词"
+    ],
+    "notes": []
+  },
+  {
+    "id": "6add64b9-28e5-40ee-8371-ad13a6dd3207",
+    "order": 5,
+    "title_vi": "Con người / sở thích / trải nghiệm",
+    "words": [
+      "年轻",
+      "有些",
+      "遥远",
+      "逛",
+      "票",
+      "排队",
+      "汗"
+    ],
+    "notes": []
+  },
+  {
+    "id": "89a2d1a6-4314-4815-b7e1-35aaec597698",
+    "order": 6,
+    "title_vi": "Cảnh vật / hoạt động du lịch",
+    "words": [
+      "湖",
+      "桥",
+      "划船"
+    ],
+    "notes": []
+  }
+]

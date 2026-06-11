@@ -1,0 +1,422 @@
+{
+  "id": "e1061d72-251f-4256-8512-b69cc03d433b",
+  "type": "deep_vocabulary_item",
+  "order": 34,
+  "hanzi": "想念",
+  "pinyin": "xiǎngniàn",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_01",
+    "离家的时候",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "tưởng niệm",
+    "meaning_vi": "nhớ, nhớ nhung",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhớ",
+      "nhớ nhung"
+    ],
+    "short_definition_vi": "nhớ, nhớ nhung",
+    "textbook_focus_vi": "Trong Bài 1 离家的时候, trọng tâm là: nhớ, nhớ nhung.",
+    "register_vi": "theo văn cảnh bài học; xem warnings/culture_note nếu có sắc thái văn viết hoặc khẩu ngữ",
+    "usage_domain_vi": "xa nhà, du học, gia đình, cảm xúc chia ly, văn hóa thơ cổ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "想",
+        "lishu_vi": "tưởng",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "相",
+            "hanviet": "tương",
+            "meaning_vi": "nhìn nhau; thành phần trên",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, suy nghĩ",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghĩ, nhớ, muốn",
+        "modern_logic_vi": "Suy nghĩ/cảm xúc nằm trong lòng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, suy nghĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "念",
+        "lishu_vi": "niệm",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "今",
+            "hanviet": "kim",
+            "meaning_vi": "nay",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "心",
+            "hanviet": "tâm",
+            "meaning_vi": "lòng, suy nghĩ",
+            "position_vi": "dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "心 được parse như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [
+                  "radical"
+                ],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tâm",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "lòng, suy nghĩ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhớ, nghĩ đến, đọc",
+        "modern_logic_vi": "Ý nghĩ ở trong lòng.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Tâm",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "lòng, suy nghĩ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "想念 trong bài dùng theo nghĩa: nhớ, nhớ nhung. Học theo logic từ ghép/cụm cố định, không suy nghĩa máy móc từng chữ.",
+    "memory_tip_vi": "Nhớ 想念 qua văn cảnh 离家的时候: nhớ, nhớ nhung.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy và logic nghĩa hiện đại đã chắc.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "思念",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhớ nhung, văn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "怀念",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "hoài niệm quá khứ",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "想",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "nhớ/muốn/nghĩ, rộng hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "牵挂",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lo nhớ/vướng bận",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "忘记",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "忘怀",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "quên đi",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4a390221-b335-491d-b847-df8d2b25967a",
+      "order": 1,
+      "zh": "想念父母",
+      "pinyin": "",
+      "vi": "nhớ bố mẹ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b9bfa89c-12f8-4ac6-8317-d13ed06b5427",
+      "order": 2,
+      "zh": "想念家乡",
+      "pinyin": "",
+      "vi": "nhớ quê",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "33a08c93-4294-4f7c-acaa-6f76a40570e9",
+      "order": 3,
+      "zh": "非常想念",
+      "pinyin": "",
+      "vi": "rất nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "10b9e1f8-7e2d-47ee-a4d2-63419f37f1c4",
+      "order": 4,
+      "zh": "表达想念",
+      "pinyin": "",
+      "vi": "bày tỏ nỗi nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8ab298ad-9b2b-488d-97e6-b62f66a34a5d",
+      "order": 5,
+      "zh": "越来越想念",
+      "pinyin": "",
+      "vi": "càng ngày càng nhớ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "3b753aff-2253-4470-82c9-f9d7629ffc69",
+      "order": 1,
+      "zh": "她很想念父母。",
+      "pinyin": "",
+      "vi": "Cô ấy rất nhớ bố mẹ.",
+      "analysis_vi": "想念 + người/nơi.",
+      "highlight": [
+        "想念"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e1061d72-251f-4256-8512-b69cc03d433b"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e2a8a12a-b0e9-412e-b47a-520ac66bbe10",
+      "order": 2,
+      "zh": "到了国外以后，她越来越想念家乡。",
+      "pinyin": "",
+      "vi": "Sau khi ra nước ngoài, cô ấy càng ngày càng nhớ quê.",
+      "analysis_vi": "越来越 + tâm lý từ diễn tả tăng dần.",
+      "highlight": [
+        "想念"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e1061d72-251f-4256-8512-b69cc03d433b"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "bed2f17e-3d5c-4e27-a37e-af7d1298de14",
+      "order": 3,
+      "zh": "她本来以为自己会过得很自在，可是一个人吃晚饭的时候特别想念母亲做的菜。",
+      "pinyin": "",
+      "vi": "Cô ấy tưởng mình sẽ sống thoải mái, nhưng khi ăn tối một mình lại đặc biệt nhớ món mẹ nấu.",
+      "analysis_vi": "母亲做的菜 là định ngữ với 的.",
+      "highlight": [
+        "想念"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e1061d72-251f-4256-8512-b69cc03d433b"
+      ],
+      "source_ref": "current_thread_compiled",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Văn hóa / ngữ cảnh dùng",
+    "content_vi": "想念父母/家乡 là mạch cảm xúc phổ biến trong văn du học/xa quê.",
+    "tags": [
+      "culture",
+      "usage",
+      "hanyu_3_1_lesson_01"
+    ],
+    "source_refs": [
+      "current_thread_compiled"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "4fc820ce-8177-4bb4-a4cb-5b3bd3a5cc17",
+      "order": 1,
+      "rule_vi": "想念 khác 纪念: 想念 = nhớ; 纪念 = kỷ niệm/tưởng niệm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "想念",
+    "back": "nhớ, nhớ nhung",
+    "hint": "xiǎngniàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_01",
+      "vocab_034"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e1061d72-251f-4256-8512-b69cc03d433b",
+    "source_lesson_vocab_id": null
+  }
+}

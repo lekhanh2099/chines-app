@@ -1,0 +1,320 @@
+{
+  "id": "8a6fb936-d296-430c-855c-968169391426",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "打鱼",
+  "pinyin": "dǎyú",
+  "pos": {
+    "raw_vi": "Động từ ly hợp / Cụm động từ",
+    "raw_cn": "离合动词 / 动宾短语",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu_2_1",
+    "lesson_05",
+    "vocabulary"
+  ],
+  "meaning": {
+    "hanviet": "đả ngư",
+    "meaning_vi": "đánh cá, bắt cá",
+    "meaning_en": "",
+    "natural_translations_vi": [],
+    "short_definition_vi": "đánh cá, bắt cá",
+    "textbook_focus_vi": "",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "打",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "丁",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đánh, thao tác",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "鱼",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "鱼",
+            "hanviet": "ngư",
+            "meaning_vi": "cá",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "魚",
+              "radical_variant": "鱼",
+              "radical_name_vi": "bộ Ngư",
+              "radical_name_zh": "",
+              "hanviet": "ngư",
+              "meaning_vi": "cá",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "鱼 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "cá",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "魚",
+          "radical_variant": "鱼",
+          "radical_name_vi": "bộ Ngư",
+          "radical_name_zh": "",
+          "hanviet": "ngư",
+          "meaning_vi": "cá",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "鱼 được dùng như bộ thủ/thành phần bộ thủ nhìn thấy.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "Không phải đập cá, mà là đánh bắt cá.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "捕鱼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bắt cá, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "钓鱼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "câu cá",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "抓鱼",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bắt cá trực tiếp",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "38949a8c-7849-4fa0-8311-f7776eb60dbd",
+      "order": 1,
+      "zh": "去打鱼",
+      "pinyin": "",
+      "vi": "đi đánh cá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "303d6e44-8c02-4bbb-a577-f1c0d079d8c9",
+      "order": 2,
+      "zh": "靠打鱼生活",
+      "pinyin": "",
+      "vi": "sống nhờ đánh cá",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3dc18eab-93c7-4290-b7f3-c3e82bc5d8e6",
+      "order": 3,
+      "zh": "打了一天鱼",
+      "pinyin": "",
+      "vi": "đánh cá cả ngày",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5b100ce5-ddaf-4ec1-a4cf-468a22bfc969",
+      "order": 1,
+      "zh": "从前他靠打鱼生活。",
+      "pinyin": "Cóngqián tā kào dǎyú shēnghuó.",
+      "vi": "Trước đây ông ấy sống nhờ đánh cá.",
+      "en": "",
+      "highlight": [
+        "打鱼"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8a6fb936-d296-430c-855c-968169391426"
+      ],
+      "source_ref": "manual-thread",
+      "note_vi": "",
+      "level": "basic",
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "打鱼 đời thường/truyền thống; văn viết ngành nghề có thể dùng 捕鱼.",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "9da6b5d7-eae8-42c0-9d0a-3f0dc18212c9",
+      "order": 1,
+      "title_vi": "Không nhầm với 钓鱼",
+      "explanation_vi": "Đi câu cá giải trí thường nói 钓鱼.",
+      "wrong_examples": [
+        "周末我去打鱼。"
+      ],
+      "correct_examples": [
+        "周末我去钓鱼。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "打鱼",
+    "back": "đánh cá, bắt cá",
+    "hint": "dǎyú",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_2_1",
+      "lesson_05",
+      "打鱼"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8a6fb936-d296-430c-855c-968169391426",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_a1946d0b031d4600",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "排练",
+  "pinyin": "páiliàn",
+  "meaning_vi": "tập luyện; diễn tập",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Nghĩa là tập luyện/diễn tập tiết mục; không phải động từ li hợp trong dữ liệu bài này.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+    "type": "vocabulary_item",
+    "order": 17,
+    "hanzi": "排练",
+    "pinyin": "páiliàn",
+    "meaning_vi": "tập luyện; diễn tập",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "排练",
+      "back": "páiliàn — tập luyện; diễn tập",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Nghĩa là tập luyện/diễn tập tiết mục; không phải động từ li hợp trong dữ liệu bài này.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,360 @@
+{
+  "id": "38f93cee-e886-4d3a-9853-a6b960824a6f",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "腿",
+  "pinyin": "tuǐ",
+  "pos": {
+    "raw_vi": "danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "lesson_19",
+    "body"
+  ],
+  "meaning": {
+    "hanviet": "Thối / thoái",
+    "meaning_vi": "chân",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chân"
+    ],
+    "short_definition_vi": "chân",
+    "textbook_focus_vi": "Bộ phận chịu tác động trong 被字句.",
+    "register_vi": "đời sống",
+    "usage_domain_vi": "cơ thể, tai nạn",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "腿",
+        "lishu_vi": "thối/thoái",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thịt, cơ thể",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thịt, cơ thể",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "退",
+            "hanviet": "thoái",
+            "meaning_vi": "lùi; thành phần ghi âm/cấu tạo",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chân",
+        "modern_logic_vi": "月/肉 gợi bộ phận cơ thể; 腿 = chân/cẳng chân.",
+        "warning_vi": "Không nhầm 腿 với 脚.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "腿 chỉ phần chân/cẳng chân; khác 脚 là bàn chân.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "脚",
+        "pinyin": "",
+        "meaning_vi": "bàn chân",
+        "difference_vi": "Tiếng Việt đều có thể nói “chân”, nhưng tiếng Trung tách rõ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "腿脚",
+        "pinyin": "",
+        "meaning_vi": "chân cẳng",
+        "difference_vi": "Nhấn khả năng đi lại.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "大腿",
+        "pinyin": "",
+        "meaning_vi": "đùi",
+        "difference_vi": "Bộ phận trên của chân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "小腿",
+        "pinyin": "",
+        "meaning_vi": "cẳng chân",
+        "difference_vi": "Bộ phận dưới đầu gối.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "左腿",
+        "right": "右腿",
+        "meaning_vi": "chân trái ↔ chân phải",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5d564a94-cb0d-4d8f-8589-118fa637622d",
+      "order": 1,
+      "zh": "腿疼",
+      "pinyin": "",
+      "vi": "đau chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d3783496-1f69-4df4-a729-ce982f4dff4a",
+      "order": 2,
+      "zh": "腿受伤",
+      "pinyin": "",
+      "vi": "chân bị thương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8726bfb9-1ffe-47c6-9fc9-c666871569cb",
+      "order": 3,
+      "zh": "腿被撞伤了",
+      "pinyin": "",
+      "vi": "chân bị đâm bị thương",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cbb39b4b-edc4-4ab9-ab90-c83793e302ac",
+      "order": 4,
+      "zh": "腿上有血",
+      "pinyin": "",
+      "vi": "trên chân có máu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0ef0b4a2-f3c3-4389-84d3-4cdabb3942c4",
+      "order": 5,
+      "zh": "双腿",
+      "pinyin": "",
+      "vi": "hai chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "eb1de30b-00dd-4ee7-95ab-3d973bf074b6",
+      "order": 6,
+      "zh": "大腿",
+      "pinyin": "",
+      "vi": "đùi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6a644ff4-99cd-43a5-837f-6b41316c04b1",
+      "order": 7,
+      "zh": "小腿",
+      "pinyin": "",
+      "vi": "cẳng chân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "4a3da82f-1ba4-456b-bd56-05a981ed7682",
+      "order": 8,
+      "zh": "腿脚不方便",
+      "pinyin": "",
+      "vi": "chân cẳng đi lại không tiện",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5f1ba78b-555b-473b-9b50-3efeb62a6cbb",
+      "order": 1,
+      "zh": "我的腿有点儿疼。",
+      "pinyin": "Wǒ de tuǐ yǒu diǎnr téng.",
+      "vi": "Chân tôi hơi đau.",
+      "analysis_vi": "有点儿 + tính từ diễn tả mức độ nhẹ.",
+      "highlight": [
+        "腿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "38f93cee-e886-4d3a-9853-a6b960824a6f"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cb5f0fef-0e62-4e1d-83ba-9026f2793ae9",
+      "order": 2,
+      "zh": "我的腿被自行车撞伤了。",
+      "pinyin": "Wǒ de tuǐ bèi zìxíngchē zhuàng shāng le.",
+      "vi": "Chân tôi bị xe đạp đâm bị thương.",
+      "analysis_vi": "腿 là bộ phận chịu tác động trong câu bị động.",
+      "highlight": [
+        "腿",
+        "被"
+      ],
+      "grammar_refs": [
+        "grammar_19_passive_bei"
+      ],
+      "vocab_refs": [
+        "38f93cee-e886-4d3a-9853-a6b960824a6f"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "7cab0c67-8634-45dd-85d1-b7fc64d310b6",
+      "order": 3,
+      "zh": "他一站起来，腿就疼得走不动，只好又坐下了。",
+      "pinyin": "Tā yí zhàn qǐlai, tuǐ jiù téng de zǒu bú dòng, zhǐhǎo yòu zuò xià le.",
+      "vi": "Anh ấy vừa đứng dậy thì chân đau đến mức không đi nổi, đành phải ngồi xuống lại.",
+      "analysis_vi": "Ôn 一……就……, 疼得…… và 走不动.",
+      "highlight": [
+        "腿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "38f93cee-e886-4d3a-9853-a6b960824a6f"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Khi nói người già hoặc người bị thương đi lại khó, 腿脚不方便 mềm hơn nói trực tiếp chân hỏng/yếu.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "1e81073f-bdb7-419f-bcc5-8599911b4025",
+      "order": 1,
+      "rule_vi": "Tiếng Việt “đau chân” có thể là đau bàn chân; tiếng Trung cần phân biệt 腿 và 脚.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我的腿疼。",
+          "pinyin": "Wǒ de tuǐ téng.",
+          "vi": "Tôi đau chân/cẳng chân.",
+          "note_vi": "",
+          "notes": []
+        },
+        {
+          "zh": "我的脚疼。",
+          "pinyin": "Wǒ de jiǎo téng.",
+          "vi": "Tôi đau bàn chân.",
+          "note_vi": "",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "腿",
+    "back": "chân",
+    "hint": "tuǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_19",
+      "body"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "38f93cee-e886-4d3a-9853-a6b960824a6f",
+    "source_lesson_vocab_id": null
+  }
+}

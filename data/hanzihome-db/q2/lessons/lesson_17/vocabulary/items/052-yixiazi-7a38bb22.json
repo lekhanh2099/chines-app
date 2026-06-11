@@ -1,0 +1,334 @@
+{
+  "id": "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "一下子",
+  "pinyin": "yíxiàzi",
+  "pos": {
+    "raw_vi": "Phó từ / Cụm thời lượng ngắn",
+    "raw_cn": "副/数量短语",
+    "normalized": "phrase",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Nhất hạ tử",
+    "meaning_vi": "lập tức, một cái là..., trong chốc lát",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lập tức, một cái là..., trong chốc lát"
+    ],
+    "short_definition_vi": "lập tức, một cái là..., trong chốc lát",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "khẩu ngữ, rất hay dùng với thay đổi trạng thái: 热闹起来, 安静下来, 明白了.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "一",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "một",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "một",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "下",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "下",
+            "hanviet": "hạ",
+            "meaning_vi": "dưới/xuống/lượt",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dưới, xuống, lần/lượt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "子",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "con/trẻ; hậu tố danh từ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "一下 là một chút/một lần ngắn. 子 làm cụm nghe khẩu ngữ hơn. → 一下子 = trong một khoảnh khắc rất ngắn, lập tức. Cảnh báo: 一下子 không phải lúc nào cũng dịch là “một cái”. Trong nhiều câu nên dịch là “lập tức / bỗng chốc / trong chốc lát”.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "一下子",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "lập tức, trong chốc lát, nhấn thay đổi nhanh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "马上",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "ngay lập tức, thiên thời gian sắp xảy ra.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "突然",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "đột nhiên, bất ngờ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "一会儿",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "một lát, khoảng thời gian ngắn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 气氛一下子热闹起来了 = không khí lập tức náo nhiệt lên; 我马上来 = tôi đến ngay."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ad3ee750-716c-43ce-98e9-4ef4c6a843b6",
+      "order": 1,
+      "zh": "一下子明白了",
+      "pinyin": "",
+      "vi": "lập tức hiểu ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e5f5cb36-0eb6-4ba9-8365-4aea87454e64",
+      "order": 2,
+      "zh": "一下子热闹起来了",
+      "pinyin": "",
+      "vi": "lập tức náo nhiệt lên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "36b95aa5-a278-45dd-a4fb-aee3e37c010f",
+      "order": 3,
+      "zh": "一下子安静下来了",
+      "pinyin": "",
+      "vi": "bỗng chốc yên lặng xuống",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5eeeed1-c71d-42bf-bd45-349f6b02453f",
+      "order": 4,
+      "zh": "一下子站起来",
+      "pinyin": "",
+      "vi": "đứng bật dậy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "685600a6-fbc2-468d-9310-220348abab73",
+      "order": 5,
+      "zh": "一下子多了很多人",
+      "pinyin": "",
+      "vi": "trong chốc lát có thêm rất nhiều người",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "36282628-5a23-4808-a96c-818e3f8ea256",
+      "order": 1,
+      "zh": "彩灯一亮，会场一下子热闹起来了。",
+      "pinyin": "Cǎidēng yí liàng, huìchǎng yíxiàzi rènao qǐlai le.",
+      "vi": "Đèn màu vừa sáng lên, hội trường lập tức náo nhiệt hẳn lên.",
+      "analysis_vi": "一下子 nhấn thay đổi nhanh; 热闹起来 là trạng thái bắt đầu náo nhiệt.",
+      "highlight": [
+        "一下子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f4bf6f64-9d3c-4f61-a46a-70190308ec77",
+      "order": 2,
+      "zh": "老师一走进来，大家一下子安静下来了。",
+      "pinyin": "Lǎoshī yì zǒu jìnlai, dàjiā yíxiàzi ānjìng xiàlai le.",
+      "vi": "Thầy/cô vừa đi vào, mọi người lập tức yên lặng xuống.",
+      "analysis_vi": "一……就…… bị lược 就 nhưng vẫn có cảm giác ngay sau đó; 安静下来 là chuyển sang yên lặng.",
+      "highlight": [
+        "一下子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f7e7794c-cfc2-498a-86c8-19cb2ff60446",
+      "order": 3,
+      "zh": "听了管理员的解释，我一下子明白了为什么不能把彩带挂在空调旁边。",
+      "pinyin": "Tīng le guǎnlǐyuán de jiěshì, wǒ yíxiàzi míngbai le wèishénme bù néng bǎ cǎidài guà zài kōngtiáo pángbiān.",
+      "vi": "Nghe người quản lý giải thích xong, tôi lập tức hiểu vì sao không được treo dây ruy băng màu bên cạnh máy lạnh.",
+      "analysis_vi": "一下子明白了 là hiểu ra ngay; câu sau có 把彩带挂在……旁边.",
+      "highlight": [
+        "一下子"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 一下子",
+    "content_vi": "Trong khẩu ngữ Trung Quốc, 一下子 rất hay dùng khi kể chuyện để làm nhịp câu sống hơn: 一下子就明白了, 一下子就哭了, 一下子热闹起来了. Nó giống tiếng Việt “cái là…”, “tự nhiên một phát…”, nhưng khi dịch bài học nên dùng “lập tức/bỗng chốc” cho sạch.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0b6dc788-de1d-460f-a718-0ac0a0a574d7",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 一下子 với 一下. 看一下 Kàn yíxià Xem một chút. 一下子明白了 Yíxiàzi míngbai le Lập tức hiểu ra. 等一下 Děng yíxià Đợi một chút. Không nói 等一下子 trong câu thông thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "一下子",
+    "back": "lập tức, một cái là..., trong chốc lát",
+    "hint": "yíxiàzi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3",
+    "source_lesson_vocab_id": null
+  }
+}

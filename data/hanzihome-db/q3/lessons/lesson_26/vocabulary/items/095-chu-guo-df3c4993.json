@@ -1,0 +1,30 @@
+{
+  "id": "synthetic_vocab_025dd6eb3d50c6f0",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "楚国",
+  "pinyin": "Chǔ guó",
+  "meaning_vi": "nước Sở",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "5f5fdc9c-74dd-458b-b5a7-8e999a418667",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "5f5fdc9c-74dd-458b-b5a7-8e999a418667",
+    "type": "proper_noun",
+    "order": 9,
+    "hanzi": "楚国",
+    "pinyin": "Chǔ guó",
+    "meaning_vi": "nước Sở",
+    "meaning_en": "Chu State",
+    "source_origin": "textbook",
+    "page_start": 228,
+    "page_end": 228,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

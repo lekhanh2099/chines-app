@@ -1,0 +1,315 @@
+{
+  "id": "3d0574b7-a5f3-40c1-8aff-5f2d8e8cc15d",
+  "type": "deep_vocabulary_item",
+  "order": 38,
+  "hanzi": "表情",
+  "pinyin": "biǎoqíng",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_19",
+    "deep_vocab",
+    "wusheng_de_lei"
+  ],
+  "meaning": {
+    "hanviet": "biểu tình",
+    "meaning_vi": "biểu cảm, vẻ mặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "biểu cảm",
+      "vẻ mặt"
+    ],
+    "short_definition_vi": "biểu cảm, vẻ mặt",
+    "textbook_focus_vi": "表情 là cảm xúc biểu hiện ra bên ngoài.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Hạ, Bài 19; công việc, cảm xúc xã hội, giao tiếp và nhân tính",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "表",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "biểu thị, bề ngoài",
+        "modern_logic_vi": "Trong từ “表情”, chữ “表” góp phần vào trường nghĩa: biểu thị, bề ngoài",
+        "warning_vi": "Không ép nghĩa từng bộ phận thành nguồn gốc chữ nếu không có căn cứ chắc chắn.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "情",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; chỉ dùng để hỗ trợ nhớ nghĩa, không thay cho chữ nguyên học.",
+        "main_radical": {
+          "radical": "心",
+          "radical_variant": "忄",
+          "radical_name_vi": "bộ Tâm đứng",
+          "radical_name_zh": "",
+          "hanviet": "tâm",
+          "meaning_vi": "tim, tâm lý, cảm xúc",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "忄",
+            "hanviet": "tâm",
+            "meaning_vi": "tim, tâm lý, cảm xúc",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "心",
+              "radical_variant": "忄",
+              "radical_name_vi": "bộ Tâm đứng",
+              "radical_name_zh": "",
+              "hanviet": "tâm",
+              "meaning_vi": "tim, tâm lý, cảm xúc",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "忄 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "忄 là bộ thủ/biến thể bộ thủ; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          },
+          {
+            "text": "青",
+            "hanviet": "thanh",
+            "meaning_vi": "xanh/trẻ; ở đây chủ yếu là thành phần cấu tạo",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "radical": null,
+            "notes": [
+              {
+                "kind": "general",
+                "text_vi": "青 là thành phần nhìn thấy; không suy diễn quá mức nếu không trực tiếp giải thích nghĩa hiện đại.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tình cảm, tình hình",
+        "modern_logic_vi": "Trong từ “表情”, chữ “情” góp phần vào trường nghĩa: tình cảm, tình hình",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "表情 là cảm xúc biểu hiện ra bên ngoài.",
+    "memory_tip_vi": "表情 là cảm xúc biểu hiện ra bên ngoài.",
+    "warning_vi": "Phân tích theo thành phần nhìn thấy; không xem đây là kết luận chữ nguyên học.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "神情",
+        "pinyin": "",
+        "meaning_vi": "thần sắc tổng thể, văn viết hơn",
+        "difference_vi": "thần sắc tổng thể, văn viết hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "脸色",
+        "pinyin": "",
+        "meaning_vi": "sắc mặt, thường liên quan sức khỏe/cảm xúc",
+        "difference_vi": "sắc mặt, thường liên quan sức khỏe/cảm xúc",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "30f6c1c2-4c80-4642-a858-34758197cfec",
+      "order": 1,
+      "zh": "脸上的表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d941ca78-4892-4dcd-aa74-caf7d668c57f",
+      "order": 2,
+      "zh": "表情严肃",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "aa50891a-49a2-4eff-aad6-6000961721d8",
+      "order": 3,
+      "zh": "没有表情",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2037125-1d8d-4c7e-89a2-562ffab1173f",
+      "order": 4,
+      "zh": "表情包",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "230035b5-4155-4aac-815c-4f74cbf022b8",
+      "order": 1,
+      "zh": "他的表情很严肃。",
+      "pinyin": "",
+      "vi": "Vẻ mặt anh ấy rất nghiêm túc.",
+      "analysis_vi": "表情 + tính từ.",
+      "highlight": [
+        "表情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d0574b7-a5f3-40c1-8aff-5f2d8e8cc15d"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "9c54e2f4-ed74-4395-8b11-b6ae8403fbb4",
+      "order": 2,
+      "zh": "我从他的表情中看不出他是否满意。",
+      "pinyin": "",
+      "vi": "Tôi không nhìn ra từ biểu cảm của anh ấy rằng anh ấy có hài lòng không.",
+      "analysis_vi": "是否 văn viết hơn 是不是.",
+      "highlight": [
+        "表情"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "3d0574b7-a5f3-40c1-8aff-5f2d8e8cc15d"
+      ],
+      "source_ref": "",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú sử dụng",
+    "content_vi": "表情 là cảm xúc biểu hiện ra bên ngoài.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8342cd53-d9d0-4d0e-8fb9-ff13a9046ad0",
+      "order": 1,
+      "rule_vi": "表情 không phải biểu tình xuống đường; biểu tình là 示威/游行示威.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "表情 không phải biểu tình xuống đường; biểu tình là 示威/游行示威.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "表情",
+    "back": "biểu cảm, vẻ mặt",
+    "hint": "biǎoqíng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_19"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "3d0574b7-a5f3-40c1-8aff-5f2d8e8cc15d",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "id": "8bdcc4f4-742e-4415-b713-37243088c2a3",
+  "type": "deep_vocabulary_item",
+  "order": 35,
+  "hanzi": "背",
+  "pinyin": "bēi / bèi",
+  "pos": {
+    "raw_vi": "Động từ / danh từ / tính từ",
+    "raw_cn": "动词/名词/形容词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bối",
+    "meaning_vi": "đeo, cõng / lưng, học thuộc, quay lưng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đeo, cõng / lưng, học thuộc, quay lưng"
+    ],
+    "short_definition_vi": "đeo, cõng / lưng, học thuộc, quay lưng",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "背",
+        "lishu_vi": "bối",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "月",
+            "hanviet": "nhục",
+            "meaning_vi": "thịt, cơ thể",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "肉",
+              "radical_variant": "月",
+              "radical_name_vi": "bộ Nhục",
+              "radical_name_zh": "",
+              "hanviet": "nhục",
+              "meaning_vi": "thịt, cơ thể",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lưng; đeo; học thuộc",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "肉",
+          "radical_variant": "月",
+          "radical_name_vi": "bộ Nhục",
+          "radical_name_zh": "",
+          "hanviet": "nhục",
+          "meaning_vi": "thịt, cơ thể",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "背 có hai âm quan trọng: bēi là đeo/cõng, bèi là lưng/học thuộc.",
+    "memory_tip_vi": "Nhớ 背书包 đọc bēi, 背课文 đọc bèi.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "",
+        "meaning_vi": "拿",
+        "difference_vi": "拿 là cầm tay; 背 là mang trên lưng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "面",
+        "pinyin": "",
+        "meaning_vi": "面",
+        "difference_vi": "mặt/phía trước đối với lưng",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8319291d-6263-4cb4-94eb-d6ace481e72f",
+      "order": 1,
+      "zh": "背书包",
+      "pinyin": "bēi shūbāo",
+      "vi": "đeo cặp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "38aafba6-8647-44d6-9743-1844b123225e",
+      "order": 2,
+      "zh": "背孩子",
+      "pinyin": "bēi háizi",
+      "vi": "cõng trẻ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "69b9bf89-7398-46c3-836d-1e1b4987c108",
+      "order": 3,
+      "zh": "背课文",
+      "pinyin": "bèi kèwén",
+      "vi": "học thuộc bài khóa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1d2451c1-0c7b-479c-ad96-86018625f72b",
+      "order": 4,
+      "zh": "背后",
+      "pinyin": "bèihòu",
+      "vi": "phía sau lưng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "7a946308-11ca-4853-b518-fbd50248b991",
+      "order": 1,
+      "zh": "他背着书包去上学。",
+      "pinyin": "Tā bēizhe shūbāo qù shàngxué.",
+      "vi": "Cậu ấy đeo cặp đi học.",
+      "analysis_vi": "背着 dùng 着 chỉ trạng thái.",
+      "highlight": [
+        "背"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8bdcc4f4-742e-4415-b713-37243088c2a3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "93d281c7-58e6-47d9-aaa4-dd71d04b7569",
+      "order": 2,
+      "zh": "我小时候每天都要背课文。",
+      "pinyin": "Wǒ xiǎoshíhou měi tiān dōu yào bèi kèwén.",
+      "vi": "Hồi nhỏ ngày nào tôi cũng phải học thuộc bài khóa.",
+      "analysis_vi": "背 ở đây đọc bèi.",
+      "highlight": [
+        "背"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8bdcc4f4-742e-4415-b713-37243088c2a3"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Một chữ hai âm; phải học theo cụm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d5a17c31-7e1d-42f2-9019-8844fd2c8a24",
+      "order": 1,
+      "rule_vi": "Không đọc sai âm vì nghĩa đổi hẳn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "背书包 bèi shūbāo",
+          "pinyin": "bèi shūbāo",
+          "vi": "Sai âm khi muốn nói đeo cặp.",
+          "note_vi": "背书包 đọc bēi.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "背书包 bēi shūbāo",
+          "pinyin": "bēi shūbāo",
+          "vi": "đeo cặp sách",
+          "note_vi": "Đúng âm cho động tác đeo/cõng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "背",
+    "back": "đeo, cõng / lưng, học thuộc, quay lưng",
+    "hint": "bēi / bèi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8bdcc4f4-742e-4415-b713-37243088c2a3",
+    "source_lesson_vocab_id": null
+  }
+}

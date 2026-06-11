@@ -1,0 +1,255 @@
+{
+  "id": "5a2f4b9c-5a7c-43a0-ae94-6c276b16904a",
+  "type": "deep_vocabulary_item",
+  "order": 66,
+  "hanzi": "飞翔",
+  "pinyin": "fēixiáng",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "phi tường",
+    "meaning_vi": "bay lượn, bay trên không",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bay lượn",
+      "bay trên không"
+    ],
+    "short_definition_vi": "bay lượn, bay trên không",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "飞",
+        "lishu_vi": "phi",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "飞 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "翔",
+        "lishu_vi": "tường",
+        "structure_note_vi": "Chữ có thành phần/bộ 羽; học theo nghĩa hiện đại trong từ.",
+        "main_radical": {
+          "radical": "羽",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Vũ",
+          "radical_name_zh": "",
+          "hanviet": "vũ",
+          "meaning_vi": "lông, cánh",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "羽",
+            "hanviet": "vũ",
+            "meaning_vi": "lông, cánh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "羽",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Vũ",
+              "radical_name_zh": "",
+              "hanviet": "vũ",
+              "meaning_vi": "lông, cánh",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "羽 được dùng như bộ thủ/thành phần chính trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ này, 翔 góp phần tạo nghĩa theo cụm, không tách máy móc từng nét.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "飞翔 trong bài được học theo nghĩa: bay lượn, bay trên không.",
+    "memory_tip_vi": "Nhớ 飞翔 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "飞",
+        "pinyin": "fēi",
+        "meaning_vi": "bay",
+        "difference_vi": "Thông dụng hơn, trung tính hơn 飞翔.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Máy bay đi từ A đến B thường dùng 飞, không cần 飞翔."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "ca6f5f28-c72b-4711-a98d-7561b8b33966",
+      "order": 1,
+      "zh": "在天空中飞翔",
+      "pinyin": "",
+      "vi": "bay lượn trên bầu trời",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9e650bb4-9bfb-4a22-bfe9-2c4eec92fceb",
+      "order": 2,
+      "zh": "自由地飞翔",
+      "pinyin": "",
+      "vi": "tự do bay lượn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3ffaae32-75ad-470d-b578-74f365ef42cc",
+      "order": 3,
+      "zh": "展翅飞翔",
+      "pinyin": "",
+      "vi": "dang cánh bay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "ff8c8ef7-3a40-46cf-949d-fadb3977d4f3",
+      "order": 1,
+      "zh": "鸟儿在天空中自由地飞翔。",
+      "pinyin": "",
+      "vi": "Chim bay lượn tự do trên bầu trời.",
+      "analysis_vi": "在天空中 nêu không gian.",
+      "highlight": [
+        "飞翔"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5a2f4b9c-5a7c-43a0-ae94-6c276b16904a"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0663fd53-b40c-4307-93d6-cec7a0403796",
+      "order": 2,
+      "zh": "两只蝴蝶从墓里飞出来，一起向天空飞翔。",
+      "pinyin": "",
+      "vi": "Hai con bướm bay ra từ trong mộ, cùng bay về phía bầu trời.",
+      "analysis_vi": "向天空飞翔 chỉ hướng bay.",
+      "highlight": [
+        "飞翔"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "5a2f4b9c-5a7c-43a0-ae94-6c276b16904a"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "飞翔 thường gắn với tự do trong văn học.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "f9e79983-9470-482e-a080-0bd849ce2d22",
+      "order": 1,
+      "rule_vi": "Máy bay đi từ A đến B thường dùng 飞, không cần 飞翔.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "飞翔",
+    "back": "bay lượn, bay trên không",
+    "hint": "fēixiáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "5a2f4b9c-5a7c-43a0-ae94-6c276b16904a",
+    "source_lesson_vocab_id": null
+  }
+}

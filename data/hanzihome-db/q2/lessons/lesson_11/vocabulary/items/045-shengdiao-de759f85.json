@@ -1,0 +1,291 @@
+{
+  "id": "99960832-587e-44bb-b4cf-6a5685aea6d5",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "声调",
+  "pinyin": "shēngdiào",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson11",
+    "deep-vocab"
+  ],
+  "meaning": {
+    "hanviet": "Thanh điệu",
+    "meaning_vi": "thanh điệu, giọng điệu",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "thanh điệu, giọng điệu"
+    ],
+    "short_definition_vi": "thanh điệu, giọng điệu",
+    "textbook_focus_vi": "thanh điệu, giọng điệu",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "声",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "âm thanh, tiếng, giọng",
+        "modern_logic_vi": "声 là giản thể của 聲; không tách sâu.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "调",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "周",
+            "hanviet": "chu",
+            "meaning_vi": "thành phần phải",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "điệu, giọng, tông; điều chỉnh",
+        "modern_logic_vi": "调 liên quan lời nói/điệu/tông.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói/ngôn ngữ",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "声 = âm thanh, 调 = điệu/tông. 声调 = độ cao thấp của âm tiết tiếng Hán.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "66c9be6f-3f29-46d4-8f12-255d74aae38b",
+      "order": 1,
+      "zh": "汉语声调",
+      "pinyin": "",
+      "vi": "thanh điệu tiếng Hán",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a344dfc6-ce54-4e8b-911b-765a15b9c8b9",
+      "order": 2,
+      "zh": "普通话声调",
+      "pinyin": "",
+      "vi": "thanh điệu phổ thông thoại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0c2e9e10-ddf4-40ce-9665-a9367c20c53f",
+      "order": 3,
+      "zh": "声调很难",
+      "pinyin": "",
+      "vi": "thanh điệu rất khó",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "d0893611-c8e5-4211-85c3-48ef7dc9dff1",
+      "order": 4,
+      "zh": "声调读错了",
+      "pinyin": "",
+      "vi": "đọc sai thanh điệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "88810948-be6d-4067-a1eb-8006f9ff2b2b",
+      "order": 5,
+      "zh": "练声调",
+      "pinyin": "",
+      "vi": "luyện thanh điệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "7878beb7-c043-4cd0-ad05-3e465a8947df",
+      "order": 6,
+      "zh": "注意声调",
+      "pinyin": "",
+      "vi": "chú ý thanh điệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cae1b042-eb6d-41bf-9e78-e4b7127cb4e2",
+      "order": 1,
+      "zh": "汉语声调很重要。",
+      "pinyin": "Hànyǔ shēngdiào hěn zhòngyào.",
+      "vi": "Thanh điệu tiếng Hán rất quan trọng.",
+      "analysis_vi": "声调 là danh từ học phát âm.",
+      "highlight": [
+        "声调"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "99960832-587e-44bb-b4cf-6a5685aea6d5"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "4c2c1608-c59d-4648-8eda-85e1d63f5b7d",
+      "order": 2,
+      "zh": "我是因为声调读错了，老师才让我再读一遍的。",
+      "pinyin": "Wǒ shì yīnwèi shēngdiào dú cuò le, lǎoshī cái ràng wǒ zài dú yí biàn de.",
+      "vi": "Tôi vì đọc sai thanh điệu nên thầy/cô mới bảo đọc lại.",
+      "analysis_vi": "是……的 nhấn nguyên nhân; 读错了 là đọc sai.",
+      "highlight": [
+        "声调"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "99960832-587e-44bb-b4cf-6a5685aea6d5"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8578219d-f539-4033-ab07-02bd1b50abbc",
+      "order": 3,
+      "zh": "一开始学汉语的时候，我总是把第二声和第三声读错。",
+      "pinyin": "Yì kāishǐ xué Hànyǔ de shíhou, wǒ zǒngshì bǎ dì èr shēng hé dì sān shēng dú cuò.",
+      "vi": "Lúc mới học tiếng Hán, tôi cứ đọc sai thanh hai và thanh ba.",
+      "analysis_vi": "把第二声和第三声读错 là 把字句 + 错.",
+      "highlight": [
+        "声调"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "99960832-587e-44bb-b4cf-6a5685aea6d5"
+      ],
+      "source_ref": "manual_lesson_11_current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Người Việt có thanh điệu nhưng không thể bê ngang hệ tiếng Việt sang 普通话.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "0631ab52-affd-4518-889e-8b7584a0e502",
+      "order": 1,
+      "rule_vi": "声调 là tone của âm tiết; 语调 là ngữ điệu của cả câu.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "声调",
+    "back": "thanh điệu, giọng điệu",
+    "hint": "shēngdiào",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson11"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "99960832-587e-44bb-b4cf-6a5685aea6d5",
+    "source_lesson_vocab_id": null
+  }
+}

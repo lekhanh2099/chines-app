@@ -1,0 +1,39 @@
+[
+  {
+    "id": "warning_ec66c0ae55bf5f8d19ada5b8",
+    "type": "skipped_single_char_scan",
+    "reason": "Single-character vocabulary terms were skipped during lexical scan to avoid noisy false-positive matches. Pass --include-single-char-scan to include them.",
+    "candidates": [
+      "架",
+      "纸",
+      "另",
+      "各",
+      "挑",
+      "抽",
+      "品",
+      "提",
+      "插",
+      "拔",
+      "串",
+      "把",
+      "累",
+      "困",
+      "步",
+      "跑",
+      "跳",
+      "却",
+      "登",
+      "爬",
+      "众",
+      "美",
+      "庙",
+      "寺",
+      "餐",
+      "菜",
+      "样",
+      "放",
+      "盘",
+      "修"
+    ]
+  }
+]

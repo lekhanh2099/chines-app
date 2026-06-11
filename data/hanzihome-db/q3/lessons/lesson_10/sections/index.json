@@ -1,0 +1,82 @@
+[
+  {
+    "id": "32752249-7945-4312-95bd-cdb2ba844cd0",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "file": "01-text.json"
+  },
+  {
+    "id": "f94782c0-1a5b-4ac6-8e80-00ee67b921ee",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng chính",
+    "file": "02-vocabulary.json"
+  },
+  {
+    "id": "e9372384-2377-46f0-9dcb-47036fb47d50",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "file": "03-proper-nouns.json"
+  },
+  {
+    "id": "b021d83b-a2e3-4baa-93dc-c7c45411024d",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "file": "04-notes.json"
+  },
+  {
+    "id": "6afd96eb-f0ec-441b-b4b4-b1bc7be454e6",
+    "type": "grammar",
+    "order": 5,
+    "title": "词语用法 / 语法",
+    "title_vi": "Cách dùng từ / Ngữ pháp",
+    "file": "05-grammar.json"
+  },
+  {
+    "id": "2b9bfb22-9023-4436-8ce6-9664f4282b65",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập trong sách",
+    "file": "06-exercises.json"
+  },
+  {
+    "id": "e7e70061-d8b7-41b0-aabb-2d36fc866501",
+    "type": "reading",
+    "order": 7,
+    "title": "综合填空",
+    "title_vi": "Điền khuyết tổng hợp / đọc hiểu",
+    "file": "07-reading.json"
+  },
+  {
+    "id": "4e0dc73f-3916-40cb-872e-3acf3d96f3a7",
+    "type": "communication",
+    "order": 8,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "file": "08-communication.json"
+  },
+  {
+    "id": "d533447f-d576-4e84-9a51-9dd012c491db",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Luyện viết chữ Hán",
+    "file": "09-character-writing.json"
+  },
+  {
+    "id": "9c08e6ed-8c49-49c6-980a-ab92f851d53d",
+    "type": "summary",
+    "order": 10,
+    "title": "总结",
+    "title_vi": "Tổng kết bài",
+    "file": "10-summary.json"
+  }
+]

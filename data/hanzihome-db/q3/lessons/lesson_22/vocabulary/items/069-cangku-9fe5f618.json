@@ -1,0 +1,56 @@
+{
+  "id": "synthetic_vocab_60b7974f40406225",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "仓库",
+  "pinyin": "cāngkù",
+  "meaning_vi": "nhà kho; kho hàng",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "825d34bd-24e5-4cd9-8f13-d2ae5e0dac35",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "825d34bd-24e5-4cd9-8f13-d2ae5e0dac35",
+    "type": "vocabulary_item",
+    "order": 1,
+    "hanzi": "仓库",
+    "pinyin": "cāngkù",
+    "meaning_vi": "nhà kho; kho hàng",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "supplementary_vocab",
+      "reading_cloze"
+    ],
+    "examples": [],
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

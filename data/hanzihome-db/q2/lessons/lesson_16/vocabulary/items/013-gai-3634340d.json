@@ -1,0 +1,309 @@
+{
+  "id": "8935e9cc-3497-4bb9-8b00-945f09496e1a",
+  "type": "deep_vocabulary_item",
+  "order": 13,
+  "hanzi": "盖",
+  "pinyin": "gài",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cái",
+    "meaning_vi": "xây; đậy, che phủ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "xây",
+      "đậy, che phủ"
+    ],
+    "short_definition_vi": "xây; đậy, che phủ",
+    "textbook_focus_vi": "xây; đậy, che phủ",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "盖",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "皿",
+            "hanviet": "mãnh",
+            "meaning_vi": "đồ đựng",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "皿",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mãnh",
+              "radical_name_zh": "",
+              "hanviet": "mãnh",
+              "meaning_vi": "đồ đựng",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "皿 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đậy, che; xây",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "盖 trong bài = xây nhà/lầu; nghĩa khác là đậy, che phủ.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "建",
+        "pinyin": "",
+        "meaning_vi": "xây dựng",
+        "difference_vi": "Rộng và trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "建设",
+        "pinyin": "",
+        "meaning_vi": "xây dựng quy mô lớn",
+        "difference_vi": "Dùng cho xã hội, đất nước, đô thị.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "修",
+        "pinyin": "",
+        "meaning_vi": "sửa/xây tùy tân ngữ",
+        "difference_vi": "Cần xem ngữ cảnh.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [
+      {
+        "left": "盖",
+        "right": "拆",
+        "meaning_vi": "xây ↔ tháo dỡ",
+        "note_vi": "",
+        "notes": []
+      }
+    ],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "62f88c25-a2b8-41f7-9c29-616ffc7d63da",
+      "order": 1,
+      "zh": "盖房子",
+      "pinyin": "",
+      "vi": "xây nhà",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a60eb3f7-383d-4a97-9be6-e134e536e0df",
+      "order": 2,
+      "zh": "盖楼",
+      "pinyin": "",
+      "vi": "xây lầu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0409e8e3-2bb2-492e-aac1-e34d13ac0841",
+      "order": 3,
+      "zh": "盖住宅",
+      "pinyin": "",
+      "vi": "xây nhà ở",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5b0c8298-b015-44a2-b104-c847520cbfe5",
+      "order": 4,
+      "zh": "盖被子",
+      "pinyin": "",
+      "vi": "đắp chăn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c2d4c6ba-96cd-4840-8381-302d4c2b9db8",
+      "order": 5,
+      "zh": "盖章",
+      "pinyin": "",
+      "vi": "đóng dấu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "de71cb77-e7f5-4220-bd4c-c82eb5c4c13d",
+      "order": 1,
+      "zh": "这里要盖一座新楼。",
+      "pinyin": "Zhèlǐ yào gài yí zuò xīn lóu.",
+      "vi": "Ở đây sắp xây một tòa nhà mới.",
+      "analysis_vi": "盖楼 là cách nói tự nhiên về xây nhà/lầu.",
+      "highlight": [
+        "盖"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8935e9cc-3497-4bb9-8b00-945f09496e1a"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e64ba0c7-ae97-49e5-9e20-3b9e681b7999",
+      "order": 2,
+      "zh": "原来的四合院被拆了，那里盖起了现代化住宅。",
+      "pinyin": "Yuánlái de sìhéyuàn bèi chāi le, nàli gàiqǐ le xiàndàihuà zhùzhái.",
+      "vi": "Tứ hợp viện cũ bị phá dỡ rồi, ở đó xây lên nhà ở hiện đại.",
+      "analysis_vi": "盖起了 có sắc thái xây lên.",
+      "highlight": [
+        "盖"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8935e9cc-3497-4bb9-8b00-945f09496e1a"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "37664942-4cf5-47c0-85a5-7d5b52b09fa2",
+      "order": 3,
+      "zh": "院子里以前种着一棵枣树，现在却盖了一栋楼。",
+      "pinyin": "Yuànzi lǐ yǐqián zhòngzhe yì kē zǎoshù, xiànzài què gài le yí dòng lóu.",
+      "vi": "Trước đây trong sân có trồng một cây táo tàu, bây giờ lại xây một tòa nhà.",
+      "analysis_vi": "Đối chiếu trạng thái cũ 种着 và biến đổi mới 盖了.",
+      "highlight": [
+        "盖"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8935e9cc-3497-4bb9-8b00-945f09496e1a"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "盖楼 / 建小区 hay đi với đô thị hóa, phá nhà cũ, xây khu mới.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "b73db78b-5bab-4ea4-9e60-2f8971a938b5",
+      "order": 1,
+      "rule_vi": "盖 không chỉ là 'đậy': 盖房子 = xây nhà, 盖被子 = đắp chăn.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "盖 không chỉ là 'đậy': 盖房子 = xây nhà, 盖被子 = đắp chăn.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "盖",
+    "back": "xây; đậy, che phủ",
+    "hint": "gài",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_013"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8935e9cc-3497-4bb9-8b00-945f09496e1a",
+    "source_lesson_vocab_id": null
+  }
+}

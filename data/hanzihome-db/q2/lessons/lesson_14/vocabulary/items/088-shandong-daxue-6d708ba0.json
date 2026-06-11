@@ -1,0 +1,66 @@
+{
+  "id": "synthetic_vocab_ad9b4d8756cb781a",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "山东大学",
+  "pinyin": "Shāndōng Dàxué",
+  "meaning_vi": "Đại học Sơn Đông",
+  "pos": "Tên riêng",
+  "pos_detail": {
+    "vi": "Tên riêng",
+    "cn": "专名",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "bba5df3a-d3ae-44a0-b9f2-2080109af173",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "bba5df3a-d3ae-44a0-b9f2-2080109af173",
+    "type": "vocabulary_item",
+    "order": 67,
+    "hanzi": "山东大学",
+    "pinyin": "Shāndōng Dàxué",
+    "meaning_vi": "Đại học Sơn Đông",
+    "meaning_en": "Shandong University",
+    "pos": "Tên riêng",
+    "tags": [
+      "supplementary_vocab",
+      "proper_noun"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "山东大学",
+      "back": "Shāndōng Dàxué — Đại học Sơn Đông",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_supplementary_added",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Tên riêng",
+      "cn": "专名",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

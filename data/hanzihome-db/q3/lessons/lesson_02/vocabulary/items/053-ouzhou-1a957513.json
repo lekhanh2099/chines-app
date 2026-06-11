@@ -1,0 +1,50 @@
+{
+  "id": "synthetic_vocab_88b47ed223ebc22d",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "欧洲",
+  "pinyin": "Ōuzhōu",
+  "meaning_vi": "châu Âu",
+  "pos": "Tên riêng / danh từ địa lý",
+  "pos_detail": {
+    "vi": "Tên riêng / danh từ địa lý",
+    "cn": "专名 / 地理名词",
+    "normalized": "proper_noun",
+    "schema_compatible_pos": "proper_noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Châu Âu; xuất hiện trong bài khóa khi liệt kê 五大洲.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "proper_noun_ouzhou_context_added",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "proper_noun_ouzhou_context_added",
+    "type": "proper_noun",
+    "order": 3,
+    "hanzi": "欧洲",
+    "pinyin": "Ōuzhōu",
+    "meaning_vi": "châu Âu",
+    "meaning_en": "Europe",
+    "source_origin": "textbook_text_context",
+    "check_needed": false,
+    "pos": "Tên riêng / danh từ địa lý",
+    "pos_detail": {
+      "vi": "Tên riêng / danh từ địa lý",
+      "cn": "专名 / 地理名词",
+      "normalized": "proper_noun",
+      "schema_compatible_pos": "proper_noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Châu Âu; xuất hiện trong bài khóa khi liệt kê 五大洲.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

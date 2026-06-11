@@ -1,0 +1,350 @@
+{
+  "id": "fd3787dd-9f23-4d11-9409-f4a20357eef2",
+  "type": "deep_vocabulary_item",
+  "order": 48,
+  "hanzi": "阵",
+  "pinyin": "zhèn",
+  "pos": {
+    "raw_vi": "measure_word",
+    "raw_cn": "",
+    "normalized": "measure_word",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "measure",
+    "weather"
+  ],
+  "meaning": {
+    "hanviet": "trận",
+    "meaning_vi": "trận, đợt, cơn; đội hình",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "trận",
+      "đợt",
+      "cơn",
+      "đội hình"
+    ],
+    "short_definition_vi": "trận, đợt, cơn; đội hình",
+    "textbook_focus_vi": "trận, đợt, cơn; đội hình",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "measure, weather",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "阵",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "阜/邑",
+          "radical_variant": "阝",
+          "radical_name_vi": "bộ Phụ/Ấp",
+          "radical_name_zh": "",
+          "hanviet": "phụ/ấp",
+          "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+          "form": "position_form",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "阝",
+            "hanviet": "phụ/ấp",
+            "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "阜/邑",
+              "radical_variant": "阝",
+              "radical_name_vi": "bộ Phụ/Ấp",
+              "radical_name_zh": "",
+              "hanviet": "phụ/ấp",
+              "meaning_vi": "gò đất, vùng đất, địa danh tùy vị trí",
+              "form": "position_form",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe, chuyển động",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe, chuyển động",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trận, cơn/đợt",
+        "modern_logic_vi": "Trong từ này, 阵 góp phần vào lớp nghĩa hiện đại: trận, cơn/đợt",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "阵 từ nghĩa trận thế mở rộng thành lượng từ cho cơn/đợt ngắn như gió, mưa, tiếng cười.",
+    "memory_tip_vi": "",
+    "warning_vi": "Không nói 一个风/一个雨. Nói 一阵风, 一场雨.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "场",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "次",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "股",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "片",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4e707ef8-c60c-42c2-af4f-ef8ec2a7057a",
+      "order": 1,
+      "zh": "一阵风",
+      "pinyin": "",
+      "vi": "một cơn gió",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b7f20bfe-db6f-49bf-b42e-ada74a57f048",
+      "order": 2,
+      "zh": "一阵雨",
+      "pinyin": "",
+      "vi": "một trận mưa ngắn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "28c1d761-807d-4113-b554-81da113f7bb1",
+      "order": 3,
+      "zh": "一阵雪",
+      "pinyin": "",
+      "vi": "một đợt tuyết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3bed304b-28d0-4651-b3a7-862f9b1f5658",
+      "order": 4,
+      "zh": "一阵笑声",
+      "pinyin": "",
+      "vi": "một tràng cười",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "a7fb7e45-1e53-4888-8072-9304b6cc602d",
+      "order": 5,
+      "zh": "一阵掌声",
+      "pinyin": "",
+      "vi": "một tràng vỗ tay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c55416bc-d61e-43db-af1f-21c2c794e2bc",
+      "order": 6,
+      "zh": "这阵子",
+      "pinyin": "",
+      "vi": "dạo này",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "041193a5-eafd-4942-a398-f8ae0926250b",
+      "order": 1,
+      "zh": "忽然刮来一阵风。",
+      "pinyin": "",
+      "vi": "Đột nhiên có một cơn gió thổi tới.",
+      "analysis_vi": "一阵风 rất tự nhiên.",
+      "highlight": [
+        "阵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd3787dd-9f23-4d11-9409-f4a20357eef2"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "8dfb51d6-9fd3-43d9-81e0-0cd9f8830509",
+      "order": 2,
+      "zh": "春天的北京有时候会刮一阵大风。",
+      "pinyin": "",
+      "vi": "Mùa xuân Bắc Kinh đôi khi có một cơn gió lớn.",
+      "analysis_vi": "有时候会…….",
+      "highlight": [
+        "阵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd3787dd-9f23-4d11-9409-f4a20357eef2"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "65c36d09-f60a-4ec4-a1c6-2a7e5d3c91d7",
+      "order": 3,
+      "zh": "我们正在湖边划船，突然刮来一阵风。",
+      "pinyin": "",
+      "vi": "Chúng tôi đang chèo thuyền bên hồ thì một cơn gió thổi tới.",
+      "analysis_vi": "正在……突然…….",
+      "highlight": [
+        "阵"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fd3787dd-9f23-4d11-9409-f4a20357eef2"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "阵 trong Bài 3 北京的四季",
+    "content_vi": "一阵 tạo cảm giác sự vật đến theo đợt rồi qua: gió, hương, tiếng cười, cảm giác lạnh.",
+    "tags": [
+      "measure",
+      "weather"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "5076e450-5097-43ca-9b6e-7d4f2a3080d5",
+      "order": 1,
+      "rule_vi": "Không nói 一个风/一个雨. Nói 一阵风, 一场雨.",
+      "natural_examples": [
+        {
+          "zh": "忽然刮来一阵风。",
+          "pinyin": "",
+          "vi": "Đột nhiên có một cơn gió thổi tới.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không nói 一个风/一个雨. Nói 一阵风, 一场雨.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "阵",
+    "back": "trận, đợt, cơn; đội hình",
+    "hint": "zhèn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "measure",
+      "weather"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fd3787dd-9f23-4d11-9409-f4a20357eef2",
+    "source_lesson_vocab_id": null
+  }
+}

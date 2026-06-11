@@ -1,0 +1,308 @@
+{
+  "id": "4dc4d245-7d2a-4c4d-9bce-1c4005345724",
+  "type": "deep_vocabulary_item",
+  "order": 31,
+  "hanzi": "误会",
+  "pinyin": "wùhuì",
+  "pos": {
+    "raw_vi": "Động từ / Danh từ",
+    "raw_cn": "动 / 名",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_18",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "ngộ hội",
+    "meaning_vi": "hiểu lầm; sự hiểu lầm",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hiểu lầm",
+      "sự hiểu lầm"
+    ],
+    "short_definition_vi": "hiểu lầm; sự hiểu lầm",
+    "textbook_focus_vi": "Hiểu sai ý người khác hoặc hiểu sai tình huống.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3, Bài 18 一盒蛋糕; kể chuyện, tâm lý nhân vật, hiểu lầm và ký ức.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "误",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "main_radical": {
+          "radical": "言",
+          "radical_variant": "讠",
+          "radical_name_vi": "bộ Ngôn",
+          "radical_name_zh": "",
+          "hanviet": "ngôn",
+          "meaning_vi": "lời nói/ngôn ngữ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "讠 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "讠",
+            "hanviet": "ngôn",
+            "meaning_vi": "lời nói/ngôn ngữ",
+            "position_vi": "trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "言",
+              "radical_variant": "讠",
+              "radical_name_vi": "bộ Ngôn",
+              "radical_name_zh": "",
+              "hanviet": "ngôn",
+              "meaning_vi": "lời nói/ngôn ngữ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "讠 được ghi là bộ/thành phần bộ thủ nhìn thấy trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "sai/nhầm",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "会",
+        "lishu_vi": "",
+        "structure_note_vi": "Tách theo thành phần nhìn thấy trong chữ hiện đại; không ép giải thích cổ tự nếu không chắc.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hiểu/hội họp/biết tùy từ",
+        "modern_logic_vi": "Ghi nhớ theo nghĩa hiện đại và vai trò của chữ trong từ/cụm bài học.",
+        "warning_vi": "Không suy nghĩa máy móc từ từng chữ nếu đây là tên riêng, thành ngữ hoặc từ ghép cố định.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "Hiểu sai ý người khác hoặc hiểu sai tình huống.",
+    "memory_tip_vi": "Nhớ qua ngữ cảnh bài 18: 误会 gắn với mạch hiểu lầm về hộp bánh và cách nhân vật xử lý cảm xúc.",
+    "warning_vi": "Không dịch máy từng chữ; ưu tiên nghĩa từ/cụm trong văn cảnh bài khóa.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "误解",
+        "pinyin": "",
+        "meaning_vi": "hiểu sai",
+        "difference_vi": "Trang trọng hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "弄错",
+        "pinyin": "",
+        "meaning_vi": "nhầm/làm nhầm",
+        "difference_vi": "Thiên về thao tác/thông tin.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "理解错",
+        "pinyin": "",
+        "meaning_vi": "hiểu sai",
+        "difference_vi": "Khẩu ngữ rõ ràng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Ưu tiên cách dùng đã xuất hiện trong bài khóa và ví dụ đã soạn trong thread."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3941acd9-0732-4ac8-8750-bb989c6c3e58",
+      "order": 1,
+      "zh": "产生误会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9f234d82-6c4b-4c76-a47e-83c68d40f06e",
+      "order": 2,
+      "zh": "造成误会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9cf8589d-0b11-4535-8380-9dd30d6a5f35",
+      "order": 3,
+      "zh": "解释误会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "812c8259-0acf-4cb1-a8d1-3242510af725",
+      "order": 4,
+      "zh": "消除误会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e1ae84bb-9b46-439f-b0b9-553417c8731a",
+      "order": 5,
+      "zh": "别误会",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e2133f7b-0e28-4d29-bec1-232116e277ae",
+      "order": 1,
+      "zh": "这盒蛋糕造成了一个很大的误会。",
+      "pinyin": "",
+      "vi": "Hộp bánh này gây ra một hiểu lầm rất lớn.",
+      "analysis_vi": "造成误会 là collocation tự nhiên.",
+      "highlight": [
+        "误会"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "4dc4d245-7d2a-4c4d-9bce-1c4005345724"
+      ],
+      "source_ref": "current_thread",
+      "level": "standard",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú dùng trong văn cảnh",
+    "content_vi": "Ghi chú này rút từ phần đã soạn: ưu tiên cách hiểu tự nhiên trong tiếng Trung hiện đại và bối cảnh truyện 一盒蛋糕, không ép văn hóa nếu không cần.",
+    "tags": [
+      "usage",
+      "lesson_18"
+    ],
+    "source_refs": [
+      "current_thread",
+      "lesson_text_reference"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "34408005-1982-4a14-829e-b6288930cae7",
+      "order": 1,
+      "rule_vi": "Không nói 我误会你的意思错了.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "我误会你的意思错了。",
+          "pinyin": "",
+          "vi": "Dư thừa và lộn cấu trúc.",
+          "note_vi": "误会 đã mang nghĩa hiểu sai.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我误会了你的意思。",
+          "pinyin": "",
+          "vi": "Tôi đã hiểu lầm ý bạn.",
+          "note_vi": "Câu đúng.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "误会",
+    "back": "hiểu lầm; sự hiểu lầm",
+    "hint": "wùhuì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_18",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "4dc4d245-7d2a-4c4d-9bce-1c4005345724",
+    "source_lesson_vocab_id": null
+  }
+}

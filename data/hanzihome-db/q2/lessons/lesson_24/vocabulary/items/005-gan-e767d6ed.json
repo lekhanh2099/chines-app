@@ -1,0 +1,286 @@
+{
+  "id": "cfd03414-31c2-4ea9-950d-e4b29eef1719",
+  "type": "deep_vocabulary_item",
+  "order": 5,
+  "hanzi": "敢",
+  "pinyin": "gǎn",
+  "pos": {
+    "raw_vi": "modal_verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Cảm",
+    "meaning_vi": "dám",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "dám"
+    ],
+    "short_definition_vi": "dám",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "敢",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "攵",
+            "hanviet": "phộc",
+            "meaning_vi": "hành động/tác động",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "dám; có can đảm",
+        "modern_logic_vi": "Học theo chức năng: 敢 + V = dám làm gì.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "敢 = dám.",
+    "memory_tip_vi": "",
+    "warning_vi": "Sau 敢 thường cần động từ chính.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "敢于",
+        "pinyin": "",
+        "meaning_vi": "dám; có tinh thần dám làm",
+        "difference_vi": "Hơi văn hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "能",
+        "pinyin": "",
+        "meaning_vi": "có thể",
+        "difference_vi": "Năng lực/điều kiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "会",
+        "pinyin": "",
+        "meaning_vi": "biết làm",
+        "difference_vi": "Kỹ năng.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "愿意",
+        "pinyin": "",
+        "meaning_vi": "sẵn lòng",
+        "difference_vi": "Ý muốn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "244e309d-fa6c-4c1f-a9a5-7acf0deafa42",
+      "order": 1,
+      "zh": "不敢",
+      "pinyin": "",
+      "vi": "không dám",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "dfe46858-117c-4fdf-9edb-10410b2927bc",
+      "order": 2,
+      "zh": "敢说",
+      "pinyin": "",
+      "vi": "dám nói",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b497366d-8788-4c29-a122-7be73fd897c6",
+      "order": 3,
+      "zh": "敢问",
+      "pinyin": "",
+      "vi": "dám hỏi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6be45b32-52a5-43e9-9760-ed910ec1bd4d",
+      "order": 4,
+      "zh": "敢做敢当",
+      "pinyin": "",
+      "vi": "dám làm dám chịu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6ba4b6d9-024c-4d97-bea7-3339d2e96fc9",
+      "order": 5,
+      "zh": "敢不敢",
+      "pinyin": "",
+      "vi": "có dám hay không",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db1ad32f-7786-4b97-a3cc-b0e578b774bb",
+      "order": 6,
+      "zh": "不敢过马路",
+      "pinyin": "",
+      "vi": "không dám qua đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "0b29cdfb-3541-4bd2-89d4-05523366d582",
+      "order": 1,
+      "zh": "路上的车太多了，孩子不敢过马路。",
+      "pinyin": "Lù shang de chē tài duō le, háizi bù gǎn guò mǎlù.",
+      "vi": "Xe trên đường nhiều quá, đứa trẻ không dám qua đường.",
+      "analysis_vi": "不敢 + V = không dám làm.",
+      "level": "basic",
+      "highlight": [
+        "敢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cfd03414-31c2-4ea9-950d-e4b29eef1719"
+      ],
+      "notes": []
+    },
+    {
+      "id": "7c8cb79a-0ace-437c-8f22-46c748a5b60f",
+      "order": 2,
+      "zh": "有问题就问，别不敢说。",
+      "pinyin": "Yǒu wèntí jiù wèn, bié bù gǎn shuō.",
+      "vi": "Có vấn đề thì hỏi, đừng không dám nói.",
+      "analysis_vi": "Câu đầu lược 如果 giống mạch bài.",
+      "level": "expanded",
+      "highlight": [
+        "敢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cfd03414-31c2-4ea9-950d-e4b29eef1719"
+      ],
+      "notes": []
+    },
+    {
+      "id": "fe6c9e65-4d4b-4f94-8b23-57b4ecf17984",
+      "order": 3,
+      "zh": "他虽然很紧张，但是还是敢站出来帮助老人。",
+      "pinyin": "Tā suīrán hěn jǐnzhāng, dànshì háishi gǎn zhàn chūlai bāngzhù lǎorén.",
+      "vi": "Tuy căng thẳng, anh ấy vẫn dám đứng ra giúp người già.",
+      "analysis_vi": "站出来 có nghĩa mở rộng là đứng ra.",
+      "level": "complex",
+      "highlight": [
+        "敢"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "cfd03414-31c2-4ea9-950d-e4b29eef1719"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "敢做敢当 là cách đánh giá tinh thần dám làm dám chịu.",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "98578738-5478-4bf7-9e15-2c518c15df92",
+      "kind": "usage",
+      "text_vi": "Sau 敢 thường cần động từ chính.",
+      "wrong_examples": [
+        "我不敢这个问题。"
+      ],
+      "correct_examples": [
+        "我不敢问这个问题。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "敢",
+    "back": "dám",
+    "hint": "gǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "cfd03414-31c2-4ea9-950d-e4b29eef1719",
+    "source_lesson_vocab_id": null
+  }
+}

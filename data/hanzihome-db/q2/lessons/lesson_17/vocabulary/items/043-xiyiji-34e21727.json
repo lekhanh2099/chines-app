@@ -1,0 +1,428 @@
+{
+  "id": "62a4668e-ec42-4861-804b-ee5c866e7101",
+  "type": "deep_vocabulary_item",
+  "order": 43,
+  "hanzi": "洗衣机",
+  "pinyin": "xǐyījī",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson17",
+    "deep_vocab",
+    "ba_construction"
+  ],
+  "meaning": {
+    "hanviet": "Tẩy y cơ",
+    "meaning_vi": "máy giặt",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "máy giặt"
+    ],
+    "short_definition_vi": "máy giặt",
+    "textbook_focus_vi": "Bài 17: câu chữ 把 và trang trí hội trường/Tết.",
+    "register_vi": "đồ gia dụng hiện đại, đời sống gia đình.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 17",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "洗",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "水",
+          "radical_variant": "氵",
+          "radical_name_vi": "bộ Thủy",
+          "radical_name_zh": "",
+          "hanviet": "thủy",
+          "meaning_vi": "nước/chất lỏng",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "先",
+            "hanviet": "tiên",
+            "meaning_vi": "trước; gợi âm",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "rửa, giặt",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "衣",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "衣",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Y",
+          "radical_name_zh": "",
+          "hanviet": "y",
+          "meaning_vi": "quần áo",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "衣",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "衣",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Y",
+              "radical_name_zh": "",
+              "hanviet": "y",
+              "meaning_vi": "quần áo",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "quần áo, áo",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "机",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "木",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Mộc",
+          "radical_name_zh": "",
+          "hanviet": "mộc",
+          "meaning_vi": "cây/gỗ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "木",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "木",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Mộc",
+              "radical_name_zh": "",
+              "hanviet": "mộc",
+              "meaning_vi": "cây/gỗ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "几",
+            "hanviet": "kỷ",
+            "meaning_vi": "kỷ; gợi âm trong giản thể",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "máy móc, cơ hội",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "洗 là giặt/rửa. 衣 là áo/quần áo. 机 là máy. → 洗衣机 = máy giặt quần áo. Cảnh báo: 洗衣机 là máy giặt; 洗衣服 là giặt quần áo.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "洗衣机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "máy giặt.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "洗衣服",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "giặt quần áo.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "烘干机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "máy sấy.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "洗碗机",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "máy rửa bát.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 洗衣机洗衣服 = máy giặt giặt quần áo; 洗碗机洗碗 = máy rửa bát rửa bát."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "decc2de3-5e7f-425b-8a90-04034d86a7b1",
+      "order": 1,
+      "zh": "一台洗衣机",
+      "pinyin": "",
+      "vi": "một cái máy giặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f3156a8b-bfb5-45ff-934e-9045b41abc8d",
+      "order": 2,
+      "zh": "用洗衣机洗衣服",
+      "pinyin": "",
+      "vi": "dùng máy giặt giặt quần áo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "70a14fbc-380f-425a-9761-a03e35a8fb36",
+      "order": 3,
+      "zh": "把衣服放进洗衣机里",
+      "pinyin": "",
+      "vi": "bỏ quần áo vào máy giặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f2c89432-0bae-4408-84bc-37edd112e400",
+      "order": 4,
+      "zh": "洗衣机坏了",
+      "pinyin": "",
+      "vi": "máy giặt hỏng rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fddcd08b-5222-4259-9786-30a7f441ba5b",
+      "order": 5,
+      "zh": "打开洗衣机",
+      "pinyin": "",
+      "vi": "bật/mở máy giặt",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8295bd4a-dbff-462e-a6c3-2222e2e774e7",
+      "order": 1,
+      "zh": "她把彩带弄脏了，只好把它放进洗衣机里洗。",
+      "pinyin": "Tā bǎ cǎidài nòng zāng le, zhǐhǎo bǎ tā fàng jìn xǐyījī lǐ xǐ.",
+      "vi": "Cô ấy làm bẩn dây ruy băng màu, đành bỏ nó vào máy giặt để giặt.",
+      "analysis_vi": "Có hai câu 把: 把彩带弄脏了 làm thay đổi trạng thái; 把它放进洗衣机里 đưa vật vào trong máy.",
+      "highlight": [
+        "洗衣机"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "62a4668e-ec42-4861-804b-ee5c866e7101"
+      ],
+      "source_ref": "current_thread",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e1a74d92-e62f-4366-9861-2cdc4b89645e",
+      "order": 2,
+      "zh": "洗衣机旁边放着一个小篮子，里面都是要洗的衣服。",
+      "pinyin": "Xǐyījī pángbiān fàngzhe yí ge xiǎo lánzi, lǐmian dōu shì yào xǐ de yīfu.",
+      "vi": "Bên cạnh máy giặt có đặt một cái giỏ nhỏ, bên trong toàn là quần áo cần giặt.",
+      "analysis_vi": "洗衣机旁边放着…… là câu tồn hiện; 里面 chỉ bên trong cái giỏ.",
+      "highlight": [
+        "洗衣机"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "62a4668e-ec42-4861-804b-ee5c866e7101"
+      ],
+      "source_ref": "current_thread",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ebe52f50-3c33-4351-9b1b-8d96e537770f",
+      "order": 3,
+      "zh": "管理员提醒大家，不能在会场旁边用洗衣机。",
+      "pinyin": "Guǎnlǐyuán tíxǐng dàjiā, bù néng zài huìchǎng pángbiān yòng xǐyījī.",
+      "vi": "Người quản lý nhắc mọi người không được dùng máy giặt bên cạnh hội trường.",
+      "analysis_vi": "在会场旁边 là vị trí; câu này hợp bối cảnh quản lý không gian/thiết bị.",
+      "highlight": [
+        "洗衣机"
+      ],
+      "grammar_refs": [
+        "grammar_17_ba_construction"
+      ],
+      "vocab_refs": [
+        "62a4668e-ec42-4861-804b-ee5c866e7101"
+      ],
+      "source_ref": "current_thread",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Ghi chú về 洗衣机",
+    "content_vi": "Ở ký túc xá Trung Quốc, máy giặt công cộng khá phổ biến. Sinh viên thường dùng app hoặc quét mã QR để trả tiền giặt. Vì vậy 洗衣机, 扫码, 宿舍, 洗衣房 là nhóm từ rất đời sống.",
+    "tags": [
+      "culture"
+    ],
+    "source_refs": [
+      "current_thread"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "bde7bc2e-640e-4da9-993c-fa9f7d6b1253",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 洗衣机 với hành động giặt. 洗衣机 là danh từ: 洗衣机坏了。 Xǐyījī huài le. Máy giặt hỏng rồi. 洗衣服 là hành động: 我在洗衣服。 Wǒ zài xǐ yīfu. Tôi đang giặt quần áo.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "洗衣机",
+    "back": "máy giặt",
+    "hint": "xǐyījī",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson17",
+      "deep_vocab",
+      "ba_construction"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "62a4668e-ec42-4861-804b-ee5c866e7101",
+    "source_lesson_vocab_id": null
+  }
+}

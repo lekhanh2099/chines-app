@@ -1,0 +1,65 @@
+{
+  "id": "synthetic_vocab_455a03c19ae4d0ef",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "婚礼",
+  "pinyin": "hūnlǐ",
+  "meaning_vi": "lễ cưới; hôn lễ",
+  "pos": "Danh từ",
+  "pos_detail": {
+    "vi": "Danh từ",
+    "cn": "名词",
+    "normalized": "noun",
+    "schema_compatible_pos": "noun",
+    "is_separable_verb": false,
+    "separable_type": "",
+    "structure_vi": "",
+    "usage_note_vi": "Chỉ lễ cưới/hôn lễ.",
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+    "type": "vocabulary_item",
+    "order": 23,
+    "hanzi": "婚礼",
+    "pinyin": "hūnlǐ",
+    "meaning_vi": "lễ cưới; hôn lễ",
+    "meaning_en": "",
+    "pos": "Danh từ",
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "婚礼",
+      "back": "hūnlǐ — lễ cưới; hôn lễ",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "pos_detail": {
+      "vi": "Danh từ",
+      "cn": "名词",
+      "normalized": "noun",
+      "schema_compatible_pos": "noun",
+      "is_separable_verb": false,
+      "separable_type": "",
+      "structure_vi": "",
+      "usage_note_vi": "Chỉ lễ cưới/hôn lễ.",
+      "notes": []
+    }
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

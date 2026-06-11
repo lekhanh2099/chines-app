@@ -1,0 +1,314 @@
+{
+  "id": "95bba3dd-4bb3-4088-815b-e8394daee813",
+  "type": "deep_vocabulary_item",
+  "order": 15,
+  "hanzi": "富强",
+  "pinyin": "fùqiáng",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phú cường",
+    "meaning_vi": "giàu mạnh, phồn thịnh và hùng mạnh",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "giàu mạnh, phồn thịnh và hùng mạnh"
+    ],
+    "short_definition_vi": "giàu mạnh, phồn thịnh và hùng mạnh",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "富",
+        "lishu_vi": "phú",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "宀",
+            "hanviet": "miên",
+            "meaning_vi": "mái nhà, nơi che phủ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "宀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Miên",
+              "radical_name_zh": "",
+              "hanviet": "miên",
+              "meaning_vi": "mái nhà, nơi che phủ",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "giàu",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "宀",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Miên",
+          "radical_name_zh": "",
+          "hanviet": "miên",
+          "meaning_vi": "mái nhà, nơi che phủ",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "强",
+        "lishu_vi": "cường",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "弓",
+            "hanviet": "cung",
+            "meaning_vi": "cây cung",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "弓",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Cung",
+              "radical_name_zh": "",
+              "hanviet": "cung",
+              "meaning_vi": "cây cung",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mạnh",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "弓",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Cung",
+          "radical_name_zh": "",
+          "hanviet": "cung",
+          "meaning_vi": "cây cung",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "富强 thường dùng cho quốc gia/xã hội: vừa giàu vừa mạnh.",
+    "memory_tip_vi": "Nhớ 祖国越来越富强.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "富有",
+        "pinyin": "",
+        "meaning_vi": "富有",
+        "difference_vi": "富有 dùng được cho cá nhân; 富强 chủ yếu nói quốc gia/xã hội.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "贫弱",
+        "pinyin": "",
+        "meaning_vi": "贫弱",
+        "difference_vi": "nghèo yếu",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3a346132-21c3-497d-80e8-f9ef63baefd5",
+      "order": 1,
+      "zh": "国家富强",
+      "pinyin": "guójiā fùqiáng",
+      "vi": "đất nước giàu mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "165abbc3-bd8f-4e23-b31b-2782c0a9c383",
+      "order": 2,
+      "zh": "祖国富强",
+      "pinyin": "zǔguó fùqiáng",
+      "vi": "tổ quốc giàu mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0781b6e2-11f5-4769-8da7-ad19ac0e4628",
+      "order": 3,
+      "zh": "越来越富强",
+      "pinyin": "yuè lái yuè fùqiáng",
+      "vi": "ngày càng giàu mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0a3d06f6-9ca9-4815-9a49-2af65317d681",
+      "order": 4,
+      "zh": "为祖国富强而努力",
+      "pinyin": "wèi zǔguó fùqiáng ér nǔlì",
+      "vi": "nỗ lực vì tổ quốc giàu mạnh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "6127380e-835f-40b1-8aba-147a69111d7b",
+      "order": 1,
+      "zh": "我们希望祖国越来越富强。",
+      "pinyin": "Wǒmen xīwàng zǔguó yuè lái yuè fùqiáng.",
+      "vi": "Chúng tôi hy vọng tổ quốc ngày càng giàu mạnh.",
+      "analysis_vi": "越来越富强 rất tự nhiên.",
+      "highlight": [
+        "富强"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "95bba3dd-4bb3-4088-815b-e8394daee813"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "45f59d13-d70f-4b86-8fe6-7a445de7c1fe",
+      "order": 2,
+      "zh": "对一个国家来说，富强不只是有钱，还要有文化和教育。",
+      "pinyin": "Duì yí ge guójiā lái shuō, fùqiáng bú zhǐ shì yǒu qián, hái yào yǒu wénhuà hé jiàoyù.",
+      "vi": "Đối với một quốc gia, giàu mạnh không chỉ là có tiền.",
+      "analysis_vi": "Phân biệt 富强 với 有钱.",
+      "highlight": [
+        "富强"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "95bba3dd-4bb3-4088-815b-e8394daee813"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "富强 có sắc thái khẩu hiệu/chính luận khá rõ.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "56c22f2c-c1c9-4f03-ae7e-58ea291cd1a3",
+      "order": 1,
+      "rule_vi": "Không dùng 富强 cho cá nhân bình thường.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "他很富强。",
+          "pinyin": "Tā hěn fùqiáng.",
+          "vi": "Sai hướng vì 富强 không dùng cho cá nhân thường.",
+          "note_vi": "Dùng 富有 nếu nói người giàu.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "这个国家很富强。",
+          "pinyin": "Zhè ge guójiā hěn fùqiáng.",
+          "vi": "Quốc gia này rất giàu mạnh.",
+          "note_vi": "富强 hợp với quốc gia.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "富强",
+    "back": "giàu mạnh, phồn thịnh và hùng mạnh",
+    "hint": "fùqiáng",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "95bba3dd-4bb3-4088-815b-e8394daee813",
+    "source_lesson_vocab_id": null
+  }
+}

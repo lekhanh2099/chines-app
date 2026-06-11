@@ -1,0 +1,255 @@
+{
+  "id": "34603400-2a7b-4311-bc9a-b1215e9009b8",
+  "type": "deep_vocabulary_item",
+  "order": 45,
+  "hanzi": "文学",
+  "pinyin": "wénxué",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Văn học",
+    "meaning_vi": "văn học",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "văn học"
+    ],
+    "short_definition_vi": "văn học",
+    "textbook_focus_vi": "văn học",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "文",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "văn, chữ viết, văn hóa",
+        "modern_logic_vi": "",
+        "warning_vi": "Không nên tách sâu theo hình giản thể hiện đại; học theo nghĩa hiện đại trong từ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "学",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "子",
+            "hanviet": "tử",
+            "meaning_vi": "con, trẻ; hậu tố danh từ",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "子",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Tử",
+              "radical_name_zh": "",
+              "hanviet": "tử",
+              "meaning_vi": "con, trẻ; hậu tố danh từ",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "子 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "học, ngành học",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "文学 là văn học, lĩnh vực nghệ thuật/ngành học dùng ngôn ngữ và tác phẩm.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "e02ce4e8-940e-4c93-8d20-654a429085cf",
+      "order": 1,
+      "zh": "中国文学",
+      "pinyin": "",
+      "vi": "văn học Trung Quốc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5c5675f0-e8b9-4a46-9748-dd277b8a65f6",
+      "order": 2,
+      "zh": "现代文学",
+      "pinyin": "",
+      "vi": "văn học hiện đại",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "40693ce7-02fa-4df5-bf9f-dd049b7ad8f3",
+      "order": 3,
+      "zh": "文学作品",
+      "pinyin": "",
+      "vi": "tác phẩm văn học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "971ed455-a8fc-47db-9f5f-07b544169b95",
+      "order": 4,
+      "zh": "文学课",
+      "pinyin": "",
+      "vi": "môn văn học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f5790178-6bfd-4a9c-bbaa-ceb32bd881f7",
+      "order": 5,
+      "zh": "研究文学",
+      "pinyin": "",
+      "vi": "nghiên cứu văn học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d768c904-6ad1-437e-af23-000b0aa6d336",
+      "order": 1,
+      "zh": "书房里放着很多文学方面的书。",
+      "pinyin": "Shūfáng lǐ fàngzhe hěn duō wénxué fāngmiàn de shū.",
+      "vi": "Trong phòng đọc có đặt rất nhiều sách về văn học.",
+      "analysis_vi": "书房里放着…… là câu tồn hiện.",
+      "highlight": [
+        "文学"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "34603400-2a7b-4311-bc9a-b1215e9009b8"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e5df4a44-13ce-44c1-bb56-c0243d203e3f",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：文学。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: văn học.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "文学"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "34603400-2a7b-4311-bc9a-b1215e9009b8"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 文学 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "86acc047-87e3-4a8c-9305-447bcc06818d",
+      "order": 1,
+      "rule_vi": "文学 là văn học; 文化 là văn hóa; 中文 là tiếng Trung/chữ Trung.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "文学 là văn học; 文化 là văn hóa; 中文 là tiếng Trung/chữ Trung.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "文学",
+    "back": "văn học",
+    "hint": "wénxué",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_045"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "34603400-2a7b-4311-bc9a-b1215e9009b8",
+    "source_lesson_vocab_id": null
+  }
+}

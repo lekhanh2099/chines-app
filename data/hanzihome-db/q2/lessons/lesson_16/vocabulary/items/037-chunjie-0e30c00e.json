@@ -1,0 +1,286 @@
+{
+  "id": "8e5a392e-e878-49e2-8399-14995ff12ca4",
+  "type": "deep_vocabulary_item",
+  "order": 37,
+  "hanzi": "春节",
+  "pinyin": "Chūnjié",
+  "pos": {
+    "raw_vi": "Danh từ riêng văn hóa / Danh từ",
+    "raw_cn": "专名 / 名",
+    "normalized": "proper_noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson16",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xuân tiết",
+    "meaning_vi": "Tết Nguyên đán, Tết âm lịch Trung Quốc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "Tết Nguyên đán, Tết âm lịch Trung Quốc"
+    ],
+    "short_definition_vi": "Tết Nguyên đán, Tết âm lịch Trung Quốc",
+    "textbook_focus_vi": "Tết Nguyên đán, Tết âm lịch Trung Quốc",
+    "register_vi": "Theo phần đã soạn: ưu tiên nghĩa trong Bài 16 và usage Mainland/普通话.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 16",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "春",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời, ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời, ngày",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "日 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mùa xuân",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "节",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy trong chữ hiện đại; không dùng để bịa nguồn chữ học.",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ, thực vật",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ, thực vật",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "艹 được xử lý như bộ thủ/thành phần bộ thủ trong chữ hiện đại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngày lễ; đoạn, tiết",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "春节 = Tết Nguyên đán/Tết âm lịch Trung Quốc.",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "cf40b042-c04f-4f3c-ac7d-65c189c45040",
+      "order": 1,
+      "zh": "过春节",
+      "pinyin": "",
+      "vi": "đón Tết / ăn Tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "25c7d80e-da1b-4ab7-a53b-63039d4ce30b",
+      "order": 2,
+      "zh": "春节快到了",
+      "pinyin": "",
+      "vi": "Tết sắp đến rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "db006eae-994f-4f04-bb2b-43c752e16b70",
+      "order": 3,
+      "zh": "春节假期",
+      "pinyin": "",
+      "vi": "kỳ nghỉ Tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80d335de-30cc-49af-9679-b4234855e508",
+      "order": 4,
+      "zh": "春节礼物",
+      "pinyin": "",
+      "vi": "quà Tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9edd8ced-6af5-48c2-af40-173882d1917e",
+      "order": 5,
+      "zh": "回家过春节",
+      "pinyin": "",
+      "vi": "về nhà ăn Tết",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "b1ee48cc-e0e1-4091-ad78-ef0c5b835767",
+      "order": 1,
+      "zh": "春节越近，小区里的节日气氛就越欢乐。",
+      "pinyin": "Chūnjié yuè jìn, xiǎoqū lǐ de jiérì qìfēn jiù yuè huānlè.",
+      "vi": "Tết càng gần, không khí lễ hội trong khu dân cư càng vui tươi.",
+      "analysis_vi": "越……越…… nói quan hệ tăng dần.",
+      "highlight": [
+        "春节"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8e5a392e-e878-49e2-8399-14995ff12ca4"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "ac9d2461-124b-48b6-a601-602432905271",
+      "order": 2,
+      "zh": "这个词在第十六课里很重要：春节。",
+      "pinyin": "",
+      "vi": "Từ này trong Bài 16 rất quan trọng: Tết Nguyên đán, Tết âm lịch Trung Quốc.",
+      "analysis_vi": "Câu phụ để giữ item có ví dụ tối thiểu; nội dung dựa trên từ đang học.",
+      "highlight": [
+        "春节"
+      ],
+      "grammar_refs": [
+        "grammar-16-existential-sentence",
+        "grammar-16-yuelaiyue-yueyue"
+      ],
+      "vocab_refs": [
+        "8e5a392e-e878-49e2-8399-14995ff12ca4"
+      ],
+      "source_ref": "thread:bai16",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Từ 春节 được giữ theo phần đã soạn trong Bài 16; không thêm fact văn hóa nếu không cần.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "a0edd76f-edb0-4539-85a8-9d9b043fb9ba",
+      "order": 1,
+      "rule_vi": "春节 là Tết âm lịch; 元旦 là Tết Dương lịch ngày 1/1; 新年 tùy văn cảnh.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "春节 là Tết âm lịch; 元旦 là Tết Dương lịch ngày 1/1; 新年 tùy văn cảnh.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "春节",
+    "back": "Tết Nguyên đán, Tết âm lịch Trung Quốc",
+    "hint": "Chūnjié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson16",
+      "vocab_037"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8e5a392e-e878-49e2-8399-14995ff12ca4",
+    "source_lesson_vocab_id": null
+  }
+}

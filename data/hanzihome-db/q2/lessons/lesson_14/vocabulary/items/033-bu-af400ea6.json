@@ -1,0 +1,291 @@
+{
+  "id": "240c82e5-f8ab-4525-b8e5-ef7d0208ec57",
+  "type": "deep_vocabulary_item",
+  "order": 33,
+  "hanzi": "步",
+  "pinyin": "bù",
+  "pos": {
+    "raw_vi": "Danh từ / Lượng từ / Yếu tố cấu tạo từ",
+    "raw_cn": "名/量/语素",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu2",
+    "lesson14",
+    "deep_vocab",
+    "double_directional_complement"
+  ],
+  "meaning": {
+    "hanviet": "Bộ",
+    "meaning_vi": "bước",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "bước"
+    ],
+    "short_definition_vi": "bước",
+    "textbook_focus_vi": "Bài 14: 钥匙忘拔下来了, trọng tâm bổ ngữ xu hướng kép.",
+    "register_vi": "đời sống, vận động, phương pháp, quá trình.",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 2, Bài 14",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "步",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "止",
+            "hanviet": "chỉ",
+            "meaning_vi": "bàn chân/dừng lại",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "bước",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [
+          {
+            "kind": "etymology",
+            "text_vi": "步 có lõi nghĩa là bước đi bằng chân. → 一步一步来 = làm từng bước một.",
+            "text_zh": "",
+            "source_ref": "",
+            "tags": [],
+            "check_needed": false
+          }
+        ],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "→ 一步一步来 = làm từng bước một.",
+    "memory_tip_vi": "",
+    "warning_vi": "Cảnh báo: 步 thường không dùng đơn độc nhiều trong khẩu ngữ cơ bản, nên học qua cụm.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "步 (bù)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bước, bước chân/bước trong quy trình.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "脚步 (jiǎobù)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bước chân, nhịp chân.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "步骤 (bùzhòu)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "bước/quy trình thực hiện.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "进步 (jìnbù)",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "tiến bộ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "→ Phân biệt nhanh: 走一步 là đi một bước; 学习步骤 là các bước học; 进步 là tiến bộ."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "63867f68-54c0-4f85-866e-94d2f4c82b8f",
+      "order": 1,
+      "zh": "一步",
+      "pinyin": "",
+      "vi": "một bước",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "bcd206ed-2b97-4a10-b1fd-d581f5fa25fb",
+      "order": 2,
+      "zh": "一步一步来",
+      "pinyin": "",
+      "vi": "làm từng bước một",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c00253ca-6a61-4ec1-be5e-f4906c5882e5",
+      "order": 3,
+      "zh": "散步",
+      "pinyin": "",
+      "vi": "đi dạo",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ba47fb1d-d7eb-4022-aac5-e4077564bc65",
+      "order": 4,
+      "zh": "进步很快",
+      "pinyin": "",
+      "vi": "tiến bộ rất nhanh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "58dca347-1477-4b2d-bc9d-9896930af864",
+      "order": 1,
+      "zh": "别一下子买太多书，学习要一步一步来。",
+      "pinyin": "Bié yíxiàzi mǎi tài duō shū, xuéxí yào yí bù yí bù lái.",
+      "vi": "Đừng một lúc mua quá nhiều sách, học phải làm từng bước một.",
+      "analysis_vi": "一步一步来 là cách nói rất tự nhiên cho quá trình học chậm mà chắc.",
+      "highlight": [
+        "步"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "240c82e5-f8ab-4525-b8e5-ef7d0208ec57"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "206ebc74-2616-4190-bf7e-5e8a394c453a",
+      "order": 2,
+      "zh": "他提着纸箱往楼上走，每走一步都觉得很累。",
+      "pinyin": "Tā tízhe zhǐxiāng wǎng lóushàng zǒu, měi zǒu yí bù dōu juéde hěn lèi.",
+      "vi": "Anh ấy xách thùng giấy đi lên lầu, mỗi bước đi đều thấy rất mệt.",
+      "analysis_vi": "每走一步都…… nhấn mạnh không bước nào là không mệt.",
+      "highlight": [
+        "步"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "240c82e5-f8ab-4525-b8e5-ef7d0208ec57"
+      ],
+      "source_ref": "",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "26418332-bf74-48aa-9973-13d64cb8acb9",
+      "order": 3,
+      "zh": "把问题写出来，是整理思路的第一步。",
+      "pinyin": "Bǎ wèntí xiě chūlai, shì zhěnglǐ sīlù de dì yī bù.",
+      "vi": "Viết vấn đề ra là bước đầu tiên để sắp xếp mạch suy nghĩ.",
+      "analysis_vi": "写出来 là đưa vấn đề từ trong đầu ra chữ viết; 第一步 là bước thứ nhất trong quá trình.",
+      "highlight": [
+        "步"
+      ],
+      "grammar_refs": [
+        "grammar_14_double_directional_complement"
+      ],
+      "vocab_refs": [
+        "240c82e5-f8ab-4525-b8e5-ef7d0208ec57"
+      ],
+      "source_ref": "",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "warnings": [
+    {
+      "id": "676a9c26-7000-48d5-836d-f440a9acfdcc",
+      "order": 1,
+      "rule_vi": "Lỗi sai phổ biến: Nhầm 步 với 路. 步 là bước.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "步",
+    "back": "bước",
+    "hint": "bù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson14"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "culture_note": {
+    "title": "Fact nhỏ / ghi chú dùng từ",
+    "content_vi": "一步一步来 là câu rất hay để tự trấn an khi học thứ khó. Nó gần với tiếng Việt “từng bước một”, không nóng vội.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "240c82e5-f8ab-4525-b8e5-ef7d0208ec57",
+    "source_lesson_vocab_id": null
+  }
+}

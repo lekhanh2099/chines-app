@@ -1,0 +1,163 @@
+{
+  "id": "b2d6b555-83c1-48b5-8303-737d56cd8402",
+  "type": "deep_vocabulary_item",
+  "order": 68,
+  "hanzi": "所以",
+  "pinyin": "suǒyǐ",
+  "pos": {
+    "raw_vi": "Liên từ",
+    "raw_cn": "连词",
+    "normalized": "conjunction",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_16",
+    "deep_vocab",
+    "Từ nối lập luận"
+  ],
+  "meaning": {
+    "hanviet": "Sở dĩ",
+    "meaning_vi": "cho nên, vì vậy",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "cho nên",
+      "vì vậy"
+    ],
+    "short_definition_vi": "cho nên, vì vậy",
+    "textbook_focus_vi": "Trong bài 16, trọng tâm là nghĩa: cho nên, vì vậy.",
+    "register_vi": "theo ngữ cảnh bài khóa; xem cảnh báo nếu là từ đa nghĩa hoặc văn viết",
+    "usage_domain_vi": "Từ nối lập luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "所",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "以",
+        "lishu_vi": "",
+        "structure_note_vi": "Đã tách chữ độc lập; không gán bộ thủ/thành phần nếu chưa cần cho UI.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "Nghĩa hiện đại xem trong toàn từ/cụm.",
+        "modern_logic_vi": "Ưu tiên học theo nghĩa từ ghép trong bài, tránh suy nghĩa máy móc từng chữ.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "所以 trong bài được học theo nghĩa trọng tâm: cho nên, vì vậy.",
+    "memory_tip_vi": "Gắn với mạch bài 金星人遇到麻烦 để nhớ nghĩa: cho nên, vì vậy.",
+    "warning_vi": "Không suy nghĩa máy móc từng chữ nếu đây là cụm cố định, tên riêng hoặc thuật ngữ.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4f0b5528-231d-4266-96e8-34f1e3f198e0",
+      "order": 1,
+      "zh": "因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。",
+      "pinyin": "",
+      "vi": "câu/cụm trong bài có nghĩa trọng tâm: cho nên, vì vậy",
+      "pattern": "lesson_context",
+      "note_vi": "Cụm/câu lấy theo ngữ cảnh bài để tránh tách từ khỏi mạch nghĩa.",
+      "tags": [
+        "lesson_context"
+      ],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "4ca55fe7-072f-4908-a9bd-9fa5b17dd193",
+      "order": 1,
+      "zh": "因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。",
+      "pinyin": "",
+      "vi": "Ví dụ ngữ cảnh trong bài: trọng tâm là “所以” = cho nên, vì vậy.",
+      "analysis_vi": "Câu này dùng “所以” trong mạch bài 16; khi dịch cần bám ngữ cảnh chứ không tách nghĩa rời.",
+      "highlight": [
+        "所以"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b2d6b555-83c1-48b5-8303-737d56cd8402"
+      ],
+      "source_ref": "lesson_text",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong bài 16, “所以” phục vụ mạch châm biếm khoa học viễn tưởng: người sao Kim suy luận về Trái Đất qua dữ liệu quan sát.",
+    "tags": [
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson_text"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "19adba9d-7b0d-47d0-97f9-c5fe7b8863bc",
+      "order": 1,
+      "rule_vi": "Cần dùng “所以” theo đúng ngữ cảnh bài; không dịch cứng từng chữ nếu là cụm hoặc từ đa nghĩa.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "所以",
+    "back": "cho nên, vì vậy",
+    "hint": "suǒyǐ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "deep_vocab",
+      "Từ nối lập luận"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b2d6b555-83c1-48b5-8303-737d56cd8402",
+    "source_lesson_vocab_id": null
+  }
+}

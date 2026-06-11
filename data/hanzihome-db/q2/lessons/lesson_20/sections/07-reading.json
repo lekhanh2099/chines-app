@@ -1,0 +1,199 @@
+{
+  "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+  "type": "reading",
+  "order": 7,
+  "title": "阅读理解 / 综合填空",
+  "title_vi": "Bài đọc / điền chỗ trống",
+  "source_origin": "textbook",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_cloze",
+      "order": 1,
+      "title": "南辕北辙",
+      "title_vi": "Nam viên bắc triệt",
+      "supplementary_vocab": [
+        {
+          "hanzi": "南辕北辙",
+          "pinyin": "nányuán-běizhé",
+          "meaning_vi": "hành động trái ngược với mục tiêu"
+        },
+        {
+          "hanzi": "富翁",
+          "pinyin": "fùwēng",
+          "meaning_vi": "phú ông; người giàu"
+        },
+        {
+          "hanzi": "赶",
+          "pinyin": "gǎn",
+          "meaning_vi": "đánh xe; điều khiển xe"
+        },
+        {
+          "hanzi": "挑",
+          "pinyin": "tiāo",
+          "meaning_vi": "gánh; gánh bằng đòn gánh"
+        },
+        {
+          "hanzi": "指",
+          "pinyin": "zhǐ",
+          "meaning_vi": "chỉ; chỉ vào"
+        },
+        {
+          "hanzi": "车夫",
+          "pinyin": "chēfū",
+          "meaning_vi": "người đánh xe; phu xe"
+        },
+        {
+          "hanzi": "身强力壮",
+          "pinyin": "shēnqiáng-lìzhuàng",
+          "meaning_vi": "thân thể khỏe mạnh, cường tráng"
+        },
+        {
+          "hanzi": "技术",
+          "pinyin": "jìshù",
+          "meaning_vi": "kỹ thuật"
+        },
+        {
+          "hanzi": "简直",
+          "pinyin": "jiǎnzhí",
+          "meaning_vi": "đúng là; quả thực là"
+        },
+        {
+          "hanzi": "道理",
+          "pinyin": "dàolǐ",
+          "meaning_vi": "đạo lý; lẽ phải"
+        },
+        {
+          "hanzi": "继续",
+          "pinyin": "jìxù",
+          "meaning_vi": "tiếp tục"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "order": 1,
+          "zh": "这是中国古代的一个故事。\n\n前边跑过来了一辆马车，①______坐着一个大富翁，后面放着一个大箱子，前面还坐着一个赶车的。赶车的不停地赶着马，马车跑②______飞快。\n\n路上走过来一位老人。老人挑着水。\n\n大富翁看见这位老人，③______叫赶车的停下车，想向老人要点儿水喝。\n\n老人问他们要到什么地方去，富翁大声地说：“我们要到楚（Chǔ）国去。”\n\n老人一听就笑了，他对富翁说：“你们走错了，楚国在南边，应该往南走，怎么往北走呢？”\n\n富翁说：“没关系，你看，我的马跑得很④______。”\n\n老人又说：“你的马跑得再快，⑤______这不是去楚国的路啊。马跑得越快离楚国越远。”\n\n“没问题。”大富翁指着车上的箱子说，“您看，这个大箱子里装着很多钱呢。”\n\n“你有很多钱，可是走的方向不对，是到不了楚国的。”\n\n大富翁又指着赶车的说：“你看我这个车夫，身强力壮，赶车的技术也特别好。”\n\n老人觉得这位先生简直不懂道理，⑥______说：“你的车夫是不错。可是，楚国在南边，你却要他赶着车往北跑，⑦______能到得了楚国呢？”\n\n大富翁听了老人的话，不高兴地说：“我们已经走⑧______好几百里路了，怎么能再往回走呢？”\n\n说完他就让赶车的继续赶着车一直往北跑去，车越跑越快，一会儿就看不见了。",
+          "vi": "Đây là một câu chuyện Trung Quốc cổ đại.\n\nPhía trước có một cỗ xe ngựa chạy tới. Trên xe có một phú ông đang ngồi, phía sau đặt một cái rương lớn, phía trước còn có một người đánh xe. Người đánh xe không ngừng thúc ngựa, xe ngựa chạy nhanh như bay.\n\nTrên đường có một ông cụ đi tới. Ông cụ đang gánh nước.\n\nPhú ông thấy ông cụ, liền bảo người đánh xe dừng xe, muốn xin ông cụ chút nước uống.\n\nÔng cụ hỏi họ định đi đâu, phú ông lớn tiếng nói: “Chúng tôi muốn đến nước Sở.”\n\nÔng cụ vừa nghe liền cười, nói với phú ông: “Các ông đi sai rồi, nước Sở ở phía nam, nên đi về phía nam, sao lại đi về phía bắc?”\n\nPhú ông nói: “Không sao, ông xem, ngựa của tôi chạy rất nhanh.”\n\nÔng cụ lại nói: “Ngựa của ông có chạy nhanh đến đâu, nhưng đây không phải đường đi nước Sở. Ngựa chạy càng nhanh thì càng xa nước Sở.”\n\n“Không vấn đề gì.” Phú ông chỉ vào chiếc rương trên xe nói: “Ông xem, trong chiếc rương lớn này có rất nhiều tiền.”\n\n“Ông có rất nhiều tiền, nhưng hướng đi không đúng thì không thể đến nước Sở được.”\n\nPhú ông lại chỉ vào người đánh xe nói: “Ông nhìn người phu xe này của tôi, thân thể khỏe mạnh, kỹ thuật đánh xe cũng đặc biệt tốt.”\n\nÔng cụ thấy vị này quả thực không hiểu đạo lý, nói tiếp: “Phu xe của ông đúng là không tệ. Nhưng nước Sở ở phía nam, ông lại bắt anh ta đánh xe chạy về phía bắc, làm sao có thể đến được nước Sở?”\n\nPhú ông nghe lời ông cụ, không vui nói: “Chúng tôi đã đi mấy trăm dặm rồi, sao có thể quay lại được nữa?”\n\nNói xong, ông ta liền bảo người đánh xe tiếp tục đánh xe chạy thẳng về phía bắc; xe chạy càng lúc càng nhanh, một lát sau thì không nhìn thấy nữa.",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "pinyin": "Zhè shì Zhōngguó gǔdài de yí ge gùshi.\n\nQiánbian pǎo guòlai le yí liàng mǎchē, chē shang zuòzhe yí ge dà fùwēng, hòumian fàngzhe yí ge dà xiāngzi, qiánmian hái zuòzhe yí ge gǎnchē de. Gǎnchē de bùtíng de gǎnzhe mǎ, mǎchē pǎo de fēikuài.\n\nLùshang zǒu guòlai yí wèi lǎorén. Lǎorén tiāozhe shuǐ.\n\nDà fùwēng kànjiàn zhè wèi lǎorén, jiù jiào gǎnchē de tíng xià chē, xiǎng xiàng lǎorén yào diǎnr shuǐ hē.\n\nLǎorén wèn tāmen yào dào shénme dìfang qù, fùwēng dàshēng de shuō: “Wǒmen yào dào Chǔguó qù.”\n\nLǎorén yì tīng jiù xiào le, tā duì fùwēng shuō: “Nǐmen zǒu cuò le, Chǔguó zài nánbian, yīnggāi wǎng nán zǒu, zěnme wǎng běi zǒu ne?”\n\nFùwēng shuō: “Méi guānxi, nǐ kàn, wǒ de mǎ pǎo de hěn kuài.”\n\nLǎorén yòu shuō: “Nǐ de mǎ pǎo de zài kuài, kěshì zhè bú shì qù Chǔguó de lù a. Mǎ pǎo de yuè kuài lí Chǔguó yuè yuǎn.”\n\n“Méi wèntí.” Dà fùwēng zhǐzhe chē shang de xiāngzi shuō, “Nín kàn, zhège dà xiāngzi lǐ zhuāngzhe hěn duō qián ne.”\n\n“Nǐ yǒu hěn duō qián, kěshì zǒu de fāngxiàng bú duì, shì dào bu liǎo Chǔguó de.”\n\nDà fùwēng yòu zhǐzhe gǎnchē de shuō: “Nǐ kàn wǒ zhège chēfū, shēnqiáng-lìzhuàng, gǎnchē de jìshù yě tèbié hǎo.”\n\nLǎorén juéde zhè wèi xiānsheng jiǎnzhí bù dǒng dàoli, jìxù shuō: “Nǐ de chēfū shì búcuò. Kěshì, Chǔguó zài nánbian, nǐ què yào tā gǎnzhe chē wǎng běi pǎo, zěnme néng dào de liǎo Chǔguó ne?”\n\nDà fùwēng tīng le lǎorén de huà, bù gāoxìng de shuō: “Wǒmen yǐjīng zǒu le hǎo jǐ bǎi lǐ lù le, zěnme néng zài wǎng huí zǒu ne?”\n\nShuō wán tā jiù ràng gǎnchē de jìxù gǎnzhe chē yìzhí wǎng běi pǎo qù, chē yuè pǎo yuè kuài, yíhuìr jiù kàn bu jiàn le."
+        }
+      ],
+      "questions": [
+        {
+          "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+          "blank": 1,
+          "answer": "车上",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "82b334af-11c3-4606-980f-154617982627",
+          "blank": 2,
+          "answer": "得",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
+          "blank": 3,
+          "answer": "就",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
+          "blank": 4,
+          "answer": "快",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "b7ee22d3-687c-4fed-acb8-66db927f5e7a",
+          "blank": 5,
+          "answer": "可是",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "3e37585b-c64f-4211-93cb-b7d95c5b9ee6",
+          "blank": 6,
+          "answer": "继续",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "81ab406f-8f8e-4bb7-8c7a-1ed88d2815b2",
+          "blank": 7,
+          "answer": "怎么",
+          "answer_verified": true,
+          "check_needed": false
+        },
+        {
+          "id": "ef50288b-f44e-4498-acdb-b999d3fc94b9",
+          "blank": 8,
+          "answer": "了",
+          "answer_verified": true,
+          "check_needed": false
+        }
+      ],
+      "culture_note_vi": "南辕北辙 nghĩa đen là muốn đi về phía Nam nhưng càng xe/vết xe lại hướng về phía Bắc; nghĩa bóng là mục tiêu và hành động trái ngược nhau.",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "answers": [
+        "车上",
+        "得",
+        "就",
+        "快",
+        "可是",
+        "继续",
+        "怎么",
+        "了"
+      ],
+      "answer_key": [
+        {
+          "blank": 1,
+          "answer": "车上",
+          "answer_verified": true
+        },
+        {
+          "blank": 2,
+          "answer": "得",
+          "answer_verified": true
+        },
+        {
+          "blank": 3,
+          "answer": "就",
+          "answer_verified": true
+        },
+        {
+          "blank": 4,
+          "answer": "快",
+          "answer_verified": true
+        },
+        {
+          "blank": 5,
+          "answer": "可是",
+          "answer_verified": true
+        },
+        {
+          "blank": 6,
+          "answer": "继续",
+          "answer_verified": true
+        },
+        {
+          "blank": 7,
+          "answer": "怎么",
+          "answer_verified": true
+        },
+        {
+          "blank": 8,
+          "answer": "了",
+          "answer_verified": true
+        }
+      ]
+    }
+  ]
+}

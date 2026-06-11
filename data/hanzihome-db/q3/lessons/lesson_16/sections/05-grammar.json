@@ -1,0 +1,195 @@
+{
+  "id": "b045e537-7383-494b-8d61-b0286977ed80",
+  "type": "grammar",
+  "order": 5,
+  "title": "词语用法",
+  "title_vi": "Cách dùng từ",
+  "source_origin": "textbook_pdf_verified",
+  "check_needed": false,
+  "items": [
+    {
+      "id": "85d0a510-2e12-4444-a8ec-62952ba505f1",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "可能",
+      "title_vi": "可能: khả năng / có thể / có lẽ",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "f0b3bb64-e8f6-41dd-b493-76cbef12d9c6",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "可能 có thể làm danh từ, tính từ hoặc phó từ/trợ động từ hóa; nghĩa lõi là khả năng xảy ra hoặc khả năng làm được.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "c76d6465-edb6-4fa0-9853-e4ae437950f2",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "究竟",
+      "title_vi": "究竟: rốt cuộc, thực ra",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "28247a55-908d-4910-b87b-3cf3c8ae6a45",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "究竟 dùng trong câu hỏi để truy hỏi sâu hơn; khẩu ngữ thường dùng 到底 nhiều hơn.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "c8ec8356-ea1d-4172-91eb-fe52a7f92f60",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "充满",
+      "title_vi": "充满: tràn đầy",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "7d6cc8e0-adb6-46e6-a706-9c0133c5bf91",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "A + 充满 + B: một nơi/sự vật được lấp đầy bởi chất, khí, cảm xúc hoặc không khí trừu tượng.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "833a279d-9e19-4ada-ad5b-5743fccc81b8",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "其他",
+      "title_vi": "其他: khác, những cái khác",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "28bcc51a-bd92-4fe4-aade-fc042c0d3aaa",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "其他 + 名词 chỉ người hoặc sự vật nằm ngoài phạm vi đã nói đến.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "7d6d5ce7-c7f4-467d-b0f3-3aed58c7d7f4",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "不可思议",
+      "title_vi": "不可思议: không thể tưởng tượng nổi",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "8826bc22-1827-42c2-acda-9b57dc01c208",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "Dùng khi một việc rất khó hiểu, khó tin, vượt ngoài tưởng tượng thông thường.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "b247a333-08b2-446a-bfc2-d789e4d5b534",
+      "type": "grammar_point",
+      "order": 6,
+      "title": "沿 / 沿着",
+      "title_vi": "沿 / 沿着: men theo, dọc theo",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "e0693e23-e221-4ddf-a8a1-9a60addf6fea",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "沿 / 沿着 + 路线 / 地点 + V biểu thị chuyển động men theo tuyến đường/quỹ đạo.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "594b67cd-9f2c-4c66-b431-12fd5459513d",
+      "type": "grammar_point",
+      "order": 7,
+      "title": "毫无 / 毫不",
+      "title_vi": "毫无 / 毫不: hoàn toàn không",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "476a923b-becc-41ce-a7a8-1f34f35cb296",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "毫无 thường đi với danh từ; 毫不 thường đi với động từ hoặc tính từ.",
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "0766ceda-b591-43d5-a6ed-a503d84ade07",
+      "type": "grammar_point",
+      "order": 8,
+      "title": "意味着",
+      "title_vi": "意味着: có nghĩa là, hàm ý là",
+      "level": "HSK3+",
+      "tags": [
+        "词语用法"
+      ],
+      "source_origin": "textbook_pdf_verified",
+      "check_needed": false,
+      "blocks": [
+        {
+          "id": "d92a621f-3fe1-43d2-9b3a-bb6a17f17d23",
+          "type": "grammar_overview",
+          "order": 1,
+          "title": "Bản chất / Cách dùng",
+          "content_vi": "A + 意味着 + B: A kéo theo ý nghĩa hoặc hệ quả B; trang trọng hơn 意思是.",
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

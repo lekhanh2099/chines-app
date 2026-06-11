@@ -1,0 +1,307 @@
+{
+  "id": "8b93e464-700c-452b-b734-ca7d58fa41a2",
+  "type": "deep_vocabulary_item",
+  "order": 54,
+  "hanzi": "车夫",
+  "pinyin": "chēfū",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Xa phu",
+    "meaning_vi": "người đánh xe, phu xe",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "người đánh xe, phu xe"
+    ],
+    "short_definition_vi": "người đánh xe, phu xe",
+    "textbook_focus_vi": "người đánh xe, phu xe",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "车",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "车",
+            "hanviet": "xa",
+            "meaning_vi": "xe",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "车 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "車",
+              "radical_variant": "车",
+              "radical_name_vi": "bộ Xa",
+              "radical_name_zh": "",
+              "hanviet": "xa",
+              "meaning_vi": "xe",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "modern_meaning_vi": "xe",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "夫",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "đại",
+            "meaning_vi": "to/lớn",
+            "position_vi": "trong chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "đại",
+              "meaning_vi": "to/lớn",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "一",
+            "hanviet": "nhất",
+            "meaning_vi": "",
+            "position_vi": "trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "người đàn ông/người lao động",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "người điều khiển/kéo/đánh xe trong bối cảnh cũ",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "24569948-0860-4713-a75e-2c60963328c4",
+      "order": 1,
+      "zh": "一个车夫",
+      "pinyin": "",
+      "vi": "một phu xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "17276929-2267-4454-9a97-4f080de73c84",
+      "order": 2,
+      "zh": "老车夫",
+      "pinyin": "",
+      "vi": "phu xe già",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff735b85-7de3-4c84-829e-8aebf6703ebc",
+      "order": 3,
+      "zh": "车夫赶车",
+      "pinyin": "",
+      "vi": "phu xe đánh xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6970de8d-1fb1-4a4e-9925-490ab1680f94",
+      "order": 4,
+      "zh": "车夫指路",
+      "pinyin": "",
+      "vi": "phu xe chỉ đường",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48f1a766-cef4-4710-b261-9aea9f6e05de",
+      "order": 5,
+      "zh": "车夫的技术",
+      "pinyin": "",
+      "vi": "kỹ thuật của phu xe",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "d3ed6f9f-5110-4508-b5df-f123e76b5862",
+      "order": 1,
+      "zh": "车夫把车赶得很快。",
+      "pinyin": "Chēfū bǎ chē gǎn de hěn kuài.",
+      "vi": "Người đánh xe thúc xe chạy rất nhanh.",
+      "analysis_vi": "把车赶得很快 là 把字句 + bổ ngữ trạng thái.",
+      "highlight": [
+        "车夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b93e464-700c-452b-b734-ca7d58fa41a2"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "268f4665-1d2f-45da-b2eb-5208d784ac58",
+      "order": 2,
+      "zh": "如果不了解车夫，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě chēfū, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 车夫, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "车夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b93e464-700c-452b-b734-ca7d58fa41a2"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "cba8c6c6-09a3-4e10-9d35-4ba6507291ed",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解车夫在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě chēfū zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 车夫 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "车夫"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "8b93e464-700c-452b-b734-ca7d58fa41a2"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "车夫 gắn xã hội cũ; tài xế hiện đại là 司机.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c3fa389f-0374-4a40-ba4d-61c727bf6e23",
+      "order": 1,
+      "rule_vi": "Không gọi tài xế taxi/xe hơi hiện đại là 车夫; dùng 司机。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "车夫",
+    "back": "người đánh xe, phu xe",
+    "hint": "chēfū",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "8b93e464-700c-452b-b734-ca7d58fa41a2",
+    "source_lesson_vocab_id": null
+  }
+}

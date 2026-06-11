@@ -1,0 +1,298 @@
+{
+  "id": "d4ed791d-6695-4fe3-beed-36b94de15e37",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "分别",
+  "pinyin": "fēnbié",
+  "pos": {
+    "raw_vi": "Động từ / Phó từ",
+    "raw_cn": "动 / 副",
+    "normalized": "adverb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_04",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "phân biệt / phân biệt",
+    "meaning_vi": "chia tay; phân biệt; lần lượt, riêng ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chia tay",
+      "phân biệt",
+      "lần lượt",
+      "riêng ra"
+    ],
+    "short_definition_vi": "chia tay",
+    "textbook_focus_vi": "Dùng theo chủ đề lý tưởng, lựa chọn, hành trình, thành bại và trải nghiệm đời người trong Bài 4.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học tập, đời sống, du lịch, nghị luận, giao tiếp",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "分",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "八",
+            "hanviet": "bát",
+            "meaning_vi": "tách ra hai bên",
+            "position_vi": "phía trên",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刀",
+            "hanviet": "đao",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "phía dưới",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chia, phân chia",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "别",
+        "lishu_vi": "",
+        "structure_note_vi": "Thành phần nhìn thấy được ghi thận trọng; không ép khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "口",
+            "hanviet": "khẩu",
+            "meaning_vi": "miệng",
+            "position_vi": "bên trái",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "刂",
+            "hanviet": "đao đứng",
+            "meaning_vi": "dao, cắt",
+            "position_vi": "bên phải",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [],
+            "check_needed": false,
+            "radical": {
+              "radical": "刀",
+              "radical_variant": "刂",
+              "radical_name_vi": "bộ Đao",
+              "radical_name_zh": "",
+              "hanviet": "đao",
+              "meaning_vi": "dao",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "khác, phân biệt, rời xa",
+        "modern_logic_vi": "Học theo nghĩa hiện đại và cụm từ trong bài.",
+        "warning_vi": "Không suy nghĩa hiện đại chỉ từ bộ thủ.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "分别 được học theo nghĩa hiện đại trong Bài 4; ưu tiên collocation và cách dùng tự nhiên.",
+    "memory_tip_vi": "Nhớ qua cụm trọng tâm liên quan đến 分别 trong bài.",
+    "warning_vi": "Không ép chiết tự khảo cổ; chỉ dùng thành phần nhìn thấy chắc chắn.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "区别",
+        "pinyin": "qūbié",
+        "meaning_vi": "phân biệt sự khác nhau",
+        "difference_vi": "Không có nghĩa chia tay",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "离别",
+        "pinyin": "líbié",
+        "meaning_vi": "ly biệt",
+        "difference_vi": "Văn hơn, buồn hơn",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "c76e405a-3f9f-4051-8412-dd87f2a0e558",
+      "order": 1,
+      "zh": "分别以后",
+      "pinyin": "fēnbié yǐhòu",
+      "vi": "sau khi chia xa",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e3711718-d162-435c-b6d8-42c6fda50ae0",
+      "order": 2,
+      "zh": "分别选择",
+      "pinyin": "fēnbié xuǎnzé",
+      "vi": "lần lượt lựa chọn",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "cbbe26f5-46d0-49bc-a1e3-372c4e016e4b",
+      "order": 3,
+      "zh": "分别介绍",
+      "pinyin": "fēnbié jièshào",
+      "vi": "lần lượt giới thiệu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ff9a96bb-13f7-47d6-aee4-b5af71aa5fbd",
+      "order": 4,
+      "zh": "和亲人分别",
+      "pinyin": "hé qīnrén fēnbié",
+      "vi": "chia xa người thân",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "8c2a2f9a-46b2-4677-a87c-d2cc4882156b",
+      "order": 1,
+      "zh": "我们分别以后，一直没有机会再见面。",
+      "pinyin": "Wǒmen fēnbié yǐhòu, yìzhí méiyǒu jīhuì zài jiànmiàn.",
+      "vi": "Sau khi chia xa, chúng tôi mãi chưa có cơ hội gặp lại.",
+      "analysis_vi": "分别 ở đây là chia xa.",
+      "highlight": [
+        "分别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4ed791d-6695-4fe3-beed-36b94de15e37"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5c61a4e5-9891-4563-b05e-9e3a871c520e",
+      "order": 2,
+      "zh": "他们分别选择了不同的专业。",
+      "pinyin": "Tāmen fēnbié xuǎnzé le bùtóng de zhuānyè.",
+      "vi": "Họ mỗi người chọn những chuyên ngành khác nhau.",
+      "analysis_vi": "分别 là phó từ, nghĩa riêng rẽ/lần lượt.",
+      "highlight": [
+        "分别"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "d4ed791d-6695-4fe3-beed-36b94de15e37"
+      ],
+      "source_ref": "thread_vocab_draft",
+      "level": "applied",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "分别 trong văn bài đọc thường gắn với cảnh rời nhà, đi xa.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "69f5bb4d-a8af-4245-95cd-6726d6d9fe47",
+      "order": 1,
+      "rule_vi": "Không thấy 分别 là mặc định dịch 'phân biệt'; 我们分别了三年 = xa nhau ba năm.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "分别",
+    "back": "chia tay; phân biệt; lần lượt, riêng ra",
+    "hint": "fēnbié",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_04"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "d4ed791d-6695-4fe3-beed-36b94de15e37",
+    "source_lesson_vocab_id": null
+  }
+}

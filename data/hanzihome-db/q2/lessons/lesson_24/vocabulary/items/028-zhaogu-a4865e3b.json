@@ -1,0 +1,258 @@
+{
+  "id": "b368834d-8934-4d3e-a426-6fa70c27f263",
+  "type": "deep_vocabulary_item",
+  "order": 28,
+  "hanzi": "照顾",
+  "pinyin": "zhàogù",
+  "pos": {
+    "raw_vi": "verb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Chiếu cố",
+    "meaning_vi": "chăm sóc; quan tâm chăm nom",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chăm sóc",
+      "quan tâm chăm nom"
+    ],
+    "short_definition_vi": "chăm sóc; quan tâm chăm nom",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "照",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "日",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Nhật",
+          "radical_name_zh": "",
+          "hanviet": "nhật",
+          "meaning_vi": "mặt trời; ngày",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "日",
+            "hanviet": "nhật",
+            "meaning_vi": "mặt trời; ngày",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "日",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Nhật",
+              "radical_name_zh": "",
+              "hanviet": "nhật",
+              "meaning_vi": "mặt trời; ngày",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "灬",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa/nhiệt",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "灬",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa/nhiệt",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chiếu sáng; soi; chăm nom",
+        "modern_logic_vi": "照 có lõi chiếu/soi tới → để ý.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "顾",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": {
+          "radical": "頁",
+          "radical_variant": "页",
+          "radical_name_vi": "bộ Hiệt",
+          "radical_name_zh": "",
+          "hanviet": "hiệt",
+          "meaning_vi": "đầu; trang",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "页",
+            "hanviet": "hiệt",
+            "meaning_vi": "đầu; trang",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "頁",
+              "radical_variant": "页",
+              "radical_name_vi": "bộ Hiệt",
+              "radical_name_zh": "",
+              "hanviet": "hiệt",
+              "meaning_vi": "đầu; trang",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "厄",
+            "hanviet": "ách",
+            "meaning_vi": "thành phần cấu chữ",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "ngoảnh nhìn; quan tâm",
+        "modern_logic_vi": "顾 = ngoảnh nhìn/để ý tới.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "照顾 = chăm sóc; quan tâm chăm nom.",
+    "memory_tip_vi": "",
+    "warning_vi": "Dịch đời thường là chăm sóc/quan tâm/giúp đỡ, không phải lúc nào cũng “chiếu cố”.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "相关词",
+        "pinyin": "",
+        "meaning_vi": "từ liên quan",
+        "difference_vi": "Cần xem theo văn cảnh cụ thể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a52ebf4e-c611-4b32-a603-b2c350b020a1",
+      "order": 1,
+      "zh": "照顾",
+      "pinyin": "",
+      "vi": "chăm sóc; quan tâm chăm nom",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "07c28ac3-34ca-46fa-92f8-256ff8e7c357",
+      "order": 1,
+      "zh": "他每天照顾腿脚不方便的老人。",
+      "pinyin": "Tā měitiān zhàogù tuǐjiǎo bù fāngbiàn de lǎorén.",
+      "vi": "Anh ấy mỗi ngày chăm sóc người già đi lại không tiện.",
+      "analysis_vi": "Dịch đời thường là chăm sóc/quan tâm/giúp đỡ, không phải lúc nào cũng “chiếu cố”.",
+      "level": "basic",
+      "highlight": [
+        "照顾"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "b368834d-8934-4d3e-a426-6fa70c27f263"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "d1442f59-a997-433b-9f4f-c16dba6e962a",
+      "kind": "usage",
+      "text_vi": "Dịch đời thường là chăm sóc/quan tâm/giúp đỡ, không phải lúc nào cũng “chiếu cố”.",
+      "wrong_examples": [],
+      "correct_examples": [],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "照顾",
+    "back": "chăm sóc; quan tâm chăm nom",
+    "hint": "zhàogù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "b368834d-8934-4d3e-a426-6fa70c27f263",
+    "source_lesson_vocab_id": null
+  }
+}

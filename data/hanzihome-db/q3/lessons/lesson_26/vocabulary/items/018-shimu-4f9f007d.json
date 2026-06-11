@@ -1,0 +1,213 @@
+{
+  "id": "a03b794d-7002-4d76-a8ce-bf50d45d92aa",
+  "type": "deep_vocabulary_item",
+  "order": 18,
+  "hanzi": "师母",
+  "pinyin": "shīmǔ",
+  "pos": {
+    "raw_vi": "Danh từ / xưng hô",
+    "raw_cn": "名词 / 称谓",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "B",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_26",
+    "deep_vocab",
+    "liang_zhu"
+  ],
+  "meaning": {
+    "hanviet": "sư mẫu",
+    "meaning_vi": "vợ của thầy / sư phụ",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "vợ của thầy",
+      "sư phụ"
+    ],
+    "short_definition_vi": "vợ của thầy / sư phụ",
+    "textbook_focus_vi": "Dùng trong bài 26 梁山伯与祝英台, ưu tiên đọc theo mạch truyện và ngữ cảnh văn hóa.",
+    "register_vi": "trung tính / văn học theo ngữ cảnh",
+    "usage_domain_vi": "truyện dân gian, tình cảm, hôn nhân truyền thống, miêu tả văn học",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "师",
+        "lishu_vi": "sư",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "师 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "母",
+        "lishu_vi": "mẫu",
+        "structure_note_vi": "Chưa tách bộ thủ chắc chắn trong bản production này; ưu tiên học nghĩa theo cụm.",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "母 được ghi nhận như một thành tố của từ/cụm đang học.",
+        "warning_vi": "Không suy diễn chiết tự nếu chưa kiểm chứng nguồn chữ học.",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "师母 trong bài được học theo nghĩa: vợ của thầy / sư phụ.",
+    "memory_tip_vi": "Nhớ 师母 qua ngữ cảnh 梁山伯与祝英台 và các cụm dùng kèm.",
+    "warning_vi": "Không suy diễn chiết tự nếu chữ giản thể hoặc thành phần chưa được kiểm chứng.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "老师的妻子",
+        "pinyin": "lǎoshī de qīzi",
+        "meaning_vi": "vợ của thầy",
+        "difference_vi": "Cách nói giải thích trung tính.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không gọi mọi phụ nữ lớn tuổi là 师母."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "683916be-eed2-441d-8885-feb66992ee06",
+      "order": 1,
+      "zh": "拜见师母",
+      "pinyin": "",
+      "vi": "bái kiến sư mẫu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c5af0f9b-5d4c-4e25-8050-195450a4c14e",
+      "order": 2,
+      "zh": "问候师母",
+      "pinyin": "",
+      "vi": "hỏi thăm sư mẫu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "32c49610-3766-4d2d-89a5-86217a9c09d3",
+      "order": 3,
+      "zh": "老师和师母",
+      "pinyin": "",
+      "vi": "thầy và sư mẫu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "cb0c3208-c484-4323-a39f-8013c3a5922a",
+      "order": 1,
+      "zh": "老师不在家，师母请我们先坐一会儿。",
+      "pinyin": "",
+      "vi": "Thầy không có nhà, sư mẫu mời chúng tôi ngồi một lát.",
+      "analysis_vi": "师母 là xưng hô theo quan hệ thầy trò.",
+      "highlight": [
+        "师母"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a03b794d-7002-4d76-a8ce-bf50d45d92aa"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "2b050d70-3907-4e99-96f8-00f746b24c9b",
+      "order": 2,
+      "zh": "祝英台拜托师母把手镯转交给梁山伯。",
+      "pinyin": "",
+      "vi": "Chúc Anh Đài nhờ sư mẫu chuyển vòng tay cho Lương Sơn Bá.",
+      "analysis_vi": "拜托 + người + 把 A 转交给 B.",
+      "highlight": [
+        "师母"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "a03b794d-7002-4d76-a8ce-bf50d45d92aa"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Xưng hô kính trọng với vợ của thầy trong quan hệ thầy trò truyền thống.",
+    "tags": [
+      "culture",
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6e9f5139-4691-4be5-9bc7-1e18c1de51b0",
+      "order": 1,
+      "rule_vi": "Không gọi mọi phụ nữ lớn tuổi là 师母.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "师母",
+    "back": "vợ của thầy / sư phụ",
+    "hint": "shīmǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_26"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "a03b794d-7002-4d76-a8ce-bf50d45d92aa",
+    "source_lesson_vocab_id": null
+  }
+}

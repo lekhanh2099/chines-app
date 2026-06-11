@@ -1,0 +1,317 @@
+{
+  "id": "27d1ea3d-c4b1-4872-b8fa-9a05c2cd2a8c",
+  "type": "deep_vocabulary_item",
+  "order": 59,
+  "hanzi": "继续",
+  "pinyin": "jìxù",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Kế tục",
+    "meaning_vi": "tiếp tục",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "tiếp tục"
+    ],
+    "short_definition_vi": "tiếp tục",
+    "textbook_focus_vi": "tiếp tục",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "继",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ, sự nối kết",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ, sự nối kết",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "米",
+            "hanviet": "mễ",
+            "meaning_vi": "gạo/hạt",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "tiếp nối/kế thừa",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "续",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ, sự nối kết",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ, sự nối kết",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "卖",
+            "hanviet": "mại",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "tiếp tục/nối tiếp",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "nối tiếp việc đang làm, không dừng hẳn",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "8a4a66c3-283e-4962-8847-b32a226ea882",
+      "order": 1,
+      "zh": "继续学习",
+      "pinyin": "",
+      "vi": "tiếp tục học",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1690f1bf-73ba-4ce6-a0b8-3baa68bfde51",
+      "order": 2,
+      "zh": "继续工作",
+      "pinyin": "",
+      "vi": "tiếp tục làm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "48353e81-fe27-4d02-985f-a4bb1d3c5734",
+      "order": 3,
+      "zh": "继续走",
+      "pinyin": "",
+      "vi": "tiếp tục đi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5d6a15b4-ce70-4455-a637-c4cea8604d3b",
+      "order": 4,
+      "zh": "继续努力",
+      "pinyin": "",
+      "vi": "tiếp tục cố gắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "90fa6605-5f5f-4d6a-ad33-ba88893ee895",
+      "order": 5,
+      "zh": "不能继续",
+      "pinyin": "",
+      "vi": "không thể tiếp tục",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "e4bfa989-f5ab-4400-9110-1dbf06ddf67f",
+      "order": 1,
+      "zh": "我们明天继续学习第二十一课。",
+      "pinyin": "Wǒmen míngtiān jìxù xuéxí dì èrshíyī kè.",
+      "vi": "Ngày mai chúng ta tiếp tục học bài 21.",
+      "analysis_vi": "继续 + động từ là cấu trúc cơ bản.",
+      "highlight": [
+        "继续"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "27d1ea3d-c4b1-4872-b8fa-9a05c2cd2a8c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "a22f87a7-a324-4e4d-8865-a9545aee787c",
+      "order": 2,
+      "zh": "如果不了解继续，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě jìxù, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 继续, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "继续"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "27d1ea3d-c4b1-4872-b8fa-9a05c2cd2a8c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "14988849-bbcf-40fb-a765-8511206f86cb",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解继续在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě jìxù zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 继续 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "继续"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "27d1ea3d-c4b1-4872-b8fa-9a05c2cd2a8c"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "继续努力 là câu động viên phổ biến, nhưng 南辕北辙 nhắc phải sửa hướng nếu hướng sai.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "613fdac9-4dd6-4058-aa34-4fa8876fdbd0",
+      "order": 1,
+      "rule_vi": "Không nhầm 继续 với 再; 继续 là tiếp tục việc đang làm, 再 là lại/thêm một lần。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "继续",
+    "back": "tiếp tục",
+    "hint": "jìxù",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "27d1ea3d-c4b1-4872-b8fa-9a05c2cd2a8c",
+    "source_lesson_vocab_id": null
+  }
+}

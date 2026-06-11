@@ -1,0 +1,273 @@
+{
+  "id": "45bac77b-7b98-40fe-ae03-cc5cd3da4051",
+  "type": "deep_vocabulary_item",
+  "order": 20,
+  "hanzi": "往事",
+  "pinyin": "wǎngshì",
+  "pos": {
+    "raw_vi": "Danh từ",
+    "raw_cn": "名词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_15",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "vãng sự",
+    "meaning_vi": "chuyện cũ; việc đã qua",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "chuyện cũ",
+      "việc đã qua"
+    ],
+    "short_definition_vi": "chuyện cũ; việc đã qua",
+    "textbook_focus_vi": "Dùng trong Bài 15 受伤以后 theo nội dung đã soạn trong thread.",
+    "register_vi": "",
+    "usage_domain_vi": "Kể trải nghiệm bị thương, bệnh viện, chăm sóc, nhận xét con người và lòng biết ơn.",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "往",
+        "lishu_vi": "",
+        "structure_note_vi": "往: trước kia",
+        "components": [
+          {
+            "text": "彳",
+            "hanviet": "xích",
+            "meaning_vi": "bước đi",
+            "position_vi": "thành phần nhìn thấy",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "彳",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Xích",
+              "radical_name_zh": "",
+              "hanviet": "xích",
+              "meaning_vi": "bước đi",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "彳 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "彳 chỉ gắn với chữ hiện tại, không copy sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trước kia",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: trước kia.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "彳",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Xích",
+          "radical_name_zh": "",
+          "hanviet": "xích",
+          "meaning_vi": "bước đi",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "彳 được parse như bộ/thành phần bộ thủ riêng cho chữ hiện tại.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "事",
+        "lishu_vi": "",
+        "structure_note_vi": "事: chuyện",
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "chuyện",
+        "modern_logic_vi": "Học theo nghĩa hiện đại trong từ/cụm: chuyện.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "往事 được phân tích theo nghĩa hiện đại và cụm dùng trong bài, không ép chiết tự khi không chắc.",
+    "memory_tip_vi": "Nhớ qua cụm: 难忘的往事.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "458d40d2-4f55-4a36-8c3f-536f9eba1a15",
+      "order": 1,
+      "zh": "难忘的往事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f69e28ad-c023-4361-9a50-abd6680ed21f",
+      "order": 2,
+      "zh": "回忆往事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f795ef1f-30f7-4e86-a4cf-c84fa3178db7",
+      "order": 3,
+      "zh": "想起往事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c932217d-e5a5-48b9-838c-53d2fd42cc20",
+      "order": 4,
+      "zh": "一段往事",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "5ced98fd-35a6-4acc-baf4-af74f7768618",
+      "order": 1,
+      "zh": "每当我想起这件往事，心里都很感动。",
+      "pinyin": "",
+      "vi": "Mỗi khi nhớ lại chuyện cũ này, trong lòng tôi đều rất cảm động。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "往事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45bac77b-7b98-40fe-ae03-cc5cd3da4051"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "0a9d91cb-56c3-4444-8b24-494bee2a13c5",
+      "order": 2,
+      "zh": "这段往事一直留在我的记忆里。",
+      "pinyin": "",
+      "vi": "Chuyện cũ ấy vẫn luôn lưu lại trong ký ức của tôi。",
+      "analysis_vi": "Ví dụ tự nhiên, bám văn cảnh Bài 15 và nội dung đã soạn.",
+      "highlight": [
+        "往事"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "45bac77b-7b98-40fe-ae03-cc5cd3da4051"
+      ],
+      "source_ref": "lesson15_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ / usage note",
+    "content_vi": "Nên học từ/cụm này theo văn cảnh Bài 15: bị thương, được giúp đỡ, ở bệnh viện và bày tỏ lòng biết ơn.",
+    "tags": [
+      "usage",
+      "lesson_context"
+    ],
+    "source_refs": [
+      "lesson15_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8b9026a9-785d-41d8-931f-1d7e57691661",
+      "order": 1,
+      "rule_vi": "Không cần nói 过去的往事 vì 往事 đã có nghĩa chuyện đã qua。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "Không cần nói 过去的往事 vì 往事 đã có nghĩa chuyện đã qua。",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "往事",
+    "back": "chuyện cũ; việc đã qua",
+    "hint": "wǎngshì",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_15",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "45bac77b-7b98-40fe-ae03-cc5cd3da4051",
+    "source_lesson_vocab_id": null
+  }
+}

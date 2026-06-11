@@ -1,0 +1,265 @@
+{
+  "id": "7e3d970b-4ff1-44d6-bdaa-59a7e12ea9d6",
+  "type": "deep_vocabulary_item",
+  "order": 47,
+  "hanzi": "苦",
+  "pinyin": "kǔ",
+  "pos": {
+    "raw_vi": "Tính từ / Danh từ",
+    "raw_cn": "形/名",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Khổ",
+    "meaning_vi": "đắng; khổ cực",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đắng; khổ cực"
+    ],
+    "short_definition_vi": "đắng; khổ cực",
+    "textbook_focus_vi": "đắng; khổ cực",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "苦",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "古",
+            "hanviet": "cổ",
+            "meaning_vi": "",
+            "position_vi": "dưới",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đắng/khổ",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "vị đắng mở rộng thành khổ cực",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "5c9ae5dc-199e-46bc-9c44-3aea445b6935",
+      "order": 1,
+      "zh": "很苦",
+      "pinyin": "",
+      "vi": "rất đắng/khổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "0b4e3f75-d43c-4458-b7d0-4772bd946201",
+      "order": 2,
+      "zh": "苦味",
+      "pinyin": "",
+      "vi": "vị đắng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "55dbfec7-c7a8-4174-93cb-82609f79cae6",
+      "order": 3,
+      "zh": "吃苦",
+      "pinyin": "",
+      "vi": "chịu khổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ffd65590-79af-4757-b926-76f69a212b87",
+      "order": 4,
+      "zh": "辛苦",
+      "pinyin": "",
+      "vi": "vất vả",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5855005b-065c-4065-9fb2-614807d8b1d4",
+      "order": 5,
+      "zh": "痛苦",
+      "pinyin": "",
+      "vi": "đau khổ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "218c4437-d219-414c-b3cc-17314d7c20d7",
+      "order": 1,
+      "zh": "这个药很苦。",
+      "pinyin": "Zhège yào hěn kǔ.",
+      "vi": "Thuốc này rất đắng.",
+      "analysis_vi": "苦 là vị giác cơ bản.",
+      "highlight": [
+        "苦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7e3d970b-4ff1-44d6-bdaa-59a7e12ea9d6"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "6e554a77-3d53-4543-8dc6-cf6fb4c5063a",
+      "order": 2,
+      "zh": "如果不了解苦，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě kǔ, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 苦, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "苦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7e3d970b-4ff1-44d6-bdaa-59a7e12ea9d6"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "f0e9d344-602a-41e9-b93a-466cb2d00401",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解苦在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě kǔ zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 苦 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "苦"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "7e3d970b-4ff1-44d6-bdaa-59a7e12ea9d6"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "吃苦 phản ánh văn hóa coi trọng chịu khó, nhưng không nên hiểu là chịu khổ mù quáng.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "6d1ef86f-9c49-45e1-98aa-ddc1488c8487",
+      "order": 1,
+      "rule_vi": "苦 không chỉ là khổ; 咖啡有点儿苦 là cà phê hơi đắng。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "苦",
+    "back": "đắng; khổ cực",
+    "hint": "kǔ",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "7e3d970b-4ff1-44d6-bdaa-59a7e12ea9d6",
+    "source_lesson_vocab_id": null
+  }
+}

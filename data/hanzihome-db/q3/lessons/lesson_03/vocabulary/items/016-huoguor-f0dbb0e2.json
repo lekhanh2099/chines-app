@@ -1,0 +1,417 @@
+{
+  "id": "fa366a45-c716-438f-bd6f-e05f63ea637e",
+  "type": "deep_vocabulary_item",
+  "order": 16,
+  "hanzi": "火锅儿",
+  "pinyin": "huǒguōr",
+  "pos": {
+    "raw_vi": "noun",
+    "raw_cn": "",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "food",
+    "beijing"
+  ],
+  "meaning": {
+    "hanviet": "hỏa oa nhi",
+    "meaning_vi": "lẩu; nồi lẩu, cách nói nhi hóa miền Bắc",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lẩu",
+      "nồi lẩu",
+      "cách nói nhi hóa miền Bắc"
+    ],
+    "short_definition_vi": "lẩu; nồi lẩu, cách nói nhi hóa miền Bắc",
+    "textbook_focus_vi": "lẩu; nồi lẩu, cách nói nhi hóa miền Bắc",
+    "register_vi": "Giáo trình/đời sống tùy từ; ưu tiên nghĩa trong bài.",
+    "usage_domain_vi": "food, beijing",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "火",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "火",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Hỏa",
+          "radical_name_zh": "",
+          "hanviet": "hỏa",
+          "meaning_vi": "lửa, nhiệt",
+          "form": "main",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "火",
+            "hanviet": "hỏa",
+            "meaning_vi": "lửa, nhiệt",
+            "position_vi": "toàn chữ",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "火",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Hỏa",
+              "radical_name_zh": "",
+              "hanviet": "hỏa",
+              "meaning_vi": "lửa, nhiệt",
+              "form": "main",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lửa, nóng",
+        "modern_logic_vi": "Trong từ này, 火 góp phần vào lớp nghĩa hiện đại: lửa, nóng",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "锅",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "main_radical": {
+          "radical": "金",
+          "radical_variant": "钅",
+          "radical_name_vi": "bộ Kim",
+          "radical_name_zh": "",
+          "hanviet": "kim",
+          "meaning_vi": "kim loại",
+          "form": "simplified",
+          "notes": [],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "钅",
+            "hanviet": "kim",
+            "meaning_vi": "kim loại",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "金",
+              "radical_variant": "钅",
+              "radical_name_vi": "bộ Kim",
+              "radical_name_zh": "",
+              "hanviet": "kim",
+              "meaning_vi": "kim loại",
+              "form": "simplified",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "呙",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nồi",
+        "modern_logic_vi": "Trong từ này, 锅 góp phần vào lớp nghĩa hiện đại: nồi",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "儿",
+        "lishu_vi": "",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không kéo sâu khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "儿",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "toàn chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhi hóa/đứa trẻ tùy cụm",
+        "modern_logic_vi": "Trong từ này, 儿 góp phần vào lớp nghĩa hiện đại: nhi hóa/đứa trẻ tùy cụm",
+        "warning_vi": "Không ép nghĩa hiện đại chỉ từ bộ thủ/thành phần nhìn thấy.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "火 = lửa/nhiệt; 锅 = nồi; 儿 trong 火锅儿 là nhi hóa. 火锅儿 = món lẩu/nồi lẩu.",
+    "memory_tip_vi": "",
+    "warning_vi": "锅 là nồi; 火锅 mới là lẩu. Không phải món nào nấu trong nồi cũng gọi 火锅.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "火锅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "涮羊肉",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "麻辣火锅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "鸳鸯锅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "锅",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "6bd06428-aaac-4a66-9abe-d07a7e3a83a8",
+      "order": 1,
+      "zh": "吃火锅儿",
+      "pinyin": "",
+      "vi": "ăn lẩu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "44592a01-e4c0-4c91-8e1e-43c5a3f2327b",
+      "order": 2,
+      "zh": "涮火锅儿",
+      "pinyin": "",
+      "vi": "nhúng lẩu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9efe9a65-a764-462d-b220-b3ca0bdb0c17",
+      "order": 3,
+      "zh": "一顿火锅儿",
+      "pinyin": "",
+      "vi": "một bữa lẩu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "6add818f-bcea-4574-8388-faed057c3479",
+      "order": 4,
+      "zh": "北京火锅儿",
+      "pinyin": "",
+      "vi": "lẩu Bắc Kinh",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3fffd382-d4ad-420b-a806-2bcc0a793213",
+      "order": 5,
+      "zh": "火锅店",
+      "pinyin": "",
+      "vi": "quán lẩu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "46d713c9-9d09-49de-9dd0-da75bd6e4e74",
+      "order": 6,
+      "zh": "围着火锅儿坐",
+      "pinyin": "",
+      "vi": "ngồi quây quanh nồi lẩu",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "baccabe9-fde4-4de3-a609-f5a3f2e43f18",
+      "order": 1,
+      "zh": "冬天，我们常常一起吃火锅儿。",
+      "pinyin": "",
+      "vi": "Mùa đông, chúng tôi thường cùng nhau ăn lẩu.",
+      "analysis_vi": "吃火锅儿 là collocation tự nhiên.",
+      "highlight": [
+        "火锅儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa366a45-c716-438f-bd6f-e05f63ea637e"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "34c2be88-b0e9-45f4-b08f-0fe9aed904f0",
+      "order": 2,
+      "zh": "天气一冷，火锅店里就坐满了人。",
+      "pinyin": "",
+      "vi": "Trời vừa lạnh, quán lẩu đầy người ngồi.",
+      "analysis_vi": "一冷……就…….",
+      "highlight": [
+        "火锅儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa366a45-c716-438f-bd6f-e05f63ea637e"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "3b67d190-8a09-4028-bfdc-cba19bc198bf",
+      "order": 3,
+      "zh": "大家围着火锅儿坐，一边吃一边聊天。",
+      "pinyin": "",
+      "vi": "Mọi người quây quanh nồi lẩu, vừa ăn vừa trò chuyện.",
+      "analysis_vi": "围着 + O + V; 一边……一边…….",
+      "highlight": [
+        "火锅儿"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "fa366a45-c716-438f-bd6f-e05f63ea637e"
+      ],
+      "source_ref": "manual_thread_vocab",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "火锅儿 trong Bài 3 北京的四季",
+    "content_vi": "Bắc Kinh nổi bật với 涮羊肉; bài dùng 火锅儿 để gợi không khí mùa đông.",
+    "tags": [
+      "food",
+      "beijing"
+    ],
+    "source_refs": [
+      "manual_thread_vocab"
+    ],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "3a203fa5-f55b-4d7a-a956-9c501831ed00",
+      "order": 1,
+      "rule_vi": "锅 là nồi; 火锅 mới là lẩu. Không phải món nào nấu trong nồi cũng gọi 火锅.",
+      "natural_examples": [
+        {
+          "zh": "冬天，我们常常一起吃火锅儿。",
+          "pinyin": "",
+          "vi": "Mùa đông, chúng tôi thường cùng nhau ăn lẩu.",
+          "note_vi": "Ví dụ dùng an toàn trong ngữ cảnh bài.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "锅 là nồi; 火锅 mới là lẩu. Không phải món nào nấu trong nồi cũng gọi 火锅.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "火锅儿",
+    "back": "lẩu; nồi lẩu, cách nói nhi hóa miền Bắc",
+    "hint": "huǒguōr",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "food",
+      "beijing"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "fa366a45-c716-438f-bd6f-e05f63ea637e",
+    "source_lesson_vocab_id": null
+  }
+}

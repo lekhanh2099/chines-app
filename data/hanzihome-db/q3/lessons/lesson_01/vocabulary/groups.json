@@ -1,0 +1,122 @@
+[
+  {
+    "id": "87bca7cb-2957-47cf-9d32-4e403ecabf1b",
+    "order": 1,
+    "title_vi": "Nguyện vọng / kết quả / dự đoán",
+    "words": [
+      "愿望",
+      "终于",
+      "实现",
+      "因此",
+      "果然"
+    ],
+    "notes": []
+  },
+  {
+    "id": "aea318ea-609b-49f6-bbbf-fd9d41a9436e",
+    "order": 2,
+    "title_vi": "Liên hệ / giấu giếm / nói thật / thái độ",
+    "words": [
+      "联系",
+      "瞒",
+      "实话",
+      "对于",
+      "说实话",
+      "说心里话",
+      "说真的"
+    ],
+    "notes": []
+  },
+  {
+    "id": "4b7ec470-0d95-4292-b4ca-bd3db89d74fd",
+    "order": 3,
+    "title_vi": "Gia đình / xa nhà / cảm xúc chia ly",
+    "words": [
+      "独生女",
+      "离别",
+      "想念",
+      "放心",
+      "异国他乡",
+      "孤独",
+      "后悔"
+    ],
+    "notes": []
+  },
+  {
+    "id": "4fb102cd-0e3d-4ae0-8d59-9da76d06ccbd",
+    "order": 4,
+    "title_vi": "Đời sống du học / tương lai / thay đổi",
+    "words": [
+      "国外",
+      "今后",
+      "事情",
+      "改变",
+      "想法",
+      "情况",
+      "考虑",
+      "鼓励"
+    ],
+    "notes": []
+  },
+  {
+    "id": "da184e72-8809-45b6-85a3-9edc22da4c73",
+    "order": 5,
+    "title_vi": "Hành động lúc chia tay / tiễn biệt",
+    "words": [
+      "临",
+      "拼命",
+      "塞",
+      "望",
+      "挥",
+      "眼泪",
+      "恋恋不舍",
+      "嘱咐",
+      "表达"
+    ],
+    "notes": []
+  },
+  {
+    "id": "ba799170-99ef-4e53-8964-70660e3f1e88",
+    "order": 6,
+    "title_vi": "Tính chất / trạng thái / cảm xúc",
+    "words": [
+      "多半",
+      "古老",
+      "而",
+      "鸟",
+      "独立",
+      "自在",
+      "逗",
+      "哈哈大笑"
+    ],
+    "notes": []
+  },
+  {
+    "id": "3bf0d2a8-629f-42d9-be08-ada3c33188dc",
+    "order": 7,
+    "title_vi": "Vật / hành động bổ sung",
+    "words": [
+      "视频",
+      "戒指",
+      "刻",
+      "分别",
+      "落下"
+    ],
+    "notes": []
+  },
+  {
+    "id": "802f6c82-62a2-49dd-8522-e388385e2e40",
+    "order": 8,
+    "title_vi": "Văn học / đọc thêm",
+    "words": [
+      "游子吟",
+      "孟郊",
+      "慈母",
+      "游子",
+      "临行",
+      "寸草心",
+      "三春晖"
+    ],
+    "notes": []
+  }
+]

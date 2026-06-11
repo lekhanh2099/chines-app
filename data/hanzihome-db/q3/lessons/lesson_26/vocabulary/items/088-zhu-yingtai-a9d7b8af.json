@@ -1,0 +1,30 @@
+{
+  "id": "synthetic_vocab_4b38928d5f051fd8",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "祝英台",
+  "pinyin": "Zhù Yīngtái",
+  "meaning_vi": "Chúc Anh Đài",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+    "type": "proper_noun",
+    "order": 2,
+    "hanzi": "祝英台",
+    "pinyin": "Zhù Yīngtái",
+    "meaning_vi": "Chúc Anh Đài",
+    "meaning_en": "Zhu Yingtai",
+    "source_origin": "textbook",
+    "page_start": 217,
+    "page_end": 217,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

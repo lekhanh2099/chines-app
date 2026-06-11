@@ -1,0 +1,295 @@
+{
+  "id": "22ab7029-25db-4f7e-be77-8b2382f09f64",
+  "type": "deep_vocabulary_item",
+  "order": 29,
+  "hanzi": "满",
+  "pinyin": "mǎn",
+  "pos": {
+    "raw_vi": "Tính từ / Động từ / Bổ ngữ kết quả",
+    "raw_cn": "形/动/补",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Mãn",
+    "meaning_vi": "đầy; đủ; hài lòng",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "đầy; đủ; hài lòng"
+    ],
+    "short_definition_vi": "đầy; đủ; hài lòng",
+    "textbook_focus_vi": "đầy; đủ; hài lòng",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "满",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "components": [
+          {
+            "text": "氵",
+            "hanviet": "thủy",
+            "meaning_vi": "nước/chất lỏng",
+            "position_vi": "bên trái",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "氵 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "水",
+              "radical_variant": "氵",
+              "radical_name_vi": "bộ Thủy",
+              "radical_name_zh": "",
+              "hanviet": "thủy",
+              "meaning_vi": "nước/chất lỏng",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "艹",
+            "hanviet": "thảo",
+            "meaning_vi": "cỏ cây",
+            "position_vi": "bên trên",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "艹 được ghi như bộ thủ/biến thể bộ thủ trong chữ này.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "艸",
+              "radical_variant": "艹",
+              "radical_name_vi": "bộ Thảo",
+              "radical_name_zh": "",
+              "hanviet": "thảo",
+              "meaning_vi": "cỏ cây",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "两",
+            "hanviet": "lưỡng",
+            "meaning_vi": "hai",
+            "position_vi": "bên phải",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "modern_meaning_vi": "đầy/kín",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "đầy/kín/đủ mức",
+    "memory_tip_vi": "",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "88f8d989-ba06-4cbc-b0e5-ef32fcc1a6da",
+      "order": 1,
+      "zh": "坐满了",
+      "pinyin": "",
+      "vi": "ngồi kín rồi",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fc27ecb2-4b8e-4a69-9fe9-10df9540b5f7",
+      "order": 2,
+      "zh": "客满",
+      "pinyin": "",
+      "vi": "hết chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "093f250e-8b09-41dd-bcdf-51fad5b3956c",
+      "order": 3,
+      "zh": "满座",
+      "pinyin": "",
+      "vi": "kín chỗ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "3cb3b7c1-5f52-4176-9ec1-470917f7652d",
+      "order": 4,
+      "zh": "满满的",
+      "pinyin": "",
+      "vi": "đầy ắp",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "82807153-eeb2-4ebc-8c5c-4d3263fc0ff5",
+      "order": 5,
+      "zh": "写满",
+      "pinyin": "",
+      "vi": "viết kín",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "9bc17651-4065-4a60-95ad-d21e196017d8",
+      "order": 1,
+      "zh": "剧场里坐满了观众。",
+      "pinyin": "Jùchǎng lǐ zuò mǎn le guānzhòng.",
+      "vi": "Trong nhà hát ngồi kín khán giả.",
+      "analysis_vi": "满 làm bổ ngữ kết quả.",
+      "highlight": [
+        "满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "22ab7029-25db-4f7e-be77-8b2382f09f64"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "5a41a976-d078-4994-91af-29815aac1196",
+      "order": 2,
+      "zh": "如果不了解满，就可能看不懂这课的内容。",
+      "pinyin": "Rúguǒ bù liǎojiě mǎn, jiù kěnéng kàn bù dǒng zhè kè de nèiróng.",
+      "vi": "Nếu không hiểu 满, có thể sẽ không hiểu nội dung bài này.",
+      "analysis_vi": "看不懂 là bổ ngữ khả năng phủ định.",
+      "highlight": [
+        "满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "22ab7029-25db-4f7e-be77-8b2382f09f64"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "expanded",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c36cdbf0-691d-4791-bdd3-a85acb0fe259",
+      "order": 3,
+      "zh": "只要先看节目单，就能大概了解满在故事里的意思。",
+      "pinyin": "Zhǐyào xiān kàn jiémùdān, jiù néng dàgài liǎojiě mǎn zài gùshi lǐ de yìsi.",
+      "vi": "Chỉ cần xem tờ chương trình trước, có thể hiểu đại khái ý nghĩa của 满 trong câu chuyện.",
+      "analysis_vi": "只要……就…… nêu điều kiện đủ.",
+      "highlight": [
+        "满"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "22ab7029-25db-4f7e-be77-8b2382f09f64"
+      ],
+      "source_ref": "manual_thread_b21",
+      "level": "complex",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "客满/满座 trong nhà hàng, khách sạn, rạp hát nghĩa là hết chỗ/kín chỗ.",
+    "tags": [],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "8efe06dd-8583-4eed-8bbb-851b7b9fcbaf",
+      "order": 1,
+      "rule_vi": "Vé bán hết là 票卖完了/没票了, không nói 票满了。",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "满",
+    "back": "đầy; đủ; hài lòng",
+    "hint": "mǎn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson21"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "22ab7029-25db-4f7e-be77-8b2382f09f64",
+    "source_lesson_vocab_id": null
+  }
+}

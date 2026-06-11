@@ -1,0 +1,59 @@
+{
+  "id": "synthetic_vocab_fdec464a6f28f34f",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "解释",
+  "pinyin": "jiěshì",
+  "meaning_vi": "giải thích",
+  "pos": "Động từ",
+  "pos_detail": {
+    "vi": "Động từ",
+    "cn": "动词",
+    "normalized": "verb",
+    "schema_compatible_pos": "verb",
+    "is_separable_verb": false,
+    "notes": []
+  },
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "bd64cee7-c7f4-495b-a82a-defdb8acd0f7",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "bd64cee7-c7f4-495b-a82a-defdb8acd0f7",
+    "type": "vocabulary_item",
+    "order": 42,
+    "hanzi": "解释",
+    "pinyin": "jiěshì",
+    "meaning_vi": "giải thích",
+    "meaning_en": "",
+    "pos": "Động từ",
+    "pos_detail": {
+      "vi": "Động từ",
+      "cn": "动词",
+      "normalized": "verb",
+      "schema_compatible_pos": "verb",
+      "is_separable_verb": false,
+      "notes": []
+    },
+    "tags": [
+      "main_vocab"
+    ],
+    "examples": [],
+    "flashcard": {
+      "front": "解释",
+      "back": "jiěshì — giải thích",
+      "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+      ]
+    },
+    "audio_key": "",
+    "source_origin": "textbook_pdf_crosschecked",
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

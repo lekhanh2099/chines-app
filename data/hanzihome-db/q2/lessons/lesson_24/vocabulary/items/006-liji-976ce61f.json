@@ -1,0 +1,278 @@
+{
+  "id": "da5c0a86-2017-4582-9ebd-c2538d183943",
+  "type": "deep_vocabulary_item",
+  "order": 6,
+  "hanzi": "立即",
+  "pinyin": "lìjí",
+  "pos": {
+    "raw_vi": "adverb",
+    "raw_cn": "",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A",
+  "tags": [
+    "hanyu2",
+    "lesson_24",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "Lập tức",
+    "meaning_vi": "lập tức; ngay",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "lập tức",
+      "ngay"
+    ],
+    "short_definition_vi": "lập tức; ngay",
+    "textbook_focus_vi": "Bài 24: 有困难找警察",
+    "register_vi": "",
+    "usage_domain_vi": "",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "立",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "đứng; lập; ngay",
+        "modern_logic_vi": "Gợi ý đứng lên/lập ngay tại chỗ → tức thời.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      },
+      {
+        "hanzi": "即",
+        "lishu_vi": "",
+        "structure_note_vi": "",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "tức là; liền; ngay",
+        "modern_logic_vi": "Trong từ hiện đại thường mang ý ngay/tức thì.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": true
+      }
+    ],
+    "word_logic_vi": "立即 = lập tức; ngay.",
+    "memory_tip_vi": "",
+    "warning_vi": "Dùng 立即 cho chuyện quá đời thường nghe hơi cứng.",
+    "notes": [],
+    "check_needed": true
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "马上",
+        "pinyin": "",
+        "meaning_vi": "ngay",
+        "difference_vi": "Khẩu ngữ hơn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "立刻",
+        "pinyin": "",
+        "meaning_vi": "lập tức",
+        "difference_vi": "Gần 立即.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "赶快",
+        "pinyin": "",
+        "meaning_vi": "mau lên",
+        "difference_vi": "Thường thúc giục.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "急忙",
+        "pinyin": "",
+        "meaning_vi": "vội vàng",
+        "difference_vi": "Nhấn trạng thái vội.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "a638063f-4a90-4bbb-9a45-da831a1e5f91",
+      "order": 1,
+      "zh": "立即处理",
+      "pinyin": "",
+      "vi": "xử lý ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e241ca14-0943-486e-af4e-202f9d9b5007",
+      "order": 2,
+      "zh": "立即离开",
+      "pinyin": "",
+      "vi": "rời đi ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ad78dae0-711f-41ac-be2a-6aea6f5c6eb5",
+      "order": 3,
+      "zh": "立即停止",
+      "pinyin": "",
+      "vi": "dừng ngay",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e8cf8702-19cf-40ce-8e5c-a1fc534ea9df",
+      "order": 4,
+      "zh": "立即报告老师",
+      "pinyin": "",
+      "vi": "báo ngay cho giáo viên",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "8409eab1-64fa-4ae6-98cb-0243c8748e41",
+      "order": 5,
+      "zh": "立即采取行动",
+      "pinyin": "",
+      "vi": "lập tức hành động",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "61b01e58-b692-41bb-aaee-397172873cd4",
+      "order": 1,
+      "zh": "看到老人摔倒了，他立即跑过去扶。",
+      "pinyin": "Kàndào lǎorén shuāidǎo le, tā lìjí pǎo guòqu fú.",
+      "vi": "Thấy cụ già ngã, anh ấy lập tức chạy qua đỡ.",
+      "analysis_vi": "立即 nhấn phản ứng nhanh.",
+      "level": "basic",
+      "highlight": [
+        "立即"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "da5c0a86-2017-4582-9ebd-c2538d183943"
+      ],
+      "notes": []
+    },
+    {
+      "id": "28779b05-2678-4cd7-8d07-bf6b7e53d9e9",
+      "order": 2,
+      "zh": "如果发生危险，请立即告诉警察。",
+      "pinyin": "Rúguǒ fāshēng wēixiǎn, qǐng lìjí gàosu jǐngchá.",
+      "vi": "Nếu xảy ra nguy hiểm, xin lập tức báo cảnh sát.",
+      "analysis_vi": "请立即… hợp thông báo an toàn.",
+      "level": "expanded",
+      "highlight": [
+        "立即"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "da5c0a86-2017-4582-9ebd-c2538d183943"
+      ],
+      "notes": []
+    },
+    {
+      "id": "f9173e15-4392-44f0-bba6-e3969d9094ec",
+      "order": 3,
+      "zh": "孩子找不到妈妈，旁边的阿姨立即把他带到服务台。",
+      "pinyin": "Háizi zhǎo bú dào māma, pángbiān de āyí lìjí bǎ tā dài dào fúwùtái.",
+      "vi": "Đứa trẻ không tìm thấy mẹ, cô bên cạnh lập tức đưa em đến quầy dịch vụ.",
+      "analysis_vi": "Ôn 把 + 带到.",
+      "level": "complex",
+      "highlight": [
+        "立即"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "da5c0a86-2017-4582-9ebd-c2538d183943"
+      ],
+      "notes": []
+    }
+  ],
+  "culture_note": {
+    "text_vi": "Thông báo an toàn hay dùng 立即 vì tạo cảm giác khẩn cấp.",
+    "text_zh": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "2ed8d9f5-f68a-4329-8940-aab47b2777c8",
+      "kind": "usage",
+      "text_vi": "Dùng 立即 cho chuyện quá đời thường nghe hơi cứng.",
+      "wrong_examples": [
+        "我立即去吃饭。"
+      ],
+      "correct_examples": [
+        "我马上去吃饭。"
+      ],
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "flashcard": {
+    "front": "立即",
+    "back": "lập tức; ngay",
+    "hint": "lìjí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu2",
+      "lesson_24",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": true,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "da5c0a86-2017-4582-9ebd-c2538d183943",
+    "source_lesson_vocab_id": null
+  }
+}

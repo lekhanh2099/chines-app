@@ -1,0 +1,270 @@
+{
+  "id": "e569397b-e393-4caf-ac28-63a4104b8618",
+  "type": "deep_vocabulary_item",
+  "order": 44,
+  "hanzi": "拔",
+  "pinyin": "bá",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动词",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "lesson_09",
+    "hanyu_3_1",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "bạt",
+    "meaning_vi": "nhổ, rút, kéo ra; chọn ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "nhổ, rút, kéo ra",
+      "chọn ra"
+    ],
+    "short_definition_vi": "nhổ, rút, kéo ra",
+    "textbook_focus_vi": "Bám Bài 9 幸福的感觉: hạnh phúc, giá trị sống, gia đình, điều kiện sống, từ thiện hoặc bài đọc bổ sung.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, xã hội, giáo dục, nghị luận",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "拔",
+        "lishu_vi": "bạt",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy; không ép nghĩa khảo cổ nếu không chắc.",
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nhổ, rút",
+        "modern_logic_vi": "",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "拔 thường là dùng tay kéo/rút vật ra khỏi vị trí cũ.",
+    "memory_tip_vi": "Nhớ 拔草, 拔牙, 拔苗.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拉",
+        "pinyin": "",
+        "meaning_vi": "拉",
+        "difference_vi": "拉 là kéo nói chung; 拔 là nhổ/rút khỏi chỗ cắm/gắn.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "插",
+        "pinyin": "",
+        "meaning_vi": "插",
+        "difference_vi": "cắm vào",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "3aec4abd-7353-4fd4-bb16-52fe0d8594c2",
+      "order": 1,
+      "zh": "拔草",
+      "pinyin": "bá cǎo",
+      "vi": "nhổ cỏ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "97fa6e27-4c60-4964-aba0-5e3f813f53b0",
+      "order": 2,
+      "zh": "拔牙",
+      "pinyin": "bá yá",
+      "vi": "nhổ răng",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "80388523-ac2e-4a91-89d8-f58c3ddc020a",
+      "order": 3,
+      "zh": "拔苗",
+      "pinyin": "bá miáo",
+      "vi": "nhổ cây mạ",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "07911983-fe9e-4bff-8596-47dfd9016ef3",
+      "order": 4,
+      "zh": "拔出来",
+      "pinyin": "bá chūlai",
+      "vi": "rút ra",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "34b46ab5-f3dd-4c12-80f0-2990e06b293c",
+      "order": 1,
+      "zh": "他在田里拔草。",
+      "pinyin": "Tā zài tián lǐ bá cǎo.",
+      "vi": "Anh ấy đang nhổ cỏ trong ruộng.",
+      "analysis_vi": "拔草 vì cỏ mọc dính vào đất.",
+      "highlight": [
+        "拔"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e569397b-e393-4caf-ac28-63a4104b8618"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "82bfae48-63fe-4498-95a0-714788cc5f62",
+      "order": 2,
+      "zh": "他以为把苗往上拔一点，苗就会长得快一点。",
+      "pinyin": "Tā yǐwéi bǎ miáo wǎng shàng bá yìdiǎn, miáo jiù huì zhǎng de kuài yìdiǎn.",
+      "vi": "Anh ta tưởng nhổ mạ lên một chút thì mạ sẽ lớn nhanh hơn.",
+      "analysis_vi": "以为 thể hiện nhận thức sai.",
+      "highlight": [
+        "拔"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "e569397b-e393-4caf-ac28-63a4104b8618"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "拔 trong 拔苗助长 tượng trưng cho can thiệp thô bạo vào phát triển tự nhiên.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "c3491f44-c379-42ed-9b39-69896b2dd182",
+      "order": 1,
+      "rule_vi": "Không nhầm 拔 với 摘.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [
+        {
+          "zh": "拔花",
+          "pinyin": "bá huā",
+          "vi": "Nếu muốn nói hái hoa thì sai/gượng; thường hiểu là nhổ cả cây hoa.",
+          "note_vi": "拔 là nhổ/rút cả vật khỏi chỗ bám.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "摘花",
+          "pinyin": "zhāi huā",
+          "vi": "hái hoa",
+          "note_vi": "摘 đúng cho hái/ngắt hoa.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "拔",
+    "back": "nhổ, rút, kéo ra; chọn ra",
+    "hint": "bá",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "lesson_09",
+      "hanyu_3_1"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "e569397b-e393-4caf-ac28-63a4104b8618",
+    "source_lesson_vocab_id": null
+  }
+}

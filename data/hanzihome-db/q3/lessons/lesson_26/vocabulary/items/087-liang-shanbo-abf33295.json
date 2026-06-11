@@ -1,0 +1,30 @@
+{
+  "id": "synthetic_vocab_0f76dfa93f88dfa0",
+  "type": "materialized_vocabulary_item",
+  "hanzi": "梁山伯",
+  "pinyin": "Liáng Shānbó",
+  "meaning_vi": "Lương Sơn Bá",
+  "pos": "",
+  "pos_detail": {},
+  "materialized": {
+    "kind": "synthetic_from_lesson_vocab",
+    "source_deep_vocab_id": null,
+    "source_lesson_vocab_id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+    "reason": "Created synthetic item because no source deep vocab item matched."
+  },
+  "original_lesson_vocab_item": {
+    "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+    "type": "proper_noun",
+    "order": 1,
+    "hanzi": "梁山伯",
+    "pinyin": "Liáng Shānbó",
+    "meaning_vi": "Lương Sơn Bá",
+    "meaning_en": "Liang Shanbo",
+    "source_origin": "textbook",
+    "page_start": 217,
+    "page_end": 217,
+    "check_needed": false
+  },
+  "check_needed": true,
+  "check_reason": "Created synthetic item because no source deep vocab item matched."
+}

@@ -1,0 +1,387 @@
+{
+  "id": "0d20305a-d44e-4e83-944e-12e6edbfe8ba",
+  "type": "deep_vocabulary_item",
+  "order": 49,
+  "hanzi": "神奇",
+  "pinyin": "shénqí",
+  "pos": {
+    "raw_vi": "Tính từ",
+    "raw_cn": "形容词",
+    "normalized": "adjective",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_11",
+    "deep_vocab",
+    "source_thread"
+  ],
+  "meaning": {
+    "hanviet": "thần kỳ",
+    "meaning_vi": "kỳ diệu, lạ thường",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kỳ diệu",
+      "lạ thường"
+    ],
+    "short_definition_vi": "lạ/kỳ diệu đến mức khó giải thích",
+    "textbook_focus_vi": "Dùng để cảm thán cảnh tượng đĩa bay và thế giới rộng lớn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "Giáo trình Hán ngữ Quyển 3 Thượng Bài 11",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "神",
+        "lishu_vi": "",
+        "structure_note_vi": "礻 + 申",
+        "components": [
+          {
+            "text": "礻",
+            "hanviet": "",
+            "meaning_vi": "lễ nghi, thần linh",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "礻 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "示",
+              "radical_variant": "礻",
+              "radical_name_vi": "bộ Thị",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "lễ nghi, thần linh",
+              "form": "position_form",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "礻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "申",
+            "hanviet": "",
+            "meaning_vi": "thành phần nhìn thấy",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thần, thần kỳ",
+        "modern_logic_vi": "thần, thần kỳ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "示",
+          "radical_variant": "礻",
+          "radical_name_vi": "bộ Thị",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "lễ nghi, thần linh",
+          "form": "position_form",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "礻 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      },
+      {
+        "hanzi": "奇",
+        "lishu_vi": "",
+        "structure_note_vi": "大 + 可",
+        "components": [
+          {
+            "text": "大",
+            "hanviet": "",
+            "meaning_vi": "lớn",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "大 là thành phần bộ thủ đã tách riêng.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "大",
+              "radical_variant": "",
+              "radical_name_vi": "bộ Đại",
+              "radical_name_zh": "",
+              "hanviet": "",
+              "meaning_vi": "lớn",
+              "form": "main",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "大 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "可",
+            "hanviet": "",
+            "meaning_vi": "có thể, được",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "lạ, kỳ",
+        "modern_logic_vi": "lạ, kỳ",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false,
+        "main_radical": {
+          "radical": "大",
+          "radical_variant": "",
+          "radical_name_vi": "bộ Đại",
+          "radical_name_zh": "",
+          "hanviet": "",
+          "meaning_vi": "lớn",
+          "form": "main",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "大 được dùng như bộ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        }
+      }
+    ],
+    "word_logic_vi": "神奇 được học trong bài theo nghĩa: lạ/kỳ diệu đến mức khó giải thích.",
+    "memory_tip_vi": "Nhớ qua cụm/câu trọng tâm: 神奇的地方.",
+    "warning_vi": "神奇 thường tích cực/ngạc nhiên; 奇怪 thường là lạ/khó hiểu, có thể tiêu cực.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "奇怪",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Lạ/khó hiểu, có thể tiêu cực.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "神秘",
+        "pinyin": "",
+        "meaning_vi": "",
+        "difference_vi": "Bí ẩn, chưa biết rõ.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "神奇 thường tích cực/ngạc nhiên; 奇怪 thường là lạ/khó hiểu, có thể tiêu cực."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "333e3794-eaae-44fa-896d-ccb16abd69f0",
+      "order": 1,
+      "zh": "神奇的地方",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "9eaf2a40-7d7a-4533-ad6c-a0bc0dfa70f6",
+      "order": 2,
+      "zh": "神奇的景象",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "f7288d0c-b478-4f5c-a6f5-7118b96c6286",
+      "order": 3,
+      "zh": "神奇的经历",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "fa6e0766-1f04-46b9-a724-08657226eea3",
+      "order": 4,
+      "zh": "神奇的力量",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c3a9c449-94cb-487d-8446-e74fe61c04e4",
+      "order": 5,
+      "zh": "太神奇了",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "871a13b8-f72c-45b6-9264-24fb4910cfaf",
+      "order": 1,
+      "zh": "那天晚上发生的事情太神奇了。",
+      "pinyin": "",
+      "vi": "Chuyện xảy ra tối hôm đó quá kỳ diệu/lạ thường.",
+      "analysis_vi": "发生的事情 là cụm định ngữ.",
+      "highlight": [
+        "神奇"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d20305a-d44e-4e83-944e-12e6edbfe8ba"
+      ],
+      "source_ref": "",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "c91d2d7b-0928-49b9-b948-6c887b6b86c3",
+      "order": 2,
+      "zh": "他觉得这个世界比自己想象的神奇得多。",
+      "pinyin": "",
+      "vi": "Anh ấy thấy thế giới này kỳ diệu hơn mình tưởng rất nhiều.",
+      "analysis_vi": "比……得多 nhấn chênh lệch lớn.",
+      "highlight": [
+        "神奇"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "0d20305a-d44e-4e83-944e-12e6edbfe8ba"
+      ],
+      "source_ref": "",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "神奇 không nhất thiết tôn giáo; có thể dùng cho công nghệ, thiên nhiên, trải nghiệm.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "01b519cd-013f-4b9c-a698-d3cb52193bc2",
+      "order": 1,
+      "rule_vi": "神奇 thường tích cực/ngạc nhiên; 奇怪 thường là lạ/khó hiểu, có thể tiêu cực.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "神奇 thường tích cực/ngạc nhiên; 奇怪 thường là lạ/khó hiểu, có thể tiêu cực.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "神奇",
+    "back": "kỳ diệu, lạ thường",
+    "hint": "shénqí",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_11",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "0d20305a-d44e-4e83-944e-12e6edbfe8ba",
+    "source_lesson_vocab_id": null
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "id": "937064af-9a34-458e-ba4d-295ef87c6ade",
+  "type": "deep_vocabulary_item",
+  "order": 42,
+  "hanzi": "经验",
+  "pinyin": "jīngyàn",
+  "pos": {
+    "raw_vi": "Danh từ / Động từ",
+    "raw_cn": "名词/动词",
+    "normalized": "noun",
+    "notes": []
+  },
+  "level_tag": "A+++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_23",
+    "network_school",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "kinh nghiệm",
+    "meaning_vi": "kinh nghiệm; tri thức/kỹ năng có từ thực tế",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "kinh nghiệm",
+      "tri thức/kỹ năng có từ thực tế"
+    ],
+    "short_definition_vi": "kinh nghiệm; tri thức/kỹ năng có từ thực tế",
+    "textbook_focus_vi": "Dùng trong bài 网络学校 để nói về kinh nghiệm, học tập, công việc.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "kinh nghiệm, học tập, công việc",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "经",
+        "lishu_vi": "kinh",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 经 trong từ 经验; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "main_radical": {
+          "radical": "糸",
+          "radical_variant": "纟",
+          "radical_name_vi": "bộ Mịch",
+          "radical_name_zh": "",
+          "hanviet": "mịch",
+          "meaning_vi": "sợi tơ",
+          "form": "simplified",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "纟 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "纟",
+            "hanviet": "mịch",
+            "meaning_vi": "sợi tơ",
+            "position_vi": "bên trái chữ",
+            "role": "radical",
+            "is_radical": true,
+            "notes": [
+              {
+                "kind": "radical",
+                "text_vi": "纟 được tách riêng để tránh copy bộ thủ sai sang chữ khác.",
+                "text_zh": "",
+                "source_ref": "",
+                "tags": [],
+                "check_needed": false
+              }
+            ],
+            "check_needed": false,
+            "radical": {
+              "radical": "糸",
+              "radical_variant": "纟",
+              "radical_name_vi": "bộ Mịch",
+              "radical_name_zh": "",
+              "hanviet": "mịch",
+              "meaning_vi": "sợi tơ",
+              "form": "simplified",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "纟 được dùng như bộ thủ/thành phần bộ thủ trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            }
+          },
+          {
+            "text": "圣",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 经验, chữ 经 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "验",
+        "lishu_vi": "nghiệm",
+        "structure_note_vi": "Thành phần nhìn thấy của chữ 验 trong từ 经验; chỉ tách các phần đã dùng trong phần giải thích, không ép chữ học nếu không chắc.",
+        "components": [
+          {
+            "text": "马",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên trái chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          },
+          {
+            "text": "佥",
+            "hanviet": "",
+            "meaning_vi": "",
+            "position_vi": "bên phải chữ",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "",
+        "modern_logic_vi": "Trong từ 经验, chữ 验 góp vào lớp nghĩa hiện đại của cả từ; ưu tiên nhớ theo nghĩa ghép thay vì suy đoán chữ nguyên thủy.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "经验 trong bài được nhớ theo nghĩa hiện đại: kinh nghiệm.",
+    "memory_tip_vi": "Ưu tiên học qua các cụm như 教学经验 để dùng được ngay trong câu.",
+    "warning_vi": "Không ép chiết tự nếu chữ giản thể đã biến đổi mạnh; phần cấu tạo chỉ dùng để hỗ trợ nhớ nghĩa hiện đại.",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "经历",
+        "pinyin": "jīnglì",
+        "meaning_vi": "trải nghiệm/sự kiện đã qua",
+        "difference_vi": "trải nghiệm/sự kiện đã qua",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "教训",
+        "pinyin": "jiàoxun",
+        "meaning_vi": "bài học, thường từ sai lầm",
+        "difference_vi": "bài học, thường từ sai lầm",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [
+      "Không nhầm 经验 với 经历."
+    ],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4f46c7b1-ebd2-4111-a5ee-e96611e64415",
+      "order": 1,
+      "zh": "教学经验",
+      "pinyin": "",
+      "vi": "kinh nghiệm giảng dạy",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5bf5b8db-56a5-4c0b-8e80-3a2fd11ff71c",
+      "order": 2,
+      "zh": "工作经验",
+      "pinyin": "",
+      "vi": "kinh nghiệm làm việc",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "5e54a574-30f9-4628-a074-28add0327444",
+      "order": 3,
+      "zh": "学习经验",
+      "pinyin": "",
+      "vi": "kinh nghiệm học tập",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "78e73730-b2a4-471f-9a5c-739b32f675e4",
+      "order": 4,
+      "zh": "积累经验",
+      "pinyin": "",
+      "vi": "tích lũy kinh nghiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e715cd22-31de-4deb-bf68-614e9078580e",
+      "order": 5,
+      "zh": "交流经验",
+      "pinyin": "",
+      "vi": "trao đổi kinh nghiệm",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "fcd56725-1a38-47af-9592-bae4c546c167",
+      "order": 1,
+      "zh": "他有很多教学经验。",
+      "pinyin": "",
+      "vi": "kinh nghiệm; tri thức/kỹ năng có từ thực tế",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "经验"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "937064af-9a34-458e-ba4d-295ef87c6ade"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "d0280416-e6c7-4763-ac75-dc5811f1ea20",
+      "order": 2,
+      "zh": "这个词语“经验”在《网络学校》这一课里很重要。",
+      "pinyin": "",
+      "vi": "Từ 经验 rất quan trọng trong bài 'Trường học trực tuyến'.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "经验"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "937064af-9a34-458e-ba4d-295ef87c6ade"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "basic",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "79569191-52e8-420a-846e-6f9e7331d6c6",
+      "order": 3,
+      "zh": "学生可以通过网络学习和复习“经验”这个词。",
+      "pinyin": "",
+      "vi": "Học sinh có thể học và ôn từ 经验 thông qua mạng.",
+      "analysis_vi": "Ví dụ được tách riêng để UI render theo từng câu; trọng tâm là từ đang học và cấu trúc bài 网络学校.",
+      "highlight": [
+        "经验"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "937064af-9a34-458e-ba4d-295ef87c6ade"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "Trong CV: 工作经验, 教学经验, 项目经验 là các cụm rất quan trọng.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "17193018-e255-463a-8df5-de5f7920235e",
+      "order": 1,
+      "rule_vi": "Không nhầm 经验 với 经历.",
+      "natural_examples": [
+        {
+          "zh": "我有一次难忘的经历。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu đúng/tự nhiên hơn trong ngữ cảnh bài học.",
+          "notes": []
+        }
+      ],
+      "unnatural_examples": [
+        {
+          "zh": "我有一次经验。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Câu dễ sai hoặc kém tự nhiên.",
+          "notes": []
+        }
+      ],
+      "wrong_examples": [
+        {
+          "zh": "我有一次经验。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Cần tránh hoặc cần đổi theo ngữ cảnh.",
+          "notes": []
+        }
+      ],
+      "correct_examples": [
+        {
+          "zh": "我有一次难忘的经历。",
+          "pinyin": "",
+          "vi": "",
+          "note_vi": "Bản sửa tự nhiên hơn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "Không nhầm 经验 với 经历.",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "经验",
+    "back": "kinh nghiệm; tri thức/kỹ năng có từ thực tế",
+    "hint": "jīngyàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_23"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "937064af-9a34-458e-ba4d-295ef87c6ade",
+    "source_lesson_vocab_id": null
+  }
+}

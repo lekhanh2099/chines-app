@@ -1,0 +1,280 @@
+{
+  "id": "9ca2e6c2-9a79-4948-a60b-6706ba4e6c60",
+  "type": "deep_vocabulary_item",
+  "order": 11,
+  "hanzi": "摘",
+  "pinyin": "zhāi",
+  "pos": {
+    "raw_vi": "Động từ",
+    "raw_cn": "动",
+    "normalized": "verb",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_1",
+    "lesson_06",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "trích",
+    "meaning_vi": "hái; ngắt; tháo/gỡ xuống; trích ra",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hái",
+      "ngắt",
+      "tháo/gỡ xuống",
+      "trích ra"
+    ],
+    "short_definition_vi": "hái",
+    "textbook_focus_vi": "Từ vựng trọng tâm Bài 6 吃葡萄.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "đời sống, giao tiếp, bài đọc Giáo trình Hán ngữ",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "摘",
+        "lishu_vi": "",
+        "structure_note_vi": "Học theo nghĩa hiện đại và cụm từ; không ép chiết tự nếu thành phần không đủ giải thích nghĩa.",
+        "main_radical": {
+          "radical": "手",
+          "radical_variant": "扌",
+          "radical_name_vi": "bộ Thủ",
+          "radical_name_zh": "",
+          "hanviet": "thủ",
+          "meaning_vi": "tay, thao tác bằng tay",
+          "form": "variant",
+          "notes": [
+            {
+              "kind": "radical",
+              "text_vi": "扌 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+              "text_zh": "",
+              "source_ref": "",
+              "tags": [
+                "radical"
+              ],
+              "check_needed": false
+            }
+          ],
+          "check_needed": false
+        },
+        "components": [
+          {
+            "text": "扌",
+            "hanviet": "thủ",
+            "meaning_vi": "tay, thao tác bằng tay",
+            "position_vi": "",
+            "role": "radical",
+            "is_radical": true,
+            "radical": {
+              "radical": "手",
+              "radical_variant": "扌",
+              "radical_name_vi": "bộ Thủ",
+              "radical_name_zh": "",
+              "hanviet": "thủ",
+              "meaning_vi": "tay, thao tác bằng tay",
+              "form": "variant",
+              "notes": [
+                {
+                  "kind": "radical",
+                  "text_vi": "扌 được dùng như bộ/thành phần bộ thủ có thể nhận diện trong chữ này.",
+                  "text_zh": "",
+                  "source_ref": "",
+                  "tags": [
+                    "radical"
+                  ],
+                  "check_needed": false
+                }
+              ],
+              "check_needed": false
+            },
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "hái, tháo xuống, trích",
+        "modern_logic_vi": "Trong từ 摘, chữ 摘 góp phần vào nghĩa hiện đại hoặc cần học theo cụm cố định.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "摘 được học theo nghĩa hiện đại trong bài, ưu tiên dùng đúng cụm và ngữ cảnh hơn là dịch từng chữ.",
+    "memory_tip_vi": "Nhớ qua ví dụ: 他从树上摘下了一串葡萄。",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "拿",
+        "pinyin": "ná",
+        "meaning_vi": "cầm/lấy",
+        "difference_vi": "拿 rộng hơn; 摘 là hái/tháo khỏi vị trí.",
+        "register_vi": "",
+        "example_zh": "我拿一本书。",
+        "example_vi": "Tôi cầm một quyển sách.",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "4b7614a8-1140-4244-9f83-8e6a2077d984",
+      "order": 1,
+      "zh": "摘葡萄",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c816bdb9-8f28-40cf-ac23-c6e11139589e",
+      "order": 2,
+      "zh": "摘花",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1bb09de8-c0ae-4a6a-8cb4-4908638577e1",
+      "order": 3,
+      "zh": "摘果子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "b2853d35-d936-4160-84b6-28191fda957b",
+      "order": 4,
+      "zh": "摘帽子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "c12d7ea8-c230-4516-982c-039d591570cb",
+      "order": 5,
+      "zh": "摘眼镜",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e4b7579a-cefd-4330-a918-4dce06f798e4",
+      "order": 6,
+      "zh": "摘下来",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "655450c5-f3ee-4d5b-a777-6c4c9c0b33e6",
+      "order": 7,
+      "zh": "摘录句子",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "2b5b4c98-8ef7-4546-8f49-3f4eb185be3a",
+      "order": 1,
+      "zh": "他从树上摘下了一串葡萄。",
+      "pinyin": "",
+      "vi": "Anh ấy hái xuống một chùm nho từ trên cây.",
+      "analysis_vi": "Ví dụ dùng 摘 trong ngữ cảnh tự nhiên của Bài 6.",
+      "highlight": [
+        "摘"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "9ca2e6c2-9a79-4948-a60b-6706ba4e6c60"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "core",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "摘 nên học theo cách dùng hiện đại trong 普通话; khi dịch sang tiếng Việt cần chọn nghĩa tự nhiên theo ngữ cảnh.",
+    "tags": [
+      "usage",
+      "mainland_mandarin"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "639b0e68-e29c-4951-8a40-976bbec04104",
+      "order": 1,
+      "rule_vi": "摘 dùng khi lấy/hái/tháo khỏi vị trí ban đầu, không dùng cho mọi kiểu “lấy”.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "摘",
+    "back": "hái; ngắt; tháo/gỡ xuống; trích ra",
+    "hint": "zhāi",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_1",
+      "lesson_06"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "9ca2e6c2-9a79-4948-a60b-6706ba4e6c60",
+    "source_lesson_vocab_id": null
+  }
+}

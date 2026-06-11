@@ -1,0 +1,310 @@
+{
+  "id": "6bf2abcd-7163-42af-bb6d-e22681a601f5",
+  "type": "deep_vocabulary_item",
+  "order": 52,
+  "hanzi": "成千上万",
+  "pinyin": "chéng qiān shàng wàn",
+  "pos": {
+    "raw_vi": "Thành ngữ",
+    "raw_cn": "成语",
+    "normalized": "idiom",
+    "notes": []
+  },
+  "level_tag": "A++",
+  "tags": [
+    "hanyu_3_2",
+    "lesson_20",
+    "deep_vocab"
+  ],
+  "meaning": {
+    "hanviet": "thành thiên thượng vạn",
+    "meaning_vi": "hàng nghìn hàng vạn, rất nhiều",
+    "meaning_en": "",
+    "natural_translations_vi": [
+      "hàng nghìn hàng vạn",
+      "rất nhiều"
+    ],
+    "short_definition_vi": "hàng nghìn hàng vạn, rất nhiều",
+    "textbook_focus_vi": "Bám theo Bài 20 什么最重要, ưu tiên nghĩa đã dùng trong bài và ví dụ vừa soạn.",
+    "register_vi": "trung tính",
+    "usage_domain_vi": "học thuật, phỏng vấn, tranh luận, đời sống",
+    "notes": []
+  },
+  "word_formation": {
+    "characters": [
+      {
+        "hanzi": "成",
+        "lishu_vi": "thành",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [
+          {
+            "text": "戈",
+            "hanviet": "qua",
+            "meaning_vi": "vũ khí",
+            "position_vi": "",
+            "role": "visible_component",
+            "is_radical": false,
+            "notes": [],
+            "check_needed": false
+          }
+        ],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "thành công, hoàn thành, trở thành",
+        "modern_logic_vi": "成为 = chuyển thành vai trò/trạng thái mới.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "千",
+        "lishu_vi": "thiên",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "nghìn",
+        "modern_logic_vi": "成千上万 chỉ số lượng rất lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "上",
+        "lishu_vi": "thượng",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "trên, lên",
+        "modern_logic_vi": "Trong 成千上万 là lên đến hàng vạn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "hanzi": "万",
+        "lishu_vi": "vạn",
+        "structure_note_vi": "Phân tích theo thành phần nhìn thấy trong chữ hiện đại; không ép cổ tự khi không cần.",
+        "main_radical": null,
+        "components": [],
+        "original_meaning_vi": "",
+        "modern_meaning_vi": "mười nghìn, rất nhiều",
+        "modern_logic_vi": "Gợi số lượng lớn.",
+        "warning_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "word_logic_vi": "成千上万 được dùng trong Bài 20 với nghĩa: hàng nghìn hàng vạn, rất nhiều.",
+    "memory_tip_vi": "Nhớ qua cụm 成千上万的人.",
+    "warning_vi": "",
+    "notes": [],
+    "check_needed": false
+  },
+  "comparison": {
+    "near_synonyms": [
+      {
+        "word": "很多",
+        "pinyin": "hěn duō",
+        "meaning_vi": "rất nhiều",
+        "difference_vi": "Phổ thông nhất.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      },
+      {
+        "word": "无数",
+        "pinyin": "wúshù",
+        "meaning_vi": "vô số",
+        "difference_vi": "Nhấn không đếm xuể.",
+        "register_vi": "",
+        "example_zh": "",
+        "example_vi": "",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "antonyms": [
+      {
+        "word": "寥寥无几",
+        "pinyin": "liáoliáo wú jǐ",
+        "meaning_vi": "rất ít",
+        "notes": [],
+        "check_needed": false
+      }
+    ],
+    "contrast_pairs": [],
+    "usage_rules": [],
+    "notes": []
+  },
+  "collocations": [
+    {
+      "id": "7b7e66ad-15d0-4d27-a23e-2845739a6029",
+      "order": 1,
+      "zh": "成千上万的人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "ce9a8388-2916-4ce0-bb87-bf894a7c7b94",
+      "order": 2,
+      "zh": "成千上万的学生",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "72b6175d-59cc-4654-add6-1f137e9dbb7f",
+      "order": 3,
+      "zh": "成千上万的观众",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "422d4dd7-8508-4a2b-a562-8b50496ab425",
+      "order": 4,
+      "zh": "成千上万的申请者",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "e50f95e3-5949-4c73-bbe1-3f6e1005fbc7",
+      "order": 5,
+      "zh": "成千上万次",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "id": "1a361514-8948-4306-91fa-76587201f9a3",
+      "order": 6,
+      "zh": "吸引成千上万的人",
+      "pinyin": "",
+      "vi": "",
+      "pattern": "",
+      "note_vi": "",
+      "tags": [],
+      "notes": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "25861262-d6b2-441c-927b-51342e08fc14",
+      "order": 1,
+      "zh": "成千上万的人都想进入这所大学。",
+      "pinyin": "Chéng qiān shàng wàn de rén dōu xiǎng jìnrù zhè suǒ dàxué.",
+      "vi": "Hàng nghìn hàng vạn người đều muốn vào đại học này.",
+      "analysis_vi": "成千上万的人 làm chủ ngữ, nhấn số lượng lớn.",
+      "highlight": [
+        "成千上万"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6bf2abcd-7163-42af-bb6d-e22681a601f5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    },
+    {
+      "id": "e109c45d-b665-48f1-a61e-c9d431ec7f96",
+      "order": 2,
+      "zh": "在成千上万的申请者中，她凭坦白、勇气和优秀的表现，给导师留下了深刻的印象。",
+      "pinyin": "Zài chéng qiān shàng wàn de shēnqǐngzhě zhōng, tā píng tǎnbái, yǒngqì hé yōuxiù de biǎoxiàn, gěi dǎoshī liúxià le shēnkè de yìnxiàng.",
+      "vi": "Trong hàng nghìn hàng vạn ứng viên, cô ấy dựa vào sự thẳng thắn, dũng khí và biểu hiện xuất sắc để lại ấn tượng sâu sắc.",
+      "analysis_vi": "在……中 đặt phạm vi; 凭…… nêu căn cứ.",
+      "highlight": [
+        "成千上万"
+      ],
+      "grammar_refs": [],
+      "vocab_refs": [
+        "6bf2abcd-7163-42af-bb6d-e22681a601f5"
+      ],
+      "source_ref": "thread_vocab_compilation",
+      "level": "intermediate",
+      "audio_key": "",
+      "notes": [],
+      "check_needed": false
+    }
+  ],
+  "culture_note": {
+    "title": "Fact nhỏ",
+    "content_vi": "成千上万 là ước lượng phóng đại, không phải con số chính xác.",
+    "tags": [
+      "usage"
+    ],
+    "source_refs": [],
+    "notes": [],
+    "check_needed": false
+  },
+  "warnings": [
+    {
+      "id": "05ad6b5b-b001-45f7-a62e-2b6055d9e9de",
+      "order": 1,
+      "rule_vi": "Không dùng 成千上万 cho số nhỏ hoặc đếm chính xác.",
+      "natural_examples": [],
+      "unnatural_examples": [],
+      "wrong_examples": [],
+      "correct_examples": [
+        {
+          "zh": "我有很多书。",
+          "pinyin": "Wǒ yǒu hěn duō shū.",
+          "vi": "Tôi có rất nhiều sách.",
+          "note_vi": "很多 an toàn hơn nếu không thật sự hàng nghìn.",
+          "notes": []
+        }
+      ],
+      "explanation_vi": "",
+      "severity": "warning",
+      "notes": []
+    }
+  ],
+  "flashcard": {
+    "front": "成千上万",
+    "back": "hàng nghìn hàng vạn, rất nhiều",
+    "hint": "chéng qiān shàng wàn",
+    "modes": [
+      "hanzi_to_meaning",
+      "meaning_to_hanzi",
+      "pinyin_to_hanzi"
+    ],
+    "tags": [
+      "hanyu_3_2",
+      "lesson_20",
+      "deep_vocab"
+    ],
+    "notes": []
+  },
+  "audio_key": "",
+  "raw_markdown": "",
+  "notes": [],
+  "check_needed": false,
+  "materialized": {
+    "kind": "source_deep_vocab",
+    "source_deep_vocab_id": "6bf2abcd-7163-42af-bb6d-e22681a601f5",
+    "source_lesson_vocab_id": null
+  }
+}
